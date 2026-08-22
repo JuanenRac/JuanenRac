@@ -24,6 +24,13 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 
 ---
 
+## 🚀 Hauptmerkmale & Skalierbarkeit
+
+- **Multi-Roboter-Skalierbarkeit**: Unterstützt bis zu 8 verteilte Robotereinheiten (derzeit 3, 4, 5 und 6 Achsen; skalierbar auf 7, 8, 9 Achsen und Dual-Roboter-Architekturen in zukünftigen Versionen).
+- **Integrierte lokale Stufe**: Die HYDRA-UMC-Hauptplatine verfügt über eine integrierte **lokale 6-Achsen-Stufe** für Zusatzaufgaben, einschließlich Sekundärroboter, ATC-Revolver (automatischer Werkzeugwechsler), Förderbandsynchronisation oder XYZ-Tischportale.
+
+---
+
 ## 🏗️ Ökosystem-Architektur
 
 Das Ökosystem ist in 6 funktionale Schichten unterteilt, die autonome, kollaborative und intelligente Roboteroperationen ermöglichen:
@@ -45,7 +52,7 @@ Das Ökosystem nutzt einen modernen Hochleistungs-Stack für unternehmenskritisc
 - **Mikrocontroller**: STM32H745 (Dual-Core 480MHz), STM32G474 (170MHz), STM32F303.
 - **Frameworks**: FreeRTOS (AMP-Modus), CMSIS-DSP, STM32 HAL/LL.
 - **Protokolle**: FDCAN (1Mbps/5Mbps), CAN-OTA, SPI (50MHz Slave IPC), I2C, UART.
-- **Kinematik**: S-Kurven-Profilgenerierung, Echtzeit-Inverse Kinematik (IK).
+- **Kinematik**: S-Kurven-Profilgenerierung, Echtzeit-Inverse Kinematics (IK).
 
 ### 🧠 Edge-KI & Wahrnehmung (Intelligenz)
 - **Beschleuniger**: Hailo-8 (26 TOPS) für 8-Kamera-Vision, Hailo-10 (40 TOPS) for GenAI.
@@ -76,8 +83,88 @@ Das Ökosystem nutzt einen modernen Hochleistungs-Stack für unternehmenskritisc
 
 - **E-STOP-Schicht**: Fest verdrahtete Not-Aus-Leitung + hochpriore CAN-Notfall-Frames (<1ms).
 - **KI-Sicherheit**: 3D-Sicherheitszonen mit automatischer Abschaltung des Motordrehmoments bei menschlichem Eindringen.
-- **Cybersicherheit**: JWT-basierte stateless Authentifizierung + mTLS für sicheren Datenverkehr zwischen den Knoten.
+- **Cybersicherheit**: JWT-based stateless Authentifizierung + mTLS für sicheren Datenverkehr zwischen den Knoten.
 - **Integrität**: Nichtflüchtiger F-RAM für die Überprüfung des Werkzeuglebenszyklus und die Statuswiederherstellung.
+
+---
+
+## 📁 Projektkatalog
+
+### 💠 Kern-Ökosystem (Hauptsteuerung)
+| Repository | Beschreibung |
+| :--- | :--- |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Kern-Bewegungssteuerungs-Firmware für STM32H745/G474 mit S-Curve-Kinematik. |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | Headless Node.js API und WebSocket-Backend für die Roboter-Orchestrierung. |
+| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Fortschrittliches React-basiertes Web-Dashboard für 3D-Roboter-Überwachung und -Steuerung. |
+| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | Hochleistungs-Python/Qt-Desktop-Anwendung für die industrielle Automatisierung. |
+| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | Flutter-basierte Touch-Schnittstelle für industrielle 7"-Displays (CM5). |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | Native Kotlin-Mobile-App mit biometrischem Login für Fernmanagement. |
+| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | Flutter-Mobile-App für iOS/iPadOS mit Live-WebSocket-Synchronisation. |
+| [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | Grafischer URDF-Editor zum Validieren und Hochladen von Robotermodellen. |
+| [URTC](https://github.com/JuanenRac/URTC) | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
+
+### 👁️ Vision-KI-Knoten (Optimiert für Hailo-8)
+| Repository | Beschreibung |
+| :--- | :--- |
+| **HYDRA-UMC-VISION-NODE** | Hochgeschwindigkeits-Perzeptionsknoten für 8 simultane USB-3.0-Kamerastreams. |
+| **HYDRA-UMC-VISION-STREAMER** | Optimierte GStreamer/MediaMTX-Pipeline für industrielle Videoweiterleitung. |
+| **HYDRA-UMC-DETECTION-HEF** | Bibliothek hardwarebeschleunigter YOLO-Modelle für SMD- und Komponenten-QS. |
+| **HYDRA-UMC-SAFETY-ZONES** | Echtzeit-KI-Intrusionserkennung zum Schutz des Robotik-Arbeitsraums. |
+| **HYDRA-UMC-VISUAL-SERVOING-API** | Bildbasiertes kinematisches Feedback für submillimetergenaue Posenschärfung. |
+
+### 🧠 Kognitiver KI-Knoten (Optimiert für Hailo-10)
+| Repository | Beschreibung |
+| :--- | :--- |
+| **HYDRA-UMC-COGNITIVE-NODE** | Semantischer Denkknoten für logische Missionsplanung und Sprachsteuerung. |
+| **HYDRA-UMC-VLA-ENGINE** | Implementierung des Vision-Language-Action-Modells für komplexe Aufgaben. |
+| **HYDRA-UMC-VOICE-UI** | Lokale, private STT/TTS-Pipeline für natürliche Bedienerinteraktion. |
+| **HYDRA-UMC-SEMANTIC-PLANNER** | LLM-basierter Missions-Orchestrator mit kontextsensitiver Fehlerbehebung. |
+| **HYDRA-UMC-DOCS-QA** | RAG-basierter KI-Assistent, trainiert auf Handbüchern und Quellcode. |
+
+### 🐝 Orchestrierung & Schwarm
+| Repository | Beschreibung |
+| :--- | :--- |
+| **HYDRA-UMC-ORCHESTRATOR** | Flottenmanager für Multi-Roboter-Koordination und Kollisionsvermeidung. |
+| **HYDRA-UMC-SWARM-SYNC** | PTP-Synchronisation für nanosekundengenaue Roboterkoordination. |
+| **HYDRA-UMC-PATH-PLANNER-3D** | Verteilter Pfadoptimierer für Roboterschwärme in gemeinsam genutzten Räumen. |
+| **HYDRA-UMC-JOB-DISPATCHER** | Prioritätsbasierter Aufgabenplaner für heterogene Roboterflotten. |
+| **HYDRA-UMC-NODE-HEALING** | Hochverfügbarkeitsmonitor mit transparentem Missions-Failover. |
+
+### 🎮 Digital Twin & Simulation
+| Repository | Beschreibung |
+| :--- | :--- |
+| **HYDRA-UMC-TWIN** | Hochpräzise Physiksimulations-Engine für risikofreies Robotertesten. |
+| **HYDRA-UMC-PHYSICS-REPLICA** | Reale Physiksimulation (MuJoCo/PhysX) von URDF-Ketten. |
+| **HYDRA-UMC-HIL-BRIDGE** | Hardware-in-the-loop-Schnittstelle für Statuskonsistenz (real vs. virtuell). |
+| **HYDRA-UMC-SYNTHETIC-DATA-GEN** | Prozeduraler Datensatzgenerator zum Trainieren von Vision-KI-Modellen. |
+
+### 📊 Daten & Analytik
+| Repository | Beschreibung |
+| :--- | :--- |
+| **HYDRA-UMC-DATALAKE** | Big-Data-Speicher für massive Multi-Roboter-Industrietelemetrie. |
+| **HYDRA-UMC-TELEMETRY-COLLECTOR** | Hochdurchsatz-Ingester für CAN-, WebSocket- und Systemprotokolle. |
+| **HYDRA-UMC-ANOMALY-DETECTOR** | Vorausschauende Wartung basierend auf Motorvibrationssignaturen. |
+| **HYDRA-UMC-PRODUCTION-REPORTS** | Automatisierte OEE- und KPI-Erstellung für das Fabrikmanagement. |
+
+### 🏭 Industrielles Gateway
+| Repository | Beschreibung |
+| :--- | :--- |
+| **HYDRA-UMC-GATEWAY-INDUSTRIAL** | Interoperabilitätsbrücke für Fabrikstandards (OPC-UA/MQTT). |
+| **HYDRA-UMC-OPCUA-SERVER** | Mapping von HydraState-Robotikobjekten auf Standard-OPC-UA-Knoten. |
+| **HYDRA-UMC-MQTT-BROKER** | Telemetriebrücke für IoT-Integrationen und externe Dashboards. |
+| **HYDRA-UMC-MTCONNECT-ADAPTER** | Standardisierte Schnittstelle für die Zustandsüberwachung von Maschinen. |
+
+### 🛠️ Ergänzende Tools
+| Repository | Beschreibung |
+| :--- | :--- |
+| **URTC-SMART-RACK** | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
+| **URTC-VISION-TOOL** | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
+| **HYDRA-UMC-WATCH** | Tragbares Notfall-Dashboard mit haptischen Sicherheitswarnungen. |
+| **HYDRA-UMC-TOOL-CLI** | Befehlszeilenschnittstelle für Flottenautomatisierung, Flashen und DevOps. |
+| **HYDRA-UMC-DASHBOARD-AI** | KI-Erweiterung für Web-Dashboards für Einblicke in natürlicher Sprache. |
 
 ---
 
