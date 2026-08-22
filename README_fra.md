@@ -109,62 +109,62 @@ L'écosystème exploite une pile moderne et performante pour une fiabilité crit
 ### 👁️ Nœud d'IA de Vision (Optimisé pour Hailo-8)
 | Dépôt | Description |
 | :--- | :--- |
-| **HYDRA-UMC-VISION-NODE** | Nœud de perception haute vitesse pour 8 flux de caméras USB 3.0 simultanés. |
-| **HYDRA-VISION-STREAMER** | Pipeline GStreamer/MediaMTX optimisé pour le relais vidéo industriel. |
-| **HYDRA-DETECTION-HEF** | Bibliothèque de modèles YOLO accélérés matériellement pour l'AQ des composants et du CMS. |
-| **HYDRA-SAFETY-ZONES** | Détection d'intrusion par IA en temps réel pour la protection du volume de travail. |
-| **HYDRA-VISUAL-SERVOING-API** | Retour cinématique basé sur l'image pour une correction de pose sub-millimétrique. |
+| [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | Nœud de perception haute vitesse pour 8 flux de caméras USB 3.0 simultanés. |
+| [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | Pipeline GStreamer/MediaMTX optimisé pour le relais vidéo industriel. |
+| [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | Bibliothèque de modèles YOLO accélérés matériellement pour l'AQ des composants et du CMS. |
+| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | Détection d'intrusion par IA en temps réel pour la protection du volume de travail. |
+| [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | Retour cinématique basé sur l'image pour une correction de pose sub-millimétrique. |
 
 ### 🧠 Nœud d'IA Cognitive (Optimisé pour Hailo-10)
 | Dépôt | Description |
 | :--- | :--- |
-| **HYDRA-UMC-COGNITIVE-NODE** | Nœud de raisonnement sémantique pour la planification logique et le contrôle vocal. |
-| **HYDRA-VLA-ENGINE** | Implémentation du modèle Vision-Language-Action pour l'exécution de tâches complexes. |
-| **HYDRA-VOICE-UI** | Pipeline local STT/TTS pour l'interaction naturelle avec l'opérateur. |
-| **HYDRA-SEMANTIC-PLANNER** | Orchestrateur basé sur LLM avec récupération d'erreur contextuelle. |
-| **HYDRA-DOCS-QA** | Assistant IA basé sur RAG entraîné sur les manuels techniques et le code source. |
+| [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | Nœud de raisonnement sémantique pour la planification logique et le contrôle vocal. |
+| [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | Implémentation du modèle Vision-Language-Action pour l'exécution de tâches complexes. |
+| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | Pipeline local STT/TTS pour l'interaction naturelle avec l'opérateur. |
+| [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | Orchestrateur basé sur LLM avec récupération d'erreur contextuelle. |
+| [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | Assistant IA basé sur RAG entraîné sur les manuels techniques et le code source. |
 
 ### 🐝 Orchestration & Essaim
 | Dépôt | Description |
 | :--- | :--- |
-| **HYDRA-UMC-ORCHESTRATOR** | Gestionnaire de flotte pour la coordination multi-robot et l'évitement de collision. |
-| **HYDRA-SWARM-SYNC** | Sincronisation PTP pour la coordination de robots avec précision nanoseconde. |
-| **HYDRA-PATH-PLANNER-3D** | Optimiseur de trajectoire distribué pour les essaims en espace partagé. |
-| **HYDRA-JOB-DISPATCHER** | Planificateur de tâches basé sur les priorités pour flottes hétérogènes. |
-| **HYDRA-NODE-HEALING** | Moniteur de haute disponibilité avec basculement transparent des missions. |
+| [HYDRA-UMC-ORCHESTRATOR](https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR) | Gestionnaire de flotte pour la coordination multi-robot et l'évitement de collision. |
+| [HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC) | Sincronisation PTP pour la coordination de robots avec précision nanoseconde. |
+| [HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D) | Optimiseur de trajectoire distribué pour les essaims en espace partagé. |
+| [HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER) | Planificateur de tâches basé sur les priorités pour flottes hétérogènes. |
+| [HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING) | Moniteur de haute disponibilité avec basculement transparent des missions. |
 
 ### 🎮 Jumeau Numérique & Simulation
 | Dépôt | Description |
 | :--- | :--- |
-| **HYDRA-UMC-TWIN** | Moteur de simulation physique haute fidélité pour des tests sans risque. |
-| **HYDRA-PHYSICS-REPLICA** | Simulation physique réelle (MuJoCo/PhysX) des chaînes URDF. |
-| **HYDRA-HIL-BRIDGE** | Interface Hardware-in-the-loop pour la cohérence entre état réel et virtuel. |
-| **HYDRA-SYNTHETIC-DATA-GEN** | Générateur de datasets procéduraux pour l'entraînement de modèles IA. |
+| [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | Moteur de simulation physique haute fidélité pour des tests sans risque. |
+| [HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA) | Simulation physique réelle (MuJoCo/PhysX) des chaînes URDF. |
+| [HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE) | Interface Hardware-in-the-loop pour la cohérence entre état réel et virtuel. |
+| [HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN) | Générateur de datasets procéduraux pour l'entraînement de modèles IA. |
 
 ### 📊 Données & Analytique
 | Dépôt | Description |
 | :--- | :--- |
-| **HYDRA-UMC-DATALAKE** | Stockage Big Data pour la télémétrie industrielle massive multi-robot. |
-| **HYDRA-TELEMETRY-COLLECTOR** | Ingesteur haut débit pour les logs CAN, WebSocket et système. |
-| **HYDRA-ANOMALY-DETECTOR** | Moteur de maintenance prédictive basé sur les signatures vibratoires. |
-| **HYDRA-PRODUCTION-REPORTS** | Génération automatisée d'OEE et KPI pour la gestion d'usine. |
+| [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | Stockage Big Data pour la télémétrie industrielle massive multi-robot. |
+| [HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR) | Ingesteur haut débit pour les logs CAN, WebSocket et système. |
+| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | Moteur de maintenance prédictive basé sur les signatures vibratoires. |
+| [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | Génération automatisée d'OEE et KPI pour la gestion d'usine. |
 
 ### 🏭 Passerelle Industrielle
 | Dépôt | Description |
 | :--- | :--- |
-| **HYDRA-UMC-GATEWAY-INDUSTRIAL** | Pont d'interopérabilité pour les standards d'usine (OPC-UA/MQTT). |
-| **HYDRA-OPCUA-SERVER** | Mapping des objets HydraState vers des nœuds standard OPC-UA. |
-| **HYDRA-MQTT-BROKER** | Pont de télémétrie pour les intégrations IoT et tableaux de bord externes. |
-| **HYDRA-MTCONNECT-ADAPTER** | Interface standardisée pour le suivi de santé des machines et robots. |
+| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | Pont d'interopérabilité pour les standards d'usine (OPC-UA/MQTT). |
+| [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | Mapping des objets HydraState vers des nœuds standard OPC-UA. |
+| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | Pont de télémétrie pour les intégrations IoT et tableaux de bord externes. |
+| [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | Interface standardisée pour le suivi de santé des machines et robots. |
 
 ### 🛠️ Outils Complémentaires
 | Dépôt | Description |
 | :--- | :--- |
-| **URTC-SMART-RACK** | Stockage d'outils intelligent avec préchauffage et audit de cycle de vie. |
-| **URTC-VISION-TOOL** | Tête d'outil avec caméras thermique et RGB intégrées pour l'AQ active. |
-| **HYDRA-UMC-WATCH** | Tableau de bord d'urgence portable avec alertes de sécurité haptiques. |
-| **HYDRA-UMC-TOOL-CLI** | Interface en ligne de commande pour l'automatisation, le flashage et le devops. |
-| **HYDRA-UMC-DASHBOARD-AI** | Extension IA pour tableaux de bord web fournissant des analyses textuelles. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Stockage d'outils intelligent avec préchauffage et audit de cycle de vie. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Tête d'outil avec caméras thermique et RGB intégrées pour l'AQ active. |
+| [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | Tableau de bord d'urgence portable avec alertes de sécurité haptiques. |
+| [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | Interface en ligne de commande pour l'automatisation, le flashage et le devops. |
+| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | Extension IA pour tableaux de bord web fournissant des analyses textuelles. |
 
 ---
 
