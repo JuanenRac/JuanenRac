@@ -24,6 +24,13 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 
 ---
 
+## 🚀 Key Features & Scalability
+
+- **Multi-Robot Scalability**: Supports up to 8 distributed robotic units (3, 4, 5, and 6-DOF today; scaling up to 7, 8, 9-DOF and Dual-Robot architectures in future releases).
+- **Integrated Local Stage**: The main HYDRA-UMC board features an onboard **6-axis Local Stage** for auxiliary tasks, including secondary robots, ATC (Automatic Tool Changer) revolvers, conveyor belt synchronization, or XYZ table gantries.
+
+---
+
 ## 🏗️ Ecosystem Architecture
 
 The ecosystem is structured into 6 functional layers that enable autonomous, collaborative, and intelligent robotic operations:
@@ -137,7 +144,7 @@ The ecosystem leverages a modern, high-performance stack for mission-critical re
 ### 📊 Data & Analytics
 | Repository | Description |
 | :--- | :--- |
-| **HYDRA-UMC-DATALAKE** | Big Data storage for massive multi-robot industrial telemetry. |
+| **HYDRA-UMC-DATALAKE** | Big Data storage for massive industrial robotic data. |
 | **HYDRA-UMC-TELEMETRY-COLLECTOR** | High-throughput ingester for CAN, WebSocket, and system logs. |
 | **HYDRA-UMC-ANOMALY-DETECTOR** | Predictive maintenance engine based on motor vibration signatures. |
 | **HYDRA-UMC-PRODUCTION-REPORTS** | Automated OEE and KPI generation for industrial plant management. |
