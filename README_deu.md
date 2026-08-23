@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
-Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robotikplattform, die von Low-Level-Echtzeit-Firmware bis hin zu kognitiver High-Level-KI reicht. Diese Organisation umfasst 44 spezialisierte Projekte, die für eine perfekte Synchronisation bei der Mikrofabrik-Automatisierung und Schwarmrobotik konzipiert sind.
+Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robotikplattform, die von Low-Level-Echtzeit-Firmware bis hin zu kognitiver High-Level-KI reicht. Diese Organisation umfasst zahlreiche spezialisierte Projekte, die für eine perfekte Synchronisation bei der Mikrofabrik-Automatisierung und Schwarmrobotik konzipiert sind.
 
 ---
 

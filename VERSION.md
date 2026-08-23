@@ -55,57 +55,55 @@ synced copy of the matching application's `FIRMWARE_VERSION_*`
 | URTC-FLASHER (Python/tkinter) | 1.1.0 | `URTC-FLASHER/flasher_config.py` |
 | URTC-TESTER (Python/tkinter) | 1.1.0 | `URTC-TESTER/tester_config.py` |
 
-## Ecosystem expansion: 32 new projects (scaffolding stage)
+## New projects (scaffolding stage)
 
-The 32 projects described in `SONNET/4.MAPA_RELACIONAL_Y_DESCRIPCIONES_
-HYDRA-UMC.txt` and cataloged in this same repo (`README.md`, "Project
+These new projects are cataloged in this same repo (`README.md`, "Project
 Catalog" section). All of them start at **1.0.0**, same incremental policy
 as the rest. As things stand, they're scaffolding only (the owner's own
 template: `.git`, README + 4 translations, community-health files, empty
 folders) — the real version "Source" (`package.json`/`Cargo.toml`/
 `go.mod`/`version.h` depending on the stack) doesn't exist yet for most of
-them; it gets created once each project reaches its turn in the work table
-of `SONNET/5.PLAN_EJECUCION_32_PROYECTOS_NUEVOS.txt`. This table will be
-updated with the real source as that happens.
+them; it gets created once each project reaches its turn in the internal
+work plan. This table will be updated with the real source as that
+happens.
 
 | Project | Version | Decided stack | Source |
 |---|---|---|---|
-| HYDRA-UMC-TOOL-CLI | 1.0.0 | Go | *(pending, see plan)* |
-| HYDRA-UMC-DASHBOARD-AI | 1.0.0 | TypeScript/React | *(pending, see plan)* |
-| HYDRA-UMC-MQTT-BROKER | 1.0.0 | Node/TypeScript | *(pending, see plan)* |
-| HYDRA-UMC-PRODUCTION-REPORTS | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-MTCONNECT-ADAPTER | 1.0.0 | Node/TypeScript | *(pending, see plan)* |
-| HYDRA-UMC-OPCUA-SERVER | 1.0.0 | Node/TypeScript | *(pending, see plan)* |
-| HYDRA-UMC-GATEWAY-INDUSTRIAL (parent) | 1.0.0 | Node/TypeScript | *(pending, see plan)* |
-| HYDRA-UMC-TELEMETRY-COLLECTOR | 1.0.0 | Go | *(pending, see plan)* |
-| HYDRA-UMC-NODE-HEALING | 1.0.0 | Go | *(pending, see plan)* |
-| HYDRA-UMC-JOB-DISPATCHER | 1.0.0 | Go | *(pending, see plan)* |
-| HYDRA-UMC-DATALAKE (parent) | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-DOCS-QA | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-VOICE-UI | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-WATCH | 1.0.0 | Kotlin (WearOS) | *(pending, see plan)* |
-| HYDRA-UMC-SWARM-SYNC | 1.0.0 | Rust | *(pending, see plan)* |
-| HYDRA-UMC-ANOMALY-DETECTOR | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-SEMANTIC-PLANNER | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-PATH-PLANNER-3D | 1.0.0 | Rust | *(pending, see plan)* |
-| HYDRA-UMC-ORCHESTRATOR (parent) | 1.0.0 | Rust | *(pending, see plan)* |
-| HYDRA-UMC-COGNITIVE-NODE (parent) | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-SYNTHETIC-DATA-GEN | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-VISUAL-SERVOING-API | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-SAFETY-ZONES | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-DETECTION-HEF | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-VISION-STREAMER | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-VISION-NODE (parent) | 1.0.0 | Python | *(pending, see plan)* |
-| HYDRA-UMC-VLA-ENGINE | 1.0.0 | Python | *(pending, see plan)* |
-| URTC-SMART-RACK | 1.0.0 | C (STM32G4) | *(pending, see plan)* |
-| URTC-VISION-TOOL | 1.0.0 | C (STM32) + Python | *(pending, see plan)* |
-| HYDRA-UMC-PHYSICS-REPLICA | 1.0.0 | Rust | *(pending, see plan)* |
-| HYDRA-UMC-HIL-BRIDGE | 1.0.0 | Rust | *(pending, see plan)* |
-| HYDRA-UMC-TWIN (parent) | 1.0.0 | Rust (Bevy) | *(pending, see plan)* |
+| HYDRA-UMC-TOOL-CLI | 1.0.0 | Go | *(pending)* |
+| HYDRA-UMC-DASHBOARD-AI | 1.0.0 | TypeScript/React | *(pending)* |
+| HYDRA-UMC-MQTT-BROKER | 1.0.0 | Node/TypeScript | *(pending)* |
+| HYDRA-UMC-PRODUCTION-REPORTS | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-MTCONNECT-ADAPTER | 1.0.0 | Node/TypeScript | *(pending)* |
+| HYDRA-UMC-OPCUA-SERVER | 1.0.0 | Node/TypeScript | *(pending)* |
+| HYDRA-UMC-GATEWAY-INDUSTRIAL (parent) | 1.0.0 | Node/TypeScript | *(pending)* |
+| HYDRA-UMC-TELEMETRY-COLLECTOR | 1.0.0 | Go | *(pending)* |
+| HYDRA-UMC-NODE-HEALING | 1.0.0 | Go | *(pending)* |
+| HYDRA-UMC-JOB-DISPATCHER | 1.0.0 | Go | *(pending)* |
+| HYDRA-UMC-DATALAKE (parent) | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-DOCS-QA | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-VOICE-UI | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-WATCH | 1.0.0 | Kotlin (WearOS) | *(pending)* |
+| HYDRA-UMC-SWARM-SYNC | 1.0.0 | Rust | *(pending)* |
+| HYDRA-UMC-ANOMALY-DETECTOR | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-SEMANTIC-PLANNER | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-PATH-PLANNER-3D | 1.0.0 | Rust | *(pending)* |
+| HYDRA-UMC-ORCHESTRATOR (parent) | 1.0.0 | Rust | *(pending)* |
+| HYDRA-UMC-COGNITIVE-NODE (parent) | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-SYNTHETIC-DATA-GEN | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-VISUAL-SERVOING-API | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-SAFETY-ZONES | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-DETECTION-HEF | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-VISION-STREAMER | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-VISION-NODE (parent) | 1.0.0 | Python | *(pending)* |
+| HYDRA-UMC-VLA-ENGINE | 1.0.0 | Python | *(pending)* |
+| URTC-SMART-RACK | 1.0.0 | C (STM32G4) | *(pending)* |
+| URTC-VISION-TOOL | 1.0.0 | C (STM32) + Python | *(pending)* |
+| HYDRA-UMC-PHYSICS-REPLICA | 1.0.0 | Rust | *(pending)* |
+| HYDRA-UMC-HIL-BRIDGE | 1.0.0 | Rust | *(pending)* |
+| HYDRA-UMC-TWIN (parent) | 1.0.0 | Rust (Bevy) | *(pending)* |
 
-"see plan" = `SONNET/5.PLAN_EJECUCION_32_PROYECTOS_NUEVOS.txt`, which also
-carries the work order (easiest/most fun → hardest) these are being built
-in, one at a time.
+These projects are being built one at a time, following an internal work
+order (easiest/most fun → hardest).
 
 ## Bump mechanism per project
 
