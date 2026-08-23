@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
-Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics platform spanning from low-level real-time firmware to high-level cognitive AI. This organization hosts 44 specialized projects designed to work in perfect synchrony for micro-factory automation and swarm robotics.
+Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics platform spanning from low-level real-time firmware to high-level cognitive AI. This organization hosts many specialized projects designed to work in perfect synchrony for micro-factory automation and swarm robotics.
 
 ---
 

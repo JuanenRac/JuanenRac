@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
-Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial de múltiples capas que abarca desde firmware en tiempo real de bajo nivel hasta IA cognitiva de alto nivel. Esta organización alberga 44 proyectos especializados diseñados para trabajar en perfecta sincronía para la automatización de micro-fábricas y robótica de enjambre.
+Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial de múltiples capas que abarca desde firmware en tiempo real de bajo nivel hasta IA cognitiva de alto nivel. Esta organización alberga numerosos proyectos especializados diseñados para trabajar en perfecta sincronía para la automatización de micro-fábricas y robótica de enjambre.
 
 ---
 
