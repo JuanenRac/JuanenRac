@@ -9,7 +9,9 @@
   <a href="README_spa.md">🇪🇸 Español</a> |
   <a href="README_fra.md">🇫🇷 Français</a> |
   <a href="README_ita.md">🇮🇹 Italiano</a> |
-  <a href="README_deu.md">🇩🇪 Deutsch</a>
+  <a href="README_deu.md">🇩🇪 Deutsch</a> |
+  <a href="README_zho.md">🇨🇳 简体中文</a> |
+  <a href="README_jpn.md">🇯🇵 日本語</a>
 </p>
 
 <p align="center">
@@ -191,5 +193,9 @@ untouched. From there, [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UM
 
 ## 🤝 Contributing
 This ecosystem is part of a high-tech robotic initiative. Each project has its own contribution guidelines. Please refer to individual repositories for technical details.
+
+Issue labels are standardized across all 45 repos from [`.github/labels.yml`](.github/labels.yml) in this same repo, synced out by [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - edit that one file to change a label everywhere at once, rather than by hand per repo.
+
+A live status dashboard for all 44 repos (stack, deploy target, current version - read straight from each repo's own default branch) is generated daily by [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) and served from `docs/` via GitHub Pages.
 
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.
