@@ -12,7 +12,7 @@
 #   45 ecosystem repositories listed below.
 #
 # IMPORTANT:
-#   A repository secret named LABELS_SYNC_TOKEN is required. OK
+#   A repository secret named LABELS_SYNC_TOKEN is required.
 #
 # The workflow intentionally uses the GitHub REST API instead of
 # EndBug/label-sync because this workflow runs from the meta-repository
