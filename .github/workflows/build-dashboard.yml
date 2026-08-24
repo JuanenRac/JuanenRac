@@ -3,61 +3,150 @@
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 #
-# Regenerates docs/index.html (scripts/generate_dashboard.py) and commits
-# it if it changed - audit idea: "Implementar un Dashboard centralizado
-# que muestre el estado de build de los 44 repositorios en tiempo real"
-# (SONNET/AUDITORIA_COMPLETA_44_PROYECTOS.txt). "En tiempo real" here
-# means "as fresh as the last scheduled run" - a static GitHub Pages
-# site has no server process to hold a live connection open; see the
-# schedule below for how often that actually is.
+# Builds the central ecosystem status dashboard and publishes it through
+# GitHub Pages from main/docs.
 #
-# ONE MANUAL STEP NEEDED before this is actually visible anywhere (not
-# done in this session - changing repo-level settings isn't something to
-# do unprompted): Settings -> Pages -> Source: "Deploy from a branch",
-# Branch: main, folder: /docs. After that, the live page is at
-# https://juanenrac.github.io/JuanenRac/ - GitHub Pages itself then
-# serves whatever this workflow last committed, no separate hosting
-# needed (GitHub's own Pages infrastructure, free for a public repo).
+# Architecture:
+#
+#   registry.py
+#        |
+#        v
+#   github_client.py
+#        |
+#        v
+#   generate_dashboard.py
+#        |
+#        v
+#   docs/index.html
+#        |
+#        v
+#   GitHub Pages
+#
+# The registry remains the single source of truth for the ecosystem project
+# list and for the location/pattern used to read each project's version.
+#
+# The generated HTML deliberately contains no generation timestamp. This is
+# important: if a timestamp were written on every scheduled execution, the
+# generated file would always change and this workflow would create an
+# unnecessary commit every day even when nothing in the ecosystem changed.
+#
+# GitHub Pages:
+#
+#   Repository Settings
+#   -> Pages
+#   -> Source: Deploy from a branch
+#   -> Branch: main
+#   -> Folder: /docs
+#
+# Live page:
+#
+#   https://juanenrac.github.io/JuanenRac/
 # =============================================================================
+
 name: Build ecosystem status dashboard
 
 on:
-  workflow_dispatch: {} # manual "Run workflow" button - the recommended way to do the first real run, once Pages is enabled per this file's own header comment
+  workflow_dispatch:
+
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - "scripts/generate_dashboard.py"
       - ".github/workflows/build-dashboard.yml"
+
   schedule:
-    - cron: "0 8 * * *" # daily, 08:00 UTC - each of the 45 repos rarely bumps its own version more than once or twice a day even during an active work session
+    # Daily at 08:00 UTC.
+    - cron: "0 8 * * *"
+
+# Prevent two dashboard builds from modifying main at the same time.
+concurrency:
+  group: ecosystem-dashboard
+  cancel-in-progress: false
 
 permissions:
-  contents: write # this workflow commits docs/index.html back to main
+  contents: write
 
 jobs:
   build:
+    name: Generate ecosystem dashboard
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+    steps:
+      # -----------------------------------------------------------------------
+      # Checkout
+      # -----------------------------------------------------------------------
+      # checkout v6 runs on Node.js 24 and avoids the old Node.js 20 warning.
+      # -----------------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      # -----------------------------------------------------------------------
+      # Python
+      # -----------------------------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      # Installed straight from GitHub, not vendored/copied - see this
-      # workflow's own directory README/generate_dashboard.py's own
-      # header for why (one real registry, not a second copy of it here).
+      # -----------------------------------------------------------------------
+      # Install the ecosystem updater
+      # -----------------------------------------------------------------------
+      # The updater contains:
+      #
+      #   registry.py
+      #   github_client.py
+      #   version_parse.py
+      #
+      # The dashboard intentionally reuses that implementation instead of
+      # maintaining another copy of the registry or version parsing logic.
+      # -----------------------------------------------------------------------
       - name: Install HYDRA-UMC-UPDATER
-        run: pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git"
-
-      - name: Generate the dashboard
-        run: python scripts/generate_dashboard.py
-
-      - name: Commit if changed
         run: |
+          python -m pip install --upgrade pip
+          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git"
+
+      # -----------------------------------------------------------------------
+      # Generate dashboard
+      # -----------------------------------------------------------------------
+      - name: Generate dashboard
+        run: |
+          python scripts/generate_dashboard.py
+
+      # -----------------------------------------------------------------------
+      # Show generated files
+      # -----------------------------------------------------------------------
+      - name: Show dashboard status
+        run: |
+          echo "Generated dashboard:"
+          ls -lah docs/
+          echo
+          echo "Git status:"
+          git status --short
+
+      # -----------------------------------------------------------------------
+      # Commit only when the generated dashboard actually changed
+      # -----------------------------------------------------------------------
+      - name: Commit dashboard if changed
+        shell: bash
+        run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add docs/index.html docs/.nojekyll
-          git diff --cached --quiet && echo "No changes - nothing to commit." && exit 0
+
+          if git diff --cached --quiet; then
+            echo "No dashboard changes detected."
+            echo "Nothing to commit."
+            exit 0
+          fi
+
           git commit -m "docs: regenerate ecosystem status dashboard"
+
+          # The concurrency group prevents two executions of this workflow
+          # from pushing simultaneously.
           git push
