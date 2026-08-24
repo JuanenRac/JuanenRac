@@ -165,6 +165,7 @@ El ecosistema aprovecha un stack moderno y de alto rendimiento para una fiabilid
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | Dashboard de emergencia wearable con alertas de seguridad hápticas. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | Interfaz de línea de comandos para automatización de flota, flasheo y devops. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | Extensión de IA para dashboards web que ofrece insights en lenguaje natural. |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | Herramienta multiplataforma GUI/CLI para detectar, instalar y actualizar a mano cada proyecto del ecosistema. |
 
 ---
 

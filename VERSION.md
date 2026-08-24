@@ -54,6 +54,7 @@ synced copy of the matching application's `FIRMWARE_VERSION_*`
 | HYDRA-UMC-EDITOR-URDF (Python/PySide6) | 1.0.0 | `HYDRA-UMC-EDITOR-URDF/hydra_editor_urdf/__init__.py` |
 | URTC-FLASHER (Python/tkinter) | 1.1.0 | `URTC-FLASHER/flasher_config.py` |
 | URTC-TESTER (Python/tkinter) | 1.1.0 | `URTC-TESTER/tester_config.py` |
+| HYDRA-UMC-UPDATER (Python/tkinter) | 0.0.4 | `HYDRA-UMC-UPDATER/src/hydra_umc_updater/__init__.py` |
 
 ## New projects (scaffolding stage)
 
@@ -121,6 +122,7 @@ order (easiest/most fun → hardest).
 | HYDRA-UMC-EDITOR-URDF | `bump_version.py` | `build_exe.sh`/`.bat` |
 | URTC-FLASHER | `bump_version.py` | `build_exe.sh`/`.bat` |
 | URTC-TESTER | `bump_version.py` | `build_exe.sh`/`.bat` |
+| HYDRA-UMC-UPDATER | `bump_version.py` | `build.sh`/`.bat` |
 
 Full detail on each mechanism, history, and policy lives in each project's
 own `CHANGELOG.md`.
