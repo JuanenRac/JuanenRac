@@ -88,7 +88,29 @@ El ecosistema aprovecha un stack moderno y de alto rendimiento para una fiabilid
 
 ---
 
+## 🔧 Hacking de Hardware: Construye tu Propio Carrier
+
+La placa Robot Controller Board se construye sobre un **Raspberry Pi CM5**, y el propio conector doble Hirose DF40 de la CM5 tiene un pinout fijo, oficial y público (Tabla 5 de la hoja de datos oficial de la CM5 de Raspberry Pi) - no es algo que este proyecto defina. Eso significa que un carrier compatible de terceros es un proyecto real y alcanzable, no un ejercicio de ingeniería inversa:
+
+- **Empieza aquí**: [`HYDRA-UMC/docs/PINOUT_CM5_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) - qué pines fijos de la CM5 usa realmente esta placa (Ethernet, los 2 PHY USB3 SuperSpeed nativos, el conector de ventilador de refrigeración del lado CM5) y por qué, reorganizado por función a partir de la tabla oficial de pinout.
+- **La vía fácil**: el **header GPIO estándar de 40 pines de Raspberry Pi** (el mismo layout "B+" sin cambios desde 2014) está expuesto en esta placa exactamente igual que en cualquier Raspberry Pi - los HATs y herramientas GPIO existentes funcionan sin modificar. Un puñado de posiciones que el propio enlace STM32 de esta placa ya usa están serigrafiadas/anotadas para saber cuáles evitar.
+- **Yendo más lejos**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) cubre cómo se comunican realmente entre sí la CM5, el "Cerebro Cinemático" STM32H745 y el "Robot Controller" STM32G474 (SPI1 + FDCAN1 + el buzón IPC CM7↔CM4) - la capa que un rediseño de carrier necesitaría preservar si quiere seguir siendo compatible con el firmware propio de este proyecto.
+- Cada documento de pinout indica claramente si es **CONFIRMADO** (tomado directamente de una tabla de hoja de datos oficial) o **PROPUESTO** (una elección de enrutado propia de este proyecto, abierta a ser distinta en un carrier derivado) - lee esa línea de estado antes de tratar una asignación de señal como fija.
+
+Esto no es un tutorial guiado (no hay un único carrier "correcto" para cada caso de uso) - es el material de referencia real que un diseñador de hardware experimentado necesita para partir de un mapa de pines ya verificado en vez de solo una hoja de datos.
+
+---
+
 ## 📁 Catálogo de Proyectos
+
+¿Nuevo en el ecosistema? `./starter-kit.sh` (o `starter-kit.bat` en
+Windows) clona los 12 repositorios de la tabla de abajo como carpetas
+hermanas en un mismo directorio - la disposición estándar que ya asume
+cualquier script entre repositorios de aquí. Volver a ejecutarlo es
+seguro: lo que ya esté clonado se deja intacto. A partir de ahí,
+[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
+(uno de los 12) puede comprobar versiones y compilar/actualizar
+cualquier proyecto.
 
 ### 💠 Ecosistema Core (Control Principal)
 | Repositorio | Descripción |

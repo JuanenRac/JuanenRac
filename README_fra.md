@@ -88,7 +88,29 @@ L'écosystème exploite une pile moderne et performante pour une fiabilité crit
 
 ---
 
+## 🔧 Hacking Matériel : Construire son Propre Carrier
+
+La Robot Controller Board est construite autour d'un **Raspberry Pi CM5**, et le double connecteur Hirose DF40 de la CM5 a un brochage fixe, officiel et public (Tableau 5 de la fiche technique officielle de la CM5 de Raspberry Pi) - ce n'est pas quelque chose que ce projet définit. Cela signifie qu'un carrier compatible tiers est un projet réel et réalisable, pas un exercice de rétro-ingénierie :
+
+- **Commencez ici** : [`HYDRA-UMC/docs/PINOUT_CM5_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) - quelles broches fixes de la CM5 cette carte utilise réellement (Ethernet, les 2 PHY USB3 SuperSpeed natifs, le connecteur de ventilateur de refroidissement côté CM5) et pourquoi, réorganisé par fonction à partir du tableau de brochage officiel.
+- **La voie facile** : le **connecteur GPIO standard 40 broches de Raspberry Pi** (la même disposition « B+ » inchangée depuis 2014) est exposé sur cette carte exactement comme sur n'importe quel Raspberry Pi - les HAT et outils GPIO existants fonctionnent sans modification. Quelques positions déjà utilisées par la liaison STM32 propre à cette carte sont sérigraphiées/annotées pour savoir lesquelles éviter.
+- **Pour aller plus loin** : [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) explique comment la CM5, le « Cerveau Cinématique » STM32H745 et le « Robot Controller » STM32G474 communiquent réellement entre eux (SPI1 + FDCAN1 + la boîte aux lettres IPC CM7↔CM4) - la couche qu'une refonte de carrier devrait préserver pour rester compatible avec le firmware propre à ce projet.
+- Chaque document de brochage indique clairement s'il est **CONFIRMÉ** (tiré directement d'un tableau de fiche technique officielle) ou **PROPOSÉ** (un choix de routage propre à ce projet, pouvant être différent sur un carrier dérivé) - lisez cette ligne de statut avant de considérer une affectation de signal comme fixe.
+
+Ce n'est pas un tutoriel guidé (il n'existe pas un unique carrier « correct » pour chaque cas d'usage) - c'est la documentation de référence réelle dont un concepteur matériel expérimenté a besoin pour partir d'une cartographie de broches déjà vérifiée plutôt que d'une simple fiche technique.
+
+---
+
 ## 📁 Catalogue de Projets
+
+Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat`
+sous Windows) clone les 12 dépôts du tableau ci-dessous comme dossiers
+frères dans un même répertoire - la disposition standard que tout
+script inter-dépôts ici suppose déjà. Le relancer est sûr : tout ce qui
+est déjà cloné reste intact. À partir de là,
+[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
+(l'un des 12) peut vérifier les versions et compiler/mettre à jour
+n'importe quel projet.
 
 ### 💠 Écosystème Core (Contrôle Principal)
 | Dépôt | Description |
