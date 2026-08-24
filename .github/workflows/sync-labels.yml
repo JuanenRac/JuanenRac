@@ -1,0 +1,116 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - .github/workflows/sync-labels.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Syncs .github/labels.yml (this same repo) out to every one of the 45
+# ecosystem repos (the 44 SONNET/AUDITORIA_COMPLETA_44_PROYECTOS.txt's
+# own title refers to, plus HYDRA-UMC-UPDATER - the ecosystem's own 45th
+# project as of this session) - audit idea: "Estandarizar las etiquetas
+# de issues en todos los repositorios mediante una GitHub Action
+# central". Runs here (the meta-repo) rather than duplicated into all
+# 45 - "central", as the idea asked for.
+#
+# Uses EndBug/label-sync (https://github.com/EndBug/label-sync), a real,
+# actively-maintained action built for exactly this ("delete" defaults to
+# false, so labels this file doesn't mention are left alone rather than
+# removed - a repo's own project-specific labels, if any, survive a sync
+# untouched).
+#
+# SETUP NEEDED BEFORE THIS CAN RUN FOR REAL (not done in this session -
+# creating account-level tokens/secrets isn't something to do
+# unprompted): create a fine-grained Personal Access Token scoped to
+# "Issues: write" + "Metadata: read" on all 45 repos below (classic PAT
+# with the "repo" scope also works, but is broader than needed), then
+# add it as a repository secret here named LABELS_SYNC_TOKEN
+# (Settings -> Secrets and variables -> Actions). The default
+# GITHUB_TOKEN this workflow would otherwise get only has permissions
+# on THIS repo, not the other 44 - a real cross-repo token is required,
+# there's no way around that for a genuinely "central" sync.
+#
+# NOT RUN in this session - no LABELS_SYNC_TOKEN secret exists yet
+# (creating one needs the account owner's own GitHub access, not
+# something this session has). Written as a complete, correct workflow
+# instead; verify by adding the secret and using the manual
+# "Run workflow" button (workflow_dispatch below) for a first real run,
+# rather than waiting for the schedule.
+# =============================================================================
+name: Sync labels across the ecosystem
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/labels.yml"
+      - ".github/workflows/sync-labels.yml"
+  workflow_dispatch: {} # manual "Run workflow" button - the recommended way to do the first real run
+  schedule:
+    - cron: "0 6 * * 1" # weekly, Monday 06:00 UTC - catches any label added by hand directly on GitHub drifting from labels.yml
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # one repo failing (renamed/deleted/token lacks access) shouldn't stop the other 44
+      matrix:
+        repo:
+          # The 45 ecosystem repos - JuanenRac itself (SONNET/9.MAPA_
+          # ARCHIVOS_VERSION_44_PROYECTOS.txt's own list) is not
+          # included here, matching every other cross-repo script in
+          # this ecosystem (this meta-repo is documentation/index, not
+          # one of the 45 projects with its own issue tracker workflow).
+          - HYDRA-UMC
+          - HYDRA-UMC-SERVER
+          - HYDRA-UMC-STUDIO
+          - HYDRA-UMC-SUITE
+          - HYDRA-UMC-DSI
+          - HYDRA-UMC-ANDROID-CONTROL
+          - HYDRA-UMC-IOS-CONTROL
+          - HYDRA-UMC-EDITOR-URDF
+          - URTC
+          - URTC-FLASHER
+          - URTC-TESTER
+          - URTC-WEB-STUDIO
+          - HYDRA-UMC-VISION-NODE
+          - HYDRA-UMC-VISION-STREAMER
+          - HYDRA-UMC-DETECTION-HEF
+          - HYDRA-UMC-SAFETY-ZONES
+          - HYDRA-UMC-VISUAL-SERVOING-API
+          - HYDRA-UMC-COGNITIVE-NODE
+          - HYDRA-UMC-VLA-ENGINE
+          - HYDRA-UMC-VOICE-UI
+          - HYDRA-UMC-SEMANTIC-PLANNER
+          - HYDRA-UMC-DOCS-QA
+          - HYDRA-UMC-ORCHESTRATOR
+          - HYDRA-UMC-SWARM-SYNC
+          - HYDRA-UMC-PATH-PLANNER-3D
+          - HYDRA-UMC-JOB-DISPATCHER
+          - HYDRA-UMC-NODE-HEALING
+          - HYDRA-UMC-TWIN
+          - HYDRA-UMC-PHYSICS-REPLICA
+          - HYDRA-UMC-HIL-BRIDGE
+          - HYDRA-UMC-SYNTHETIC-DATA-GEN
+          - HYDRA-UMC-DATALAKE
+          - HYDRA-UMC-TELEMETRY-COLLECTOR
+          - HYDRA-UMC-ANOMALY-DETECTOR
+          - HYDRA-UMC-PRODUCTION-REPORTS
+          - HYDRA-UMC-GATEWAY-INDUSTRIAL
+          - HYDRA-UMC-OPCUA-SERVER
+          - HYDRA-UMC-MQTT-BROKER
+          - HYDRA-UMC-MTCONNECT-ADAPTER
+          - HYDRA-UMC-DASHBOARD-AI
+          - URTC-SMART-RACK
+          - URTC-VISION-TOOL
+          - HYDRA-UMC-WATCH
+          - HYDRA-UMC-TOOL-CLI
+          - HYDRA-UMC-UPDATER
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: EndBug/label-sync@v2
+        with:
+          config-file: .github/labels.yml
+          token: ${{ secrets.LABELS_SYNC_TOKEN }}
+          repo: ${{ matrix.repo }}
+          # delete: false (the action's own default) - a repo-specific
+          # label not in labels.yml is left alone, not removed.

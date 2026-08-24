@@ -1,0 +1,77 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - .github/labels.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# The single source of truth for the label set every one of the 44
+# ecosystem repos should carry (audit idea: "Estandarizar las etiquetas
+# de issues en todos los repositorios mediante una GitHub Action
+# central" - SONNET/AUDITORIA_COMPLETA_44_PROYECTOS.txt). Synced out to
+# every repo by .github/workflows/sync-labels.yml in this same repo -
+# edit this file, push to main, and the next scheduled/manual run
+# applies it everywhere.
+#
+# Colors deliberately reuse this ecosystem's own real accent palette
+# (STUDIO's theme tokens - sky/amber/emerald/rose - the same 4 colors
+# already used throughout STUDIO's UI, the admin-ui dashboard, and this
+# session's own status-dashboard artifact) rather than GitHub's generic
+# defaults, so a label reads as "this ecosystem's own", not generic.
+# =============================================================================
+
+# --- Type ---
+- name: "bug"
+  color: "e11d48" # rose
+  description: "Something doesn't work as documented"
+- name: "enhancement"
+  color: "0ea5e9" # sky
+  description: "A new capability or an improvement to an existing one"
+- name: "documentation"
+  color: "64748b" # slate
+  description: "README/CHANGELOG/comments - no application behavior change"
+- name: "question"
+  color: "a855f7" # purple
+  description: "A question, not (yet) a confirmed bug or feature request"
+
+# --- Priority ---
+- name: "priority: critical"
+  color: "b91c1c" # dark rose - safety/security or a broken core flow
+  description: "Safety, security, or a broken core flow - handle before anything else"
+- name: "priority: high"
+  color: "f59e0b" # amber
+  description: "Should land soon, not safety/security-critical"
+- name: "priority: low"
+  color: "94a3b8" # slate light
+  description: "Real, but not urgent"
+
+# --- Area (cross-cutting, apply as many as relevant) ---
+- name: "area: firmware"
+  color: "059669" # emerald
+  description: "STM32 firmware/bootloader (HYDRA-UMC, URTC, and their expansion/tool-head repos)"
+- name: "area: server"
+  color: "059669"
+  description: "HYDRA-UMC-SERVER backend"
+- name: "area: ui"
+  color: "059669"
+  description: "STUDIO / SUITE / DSI / Android / iOS - any client UI"
+- name: "area: ai"
+  color: "059669"
+  description: "Vision/Cognitive nodes, Hailo-8/10"
+- name: "area: infra"
+  color: "059669"
+  description: "Build scripts, CI, packaging, cross-repo tooling"
+
+# --- Status ---
+- name: "status: needs hardware to verify"
+  color: "fbbf24" # amber light
+  description: "Can't be confirmed/fixed further without the real board/device in hand"
+- name: "status: blocked"
+  color: "78716c" # stone
+  description: "Waiting on a decision or another issue/PR before work can continue"
+- name: "wontfix"
+  color: "44403c" # dark stone
+  description: "Understood, deliberately not doing this - see the issue's own closing comment for why"
+
+# --- Scale ---
+- name: "good first issue"
+  color: "16a34a" # green
+  description: "Small, self-contained, a reasonable starting point for a new contributor"
