@@ -165,6 +165,7 @@ L'écosystème exploite une pile moderne et performante pour une fiabilité crit
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | Tableau de bord d'urgence portable avec alertes de sécurité haptiques. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | Interface en ligne de commande pour l'automatisation, le flashage et le devops. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | Extension IA pour tableaux de bord web fournissant des analyses textuelles. |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | Outil GUI/CLI multiplateforme pour détecter, installer et mettre à jour manuellement chaque projet de l'écosystème. |
 
 ---
 

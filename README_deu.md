@@ -165,6 +165,7 @@ Das Ökosystem nutzt einen modernen Hochleistungs-Stack für unternehmenskritisc
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | Tragbares Notfall-Dashboard mit haptischen Sicherheitswarnungen. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | Befehlszeilenschnittstelle für Flottenautomatisierung, Flashen und DevOps. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | KI-Erweiterung für Web-Dashboards für Einblicke in natürlicher Sprache. |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | Plattformübergreifendes GUI/CLI-Tool zum Erkennen, Installieren und manuellen Aktualisieren jedes Ökosystem-Projekts. |
 
 ---
 

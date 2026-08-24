@@ -165,6 +165,7 @@ The ecosystem leverages a modern, high-performance stack for mission-critical re
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | Wearable emergency dashboard with haptic safety alerts. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | Command-line interface for fleet automation, flashing, and devops. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | AI extension for web dashboards providing natural language insights. |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | Cross-platform GUI/CLI tool to detect, install, and manually update every ecosystem project. |
 
 ---
 
