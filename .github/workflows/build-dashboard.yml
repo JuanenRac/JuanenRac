@@ -112,6 +112,14 @@ jobs:
       # Generate dashboard
       # -----------------------------------------------------------------------
       - name: Generate dashboard
+        env:
+          # Used only to read PUBLIC commit/Actions-run metadata on the
+          # other repos in this same GitHub account via api.github.com
+          # (raw.githubusercontent.com, used for version lookups, does not
+          # need it). Passing it raises the rate limit from 60/hour to
+          # ~5000/hour; the script still works, just with less metadata,
+          # if this is ever unset.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/generate_dashboard.py
 
