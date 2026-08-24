@@ -88,7 +88,29 @@ Das Ökosystem nutzt einen modernen Hochleistungs-Stack für unternehmenskritisc
 
 ---
 
+## 🔧 Hardware-Hacking: Bau deines eigenen Carriers
+
+Die Robot Controller Board basiert auf einem **Raspberry Pi CM5**, und der eigene doppelte Hirose-DF40-Steckverbinder der CM5 hat ein festes, offizielles, öffentliches Pinout (Tabelle 5 im offiziellen CM5-Datenblatt von Raspberry Pi) - das ist nichts, was dieses Projekt selbst festlegt. Das bedeutet, ein kompatibler Carrier von Drittanbietern ist ein reales, erreichbares Projekt, kein Reverse-Engineering:
+
+- **Hier anfangen**: [`HYDRA-UMC/docs/PINOUT_CM5_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) - welche festen CM5-Pins dieses Board tatsächlich nutzt (Ethernet, die 2 nativen USB3-SuperSpeed-PHYs, der CM5-seitige Kühllüfteranschluss) und warum, nach Funktion neu geordnet aus der offiziellen Pinout-Tabelle.
+- **Der einfache Einstieg**: die **Standard-40-Pin-GPIO-Leiste von Raspberry Pi** (dasselbe "B+"-Layout, unverändert seit 2014) ist auf diesem Board genau wie bei jedem Raspberry Pi herausgeführt - bestehende RPi-HATs und GPIO-Tools funktionieren unverändert. Eine Handvoll Positionen, die die eigene STM32-Verbindung dieses Boards bereits nutzt, sind im Siebdruck/vermerkt, damit klar ist, welche auszulassen sind.
+- **Weiterführend**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) beschreibt, wie CM5, das STM32H745 "Kinematic Brain" und der STM32G474 "Robot Controller" tatsächlich miteinander kommunizieren (SPI1 + FDCAN1 + die CM7↔CM4-IPC-Mailbox) - die Schicht, die ein Carrier-Redesign erhalten müsste, um mit der eigenen Firmware dieses Projekts kompatibel zu bleiben.
+- Jedes Pinout-Dokument gibt klar an, ob es **BESTÄTIGT** (direkt aus einer offiziellen Datenblatt-Tabelle übernommen) oder **VORGESCHLAGEN** (eine eigene Routing-Entscheidung dieses Projekts, die auf einem abgeleiteten Carrier anders ausfallen kann) ist - lies diese Statuszeile, bevor du eine Signalzuweisung als fest behandelst.
+
+Das ist kein geführtes Tutorial (es gibt keinen einzigen "richtigen" Carrier für jeden Anwendungsfall) - es ist das reale Referenzmaterial, das ein erfahrener Hardware-Entwickler braucht, um von einer bereits verifizierten Pin-Zuordnung statt nur einem Datenblatt auszugehen.
+
+---
+
 ## 📁 Projektkatalog
+
+Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter
+Windows) klont die 12 Repositories aus der Tabelle unten als
+Geschwisterverzeichnisse in einem gemeinsamen Ordner - die
+Standardstruktur, die jedes repoübergreifende Skript hier bereits
+voraussetzt. Erneutes Ausführen ist sicher: bereits geklonte
+Repositories bleiben unangetastet. Von dort aus kann
+[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
+(eines der 12) Versionen prüfen und jedes Projekt bauen/aktualisieren.
 
 ### 💠 Kern-Ökosystem (Hauptsteuerung)
 | Repository | Beschreibung |

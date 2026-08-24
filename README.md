@@ -88,7 +88,27 @@ The ecosystem leverages a modern, high-performance stack for mission-critical re
 
 ---
 
+## 🔧 Hardware Hacking: Building Your Own Carrier
+
+The Robot Controller Board is built around a **Raspberry Pi CM5**, and CM5's own dual Hirose DF40 connector is a fixed, official, public pinout (Table 5 of Raspberry Pi's own CM5 datasheet) - not something this project defines. That means a compatible third-party carrier is a real, achievable project, not a reverse-engineering exercise:
+
+- **Start here**: [`HYDRA-UMC/docs/PINOUT_CM5_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) - which of CM5's fixed pins this board actually uses (Ethernet, the 2 native USB3 SuperSpeed PHYs, the CM5-side cooling fan header) and why, reorganized by function from the official pinout table.
+- **The easy on-ramp**: the standard **Raspberry Pi 40-pin GPIO header** (the same "B+" layout unchanged since 2014) is broken out on this board exactly like any Raspberry Pi - existing RPi HATs and GPIO tooling work unmodified. A handful of positions that this board's own STM32 link already uses are silkscreened/noted so you know which ones to skip.
+- **Going further**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) covers how the CM5, the STM32H745 "Kinematic Brain", and the STM32G474 "Robot Controller" actually talk to each other (SPI1 + FDCAN1 + the CM7↔CM4 IPC mailbox) - the layer a carrier redesign would need to preserve if it's meant to stay compatible with this project's own firmware.
+- Every pinout doc states plainly whether it's **CONFIRMED** (taken directly from an official datasheet table) or **PROPOSED** (this project's own routing choice, open to a different one on a derivative carrier) - read that status line before treating a signal assignment as fixed.
+
+This isn't a guided tutorial (there's no single "right" carrier for every use case) - it's the real reference material an experienced hardware designer needs to start from a known-good pin map instead of a datasheet alone.
+
+---
+
 ## 📁 Project Catalog
+
+New to the ecosystem? `./starter-kit.sh` (or `starter-kit.bat` on
+Windows) clones all 12 repos in the table below as siblings in one
+directory - the standard layout every cross-repo script here already
+assumes. Re-running it is safe: anything already cloned is left
+untouched. From there, [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
+(one of the 12) can check versions and build/update any project.
 
 ### 💠 Core Ecosystem (Main Control)
 | Repository | Description |
