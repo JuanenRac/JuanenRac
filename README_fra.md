@@ -196,4 +196,8 @@ n'importe quel projet.
 ## 🤝 Contribuer
 Cet écosystème fait partie d'une initiative robotique de haute technologie. Chaque projet a ses propres directives de contribution. Veuillez vous référer aux dépôts individuels pour les détails techniques.
 
+Les labels d'issues sont standardisés sur les 45 dépôts à partir de [`.github/labels.yml`](.github/labels.yml) dans ce même dépôt, synchronisés par [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - modifiez ce seul fichier pour changer un label partout à la fois, plutôt qu'à la main dépôt par dépôt.
+
+Un tableau de bord d'état en direct pour les 45 dépôts (stack, cible de déploiement, version actuelle - lue directement depuis la branche par défaut de chaque dépôt) est généré quotidiennement par [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) et servi depuis `docs/` via GitHub Pages : **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**.
+
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - Licence GPL-3.0.
