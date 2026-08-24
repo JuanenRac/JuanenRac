@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="HYDRA_UMC_BANNER.png" alt="HYDRA-UMC Ecosystem Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="HYDRA-UMC Ecosystem Banner" width="100%">
 </p>
 
 # HYDRA-UMC / URTC Ecosystem 🤖🚀
