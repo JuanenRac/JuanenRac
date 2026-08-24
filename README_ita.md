@@ -196,4 +196,8 @@ qualsiasi progetto.
 ## 🤝 Contribuire
 Questo ecosistema fa parte di un'iniziativa robotica ad alta tecnologia. Ogni progetto ha le proprie linee guida per il contributo. Fare riferimento ai singoli repository per i dettagli tecnici.
 
+Le etichette delle issue sono standardizzate su tutti i 45 repo a partire da [`.github/labels.yml`](.github/labels.yml) in questo stesso repo, sincronizzate da [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - modifica quel singolo file per cambiare un'etichetta ovunque in una volta, invece di farlo a mano repo per repo.
+
+Una dashboard di stato in tempo reale per tutti i 45 repo (stack, target di deployment, versione corrente - letta direttamente dal branch predefinito di ciascun repo) viene generata quotidianamente da [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) e servita da `docs/` tramite GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**.
+
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - Licenza GPL-3.0.

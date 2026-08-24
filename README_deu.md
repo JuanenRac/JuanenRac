@@ -196,4 +196,8 @@ Repositories bleiben unangetastet. Von dort aus kann
 ## 🤝 Mitwirken
 Dieses Ökosystem ist Teil einer High-Tech-Robotik-Initiative. Jedes Projekt hat seine eigenen Richtlinien für die Mitarbeit. Technische Details finden Sie in den einzelnen Repositories.
 
+Issue-Labels sind über alle 45 Repos hinweg aus [`.github/labels.yml`](.github/labels.yml) in diesem selben Repo standardisiert und werden von [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) synchronisiert - bearbeiten Sie diese eine Datei, um ein Label überall auf einmal zu ändern, statt es von Hand pro Repo zu tun.
+
+Ein Live-Statusdashboard für alle 45 Repos (Stack, Deploy-Ziel, aktuelle Version - direkt aus dem eigenen Standard-Branch jedes Repos gelesen) wird täglich von [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) generiert und über GitHub Pages aus `docs/` ausgeliefert: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**.
+
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 Lizenz.

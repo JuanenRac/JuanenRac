@@ -199,6 +199,6 @@
 
 45 個すべてのリポジトリの Issue ラベルは、本リポジトリの [`.github/labels.yml`](.github/labels.yml) から統一管理され、[`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) によって各リポジトリへ同期されています——このファイル 1 つを編集するだけで、リポジトリごとに手作業で行うことなく、すべてのラベルを一括更新できます。
 
-44 個すべてのリポジトリのライブステータスダッシュボード（技術スタック、デプロイ対象、現在のバージョン——各リポジトリのデフォルトブランチから直接取得）は、[`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) によって毎日自動生成され、GitHub Pages 経由で `docs/` から配信されています。
+45 個すべてのリポジトリのライブステータスダッシュボード（技術スタック、デプロイ対象、現在のバージョン——各リポジトリのデフォルトブランチから直接取得）は、[`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) によって毎日自動生成され、GitHub Pages 経由で `docs/` から配信されています：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。
 
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.
