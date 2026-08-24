@@ -3,62 +3,77 @@
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 #
-# Syncs .github/labels.yml (this same repo) out to every one of the 45
-# ecosystem repos (the 44 SONNET/AUDITORIA_COMPLETA_44_PROYECTOS.txt's
-# own title refers to, plus HYDRA-UMC-UPDATER - the ecosystem's own 45th
-# project as of this session) - audit idea: "Estandarizar las etiquetas
-# de issues en todos los repositorios mediante una GitHub Action
-# central". Runs here (the meta-repo) rather than duplicated into all
-# 45 - "central", as the idea asked for.
+# Central synchronization of the ecosystem's common GitHub issue labels.
 #
-# Uses EndBug/label-sync (https://github.com/EndBug/label-sync), a real,
-# actively-maintained action built for exactly this ("delete" defaults to
-# false, so labels this file doesn't mention are left alone rather than
-# removed - a repo's own project-specific labels, if any, survive a sync
-# untouched).
+# Source of truth:
+#   .github/labels.yml
 #
-# SETUP NEEDED BEFORE THIS CAN RUN FOR REAL (not done in this session -
-# creating account-level tokens/secrets isn't something to do
-# unprompted): create a fine-grained Personal Access Token scoped to
-# "Issues: write" + "Metadata: read" on all 45 repos below (classic PAT
-# with the "repo" scope also works, but is broader than needed), then
-# add it as a repository secret here named LABELS_SYNC_TOKEN
-# (Settings -> Secrets and variables -> Actions). The default
-# GITHUB_TOKEN this workflow would otherwise get only has permissions
-# on THIS repo, not the other 44 - a real cross-repo token is required,
-# there's no way around that for a genuinely "central" sync.
+# Destination:
+#   45 ecosystem repositories listed below.
 #
-# NOT RUN in this session - no LABELS_SYNC_TOKEN secret exists yet
-# (creating one needs the account owner's own GitHub access, not
-# something this session has). Written as a complete, correct workflow
-# instead; verify by adding the secret and using the manual
-# "Run workflow" button (workflow_dispatch below) for a first real run,
-# rather than waiting for the schedule.
+# IMPORTANT:
+#   A repository secret named LABELS_SYNC_TOKEN is required.
+#
+# The workflow intentionally uses the GitHub REST API instead of
+# EndBug/label-sync because this workflow runs from the meta-repository
+# JuanenRac/JuanenRac while modifying labels in multiple other repositories.
+#
+# Existing project-specific labels are NEVER deleted.
+# Only labels defined in .github/labels.yml are created or updated.
 # =============================================================================
+
 name: Sync labels across the ecosystem
 
 on:
+
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - ".github/labels.yml"
       - ".github/workflows/sync-labels.yml"
-  workflow_dispatch: {} # manual "Run workflow" button - the recommended way to do the first real run
+
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview changes without modifying repositories"
+        required: false
+        default: true
+        type: boolean
+
   schedule:
-    - cron: "0 6 * * 1" # weekly, Monday 06:00 UTC - catches any label added by hand directly on GitHub drifting from labels.yml
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-labels-ecosystem
+  cancel-in-progress: false
+
 
 jobs:
+
   sync:
+
+    name: sync (${{ matrix.repo }})
+
     runs-on: ubuntu-latest
+
     strategy:
-      fail-fast: false # one repo failing (renamed/deleted/token lacks access) shouldn't stop the other 44
+
+      fail-fast: false
+
+      max-parallel: 4
+
       matrix:
+
         repo:
-          # The 45 ecosystem repos - JuanenRac itself (SONNET/9.MAPA_
-          # ARCHIVOS_VERSION_44_PROYECTOS.txt's own list) is not
-          # included here, matching every other cross-repo script in
-          # this ecosystem (this meta-repo is documentation/index, not
-          # one of the 45 projects with its own issue tracker workflow).
+
+          # -------------------------------------------------------------------
+          # HYDRA-UMC / URTC ecosystem repositories
+          # -------------------------------------------------------------------
+
           - HYDRA-UMC
           - HYDRA-UMC-SERVER
           - HYDRA-UMC-STUDIO
@@ -104,13 +119,669 @@ jobs:
           - HYDRA-UMC-WATCH
           - HYDRA-UMC-TOOL-CLI
           - HYDRA-UMC-UPDATER
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: EndBug/label-sync@v2
+
+    steps:
+
+      # =======================================================================
+      # Checkout only the central label configuration
+      # =======================================================================
+
+      - name: Checkout label configuration
+
+        uses: actions/checkout@v4
+
         with:
-          config-file: .github/labels.yml
-          token: ${{ secrets.LABELS_SYNC_TOKEN }}
-          repo: ${{ matrix.repo }}
-          # delete: false (the action's own default) - a repo-specific
-          # label not in labels.yml is left alone, not removed.
+          sparse-checkout: |
+            .github/labels.yml
+          sparse-checkout-cone-mode: false
+
+
+      # =======================================================================
+      # Validate configuration
+      # =======================================================================
+
+      - name: Validate label configuration
+
+        shell: bash
+
+        run: |
+
+          set -euo pipefail
+
+          if [ ! -f ".github/labels.yml" ]; then
+
+            echo "::error::.github/labels.yml was not found."
+
+            exit 1
+
+          fi
+
+          echo "Central label configuration found."
+
+          echo "Target repository:"
+          echo "  JuanenRac/${{ matrix.repo }}"
+
+
+      # =======================================================================
+      # Install YAML parser
+      # =======================================================================
+
+      - name: Install YAML parser
+
+        shell: bash
+
+        run: |
+
+          python3 -m pip install \
+            --disable-pip-version-check \
+            --quiet \
+            pyyaml
+
+
+      # =======================================================================
+      # Synchronize labels
+      # =======================================================================
+
+      - name: Synchronize labels
+
+        env:
+
+          GH_TOKEN: ${{ secrets.LABELS_SYNC_TOKEN }}
+
+          TARGET_REPO: JuanenRac/${{ matrix.repo }}
+
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+
+        shell: bash
+
+        run: |
+
+          set -euo pipefail
+
+
+          # -------------------------------------------------------------------
+          # Token validation
+          # -------------------------------------------------------------------
+
+          if [ -z "${GH_TOKEN}" ]; then
+
+            echo "::error::LABELS_SYNC_TOKEN is not configured."
+
+            echo ""
+            echo "Create the repository secret:"
+            echo "  LABELS_SYNC_TOKEN"
+
+            echo ""
+            echo "GitHub:"
+            echo "  Settings"
+            echo "  -> Secrets and variables"
+            echo "  -> Actions"
+
+            exit 1
+
+          fi
+
+
+          echo "============================================================"
+          echo "HYDRA-UMC / URTC LABEL SYNCHRONIZATION"
+          echo "============================================================"
+          echo "Target : ${TARGET_REPO}"
+          echo "Dry-run: ${DRY_RUN}"
+          echo "============================================================"
+
+
+          python3 <<'PY'
+
+          import json
+          import os
+          import sys
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          import yaml
+
+
+          TOKEN = os.environ["GH_TOKEN"]
+
+          TARGET_REPO = os.environ["TARGET_REPO"]
+
+          DRY_RUN = (
+              os.environ["DRY_RUN"].lower() == "true"
+          )
+
+          CONFIG_FILE = ".github/labels.yml"
+
+          API_BASE = "https://api.github.com"
+
+
+          HEADERS = {
+
+              "Accept":
+                  "application/vnd.github+json",
+
+              "Authorization":
+                  f"Bearer {TOKEN}",
+
+              "X-GitHub-Api-Version":
+                  "2022-11-28",
+
+              "User-Agent":
+                  "HYDRA-UMC-central-label-sync",
+          }
+
+
+          # ===================================================================
+          # GitHub API helper
+          # ===================================================================
+
+          def api_request(
+              method,
+              url,
+              payload=None
+          ):
+
+              data = None
+
+              headers = dict(HEADERS)
+
+
+              if payload is not None:
+
+                  data = json.dumps(
+                      payload
+                  ).encode("utf-8")
+
+                  headers["Content-Type"] = (
+                      "application/json"
+                  )
+
+
+              request = urllib.request.Request(
+
+                  url,
+
+                  data=data,
+
+                  headers=headers,
+
+                  method=method
+              )
+
+
+              try:
+
+                  with urllib.request.urlopen(
+                      request
+                  ) as response:
+
+                      raw = response.read()
+
+                      if not raw:
+
+                          return (
+                              response.status,
+                              None
+                          )
+
+                      return (
+                          response.status,
+                          json.loads(
+                              raw.decode("utf-8")
+                          )
+                      )
+
+
+              except urllib.error.HTTPError as error:
+
+                  body = (
+                      error.read()
+                      .decode(
+                          "utf-8",
+                          errors="replace"
+                      )
+                  )
+
+                  print(
+                      f"::error::GitHub API "
+                      f"HTTP {error.code}: {body}"
+                  )
+
+                  raise
+
+
+          def github_url(path):
+
+              return (
+                  f"{API_BASE}{path}"
+              )
+
+
+          # ===================================================================
+          # Read labels.yml
+          # ===================================================================
+
+          print()
+          print(
+              "Reading central label configuration..."
+          )
+
+
+          with open(
+              CONFIG_FILE,
+              "r",
+              encoding="utf-8"
+          ) as file:
+
+              config = yaml.safe_load(file)
+
+
+          if not isinstance(
+              config,
+              list
+          ):
+
+              print(
+                  "::error::.github/labels.yml "
+                  "must contain a YAML list."
+              )
+
+              sys.exit(1)
+
+
+          labels = []
+
+
+          for index, item in enumerate(config):
+
+              if not isinstance(
+                  item,
+                  dict
+              ):
+
+                  print(
+                      "::error::Label entry "
+                      f"{index} is invalid."
+                  )
+
+                  sys.exit(1)
+
+
+              name = item.get(
+                  "name"
+              )
+
+              color = item.get(
+                  "color"
+              )
+
+              description = item.get(
+                  "description",
+                  ""
+              )
+
+
+              if not isinstance(
+                  name,
+                  str
+              ) or not name.strip():
+
+                  print(
+                      "::error::Label entry "
+                      f"{index} has no valid name."
+                  )
+
+                  sys.exit(1)
+
+
+              if not isinstance(
+                  color,
+                  str
+              ) or not color.strip():
+
+                  print(
+                      "::error::Label "
+                      f"'{name}' has no valid color."
+                  )
+
+                  sys.exit(1)
+
+
+              color = (
+                  color
+                  .strip()
+                  .lstrip("#")
+              )
+
+
+              if not isinstance(
+                  description,
+                  str
+              ):
+
+                  description = ""
+
+
+              labels.append({
+
+                  "name":
+                      name,
+
+                  "color":
+                      color,
+
+                  "description":
+                      description,
+
+              })
+
+
+          print(
+              f"Loaded {len(labels)} labels."
+          )
+
+
+          # ===================================================================
+          # Read labels from destination repository
+          # ===================================================================
+
+          print()
+
+          print(
+              f"Reading labels from "
+              f"{TARGET_REPO}..."
+          )
+
+
+          destination_labels = []
+
+          page = 1
+
+
+          while True:
+
+              status, data = api_request(
+
+                  "GET",
+
+                  github_url(
+                      f"/repos/{TARGET_REPO}/labels"
+                      f"?per_page=100&page={page}"
+                  )
+
+              )
+
+
+              if not isinstance(
+                  data,
+                  list
+              ):
+
+                  print(
+                      "::error::Unexpected "
+                      "GitHub API response."
+                  )
+
+                  sys.exit(1)
+
+
+              destination_labels.extend(
+                  data
+              )
+
+
+              if len(data) < 100:
+
+                  break
+
+
+              page += 1
+
+
+          existing = {
+
+              label["name"]:
+                  label
+
+              for label
+              in destination_labels
+
+          }
+
+
+          print(
+              f"Found "
+              f"{len(destination_labels)} "
+              f"existing labels."
+          )
+
+
+          # ===================================================================
+          # Synchronization
+          # ===================================================================
+
+          created = 0
+
+          updated = 0
+
+          unchanged = 0
+
+
+          for label in labels:
+
+              name = label["name"]
+
+              desired_color = (
+                  label["color"]
+              )
+
+              desired_description = (
+                  label["description"]
+              )
+
+
+              # ----------------------------------------------------------------
+              # CREATE
+              # ----------------------------------------------------------------
+
+              if name not in existing:
+
+                  print(
+                      f"[CREATE] {name}"
+                  )
+
+
+                  if not DRY_RUN:
+
+                      api_request(
+
+                          "POST",
+
+                          github_url(
+                              f"/repos/"
+                              f"{TARGET_REPO}/labels"
+                          ),
+
+                          {
+
+                              "name":
+                                  name,
+
+                              "color":
+                                  desired_color,
+
+                              "description":
+                                  desired_description,
+
+                          }
+
+                      )
+
+
+                  created += 1
+
+                  continue
+
+
+              # ----------------------------------------------------------------
+              # UPDATE
+              # ----------------------------------------------------------------
+
+              current = existing[name]
+
+
+              current_color = (
+                  current.get(
+                      "color",
+                      ""
+                  )
+                  .lstrip("#")
+                  .lower()
+              )
+
+
+              current_description = (
+                  current.get(
+                      "description",
+                      ""
+                  )
+                  or ""
+              )
+
+
+              changed = (
+
+                  current_color
+                  != desired_color.lower()
+
+                  or
+
+                  current_description
+                  != desired_description
+
+              )
+
+
+              if changed:
+
+                  print(
+                      f"[UPDATE] {name}"
+                  )
+
+
+                  if not DRY_RUN:
+
+                      encoded_name = (
+                          urllib.parse.quote(
+                              name,
+                              safe=""
+                          )
+                      )
+
+
+                      api_request(
+
+                          "PATCH",
+
+                          github_url(
+
+                              f"/repos/"
+                              f"{TARGET_REPO}"
+                              f"/labels/"
+                              f"{encoded_name}"
+
+                          ),
+
+                          {
+
+                              "new_name":
+                                  name,
+
+                              "color":
+                                  desired_color,
+
+                              "description":
+                                  desired_description,
+
+                          }
+
+                      )
+
+
+                  updated += 1
+
+
+              else:
+
+                  print(
+                      f"[OK] {name}"
+                  )
+
+                  unchanged += 1
+
+
+          # ===================================================================
+          # Summary
+          # ===================================================================
+
+          print()
+
+          print(
+              "============================================================"
+          )
+
+          print(
+              "Synchronization summary"
+          )
+
+          print(
+              "============================================================"
+          )
+
+          print(
+              f"Repository : {TARGET_REPO}"
+          )
+
+          print(
+              f"Dry-run    : {DRY_RUN}"
+          )
+
+          print(
+              f"Created    : {created}"
+          )
+
+          print(
+              f"Updated    : {updated}"
+          )
+
+          print(
+              f"Unchanged  : {unchanged}"
+          )
+
+          print(
+              "============================================================"
+          )
+
+
+          if DRY_RUN:
+
+              print()
+
+              print(
+                  "DRY-RUN completed."
+              )
+
+              print(
+                  "No repository was modified."
+              )
+
+          else:
+
+              print()
+
+              print(
+                  "Label synchronization completed successfully."
+              )
+
+          PY
