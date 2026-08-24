@@ -24,12 +24,14 @@
 #   - failed lookups
 #   - success percentage
 #   - deployment target statistics
-#   - project stack
+#   - project stack (with a small stack icon)
 #   - project version
 #   - detailed error status
+#   - latest commit subject per project (api.github.com, best-effort)
 #   - project search
 #   - deployment filters
 #   - health/status filters
+#   - manual dark/light theme toggle (remembered via localStorage)
 #   - direct links to repository / Actions / Issues
 #
 # IMPORTANT:
@@ -42,7 +44,14 @@
 from __future__ import annotations
 
 import html
+import json
+import os
+import socket
 import sys
+import urllib.error
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from pathlib import Path
 
 from hydra_umc_updater.github_client import RemoteStatus, fetch_all
@@ -54,6 +63,176 @@ from hydra_umc_updater.registry import PROJECTS
 # ---------------------------------------------------------------------------
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "docs"
+
+
+# ---------------------------------------------------------------------------
+# GitHub REST metadata (latest commit subject per project)
+# ---------------------------------------------------------------------------
+#
+# The version lookup above (fetch_all) reads raw.githubusercontent.com,
+# which is not part of the GitHub REST API and is not meaningfully
+# rate-limited. Commit messages, by contrast, only exist through
+# api.github.com, which enforces a real 60 requests/hour limit for
+# unauthenticated calls - far too low for 45 repos.
+#
+# GITHUB_TOKEN is the same token GitHub Actions already injects into every
+# workflow run for the repo the workflow lives in. It has no special access
+# to any of the OTHER 45 repos - it is used here purely as authentication to
+# raise api.github.com's rate limit (an authenticated request gets ~5000/hour
+# regardless of which repo it targets, as long as the data being read is
+# public, which every project in this ecosystem is). If the token is absent
+# (e.g. a local run outside CI), the calls still work, just capped at the
+# public 60/hour ceiling - this whole feature degrades to "no metadata shown"
+# rather than failing the build.
+#
+# A per-repo "last build time" (from each repo's own Actions runs) was
+# tried and dropped: checked for real against the live GitHub API and none
+# of the 45 project repos run their own Actions workflows (only this
+# dashboard's own JuanenRac repo does) - every row would have shown "-"
+# forever, which is worse than not having the column.
+# ---------------------------------------------------------------------------
+
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
+
+API_REQUEST_TIMEOUT_S = 10
+
+API_MAX_CONCURRENT_REQUESTS = 8
+
+API_USER_AGENT = "JuanenRac-dashboard"
+
+
+@dataclass
+class RepoMeta:
+    """
+    Extra, best-effort metadata for one project, shown alongside its
+    version status. Both fields are None when the lookup failed or was
+    skipped - the dashboard renders that as "-", the same convention
+    already used for a failed version lookup.
+
+    Note: an earlier version of this also tracked each repo's latest
+    Actions run duration ("build time"). It was removed after checking
+    real data: none of the 45 project repos run their own Actions
+    workflows (only this dashboard's own JuanenRac repo does) - every
+    row would have shown "-" forever, which is worse than not having the
+    column. Commit metadata, checked the same way, does return real data
+    for every public repo, so it stayed.
+    """
+
+    commit_subject: str | None = None
+    commit_url: str | None = None
+
+
+def _api_get(url: str) -> dict | list | None:
+    """
+    GET one api.github.com JSON endpoint. Returns None on any failure
+    (network error, rate limit, 404, malformed JSON, ...) - metadata is
+    optional decoration, never something that should abort the dashboard
+    build.
+    """
+
+    headers = {
+        "User-Agent": API_USER_AGENT,
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+
+    request = urllib.request.Request(url, headers=headers, method="GET")
+
+    try:
+        with urllib.request.urlopen(
+            request,
+            timeout=API_REQUEST_TIMEOUT_S,
+        ) as response:
+            raw = response.read()
+
+        return json.loads(raw.decode("utf-8", errors="replace"))
+
+    except (
+        urllib.error.HTTPError,
+        urllib.error.URLError,
+        TimeoutError,
+        socket.timeout,
+        OSError,
+        json.JSONDecodeError,
+    ):
+        return None
+
+
+def _fetch_one_meta(repo_name: str) -> RepoMeta:
+    meta = RepoMeta()
+
+    # --- Latest commit on the default branch --------------------------
+    commits = _api_get(
+        f"https://api.github.com/repos/JuanenRac/{repo_name}/commits"
+        f"?per_page=1"
+    )
+
+    if isinstance(commits, list) and commits:
+        commit = commits[0]
+
+        message = (
+            commit.get("commit", {})
+            .get("message", "")
+            .strip()
+        )
+
+        if message:
+            # First line only - a commit body is not meant for one table row.
+            meta.commit_subject = message.splitlines()[0][:120]
+            meta.commit_url = commit.get("html_url")
+
+    return meta
+
+
+def fetch_all_meta(
+    entries: list,
+    progress=None,
+) -> dict[str, RepoMeta]:
+    """
+    Fetch commit metadata for every given registry entry, concurrently.
+    Mirrors hydra_umc_updater.github_client.fetch_all's own shape (same
+    concurrency cap, same "never raise, always return a result" contract)
+    so the two data sources behave consistently.
+    """
+
+    results: dict[str, RepoMeta] = {}
+
+    total = len(entries)
+    done = 0
+
+    if total == 0:
+        return results
+
+    with ThreadPoolExecutor(
+        max_workers=API_MAX_CONCURRENT_REQUESTS,
+        thread_name_prefix="dashboard-meta",
+    ) as pool:
+
+        futures = {
+            pool.submit(_fetch_one_meta, entry.name): entry
+            for entry in entries
+        }
+
+        for future in as_completed(futures):
+            entry = futures[future]
+
+            try:
+                meta = future.result()
+
+            except Exception:
+                meta = RepoMeta()
+
+            results[entry.name] = meta
+
+            done += 1
+
+            if progress is not None:
+                progress(done, total)
+
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -73,6 +252,84 @@ DEPLOY_ORDER = [
     "mobile",
     "wearable",
 ]
+
+
+# ---------------------------------------------------------------------------
+# Icons
+# ---------------------------------------------------------------------------
+#
+# Small inline glyphs (24x24 viewBox, single `currentColor` stroke) for each
+# technology stack and deployment target. Inlined directly rather than
+# fetched, so the dashboard stays a single static file with no extra
+# requests. They intentionally do not reproduce any project's real logo -
+# generic, license-free shapes loosely evoking each stack (a chip for
+# firmware, a hexagon for Node, a gear for Rust, ...) rather than trademarked
+# marks.
+# ---------------------------------------------------------------------------
+
+STACK_ICONS: dict[str, str] = {
+    "firmware-c": (
+        '<path d="M9 2v3M12 2v3M15 2v3M9 19v3M12 19v3M15 19v3'
+        'M2 9h3M2 12h3M2 15h3M19 9h3M19 12h3M19 15h3"/>'
+        '<rect x="6" y="6" width="12" height="12" rx="2"/>'
+        '<rect x="9.5" y="9.5" width="5" height="5" rx="1"/>'
+    ),
+    "python": (
+        '<path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"/>'
+        '<path d="M3 7l9 5 9-5M12 12v9"/>'
+    ),
+    "node": (
+        '<path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"/>'
+    ),
+    "rust": (
+        '<circle cx="12" cy="12" r="3"/>'
+        '<path d="M12 2v3M12 19v3M2 12h3M19 12h3'
+        'M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>'
+    ),
+    "go": (
+        '<rect x="3" y="4" width="18" height="16" rx="2"/>'
+        '<path d="M7 9l3 3-3 3M13 15h4"/>'
+    ),
+    "android": (
+        '<rect x="7" y="2" width="10" height="20" rx="2"/>'
+        '<path d="M11 18h2"/>'
+    ),
+    "flutter": (
+        '<rect x="4" y="3" width="16" height="18" rx="2"/>'
+        '<path d="M11 19h2"/>'
+    ),
+}
+
+DEPLOY_ICONS: dict[str, str] = {
+    "cm5": (
+        '<rect x="4" y="4" width="16" height="16" rx="2"/>'
+        '<circle cx="12" cy="12" r="3"/>'
+        '<path d="M9 4V2M15 4V2M9 22v-2M15 22v-2'
+        'M4 9H2M4 15H2M22 9h-2M22 15h-2"/>'
+    ),
+    "user-pc": (
+        '<rect x="3" y="4" width="18" height="12" rx="2"/>'
+        '<path d="M8 20h8M12 16v4"/>'
+    ),
+    "mobile": (
+        '<rect x="7" y="2" width="10" height="20" rx="2"/>'
+        '<path d="M11 18h2"/>'
+    ),
+    "wearable": (
+        '<circle cx="12" cy="12" r="6"/>'
+        '<path d="M12 9v3l1.8 1.8M9.5 4h5l-.8 3h-3.4L9.5 4Z'
+        'M9.5 20h5l-.8-3h-3.4l-.8 3Z"/>'
+    ),
+}
+
+
+def render_icon(inner: str, css_class: str = "tech-icon") -> str:
+    return (
+        f'<svg class="{css_class}" viewBox="0 0 24 24" width="14" '
+        f'height="14" fill="none" stroke="currentColor" '
+        f'stroke-width="1.8" stroke-linecap="round" '
+        f'stroke-linejoin="round" aria-hidden="true">{inner}</svg>'
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -132,11 +389,15 @@ def error_text(result: RemoteStatus | None) -> str:
 # Project rows
 # ---------------------------------------------------------------------------
 
-def render_project_rows(results: dict[str, RemoteStatus]) -> str:
+def render_project_rows(
+    results: dict[str, RemoteStatus],
+    meta: dict[str, RepoMeta],
+) -> str:
     rows: list[str] = []
 
     for entry in PROJECTS:
         result = results.get(entry.name)
+        repo_meta = meta.get(entry.name, RepoMeta())
 
         status_key, status_label, status_class = status_for(result)
 
@@ -164,6 +425,29 @@ def render_project_rows(results: dict[str, RemoteStatus]) -> str:
         project_repo = esc(repo_url(entry.name))
         project_actions = esc(actions_url(entry.name))
         project_issues = esc(issues_url(entry.name))
+
+        stack_icon = render_icon(
+            STACK_ICONS.get(entry.stack, ""),
+        )
+
+        deploy_icon = render_icon(
+            DEPLOY_ICONS.get(deploy_key, ""),
+        )
+
+        # --- Last commit --------------------------------------------------
+        if repo_meta.commit_subject:
+            commit_text = esc(repo_meta.commit_subject)
+            commit_url = esc(
+                repo_meta.commit_url or project_repo
+            )
+
+            commit_html = (
+                f'<a href="{commit_url}" target="_blank" '
+                f'rel="noopener noreferrer" class="commit-link" '
+                f'title="{commit_text}">{commit_text}</a>'
+            )
+        else:
+            commit_html = '<span class="cell-muted">—</span>'
 
         rows.append(
             f"""
@@ -199,12 +483,12 @@ def render_project_rows(results: dict[str, RemoteStatus]) -> str:
               </td>
 
               <td class="stack">
-                {stack}
+                {stack_icon}{stack}
               </td>
 
               <td class="deploy">
                 <span class="deploy-badge">
-                  {deploy}
+                  {deploy_icon}{deploy}
                 </span>
               </td>
 
@@ -221,6 +505,10 @@ def render_project_rows(results: dict[str, RemoteStatus]) -> str:
                 <div class="status-detail">
                   {detail_html}
                 </div>
+              </td>
+
+              <td class="commit-cell">
+                {commit_html}
               </td>
             </tr>
             """
@@ -299,6 +587,11 @@ def render_deploy_cards(
             0,
         )
 
+        icon = render_icon(
+            DEPLOY_ICONS.get(key, ""),
+            css_class="tech-icon deploy-card-icon",
+        )
+
         cards.append(
             f"""
             <button
@@ -311,7 +604,7 @@ def render_deploy_cards(
               </span>
 
               <span class="deploy-label">
-                {esc(label)}
+                {icon}{esc(label)}
               </span>
             </button>
             """
@@ -349,6 +642,7 @@ def render_stack_summary(
 
 def render_html(
     results: dict[str, RemoteStatus],
+    meta: dict[str, RepoMeta],
 ) -> str:
     stats = calculate_statistics(results)
 
@@ -360,7 +654,7 @@ def render_html(
     deploy_counts = stats["deploy_counts"]
     stack_counts = stats["stack_counts"]
 
-    rows = render_project_rows(results)
+    rows = render_project_rows(results, meta)
 
     deploy_cards = render_deploy_cards(
         deploy_counts,
@@ -389,6 +683,23 @@ def render_html(
 >
 
 <title>HYDRA-UMC / URTC Ecosystem Status</title>
+
+<script>
+  // Applied synchronously, before first paint, so a saved manual theme
+  // choice never causes a visible flash of the system-default theme.
+  (function () {{
+    try {{
+      var saved = localStorage.getItem("hydra-dashboard-theme");
+
+      if (saved === "dark" || saved === "light") {{
+        document.documentElement.setAttribute("data-theme", saved);
+      }}
+    }} catch (e) {{
+      // Private browsing / storage disabled - falls back to the
+      // system theme, same as any other viewer without a saved choice.
+    }}
+  }})();
+</script>
 
 <link
   rel="preconnect"
@@ -425,7 +736,7 @@ def render_html(
   }}
 
   @media (prefers-color-scheme: dark) {{
-    :root {{
+    :root:not([data-theme="light"]) {{
       --bg: #0a0e13;
       --surface: #10151d;
       --surface-2: #151c26;
@@ -441,6 +752,28 @@ def render_html(
       --err-soft: #4c0519;
       --shadow: 0 4px 18px rgba(0, 0, 0, .25);
     }}
+  }}
+
+  /*
+   * Explicit theme override (the toggle button). Repeats the same dark
+   * token values as the media query above so a manual choice wins in both
+   * directions - system says light + user picks dark, and vice versa.
+   */
+  :root[data-theme="dark"] {{
+    --bg: #0a0e13;
+    --surface: #10151d;
+    --surface-2: #151c26;
+    --border: #232c39;
+    --border-strong: #334155;
+    --text: #e8eef5;
+    --dim: #93a3b8;
+    --accent: #38bdf8;
+    --accent-soft: #082f49;
+    --ok: #34d399;
+    --ok-soft: #064e3b;
+    --err: #fb7185;
+    --err-soft: #4c0519;
+    --shadow: 0 4px 18px rgba(0, 0, 0, .25);
   }}
 
   * {{
@@ -511,6 +844,62 @@ def render_html(
 
   .subtitle a:hover {{
     text-decoration: underline;
+  }}
+
+  .header-top {{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }}
+
+  .theme-toggle {{
+    appearance: none;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--dim);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: border-color .15s ease, color .15s ease;
+  }}
+
+  .theme-toggle:hover {{
+    border-color: var(--accent);
+    color: var(--accent);
+  }}
+
+  .theme-toggle svg {{
+    width: 17px;
+    height: 17px;
+  }}
+
+  .theme-toggle .icon-moon {{
+    display: none;
+  }}
+
+  :root[data-theme="dark"] .theme-toggle .icon-sun {{
+    display: none;
+  }}
+
+  :root[data-theme="dark"] .theme-toggle .icon-moon {{
+    display: block;
+  }}
+
+  @media (prefers-color-scheme: dark) {{
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun {{
+      display: none;
+    }}
+
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon {{
+      display: block;
+    }}
   }}
 
   .health {{
@@ -705,7 +1094,7 @@ def render_html(
 
   table {{
     width: 100%;
-    min-width: 900px;
+    min-width: 1040px;
     border-collapse: collapse;
   }}
 
@@ -837,6 +1226,49 @@ def render_html(
     line-height: 1.4;
   }}
 
+  .tech-icon {{
+    flex-shrink: 0;
+    vertical-align: -2px;
+    margin-right: 5px;
+    color: var(--dim);
+  }}
+
+  .deploy-card-icon {{
+    color: var(--accent);
+  }}
+
+  .deploy-label {{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+  }}
+
+  .commit-cell {{
+    max-width: 220px;
+  }}
+
+  .commit-link {{
+    color: var(--text);
+    text-decoration: none;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+  }}
+
+  .commit-link:hover {{
+    color: var(--accent);
+    text-decoration: underline;
+  }}
+
+  .cell-muted {{
+    color: var(--dim);
+    font-size: 12px;
+  }}
+
   .empty {{
     display: none;
     padding: 30px;
@@ -887,8 +1319,40 @@ def render_html(
 <div class="wrap">
 
   <header class="header">
-    <div class="eyebrow">
-      HYDRA-UMC / URTC ECOSYSTEM
+    <div class="header-top">
+      <div class="eyebrow">
+        HYDRA-UMC / URTC ECOSYSTEM
+      </div>
+
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark/light theme"
+        title="Toggle dark/light theme"
+      >
+        <svg
+          class="icon-sun"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        ><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+
+        <svg
+          class="icon-moon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
     </div>
 
     <h1>
@@ -1046,6 +1510,7 @@ def render_html(
           <th>Deploy target</th>
           <th>Version</th>
           <th>Status</th>
+          <th>Last commit</th>
         </tr>
       </thead>
 
@@ -1115,6 +1580,48 @@ def render_html(
 <script>
 (function () {{
   "use strict";
+
+  // --- Theme toggle ---------------------------------------------------
+
+  const themeToggle =
+    document.getElementById("theme-toggle");
+
+  const THEME_KEY = "hydra-dashboard-theme";
+
+  function currentTheme() {{
+    var explicit =
+      document.documentElement.getAttribute("data-theme");
+
+    if (explicit === "dark" || explicit === "light") {{
+      return explicit;
+    }}
+
+    return (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    )
+      ? "dark"
+      : "light";
+  }}
+
+  if (themeToggle) {{
+    themeToggle.addEventListener("click", function () {{
+      const next =
+        currentTheme() === "dark" ? "light" : "dark";
+
+      document.documentElement.setAttribute(
+        "data-theme",
+        next
+      );
+
+      try {{
+        localStorage.setItem(THEME_KEY, next);
+      }} catch (e) {{
+        // Storage unavailable - the toggle still works for this
+        // page view, it just won't be remembered next visit.
+      }}
+    }});
+  }}
 
   const rows = Array.from(
     document.querySelectorAll(".project-row")
@@ -1313,6 +1820,30 @@ def main() -> int:
                     file=sys.stderr,
                 )
 
+    print(
+        f"Fetching latest commit for "
+        f"{total} projects"
+        + (
+            " (authenticated)..."
+            if GITHUB_TOKEN
+            else " (unauthenticated, 60/hour ceiling)..."
+        ),
+        file=sys.stderr,
+    )
+
+    meta = fetch_all_meta(PROJECTS)
+
+    meta_ok = sum(
+        1
+        for repo_meta in meta.values()
+        if repo_meta.commit_subject is not None
+    )
+
+    print(
+        f"{meta_ok}/{total} commit lookups resolved.",
+        file=sys.stderr,
+    )
+
     OUT_DIR.mkdir(
         parents=True,
         exist_ok=True,
@@ -1321,7 +1852,7 @@ def main() -> int:
     index_path = OUT_DIR / "index.html"
 
     index_path.write_text(
-        render_html(results),
+        render_html(results, meta),
         encoding="utf-8",
     )
 
