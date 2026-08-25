@@ -1,0 +1,3 @@
+# Python bytecode from running scripts/generate_dashboard.py locally.
+__pycache__/
+*.pyc
