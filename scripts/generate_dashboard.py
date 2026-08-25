@@ -55,7 +55,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from hydra_umc_updater.github_client import RemoteStatus, fetch_all
-from hydra_umc_updater.registry import PROJECTS
+from hydra_umc_updater.registry import BY_FAMILY, FAMILY_PARENT, PROJECTS, ProjectEntry
 
 
 # ---------------------------------------------------------------------------
@@ -298,6 +298,88 @@ STACK_ICONS: dict[str, str] = {
         '<rect x="4" y="3" width="16" height="18" rx="2"/>'
         '<path d="M11 19h2"/>'
     ),
+    "python-bare": (
+        '<path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"/>'
+        '<path d="M3 7l9 5 9-5M12 12v9"/>'
+        '<circle cx="12" cy="9" r="1.4"/>'
+    ),
+}
+
+# ---------------------------------------------------------------------------
+# Role icons (v3) - one per ProjectEntry.role, same "generic shape, not a
+# trademark" convention as STACK_ICONS/DEPLOY_ICONS above.
+# ---------------------------------------------------------------------------
+
+ROLE_ICONS: dict[str, str] = {
+    "api": (
+        '<path d="M4 12h4M16 12h4M8 12a4 4 0 0 1 4-4M12 16a4 4 0 0 1-4-4"/>'
+        '<circle cx="8" cy="12" r="2"/><circle cx="16" cy="12" r="2"/>'
+    ),
+    "ui": (
+        '<rect x="3" y="4" width="18" height="13" rx="2"/>'
+        '<path d="M8 21h8M12 17v4"/>'
+    ),
+    "cli": (
+        '<rect x="3" y="4" width="18" height="16" rx="2"/>'
+        '<path d="M7 9l3 3-3 3M13 15h4"/>'
+    ),
+    "firmware": (
+        '<path d="M9 2v3M12 2v3M15 2v3M9 19v3M12 19v3M15 19v3'
+        'M2 9h3M2 12h3M2 15h3M19 9h3M19 12h3M19 15h3"/>'
+        '<rect x="6" y="6" width="12" height="12" rx="2"/>'
+    ),
+    "library": (
+        '<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l4-1v16l-4 1z"/>'
+    ),
+    "service": (
+        '<circle cx="12" cy="12" r="3"/>'
+        '<path d="M12 2v3M12 19v3M2 12h3M19 12h3'
+        'M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>'
+    ),
+    "tool": (
+        '<path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4Z"/>'
+    ),
+}
+
+ROLE_LABELS: dict[str, str] = {
+    "api": "API",
+    "ui": "UI",
+    "cli": "CLI",
+    "firmware": "Firmware",
+    "library": "Library",
+    "service": "Service",
+    "tool": "Tool",
+}
+
+ROLE_ORDER = ["api", "ui", "cli", "firmware", "library", "service", "tool"]
+
+# ---------------------------------------------------------------------------
+# Maturity (v3) - see registry.py's own module docstring for exactly how
+# each project was assigned one of these four levels; this dashboard only
+# renders the classification, it doesn't decide it.
+# ---------------------------------------------------------------------------
+
+MATURITY_ORDER = ["production", "established", "functional", "scaffolding"]
+
+MATURITY_LABELS: dict[str, str] = {
+    "production": "Production",
+    "established": "Established",
+    "functional": "Functional",
+    "scaffolding": "Scaffolding",
+}
+
+MATURITY_CLASSES: dict[str, str] = {
+    "production": "maturity-production",
+    "established": "maturity-established",
+    "functional": "maturity-functional",
+    "scaffolding": "maturity-scaffolding",
+}
+
+MATURITY_DESCRIPTIONS: dict[str, str] = {
+    "production": "Real firmware for a real, physical PCB this ecosystem's own hardware docs describe.",
+    "established": "Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass.",
+    "functional": "Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).",
+    "scaffolding": "A real, compilable entry point exists; the feature the project exists for does not yet.",
 }
 
 DEPLOY_ICONS: dict[str, str] = {
@@ -386,8 +468,243 @@ def error_text(result: RemoteStatus | None) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Project ordering (v3) - grouped by family, each family's own parent (if
+# it has a single one) shown first with its children immediately after in
+# their original registry order. Families with no single shared parent
+# (only "Complementary Tools" today) render in plain registry order.
+# ---------------------------------------------------------------------------
+
+def ordered_projects() -> list[tuple[str, ProjectEntry | None, list[ProjectEntry]]]:
+    """Returns [(family_name, parent_or_None, [children_in_family_order]), ...]
+    in first-seen family order (i.e. the order families already appear in
+    registry.py's own PROJECTS list)."""
+
+    order: list[tuple[str, ProjectEntry | None, list[ProjectEntry]]] = []
+    seen: dict[str, int] = {}
+
+    for entry in PROJECTS:
+        if entry.family not in seen:
+            seen[entry.family] = len(order)
+            order.append((entry.family, FAMILY_PARENT.get(entry.family), []))
+
+        idx = seen[entry.family]
+        parent = order[idx][1]
+        if parent is not None and entry.name == parent.name:
+            continue  # parent itself is stored separately, not in the children list
+        order[idx][2].append(entry)
+
+    return order
+
+
+# ---------------------------------------------------------------------------
 # Project rows
 # ---------------------------------------------------------------------------
+
+def _render_one_row(
+    entry: ProjectEntry,
+    *,
+    results: dict[str, RemoteStatus],
+    meta: dict[str, RepoMeta],
+    is_child: bool,
+) -> str:
+    result = results.get(entry.name)
+    repo_meta = meta.get(entry.name, RepoMeta())
+
+    status_key, status_label, status_class = status_for(result)
+
+    if result and result.version is not None:
+        version = str(result.version)
+        detail = "Version successfully resolved"
+    else:
+        version = "—"
+        detail = error_text(result)
+
+    deploy_key = entry.deploy
+    deploy_label = DEPLOY_LABELS.get(
+        deploy_key,
+        deploy_key,
+    )
+
+    project_name = esc(entry.name)
+    stack = esc(entry.stack)
+    deploy = esc(deploy_label)
+    deploy_filter = esc(deploy_key)
+
+    version_html = esc(version)
+    detail_html = esc(detail)
+
+    project_repo = esc(repo_url(entry.name))
+    project_actions = esc(actions_url(entry.name))
+    project_issues = esc(issues_url(entry.name))
+
+    stack_icon = render_icon(
+        STACK_ICONS.get(entry.stack, ""),
+    )
+
+    deploy_icon = render_icon(
+        DEPLOY_ICONS.get(deploy_key, ""),
+    )
+
+    role_icon = render_icon(
+        ROLE_ICONS.get(entry.role, ""),
+        css_class="tech-icon role-icon",
+    )
+    role_label = esc(ROLE_LABELS.get(entry.role, entry.role))
+
+    maturity_class = MATURITY_CLASSES.get(entry.maturity, "maturity-scaffolding")
+    maturity_label = esc(MATURITY_LABELS.get(entry.maturity, entry.maturity))
+
+    child_class = " child-row" if is_child else ""
+    child_marker = '<span class="child-marker" aria-hidden="true">↳</span>' if is_child else ""
+
+    tech_chips = "".join(
+        f'<span class="tech-chip">{esc(t)}</span>' for t in entry.tech
+    ) or '<span class="cell-muted">—</span>'
+
+    notes_html = esc(entry.notes) if entry.notes else "No notes recorded for this project yet."
+    build_note_html = esc(entry.note) if entry.note else "—"
+
+    # --- Last commit --------------------------------------------------
+    if repo_meta.commit_subject:
+        commit_text = esc(repo_meta.commit_subject)
+        commit_url = esc(
+            repo_meta.commit_url or project_repo
+        )
+
+        commit_html = (
+            f'<a href="{commit_url}" target="_blank" '
+            f'rel="noopener noreferrer" class="commit-link" '
+            f'title="{commit_text}">{commit_text}</a>'
+        )
+    else:
+        commit_html = '<span class="cell-muted">—</span>'
+
+    detail_row_id = f"detail-{project_name}"
+
+    row = f"""
+        <tr
+            class="project-row {status_class}{child_class}"
+            data-name="{project_name.lower()}"
+            data-status="{esc(status_key)}"
+            data-deploy="{deploy_filter}"
+            data-stack="{stack.lower()}"
+            data-maturity="{esc(entry.maturity)}"
+            data-role="{esc(entry.role)}"
+            data-family="{esc(entry.family.lower())}"
+        >
+          <td class="project-name">
+            <button
+                type="button"
+                class="details-toggle"
+                data-details-target="{detail_row_id}"
+                aria-expanded="false"
+                aria-label="Toggle notes for {project_name}"
+            >▸</button>
+
+            {child_marker}
+
+            <div class="project-title-wrap">
+              <div class="project-title">
+                <a
+                  href="{project_repo}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{project_name}</a>
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="{project_actions}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Actions</a>
+
+                <a
+                  href="{project_issues}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Issues</a>
+              </div>
+            </div>
+          </td>
+
+          <td class="role-cell">
+            <span class="role-badge role-{esc(entry.role)}">
+              {role_icon}{role_label}
+            </span>
+          </td>
+
+          <td class="maturity-cell">
+            <span class="maturity-badge {maturity_class}">
+              {maturity_label}
+            </span>
+          </td>
+
+          <td class="stack">
+            {stack_icon}{stack}
+          </td>
+
+          <td class="deploy">
+            <span class="deploy-badge">
+              {deploy_icon}{deploy}
+            </span>
+          </td>
+
+          <td class="version {status_class}">
+            {version_html}
+          </td>
+
+          <td class="status-cell">
+            <span class="status-badge {status_class}">
+              <span class="status-dot"></span>
+              {esc(status_label)}
+            </span>
+
+            <div class="status-detail">
+              {detail_html}
+            </div>
+          </td>
+
+          <td class="commit-cell">
+            {commit_html}
+          </td>
+        </tr>
+
+        <tr
+            class="detail-row"
+            id="{detail_row_id}"
+            data-name="{project_name.lower()}"
+            data-status="{esc(status_key)}"
+            data-deploy="{deploy_filter}"
+            data-stack="{stack.lower()}"
+            data-maturity="{esc(entry.maturity)}"
+            data-role="{esc(entry.role)}"
+            data-family="{esc(entry.family.lower())}"
+            hidden
+        >
+          <td colspan="8">
+            <div class="detail-panel">
+              <div class="detail-block">
+                <div class="detail-label">Notes</div>
+                <div class="detail-text">{notes_html}</div>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-label">Technology</div>
+                <div class="tech-chips">{tech_chips}</div>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-label">Build</div>
+                <div class="detail-text">{build_note_html}</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        """
+
+    return row
+
 
 def render_project_rows(
     results: dict[str, RemoteStatus],
@@ -395,124 +712,43 @@ def render_project_rows(
 ) -> str:
     rows: list[str] = []
 
-    for entry in PROJECTS:
-        result = results.get(entry.name)
-        repo_meta = meta.get(entry.name, RepoMeta())
+    for family_name, parent, children in ordered_projects():
+        # Same raw lower() value the project rows themselves stamp into
+        # their own data-family attribute (and the family <select>'s own
+        # option values use) - a data-* attribute value, not a CSS
+        # id/class, so it doesn't need slug-sanitizing, and NOT
+        # sanitizing it is what keeps the two sides matching in the JS
+        # filter below.
+        family_id = esc(family_name.lower())
 
-        status_key, status_label, status_class = status_for(result)
-
-        if result and result.version is not None:
-            version = str(result.version)
-            detail = "Version successfully resolved"
-        else:
-            version = "—"
-            detail = error_text(result)
-
-        deploy_key = entry.deploy
-        deploy_label = DEPLOY_LABELS.get(
-            deploy_key,
-            deploy_key,
-        )
-
-        project_name = esc(entry.name)
-        stack = esc(entry.stack)
-        deploy = esc(deploy_label)
-        deploy_filter = esc(deploy_key)
-
-        version_html = esc(version)
-        detail_html = esc(detail)
-
-        project_repo = esc(repo_url(entry.name))
-        project_actions = esc(actions_url(entry.name))
-        project_issues = esc(issues_url(entry.name))
-
-        stack_icon = render_icon(
-            STACK_ICONS.get(entry.stack, ""),
-        )
-
-        deploy_icon = render_icon(
-            DEPLOY_ICONS.get(deploy_key, ""),
-        )
-
-        # --- Last commit --------------------------------------------------
-        if repo_meta.commit_subject:
-            commit_text = esc(repo_meta.commit_subject)
-            commit_url = esc(
-                repo_meta.commit_url or project_repo
+        parent_repo_link = ""
+        if parent is not None:
+            parent_repo_link = (
+                f' · <a href="{esc(repo_url(parent.name))}" target="_blank" '
+                f'rel="noopener noreferrer">{esc(parent.name)}</a> is this family\'s '
+                f"own integration parent"
             )
-
-            commit_html = (
-                f'<a href="{commit_url}" target="_blank" '
-                f'rel="noopener noreferrer" class="commit-link" '
-                f'title="{commit_text}">{commit_text}</a>'
-            )
-        else:
-            commit_html = '<span class="cell-muted">—</span>'
 
         rows.append(
             f"""
-            <tr
-                class="project-row {status_class}"
-                data-name="{project_name.lower()}"
-                data-status="{esc(status_key)}"
-                data-deploy="{deploy_filter}"
-                data-stack="{stack.lower()}"
-            >
-              <td class="project-name">
-                <div class="project-title">
-                  <a
-                    href="{project_repo}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >{project_name}</a>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="{project_actions}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >Actions</a>
-
-                  <a
-                    href="{project_issues}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >Issues</a>
-                </div>
-              </td>
-
-              <td class="stack">
-                {stack_icon}{stack}
-              </td>
-
-              <td class="deploy">
-                <span class="deploy-badge">
-                  {deploy_icon}{deploy}
-                </span>
-              </td>
-
-              <td class="version {status_class}">
-                {version_html}
-              </td>
-
-              <td class="status-cell">
-                <span class="status-badge {status_class}">
-                  <span class="status-dot"></span>
-                  {esc(status_label)}
-                </span>
-
-                <div class="status-detail">
-                  {detail_html}
-                </div>
-              </td>
-
-              <td class="commit-cell">
-                {commit_html}
+            <tr class="family-header-row" data-family-header="{family_id}">
+              <td colspan="8">
+                <span class="family-header-label">{esc(family_name)}</span>
+                <span class="family-header-count">{len(children) + (1 if parent else 0)} project(s){parent_repo_link}</span>
               </td>
             </tr>
             """
         )
+
+        if parent is not None:
+            rows.append(
+                _render_one_row(parent, results=results, meta=meta, is_child=False)
+            )
+
+        for child in children:
+            rows.append(
+                _render_one_row(child, results=results, meta=meta, is_child=parent is not None)
+            )
 
     return "".join(rows)
 
@@ -548,6 +784,16 @@ def calculate_statistics(
 
     stack_counts: dict[str, int] = {}
 
+    maturity_counts = {
+        key: 0
+        for key in MATURITY_ORDER
+    }
+
+    role_counts = {
+        key: 0
+        for key in ROLE_ORDER
+    }
+
     for entry in PROJECTS:
         deploy_counts[entry.deploy] = (
             deploy_counts.get(entry.deploy, 0) + 1
@@ -557,6 +803,14 @@ def calculate_statistics(
             stack_counts.get(entry.stack, 0) + 1
         )
 
+        maturity_counts[entry.maturity] = (
+            maturity_counts.get(entry.maturity, 0) + 1
+        )
+
+        role_counts[entry.role] = (
+            role_counts.get(entry.role, 0) + 1
+        )
+
     return {
         "total": total,
         "ok": ok,
@@ -564,6 +818,8 @@ def calculate_statistics(
         "success_percent": success_percent,
         "deploy_counts": deploy_counts,
         "stack_counts": stack_counts,
+        "maturity_counts": maturity_counts,
+        "role_counts": role_counts,
     }
 
 
@@ -637,6 +893,68 @@ def render_stack_summary(
 
 
 # ---------------------------------------------------------------------------
+# Maturity cards (v3)
+# ---------------------------------------------------------------------------
+
+def render_maturity_cards(
+    maturity_counts: dict[str, int],
+) -> str:
+    cards: list[str] = []
+
+    for key in MATURITY_ORDER:
+        count = maturity_counts.get(key, 0)
+        label = MATURITY_LABELS.get(key, key)
+        description = MATURITY_DESCRIPTIONS.get(key, "")
+        css_class = MATURITY_CLASSES.get(key, "maturity-scaffolding")
+
+        cards.append(
+            f"""
+            <button
+                class="maturity-card {css_class}"
+                type="button"
+                data-filter-maturity="{esc(key)}"
+                title="{esc(description)}"
+            >
+              <span class="maturity-count">{count}</span>
+              <span class="maturity-card-label">{esc(label)}</span>
+              <span class="maturity-card-desc">{esc(description)}</span>
+            </button>
+            """
+        )
+
+    return "".join(cards)
+
+
+# ---------------------------------------------------------------------------
+# Role summary (v3)
+# ---------------------------------------------------------------------------
+
+def render_role_summary(
+    role_counts: dict[str, int],
+) -> str:
+    items = [
+        (key, role_counts.get(key, 0))
+        for key in ROLE_ORDER
+        if role_counts.get(key, 0) > 0
+    ]
+
+    return "".join(
+        f"""
+        <button
+            class="role-item"
+            type="button"
+            data-filter-role="{esc(key)}"
+        >
+          {render_icon(ROLE_ICONS.get(key, ""), css_class="tech-icon role-icon")}
+          <span>{esc(ROLE_LABELS.get(key, key))}</span>
+          <strong>{count}</strong>
+        </button>
+        """
+        for key, count in items
+    )
+
+
+# ---------------------------------------------------------------------------
 # HTML
 # ---------------------------------------------------------------------------
 
@@ -653,6 +971,8 @@ def render_html(
 
     deploy_counts = stats["deploy_counts"]
     stack_counts = stats["stack_counts"]
+    maturity_counts = stats["maturity_counts"]
+    role_counts = stats["role_counts"]
 
     rows = render_project_rows(results, meta)
 
@@ -662,6 +982,19 @@ def render_html(
 
     stack_summary = render_stack_summary(
         stack_counts,
+    )
+
+    maturity_cards = render_maturity_cards(
+        maturity_counts,
+    )
+
+    role_summary = render_role_summary(
+        role_counts,
+    )
+
+    family_options = "".join(
+        f'<option value="{esc(name.lower())}">{esc(name)} ({len(members)})</option>'
+        for name, members in BY_FAMILY.items()
     )
 
     success_percent_text = (
@@ -679,10 +1012,10 @@ def render_html(
 
 <meta
   name="description"
-  content="HYDRA-UMC / URTC ecosystem status dashboard"
+  content="HYDRA-UMC / URTC ecosystem status dashboard - maturity, role, family/parent tree, stack and version for all 44 projects"
 >
 
-<title>HYDRA-UMC / URTC Ecosystem Status</title>
+<title>HYDRA-UMC / URTC Ecosystem Status v3</title>
 
 <script>
   // Applied synchronously, before first paint, so a saved manual theme
@@ -732,6 +1065,12 @@ def render_html(
     --ok-soft: #d1fae5;
     --err: #e11d48;
     --err-soft: #ffe4e6;
+    --maturity-production: #0f766e;
+    --maturity-production-soft: #ccfbf1;
+    --maturity-established: #4338ca;
+    --maturity-established-soft: #e0e7ff;
+    --maturity-scaffolding: #b45309;
+    --maturity-scaffolding-soft: #fef3c7;
     --shadow: 0 4px 18px rgba(15, 23, 42, .06);
   }}
 
@@ -750,6 +1089,12 @@ def render_html(
       --ok-soft: #064e3b;
       --err: #fb7185;
       --err-soft: #4c0519;
+      --maturity-production: #2dd4bf;
+      --maturity-production-soft: #0f3d3a;
+      --maturity-established: #818cf8;
+      --maturity-established-soft: #241f57;
+      --maturity-scaffolding: #fbbf24;
+      --maturity-scaffolding-soft: #4a3105;
       --shadow: 0 4px 18px rgba(0, 0, 0, .25);
     }}
   }}
@@ -773,6 +1118,12 @@ def render_html(
     --ok-soft: #064e3b;
     --err: #fb7185;
     --err-soft: #4c0519;
+    --maturity-production: #2dd4bf;
+    --maturity-production-soft: #0f3d3a;
+    --maturity-established: #818cf8;
+    --maturity-established-soft: #241f57;
+    --maturity-scaffolding: #fbbf24;
+    --maturity-scaffolding-soft: #4a3105;
     --shadow: 0 4px 18px rgba(0, 0, 0, .25);
   }}
 
@@ -828,6 +1179,19 @@ def render_html(
     font-size: clamp(24px, 4vw, 34px);
     line-height: 1.15;
     margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }}
+
+  .version-pill {{
+    font-size: 13px;
+    font-weight: 700;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 3px 11px;
+    vertical-align: middle;
   }}
 
   .subtitle {{
@@ -835,6 +1199,11 @@ def render_html(
     margin: 0;
     font-size: 14px;
     line-height: 1.6;
+  }}
+
+  .subtitle-v3 {{
+    margin-top: 6px;
+    font-size: 12.5px;
   }}
 
   .subtitle a {{
@@ -1027,6 +1396,185 @@ def render_html(
     color: var(--accent);
   }}
 
+  .section-title-hint {{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--dim);
+    margin-left: 8px;
+    text-transform: none;
+    letter-spacing: 0;
+  }}
+
+  /* --- Maturity cards (v3) ---------------------------------------------- */
+
+  .maturity-grid {{
+    display: grid;
+    grid-template-columns:
+      repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+  }}
+
+  .maturity-card {{
+    appearance: none;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 9px;
+    padding: 13px 15px;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--maturity-scaffolding);
+    transition:
+      border-color .15s ease,
+      transform .15s ease;
+  }}
+
+  .maturity-card:hover {{
+    transform: translateY(-1px);
+  }}
+
+  .maturity-card.active {{
+    box-shadow: 0 0 0 2px var(--accent-soft);
+  }}
+
+  .maturity-card.maturity-production {{ border-left-color: var(--maturity-production); }}
+  .maturity-card.maturity-established {{ border-left-color: var(--maturity-established); }}
+  .maturity-card.maturity-functional {{ border-left-color: var(--accent); }}
+  .maturity-card.maturity-scaffolding {{ border-left-color: var(--maturity-scaffolding); }}
+
+  .maturity-count {{
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 21px;
+    font-weight: 700;
+  }}
+
+  .maturity-card-label {{
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 2px;
+  }}
+
+  .maturity-card-desc {{
+    display: block;
+    color: var(--dim);
+    font-size: 11px;
+    margin-top: 4px;
+    line-height: 1.4;
+  }}
+
+  .maturity-badge {{
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 3px 9px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }}
+
+  .maturity-badge.maturity-production {{
+    background: var(--maturity-production-soft);
+    color: var(--maturity-production);
+  }}
+
+  .maturity-badge.maturity-established {{
+    background: var(--maturity-established-soft);
+    color: var(--maturity-established);
+  }}
+
+  .maturity-badge.maturity-functional {{
+    background: var(--accent-soft);
+    color: var(--accent);
+  }}
+
+  .maturity-badge.maturity-scaffolding {{
+    background: var(--maturity-scaffolding-soft);
+    color: var(--maturity-scaffolding);
+  }}
+
+  /* --- Role summary/badges (v3) ------------------------------------------ */
+
+  .role-summary {{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }}
+
+  .role-item {{
+    appearance: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 11px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color .15s ease;
+  }}
+
+  .role-item:hover {{
+    border-color: var(--accent);
+  }}
+
+  .role-item.active {{
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-soft);
+  }}
+
+  .role-item strong {{
+    color: var(--accent);
+  }}
+
+  .role-badge {{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--dim);
+    white-space: nowrap;
+  }}
+
+  .role-icon {{
+    color: var(--accent);
+  }}
+
+  /* --- Family filter (v3) ------------------------------------------------ */
+
+  .family-filter {{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--dim);
+  }}
+
+  .family-filter select {{
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12.5px;
+    max-width: 260px;
+  }}
+
   .toolbar {{
     margin-top: 28px;
     display: flex;
@@ -1094,7 +1642,7 @@ def render_html(
 
   table {{
     width: 100%;
-    min-width: 1040px;
+    min-width: 1220px;
     border-collapse: collapse;
   }}
 
@@ -1127,6 +1675,130 @@ def render_html(
 
   tr.project-row.hidden {{
     display: none;
+  }}
+
+  tr.project-row.hidden + tr.detail-row {{
+    display: none;
+  }}
+
+  /* --- Family header rows (v3) -------------------------------------- */
+
+  tr.family-header-row td {{
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border-strong);
+    padding: 9px 14px;
+    font-family: "IBM Plex Mono", monospace;
+  }}
+
+  tr.family-header-row.hidden {{
+    display: none;
+  }}
+
+  .family-header-label {{
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }}
+
+  .family-header-count {{
+    color: var(--dim);
+    font-size: 11px;
+    margin-left: 10px;
+  }}
+
+  .family-header-count a {{
+    color: var(--accent);
+    text-decoration: none;
+  }}
+
+  /* --- Child rows (v3) - visually nested under their family's parent -- */
+
+  tr.project-row.child-row .project-name {{
+    padding-left: 6px;
+  }}
+
+  .child-marker {{
+    color: var(--dim);
+    font-family: "IBM Plex Mono", monospace;
+    margin-right: 2px;
+  }}
+
+  /* --- Per-row notes toggle + detail panel (v3) ----------------------- */
+
+  .project-name {{
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }}
+
+  .details-toggle {{
+    appearance: none;
+    border: none;
+    background: none;
+    color: var(--dim);
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 1.6;
+    padding: 0 2px;
+    flex: 0 0 auto;
+  }}
+
+  .details-toggle:hover {{
+    color: var(--accent);
+  }}
+
+  .project-title-wrap {{
+    flex: 1 1 auto;
+    min-width: 0;
+  }}
+
+  tr.detail-row td {{
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 14px 16px 40px;
+  }}
+
+  .detail-panel {{
+    display: grid;
+    grid-template-columns:
+      repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }}
+
+  .detail-label {{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--dim);
+    margin-bottom: 5px;
+  }}
+
+  .detail-text {{
+    font-size: 12.5px;
+    line-height: 1.55;
+  }}
+
+  .tech-chips {{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }}
+
+  .tech-chip {{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    white-space: nowrap;
+  }}
+
+  .role-cell,
+  .maturity-cell {{
+    white-space: nowrap;
   }}
 
   .project-title a {{
@@ -1357,6 +2029,7 @@ def render_html(
 
     <h1>
       Ecosystem Status Dashboard
+      <span class="version-pill">v3</span>
     </h1>
 
     <p class="subtitle">
@@ -1365,6 +2038,12 @@ def render_html(
       · versions are read from each project's own source file
       · dashboard generated by GitHub Actions
       · static GitHub Pages
+    </p>
+
+    <p class="subtitle subtitle-v3">
+      v3: real maturity/role classification, family/parent trees and richer
+      per-project notes - see the Maturity legend below for exactly how
+      each level was decided.
     </p>
   </header>
 
@@ -1449,6 +2128,41 @@ def render_html(
 
 
   <!-- ================================================================
+       MATURITY (v3)
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Maturity
+      <span class="section-title-hint">click a card to filter · hover for how it was decided</span>
+    </div>
+
+    <div class="maturity-grid">
+      {maturity_cards}
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
+       ROLE (v3)
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Role
+    </div>
+
+    <div class="role-summary">
+      {role_summary}
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
        SEARCH / FILTERS
        ================================================================ -->
 
@@ -1492,6 +2206,14 @@ def render_html(
 
     </div>
 
+    <div class="family-filter">
+      <label for="family-select">Family:</label>
+      <select id="family-select">
+        <option value="all">All families</option>
+        {family_options}
+      </select>
+    </div>
+
   </section>
 
 
@@ -1506,6 +2228,8 @@ def render_html(
       <thead>
         <tr>
           <th>Project</th>
+          <th>Type</th>
+          <th>Maturity</th>
           <th>Stack</th>
           <th>Deploy target</th>
           <th>Version</th>
@@ -1627,11 +2351,18 @@ def render_html(
     document.querySelectorAll(".project-row")
   );
 
+  const familyHeaderRows = Array.from(
+    document.querySelectorAll(".family-header-row")
+  );
+
   const searchInput =
     document.getElementById("project-search");
 
   const emptyResults =
     document.getElementById("empty-results");
+
+  const familySelect =
+    document.getElementById("family-select");
 
   const statusFilters =
     Array.from(
@@ -1643,8 +2374,20 @@ def render_html(
       document.querySelectorAll("[data-filter-deploy]")
     );
 
+  const maturityFilters =
+    Array.from(
+      document.querySelectorAll("[data-filter-maturity]")
+    );
+
+  const roleFilters =
+    Array.from(
+      document.querySelectorAll("[data-filter-role]")
+    );
+
   let activeStatus = "all";
   let activeDeploy = "all";
+  let activeMaturity = "all";
+  let activeRole = "all";
 
 
   function applyFilters() {{
@@ -1653,7 +2396,11 @@ def render_html(
         .trim()
         .toLowerCase();
 
+    const activeFamily =
+      familySelect ? familySelect.value : "all";
+
     let visible = 0;
+    const visibleFamilies = {{}};
 
     rows.forEach(function (row) {{
       const name =
@@ -1668,11 +2415,21 @@ def render_html(
       const stack =
         row.dataset.stack || "";
 
+      const maturity =
+        row.dataset.maturity || "";
+
+      const role =
+        row.dataset.role || "";
+
+      const family =
+        row.dataset.family || "";
+
       const matchesSearch =
         !query ||
         name.includes(query) ||
         stack.includes(query) ||
-        deploy.includes(query);
+        deploy.includes(query) ||
+        family.includes(query);
 
       const matchesStatus =
         activeStatus === "all" ||
@@ -1682,19 +2439,60 @@ def render_html(
         activeDeploy === "all" ||
         deploy === activeDeploy;
 
+      const matchesMaturity =
+        activeMaturity === "all" ||
+        maturity === activeMaturity;
+
+      const matchesRole =
+        activeRole === "all" ||
+        role === activeRole;
+
+      const matchesFamily =
+        activeFamily === "all" ||
+        family === activeFamily;
+
       const show =
         matchesSearch &&
         matchesStatus &&
-        matchesDeploy;
+        matchesDeploy &&
+        matchesMaturity &&
+        matchesRole &&
+        matchesFamily;
 
       row.classList.toggle(
         "hidden",
         !show
       );
 
+      // The detail row right after this project row shares its
+      // visibility gate - a hidden project row's notes can't stay open.
+      if (!show) {{
+        const toggle = row.querySelector(".details-toggle");
+        const targetId = toggle && toggle.dataset.detailsTarget;
+        const target = targetId && document.getElementById(targetId);
+        if (target) {{
+          target.hidden = true;
+        }}
+        if (toggle) {{
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "▸";
+        }}
+      }}
+
       if (show) {{
         visible += 1;
+        if (family) {{
+          visibleFamilies[family] = true;
+        }}
       }}
+    }});
+
+    familyHeaderRows.forEach(function (headerRow) {{
+      const key = headerRow.dataset.familyHeader || "";
+      headerRow.classList.toggle(
+        "hidden",
+        !visibleFamilies[key]
+      );
     }});
 
     emptyResults.style.display =
@@ -1708,6 +2506,13 @@ def render_html(
     "input",
     applyFilters
   );
+
+  if (familySelect) {{
+    familySelect.addEventListener(
+      "change",
+      applyFilters
+    );
+  }}
 
 
   statusFilters.forEach(function (button) {{
@@ -1760,6 +2565,85 @@ def render_html(
         applyFilters();
       }}
     );
+  }});
+
+
+  maturityFilters.forEach(function (button) {{
+    button.addEventListener(
+      "click",
+      function () {{
+
+        const selected =
+          button.dataset.filterMaturity;
+
+        if (activeMaturity === selected) {{
+          activeMaturity = "all";
+          button.classList.remove("active");
+        }} else {{
+          activeMaturity = selected;
+
+          maturityFilters.forEach(
+            function (item) {{
+              item.classList.toggle(
+                "active",
+                item === button
+              );
+            }}
+          );
+        }}
+
+        applyFilters();
+      }}
+    );
+  }});
+
+
+  roleFilters.forEach(function (button) {{
+    button.addEventListener(
+      "click",
+      function () {{
+
+        const selected =
+          button.dataset.filterRole;
+
+        if (activeRole === selected) {{
+          activeRole = "all";
+          button.classList.remove("active");
+        }} else {{
+          activeRole = selected;
+
+          roleFilters.forEach(
+            function (item) {{
+              item.classList.toggle(
+                "active",
+                item === button
+              );
+            }}
+          );
+        }}
+
+        applyFilters();
+      }}
+    );
+  }});
+
+
+  // --- Per-row notes toggle --------------------------------------------
+
+  Array.from(
+    document.querySelectorAll(".details-toggle")
+  ).forEach(function (button) {{
+    button.addEventListener("click", function () {{
+      const targetId = button.dataset.detailsTarget;
+      const target = document.getElementById(targetId);
+      if (!target) {{
+        return;
+      }}
+      const nowOpen = target.hidden;
+      target.hidden = !nowOpen;
+      button.setAttribute("aria-expanded", nowOpen ? "true" : "false");
+      button.textContent = nowOpen ? "▾" : "▸";
+    }});
   }});
 
 
