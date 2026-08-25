@@ -196,6 +196,6 @@
 
 全部 45 个仓库的 Issue 标签均从本仓库的 [`.github/labels.yml`](.github/labels.yml) 统一同步，由 [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) 负责推送——只需修改这一份文件，即可一次性更新所有仓库的标签，无需逐个手动维护。
 
-全部 45 个仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每日自动生成，并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。
+全部 45 个仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每日自动生成，并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。v3 为每个项目新增了真实的成熟度分类（scaffolding / functional / established / production，每一项都根据该项目自身真实的 CHANGELOG 决定——具体判定标准见[`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)模块自身的文档说明），以及其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、真实的家族/父子关系树，以及每个项目关于当前实际实现内容的说明。
 
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.
