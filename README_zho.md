@@ -35,14 +35,17 @@
 
 ## 🏗️ 生态系统架构
 
-整个生态系统分为 6 个功能层，共同实现自主、协同、智能的机器人操作：
+v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 Raspberry Pi 技术之上，不重新开发操作系统，也不替代厂商 API。
 
-1.  **执行层**：基于 STM32 的固件（H745/G474），实现亚毫米级精度与高速 FDCAN 驱动。
-2.  **智能层**：由 **Hailo-8**（反射式感知）与 **Hailo-10**（认知推理）驱动的边缘 AI。
-3.  **协调层**：独立运行的 Node.js 后端与分布式集群编排器。
-4.  **接口层**：Web（React）、桌面端（Qt6）、移动端（Kotlin/Flutter）及 DSI 触摸仪表盘。
-5.  **虚拟层**：高保真数字孪生引擎（Rust/Bevy），用于安全的物理前验证。
-6.  **支持层**：工业 4.0 网关（OPC-UA/MQTT）与大数据预测性维护。
+1.  **平台基础**：Raspberry Pi OS ARM64 与标准 Linux 服务构成受支持的 CM5 基础。
+2.  **平台与契约**：**HYDRA-UMC-OS** 在 Raspberry Pi OS 上提供可复现的配置文件、服务、诊断与更新；**HYDRA-UMC-SDK** 发布版本化契约、轻量客户端和一致性测试。
+3.  **实时执行**：运行于 STM32/MCU 的 **HYDRA-UMC** 固件和 URTC 保有运动限制、看门狗与安全停止权。
+4.  **协调与运维**：服务器服务、任务分发、遥测与配置负责协调设备，且不会绕过 MCU 的安全边界。
+5.  **操作员界面**：Studio、Suite、DSI、Web、桌面、移动端和 CLI 均使用 SDK 契约。
+6.  **感知与智能**：视觉、Hailo 与认知服务提出观测或计划；它们不具备物理安全权限。
+7.  **工程、工业与数据**：数字孪生、HIL/物理、OPC-UA/MQTT/MTConnect 网关和数据服务用于验证和集成系统。
+
+开发应从 **HYDRA-UMC-OS** 的公共架构与服务模型开始，再使用 **HYDRA-UMC-SDK** 的契约和一致性规则。所有流程都保留 MCU/URTC 的安全权限。
 
 ---
 
@@ -116,6 +119,8 @@
 | 仓库 | 说明 |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 面向 CM5 的 Raspberry Pi OS 平台层：可复现配置、诊断、服务生命周期与更新；并非新的 Linux 发行版。 |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |
