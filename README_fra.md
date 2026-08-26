@@ -35,14 +35,17 @@ Bienvenue dans l'**Écosystème HYDRA-UMC**, une plateforme robotique industriel
 
 ## 🏗️ Architecture de l'Écosystème
 
-L'écosystème est structuré en 6 couches fonctionnelles permettant des opérations robotiques autonomes, collaboratives et intelligentes :
+L'écosystème v1.1 est une plateforme produit en couches : il s'appuie sur les technologies Linux et Raspberry Pi existantes, sans créer un nouveau système d'exploitation ni remplacer les API des fournisseurs.
 
-1.  **Couche d'Exécution** : Micrologiciel basé sur STM32 (H745/G474) pour une précision submillimétrique et une action FDCAN haute vitesse.
-2.  **Couche d'Intelligence** : IA de bord propulsée par **Hailo-8** (perception des réflexes) et **Hailo-10** (raisonnement cognitif).
-3.  **Couche de Coordination** : Backends Node.js autonomes et orchestrateurs d'essaim distribués.
-4.  **Couche d'Interface** : Tableaux de bord Web (React), Bureau (Qt6), Mobile (Kotlin/Flutter) et tactiles DSI.
-5.  **Couche Virtuelle** : Moteurs de Jumeau Numérique haute fidélité (Rust/Bevy) pour une validation pré-physique sécurisée.
-6.  **Couche de Support** : Passerelles Industrie 4.0 (OPC-UA/MQTT) et maintenance prédictive Big Data.
+1.  **Base de plateforme** : Raspberry Pi OS ARM64 et les services Linux standard fournissent la base CM5 prise en charge.
+2.  **Plateforme et contrats** : **HYDRA-UMC-OS** fournit des profils reproductibles, services, diagnostics et mises à jour sur Raspberry Pi OS ; **HYDRA-UMC-SDK** publie des contrats versionnés, clients légers et tests de conformité.
+3.  **Exécution temps réel** : le firmware **HYDRA-UMC** et URTC sur STM32/MCU conservent limites de mouvement, watchdogs et arrêt sûr.
+4.  **Coordination et opérations** : services serveur, distribution des tâches, télémétrie et configuration coordonnent les équipements sans contourner la frontière de sécurité du MCU.
+5.  **Interfaces opérateur** : Studio, Suite, DSI, Web, bureau, mobile et CLI utilisent les contrats du SDK.
+6.  **Perception et intelligence** : vision, Hailo et services cognitifs proposent des observations ou plans ; ils n'ont aucune autorité de sécurité physique.
+7.  **Ingénierie, industrie et données** : Jumeau Numérique, HIL/physique, passerelles OPC-UA/MQTT/MTConnect et données valident et intègrent le système.
+
+Le développement commence par l'architecture et le modèle de services publics de **HYDRA-UMC-OS**, puis utilise les contrats et règles de conformité de **HYDRA-UMC-SDK**. L'autorité de sécurité du MCU/URTC est maintenue dans tous les flux.
 
 ---
 
@@ -118,6 +121,8 @@ n'importe quel projet.
 | Dépôt | Description |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Micrologiciel de contrôle de mouvement core pour STM32H745/G474 avec cinématique S-Curve. |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Couche de plateforme Raspberry Pi OS pour CM5 : profils reproductibles, configuration, diagnostic, cycle de vie des services et mises à jour ; ce n'est pas une nouvelle distribution Linux. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contrats versionnés, clients légers et tests de conformité communs pour services, interfaces, adaptateurs CM5 et URTC ; ne remplace pas les API des fournisseurs. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | API Node.js headless et backend WebSocket pour l'orchestration robotique. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | Application de bureau Python/Qt haute performance pour l'automatisation industrielle. |

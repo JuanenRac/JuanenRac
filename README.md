@@ -35,14 +35,17 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 
 ## 🏗️ Ecosystem Architecture
 
-The ecosystem is structured into 6 functional layers that enable autonomous, collaborative, and intelligent robotic operations:
+The v1.1 ecosystem is a layered product platform: it builds on established Linux and Raspberry Pi technology instead of creating a new operating system or replacing vendor APIs.
 
-1.  **Execution Layer**: STM32-based firmware (H745/G474) for sub-millimetric precision and high-speed FDCAN actuation.
-2.  **Intelligence Layer**: Edge AI powered by **Hailo-8** (Reflex perception) and **Hailo-10** (Cognitive reasoning).
-3.  **Coordination Layer**: Standalone Node.js backends and distributed swarm orchestrators.
-4.  **Interface Layer**: Web (React), Desktop (Qt6), Mobile (Kotlin/Flutter), and DSI touch dashboards.
-5.  **Virtual Layer**: High-fidelity Digital Twin engines (Rust/Bevy) for safe pre-physical validation.
-6.  **Support Layer**: Industry 4.0 gateways (OPC-UA/MQTT) and Big Data predictive maintenance.
+1.  **Platform base**: Raspberry Pi OS ARM64 and standard Linux services provide the supported CM5 foundation.
+2.  **Platform and contracts**: **HYDRA-UMC-OS** packages reproducible profiles, services, diagnostics and updates on Raspberry Pi OS; **HYDRA-UMC-SDK** publishes versioned contracts, thin clients and conformance fixtures.
+3.  **Real-time execution**: **HYDRA-UMC** firmware and URTC control on STM32/MCU own motion limits, watchdogs and safe stop.
+4.  **Coordination and operations**: Server services, job dispatching, telemetry and configuration coordinate devices without bypassing the MCU safety boundary.
+5.  **Operator interfaces**: Studio, Suite, DSI, web, desktop, mobile and CLI clients use the SDK contracts.
+6.  **Perception and intelligence**: Vision, Hailo and cognitive services propose observations or plans; they have no physical safety authority.
+7.  **Engineering, industrial and data**: Digital Twin, HIL/physics, OPC-UA/MQTT/MTConnect gateways and data services validate and integrate the system.
+
+For implementation guidance, start with the public architecture and service documentation in **HYDRA-UMC-OS**, then use the contracts and conformance rules in **HYDRA-UMC-SDK**. The MCU/URTC safety authority is preserved throughout every flow.
 
 ---
 
@@ -116,6 +119,8 @@ untouched. From there, [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UM
 | Repository | Description |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Raspberry Pi OS platform layer for CM5: reproducible profiles, configuration, diagnostics, service lifecycle and updates; not a new Linux distribution. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Shared versioned contracts, thin clients and conformance fixtures for services, UIs, CM5 adapters and URTC; it does not replace vendor APIs. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | Headless Node.js API and WebSocket backend for robotic orchestration. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | High-performance Python/Qt desktop application for industrial automation. |
