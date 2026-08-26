@@ -136,10 +136,17 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 面向 iOS/iPadOS 的 Flutter 移动应用，支持实时 WebSocket 同步。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 图形化 URDF 编辑器，用于校验并推送机器人模型至目录。 |
+
+
+### 🔧 URTC 核心与工具
+| 仓库 | 说明 |
+| :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 智能工具存放架，具备自动预热与生命周期审计功能。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
 
 ### 👁️ Vision AI Node (Hailo-8 Optimized)
 | 仓库 | 说明 |
@@ -195,8 +202,6 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 ### 🛠️ Complementary Tools（配套工具）
 | 仓库 | 说明 |
 | :--- | :--- |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 智能工具存放架，具备自动预热与生命周期审计功能。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 可穿戴式应急仪表盘，具备触觉安全告警功能。 |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 命令行工具，用于舰队自动化、烧录与 DevOps。 |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 为 Web 仪表盘提供自然语言洞察的 AI 扩展。 |
