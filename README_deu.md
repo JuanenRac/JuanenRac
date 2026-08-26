@@ -126,6 +126,10 @@ Repositories bleiben unangetastet. Von dort aus kann
 ### 💠 Kernsteuerung und Bedienclients
 | Repository | Beschreibung |
 | :--- | :--- |
+
+### 💠 Kernsteuerung und Bedienclients
+| Repository | Beschreibung |
+| :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Kern-Bewegungssteuerungs-Firmware für STM32H745/G474 mit S-Curve-Kinematik. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | Headless Node.js API und WebSocket-Backend für die Roboter-Orchestrierung. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Fortschrittliches React-basiertes Web-Dashboard für 3D-Roboter-Überwachung und -Steuerung. |
