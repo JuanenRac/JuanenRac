@@ -118,12 +118,16 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 （この 12 個のうちの 1 つ）を使って、各プロジェクトのバージョン確認や
 ビルド・更新が行えます。
 
-### 💠 Core Ecosystem（コアエコシステム・メイン制御系）
+### 🧱 プラットフォーム基盤と契約
+| リポジトリ | 説明 |
+| :--- | :--- |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | CM5 向け Raspberry Pi OS プラットフォーム層：再現可能なプロファイル、設定、診断、サービスのライフサイクル、更新を提供。新しい Linux ディストリビューションではありません。 |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | サービス、UI、CM5 アダプター、URTC 向けの共有バージョン管理契約、軽量クライアント、適合性テスト。ベンダー API は置き換えません。 |
+
+### 💠 コア制御とオペレータークライアント
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | CM5 向け Raspberry Pi OS プラットフォーム層：再現可能なプロファイル、設定、診断、サービスのライフサイクル、更新を提供。新しい Linux ディストリビューションではありません。 |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | サービス、UI、CM5 アダプター、URTC 向けの共有バージョン管理契約、軽量クライアント、適合性テスト。ベンダー API は置き換えません。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |

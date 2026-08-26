@@ -117,12 +117,16 @@ Repositories bleiben unangetastet. Von dort aus kann
 [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
 (eines der 12) Versionen prüfen und jedes Projekt bauen/aktualisieren.
 
-### 💠 Kern-Ökosystem (Hauptsteuerung)
+### 🧱 Plattformbasis und Verträge
+| Repository | Beschreibung |
+| :--- | :--- |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Raspberry-Pi-OS-Plattformschicht für CM5: reproduzierbare Profile, Konfiguration, Diagnose, Dienstlebenszyklus und Updates; keine neue Linux-Distribution. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Gemeinsame versionierte Verträge, schlanke Clients und Konformitätsprüfungen für Dienste, Oberflächen, CM5-Adapter und URTC; ersetzt keine Hersteller-APIs. |
+
+### 💠 Kernsteuerung und Bedienclients
 | Repository | Beschreibung |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Kern-Bewegungssteuerungs-Firmware für STM32H745/G474 mit S-Curve-Kinematik. |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Raspberry-Pi-OS-Plattformschicht für CM5: reproduzierbare Profile, Konfiguration, Diagnose, Dienstlebenszyklus und Updates; keine neue Linux-Distribution. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Gemeinsame versionierte Verträge, schlanke Clients und Konformitätsprüfungen für Dienste, Oberflächen, CM5-Adapter und URTC; ersetzt keine Hersteller-APIs. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | Headless Node.js API und WebSocket-Backend für die Roboter-Orchestrierung. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Fortschrittliches React-basiertes Web-Dashboard für 3D-Roboter-Überwachung und -Steuerung. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | Hochleistungs-Python/Qt-Desktop-Anwendung für die industrielle Automatisierung. |
