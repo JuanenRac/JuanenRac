@@ -114,15 +114,23 @@ hermanas en un mismo directorio - la disposición estándar que ya asume
 cualquier script entre repositorios de aquí. Volver a ejecutarlo es
 seguro: lo que ya esté clonado se deja intacto. A partir de ahí,
 [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-(uno de los 12) puede comprobar versiones y compilar/actualizar
+(uno de los 14) puede comprobar versiones y compilar/actualizar
 cualquier proyecto.
 
-### 💠 Ecosistema Core (Control Principal)
+### 🧱 Base de plataforma y contratos
+| Repositorio | Descripción |
+| :--- | :--- |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Capa de plataforma Raspberry Pi OS para CM5: perfiles reproducibles, configuración, diagnóstico, ciclo de servicios y actualizaciones; no es una distribución Linux nueva. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contratos versionados, clientes ligeros y pruebas de conformidad compartidos para servicios, interfaces, adaptadores CM5 y URTC; no sustituye API de fabricantes. |
+
+### 💠 Control core e interfaces de operador
+| Repositorio | Descripción |
+| :--- | :--- |
+
+### 💠 Control core e interfaces de operador
 | Repositorio | Descripción |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Firmware de control de movimiento core para STM32H745/G474 con cinemática S-Curve. |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Capa de plataforma Raspberry Pi OS para CM5: perfiles reproducibles, configuración, diagnóstico, ciclo de servicios y actualizaciones; no es una distribución Linux nueva. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contratos versionados, clientes ligeros y pruebas de conformidad compartidos para servicios, interfaces, adaptadores CM5 y URTC; no sustituye API de fabricantes. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | API Node.js headless y backend WebSocket para orquestación robótica. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Dashboard web avanzado basado en React para monitoreo y control 3D. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | Aplicación de escritorio Python/Qt de alto rendimiento para automatización industrial. |
