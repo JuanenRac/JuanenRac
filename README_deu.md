@@ -138,10 +138,17 @@ Repositories bleiben unangetastet. Von dort aus kann
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | Native Kotlin-Mobile-App mit biometrischem Login für Fernmanagement. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | Flutter-Mobile-App für iOS/iPadOS mit Live-WebSocket-Synchronisation. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | Grafischer URDF-Editor zum Validieren und Hochladen von Robotermodellen. |
+
+
+### 🔧 URTC-Kern und Werkzeuge
+| Repository | Beschreibung |
+| :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
 
 ### 👁️ Vision-KI-Knoten (Optimiert für Hailo-8)
 | Repository | Beschreibung |
@@ -197,8 +204,6 @@ Repositories bleiben unangetastet. Von dort aus kann
 ### 🛠️ Ergänzende Tools
 | Repository | Beschreibung |
 | :--- | :--- |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | Tragbares Notfall-Dashboard mit haptischen Sicherheitswarnungen. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | Befehlszeilenschnittstelle für Flottenautomatisierung, Flashen und DevOps. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | KI-Erweiterung für Web-Dashboards für Einblicke in natürlicher Sprache. |

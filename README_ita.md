@@ -138,10 +138,17 @@ qualsiasi progetto.
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | App mobile nativa Kotlin con login biometrico per la gestione remota. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | App mobile Flutter per iOS/iPadOS con sincronizzazione WebSocket in tempo reale. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | Editor grafico URDF per convalidare e caricare modelli di robot nel catalogo. |
+
+
+### 🔧 Core e strumenti URTC
+| Repository | Descrizione |
+| :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | Firmware per controller utensili universale per oltre 25 utensili specializzati. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | Strumento GUI per aggiornamenti firmware CAN-OTA e SWD/JTAG. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | Strumento di diagnostica CAN-bus con pannelli di telemetria per utensile. |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | Strumento Web Serial per test e analisi istantanea dell'hardware. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
 
 ### 👁️ Nodo AI di Visione (Ottimizzato per Hailo-8)
 | Repository | Descrizione |
@@ -197,8 +204,6 @@ qualsiasi progetto.
 ### 🛠️ Strumenti Complementari
 | Repository | Descrizione |
 | :--- | :--- |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | Dashboard di emergenza wearable con avvisi di sicurezza aptici. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | Interfaccia a riga di comando per automazione flotta, flashing e devops. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | Estensione AI per dashboard web per analisi in linguaggio naturale. |
