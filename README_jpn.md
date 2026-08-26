@@ -35,14 +35,17 @@
 
 ## 🏗️ エコシステムのアーキテクチャ
 
-本エコシステムは、自律的かつ協調的でインテリジェントなロボット動作を実現する 6 つの機能層で構成されています。
+v1.1 のエコシステムは階層化された製品プラットフォームです。既存の Linux と Raspberry Pi 技術を基盤とし、新しい OS を作ったりベンダー API を置き換えたりしません。
 
-1.  **実行層**：STM32 ベースのファームウェア（H745/G474）により、サブミリメートル精度と高速 FDCAN アクチュエーションを実現。
-2.  **インテリジェンス層**：**Hailo-8**（反射的知覚処理）と **Hailo-10**（認知推論）によるエッジ AI。
-3.  **協調層**：スタンドアロンで動作する Node.js バックエンドと分散型群制御オーケストレーター。
-4.  **インターフェース層**：Web（React）、デスクトップ（Qt6）、モバイル（Kotlin/Flutter）、DSI タッチダッシュボード。
-5.  **仮想層**：物理検証前の安全な確認を可能にする高忠実度デジタルツインエンジン（Rust/Bevy）。
-6.  **サポート層**：インダストリー4.0 ゲートウェイ（OPC-UA/MQTT）とビッグデータによる予知保全。
+1.  **プラットフォーム基盤**：Raspberry Pi OS ARM64 と標準 Linux サービスが、サポート対象の CM5 基盤を提供します。
+2.  **プラットフォームと契約**：**HYDRA-UMC-OS** は Raspberry Pi OS 上で再現可能なプロファイル、サービス、診断、更新を提供し、**HYDRA-UMC-SDK** はバージョン管理された契約、軽量クライアント、適合性テストを公開します。
+3.  **リアルタイム実行**：STM32/MCU 上の **HYDRA-UMC** ファームウェアと URTC が、動作制限、ウォッチドッグ、安全停止を保持します。
+4.  **協調と運用**：サーバーサービス、ジョブ配信、テレメトリ、設定が、MCU の安全境界を越えずにデバイスを協調させます。
+5.  **オペレーターインターフェース**：Studio、Suite、DSI、Web、デスクトップ、モバイル、CLI は SDK 契約を使用します。
+6.  **知覚とインテリジェンス**：Vision、Hailo、認知サービスは観測または計画を提案しますが、物理安全の権限は持ちません。
+7.  **エンジニアリング、産業、データ**：デジタルツイン、HIL/物理、OPC-UA/MQTT/MTConnect ゲートウェイ、データサービスがシステムを検証・統合します。
+
+開発は **HYDRA-UMC-OS** の公開アーキテクチャとサービスモデルから開始し、その後 **HYDRA-UMC-SDK** の契約と適合性ルールを使用します。すべてのフローで MCU/URTC の安全権限を維持します。
 
 ---
 
@@ -119,6 +122,8 @@
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | CM5 向け Raspberry Pi OS プラットフォーム層：再現可能なプロファイル、設定、診断、サービスのライフサイクル、更新を提供。新しい Linux ディストリビューションではありません。 |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | サービス、UI、CM5 アダプター、URTC 向けの共有バージョン管理契約、軽量クライアント、適合性テスト。ベンダー API は置き換えません。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
