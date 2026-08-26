@@ -117,12 +117,16 @@ script tra repository qui già presuppone. Rieseguirlo è sicuro: ciò che
 (uno dei 12) può controllare le versioni e compilare/aggiornare
 qualsiasi progetto.
 
-### 💠 Core Ecosystem (Controllo Principale)
+### 🧱 Fondazione della piattaforma e contratti
+| Repository | Descrizione |
+| :--- | :--- |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Livello di piattaforma Raspberry Pi OS per CM5: profili riproducibili, configurazione, diagnostica, ciclo di vita dei servizi e aggiornamenti; non è una nuova distribuzione Linux. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contratti versionati, client leggeri e verifiche di conformità condivisi per servizi, interfacce, adattatori CM5 e URTC; non sostituisce le API dei fornitori. |
+
+### 💠 Controllo core e client operatore
 | Repository | Descrizione |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Firmware di controllo movimento core per STM32H745/G474 con cinemática S-Curve. |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Livello di piattaforma Raspberry Pi OS per CM5: profili riproducibili, configurazione, diagnostica, ciclo di vita dei servizi e aggiornamenti; non è una nuova distribuzione Linux. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contratti versionati, client leggeri e verifiche di conformità condivisi per servizi, interfacce, adattatori CM5 e URTC; non sostituisce le API dei fornitori. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | API Node.js headless e backend WebSocket per l'orchestrazione robotica. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Dashboard web avanzata basata su React per il monitoraggio e il controllo 3D. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | Applicazione desktop Python/Qt ad alte prestazioni per l'automazione industriale. |

@@ -115,12 +115,16 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
 （12 个仓库之一）即可检查版本，并构建/更新任意项目。
 
-### 💠 Core Ecosystem（核心生态 · 主控）
+### 🧱 平台基础与契约
+| 仓库 | 说明 |
+| :--- | :--- |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 面向 CM5 的 Raspberry Pi OS 平台层：可复现配置、诊断、服务生命周期与更新；并非新的 Linux 发行版。 |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
+
+### 💠 核心控制与操作员客户端
 | 仓库 | 说明 |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 面向 CM5 的 Raspberry Pi OS 平台层：可复现配置、诊断、服务生命周期与更新；并非新的 Linux 发行版。 |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |

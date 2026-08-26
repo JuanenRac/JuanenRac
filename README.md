@@ -109,18 +109,22 @@ This isn't a guided tutorial (there's no single "right" carrier for every use ca
 ## 📁 Project Catalog
 
 New to the ecosystem? `./starter-kit.sh` (or `starter-kit.bat` on
-Windows) clones all 12 repos in the table below as siblings in one
+Windows) clones all 14 repos in the table below as siblings in one
 directory - the standard layout every cross-repo script here already
 assumes. Re-running it is safe: anything already cloned is left
 untouched. From there, [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-(one of the 12) can check versions and build/update any project.
+(one of the 14) can check versions and build/update any project.
 
-### 💠 Core Ecosystem (Main Control)
+### 🧱 Platform Foundation & Contracts
+| Repository | Description |
+| :--- | :--- |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Raspberry Pi OS platform layer for CM5: reproducible profiles, configuration, diagnostics, service lifecycle and updates; not a new Linux distribution. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Shared versioned contracts, thin clients and conformance fixtures for services, UIs, CM5 adapters and URTC; it does not replace vendor APIs. |
+
+### 💠 Core Control & Operator Clients
 | Repository | Description |
 | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Raspberry Pi OS platform layer for CM5: reproducible profiles, configuration, diagnostics, service lifecycle and updates; not a new Linux distribution. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Shared versioned contracts, thin clients and conformance fixtures for services, UIs, CM5 adapters and URTC; it does not replace vendor APIs. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | Headless Node.js API and WebSocket backend for robotic orchestration. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | High-performance Python/Qt desktop application for industrial automation. |
@@ -201,6 +205,6 @@ This ecosystem is part of a high-tech robotic initiative. Each project has its o
 
 Issue labels are standardized across all 45 repos from [`.github/labels.yml`](.github/labels.yml) in this same repo, synced out by [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - edit that one file to change a label everywhere at once, rather than by hand per repo.
 
-A live status dashboard for all 45 repos (stack, deploy target, current version - read straight from each repo's own default branch) is generated daily by [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) and served from `docs/` via GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. v3 adds a real maturity classification per project (scaffolding / functional / established / production, each decided from that project's own CHANGELOG - see [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)'s own module docstring for exactly how), its role (API / UI / CLI / firmware / library / service / tool), a real family/parent-child tree, and per-project notes on what's actually implemented today.
+A live status dashboard for all 46 repos (stack, deploy target, current version - read straight from each repo's own default branch) is generated daily by [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) and served from `docs/` via GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. v3 adds a real maturity classification per project (scaffolding / functional / established / production, each decided from that project's own CHANGELOG - see [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)'s own module docstring for exactly how), its role (API / UI / CLI / firmware / library / service / tool), a real family/parent-child tree, and per-project notes on what's actually implemented today.
 
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.
