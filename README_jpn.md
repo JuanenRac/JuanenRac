@@ -139,10 +139,17 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 生体認証ログイン対応のネイティブ Kotlin 製モバイルアプリ。リモートでのロボット管理向け。 |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | iOS/iPadOS 向けの Flutter 製モバイルアプリ。リアルタイム WebSocket 同期に対応。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | ロボットモデルの検証とカタログへのプッシュを行う、グラフィカルな URDF エディタ。 |
+
+
+### 🔧 URTC コアとツール
+| リポジトリ | 説明 |
+| :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
 
 ### 👁️ Vision AI Node (Hailo-8 Optimized)
 | リポジトリ | 説明 |
@@ -198,8 +205,6 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 ### 🛠️ Complementary Tools（補完ツール群）
 | リポジトリ | 説明 |
 | :--- | :--- |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 触覚安全アラート機能を備えた、ウェアラブル緊急ダッシュボード。 |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | フリート自動化・ファームウェア書き込み・DevOps 向けのコマンドラインインターフェース。 |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 自然言語によるインサイトを Web ダッシュボードに提供する、AI 拡張機能。 |
