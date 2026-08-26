@@ -1740,6 +1740,104 @@ def render_html(
     font-size: 12.5px;
   }}
 
+  .ecosystem-intro {{
+    max-width: 930px;
+    margin: 16px 0 0;
+    padding: 14px 16px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    line-height: 1.65;
+  }}
+
+  .architecture-grid {{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }}
+
+  .architecture-card {{
+    min-height: 178px;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+  }}
+
+  .architecture-card h3 {{
+    margin: 0 0 10px;
+    color: var(--text);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }}
+
+  .architecture-card p {{
+    margin: 0 0 10px;
+    color: var(--dim);
+    font-size: 12px;
+    line-height: 1.5;
+  }}
+
+  .architecture-card ul {{
+    margin: 0;
+    padding-left: 17px;
+    color: var(--text);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    line-height: 1.65;
+  }}
+
+  .architecture-flow {{
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 14px;
+    color: var(--dim);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+  }}
+
+  .architecture-flow span {{
+    display: grid;
+    place-items: center;
+    flex: 1;
+    min-height: 42px;
+    padding: 7px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-align: center;
+  }}
+
+  .architecture-flow b {{
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+  }}
+
+  .relationship-note {{
+    margin: 14px 0 0;
+    padding: 13px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-2);
+    color: var(--dim);
+    font-size: 12px;
+    line-height: 1.6;
+  }}
+
+  .relationship-note strong {{
+    color: var(--text);
+  }}
+
   .subtitle a {{
     color: var(--accent);
     text-decoration: none;
@@ -2626,6 +2724,19 @@ def render_html(
         repeat(2, minmax(0, 1fr));
     }}
 
+    .architecture-grid {{
+      grid-template-columns: 1fr;
+    }}
+
+    .architecture-flow {{
+      flex-direction: column;
+    }}
+
+    .architecture-flow b {{
+      transform: rotate(90deg);
+      min-height: 18px;
+    }}
+
     .toolbar {{
       align-items: stretch;
     }}
@@ -2716,7 +2827,65 @@ def render_html(
       per-project notes - see the Maturity legend below for exactly how
       each level was decided.
     </p>
+
+    <p class="ecosystem-intro">
+      HYDRA-UMC is a modular engineering ecosystem for multi-axis control,
+      robotics, industrial connectivity, machine vision and edge intelligence.
+      It keeps Raspberry Pi OS and official vendor APIs as its base, then adds
+      a versioned HYDRA-UMC platform layer, shared contracts and optional
+      services. This dashboard explains the system while the registry and table
+      remain the source of project-specific facts.
+    </p>
   </header>
+
+
+  <!-- ================================================================
+       SYSTEM ARCHITECTURE
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title">System architecture</div>
+
+    <div class="architecture-grid">
+      <article class="architecture-card">
+        <h3>Platform foundation</h3>
+        <p>Raspberry Pi OS ARM64 remains the operating-system base. The
+        HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.</p>
+        <ul><li>HYDRA-UMC-OS</li><li>CM5 / Linux</li><li>systemd / udev</li><li>MCU / URTC boundary</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3>Contracts and operations</h3>
+        <p>The SDK defines stable data and command contracts; Server, UI and
+        tools use those contracts instead of raw hardware protocols.</p>
+        <ul><li>HYDRA-UMC-SDK</li><li>Server / Studio / Suite</li><li>DSI / mobile / CLI</li><li>Job Dispatcher</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3>Perception and intelligence</h3>
+        <p>Vision and AI are optional capabilities. Their output is validated
+        before it can influence a mission; they are never safety authority.</p>
+        <ul><li>Vision Streamer / Node</li><li>Detection HEF</li><li>Cognitive / VLA</li><li>Safety Zones</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3>Engineering and industry</h3>
+        <p>Simulation, telemetry and standards make the physical cell
+        observable, testable and interoperable.</p>
+        <ul><li>Twin / Physics / HIL</li><li>Telemetry / DataLake</li><li>OPC-UA / MQTT</li><li>MTConnect / Gateway</li></ul>
+      </article>
+    </div>
+
+    <div class="architecture-flow" aria-label="HYDRA-UMC control flow">
+      <span>Operator interfaces</span><b>→</b><span>Server and SDK</span><b>→</b><span>CM5-MCU adapter</span><b>→</b><span>MCU / URTC / machine</span>
+    </div>
+
+    <div class="relationship-note">
+      <strong>HYDRA-UMC and URTC:</strong> HYDRA-UMC is the platform and cell
+      controller. URTC is its universal robot-tool subsystem, with independent
+      firmware and maintenance tools. The MCU remains authoritative for physical
+      limits and safe stop; UI, network and AI cannot bypass that boundary.
+    </div>
+
+  </section>
 
 
   <!-- ================================================================
