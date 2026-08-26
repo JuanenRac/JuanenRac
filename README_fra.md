@@ -126,6 +126,10 @@ n'importe quel projet.
 ### 💠 Contrôle central et clients opérateur
 | Dépôt | Description |
 | :--- | :--- |
+
+### 💠 Contrôle central et clients opérateur
+| Dépôt | Description |
+| :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Micrologiciel de contrôle de mouvement core pour STM32H745/G474 avec cinématique S-Curve. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | API Node.js headless et backend WebSocket pour l'orchestration robotique. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D. |

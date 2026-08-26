@@ -127,6 +127,10 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 ### 💠 コア制御とオペレータークライアント
 | リポジトリ | 説明 |
 | :--- | :--- |
+
+### 💠 コア制御とオペレータークライアント
+| リポジトリ | 説明 |
+| :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
