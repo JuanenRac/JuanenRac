@@ -124,6 +124,10 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 ### 💠 核心控制与操作员客户端
 | 仓库 | 说明 |
 | :--- | :--- |
+
+### 💠 核心控制与操作员客户端
+| 仓库 | 说明 |
+| :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
