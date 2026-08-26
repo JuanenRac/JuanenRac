@@ -863,6 +863,77 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     },
 }
 
+# Architecture text is kept separate from the UI chrome above so that the
+# public technical model stays equally available in every dashboard language.
+ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
+    "en": {
+        "architecture_intro": "HYDRA-UMC is a modular engineering ecosystem for multi-axis control, robotics, industrial connectivity, machine vision and edge intelligence. It keeps Raspberry Pi OS and official vendor APIs as its base, then adds a versioned HYDRA-UMC platform layer, shared contracts and optional services. This dashboard explains the system while the registry and table remain the source of project-specific facts.",
+        "architecture_section": "System architecture", "architecture_platform_title": "Platform foundation", "architecture_platform_body": "Raspberry Pi OS ARM64 remains the operating-system base. The HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.",
+        "architecture_contracts_title": "Contracts and operations", "architecture_contracts_body": "The SDK defines stable data and command contracts; Server, UI and tools use those contracts instead of raw hardware protocols.",
+        "architecture_perception_title": "Perception and intelligence", "architecture_perception_body": "Vision and AI are optional capabilities. Their output is validated before it can influence a mission; they are never safety authority.",
+        "architecture_engineering_title": "Engineering and industry", "architecture_engineering_body": "Simulation, telemetry and standards make the physical cell observable, testable and interoperable.",
+        "architecture_flow_operator": "Operator interfaces", "architecture_flow_services": "Server and SDK", "architecture_flow_adapter": "CM5-MCU adapter", "architecture_flow_machine": "MCU / URTC / machine",
+        "architecture_relationship_title": "HYDRA-UMC and URTC:", "architecture_relationship_body": "HYDRA-UMC is the platform and cell controller. URTC is its universal robot-tool subsystem, with independent firmware and maintenance tools. The MCU remains authoritative for physical limits and safe stop; UI, network and AI cannot bypass that boundary.",
+    },
+    "es": {
+        "architecture_intro": "HYDRA-UMC es un ecosistema modular de ingeniería para control multieje, robótica, conectividad industrial, visión artificial e inteligencia de borde. Mantiene Raspberry Pi OS y las API oficiales de cada proveedor como base, y añade una capa de plataforma HYDRA-UMC versionada, contratos compartidos y servicios opcionales. Este panel explica el sistema; el registro y la tabla conservan los hechos específicos de cada proyecto.",
+        "architecture_section": "Arquitectura del sistema", "architecture_platform_title": "Base de plataforma", "architecture_platform_body": "Raspberry Pi OS ARM64 mantiene el papel de sistema operativo base. La capa HYDRA-UMC aporta perfiles de dispositivo, diagnóstico y ciclo de vida de servicios.",
+        "architecture_contracts_title": "Contratos y operaciones", "architecture_contracts_body": "El SDK define contratos estables de datos y comandos; Server, las interfaces y las herramientas los usan en lugar de protocolos de hardware sin abstraer.",
+        "architecture_perception_title": "Percepción e inteligencia", "architecture_perception_body": "La visión y la IA son capacidades opcionales. Su salida se valida antes de influir en una misión y nunca tiene autoridad de seguridad.",
+        "architecture_engineering_title": "Ingeniería e industria", "architecture_engineering_body": "La simulación, la telemetría y los estándares hacen que la celda física sea observable, comprobable e interoperable.",
+        "architecture_flow_operator": "Interfaces de operador", "architecture_flow_services": "Server y SDK", "architecture_flow_adapter": "Adaptador CM5-MCU", "architecture_flow_machine": "MCU / URTC / máquina",
+        "architecture_relationship_title": "HYDRA-UMC y URTC:", "architecture_relationship_body": "HYDRA-UMC es la plataforma y el controlador de celda. URTC es su subsistema universal de herramientas robóticas, con firmware y utilidades de mantenimiento independientes. El MCU conserva la autoridad sobre límites físicos y parada segura; UI, red e IA no pueden saltarse esa frontera.",
+    },
+    "fr": {
+        "architecture_intro": "HYDRA-UMC est un écosystème d’ingénierie modulaire pour le contrôle multi-axes, la robotique, la connectivité industrielle, la vision et l’intelligence de périphérie. Il conserve Raspberry Pi OS et les API officielles comme base, puis ajoute une couche de plateforme HYDRA-UMC versionnée, des contrats partagés et des services optionnels. Ce tableau explique le système ; le registre et le tableau restent la source des faits par projet.",
+        "architecture_section": "Architecture du système", "architecture_platform_title": "Fondation de plateforme", "architecture_platform_body": "Raspberry Pi OS ARM64 reste la base du système d’exploitation. La couche HYDRA-UMC apporte profils d’appareil, diagnostic et cycle de vie des services.",
+        "architecture_contracts_title": "Contrats et opérations", "architecture_contracts_body": "Le SDK définit des contrats stables de données et de commandes ; Server, les interfaces et les outils les utilisent au lieu de protocoles matériels bruts.",
+        "architecture_perception_title": "Perception et intelligence", "architecture_perception_body": "La vision et l’IA sont des capacités optionnelles. Leur sortie est validée avant d’influencer une mission et n’a jamais autorité sur la sécurité.",
+        "architecture_engineering_title": "Ingénierie et industrie", "architecture_engineering_body": "Simulation, télémétrie et standards rendent la cellule physique observable, testable et interopérable.",
+        "architecture_flow_operator": "Interfaces opérateur", "architecture_flow_services": "Server et SDK", "architecture_flow_adapter": "Adaptateur CM5-MCU", "architecture_flow_machine": "MCU / URTC / machine",
+        "architecture_relationship_title": "HYDRA-UMC et URTC :", "architecture_relationship_body": "HYDRA-UMC est la plateforme et le contrôleur de cellule. URTC est son sous-système universel d’outils robotiques, avec firmware et outils de maintenance indépendants. Le MCU garde l’autorité sur les limites physiques et l’arrêt sûr ; interface, réseau et IA ne peuvent pas contourner cette frontière.",
+    },
+    "it": {
+        "architecture_intro": "HYDRA-UMC è un ecosistema ingegneristico modulare per controllo multiasse, robotica, connettività industriale, visione artificiale e intelligenza edge. Mantiene Raspberry Pi OS e le API ufficiali dei fornitori come base, quindi aggiunge una piattaforma HYDRA-UMC versionata, contratti condivisi e servizi opzionali. Questa dashboard spiega il sistema; registro e tabella restano la fonte dei fatti per progetto.",
+        "architecture_section": "Architettura del sistema", "architecture_platform_title": "Fondazione della piattaforma", "architecture_platform_body": "Raspberry Pi OS ARM64 rimane la base del sistema operativo. Il livello HYDRA-UMC aggiunge profili dispositivo, diagnostica e ciclo di vita dei servizi.",
+        "architecture_contracts_title": "Contratti e operazioni", "architecture_contracts_body": "L’SDK definisce contratti stabili per dati e comandi; Server, UI e strumenti li usano invece di protocolli hardware grezzi.",
+        "architecture_perception_title": "Percezione e intelligenza", "architecture_perception_body": "Visione e IA sono capacità opzionali. Il loro output viene convalidato prima di influire su una missione e non ha mai autorità sulla sicurezza.",
+        "architecture_engineering_title": "Ingegneria e industria", "architecture_engineering_body": "Simulazione, telemetria e standard rendono la cella fisica osservabile, verificabile e interoperabile.",
+        "architecture_flow_operator": "Interfacce operatore", "architecture_flow_services": "Server e SDK", "architecture_flow_adapter": "Adattatore CM5-MCU", "architecture_flow_machine": "MCU / URTC / macchina",
+        "architecture_relationship_title": "HYDRA-UMC e URTC:", "architecture_relationship_body": "HYDRA-UMC è la piattaforma e il controllore di cella. URTC è il suo sottosistema universale per utensili robotici, con firmware e strumenti di manutenzione indipendenti. Il MCU mantiene l’autorità sui limiti fisici e sull’arresto sicuro; UI, rete e IA non possono aggirare quel confine.",
+    },
+    "de": {
+        "architecture_intro": "HYDRA-UMC ist ein modulares Engineering-Ökosystem für Mehrachsensteuerung, Robotik, industrielle Konnektivität, maschinelles Sehen und Edge-Intelligenz. Raspberry Pi OS und offizielle Hersteller-APIs bleiben die Basis; darüber liegen eine versionierte HYDRA-UMC-Plattformschicht, gemeinsame Verträge und optionale Dienste. Dieses Dashboard erklärt das System, während Registry und Tabelle projektbezogene Fakten liefern.",
+        "architecture_section": "Systemarchitektur", "architecture_platform_title": "Plattformbasis", "architecture_platform_body": "Raspberry Pi OS ARM64 bleibt die Betriebssystembasis. Die HYDRA-UMC-Schicht ergänzt Geräteprofile, Diagnose und den Lebenszyklus der Dienste.",
+        "architecture_contracts_title": "Verträge und Betrieb", "architecture_contracts_body": "Das SDK definiert stabile Daten- und Befehlsverträge; Server, Oberflächen und Werkzeuge verwenden sie statt roher Hardwareprotokolle.",
+        "architecture_perception_title": "Wahrnehmung und Intelligenz", "architecture_perception_body": "Vision und KI sind optionale Fähigkeiten. Ihre Ausgabe wird validiert, bevor sie eine Mission beeinflussen kann; sie besitzen nie Sicherheitsautorität.",
+        "architecture_engineering_title": "Engineering und Industrie", "architecture_engineering_body": "Simulation, Telemetrie und Standards machen die physische Zelle beobachtbar, testbar und interoperabel.",
+        "architecture_flow_operator": "Bedienoberflächen", "architecture_flow_services": "Server und SDK", "architecture_flow_adapter": "CM5-MCU-Adapter", "architecture_flow_machine": "MCU / URTC / Maschine",
+        "architecture_relationship_title": "HYDRA-UMC und URTC:", "architecture_relationship_body": "HYDRA-UMC ist Plattform und Zellensteuerung. URTC ist das universelle Roboterwerkzeug-Subsystem mit unabhängiger Firmware und Wartungswerkzeugen. Der MCU behält die Autorität über physische Grenzen und sicheren Stopp; UI, Netzwerk und KI können diese Grenze nicht umgehen.",
+    },
+    "zh": {
+        "architecture_intro": "HYDRA-UMC 是面向多轴控制、机器人、工业连接、机器视觉和边缘智能的模块化工程生态系统。它以 Raspberry Pi OS 与厂商官方 API 为基础，并增加版本化的 HYDRA-UMC 平台层、共享契约和可选服务。本仪表板说明系统；注册表和项目表仍是各项目事实的来源。",
+        "architecture_section": "系统架构", "architecture_platform_title": "平台基础", "architecture_platform_body": "Raspberry Pi OS ARM64 仍是操作系统基础。HYDRA-UMC 层增加设备配置文件、诊断和服务生命周期。",
+        "architecture_contracts_title": "契约与运维", "architecture_contracts_body": "SDK 定义稳定的数据和命令契约；Server、界面和工具使用这些契约，而不是原始硬件协议。",
+        "architecture_perception_title": "感知与智能", "architecture_perception_body": "视觉和 AI 是可选能力。其输出在影响任务前必须经过验证，且永远不拥有安全权限。",
+        "architecture_engineering_title": "工程与工业", "architecture_engineering_body": "仿真、遥测和标准使物理单元可观测、可测试且可互操作。",
+        "architecture_flow_operator": "操作员界面", "architecture_flow_services": "Server 和 SDK", "architecture_flow_adapter": "CM5-MCU 适配器", "architecture_flow_machine": "MCU / URTC / 机器",
+        "architecture_relationship_title": "HYDRA-UMC 与 URTC：", "architecture_relationship_body": "HYDRA-UMC 是平台和单元控制器。URTC 是其通用机器人工具子系统，拥有独立的固件和维护工具。MCU 保留物理限制和安全停止的权力；UI、网络和 AI 都不能绕过这一边界。",
+    },
+    "ja": {
+        "architecture_intro": "HYDRA-UMC は、多軸制御、ロボティクス、産業接続、マシンビジョン、エッジインテリジェンスのためのモジュール型エンジニアリングエコシステムです。Raspberry Pi OS と公式ベンダー API を基盤に、バージョン管理された HYDRA-UMC プラットフォーム層、共有契約、任意のサービスを追加します。このダッシュボードはシステムを説明し、レジストリと表が各プロジェクトの事実の情報源です。",
+        "architecture_section": "システムアーキテクチャ", "architecture_platform_title": "プラットフォーム基盤", "architecture_platform_body": "Raspberry Pi OS ARM64 は OS の基盤として残ります。HYDRA-UMC 層はデバイスプロファイル、診断、サービスライフサイクルを追加します。",
+        "architecture_contracts_title": "契約と運用", "architecture_contracts_body": "SDK は安定したデータおよびコマンド契約を定義し、Server、UI、ツールは生のハードウェアプロトコルの代わりにそれを使用します。",
+        "architecture_perception_title": "知覚とインテリジェンス", "architecture_perception_body": "Vision と AI は任意の能力です。出力はミッションに影響する前に検証され、安全権限を持つことはありません。",
+        "architecture_engineering_title": "エンジニアリングと産業", "architecture_engineering_body": "シミュレーション、テレメトリ、標準により、物理セルは観測可能、テスト可能、相互運用可能になります。",
+        "architecture_flow_operator": "オペレーターインターフェース", "architecture_flow_services": "Server と SDK", "architecture_flow_adapter": "CM5-MCU アダプター", "architecture_flow_machine": "MCU / URTC / 機械",
+        "architecture_relationship_title": "HYDRA-UMC と URTC：", "architecture_relationship_body": "HYDRA-UMC はプラットフォームおよびセルコントローラーです。URTC は独立したファームウェアと保守ツールを持つ汎用ロボットツールサブシステムです。MCU は物理的な制限と安全停止の権限を維持し、UI、ネットワーク、AI はその境界を迂回できません。",
+    },
+}
+
+for language, values in ARCHITECTURE_TRANSLATIONS.items():
+    TRANSLATIONS[language].update(values)
+
 DEPLOY_ICONS: dict[str, str] = {
     "cm5": (
         '<rect x="4" y="4" width="16" height="16" rx="2"/>'
@@ -2828,7 +2899,7 @@ def render_html(
       each level was decided.
     </p>
 
-    <p class="ecosystem-intro">
+    <p class="ecosystem-intro" data-i18n="architecture_intro">
       HYDRA-UMC is a modular engineering ecosystem for multi-axis control,
       robotics, industrial connectivity, machine vision and edge intelligence.
       It keeps Raspberry Pi OS and official vendor APIs as its base, then adds
@@ -2845,44 +2916,44 @@ def render_html(
 
   <section class="section">
 
-    <div class="section-title">System architecture</div>
+    <div class="section-title" data-i18n="architecture_section">System architecture</div>
 
     <div class="architecture-grid">
       <article class="architecture-card">
-        <h3>Platform foundation</h3>
-        <p>Raspberry Pi OS ARM64 remains the operating-system base. The
+        <h3 data-i18n="architecture_platform_title">Platform foundation</h3>
+        <p data-i18n="architecture_platform_body">Raspberry Pi OS ARM64 remains the operating-system base. The
         HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.</p>
         <ul><li>HYDRA-UMC-OS</li><li>CM5 / Linux</li><li>systemd / udev</li><li>MCU / URTC boundary</li></ul>
       </article>
       <article class="architecture-card">
-        <h3>Contracts and operations</h3>
-        <p>The SDK defines stable data and command contracts; Server, UI and
+        <h3 data-i18n="architecture_contracts_title">Contracts and operations</h3>
+        <p data-i18n="architecture_contracts_body">The SDK defines stable data and command contracts; Server, UI and
         tools use those contracts instead of raw hardware protocols.</p>
         <ul><li>HYDRA-UMC-SDK</li><li>Server / Studio / Suite</li><li>DSI / mobile / CLI</li><li>Job Dispatcher</li></ul>
       </article>
       <article class="architecture-card">
-        <h3>Perception and intelligence</h3>
-        <p>Vision and AI are optional capabilities. Their output is validated
+        <h3 data-i18n="architecture_perception_title">Perception and intelligence</h3>
+        <p data-i18n="architecture_perception_body">Vision and AI are optional capabilities. Their output is validated
         before it can influence a mission; they are never safety authority.</p>
         <ul><li>Vision Streamer / Node</li><li>Detection HEF</li><li>Cognitive / VLA</li><li>Safety Zones</li></ul>
       </article>
       <article class="architecture-card">
-        <h3>Engineering and industry</h3>
-        <p>Simulation, telemetry and standards make the physical cell
+        <h3 data-i18n="architecture_engineering_title">Engineering and industry</h3>
+        <p data-i18n="architecture_engineering_body">Simulation, telemetry and standards make the physical cell
         observable, testable and interoperable.</p>
         <ul><li>Twin / Physics / HIL</li><li>Telemetry / DataLake</li><li>OPC-UA / MQTT</li><li>MTConnect / Gateway</li></ul>
       </article>
     </div>
 
     <div class="architecture-flow" aria-label="HYDRA-UMC control flow">
-      <span>Operator interfaces</span><b>→</b><span>Server and SDK</span><b>→</b><span>CM5-MCU adapter</span><b>→</b><span>MCU / URTC / machine</span>
+      <span data-i18n="architecture_flow_operator">Operator interfaces</span><b>→</b><span data-i18n="architecture_flow_services">Server and SDK</span><b>→</b><span data-i18n="architecture_flow_adapter">CM5-MCU adapter</span><b>→</b><span data-i18n="architecture_flow_machine">MCU / URTC / machine</span>
     </div>
 
     <div class="relationship-note">
-      <strong>HYDRA-UMC and URTC:</strong> HYDRA-UMC is the platform and cell
+      <strong data-i18n="architecture_relationship_title">HYDRA-UMC and URTC:</strong> <span data-i18n="architecture_relationship_body">HYDRA-UMC is the platform and cell
       controller. URTC is its universal robot-tool subsystem, with independent
       firmware and maintenance tools. The MCU remains authoritative for physical
-      limits and safe stop; UI, network and AI cannot bypass that boundary.
+      limits and safe stop; UI, network and AI cannot bypass that boundary.</span>
     </div>
 
   </section>

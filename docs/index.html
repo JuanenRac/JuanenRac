@@ -1325,7 +1325,7 @@
       each level was decided.
     </p>
 
-    <p class="ecosystem-intro">
+    <p class="ecosystem-intro" data-i18n="architecture_intro">
       HYDRA-UMC is a modular engineering ecosystem for multi-axis control,
       robotics, industrial connectivity, machine vision and edge intelligence.
       It keeps Raspberry Pi OS and official vendor APIs as its base, then adds
@@ -1342,44 +1342,44 @@
 
   <section class="section">
 
-    <div class="section-title">System architecture</div>
+    <div class="section-title" data-i18n="architecture_section">System architecture</div>
 
     <div class="architecture-grid">
       <article class="architecture-card">
-        <h3>Platform foundation</h3>
-        <p>Raspberry Pi OS ARM64 remains the operating-system base. The
+        <h3 data-i18n="architecture_platform_title">Platform foundation</h3>
+        <p data-i18n="architecture_platform_body">Raspberry Pi OS ARM64 remains the operating-system base. The
         HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.</p>
         <ul><li>HYDRA-UMC-OS</li><li>CM5 / Linux</li><li>systemd / udev</li><li>MCU / URTC boundary</li></ul>
       </article>
       <article class="architecture-card">
-        <h3>Contracts and operations</h3>
-        <p>The SDK defines stable data and command contracts; Server, UI and
+        <h3 data-i18n="architecture_contracts_title">Contracts and operations</h3>
+        <p data-i18n="architecture_contracts_body">The SDK defines stable data and command contracts; Server, UI and
         tools use those contracts instead of raw hardware protocols.</p>
         <ul><li>HYDRA-UMC-SDK</li><li>Server / Studio / Suite</li><li>DSI / mobile / CLI</li><li>Job Dispatcher</li></ul>
       </article>
       <article class="architecture-card">
-        <h3>Perception and intelligence</h3>
-        <p>Vision and AI are optional capabilities. Their output is validated
+        <h3 data-i18n="architecture_perception_title">Perception and intelligence</h3>
+        <p data-i18n="architecture_perception_body">Vision and AI are optional capabilities. Their output is validated
         before it can influence a mission; they are never safety authority.</p>
         <ul><li>Vision Streamer / Node</li><li>Detection HEF</li><li>Cognitive / VLA</li><li>Safety Zones</li></ul>
       </article>
       <article class="architecture-card">
-        <h3>Engineering and industry</h3>
-        <p>Simulation, telemetry and standards make the physical cell
+        <h3 data-i18n="architecture_engineering_title">Engineering and industry</h3>
+        <p data-i18n="architecture_engineering_body">Simulation, telemetry and standards make the physical cell
         observable, testable and interoperable.</p>
         <ul><li>Twin / Physics / HIL</li><li>Telemetry / DataLake</li><li>OPC-UA / MQTT</li><li>MTConnect / Gateway</li></ul>
       </article>
     </div>
 
     <div class="architecture-flow" aria-label="HYDRA-UMC control flow">
-      <span>Operator interfaces</span><b>→</b><span>Server and SDK</span><b>→</b><span>CM5-MCU adapter</span><b>→</b><span>MCU / URTC / machine</span>
+      <span data-i18n="architecture_flow_operator">Operator interfaces</span><b>→</b><span data-i18n="architecture_flow_services">Server and SDK</span><b>→</b><span data-i18n="architecture_flow_adapter">CM5-MCU adapter</span><b>→</b><span data-i18n="architecture_flow_machine">MCU / URTC / machine</span>
     </div>
 
     <div class="relationship-note">
-      <strong>HYDRA-UMC and URTC:</strong> HYDRA-UMC is the platform and cell
+      <strong data-i18n="architecture_relationship_title">HYDRA-UMC and URTC:</strong> <span data-i18n="architecture_relationship_body">HYDRA-UMC is the platform and cell
       controller. URTC is its universal robot-tool subsystem, with independent
       firmware and maintenance tools. The MCU remains authoritative for physical
-      limits and safe stop; UI, network and AI cannot bypass that boundary.
+      limits and safe stop; UI, network and AI cannot bypass that boundary.</span>
     </div>
 
   </section>
@@ -1887,7 +1887,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.0
+            0.0.1
           </td>
 
           <td class="status-cell">
@@ -1902,7 +1902,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/59a7faa8234dadcaecc1de546588eca2e73b37be" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2009,7 +2009,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.0
+            0.0.1
           </td>
 
           <td class="status-cell">
@@ -2024,7 +2024,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/e154ff192e00f6b6bace25cf4fd696bdb39e5fc0" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2155,7 +2155,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC/commit/2f370ea28aab0376484377d453ce29b7d957804e" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2286,7 +2286,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/bcb21251cb504130fd8309719b82a856d142ac2a" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2408,7 +2408,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/7f11190b59fc47da849b0ccd20c066602a4482fa" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2530,7 +2530,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/d57673e7ca4e09061077fe6b220d65f882df4c99" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2652,7 +2652,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/6a6b08fc63a003f595b3f15940db7c9c3d1a3b7e" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2774,7 +2774,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/e5f9543c9678c905d1f8f81e274278248bbed1a7" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -2896,7 +2896,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/f1f893edf296fa8ac9fcd83f0523262107055268" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3018,7 +3018,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF/commit/21302efa0e10a7e0d02a85f83b7736b408b7052e" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3149,7 +3149,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/URTC/commit/2dd645525b63a56e0b922e3e05cd41a0ee908129" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3271,7 +3271,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/acd111b68eff97f597f96d4ea3a97db359c1d228" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3393,7 +3393,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/8bd0654e96cbb8be32e19c4fc2afc18af7c8e41a" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3515,7 +3515,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/5df4ba7de3c60f213f48332113d64d9b6afcee42" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
+            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/0e9a59416f6913eb963d85e6c6249e5fd1fd8087" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3646,7 +3646,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE/commit/227e9c424e89219be625c2702d09f498a3ac96cb" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3768,7 +3768,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER/commit/372fb26ef0c7a575b5cf5bb8e0cac007695eaf46" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -3890,7 +3890,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF/commit/c0333b5776acd66de957f81826f32c4633094007" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4012,7 +4012,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES/commit/e3772122179b04d523ee8edceff15472647f58cc" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4134,7 +4134,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API/commit/8a3ae83d81cd3d6a81476fb5bdd747363d6eca9c" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4265,7 +4265,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE/commit/0b8040176811922f2d53bb4fbb4f3227188651d2" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4387,7 +4387,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE/commit/8a902032ed85376c5ca5665461f89e404f56e77d" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4509,7 +4509,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI/commit/2bb2bfd7996ebf742cde9ee1cb3fe4a94fa908ad" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4631,7 +4631,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER/commit/eaf8ffa055eba12accc70859df7c1f1695c4e717" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4753,7 +4753,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA/commit/efcac067d7b669babf006f71316bbf686abba9ca" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -4884,7 +4884,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/50b5e18025ce745a093f25bc9c63cb6ec20a94f6" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5006,7 +5006,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/commit/420520a855ffc3dbab206ec76d0ea9be05258c86" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5128,7 +5128,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/commit/8b24f33ac3c0011d984cfb85a5fc43c69b01f510" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5250,7 +5250,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/commit/7d6f5eb31e19c8d9cd198535ff173363b3ce7824" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5372,7 +5372,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/commit/53ea623cbe4bb7a576c82127549e0d04b51efe4c" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5503,7 +5503,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TWIN/commit/c08460dcd6cfbaad1dd67bde25dfe5a607e688d6" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5625,7 +5625,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/91ceccb332ad89093f257bf7db22ab94a9e662a2" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5747,7 +5747,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/commit/cd9792c4adad7a2e57d54691d8a281c8f311880f" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -5869,7 +5869,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN/commit/60c6a80427c89d56669e4091af0253bf35fdd618" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6000,7 +6000,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DATALAKE/commit/54bf47573c527f5050ed32389d59142a128cdfdb" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6122,7 +6122,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR/commit/320c3499193fb3d63844b53c3f003771740da31e" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6244,7 +6244,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR/commit/26ab2bff0c0532ab6d09f7bb9cc15f9d6bba0345" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6366,7 +6366,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS/commit/0b7374428690cdfdd3b2f40eff1ae4a941d76e02" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6497,7 +6497,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL/commit/a9b3d03342b28f5fad693e712a15fd0f998b7340" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6619,7 +6619,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/8f3ec6e0a3209af780173c79eb54a99b36dd00fd" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6741,7 +6741,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER/commit/34a4b342cb4d28948772d7614292e445a796302b" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6863,7 +6863,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER/commit/2805ee305dfcdd79e13591e05af1959886690cea" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -6994,7 +6994,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/a10608c5d453be7549da2986adeb8f787be679e6" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -7116,7 +7116,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/073ebc9281421056431feae446f084b5d2797aef" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -7238,7 +7238,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/7affcc236e65c740237e8362217dd0a6805b8d66" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -7360,7 +7360,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/77d5e8a53fe101a64c43b8fa89b608581d091d2c" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -7482,7 +7482,7 @@
           </td>
 
           <td class="commit-cell">
-            <span class="cell-muted">—</span>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/8a33aa6dfaf7fd125b30833943250480c989613d" target="_blank" rel="noopener noreferrer" class="commit-link" title="FIXED FILES">FIXED FILES</a>
           </td>
         </tr>
 
@@ -7597,7 +7597,7 @@
   // early <head> script exists to avoid for color, but can't for text
   // content that needs its element to exist first).
 
-  const I18N = {"en": {"header_title": "Ecosystem Status Dashboard", "subtitle_main": "{ok}/{total} repositories resolved successfully · {percent} healthy · versions are read from each project's own source file · dashboard generated by GitHub Actions · static GitHub Pages", "subtitle_v3": "v3: real maturity/role classification, family/parent trees and richer per-project notes - see the Maturity legend below for exactly how each level was decided.", "theme_toggle": "Toggle dark/light theme", "health_total": "Total projects", "health_resolved": "Version resolved", "health_errors": "Errors / unknown", "health_registry": "Registry health", "section_deploy": "Deployment targets", "section_stack": "Technology stacks", "section_maturity": "Maturity", "section_maturity_hint": "click a card to filter · hover for how it was decided", "section_role": "Role", "search_placeholder": "Search project, stack or deployment...", "search_aria": "Search projects", "filter_all": "All", "filter_ok": "✓ OK", "filter_error": "⚠ Errors", "family_label": "Family:", "family_all": "All families", "reset_filters": "⟲ Reset", "reset_filters_title": "Clear the search box and every active filter (status, deploy, maturity, role, family)", "th_project": "Project", "th_type": "Type", "th_maturity": "Maturity", "th_stack": "Stack", "th_deploy": "Deploy target", "th_version": "Version", "th_status": "Status", "th_commit": "Last commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notes", "detail_technology": "Technology", "detail_build": "Build", "notes_empty": "No notes recorded for this project yet.", "empty_results": "No projects match the current filters.", "family_count": "{count} project(s)", "family_parent_suffix": "is this family's own integration parent", "footer_registry": "Registry source:", "footer_generator": "Dashboard generator:", "footer_workflow": "Workflow:", "footer_note": "The registry remains the single source of truth for project/version locations.", "version_status_ok": "OK", "version_status_error": "ERROR", "deploy_cm5": "CM5", "deploy_user-pc": "User PC", "deploy_mobile": "Mobile", "deploy_wearable": "Wearable", "maturity_production": "Production", "maturity_established": "Established", "maturity_functional": "Functional", "maturity_scaffolding": "Scaffolding", "maturity_desc_production": "Real firmware for a real, physical PCB this ecosystem's own hardware docs describe.", "maturity_desc_established": "Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass.", "maturity_desc_functional": "Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).", "maturity_desc_scaffolding": "A real, compilable entry point exists; the feature the project exists for does not yet.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Library", "role_service": "Service", "role_tool": "Tool"}, "es": {"header_title": "Panel de Estado del Ecosistema", "subtitle_main": "{ok}/{total} repositorios resueltos correctamente · {percent} saludable · las versiones se leen del propio archivo fuente de cada proyecto · panel generado por GitHub Actions · GitHub Pages estático", "subtitle_v3": "v3: clasificación real de madurez/rol, árboles de familia/padre-hijo y notas por proyecto más completas - ver la leyenda de Madurez más abajo para saber exactamente cómo se decidió cada nivel.", "theme_toggle": "Cambiar tema claro/oscuro", "health_total": "Proyectos totales", "health_resolved": "Versión resuelta", "health_errors": "Errores / desconocido", "health_registry": "Salud del registro", "section_deploy": "Destinos de despliegue", "section_stack": "Stacks tecnológicos", "section_maturity": "Madurez", "section_maturity_hint": "clic en una tarjeta para filtrar · pasa el ratón para ver cómo se decidió", "section_role": "Rol", "search_placeholder": "Buscar proyecto, stack o despliegue...", "search_aria": "Buscar proyectos", "filter_all": "Todos", "filter_ok": "✓ OK", "filter_error": "⚠ Errores", "family_label": "Familia:", "family_all": "Todas las familias", "reset_filters": "⟲ Restablecer", "reset_filters_title": "Limpia el buscador y todos los filtros activos (estado, despliegue, madurez, rol, familia)", "th_project": "Proyecto", "th_type": "Tipo", "th_maturity": "Madurez", "th_stack": "Stack", "th_deploy": "Destino de despliegue", "th_version": "Versión", "th_status": "Estado", "th_commit": "Último commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notas", "detail_technology": "Tecnología", "detail_build": "Build", "notes_empty": "Todavía no hay notas registradas para este proyecto.", "empty_results": "Ningún proyecto coincide con los filtros actuales.", "family_count": "{count} proyecto(s)", "family_parent_suffix": "es el padre de integración real de esta familia", "footer_registry": "Fuente del registro:", "footer_generator": "Generador del panel:", "footer_workflow": "Workflow:", "footer_note": "El registro sigue siendo la única fuente de verdad para las ubicaciones de proyecto/versión.", "version_status_ok": "OK", "version_status_error": "ERROR", "deploy_cm5": "CM5", "deploy_user-pc": "PC del usuario", "deploy_mobile": "Móvil", "deploy_wearable": "Wearable", "maturity_production": "Producción", "maturity_established": "Establecido", "maturity_functional": "Funcional", "maturity_scaffolding": "Andamiaje", "maturity_desc_production": "Firmware real para una placa física real que la propia documentación de hardware de este ecosistema describe.", "maturity_desc_established": "Proyecto original, previo a la expansión de 2026, con un largo historial de versiones real - confiado por ese historial, no reauditado en este pase.", "maturity_desc_functional": "Lógica de negocio real y probada - verificada en este pase (suite de tests propia / smoke test real de extremo a extremo / round-trip real de protocolo compilado).", "maturity_desc_scaffolding": "Existe un punto de entrada real y compilable; la función para la que existe el proyecto todavía no.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Librería", "role_service": "Servicio", "role_tool": "Herramienta"}, "fr": {"header_title": "Tableau de bord d'état de l'écosystème", "subtitle_main": "{ok}/{total} dépôts résolus avec succès · {percent} en bonne santé · les versions sont lues depuis le propre fichier source de chaque projet · tableau de bord généré par GitHub Actions · GitHub Pages statique", "subtitle_v3": "v3 : classification réelle de maturité/rôle, arbres famille/parent-enfant et notes par projet plus complètes - voir la légende Maturité ci-dessous pour savoir exactement comment chaque niveau a été décidé.", "theme_toggle": "Basculer le thème clair/sombre", "health_total": "Projets au total", "health_resolved": "Version résolue", "health_errors": "Erreurs / inconnu", "health_registry": "Santé du registre", "section_deploy": "Cibles de déploiement", "section_stack": "Stacks technologiques", "section_maturity": "Maturité", "section_maturity_hint": "cliquez sur une carte pour filtrer · survolez pour voir comment c'est décidé", "section_role": "Rôle", "search_placeholder": "Rechercher un projet, un stack ou un déploiement...", "search_aria": "Rechercher des projets", "filter_all": "Tous", "filter_ok": "✓ OK", "filter_error": "⚠ Erreurs", "family_label": "Famille :", "family_all": "Toutes les familles", "reset_filters": "⟲ Réinitialiser", "reset_filters_title": "Efface le champ de recherche et tous les filtres actifs (statut, déploiement, maturité, rôle, famille)", "th_project": "Projet", "th_type": "Type", "th_maturity": "Maturité", "th_stack": "Stack", "th_deploy": "Cible de déploiement", "th_version": "Version", "th_status": "Statut", "th_commit": "Dernier commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notes", "detail_technology": "Technologie", "detail_build": "Build", "notes_empty": "Aucune note enregistrée pour ce projet pour l'instant.", "empty_results": "Aucun projet ne correspond aux filtres actuels.", "family_count": "{count} projet(s)", "family_parent_suffix": "est le véritable parent d'intégration de cette famille", "footer_registry": "Source du registre :", "footer_generator": "Générateur du tableau de bord :", "footer_workflow": "Workflow :", "footer_note": "Le registre reste la seule source de vérité pour l'emplacement des projets/versions.", "version_status_ok": "OK", "version_status_error": "ERREUR", "deploy_cm5": "CM5", "deploy_user-pc": "PC utilisateur", "deploy_mobile": "Mobile", "deploy_wearable": "Wearable", "maturity_production": "Production", "maturity_established": "Établi", "maturity_functional": "Fonctionnel", "maturity_scaffolding": "Ébauche", "maturity_desc_production": "Firmware réel pour une carte physique réelle que la propre documentation matérielle de cet écosystème décrit.", "maturity_desc_established": "Projet original, antérieur à l'expansion 2026, avec un long historique de versions réel - fiable sur cet historique, non ré-audité lors de cette passe.", "maturity_desc_functional": "Logique métier réelle et testée - vérifiée lors de cette passe (suite de tests propre / test de bout en bout réel / aller-retour réel d'un protocole compilé).", "maturity_desc_scaffolding": "Un point d'entrée réel et compilable existe ; la fonctionnalité pour laquelle le projet existe n'existe pas encore.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Bibliothèque", "role_service": "Service", "role_tool": "Outil"}, "it": {"header_title": "Dashboard di stato dell'ecosistema", "subtitle_main": "{ok}/{total} repository risolti correttamente · {percent} in salute · le versioni sono lette dal file sorgente proprio di ciascun progetto · dashboard generata da GitHub Actions · GitHub Pages statico", "subtitle_v3": "v3: classificazione reale di maturità/ruolo, alberi famiglia/genitore-figlio e note per progetto più ricche - vedi la legenda Maturità qui sotto per sapere esattamente come è stato deciso ogni livello.", "theme_toggle": "Cambia tema chiaro/scuro", "health_total": "Progetti totali", "health_resolved": "Versione risolta", "health_errors": "Errori / sconosciuto", "health_registry": "Salute del registro", "section_deploy": "Target di deployment", "section_stack": "Stack tecnologici", "section_maturity": "Maturità", "section_maturity_hint": "clicca su una scheda per filtrare · passa il mouse per sapere come è stato deciso", "section_role": "Ruolo", "search_placeholder": "Cerca progetto, stack o deployment...", "search_aria": "Cerca progetti", "filter_all": "Tutti", "filter_ok": "✓ OK", "filter_error": "⚠ Errori", "family_label": "Famiglia:", "family_all": "Tutte le famiglie", "reset_filters": "⟲ Reimposta", "reset_filters_title": "Cancella la casella di ricerca e tutti i filtri attivi (stato, deployment, maturità, ruolo, famiglia)", "th_project": "Progetto", "th_type": "Tipo", "th_maturity": "Maturità", "th_stack": "Stack", "th_deploy": "Target di deployment", "th_version": "Versione", "th_status": "Stato", "th_commit": "Ultimo commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Note", "detail_technology": "Tecnologia", "detail_build": "Build", "notes_empty": "Nessuna nota registrata ancora per questo progetto.", "empty_results": "Nessun progetto corrisponde ai filtri attuali.", "family_count": "{count} progetto/i", "family_parent_suffix": "è il vero genitore di integrazione di questa famiglia", "footer_registry": "Fonte del registro:", "footer_generator": "Generatore della dashboard:", "footer_workflow": "Workflow:", "footer_note": "Il registro rimane l'unica fonte di verità per le posizioni di progetto/versione.", "version_status_ok": "OK", "version_status_error": "ERRORE", "deploy_cm5": "CM5", "deploy_user-pc": "PC dell'utente", "deploy_mobile": "Mobile", "deploy_wearable": "Wearable", "maturity_production": "Produzione", "maturity_established": "Consolidato", "maturity_functional": "Funzionale", "maturity_scaffolding": "Impalcatura", "maturity_desc_production": "Firmware reale per una scheda fisica reale che la documentazione hardware di questo ecosistema descrive.", "maturity_desc_established": "Progetto originale, precedente all'espansione 2026, con una lunga storia di versioni reale - fidato su quella storia, non riverificato in questo passaggio.", "maturity_desc_functional": "Logica di business reale e testata - verificata in questo passaggio (suite di test propria / smoke test reale end-to-end / round-trip reale di un protocollo compilato).", "maturity_desc_scaffolding": "Esiste un punto di ingresso reale e compilabile; la funzionalità per cui il progetto esiste ancora no.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Libreria", "role_service": "Servizio", "role_tool": "Strumento"}, "de": {"header_title": "Ökosystem-Statusdashboard", "subtitle_main": "{ok}/{total} Repositories erfolgreich aufgelöst · {percent} gesund · Versionen werden aus der eigenen Quelldatei jedes Projekts gelesen · Dashboard generiert von GitHub Actions · statisches GitHub Pages", "subtitle_v3": "v3: echte Reifegrad-/Rollen-Klassifizierung, Familie/Eltern-Kind-Bäume und umfangreichere Notizen pro Projekt - siehe die Legende 'Reifegrad' unten für genau, wie jede Stufe entschieden wurde.", "theme_toggle": "Hell-/Dunkelmodus umschalten", "health_total": "Projekte insgesamt", "health_resolved": "Version aufgelöst", "health_errors": "Fehler / unbekannt", "health_registry": "Registry-Zustand", "section_deploy": "Deploy-Ziele", "section_stack": "Technologie-Stacks", "section_maturity": "Reifegrad", "section_maturity_hint": "Karte anklicken zum Filtern · Hover zeigt, wie es entschieden wurde", "section_role": "Rolle", "search_placeholder": "Projekt, Stack oder Deploy-Ziel suchen...", "search_aria": "Projekte durchsuchen", "filter_all": "Alle", "filter_ok": "✓ OK", "filter_error": "⚠ Fehler", "family_label": "Familie:", "family_all": "Alle Familien", "reset_filters": "⟲ Zurücksetzen", "reset_filters_title": "Löscht das Suchfeld und alle aktiven Filter (Status, Deploy-Ziel, Reifegrad, Rolle, Familie)", "th_project": "Projekt", "th_type": "Typ", "th_maturity": "Reifegrad", "th_stack": "Stack", "th_deploy": "Deploy-Ziel", "th_version": "Version", "th_status": "Status", "th_commit": "Letzter Commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notizen", "detail_technology": "Technologie", "detail_build": "Build", "notes_empty": "Für dieses Projekt sind noch keine Notizen erfasst.", "empty_results": "Kein Projekt entspricht den aktuellen Filtern.", "family_count": "{count} Projekt(e)", "family_parent_suffix": "ist der echte Integrations-Elternteil dieser Familie", "footer_registry": "Registry-Quelle:", "footer_generator": "Dashboard-Generator:", "footer_workflow": "Workflow:", "footer_note": "Die Registry bleibt die einzige verlässliche Quelle für Projekt-/Versionsorte.", "version_status_ok": "OK", "version_status_error": "FEHLER", "deploy_cm5": "CM5", "deploy_user-pc": "Benutzer-PC", "deploy_mobile": "Mobil", "deploy_wearable": "Wearable", "maturity_production": "Produktion", "maturity_established": "Etabliert", "maturity_functional": "Funktional", "maturity_scaffolding": "Grundgerüst", "maturity_desc_production": "Echte Firmware für eine echte, physische Platine, die die eigene Hardware-Dokumentation dieses Ökosystems beschreibt.", "maturity_desc_established": "Ursprüngliches Projekt von vor der 2026er-Erweiterung mit einer langen echten Versionshistorie - vertraut aufgrund dieser Historie, in diesem Durchgang nicht neu geprüft.", "maturity_desc_functional": "Echte, getestete Geschäftslogik - in diesem Durchgang verifiziert (eigene Testsuite / echter End-to-End-Smoketest / ein echter kompilierter Protokoll-Roundtrip).", "maturity_desc_scaffolding": "Ein echter, kompilierbarer Einstiegspunkt existiert; die Funktion, für die das Projekt existiert, noch nicht.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Bibliothek", "role_service": "Dienst", "role_tool": "Werkzeug"}, "zh": {"header_title": "生态系统状态仪表盘", "subtitle_main": "{ok}/{total} 个仓库成功解析 · {percent} 健康 · 版本号直接从各项目自身的源文件读取 · 仪表盘由 GitHub Actions 生成 · 静态 GitHub Pages", "subtitle_v3": "v3：新增真实的成熟度/角色分类、家族/父子关系树，以及更丰富的逐项目说明——具体每个等级是如何判定的，见下方的“成熟度”图例。", "theme_toggle": "切换深色/浅色主题", "health_total": "项目总数", "health_resolved": "已解析版本", "health_errors": "错误/未知", "health_registry": "注册表健康度", "section_deploy": "部署目标", "section_stack": "技术栈", "section_maturity": "成熟度", "section_maturity_hint": "点击卡片可筛选 · 悬停查看判定依据", "section_role": "角色", "search_placeholder": "搜索项目、技术栈或部署目标……", "search_aria": "搜索项目", "filter_all": "全部", "filter_ok": "✓ 正常", "filter_error": "⚠ 错误", "family_label": "家族：", "family_all": "所有家族", "reset_filters": "⟲ 重置", "reset_filters_title": "清除搜索框以及所有已激活的筛选条件（状态、部署目标、成熟度、角色、家族）", "th_project": "项目", "th_type": "类型", "th_maturity": "成熟度", "th_stack": "技术栈", "th_deploy": "部署目标", "th_version": "版本", "th_status": "状态", "th_commit": "最新提交", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "说明", "detail_technology": "技术", "detail_build": "构建", "notes_empty": "该项目目前还没有记录说明。", "empty_results": "没有项目匹配当前的筛选条件。", "family_count": "{count} 个项目", "family_parent_suffix": "是该家族真正的集成父项目", "footer_registry": "注册表来源：", "footer_generator": "仪表盘生成器：", "footer_workflow": "工作流：", "footer_note": "该注册表仍然是项目/版本位置的唯一真实来源。", "version_status_ok": "正常", "version_status_error": "错误", "deploy_cm5": "CM5", "deploy_user-pc": "用户电脑", "deploy_mobile": "移动端", "deploy_wearable": "可穿戴设备", "maturity_production": "生产", "maturity_established": "成熟", "maturity_functional": "功能完备", "maturity_scaffolding": "脚手架", "maturity_desc_production": "真实的固件，对应本生态系统自身硬件文档中描述的真实物理电路板。", "maturity_desc_established": "2026 年扩展之前就存在的原始项目，拥有真实且长期的版本历史——基于该历史被信任，本轮未重新审计。", "maturity_desc_functional": "真实、经过测试的业务逻辑——已在本轮验证（自有测试套件 / 真实的端到端冒烟测试 / 真实的编译协议往返）。", "maturity_desc_scaffolding": "已有真实可编译的入口点；但该项目存在的目的所对应的功能尚未实现。", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "固件", "role_library": "库", "role_service": "服务", "role_tool": "工具"}, "ja": {"header_title": "エコシステム ステータスダッシュボード", "subtitle_main": "{ok}/{total} 個のリポジトリが正常に解決 · {percent} が健全 · バージョンは各プロジェクト自身のソースファイルから読み取り · ダッシュボードは GitHub Actions によって生成 · 静的な GitHub Pages", "subtitle_v3": "v3：実際の成熟度/役割分類、ファミリー/親子ツリー、そしてより充実したプロジェクトごとの注記を追加しました——各レベルが具体的にどう判定されたかは、下部の成熟度の凡例を参照してください。", "theme_toggle": "ダーク/ライトテーマを切り替え", "health_total": "プロジェクト総数", "health_resolved": "バージョン解決済み", "health_errors": "エラー / 不明", "health_registry": "レジストリの健全性", "section_deploy": "デプロイ対象", "section_stack": "技術スタック", "section_maturity": "成熟度", "section_maturity_hint": "カードをクリックして絞り込み · ホバーで判定理由を表示", "section_role": "役割", "search_placeholder": "プロジェクト、スタック、デプロイ対象を検索...", "search_aria": "プロジェクトを検索", "filter_all": "すべて", "filter_ok": "✓ OK", "filter_error": "⚠ エラー", "family_label": "ファミリー：", "family_all": "すべてのファミリー", "reset_filters": "⟲ リセット", "reset_filters_title": "検索欄とすべてのアクティブなフィルター（状態、デプロイ対象、成熟度、役割、ファミリー）をクリアします", "th_project": "プロジェクト", "th_type": "種別", "th_maturity": "成熟度", "th_stack": "スタック", "th_deploy": "デプロイ対象", "th_version": "バージョン", "th_status": "ステータス", "th_commit": "最新コミット", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "注記", "detail_technology": "技術", "detail_build": "ビルド", "notes_empty": "このプロジェクトにはまだ注記が記録されていません。", "empty_results": "現在のフィルター条件に一致するプロジェクトはありません。", "family_count": "{count} 件のプロジェクト", "family_parent_suffix": "がこのファミリーの実際の統合親プロジェクトです", "footer_registry": "レジストリの情報源：", "footer_generator": "ダッシュボード生成スクリプト：", "footer_workflow": "ワークフロー：", "footer_note": "レジストリは引き続き、プロジェクト/バージョンの所在に関する唯一の信頼できる情報源です。", "version_status_ok": "OK", "version_status_error": "エラー", "deploy_cm5": "CM5", "deploy_user-pc": "ユーザーPC", "deploy_mobile": "モバイル", "deploy_wearable": "ウェアラブル", "maturity_production": "本番", "maturity_established": "定着済み", "maturity_functional": "機能実装済み", "maturity_scaffolding": "骨組み", "maturity_desc_production": "この生態系自身のハードウェアドキュメントが説明する、実際の物理的な PCB 向けの本物のファームウェア。", "maturity_desc_established": "2026年の拡張以前から存在するオリジナルプロジェクトで、長く実際のバージョン履歴を持つ——その履歴に基づいて信頼されており、今回の作業で改めて監査されたわけではない。", "maturity_desc_functional": "実際にテストされた本物のビジネスロジック——今回の作業で検証済み（自前のテストスイート / 実際のエンドツーエンドのスモークテスト / 実際にコンパイルされたプロトコルの往復）。", "maturity_desc_scaffolding": "実際にコンパイル可能なエントリーポイントは存在するが、そのプロジェクトが本来目指す機能はまだ存在しない。", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "ファームウェア", "role_library": "ライブラリ", "role_service": "サービス", "role_tool": "ツール"}};
+  const I18N = {"en": {"header_title": "Ecosystem Status Dashboard", "subtitle_main": "{ok}/{total} repositories resolved successfully · {percent} healthy · versions are read from each project's own source file · dashboard generated by GitHub Actions · static GitHub Pages", "subtitle_v3": "v3: real maturity/role classification, family/parent trees and richer per-project notes - see the Maturity legend below for exactly how each level was decided.", "theme_toggle": "Toggle dark/light theme", "health_total": "Total projects", "health_resolved": "Version resolved", "health_errors": "Errors / unknown", "health_registry": "Registry health", "section_deploy": "Deployment targets", "section_stack": "Technology stacks", "section_maturity": "Maturity", "section_maturity_hint": "click a card to filter · hover for how it was decided", "section_role": "Role", "search_placeholder": "Search project, stack or deployment...", "search_aria": "Search projects", "filter_all": "All", "filter_ok": "✓ OK", "filter_error": "⚠ Errors", "family_label": "Family:", "family_all": "All families", "reset_filters": "⟲ Reset", "reset_filters_title": "Clear the search box and every active filter (status, deploy, maturity, role, family)", "th_project": "Project", "th_type": "Type", "th_maturity": "Maturity", "th_stack": "Stack", "th_deploy": "Deploy target", "th_version": "Version", "th_status": "Status", "th_commit": "Last commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notes", "detail_technology": "Technology", "detail_build": "Build", "notes_empty": "No notes recorded for this project yet.", "empty_results": "No projects match the current filters.", "family_count": "{count} project(s)", "family_parent_suffix": "is this family's own integration parent", "footer_registry": "Registry source:", "footer_generator": "Dashboard generator:", "footer_workflow": "Workflow:", "footer_note": "The registry remains the single source of truth for project/version locations.", "version_status_ok": "OK", "version_status_error": "ERROR", "deploy_cm5": "CM5", "deploy_user-pc": "User PC", "deploy_mobile": "Mobile", "deploy_wearable": "Wearable", "maturity_production": "Production", "maturity_established": "Established", "maturity_functional": "Functional", "maturity_scaffolding": "Scaffolding", "maturity_desc_production": "Real firmware for a real, physical PCB this ecosystem's own hardware docs describe.", "maturity_desc_established": "Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass.", "maturity_desc_functional": "Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).", "maturity_desc_scaffolding": "A real, compilable entry point exists; the feature the project exists for does not yet.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Library", "role_service": "Service", "role_tool": "Tool", "architecture_intro": "HYDRA-UMC is a modular engineering ecosystem for multi-axis control, robotics, industrial connectivity, machine vision and edge intelligence. It keeps Raspberry Pi OS and official vendor APIs as its base, then adds a versioned HYDRA-UMC platform layer, shared contracts and optional services. This dashboard explains the system while the registry and table remain the source of project-specific facts.", "architecture_section": "System architecture", "architecture_platform_title": "Platform foundation", "architecture_platform_body": "Raspberry Pi OS ARM64 remains the operating-system base. The HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.", "architecture_contracts_title": "Contracts and operations", "architecture_contracts_body": "The SDK defines stable data and command contracts; Server, UI and tools use those contracts instead of raw hardware protocols.", "architecture_perception_title": "Perception and intelligence", "architecture_perception_body": "Vision and AI are optional capabilities. Their output is validated before it can influence a mission; they are never safety authority.", "architecture_engineering_title": "Engineering and industry", "architecture_engineering_body": "Simulation, telemetry and standards make the physical cell observable, testable and interoperable.", "architecture_flow_operator": "Operator interfaces", "architecture_flow_services": "Server and SDK", "architecture_flow_adapter": "CM5-MCU adapter", "architecture_flow_machine": "MCU / URTC / machine", "architecture_relationship_title": "HYDRA-UMC and URTC:", "architecture_relationship_body": "HYDRA-UMC is the platform and cell controller. URTC is its universal robot-tool subsystem, with independent firmware and maintenance tools. The MCU remains authoritative for physical limits and safe stop; UI, network and AI cannot bypass that boundary."}, "es": {"header_title": "Panel de Estado del Ecosistema", "subtitle_main": "{ok}/{total} repositorios resueltos correctamente · {percent} saludable · las versiones se leen del propio archivo fuente de cada proyecto · panel generado por GitHub Actions · GitHub Pages estático", "subtitle_v3": "v3: clasificación real de madurez/rol, árboles de familia/padre-hijo y notas por proyecto más completas - ver la leyenda de Madurez más abajo para saber exactamente cómo se decidió cada nivel.", "theme_toggle": "Cambiar tema claro/oscuro", "health_total": "Proyectos totales", "health_resolved": "Versión resuelta", "health_errors": "Errores / desconocido", "health_registry": "Salud del registro", "section_deploy": "Destinos de despliegue", "section_stack": "Stacks tecnológicos", "section_maturity": "Madurez", "section_maturity_hint": "clic en una tarjeta para filtrar · pasa el ratón para ver cómo se decidió", "section_role": "Rol", "search_placeholder": "Buscar proyecto, stack o despliegue...", "search_aria": "Buscar proyectos", "filter_all": "Todos", "filter_ok": "✓ OK", "filter_error": "⚠ Errores", "family_label": "Familia:", "family_all": "Todas las familias", "reset_filters": "⟲ Restablecer", "reset_filters_title": "Limpia el buscador y todos los filtros activos (estado, despliegue, madurez, rol, familia)", "th_project": "Proyecto", "th_type": "Tipo", "th_maturity": "Madurez", "th_stack": "Stack", "th_deploy": "Destino de despliegue", "th_version": "Versión", "th_status": "Estado", "th_commit": "Último commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notas", "detail_technology": "Tecnología", "detail_build": "Build", "notes_empty": "Todavía no hay notas registradas para este proyecto.", "empty_results": "Ningún proyecto coincide con los filtros actuales.", "family_count": "{count} proyecto(s)", "family_parent_suffix": "es el padre de integración real de esta familia", "footer_registry": "Fuente del registro:", "footer_generator": "Generador del panel:", "footer_workflow": "Workflow:", "footer_note": "El registro sigue siendo la única fuente de verdad para las ubicaciones de proyecto/versión.", "version_status_ok": "OK", "version_status_error": "ERROR", "deploy_cm5": "CM5", "deploy_user-pc": "PC del usuario", "deploy_mobile": "Móvil", "deploy_wearable": "Wearable", "maturity_production": "Producción", "maturity_established": "Establecido", "maturity_functional": "Funcional", "maturity_scaffolding": "Andamiaje", "maturity_desc_production": "Firmware real para una placa física real que la propia documentación de hardware de este ecosistema describe.", "maturity_desc_established": "Proyecto original, previo a la expansión de 2026, con un largo historial de versiones real - confiado por ese historial, no reauditado en este pase.", "maturity_desc_functional": "Lógica de negocio real y probada - verificada en este pase (suite de tests propia / smoke test real de extremo a extremo / round-trip real de protocolo compilado).", "maturity_desc_scaffolding": "Existe un punto de entrada real y compilable; la función para la que existe el proyecto todavía no.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Librería", "role_service": "Servicio", "role_tool": "Herramienta", "architecture_intro": "HYDRA-UMC es un ecosistema modular de ingeniería para control multieje, robótica, conectividad industrial, visión artificial e inteligencia de borde. Mantiene Raspberry Pi OS y las API oficiales de cada proveedor como base, y añade una capa de plataforma HYDRA-UMC versionada, contratos compartidos y servicios opcionales. Este panel explica el sistema; el registro y la tabla conservan los hechos específicos de cada proyecto.", "architecture_section": "Arquitectura del sistema", "architecture_platform_title": "Base de plataforma", "architecture_platform_body": "Raspberry Pi OS ARM64 mantiene el papel de sistema operativo base. La capa HYDRA-UMC aporta perfiles de dispositivo, diagnóstico y ciclo de vida de servicios.", "architecture_contracts_title": "Contratos y operaciones", "architecture_contracts_body": "El SDK define contratos estables de datos y comandos; Server, las interfaces y las herramientas los usan en lugar de protocolos de hardware sin abstraer.", "architecture_perception_title": "Percepción e inteligencia", "architecture_perception_body": "La visión y la IA son capacidades opcionales. Su salida se valida antes de influir en una misión y nunca tiene autoridad de seguridad.", "architecture_engineering_title": "Ingeniería e industria", "architecture_engineering_body": "La simulación, la telemetría y los estándares hacen que la celda física sea observable, comprobable e interoperable.", "architecture_flow_operator": "Interfaces de operador", "architecture_flow_services": "Server y SDK", "architecture_flow_adapter": "Adaptador CM5-MCU", "architecture_flow_machine": "MCU / URTC / máquina", "architecture_relationship_title": "HYDRA-UMC y URTC:", "architecture_relationship_body": "HYDRA-UMC es la plataforma y el controlador de celda. URTC es su subsistema universal de herramientas robóticas, con firmware y utilidades de mantenimiento independientes. El MCU conserva la autoridad sobre límites físicos y parada segura; UI, red e IA no pueden saltarse esa frontera."}, "fr": {"header_title": "Tableau de bord d'état de l'écosystème", "subtitle_main": "{ok}/{total} dépôts résolus avec succès · {percent} en bonne santé · les versions sont lues depuis le propre fichier source de chaque projet · tableau de bord généré par GitHub Actions · GitHub Pages statique", "subtitle_v3": "v3 : classification réelle de maturité/rôle, arbres famille/parent-enfant et notes par projet plus complètes - voir la légende Maturité ci-dessous pour savoir exactement comment chaque niveau a été décidé.", "theme_toggle": "Basculer le thème clair/sombre", "health_total": "Projets au total", "health_resolved": "Version résolue", "health_errors": "Erreurs / inconnu", "health_registry": "Santé du registre", "section_deploy": "Cibles de déploiement", "section_stack": "Stacks technologiques", "section_maturity": "Maturité", "section_maturity_hint": "cliquez sur une carte pour filtrer · survolez pour voir comment c'est décidé", "section_role": "Rôle", "search_placeholder": "Rechercher un projet, un stack ou un déploiement...", "search_aria": "Rechercher des projets", "filter_all": "Tous", "filter_ok": "✓ OK", "filter_error": "⚠ Erreurs", "family_label": "Famille :", "family_all": "Toutes les familles", "reset_filters": "⟲ Réinitialiser", "reset_filters_title": "Efface le champ de recherche et tous les filtres actifs (statut, déploiement, maturité, rôle, famille)", "th_project": "Projet", "th_type": "Type", "th_maturity": "Maturité", "th_stack": "Stack", "th_deploy": "Cible de déploiement", "th_version": "Version", "th_status": "Statut", "th_commit": "Dernier commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notes", "detail_technology": "Technologie", "detail_build": "Build", "notes_empty": "Aucune note enregistrée pour ce projet pour l'instant.", "empty_results": "Aucun projet ne correspond aux filtres actuels.", "family_count": "{count} projet(s)", "family_parent_suffix": "est le véritable parent d'intégration de cette famille", "footer_registry": "Source du registre :", "footer_generator": "Générateur du tableau de bord :", "footer_workflow": "Workflow :", "footer_note": "Le registre reste la seule source de vérité pour l'emplacement des projets/versions.", "version_status_ok": "OK", "version_status_error": "ERREUR", "deploy_cm5": "CM5", "deploy_user-pc": "PC utilisateur", "deploy_mobile": "Mobile", "deploy_wearable": "Wearable", "maturity_production": "Production", "maturity_established": "Établi", "maturity_functional": "Fonctionnel", "maturity_scaffolding": "Ébauche", "maturity_desc_production": "Firmware réel pour une carte physique réelle que la propre documentation matérielle de cet écosystème décrit.", "maturity_desc_established": "Projet original, antérieur à l'expansion 2026, avec un long historique de versions réel - fiable sur cet historique, non ré-audité lors de cette passe.", "maturity_desc_functional": "Logique métier réelle et testée - vérifiée lors de cette passe (suite de tests propre / test de bout en bout réel / aller-retour réel d'un protocole compilé).", "maturity_desc_scaffolding": "Un point d'entrée réel et compilable existe ; la fonctionnalité pour laquelle le projet existe n'existe pas encore.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Bibliothèque", "role_service": "Service", "role_tool": "Outil", "architecture_intro": "HYDRA-UMC est un écosystème d’ingénierie modulaire pour le contrôle multi-axes, la robotique, la connectivité industrielle, la vision et l’intelligence de périphérie. Il conserve Raspberry Pi OS et les API officielles comme base, puis ajoute une couche de plateforme HYDRA-UMC versionnée, des contrats partagés et des services optionnels. Ce tableau explique le système ; le registre et le tableau restent la source des faits par projet.", "architecture_section": "Architecture du système", "architecture_platform_title": "Fondation de plateforme", "architecture_platform_body": "Raspberry Pi OS ARM64 reste la base du système d’exploitation. La couche HYDRA-UMC apporte profils d’appareil, diagnostic et cycle de vie des services.", "architecture_contracts_title": "Contrats et opérations", "architecture_contracts_body": "Le SDK définit des contrats stables de données et de commandes ; Server, les interfaces et les outils les utilisent au lieu de protocoles matériels bruts.", "architecture_perception_title": "Perception et intelligence", "architecture_perception_body": "La vision et l’IA sont des capacités optionnelles. Leur sortie est validée avant d’influencer une mission et n’a jamais autorité sur la sécurité.", "architecture_engineering_title": "Ingénierie et industrie", "architecture_engineering_body": "Simulation, télémétrie et standards rendent la cellule physique observable, testable et interopérable.", "architecture_flow_operator": "Interfaces opérateur", "architecture_flow_services": "Server et SDK", "architecture_flow_adapter": "Adaptateur CM5-MCU", "architecture_flow_machine": "MCU / URTC / machine", "architecture_relationship_title": "HYDRA-UMC et URTC :", "architecture_relationship_body": "HYDRA-UMC est la plateforme et le contrôleur de cellule. URTC est son sous-système universel d’outils robotiques, avec firmware et outils de maintenance indépendants. Le MCU garde l’autorité sur les limites physiques et l’arrêt sûr ; interface, réseau et IA ne peuvent pas contourner cette frontière."}, "it": {"header_title": "Dashboard di stato dell'ecosistema", "subtitle_main": "{ok}/{total} repository risolti correttamente · {percent} in salute · le versioni sono lette dal file sorgente proprio di ciascun progetto · dashboard generata da GitHub Actions · GitHub Pages statico", "subtitle_v3": "v3: classificazione reale di maturità/ruolo, alberi famiglia/genitore-figlio e note per progetto più ricche - vedi la legenda Maturità qui sotto per sapere esattamente come è stato deciso ogni livello.", "theme_toggle": "Cambia tema chiaro/scuro", "health_total": "Progetti totali", "health_resolved": "Versione risolta", "health_errors": "Errori / sconosciuto", "health_registry": "Salute del registro", "section_deploy": "Target di deployment", "section_stack": "Stack tecnologici", "section_maturity": "Maturità", "section_maturity_hint": "clicca su una scheda per filtrare · passa il mouse per sapere come è stato deciso", "section_role": "Ruolo", "search_placeholder": "Cerca progetto, stack o deployment...", "search_aria": "Cerca progetti", "filter_all": "Tutti", "filter_ok": "✓ OK", "filter_error": "⚠ Errori", "family_label": "Famiglia:", "family_all": "Tutte le famiglie", "reset_filters": "⟲ Reimposta", "reset_filters_title": "Cancella la casella di ricerca e tutti i filtri attivi (stato, deployment, maturità, ruolo, famiglia)", "th_project": "Progetto", "th_type": "Tipo", "th_maturity": "Maturità", "th_stack": "Stack", "th_deploy": "Target di deployment", "th_version": "Versione", "th_status": "Stato", "th_commit": "Ultimo commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Note", "detail_technology": "Tecnologia", "detail_build": "Build", "notes_empty": "Nessuna nota registrata ancora per questo progetto.", "empty_results": "Nessun progetto corrisponde ai filtri attuali.", "family_count": "{count} progetto/i", "family_parent_suffix": "è il vero genitore di integrazione di questa famiglia", "footer_registry": "Fonte del registro:", "footer_generator": "Generatore della dashboard:", "footer_workflow": "Workflow:", "footer_note": "Il registro rimane l'unica fonte di verità per le posizioni di progetto/versione.", "version_status_ok": "OK", "version_status_error": "ERRORE", "deploy_cm5": "CM5", "deploy_user-pc": "PC dell'utente", "deploy_mobile": "Mobile", "deploy_wearable": "Wearable", "maturity_production": "Produzione", "maturity_established": "Consolidato", "maturity_functional": "Funzionale", "maturity_scaffolding": "Impalcatura", "maturity_desc_production": "Firmware reale per una scheda fisica reale che la documentazione hardware di questo ecosistema descrive.", "maturity_desc_established": "Progetto originale, precedente all'espansione 2026, con una lunga storia di versioni reale - fidato su quella storia, non riverificato in questo passaggio.", "maturity_desc_functional": "Logica di business reale e testata - verificata in questo passaggio (suite di test propria / smoke test reale end-to-end / round-trip reale di un protocollo compilato).", "maturity_desc_scaffolding": "Esiste un punto di ingresso reale e compilabile; la funzionalità per cui il progetto esiste ancora no.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Libreria", "role_service": "Servizio", "role_tool": "Strumento", "architecture_intro": "HYDRA-UMC è un ecosistema ingegneristico modulare per controllo multiasse, robotica, connettività industriale, visione artificiale e intelligenza edge. Mantiene Raspberry Pi OS e le API ufficiali dei fornitori come base, quindi aggiunge una piattaforma HYDRA-UMC versionata, contratti condivisi e servizi opzionali. Questa dashboard spiega il sistema; registro e tabella restano la fonte dei fatti per progetto.", "architecture_section": "Architettura del sistema", "architecture_platform_title": "Fondazione della piattaforma", "architecture_platform_body": "Raspberry Pi OS ARM64 rimane la base del sistema operativo. Il livello HYDRA-UMC aggiunge profili dispositivo, diagnostica e ciclo di vita dei servizi.", "architecture_contracts_title": "Contratti e operazioni", "architecture_contracts_body": "L’SDK definisce contratti stabili per dati e comandi; Server, UI e strumenti li usano invece di protocolli hardware grezzi.", "architecture_perception_title": "Percezione e intelligenza", "architecture_perception_body": "Visione e IA sono capacità opzionali. Il loro output viene convalidato prima di influire su una missione e non ha mai autorità sulla sicurezza.", "architecture_engineering_title": "Ingegneria e industria", "architecture_engineering_body": "Simulazione, telemetria e standard rendono la cella fisica osservabile, verificabile e interoperabile.", "architecture_flow_operator": "Interfacce operatore", "architecture_flow_services": "Server e SDK", "architecture_flow_adapter": "Adattatore CM5-MCU", "architecture_flow_machine": "MCU / URTC / macchina", "architecture_relationship_title": "HYDRA-UMC e URTC:", "architecture_relationship_body": "HYDRA-UMC è la piattaforma e il controllore di cella. URTC è il suo sottosistema universale per utensili robotici, con firmware e strumenti di manutenzione indipendenti. Il MCU mantiene l’autorità sui limiti fisici e sull’arresto sicuro; UI, rete e IA non possono aggirare quel confine."}, "de": {"header_title": "Ökosystem-Statusdashboard", "subtitle_main": "{ok}/{total} Repositories erfolgreich aufgelöst · {percent} gesund · Versionen werden aus der eigenen Quelldatei jedes Projekts gelesen · Dashboard generiert von GitHub Actions · statisches GitHub Pages", "subtitle_v3": "v3: echte Reifegrad-/Rollen-Klassifizierung, Familie/Eltern-Kind-Bäume und umfangreichere Notizen pro Projekt - siehe die Legende 'Reifegrad' unten für genau, wie jede Stufe entschieden wurde.", "theme_toggle": "Hell-/Dunkelmodus umschalten", "health_total": "Projekte insgesamt", "health_resolved": "Version aufgelöst", "health_errors": "Fehler / unbekannt", "health_registry": "Registry-Zustand", "section_deploy": "Deploy-Ziele", "section_stack": "Technologie-Stacks", "section_maturity": "Reifegrad", "section_maturity_hint": "Karte anklicken zum Filtern · Hover zeigt, wie es entschieden wurde", "section_role": "Rolle", "search_placeholder": "Projekt, Stack oder Deploy-Ziel suchen...", "search_aria": "Projekte durchsuchen", "filter_all": "Alle", "filter_ok": "✓ OK", "filter_error": "⚠ Fehler", "family_label": "Familie:", "family_all": "Alle Familien", "reset_filters": "⟲ Zurücksetzen", "reset_filters_title": "Löscht das Suchfeld und alle aktiven Filter (Status, Deploy-Ziel, Reifegrad, Rolle, Familie)", "th_project": "Projekt", "th_type": "Typ", "th_maturity": "Reifegrad", "th_stack": "Stack", "th_deploy": "Deploy-Ziel", "th_version": "Version", "th_status": "Status", "th_commit": "Letzter Commit", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "Notizen", "detail_technology": "Technologie", "detail_build": "Build", "notes_empty": "Für dieses Projekt sind noch keine Notizen erfasst.", "empty_results": "Kein Projekt entspricht den aktuellen Filtern.", "family_count": "{count} Projekt(e)", "family_parent_suffix": "ist der echte Integrations-Elternteil dieser Familie", "footer_registry": "Registry-Quelle:", "footer_generator": "Dashboard-Generator:", "footer_workflow": "Workflow:", "footer_note": "Die Registry bleibt die einzige verlässliche Quelle für Projekt-/Versionsorte.", "version_status_ok": "OK", "version_status_error": "FEHLER", "deploy_cm5": "CM5", "deploy_user-pc": "Benutzer-PC", "deploy_mobile": "Mobil", "deploy_wearable": "Wearable", "maturity_production": "Produktion", "maturity_established": "Etabliert", "maturity_functional": "Funktional", "maturity_scaffolding": "Grundgerüst", "maturity_desc_production": "Echte Firmware für eine echte, physische Platine, die die eigene Hardware-Dokumentation dieses Ökosystems beschreibt.", "maturity_desc_established": "Ursprüngliches Projekt von vor der 2026er-Erweiterung mit einer langen echten Versionshistorie - vertraut aufgrund dieser Historie, in diesem Durchgang nicht neu geprüft.", "maturity_desc_functional": "Echte, getestete Geschäftslogik - in diesem Durchgang verifiziert (eigene Testsuite / echter End-to-End-Smoketest / ein echter kompilierter Protokoll-Roundtrip).", "maturity_desc_scaffolding": "Ein echter, kompilierbarer Einstiegspunkt existiert; die Funktion, für die das Projekt existiert, noch nicht.", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "Firmware", "role_library": "Bibliothek", "role_service": "Dienst", "role_tool": "Werkzeug", "architecture_intro": "HYDRA-UMC ist ein modulares Engineering-Ökosystem für Mehrachsensteuerung, Robotik, industrielle Konnektivität, maschinelles Sehen und Edge-Intelligenz. Raspberry Pi OS und offizielle Hersteller-APIs bleiben die Basis; darüber liegen eine versionierte HYDRA-UMC-Plattformschicht, gemeinsame Verträge und optionale Dienste. Dieses Dashboard erklärt das System, während Registry und Tabelle projektbezogene Fakten liefern.", "architecture_section": "Systemarchitektur", "architecture_platform_title": "Plattformbasis", "architecture_platform_body": "Raspberry Pi OS ARM64 bleibt die Betriebssystembasis. Die HYDRA-UMC-Schicht ergänzt Geräteprofile, Diagnose und den Lebenszyklus der Dienste.", "architecture_contracts_title": "Verträge und Betrieb", "architecture_contracts_body": "Das SDK definiert stabile Daten- und Befehlsverträge; Server, Oberflächen und Werkzeuge verwenden sie statt roher Hardwareprotokolle.", "architecture_perception_title": "Wahrnehmung und Intelligenz", "architecture_perception_body": "Vision und KI sind optionale Fähigkeiten. Ihre Ausgabe wird validiert, bevor sie eine Mission beeinflussen kann; sie besitzen nie Sicherheitsautorität.", "architecture_engineering_title": "Engineering und Industrie", "architecture_engineering_body": "Simulation, Telemetrie und Standards machen die physische Zelle beobachtbar, testbar und interoperabel.", "architecture_flow_operator": "Bedienoberflächen", "architecture_flow_services": "Server und SDK", "architecture_flow_adapter": "CM5-MCU-Adapter", "architecture_flow_machine": "MCU / URTC / Maschine", "architecture_relationship_title": "HYDRA-UMC und URTC:", "architecture_relationship_body": "HYDRA-UMC ist Plattform und Zellensteuerung. URTC ist das universelle Roboterwerkzeug-Subsystem mit unabhängiger Firmware und Wartungswerkzeugen. Der MCU behält die Autorität über physische Grenzen und sicheren Stopp; UI, Netzwerk und KI können diese Grenze nicht umgehen."}, "zh": {"header_title": "生态系统状态仪表盘", "subtitle_main": "{ok}/{total} 个仓库成功解析 · {percent} 健康 · 版本号直接从各项目自身的源文件读取 · 仪表盘由 GitHub Actions 生成 · 静态 GitHub Pages", "subtitle_v3": "v3：新增真实的成熟度/角色分类、家族/父子关系树，以及更丰富的逐项目说明——具体每个等级是如何判定的，见下方的“成熟度”图例。", "theme_toggle": "切换深色/浅色主题", "health_total": "项目总数", "health_resolved": "已解析版本", "health_errors": "错误/未知", "health_registry": "注册表健康度", "section_deploy": "部署目标", "section_stack": "技术栈", "section_maturity": "成熟度", "section_maturity_hint": "点击卡片可筛选 · 悬停查看判定依据", "section_role": "角色", "search_placeholder": "搜索项目、技术栈或部署目标……", "search_aria": "搜索项目", "filter_all": "全部", "filter_ok": "✓ 正常", "filter_error": "⚠ 错误", "family_label": "家族：", "family_all": "所有家族", "reset_filters": "⟲ 重置", "reset_filters_title": "清除搜索框以及所有已激活的筛选条件（状态、部署目标、成熟度、角色、家族）", "th_project": "项目", "th_type": "类型", "th_maturity": "成熟度", "th_stack": "技术栈", "th_deploy": "部署目标", "th_version": "版本", "th_status": "状态", "th_commit": "最新提交", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "说明", "detail_technology": "技术", "detail_build": "构建", "notes_empty": "该项目目前还没有记录说明。", "empty_results": "没有项目匹配当前的筛选条件。", "family_count": "{count} 个项目", "family_parent_suffix": "是该家族真正的集成父项目", "footer_registry": "注册表来源：", "footer_generator": "仪表盘生成器：", "footer_workflow": "工作流：", "footer_note": "该注册表仍然是项目/版本位置的唯一真实来源。", "version_status_ok": "正常", "version_status_error": "错误", "deploy_cm5": "CM5", "deploy_user-pc": "用户电脑", "deploy_mobile": "移动端", "deploy_wearable": "可穿戴设备", "maturity_production": "生产", "maturity_established": "成熟", "maturity_functional": "功能完备", "maturity_scaffolding": "脚手架", "maturity_desc_production": "真实的固件，对应本生态系统自身硬件文档中描述的真实物理电路板。", "maturity_desc_established": "2026 年扩展之前就存在的原始项目，拥有真实且长期的版本历史——基于该历史被信任，本轮未重新审计。", "maturity_desc_functional": "真实、经过测试的业务逻辑——已在本轮验证（自有测试套件 / 真实的端到端冒烟测试 / 真实的编译协议往返）。", "maturity_desc_scaffolding": "已有真实可编译的入口点；但该项目存在的目的所对应的功能尚未实现。", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "固件", "role_library": "库", "role_service": "服务", "role_tool": "工具", "architecture_intro": "HYDRA-UMC 是面向多轴控制、机器人、工业连接、机器视觉和边缘智能的模块化工程生态系统。它以 Raspberry Pi OS 与厂商官方 API 为基础，并增加版本化的 HYDRA-UMC 平台层、共享契约和可选服务。本仪表板说明系统；注册表和项目表仍是各项目事实的来源。", "architecture_section": "系统架构", "architecture_platform_title": "平台基础", "architecture_platform_body": "Raspberry Pi OS ARM64 仍是操作系统基础。HYDRA-UMC 层增加设备配置文件、诊断和服务生命周期。", "architecture_contracts_title": "契约与运维", "architecture_contracts_body": "SDK 定义稳定的数据和命令契约；Server、界面和工具使用这些契约，而不是原始硬件协议。", "architecture_perception_title": "感知与智能", "architecture_perception_body": "视觉和 AI 是可选能力。其输出在影响任务前必须经过验证，且永远不拥有安全权限。", "architecture_engineering_title": "工程与工业", "architecture_engineering_body": "仿真、遥测和标准使物理单元可观测、可测试且可互操作。", "architecture_flow_operator": "操作员界面", "architecture_flow_services": "Server 和 SDK", "architecture_flow_adapter": "CM5-MCU 适配器", "architecture_flow_machine": "MCU / URTC / 机器", "architecture_relationship_title": "HYDRA-UMC 与 URTC：", "architecture_relationship_body": "HYDRA-UMC 是平台和单元控制器。URTC 是其通用机器人工具子系统，拥有独立的固件和维护工具。MCU 保留物理限制和安全停止的权力；UI、网络和 AI 都不能绕过这一边界。"}, "ja": {"header_title": "エコシステム ステータスダッシュボード", "subtitle_main": "{ok}/{total} 個のリポジトリが正常に解決 · {percent} が健全 · バージョンは各プロジェクト自身のソースファイルから読み取り · ダッシュボードは GitHub Actions によって生成 · 静的な GitHub Pages", "subtitle_v3": "v3：実際の成熟度/役割分類、ファミリー/親子ツリー、そしてより充実したプロジェクトごとの注記を追加しました——各レベルが具体的にどう判定されたかは、下部の成熟度の凡例を参照してください。", "theme_toggle": "ダーク/ライトテーマを切り替え", "health_total": "プロジェクト総数", "health_resolved": "バージョン解決済み", "health_errors": "エラー / 不明", "health_registry": "レジストリの健全性", "section_deploy": "デプロイ対象", "section_stack": "技術スタック", "section_maturity": "成熟度", "section_maturity_hint": "カードをクリックして絞り込み · ホバーで判定理由を表示", "section_role": "役割", "search_placeholder": "プロジェクト、スタック、デプロイ対象を検索...", "search_aria": "プロジェクトを検索", "filter_all": "すべて", "filter_ok": "✓ OK", "filter_error": "⚠ エラー", "family_label": "ファミリー：", "family_all": "すべてのファミリー", "reset_filters": "⟲ リセット", "reset_filters_title": "検索欄とすべてのアクティブなフィルター（状態、デプロイ対象、成熟度、役割、ファミリー）をクリアします", "th_project": "プロジェクト", "th_type": "種別", "th_maturity": "成熟度", "th_stack": "スタック", "th_deploy": "デプロイ対象", "th_version": "バージョン", "th_status": "ステータス", "th_commit": "最新コミット", "link_actions": "Actions", "link_issues": "Issues", "detail_notes": "注記", "detail_technology": "技術", "detail_build": "ビルド", "notes_empty": "このプロジェクトにはまだ注記が記録されていません。", "empty_results": "現在のフィルター条件に一致するプロジェクトはありません。", "family_count": "{count} 件のプロジェクト", "family_parent_suffix": "がこのファミリーの実際の統合親プロジェクトです", "footer_registry": "レジストリの情報源：", "footer_generator": "ダッシュボード生成スクリプト：", "footer_workflow": "ワークフロー：", "footer_note": "レジストリは引き続き、プロジェクト/バージョンの所在に関する唯一の信頼できる情報源です。", "version_status_ok": "OK", "version_status_error": "エラー", "deploy_cm5": "CM5", "deploy_user-pc": "ユーザーPC", "deploy_mobile": "モバイル", "deploy_wearable": "ウェアラブル", "maturity_production": "本番", "maturity_established": "定着済み", "maturity_functional": "機能実装済み", "maturity_scaffolding": "骨組み", "maturity_desc_production": "この生態系自身のハードウェアドキュメントが説明する、実際の物理的な PCB 向けの本物のファームウェア。", "maturity_desc_established": "2026年の拡張以前から存在するオリジナルプロジェクトで、長く実際のバージョン履歴を持つ——その履歴に基づいて信頼されており、今回の作業で改めて監査されたわけではない。", "maturity_desc_functional": "実際にテストされた本物のビジネスロジック——今回の作業で検証済み（自前のテストスイート / 実際のエンドツーエンドのスモークテスト / 実際にコンパイルされたプロトコルの往復）。", "maturity_desc_scaffolding": "実際にコンパイル可能なエントリーポイントは存在するが、そのプロジェクトが本来目指す機能はまだ存在しない。", "role_api": "API", "role_ui": "UI", "role_cli": "CLI", "role_firmware": "ファームウェア", "role_library": "ライブラリ", "role_service": "サービス", "role_tool": "ツール", "architecture_intro": "HYDRA-UMC は、多軸制御、ロボティクス、産業接続、マシンビジョン、エッジインテリジェンスのためのモジュール型エンジニアリングエコシステムです。Raspberry Pi OS と公式ベンダー API を基盤に、バージョン管理された HYDRA-UMC プラットフォーム層、共有契約、任意のサービスを追加します。このダッシュボードはシステムを説明し、レジストリと表が各プロジェクトの事実の情報源です。", "architecture_section": "システムアーキテクチャ", "architecture_platform_title": "プラットフォーム基盤", "architecture_platform_body": "Raspberry Pi OS ARM64 は OS の基盤として残ります。HYDRA-UMC 層はデバイスプロファイル、診断、サービスライフサイクルを追加します。", "architecture_contracts_title": "契約と運用", "architecture_contracts_body": "SDK は安定したデータおよびコマンド契約を定義し、Server、UI、ツールは生のハードウェアプロトコルの代わりにそれを使用します。", "architecture_perception_title": "知覚とインテリジェンス", "architecture_perception_body": "Vision と AI は任意の能力です。出力はミッションに影響する前に検証され、安全権限を持つことはありません。", "architecture_engineering_title": "エンジニアリングと産業", "architecture_engineering_body": "シミュレーション、テレメトリ、標準により、物理セルは観測可能、テスト可能、相互運用可能になります。", "architecture_flow_operator": "オペレーターインターフェース", "architecture_flow_services": "Server と SDK", "architecture_flow_adapter": "CM5-MCU アダプター", "architecture_flow_machine": "MCU / URTC / 機械", "architecture_relationship_title": "HYDRA-UMC と URTC：", "architecture_relationship_body": "HYDRA-UMC はプラットフォームおよびセルコントローラーです。URTC は独立したファームウェアと保守ツールを持つ汎用ロボットツールサブシステムです。MCU は物理的な制限と安全停止の権限を維持し、UI、ネットワーク、AI はその境界を迂回できません。"}};
 
   const LANG_KEY = "hydra-dashboard-lang";
 
