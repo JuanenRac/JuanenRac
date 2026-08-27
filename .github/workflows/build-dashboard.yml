@@ -8,9 +8,6 @@
 #
 # Architecture:
 #
-#   registry.py
-#        |
-#        v
 #   github_client.py
 #        |
 #        v
@@ -22,8 +19,9 @@
 #        v
 #   GitHub Pages
 #
-# The registry remains the single source of truth for the ecosystem project
-# list and for the location/pattern used to read each project's version.
+# Each repository's hydra-umc.project.json is the single source of truth for
+# its metadata and version. The workflow discovers GitHub repositories at
+# runtime; it contains no project list.
 #
 # The generated HTML deliberately contains no generation timestamp. This is
 # important: if a timestamp were written on every scheduled execution, the
@@ -53,11 +51,13 @@ on:
       - main
     paths:
       - "scripts/generate_dashboard.py"
+      - "ecosystem-catalog.json"
       - ".github/workflows/build-dashboard.yml"
 
   schedule:
-    # Daily at 08:00 UTC.
-    - cron: "0 8 * * *"
+    # Hourly discovery: a newly pushed manifest repository appears without
+    # editing this repository or maintaining a dashboard project list.
+    - cron: "17 * * * *"
 
 # Prevent two dashboard builds from modifying main at the same time.
 concurrency:
@@ -94,14 +94,8 @@ jobs:
       # -----------------------------------------------------------------------
       # Install the ecosystem updater
       # -----------------------------------------------------------------------
-      # The updater contains:
-      #
-      #   registry.py
-      #   github_client.py
-      #   version_parse.py
-      #
-      # The dashboard intentionally reuses that implementation instead of
-      # maintaining another copy of the registry or version parsing logic.
+      # The updater supplies the shared manifest parser and dynamic GitHub
+      # discovery implementation. No project catalogue is installed here.
       # -----------------------------------------------------------------------
       - name: Install HYDRA-UMC-UPDATER
         run: |
