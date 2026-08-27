@@ -1604,7 +1604,7 @@
                 title="Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip)."
                 data-i18n-title="maturity_desc_functional"
             >
-              <span class="maturity-count">33</span>
+              <span class="maturity-count">34</span>
               <span class="maturity-card-label" data-i18n="maturity_functional">Functional</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_functional">Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).</span>
             </button>
@@ -1616,7 +1616,7 @@
                 title="A real, compilable entry point exists; the feature the project exists for does not yet."
                 data-i18n-title="maturity_desc_scaffolding"
             >
-              <span class="maturity-count">1</span>
+              <span class="maturity-count">0</span>
               <span class="maturity-card-label" data-i18n="maturity_scaffolding">Scaffolding</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_scaffolding">A real, compilable entry point exists; the feature the project exists for does not yet.</span>
             </button>
@@ -2929,7 +2929,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="scaffolding"
+            data-maturity="functional"
             data-role="firmware"
             data-family="complementary tools"
         >
@@ -2978,8 +2978,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-scaffolding" data-i18n="maturity_scaffolding">
-              Scaffolding
+            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
+              Functional
             </span>
           </td>
 
@@ -3009,7 +3009,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/46168c9e4d1c5a7c00eb252a15f8f03421c82220" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (build-test pattern, docs, real builds)">Sync pending ecosystem-wide work (build-test pattern, docs, real builds)</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/a12b1676f34477bf73727bc26e296300e7c920ad" target="_blank" rel="noopener noreferrer" class="commit-link" title="vision_companion: real RGB-&gt;thermal ROI alignment + 21 pytest cases">vision_companion: real RGB-&gt;thermal ROI alignment + 21 pytest cases</a>
           </td>
         </tr>
 
@@ -3020,7 +3020,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="scaffolding"
+            data-maturity="functional"
             data-role="firmware"
             data-family="complementary tools"
             hidden
@@ -3029,7 +3029,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Scaffolding stage for the firmware itself, but the Python vision-companion package&#x27;s install paths and selftest are both really verified - real dual-modal (RGB + thermal) capture needs a real PCB first.</div>
+                <div class="detail-text">Firmware itself is still an unverified skeleton pending a real PCB. The Python vision_companion package is real and test-covered: synthetic thermal+RGB frame generation, false-color rendering, and (new) real RGB-&gt;thermal ROI alignment + temperature-stats extraction (alignment.py), all verified by 21 real pytest cases. Real dual-modal (RGB + thermal) capture and per-pixel sensor calibration still need a real PCB and real cameras.</div>
               </div>
 
               <div class="detail-block">
@@ -3039,7 +3039,7 @@
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_build">Build</div>
-                <div class="detail-text">bash build_firmware.sh. Also contains an independent Python vision companion package.</div>
+                <div class="detail-text">bash build_firmware.sh. Also contains an independent Python vision companion package (cd src/vision_companion &amp;&amp; pip install -e &#x27;.[dev]&#x27; &amp;&amp; pytest).</div>
               </div>
             </div>
           </td>
@@ -4256,7 +4256,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR/commit/79add04ac133560862db9ae6a4a6f6af213f4fd6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (build-test pattern, docs, real builds)">Sync pending ecosystem-wide work (build-test pattern, docs, real builds)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR/commit/e9581822ca1fcdeec4a5bb8c9be8f6cdea9f2945" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real HTTP API reference (docs/API.md)">Add real HTTP API reference (docs/API.md)</a>
           </td>
         </tr>
 
