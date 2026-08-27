@@ -109,13 +109,15 @@ Das ist kein geführtes Tutorial (es gibt keinen einzigen "richtigen" Carrier f�
 ## 📁 Projektkatalog
 
 Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter
-Windows) klont die 12 Repositories aus der Tabelle unten als
-Geschwisterverzeichnisse in einem gemeinsamen Ordner - die
-Standardstruktur, die jedes repoübergreifende Skript hier bereits
-voraussetzt. Erneutes Ausführen ist sicher: bereits geklonte
-Repositories bleiben unangetastet. Von dort aus kann
+Windows) klont 13 Kern-Repositories - eine handverlesene Startauswahl,
+nicht den vollständigen Katalog unten - als Geschwisterverzeichnisse in
+einem gemeinsamen Ordner: die Standardstruktur, die jedes
+repoübergreifende Skript hier bereits voraussetzt. Erneutes Ausführen
+ist sicher: bereits geklonte Repositories bleiben unangetastet. Von
+dort aus kann
 [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-(eines der 12) Versionen prüfen und jedes Projekt bauen/aktualisieren.
+(eines der 13 gerade geklonten) Versionen prüfen und jedes andere
+Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 
 ### 🧱 Plattformbasis und Verträge
 | Repository | Beschreibung |

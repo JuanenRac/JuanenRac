@@ -4,17 +4,19 @@
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 #
-# Clones the 12 original/core repositories (README.md's own "Core
-# Ecosystem" table) as siblings under one workspace directory - the
-# standard layout every cross-repo script in this ecosystem already
-# assumes (HYDRA-UMC-SERVER's build-frontend.sh, HYDRA-UMC-SUITE's own
-# discovery, HYDRA-UMC-UPDATER's own default_workspace_root()). Only
-# the 12 core repos, not all 44/45 - the audit idea this answers
-# ("Starter Kit que descargue los 12 repositorios core") asked
-# specifically for the core set, and that's also the smaller, faster,
-# more focused starting point for someone new to the ecosystem; run
-# HYDRA-UMC-UPDATER afterward (see the summary this script prints at the
-# end) for the rest, or to build/update anything cloned here.
+# Clones 13 core repositories (README.md's own "Core Ecosystem" table,
+# plus HYDRA-UMC-UPDATER itself) as siblings under one workspace
+# directory - the standard layout every cross-repo script in this
+# ecosystem already assumes (HYDRA-UMC-SERVER's build-frontend.sh,
+# HYDRA-UMC-SUITE's own discovery, HYDRA-UMC-UPDATER's own
+# default_workspace_root()). Only these 13, not the full ~47-repo
+# catalog - the audit idea this answers ("Starter Kit que descargue los
+# 12 repositorios core") asked specifically for a small core set, and
+# that's also the smaller, faster, more focused starting point for
+# someone new to the ecosystem. HYDRA-UMC-UPDATER is included precisely
+# so the "next step" this script prints at the end - using it to check
+# versions and build/update anything else - is something you can
+# actually do immediately, without a second manual clone first.
 #
 # Idempotent: a directory that already exists here is left completely
 # untouched (never pulled, never reset) - re-running this script after a
@@ -44,11 +46,12 @@ CORE_REPOS=(
   URTC-FLASHER
   URTC-TESTER
   URTC-WEB-STUDIO
+  HYDRA-UMC-UPDATER
 )
 
 echo "============================================================"
 echo " HYDRA-UMC / URTC Starter Kit"
-echo " Cloning the 12 core repositories into: $(pwd)"
+echo " Cloning the 13 core repositories into: $(pwd)"
 echo "============================================================"
 
 cloned=0
@@ -74,7 +77,7 @@ echo "============================================================"
 echo " Done: $cloned cloned, $skipped already present, $failed failed"
 echo "============================================================"
 echo
-echo "Next step: HYDRA-UMC-UPDATER (one of the repos just cloned above)"
+echo "Next step: HYDRA-UMC-UPDATER (one of the 13 repos just cloned above)"
 echo "can check versions, install/update any of the other projects one"
 echo "at a time, and build each project via its own build.sh/.bat - see"
 echo "HYDRA-UMC-UPDATER/README.md. This script's only job was step one:"
