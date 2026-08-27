@@ -109,11 +109,13 @@ This isn't a guided tutorial (there's no single "right" carrier for every use ca
 ## 📁 Project Catalog
 
 New to the ecosystem? `./starter-kit.sh` (or `starter-kit.bat` on
-Windows) clones all 14 repos in the table below as siblings in one
-directory - the standard layout every cross-repo script here already
-assumes. Re-running it is safe: anything already cloned is left
-untouched. From there, [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-(one of the 14) can check versions and build/update any project.
+Windows) clones 13 core repositories - a hand-picked starting set, not
+the full catalog below - as siblings in one directory: the standard
+layout every cross-repo script here already assumes. Re-running it is
+safe: anything already cloned is left untouched. From there,
+[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
+(one of the 13 just cloned) can check versions and build/update any of
+the other projects in the full catalog below.
 
 ### 🧱 Platform Foundation & Contracts
 | Repository | Description |

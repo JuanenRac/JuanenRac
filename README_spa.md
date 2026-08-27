@@ -109,13 +109,15 @@ Esto no es un tutorial guiado (no hay un único carrier "correcto" para cada cas
 ## 📁 Catálogo de Proyectos
 
 ¿Nuevo en el ecosistema? `./starter-kit.sh` (o `starter-kit.bat` en
-Windows) clona los 12 repositorios de la tabla de abajo como carpetas
-hermanas en un mismo directorio - la disposición estándar que ya asume
-cualquier script entre repositorios de aquí. Volver a ejecutarlo es
-seguro: lo que ya esté clonado se deja intacto. A partir de ahí,
+Windows) clona 13 repositorios core - un conjunto inicial seleccionado a
+mano, no el catálogo completo de abajo - como carpetas hermanas en un
+mismo directorio: la disposición estándar que ya asume cualquier script
+entre repositorios de aquí. Volver a ejecutarlo es seguro: lo que ya
+esté clonado se deja intacto. A partir de ahí,
 [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-(uno de los 14) puede comprobar versiones y compilar/actualizar
-cualquier proyecto.
+(uno de los 13 recién clonados) puede comprobar versiones y
+compilar/actualizar cualquiera de los demás proyectos del catálogo
+completo de abajo.
 
 ### 🧱 Base de plataforma y contratos
 | Repositorio | Descripción |

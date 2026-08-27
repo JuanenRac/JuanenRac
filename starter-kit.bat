@@ -4,7 +4,7 @@ REM HYDRA-UMC / URTC Ecosystem - starter-kit.bat
 REM Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 REM GPL-3.0 - see LICENSE.md
 REM
-REM Windows counterpart to starter-kit.sh - same 12 core repos, same
+REM Windows counterpart to starter-kit.sh - same 13 core repos, same
 REM idempotent "skip what's already here, never pull/reset" behavior. See
 REM starter-kit.sh's own header comment for the full reasoning.
 REM
@@ -18,11 +18,11 @@ if "%DEST%"=="" set "DEST=."
 if not exist "%DEST%" mkdir "%DEST%"
 cd /d "%DEST%"
 
-set REPOS=HYDRA-UMC HYDRA-UMC-SERVER HYDRA-UMC-STUDIO HYDRA-UMC-SUITE HYDRA-UMC-DSI HYDRA-UMC-ANDROID-CONTROL HYDRA-UMC-IOS-CONTROL HYDRA-UMC-EDITOR-URDF URTC URTC-FLASHER URTC-TESTER URTC-WEB-STUDIO
+set REPOS=HYDRA-UMC HYDRA-UMC-SERVER HYDRA-UMC-STUDIO HYDRA-UMC-SUITE HYDRA-UMC-DSI HYDRA-UMC-ANDROID-CONTROL HYDRA-UMC-IOS-CONTROL HYDRA-UMC-EDITOR-URDF URTC URTC-FLASHER URTC-TESTER URTC-WEB-STUDIO HYDRA-UMC-UPDATER
 
 echo ============================================================
 echo  HYDRA-UMC / URTC Starter Kit
-echo  Cloning the 12 core repositories into: %CD%
+echo  Cloning the 13 core repositories into: %CD%
 echo ============================================================
 
 set /a cloned=0
@@ -49,7 +49,7 @@ echo ============================================================
 echo  Done: !cloned! cloned, !skipped! already present, !failed! failed
 echo ============================================================
 echo.
-echo Next step: HYDRA-UMC-UPDATER (one of the repos just cloned above)
+echo Next step: HYDRA-UMC-UPDATER (one of the 13 repos just cloned above)
 echo can check versions, install/update any of the other projects one
 echo at a time, and build each project via its own build.sh/.bat - see
 echo HYDRA-UMC-UPDATER\README.md. This script's only job was step one:
