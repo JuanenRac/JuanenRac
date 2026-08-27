@@ -1,9 +1,7 @@
 # CODEOWNERS - HYDRA-UMC / URTC Ecosystem
 #
-# A single line covers every file in this meta-repo (SONNET/
-# AUDITORIA_COMPLETA_44_PROYECTOS.txt flagged the missing file - real,
-# though low-impact for a single-maintainer ecosystem: this is what
-# CODEOWNERS looks like for one owner, not an empty/unconfigured gap).
+# A single line covers every file in this meta-repo. This is what
+# CODEOWNERS looks like for one owner, not an empty/unconfigured gap.
 # GitHub auto-requests a review from whoever is listed below on any pull
 # request touching a matching path. Each of the 44 individual project
 # repos is independent and can carry its own CODEOWNERS if/when this
