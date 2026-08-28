@@ -1592,7 +1592,7 @@
                 title="Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass."
                 data-i18n-title="maturity_desc_established"
             >
-              <span class="maturity-count">24</span>
+              <span class="maturity-count">34</span>
               <span class="maturity-card-label" data-i18n="maturity_established">Established</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_established">Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass.</span>
             </button>
@@ -1604,7 +1604,7 @@
                 title="Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip)."
                 data-i18n-title="maturity_desc_functional"
             >
-              <span class="maturity-count">20</span>
+              <span class="maturity-count">10</span>
               <span class="maturity-card-label" data-i18n="maturity_functional">Functional</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_functional">Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).</span>
             </button>
@@ -1822,7 +1822,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
         >
@@ -1871,8 +1871,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -1887,7 +1887,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.5
+            0.0.6
           </td>
 
           <td class="status-cell">
@@ -1902,7 +1902,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE/commit/cfa8517516ab8f1c0ad6cbfa83f29a097e592cfc" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE/commit/44026db1cb6221f5f6e8f97234c1786b4be3d526" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: versioned family-status schema, resource-limited manifest reads, shared-model degradation check">feat: versioned family-status schema, resource-limited manifest reads, shared-model degradation check</a>
           </td>
         </tr>
 
@@ -1913,7 +1913,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
             hidden
@@ -1922,7 +1922,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 family-readiness check (`family-status` subcommand): reads each of the 4 real children&#x27;s own hydra-umc.project.json and reports presence/version/maturity. Honest for an integration hub that runs no model itself - real LLM/VLA/voice orchestration stays future work, blocked on the children themselves.</div>
+                <div class="detail-text">Real v0 family-readiness check (`family-status [--json]` subcommand): reads each of the 4 real children&#x27;s own hydra-umc.project.json and reports presence/version/maturity through a real, versioned JSON schema. Sibling manifest reads are bounded (64 KiB) against a corrupted/oversized file. Also honestly reports this node&#x27;s own shared model-weights directory (models/) as present/missing - real degradation-awareness for an integration hub that runs no model itself. Real LLM/VLA/voice orchestration stays future work, blocked on the children themselves.</div>
               </div>
 
               <div class="detail-block">
@@ -1944,7 +1944,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="api"
             data-family="cognitive ai node"
         >
@@ -1993,8 +1993,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2009,7 +2009,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -2024,7 +2024,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA/commit/c2d5575ab244ae938867e6a6afba2f8f59fb56d1" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA/commit/c0711868129734c9eb75137d2f49939699736958" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -2035,7 +2035,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="api"
             data-family="cognitive ai node"
             hidden
@@ -2044,7 +2044,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 lexical retrieval: stdlib-only TF-IDF search (query subcommand) over ingested Markdown, defaulting to this repo&#x27;s own README/CHANGELOG. Honestly lexical, not yet embedding-based semantic search, and no LLM synthesis step - that and PDF ingestion are future work.</div>
+                <div class="detail-text">Real v0 lexical retrieval: stdlib-only TF-IDF search (query subcommand) over ingested Markdown, defaulting to this repo&#x27;s own README/CHANGELOG. Deterministic scoring (hash-seed-independent summation), traceable source#index citations, and a real document allowlist (only existing .md/.markdown paths are ingested; every other path is rejected with a distinct reason instead of being silently skipped or silently read as text). Honestly lexical, not yet embedding-based semantic search, and no LLM synthesis step - that and PDF ingestion are future work.</div>
               </div>
 
               <div class="detail-block">
@@ -2066,7 +2066,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
         >
@@ -2115,8 +2115,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2131,7 +2131,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -2146,7 +2146,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER/commit/531282b6b5395ed1f22a48960676e10263374b77" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER/commit/27a91aa72c21a5d4914bf1123b4af06f2032425c" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real precondition validation and property-tested determinism">feat: real precondition validation and property-tested determinism</a>
           </td>
         </tr>
 
@@ -2157,7 +2157,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
             hidden
@@ -2166,7 +2166,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 rule-based task decomposition (`decompose` subcommand, small known goal vocabulary) and real rule-based semantic recovery over structured MCU error codes (`recover` subcommand). Honestly template-based, not the local LLM the README describes - that and context-aware multi-step reasoning are future work.</div>
+                <div class="detail-text">Real v0 rule-based task decomposition (`decompose` subcommand, small known goal vocabulary) and real rule-based semantic recovery over structured MCU error codes (`recover` subcommand). Real precondition validation (validation.py) refuses a plan that fails its own preconditions instead of handing it off as execution-ready; decompose_goal() is proven deterministic and fuzz-tested against 500 random invalid goals. Honestly template-based, not the local LLM the README describes - that and context-aware multi-step reasoning are future work.</div>
               </div>
 
               <div class="detail-block">
@@ -2188,7 +2188,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
         >
@@ -2237,8 +2237,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2253,7 +2253,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -2268,7 +2268,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE/commit/6ced08f60df8ed9e41644dc1393fb2743032db4d" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE/commit/4442c7ff7efe835729ce2b64bb6092f96dc0c500" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real model manifest contract, output validation, honest status mode">feat: real model manifest contract, output validation, honest status mode</a>
           </td>
         </tr>
 
@@ -2279,7 +2279,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
             hidden
@@ -2288,7 +2288,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real action-token encoding/decoding (OpenVLA/RT-2-style 256-bin discretization per action dimension) and trajectory generation (delta-pose integration, absolute gripper state) - the &#x27;Action Tokens&#x27; and &#x27;Trajectory Generator&#x27; steps of the VLA flow, exposed via &#x27;tokens encode&#x27;/&#x27;tokens decode&#x27;/&#x27;trajectory integrate&#x27;. 19 tests. Real VLA model inference (OpenVLA/RT-2 on Hailo-10) remains future work.</div>
+                <div class="detail-text">Real action-token encoding/decoding (OpenVLA/RT-2-style 256-bin discretization per action dimension) and trajectory generation (delta-pose integration, absolute gripper state) - the &#x27;Action Tokens&#x27; and &#x27;Trajectory Generator&#x27; steps of the VLA flow, exposed via &#x27;tokens encode&#x27;/&#x27;tokens decode&#x27;/&#x27;trajectory integrate&#x27;. A real, versioned model manifest contract (model_manifest.py) plus shape/confidence validation for a future model&#x27;s inference output, and an honest &#x27;status&#x27; subcommand reporting real accelerator/model-weight availability (never a fake ready state). 40 tests. Real VLA model inference (OpenVLA/RT-2 on Hailo-10) remains future work.</div>
               </div>
 
               <div class="detail-block">
@@ -2310,7 +2310,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
         >
@@ -2359,8 +2359,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2375,7 +2375,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.5
+            0.0.6
           </td>
 
           <td class="status-cell">
@@ -2390,7 +2390,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI/commit/5232aa695ec6818fa1c641a7cde96ceea79da5bf" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI/commit/5170fdd92b11be2cb71a82e75d473003c90d997f" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: ambiguity-aware intent classification and real text normalization">feat: ambiguity-aware intent classification and real text normalization</a>
           </td>
         </tr>
 
@@ -2401,7 +2401,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="cognitive ai node"
             hidden
@@ -2410,7 +2410,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 audio front-end (WAV loading + energy-gate voice activity detection, stdlib-only) and a real rule-based intent/entity parser over already-transcribed text. Neither is the real Whisper STT / neural TTS pipeline the README&#x27;s roadmap describes - those need a real model dependency and are still future work (name says UI, role is closer to a voice service than a graphical UI).</div>
+                <div class="detail-text">Real v0 audio front-end (WAV loading + energy-gate voice activity detection, stdlib-only), rule-based intent/entity parser over already-transcribed text, and a bounded Watch voice-turn HTTP gateway. Server now relays authenticated client requests to a loopback CM5 service while retaining the gateway token; replies require primary-control confirmation for motion. Real intent normalization (Unicode NFKC, filler/punctuation stripping) and ambiguity-aware classification (classify_intent) reject a transcript that genuinely matches more than one known command instead of silently guessing. Whisper STT / neural TTS still require their real model/runtime dependencies.</div>
               </div>
 
               <div class="detail-block">
@@ -2441,7 +2441,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="node"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="ui"
             data-family="complementary tools"
         >
@@ -2490,8 +2490,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2506,7 +2506,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -2521,7 +2521,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/4d58fea2aac9f7aa485d356c2d0d6f3a60a639de" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/c4099686d34e9a977d943519d5550076be20a310" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real AI-provider gate: schema validation and honest fallback">Add real AI-provider gate: schema validation and honest fallback</a>
           </td>
         </tr>
 
@@ -2532,7 +2532,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="node"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="ui"
             data-family="complementary tools"
             hidden
@@ -2541,7 +2541,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 Smart Summaries (min/max/average/latest/direction stats from real HYDRA-UMC-DATALAKE history) and Anomaly Highlighting (real check against a real, already-fitted HYDRA-UMC-ANOMALY-DETECTOR baseline), each a real text panel, verified against live sibling services. 16 tests. Trend Prediction (real forecasting) and embedding the panels inside STUDIO itself are future work.</div>
+                <div class="detail-text">Established v0: Smart Summaries (min/max/average/latest/direction stats from real HYDRA-UMC-DATALAKE history) and Anomaly Highlighting (real check against a real, already-fitted HYDRA-UMC-ANOMALY-DETECTOR baseline), each a real text panel, verified against live sibling services. Real AI-provider gate (aiProvider.ts): input/output schema validation, real rejection of unstructured provider output, and an honest statistical fallback for when no real AI provider is configured - wired into the Trend Summary panel. 39 tests. An actual LLM-backed provider, Trend Prediction (real forecasting), and embedding the panels inside STUDIO itself are future work.</div>
               </div>
 
               <div class="detail-block">
@@ -2563,7 +2563,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="go"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="cli"
             data-family="complementary tools"
         >
@@ -2612,8 +2612,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2628,7 +2628,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -2643,7 +2643,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/c414ca62338d312794461f1ac200902e065d197d" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/e2b55ef314116c48c22b2c24dea56a0d502188cf" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -2654,7 +2654,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="go"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="cli"
             data-family="complementary tools"
             hidden
@@ -2663,7 +2663,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real `version`/`status`/`robots` commands, the last a genuine client of a live HYDRA-UMC-SERVER fleet endpoint (GET /api/settings), with 12 tests via net/http/httptest. Fleet-wide deploy/flash-all/audit commands are future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
+                <div class="detail-text">Real `version`/`status`/`robots`/`config validate`/`config apply --dry-run` commands. `robots`/`status` are genuine clients of a live HYDRA-UMC-SERVER (GET /api/settings, GET /api/hydra-info). A real, stable exit-code contract (exitcode.go) classifies every failure (usage/config/network/server/not-implemented) instead of a bare exit 1. 36 tests via net/http/httptest and real temp-file config fixtures. Fleet-wide deploy/flash-all/audit commands and a live (non-dry-run) `config apply` remain future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -2765,7 +2765,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/7db0debd728405a3348991db41190284d11d7613" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/8cdf15df179e2a65c22ed3c55086d437edcfac1e" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: release signing config + relay/voice protocol updates">chore: release signing config + relay/voice protocol updates</a>
           </td>
         </tr>
 
@@ -2785,7 +2785,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real differentiated haptic vibration patterns per alert severity, and a real kotlinx.serialization-backed SERVER&lt;-&gt;WATCH sync-message protocol (parse/serialize, not the WebSocket transport itself). 12 JUnit tests. The real WebSocket connection, wireless E-STOP, and glanceable status dashboard remain future work.</div>
+                <div class="detail-text">Functional v0: differentiated haptic vibration patterns wired to Wear OS Vibrator, explicit microphone/system-STT capture and local TTS confirmation, plus typed voice_turn/assistant_reply/system_status messages. A paired Android Data Layer relay is implemented; it keeps the Server JWT on the phone and Voice UI token on CM5. Physical radio, wireless E-STOP and live CM5 telemetry remain hardware integration gates. Voice never directly actuates a robot.</div>
               </div>
 
               <div class="detail-block">
@@ -3009,7 +3009,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/fbdc076fd5ea6183c2511dd3eff57ea4a95d980a" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/dfa6c420cd4910bdacdf7ce8768122344b6e7086" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -3140,7 +3140,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/eb4d30a323a4c4b6cba20d7d15184136a2a8b4e0" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/98543078d2b418ae80002bbeb0fae6c0ae4e268c" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix(ci): use workflow python for voice relay test">fix(ci): use workflow python for voice relay test</a>
           </td>
         </tr>
 
@@ -3160,7 +3160,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The real headless backend every control client (STUDIO, SUITE, DSI, the mobile apps) actually talks to - the integration parent of this whole family.</div>
+                <div class="detail-text">The real headless backend every control client (STUDIO, SUITE, DSI, the mobile apps) actually talks to. It now relays bounded authenticated voice turns to a loopback HYDRA-UMC-VOICE-UI gateway while retaining the gateway token server-side; voice never becomes a direct robot command.</div>
               </div>
 
               <div class="detail-block">
@@ -3247,7 +3247,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.8
+            0.2.9
           </td>
 
           <td class="status-cell">
@@ -3262,7 +3262,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/8def0792273544f15524d0eef53f71ebe793a049" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/54d62874512ea3f090cfe4ae01212838dc9ea7e9" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync watch companion protocol/relay updates">chore: sync watch companion protocol/relay updates</a>
           </td>
         </tr>
 
@@ -3282,7 +3282,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Native Android control app with biometric login, talking to HYDRA-UMC-SERVER over Wi-Fi/Bluetooth.</div>
+                <div class="detail-text">Native Android control app with biometric login, talking to HYDRA-UMC-SERVER over Wi-Fi/Bluetooth. It receives paired Wear OS Data Layer voice/status messages, keeps the Server JWT encrypted on the phone and returns bounded replies; that path never issues robot commands.</div>
               </div>
 
               <div class="detail-block">
@@ -3750,7 +3750,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/fc3d16e35b808c216e33858b27ba7b261f3c090f" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/3eefe799239be533863502ac46dbd7e2e7676af5" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: pass explicit pause payload and richer optimistic playback state to sendRobotCommand">fix: pass explicit pause payload and richer optimistic playback state to sendRobotCommand</a>
           </td>
         </tr>
 
@@ -4631,7 +4631,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TWIN/commit/fe0dd25bea2ab70909366d9a94b5fa41e1182dcf" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TWIN/commit/09142edfa6e408ab725b4459f6bfc76bd3d003a3" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: rustfmt reformat">chore: rustfmt reformat</a>
           </td>
         </tr>
 
@@ -4753,7 +4753,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/commit/d7a1ed3fe6ecd9e57dd412ec9d5a7813dee20231" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/commit/75268bc4db261a00cff38520d9d4a37489c48c3f" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -4875,7 +4875,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/c3dd2fc07728b2da987e31e131cba756627e3c0a" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/3156d3e4376b9e3eccfbe148642a049a59e08b3c" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -4997,7 +4997,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN/commit/e54eafa82271f582afa74b2de6a3b9d06b551ad0" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add reproducible-seed dataset manifest and real output validation">Add reproducible-seed dataset manifest and real output validation</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN/commit/b0ffc9141c72dae138d4d9da481847779dffdb93" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -5625,7 +5625,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/f49d375ad81f75577012068c2777fbf87b607778" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/5a2bf4c0f023ed75675da2bbc4c9a834e3b03152" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: update CLI reference now that run.sh/run.bat forward arguments">docs: update CLI reference now that run.sh/run.bat forward arguments</a>
           </td>
         </tr>
 
@@ -5991,7 +5991,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/commit/95f1c4816d0a530a72d01f7f724105e50aa1c53e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real planning time limit and unsafe-trajectory validation">Add real planning time limit and unsafe-trajectory validation</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/commit/88e319627d7deb59cdeaa315ed8600d887a81cfa" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: rustfmt reformat">chore: rustfmt reformat</a>
           </td>
         </tr>
 
@@ -6113,7 +6113,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/commit/13180393e1d91aca750deddb5363dabafc076bea" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real conflict visibility and 4-cell partition/reconnect proof">Add real conflict visibility and 4-cell partition/reconnect proof</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/commit/4f5d77b16ebabe5b996fd4fbe0f352e926993181" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: rustfmt reformat">chore: rustfmt reformat</a>
           </td>
         </tr>
 
@@ -6164,7 +6164,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="platform foundation &amp; contracts"
         >
@@ -6213,8 +6213,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -6229,7 +6229,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -6244,7 +6244,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/a66c4eb515f95a90bc87d4ad7ca8a17dbd5ed2f4" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/14129d41b35092e7be6780c42d4c576afdd8de83" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real system-file rollback mechanism, idempotent preflight verification">feat: real system-file rollback mechanism, idempotent preflight verification</a>
           </td>
         </tr>
 
@@ -6255,7 +6255,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="platform foundation &amp; contracts"
             hidden
@@ -6264,7 +6264,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">A reproducible HYDRA-UMC product layer on Raspberry Pi OS, not a new Linux distribution. Version 0.0.3 provides a read-only agent, validated configuration, profiles, diagnostics and systemd staging; CM5 validation and production image assembly remain release gates.</div>
+                <div class="detail-text">A reproducible HYDRA-UMC product layer on Raspberry Pi OS, not a new Linux distribution. Provides a read-only agent, validated configuration, profiles, diagnostics, Server staging and an optional loopback Voice UI gateway. The preflight is proven idempotent and side-effect-free by a real test (two runs, byte-identical output, zero files touched), and a real, host-independent backup/rollback mechanism (provisioning/rollback.py) protects the one system file install_local_agent.sh unconditionally overwrites. CM5 validation and production image assembly remain release gates.</div>
               </div>
 
               <div class="detail-block">
@@ -6286,7 +6286,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="library"
             data-family="platform foundation &amp; contracts"
         >
@@ -6335,8 +6335,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -6351,7 +6351,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -6366,7 +6366,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/b9371f232b2a2e00cb60bfeb19a64667c5f54226" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/b7ce5260457af16b66bb1227a1a71945a733b4bb" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: automatic contract/validator compatibility matrix">feat: automatic contract/validator compatibility matrix</a>
           </td>
         </tr>
 
@@ -6377,7 +6377,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="library"
             data-family="platform foundation &amp; contracts"
             hidden
@@ -6386,7 +6386,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The common contract and conformance boundary for services, UIs, CM5 adapters and URTC. Version 0.0.3 provides v1 JSON Schema, Python validation and conformance fixtures; package publication and further clients remain release gates.</div>
+                <div class="detail-text">The common contract and conformance boundary for services, UIs, CM5 adapters and URTC. Provides v1 JSON Schema, Python validation and conformance fixtures, plus a real, automatic compatibility matrix (tools/verify_contract_matrix.py) between the published schemas and the validator - found and fixed a real gap where the ProjectManifest (hydra-umc.project.json) contract had no validator entry at all. Package publication and further clients remain release gates.</div>
               </div>
 
               <div class="detail-block">
@@ -6619,7 +6619,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/466e5bd16b9c10cd98443ee4d2e0e221496bbce5" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/dd9a5dd9d997a926ef24cde2878829cd4f4bbf7a" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -6994,7 +6994,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE/commit/011ffebf410d6836d09a067441a7cca3ce7ff7c3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real pipeline manifest, frame validation, and degraded-mode detection">Add real pipeline manifest, frame validation, and degraded-mode detection</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE/commit/f28b8e4e476662f5be58b349ede28e441c945c27" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -7116,7 +7116,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF/commit/2e3ae6ae9a9964ba137b1dd646707fb02bd42f90" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real safe-load gate: Hailo-architecture compatibility + checksum">Add real safe-load gate: Hailo-architecture compatibility + checksum</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF/commit/4d4388ffaa36ab8e6fce3ea268ff65bb402c5f94" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -7238,7 +7238,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES/commit/e6a03e6c5aa5df6aaa83810b881c88283c030726" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES/commit/cb62eaf49bed3590ffbb0a9c8d13039400430dee" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -7280,7 +7280,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="vision ai node"
         >
@@ -7329,8 +7329,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -7345,7 +7345,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -7360,7 +7360,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER/commit/0afa1925b597d08a5238f8c09c886e98de6779b7" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER/commit/fb391f156a229e4aa4a3a7abffecf06b2b332361" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
@@ -7371,7 +7371,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="vision ai node"
             hidden
@@ -7380,7 +7380,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real per-camera config validation, GStreamer pipeline description generation, and MediaMTX paths.yml generation, exposed via &#x27;config validate&#x27;/&#x27;config gst&#x27;/&#x27;config mediamtx&#x27;. 24 tests. Actually running the generated pipeline against physical USB cameras needs the V4L2/GStreamer/Hailo-8 runtime, which is future work.</div>
+                <div class="detail-text">Established v0: real per-camera config validation, GStreamer pipeline description generation, and MediaMTX paths.yml generation, exposed via &#x27;config validate&#x27;/&#x27;config gst&#x27;/&#x27;config mediamtx&#x27;. Real bounded frame buffering (drop-oldest backpressure, provably bounded memory under a slow consumer) and a real deterministic reconnect/backoff policy for a dropped camera link, exposed via &#x27;stream simulate&#x27;. 45 tests. Actually running the generated pipeline against physical USB cameras needs the V4L2/GStreamer/Hailo-8 runtime, which is future work.</div>
               </div>
 
               <div class="detail-block">
@@ -7482,7 +7482,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API/commit/442c3632f42820ba71faa936123d1a0870b2c146" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync build/run scripts and version metadata">chore: sync build/run scripts and version metadata</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API/commit/8fd8a4af897d8a8683f258e83568fd141de79771" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add real CLI usage reference (docs/CLI_REFERENCE.md)">docs: add real CLI usage reference (docs/CLI_REFERENCE.md)</a>
           </td>
         </tr>
 
