@@ -201,6 +201,15 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 遥测数据桥接器，用于 IoT 集成与外部仪表盘。 |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 标准化接口，用于机床与机器人健康监测。 |
 
+### 外部自动化桥接器
+| 仓库 | 说明 |
+| :--- | :--- |
+| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 双向 ROS 2 协调边界：主题用于观测，服务用于检查，可取消动作用于单元任务。 |
+| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | 面向 OpenPnP 及机器人辅助上下料的可追溯 PCB 交接协调器。 |
+| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 围绕 3D 打印软件的安全桥接器；首个适配器验证 Moonraker 就绪状态而不替换固件。 |
+| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | CNC 单元辅助协调器；轨迹和安全性仍由原生控制器负责。 |
+| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 激光单元辅助协调器，不能解锁、发射或绕过激光互锁。 |
+
 ### 🛠️ Complementary Tools（配套工具）
 | 仓库 | 说明 |
 | :--- | :--- |

@@ -203,6 +203,15 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 | [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | Telemetriebrücke für IoT-Integrationen und externe Dashboards. |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | Standardisierte Schnittstelle für die Zustandsüberwachung von Maschinen. |
 
+### Externe Automatisierungsbrücken
+| Repository | Beschreibung |
+| :--- | :--- |
+| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | Bidirektionale ROS-2-Koordinationsgrenze: Topics für Beobachtung, Dienste zur Prüfung und abbrechbare Zellaktionen. |
+| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | Nachverfolgbarer PCB-Übergabekoordinator für OpenPnP sowie robotergestütztes Be- oder Entladen. |
+| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | Sichere Brücke um 3D-Drucksoftware; der erste Adapter prüft Moonraker ohne Firmware zu ersetzen. |
+| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | Koordinator für CNC-Zellenhilfen; Bahnplanung und Sicherheit bleiben im nativen Controller. |
+| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | Koordinator für Laserzellenhilfen, der weder Laser scharf schalten noch auslösen oder Interlocks umgehen kann. |
+
 ### 🛠️ Ergänzende Tools
 | Repository | Beschreibung |
 | :--- | :--- |

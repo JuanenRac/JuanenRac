@@ -204,6 +204,15 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | IoT 連携や外部ダッシュボード向けの、テレメトリブリッジ。 |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 工作機械・ロボットの稼働監視向けの、標準化されたインターフェース。 |
 
+### 外部オートメーションブリッジ
+| リポジトリ | 説明 |
+| :--- | :--- |
+| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 双方向 ROS 2 協調境界：観測用トピック、検査用サービス、キャンセル可能なセル作業アクション。 |
+| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | OpenPnP とロボット支援の搬入・搬出のための、追跡可能な PCB 受け渡しコーディネーター。 |
+| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 3D プリンターソフトウェア周辺の安全なブリッジ。最初のアダプターはファームウェアを置き換えず Moonraker の準備状態を検証します。 |
+| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | CNC セル補助のコーディネーター。軌道と安全性はネイティブコントローラーに残ります。 |
+| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | レーザーセル補助のコーディネーター。レーザーのアーム、有効化、インターロックの迂回はできません。 |
+
 ### 🛠️ Complementary Tools（補完ツール群）
 | リポジトリ | 説明 |
 | :--- | :--- |
