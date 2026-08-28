@@ -46,6 +46,13 @@ name: Build ecosystem status dashboard
 on:
   workflow_dispatch:
 
+  # Immediate refresh requested by a project after a push to its main branch.
+  # Payload data is informational only: the generator still discovers and
+  # validates every public manifest itself before publishing the dashboard.
+  repository_dispatch:
+    types:
+      - ecosystem_project_updated
+
   push:
     branches:
       - main
