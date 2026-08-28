@@ -1592,7 +1592,7 @@
                 title="Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass."
                 data-i18n-title="maturity_desc_established"
             >
-              <span class="maturity-count">14</span>
+              <span class="maturity-count">19</span>
               <span class="maturity-card-label" data-i18n="maturity_established">Established</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_established">Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass.</span>
             </button>
@@ -1604,7 +1604,7 @@
                 title="Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip)."
                 data-i18n-title="maturity_desc_functional"
             >
-              <span class="maturity-count">30</span>
+              <span class="maturity-count">25</span>
               <span class="maturity-card-label" data-i18n="maturity_functional">Functional</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_functional">Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).</span>
             </button>
@@ -2506,7 +2506,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -2521,7 +2521,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/37678e6060021a02dfb560f90f633aedccdeb5bb" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)">Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/3bf67a666e2ec01adfbe85106befda81c555d2ff" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work">Sync pending ecosystem-wide work</a>
           </td>
         </tr>
 
@@ -3247,7 +3247,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.7
+            0.2.8
           </td>
 
           <td class="status-cell">
@@ -3262,7 +3262,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/3c90d70a2bc45263090692ae0724a232212449c3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)">Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/e472f0be3cefc7f4fd6fe4137be75fe88c678ea2" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work">Sync pending ecosystem-wide work</a>
           </td>
         </tr>
 
@@ -4551,7 +4551,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="rust"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="digital twin &amp; simulation"
         >
@@ -4600,8 +4600,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -4616,7 +4616,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.3
           </td>
 
           <td class="status-cell">
@@ -4631,7 +4631,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TWIN/commit/8742c1c59f43dd4b31cb623528d9ff224f7ec374" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)">Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TWIN/commit/037105de62b28f1ac84e29a281df414e2fc53039" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add state-sync contract with incompatible-simulator-version rejection">Add state-sync contract with incompatible-simulator-version rejection</a>
           </td>
         </tr>
 
@@ -4642,7 +4642,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="rust"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="digital twin &amp; simulation"
             hidden
@@ -4651,7 +4651,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 family-readiness check (`family-status` subcommand): reads each of the 3 real children&#x27;s own hydra-umc.project.json and reports presence/version/maturity/role. Honest for an integration hub that runs no rendering/physics engine itself - the real Bevy-based engine and MuJoCo/PhysX backend stay future work, blocked on a real GPU/graphics toolchain and the children&#x27;s own engines maturing.</div>
+                <div class="detail-text">Established v0: real family-readiness check (`family-status` subcommand) reads each of the 3 real children&#x27;s own hydra-umc.project.json and reports presence/version/maturity/role. Plus a real state-sync contract (src/contract.rs): a child must be at least `functional` maturity and report a major version no higher than this Twin&#x27;s verified-compatible ceiling (0 today) before it is treated as sync-ready - an incompatible simulator version or an immature child is refused with a real reason, exposed via the new `family-sync` subcommand. 21 tests. Honest for an integration hub that runs no rendering/physics engine itself - the real Bevy-based engine and MuJoCo/PhysX backend stay future work, blocked on a real GPU/graphics toolchain and the children&#x27;s own engines maturing.</div>
               </div>
 
               <div class="detail-block">
@@ -4795,7 +4795,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="rust"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="library"
             data-family="digital twin &amp; simulation"
         >
@@ -4844,8 +4844,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -4860,7 +4860,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.3
           </td>
 
           <td class="status-cell">
@@ -4875,7 +4875,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/9c50943562d4c5d4c368ac6a4f5e69d685354a03" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)">Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/b1321c0f2529e316f39762cafc6b5075008730fd" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add joint-limits corpus and limit-aware FK regression tests">Add joint-limits corpus and limit-aware FK regression tests</a>
           </td>
         </tr>
 
@@ -4886,7 +4886,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="rust"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="library"
             data-family="digital twin &amp; simulation"
             hidden
@@ -4895,7 +4895,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 forward kinematics and joint-limit validation (`fk`/`validate-limits` subcommands) over a real, documented-partial URDF subset (single serial chain, revolute/continuous/prismatic/fixed joints). Real MuJoCo/PhysX rigid-body and contact simulation stays future work - genuinely blocked on integrating an actual physics-engine dependency, not just unwritten code.</div>
+                <div class="detail-text">Established v0: real forward kinematics and joint-limit validation (`fk`/`validate-limits` subcommands) over a real, documented-partial URDF subset (single serial chain, revolute/continuous/prismatic/fixed joints). Plus a real joint-limits corpus (src/corpus.rs) and a fail-safe `fk-checked` subcommand: forward_kinematics_checked() refuses to compute a world-frame pose for a joint position outside its declared URDF limit, closing the gap where plain fk would silently compute a physically-unreachable pose. 33 tests. Real MuJoCo/PhysX rigid-body and contact simulation stays future work - genuinely blocked on integrating an actual physics-engine dependency, not just unwritten code.</div>
               </div>
 
               <div class="detail-block">
@@ -4917,7 +4917,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="tool"
             data-family="digital twin &amp; simulation"
         >
@@ -4966,8 +4966,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -4982,7 +4982,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -4997,7 +4997,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN/commit/bd2951b2d80cdafb0a77592e611e7f5832493e4c" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (build-test pattern, docs, real builds)">Sync pending ecosystem-wide work (build-test pattern, docs, real builds)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN/commit/e54eafa82271f582afa74b2de6a3b9d06b551ad0" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add reproducible-seed dataset manifest and real output validation">Add reproducible-seed dataset manifest and real output validation</a>
           </td>
         </tr>
 
@@ -5008,7 +5008,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="python"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="tool"
             data-family="digital twin &amp; simulation"
             hidden
@@ -5017,7 +5017,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real v0 procedural 2D scene generation, stdlib-only BMP rasterization, and real YOLO/COCO annotation export (`generate` subcommand), verified end to end incl. visual inspection of a real rendered image. Honestly 2D placeholder shapes, not the photorealistic 3D rendering through HYDRA-UMC-TWIN&#x27;s own engine the README describes - that engine doesn&#x27;t exist yet (TWIN is itself still scaffolding). TFRecord export and real 3D rendering are future work.</div>
+                <div class="detail-text">Real v0 procedural 2D scene generation, stdlib-only BMP rasterization, and real YOLO/COCO annotation export (`generate` subcommand), verified end to end incl. visual inspection of a real rendered image. A real dataset manifest (manifest.json, with a reproducible-seed flag and a per-image sha256 checksum) and real post-generation validation (scene bounds, BMP integrity against a genuinely truncated file, label-distribution sanity) now run automatically at the end of every `generate` call. Honestly 2D placeholder shapes, not the photorealistic 3D rendering through HYDRA-UMC-TWIN&#x27;s own engine the README describes - that engine doesn&#x27;t exist yet (TWIN is itself still scaffolding). TFRecord export and real 3D rendering are future work.</div>
               </div>
 
               <div class="detail-block">
@@ -5048,7 +5048,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="node"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="api"
             data-family="industrial gateway"
         >
@@ -5097,8 +5097,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -5113,7 +5113,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.3
           </td>
 
           <td class="status-cell">
@@ -5128,7 +5128,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL/commit/c9c51fdadc9bf8605b18effd9f3ad22f49d9b3e6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)">Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL/commit/0bcdbedc4e429207964647c949d015ebd69cd868" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add command allowlist, backpressure and timeout for POST /command">Add command allowlist, backpressure and timeout for POST /command</a>
           </td>
         </tr>
 
@@ -5139,7 +5139,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="node"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="api"
             data-family="industrial gateway"
             hidden
@@ -5148,7 +5148,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">GET /status makes a real, live reachability check against all 3 children on every request - verified end-to-end, including detecting a real killed sibling.</div>
+                <div class="detail-text">Established v0: GET /status makes a real, live reachability check against all 3 children on every request - verified end-to-end, including detecting a real killed sibling. Plus a real command allowlist + backpressure + timeout decision layer (src/command.ts, CommandDispatcher) in front of POST /command: default-deny per-protocol allowlist (only read-like/publish operations allowed in v0), bounded concurrency (no more than maxConcurrent commands in flight, rejected immediately beyond that), and a real timeout - all enforced before any relay attempt, mapped to real HTTP status codes (403/429/504/502). The default executor reuses the existing real reachability probes; an actual protocol-level write is not implemented yet, honestly. 27 tests.</div>
               </div>
 
               <div class="detail-block">
@@ -5494,7 +5494,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/3b91a9f941fb150e07e95282c5dcf747a7ebd199" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)">Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/040f2a6109d5439a839c42a12bec802a05bac348" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work">Sync pending ecosystem-wide work</a>
           </td>
         </tr>
 
@@ -5545,7 +5545,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="rust"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="orchestration &amp; swarm"
         >
@@ -5594,8 +5594,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -5610,7 +5610,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.3
           </td>
 
           <td class="status-cell">
@@ -5625,7 +5625,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/b9c5dac8aa1f7aaf8c3fd0ffc90f0c6eb052a22b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)">Sync pending ecosystem-wide work (docs, config, line endings, minor fixes)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/df13d85f0cfee805c5d7f50bb6d6bc37ff2f35f9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Apply rustfmt formatting to main.rs and mission.rs">Apply rustfmt formatting to main.rs and mission.rs</a>
           </td>
         </tr>
 
@@ -5636,7 +5636,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="rust"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="orchestration &amp; swarm"
             hidden
@@ -5645,7 +5645,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real gRPC/Protobuf health-report schema, verified by actually compiling it with grpc_tools.protoc and round-tripping a real HealthReport message through serialize/parse - the shared service contract its 4 children build against.</div>
+                <div class="detail-text">Established v0: real gRPC/Protobuf health-report schema, verified by actually compiling it with grpc_tools.protoc and round-tripping a real HealthReport message through serialize/parse - the shared service contract its 4 children build against. Plus a real, pure in-memory mission state machine (src/mission.rs): Mission (Pending-&gt;Dispatched-&gt;InProgress-&gt;Completed, Cancelled/Failed terminal), idempotent cancel() (cancelling an already-cancelled mission succeeds as a no-op, never errors), and recover_from_unavailable_node()/MissionRegistry::recover_node_unavailable() (requeues a Dispatched/InProgress mission to Pending when its node is reported unreachable/invalid, e.g. by HYDRA-UMC-NODE-HEALING&#x27;s watchdog). 22 tests. Exposed via the `mission-demo` CLI subcommand. Real gRPC transport to JOB-DISPATCHER/NODE-HEALING remains future work - genuinely blocked on those services not having a real API to call yet.</div>
               </div>
 
               <div class="detail-block">
