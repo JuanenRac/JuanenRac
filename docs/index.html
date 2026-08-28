@@ -1592,7 +1592,7 @@
                 title="Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass."
                 data-i18n-title="maturity_desc_established"
             >
-              <span class="maturity-count">40</span>
+              <span class="maturity-count">44</span>
               <span class="maturity-card-label" data-i18n="maturity_established">Established</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_established">Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass.</span>
             </button>
@@ -1604,7 +1604,7 @@
                 title="Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip)."
                 data-i18n-title="maturity_desc_functional"
             >
-              <span class="maturity-count">9</span>
+              <span class="maturity-count">5</span>
               <span class="maturity-card-label" data-i18n="maturity_functional">Functional</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_functional">Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).</span>
             </button>
@@ -2685,7 +2685,7 @@
             data-status="ok"
             data-deploy="wearable"
             data-stack="android"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="ui"
             data-family="complementary tools"
         >
@@ -2734,8 +2734,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2750,7 +2750,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.2
+            0.1.4
           </td>
 
           <td class="status-cell">
@@ -2765,7 +2765,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/080bf1c55431a7a051fe44b6e23f9af8ed904c80" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore(dashboard): notify central refresh">chore(dashboard): notify central refresh</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/d75483573589d0010a4dbd47f1ca47bc752903f7" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real relay reconnection policy and last-known-state cache">feat: real relay reconnection policy and last-known-state cache</a>
           </td>
         </tr>
 
@@ -2776,7 +2776,7 @@
             data-status="ok"
             data-deploy="wearable"
             data-stack="android"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="ui"
             data-family="complementary tools"
             hidden
@@ -2785,7 +2785,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: differentiated haptic vibration patterns wired to Wear OS Vibrator, explicit microphone/system-STT capture and local TTS confirmation, plus typed voice_turn/assistant_reply/system_status messages. A paired Android Data Layer relay is implemented; it keeps the Server JWT on the phone and Voice UI token on CM5. Physical radio, wireless E-STOP and live CM5 telemetry remain hardware integration gates. Voice never directly actuates a robot.</div>
+                <div class="detail-text">Functional v0: differentiated haptic vibration patterns wired to Wear OS Vibrator, explicit microphone/system-STT capture and local TTS confirmation, plus typed voice_turn/assistant_reply/system_status messages. A paired Android Data Layer relay is implemented; it keeps the Server JWT on the phone and Voice UI token on CM5. Physical radio, wireless E-STOP and live CM5 telemetry remain hardware integration gates. Voice never directly actuates a robot. The relay now has a real, testable reconnection policy (RelayRetryPolicy) and a last-known-state cache with staleness tracking (LastKnownStateCache) so a stale relayed status/alert is never shown as current.</div>
               </div>
 
               <div class="detail-block">
@@ -2807,7 +2807,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="firmware"
             data-family="complementary tools"
         >
@@ -2856,8 +2856,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2872,7 +2872,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.6
+            0.0.7
           </td>
 
           <td class="status-cell">
@@ -2887,7 +2887,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/78bee7d6abc152aede58f10e917bc7dd7e54b8bc" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore(dashboard): notify central refresh">chore(dashboard): notify central refresh</a>
+            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/f74a4ace09d94347c79ab6e6d47c85cac3f99f87" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real rack protocol - framing, CRC, command limits, timeout, idempotency">feat: real rack protocol - framing, CRC, command limits, timeout, idempotency</a>
           </td>
         </tr>
 
@@ -2898,7 +2898,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="firmware"
             data-family="complementary tools"
             hidden
@@ -2907,7 +2907,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real, hardware-independent pure-C logic (tool_id.c ID decoding, lifecycle.c usage/maintenance tracking, preheat.c Smart Idle activation + target temperature) with 25 host-native test assertions, plus the verified cross-compile toolchain (arm-none-eabi-gcc -&gt; .bin/.hex with a real size report). Real CAN/F-RAM/GPIO I/O to actually drive tool tracking and pre-heating needs a real PCB, which doesn&#x27;t exist yet.</div>
+                <div class="detail-text">Real, hardware-independent pure-C logic (tool_id.c ID decoding, lifecycle.c usage/maintenance tracking, preheat.c Smart Idle activation + target temperature + real safe-state target), a real rack command protocol (protocol.c: versioned framing + CRC8; rack_command.c: real actuation-limit validation; link_watchdog.c: real timeout + idempotency), and a real host-side scenario harness playing valid/CRC-corrupted/out-of-range/timed-out/duplicate frames through the whole pipeline - 74 host-native test assertions total, plus the verified cross-compile toolchain (arm-none-eabi-gcc -&gt; .bin/.hex with a real size report). Real CAN/F-RAM/GPIO I/O to actually drive tool tracking and pre-heating needs a real PCB, which doesn&#x27;t exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -2929,7 +2929,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="firmware"
             data-family="complementary tools"
         >
@@ -2978,8 +2978,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -2994,7 +2994,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -3009,7 +3009,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/c70952f007b2ee0693e3d016defbcfcceb1b66f7" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore(dashboard): notify central refresh">chore(dashboard): notify central refresh</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/238196512c1dc244d3d52ac29845b1ce5f9d65b6" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real sensor protocol - framing, CRC, range limits, rate limiting, diagnostics">feat: real sensor protocol - framing, CRC, range limits, rate limiting, diagnostics</a>
           </td>
         </tr>
 
@@ -3020,7 +3020,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="firmware"
             data-family="complementary tools"
             hidden
@@ -3029,7 +3029,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Firmware itself is still an unverified skeleton pending a real PCB. The Python vision_companion package is real and test-covered: synthetic thermal+RGB frame generation, false-color rendering, and (new) real RGB-&gt;thermal ROI alignment + temperature-stats extraction (alignment.py), all verified by 21 real pytest cases. Real dual-modal (RGB + thermal) capture and per-pixel sensor calibration still need a real PCB and real cameras.</div>
+                <div class="detail-text">Firmware now has a real, hardware-independent sensor protocol (sensor_frame.c: versioned framing + CRC8; sensor_reading.c: real range validation; rate_limiter.c: real minimum-interval throttling; sensor_diagnostics.c: real error/latency/bus-reset counters, kept separate from any accept/reject decision) with a real host-side sensor simulator covering valid/truncated/CRC-corrupt/out-of-range/disconnected frames - 65 host-native test assertions. Still pending a real PCB: wiring this pipeline to a real MLX9064x/RGB trigger over I2C/SPI. The Python vision_companion package is real and test-covered: synthetic thermal+RGB frame generation, false-color rendering, and real RGB-&gt;thermal ROI alignment + temperature-stats extraction (alignment.py), all verified by 21 real pytest cases. Real dual-modal (RGB + thermal) capture and per-pixel sensor calibration still need a real PCB and real cameras.</div>
               </div>
 
               <div class="detail-block">
@@ -3247,7 +3247,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.9
+            0.3.0
           </td>
 
           <td class="status-cell">
@@ -3262,7 +3262,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/d9375309dd0e33f8c64d3dc3ae21739e3e37760c" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: fix CODE_OF_CONDUCT.md link to point at the org profile repo">docs: fix CODE_OF_CONDUCT.md link to point at the org profile repo</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/2c07aa33e7b2020aca0561ee67bd5f3b3d723a05" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore: sync manifest to already-bumped native version (0.2.9 -&gt; 0.3.0)">chore: sync manifest to already-bumped native version (0.2.9 -&gt; 0.3.0)</a>
           </td>
         </tr>
 
@@ -6033,7 +6033,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="node"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="industrial gateway"
         >
@@ -6082,8 +6082,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
-              Functional
+            <span class="maturity-badge maturity-established" data-i18n="maturity_established">
+              Established
             </span>
           </td>
 
@@ -6098,7 +6098,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.3
           </td>
 
           <td class="status-cell">
@@ -6113,7 +6113,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/a430c1f640d9a6acf5da80162726d2ab0c480657" target="_blank" rel="noopener noreferrer" class="commit-link" title="chore(dashboard): notify central refresh">chore(dashboard): notify central refresh</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/9f13cf5abd498a905f0a6647c6d5a3b52c06c3f6" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real namespace versioning, stable NodeIds, quality/units/UTC, and read/write authorization">feat: real namespace versioning, stable NodeIds, quality/units/UTC, and read/write authorization</a>
           </td>
         </tr>
 
@@ -6124,7 +6124,7 @@
             data-status="ok"
             data-deploy="cm5"
             data-stack="node"
-            data-maturity="functional"
+            data-maturity="established"
             data-role="service"
             data-family="industrial gateway"
             hidden
@@ -6133,7 +6133,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real OPC-UA address space, verified with a real OPCUAClient session over the real binary protocol (browse, read, write).</div>
+                <div class="detail-text">Real OPC-UA address space, verified with a real OPCUAClient session over the real binary protocol (browse, read, write). Real, explicit, versioned namespace URI and stable string NodeIds; a real quality/units/UTC-timestamped DataItem (SpindleTemp, real EngineeringUnits); real per-session read/write authorization on MaintenanceMode (anonymous read-only, authenticated write via OPCUA_ADMIN_USERNAME/PASSWORD).</div>
               </div>
 
               <div class="detail-block">
