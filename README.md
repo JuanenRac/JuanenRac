@@ -24,6 +24,10 @@
 
 Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics platform spanning from low-level real-time firmware to high-level cognitive AI. This organization hosts many specialized projects designed to work in perfect synchrony for micro-factory automation and swarm robotics.
 
+## 📈 Ecosystem Progress
+
+`[████████░░░░░░░░░░░░] 40%` — Reference only. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+
 ---
 
 ## 🚀 Key Features & Scalability
