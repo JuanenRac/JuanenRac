@@ -24,6 +24,10 @@
 
 Bienvenue dans l'**Écosystème HYDRA-UMC**, une plateforme robotique industrielle multicouche allant du micrologiciel temps réel de bas niveau à l'IA cognitive de haut niveau. Cette organisation héberge de nombreux projets spécialisés conçus pour travailler en parfaite synchronie pour l'automatisation de micro-usines et la robotique en essaim.
 
+## 📈 Progression de l'Écosystème
+
+`[████████░░░░░░░░░░░░] 40%` — Indication de référence. Le jalon 100 % correspond à un écosystème intégré fonctionnant sur du matériel réel.
+
 ---
 
 ## 🚀 Caractéristiques Clés et Évolutivité
