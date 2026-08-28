@@ -23,9 +23,11 @@ one malformed or stale notification cannot publish invented project metadata.
 ## One-time GitHub configuration
 
 The dispatching workflow intentionally has no embedded credential. Create a
-fine-grained personal access token restricted to the `JuanenRac/JuanenRac`
-repository with the minimum permission required to create repository dispatch
-events, then store it as the Actions secret named
+fine-grained personal access token for the `JuanenRac` resource owner,
+restricted to the single `JuanenRac/JuanenRac` repository, with only the
+**Contents: Read and write** repository permission. GitHub requires Contents
+write to create a repository-dispatch event. Store it as the Actions secret
+named
 `ECOSYSTEM_DASHBOARD_DISPATCH_TOKEN` in every product repository that should
 notify the dashboard.
 
