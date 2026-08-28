@@ -3,13 +3,10 @@
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 #
-# The single source of truth for the label set every one of the 44
-# ecosystem repos should carry (audit idea: "Estandarizar las etiquetas
-# de issues en todos los repositorios mediante una GitHub Action
-# central" - SONNET/AUDITORIA_COMPLETA_44_PROYECTOS.txt). Synced out to
-# every repo by .github/workflows/sync-labels.yml in this same repo -
-# edit this file, push to main, and the next scheduled/manual run
-# applies it everywhere.
+# The single source of truth for the common label set carried by ecosystem
+# repositories. It is synchronized by .github/workflows/sync-labels.yml in
+# this same repository: edit this file, push to main, and the next
+# scheduled/manual run applies it to every configured target.
 #
 # Colors deliberately reuse this ecosystem's own real accent palette
 # (STUDIO's theme tokens - sky/amber/emerald/rose - the same 4 colors
