@@ -203,6 +203,15 @@ sotto.
 | [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | Ponte di telemetria per integrazioni IoT e dashboard esterne. |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | Interfaccia standardizzata per il monitoraggio dello stato di macchine e robot. |
 
+### Bridge di automazione esterna
+| Repository | Descrizione |
+| :--- | :--- |
+| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | Confine di coordinamento ROS 2 bidirezionale: topic di osservazione, servizi di ispezione e azioni di cella annullabili. |
+| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | Coordinatore tracciabile di passaggio PCB per OpenPnP e carico o scarico assistito da robot. |
+| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | Bridge sicuro attorno al software di stampa 3D; il primo adattatore convalida Moonraker senza sostituire il firmware. |
+| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | Coordinatore di ausiliari della cella CNC; traiettoria e sicurezza restano del controller nativo. |
+| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | Coordinatore di ausiliari della cella laser che non può armare, attivare o aggirare gli interlock. |
+
 ### 🛠️ Strumenti Complementari
 | Repository | Descrizione |
 | :--- | :--- |
