@@ -3854,10 +3854,12 @@ def main() -> int:
 
     index_path = OUT_DIR / "index.html"
 
-    index_path.write_text(
-        render_html(entries, results, meta),
-        encoding="utf-8",
-    )
+    # Template indentation must not leak as trailing whitespace into the
+    # published static page. Normalising it here keeps local and CI-generated
+    # output identical without manually editing generated HTML.
+    rendered = render_html(entries, results, meta)
+    clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
+    index_path.write_text(clean_rendered, encoding="utf-8")
 
     # Tell GitHub Pages that this is plain static HTML.
     (OUT_DIR / ".nojekyll").touch()
