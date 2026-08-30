@@ -18,7 +18,7 @@ import argparse
 import os
 import sys
 
-from bootstrap_ecosystem_project import PROJECT_TITLE, graphql, viewer_projects
+from bootstrap_ecosystem_project import PROJECT_TITLE, graphql, upsert_field, viewer_projects
 
 
 SEED_ITEMS = (
@@ -205,7 +205,7 @@ def project_fields(token: str, project_id: str) -> dict[str, dict]:
     return {field["name"]: field for field in data["fields"]["nodes"] if field}
 
 
-def existing_draft_titles(token: str, project_id: str) -> set[str]:
+def existing_draft_items(token: str, project_id: str) -> dict[str, str]:
     data = graphql(
         token,
         """
@@ -214,6 +214,7 @@ def existing_draft_titles(token: str, project_id: str) -> set[str]:
             ... on ProjectV2 {
               items(first: 100) {
                 nodes {
+                  id
                   content { ... on DraftIssue { title } }
                 }
               }
@@ -224,7 +225,7 @@ def existing_draft_titles(token: str, project_id: str) -> set[str]:
         {"projectId": project_id},
     )["node"]
     return {
-        item["content"]["title"]
+        item["content"]["title"]: item["id"]
         for item in data["items"]["nodes"]
         if item.get("content") and item["content"].get("title")
     }
@@ -297,7 +298,7 @@ def main() -> int:
         return 2
 
     target = project(token)
-    existing = existing_draft_titles(token, target["id"])
+    existing = existing_draft_items(token, target["id"])
     missing = [item for item in SEED_ITEMS if item["title"] not in existing]
     print(f"ROADMAP_SEED=PLAN project={target['url']} existing={len(existing)} missing={len(missing)} apply={args.apply}")
     for item in missing:
@@ -307,24 +308,35 @@ def main() -> int:
         return 0
 
     fields = project_fields(token, target["id"])
-    required = {"Status", "Repository", "Family", "Maturity", "Evidence", "Hardware dependency", "Priority", "Blocked by"}
+    if "Affected repositories" not in fields:
+        upsert_field(token, target["id"], None, "Affected repositories", "TEXT")
+        fields = project_fields(token, target["id"])
+        print("FIELD=CREATED name=Affected repositories")
+    required = {"Status", "Affected repositories", "Family", "Maturity", "Evidence", "Hardware dependency", "Priority", "Blocked by"}
     missing_fields = sorted(required.difference(fields))
     if missing_fields:
         raise RuntimeError(f"Roadmap is missing required fields: {', '.join(missing_fields)}")
 
-    for item in missing:
-        item_id = create_draft_item(token, target["id"], item)
+    created = 0
+    reconciled = 0
+    for item in SEED_ITEMS:
+        item_id = existing.get(item["title"])
+        if item_id is None:
+            item_id = create_draft_item(token, target["id"], item)
+            created += 1
+            print(f"ROADMAP_ITEM=CREATED title={item['title']}")
+        else:
+            reconciled += 1
+            print(f"ROADMAP_ITEM=RECONCILED title={item['title']}")
         set_select(token, target["id"], item_id, fields["Status"], "Backlog")
-        set_text(token, target["id"], item_id, fields["Repository"]["id"], item["repository"])
+        set_text(token, target["id"], item_id, fields["Affected repositories"]["id"], item["repository"])
         set_select(token, target["id"], item_id, fields["Family"], item["family"])
         set_select(token, target["id"], item_id, fields["Maturity"], item["maturity"])
         set_select(token, target["id"], item_id, fields["Evidence"], item["evidence"])
         set_select(token, target["id"], item_id, fields["Hardware dependency"], "None")
         set_select(token, target["id"], item_id, fields["Priority"], item["priority"])
         set_text(token, target["id"], item_id, fields["Blocked by"]["id"], "None")
-        print(f"ROADMAP_ITEM=CREATED title={item['title']}")
-
-    print(f"ROADMAP_SEED=PASS created={len(missing)} skipped={len(SEED_ITEMS) - len(missing)} url={target['url']}")
+    print(f"ROADMAP_SEED=PASS created={created} reconciled={reconciled} url={target['url']}")
     return 0
 
 

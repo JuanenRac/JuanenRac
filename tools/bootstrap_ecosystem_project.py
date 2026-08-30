@@ -85,7 +85,7 @@ SELECT_FIELDS = {
         ("Low", "GRAY"),
     ],
 }
-TEXT_FIELDS = ("Repository", "Blocked by")
+TEXT_FIELDS = ("Affected repositories", "Blocked by")
 VIEWS = (
     ("Ecosystem Backlog", "TABLE_LAYOUT"),
     ("Active Work", "BOARD_LAYOUT"),
