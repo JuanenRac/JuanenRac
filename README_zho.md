@@ -26,7 +26,7 @@
 
 ## 📈 生态系统进度
 
-`[████████░░░░░░░░░░░░] 40%` —— 仅作参考。100% 里程碑是完整集成并在真实硬件上运行的生态系统。
+`[█████████░░░░░░░░░░░] 47%` —— 仅作参考。100% 里程碑是完整集成并在真实硬件上运行的生态系统。
 
 ---
 
@@ -234,4 +234,9 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 全部 45 个仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每日自动生成，并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。v3 为每个项目新增了真实的成熟度分类（scaffolding / functional / established / production，每一项都根据该项目自身真实的 CHANGELOG 决定——具体判定标准见[`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)模块自身的文档说明），以及其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、真实的家族/父子关系树，以及每个项目关于当前实际实现内容的说明。
 
+## 🧭 GitHub 协作
+
+[GitHub 协作模型](docs/GITHUB_COLLABORATION.md)定义了一个中央 Wiki、一个生态系统 Project、Discussions 的使用范围、Release 标准及共享自动化边界。中央[Issue 表单](.github/ISSUE_TEMPLATE/)和[Pull Request 模板](.github/PULL_REQUEST_TEMPLATE.md)让软件、硬件验证和文档工作可追溯，同时不复制各项目的技术手册。
+
+社区健康工作流仅手动运行，默认采用 dry-run。配置 `COMMUNITY_HEALTH_SYNC_TOKEN` 后，它只会将这些受管理模板复制到发布 HYDRA-UMC 清单的仓库；绝不会删除项目专用模板。
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.

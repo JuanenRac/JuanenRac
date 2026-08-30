@@ -26,7 +26,7 @@ Bienvenue dans l'**Écosystème HYDRA-UMC**, une plateforme robotique industriel
 
 ## 📈 Progression de l'Écosystème
 
-`[████████░░░░░░░░░░░░] 40%` — Indication de référence. Le jalon 100 % correspond à un écosystème intégré fonctionnant sur du matériel réel.
+`[█████████░░░░░░░░░░░] 47%` — Indication de référence. Le jalon 100 % correspond à un écosystème intégré fonctionnant sur du matériel réel.
 
 ---
 
@@ -236,4 +236,9 @@ Les labels d'issues sont standardisés sur les 45 dépôts à partir de [`.githu
 
 Un tableau de bord d'état en direct pour les 45 dépôts (stack, cible de déploiement, version actuelle - lue directement depuis la branche par défaut de chaque dépôt) est généré quotidiennement par [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) et servi depuis `docs/` via GitHub Pages : **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. La v3 ajoute une véritable classification de maturité par projet (scaffolding / functional / established / production, chacune décidée à partir du propre CHANGELOG de ce projet - voir le docstring du module [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) pour le critère exact), son rôle (API / UI / CLI / firmware / bibliothèque / service / outil), un véritable arbre famille/parent-enfant, et des notes par projet sur ce qui est réellement implémenté aujourd'hui.
 
+## 🧭 Collaboration GitHub
+
+Le [modèle de collaboration GitHub](docs/GITHUB_COLLABORATION.md) définit un Wiki central unique, un Project unique pour l’écosystème, le périmètre des Discussions, les critères de release et la limite de l’automatisation partagée. Les [formulaires d’issues](.github/ISSUE_TEMPLATE/) et le [modèle de pull request](.github/PULL_REQUEST_TEMPLATE.md) centralisés rendent le travail logiciel, la validation matérielle et la documentation traçables sans dupliquer les manuels des projets.
+
+Le workflow de santé communautaire est manuel et en simulation par défaut. Une fois `COMMUNITY_HEALTH_SYNC_TOKEN` configuré, il peut copier uniquement ces modèles gérés dans chaque dépôt publiant un manifeste HYDRA-UMC ; il ne supprime jamais un modèle spécifique à un projet.
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - Licence GPL-3.0.

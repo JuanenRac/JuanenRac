@@ -1,0 +1,155 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - Community health synchronization
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+# Copies only the centrally maintained issue and pull-request templates to
+# repositories that publish a HYDRA-UMC manifest. It never deletes repository-
+# specific templates. The workflow is manual and dry-run by default because it
+# changes multiple repositories through the GitHub Contents API.
+name: Sync community health across the ecosystem
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview targets and file changes without writing repositories.
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-community-health-ecosystem
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    name: Discover manifest repositories
+    runs-on: ubuntu-latest
+    outputs:
+      repositories: ${{ steps.repositories.outputs.value }}
+    steps:
+      - name: Discover public HYDRA-UMC manifests
+        id: repositories
+        env:
+          GH_TOKEN: ${{ secrets.COMMUNITY_HEALTH_SYNC_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$GH_TOKEN" || {
+            echo "::error::COMMUNITY_HEALTH_SYNC_TOKEN is not configured."
+            exit 1
+          }
+
+          repos_json="$(curl --fail-with-body --silent --show-error \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            'https://api.github.com/users/JuanenRac/repos?per_page=100&type=public')"
+
+          selected='[]'
+          while IFS= read -r repository; do
+            manifest="$(curl --silent --show-error --location \
+              "https://raw.githubusercontent.com/JuanenRac/${repository}/main/hydra-umc.project.json" || true)"
+            if printf '%s' "$manifest" | jq -e '.ecosystem == "HYDRA-UMC"' >/dev/null 2>&1; then
+              selected="$(jq --arg name "$repository" '. + [$name]' <<<"$selected")"
+            fi
+          done < <(jq -r '.[].name' <<<"$repos_json")
+
+          test "$(jq 'length' <<<"$selected")" -gt 0
+          echo "value=$(jq -c . <<<"$selected")" >> "$GITHUB_OUTPUT"
+
+  sync:
+    name: Sync templates (${{ matrix.repository }})
+    needs: discover
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        repository: ${{ fromJSON(needs.discover.outputs.repositories) }}
+    steps:
+      - name: Checkout central templates
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            .github/ISSUE_TEMPLATE
+            .github/PULL_REQUEST_TEMPLATE.md
+          sparse-checkout-cone-mode: false
+      - name: Synchronize managed templates without deleting local additions
+        env:
+          GH_TOKEN: ${{ secrets.COMMUNITY_HEALTH_SYNC_TOKEN }}
+          TARGET_REPOSITORY: JuanenRac/${{ matrix.repository }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          # =============================================================================
+          # HYDRA-UMC / URTC - GitHub community-health synchronization worker
+          # Copyright (C) 2026 JuanenRac (Electro Hobby 3D)
+          # GPL-3.0 - see LICENSE.md
+          # =============================================================================
+          import base64
+          import json
+          import os
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+
+          token = os.environ["GH_TOKEN"]
+          repository = os.environ["TARGET_REPOSITORY"]
+          dry_run = os.environ["DRY_RUN"].lower() == "true"
+          root = Path.cwd()
+          files = [
+              *sorted((root / ".github" / "ISSUE_TEMPLATE").glob("*.yml")),
+              root / ".github" / "PULL_REQUEST_TEMPLATE.md",
+          ]
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {token}",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "HYDRA-UMC-community-health-sync",
+          }
+
+          def request(method: str, url: str, payload: dict | None = None):
+              body = None if payload is None else json.dumps(payload).encode("utf-8")
+              request_headers = dict(headers)
+              if body is not None:
+                  request_headers["Content-Type"] = "application/json"
+              try:
+                  with urllib.request.urlopen(
+                      urllib.request.Request(url, data=body, headers=request_headers, method=method)
+                  ) as response:
+                      return response.status, json.loads(response.read().decode("utf-8"))
+              except urllib.error.HTTPError as error:
+                  if error.code == 404:
+                      return 404, None
+                  raise RuntimeError(f"GitHub API HTTP {error.code}: {error.read().decode('utf-8', 'replace')}")
+
+          for source in files:
+              relative = source.relative_to(root).as_posix()
+              api_path = urllib.parse.quote(relative, safe="/")
+              url = f"https://api.github.com/repos/{repository}/contents/{api_path}"
+              status, current = request("GET", url)
+              content = source.read_bytes()
+              if status == 200 and base64.b64decode(current["content"].replace("\n", "")) == content:
+                  print(f"[OK] {repository}:{relative}")
+                  continue
+              action = "CREATE" if status == 404 else "UPDATE"
+              print(f"[{action}] {repository}:{relative} dry_run={dry_run}")
+              if dry_run:
+                  continue
+              payload = {
+                  "message": f"docs: synchronize HYDRA-UMC community template {relative}",
+                  "content": base64.b64encode(content).decode("ascii"),
+                  "branch": "main",
+              }
+              if status == 200:
+                  payload["sha"] = current["sha"]
+              request("PUT", url, payload)
+          PY

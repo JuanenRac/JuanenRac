@@ -26,7 +26,7 @@ Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial d
 
 ## 📈 Progreso del Ecosistema
 
-`[████████░░░░░░░░░░░░] 40%` — Referencia orientativa. El 100% representa el ecosistema integrado funcionando sobre hardware real.
+`[█████████░░░░░░░░░░░] 47%` — Referencia orientativa. El 100% representa el ecosistema integrado funcionando sobre hardware real.
 
 ---
 
@@ -236,4 +236,9 @@ Las etiquetas de issues están estandarizadas en los 45 repos a partir de [`.git
 
 Un dashboard de estado en vivo de los 45 repos (stack, destino de despliegue, versión actual - leído directamente de la rama por defecto de cada repo) se genera a diario mediante [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) y se sirve desde `docs/` vía GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. La v3 añade una clasificación real de madurez por proyecto (andamiaje / funcional / establecido / producción, cada una decidida a partir del propio CHANGELOG de ese proyecto - ver el docstring del propio módulo [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) para el criterio exacto), su rol (API / UI / CLI / firmware / librería / servicio / herramienta), un árbol real de familia/padre-hijo, y notas por proyecto sobre lo que está realmente implementado hoy.
 
+## 🧭 Colaboración en GitHub
+
+El [modelo de colaboración en GitHub](docs/GITHUB_COLLABORATION.md) define una única Wiki central, un único Project del ecosistema, el ámbito de Discussions, los criterios de release y el límite de la automatización compartida. Los [formularios de issues](.github/ISSUE_TEMPLATE/) y la [plantilla de pull request](.github/PULL_REQUEST_TEMPLATE.md) centralizados hacen trazable el trabajo de software, validación de hardware y documentación sin duplicar manuales de proyecto.
+
+El workflow de salud comunitaria es manual y funciona en modo simulación por defecto. Cuando se configure `COMMUNITY_HEALTH_SYNC_TOKEN`, podrá copiar solo estas plantillas gestionadas a cada repositorio que publique un manifiesto HYDRA-UMC; nunca elimina una plantilla específica de proyecto.
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - Licencia GPL-3.0.
