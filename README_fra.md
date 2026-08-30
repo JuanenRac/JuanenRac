@@ -215,6 +215,9 @@ du catalogue complet ci-dessous.
 | [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | Pont sûr autour d'un logiciel d'impression 3D ; le premier adaptateur valide Moonraker sans remplacer le firmware. |
 | [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | Coordinateur d'auxiliaires de cellule CNC ; trajectoire et sécurité restent natives au contrôleur. |
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | Coordinateur d'auxiliaires de cellule laser qui ne peut ni armer, ni tirer, ni contourner les interlocks. |
+| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | Frontière de coordination pour droïdes à pattes/humanoïdes : vocabulaire d'actions marcher/prendre/poser filtré par le contrat de sécurité partagé ; la marche et l'équilibre restent du ressort du contrôleur propre au droïde. |
+| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | Frontière de coordination pour flottes AGV/AMR : transformation du repère usine vers le repère local d'un AMR, plus un vocabulaire d'ordres inspiré de VDA-5050 ; la planification de trajectoire reste du ressort de la navigation propre à l'AMR. |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | Frontière de coordination pour drones équipés de caméra : vocabulaire de requêtes de vol nommées plus un watchdog déterministe de heartbeat/perte de liaison. |
 
 ### 🛠️ Outils Complémentaires
 | Dépôt | Description |

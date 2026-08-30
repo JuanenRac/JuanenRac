@@ -215,6 +215,9 @@ sotto.
 | [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | Bridge sicuro attorno al software di stampa 3D; il primo adattatore convalida Moonraker senza sostituire il firmware. |
 | [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | Coordinatore di ausiliari della cella CNC; traiettoria e sicurezza restano del controller nativo. |
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | Coordinatore di ausiliari della cella laser che non può armare, attivare o aggirare gli interlock. |
+| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | Confine di coordinamento per droidi con gambe/umanoidi: vocabolario di azioni cammina/prendi/posa filtrato dal contratto di sicurezza condiviso; andatura ed equilibrio restano al controller nativo del droide. |
+| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | Confine di coordinamento per flotte AGV/AMR: trasformazione dal sistema di riferimento di fabbrica a quello locale di un AMR più un vocabolario di ordini ispirato a VDA-5050; la pianificazione del percorso resta alla navigazione nativa dell'AMR. |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | Confine di coordinamento per UAV con fotocamera: vocabolario di richieste di volo con nome più un watchdog deterministico di heartbeat/perdita di collegamento. |
 
 ### 🛠️ Strumenti Complementari
 | Repository | Descrizione |
