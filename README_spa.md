@@ -207,7 +207,7 @@ completo de abajo.
 | [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | Puente de telemetría para integraciones IoT y dashboards externos. |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | Interfaz estandarizada para monitoreo de salud de máquinas y robots. |
 
-### Puentes de Automatización Externa
+### 🌉 Puentes de Automatización Externa
 | Repositorio | Descripción |
 | :--- | :--- |
 | [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | Límite de coordinación bidireccional ROS 2: topics para observación, servicios para inspección y acciones cancelables para trabajos de celda. |
