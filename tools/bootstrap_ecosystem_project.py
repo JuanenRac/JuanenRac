@@ -87,11 +87,11 @@ SELECT_FIELDS = {
 }
 TEXT_FIELDS = ("Repository", "Blocked by")
 VIEWS = (
-    ("Ecosystem Backlog", "TABLE"),
-    ("Active Work", "BOARD"),
-    ("Software toward 95%", "TABLE"),
-    ("Awaiting Hardware", "TABLE"),
-    ("Safety Validation", "TABLE"),
+    ("Ecosystem Backlog", "TABLE_LAYOUT"),
+    ("Active Work", "BOARD_LAYOUT"),
+    ("Software toward 95%", "TABLE_LAYOUT"),
+    ("Awaiting Hardware", "TABLE_LAYOUT"),
+    ("Safety Validation", "TABLE_LAYOUT"),
 )
 
 
@@ -255,7 +255,7 @@ def upsert_views(token: str, project_id: str, views: dict[str, dict]) -> None:
               updateProjectV2View(input: $input) { projectV2View { id } }
             }
             """,
-            {"input": {"viewId": default_view["id"], "name": "Ecosystem Backlog", "layout": "TABLE"}},
+            {"input": {"viewId": default_view["id"], "name": "Ecosystem Backlog", "layout": "TABLE_LAYOUT"}},
         )
         views["Ecosystem Backlog"] = default_view
         print("VIEW=RENAMED name=Ecosystem Backlog")
