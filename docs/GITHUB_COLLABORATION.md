@@ -39,7 +39,8 @@ following fields:
 
 | Field | Type | Purpose |
 | --- | --- | --- |
-| Repository | text | Exact affected repository name. |
+| Repository | GitHub built-in | Link one scoped issue or pull request to its repository. |
+| Affected repositories | text | One or more affected repository names, including cross-project work. |
 | Family | single select | Manifest family, such as Platform Foundation or External Automation Bridges. |
 | Maturity | single select | Scaffolding, Functional, Established, Production. |
 | Evidence | single select | Local software, Simulator, CM5, MCU, Machine, Safety validation. |
