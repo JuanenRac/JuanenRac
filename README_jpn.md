@@ -216,6 +216,9 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 3D プリンターソフトウェア周辺の安全なブリッジ。最初のアダプターはファームウェアを置き換えず Moonraker の準備状態を検証します。 |
 | [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | CNC セル補助のコーディネーター。軌道と安全性はネイティブコントローラーに残ります。 |
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | レーザーセル補助のコーディネーター。レーザーのアーム、有効化、インターロックの迂回はできません。 |
+| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 脚式/ヒューマノイドドロイド向け調整境界。共有安全コントラクトで検証される歩行/把持/設置の名前付きアクション語彙で、歩容とバランス制御はドロイド自身のコントローラーが担当します。 |
+| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | AGV/AMR フリート向け調整境界。工場座標系からAMRのローカル座標系への変換と、VDA-5050 に着想を得た注文アクション語彙を備え、経路計画はAMR自身のナビゲーションが担当します。 |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | カメラ搭載UAV向け調整境界。名前付きの飛行リクエスト語彙と、決定論的なハートビート/リンク切断フェイルセーフ監視を備えます。 |
 
 ### 🛠️ Complementary Tools（補完ツール群）
 | リポジトリ | 説明 |
