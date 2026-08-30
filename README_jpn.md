@@ -26,7 +26,7 @@
 
 ## 📈 エコシステムの進捗
 
-`[████████░░░░░░░░░░░░] 40%` — 目安です。100% の到達点は、実機上で動作する完全統合済みのエコシステムです。
+`[█████████░░░░░░░░░░░] 47%` — 目安です。100% の到達点は、実機上で動作する完全統合済みのエコシステムです。
 
 ---
 
@@ -237,4 +237,9 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 
 45 個すべてのリポジトリのライブステータスダッシュボード（技術スタック、デプロイ対象、現在のバージョン——各リポジトリのデフォルトブランチから直接取得）は、[`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) によって毎日自動生成され、GitHub Pages 経由で `docs/` から配信されています：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。v3 では、各プロジェクトに実際の成熟度分類（scaffolding / functional / established / production。それぞれ各プロジェクト自身の実際の CHANGELOG に基づいて判定されています——正確な判定基準は [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) モジュール自身の docstring を参照）、その役割（API / UI / CLI / ファームウェア / ライブラリ / サービス / ツール）、実際のファミリー/親子関係ツリー、そして現在実際に何が実装されているかについてのプロジェクトごとの注記が追加されています。
 
+## 🧭 GitHub コラボレーション
+
+[GitHub コラボレーションモデル](docs/GITHUB_COLLABORATION.md)は、中央 Wiki、エコシステム共通 Project、Discussions の範囲、リリース基準、共有自動化の境界を定義します。中央の[Issue フォーム](.github/ISSUE_TEMPLATE/)と[プルリクエストテンプレート](.github/PULL_REQUEST_TEMPLATE.md)により、プロジェクトの手順書を複製せずにソフトウェア、ハードウェア検証、ドキュメント作業を追跡できます。
+
+Community Health ワークフローは手動実行で、既定では dry-run です。`COMMUNITY_HEALTH_SYNC_TOKEN` を設定すると、HYDRA-UMC マニフェストを公開する各リポジトリへ管理対象テンプレートだけをコピーできます。プロジェクト固有のテンプレートは削除しません。
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.

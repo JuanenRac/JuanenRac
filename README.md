@@ -26,7 +26,7 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 
 ## 📈 Ecosystem Progress
 
-`[████████░░░░░░░░░░░░] 40%` — Reference only. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████░░░░░░░░░░░] 47%` — Reference only. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 
 ---
 
@@ -230,4 +230,9 @@ Issue labels are standardized across all 45 repos from [`.github/labels.yml`](.g
 
 A live status dashboard for all 46 repos (stack, deploy target, current version - read straight from each repo's own default branch) is generated daily by [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) and served from `docs/` via GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. v3 adds a real maturity classification per project (scaffolding / functional / established / production, each decided from that project's own CHANGELOG - see [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)'s own module docstring for exactly how), its role (API / UI / CLI / firmware / library / service / tool), a real family/parent-child tree, and per-project notes on what's actually implemented today.
 
+## 🧭 GitHub Collaboration
+
+The [GitHub collaboration model](docs/GITHUB_COLLABORATION.md) defines one central Wiki, one ecosystem Project, Discussions scope, release criteria and the shared automation boundary. The centrally maintained [issue forms](.github/ISSUE_TEMPLATE/) and [pull-request template](.github/PULL_REQUEST_TEMPLATE.md) make software, hardware-validation and documentation work traceable without duplicating project manuals.
+
+The community-health workflow is intentionally manual and dry-run by default. Once `COMMUNITY_HEALTH_SYNC_TOKEN` is configured, it can copy only these managed templates to every repository that publishes a HYDRA-UMC manifest; it never deletes a project-specific template.
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.
