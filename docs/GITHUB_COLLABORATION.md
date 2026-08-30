@@ -56,7 +56,9 @@ without an evidence link.
 The central issue forms in `.github/ISSUE_TEMPLATE/` collect reproducible
 software defects, controlled hardware validation, improvements and public
 documentation corrections. The pull-request template keeps versioning,
-translations and safety boundaries visible during review.
+translations and safety boundaries visible during review. The matching
+discussion forms in `.github/DISCUSSION_TEMPLATE/` guide announcements,
+questions, ideas, integration validation and documentation conversations.
 
 The synchronization workflow validates these shared templates before it writes
 to a project. Its template-only commits carry `[skip ci]`, so they do not
@@ -68,7 +70,8 @@ community repository), never across every component. Recommended categories:
 - **Announcements** for releases and dashboard changes.
 - **Ideas** for architecture proposals before they become bounded issues.
 - **Q&A** for public support, with accepted answers.
-- **Show and tell** for compatible community integrations.
+- **Integrations & Validation** for compatibility and evidence-based tests.
+- **Documentation & Ecosystem** for public architecture and catalogue topics.
 
 Issues remain for actionable, traceable work; Discussions remain for open
 conversation and decisions.

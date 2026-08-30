@@ -1,0 +1,36 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - Announcement discussion form
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+name: Ecosystem announcement
+description: Maintainer-only update for releases, milestones or important changes.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this category only for verified ecosystem updates. Link to the
+        canonical public repository, issue, pull request or release.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: State the change and why it matters to users or contributors.
+    validations:
+      required: true
+  - type: input
+    id: affected_repositories
+    attributes:
+      label: Affected repositories
+      description: List affected repositories, or state Central ecosystem only.
+      placeholder: HYDRA-UMC-SERVER, HYDRA-UMC-SDK
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence and required action
+      description: Link releases, pull requests or public documentation. State any action required.
+      placeholder: https://github.com/JuanenRac/...
+    validations:
+      required: true

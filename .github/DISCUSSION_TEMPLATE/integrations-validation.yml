@@ -1,0 +1,47 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - Integration discussion form
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+name: Integration or validation topic
+description: Plan or discuss a bridge, compatibility path or evidence-based validation.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not publish credentials, personal network data, serial numbers or
+        unsafe physical instructions. State the validation level honestly.
+  - type: input
+    id: systems
+    attributes:
+      label: HYDRA-UMC component and external system
+      description: Identify both sides of the proposed integration.
+      placeholder: HYDRA-UMC-BRIDGE-ROS2 ↔ ROS 2 Jazzy
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and interface boundary
+      description: Explain what information or command must cross the bridge.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_level
+    attributes:
+      label: Current evidence level
+      options:
+        - Documentation or contract only
+        - Local software test
+        - Simulator or recorded data
+        - Controlled hardware test
+        - Real machine validation
+    validations:
+      required: true
+  - type: textarea
+    id: safety_boundary
+    attributes:
+      label: Safety boundary and next validation step
+      description: State what the integration must not do until evidence exists.
+    validations:
+      required: true

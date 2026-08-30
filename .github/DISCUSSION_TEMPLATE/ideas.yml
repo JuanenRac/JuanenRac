@@ -1,0 +1,47 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - Idea discussion form
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+name: Ecosystem idea
+description: Propose a cross-project improvement before it becomes an issue.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An idea is not a commitment. Keep it bounded, explain its value and
+        distinguish software work from unvalidated physical assumptions.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What concrete limitation or user need does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed direction
+      description: Describe the smallest useful approach, not an implementation claim.
+    validations:
+      required: true
+  - type: input
+    id: repositories
+    attributes:
+      label: Affected repositories
+      description: List known projects, or write Unknown if discovery is needed.
+      placeholder: HYDRA-UMC-SDK, HYDRA-UMC-SERVER
+    validations:
+      required: true
+  - type: dropdown
+    id: hardware_dependency
+    attributes:
+      label: Hardware dependency
+      options:
+        - None - software or documentation only
+        - Simulator or recorded data
+        - CM5 or platform hardware
+        - MCU, camera, Hailo or actuator
+        - External machine integration
+    validations:
+      required: true
