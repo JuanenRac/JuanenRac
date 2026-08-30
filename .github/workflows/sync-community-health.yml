@@ -26,8 +26,31 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  preflight:
+    name: Validate central community templates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout central templates
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            .github/ISSUE_TEMPLATE
+            .github/PULL_REQUEST_TEMPLATE.md
+          sparse-checkout-cone-mode: false
+      - name: Enforce the public-documentation boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          private_marker='SON''NET'
+          if git grep -n -I -- "$private_marker" -- \
+            .github/ISSUE_TEMPLATE .github/PULL_REQUEST_TEMPLATE.md; then
+            echo '::error::Public community templates must not reference private documentation.'
+            exit 1
+          fi
+
   discover:
     name: Discover manifest repositories
+    needs: preflight
     runs-on: ubuntu-latest
     outputs:
       repositories: ${{ steps.repositories.outputs.value }}
@@ -145,7 +168,7 @@ jobs:
               if dry_run:
                   continue
               payload = {
-                  "message": f"docs: synchronize HYDRA-UMC community template {relative}",
+                  "message": f"docs: synchronize HYDRA-UMC community template {relative} [skip ci]",
                   "content": base64.b64encode(content).decode("ascii"),
                   "branch": "main",
               }
