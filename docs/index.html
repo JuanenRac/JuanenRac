@@ -5113,7 +5113,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.6
           </td>
 
           <td class="status-cell">
@@ -5128,7 +5128,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/1af11f8834e7c92f7f297dc4089b03e1ac1f6a17" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add read-only MTConnect CNC evidence">Add read-only MTConnect CNC evidence</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/96fc4b0a6e77b3b2ef367616afb385f1ff85c374" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real GRBL serial transport - status query + real-time control bytes">feat: real GRBL serial transport - status query + real-time control bytes</a>
           </td>
         </tr>
 
@@ -5148,12 +5148,12 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">High-level CNC cell coordinator. It normalizes read-only controller evidence; LinuxCNC or another controller retains real-time trajectory, limits, spindle and safety authority.</div>
+                <div class="detail-text">High-level CNC cell coordinator. It normalizes read-only controller evidence and can now query real GRBL status and send GRBL&#x27;s own real-time control bytes (status query, feed hold, cycle resume, soft reset) over a real serial connection; LinuxCNC or another controller retains real-time trajectory, limits, spindle and safety authority - this never streams a G-code program.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">LinuxCNC</span><span class="tech-chip">G-code</span><span class="tech-chip">GRBL status evidence</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">LinuxCNC</span><span class="tech-chip">G-code</span><span class="tech-chip">GRBL status evidence</span><span class="tech-chip">GRBL serial transport</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
               </div>
 
               <div class="detail-block">
@@ -5235,7 +5235,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.6
           </td>
 
           <td class="status-cell">
@@ -5250,7 +5250,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER/commit/b51599138bf1198487ba0405f708027f76d78f24" target="_blank" rel="noopener noreferrer" class="commit-link" title="Fail closed on stale laser interlocks">Fail closed on stale laser interlocks</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER/commit/2813b75a680a699e2aa7dc43f79bc0520bc21e1c" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real, controller-neutral GPIO interlock reading">feat: real, controller-neutral GPIO interlock reading</a>
           </td>
         </tr>
 
@@ -5270,12 +5270,12 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">High-level laser cell coordinator. It normalizes read-only safety evidence, cannot arm or fire a laser, and preserves the controller&#x27;s enclosure, key-switch and interlock authority.</div>
+                <div class="detail-text">High-level laser cell coordinator. It normalizes read-only safety evidence and can now read the 3 independent key/enclosure/interlock safeguards from real GPIO lines, controller-neutral by design; it cannot arm or fire a laser, and preserves the controller&#x27;s own authority.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">Laser controller</span><span class="tech-chip">G-code</span><span class="tech-chip">Safety evidence</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">Laser controller</span><span class="tech-chip">G-code</span><span class="tech-chip">Safety evidence</span><span class="tech-chip">GPIO interlock reading</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
               </div>
 
               <div class="detail-block">
@@ -5357,7 +5357,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.9
+            0.1.0
           </td>
 
           <td class="status-cell">
@@ -5372,7 +5372,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP/commit/d34a0f8563f0adff791c637e9e2440916fcd2a8f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bound OpenPnP profile inspection">Bound OpenPnP profile inspection</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP/commit/4bd80dcc9b934cb4cbd7ddf6c0d4b33881b75fdf" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: surface real OpenPnP actuator/signaler/nozzle-tip evidence">feat: surface real OpenPnP actuator/signaler/nozzle-tip evidence</a>
           </td>
         </tr>
 
@@ -5479,7 +5479,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.7
+            0.0.9
           </td>
 
           <td class="status-cell">
@@ -5494,7 +5494,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D/commit/b3fcd4ae759c9b1f9c72594a32df495879c83838" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bound Moonraker readiness responses">Bound Moonraker readiness responses</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D/commit/d9d10b89ce2691868f8863cd6c6c167a0c47c9a6" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real, SDK-gated Moonraker job commands - start/pause/resume/cancel">feat: real, SDK-gated Moonraker job commands - start/pause/resume/cancel</a>
           </td>
         </tr>
 
@@ -5514,7 +5514,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Safe coordination boundary for native 3D-printing controllers. It checks Moonraker readiness, inspects slicer artifacts and matches profile evidence read-only; it does not replace firmware, heater interlocks or send print commands.</div>
+                <div class="detail-text">Safe coordination boundary for native 3D-printing controllers. It checks Moonraker readiness, inspects slicer artifacts and matches profile evidence read-only, and now sends only fail-closed, SDK-gated real job commands (start/pause/resume/cancel) through Moonraker&#x27;s own REST API - every command still passes the same evaluate_job() safety gate every bridge in this ecosystem uses. It never streams raw G-code and never replaces firmware, heater interlocks or motion authority - Moonraker/Klipper keep that.</div>
               </div>
 
               <div class="detail-block">
@@ -5601,7 +5601,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -5616,7 +5616,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2/commit/1532c3106bda6d4e08488a13bc0b2eef46a7bbdb" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: version ROS2 interface plan fixture">feat: version ROS2 interface plan fixture</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2/commit/e978d981a4d902d78942c0c24ff8a21ec1a6e782" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real, partial rclpy transport - only where a real message type exists">feat: real, partial rclpy transport - only where a real message type exists</a>
           </td>
         </tr>
 
@@ -5636,12 +5636,12 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Dependency-free safety coordinator with a ROS 2 interface plan. The optional rclpy runtime is intentionally not installed until it is tested against a real ROS 2 deployment.</div>
+                <div class="detail-text">Dependency-free safety coordinator with a ROS 2 interface plan, plus a real, lazily-imported rclpy transport for the 2 interfaces that have a real standard ROS 2 message type today (safe_stop_service via std_srvs/Trigger, state_topic via std_msgs/String) - inspect_service/job_action still need a custom .srv/.action definition this repository doesn&#x27;t have yet. The optional rclpy runtime is intentionally not installed until it is tested against a real ROS 2 deployment.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">ROS 2</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">ROS 2</span><span class="tech-chip">rclpy</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
               </div>
 
               <div class="detail-block">
@@ -6229,7 +6229,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -6244,7 +6244,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR/commit/ec4ab0b6eda7041c65fcd2ce5e315e1d5da6251d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Real VDA 5050 order/instantActions channel split for CANCEL_ORDER">Real VDA 5050 order/instantActions channel split for CANCEL_ORDER</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR/commit/b16606a63d2aca43e9bd80d7a044b99e1c25e518" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real VDA 5050 MQTT publisher">feat: real VDA 5050 MQTT publisher</a>
           </td>
         </tr>
 
@@ -6264,12 +6264,12 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real, dependency-free coordination boundary for AGV/AMR fleets: a real, hand-checkable 2D rigid-body transform (FrameTransform) from the factory&#x27;s shared coordinate frame into a specific AMR&#x27;s local frame, plus a minimal VDA-5050-inspired order-action vocabulary (MOVE_TO_*/PICK_LOAD/DROP_LOAD/CANCEL_ORDER) gated through HYDRA-UMC-SDK&#x27;s shared safety contract. Never plans a path or avoids an obstacle itself - that authority stays with the AMR&#x27;s own onboard navigation or its fleet manager. No real fleet-manager REST/WebSocket adapter or physical AMR validated yet.</div>
+                <div class="detail-text">Real, dependency-free coordination boundary for AGV/AMR fleets: a real, hand-checkable 2D rigid-body transform (FrameTransform) from the factory&#x27;s shared coordinate frame into a specific AMR&#x27;s local frame, a minimal VDA-5050-inspired order-action vocabulary (MOVE_TO_*/PICK_LOAD/DROP_LOAD/CANCEL_ORDER) gated through HYDRA-UMC-SDK&#x27;s shared safety contract, and a real VDA 5050 MQTT publisher (Vda5050Publisher) that only ever publishes an already-gated dispatch to the correct real order/instantActions topic. Never plans a path or avoids an obstacle itself - that authority stays with the AMR&#x27;s own onboard navigation or its fleet manager. Not yet exercised against a real fleet manager or physical AMR.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">VDA 5050 (subset)</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">VDA 5050 (subset)</span><span class="tech-chip">MQTT</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
               </div>
 
               <div class="detail-block">
@@ -6351,7 +6351,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -6366,7 +6366,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS/commit/124925f56e414b89f651ae3dc59f2c79718f1e1e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Real STAND/SIT posture commands">Real STAND/SIT posture commands</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS/commit/a117ca26664be587e7c9dbfc82612defb0a2b05d" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real bosdyn-client Spot command transport">feat: real bosdyn-client Spot command transport</a>
           </td>
         </tr>
 
@@ -6386,12 +6386,12 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real, dependency-free coordination boundary for legged/humanoid droids: validates a small named action-trigger vocabulary (WALK_TO/PICK_OBJECT/PLACE_OBJECT/RETURN_HOME/HOLD_POSITION) and its real required parameters before forwarding through HYDRA-UMC-SDK&#x27;s shared safety gate. Never computes gait/balance/joint trajectories itself - that authority stays with the droid&#x27;s own onboard controller. No real Wi-Fi/BT/4G-5G transport adapter or physical droid validated yet.</div>
+                <div class="detail-text">Real, dependency-free coordination boundary for legged/humanoid droids: validates a small named action-trigger vocabulary (WALK_TO/PICK_OBJECT/PLACE_OBJECT/RETURN_HOME/HOLD_POSITION/STAND/SIT) and its real required parameters before forwarding through HYDRA-UMC-SDK&#x27;s shared safety gate, plus a real bosdyn-client command sender (SpotDroidControl) for Boston Dynamics Spot, lazily imported. Never computes gait/balance/joint trajectories itself - that authority stays with the droid&#x27;s own onboard controller. Not yet exercised against a real Spot robot.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">Boston Dynamics Spot SDK (bosdyn-client)</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
               </div>
 
               <div class="detail-block">
@@ -6473,7 +6473,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -6488,7 +6488,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV/commit/9f65722645f901681870ab61053cb97ff366d927" target="_blank" rel="noopener noreferrer" class="commit-link" title="Real, standalone LAND request (MAV_CMD_NAV_LAND)">Real, standalone LAND request (MAV_CMD_NAV_LAND)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV/commit/d95620579344375b7254da583bfaaa9aed170cf7" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real MAVLink command transport">feat: real MAVLink command transport</a>
           </td>
         </tr>
 
@@ -6508,12 +6508,12 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real, dependency-free coordination boundary for camera-equipped UAVs: a named high-level flight-request vocabulary (PRE_FLIGHT_CHECK/TAKEOFF/GOTO_WAYPOINT/HOVER_AND_CAPTURE/RETURN_TO_LAUNCH) gated through HYDRA-UMC-SDK&#x27;s shared safety contract, plus a real, deterministic HeartbeatMonitor link-loss failsafe state machine (explicit `now`-driven, no real sleeps, fully unit-tested including its exact timeout boundary) - the required watchdog a UAV bridge needs per this project&#x27;s own architecture note. Never computes flight control or stabilization itself, and this heartbeat signal is a coordination-layer concern, not a replacement for the flight controller&#x27;s own independent link-loss failsafe. No real MAVLink/DJI OSDK transport adapter or physical UAV validated yet.</div>
+                <div class="detail-text">Real, dependency-free coordination boundary for camera-equipped UAVs: a named high-level flight-request vocabulary (PRE_FLIGHT_CHECK/TAKEOFF/GOTO_WAYPOINT/HOVER_AND_CAPTURE/RETURN_TO_LAUNCH/LAND) gated through HYDRA-UMC-SDK&#x27;s shared safety contract, a real, deterministic HeartbeatMonitor link-loss failsafe state machine, and a real MAVLink command sender (MavlinkFlightControl) mapping each request to its real, numbered MAV_CMD - only an already-gated dispatch is ever sent. Never computes flight control or stabilization itself; real-time failsafe execution stays the flight controller&#x27;s own authority. Not yet exercised against a real flight controller or SITL.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">MAVLink-class flight requests</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">MAVLink</span><span class="tech-chip">HYDRA-UMC-SDK</span></div>
               </div>
 
               <div class="detail-block">
