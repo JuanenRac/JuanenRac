@@ -1,0 +1,46 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - Roadmap seed workflow
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+name: Seed HYDRA-UMC Roadmap
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Add missing evidence-based software planning items to the Roadmap.
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  seed:
+    name: Seed missing ecosystem planning items
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Roadmap automation source
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            tools/bootstrap_ecosystem_project.py
+            tools/seed_ecosystem_roadmap.py
+          sparse-checkout-cone-mode: false
+      - name: Seed evidence-based software work
+        env:
+          HYDRA_UMC_PROJECTS_TOKEN: ${{ secrets.HYDRA_UMC_PROJECTS_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$HYDRA_UMC_PROJECTS_TOKEN" || {
+            echo '::error::HYDRA_UMC_PROJECTS_TOKEN is not configured.'
+            exit 1
+          }
+          if [[ '${{ inputs.apply }}' == 'true' ]]; then
+            python3 tools/seed_ecosystem_roadmap.py --apply
+          else
+            python3 tools/seed_ecosystem_roadmap.py
+          fi
