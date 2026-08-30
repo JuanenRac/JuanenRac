@@ -51,6 +51,13 @@ Use three views: **Software 95%**, **Awaiting hardware**, and **Safety
 validation**. Do not use a Project field to declare a physical feature done
 without an evidence link.
 
+The manual workflow `.github/workflows/bootstrap-ecosystem-project.yml`
+creates or reconciles the public **HYDRA-UMC Roadmap** Project, its fields and
+its structural views. It requires the account-level
+`HYDRA_UMC_PROJECTS_TOKEN` secret and is dry-run by default. It does not add
+issues automatically, because only scoped, evidence-based work belongs on the
+Roadmap.
+
 ## Issues, pull requests and Discussions
 
 The central issue forms in `.github/ISSUE_TEMPLATE/` collect reproducible
