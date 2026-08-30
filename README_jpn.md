@@ -208,7 +208,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | IoT 連携や外部ダッシュボード向けの、テレメトリブリッジ。 |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 工作機械・ロボットの稼働監視向けの、標準化されたインターフェース。 |
 
-### 外部オートメーションブリッジ
+### 🌉 外部オートメーションブリッジ
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 双方向 ROS 2 協調境界：観測用トピック、検査用サービス、キャンセル可能なセル作業アクション。 |
