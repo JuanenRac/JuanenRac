@@ -22,7 +22,7 @@
 
   <!-- Central Logo Icon (Abstract Hydra/Robot Arm) -->
   <g transform="translate(600, 180)" filter="url(#glow)">
-    <!-- Hydra Heads / Multi-axis representation -->
+    <!-- Hydra Heads / Machines representation -->
     <path d="M-60,40 L-80,-20 L-40,-60 L0,-40 L40,-60 L80,-20 L60,40 Z" fill="none" stroke="#00E5FF" stroke-width="4"/>
     <circle cx="0" cy="-40" r="10" fill="#00E5FF"/>
     <circle cx="-40" cy="-60" r="8" fill="#00E5FF"/>
@@ -34,7 +34,7 @@
 
   <!-- Text Branding -->
   <text x="600" y="280" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="8">HYDRA-UMC</text>
-  <text x="600" y="325" font-family="Arial, sans-serif" font-size="18" fill="#00E5FF" text-anchor="middle" letter-spacing="4" opacity="0.9">UNIVERSAL MULTI-AXIS CONTROLLER ECOSYSTEM</text>
+  <text x="600" y="325" font-family="Arial, sans-serif" font-size="18" fill="#00E5FF" text-anchor="middle" letter-spacing="4" opacity="0.9">UNIVERSAL MACHINES CONTROLLER ECOSYSTEM</text>
 
   <!-- Tech Tags -->
   <g font-family="monospace" font-size="12" fill="#00E5FF" opacity="0.6">
