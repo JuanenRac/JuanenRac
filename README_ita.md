@@ -26,7 +26,7 @@ Benvenuti nell'**Ecosistema HYDRA-UMC**, una piattaforma di robotica industriale
 
 ## 📈 Avanzamento dell'Ecosistema
 
-`[█████████░░░░░░░░░░░] 47%` — Indicazione orientativa. Il traguardo 100% è un ecosistema integrato operante su hardware reale.
+`[█████████▊░░░░░░░░░░] 49%` — Indicazione orientativa. Il traguardo 100% è un ecosistema integrato operante su hardware reale.
 
 ---
 
