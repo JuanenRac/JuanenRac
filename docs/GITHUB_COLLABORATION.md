@@ -58,6 +58,10 @@ software defects, controlled hardware validation, improvements and public
 documentation corrections. The pull-request template keeps versioning,
 translations and safety boundaries visible during review.
 
+The synchronization workflow validates these shared templates before it writes
+to a project. Its template-only commits carry `[skip ci]`, so they do not
+launch a full project build for an administrative metadata-only update.
+
 Enable Discussions only on `JuanenRac/JuanenRac` (or a future dedicated
 community repository), never across every component. Recommended categories:
 
