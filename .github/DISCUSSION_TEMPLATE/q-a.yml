@@ -1,0 +1,35 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - Q&A discussion form
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+name: Public support question
+description: Ask a bounded question that does not yet identify a reproducible defect.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a reproducible fault, use the issue form in the affected repository.
+        Never include tokens, passwords, personal data or private network details.
+  - type: input
+    id: component
+    attributes:
+      label: Repository, component and version
+      description: Identify the software you are using.
+      placeholder: HYDRA-UMC-SDK v0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: State the expected outcome and the point that is unclear.
+    validations:
+      required: true
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What have you already tried?
+      description: Include public documentation links and sanitized commands or output.
+    validations:
+      required: true

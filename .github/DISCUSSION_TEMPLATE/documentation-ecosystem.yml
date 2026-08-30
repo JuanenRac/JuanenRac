@@ -1,0 +1,36 @@
+# =============================================================================
+# HYDRA-UMC / URTC Ecosystem - Documentation discussion form
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+name: Documentation or ecosystem question
+description: Ask about public architecture, documentation or project relationships.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use public links only. Technical truth belongs in versioned README and
+        docs files; this discussion captures the question and the decision.
+  - type: input
+    id: repositories
+    attributes:
+      label: Relevant repository or ecosystem area
+      description: Name the repository, family or architectural boundary involved.
+      placeholder: HYDRA-UMC-OS / Platform Foundation
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question or correction requested
+      description: Explain the ambiguity, inconsistency or missing public information.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Public references consulted
+      description: Link README, docs, release or issue pages already checked.
+      placeholder: https://github.com/JuanenRac/...
+    validations:
+      required: true
