@@ -215,6 +215,9 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 | [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | Sichere Brücke um 3D-Drucksoftware; der erste Adapter prüft Moonraker ohne Firmware zu ersetzen. |
 | [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | Koordinator für CNC-Zellenhilfen; Bahnplanung und Sicherheit bleiben im nativen Controller. |
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | Koordinator für Laserzellenhilfen, der weder Laser scharf schalten noch auslösen oder Interlocks umgehen kann. |
+| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | Koordinationsgrenze für Lauf-/Humanoid-Droiden: benanntes Aktionsvokabular (Laufen/Greifen/Ablegen), gefiltert durch den gemeinsamen Sicherheitsvertrag; Gangart und Balance bleiben beim eigenen Controller des Droiden. |
+| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | Koordinationsgrenze für AGV-/AMR-Flotten: Transformation vom Fabrik-Koordinatensystem ins lokale System eines AMR plus ein an VDA-5050 angelehntes Auftragsvokabular; die Bahnplanung bleibt bei der eigenen Navigation des AMR. |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | Koordinationsgrenze für kameratragende UAVs: benanntes Flugauftragsvokabular plus ein deterministischer Heartbeat-/Verbindungsverlust-Watchdog. |
 
 ### 🛠️ Ergänzende Tools
 | Repository | Beschreibung |

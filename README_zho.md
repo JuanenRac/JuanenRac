@@ -213,6 +213,9 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 围绕 3D 打印软件的安全桥接器；首个适配器验证 Moonraker 就绪状态而不替换固件。 |
 | [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | CNC 单元辅助协调器；轨迹和安全性仍由原生控制器负责。 |
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 激光单元辅助协调器，不能解锁、发射或绕过激光互锁。 |
+| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 面向腿式/仿人机器人的协调边界：通过共享安全契约校验的行走/抓取/放置动作词表，步态与平衡控制仍由机器人自身控制器负责。 |
+| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 面向AGV/AMR车队的协调边界：从工厂坐标系到AMR本地坐标系的变换，加上受VDA-5050启发的订单动作词表，路径规划仍由AMR自身导航负责。 |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 面向搭载摄像头的无人机的协调边界：命名飞行请求词表，加上确定性的心跳/失联故障保护看门狗。 |
 
 ### 🛠️ Complementary Tools（配套工具）
 | 仓库 | 说明 |
