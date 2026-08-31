@@ -3,7 +3,5 @@
   "ecosystem": "HYDRA-UMC",
   "github_owner": "JuanenRac",
   "manifest_file": "hydra-umc.project.json",
-  "dashboard_exclude": [
-    "HYDRA-UMC-UPDATER"
-  ]
+  "dashboard_exclude": []
 }
