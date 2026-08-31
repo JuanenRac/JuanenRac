@@ -9,7 +9,15 @@
 #   .github/labels.yml
 #
 # Destination:
-#   45 ecosystem repositories listed below.
+#   55 ecosystem repositories listed below. Static, unlike the dashboard's
+#   own dynamic discovery (generate_dashboard.py) - a newly added repo
+#   needs an entry here too, not just a real hydra-umc.project.json.
+#   Verify this list still matches every repo with a real manifest before
+#   trusting the count above: `for d in */; do test -f "$d/hydra-umc.project.json" && echo "$d"; done`
+#   run from a sibling checkout of the whole ecosystem, diffed against the
+#   matrix below - this exact drift (10 real repos missing: all 8
+#   External Automation/Mobile bridges, HYDRA-UMC-OS, HYDRA-UMC-SDK) was
+#   found and fixed this way once already.
 #
 # IMPORTANT:
 #   A repository secret named LABELS_SYNC_TOKEN is required.
@@ -75,6 +83,8 @@ jobs:
           # -------------------------------------------------------------------
 
           - HYDRA-UMC
+          - HYDRA-UMC-OS
+          - HYDRA-UMC-SDK
           - HYDRA-UMC-SERVER
           - HYDRA-UMC-STUDIO
           - HYDRA-UMC-SUITE
@@ -119,6 +129,19 @@ jobs:
           - HYDRA-UMC-WATCH
           - HYDRA-UMC-TOOL-CLI
           - HYDRA-UMC-UPDATER
+
+          # -------------------------------------------------------------------
+          # External Automation / Mobile & Autonomous Bridges
+          # -------------------------------------------------------------------
+
+          - HYDRA-UMC-BRIDGE-CNC
+          - HYDRA-UMC-BRIDGE-LASER
+          - HYDRA-UMC-BRIDGE-PRINTER3D
+          - HYDRA-UMC-BRIDGE-OPENPNP
+          - HYDRA-UMC-BRIDGE-ROS2
+          - HYDRA-UMC-BRIDGE-AMR
+          - HYDRA-UMC-BRIDGE-UAV
+          - HYDRA-UMC-BRIDGE-DROIDS
 
 
     steps:
