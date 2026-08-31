@@ -230,9 +230,9 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 ## 🤝 贡献指南
 本生态系统隶属于一项高科技机器人计划。每个项目都有各自的贡献指南，具体技术细节请参阅各仓库自身文档。
 
-全部 45 个仓库的 Issue 标签均从本仓库的 [`.github/labels.yml`](.github/labels.yml) 统一同步，由 [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) 负责推送——只需修改这一份文件，即可一次性更新所有仓库的标签，无需逐个手动维护。
+生态系统内所有仓库的 Issue 标签均从本仓库的 [`.github/labels.yml`](.github/labels.yml) 统一同步，由 [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) 负责推送——只需修改这一份文件，即可一次性更新所有仓库的标签，无需逐个手动维护。与下方的仪表盘不同，这份列表是静态的（一个真实的 GitHub Actions 矩阵，而非动态发现）——新增仓库也需要在其中添加一条记录，仅有真实的 `hydra-umc.project.json` 是不够的。
 
-全部 45 个仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每日自动生成，并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。v3 为每个项目新增了真实的成熟度分类（scaffolding / functional / established / production，每一项都根据该项目自身真实的 CHANGELOG 决定——具体判定标准见[`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)模块自身的文档说明），以及其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、真实的家族/父子关系树，以及每个项目关于当前实际实现内容的说明。
+覆盖每一个在自身 `hydra-umc.project.json` 中声明 `ecosystem: HYDRA-UMC` 的公开仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取，动态发现、无固定列表）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每小时自动重新生成（并在相关推送后立即触发），并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。v3 为每个项目新增了真实的成熟度分类（scaffolding / functional / established / production，每一项都根据该项目自身真实的 CHANGELOG 决定——具体判定标准见[`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)模块自身的文档说明），以及其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、真实的家族/父子关系树，以及每个项目关于当前实际实现内容的说明。
 
 ## 🧭 GitHub 协作
 
