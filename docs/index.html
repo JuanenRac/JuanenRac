@@ -3247,7 +3247,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.6
+            0.4.7
           </td>
 
           <td class="status-cell">
@@ -3262,7 +3262,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/c361c8ce392f5b5f3bcfacc2b264a167807b7e0d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Document the 3D-viewport desync investigation in the 0.4.6 changelog entry">Document the 3D-viewport desync investigation in the 0.4.6 changelog entry</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/5221c002963c7d6ae386bea2c95f40edef30cc5e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Make RobotViewModel&#x27;s auth token real Compose state">Make RobotViewModel&#x27;s auth token real Compose state</a>
           </td>
         </tr>
 
@@ -3750,7 +3750,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/5f14056518a8431c9e569a88f75c4fbdac8592b5" target="_blank" rel="noopener noreferrer" class="commit-link" title="Route gamepad real-time actions through the atomic command path">Route gamepad real-time actions through the atomic command path</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/4bef0bbd110443d3b538bc7576ecd804d7a07797" target="_blank" rel="noopener noreferrer" class="commit-link" title="App.tsx: add skipSplash, independent of hideUI&#x27;s chrome-hiding">App.tsx: add skipSplash, independent of hideUI&#x27;s chrome-hiding</a>
           </td>
         </tr>
 
@@ -3857,7 +3857,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.7
+            0.1.8
           </td>
 
           <td class="status-cell">
@@ -3872,7 +3872,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/af87d328d82515508b4027f51cd4085b97756f9d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real, deterministic coverage for net/discovery.py&#x27;s pure logic">Add real, deterministic coverage for net/discovery.py&#x27;s pure logic</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/e025dddcec43db66885ee054ad66f76a77354d4e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Route joint jog through the atomic command path + debounce all 3 sliders">Route joint jog through the atomic command path + debounce all 3 sliders</a>
           </td>
         </tr>
 
@@ -3892,7 +3892,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Desktop swarm command center, packaged as a standalone executable. Real server discovery (net/discovery.py): concurrent subnet /24 scan plus real mDNS (_hydra._tcp, matching what server.ts publishes and HYDRA-UMC-IOS-CONTROL already queries), deduplicated by (host, port). tests/verify_discovery.py gives the pure candidate-host enumeration and cross-source dedup logic real, deterministic, no-network coverage (this repo has no pytest suite - verify_*.py scripts are its own real testing convention).</div>
+                <div class="detail-text">Desktop swarm command center, packaged as a standalone executable. Real server discovery (net/discovery.py): concurrent subnet /24 scan plus real mDNS (_hydra._tcp, matching what server.ts publishes and HYDRA-UMC-IOS-CONTROL already queries), deduplicated by (host, port). Every real-time robot control (joint jog, speed, acceleration) now fires the atomic, debounced /api/robot/:id/command path (net/client.py&#x27;s HydraConnection.send_command(), debounce_ms) instead of the full-tree push_state() a continuously-dragged knob/slider used to call once per mouse event. tests/verify_discovery.py and tests/verify_send_command_debounce.py give the pure logic real, deterministic, no-network coverage (this repo has no pytest suite - verify_*.py scripts are its own real testing convention).</div>
               </div>
 
               <div class="detail-block">
@@ -7354,7 +7354,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.8
+            0.1.7
           </td>
 
           <td class="status-cell">
@@ -7369,7 +7369,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/52a624db662a8daade078af1ac922f80a5840d72" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: fix HYDRA-UMC expansion in banner/splashscreen (Multi-Axis -&gt; Machines)">docs: fix HYDRA-UMC expansion in banner/splashscreen (Multi-Axis -&gt; Machines)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/de475b203aa6db7db63ebc88015abbb26c43ae77" target="_blank" rel="noopener noreferrer" class="commit-link" title="Correct this session&#x27;s version numbering: odometer rule, not decimal">Correct this session&#x27;s version numbering: odometer rule, not decimal</a>
           </td>
         </tr>
 
@@ -7389,7 +7389,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">A reproducible HYDRA-UMC product layer on Raspberry Pi OS, not a new Linux distribution. Provides a read-only agent, validated configuration, profiles, diagnostics, Server staging and an optional loopback Voice UI gateway. The preflight is proven idempotent and side-effect-free by a real test (two runs, byte-identical output, zero files touched), and a real, host-independent backup/rollback mechanism (provisioning/rollback.py) protects the one system file install_local_agent.sh unconditionally overwrites. CM5 validation and production image assembly remain release gates.</div>
+                <div class="detail-text">A reproducible HYDRA-UMC product layer on Raspberry Pi OS, not a new Linux distribution. Provides a read-only agent, validated configuration, profiles, diagnostics, Server staging and an optional loopback Voice UI gateway. The preflight is proven idempotent and side-effect-free by a real test (two runs, byte-identical output, zero files touched), and a real, host-independent backup/rollback mechanism (provisioning/rollback.py) protects the one system file install_local_agent.sh unconditionally overwrites. Real WiFi first-contact provisioning (provisioning/wifi_provision.py, hydra-umc-wifi-provision.service): a real NetworkManager AP-mode fallback + local HTTP form for a headless CM5 with no known network yet, state machine unit-tested against a fake NetworkManager including a real HTTP round-trip (tools/verify_wifi_provision.py). CM5 validation and production image assembly remain release gates.</div>
               </div>
 
               <div class="detail-block">
