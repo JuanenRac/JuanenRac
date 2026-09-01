@@ -175,7 +175,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 文脈を考慮したエラー復旧機能を備える、LLM ベースのミッションオーケストレーター。 |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 技術マニュアルとソースコードで学習させた、RAG ベースの AI アシスタント。 |
 
-### 🐝 Orchestration & Swarm（オーケストレーション・群制御）
+### 🐝 オーケストレーションと群制御（オーケストレーション・群制御）
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC-ORCHESTRATOR](https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR) | マルチロボットの協調と衝突回避を担う、フリートマネージャー。 |
@@ -184,7 +184,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER) | 異種混在のロボットフリート向け、優先度ベースのタスクスケジューラー。 |
 | [HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING) | ミッションの透過的なフェイルオーバーを実現する、高可用性モニター。 |
 
-### 🎮 Digital Twin & Simulation（デジタルツイン・シミュレーション）
+### 🎮 デジタルツインとシミュレーション（デジタルツイン・シミュレーション）
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | リスクフリーなロボットテストのための、高忠実度物理シミュレーションエンジン。 |
@@ -192,7 +192,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE) | 実機と仮想コマンドを同期させる、Hardware-in-the-Loop（HIL）インターフェース。 |
 | [HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN) | Vision ノード向け学習データセットのプロシージャル生成ツール。 |
 
-### 📊 Data & Analytics（データ・分析）
+### 📊 データと分析（データ・分析）
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 大量の産業用ロボットデータを格納する、ビッグデータストレージ。 |
@@ -200,7 +200,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | モーター振動の特徴パターンに基づく、予知保全エンジン。 |
 | [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 工場の生産管理向けの、OEE・KPI 自動生成ツール。 |
 
-### 🏭 Industrial Gateway（産業用ゲートウェイ）
+### 🏭 産業用ゲートウェイ（産業用ゲートウェイ）
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 工場標準規格（OPC-UA/MQTT）に対応する、インダストリー4.0 相互運用ブリッジ。 |
@@ -220,7 +220,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | AGV/AMR フリート向け調整境界。工場座標系からAMRのローカル座標系への変換と、VDA-5050 に着想を得た注文アクション語彙を備え、経路計画はAMR自身のナビゲーションが担当します。 |
 | [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | カメラ搭載UAV向け調整境界。名前付きの飛行リクエスト語彙と、決定論的なハートビート/リンク切断フェイルセーフ監視を備えます。 |
 
-### 🛠️ Complementary Tools（補完ツール群）
+### 🛠️ 補完ツール（補完ツール群）
 | リポジトリ | 説明 |
 | :--- | :--- |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 触覚安全アラート機能を備えた、ウェアラブル緊急ダッシュボード。 |
