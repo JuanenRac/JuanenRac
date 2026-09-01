@@ -26,7 +26,7 @@ Bienvenue dans l'**Écosystème HYDRA-UMC**, une plateforme robotique industriel
 
 ## 📈 Progression de l'Écosystème
 
-`[█████████▊░░░░░░░░░░] 49%` — Indication de référence. Le jalon 100 % correspond à un écosystème intégré fonctionnant sur du matériel réel.
+`[██████████▊░░░░░░░░░] 54%` — Indication de référence. Le jalon 100 % correspond à un écosystème intégré fonctionnant sur du matériel réel.
 
 ---
 
