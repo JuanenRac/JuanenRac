@@ -183,7 +183,7 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 | [HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER) | Prioritätsbasierter Aufgabenplaner für heterogene Roboterflotten. |
 | [HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING) | Hochverfügbarkeitsmonitor mit transparentem Missions-Failover. |
 
-### 🎮 Digital Twin & Simulation
+### 🎮 Digitaler Zwilling & Simulation
 | Repository | Beschreibung |
 | :--- | :--- |
 | [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | Hochpräzise Physiksimulations-Engine für risikofreies Robotertesten. |

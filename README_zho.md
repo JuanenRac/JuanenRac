@@ -172,7 +172,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 基于 LLM 的任务编排器，具备上下文感知的错误恢复能力。 |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 基于 RAG 的 AI 助手，基于技术手册与源代码训练。 |
 
-### 🐝 Orchestration & Swarm（编排与集群）
+### 🐝 编排与集群（编排与集群）
 | 仓库 | 说明 |
 | :--- | :--- |
 | [HYDRA-UMC-ORCHESTRATOR](https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR) | 舰队管理器，用于多机器人协同与防碰撞。 |
@@ -181,7 +181,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER) | 基于优先级的任务调度器，用于异构机器人舰队。 |
 | [HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING) | 高可用监控器，支持任务的透明故障转移。 |
 
-### 🎮 Digital Twin & Simulation（数字孪生与仿真）
+### 🎮 数字孪生与仿真（数字孪生与仿真）
 | 仓库 | 说明 |
 | :--- | :--- |
 | [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | 高保真物理仿真引擎，用于无风险的机器人测试。 |
@@ -189,7 +189,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE) | 硬件在环（HIL）接口，用于真实与虚拟指令的同步。 |
 | [HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN) | 面向 Vision 节点的训练数据集程序化生成器。 |
 
-### 📊 Data & Analytics（数据与分析）
+### 📊 数据与分析（数据与分析）
 | 仓库 | 说明 |
 | :--- | :--- |
 | [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 用于海量工业机器人数据的大数据存储。 |
@@ -197,7 +197,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 基于电机振动特征的预测性维护引擎。 |
 | [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 面向工厂生产管理的自动化 OEE 与 KPI 生成工具。 |
 
-### 🏭 Industrial Gateway（工业网关）
+### 🏭 工业网关（工业网关）
 | 仓库 | 说明 |
 | :--- | :--- |
 | [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 工业 4.0 互操作性网关，对接工厂标准（OPC-UA/MQTT）。 |
@@ -217,7 +217,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 面向AGV/AMR车队的协调边界：从工厂坐标系到AMR本地坐标系的变换，加上受VDA-5050启发的订单动作词表，路径规划仍由AMR自身导航负责。 |
 | [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 面向搭载摄像头的无人机的协调边界：命名飞行请求词表，加上确定性的心跳/失联故障保护看门狗。 |
 
-### 🛠️ Complementary Tools（配套工具）
+### 🛠️ 配套工具（配套工具）
 | 仓库 | 说明 |
 | :--- | :--- |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 可穿戴式应急仪表盘，具备触觉安全告警功能。 |
