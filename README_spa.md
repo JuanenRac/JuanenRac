@@ -132,10 +132,6 @@ completo de abajo.
 ### 💠 Control core e interfaces de operador
 | Repositorio | Descripción |
 | :--- | :--- |
-
-### 💠 Control core e interfaces de operador
-| Repositorio | Descripción |
-| :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | Firmware de control de movimiento core para STM32H745/G474 con cinemática S-Curve. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | API Node.js headless y backend WebSocket para orquestación robótica. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | Dashboard web avanzado basado en React para monitoreo y control 3D. |
