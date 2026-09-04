@@ -223,6 +223,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | フリート自動化・ファームウェア書き込み・DevOps 向けのコマンドラインインターフェース。 |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 自然言語によるインサイトを Web ダッシュボードに提供する、AI 拡張機能。 |
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | エコシステム内のあらゆるプロジェクトを検出・インストール・手動更新できる、クロスプラットフォーム GUI/CLI ツール。 |
+| [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | エコシステムの最新バージョンをプリロードし、Raspberry Pi Imager方式の初回起動設定を備えた、書き込み可能なCM5イメージを構築するWindows/Linuxデスクトップツール。 |
 
 ---
 
