@@ -4256,7 +4256,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR/commit/17c9a6b2f0dd3cc5118a60ad5c944a1c6b2339ff" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove the private-internal-log mention from CHANGELOG.md">docs: remove the private-internal-log mention from CHANGELOG.md</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR/commit/31e471f722f5a8af9eee9f2ff65c8868fb0fafde" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: merge duplicate [0.1.1] CHANGELOG heading">docs: merge duplicate [0.1.1] CHANGELOG heading</a>
           </td>
         </tr>
 
@@ -6872,7 +6872,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/f0aa2f9646cc9862e5af8c3ecbf4ce83210aa479" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)">docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/09f724f8b9ee40b5776da1b55b57c23f45e0de08" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: manifest notes said &quot;22 tests&quot; and &quot;genuinely blocked&quot; - both stale">docs: manifest notes said &quot;22 tests&quot; and &quot;genuinely blocked&quot; - both stale</a>
           </td>
         </tr>
 
@@ -6892,7 +6892,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Established v0: real gRPC/Protobuf health-report schema, verified by actually compiling it with grpc_tools.protoc and round-tripping a real HealthReport message through serialize/parse - the shared service contract its 4 children build against. Plus a real, pure in-memory mission state machine (src/mission.rs): Mission (Pending-&gt;Dispatched-&gt;InProgress-&gt;Completed, Cancelled/Failed terminal), idempotent cancel() (cancelling an already-cancelled mission succeeds as a no-op, never errors), and recover_from_unavailable_node()/MissionRegistry::recover_node_unavailable() (requeues a Dispatched/InProgress mission to Pending when its node is reported unreachable/invalid, e.g. by HYDRA-UMC-NODE-HEALING&#x27;s watchdog). 22 tests. Exposed via the `mission-demo` CLI subcommand. Real gRPC transport to JOB-DISPATCHER/NODE-HEALING remains future work - genuinely blocked on those services not having a real API to call yet.</div>
+                <div class="detail-text">Established v0: real gRPC/Protobuf health-report schema, verified by actually compiling it with grpc_tools.protoc and round-tripping a real HealthReport message through serialize/parse - the shared service contract its 4 children build against. Plus a real, pure in-memory mission state machine (src/mission.rs): Mission (Pending-&gt;Dispatched-&gt;InProgress-&gt;Completed, Cancelled/Failed terminal), idempotent cancel() (cancelling an already-cancelled mission succeeds as a no-op, never errors), and recover_from_unavailable_node()/MissionRegistry::recover_node_unavailable() (requeues a Dispatched/InProgress mission to Pending when its node is reported unreachable/invalid). 42 tests. Exposed via the `mission-demo` CLI subcommand. Both real integrations are now wired: src/job_dispatcher.rs is a real HTTP client to HYDRA-UMC-JOB-DISPATCHER&#x27;s own API (POST /jobs/submit, POST /dispatch); and src/server.rs&#x27;s own POST /nodes/:node/recover is the real endpoint HYDRA-UMC-NODE-HEALING&#x27;s watchdog.Reactor (OrchestratorReactor) calls into on every unhealthy-node transition, which drives recover_node_unavailable() above.</div>
               </div>
 
               <div class="detail-block">
