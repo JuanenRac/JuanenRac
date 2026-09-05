@@ -4003,7 +4003,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC/commit/e01dc0fef56f1069506de75c76a520c247eaa8b4" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: POST /flash crashed the handler on a malformed Content-Length header">fix: POST /flash crashed the handler on a malformed Content-Length header</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC/commit/6183a7a2a2203ab76d4401ace2f96445ee33d907" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: CM4/G474 firmware are real applications now, not skeletons (all 7 languages)">docs: CM4/G474 firmware are real applications now, not skeletons (all 7 languages)</a>
           </td>
         </tr>
 
@@ -5381,7 +5381,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/21cc85733a9702267474e0e9e0423c85ccf64868" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)">docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/d982a87e25dde6ee8658e15309c2894a5d22eff3" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: strip stray calendar dates from CHANGELOG.md version headings">docs: strip stray calendar dates from CHANGELOG.md version headings</a>
           </td>
         </tr>
 
@@ -5503,7 +5503,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER/commit/1bfdf876c0d639a9245c41e53ded2d6750e5ba92" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)">docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER/commit/592c4037189c99927d3522aededb5418c6ab62bc" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: strip stray calendar dates from CHANGELOG.md version headings">docs: strip stray calendar dates from CHANGELOG.md version headings</a>
           </td>
         </tr>
 
@@ -7116,7 +7116,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/commit/055ffd70b0db1006f53422bdc9b5e90c43e2f5bb" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove the private-internal-log mention from CHANGELOG.md">docs: remove the private-internal-log mention from CHANGELOG.md</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/commit/34c032b639116e0015ea9fd3af2af7617e3330fb" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: real failover was already wired, README/manifest still said &quot;not yet&quot; (all 7 languages)">docs: real failover was already wired, README/manifest still said &quot;not yet&quot; (all 7 languages)</a>
           </td>
         </tr>
 
@@ -7136,7 +7136,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Established v0: real gRPC-based health watchdog (detection only - real failover/soft-reboot needs HYDRA-UMC-ORCHESTRATOR to expose an API that doesn&#x27;t exist yet, see watchdog.Reactor). checkNode now retries a transport-level failure (dial/RPC error) via a bounded, deterministic RetryPolicy (default 3 attempts, exponential backoff 250ms-&gt;2s cap) before classifying a node UNREACHABLE, masking transient network blips without an open-ended retry loop. A node that answers but misreports its own identity (missing or mismatched NodeIdentity.Name) is classified StatusInvalid and never trusted or retried - retrying cannot fix a node lying about its own name. 22 tests.</div>
+                <div class="detail-text">Established v0: real gRPC-based health watchdog with real failover wired in - OrchestratorReactor (watchdog.Reactor&#x27;s real implementation) calls HYDRA-UMC-ORCHESTRATOR&#x27;s own POST /nodes/:node/recover on every unhealthy transition. checkNode retries a transport-level failure (dial/RPC error) via a bounded, deterministic RetryPolicy (default 3 attempts, exponential backoff 250ms-&gt;2s cap) before classifying a node UNREACHABLE, masking transient network blips without an open-ended retry loop. A node that answers but misreports its own identity (missing or mismatched NodeIdentity.Name) is classified StatusInvalid and never trusted or retried - retrying cannot fix a node lying about its own name. 28 tests.</div>
               </div>
 
               <div class="detail-block">
