@@ -128,6 +128,7 @@ du catalogue complet ci-dessous.
 | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Couche de plateforme Raspberry Pi OS pour CM5 : profils reproductibles, configuration, diagnostic, cycle de vie des services et mises à jour ; ce n'est pas une nouvelle distribution Linux. |
 | [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contrats versionnés, clients légers et tests de conformité communs pour services, interfaces, adaptateurs CM5 et URTC ; ne remplace pas les API des fournisseurs. |
+| [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | Registre déclaratif et validateur de manifestes d'adaptateur pour les connecteurs de machines externes ; étend la propre idée de contrat du SDK aux machines externes sans remplacer les projets de passerelle industrielle. |
 
 ### 💠 Contrôle central et clients opérateur
 | Dépôt | Description |
@@ -223,6 +224,7 @@ du catalogue complet ci-dessous.
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | Extension IA pour tableaux de bord web fournissant des analyses textuelles. |
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | Outil GUI/CLI multiplateforme pour détecter, installer et mettre à jour manuellement chaque projet de l'écosystème. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | Outil de bureau Windows/Linux qui construit une image de la CM5 prête à graver, préchargée avec les versions les plus actuelles de l'écosystème, avec une configuration de premier démarrage façon Raspberry Pi Imager. |
+| [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | Coordinateur d'incidents de maintenance : un rôle edge à faible privilège collecte un instantané d'inventaire/santé assaini, un rôle control-plane le rend en lecture seule et demande à un fournisseur d'IA de suggérer un diagnostic - n'applique jamais de correctif ni ne déploie rien. |
 
 ---
 
