@@ -3125,7 +3125,7 @@
           </td>
 
           <td class="version status-ok">
-            0.5.2
+            0.5.3
           </td>
 
           <td class="status-cell">
@@ -3140,7 +3140,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/316b66abf4a53351d362a2ec50cbde6dd1a482fc" target="_blank" rel="noopener noreferrer" class="commit-link" title="refactor: extract pure helpers into src/serverPolicy.ts, add real direct unit tests">refactor: extract pure helpers into src/serverPolicy.ts, add real direct unit tests</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/e134fc2a8c24fec58964730bd0583161ef5b4838" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: bound concurrent scrypt operations, reject overload (SERVER-03 follow-up)">fix: bound concurrent scrypt operations, reject overload (SERVER-03 follow-up)</a>
           </td>
         </tr>
 
@@ -3160,7 +3160,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The real headless backend every control client (STUDIO, SUITE, DSI, the mobile apps) actually talks to. It relays bounded authenticated voice turns to a loopback HYDRA-UMC-VOICE-UI gateway while retaining the gateway token server-side (voice never becomes a direct robot command), and now relays the real CM5&lt;-&gt;STM32H745 SPI-OTA link to a local spi_bridge service (admin-only for flashing, live progress over WebSocket) - not yet exercised against real STM32H745 hardware, since no populated board exists yet. src/serverPolicy.ts now holds 8 pure helper functions extracted out of src/server.ts (some previously trapped inside startServer()&#x27;s own closure with no external reason to be), each with real, direct node:test unit tests (tests/serverPolicy.test.ts, tests/kinematics.test.ts) run via the already-present tsx devDependency - this repository&#x27;s first direct unit tests, alongside its existing 11 real end-to-end tools/verify_*_contract.mjs scripts.</div>
+                <div class="detail-text">The real headless backend every control client (STUDIO, SUITE, DSI, the mobile apps) actually talks to. It relays bounded authenticated voice turns to a loopback HYDRA-UMC-VOICE-UI gateway while retaining the gateway token server-side (voice never becomes a direct robot command), and now relays the real CM5&lt;-&gt;STM32H745 SPI-OTA link to a local spi_bridge service (admin-only for flashing, live progress over WebSocket) - not yet exercised against real STM32H745 hardware, since no populated board exists yet. src/serverPolicy.ts now holds 8 pure helper functions extracted out of src/server.ts (some previously trapped inside startServer()&#x27;s own closure with no external reason to be), each with real, direct node:test unit tests (tests/serverPolicy.test.ts, tests/kinematics.test.ts) run via the already-present tsx devDependency - this repository&#x27;s first direct unit tests, alongside its existing 11 real end-to-end tools/verify_*_contract.mjs scripts. src/users.ts accounts now carry a real tokenVersion, bumped on every account mutation and re-checked on every authenticated HTTP request and WebSocket tick (not just at login), so deleting/demoting a user or changing its password revokes every already-issued token/session immediately instead of waiting for JWT expiry; users.json reads now distinguish a genuinely missing file from real corruption (throws instead of silently reseeding) and writes are atomic (temp file + rename); scrypt password hashing runs on Node&#x27;s async threadpool instead of blocking the whole event loop per login, bounded to 4 concurrent operations plus a 20-deep queue with an explicit ScryptOverloadError/503 once both are full (an unbounded queue is just a slower-motion version of the same overload). tests/users.test.ts adds 32 direct unit tests for this store.</div>
               </div>
 
               <div class="detail-block">
@@ -3613,7 +3613,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.1
+            0.1.2
           </td>
 
           <td class="status-cell">
@@ -3628,7 +3628,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/13b0179c869f3dc74b63dbbdae49ca49e03a01d2" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add real end-to-end reconnect tests for hydra_websocket.dart">Add real end-to-end reconnect tests for hydra_websocket.dart</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/33729b853846c4a0f8b3cfccff89d0aa8f52bec4" target="_blank" rel="noopener noreferrer" class="commit-link" title="IOS-01: real secure storage for the session token">IOS-01: real secure storage for the session token</a>
           </td>
         </tr>
 
@@ -3735,7 +3735,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.8
+            0.4.9
           </td>
 
           <td class="status-cell">
@@ -3750,7 +3750,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/e8dd0143cfd98740167ba3096ea71139dab1a3f7" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: typecheck was still a no-op, plus a real automated test suite">fix: typecheck was still a no-op, plus a real automated test suite</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/92043533d9bf80ec256c65896cb9191f1417eb1f" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: example data can no longer look like a live connection (STUDIO-01)">fix: example data can no longer look like a live connection (STUDIO-01)</a>
           </td>
         </tr>
 
@@ -3770,7 +3770,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Web control dashboard with 3D multi-robot visualization, talking to HYDRA-UMC-SERVER&#x27;s own API. GamepadController.tsx&#x27;s real-time actions (joint/table jog, E-STOP, START/STOP, speed) now fire the atomic sendRobotCommand()/POST /api/robot/:id/command path instead of the 500ms-debounced settings save, matching every other real-time control surface in RobotDetail.tsx; jointLimitsFor() moved to the shared examples/robotKinematicsDispatch.ts so both reuse the same per-model joint-limit clamping. `npm run typecheck` (tsc --noEmit) was itself a silent no-op against this repo&#x27;s own solution-style tsconfig - fixed to real `tsc -b --noEmit`, which immediately surfaced and got 8 real pre-existing type errors fixed. tests/ (new, vitest) now covers 141 real cases across src/examples/ - the FK/IK math for all 24 robot models robotKinematicsDispatch.ts fans out to, none of which had a single test before.</div>
+                <div class="detail-text">Web control dashboard with 3D multi-robot visualization, talking to HYDRA-UMC-SERVER&#x27;s own API. GamepadController.tsx&#x27;s real-time actions (joint/table jog, E-STOP, START/STOP, speed) now fire the atomic sendRobotCommand()/POST /api/robot/:id/command path instead of the 500ms-debounced settings save, matching every other real-time control surface in RobotDetail.tsx; jointLimitsFor() moved to the shared examples/robotKinematicsDispatch.ts so both reuse the same per-model joint-limit clamping. `npm run typecheck` (tsc --noEmit) was itself a silent no-op against this repo&#x27;s own solution-style tsconfig - fixed to real `tsc -b --noEmit`, which immediately surfaced and got 8 real pre-existing type errors fixed. tests/ (new, vitest) now covers 145 real cases across src/examples/ and the default-fixture seed - the FK/IK math for all 24 robot models robotKinematicsDispatch.ts fans out to, none of which had a single test before. Example robots/cameras seeded on a fresh install no longer claim a live online/urtcConnected/connected hardware connection they don&#x27;t have; a new serverReachable signal (real, live, never persisted to settings.json) now drives the System Online/Offline badge instead of a static fixture field.</div>
               </div>
 
               <div class="detail-block">
@@ -3857,7 +3857,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.9
+            0.4.0
           </td>
 
           <td class="status-cell">
@@ -3872,7 +3872,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/445e1ac7fbb642756a6723af18cd16958d95c4da" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: real overlapping-text layout bugs in the --qtquick deck">fix: real overlapping-text layout bugs in the --qtquick deck</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/d23bf1a98675cee61fa98262f71639bc984dceaf" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove dangling private-file reference from CHANGELOG (DOC-38)">docs: remove dangling private-file reference from CHANGELOG (DOC-38)</a>
           </td>
         </tr>
 
@@ -4363,7 +4363,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.7
+            0.0.8
           </td>
 
           <td class="status-cell">
@@ -4378,7 +4378,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS/commit/aefb81d2780a782a340cfcb0ef4865b7c9a36ba6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Fix stray leftover word in CHANGELOG.md&#x27;s own intro line">Fix stray leftover word in CHANGELOG.md&#x27;s own intro line</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS/commit/b4cad115fbab751c72bdf5615d799cd4cdc5e14e" target="_blank" rel="noopener noreferrer" class="commit-link" title="DOC-32: keep mejoras_futuras.txt discoverable, state reasons inline">DOC-32: keep mejoras_futuras.txt discoverable, state reasons inline</a>
           </td>
         </tr>
 
@@ -4485,7 +4485,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.9
+            0.1.0
           </td>
 
           <td class="status-cell">
@@ -4500,7 +4500,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR/commit/c43e8c705974f6d5a35fe0cb023d5d657304b032" target="_blank" rel="noopener noreferrer" class="commit-link" title="Fix stray leftover word in CHANGELOG.md&#x27;s own intro line">Fix stray leftover word in CHANGELOG.md&#x27;s own intro line</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR/commit/eaca1ba2d5e74578f8f70804f1c90afeeaeb262c" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: quarantine a permanently-rejected sample instead of blocking the queue forever (TEL-01)">fix: quarantine a permanently-rejected sample instead of blocking the queue forever (TEL-01)</a>
           </td>
         </tr>
 
@@ -4520,7 +4520,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real CAN/WebSocket ingestion pipeline with a bounded buffer, retry-on-outage delivery, and a real DatalakeSink writing to HYDRA-UMC-DATALAKE - verified end-to-end. Real per-producer sequence deduplication with a bounded reorder window (dedup.Tracker) so a reconnect resend never inflates ingest counts, and a real transport-vs-invalid-data error classification on flush failures (sink.InvalidDataError) for real operational diagnosis.</div>
+                <div class="detail-text">Real CAN/WebSocket ingestion pipeline with a bounded buffer, retry-on-outage delivery, and a real DatalakeSink writing to HYDRA-UMC-DATALAKE - verified end-to-end. Real per-producer sequence deduplication with a bounded reorder window (dedup.Tracker) so a reconnect resend never inflates ingest counts, and a real transport-vs-invalid-data error classification on flush failures (sink.InvalidDataError) for real operational diagnosis. A permanently-rejected sample is now quarantined (dropped, counted in Stats().Quarantined) instead of being requeued forever and blocking every valid sample behind it - sink.InvalidDataError now carries that sample&#x27;s exact batch Index so only it, not the whole batch, is dropped.</div>
               </div>
 
               <div class="detail-block">
@@ -4860,7 +4860,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -4875,7 +4875,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/782988a7eb66835e498629a0c8af631c59e31724" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: real parent/child URDF tree walk instead of document order">fix: real parent/child URDF tree walk instead of document order</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/b414364681483f3d6dfed309369ef7e578a2aad1" target="_blank" rel="noopener noreferrer" class="commit-link" title="PHYS-01: reject malformed/non-finite URDF values instead of silently accepting them">PHYS-01: reject malformed/non-finite URDF values instead of silently accepting them</a>
           </td>
         </tr>
 
@@ -5235,7 +5235,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.2
+            0.1.3
           </td>
 
           <td class="status-cell">
@@ -5250,7 +5250,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/commit/dcd0d5aee1efef94c82ef6e789de3c0025607608" target="_blank" rel="noopener noreferrer" class="commit-link" title="Real UI layout/sizing pass per user feedback">Real UI layout/sizing pass per user feedback</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/commit/8e49b89c62c878a68170a25bfb5155e8262b032f" target="_blank" rel="noopener noreferrer" class="commit-link" title="IMAGE-01/02: pin to a real commit, never promote an image cleanup couldn&#x27;t finish">IMAGE-01/02: pin to a real commit, never promote an image cleanup couldn&#x27;t finish</a>
           </td>
         </tr>
 
@@ -6107,7 +6107,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.8
+            0.0.9
           </td>
 
           <td class="status-cell">
@@ -6122,7 +6122,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER/commit/9669e0def8b44e394381569c61d38111e499195e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add a real, opt-in MQTT-over-WebSocket listener alongside plain TCP">Add a real, opt-in MQTT-over-WebSocket listener alongside plain TCP</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER/commit/f70e28e45c5c3b5ad5fca35cd566540ce5db6617" target="_blank" rel="noopener noreferrer" class="commit-link" title="MQTT-01: bind authenticated identity to a real client-ID prefix">MQTT-01: bind authenticated identity to a real client-ID prefix</a>
           </td>
         </tr>
 
@@ -6351,7 +6351,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.7
+            0.0.9
           </td>
 
           <td class="status-cell">
@@ -6366,7 +6366,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/26b04855a6d1e3160fb537d32e7b4fce8ee3c02f" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix(security): SecurityPolicy.None was a real, exposed default - now refused">fix(security): SecurityPolicy.None was a real, exposed default - now refused</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/959da40334933f0ab0aafc8bdb492822757c5ffb" target="_blank" rel="noopener noreferrer" class="commit-link" title="DOC-26 follow-up: keep mejoras_futuras.txt discoverable and correct">DOC-26 follow-up: keep mejoras_futuras.txt discoverable and correct</a>
           </td>
         </tr>
 
@@ -6857,7 +6857,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.6
+            0.0.7
           </td>
 
           <td class="status-cell">
@@ -6872,7 +6872,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/3b8600189bbd29a8db62e3ea5c61a9aab53b5800" target="_blank" rel="noopener noreferrer" class="commit-link" title="Notify Job-Dispatcher to requeue when handle_recover() requeues a mission">Notify Job-Dispatcher to requeue when handle_recover() requeues a mission</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/35c393aa77056b257250b4a2a678f3d7af158542" target="_blank" rel="noopener noreferrer" class="commit-link" title="ORCH-01/02/03: reconcile every assignment, confirm completion, fix a real test race">ORCH-01/02/03: reconcile every assignment, confirm completion, fix a real test race</a>
           </td>
         </tr>
 
@@ -6979,7 +6979,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.1
+            0.1.2
           </td>
 
           <td class="status-cell">
@@ -6994,7 +6994,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/commit/dbea2d6e227e2c1b6bf4f99e670538e1b1bd8891" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat(persistence): real SQLite-backed mission state, survives a restart">feat(persistence): real SQLite-backed mission state, survives a restart</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/commit/cfed473fa19936e74456ab75f4bc38598e700ad7" target="_blank" rel="noopener noreferrer" class="commit-link" title="JOB-01/JOB-02: defensive copies and a real reservation guard">JOB-01/JOB-02: defensive copies and a real reservation guard</a>
           </td>
         </tr>
 
@@ -7101,7 +7101,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.2
+            0.1.3
           </td>
 
           <td class="status-cell">
@@ -7116,7 +7116,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/commit/876c48bad1ce55d41d740e1e0e0973449414e5d9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Give OrchestratorReactor&#x27;s default HTTP client a real timeout">Give OrchestratorReactor&#x27;s default HTTP client a real timeout</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/commit/5033337fa2ac8959d84308c649e6beb3aa4fa1a7" target="_blank" rel="noopener noreferrer" class="commit-link" title="HEAL-01: bounded background retry when Orchestrator is briefly down">HEAL-01: bounded background retry when Orchestrator is briefly down</a>
           </td>
         </tr>
 
@@ -7223,7 +7223,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -7238,7 +7238,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/commit/a664b112a8828c0e78bbcf43a289bf70fa33d73e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Fix stray leftover word in CHANGELOG.md&#x27;s own intro line">Fix stray leftover word in CHANGELOG.md&#x27;s own intro line</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/commit/d9f1e56cdb9b0e6cef2a79e85e904fa9f0fef311" target="_blank" rel="noopener noreferrer" class="commit-link" title="DOC-30 follow-up: keep mejoras_futuras.txt discoverable and correct">DOC-30 follow-up: keep mejoras_futuras.txt discoverable and correct</a>
           </td>
         </tr>
 
@@ -7345,7 +7345,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.6
+            0.0.7
           </td>
 
           <td class="status-cell">
@@ -7360,7 +7360,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/commit/7388eec7a4937572a45d3356c86e64bee8fa7b94" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat(persistence): real per-node state, POST /reconcile now remembers">feat(persistence): real per-node state, POST /reconcile now remembers</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/commit/d373990bb5ce55f102ca93f99ae35728621fa14f" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: reject an impossible merge conflict instead of silently diverging (SWARM-01)">fix: reject an impossible merge conflict instead of silently diverging (SWARM-01)</a>
           </td>
         </tr>
 
@@ -7380,7 +7380,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real CRDT LWW-Element-Map implementation with property-tested commutativity/associativity/idempotence, backed by a real Lamport logical clock for event ordering. merge_report() gives real, inspectable per-key conflict visibility (which cell&#x27;s write beat which other&#x27;s), and a 4-cell multi-round simulated partition/reconnect test proves eventual convergence at swarm scale, not just a single two-cell merge. src/store.rs (serve --state-file) adds real, opt-in per-node persistence - POST /reconcile now merges into and durably updates this node&#x27;s own state instead of discarding it every call, verified end-to-end against a real killed-and-relaunched binary, closing a real gap where the server was fully stateless.</div>
+                <div class="detail-text">Real CRDT LWW-Element-Map implementation with property-tested commutativity/associativity/idempotence, backed by a real Lamport logical clock for event ordering. merge_report() gives real, inspectable per-key conflict visibility (which cell&#x27;s write beat which other&#x27;s), and a 4-cell multi-round simulated partition/reconnect test proves eventual convergence at swarm scale, not just a single two-cell merge. src/store.rs (serve --state-file) adds real, opt-in per-node persistence - POST /reconcile now merges into and durably updates this node&#x27;s own state instead of discarding it every call, verified end-to-end against a real killed-and-relaunched binary, closing a real gap where the server was fully stateless. merge_report() now also rejects (IdentityCollision) the one case the CRDT&#x27;s own single-writer invariant should make impossible - an identical (time, writer) stamp claiming two different values - instead of silently, order-dependently keeping one side; LamportClock::tick/observe use checked_add and a real ClockOverflowError instead of silently wrapping at u64::MAX.</div>
               </div>
 
               <div class="detail-block">
@@ -7476,7 +7476,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.8
+            0.3.9
           </td>
 
           <td class="status-cell">
@@ -7491,7 +7491,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/0da1a551b65c389daf33a9d3208d8b89424c16ad" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix(provisioning): create the real data/ directory for swarm-sync&#x27;s own persistence">fix(provisioning): create the real data/ directory for swarm-sync&#x27;s own persistence</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/35022a51d4e44ad1b0beb7e04eb6f0369d8b091d" target="_blank" rel="noopener noreferrer" class="commit-link" title="OS-01: real pre-validation before any rollback mutation">OS-01: real pre-validation before any rollback mutation</a>
           </td>
         </tr>
 
@@ -7598,7 +7598,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.0
+            0.1.1
           </td>
 
           <td class="status-cell">
@@ -7613,7 +7613,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/f86c60f531bab22e74f9896f6c63a918a66c0689" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat(contracts): publish a real first OpenAPI v1 slice for HYDRA-UMC-SERVER">feat(contracts): publish a real first OpenAPI v1 slice for HYDRA-UMC-SERVER</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/3a280338f11b614b71e3657af74d48ac5eaef8b6" target="_blank" rel="noopener noreferrer" class="commit-link" title="SDK-01: enforce real enum membership at the BridgeJob constructor">SDK-01: enforce real enum membership at the BridgeJob constructor</a>
           </td>
         </tr>
 
@@ -8470,7 +8470,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.6
+            0.0.7
           </td>
 
           <td class="status-cell">
@@ -8485,7 +8485,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES/commit/d689fd371d4959af86d3556165f4c9bcbc8a4efd" target="_blank" rel="noopener noreferrer" class="commit-link" title="Cap and drain oversized JSON request bodies in the HTTP API">Cap and drain oversized JSON request bodies in the HTTP API</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES/commit/9df88beb3f1ef0977201106aa9a00b695c815a88" target="_blank" rel="noopener noreferrer" class="commit-link" title="SAFE-01: reject bool/fraction max_age_days before it reaches calibration">SAFE-01: reject bool/fraction max_age_days before it reaches calibration</a>
           </td>
         </tr>
 
