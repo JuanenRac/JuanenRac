@@ -1305,6 +1305,27 @@
       <span class="version-pill">v3</span>
     </h1>
 
+    <!--
+      CAT-01 (found in an ecosystem-wide software-improvements audit,
+      P2): "content unchanged" and "the hourly check has silently
+      stopped running" used to look identical on this page - no
+      generation timestamp is written here on purpose (see this
+      script's own header comment on why), so there was no visible
+      signal at all distinguishing the two. GitHub's own Actions status
+      badge is a real, live, always-current answer to "did the last
+      scheduled check actually run and succeed" - it needs no sidecar
+      file/extra commit of its own to stay honest, unlike a timestamp
+      baked into this static page would.
+    -->
+    <p class="subtitle">
+      <a href="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml" target="_blank" rel="noopener">
+        <img
+          src="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml/badge.svg"
+          alt="Ecosystem dashboard build status - click for the live run history"
+        >
+      </a>
+    </p>
+
     <p
         class="subtitle"
         data-i18n-template="subtitle_main"
