@@ -105,9 +105,18 @@ jobs:
       # discovery implementation. No project catalogue is installed here.
       # -----------------------------------------------------------------------
       - name: Install HYDRA-UMC-UPDATER
+        # CAT-01 (found in an ecosystem-wide software-improvements audit,
+        # P2): this used to install directly from main with no revision
+        # pin - a mutable dependency where main could get a real behavior
+        # change (or a genuine regression) between one scheduled run and
+        # the next, silently, with no way to tell which commit a given
+        # dashboard build actually used. Pinned to a real, current commit
+        # SHA (HYDRA-UMC-UPDATER's own main at the time of this fix) -
+        # bump this SHA by hand (a real, deliberate action, not silent
+        # drift) whenever this repo wants a newer UPDATER behavior.
         run: |
           python -m pip install --upgrade pip
-          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git"
+          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git@3490056990f29ddc33f6f0055e4107da4d1992c5"
 
       # -----------------------------------------------------------------------
       # Generate dashboard
@@ -138,6 +147,18 @@ jobs:
       # -----------------------------------------------------------------------
       # Commit only when the generated dashboard actually changed
       # -----------------------------------------------------------------------
+      # CAT-01 (found in an ecosystem-wide software-improvements audit,
+      # P2): the concurrency group above only ever serialized two runs of
+      # THIS SAME workflow against each other - it does nothing for a
+      # genuine human push to main landing between this job's checkout
+      # and its own push, which used to just fail outright (a real
+      # non-fast-forward rejection) and silently lose this run's
+      # regenerated dashboard until the next scheduled hour. The
+      # generated docs/index.html/.nojekyll content is saved to a real
+      # temp location BEFORE touching git at all, so a retry can re-apply
+      # the exact same already-computed output onto a freshly re-fetched
+      # main - never regenerating (and never re-hitting the GitHub API)
+      # partway through a retry.
       - name: Commit dashboard if changed
         shell: bash
         run: |
@@ -146,16 +167,33 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add docs/index.html docs/.nojekyll
+          workdir="$(mktemp -d)"
+          cp docs/index.html "$workdir/index.html"
+          cp docs/.nojekyll "$workdir/.nojekyll"
 
-          if git diff --cached --quiet; then
-            echo "No dashboard changes detected."
-            echo "Nothing to commit."
-            exit 0
-          fi
+          max_attempts=5
+          for attempt in $(seq 1 "$max_attempts"); do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$workdir/index.html" docs/index.html
+            cp "$workdir/.nojekyll" docs/.nojekyll
+            git add docs/index.html docs/.nojekyll
 
-          git commit -m "docs: regenerate ecosystem status dashboard"
+            if git diff --cached --quiet; then
+              echo "No dashboard changes detected against the current main."
+              echo "Nothing to commit."
+              exit 0
+            fi
 
-          # The concurrency group prevents two executions of this workflow
-          # from pushing simultaneously.
-          git push
+            git commit -m "docs: regenerate ecosystem status dashboard"
+
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt/$max_attempts."
+              exit 0
+            fi
+
+            echo "Push rejected (attempt $attempt/$max_attempts) - main moved concurrently, re-fetching and retrying."
+          done
+
+          echo "::error::Could not push the regenerated dashboard after $max_attempts attempts - main kept moving concurrently. No content was lost (still sitting in $workdir); re-run this workflow." >&2
+          exit 1

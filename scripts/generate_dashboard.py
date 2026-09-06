@@ -41,6 +41,7 @@ from __future__ import annotations
 import html
 import json
 import os
+import re
 import socket
 import sys
 import urllib.error
@@ -158,6 +159,31 @@ def _api_get(url: str) -> dict | list | None:
         return None
 
 
+# DOC-51 (found in an ecosystem-wide software-improvements audit, P2):
+# a real, historical commit subject pulled live from the GitHub API can
+# itself name a private internal tracking document by filename (e.g. a
+# past "mejoras_futuras.txt sweep" commit, from before those references
+# were cleaned out of every repo's own public files this same audit
+# round) - the commit is real history and is never rewritten, but this
+# dashboard is public presentation, so any such filename is redacted
+# right here, at render time, the moment a subject is fetched. Case-
+# insensitive; matches the exact filenames this audit's own detector
+# already found leaking into public files elsewhere in the ecosystem.
+_PRIVATE_DOCUMENT_NAME_RE = re.compile(
+    r"\b(mejoras_futuras\.txt|chat\.txt|auditoria_historial\.txt)\b",
+    re.IGNORECASE,
+)
+
+
+def _redact_private_document_names(subject: str) -> str:
+    """Replaces a bare private-tracking-document filename with a generic,
+    self-sufficient placeholder - the rest of a real commit subject (e.g.
+    "... sweep + real mDNS") stays intact and still tells a public reader
+    something real happened, without naming a file they have no access
+    to and were never meant to."""
+    return _PRIVATE_DOCUMENT_NAME_RE.sub("an internal tracking note", subject)
+
+
 def _fetch_one_meta(repo_name: str) -> RepoMeta:
     meta = RepoMeta()
 
@@ -178,7 +204,7 @@ def _fetch_one_meta(repo_name: str) -> RepoMeta:
 
         if message:
             # First line only - a commit body is not meant for one table row.
-            meta.commit_subject = message.splitlines()[0][:120]
+            meta.commit_subject = _redact_private_document_names(message.splitlines()[0][:120])
             meta.commit_url = commit.get("html_url")
 
     return meta
@@ -2873,6 +2899,27 @@ def render_html(
       <span data-i18n="header_title">Ecosystem Status Dashboard</span>
       <span class="version-pill">v3</span>
     </h1>
+
+    <!--
+      CAT-01 (found in an ecosystem-wide software-improvements audit,
+      P2): "content unchanged" and "the hourly check has silently
+      stopped running" used to look identical on this page - no
+      generation timestamp is written here on purpose (see this
+      script's own header comment on why), so there was no visible
+      signal at all distinguishing the two. GitHub's own Actions status
+      badge is a real, live, always-current answer to "did the last
+      scheduled check actually run and succeed" - it needs no sidecar
+      file/extra commit of its own to stay honest, unlike a timestamp
+      baked into this static page would.
+    -->
+    <p class="subtitle">
+      <a href="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml" target="_blank" rel="noopener">
+        <img
+          src="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml/badge.svg"
+          alt="Ecosystem dashboard build status - click for the live run history"
+        >
+      </a>
+    </p>
 
     <p
         class="subtitle"
