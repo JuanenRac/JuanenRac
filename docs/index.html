@@ -1601,7 +1601,7 @@
                 title="Real firmware for a real, physical PCB this ecosystem&#x27;s own hardware docs describe."
                 data-i18n-title="maturity_desc_production"
             >
-              <span class="maturity-count">1</span>
+              <span class="maturity-count">0</span>
               <span class="maturity-card-label" data-i18n="maturity_production">Production</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_production">Real firmware for a real, physical PCB this ecosystem&#x27;s own hardware docs describe.</span>
             </button>
@@ -1625,7 +1625,7 @@
                 title="Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip)."
                 data-i18n-title="maturity_desc_functional"
             >
-              <span class="maturity-count">1</span>
+              <span class="maturity-count">2</span>
               <span class="maturity-card-label" data-i18n="maturity_functional">Functional</span>
               <span class="maturity-card-desc" data-i18n="maturity_desc_functional">Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).</span>
             </button>
@@ -2893,7 +2893,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.7
+            0.0.8
           </td>
 
           <td class="status-cell">
@@ -2908,7 +2908,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/f308f87b2361c23e1be9ce85bc019c6e6aa6a0e7" target="_blank" rel="noopener noreferrer" class="commit-link" title="Promote the real receive-path decision to a real src/ module">Promote the real receive-path decision to a real src/ module</a>
+            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/0c286fa05cc814dca0cb504652536658b602baba" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix(manifest): escape unescaped quotes breaking JSON parsing">fix(manifest): escape unescaped quotes breaking JSON parsing</a>
           </td>
         </tr>
 
@@ -2928,7 +2928,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real, hardware-independent pure-C logic (tool_id.c ID decoding, lifecycle.c usage/maintenance tracking, preheat.c Smart Idle activation + target temperature + real safe-state target), a real rack command protocol (protocol.c: versioned framing + CRC8; rack_command.c: real actuation-limit validation; link_watchdog.c: real timeout + idempotency), and a real host-side scenario harness playing valid/CRC-corrupted/out-of-range/timed-out/duplicate frames through the whole pipeline - 74 host-native test assertions total, plus the verified cross-compile toolchain (arm-none-eabi-gcc -&gt; .bin/.hex with a real size report). Real CAN/F-RAM/GPIO I/O to actually drive tool tracking and pre-heating needs a real PCB, which doesn&#x27;t exist yet.</div>
+                <div class="detail-text">Real, hardware-independent pure-C logic (tool_id.c ID decoding, lifecycle.c usage/maintenance tracking, preheat.c Smart Idle activation + target temperature + real safe-state target), a real rack command protocol (protocol.c: versioned framing + CRC8; rack_command.c: real actuation-limit validation; link_watchdog.c: real timeout + idempotency), and a real host-side scenario harness playing valid/CRC-corrupted/out-of-range/timed-out/duplicate frames through the whole pipeline - 89 host-native test assertions total, plus the verified cross-compile toolchain (arm-none-eabi-gcc -&gt; .bin/.hex with a real size report). link_watchdog.c&#x27;s sequence check is now a real wraparound-aware &quot;genuinely newer&quot; comparison (not just &quot;different from the last one seen&quot;), with a real session/epoch reset on link-loss recovery. Real CAN/F-RAM/GPIO I/O to actually drive tool tracking and pre-heating needs a real PCB, which doesn&#x27;t exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -3015,7 +3015,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -3030,7 +3030,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/21b7f6257349c72482d7c973234b141478398a17" target="_blank" rel="noopener noreferrer" class="commit-link" title="Promote the real receive-path decision to a real src/ module">Promote the real receive-path decision to a real src/ module</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/d02434808e458b26e9ab42693ed8cadc31724b5f" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove dangling references to a private tracking document (DOC-56)">docs: remove dangling references to a private tracking document (DOC-56)</a>
           </td>
         </tr>
 
@@ -7685,7 +7685,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="production"
+            data-maturity="functional"
             data-role="firmware"
             data-family="urtc tool platform"
         >
@@ -7734,8 +7734,8 @@
           </td>
 
           <td class="maturity-cell">
-            <span class="maturity-badge maturity-production" data-i18n="maturity_production">
-              Production
+            <span class="maturity-badge maturity-functional" data-i18n="maturity_functional">
+              Functional
             </span>
           </td>
 
@@ -7750,7 +7750,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.8
+            0.2.9
           </td>
 
           <td class="status-cell">
@@ -7765,7 +7765,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC/commit/271cfba5ea600a1771512605b03f40e710cc0f47" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)">docs: add HYDRA-UMC-OS-REBUILDER to Related Projects (all 7 languages)</a>
+            <a href="https://github.com/JuanenRac/URTC/commit/60304c6360dd0c04fa253f69e6376537a496d8dd" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove dangling references to private tracking documents (DOC-52)">docs: remove dangling references to private tracking documents (DOC-52)</a>
           </td>
         </tr>
 
@@ -7776,7 +7776,7 @@
             data-status="ok"
             data-deploy="user-pc"
             data-stack="firmware-c"
-            data-maturity="production"
+            data-maturity="functional"
             data-role="firmware"
             data-family="urtc tool platform"
             hidden
@@ -7872,7 +7872,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.3
+            0.1.4
           </td>
 
           <td class="status-cell">
@@ -7887,7 +7887,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/e3a45c506e91ac2e555b5e4bfd8e618b6898df56" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: the Qt Quick deck has full real feature parity now, not a subset">docs: the Qt Quick deck has full real feature parity now, not a subset</a>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/8f3fe317ad2c4f9339a41a6c83c831cdd58f65a4" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: every timeout uses the monotonic clock, not the civil one (FLASH-01)">fix: every timeout uses the monotonic clock, not the civil one (FLASH-01)</a>
           </td>
         </tr>
 
@@ -7907,7 +7907,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real GUI flashing tool (CAN-OTA + full-chip SWD/JTAG). Qt Quick is the shared command-deck renderer for the real CAN-OTA flow; the established Tkinter UI remains the default until advanced SWD/JTAG parity is complete.</div>
+                <div class="detail-text">Real GUI flashing tool (CAN-OTA + full-chip SWD/JTAG). Qt Quick is the shared command-deck renderer for the real CAN-OTA flow; the established Tkinter UI remains the default until advanced SWD/JTAG parity is complete. flasher_protocol.py&#x27;s deadline/duration math uses time.monotonic() throughout, not the civil clock, so an NTP sync or manual clock change mid-flash can never shorten or lengthen a real timeout.</div>
               </div>
 
               <div class="detail-block">
@@ -7994,7 +7994,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.5
+            0.1.6
           </td>
 
           <td class="status-cell">
@@ -8009,7 +8009,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/2c06dc764b38ca83e29a54d4357738e28890510a" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove the private-internal-log mention from CHANGELOG.md">docs: remove the private-internal-log mention from CHANGELOG.md</a>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/df752e3c9aeababa11beaa122ea78dbc6011e5b9" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: protocol boundary can no longer turn invalid input into a different valid command (TESTER-01)">fix: protocol boundary can no longer turn invalid input into a different valid command (TESTER-01)</a>
           </td>
         </tr>
 
@@ -8029,7 +8029,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real live CAN-bus diagnostic tool including CSV export of live graphs. Qt Quick is a staged, safety-first connection and identity-probe deck; the established Tkinter UI remains default until 25-tool control parity is complete.</div>
+                <div class="detail-text">Real live CAN-bus diagnostic tool including CSV export of live graphs. Qt Quick is a staged, safety-first connection and identity-probe deck; the established Tkinter UI remains default until 25-tool control parity is complete. advanced_protocol.py&#x27;s protocol boundary (bounded_int/motion_frame/drill_frame, plus the same class of bug independently duplicated in qt_tester.py and tester_tool_panels.py) now strictly rejects an out-of-range or unrecognized-direction value instead of silently clamping/re-interpreting it as a different valid command.</div>
               </div>
 
               <div class="detail-block">
