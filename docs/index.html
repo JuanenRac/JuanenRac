@@ -2628,7 +2628,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.7
+            0.0.8
           </td>
 
           <td class="status-cell">
@@ -2643,7 +2643,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/643b5de57fc95ce05901dc8b8e3eaa35f90b887f" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove the private-internal-log mention from CHANGELOG.md">docs: remove the private-internal-log mention from CHANGELOG.md</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/5817ab89a4b4196d5a3f472e565cfdaa24c5b593" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: wire --config into status/robots/doctor/shell, not just validation">feat: wire --config into status/robots/doctor/shell, not just validation</a>
           </td>
         </tr>
 
@@ -2663,7 +2663,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real `version`/`status`/`robots`/`config validate`/`config apply --dry-run` commands. `robots`/`status` are genuine clients of a live HYDRA-UMC-SERVER (GET /api/settings, GET /api/hydra-info). A real, stable exit-code contract (exitcode.go) classifies every failure (usage/config/network/server/not-implemented) instead of a bare exit 1. 49 tests via net/http/httptest and real temp-file config fixtures. Fleet-wide deploy/flash-all/audit commands and a live (non-dry-run) `config apply` remain future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
+                <div class="detail-text">Real `version`/`status`/`robots`/`doctor`/`config validate`/`config apply --dry-run`/`shell` commands. `robots`/`status`/`doctor` are genuine clients of a live HYDRA-UMC-SERVER (GET /api/settings, GET /api/hydra-info). A --config file&#x27;s own &quot;server&quot;/&quot;timeoutSec&quot; (already schema-validated by `config validate`/`apply`) now really drives every live command&#x27;s HTTP target and request timeout via resolveTarget(), not just validation - a `shell` session persists both as session defaults too. A real, stable exit-code contract (exitcode.go) classifies every failure (usage/config/network/server/not-implemented) instead of a bare exit 1. 62 tests via net/http/httptest and real temp-file config fixtures. Fleet-wide deploy/flash-all/audit commands and a live (non-dry-run) `config apply` remain future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -2887,7 +2887,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/7b7e2eb0d2667068285d9f3d448be22832876a56" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove the private-internal-log mention from CHANGELOG.md">docs: remove the private-internal-log mention from CHANGELOG.md</a>
+            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/f308f87b2361c23e1be9ce85bc019c6e6aa6a0e7" target="_blank" rel="noopener noreferrer" class="commit-link" title="Promote the real receive-path decision to a real src/ module">Promote the real receive-path decision to a real src/ module</a>
           </td>
         </tr>
 
@@ -3009,7 +3009,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/3f2634bc9125d63f7c2b1c5c1f1110aa8c75386d" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: remove the private-internal-log mention from CHANGELOG.md">docs: remove the private-internal-log mention from CHANGELOG.md</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/21b7f6257349c72482d7c973234b141478398a17" target="_blank" rel="noopener noreferrer" class="commit-link" title="Promote the real receive-path decision to a real src/ module">Promote the real receive-path decision to a real src/ module</a>
           </td>
         </tr>
 
@@ -4378,7 +4378,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS/commit/f9736dbd5de79e9f57c8543807e9017557797733" target="_blank" rel="noopener noreferrer" class="commit-link" title="Retry a transient DATALAKE network failure instead of failing the report">Retry a transient DATALAKE network failure instead of failing the report</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS/commit/aefb81d2780a782a340cfcb0ef4865b7c9a36ba6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Fix stray leftover word in CHANGELOG.md&#x27;s own intro line">Fix stray leftover word in CHANGELOG.md&#x27;s own intro line</a>
           </td>
         </tr>
 
@@ -7598,7 +7598,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.9
+            0.1.0
           </td>
 
           <td class="status-cell">
@@ -7613,7 +7613,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/bc9b4dc9d7938359443f033892b275e617b62829" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix(ci): TypeScript client&#x27;s real CI run failed on Node 20">fix(ci): TypeScript client&#x27;s real CI run failed on Node 20</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/f86c60f531bab22e74f9896f6c63a918a66c0689" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat(contracts): publish a real first OpenAPI v1 slice for HYDRA-UMC-SERVER">feat(contracts): publish a real first OpenAPI v1 slice for HYDRA-UMC-SERVER</a>
           </td>
         </tr>
 
@@ -7633,7 +7633,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The common contract and conformance boundary for services, UIs, CM5 adapters and URTC. Provides v1 JSON Schema, a Python reference validator and conformance fixtures, plus a real, automatic compatibility matrix (tools/verify_contract_matrix.py) between the published schemas and the validator - found and fixed a real gap where the ProjectManifest (hydra-umc.project.json) contract had no validator entry at all. Go, TypeScript and Rust reference clients (clients/go, clients/typescript, clients/rust) now compile and enforce the real published schemas directly through a real Draft 2020-12 validator library per language, each with its own passing test suite against the shared conformance fixtures; the CI baseline now actually discovers and exercises all three (their manifests live under clients/, not the repository root). Package publication remains a release gate.</div>
+                <div class="detail-text">The common contract and conformance boundary for services, UIs, CM5 adapters and URTC. Provides v1 JSON Schema, a Python reference validator and conformance fixtures, plus a real, automatic compatibility matrix (tools/verify_contract_matrix.py) between the published schemas and the validator - found and fixed a real gap where the ProjectManifest (hydra-umc.project.json) contract had no validator entry at all. Go, TypeScript and Rust reference clients (clients/go, clients/typescript, clients/rust) now compile and enforce the real published schemas directly through a real Draft 2020-12 validator library per language, each with its own passing test suite against the shared conformance fixtures; the CI baseline now actually discovers and exercises all three (their manifests live under clients/, not the repository root). contracts/openapi/v1/server.openapi.json is a real, hand-verified OpenAPI 3.1 description of HYDRA-UMC-SERVER&#x27;s discovery/auth/fleet/command routes (docs/API_DESIGN.md&#x27;s own committed &#x27;OpenAPI source&#x27;, not a placeholder), gated by a new dependency-free tools/verify_openapi.py now wired into both build-test and, alongside verify_contract_matrix.py itself, this repository&#x27;s real CI workflow for the first time. Package publication remains a release gate.</div>
               </div>
 
               <div class="detail-block">
@@ -7643,7 +7643,7 @@
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_build">Build</div>
-                <div class="detail-text">Functional JSON Schema v1 contracts, plus real, tested Python, Go, TypeScript and Rust reference clients and conformance fixtures.</div>
+                <div class="detail-text">Functional JSON Schema v1 contracts, a real first OpenAPI v1 slice for HYDRA-UMC-SERVER&#x27;s own HTTP surface, plus real, tested Python, Go, TypeScript and Rust reference clients and conformance fixtures.</div>
               </div>
             </div>
           </td>
