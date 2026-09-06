@@ -2253,7 +2253,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.0
+            0.1.1
           </td>
 
           <td class="status-cell">
@@ -2268,7 +2268,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE/commit/119b21202626dcd2259a81d3c3fb054cb421ac18" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add a real Dockerfile">Add a real Dockerfile</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE/commit/fdc8e7aa769eff50a1683ea43ad649bd72580ead" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: an overflowing accumulation no longer returns an infinite pose (VLA-01)">fix: an overflowing accumulation no longer returns an infinite pose (VLA-01)</a>
           </td>
         </tr>
 
@@ -2288,7 +2288,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real action-token encoding/decoding (OpenVLA/RT-2-style 256-bin discretization per action dimension) and trajectory generation (delta-pose integration, absolute gripper state) - the &#x27;Action Tokens&#x27; and &#x27;Trajectory Generator&#x27; steps of the VLA flow, exposed via &#x27;tokens encode&#x27;/&#x27;tokens decode&#x27;/&#x27;trajectory integrate&#x27;. A real, versioned model manifest contract (model_manifest.py) plus shape/confidence validation for a future model&#x27;s inference output, and an honest &#x27;status&#x27; subcommand reporting real accelerator/model-weight availability (never a fake ready state). Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_vla_model() against the real confirmed API (VDevice, HEF, ConfigureParams, InputVStreamParams/OutputVStreamParams), lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_tokens() adapts a real InferVStreams result into this engine&#x27;s own token/confidence contract and is fully unit-tested without hailort. 53 tests. Real VLA model inference still needs a real .hef model and a physical Hailo-10 module, both future work.</div>
+                <div class="detail-text">Real action-token encoding/decoding (OpenVLA/RT-2-style 256-bin discretization per action dimension) and trajectory generation (delta-pose integration, absolute gripper state) - the &#x27;Action Tokens&#x27; and &#x27;Trajectory Generator&#x27; steps of the VLA flow, exposed via &#x27;tokens encode&#x27;/&#x27;tokens decode&#x27;/&#x27;trajectory integrate&#x27;. A real, versioned model manifest contract (model_manifest.py) plus shape/confidence validation for a future model&#x27;s inference output, and an honest &#x27;status&#x27; subcommand reporting real accelerator/model-weight availability (never a fake ready state). Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_vla_model() against the real confirmed API (VDevice, HEF, ConfigureParams, InputVStreamParams/OutputVStreamParams), lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_tokens() adapts a real InferVStreams result into this engine&#x27;s own token/confidence contract and is fully unit-tested without hailort. 69 tests. integrate_trajectory() now rejects an accumulated pose that silently overflowed to infinite (two individually-finite values, e.g. a start position and a delta, summing past float&#x27;s max range) instead of returning it as part of the trajectory. Real VLA model inference still needs a real .hef model and a physical Hailo-10 module, both future work.</div>
               </div>
 
               <div class="detail-block">
@@ -2750,7 +2750,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.7
+            0.1.8
           </td>
 
           <td class="status-cell">
@@ -2765,7 +2765,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/b34a12769ede461ba1d87c074f54cfc3edbe9aba" target="_blank" rel="noopener noreferrer" class="commit-link" title="Extract the relay routing decision into a pure, JVM-testable class">Extract the relay routing decision into a pure, JVM-testable class</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/99fd90a28f77a59e45d924f0cef27e61209966b2" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: relay only sends to a verified companion node, cancels retries on close (WATCH-01)">fix: relay only sends to a verified companion node, cancels retries on close (WATCH-01)</a>
           </td>
         </tr>
 
@@ -2785,7 +2785,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: differentiated haptic vibration patterns wired to Wear OS Vibrator, explicit microphone/system-STT capture and local TTS confirmation, plus typed voice_turn/assistant_reply/system_status messages. A paired Android Data Layer relay is implemented; it keeps the Server JWT on the phone and Voice UI token on CM5. Physical radio, wireless E-STOP and live CM5 telemetry remain hardware integration gates. Voice never directly actuates a robot. The relay now has a real, testable reconnection policy (RelayRetryPolicy) and a last-known-state cache with staleness tracking (LastKnownStateCache) so a stale relayed status/alert is never shown as current.</div>
+                <div class="detail-text">Functional v0: differentiated haptic vibration patterns wired to Wear OS Vibrator, explicit microphone/system-STT capture and local TTS confirmation, plus typed voice_turn/assistant_reply/system_status messages. A paired Android Data Layer relay is implemented; it keeps the Server JWT on the phone and Voice UI token on CM5. Physical radio, wireless E-STOP and live CM5 telemetry remain hardware integration gates. Voice never directly actuates a robot. The relay now has a real, testable reconnection policy (RelayRetryPolicy) and a last-known-state cache with staleness tracking (LastKnownStateCache) so a stale relayed status/alert is never shown as current. The relay now only ever sends to a real CapabilityClient-verified companion node (hydra_umc_phone_companion, not any connectedNodes.firstOrNull()), preferring a nearby node over a cloud-relayed one, and cancels a pending retry outright once the screen closes instead of only bounding it by attempt count.</div>
               </div>
 
               <div class="detail-block">
@@ -3247,7 +3247,7 @@
           </td>
 
           <td class="version status-ok">
-            0.5.1
+            0.5.2
           </td>
 
           <td class="status-cell">
@@ -3262,7 +3262,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/281e4f947e493cf449e60302e221188eba606279" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: Wear relay service now cancels its own coroutines on destroy">fix: Wear relay service now cancels its own coroutines on destroy</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/3b7aebe4dda184c3ff30b17d5e7cee8a5a8449a8" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: declare a real Wear OS companion capability (WATCH-01)">fix: declare a real Wear OS companion capability (WATCH-01)</a>
           </td>
         </tr>
 
@@ -3282,7 +3282,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Native Android control app with biometric login, talking to HYDRA-UMC-SERVER over Wi-Fi/Bluetooth. It receives paired Wear OS Data Layer voice/status messages, keeps the Server JWT encrypted on the phone and returns bounded replies; that path never issues robot commands.</div>
+                <div class="detail-text">Native Android control app with biometric login, talking to HYDRA-UMC-SERVER over Wi-Fi/Bluetooth. It receives paired Wear OS Data Layer voice/status messages, keeps the Server JWT encrypted on the phone and returns bounded replies; that path never issues robot commands. Declares a real Wear OS android_wear_capabilities resource (hydra_umc_phone_companion) so the paired Watch can discover this exact app via CapabilityClient instead of trusting connectedNodes ordering.</div>
               </div>
 
               <div class="detail-block">
@@ -5113,7 +5113,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.8
+            0.2.9
           </td>
 
           <td class="status-cell">
@@ -5128,7 +5128,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-UPDATER/commit/b05e95b65030688f35cce0971aaec1b0c2c9b9cc" target="_blank" rel="noopener noreferrer" class="commit-link" title="Distinguish a real GitHub rate limit from any other HTTP error">Distinguish a real GitHub rate limit from any other HTTP error</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-UPDATER/commit/3490056990f29ddc33f6f0055e4107da4d1992c5" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: updating an existing checkout is now atomic-by-verification (UPD-01)">fix: updating an existing checkout is now atomic-by-verification (UPD-01)</a>
           </td>
         </tr>
 
@@ -5148,7 +5148,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Administrative tooling for the ecosystem catalog. Now included in the public dashboard&#x27;s own project count (JuanenRac/ecosystem-catalog.json&#x27;s dashboard_exclude list no longer excludes it). Real bounded retry with backoff for transient GitHub network errors; a malformed remote catalog fails loudly (caught by both gui.py and main.py, falling back to local-only state) while one malformed manifest is isolated without aborting discovery of the rest. install.py&#x27;s clone_or_pull never replaces a healthy local checkout - pull is always --ff-only, never a reset.</div>
+                <div class="detail-text">Administrative tooling for the ecosystem catalog. Now included in the public dashboard&#x27;s own project count (JuanenRac/ecosystem-catalog.json&#x27;s dashboard_exclude list no longer excludes it). Real bounded retry with backoff for transient GitHub network errors; a malformed remote catalog fails loudly (caught by both gui.py and main.py, falling back to local-only state) while one malformed manifest is isolated without aborting discovery of the rest. install.py&#x27;s clone_or_pull never replaces a healthy local checkout - pull is always --ff-only, never a reset. Updating an existing checkout is now atomic-by-verification: the candidate is cloned+merged+built in an independent staging clone first, and only promoted (via two back-to-back directory renames, previous install kept at &lt;name&gt;.backup) once that build actually succeeds - a build failure, crash, or full disk before promotion leaves the previous installation completely untouched.</div>
               </div>
 
               <div class="detail-block">
@@ -8714,7 +8714,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.7
+            0.0.8
           </td>
 
           <td class="status-cell">
@@ -8729,7 +8729,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API/commit/20ad30e5b873f99279ae53c94d3bc830cdb29d59" target="_blank" rel="noopener noreferrer" class="commit-link" title="Cap and drain oversized JSON request bodies, run pytest in CI">Cap and drain oversized JSON request bodies, run pytest in CI</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API/commit/3913ecc7fb2776eb828c63f47b32dffcf8100054" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: non-object JSON body and extreme-but-finite poses no longer crash the handler (SERVO-01/SERVO-02)">fix: non-object JSON body and extreme-but-finite poses no longer crash the handler (SERVO-01/SERVO-02)</a>
           </td>
         </tr>
 
@@ -8749,7 +8749,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Established v0: real Position-Based Visual Servoing (PBVS) correction law - pose-delta computation with shortest-turn angle wrapping, proportional velocity command with direction-preserving clamping, and convergence check, exposed via the &#x27;correct&#x27; subcommand. Plus a safety-gated authorization layer (authorization.py) that refuses to turn a visual detection into motion unless the upstream safety_state is READY and the data is confident/fresh enough (INHIBITED wins over REJECTED, mirroring HYDRA-UMC-SAFETY-ZONES), exposed via the &#x27;request&#x27; subcommand. Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_pose_model() against the real confirmed API, lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_pose() adapts a real InferVStreams result into this project&#x27;s own Pose6D and is fully unit-tested without hailort. 57 tests. Real 6-DOF pose *estimation* (needs the Hailo-8 NPU and a real compiled .hef) and the low-latency gRPC feed to the HYDRA-UMC core remain future work.</div>
+                <div class="detail-text">Established v0: real Position-Based Visual Servoing (PBVS) correction law - pose-delta computation with shortest-turn angle wrapping, proportional velocity command with direction-preserving clamping, and convergence check, exposed via the &#x27;correct&#x27; subcommand. Plus a safety-gated authorization layer (authorization.py) that refuses to turn a visual detection into motion unless the upstream safety_state is READY and the data is confident/fresh enough (INHIBITED wins over REJECTED, mirroring HYDRA-UMC-SAFETY-ZONES), exposed via the &#x27;request&#x27; subcommand. Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_pose_model() against the real confirmed API, lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_pose() adapts a real InferVStreams result into this project&#x27;s own Pose6D and is fully unit-tested without hailort. 79 tests. A non-object top-level JSON body (SERVO-01) and an extreme-but-individually-finite pose delta/gain combination that could overflow to inf/NaN (SERVO-02) now both surface as a real 400 instead of crashing the handler thread or returning a corrupted velocity command. Real 6-DOF pose *estimation* (needs the Hailo-8 NPU and a real compiled .hef) and the low-latency gRPC feed to the HYDRA-UMC core remain future work.</div>
               </div>
 
               <div class="detail-block">
