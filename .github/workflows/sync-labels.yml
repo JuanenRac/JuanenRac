@@ -9,7 +9,7 @@
 #   .github/labels.yml
 #
 # Destination:
-#   55 ecosystem repositories listed below. Static, unlike the dashboard's
+#   58 ecosystem repositories listed below. Static, unlike the dashboard's
 #   own dynamic discovery (generate_dashboard.py) - a newly added repo
 #   needs an entry here too, not just a real hydra-umc.project.json.
 #   Verify this list still matches every repo with a real manifest before
@@ -17,7 +17,10 @@
 #   run from a sibling checkout of the whole ecosystem, diffed against the
 #   matrix below - this exact drift (10 real repos missing: all 8
 #   External Automation/Mobile bridges, HYDRA-UMC-OS, HYDRA-UMC-SDK) was
-#   found and fixed this way once already.
+#   found and fixed this way once already. A second, smaller drift
+#   (HYDRA-UMC-OS-REBUILDER missing since its own creation) was found and
+#   fixed the same way while adding HYDRA-UMC-OPS-AGENT and
+#   HYDRA-UMC-CONNECTOR-HUB below.
 #
 # IMPORTANT:
 #   A repository secret named LABELS_SYNC_TOKEN is required.
@@ -85,6 +88,7 @@ jobs:
           - HYDRA-UMC
           - HYDRA-UMC-OS
           - HYDRA-UMC-SDK
+          - HYDRA-UMC-CONNECTOR-HUB
           - HYDRA-UMC-SERVER
           - HYDRA-UMC-STUDIO
           - HYDRA-UMC-SUITE
@@ -129,6 +133,8 @@ jobs:
           - HYDRA-UMC-WATCH
           - HYDRA-UMC-TOOL-CLI
           - HYDRA-UMC-UPDATER
+          - HYDRA-UMC-OS-REBUILDER
+          - HYDRA-UMC-OPS-AGENT
 
           # -------------------------------------------------------------------
           # External Automation / Mobile & Autonomous Bridges
