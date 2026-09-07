@@ -114,9 +114,18 @@ jobs:
         # SHA (HYDRA-UMC-UPDATER's own main at the time of this fix) -
         # bump this SHA by hand (a real, deliberate action, not silent
         # drift) whenever this repo wants a newer UPDATER behavior.
+        #
+        # This SHA is re-pinned to HYDRA-UMC-UPDATER's own new single
+        # root commit after every ecosystem-wide repository/history reset
+        # (the same one every other pin like this needs updating for,
+        # anywhere it exists in this ecosystem) - a prior reset commit
+        # this line pinned no longer exists once that repo's own history
+        # is replaced, and pip's own git+https install fails outright
+        # (`fatal: remote error: upload-pack: not our ref <sha>`) rather
+        # than silently falling back to anything.
         run: |
           python -m pip install --upgrade pip
-          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git@3490056990f29ddc33f6f0055e4107da4d1992c5"
+          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git@b38c1eb1152cfabfe1e776f90d7ec689acac2f8c"
 
       # -----------------------------------------------------------------------
       # Generate dashboard
