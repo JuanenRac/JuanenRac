@@ -3030,7 +3030,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/7c989b229e67f88441f3c10a5e522b44933cd953" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects">docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/ef5081b851bb2bf5030b8c67cbd3528886ad1985" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming a private tracking document by filename in CHANGELOG">REV-027: stop naming a private tracking document by filename in CHANGELOG</a>
           </td>
         </tr>
 
@@ -3405,7 +3405,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/b205234e49a757d42eba0f1eb64b3f8954421c87" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: sincroniza las 6 traducciones con el aviso de conflicto entre kioscos (REV-025)">docs: sincroniza las 6 traducciones con el aviso de conflicto entre kioscos (REV-025)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/40f64f749a4ec428fbc15b3c087a127d1f878558" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming private tracking documents by filename in CHANGELOG">REV-027: stop naming private tracking documents by filename in CHANGELOG</a>
           </td>
         </tr>
 
@@ -3527,7 +3527,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF/commit/a488bfbb2b8795249b3b59bb17951c474a32d948" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: corrige version desactualizada en los 7 README (REV-023)">docs: corrige version desactualizada en los 7 README (REV-023)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF/commit/0de1a636b1e230127d22439d73d63475e4ef4695" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming a private tracking document by filename in CHANGELOG">REV-027: stop naming a private tracking document by filename in CHANGELOG</a>
           </td>
         </tr>
 
@@ -3878,7 +3878,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.0
+            0.4.1
           </td>
 
           <td class="status-cell">
@@ -3893,7 +3893,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/9dd6eacb6b2a64c666a4f7c66f5263497b2dc072" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects">docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/a1ef593cea5b579688280b4f1684e51a4da97001" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming a private tracking document by filename in CHANGELOG">REV-027: stop naming a private tracking document by filename in CHANGELOG</a>
           </td>
         </tr>
 
@@ -3913,7 +3913,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Desktop swarm command center, packaged as a standalone executable. Real server discovery (net/discovery.py): concurrent subnet /24 scan plus real mDNS (_hydra._tcp, matching what server.ts publishes and HYDRA-UMC-IOS-CONTROL already queries), deduplicated by (host, port). Every real-time robot control (joint jog, speed, acceleration) now fires the atomic, debounced /api/robot/:id/command path (net/client.py&#x27;s HydraConnection.send_command(), debounce_ms) instead of the full-tree push_state() a continuously-dragged knob/slider used to call once per mouse event. tests/verify_discovery.py and tests/verify_send_command_debounce.py give the pure logic real, deterministic, no-network coverage (this repo has no pytest suite - verify_*.py scripts are its own real testing convention).</div>
+                <div class="detail-text">Desktop swarm command center, packaged as a standalone executable. Real server discovery (net/discovery.py): concurrent subnet /24 scan plus real mDNS (_hydra._tcp, matching what server.ts publishes and HYDRA-UMC-IOS-CONTROL already queries), deduplicated by (host, port). Every real-time robot control (joint jog, speed, acceleration) now fires the atomic, debounced /api/robot/:id/command path (net/client.py&#x27;s HydraConnection.send_command(), debounce_ms) instead of the full-tree push_state() a continuously-dragged knob/slider used to call once per mouse event. tests/verify_discovery.py and tests/verify_send_command_debounce.py give the pure logic real, deterministic, no-network coverage (this repo has no pytest suite - verify_*.py scripts are its own real testing convention). tools/run_offline_verifiers.py now runs all 21 of them headlessly (QT_QPA_PLATFORM=offscreen), wired into both tools/build_test.py and this repository&#x27;s own CI workflow (REV-019) - a broken control no longer reaches main with a green CI.</div>
               </div>
 
               <div class="detail-block">
@@ -4155,7 +4155,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DATALAKE/commit/2b6381aeef9536d398e4eca84a5c72bcb5093d03" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects">docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DATALAKE/commit/e5e05c51cc848bc4b8d60500b89480a0a93fcf5f" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming a private tracking document by filename in CHANGELOG">REV-027: stop naming a private tracking document by filename in CHANGELOG</a>
           </td>
         </tr>
 
@@ -4277,7 +4277,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR/commit/f5eb6e56e01b172d33eb15a1bfa7d7a168fbea12" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: sincroniza las 6 traducciones con la persistencia de baseline real (REV-024)">docs: sincroniza las 6 traducciones con la persistencia de baseline real (REV-024)</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR/commit/e9cbd81b02387172949b7f3397e15d9e94efe4af" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming a private tracking document by filename in CHANGELOG">REV-027: stop naming a private tracking document by filename in CHANGELOG</a>
           </td>
         </tr>
 
@@ -8009,7 +8009,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC/commit/74433bb651a57f23e2c74c81e6da07db652afafe" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects">docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects</a>
+            <a href="https://github.com/JuanenRac/URTC/commit/992784a96230c8428e03c4d39944b72dbfcec35f" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming private tracking documents by filename in CHANGELOG">REV-027: stop naming private tracking documents by filename in CHANGELOG</a>
           </td>
         </tr>
 
@@ -8253,7 +8253,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/10c8ec395cdc2cc3bfb7e2b842e59636db718a05" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects">docs: add HYDRA-UMC-OPS-AGENT and HYDRA-UMC-CONNECTOR-HUB to Related Projects</a>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/8ed1b7e4788b7322acebf1626945d31f00b48f66" target="_blank" rel="noopener noreferrer" class="commit-link" title="REV-027: stop naming private tracking documents by filename in CHANGELOG">REV-027: stop naming private tracking documents by filename in CHANGELOG</a>
           </td>
         </tr>
 
