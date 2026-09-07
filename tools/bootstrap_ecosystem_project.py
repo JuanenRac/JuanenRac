@@ -56,7 +56,7 @@ SELECT_FIELDS = {
         ("Applications", "GRAY"),
     ],
     "Maturity": [
-        ("Scaffold", "GRAY"),
+        ("Scaffolding", "GRAY"),
         ("Functional", "BLUE"),
         ("Established", "GREEN"),
         ("Production", "PURPLE"),
@@ -92,6 +92,14 @@ VIEWS = (
     ("Software toward 95%", "TABLE_LAYOUT"),
     ("Awaiting Hardware", "TABLE_LAYOUT"),
     ("Safety Validation", "TABLE_LAYOUT"),
+    # Added once real CM5 hardware existed to test against - see
+    # GITHUB_COLLABORATION.md's own filter convention for both (this
+    # script only creates the view with the right name/layout; the
+    # actual filter, like every other view above, is configured once by
+    # a human in the Project UI - the API this script calls has no
+    # filter argument on CreateProjectV2ViewInput/UpdateProjectV2ViewInput).
+    ("CM5 Field Testing", "TABLE_LAYOUT"),
+    ("Pending Human Decision", "TABLE_LAYOUT"),
 )
 
 
