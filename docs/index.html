@@ -2586,7 +2586,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/390486ac19b77234a412df391d75f3dff1802707" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/82a1b413f6145f0ecc0e35f628f16df7c5c9a346" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: keep package-lock.json&#x27;s own root version in sync (V07-017)">fix: keep package-lock.json&#x27;s own root version in sync (V07-017)</a>
           </td>
         </tr>
 
@@ -3074,7 +3074,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/d41cd9aafc3e4b7f128800e994d29b454da68f0f" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/547c264ed80d942662ba46db42f3b39781e5d86b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Fix standalone receive-path compilation">Fix standalone receive-path compilation</a>
           </td>
         </tr>
 
@@ -3205,7 +3205,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/f2c41459cf5c185a605aecb4268f0f4f183eb52b" target="_blank" rel="noopener noreferrer" class="commit-link" title="feat: real authenticated proxy to this cell&#x27;s own local AI services">feat: real authenticated proxy to this cell&#x27;s own local AI services</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/53fe383406593b5a418d84e7d882ac93e8a07484" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: keep package-lock.json&#x27;s own root version in sync (V07-017)">fix: keep package-lock.json&#x27;s own root version in sync (V07-017)</a>
           </td>
         </tr>
 
@@ -3434,7 +3434,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.4
+            0.1.5
           </td>
 
           <td class="status-cell">
@@ -3449,7 +3449,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/c1ea370d9540209b239ecec7bc016597bc234593" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/56fe6b9941a4bed3b6c7aea1f5d526caad448e7e" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: a failed logout or a half-written session could resurrect an old token (V07-015, v0.1.5)">fix: a failed logout or a half-written session could resurrect an old token (V07-015, v0.1.5)</a>
           </td>
         </tr>
 
@@ -3469,7 +3469,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Native touch UI for the onboard 7&quot; DSI touchscreen, same client role as the mobile apps but embedded on the CM5 itself.</div>
+                <div class="detail-text">Native touch UI for the onboard 7&quot; DSI touchscreen, same client role as the mobile apps but embedded on the CM5 itself. v0.1.5: a failed secure-storage delete during logout, or a partial saveToken() write (token saved, username save failed), could leave a real, orphaned token that a later loadToken() would resurrect - fixed with a plain, non-secret hydra_logged_out marker checked before secure storage is ever consulted, plus a best-effort revert of a partial write. Same fix ported to HYDRA-UMC-IOS-CONTROL.</div>
               </div>
 
               <div class="detail-block">
@@ -3678,7 +3678,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.3
+            0.1.4
           </td>
 
           <td class="status-cell">
@@ -3693,7 +3693,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/fe79751e50c734088385eebaae85f05df6bc38fc" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/da3d6d11a818ecc14164a52e6e17f4109543667f" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: a failed logout or a half-written session could resurrect an old token (V07-015, v0.1.4)">fix: a failed logout or a half-written session could resurrect an old token (V07-015, v0.1.4)</a>
           </td>
         </tr>
 
@@ -3713,7 +3713,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">iOS/iPadOS control app with real-time WebSocket sync to HYDRA-UMC-SERVER.</div>
+                <div class="detail-text">iOS/iPadOS control app with real-time WebSocket sync to HYDRA-UMC-SERVER. v0.1.4: a failed secure-storage delete during logout, or a partial saveToken() write (token saved, username save failed), could leave a real, orphaned token that a later loadToken() would resurrect - fixed with a plain, non-secret hydra_logged_out marker checked before secure storage is ever consulted, plus a best-effort revert of a partial write. Same fix ported from HYDRA-UMC-DSI.</div>
               </div>
 
               <div class="detail-block">
@@ -3800,7 +3800,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.9
+            0.5.1
           </td>
 
           <td class="status-cell">
@@ -3815,7 +3815,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/c0212f6860f96156a58607de00b5d79c7ba44aab" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/825a168e7fd31a157f3e328a41dda111ea1a2aef" target="_blank" rel="noopener noreferrer" class="commit-link" title="Remove 2 dead lint findings (unused SKY_SOFT constant, unused activeController)">Remove 2 dead lint findings (unused SKY_SOFT constant, unused activeController)</a>
           </td>
         </tr>
 
@@ -3835,7 +3835,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Web control dashboard with 3D multi-robot visualization, talking to HYDRA-UMC-SERVER&#x27;s own API. GamepadController.tsx&#x27;s real-time actions (joint/table jog, E-STOP, START/STOP, speed) now fire the atomic sendRobotCommand()/POST /api/robot/:id/command path instead of the 500ms-debounced settings save, matching every other real-time control surface in RobotDetail.tsx; jointLimitsFor() moved to the shared examples/robotKinematicsDispatch.ts so both reuse the same per-model joint-limit clamping. `npm run typecheck` (tsc --noEmit) was itself a silent no-op against this repo&#x27;s own solution-style tsconfig - fixed to real `tsc -b --noEmit`, which immediately surfaced and got 8 real pre-existing type errors fixed. tests/ (new, vitest) now covers 145 real cases across src/examples/ and the default-fixture seed - the FK/IK math for all 24 robot models robotKinematicsDispatch.ts fans out to, none of which had a single test before. Example robots/cameras seeded on a fresh install no longer claim a live online/urtcConnected/connected hardware connection they don&#x27;t have; a new serverReachable signal (real, live, never persisted to settings.json) now drives the System Online/Offline badge instead of a static fixture field.</div>
+                <div class="detail-text">Web control dashboard with 3D multi-robot visualization, talking to HYDRA-UMC-SERVER&#x27;s own API. Found live in production: the debounced POST /api/settings save (and flushSettingsSave()/factoryReset()) used `fetch(...).catch(() =&gt; {})`, which only catches a real network failure - a 401 (expired session) or 403 (non-admin role) response was never checked, so a save could silently no-op forever while the local UI still showed the new value (a camera toggled off in Vision Center kept its real Server-side stream process running, burning CPU; toggling it back on then showed nothing). All three paths now check response.ok, surface a real settingsSaveError instead of pretending to succeed, and only mark a payload as sent once it actually was; a new &quot;Save failed - Retry&quot; indicator next to the System Online/Offline badge surfaces this immediately with a one-click retry. HYDRA-UMC SUITE&#x27;s own push_state() already did this correctly - this was a STUDIO-only gap.</div>
               </div>
 
               <div class="detail-block">
@@ -3937,7 +3937,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/20fcc01f10187f63f2f893bade23d97129d65f67" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/88ffdc79b5c2e98251c42a1acd445867db07c7d1" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: mention tools/run_offline_verifiers.py in the tools/ tree (V07-018)">docs: mention tools/run_offline_verifiers.py in the tools/ tree (V07-018)</a>
           </td>
         </tr>
 
@@ -5553,7 +5553,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.9
+            0.1.0
           </td>
 
           <td class="status-cell">
@@ -5568,7 +5568,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/8d4652b77104ed87271b83f8b9763f9094b33023" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/3c17fd45f6476f5b422ce429868245e29f1bd51b" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: a non-conforming serial write was still reported as executed (V07-019, v0.1.0)">fix: a non-conforming serial write was still reported as executed (V07-019, v0.1.0)</a>
           </td>
         </tr>
 
@@ -5588,7 +5588,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">High-level CNC cell coordinator. It normalizes read-only controller evidence and can now query real GRBL status and send GRBL&#x27;s own real-time control bytes (status query, feed hold, cycle resume, soft reset) over a real serial connection; LinuxCNC or another controller retains real-time trajectory, limits, spindle and safety authority - this never streams a G-code program. Interlocks (door/E-STOP) are always re-read live immediately before cycle_start_resume/a new job is gated - no cached snapshot is ever reused for a real safety decision, and (v0.0.9) the live read itself now happens AFTER the blocking GRBL status query completes, not before it, so a real E-STOP/door event during that query is never missed. A real short/zero-byte serial write is reported as not executed, never as a false success.</div>
+                <div class="detail-text">High-level CNC cell coordinator. It normalizes read-only controller evidence and can now query real GRBL status and send GRBL&#x27;s own real-time control bytes (status query, feed hold, cycle resume, soft reset) over a real serial connection; LinuxCNC or another controller retains real-time trajectory, limits, spindle and safety authority - this never streams a G-code program. Interlocks (door/E-STOP) are always re-read live immediately before cycle_start_resume/a new job is gated - no cached snapshot is ever reused for a real safety decision, and (v0.0.9) the live read itself now happens AFTER the blocking GRBL status query completes, not before it, so a real E-STOP/door event during that query is never missed. A real short/zero-byte serial write is reported as not executed, never as a false success; v0.1.0: this now also requires an exact, real int byte count equal to the command length - a None/bool/mismatched-but-real return value from a non-conforming serial-like implementation is no longer silently trusted as a confirmed write either.</div>
               </div>
 
               <div class="detail-block">
@@ -5797,7 +5797,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.1
+            0.1.2
           </td>
 
           <td class="status-cell">
@@ -5812,7 +5812,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP/commit/018316017c084c4c1e60cb418cc38e2cf8867e9c" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP/commit/4f3e3b36e4b2cb6c3d5b5ea579e0a0bca53575a6" target="_blank" rel="noopener noreferrer" class="commit-link" title="test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.1.2)">test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.1.2)</a>
           </td>
         </tr>
 
@@ -5832,7 +5832,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Safe high-level board-flow coordinator for OpenPnP. It never claims placement kinematics or bypasses a pick-and-place controller.</div>
+                <div class="detail-text">Safe high-level board-flow coordinator for OpenPnP. It never claims placement kinematics or bypasses a pick-and-place controller. v0.1.2: the test suite&#x27;s own unknown-phase reproduction (a raw string BridgeJob construction) was updated to match HYDRA-UMC-SDK&#x27;s own real construction-time rejection (REV-008) - split into a real construction-rejection test plus a minimal double proving BoardFlow.plan()&#x27;s own defensive fallback still fails safe.</div>
               </div>
 
               <div class="detail-block">
@@ -6041,7 +6041,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.6
+            0.0.7
           </td>
 
           <td class="status-cell">
@@ -6056,7 +6056,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2/commit/1d0965801cc73f066f4524fd09573400357596bf" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2/commit/b61073a90dee6c8759677b4cee63723f0c08c5cb" target="_blank" rel="noopener noreferrer" class="commit-link" title="test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.0.7)">test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.0.7)</a>
           </td>
         </tr>
 
@@ -6076,7 +6076,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Dependency-free safety coordinator with a ROS 2 interface plan, plus a real, lazily-imported rclpy transport for the 2 interfaces that have a real standard ROS 2 message type today (safe_stop_service via std_srvs/Trigger, state_topic via std_msgs/String) - inspect_service/job_action still need a custom .srv/.action definition this repository doesn&#x27;t have yet. The optional rclpy runtime is intentionally not installed until it is tested against a real ROS 2 deployment. The safe-stop call uses call_async()+spin_until_future_complete() with a real bounded timeout on the response itself, not just on service availability.</div>
+                <div class="detail-text">Dependency-free safety coordinator with a ROS 2 interface plan, plus a real, lazily-imported rclpy transport for the 2 interfaces that have a real standard ROS 2 message type today (safe_stop_service via std_srvs/Trigger, state_topic via std_msgs/String) - inspect_service/job_action still need a custom .srv/.action definition this repository doesn&#x27;t have yet. The optional rclpy runtime is intentionally not installed until it is tested against a real ROS 2 deployment. The safe-stop call uses call_async()+spin_until_future_complete() with a real bounded timeout on the response itself, not just on service availability. v0.0.7: the test suite&#x27;s own unknown-phase reproduction (a raw string BridgeJob construction) was updated to match HYDRA-UMC-SDK&#x27;s own real construction-time rejection (REV-008) - split into a real construction-rejection test plus a minimal double proving the coordinator&#x27;s own defensive fallback still fails closed.</div>
               </div>
 
               <div class="detail-block">
@@ -6187,7 +6187,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL/commit/77089dcecab2798913fcb02532459bc5a00163df" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL/commit/9b8b1337b723043a4ca120b0ce59b85da4bd3035" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: keep package-lock.json&#x27;s own root version in sync (V07-017)">fix: keep package-lock.json&#x27;s own root version in sync (V07-017)</a>
           </td>
         </tr>
 
@@ -6309,7 +6309,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER/commit/f04af25a43136cfbdb134a7289baaa88052f8660" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER/commit/d497473a0e23026f89c544ed0971a7fa7d8ab597" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: keep package-lock.json&#x27;s own root version in sync (V07-017)">fix: keep package-lock.json&#x27;s own root version in sync (V07-017)</a>
           </td>
         </tr>
 
@@ -6431,7 +6431,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER/commit/c3ee66dc5ad647413582a79d7b082992408d6070" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER/commit/059f40a526cd5d82001cf6856572501e73d08ca2" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: keep package-lock.json&#x27;s own root version in sync (V07-017)">fix: keep package-lock.json&#x27;s own root version in sync (V07-017)</a>
           </td>
         </tr>
 
@@ -6553,7 +6553,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/7571af0814349408c9082b219b8b5dd65f6e3a5f" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/915779cff1869418448c2d6b17df0eda1019a7ce" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: keep package-lock.json&#x27;s own root version in sync (V07-017)">fix: keep package-lock.json&#x27;s own root version in sync (V07-017)</a>
           </td>
         </tr>
 
@@ -6669,7 +6669,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.5
+            0.0.6
           </td>
 
           <td class="status-cell">
@@ -6684,7 +6684,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR/commit/77a6ff23c805c3da96857913a904cf13b9eb4c98" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR/commit/4db63723685b8b0949040a8552c6f387e343bd12" target="_blank" rel="noopener noreferrer" class="commit-link" title="test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.0.6)">test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.0.6)</a>
           </td>
         </tr>
 
@@ -6704,7 +6704,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real, dependency-free coordination boundary for AGV/AMR fleets: a real, hand-checkable 2D rigid-body transform (FrameTransform, now carrying a required real map_id per site/AMR) from the factory&#x27;s shared coordinate frame into a specific AMR&#x27;s local frame, a minimal VDA-5050-inspired order-action vocabulary (MOVE_TO_*/PICK_LOAD/DROP_LOAD/CANCEL_ORDER) gated through HYDRA-UMC-SDK&#x27;s shared safety contract, and a real VDA 5050 MQTT publisher (Vda5050Publisher) that only ever publishes an already-gated dispatch to the correct real order/instantActions topic, checks the real MQTT client rc before ever reporting a dispatch as delivered, and reports success honestly as &quot;queued for delivery&quot;, not AGV acceptance. Never plans a path or avoids an obstacle itself - that authority stays with the AMR&#x27;s own onboard navigation or its fleet manager. Not yet exercised against a real fleet manager or physical AMR.</div>
+                <div class="detail-text">Real, dependency-free coordination boundary for AGV/AMR fleets: a real, hand-checkable 2D rigid-body transform (FrameTransform, now carrying a required real map_id per site/AMR) from the factory&#x27;s shared coordinate frame into a specific AMR&#x27;s local frame, a minimal VDA-5050-inspired order-action vocabulary (MOVE_TO_*/PICK_LOAD/DROP_LOAD/CANCEL_ORDER) gated through HYDRA-UMC-SDK&#x27;s shared safety contract, and a real VDA 5050 MQTT publisher (Vda5050Publisher) that only ever publishes an already-gated dispatch to the correct real order/instantActions topic, checks the real MQTT client rc before ever reporting a dispatch as delivered, and reports success honestly as &quot;queued for delivery&quot;, not AGV acceptance. Never plans a path or avoids an obstacle itself - that authority stays with the AMR&#x27;s own onboard navigation or its fleet manager. Not yet exercised against a real fleet manager or physical AMR. v0.0.6: the test suite&#x27;s own unknown-phase reproduction (a raw string BridgeJob construction) was updated to match HYDRA-UMC-SDK&#x27;s own real construction-time rejection (REV-008) - split into a real construction-rejection test plus a minimal double proving the coordinator&#x27;s own defensive fallback still fails closed.</div>
               </div>
 
               <div class="detail-block">
@@ -6791,7 +6791,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -6806,7 +6806,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS/commit/dd501c1e24298e4bf5d0497395cad5a062bf0ba3" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS/commit/434a336c28fc8dd11def1cd6836f6339fa9eac8e" target="_blank" rel="noopener noreferrer" class="commit-link" title="test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.0.5)">test: match SDK&#x27;s real construction-time phase rejection (V07-014, v0.0.5)</a>
           </td>
         </tr>
 
@@ -6826,7 +6826,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real, dependency-free coordination boundary for legged/humanoid droids: validates a small named action-trigger vocabulary (WALK_TO/PICK_OBJECT/PLACE_OBJECT/RETURN_HOME/HOLD_POSITION/STAND/SIT) and its real required parameters before forwarding through HYDRA-UMC-SDK&#x27;s shared safety gate, plus a real bosdyn-client command sender (SpotDroidControl) for Boston Dynamics Spot, lazily imported. Never computes gait/balance/joint trajectories itself - that authority stays with the droid&#x27;s own onboard controller. Not yet exercised against a real Spot robot.</div>
+                <div class="detail-text">Real, dependency-free coordination boundary for legged/humanoid droids: validates a small named action-trigger vocabulary (WALK_TO/PICK_OBJECT/PLACE_OBJECT/RETURN_HOME/HOLD_POSITION/STAND/SIT) and its real required parameters before forwarding through HYDRA-UMC-SDK&#x27;s shared safety gate, plus a real bosdyn-client command sender (SpotDroidControl) for Boston Dynamics Spot, lazily imported. Never computes gait/balance/joint trajectories itself - that authority stays with the droid&#x27;s own onboard controller. Not yet exercised against a real Spot robot. v0.0.5: the test suite&#x27;s own unknown-phase reproduction (a raw string BridgeJob construction) was updated to match HYDRA-UMC-SDK&#x27;s own real construction-time rejection (REV-008) - split into a real construction-rejection test plus a minimal double proving the coordinator&#x27;s own defensive fallback still fails closed.</div>
               </div>
 
               <div class="detail-block">
@@ -7044,7 +7044,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.8
+            0.0.9
           </td>
 
           <td class="status-cell">
@@ -7059,7 +7059,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/21507ab35b8bfaf0cc6a8ab0f212e1dc0884d445" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/dec5ca1ef54fc0fa7151be65d6ea0f9ece21ab03" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: pending remote-close reconciliation now survives a real restart (V07-012, v0.0.9)">fix: pending remote-close reconciliation now survives a real restart (V07-012, v0.0.9)</a>
           </td>
         </tr>
 
@@ -7079,7 +7079,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Established v0: real gRPC/Protobuf health-report schema, verified by actually compiling it with grpc_tools.protoc and round-tripping a real HealthReport message through serialize/parse - the shared service contract its 4 children build against. Plus a real, pure in-memory mission state machine (src/mission.rs): Mission (Pending-&gt;Dispatched-&gt;InProgress-&gt;Completed, Cancelled/Failed terminal), idempotent cancel() (cancelling an already-cancelled mission succeeds as a no-op, never errors), and recover_from_unavailable_node()/MissionRegistry::recover_node_unavailable() (requeues a Dispatched/InProgress mission to Pending when its node is reported unreachable/invalid). 47 tests. Exposed via the `mission-demo` CLI subcommand. Both real integrations are now wired: src/job_dispatcher.rs is a real HTTP client to HYDRA-UMC-JOB-DISPATCHER&#x27;s own API (POST /jobs/submit, POST /jobs/complete, POST /dispatch) - including requeue_job(), which src/server.rs&#x27;s own POST /nodes/:node/recover now calls for every requeued mission so Job-Dispatcher stops believing a job is still assigned to the now-unreachable node; and src/server.rs&#x27;s own POST /nodes/:node/recover is the real endpoint HYDRA-UMC-NODE-HEALING&#x27;s watchdog.Reactor (OrchestratorReactor) calls into on every unhealthy-node transition, which drives recover_node_unavailable() above. v0.0.8: Mission now carries a real remote_close_confirmed field, and a background thread retries confirming a mission&#x27;s terminal outcome to Job-Dispatcher every 30s if the first attempt failed - closes the gap within this process&#x27;s own lifetime; MissionRegistry is still purely in-memory, so a real process restart still loses this (and every other) mission state, a real, separate durability gap not yet addressed.</div>
+                <div class="detail-text">Established v0: real gRPC/Protobuf health-report schema, verified by actually compiling it with grpc_tools.protoc and round-tripping a real HealthReport message through serialize/parse - the shared service contract its 4 children build against. Plus a real, pure in-memory mission state machine (src/mission.rs): Mission (Pending-&gt;Dispatched-&gt;InProgress-&gt;Completed, Cancelled/Failed terminal), idempotent cancel() (cancelling an already-cancelled mission succeeds as a no-op, never errors), and recover_from_unavailable_node()/MissionRegistry::recover_node_unavailable() (requeues a Dispatched/InProgress mission to Pending when its node is reported unreachable/invalid). 47 tests. Exposed via the `mission-demo` CLI subcommand. Both real integrations are now wired: src/job_dispatcher.rs is a real HTTP client to HYDRA-UMC-JOB-DISPATCHER&#x27;s own API (POST /jobs/submit, POST /jobs/complete, POST /dispatch) - including requeue_job(), which src/server.rs&#x27;s own POST /nodes/:node/recover now calls for every requeued mission so Job-Dispatcher stops believing a job is still assigned to the now-unreachable node; and src/server.rs&#x27;s own POST /nodes/:node/recover is the real endpoint HYDRA-UMC-NODE-HEALING&#x27;s watchdog.Reactor (OrchestratorReactor) calls into on every unhealthy-node transition, which drives recover_node_unavailable() above. v0.0.8: Mission now carries a real remote_close_confirmed field, and a background thread retries confirming a mission&#x27;s terminal outcome to Job-Dispatcher every 30s if the first attempt failed - closes the gap within this process&#x27;s own lifetime; MissionRegistry is still purely in-memory, so a real process restart still loses this (and every other) mission state, a real, separate durability gap not yet addressed. v0.0.9: that gap is closed for pending remote closes specifically - a new src/outbox.rs (RemoteCloseOutbox) persists exactly which missions still need a remote-close confirmation (and which outcome to report) to a real, crash-safe JSON file independent of MissionRegistry, so a fresh incarnation with an empty registry still retries and correctly reconciles a mission it has otherwise completely forgotten (not a full MissionRegistry persistence layer, deliberately scoped to this one real finding). job_dispatcher::complete_job() also no longer treats every 400 as a confirmed close - it now looks up the job&#x27;s real remote status via GET /jobs first, so a job still genuinely &#x27;assigned&#x27; there is reported as a real failure instead of a false confirmation.</div>
               </div>
 
               <div class="detail-block">
@@ -7663,7 +7663,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.4
           </td>
 
           <td class="status-cell">
@@ -7678,7 +7678,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB/commit/44f3d70e7d2153f9861ee0e13160140c5aa72d80" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB/commit/fa2c2bf8a99395a4eeb53ba531e36adb68877bcc" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: real capability-gate policy enforcement, path-traversal and append-only fixes (v0.0.4)">fix: real capability-gate policy enforcement, path-traversal and append-only fixes (v0.0.4)</a>
           </td>
         </tr>
 
@@ -7698,7 +7698,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">v0.0.3 - Deliveries 1-4 of the 4-delivery plan (&quot;Esquema JSON, CLI validate y diez fixtures&quot; / &quot;Registro ... y endpoint read-only de catalogo&quot; / &quot;Integracion con SDK: validacion de capability + safety gate + evidencia&quot; [P0] / &quot;Certificar adaptadores uno a uno sobre sus maquinas&quot; [P1][HARDWARE]) from the ecosystem-wide software-improvements audit&#x27;s own recommended-new-project proposal. Complementary to the proposal&#x27;s other recommended project, HYDRA-UMC-OPS-AGENT (maintenance-incident lifecycle for the ecosystem&#x27;s OWN components) - this one is about discovering, validating and safely invoking what an EXTERNAL machine/adapter can do, never about CAN/SPI/UART access or motor control directly (those stay owned by HYDRA-UMC-SERVER/SDK/MCU). Explicitly does not replace HYDRA-UMC-GATEWAY-INDUSTRIAL, HYDRA-UMC-OPCUA-SERVER, HYDRA-UMC-MQTT-BROKER or HYDRA-UMC-MTCONNECT-ADAPTER - it is a declarative registry/validator/gate ABOVE them, not a second protocol implementation. The ten fixtures reference those real projects (and the real bridge repos) as their own ownerProject, never an invented one. A capability whose mode is write/abort is rejected by the validator unless it also declares risk, requiredPermission, requiredCellState and timeoutMs - the audit proposal&#x27;s own explicit rule (&quot;las acciones write nunca son seleccionables si falta una de esas condiciones&quot;), enforced as a real, tested check. Delivery 3&#x27;s own gate never reimplements HYDRA-UMC-SDK&#x27;s safety logic - it calls the SDK&#x27;s real `evaluate_job()` directly (a `read` capability skips the SDK entirely; `write`/`abort` map onto a documented, honestly-simplified single JobPhase - see sdk_gate.py&#x27;s own module docstring for exactly why). Delivery 4&#x27;s own certification log is real, append-only record-keeping of a human-attested evidence payload checked against the adapter&#x27;s own evidenceSchema - it explicitly does NOT and cannot independently verify that evidence came from real hardware without the real hardware itself, which this development machine does not have; that gap is documented, not hidden.</div>
+                <div class="detail-text">v0.0.4 - a second independent revalidation audit found and fixed 4 more real issues: the capability gate now enforces a write/abort capability&#x27;s own declared requiredPermission/requiredCellState/requiresHumanConfirmation and the manifest&#x27;s own requiredSafetyGates (previously ignored - a call was gate-allowed on the generic SDK motion check alone, zero policy enforced); adapterId is now restricted to a safe charset and save_certification_record() independently verifies its resolved path stays inside the target directory (previously a path-traversal adapterId could write outside it); the certification store now creates records with real atomic O_CREAT|O_EXCL semantics, refusing to silently overwrite a different record under the same id (previously not actually append-only despite documenting it as such); the JSON-Schema-subset validator no longer accepts a bool as a number or raises on an invalid regex pattern/non-string required entry (previously it could crash or silently accept wrong-typed evidence). Deliveries 1-4 of the 4-delivery plan (&quot;Esquema JSON, CLI validate y diez fixtures&quot; / &quot;Registro ... y endpoint read-only de catalogo&quot; / &quot;Integracion con SDK: validacion de capability + safety gate + evidencia&quot; [P0] / &quot;Certificar adaptadores uno a uno sobre sus maquinas&quot; [P1][HARDWARE]) from the ecosystem-wide software-improvements audit&#x27;s own recommended-new-project proposal. Complementary to the proposal&#x27;s other recommended project, HYDRA-UMC-OPS-AGENT (maintenance-incident lifecycle for the ecosystem&#x27;s OWN components) - this one is about discovering, validating and safely invoking what an EXTERNAL machine/adapter can do, never about CAN/SPI/UART access or motor control directly (those stay owned by HYDRA-UMC-SERVER/SDK/MCU). Explicitly does not replace HYDRA-UMC-GATEWAY-INDUSTRIAL, HYDRA-UMC-OPCUA-SERVER, HYDRA-UMC-MQTT-BROKER or HYDRA-UMC-MTCONNECT-ADAPTER - it is a declarative registry/validator/gate ABOVE them, not a second protocol implementation. The ten fixtures reference those real projects (and the real bridge repos) as their own ownerProject, never an invented one. A capability whose mode is write/abort is rejected by the validator unless it also declares risk, requiredPermission, requiredCellState and timeoutMs - the audit proposal&#x27;s own explicit rule (&quot;las acciones write nunca son seleccionables si falta una de esas condiciones&quot;), enforced as a real, tested check. Delivery 3&#x27;s own gate never reimplements HYDRA-UMC-SDK&#x27;s safety logic - it calls the SDK&#x27;s real `evaluate_job()` directly (a `read` capability skips the SDK entirely; `write`/`abort` map onto a documented, honestly-simplified single JobPhase - see sdk_gate.py&#x27;s own module docstring for exactly why). Delivery 4&#x27;s own certification log is real, append-only record-keeping of a human-attested evidence payload checked against the adapter&#x27;s own evidenceSchema - it explicitly does NOT and cannot independently verify that evidence came from real hardware without the real hardware itself, which this development machine does not have; that gap is documented, not hidden.</div>
               </div>
 
               <div class="detail-block">
@@ -8053,7 +8053,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC/commit/d8dc833857ec9b4dcaa9bee7711e88660123bc5f" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/URTC/commit/063eb79ae810df7cf5067b725bce4e2b0d55ea33" target="_blank" rel="noopener noreferrer" class="commit-link" title="V07-020: defer MLX90640/90641 capture out of the I2C1 ISR">V07-020: defer MLX90640/90641 capture out of the I2C1 ISR</a>
           </td>
         </tr>
 
@@ -8419,7 +8419,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/d436e4f8d469958e043baae0431ee4189ce248f5" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/e05e5fd4c4bbc19d6eb01d28635ce7ecabf22ebf" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: keep package-lock.json&#x27;s own root version in sync (V07-017)">fix: keep package-lock.json&#x27;s own root version in sync (V07-017)</a>
           </td>
         </tr>
 
