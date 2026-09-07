@@ -161,14 +161,14 @@ def _api_get(url: str) -> dict | list | None:
 
 # DOC-51 (found in an ecosystem-wide software-improvements audit, P2):
 # a real, historical commit subject pulled live from the GitHub API can
-# itself name a private internal tracking document by filename (e.g. a
-# past "mejoras_futuras.txt sweep" commit, from before those references
-# were cleaned out of every repo's own public files this same audit
-# round) - the commit is real history and is never rewritten, but this
-# dashboard is public presentation, so any such filename is redacted
-# right here, at render time, the moment a subject is fetched. Case-
-# insensitive; matches the exact filenames this audit's own detector
-# already found leaking into public files elsewhere in the ecosystem.
+# itself name a private internal tracking document by filename (from
+# before those references were cleaned out of every repo's own public
+# files this same audit round) - the commit is real history and is
+# never rewritten, but this dashboard is public presentation, so any
+# such filename is redacted right here, at render time, the moment a
+# subject is fetched. Case-insensitive; matches the exact filenames
+# this audit's own detector already found leaking into public files
+# elsewhere in the ecosystem.
 _PRIVATE_DOCUMENT_NAME_RE = re.compile(
     r"\b(mejoras_futuras\.txt|chat\.txt|auditoria_historial\.txt)\b",
     re.IGNORECASE,
