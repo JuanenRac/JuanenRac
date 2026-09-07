@@ -5178,7 +5178,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.4
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -5193,7 +5193,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT/commit/502bb2843f25820efd44de2810869fa24308e03a" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT/commit/4d4e64cc81af43cd41ab6cba3274bf36643a229b" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: 7 real regressions found by independent revalidation (V07-002/003/004/005/010/011/020/021)">fix: 7 real regressions found by independent revalidation (V07-002/003/004/005/010/011/020/021)</a>
           </td>
         </tr>
 
@@ -5422,7 +5422,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.0
+            0.3.1
           </td>
 
           <td class="status-cell">
@@ -5437,7 +5437,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-UPDATER/commit/cdefc134384251fcd97701dd4a5c87ff950da95e" target="_blank" rel="noopener noreferrer" class="commit-link" title="ci: catch stale README version-prose claims automatically">ci: catch stale README version-prose claims automatically</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-UPDATER/commit/ed71ab7895a8f89b126dc799d71286a060d905b7" target="_blank" rel="noopener noreferrer" class="commit-link" title="fix: refuse an update when a tracked file has a real uncommitted edit (V07-001)">fix: refuse an update when a tracked file has a real uncommitted edit (V07-001)</a>
           </td>
         </tr>
 
@@ -5457,7 +5457,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Administrative tooling for the ecosystem catalog. Now included in the public dashboard&#x27;s own project count (JuanenRac/ecosystem-catalog.json&#x27;s dashboard_exclude list no longer excludes it). Real bounded retry with backoff for transient GitHub network errors; a malformed remote catalog fails loudly (caught by both gui.py and main.py, falling back to local-only state) while one malformed manifest is isolated without aborting discovery of the rest. install.py&#x27;s clone_or_pull never replaces a healthy local checkout - pull is always --ff-only, never a reset. Updating an existing checkout is now atomic-by-verification: the candidate is cloned+merged+built in an independent staging clone first, and only promoted (via two back-to-back directory renames, previous install kept at &lt;name&gt;.backup) once that build actually succeeds - a build failure, crash, or full disk before promotion leaves the previous installation completely untouched. v0.3.0: the staging clone&#x27;s own git remote is reset to the real GitHub upstream immediately after creation (a plain `git clone --local` used to leave it pointing at the local install path instead, silently stopping all future updates once promoted), and the installed checkout&#x27;s own real local data (anything git considers untracked/ignored, e.g. data/settings.json - excluding regenerable build artifacts) is carried into the staging clone before it is built, so a project&#x27;s own real operational state survives an update instead of being stranded in the kept .backup checkout.</div>
+                <div class="detail-text">Administrative tooling for the ecosystem catalog. Now included in the public dashboard&#x27;s own project count (JuanenRac/ecosystem-catalog.json&#x27;s dashboard_exclude list no longer excludes it). Real bounded retry with backoff for transient GitHub network errors; a malformed remote catalog fails loudly (caught by both gui.py and main.py, falling back to local-only state) while one malformed manifest is isolated without aborting discovery of the rest. install.py&#x27;s clone_or_pull never replaces a healthy local checkout - pull is always --ff-only, never a reset. Updating an existing checkout is now atomic-by-verification: the candidate is cloned+merged+built in an independent staging clone first, and only promoted (via two back-to-back directory renames, previous install kept at &lt;name&gt;.backup) once that build actually succeeds - a build failure, crash, or full disk before promotion leaves the previous installation completely untouched. v0.3.0: the staging clone&#x27;s own git remote is reset to the real GitHub upstream immediately after creation (a plain `git clone --local` used to leave it pointing at the local install path instead, silently stopping all future updates once promoted), and the installed checkout&#x27;s own real local data (anything git considers untracked/ignored, e.g. data/settings.json - excluding regenerable build artifacts) is carried into the staging clone before it is built, so a project&#x27;s own real operational state survives an update instead of being stranded in the kept .backup checkout. A real, genuinely uncommitted edit to an already-TRACKED file is a separate case (V07-001) - checked explicitly upfront and refused outright, never silently discarded via the same staging-clone path.</div>
               </div>
 
               <div class="detail-block">
