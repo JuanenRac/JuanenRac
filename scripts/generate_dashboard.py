@@ -1026,6 +1026,100 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
 for language, values in ARCHITECTURE_TRANSLATIONS.items():
     TRANSLATIONS[language].update(values)
 
+
+# ---------------------------------------------------------------------------
+# Roadmap and compatibility matrix translations. Reuses the existing
+# maturity_*/maturity_desc_* keys verbatim for each rung's own name and
+# description - only the "what moves it to the next rung" sentences and the
+# two section headers are new. Deliberately not a feature timeline with
+# dates (see feedback_no_dates_public_docs): the real, already-practiced
+# graduation path from one maturity tier to the next, same criteria this
+# ecosystem's own review process already applies.
+# ---------------------------------------------------------------------------
+
+ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
+    "en": {
+        "roadmap_section": "Roadmap",
+        "roadmap_intro": "Not a feature timeline with dates - the real path every project in this ecosystem follows, and exactly where each one sits on it right now (see the Maturity section above for the live counts).",
+        "roadmap_advance_scaffolding": "Advances once real, tested business logic exists behind it: its own test suite, a real end-to-end smoke test, or a real protocol round-trip - never a mock standing in forever.",
+        "roadmap_advance_functional": "Advances once a real consumer outside its own checkout - another real service, or a package actually installed rather than left editable - depends on it and proves that in a repeatable test, not just its own CLI or fixtures.",
+        "roadmap_advance_established": "Advances only once real, physical hardware exists for it to run against - the exact board or machine this ecosystem's own hardware documentation describes.",
+        "roadmap_advance_production": "The top of the ladder. Nothing advances past here - it just keeps shipping real fixes.",
+        "compat_section": "Compatibility matrix",
+        "compat_intro": "Real project counts by role and deployment target, drawn straight from every repository's own manifest. A count, not a claim that any two specific projects interoperate.",
+        "compat_corner": "Role \\ Target",
+    },
+    "es": {
+        "roadmap_section": "Hoja de ruta",
+        "roadmap_intro": "No es un calendario de funciones con fechas - es el camino real que sigue cada proyecto de este ecosistema, y en qué punto exacto está cada uno ahora mismo (ver la sección Madurez de arriba para los recuentos en vivo).",
+        "roadmap_advance_scaffolding": "Avanza en cuanto existe lógica de negocio real y probada detrás: su propia batería de pruebas, una prueba de humo real de extremo a extremo, o un ida-y-vuelta real de protocolo - nunca un simulacro que se queda para siempre.",
+        "roadmap_advance_functional": "Avanza en cuanto un consumidor real fuera de su propio checkout - otro servicio real, o un paquete realmente instalado en vez de dejado editable - depende de él y lo demuestra en una prueba repetible, no solo su propio CLI o sus fixtures.",
+        "roadmap_advance_established": "Avanza solo cuando existe hardware físico real contra el que funcionar - la placa o máquina exacta que la propia documentación de hardware de este ecosistema describe.",
+        "roadmap_advance_production": "La cima de la escalera. Nada avanza más allá de aquí - solo sigue entregando arreglos reales.",
+        "compat_section": "Matriz de compatibilidad",
+        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, extraídos directamente del manifiesto propio de cada repositorio. Un recuento, no una afirmación de que dos proyectos concretos interoperen.",
+        "compat_corner": "Rol \\ Destino",
+    },
+    "fr": {
+        "roadmap_section": "Feuille de route",
+        "roadmap_intro": "Ce n'est pas un calendrier de fonctionnalités avec des dates - c'est le vrai chemin que suit chaque projet de cet écosystème, et l'endroit exact où se trouve chacun en ce moment (voir la section Maturité ci-dessus pour les comptages en direct).",
+        "roadmap_advance_scaffolding": "Avance dès qu'une logique métier réelle et testée existe derrière lui : sa propre suite de tests, un vrai test de fumée de bout en bout, ou un véritable aller-retour de protocole - jamais un simulacre qui reste en place pour toujours.",
+        "roadmap_advance_functional": "Avance dès qu'un véritable consommateur en dehors de son propre checkout - un autre service réel, ou un paquet réellement installé plutôt que laissé éditable - en dépend et le prouve dans un test reproductible, pas seulement sa propre CLI ou ses fixtures.",
+        "roadmap_advance_established": "N'avance que lorsqu'un matériel physique réel existe pour qu'il puisse fonctionner face à lui - la carte ou la machine exacte que la documentation matérielle de cet écosystème décrit elle-même.",
+        "roadmap_advance_production": "Le sommet de l'échelle. Rien n'avance au-delà d'ici - il continue simplement à livrer de vrais correctifs.",
+        "compat_section": "Matrice de compatibilité",
+        "compat_intro": "Comptages réels de projets par rôle et cible de déploiement, tirés directement du manifeste propre de chaque dépôt. Un comptage, pas une affirmation que deux projets précis interopèrent.",
+        "compat_corner": "Rôle \\ Cible",
+    },
+    "it": {
+        "roadmap_section": "Tabella di marcia",
+        "roadmap_intro": "Non è un calendario di funzionalità con date - è il percorso reale che segue ogni progetto di questo ecosistema, ed esattamente il punto in cui si trova ciascuno in questo momento (vedi la sezione Maturità sopra per i conteggi in tempo reale).",
+        "roadmap_advance_scaffolding": "Avanza non appena esiste una logica di business reale e testata dietro di esso: la propria suite di test, un vero smoke test end-to-end, o un vero andata-e-ritorno di protocollo - mai un simulacro che resta per sempre.",
+        "roadmap_advance_functional": "Avanza non appena un vero consumatore al di fuori del proprio checkout - un altro servizio reale, o un pacchetto realmente installato anziché lasciato editabile - dipende da esso e lo dimostra in un test ripetibile, non solo la propria CLI o le proprie fixture.",
+        "roadmap_advance_established": "Avanza solo quando esiste hardware fisico reale contro cui funzionare - la scheda o la macchina esatta che la documentazione hardware di questo ecosistema descrive.",
+        "roadmap_advance_production": "La cima della scala. Nulla avanza oltre questo punto - continua solo a distribuire correzioni reali.",
+        "compat_section": "Matrice di compatibilità",
+        "compat_intro": "Conteggi reali di progetti per ruolo e destinazione di distribuzione, presi direttamente dal manifesto proprio di ogni repository. Un conteggio, non un'affermazione che due progetti specifici interoperino.",
+        "compat_corner": "Ruolo \\ Destinazione",
+    },
+    "de": {
+        "roadmap_section": "Fahrplan",
+        "roadmap_intro": "Kein Feature-Zeitplan mit Daten - der echte Weg, den jedes Projekt in diesem Ökosystem geht, und genau der Punkt, an dem jedes gerade steht (siehe den Abschnitt Reifegrad oben für die Live-Zahlen).",
+        "roadmap_advance_scaffolding": "Steigt auf, sobald echte, getestete Geschäftslogik dahintersteckt: eine eigene Testsuite, ein echter End-to-End-Smoke-Test oder ein echter Protokoll-Hin-und-Rückweg - niemals ein Mock, der für immer bleibt.",
+        "roadmap_advance_functional": "Steigt auf, sobald ein echter Verbraucher außerhalb des eigenen Checkouts - ein anderer echter Dienst, oder ein tatsächlich installiertes statt editierbar belassenes Paket - davon abhängt und das in einem wiederholbaren Test beweist, nicht nur in der eigenen CLI oder den eigenen Fixtures.",
+        "roadmap_advance_established": "Steigt nur auf, sobald echte physische Hardware existiert, gegen die es laufen kann - genau die Platine oder Maschine, die die eigene Hardware-Dokumentation dieses Ökosystems beschreibt.",
+        "roadmap_advance_production": "Die Spitze der Leiter. Nichts steigt hier weiter auf - es liefert einfach weiter echte Fixes.",
+        "compat_section": "Kompatibilitätsmatrix",
+        "compat_intro": "Echte Projektzahlen nach Rolle und Deployment-Ziel, direkt aus dem eigenen Manifest jedes Repositories entnommen. Eine Zählung, keine Behauptung, dass zwei bestimmte Projekte zusammenarbeiten.",
+        "compat_corner": "Rolle \\ Ziel",
+    },
+    "zh": {
+        "roadmap_section": "路线图",
+        "roadmap_intro": "这不是带日期的功能时间表——而是本生态系统中每个项目真实走过的路径，以及此刻每个项目实际所处的位置(实时数量见上方“成熟度”一节)。",
+        "roadmap_advance_scaffolding": "一旦其背后有了真实、经过测试的业务逻辑——自己的测试套件、真实的端到端冒烟测试，或真实的协议往返——就会晋级，绝不是永远留在原地的模拟。",
+        "roadmap_advance_functional": "一旦有一个真实的、在其自身检出目录之外的消费者——另一个真实的服务，或一个真正被安装而非保持可编辑状态的包——依赖它，并在可重复的测试中证明这一点，而不仅仅是它自己的 CLI 或 fixture，就会晋级。",
+        "roadmap_advance_established": "只有当真实的物理硬件存在、可供其运行时才会晋级——正是本生态系统自身硬件文档所描述的那块板卡或那台机器。",
+        "roadmap_advance_production": "阶梯的顶端。到这里就不再晋级——只会持续交付真实的修复。",
+        "compat_section": "兼容性矩阵",
+        "compat_intro": "按角色和部署目标统计的真实项目数量，直接取自每个仓库自身的清单文件。这是一个计数，而不是声称某两个具体项目能够互操作。",
+        "compat_corner": "角色 \\ 目标",
+    },
+    "ja": {
+        "roadmap_section": "ロードマップ",
+        "roadmap_intro": "日付付きの機能予定表ではありません——このエコシステムのすべてのプロジェクトが実際にたどる道であり、今この瞬間、各プロジェクトが正確にどこに位置しているかです(リアルタイムの件数は上の「成熟度」セクションを参照してください)。",
+        "roadmap_advance_scaffolding": "その裏に本物のテスト済みビジネスロジックができた時点で昇格します:自身のテストスイート、本物のエンドツーエンドのスモークテスト、または本物のプロトコルの往復——永遠にそこに居座るモックでは決してありません。",
+        "roadmap_advance_functional": "自身のチェックアウトの外にある本物の利用者——別の本物のサービス、または編集可能なままではなく実際にインストールされたパッケージ——がそれに依存し、それを再現可能なテストで証明した時点で昇格します。自身の CLI やフィクスチャだけではありません。",
+        "roadmap_advance_established": "本物の物理ハードウェアが存在し、それに対して実際に動作できるようになった時点でのみ昇格します——このエコシステム自身のハードウェアドキュメントが説明する、まさにそのボードやマシンです。",
+        "roadmap_advance_production": "はしごの頂点です。ここから先に昇格することはありません——ただ本物の修正を届け続けるだけです。",
+        "compat_section": "互換性マトリクス",
+        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、各リポジトリ自身のマニフェストから直接取得しています。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
+        "compat_corner": "役割 \\ 対象",
+    },
+}
+
+for language, values in ROADMAP_COMPAT_TRANSLATIONS.items():
+    TRANSLATIONS[language].update(values)
+
 DEPLOY_ICONS: dict[str, str] = {
     "cm5": (
         '<rect x="4" y="4" width="16" height="16" rx="2"/>'
@@ -1447,6 +1541,15 @@ def calculate_statistics(
         for key in ROLE_ORDER
     }
 
+    # Role x deployment-target cross-tab for the compatibility matrix -
+    # real counts only, built the same way as the 4 single-axis counts
+    # above. Never a claim that two specific projects interoperate, only
+    # how many real projects of a given role target a given host.
+    role_deploy_matrix: dict[str, dict[str, int]] = {
+        role: {deploy: 0 for deploy in DEPLOY_ORDER}
+        for role in ROLE_ORDER
+    }
+
     for entry in entries:
         deploy_counts[entry.deploy] = (
             deploy_counts.get(entry.deploy, 0) + 1
@@ -1464,6 +1567,9 @@ def calculate_statistics(
             role_counts.get(entry.role, 0) + 1
         )
 
+        if entry.role in role_deploy_matrix and entry.deploy in role_deploy_matrix[entry.role]:
+            role_deploy_matrix[entry.role][entry.deploy] += 1
+
     return {
         "total": total,
         "ok": ok,
@@ -1473,6 +1579,7 @@ def calculate_statistics(
         "stack_counts": stack_counts,
         "maturity_counts": maturity_counts,
         "role_counts": role_counts,
+        "role_deploy_matrix": role_deploy_matrix,
     }
 
 
@@ -1609,6 +1716,108 @@ def render_role_summary(
 
 
 # ---------------------------------------------------------------------------
+# Compatibility matrix (role x deployment target)
+# ---------------------------------------------------------------------------
+#
+# A real cross-tab of the same two axes already computed above (role_counts,
+# deploy_counts), not a new data source - see role_deploy_matrix in
+# calculate_statistics(). Rows are roles that have at least one real
+# project; a role with zero real projects on a given target simply shows
+# an em dash rather than a fabricated zero-with-meaning.
+# ---------------------------------------------------------------------------
+
+def render_compatibility_matrix(
+    role_deploy_matrix: dict[str, dict[str, int]],
+    role_counts: dict[str, int],
+) -> str:
+    rows = [
+        role
+        for role in ROLE_ORDER
+        if role_counts.get(role, 0) > 0
+    ]
+
+    header_cells = "".join(
+        f'<th data-i18n="deploy_{esc(deploy)}">{esc(DEPLOY_LABELS.get(deploy, deploy))}</th>'
+        for deploy in DEPLOY_ORDER
+    )
+
+    body_rows = []
+    for role in rows:
+        cells = []
+        for deploy in DEPLOY_ORDER:
+            count = role_deploy_matrix.get(role, {}).get(deploy, 0)
+            cell_text = str(count) if count else "–"
+            css_class = "compat-cell compat-cell-hit" if count else "compat-cell compat-cell-empty"
+            cells.append(f'<td class="{css_class}">{cell_text}</td>')
+
+        body_rows.append(
+            f"""
+            <tr>
+              <th scope="row">
+                {render_icon(ROLE_ICONS.get(role, ""), css_class="tech-icon role-icon")}
+                <span data-i18n="role_{esc(role)}">{esc(ROLE_LABELS.get(role, role))}</span>
+              </th>
+              {"".join(cells)}
+            </tr>
+            """
+        )
+
+    return f"""
+    <table class="compat-matrix">
+      <thead>
+        <tr>
+          <th data-i18n="compat_corner">Role \\ Target</th>
+          {header_cells}
+        </tr>
+      </thead>
+      <tbody>
+        {"".join(body_rows)}
+      </tbody>
+    </table>
+    """
+
+
+# ---------------------------------------------------------------------------
+# Roadmap (v3) - the real maturity ladder, not a dated feature timeline.
+# See feedback_no_dates_public_docs and ROADMAP_COMPAT_TRANSLATIONS above.
+# ---------------------------------------------------------------------------
+
+ROADMAP_ORDER = ["scaffolding", "functional", "established", "production"]
+
+ROADMAP_ADVANCE_TEXT: dict[str, str] = {
+    key: ROADMAP_COMPAT_TRANSLATIONS["en"][f"roadmap_advance_{key}"]
+    for key in ROADMAP_ORDER
+}
+
+def render_roadmap(
+    maturity_counts: dict[str, int],
+) -> str:
+    steps = []
+
+    for key in ROADMAP_ORDER:
+        count = maturity_counts.get(key, 0)
+        label = MATURITY_LABELS.get(key, key)
+        description = MATURITY_DESCRIPTIONS.get(key, "")
+        advance = ROADMAP_ADVANCE_TEXT.get(key, "")
+        css_class = MATURITY_CLASSES.get(key, "maturity-scaffolding")
+
+        steps.append(
+            f"""
+            <li class="roadmap-step {css_class}">
+              <div class="roadmap-step-head">
+                <span class="maturity-badge {css_class}" data-i18n="maturity_{esc(key)}">{esc(label)}</span>
+                <span class="roadmap-step-count">{count}</span>
+              </div>
+              <p class="roadmap-step-desc" data-i18n="maturity_desc_{esc(key)}">{esc(description)}</p>
+              <p class="roadmap-step-advance" data-i18n="roadmap_advance_{esc(key)}">{esc(advance)}</p>
+            </li>
+            """
+        )
+
+    return "".join(steps)
+
+
+# ---------------------------------------------------------------------------
 # HTML
 # ---------------------------------------------------------------------------
 
@@ -1628,6 +1837,7 @@ def render_html(
     stack_counts = stats["stack_counts"]
     maturity_counts = stats["maturity_counts"]
     role_counts = stats["role_counts"]
+    role_deploy_matrix = stats["role_deploy_matrix"]
 
     rows = render_project_rows(entries, results, meta)
 
@@ -1647,6 +1857,15 @@ def render_html(
 
     role_summary = render_role_summary(
         role_counts,
+    )
+
+    compatibility_matrix = render_compatibility_matrix(
+        role_deploy_matrix,
+        role_counts,
+    )
+
+    roadmap_steps = render_roadmap(
+        maturity_counts,
     )
 
     family_options = "".join(
@@ -2411,6 +2630,114 @@ def render_html(
 
   .role-icon {{
     color: var(--accent);
+  }}
+
+  /* --- Compatibility matrix (v3) ----------------------------------------- */
+
+  .compat-matrix-wrapper {{
+    overflow-x: auto;
+  }}
+
+  .compat-matrix {{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+  }}
+
+  .compat-matrix th,
+  .compat-matrix td {{
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    text-align: center;
+    white-space: nowrap;
+  }}
+
+  .compat-matrix thead th {{
+    background: var(--surface-2);
+    color: var(--dim);
+    font-weight: 600;
+    font-size: 11px;
+  }}
+
+  .compat-matrix tbody th {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+    background: var(--surface-2);
+    font-weight: 600;
+    white-space: nowrap;
+  }}
+
+  .compat-cell-hit {{
+    color: var(--accent);
+    font-weight: 700;
+    background: var(--accent-soft);
+  }}
+
+  .compat-cell-empty {{
+    color: var(--dim);
+    opacity: .5;
+  }}
+
+  /* --- Roadmap (v3) -------------------------------------------------------
+   * Reuses the same maturity-* color tokens as the Maturity cards above -
+   * the roadmap is that same classification, laid out as a ladder instead
+   * of a filterable grid, not a second color scheme to keep in sync.
+   */
+
+  .roadmap-ladder {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }}
+
+  .roadmap-step {{
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--maturity-scaffolding);
+    background: var(--surface);
+    border-radius: 9px;
+    padding: 13px 15px;
+    box-shadow: var(--shadow);
+  }}
+
+  .roadmap-step.maturity-production {{ border-top-color: var(--maturity-production); }}
+  .roadmap-step.maturity-established {{ border-top-color: var(--maturity-established); }}
+  .roadmap-step.maturity-functional {{ border-top-color: var(--accent); }}
+  .roadmap-step.maturity-scaffolding {{ border-top-color: var(--maturity-scaffolding); }}
+
+  .roadmap-step-head {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }}
+
+  .roadmap-step-count {{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dim);
+  }}
+
+  .roadmap-step-desc {{
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 10px 0 0;
+  }}
+
+  .roadmap-step-advance {{
+    color: var(--dim);
+    font-size: 11.5px;
+    line-height: 1.5;
+    margin: 8px 0 0;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border);
   }}
 
   /* --- Family filter (v3) ------------------------------------------------ */
@@ -3229,6 +3556,52 @@ def render_html(
     <div class="role-summary">
       {role_summary}
     </div>
+
+  </section>
+
+
+  <!-- ================================================================
+       COMPATIBILITY MATRIX (v3)
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title" data-i18n="compat_section">
+      Compatibility matrix
+    </div>
+
+    <p class="ecosystem-intro" data-i18n="compat_intro">
+      Real project counts by role and deployment target, drawn straight
+      from every repository's own manifest. A count, not a claim that any
+      two specific projects interoperate.
+    </p>
+
+    <div class="compat-matrix-wrapper">
+      {compatibility_matrix}
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
+       ROADMAP (v3)
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title" data-i18n="roadmap_section">
+      Roadmap
+    </div>
+
+    <p class="ecosystem-intro" data-i18n="roadmap_intro">
+      Not a feature timeline with dates - the real path every project in
+      this ecosystem follows, and exactly where each one sits on it right
+      now (see the Maturity section above for the live counts).
+    </p>
+
+    <ol class="roadmap-ladder">
+      {roadmap_steps}
+    </ol>
 
   </section>
 
