@@ -43,14 +43,31 @@ following fields:
 | Affected repositories | text | One or more affected repository names, including cross-project work. |
 | Family | single select | Manifest family, such as Platform Foundation or External Automation Bridges. |
 | Maturity | single select | Scaffolding, Functional, Established, Production. |
-| Evidence | single select | Local software, Simulator, CM5, MCU, Machine, Safety validation. |
+| Evidence | single select | Documentation, Local test, Simulator, CM5, MCU, External machine, Safety validation. |
 | Hardware dependency | single select | None, CM5, MCU, Vision/Hailo, Robot/actuator, External machine. |
 | Priority | single select | Critical, High, Normal, Low. |
 | Blocked by | text | Issue, pull request, delivery or physical dependency. |
 
-Use three views: **Software 95%**, **Awaiting hardware**, and **Safety
-validation**. Do not use a Project field to declare a physical feature done
-without an evidence link.
+Use seven views: **Ecosystem Backlog** (every item, table layout), **Active
+Work** (board layout, grouped by Status), **Software toward 95%** (software
+work with no unmet hardware dependency), **Awaiting Hardware** (blocked on
+CM5/MCU/Vision/Hailo/Robot/External machine), **Safety Validation**
+(anything whose Evidence is, or must become, Safety validation), **CM5
+Field Testing** (Hardware dependency = CM5, Status = In progress - real
+work actively running against the real board, not just planned), and
+**Pending Human Decision** (Status = Blocked, and `Blocked by` starts with
+the literal text `Decision:` - a real convention, not a Project field of
+its own: use it when the block is a choice someone has to make, not a
+missing PR/issue/delivery, e.g. `Decision: pick VacuumTable's own
+pump/valve wiring vs the robot's generic 2-valve one before touching
+SUITE's panel`). Do not use a Project field to declare a physical feature
+done without an evidence link.
+
+`tools/bootstrap_ecosystem_project.py` only creates each view with its own
+name and layout - GitHub's Project view API has no filter argument, so the
+actual filter for every view above (including the 5 that came before CM5
+Field Testing/Pending Human Decision) is a one-time manual setup in the
+Project UI, done once by whoever administers it.
 
 The manual workflow `.github/workflows/bootstrap-ecosystem-project.yml`
 creates or reconciles the public **HYDRA-UMC Roadmap** Project, its fields and
@@ -63,7 +80,14 @@ After the Project exists, `.github/workflows/seed-ecosystem-roadmap.yml` can
 add the small, curated set of software-only draft items derived from the
 current audit. It is also idempotent and dry-run by default. These are planning
 records, not public repository issues; convert one to an issue only when its
-scope and owner are ready.
+scope and owner are ready. `SEED_ITEMS` is a real, human-curated list, not
+an automatic scan - a new repository (or a real recent plan for one that
+already exists) never gets a draft item added on its own just because the
+repository exists. Every run instead prints a real coverage report
+(`UNCOVERED_REPOSITORY=...`, in both dry-run and `--apply`): which public
+repositories under this account have no `SEED_ITEMS` entry mentioning them
+at all yet. That is a prompt for a human to decide whether one is actually
+ready to write, never something this script writes for itself.
 
 ## Issues, pull requests and Discussions
 

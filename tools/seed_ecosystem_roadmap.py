@@ -10,13 +10,26 @@ Items are Project draft issues, not repository issues. They are intentionally
 kept as planning records until their scope is accepted and a repository issue
 is created. Re-running this script never duplicates a title already present in
 the Project.
+
+SEED_ITEMS below is a real, human-curated list, deliberately NOT an
+automatic scan of every ecosystem repository - a real project existing does
+not by itself mean a specific, scoped, evidence-based planning item is
+ready to be written for it (that still takes a human deciding what the
+actual next step is). What this script CAN do automatically, and does
+every run: report which real public repositories under this account have
+NO seed item mentioning them at all yet (see `uncovered_repositories()`
+below) - a coverage signal for a human to act on, never a reason for this
+script to invent one on its own.
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
+import urllib.error
+import urllib.request
 
 from bootstrap_ecosystem_project import PROJECT_TITLE, graphql, upsert_field, viewer_projects
 
@@ -175,6 +188,53 @@ SEED_ITEMS = (
 )
 
 
+def discover_repository_names(token: str, owner: str) -> list[str]:
+    """Every real, public, non-archived, non-fork repository name under
+    `owner` - a plain paginated REST call (this script's own account-token
+    already has the real access it needs; no separate discovery
+    dependency, matching this script's own existing stdlib-only,
+    urllib-based GraphQL calls above rather than adding
+    hydra-umc-updater as a dependency here too)."""
+    names: list[str] = []
+    page = 1
+    while True:
+        request = urllib.request.Request(
+            f"https://api.github.com/users/{owner}/repos?type=public&per_page=100&page={page}",
+            headers={
+                "Accept": "application/vnd.github+json",
+                "Authorization": f"Bearer {token}",
+                "X-GitHub-Api-Version": "2026-03-10",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                batch = json.load(response)
+        except urllib.error.HTTPError as error:
+            raise RuntimeError(f"GitHub API HTTP {error.code} listing repositories for {owner!r}") from error
+        if not batch:
+            break
+        names.extend(repo["name"] for repo in batch if not repo.get("archived") and not repo.get("fork"))
+        if len(batch) < 100:
+            break
+        page += 1
+    return names
+
+
+def uncovered_repositories(token: str, owner: str) -> list[str]:
+    """Real repositories with zero SEED_ITEMS mentioning them anywhere in
+    their own `repository` field (a multi-repo item like the SDK contract
+    one above lists several names in one string, so this checks
+    substring membership, not an exact match) - a coverage report only,
+    never a reason to fabricate a seed item for one of these on its own."""
+    real_names = discover_repository_names(token, owner)
+    covered = {
+        name
+        for name in real_names
+        if any(name in item["repository"] for item in SEED_ITEMS)
+    }
+    return sorted(set(real_names) - covered)
+
+
 def project(token: str) -> dict:
     _, projects = viewer_projects(token)
     result = next((candidate for candidate in projects if candidate["title"] == PROJECT_TITLE), None)
@@ -297,12 +357,24 @@ def main() -> int:
         print("ROADMAP_SEED=FAIL HYDRA_UMC_PROJECTS_TOKEN is not configured", file=sys.stderr)
         return 2
 
+    viewer, _ = viewer_projects(token)
     target = project(token)
     existing = existing_draft_items(token, target["id"])
     missing = [item for item in SEED_ITEMS if item["title"] not in existing]
     print(f"ROADMAP_SEED=PLAN project={target['url']} existing={len(existing)} missing={len(missing)} apply={args.apply}")
     for item in missing:
         print(f"PLAN_ITEM={item['title']}")
+
+    # Coverage-only, never blocking and never auto-fixed: SEED_ITEMS is a
+    # real, human-curated list (see this module's own header) - a new
+    # repository, or a repository whose real next step nobody has written
+    # down yet, shows up here so a human can decide whether it needs one,
+    # not so this script invents one on its own.
+    uncovered = uncovered_repositories(token, viewer["login"])
+    print(f"ROADMAP_SEED_COVERAGE=REPORT uncovered={len(uncovered)}")
+    for name in uncovered:
+        print(f"UNCOVERED_REPOSITORY={name}")
+
     if not args.apply:
         print("ROADMAP_SEED=DRY_RUN no Project item was created")
         return 0
