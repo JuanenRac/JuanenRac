@@ -135,6 +135,7 @@ jobs:
           - HYDRA-UMC-UPDATER
           - HYDRA-UMC-OS-REBUILDER
           - HYDRA-UMC-OPS-AGENT
+          - HYDRA-UMC-DEV-SERVER
 
           # -------------------------------------------------------------------
           # External Automation / Mobile & Autonomous Bridges
