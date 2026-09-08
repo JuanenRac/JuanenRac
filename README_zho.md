@@ -168,6 +168,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 本地化、隐私优先的 STT/TTS 管线，用于自然语言操作员交互。 |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 基于 LLM 的任务编排器，具备上下文感知的错误恢复能力。 |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 基于 RAG 的 AI 助手，基于技术手册与源代码训练。 |
+| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 由策略限权的本地 AI 技术员：目前是固定的风险等级策略与工具白名单，具备真实且经过测试的防御，证明恶意的被检索文档永远无法触发工具调用或泄露密钥——AI 永远不会因生成一段回复而获得权限。 |
 
 ### 🐝 编排与集群（编排与集群）
 | 仓库 | 说明 |
