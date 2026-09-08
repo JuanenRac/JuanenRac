@@ -171,6 +171,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 自然言語によるオペレーター対話のための、ローカル完結・プライバシー重視の STT/TTS パイプライン。 |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 文脈を考慮したエラー復旧機能を備える、LLM ベースのミッションオーケストレーター。 |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 技術マニュアルとソースコードで学習させた、RAG ベースの AI アシスタント。 |
+| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | ポリシーで権限を制御されたローカルAI技術者: 現在は固定のリスクレベル・ポリシーとツール許可リストであり、悪意ある取得ドキュメントが決してツール呼び出しを引き起こしたり機密情報を漏らしたりできないことを証明する、実際にテストされた防御を備える - AIは応答を生成することによって権限を得ることは決してない。 |
 
 ### 🐝 オーケストレーションと群制御（オーケストレーション・群制御）
 | リポジトリ | 説明 |
