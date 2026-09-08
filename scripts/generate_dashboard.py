@@ -311,6 +311,7 @@ DEPLOY_LABELS = {
     "user-pc": "User PC",
     "mobile": "Mobile",
     "wearable": "Wearable",
+    "dev-server": "Dev Server",
 }
 
 DEPLOY_ORDER = [
@@ -318,6 +319,7 @@ DEPLOY_ORDER = [
     "user-pc",
     "mobile",
     "wearable",
+    "dev-server",
 ]
 
 
@@ -517,6 +519,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_user-pc": "User PC",
         "deploy_mobile": "Mobile",
         "deploy_wearable": "Wearable",
+        "deploy_dev-server": "Dev Server",
         "maturity_production": "Production",
         "maturity_established": "Established",
         "maturity_functional": "Functional",
@@ -587,6 +590,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_user-pc": "PC del usuario",
         "deploy_mobile": "Móvil",
         "deploy_wearable": "Wearable",
+        "deploy_dev-server": "Servidor de desarrollo",
         "maturity_production": "Producción",
         "maturity_established": "Establecido",
         "maturity_functional": "Funcional",
@@ -657,6 +661,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_user-pc": "PC utilisateur",
         "deploy_mobile": "Mobile",
         "deploy_wearable": "Wearable",
+        "deploy_dev-server": "Serveur de développement",
         "maturity_production": "Production",
         "maturity_established": "Établi",
         "maturity_functional": "Fonctionnel",
@@ -727,6 +732,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_user-pc": "PC dell'utente",
         "deploy_mobile": "Mobile",
         "deploy_wearable": "Wearable",
+        "deploy_dev-server": "Server di sviluppo",
         "maturity_production": "Produzione",
         "maturity_established": "Consolidato",
         "maturity_functional": "Funzionale",
@@ -797,6 +803,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_user-pc": "Benutzer-PC",
         "deploy_mobile": "Mobil",
         "deploy_wearable": "Wearable",
+        "deploy_dev-server": "Entwicklungsserver",
         "maturity_production": "Produktion",
         "maturity_established": "Etabliert",
         "maturity_functional": "Funktional",
@@ -867,6 +874,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_user-pc": "用户电脑",
         "deploy_mobile": "移动端",
         "deploy_wearable": "可穿戴设备",
+        "deploy_dev-server": "开发服务器",
         "maturity_production": "生产",
         "maturity_established": "成熟",
         "maturity_functional": "功能完备",
@@ -937,6 +945,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_user-pc": "ユーザーPC",
         "deploy_mobile": "モバイル",
         "deploy_wearable": "ウェアラブル",
+        "deploy_dev-server": "開発サーバー",
         "maturity_production": "本番",
         "maturity_established": "定着済み",
         "maturity_functional": "機能実装済み",
@@ -1139,6 +1148,10 @@ DEPLOY_ICONS: dict[str, str] = {
         '<circle cx="12" cy="12" r="6"/>'
         '<path d="M12 9v3l1.8 1.8M9.5 4h5l-.8 3h-3.4L9.5 4Z'
         'M9.5 20h5l-.8-3h-3.4l-.8 3Z"/>'
+    ),
+    "dev-server": (
+        '<rect x="3" y="4" width="18" height="16" rx="2"/>'
+        '<path d="M7 9l3 3-3 3M13 15h4"/>'
     ),
 }
 
