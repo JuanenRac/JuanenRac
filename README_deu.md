@@ -170,6 +170,7 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | Lokale, private STT/TTS-Pipeline für natürliche Bedienerinteraktion. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | LLM-basierter Missions-Orchestrator mit kontextsensitiver Fehlerbehebung. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | RAG-basierter KI-Assistent, trainiert auf Handbüchern und Quellcode. |
+| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | Lokaler KI-Techniker mit richtlinien-gesteuerten Berechtigungen: heute eine feste Risikostufen-Richtlinie und eine Werkzeug-Positivliste, mit einer realen, getesteten Abwehr, die beweist, dass ein bösartiges abgerufenes Dokument niemals einen Werkzeugaufruf auslösen oder ein Geheimnis preisgeben kann - die KI erhält niemals Autorität durch das Generieren einer Antwort. |
 
 ### 🐝 Orchestrierung & Schwarm
 | Repository | Beschreibung |

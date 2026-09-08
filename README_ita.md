@@ -170,6 +170,7 @@ sotto.
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | Pipeline locale STT/TTS per l'interazione naturale con l'operatore. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | Orchestratore basato su LLM con recupero errori contestuale. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | Assistente AI basato su RAG addestrato su manuali tecnici e codice sorgente. |
+| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | Tecnico IA locale con permessi controllati da politica: oggi una politica fissa dei livelli di rischio e una lista bianca di strumenti, con una difesa reale e testata che dimostra che un documento malevolo recuperato non può mai innescare una chiamata a uno strumento né rivelare un segreto - l'IA non ottiene mai autorità generando una risposta. |
 
 ### 🐝 Orchestrazione & Sciame
 | Repository | Descrizione |
