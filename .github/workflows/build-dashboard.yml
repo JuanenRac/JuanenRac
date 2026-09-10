@@ -105,8 +105,7 @@ jobs:
       # discovery implementation. No project catalogue is installed here.
       # -----------------------------------------------------------------------
       - name: Install HYDRA-UMC-UPDATER
-        # CAT-01 (found in an ecosystem-wide software-improvements audit,
-        # P2): this used to install directly from main with no revision
+        # CAT-01 (P2): this used to install directly from main with no revision
         # pin - a mutable dependency where main could get a real behavior
         # change (or a genuine regression) between one scheduled run and
         # the next, silently, with no way to tell which commit a given
@@ -156,8 +155,7 @@ jobs:
       # -----------------------------------------------------------------------
       # Commit only when the generated dashboard actually changed
       # -----------------------------------------------------------------------
-      # CAT-01 (found in an ecosystem-wide software-improvements audit,
-      # P2): the concurrency group above only ever serialized two runs of
+      # CAT-01 (P2): the concurrency group above only ever serialized two runs of
       # THIS SAME workflow against each other - it does nothing for a
       # genuine human push to main landing between this job's checkout
       # and its own push, which used to just fail outright (a real
