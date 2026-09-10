@@ -159,15 +159,15 @@ def _api_get(url: str) -> dict | list | None:
         return None
 
 
-# DOC-51 (found in an ecosystem-wide software-improvements audit, P2):
+# DOC-51 (P2):
 # a real, historical commit subject pulled live from the GitHub API can
 # itself name a private internal tracking document by filename (from
 # before those references were cleaned out of every repo's own public
-# files this same audit round) - the commit is real history and is
+# files this same review pass) - the commit is real history and is
 # never rewritten, but this dashboard is public presentation, so any
 # such filename is redacted right here, at render time, the moment a
 # subject is fetched. Case-insensitive; matches the exact filenames
-# this audit's own detector already found leaking into public files
+# the same review pass's detector already found leaking into public files
 # elsewhere in the ecosystem.
 _PRIVATE_DOCUMENT_NAME_RE = re.compile(
     r"\b(mejoras_futuras\.txt|chat\.txt|auditoria_historial\.txt)\b",
@@ -184,7 +184,7 @@ def _redact_private_document_names(subject: str) -> str:
     return _PRIVATE_DOCUMENT_NAME_RE.sub("an internal tracking note", subject)
 
 
-# REV-033 (found in an independent revalidation audit, P2): the CAT-01
+# REV-033 (found in a review pass, P2): the CAT-01
 # fix above (the live GitHub Actions badge.svg) answers "did the build
 # succeed", but not "how long ago was that" - a check that passed the
 # last time this workflow actually ran, whenever that was, looks
@@ -3357,8 +3357,7 @@ def render_html(
     </h1>
 
     <!--
-      CAT-01 (found in an ecosystem-wide software-improvements audit,
-      P2): "content unchanged" and "the hourly check has silently
+      CAT-01 (P2): "content unchanged" and "the hourly check has silently
       stopped running" used to look identical on this page - no
       generation timestamp is written here on purpose (see this
       script's own header comment on why), so there was no visible
