@@ -1910,7 +1910,7 @@ def render_html(
 
 <meta
   name="description"
-  content="HYDRA-UMC / URTC ecosystem status dashboard - maturity, role, family/parent tree, stack and version for all 46 projects"
+  content="HYDRA-UMC / URTC ecosystem status dashboard - maturity, role, family/parent tree, stack and version for all {total} projects"
 >
 
 <title>HYDRA-UMC / URTC Ecosystem Status v3</title>
