@@ -77,8 +77,8 @@ issues automatically, because only scoped, evidence-based work belongs on the
 Roadmap.
 
 After the Project exists, `.github/workflows/seed-ecosystem-roadmap.yml` can
-add the small, curated set of software-only draft items derived from the
-current audit. It is also idempotent and dry-run by default. These are planning
+add the small, curated set of software-only draft items identified while
+auditing the code. It is also idempotent and dry-run by default. These are planning
 records, not public repository issues; convert one to an issue only when its
 scope and owner are ready. `SEED_ITEMS` is a real, human-curated list, not
 an automatic scan - a new repository (or a real recent plan for one that
