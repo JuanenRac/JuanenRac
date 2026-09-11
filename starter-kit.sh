@@ -10,7 +10,7 @@
 # ecosystem already assumes (HYDRA-UMC-SERVER's build-frontend.sh,
 # HYDRA-UMC-SUITE's own discovery, HYDRA-UMC-UPDATER's own
 # default_workspace_root()). Only these 13, not the full ~47-repo
-# catalog - the audit idea this answers ("Starter Kit que descargue los
+# catalog - the request this answers ("Starter Kit que descargue los
 # 12 repositorios core") asked specifically for a small core set, and
 # that's also the smaller, faster, more focused starting point for
 # someone new to the ecosystem. HYDRA-UMC-UPDATER is included precisely
