@@ -20,8 +20,12 @@ build, safety or API manuals from those files.
 Enable a Wiki only on `JuanenRac/JuanenRac`. Its purpose is navigation and
 long-lived ecosystem context:
 
-1. **Home:** what HYDRA-UMC and URTC are, the 47% global reference and the
-   boundary between software readiness and hardware evidence.
+1. **Home:** what HYDRA-UMC and URTC are, the boundary between software
+   readiness and hardware evidence, and a link to `README.md`'s own
+   "Ecosystem Progress" reference bar for the current global percentage -
+   never a number copied here, since that figure moves as the ecosystem
+   does and a copy would silently go stale the next time it does (see
+   "Single source of public technical documentation" above).
 2. **Architecture map:** links to HYDRA-UMC-OS, HYDRA-UMC-SDK, firmware,
    Server and the public dashboard.
 3. **Operator glossary:** terms such as CM5, URTC, bridge, fail-safe and
