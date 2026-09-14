@@ -28,6 +28,9 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 
 `[██████████▊░░░░░░░░░] 54%` — Reference only. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 
+> [!IMPORTANT]
+> 🛠️ **Project on hold — building the real hardware.** Active development is paused while the physical robotics cell (frames, wiring, the real CM5 and STM32 boards) gets built for real, so the next phase of work has actual hardware to run and validate against, not just a bar going up. Work picks back up once that build is in place.
+
 ---
 
 ## 🚀 Key Features & Scalability

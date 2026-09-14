@@ -28,6 +28,9 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 
 `[██████████▊░░░░░░░░░] 54%` — Orientierungswert. Der Meilenstein 100 % ist ein vollständig integriertes Ökosystem auf realer Hardware.
 
+> [!IMPORTANT]
+> 🛠️ **Projekt pausiert — der echte Hardwareaufbau läuft.** Die aktive Entwicklung ruht, während die physische Zelle (Rahmen, Verkabelung, die echten CM5- und STM32-Platinen) wirklich aufgebaut wird, damit die nächste Arbeitsphase echte Hardware zum Ausführen und Validieren hat statt nur eines steigenden Balkens. Die Arbeit geht weiter, sobald dieser Aufbau steht.
+
 ---
 
 ## 🚀 Hauptmerkmale & Skalierbarkeit
