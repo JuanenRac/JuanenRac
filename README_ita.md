@@ -28,6 +28,9 @@ Benvenuti nell'**Ecosistema HYDRA-UMC**, una piattaforma di robotica industriale
 
 `[██████████▊░░░░░░░░░] 54%` — Indicazione orientativa. Il traguardo 100% è un ecosistema integrato operante su hardware reale.
 
+> [!IMPORTANT]
+> 🛠️ **Progetto in pausa — costruzione dell'hardware reale.** Lo sviluppo attivo è sospeso mentre si costruisce davvero la cella fisica (telai, cablaggio, le vere schede CM5 e STM32), così che la prossima fase di lavoro abbia hardware reale su cui girare e validarsi, non solo una barra che sale. Il lavoro riprenderà una volta completata questa costruzione.
+
 ---
 
 ## 🚀 Caratteristiche Chiave e Scalabilità
