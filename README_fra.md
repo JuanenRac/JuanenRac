@@ -28,6 +28,9 @@ Bienvenue dans l'**Écosystème HYDRA-UMC**, une plateforme robotique industriel
 
 `[██████████▊░░░░░░░░░] 54%` — Indication de référence. Le jalon 100 % correspond à un écosystème intégré fonctionnant sur du matériel réel.
 
+> [!IMPORTANT]
+> 🛠️ **Projet en pause — construction du matériel réel.** Le développement actif est suspendu le temps de construire pour de vrai la cellule physique (châssis, câblage, les vraies cartes CM5 et STM32), afin que la prochaine phase de travail dispose d'un matériel réel sur lequel s'exécuter et se valider, pas seulement d'une barre qui progresse. Le travail reprendra une fois cette construction en place.
+
 ---
 
 ## 🚀 Caractéristiques Clés et Évolutivité
