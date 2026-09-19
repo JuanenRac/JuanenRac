@@ -144,6 +144,7 @@ sotto.
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | App mobile nativa Kotlin con login biometrico per la gestione remota. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | App mobile Flutter per iOS/iPadOS con sincronizzazione WebSocket in tempo reale. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | Editor grafico URDF per convalidare e caricare modelli di robot nel catalogo. |
+| [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | Editor desktop di modelli STL - trasforma, sostituisce, rimuove e aggiunge veri pezzi nel catalogo di modelli condiviso. |
 
 
 ### 🔧 Core e strumenti URTC
