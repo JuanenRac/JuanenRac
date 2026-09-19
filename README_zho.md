@@ -142,6 +142,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 面向 iOS/iPadOS 的 Flutter 移动应用，支持实时 WebSocket 同步。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 图形化 URDF 编辑器，用于校验并推送机器人模型至目录。 |
+| [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 桌面 STL 模型编辑器 - 在共享模型目录中变换、替换、移除和添加真实部件。 |
 
 
 ### 🔧 URTC 核心与工具
