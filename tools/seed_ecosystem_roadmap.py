@@ -310,7 +310,7 @@ DELIVERED_ITEMS = (
     ),
     _item(
         "Keep the seven README translations in step",
-        "Every repository",
+        "Every repository (including HYDRA-UMC-DOCS-QA)",
         "Platform Foundation",
         "Established",
         "Local test",
@@ -660,6 +660,50 @@ NEXT_ITEMS = (
         "High",
         "Refuse to report success unless the target identity and firmware hash match.",
         "Tests for a wrong target and a wrong hash; a recovery procedure is documented for an interrupted flash.",
+    ),
+)
+
+NEXT_ITEMS = NEXT_ITEMS + (
+    _item(
+        "Keep visual simulation apart from confirmation of real motion in Studio",
+        "HYDRA-UMC-STUDIO",
+        "Applications",
+        "Established",
+        "Local test",
+        "High",
+        "Make it impossible to read a simulated pose as a confirmed machine movement.",
+        "Every motion control shows whether the pose is simulated or confirmed by the machine; tests cover both states.",
+    ),
+    _item(
+        "Write a display compatibility matrix for the touch panel",
+        "HYDRA-UMC-DSI",
+        "Applications",
+        "Established",
+        "Documentation",
+        "Low",
+        "Document supported panels, orientation, refresh rate and the start-up sequence as a matrix to be filled in on hardware.",
+        "A matrix in the documentation with every cell marked as measured or not yet measured.",
+    ),
+    _item(
+        "Validate limits, axes, basic collisions and mesh paths when saving a URDF",
+        "HYDRA-UMC-EDITOR-URDF",
+        "Applications",
+        "Established",
+        "Local test",
+        "Normal",
+        "Refuse to save a model with impossible limits, unnormalized axes, colliding links or a missing mesh.",
+        "A validator with one failing fixture per rule and a save that reports the first failure.",
+    ),
+    _item(
+        "Show delivered, ready, blocked and hardware work on the Roadmap",
+        "JuanenRac",
+        "Platform Foundation",
+        "Established",
+        "Documentation",
+        "Normal",
+        "Make the Roadmap show what has moved and what is waiting, not only a backlog.",
+        "Delivered: the seed carries a status, a hardware dependency and a blocker per item, and a re-run never moves a card that was moved by hand.",
+        status="Done",
     ),
 )
 
