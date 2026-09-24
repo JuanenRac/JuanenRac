@@ -93,6 +93,15 @@ repositories under this account have no `SEED_ITEMS` entry mentioning them
 at all yet. That is a prompt for a human to decide whether one is actually
 ready to write, never something this script writes for itself.
 
+The curated list covers four kinds of item, so the board shows movement and not
+only what is left: work that has shipped (Status `Done`), scoped software work
+that is ready or in progress, software work that waits for a person's decision
+(Status `Blocked`, `Blocked by` starting with `Decision:`), and work that needs
+hardware or an external tool (the `Hardware dependency` field is set and the item
+is never marked done on software evidence alone). Each entry may set its own
+`status`, `hardware` and `blocked_by`. A re-run sets Status and `Blocked by` only
+when it creates an item, so a card moved by hand stays where it was put.
+
 ## Issues, pull requests and Discussions
 
 The central issue forms in `.github/ISSUE_TEMPLATE/` collect reproducible
