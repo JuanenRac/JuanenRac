@@ -896,28 +896,35 @@ def project_fields(token: str, project_id: str) -> dict[str, dict]:
     return {field["name"]: field for field in data["fields"]["nodes"] if field}
 
 
-def existing_draft_items(token: str, project_id: str) -> dict[str, str]:
-    data = graphql(
-        token,
-        """
-        query ProjectItems($projectId: ID!) {
+def _all_items(token: str, project_id: str, item_fields: str) -> list[dict]:
+    """Every item of the Project, following the cursor 100 items at a time."""
+    query = """
+        query ProjectItems($projectId: ID!, $after: String) {
           node(id: $projectId) {
             ... on ProjectV2 {
-              items(first: 100) {
-                nodes {
-                  id
-                  content { ... on DraftIssue { title } }
-                }
+              items(first: 100, after: $after) {
+                pageInfo { hasNextPage endCursor }
+                nodes { %s }
               }
             }
           }
         }
-        """,
-        {"projectId": project_id},
-    )["node"]
+        """ % item_fields
+    nodes: list[dict] = []
+    after = None
+    while True:
+        page = graphql(token, query, {"projectId": project_id, "after": after})["node"]["items"]
+        nodes.extend(page["nodes"])
+        if not page["pageInfo"]["hasNextPage"]:
+            return nodes
+        after = page["pageInfo"]["endCursor"]
+
+
+def existing_draft_items(token: str, project_id: str) -> dict[str, str]:
+    nodes = _all_items(token, project_id, "id content { ... on DraftIssue { title } }")
     return {
         item["content"]["title"]: item["id"]
-        for item in data["items"]["nodes"]
+        for item in nodes
         if item.get("content") and item["content"].get("title")
     }
 
@@ -926,27 +933,12 @@ def items_without_status(token: str, project_id: str) -> set[str]:
     """Ids of items whose Status is empty - which is what a field re-creation
     leaves behind. Those get their default Status again; every item that has
     one keeps it."""
-    data = graphql(
+    nodes = _all_items(
         token,
-        """
-        query ProjectItemStatus($projectId: ID!) {
-          node(id: $projectId) {
-            ... on ProjectV2 {
-              items(first: 100) {
-                nodes {
-                  id
-                  fieldValueByName(name: "Status") {
-                    ... on ProjectV2ItemFieldSingleSelectValue { name }
-                  }
-                }
-              }
-            }
-          }
-        }
-        """,
-        {"projectId": project_id},
-    )["node"]
-    return {item["id"] for item in data["items"]["nodes"] if not item.get("fieldValueByName")}
+        project_id,
+        'id fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } }',
+    )
+    return {item["id"] for item in nodes if not item.get("fieldValueByName")}
 
 
 def create_draft_item(token: str, project_id: str, item: dict) -> str:
