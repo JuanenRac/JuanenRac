@@ -922,6 +922,33 @@ def existing_draft_items(token: str, project_id: str) -> dict[str, str]:
     }
 
 
+def items_without_status(token: str, project_id: str) -> set[str]:
+    """Ids of items whose Status is empty - which is what a field re-creation
+    leaves behind. Those get their default Status again; every item that has
+    one keeps it."""
+    data = graphql(
+        token,
+        """
+        query ProjectItemStatus($projectId: ID!) {
+          node(id: $projectId) {
+            ... on ProjectV2 {
+              items(first: 100) {
+                nodes {
+                  id
+                  fieldValueByName(name: "Status") {
+                    ... on ProjectV2ItemFieldSingleSelectValue { name }
+                  }
+                }
+              }
+            }
+          }
+        }
+        """,
+        {"projectId": project_id},
+    )["node"]
+    return {item["id"] for item in data["items"]["nodes"] if not item.get("fieldValueByName")}
+
+
 def create_draft_item(token: str, project_id: str, item: dict) -> str:
     if item.get("hardware", "None") == "None":
         boundary = (
@@ -1000,6 +1027,7 @@ def main() -> int:
     viewer, _ = viewer_projects(token)
     target = project(token)
     existing = existing_draft_items(token, target["id"])
+    empty_status = items_without_status(token, target["id"])
     missing = [item for item in SEED_ITEMS if item["title"] not in existing]
     print(f"ROADMAP_SEED=PLAN project={target['url']} existing={len(existing)} missing={len(missing)} apply={args.apply}")
     for item in missing:
@@ -1043,7 +1071,7 @@ def main() -> int:
             print(f"ROADMAP_ITEM=RECONCILED title={item['title']}")
         # Status and "Blocked by" are set only when the item is created: they are
         # what people move on the board, and a re-run must not undo that.
-        if is_new:
+        if is_new or item_id in empty_status:
             set_select(token, target["id"], item_id, fields["Status"], item.get("status", "Backlog"))
             set_text(token, target["id"], item_id, fields["Blocked by"]["id"], item.get("blocked_by", "None"))
         set_text(token, target["id"], item_id, fields["Affected repositories"]["id"], item["repository"])
