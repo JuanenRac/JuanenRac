@@ -54,6 +54,18 @@ from hydra_umc_updater.ecosystem_catalog import parse_catalog
 from hydra_umc_updater.github_client import RemoteStatus, discover_remote_projects
 from hydra_umc_updater.registry import ProjectEntry
 
+# URTC and A.R.M.O.R. ship their own dedicated updater/discovery client too
+# (urtc-updater, armor-updater) - each is public and needs no token, same as
+# HYDRA-UMC's own discover_remote_projects above. Aliased on import: all
+# three packages name this function identically, and ProjectEntry/
+# RemoteStatus from all three are duck-type compatible with the renderers
+# below (same field names: name/stack/deploy/tech/notes/maturity/role/
+# family/parent/native_version) even though they are technically different
+# classes - each one's own manifest schema is a superset or exact match of
+# what this file actually reads.
+from urtc_updater.github_client import discover_remote_projects as discover_urtc_projects
+from armor_updater.github_client import discover_remote_projects as discover_armor_projects
+
 
 # ---------------------------------------------------------------------------
 # Output
@@ -976,7 +988,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Operator interfaces", "architecture_flow_services": "Server and SDK", "architecture_flow_adapter": "CM5-MCU adapter", "architecture_flow_machine": "MCU / URTC / machine",
         "architecture_relationship_title": "HYDRA-UMC and URTC:", "architecture_relationship_body": "HYDRA-UMC is the platform and cell controller. URTC is its universal robot-tool subsystem, with independent firmware and maintenance tools. The MCU remains authoritative for physical limits and safe stop; UI, network and AI cannot bypass that boundary.",
         "table_urtc_banner": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "A separate, public ecosystem (perimeter security and home automation), same author. Unlike the table above, this list is static (refreshed by hand alongside this generator), not fetched live.", "th_armor_desc": "Description",
+        "section_by_ecosystem": "Projects by ecosystem",
     },
     "es": {
         "architecture_intro": "HYDRA-UMC es un ecosistema modular de ingeniería para control multieje, robótica, conectividad industrial, visión artificial e inteligencia de borde. Mantiene Raspberry Pi OS y las API oficiales de cada proveedor como base, y añade una capa de plataforma HYDRA-UMC versionada, contratos compartidos y servicios opcionales. Este panel explica el sistema; los manifiestos de los repositorios y la tabla generada aportan los datos específicos de cada proyecto.",
@@ -987,7 +999,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Interfaces de operador", "architecture_flow_services": "Server y SDK", "architecture_flow_adapter": "Adaptador CM5-MCU", "architecture_flow_machine": "MCU / URTC / máquina",
         "architecture_relationship_title": "HYDRA-UMC y URTC:", "architecture_relationship_body": "HYDRA-UMC es la plataforma y el controlador de celda. URTC es su subsistema universal de herramientas robóticas, con firmware y utilidades de mantenimiento independientes. El MCU conserva la autoridad sobre límites físicos y parada segura; UI, red e IA no pueden saltarse esa frontera.",
         "table_urtc_banner": "URTC - un producto independiente con firmware y utilidades de mantenimiento propios, coordinado con HYDRA-UMC por FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un ecosistema aparte, público (seguridad perimetral y automatización del hogar), del mismo autor. A diferencia de la tabla de arriba, esta lista es estática (actualizada a mano junto con este generador), no se obtiene en vivo.", "th_armor_desc": "Descripción",
+        "section_by_ecosystem": "Proyectos por ecosistema",
     },
     "fr": {
         "architecture_intro": "HYDRA-UMC est un écosystème d’ingénierie modulaire pour le contrôle multi-axes, la robotique, la connectivité industrielle, la vision et l’intelligence de périphérie. Il conserve Raspberry Pi OS et les API officielles comme base, puis ajoute une couche de plateforme HYDRA-UMC versionnée, des contrats partagés et des services optionnels. Ce tableau explique le système ; les manifestes des dépôts et le tableau généré fournissent les faits par projet.",
@@ -998,7 +1010,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Interfaces opérateur", "architecture_flow_services": "Server et SDK", "architecture_flow_adapter": "Adaptateur CM5-MCU", "architecture_flow_machine": "MCU / URTC / machine",
         "architecture_relationship_title": "HYDRA-UMC et URTC :", "architecture_relationship_body": "HYDRA-UMC est la plateforme et le contrôleur de cellule. URTC est son sous-système universel d’outils robotiques, avec firmware et outils de maintenance indépendants. Le MCU garde l’autorité sur les limites physiques et l’arrêt sûr ; interface, réseau et IA ne peuvent pas contourner cette frontière.",
         "table_urtc_banner": "URTC - un produit indépendant avec son propre firmware et ses propres outils de maintenance, coordonné avec HYDRA-UMC via FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un écosystème séparé et public (sécurité périmétrique et domotique), du même auteur. Contrairement au tableau ci-dessus, cette liste est statique (mise à jour à la main avec ce générateur), non récupérée en direct.", "th_armor_desc": "Description",
+        "section_by_ecosystem": "Projets par écosystème",
     },
     "it": {
         "architecture_intro": "HYDRA-UMC è un ecosistema ingegneristico modulare per controllo multiasse, robotica, connettività industriale, visione artificiale e intelligenza edge. Mantiene Raspberry Pi OS e le API ufficiali dei fornitori come base, quindi aggiunge una piattaforma HYDRA-UMC versionata, contratti condivisi e servizi opzionali. Questa dashboard spiega il sistema; i manifesti dei repository e la tabella generata forniscono i fatti per progetto.",
@@ -1009,7 +1021,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Interfacce operatore", "architecture_flow_services": "Server e SDK", "architecture_flow_adapter": "Adattatore CM5-MCU", "architecture_flow_machine": "MCU / URTC / macchina",
         "architecture_relationship_title": "HYDRA-UMC e URTC:", "architecture_relationship_body": "HYDRA-UMC è la piattaforma e il controllore di cella. URTC è il suo sottosistema universale per utensili robotici, con firmware e strumenti di manutenzione indipendenti. Il MCU mantiene l’autorità sui limiti fisici e sull’arresto sicuro; UI, rete e IA non possono aggirare quel confine.",
         "table_urtc_banner": "URTC - un prodotto indipendente con firmware e strumenti di manutenzione propri, coordinato con HYDRA-UMC via FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un ecosistema a parte, pubblico (sicurezza perimetrale e domotica), dello stesso autore. A differenza della tabella sopra, questo elenco è statico (aggiornato a mano insieme a questo generatore), non recuperato in tempo reale.", "th_armor_desc": "Descrizione",
+        "section_by_ecosystem": "Progetti per ecosistema",
     },
     "de": {
         "architecture_intro": "HYDRA-UMC ist ein modulares Engineering-Ökosystem für Mehrachsensteuerung, Robotik, industrielle Konnektivität, maschinelles Sehen und Edge-Intelligenz. Raspberry Pi OS und offizielle Hersteller-APIs bleiben die Basis; darüber liegen eine versionierte HYDRA-UMC-Plattformschicht, gemeinsame Verträge und optionale Dienste. Dieses Dashboard erklärt das System; Repository-Manifeste und die erzeugte Tabelle liefern projektbezogene Fakten.",
@@ -1020,7 +1032,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Bedienoberflächen", "architecture_flow_services": "Server und SDK", "architecture_flow_adapter": "CM5-MCU-Adapter", "architecture_flow_machine": "MCU / URTC / Maschine",
         "architecture_relationship_title": "HYDRA-UMC und URTC:", "architecture_relationship_body": "HYDRA-UMC ist Plattform und Zellensteuerung. URTC ist das universelle Roboterwerkzeug-Subsystem mit unabhängiger Firmware und Wartungswerkzeugen. Der MCU behält die Autorität über physische Grenzen und sicheren Stopp; UI, Netzwerk und KI können diese Grenze nicht umgehen.",
         "table_urtc_banner": "URTC - ein eigenständiges Produkt mit eigener Firmware und eigenen Wartungswerkzeugen, über FDCAN mit HYDRA-UMC koordiniert.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Ein separates, öffentliches Ökosystem (Perimetersicherheit und Hausautomation) desselben Autors. Anders als die Tabelle oben ist diese Liste statisch (von Hand zusammen mit diesem Generator aktualisiert), nicht live abgerufen.", "th_armor_desc": "Beschreibung",
+        "section_by_ecosystem": "Projekte nach Ökosystem",
     },
     "zh": {
         "architecture_intro": "HYDRA-UMC 是面向多轴控制、机器人、工业连接、机器视觉和边缘智能的模块化工程生态系统。它以 Raspberry Pi OS 与厂商官方 API 为基础，并增加版本化的 HYDRA-UMC 平台层、共享契约和可选服务。本仪表板说明系统；各仓库的清单文件和生成的项目表提供项目事实。",
@@ -1031,7 +1043,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "操作员界面", "architecture_flow_services": "Server 和 SDK", "architecture_flow_adapter": "CM5-MCU 适配器", "architecture_flow_machine": "MCU / URTC / 机器",
         "architecture_relationship_title": "HYDRA-UMC 与 URTC：", "architecture_relationship_body": "HYDRA-UMC 是平台和单元控制器。URTC 是其通用机器人工具子系统，拥有独立的固件和维护工具。MCU 保留物理限制和安全停止的权力；UI、网络和 AI 都不能绕过这一边界。",
         "table_urtc_banner": "URTC - 一个独立产品，拥有自己的固件和维护工具，通过 FDCAN 与 HYDRA-UMC 协调。",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "一个完全独立的公开生态系统（周界安防与家庭自动化），同一作者。与上面的表格不同，这份列表是静态的（随本生成器手动更新），不是实时获取的。", "th_armor_desc": "描述",
+        "section_by_ecosystem": "按生态系统划分的项目",
     },
     "ja": {
         "architecture_intro": "HYDRA-UMC は、多軸制御、ロボティクス、産業接続、マシンビジョン、エッジインテリジェンスのためのモジュール型エンジニアリングエコシステムです。Raspberry Pi OS と公式ベンダー API を基盤に、バージョン管理された HYDRA-UMC プラットフォーム層、共有契約、任意のサービスを追加します。このダッシュボードはシステムを説明し、各リポジトリのマニフェストと生成された表がプロジェクトごとの事実を提供します。",
@@ -1042,7 +1054,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "オペレーターインターフェース", "architecture_flow_services": "Server と SDK", "architecture_flow_adapter": "CM5-MCU アダプター", "architecture_flow_machine": "MCU / URTC / 機械",
         "architecture_relationship_title": "HYDRA-UMC と URTC：", "architecture_relationship_body": "HYDRA-UMC はプラットフォームおよびセルコントローラーです。URTC は独立したファームウェアと保守ツールを持つ汎用ロボットツールサブシステムです。MCU は物理的な制限と安全停止の権限を維持し、UI、ネットワーク、AI はその境界を迂回できません。",
         "table_urtc_banner": "URTC - 独自のファームウェアと保守ツールを持つ独立した製品で、FDCAN 経由で HYDRA-UMC と協調します。",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "同じ作者による、別個の公開エコシステム（周辺セキュリティとホームオートメーション）です。上の表とは異なり、このリストは静的で（このジェネレーターと合わせて手動更新）、リアルタイムには取得されません。", "th_armor_desc": "説明",
+        "section_by_ecosystem": "エコシステム別プロジェクト",
     },
 }
 
@@ -1730,6 +1742,50 @@ def render_maturity_cards(
 
 
 # ---------------------------------------------------------------------------
+# Per-ecosystem counters - HYDRA-UMC, URTC and A.R.M.O.R. are three real,
+# independent ecosystems by the same author, each with its own dedicated
+# discovery client (see this file's own import comment). This renders the
+# grand total (all three combined, already shown by the health section
+# above) broken down per ecosystem, reusing the same `.health-card` styling
+# rather than introducing a fourth card class for what is visually the same
+# kind of number. Deliberately not a filter control (unlike the maturity/
+# deploy cards above): the project table's existing family/deploy/maturity
+# filters already cut across all three ecosystems at once, and each
+# ecosystem is already visually obvious from a project's own name prefix
+# (HYDRA-UMC-*, URTC(-*) or ARMOR-*).
+# ---------------------------------------------------------------------------
+
+ECOSYSTEM_ORDER: tuple[tuple[str, str], ...] = (
+    ("hydra-umc", "HYDRA-UMC"),
+    ("urtc", "URTC"),
+    ("armor", "A.R.M.O.R."),
+)
+
+
+def render_ecosystem_cards(
+    entries: list[ProjectEntry],
+    ecosystem_by_name: dict[str, str],
+) -> str:
+    counts = {key: 0 for key, _ in ECOSYSTEM_ORDER}
+    for entry in entries:
+        key = ecosystem_by_name.get(entry.name)
+        if key in counts:
+            counts[key] += 1
+
+    cards: list[str] = []
+    for key, label in ECOSYSTEM_ORDER:
+        cards.append(
+            f"""
+            <div class="health-card">
+              <div class="number">{counts[key]}</div>
+              <div class="label">{esc(label)}</div>
+            </div>
+            """
+        )
+    return "".join(cards)
+
+
+# ---------------------------------------------------------------------------
 # Role summary (v3)
 # ---------------------------------------------------------------------------
 
@@ -1861,82 +1917,6 @@ def render_roadmap(
 
 
 # ---------------------------------------------------------------------------
-# A.R.M.O.R. - a separate, public ecosystem (perimeter security and home
-# automation), same author. It is NOT discovered live like HYDRA-UMC/URTC
-# above yet, even though every A.R.M.O.R.-* repository is now public and
-# `armor_updater.github_client.discover_remote_projects()` already works
-# with no token at all - this section is still a real but STATIC catalogue
-# for now: the same version, maturity and description each repository's own
-# armor.project.json and ARMOR-DOCS/docs/PROJECT_CATALOG.md carry, refreshed
-# by hand alongside this file rather than fetched at generation time. A
-# future revision should switch this to the same live-discovery pattern as
-# the `hydra_umc_updater` import above, installing the `armor_updater`
-# package (ARMOR-UPDATER's own discovery client) alongside it - now that
-# the ecosystem is public, nothing blocks that anymore except doing it.
-# ---------------------------------------------------------------------------
-
-ARMOR_PROJECTS: list[tuple[str, str, str, str]] = [
-    # (name, version, maturity, description)
-    ("ARMOR-COMMON", "0.2.6", "functional", "Message contracts, validators, conformance vectors, generated types, OpenAPI, shared launcher."),
-    ("ARMOR-RADAR", "0.3.0", "scaffolding", "ESP32-S3 field-node firmware, decoders for the LD2450, LD2461 and presence sensors, and its host-tested core."),
-    ("ARMOR-SOLAR", "0.0.9", "scaffolding", "Solar gateway node: the ESP32-S3 firmware and its panel, and the protocols of Voltronic / MPP Solar inverters and Pylontech and ANT-BMS batteries."),
-    ("ARMOR-ELECTRICAL", "0.0.5", "scaffolding", "Electrical node: sixteen PZEM meters on one serial line, web panel, MQTT, the message of the network's readings and the rules for switching."),
-    ("ARMOR-NETWORK", "0.0.2", "scaffolding", "Local network monitor: the devices on the house's network, the state of the internet (and whose side an outage is on); it only observes."),
-    ("ARMOR-SERVER", "0.3.1", "functional", "Central state (persisted), users, event history, alarms, devices, automations, solar readings, camera watchdog, cameras, evidence, audit."),
-    ("ARMOR-SERVER-AI", "0.2.1", "functional", "Visual profile selection, explainable fusion policy, engine registry."),
-    ("ARMOR-VOICE-AI", "0.2.1", "functional", "Offline voice intents with signed confirmation."),
-    ("ARMOR-STUDIO", "0.3.8", "functional", "Operations console: alarms, devices, automations, users, history, alert rules, PTZ, radar map, solar menus and configuration, and a 2D/3D site designer."),
-    ("ARMOR-ANDROID-CONTROL", "0.3.5", "functional", "Android operator client: arm and disarm, alarms, devices, live radar, solar inverters and batteries, history and alarm notifications."),
-    ("ARMOR-HARDWARE", "0.2.2", "functional", "Enclosure design and the bench acceptance matrix."),
-    ("ARMOR-DEVOPS", "0.3.4", "functional", "Compose topology, central-server test-bench installer, backup and restore, TLS profile, own MQTT broker."),
-    ("ARMOR-SIMULATOR", "0.2.3", "functional", "Scenarios and repeatable faults."),
-    ("ARMOR-UPDATER", "0.0.2", "scaffolding", "Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required)."),
-    ("ARMOR-DOCS", "0.4.8", "functional", "Canonical documentation and the capability matrix."),
-]
-
-
-def render_armor_section() -> str:
-    rows: list[str] = []
-    for name, version, maturity, description in ARMOR_PROJECTS:
-        css_class = MATURITY_CLASSES.get(maturity, "maturity-scaffolding")
-        maturity_label = esc(maturity.capitalize())
-        rows.append(
-            f"""
-            <tr>
-              <td>
-                <a href="{esc(repo_url(name))}" target="_blank" rel="noopener noreferrer">{esc(name)}</a>
-              </td>
-              <td><span class="maturity-badge {css_class}">{maturity_label}</span></td>
-              <td class="version-cell">{esc(version)}</td>
-              <td>{esc(description)}</td>
-            </tr>
-            """
-        )
-    return f"""
-  <section class="section armor-section">
-    <div class="section-title" data-i18n="armor_section_title">A.R.M.O.R.</div>
-    <p class="armor-section-intro" data-i18n="armor_section_intro">
-      A separate, public ecosystem (perimeter security and home automation), same author. Unlike the table above, this
-      list is static (refreshed by hand alongside this generator), not fetched live at generation time.
-    </p>
-    <table class="armor-table">
-      <thead>
-        <tr>
-          <th data-i18n="th_project">Project</th>
-          <th data-i18n="th_maturity">Maturity</th>
-          <th data-i18n="th_version">Version</th>
-          <th data-i18n="th_armor_desc">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {"".join(rows)}
-      </tbody>
-    </table>
-  </section>
-"""
-
-
-# ---------------------------------------------------------------------------
 # HTML
 # ---------------------------------------------------------------------------
 
@@ -1944,6 +1924,7 @@ def render_html(
     entries: list[ProjectEntry],
     results: dict[str, RemoteStatus],
     meta: dict[str, RepoMeta],
+    ecosystem_by_name: dict[str, str],
 ) -> str:
     stats = calculate_statistics(entries, results)
 
@@ -1960,7 +1941,7 @@ def render_html(
 
     rows = render_project_rows(entries, results, meta)
 
-    armor_section = render_armor_section()
+    ecosystem_cards = render_ecosystem_cards(entries, ecosystem_by_name)
 
     freshness_html = render_freshness_indicator()
 
@@ -2018,7 +1999,7 @@ def render_html(
 
 <meta
   name="description"
-  content="Electro Hobby 3D ecosystem status dashboard: HYDRA-UMC and URTC live status for {total} projects, plus A.R.M.O.R. (private)"
+  content="Electro Hobby 3D ecosystem status dashboard: live status for {total} projects across the HYDRA-UMC, URTC and A.R.M.O.R. ecosystems"
 >
 
 <title>Electro Hobby 3D - Ecosystem Status</title>
@@ -3653,6 +3634,23 @@ def render_html(
 
 
   <!-- ================================================================
+       PROJECTS BY ECOSYSTEM
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title" data-i18n="section_by_ecosystem">
+      Projects by ecosystem
+    </div>
+
+    <div class="health">
+      {ecosystem_cards}
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
        DEPLOYMENT
        ================================================================ -->
 
@@ -3874,8 +3872,6 @@ def render_html(
     </div>
 
   </section>
-
-  {armor_section}
 
   <!-- ================================================================
        FOOTER
@@ -4587,19 +4583,51 @@ def main() -> int:
         for status in discovery.projects
         if status.entry.name not in catalog.dashboard_exclude
     ]
-    results = {status.entry.name: status for status in statuses}
-    entries = [status.entry for status in statuses]
-    total = len(entries)
+    results: dict[str, RemoteStatus] = {status.entry.name: status for status in statuses}
+    entries: list[ProjectEntry] = [status.entry for status in statuses]
+    ecosystem_by_name: dict[str, str] = {entry.name: "hydra-umc" for entry in entries}
+    all_discovery_errors = list(discovery.errors)
+
+    hydra_umc_total = len(entries)
 
     # Do not replace a working public dashboard with an empty page when the
     # API token, GitHub listing or manifests are temporarily unavailable.
     # An intentionally empty ecosystem is not a valid production state.
-    if total == 0:
+    if hydra_umc_total == 0:
         print(
             "ERROR: no valid HYDRA-UMC manifests were discovered; preserving the current dashboard.",
             file=sys.stderr,
         )
         return 1
+
+    # URTC and A.R.M.O.R. each ship their own dedicated updater/discovery
+    # client (see the import comment above) - both ecosystems are public, so
+    # this needs no separate catalog file or token. A single ecosystem's own
+    # discovery failing (a real GitHub outage, a bad manifest push) no
+    # longer takes the whole dashboard down with it: it is logged as a
+    # warning and that ecosystem's own count for this run is 0, same as any
+    # other transient discovery error already handled per-project below -
+    # only a HYDRA-UMC-wide failure (checked above) still preserves the
+    # previous dashboard outright, since HYDRA-UMC never has zero real
+    # projects and an empty result there is never legitimate.
+    for ecosystem_key, ecosystem_label, discover in (
+        ("urtc", "URTC", discover_urtc_projects),
+        ("armor", "A.R.M.O.R.", discover_armor_projects),
+    ):
+        print(f"Discovering {ecosystem_label} repositories for {catalog.github_owner} from GitHub...", file=sys.stderr)
+        try:
+            sub_discovery = discover(catalog.github_owner, token=GITHUB_TOKEN or None)
+        except Exception as exc:  # noqa: BLE001 - a real, unexpected client failure must not take down the other two ecosystems
+            print(f"WARNING: {ecosystem_label} discovery failed: {exc}", file=sys.stderr)
+            continue
+        for status in sub_discovery.projects:
+            results[status.entry.name] = status
+            entries.append(status.entry)
+            ecosystem_by_name[status.entry.name] = ecosystem_key
+        all_discovery_errors.extend(sub_discovery.errors)
+        print(f"{ecosystem_label}: {len(sub_discovery.projects)} project(s) discovered.", file=sys.stderr)
+
+    total = len(entries)
 
     ok = sum(1 for result in results.values() if result.version is not None)
 
@@ -4607,18 +4635,18 @@ def main() -> int:
 
     print(
         f"{ok}/{total} resolved "
-        f"({errors} errors/unknown).",
+        f"({errors} errors/unknown) across all three ecosystems.",
         file=sys.stderr,
     )
 
     # Invalid manifests are intentionally not rendered as projects. They are
     # still reported in CI so a repository cannot disappear silently.
-    if discovery.errors:
+    if all_discovery_errors:
         print(
             "\nDiscovery warnings:",
             file=sys.stderr,
         )
-        for error in discovery.errors:
+        for error in all_discovery_errors:
             print(f"  - {error}", file=sys.stderr)
 
     print(
@@ -4655,7 +4683,7 @@ def main() -> int:
     # Template indentation must not leak as trailing whitespace into the
     # published static page. Normalising it here keeps local and CI-generated
     # output identical without manually editing generated HTML.
-    rendered = render_html(entries, results, meta)
+    rendered = render_html(entries, results, meta, ecosystem_by_name)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(clean_rendered, encoding="utf-8")
 
