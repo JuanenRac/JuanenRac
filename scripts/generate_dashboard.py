@@ -980,80 +980,80 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
 # public technical model stays equally available in every dashboard language.
 ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
     "en": {
-        "architecture_intro": "HYDRA-UMC is a modular engineering ecosystem for multi-axis control, robotics, industrial connectivity, machine vision and edge intelligence. It keeps Raspberry Pi OS and official vendor APIs as its base, then adds a versioned HYDRA-UMC platform layer, shared contracts and optional services. This dashboard explains the system while repository manifests and the generated table provide project-specific facts.",
-        "architecture_section": "System architecture", "architecture_platform_title": "Platform foundation", "architecture_platform_body": "Raspberry Pi OS ARM64 remains the operating-system base. The HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.",
+        "architecture_intro": "Electro Hobby 3D is three independent engineering ecosystems by the same author: HYDRA-UMC (industrial multi-robot platform), URTC (its universal robot-tool subsystem, an independent product with its own firmware) and A.R.M.O.R. (perimeter security and home automation). This dashboard discovers and lists every one of them live; each ecosystem's own family groups are labeled below, and HYDRA-UMC's own deeper architecture is detailed in the section right after this one.",
+        "architecture_section": "HYDRA-UMC: System architecture", "architecture_platform_title": "Platform foundation", "architecture_platform_body": "Raspberry Pi OS ARM64 remains the operating-system base. The HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.",
         "architecture_contracts_title": "Contracts and operations", "architecture_contracts_body": "The SDK defines stable data and command contracts; Server, UI and tools use those contracts instead of raw hardware protocols.",
         "architecture_perception_title": "Perception and intelligence", "architecture_perception_body": "Vision and AI are optional capabilities. Their output is validated before it can influence a mission; they are never safety authority.",
         "architecture_engineering_title": "Engineering and industry", "architecture_engineering_body": "Simulation, telemetry and standards make the physical cell observable, testable and interoperable.",
         "architecture_flow_operator": "Operator interfaces", "architecture_flow_services": "Server and SDK", "architecture_flow_adapter": "CM5-MCU adapter", "architecture_flow_machine": "MCU / URTC / machine",
         "architecture_relationship_title": "HYDRA-UMC and URTC:", "architecture_relationship_body": "HYDRA-UMC is the platform and cell controller. URTC is its universal robot-tool subsystem, with independent firmware and maintenance tools. The MCU remains authoritative for physical limits and safe stop; UI, network and AI cannot bypass that boundary.",
-        "table_urtc_banner": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.",
+        "table_hydra_umc_banner": "HYDRA-UMC - the industrial multi-robot platform and cell controller, this dashboard's first ecosystem.", "table_urtc_banner": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.", "table_armor_banner": "A.R.M.O.R. - a separate, public perimeter-security and home-automation ecosystem, same author.",
         "section_by_ecosystem": "Projects by ecosystem",
     },
     "es": {
-        "architecture_intro": "HYDRA-UMC es un ecosistema modular de ingeniería para control multieje, robótica, conectividad industrial, visión artificial e inteligencia de borde. Mantiene Raspberry Pi OS y las API oficiales de cada proveedor como base, y añade una capa de plataforma HYDRA-UMC versionada, contratos compartidos y servicios opcionales. Este panel explica el sistema; los manifiestos de los repositorios y la tabla generada aportan los datos específicos de cada proyecto.",
-        "architecture_section": "Arquitectura del sistema", "architecture_platform_title": "Base de plataforma", "architecture_platform_body": "Raspberry Pi OS ARM64 mantiene el papel de sistema operativo base. La capa HYDRA-UMC aporta perfiles de dispositivo, diagnóstico y ciclo de vida de servicios.",
+        "architecture_intro": "Electro Hobby 3D son tres ecosistemas de ingeniería independientes del mismo autor: HYDRA-UMC (plataforma industrial multi-robot), URTC (su subsistema universal de herramientas, un producto independiente con firmware propio) y A.R.M.O.R. (seguridad perimetral y automatización del hogar). Este panel descubre y lista los tres en vivo; los grupos de familia de cada ecosistema aparecen etiquetados más abajo, y la arquitectura propia de HYDRA-UMC se detalla justo en la siguiente sección.",
+        "architecture_section": "HYDRA-UMC: Arquitectura del sistema", "architecture_platform_title": "Base de plataforma", "architecture_platform_body": "Raspberry Pi OS ARM64 mantiene el papel de sistema operativo base. La capa HYDRA-UMC aporta perfiles de dispositivo, diagnóstico y ciclo de vida de servicios.",
         "architecture_contracts_title": "Contratos y operaciones", "architecture_contracts_body": "El SDK define contratos estables de datos y comandos; Server, las interfaces y las herramientas los usan en lugar de protocolos de hardware sin abstraer.",
         "architecture_perception_title": "Percepción e inteligencia", "architecture_perception_body": "La visión y la IA son capacidades opcionales. Su salida se valida antes de influir en una misión y nunca tiene autoridad de seguridad.",
         "architecture_engineering_title": "Ingeniería e industria", "architecture_engineering_body": "La simulación, la telemetría y los estándares hacen que la celda física sea observable, comprobable e interoperable.",
         "architecture_flow_operator": "Interfaces de operador", "architecture_flow_services": "Server y SDK", "architecture_flow_adapter": "Adaptador CM5-MCU", "architecture_flow_machine": "MCU / URTC / máquina",
         "architecture_relationship_title": "HYDRA-UMC y URTC:", "architecture_relationship_body": "HYDRA-UMC es la plataforma y el controlador de celda. URTC es su subsistema universal de herramientas robóticas, con firmware y utilidades de mantenimiento independientes. El MCU conserva la autoridad sobre límites físicos y parada segura; UI, red e IA no pueden saltarse esa frontera.",
-        "table_urtc_banner": "URTC - un producto independiente con firmware y utilidades de mantenimiento propios, coordinado con HYDRA-UMC por FDCAN.",
+        "table_hydra_umc_banner": "HYDRA-UMC - la plataforma industrial multi-robot y el controlador de celda, el primer ecosistema de este panel.", "table_urtc_banner": "URTC - un producto independiente con firmware y utilidades de mantenimiento propios, coordinado con HYDRA-UMC por FDCAN.", "table_armor_banner": "A.R.M.O.R. - un ecosistema aparte, publico, de seguridad perimetral y automatizacion del hogar, del mismo autor.",
         "section_by_ecosystem": "Proyectos por ecosistema",
     },
     "fr": {
-        "architecture_intro": "HYDRA-UMC est un écosystème d’ingénierie modulaire pour le contrôle multi-axes, la robotique, la connectivité industrielle, la vision et l’intelligence de périphérie. Il conserve Raspberry Pi OS et les API officielles comme base, puis ajoute une couche de plateforme HYDRA-UMC versionnée, des contrats partagés et des services optionnels. Ce tableau explique le système ; les manifestes des dépôts et le tableau généré fournissent les faits par projet.",
-        "architecture_section": "Architecture du système", "architecture_platform_title": "Fondation de plateforme", "architecture_platform_body": "Raspberry Pi OS ARM64 reste la base du système d’exploitation. La couche HYDRA-UMC apporte profils d’appareil, diagnostic et cycle de vie des services.",
+        "architecture_intro": "Electro Hobby 3D regroupe trois écosystèmes d'ingénierie indépendants du même auteur : HYDRA-UMC (plateforme industrielle multi-robot), URTC (son sous-système universel d'outils, un produit indépendant avec son propre firmware) et A.R.M.O.R. (sécurité périmétrique et domotique). Ce tableau de bord découvre et liste les trois en direct ; les groupes de famille de chaque écosystème sont indiqués plus bas, et l'architecture propre de HYDRA-UMC est détaillée juste après cette section.",
+        "architecture_section": "HYDRA-UMC : Architecture du système", "architecture_platform_title": "Fondation de plateforme", "architecture_platform_body": "Raspberry Pi OS ARM64 reste la base du système d’exploitation. La couche HYDRA-UMC apporte profils d’appareil, diagnostic et cycle de vie des services.",
         "architecture_contracts_title": "Contrats et opérations", "architecture_contracts_body": "Le SDK définit des contrats stables de données et de commandes ; Server, les interfaces et les outils les utilisent au lieu de protocoles matériels bruts.",
         "architecture_perception_title": "Perception et intelligence", "architecture_perception_body": "La vision et l’IA sont des capacités optionnelles. Leur sortie est validée avant d’influencer une mission et n’a jamais autorité sur la sécurité.",
         "architecture_engineering_title": "Ingénierie et industrie", "architecture_engineering_body": "Simulation, télémétrie et standards rendent la cellule physique observable, testable et interopérable.",
         "architecture_flow_operator": "Interfaces opérateur", "architecture_flow_services": "Server et SDK", "architecture_flow_adapter": "Adaptateur CM5-MCU", "architecture_flow_machine": "MCU / URTC / machine",
         "architecture_relationship_title": "HYDRA-UMC et URTC :", "architecture_relationship_body": "HYDRA-UMC est la plateforme et le contrôleur de cellule. URTC est son sous-système universel d’outils robotiques, avec firmware et outils de maintenance indépendants. Le MCU garde l’autorité sur les limites physiques et l’arrêt sûr ; interface, réseau et IA ne peuvent pas contourner cette frontière.",
-        "table_urtc_banner": "URTC - un produit indépendant avec son propre firmware et ses propres outils de maintenance, coordonné avec HYDRA-UMC via FDCAN.",
+        "table_hydra_umc_banner": "HYDRA-UMC - la plateforme industrielle multi-robot et le contrôleur de cellule, le premier écosystème de ce tableau de bord.", "table_urtc_banner": "URTC - un produit indépendant avec son propre firmware et ses propres outils de maintenance, coordonné avec HYDRA-UMC via FDCAN.", "table_armor_banner": "A.R.M.O.R. - un écosystème séparé et public de sécurité périmétrique et de domotique, du même auteur.",
         "section_by_ecosystem": "Projets par écosystème",
     },
     "it": {
-        "architecture_intro": "HYDRA-UMC è un ecosistema ingegneristico modulare per controllo multiasse, robotica, connettività industriale, visione artificiale e intelligenza edge. Mantiene Raspberry Pi OS e le API ufficiali dei fornitori come base, quindi aggiunge una piattaforma HYDRA-UMC versionata, contratti condivisi e servizi opzionali. Questa dashboard spiega il sistema; i manifesti dei repository e la tabella generata forniscono i fatti per progetto.",
-        "architecture_section": "Architettura del sistema", "architecture_platform_title": "Fondazione della piattaforma", "architecture_platform_body": "Raspberry Pi OS ARM64 rimane la base del sistema operativo. Il livello HYDRA-UMC aggiunge profili dispositivo, diagnostica e ciclo di vita dei servizi.",
+        "architecture_intro": "Electro Hobby 3D è composto da tre ecosistemi ingegneristici indipendenti dello stesso autore: HYDRA-UMC (piattaforma industriale multi-robot), URTC (il suo sottosistema universale di utensili, un prodotto indipendente con firmware proprio) e A.R.M.O.R. (sicurezza perimetrale e domotica). Questa dashboard scopre ed elenca tutti e tre dal vivo; i gruppi di famiglia di ogni ecosistema sono etichettati più sotto, e l'architettura propria di HYDRA-UMC è descritta subito nella sezione successiva.",
+        "architecture_section": "HYDRA-UMC: Architettura del sistema", "architecture_platform_title": "Fondazione della piattaforma", "architecture_platform_body": "Raspberry Pi OS ARM64 rimane la base del sistema operativo. Il livello HYDRA-UMC aggiunge profili dispositivo, diagnostica e ciclo di vita dei servizi.",
         "architecture_contracts_title": "Contratti e operazioni", "architecture_contracts_body": "L’SDK definisce contratti stabili per dati e comandi; Server, UI e strumenti li usano invece di protocolli hardware grezzi.",
         "architecture_perception_title": "Percezione e intelligenza", "architecture_perception_body": "Visione e IA sono capacità opzionali. Il loro output viene convalidato prima di influire su una missione e non ha mai autorità sulla sicurezza.",
         "architecture_engineering_title": "Ingegneria e industria", "architecture_engineering_body": "Simulazione, telemetria e standard rendono la cella fisica osservabile, verificabile e interoperabile.",
         "architecture_flow_operator": "Interfacce operatore", "architecture_flow_services": "Server e SDK", "architecture_flow_adapter": "Adattatore CM5-MCU", "architecture_flow_machine": "MCU / URTC / macchina",
         "architecture_relationship_title": "HYDRA-UMC e URTC:", "architecture_relationship_body": "HYDRA-UMC è la piattaforma e il controllore di cella. URTC è il suo sottosistema universale per utensili robotici, con firmware e strumenti di manutenzione indipendenti. Il MCU mantiene l’autorità sui limiti fisici e sull’arresto sicuro; UI, rete e IA non possono aggirare quel confine.",
-        "table_urtc_banner": "URTC - un prodotto indipendente con firmware e strumenti di manutenzione propri, coordinato con HYDRA-UMC via FDCAN.",
+        "table_hydra_umc_banner": "HYDRA-UMC - la piattaforma industriale multi-robot e il controllore di cella, il primo ecosistema di questa dashboard.", "table_urtc_banner": "URTC - un prodotto indipendente con firmware e strumenti di manutenzione propri, coordinato con HYDRA-UMC via FDCAN.", "table_armor_banner": "A.R.M.O.R. - un ecosistema a parte, pubblico, di sicurezza perimetrale e domotica, dello stesso autore.",
         "section_by_ecosystem": "Progetti per ecosistema",
     },
     "de": {
-        "architecture_intro": "HYDRA-UMC ist ein modulares Engineering-Ökosystem für Mehrachsensteuerung, Robotik, industrielle Konnektivität, maschinelles Sehen und Edge-Intelligenz. Raspberry Pi OS und offizielle Hersteller-APIs bleiben die Basis; darüber liegen eine versionierte HYDRA-UMC-Plattformschicht, gemeinsame Verträge und optionale Dienste. Dieses Dashboard erklärt das System; Repository-Manifeste und die erzeugte Tabelle liefern projektbezogene Fakten.",
-        "architecture_section": "Systemarchitektur", "architecture_platform_title": "Plattformbasis", "architecture_platform_body": "Raspberry Pi OS ARM64 bleibt die Betriebssystembasis. Die HYDRA-UMC-Schicht ergänzt Geräteprofile, Diagnose und den Lebenszyklus der Dienste.",
+        "architecture_intro": "Electro Hobby 3D besteht aus drei unabhängigen Engineering-Ökosystemen desselben Autors: HYDRA-UMC (industrielle Multi-Roboter-Plattform), URTC (dessen universelles Werkzeug-Subsystem, ein eigenständiges Produkt mit eigener Firmware) und A.R.M.O.R. (Perimetersicherheit und Hausautomation). Dieses Dashboard entdeckt und listet alle drei live auf; die Familiengruppen jedes Ökosystems sind weiter unten gekennzeichnet, und die eigene Architektur von HYDRA-UMC wird direkt im nächsten Abschnitt beschrieben.",
+        "architecture_section": "HYDRA-UMC: Systemarchitektur", "architecture_platform_title": "Plattformbasis", "architecture_platform_body": "Raspberry Pi OS ARM64 bleibt die Betriebssystembasis. Die HYDRA-UMC-Schicht ergänzt Geräteprofile, Diagnose und den Lebenszyklus der Dienste.",
         "architecture_contracts_title": "Verträge und Betrieb", "architecture_contracts_body": "Das SDK definiert stabile Daten- und Befehlsverträge; Server, Oberflächen und Werkzeuge verwenden sie statt roher Hardwareprotokolle.",
         "architecture_perception_title": "Wahrnehmung und Intelligenz", "architecture_perception_body": "Vision und KI sind optionale Fähigkeiten. Ihre Ausgabe wird validiert, bevor sie eine Mission beeinflussen kann; sie besitzen nie Sicherheitsautorität.",
         "architecture_engineering_title": "Engineering und Industrie", "architecture_engineering_body": "Simulation, Telemetrie und Standards machen die physische Zelle beobachtbar, testbar und interoperabel.",
         "architecture_flow_operator": "Bedienoberflächen", "architecture_flow_services": "Server und SDK", "architecture_flow_adapter": "CM5-MCU-Adapter", "architecture_flow_machine": "MCU / URTC / Maschine",
         "architecture_relationship_title": "HYDRA-UMC und URTC:", "architecture_relationship_body": "HYDRA-UMC ist Plattform und Zellensteuerung. URTC ist das universelle Roboterwerkzeug-Subsystem mit unabhängiger Firmware und Wartungswerkzeugen. Der MCU behält die Autorität über physische Grenzen und sicheren Stopp; UI, Netzwerk und KI können diese Grenze nicht umgehen.",
-        "table_urtc_banner": "URTC - ein eigenständiges Produkt mit eigener Firmware und eigenen Wartungswerkzeugen, über FDCAN mit HYDRA-UMC koordiniert.",
+        "table_hydra_umc_banner": "HYDRA-UMC - die industrielle Multi-Roboter-Plattform und Zellcontroller, das erste Ökosystem dieses Dashboards.", "table_urtc_banner": "URTC - ein eigenständiges Produkt mit eigener Firmware und eigenen Wartungswerkzeugen, über FDCAN mit HYDRA-UMC koordiniert.", "table_armor_banner": "A.R.M.O.R. - ein separates, öffentliches Ökosystem für Perimetersicherheit und Hausautomation desselben Autors.",
         "section_by_ecosystem": "Projekte nach Ökosystem",
     },
     "zh": {
-        "architecture_intro": "HYDRA-UMC 是面向多轴控制、机器人、工业连接、机器视觉和边缘智能的模块化工程生态系统。它以 Raspberry Pi OS 与厂商官方 API 为基础，并增加版本化的 HYDRA-UMC 平台层、共享契约和可选服务。本仪表板说明系统；各仓库的清单文件和生成的项目表提供项目事实。",
-        "architecture_section": "系统架构", "architecture_platform_title": "平台基础", "architecture_platform_body": "Raspberry Pi OS ARM64 仍是操作系统基础。HYDRA-UMC 层增加设备配置文件、诊断和服务生命周期。",
+        "architecture_intro": "Electro Hobby 3D 是同一作者打造的三个独立工程生态系统：HYDRA-UMC（工业多机器人平台）、URTC（其通用工具子系统，一个拥有自己固件的独立产品）和 A.R.M.O.R.（周界安防与家庭自动化）。本仪表板实时发现并列出这三者；下方按生态系统标注了各自的家族分组，HYDRA-UMC 自身的架构详见紧接的下一节。",
+        "architecture_section": "HYDRA-UMC：系统架构", "architecture_platform_title": "平台基础", "architecture_platform_body": "Raspberry Pi OS ARM64 仍是操作系统基础。HYDRA-UMC 层增加设备配置文件、诊断和服务生命周期。",
         "architecture_contracts_title": "契约与运维", "architecture_contracts_body": "SDK 定义稳定的数据和命令契约；Server、界面和工具使用这些契约，而不是原始硬件协议。",
         "architecture_perception_title": "感知与智能", "architecture_perception_body": "视觉和 AI 是可选能力。其输出在影响任务前必须经过验证，且永远不拥有安全权限。",
         "architecture_engineering_title": "工程与工业", "architecture_engineering_body": "仿真、遥测和标准使物理单元可观测、可测试且可互操作。",
         "architecture_flow_operator": "操作员界面", "architecture_flow_services": "Server 和 SDK", "architecture_flow_adapter": "CM5-MCU 适配器", "architecture_flow_machine": "MCU / URTC / 机器",
         "architecture_relationship_title": "HYDRA-UMC 与 URTC：", "architecture_relationship_body": "HYDRA-UMC 是平台和单元控制器。URTC 是其通用机器人工具子系统，拥有独立的固件和维护工具。MCU 保留物理限制和安全停止的权力；UI、网络和 AI 都不能绕过这一边界。",
-        "table_urtc_banner": "URTC - 一个独立产品，拥有自己的固件和维护工具，通过 FDCAN 与 HYDRA-UMC 协调。",
+        "table_hydra_umc_banner": "HYDRA-UMC —— 工业多机器人平台与单元控制器，本仪表盘的第一个生态系统。", "table_urtc_banner": "URTC - 一个独立产品，拥有自己的固件和维护工具，通过 FDCAN 与 HYDRA-UMC 协调。", "table_armor_banner": "A.R.M.O.R. —— 一个完全独立的公开生态系统，用于周界安防与家庭自动化，同一作者。",
         "section_by_ecosystem": "按生态系统划分的项目",
     },
     "ja": {
-        "architecture_intro": "HYDRA-UMC は、多軸制御、ロボティクス、産業接続、マシンビジョン、エッジインテリジェンスのためのモジュール型エンジニアリングエコシステムです。Raspberry Pi OS と公式ベンダー API を基盤に、バージョン管理された HYDRA-UMC プラットフォーム層、共有契約、任意のサービスを追加します。このダッシュボードはシステムを説明し、各リポジトリのマニフェストと生成された表がプロジェクトごとの事実を提供します。",
-        "architecture_section": "システムアーキテクチャ", "architecture_platform_title": "プラットフォーム基盤", "architecture_platform_body": "Raspberry Pi OS ARM64 は OS の基盤として残ります。HYDRA-UMC 層はデバイスプロファイル、診断、サービスライフサイクルを追加します。",
+        "architecture_intro": "Electro Hobby 3D は、同じ著者による3つの独立したエンジニアリングエコシステムです:HYDRA-UMC(産業用マルチロボットプラットフォーム)、URTC(その汎用ツールサブシステムで、独自のファームウェアを持つ独立した製品)、そして A.R.M.O.R.(周辺セキュリティとホームオートメーション)。このダッシュボードは3つ全てをライブで検出・一覧表示します。各エコシステムのファミリーグループは以下にラベル付けされており、HYDRA-UMC 自身のアーキテクチャはこの直後のセクションで詳しく説明されます。",
+        "architecture_section": "HYDRA-UMC:システムアーキテクチャ", "architecture_platform_title": "プラットフォーム基盤", "architecture_platform_body": "Raspberry Pi OS ARM64 は OS の基盤として残ります。HYDRA-UMC 層はデバイスプロファイル、診断、サービスライフサイクルを追加します。",
         "architecture_contracts_title": "契約と運用", "architecture_contracts_body": "SDK は安定したデータおよびコマンド契約を定義し、Server、UI、ツールは生のハードウェアプロトコルの代わりにそれを使用します。",
         "architecture_perception_title": "知覚とインテリジェンス", "architecture_perception_body": "Vision と AI は任意の能力です。出力はミッションに影響する前に検証され、安全権限を持つことはありません。",
         "architecture_engineering_title": "エンジニアリングと産業", "architecture_engineering_body": "シミュレーション、テレメトリ、標準により、物理セルは観測可能、テスト可能、相互運用可能になります。",
         "architecture_flow_operator": "オペレーターインターフェース", "architecture_flow_services": "Server と SDK", "architecture_flow_adapter": "CM5-MCU アダプター", "architecture_flow_machine": "MCU / URTC / 機械",
         "architecture_relationship_title": "HYDRA-UMC と URTC：", "architecture_relationship_body": "HYDRA-UMC はプラットフォームおよびセルコントローラーです。URTC は独立したファームウェアと保守ツールを持つ汎用ロボットツールサブシステムです。MCU は物理的な制限と安全停止の権限を維持し、UI、ネットワーク、AI はその境界を迂回できません。",
-        "table_urtc_banner": "URTC - 独自のファームウェアと保守ツールを持つ独立した製品で、FDCAN 経由で HYDRA-UMC と協調します。",
+        "table_hydra_umc_banner": "HYDRA-UMC — 産業用マルチロボットプラットフォーム兼セル制御装置。本ダッシュボードの最初のエコシステムです。", "table_urtc_banner": "URTC - 独自のファームウェアと保守ツールを持つ独立した製品で、FDCAN 経由で HYDRA-UMC と協調します。", "table_armor_banner": "A.R.M.O.R. — 同じ作者による、別個の公開の周辺セキュリティ・ホームオートメーションエコシステムです。",
         "section_by_ecosystem": "エコシステム別プロジェクト",
     },
 }
@@ -1254,7 +1254,11 @@ def ordered_projects(
     entries: list[ProjectEntry],
 ) -> list[tuple[str, ProjectEntry | None, list[ProjectEntry]]]:
     """Returns [(family_name, parent_or_None, [children_in_family_order]), ...]
-    in family/name order derived from the manifest-resolved project list."""
+    in family/name order derived from the manifest-resolved project list.
+    Ecosystem-agnostic on purpose - this only feeds the family filter
+    <select>, a flat list where plain alphabetical order is the expected,
+    conventional behavior of any dropdown, unlike the big project table
+    (see `ordered_projects_by_ecosystem` below, used there instead)."""
 
     families: dict[str, list[ProjectEntry]] = {}
     for entry in entries:
@@ -1269,6 +1273,43 @@ def ordered_projects(
         order.append((family, parent, children))
 
     return order
+
+
+def ordered_projects_by_ecosystem(
+    entries: list[ProjectEntry],
+    ecosystem_by_name: dict[str, str],
+) -> list[tuple[str, str, list[tuple[str, ProjectEntry | None, list[ProjectEntry]]]]]:
+    """Returns [(ecosystem_key, ecosystem_label, [(family, parent, children), ...]), ...]
+    in `ECOSYSTEM_ORDER` order, each ecosystem's own families in family/name
+    order - the big project table's own real grouping.
+
+    Grouping by ecosystem FIRST (not just family, as `ordered_projects`
+    does for the filter dropdown) matters for real here: several family
+    names are shared across ecosystems by simple convention rather than by
+    meaning - "Ecosystem Operations" alone now holds HYDRA-UMC-UPDATER,
+    URTC-UPDATER AND ARMOR-UPDATER, three unrelated tools that happen to
+    use the same family label - and merging them into one alphabetically-
+    sorted list of ~20 unlabeled family headers from three different
+    ecosystems at once is genuinely disordered to read, not just a
+    cosmetic nit: nothing on the page told a reader whether "Clients" (an
+    A.R.M.O.R. family) or "Core Backend & Clients" (a HYDRA-UMC one) was
+    which ecosystem's, or that "Ecosystem Operations" was about to contain
+    three unrelated tools back to back. Splitting the same family-name
+    bucket per ecosystem instead means a repeated family name shows up
+    once per ecosystem that actually uses it, each time under a clearly
+    labeled ecosystem section, and never mixes projects that only share a
+    label by coincidence.
+    """
+    entries_by_ecosystem: dict[str, list[ProjectEntry]] = {key: [] for key, _ in ECOSYSTEM_ORDER}
+    for entry in entries:
+        key = ecosystem_by_name.get(entry.name)
+        if key in entries_by_ecosystem:
+            entries_by_ecosystem[key].append(entry)
+
+    return [
+        (key, label, ordered_projects(entries_by_ecosystem[key]))
+        for key, label in ECOSYSTEM_ORDER
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -1325,6 +1366,30 @@ def _render_one_row(
         css_class="tech-icon role-icon",
     )
     role_label = esc(ROLE_LABELS.get(entry.role, entry.role))
+
+    # A.R.M.O.R.'s own `role`/`deployment_target` fields are real,
+    # free-text one-line descriptions (up to ~140 characters), not the
+    # short curated single/two-word enum HYDRA-UMC/URTC use for these same
+    # two columns (`ROLE_LABELS`/`DEPLOY_LABELS`) - found for real the
+    # first time this table actually rendered A.R.M.O.R. rows: the raw
+    # value was used as a literal CSS class name (`role-{entry.role}`),
+    # which a value containing spaces silently turns into several bogus,
+    # unstyled class tokens instead of one, and both badges' own
+    # `white-space: nowrap` (deliberately never wrapping a short label)
+    # rendered a full sentence as one very long unbroken line - ballooning
+    # the whole table's width far enough that Version/Status/Last commit,
+    # near the row's right edge, needed a lot of hidden horizontal
+    # scrolling to ever see. Fixed on both sides: a real, CSS-safe class
+    # token here (falls back to a plain "other" modifier for anything
+    # outside the curated enum), and `.role-badge`/`.deploy-badge` in the
+    # stylesheet below now truncate with an ellipsis - never grow the
+    # table - and carry the untruncated text in a real `title` tooltip.
+    role_known = entry.role in ROLE_LABELS
+    role_css_key = entry.role if role_known else "other"
+    role_i18n_attr = f' data-i18n="role_{esc(entry.role)}"' if role_known else ""
+
+    deploy_known = deploy_key in DEPLOY_LABELS
+    deploy_i18n_attr = f' data-i18n="deploy_{deploy_filter}"' if deploy_known else ""
 
     maturity_class = MATURITY_CLASSES.get(entry.maturity, "maturity-scaffolding")
     maturity_label = esc(MATURITY_LABELS.get(entry.maturity, entry.maturity))
@@ -1410,8 +1475,8 @@ def _render_one_row(
           </td>
 
           <td class="role-cell">
-            <span class="role-badge role-{esc(entry.role)}">
-              {role_icon}<span data-i18n="role_{esc(entry.role)}">{role_label}</span>
+            <span class="role-badge role-{esc(role_css_key)}" title="{esc(entry.role)}">
+              {role_icon}<span{role_i18n_attr}>{role_label}</span>
             </span>
           </td>
 
@@ -1426,8 +1491,8 @@ def _render_one_row(
           </td>
 
           <td class="deploy">
-            <span class="deploy-badge">
-              {deploy_icon}<span data-i18n="deploy_{deploy_filter}">{deploy}</span>
+            <span class="deploy-badge" title="{deploy}">
+              {deploy_icon}<span{deploy_i18n_attr}>{deploy}</span>
             </span>
           </td>
 
@@ -1487,50 +1552,67 @@ def _render_one_row(
     return row
 
 
+ECOSYSTEM_BANNER_I18N_KEY: dict[str, str] = {
+    "hydra-umc": "table_hydra_umc_banner",
+    "urtc": "table_urtc_banner",
+    "armor": "table_armor_banner",
+}
+
+ECOSYSTEM_BANNER_FALLBACK_TEXT: dict[str, str] = {
+    "hydra-umc": "HYDRA-UMC - the industrial multi-robot platform and cell controller, this dashboard's first ecosystem.",
+    "urtc": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.",
+    "armor": "A.R.M.O.R. - a separate, public perimeter-security and home-automation ecosystem, same author.",
+}
+
+
 def render_project_rows(
     entries: list[ProjectEntry],
     results: dict[str, RemoteStatus],
     meta: dict[str, RepoMeta],
+    ecosystem_by_name: dict[str, str],
 ) -> str:
     rows: list[str] = []
 
-    for family_name, parent, children in ordered_projects(entries):
-        # "URTC Tool Platform" is the one family every URTC-* repository's
-        # own manifest declares (still `ecosystem: HYDRA-UMC` - URTC is
-        # discovered by the same live scan as everything else here, not a
-        # separate fetch) - a real, visible banner marks the boundary
-        # where the family list crosses from HYDRA-UMC's own families into
-        # URTC's, instead of leaving that boundary implicit in an
-        # alphabetically-sorted family list.
-        if family_name == "URTC Tool Platform":
-            rows.append(
-                '\n            <tr class="ecosystem-banner-row">'
-                '\n              <td colspan="8">'
-                '\n                <span data-i18n="table_urtc_banner">URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.</span>'
-                '\n              </td>'
-                '\n            </tr>\n            '
-            )
+    # Grouped by ecosystem first, each one's own families second (see
+    # `ordered_projects_by_ecosystem`'s own docstring for why this is not
+    # just cosmetic) - a real, visible banner marks the start of every
+    # ecosystem's own block, not just URTC's the way this used to work
+    # when the table only ever mixed two ecosystems together.
+    for ecosystem_key, ecosystem_label, families in ordered_projects_by_ecosystem(entries, ecosystem_by_name):
+        if not families:
+            continue
 
-        # Same raw lower() value the project rows themselves stamp into
-        # their own data-family attribute (and the family <select>'s own
-        # option values use) - a data-* attribute value, not a CSS
-        # id/class, so it doesn't need slug-sanitizing, and NOT
-        # sanitizing it is what keeps the two sides matching in the JS
-        # filter below.
-        family_id = esc(family_name.lower())
-        member_count = len(children) + (1 if parent else 0)
-
-        parent_repo_link = ""
-        if parent is not None:
-            parent_repo_link = (
-                f' · <a href="{esc(repo_url(parent.name))}" target="_blank" '
-                f'rel="noopener noreferrer">{esc(parent.name)}</a> '
-                f'<span data-i18n="family_parent_suffix">is this family\'s own integration parent</span>'
-            )
-
+        banner_key = ECOSYSTEM_BANNER_I18N_KEY[ecosystem_key]
+        banner_text = esc(ECOSYSTEM_BANNER_FALLBACK_TEXT[ecosystem_key])
         rows.append(
-            f"""
-            <tr class="family-header-row" data-family-header="{family_id}">
+            f'\n            <tr class="ecosystem-banner-row" data-ecosystem-banner="{esc(ecosystem_key)}">'
+            f'\n              <td colspan="8">'
+            f'\n                <span data-i18n="{banner_key}">{banner_text}</span>'
+            f'\n              </td>'
+            f'\n            </tr>\n            '
+        )
+
+        for family_name, parent, children in families:
+            # Same raw lower() value the project rows themselves stamp into
+            # their own data-family attribute (and the family <select>'s own
+            # option values use) - a data-* attribute value, not a CSS
+            # id/class, so it doesn't need slug-sanitizing, and NOT
+            # sanitizing it is what keeps the two sides matching in the JS
+            # filter below.
+            family_id = esc(family_name.lower())
+            member_count = len(children) + (1 if parent else 0)
+
+            parent_repo_link = ""
+            if parent is not None:
+                parent_repo_link = (
+                    f' · <a href="{esc(repo_url(parent.name))}" target="_blank" '
+                    f'rel="noopener noreferrer">{esc(parent.name)}</a> '
+                    f'<span data-i18n="family_parent_suffix">is this family\'s own integration parent</span>'
+                )
+
+            rows.append(
+                f"""
+            <tr class="family-header-row" data-family-header="{family_id}" data-ecosystem="{esc(ecosystem_key)}">
               <td colspan="8">
                 <span class="family-header-label">{esc(family_name)}</span>
                 <span class="family-header-count">
@@ -1538,18 +1620,18 @@ def render_project_rows(
                 </span>
               </td>
             </tr>
-            """
-        )
-
-        if parent is not None:
-            rows.append(
-                _render_one_row(parent, results=results, meta=meta, is_child=False)
+                """
             )
 
-        for child in children:
-            rows.append(
-                _render_one_row(child, results=results, meta=meta, is_child=parent is not None)
-            )
+            if parent is not None:
+                rows.append(
+                    _render_one_row(parent, results=results, meta=meta, is_child=False)
+                )
+
+            for child in children:
+                rows.append(
+                    _render_one_row(child, results=results, meta=meta, is_child=parent is not None)
+                )
 
     return "".join(rows)
 
@@ -1939,7 +2021,7 @@ def render_html(
     role_counts = stats["role_counts"]
     role_deploy_matrix = stats["role_deploy_matrix"]
 
-    rows = render_project_rows(entries, results, meta)
+    rows = render_project_rows(entries, results, meta, ecosystem_by_name)
 
     ecosystem_cards = render_ecosystem_cards(entries, ecosystem_by_name)
 
@@ -2728,6 +2810,16 @@ def render_html(
     border: 1px solid var(--border);
     color: var(--dim);
     white-space: nowrap;
+    /* A.R.M.O.R.'s own role/deploy text is a real, free-text one-line
+       description (up to ~140 characters), not a short curated word like
+       HYDRA-UMC/URTC use for this same column - truncated here instead
+       of blowing out this table's total width (which pushed Version/
+       Status/Last commit far enough right to need a lot of hidden
+       horizontal scrolling to ever see). The untruncated text is still
+       real and reachable, in this same element's own `title` tooltip. */
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }}
 
   .role-icon {{
@@ -3202,6 +3294,13 @@ def render_html(
     font-family: "IBM Plex Mono", monospace;
     font-size: 10px;
     color: var(--dim);
+    /* Same real free-text-description problem, and the same fix, as
+       .role-badge above - see that rule's own comment. */
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
   }}
 
   .version {{
@@ -3529,12 +3628,13 @@ def render_html(
     </p>
 
     <p class="ecosystem-intro" data-i18n="architecture_intro">
-      HYDRA-UMC is a modular engineering ecosystem for multi-axis control,
-      robotics, industrial connectivity, machine vision and edge intelligence.
-      It keeps Raspberry Pi OS and official vendor APIs as its base, then adds
-      a versioned HYDRA-UMC platform layer, shared contracts and optional
-      services. This dashboard explains the system while repository manifests
-      and the generated table provide project-specific facts.
+      Electro Hobby 3D is three independent engineering ecosystems by the
+      same author: HYDRA-UMC (industrial multi-robot platform), URTC (its
+      universal robot-tool subsystem, an independent product with its own
+      firmware) and A.R.M.O.R. (perimeter security and home automation).
+      This dashboard discovers and lists every one of them live; each
+      ecosystem's own family groups are labeled below, and HYDRA-UMC's own
+      deeper architecture is detailed in the section right after this one.
     </p>
   </header>
 
@@ -3545,7 +3645,7 @@ def render_html(
 
   <section class="section">
 
-    <div class="section-title" data-i18n="architecture_section">System architecture</div>
+    <div class="section-title" data-i18n="architecture_section">HYDRA-UMC: System architecture</div>
 
     <div class="architecture-grid">
       <article class="architecture-card">
