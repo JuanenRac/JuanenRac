@@ -5,14 +5,24 @@
 # GPL-3.0 - see LICENSE.md
 #
 # Fills in (and keeps current) the "Version" column of every project-catalog
-# table in every README_*.md, reading each repository's own real manifest
-# from the local sibling checkout - never typed by hand, and never stale.
+# table in every README_*.md, reading each repository's own real manifest -
+# never typed by hand, and never stale.
 #
 # A table with only a Repository/Description column pair is upgraded to
 # three columns the first time this runs; a table that already has a
 # Version column (A.R.M.O.R.'s own, written by hand once) just gets its
 # values refreshed on every run after that, same as the other two
 # ecosystems from then on.
+#
+# A repository's own manifest is read from the local sibling checkout when
+# one exists (the fast, free path on a developer machine that already has
+# every ecosystem repo checked out next to this one) and otherwise fetched
+# from raw.githubusercontent.com (the only path available in CI, which
+# checks out just this one repository) - the exact same fallback
+# generate_dashboard.py's own manifest lookup already uses, for the same
+# reason: this script was real and working, but never wired into any
+# workflow, because it could only ever run somewhere with all 77 sibling
+# repos already cloned. It now runs the same way the dashboard does.
 #
 # Usage:  python scripts/sync_readme_versions.py            # writes every README
 #         python scripts/sync_readme_versions.py --check    # exit 1 if any is stale
@@ -22,10 +32,15 @@ from __future__ import annotations
 import json
 import re
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SIBLINGS = ROOT.parent  # the GitHub/ folder: every ecosystem repo is a sibling of JuanenRac
+SIBLINGS = ROOT.parent  # the GitHub/ folder: every ecosystem repo is a sibling of JuanenRac, on a dev machine
+
+API_USER_AGENT = "JuanenRac-sync-readme-versions"
+RAW_REQUEST_TIMEOUT_S = 10
 
 README_FILES = [
     "README.md", "README_spa.md", "README_fra.md", "README_ita.md",
@@ -45,19 +60,54 @@ MANIFEST_CANDIDATES = ("armor.project.json", "urtc.project.json", "hydra-umc.pro
 REPO_LINK = re.compile(r"^\[([A-Za-z0-9.\-]+)\]\(https://github\.com/JuanenRac/([A-Za-z0-9.\-]+)\)")
 CELL_SPLIT = re.compile(r"(?<!\\)\|")
 
+_version_cache: dict[str, str | None] = {}
+
+
+def _version_from_manifest_text(text: str) -> str | None:
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return None
+    version = data.get("version")
+    return version if isinstance(version, str) else None
+
+
+def _fetch_raw(name: str, candidate: str) -> str | None:
+    url = f"https://raw.githubusercontent.com/JuanenRac/{name}/main/{candidate}"
+    request = urllib.request.Request(url, headers={"User-Agent": API_USER_AGENT}, method="GET")
+    try:
+        with urllib.request.urlopen(request, timeout=RAW_REQUEST_TIMEOUT_S) as response:
+            return response.read().decode("utf-8", errors="replace")
+    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError):
+        return None
+
 
 def repo_version(name: str) -> str | None:
+    if name in _version_cache:
+        return _version_cache[name]
+
     repo_dir = SIBLINGS / name
+    version: str | None = None
     for candidate in MANIFEST_CANDIDATES:
         manifest_path = repo_dir / candidate
         if manifest_path.is_file():
             try:
-                data = json.loads(manifest_path.read_text(encoding="utf-8"))
-            except (OSError, json.JSONDecodeError):
-                return None
-            version = data.get("version")
-            return version if isinstance(version, str) else None
-    return None
+                version = _version_from_manifest_text(manifest_path.read_text(encoding="utf-8"))
+            except OSError:
+                version = None
+            break
+    else:
+        # No local sibling checkout (the real case in CI, which only ever
+        # checks out this one repository) - the same three candidate
+        # filenames, fetched from GitHub instead of the filesystem.
+        for candidate in MANIFEST_CANDIDATES:
+            raw = _fetch_raw(name, candidate)
+            if raw is not None:
+                version = _version_from_manifest_text(raw)
+                break
+
+    _version_cache[name] = version
+    return version
 
 
 def split_row(line: str) -> list[str] | None:

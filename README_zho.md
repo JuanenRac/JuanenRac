@@ -322,11 +322,11 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 会解释决策且从不执行动作的视觉推理策略 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | 带无法伪造确认的离线语音意图 |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.8 | 网页控制台：摄像头、雷达、报警、太阳能和 2D/3D 场地设计器 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.5 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.6 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | 外壳、电子器件和台架验收矩阵 |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | 部署、中央服务器测试台、备份与 TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 带可重复故障的离线遥测模拟器 |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.2 | 发现、安装并更新生态系统自身的仓库 |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.4 | 发现、安装并更新生态系统自身的仓库 |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.8 | 架构、安全基线和能力矩阵 |
 
 ---
@@ -336,7 +336,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 
 生态系统内所有仓库的 Issue 标签均从本仓库的 [`.github/labels.yml`](.github/labels.yml) 统一同步，由 [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) 负责推送——只需修改这一份文件，即可一次性更新所有仓库的标签，无需逐个手动维护。与下方的仪表盘不同，这份列表是静态的（一个真实的 GitHub Actions 矩阵，而非动态发现）——新增仓库也需要在其中添加一条记录，仅有真实的 `hydra-umc.project.json` 是不够的。
 
-覆盖每一个在自身 `hydra-umc.project.json` 中声明 `ecosystem: HYDRA-UMC` 的公开仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取，动态发现、无固定列表）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每小时自动重新生成（并在相关推送后立即触发），并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。v3 为每个项目新增了真实的成熟度分类（scaffolding / functional / established / production，每一项都根据该项目自身真实的 CHANGELOG 决定——具体判定标准见[`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)模块自身的文档说明），以及其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、真实的家族/父子关系树，以及每个项目关于当前实际实现内容的说明。
+覆盖每一个在自身 `hydra-umc.project.json` 中声明 `ecosystem: HYDRA-UMC` 的公开仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取，动态发现、无固定列表）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每小时自动重新生成（并在相关推送后立即触发），并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。它为每个项目新增了真实的成熟度分类（scaffolding / functional / established / production，每一项都根据该项目自身真实的 CHANGELOG 决定——具体判定标准见[`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)模块自身的文档说明），以及其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、真实的家族/父子关系树，以及每个项目关于当前实际实现内容的说明。URTC 和 A.R.M.O.R. 自身的仓库在同一个仪表盘上以和 HYDRA-UMC 完全相同的方式被实时发现（见 `scripts/generate_dashboard.py`），各自在自己的 `urtc.project.json`/`armor.project.json` 中声明自己的 `ecosystem` 字段——三者都没有固定列表。
 
 ## 🧭 GitHub 协作
 
