@@ -63,6 +63,7 @@ on:
       - main
     paths:
       - "scripts/generate_dashboard.py"
+      - "scripts/sync_readme_versions.py"
       - "ecosystem-catalog.json"
       - ".github/workflows/build-dashboard.yml"
 
@@ -146,7 +147,7 @@ jobs:
       - name: Install URTC-UPDATER and ARMOR-UPDATER
         run: |
           python -m pip install "git+https://github.com/JuanenRac/URTC-UPDATER.git@8e666e57f00c6a77925aa04849ef593cd72676b6"
-          python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@f1fb5538c6b8e16e26bfd003dd181fcb97dd739b"
+          python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@bc3f556b206ec7ab656cacf1eb2010a6a344dd2f"
 
       # -----------------------------------------------------------------------
       # Generate dashboard
@@ -162,6 +163,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/generate_dashboard.py
+
+      # -----------------------------------------------------------------------
+      # Sync README project-catalog versions
+      # -----------------------------------------------------------------------
+      # scripts/sync_readme_versions.py was a real, working script long
+      # before this step existed - it just could only ever run on a
+      # developer machine with every ecosystem repository checked out as a
+      # sibling of this one, which this runner never has (fetch-depth: 1
+      # of this repository alone). It now fetches each repository's own
+      # manifest from raw.githubusercontent.com when no local sibling
+      # exists, the same fallback generate_dashboard.py's own manifest
+      # lookup already uses, so it runs here exactly like the dashboard
+      # generation step above.
+      # -----------------------------------------------------------------------
+      - name: Sync README project versions
+        run: |
+          python scripts/sync_readme_versions.py
 
       # -----------------------------------------------------------------------
       # Show generated files
@@ -183,11 +201,12 @@ jobs:
       # and its own push, which used to just fail outright (a real
       # non-fast-forward rejection) and silently lose this run's
       # regenerated dashboard until the next scheduled hour. The
-      # generated docs/index.html/.nojekyll content is saved to a real
-      # temp location BEFORE touching git at all, so a retry can re-apply
-      # the exact same already-computed output onto a freshly re-fetched
-      # main - never regenerating (and never re-hitting the GitHub API)
-      # partway through a retry.
+      # generated docs/index.html/.nojekyll content, and the seven
+      # version-synced READMEs, are saved to a real temp location BEFORE
+      # touching git at all, so a retry can re-apply the exact same
+      # already-computed output onto a freshly re-fetched main - never
+      # regenerating (and never re-hitting the GitHub API) partway
+      # through a retry.
       - name: Commit dashboard if changed
         shell: bash
         run: |
@@ -196,9 +215,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          readmes=(README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md)
+
           workdir="$(mktemp -d)"
           cp docs/index.html "$workdir/index.html"
           cp docs/.nojekyll "$workdir/.nojekyll"
+          for readme in "${readmes[@]}"; do
+            cp "$readme" "$workdir/$readme"
+          done
 
           max_attempts=5
           for attempt in $(seq 1 "$max_attempts"); do
@@ -206,15 +230,18 @@ jobs:
             git reset --hard origin/main
             cp "$workdir/index.html" docs/index.html
             cp "$workdir/.nojekyll" docs/.nojekyll
-            git add docs/index.html docs/.nojekyll
+            for readme in "${readmes[@]}"; do
+              cp "$workdir/$readme" "$readme"
+            done
+            git add docs/index.html docs/.nojekyll "${readmes[@]}"
 
             if git diff --cached --quiet; then
-              echo "No dashboard changes detected against the current main."
+              echo "No dashboard/README changes detected against the current main."
               echo "Nothing to commit."
               exit 0
             fi
 
-            git commit -m "docs: regenerate ecosystem status dashboard"
+            git commit -m "docs: regenerate ecosystem status dashboard and sync README versions"
 
             if git push origin HEAD:main; then
               echo "Pushed on attempt $attempt/$max_attempts."
@@ -224,5 +251,5 @@ jobs:
             echo "Push rejected (attempt $attempt/$max_attempts) - main moved concurrently, re-fetching and retrying."
           done
 
-          echo "::error::Could not push the regenerated dashboard after $max_attempts attempts - main kept moving concurrently. No content was lost (still sitting in $workdir); re-run this workflow." >&2
+          echo "::error::Could not push the regenerated dashboard/READMEs after $max_attempts attempts - main kept moving concurrently. No content was lost (still sitting in $workdir); re-run this workflow." >&2
           exit 1
