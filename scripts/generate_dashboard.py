@@ -989,9 +989,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_relationship_title": "HYDRA-UMC and URTC:", "architecture_relationship_body": "HYDRA-UMC is the platform and cell controller. URTC is its universal robot-tool subsystem, with independent firmware and maintenance tools. The MCU remains authoritative for physical limits and safe stop; UI, network and AI cannot bypass that boundary.",
         "table_hydra_umc_banner": "HYDRA-UMC - the industrial multi-robot platform and cell controller, this dashboard's first ecosystem.", "table_urtc_banner": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.", "table_armor_banner": "A.R.M.O.R. - a separate, public perimeter-security and home-automation ecosystem, same author.",
         "section_by_ecosystem": "Projects by ecosystem",
+        "architecture_section_u": "URTC: System architecture",
+        "architecture_u_card1_title": "Tool-head firmware", "architecture_u_card1_body": "An STM32F303 runs each tool head over CAN, reading its own 5-bit hardware address to auto-configure power stages, sensors and safety logic for one of 25 built-in tool profiles.",
+        "architecture_u_card2_title": "Expansion and motion", "architecture_u_card2_body": "A 20-pin expansion connector adds a second stepper axis or sensor board through one of six interchangeable variants, sharing STEP/DIR/EN wiring between a TMC2209 and a TMC5160 driver.",
+        "architecture_u_card3_title": "Maintenance tools", "architecture_u_card3_body": "URTC-FLASHER updates firmware over CAN without removing the board, URTC-TESTER exercises the protocol end to end and URTC-UPDATER keeps every desktop tool current from GitHub.",
+        "architecture_u_card4_title": "Vision and operation", "architecture_u_card4_body": "URTC-VISION-TOOL adds camera-based tool inspection, URTC-WEB-STUDIO gives it a browser console and URTC-SMART-RACK stores and identifies tool heads between changes.",
+        "architecture_u_flow_1": "Tool head", "architecture_u_flow_2": "STM32F303 firmware", "architecture_u_flow_3": "CAN bus", "architecture_u_flow_4": "HYDRA-UMC MCU / host",
+        "architecture_u_rel_title": "URTC on its own, and paired with HYDRA-UMC:", "architecture_u_rel_body": "URTC is an independent, unofficial project - a CAN-based tool-head controller built to work with PAROL6/Faze4-style arms, with its own firmware, hardware and maintenance tools. When it is the tool subsystem of a HYDRA-UMC cell, HYDRA-UMC's own MCU keeps authority over physical limits and safe stop; URTC never bypasses that boundary.",
+        "architecture_section_a": "A.R.M.O.R.: System architecture",
+        "architecture_a_card1_title": "Network segmentation", "architecture_a_card1_body": "Field nodes and cameras sit on their own VLAN with no internet access; the MQTT broker and server live on a core VLAN; Studio and the Android app reach the server from a client VLAN.",
+        "architecture_a_card2_title": "Field nodes", "architecture_a_card2_body": "ESP32-S3 radar, solar and electrical nodes publish sensor and equipment readings; the solar and electrical ones only read, never write to an inverter, battery or meter.",
+        "architecture_a_card3_title": "Perception, never authority", "architecture_a_card3_body": "Visual and voice AI recommend a severity or an intent with reasons attached; authorizes_action is always false until the server itself authenticates and confirms.",
+        "architecture_a_card4_title": "State and operator consoles", "architecture_a_card4_body": "ARMOR-SERVER is the only place that ever touches a camera password or an RTSP address; Studio and the Android app are its authenticated clients, and a phone can set a new node up over Bluetooth alone.",
+        "architecture_a_flow_1": "Field nodes and cameras", "architecture_a_flow_2": "MQTT broker and server", "architecture_a_flow_3": "AI recommendation", "architecture_a_flow_4": "Authenticated client session",
+        "architecture_a_rel_title": "A.R.M.O.R.'s own boundary:", "architecture_a_rel_body": "The server is the only component that authorises an action or holds a camera credential. Visual and voice AI only recommend; solar and electrical nodes only read - the rules for switching an electrical source are tested in software but not yet linked to any real hardware.",
     },
     "es": {
-        "architecture_intro": "Electro Hobby 3D son tres ecosistemas de ingeniería independientes del mismo autor: HYDRA-UMC (plataforma industrial multi-robot), URTC (su subsistema universal de herramientas, un producto independiente con firmware propio) y A.R.M.O.R. (seguridad perimetral y automatización del hogar). Este panel descubre y lista los tres en vivo; los grupos de familia de cada ecosistema aparecen etiquetados más abajo, y la arquitectura propia de HYDRA-UMC se detalla justo en la siguiente sección.",
+        "architecture_intro": "Electro Hobby 3D son tres ecosistemas de ingeniería independientes del mismo autor: HYDRA-UMC (plataforma industrial multi-robot), URTC (su subsistema universal de herramientas, un producto independiente con firmware propio) y A.R.M.O.R. (seguridad perimetral y automatización del hogar). Este panel descubre y lista los tres en vivo; los grupos de familia de cada ecosistema aparecen etiquetados más abajo, y la arquitectura propia de cada uno se detalla en su propia sección más abajo.",
         "architecture_section": "HYDRA-UMC: Arquitectura del sistema", "architecture_platform_title": "Base de plataforma", "architecture_platform_body": "Raspberry Pi OS ARM64 mantiene el papel de sistema operativo base. La capa HYDRA-UMC aporta perfiles de dispositivo, diagnóstico y ciclo de vida de servicios.",
         "architecture_contracts_title": "Contratos y operaciones", "architecture_contracts_body": "El SDK define contratos estables de datos y comandos; Server, las interfaces y las herramientas los usan en lugar de protocolos de hardware sin abstraer.",
         "architecture_perception_title": "Percepción e inteligencia", "architecture_perception_body": "La visión y la IA son capacidades opcionales. Su salida se valida antes de influir en una misión y nunca tiene autoridad de seguridad.",
@@ -1000,9 +1014,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_relationship_title": "HYDRA-UMC y URTC:", "architecture_relationship_body": "HYDRA-UMC es la plataforma y el controlador de celda. URTC es su subsistema universal de herramientas robóticas, con firmware y utilidades de mantenimiento independientes. El MCU conserva la autoridad sobre límites físicos y parada segura; UI, red e IA no pueden saltarse esa frontera.",
         "table_hydra_umc_banner": "HYDRA-UMC - la plataforma industrial multi-robot y el controlador de celda, el primer ecosistema de este panel.", "table_urtc_banner": "URTC - un producto independiente con firmware y utilidades de mantenimiento propios, coordinado con HYDRA-UMC por FDCAN.", "table_armor_banner": "A.R.M.O.R. - un ecosistema aparte, publico, de seguridad perimetral y automatizacion del hogar, del mismo autor.",
         "section_by_ecosystem": "Proyectos por ecosistema",
+        "architecture_section_u": "URTC: Arquitectura del sistema",
+        "architecture_u_card1_title": "Firmware del cabezal de herramienta", "architecture_u_card1_body": "Un STM32F303 controla cada cabezal de herramienta por CAN, leyendo su propia dirección de 5 bits para autoconfigurar las etapas de potencia, los sensores y la lógica de seguridad de uno de 25 perfiles de herramienta integrados.",
+        "architecture_u_card2_title": "Expansión y movimiento", "architecture_u_card2_body": "Un conector de expansión de 20 pines añade un segundo eje paso a paso o una placa de sensores mediante una de seis variantes intercambiables, compartiendo el cableado STEP/DIR/EN entre un driver TMC2209 y uno TMC5160.",
+        "architecture_u_card3_title": "Herramientas de mantenimiento", "architecture_u_card3_body": "URTC-FLASHER actualiza el firmware por CAN sin desmontar la placa, URTC-TESTER ejercita el protocolo de extremo a extremo y URTC-UPDATER mantiene actualizadas todas las herramientas de escritorio desde GitHub.",
+        "architecture_u_card4_title": "Visión y operación", "architecture_u_card4_body": "URTC-VISION-TOOL añade inspección de herramientas por cámara, URTC-WEB-STUDIO le da una consola de navegador y URTC-SMART-RACK almacena e identifica los cabezales entre cambios.",
+        "architecture_u_flow_1": "Cabezal de herramienta", "architecture_u_flow_2": "Firmware STM32F303", "architecture_u_flow_3": "Bus CAN", "architecture_u_flow_4": "MCU / host HYDRA-UMC",
+        "architecture_u_rel_title": "URTC solo, y emparejado con HYDRA-UMC:", "architecture_u_rel_body": "URTC es un proyecto independiente y no oficial: un controlador de cabezal por CAN pensado para brazos tipo PAROL6/Faze4, con firmware, hardware y herramientas de mantenimiento propios. Cuando actúa como subsistema de herramientas de una celda HYDRA-UMC, el MCU de HYDRA-UMC conserva la autoridad sobre los límites físicos y la parada segura; URTC nunca se salta esa frontera.",
+        "architecture_section_a": "A.R.M.O.R.: Arquitectura del sistema",
+        "architecture_a_card1_title": "Segmentación de red", "architecture_a_card1_body": "Los nodos de campo y las cámaras están en su propia VLAN sin acceso a internet; el broker MQTT y el servidor viven en una VLAN núcleo; Studio y la app Android llegan al servidor desde una VLAN de clientes.",
+        "architecture_a_card2_title": "Nodos de campo", "architecture_a_card2_body": "Los nodos ESP32-S3 de radar, solares y eléctricos publican lecturas de sensores y equipos; los solares y eléctricos solo leen, nunca escriben en un inversor, una batería o un medidor.",
+        "architecture_a_card3_title": "Percepción, nunca autoridad", "architecture_a_card3_body": "La IA visual y de voz recomiendan una gravedad o una intención con sus razones; authorizes_action siempre es falso hasta que el propio servidor autentica y confirma.",
+        "architecture_a_card4_title": "Estado y consolas de operador", "architecture_a_card4_body": "ARMOR-SERVER es el único lugar que toca una contraseña de cámara o una dirección RTSP; Studio y la app Android son sus clientes autenticados, y un teléfono puede configurar un nodo nuevo solo por Bluetooth.",
+        "architecture_a_flow_1": "Nodos de campo y cámaras", "architecture_a_flow_2": "Broker MQTT y servidor", "architecture_a_flow_3": "Recomendación de IA", "architecture_a_flow_4": "Sesión de cliente autenticada",
+        "architecture_a_rel_title": "La frontera propia de A.R.M.O.R.:", "architecture_a_rel_body": "El servidor es el único componente que autoriza una acción o guarda una credencial de cámara. La IA visual y de voz solo recomiendan; los nodos solares y eléctricos solo leen - las reglas para maniobrar una fuente eléctrica están probadas en software pero aún no conectadas a ningún hardware real.",
     },
     "fr": {
-        "architecture_intro": "Electro Hobby 3D regroupe trois écosystèmes d'ingénierie indépendants du même auteur : HYDRA-UMC (plateforme industrielle multi-robot), URTC (son sous-système universel d'outils, un produit indépendant avec son propre firmware) et A.R.M.O.R. (sécurité périmétrique et domotique). Ce tableau de bord découvre et liste les trois en direct ; les groupes de famille de chaque écosystème sont indiqués plus bas, et l'architecture propre de HYDRA-UMC est détaillée juste après cette section.",
+        "architecture_intro": "Electro Hobby 3D regroupe trois écosystèmes d'ingénierie indépendants du même auteur : HYDRA-UMC (plateforme industrielle multi-robot), URTC (son sous-système universel d'outils, un produit indépendant avec son propre firmware) et A.R.M.O.R. (sécurité périmétrique et domotique). Ce tableau de bord découvre et liste les trois en direct ; les groupes de famille de chaque écosystème sont indiqués plus bas, et l'architecture propre de chacun est détaillée dans sa propre section plus bas.",
         "architecture_section": "HYDRA-UMC : Architecture du système", "architecture_platform_title": "Fondation de plateforme", "architecture_platform_body": "Raspberry Pi OS ARM64 reste la base du système d’exploitation. La couche HYDRA-UMC apporte profils d’appareil, diagnostic et cycle de vie des services.",
         "architecture_contracts_title": "Contrats et opérations", "architecture_contracts_body": "Le SDK définit des contrats stables de données et de commandes ; Server, les interfaces et les outils les utilisent au lieu de protocoles matériels bruts.",
         "architecture_perception_title": "Perception et intelligence", "architecture_perception_body": "La vision et l’IA sont des capacités optionnelles. Leur sortie est validée avant d’influencer une mission et n’a jamais autorité sur la sécurité.",
@@ -1011,9 +1039,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_relationship_title": "HYDRA-UMC et URTC :", "architecture_relationship_body": "HYDRA-UMC est la plateforme et le contrôleur de cellule. URTC est son sous-système universel d’outils robotiques, avec firmware et outils de maintenance indépendants. Le MCU garde l’autorité sur les limites physiques et l’arrêt sûr ; interface, réseau et IA ne peuvent pas contourner cette frontière.",
         "table_hydra_umc_banner": "HYDRA-UMC - la plateforme industrielle multi-robot et le contrôleur de cellule, le premier écosystème de ce tableau de bord.", "table_urtc_banner": "URTC - un produit indépendant avec son propre firmware et ses propres outils de maintenance, coordonné avec HYDRA-UMC via FDCAN.", "table_armor_banner": "A.R.M.O.R. - un écosystème séparé et public de sécurité périmétrique et de domotique, du même auteur.",
         "section_by_ecosystem": "Projets par écosystème",
+        "architecture_section_u": "URTC : Architecture du système",
+        "architecture_u_card1_title": "Firmware de la tête d'outil", "architecture_u_card1_body": "Un STM32F303 pilote chaque tête d'outil par CAN, en lisant sa propre adresse matérielle sur 5 bits pour configurer automatiquement les étages de puissance, les capteurs et la logique de sécurité de l'un des 25 profils d'outil intégrés.",
+        "architecture_u_card2_title": "Extension et mouvement", "architecture_u_card2_body": "Un connecteur d'extension à 20 broches ajoute un second axe pas à pas ou une carte de capteurs via l'une des six variantes interchangeables, en partageant le câblage STEP/DIR/EN entre un driver TMC2209 et un TMC5160.",
+        "architecture_u_card3_title": "Outils de maintenance", "architecture_u_card3_body": "URTC-FLASHER met à jour le firmware par CAN sans démonter la carte, URTC-TESTER teste le protocole de bout en bout et URTC-UPDATER maintient tous les outils de bureau à jour depuis GitHub.",
+        "architecture_u_card4_title": "Vision et exploitation", "architecture_u_card4_body": "URTC-VISION-TOOL ajoute l'inspection des outils par caméra, URTC-WEB-STUDIO lui donne une console dans le navigateur et URTC-SMART-RACK stocke et identifie les têtes d'outil entre deux changements.",
+        "architecture_u_flow_1": "Tête d'outil", "architecture_u_flow_2": "Firmware STM32F303", "architecture_u_flow_3": "Bus CAN", "architecture_u_flow_4": "MCU / hôte HYDRA-UMC",
+        "architecture_u_rel_title": "URTC seul, et associé à HYDRA-UMC :", "architecture_u_rel_body": "URTC est un projet indépendant et non officiel : un contrôleur de tête d'outil par CAN conçu pour des bras de type PAROL6/Faze4, avec son propre firmware, son propre matériel et ses propres outils de maintenance. Lorsqu'il est le sous-système d'outils d'une cellule HYDRA-UMC, le MCU de HYDRA-UMC garde l'autorité sur les limites physiques et l'arrêt sûr ; URTC ne contourne jamais cette frontière.",
+        "architecture_section_a": "A.R.M.O.R. : Architecture du système",
+        "architecture_a_card1_title": "Segmentation réseau", "architecture_a_card1_body": "Les nœuds de terrain et les caméras se trouvent sur leur propre VLAN sans accès à internet ; le broker MQTT et le serveur vivent sur un VLAN cœur ; Studio et l'application Android atteignent le serveur depuis un VLAN clients.",
+        "architecture_a_card2_title": "Nœuds de terrain", "architecture_a_card2_body": "Les nœuds ESP32-S3 radar, solaires et électriques publient les relevés des capteurs et des équipements ; les nœuds solaires et électriques ne font que lire, jamais écrire sur un onduleur, une batterie ou un compteur.",
+        "architecture_a_card3_title": "Perception, jamais autorité", "architecture_a_card3_body": "L'IA visuelle et vocale recommande une gravité ou une intention avec ses raisons ; authorizes_action reste toujours faux tant que le serveur lui-même n'authentifie et ne confirme pas.",
+        "architecture_a_card4_title": "État et consoles opérateur", "architecture_a_card4_body": "ARMOR-SERVER est le seul endroit qui touche un mot de passe de caméra ou une adresse RTSP ; Studio et l'application Android en sont les clients authentifiés, et un téléphone peut configurer un nouveau nœud uniquement par Bluetooth.",
+        "architecture_a_flow_1": "Nœuds de terrain et caméras", "architecture_a_flow_2": "Broker MQTT et serveur", "architecture_a_flow_3": "Recommandation de l'IA", "architecture_a_flow_4": "Session client authentifiée",
+        "architecture_a_rel_title": "La frontière propre d'A.R.M.O.R. :", "architecture_a_rel_body": "Le serveur est le seul composant à autoriser une action ou à détenir un identifiant de caméra. L'IA visuelle et vocale ne fait que recommander ; les nœuds solaires et électriques ne font que lire - les règles de manœuvre d'une source électrique sont testées en logiciel mais pas encore reliées à un matériel réel.",
     },
     "it": {
-        "architecture_intro": "Electro Hobby 3D è composto da tre ecosistemi ingegneristici indipendenti dello stesso autore: HYDRA-UMC (piattaforma industriale multi-robot), URTC (il suo sottosistema universale di utensili, un prodotto indipendente con firmware proprio) e A.R.M.O.R. (sicurezza perimetrale e domotica). Questa dashboard scopre ed elenca tutti e tre dal vivo; i gruppi di famiglia di ogni ecosistema sono etichettati più sotto, e l'architettura propria di HYDRA-UMC è descritta subito nella sezione successiva.",
+        "architecture_intro": "Electro Hobby 3D è composto da tre ecosistemi ingegneristici indipendenti dello stesso autore: HYDRA-UMC (piattaforma industriale multi-robot), URTC (il suo sottosistema universale di utensili, un prodotto indipendente con firmware proprio) e A.R.M.O.R. (sicurezza perimetrale e domotica). Questa dashboard scopre ed elenca tutti e tre dal vivo; i gruppi di famiglia di ogni ecosistema sono etichettati più sotto, e l'architettura propria di ciascuno è descritta nella sua sezione più sotto.",
         "architecture_section": "HYDRA-UMC: Architettura del sistema", "architecture_platform_title": "Fondazione della piattaforma", "architecture_platform_body": "Raspberry Pi OS ARM64 rimane la base del sistema operativo. Il livello HYDRA-UMC aggiunge profili dispositivo, diagnostica e ciclo di vita dei servizi.",
         "architecture_contracts_title": "Contratti e operazioni", "architecture_contracts_body": "L’SDK definisce contratti stabili per dati e comandi; Server, UI e strumenti li usano invece di protocolli hardware grezzi.",
         "architecture_perception_title": "Percezione e intelligenza", "architecture_perception_body": "Visione e IA sono capacità opzionali. Il loro output viene convalidato prima di influire su una missione e non ha mai autorità sulla sicurezza.",
@@ -1022,9 +1064,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_relationship_title": "HYDRA-UMC e URTC:", "architecture_relationship_body": "HYDRA-UMC è la piattaforma e il controllore di cella. URTC è il suo sottosistema universale per utensili robotici, con firmware e strumenti di manutenzione indipendenti. Il MCU mantiene l’autorità sui limiti fisici e sull’arresto sicuro; UI, rete e IA non possono aggirare quel confine.",
         "table_hydra_umc_banner": "HYDRA-UMC - la piattaforma industriale multi-robot e il controllore di cella, il primo ecosistema di questa dashboard.", "table_urtc_banner": "URTC - un prodotto indipendente con firmware e strumenti di manutenzione propri, coordinato con HYDRA-UMC via FDCAN.", "table_armor_banner": "A.R.M.O.R. - un ecosistema a parte, pubblico, di sicurezza perimetrale e domotica, dello stesso autore.",
         "section_by_ecosystem": "Progetti per ecosistema",
+        "architecture_section_u": "URTC: Architettura del sistema",
+        "architecture_u_card1_title": "Firmware della testa utensile", "architecture_u_card1_body": "Uno STM32F303 pilota ogni testa utensile via CAN, leggendo il proprio indirizzo hardware a 5 bit per configurare automaticamente stadi di potenza, sensori e logica di sicurezza di uno dei 25 profili utensile integrati.",
+        "architecture_u_card2_title": "Espansione e movimento", "architecture_u_card2_body": "Un connettore di espansione a 20 pin aggiunge un secondo asse passo-passo o una scheda sensori tramite una delle sei varianti intercambiabili, condividendo il cablaggio STEP/DIR/EN tra un driver TMC2209 e uno TMC5160.",
+        "architecture_u_card3_title": "Strumenti di manutenzione", "architecture_u_card3_body": "URTC-FLASHER aggiorna il firmware via CAN senza smontare la scheda, URTC-TESTER verifica il protocollo end-to-end e URTC-UPDATER mantiene aggiornati tutti gli strumenti desktop da GitHub.",
+        "architecture_u_card4_title": "Visione e operatività", "architecture_u_card4_body": "URTC-VISION-TOOL aggiunge l'ispezione degli utensili tramite telecamera, URTC-WEB-STUDIO offre una console da browser e URTC-SMART-RACK conserva e identifica le teste utensile tra un cambio e l'altro.",
+        "architecture_u_flow_1": "Testa utensile", "architecture_u_flow_2": "Firmware STM32F303", "architecture_u_flow_3": "Bus CAN", "architecture_u_flow_4": "MCU / host HYDRA-UMC",
+        "architecture_u_rel_title": "URTC da solo, e abbinato a HYDRA-UMC:", "architecture_u_rel_body": "URTC è un progetto indipendente e non ufficiale: un controllore di testa utensile via CAN pensato per bracci del tipo PAROL6/Faze4, con firmware, hardware e strumenti di manutenzione propri. Quando è il sottosistema utensili di una cella HYDRA-UMC, l'MCU di HYDRA-UMC mantiene l'autorità sui limiti fisici e sull'arresto sicuro; URTC non aggira mai questo confine.",
+        "architecture_section_a": "A.R.M.O.R.: Architettura del sistema",
+        "architecture_a_card1_title": "Segmentazione di rete", "architecture_a_card1_body": "I nodi di campo e le telecamere stanno su una propria VLAN senza accesso a internet; il broker MQTT e il server vivono su una VLAN core; Studio e l'app Android raggiungono il server da una VLAN client.",
+        "architecture_a_card2_title": "Nodi di campo", "architecture_a_card2_body": "I nodi ESP32-S3 radar, solari ed elettrici pubblicano le letture di sensori ed equipaggiamenti; quelli solari ed elettrici solo leggono, mai scrivono su un inverter, una batteria o un contatore.",
+        "architecture_a_card3_title": "Percezione, mai autorità", "architecture_a_card3_body": "L'IA visiva e vocale raccomanda una gravità o un'intenzione con le proprie motivazioni; authorizes_action è sempre falso finché il server stesso non autentica e conferma.",
+        "architecture_a_card4_title": "Stato e console operatore", "architecture_a_card4_body": "ARMOR-SERVER è l'unico punto che tocca una password di telecamera o un indirizzo RTSP; Studio e l'app Android ne sono i client autenticati, e un telefono può configurare un nuovo nodo solo via Bluetooth.",
+        "architecture_a_flow_1": "Nodi di campo e telecamere", "architecture_a_flow_2": "Broker MQTT e server", "architecture_a_flow_3": "Raccomandazione dell'IA", "architecture_a_flow_4": "Sessione client autenticata",
+        "architecture_a_rel_title": "Il confine proprio di A.R.M.O.R.:", "architecture_a_rel_body": "Il server è l'unico componente che autorizza un'azione o detiene una credenziale di telecamera. L'IA visiva e vocale solo raccomanda; i nodi solari ed elettrici solo leggono - le regole per manovrare una fonte elettrica sono testate via software ma non ancora collegate a hardware reale.",
     },
     "de": {
-        "architecture_intro": "Electro Hobby 3D besteht aus drei unabhängigen Engineering-Ökosystemen desselben Autors: HYDRA-UMC (industrielle Multi-Roboter-Plattform), URTC (dessen universelles Werkzeug-Subsystem, ein eigenständiges Produkt mit eigener Firmware) und A.R.M.O.R. (Perimetersicherheit und Hausautomation). Dieses Dashboard entdeckt und listet alle drei live auf; die Familiengruppen jedes Ökosystems sind weiter unten gekennzeichnet, und die eigene Architektur von HYDRA-UMC wird direkt im nächsten Abschnitt beschrieben.",
+        "architecture_intro": "Electro Hobby 3D besteht aus drei unabhängigen Engineering-Ökosystemen desselben Autors: HYDRA-UMC (industrielle Multi-Roboter-Plattform), URTC (dessen universelles Werkzeug-Subsystem, ein eigenständiges Produkt mit eigener Firmware) und A.R.M.O.R. (Perimetersicherheit und Hausautomation). Dieses Dashboard entdeckt und listet alle drei live auf; die Familiengruppen jedes Ökosystems sind weiter unten gekennzeichnet, und die eigene Architektur jedes Ökosystems wird in seinem eigenen Abschnitt weiter unten beschrieben.",
         "architecture_section": "HYDRA-UMC: Systemarchitektur", "architecture_platform_title": "Plattformbasis", "architecture_platform_body": "Raspberry Pi OS ARM64 bleibt die Betriebssystembasis. Die HYDRA-UMC-Schicht ergänzt Geräteprofile, Diagnose und den Lebenszyklus der Dienste.",
         "architecture_contracts_title": "Verträge und Betrieb", "architecture_contracts_body": "Das SDK definiert stabile Daten- und Befehlsverträge; Server, Oberflächen und Werkzeuge verwenden sie statt roher Hardwareprotokolle.",
         "architecture_perception_title": "Wahrnehmung und Intelligenz", "architecture_perception_body": "Vision und KI sind optionale Fähigkeiten. Ihre Ausgabe wird validiert, bevor sie eine Mission beeinflussen kann; sie besitzen nie Sicherheitsautorität.",
@@ -1033,9 +1089,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_relationship_title": "HYDRA-UMC und URTC:", "architecture_relationship_body": "HYDRA-UMC ist Plattform und Zellensteuerung. URTC ist das universelle Roboterwerkzeug-Subsystem mit unabhängiger Firmware und Wartungswerkzeugen. Der MCU behält die Autorität über physische Grenzen und sicheren Stopp; UI, Netzwerk und KI können diese Grenze nicht umgehen.",
         "table_hydra_umc_banner": "HYDRA-UMC - die industrielle Multi-Roboter-Plattform und Zellcontroller, das erste Ökosystem dieses Dashboards.", "table_urtc_banner": "URTC - ein eigenständiges Produkt mit eigener Firmware und eigenen Wartungswerkzeugen, über FDCAN mit HYDRA-UMC koordiniert.", "table_armor_banner": "A.R.M.O.R. - ein separates, öffentliches Ökosystem für Perimetersicherheit und Hausautomation desselben Autors.",
         "section_by_ecosystem": "Projekte nach Ökosystem",
+        "architecture_section_u": "URTC: Systemarchitektur",
+        "architecture_u_card1_title": "Werkzeugkopf-Firmware", "architecture_u_card1_body": "Ein STM32F303 steuert jeden Werkzeugkopf über CAN und liest seine eigene 5-Bit-Hardwareadresse aus, um Leistungsstufen, Sensoren und Sicherheitslogik für eines von 25 integrierten Werkzeugprofilen automatisch zu konfigurieren.",
+        "architecture_u_card2_title": "Erweiterung und Bewegung", "architecture_u_card2_body": "Ein 20-poliger Erweiterungsstecker fügt über eine von sechs austauschbaren Varianten eine zweite Schrittmotorachse oder eine Sensorplatine hinzu und teilt sich die STEP/DIR/EN-Verkabelung zwischen einem TMC2209- und einem TMC5160-Treiber.",
+        "architecture_u_card3_title": "Wartungswerkzeuge", "architecture_u_card3_body": "URTC-FLASHER aktualisiert die Firmware über CAN, ohne die Platine auszubauen, URTC-TESTER prüft das Protokoll durchgehend, und URTC-UPDATER hält alle Desktop-Werkzeuge von GitHub aus aktuell.",
+        "architecture_u_card4_title": "Bildverarbeitung und Betrieb", "architecture_u_card4_body": "URTC-VISION-TOOL ergänzt die kamerabasierte Werkzeugprüfung, URTC-WEB-STUDIO gibt ihr eine Browser-Konsole, und URTC-SMART-RACK speichert und identifiziert Werkzeugköpfe zwischen den Wechseln.",
+        "architecture_u_flow_1": "Werkzeugkopf", "architecture_u_flow_2": "STM32F303-Firmware", "architecture_u_flow_3": "CAN-Bus", "architecture_u_flow_4": "HYDRA-UMC-MCU / -Host",
+        "architecture_u_rel_title": "URTC allein, und im Verbund mit HYDRA-UMC:", "architecture_u_rel_body": "URTC ist ein unabhängiges, inoffizielles Projekt - ein CAN-basierter Werkzeugkopf-Controller für Arme vom Typ PAROL6/Faze4, mit eigener Firmware, eigener Hardware und eigenen Wartungswerkzeugen. Als Werkzeug-Subsystem einer HYDRA-UMC-Zelle behält der MCU von HYDRA-UMC die Autorität über physische Grenzen und den sicheren Stopp; URTC umgeht diese Grenze nie.",
+        "architecture_section_a": "A.R.M.O.R.: Systemarchitektur",
+        "architecture_a_card1_title": "Netzwerksegmentierung", "architecture_a_card1_body": "Feldknoten und Kameras befinden sich in einem eigenen VLAN ohne Internetzugang; der MQTT-Broker und der Server laufen in einem Kern-VLAN; Studio und die Android-App erreichen den Server aus einem Client-VLAN.",
+        "architecture_a_card2_title": "Feldknoten", "architecture_a_card2_body": "ESP32-S3-Radar-, Solar- und Elektroknoten veröffentlichen Sensor- und Anlagenwerte; die Solar- und Elektroknoten lesen nur, sie schreiben nie auf einen Wechselrichter, eine Batterie oder einen Zähler.",
+        "architecture_a_card3_title": "Wahrnehmung, niemals Autorität", "architecture_a_card3_body": "Visuelle und Sprach-KI empfehlen einen Schweregrad oder eine Absicht samt Begründung; authorizes_action bleibt immer falsch, bis der Server selbst authentifiziert und bestätigt.",
+        "architecture_a_card4_title": "Zustand und Bedienkonsolen", "architecture_a_card4_body": "ARMOR-SERVER ist die einzige Stelle, die je ein Kamerapasswort oder eine RTSP-Adresse berührt; Studio und die Android-App sind seine authentifizierten Clients, und ein Telefon kann einen neuen Knoten allein über Bluetooth einrichten.",
+        "architecture_a_flow_1": "Feldknoten & Kameras", "architecture_a_flow_2": "MQTT-Broker & Server", "architecture_a_flow_3": "KI-Empfehlung", "architecture_a_flow_4": "Authentifizierte Client-Sitzung",
+        "architecture_a_rel_title": "Die eigene Grenze von A.R.M.O.R.:", "architecture_a_rel_body": "Der Server ist die einzige Komponente, die eine Aktion autorisiert oder eine Kamera-Zugangsdaten hält. Visuelle und Sprach-KI empfehlen nur; Solar- und Elektroknoten lesen nur - die Regeln zum Schalten einer Stromquelle sind in Software getestet, aber noch mit keiner echten Hardware verbunden.",
     },
     "zh": {
-        "architecture_intro": "Electro Hobby 3D 是同一作者打造的三个独立工程生态系统：HYDRA-UMC（工业多机器人平台）、URTC（其通用工具子系统，一个拥有自己固件的独立产品）和 A.R.M.O.R.（周界安防与家庭自动化）。本仪表板实时发现并列出这三者；下方按生态系统标注了各自的家族分组，HYDRA-UMC 自身的架构详见紧接的下一节。",
+        "architecture_intro": "Electro Hobby 3D 是同一作者打造的三个独立工程生态系统：HYDRA-UMC（工业多机器人平台）、URTC（其通用工具子系统，一个拥有自己固件的独立产品）和 A.R.M.O.R.（周界安防与家庭自动化）。本仪表板实时发现并列出这三者；下方按生态系统标注了各自的家族分组，每个生态系统自身的架构详见其下方的独立小节。",
         "architecture_section": "HYDRA-UMC：系统架构", "architecture_platform_title": "平台基础", "architecture_platform_body": "Raspberry Pi OS ARM64 仍是操作系统基础。HYDRA-UMC 层增加设备配置文件、诊断和服务生命周期。",
         "architecture_contracts_title": "契约与运维", "architecture_contracts_body": "SDK 定义稳定的数据和命令契约；Server、界面和工具使用这些契约，而不是原始硬件协议。",
         "architecture_perception_title": "感知与智能", "architecture_perception_body": "视觉和 AI 是可选能力。其输出在影响任务前必须经过验证，且永远不拥有安全权限。",
@@ -1044,9 +1114,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_relationship_title": "HYDRA-UMC 与 URTC：", "architecture_relationship_body": "HYDRA-UMC 是平台和单元控制器。URTC 是其通用机器人工具子系统，拥有独立的固件和维护工具。MCU 保留物理限制和安全停止的权力；UI、网络和 AI 都不能绕过这一边界。",
         "table_hydra_umc_banner": "HYDRA-UMC —— 工业多机器人平台与单元控制器，本仪表盘的第一个生态系统。", "table_urtc_banner": "URTC - 一个独立产品，拥有自己的固件和维护工具，通过 FDCAN 与 HYDRA-UMC 协调。", "table_armor_banner": "A.R.M.O.R. —— 一个完全独立的公开生态系统，用于周界安防与家庭自动化，同一作者。",
         "section_by_ecosystem": "按生态系统划分的项目",
+        "architecture_section_u": "URTC：系统架构",
+        "architecture_u_card1_title": "工具头固件", "architecture_u_card1_body": "STM32F303 通过 CAN 总线驱动每个工具头，读取自身的 5 位硬件地址，自动为 25 种内置工具配置文件之一配置功率级、传感器和安全逻辑。",
+        "architecture_u_card2_title": "扩展与运动", "architecture_u_card2_body": "20 针扩展接口通过六种可互换变体之一增加第二个步进轴或传感器板，在 TMC2209 和 TMC5160 驱动器之间共享 STEP/DIR/EN 接线。",
+        "architecture_u_card3_title": "维护工具", "architecture_u_card3_body": "URTC-FLASHER 无需拆卸主板即可通过 CAN 更新固件，URTC-TESTER 对协议进行端到端测试，URTC-UPDATER 让所有桌面工具与 GitHub 保持同步。",
+        "architecture_u_card4_title": "视觉与运行", "architecture_u_card4_body": "URTC-VISION-TOOL 增加基于摄像头的工具检测，URTC-WEB-STUDIO 提供浏览器控制台，URTC-SMART-RACK 在更换之间存放并识别工具头。",
+        "architecture_u_flow_1": "工具头", "architecture_u_flow_2": "STM32F303 固件", "architecture_u_flow_3": "CAN 总线", "architecture_u_flow_4": "HYDRA-UMC MCU / 主机",
+        "architecture_u_rel_title": "URTC 独立运行，以及与 HYDRA-UMC 配对时：", "architecture_u_rel_body": "URTC 是一个独立的非官方项目——一款为 PAROL6/Faze4 一类机械臂设计的基于 CAN 的工具头控制器，拥有自己的固件、硬件和维护工具。当它作为 HYDRA-UMC 单元的工具子系统时，HYDRA-UMC 自身的 MCU 保留对物理限位和安全停止的权力；URTC 从不绕过这一边界。",
+        "architecture_section_a": "A.R.M.O.R.：系统架构",
+        "architecture_a_card1_title": "网络分段", "architecture_a_card1_body": "现场节点和摄像头位于没有互联网访问的独立 VLAN 中；MQTT 代理和服务器运行在核心 VLAN 中；Studio 和 Android 应用从客户端 VLAN 访问服务器。",
+        "architecture_a_card2_title": "现场节点", "architecture_a_card2_body": "ESP32-S3 雷达、太阳能和电力节点发布传感器和设备读数；太阳能和电力节点仅读取，从不向逆变器、电池或电表写入。",
+        "architecture_a_card3_title": "感知，从不拥有权限", "architecture_a_card3_body": "视觉和语音 AI 会给出带理由的严重等级或意图建议；在服务器自身完成认证和确认之前，authorizes_action 始终为 false。",
+        "architecture_a_card4_title": "状态与操作控制台", "architecture_a_card4_body": "ARMOR-SERVER 是唯一接触摄像头密码或 RTSP 地址的地方；Studio 和 Android 应用是它的已认证客户端，手机仅通过蓝牙即可设置新节点。",
+        "architecture_a_flow_1": "现场节点与摄像头", "architecture_a_flow_2": "MQTT 代理与服务器", "architecture_a_flow_3": "AI 建议", "architecture_a_flow_4": "已认证的客户端会话",
+        "architecture_a_rel_title": "A.R.M.O.R. 自身的边界：", "architecture_a_rel_body": "服务器是唯一授权操作或持有摄像头凭证的组件。视觉和语音 AI 只提出建议；太阳能和电力节点只读取——切换电源的规则已在软件中测试，但尚未连接任何真实硬件。",
     },
     "ja": {
-        "architecture_intro": "Electro Hobby 3D は、同じ著者による3つの独立したエンジニアリングエコシステムです:HYDRA-UMC(産業用マルチロボットプラットフォーム)、URTC(その汎用ツールサブシステムで、独自のファームウェアを持つ独立した製品)、そして A.R.M.O.R.(周辺セキュリティとホームオートメーション)。このダッシュボードは3つ全てをライブで検出・一覧表示します。各エコシステムのファミリーグループは以下にラベル付けされており、HYDRA-UMC 自身のアーキテクチャはこの直後のセクションで詳しく説明されます。",
+        "architecture_intro": "Electro Hobby 3D は、同じ著者による3つの独立したエンジニアリングエコシステムです:HYDRA-UMC(産業用マルチロボットプラットフォーム)、URTC(その汎用ツールサブシステムで、独自のファームウェアを持つ独立した製品)、そして A.R.M.O.R.(周辺セキュリティとホームオートメーション)。このダッシュボードは3つ全てをライブで検出・一覧表示します。各エコシステムのファミリーグループは以下にラベル付けされており、それぞれの詳しいアーキテクチャは以下の各セクションで説明されます。",
         "architecture_section": "HYDRA-UMC:システムアーキテクチャ", "architecture_platform_title": "プラットフォーム基盤", "architecture_platform_body": "Raspberry Pi OS ARM64 は OS の基盤として残ります。HYDRA-UMC 層はデバイスプロファイル、診断、サービスライフサイクルを追加します。",
         "architecture_contracts_title": "契約と運用", "architecture_contracts_body": "SDK は安定したデータおよびコマンド契約を定義し、Server、UI、ツールは生のハードウェアプロトコルの代わりにそれを使用します。",
         "architecture_perception_title": "知覚とインテリジェンス", "architecture_perception_body": "Vision と AI は任意の能力です。出力はミッションに影響する前に検証され、安全権限を持つことはありません。",
@@ -1055,6 +1139,20 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_relationship_title": "HYDRA-UMC と URTC：", "architecture_relationship_body": "HYDRA-UMC はプラットフォームおよびセルコントローラーです。URTC は独立したファームウェアと保守ツールを持つ汎用ロボットツールサブシステムです。MCU は物理的な制限と安全停止の権限を維持し、UI、ネットワーク、AI はその境界を迂回できません。",
         "table_hydra_umc_banner": "HYDRA-UMC — 産業用マルチロボットプラットフォーム兼セル制御装置。本ダッシュボードの最初のエコシステムです。", "table_urtc_banner": "URTC - 独自のファームウェアと保守ツールを持つ独立した製品で、FDCAN 経由で HYDRA-UMC と協調します。", "table_armor_banner": "A.R.M.O.R. — 同じ作者による、別個の公開の周辺セキュリティ・ホームオートメーションエコシステムです。",
         "section_by_ecosystem": "エコシステム別プロジェクト",
+        "architecture_section_u": "URTC：システムアーキテクチャ",
+        "architecture_u_card1_title": "ツールヘッドファームウェア", "architecture_u_card1_body": "STM32F303 が CAN 経由で各ツールヘッドを制御し、自身の 5 ビットのハードウェアアドレスを読み取って、25 種類の内蔵ツールプロファイルの一つに合わせて電源段、センサー、安全ロジックを自動設定します。",
+        "architecture_u_card2_title": "拡張と駆動", "architecture_u_card2_body": "20 ピンの拡張コネクタは、6 種類の交換可能なバリエーションのいずれかを通じて、第 2 のステッピング軸またはセンサーボードを追加し、TMC2209 と TMC5160 ドライバ間で STEP/DIR/EN 配線を共有します。",
+        "architecture_u_card3_title": "メンテナンスツール", "architecture_u_card3_body": "URTC-FLASHER は基板を取り外さずに CAN 経由でファームウェアを更新し、URTC-TESTER はプロトコルをエンドツーエンドで検証し、URTC-UPDATER はすべてのデスクトップツールを GitHub から最新に保ちます。",
+        "architecture_u_card4_title": "ビジョンと運用", "architecture_u_card4_body": "URTC-VISION-TOOL はカメラによるツール検査を追加し、URTC-WEB-STUDIO はブラウザコンソールを提供し、URTC-SMART-RACK は交換の間にツールヘッドを保管・識別します。",
+        "architecture_u_flow_1": "ツールヘッド", "architecture_u_flow_2": "STM32F303 ファームウェア", "architecture_u_flow_3": "CAN バス", "architecture_u_flow_4": "HYDRA-UMC MCU / ホスト",
+        "architecture_u_rel_title": "単体の URTC、そして HYDRA-UMC と組み合わせた場合：", "architecture_u_rel_body": "URTC は独立した非公式プロジェクトです — PAROL6/Faze4 系のアームに対応する CAN ベースのツールヘッドコントローラーで、独自のファームウェア、ハードウェア、メンテナンスツールを持ちます。HYDRA-UMC セルのツールサブシステムとして動作する場合、物理的な限界と安全停止の権限は HYDRA-UMC 自身の MCU が持ち続け、URTC がその境界を越えることはありません。",
+        "architecture_section_a": "A.R.M.O.R.：システムアーキテクチャ",
+        "architecture_a_card1_title": "ネットワークセグメンテーション", "architecture_a_card1_body": "フィールドノードとカメラはインターネットに接続されない専用 VLAN 上にあり、MQTT ブローカーとサーバーはコア VLAN 上で、Studio と Android アプリはクライアント VLAN からサーバーにアクセスします。",
+        "architecture_a_card2_title": "フィールドノード", "architecture_a_card2_body": "ESP32-S3 のレーダー、ソーラー、電気ノードがセンサーと機器の値を送信します。ソーラーと電気ノードは読み取り専用で、インバーター、バッテリー、メーターに書き込むことはありません。",
+        "architecture_a_card3_title": "認識するが権限は持たない", "architecture_a_card3_body": "映像・音声 AI は理由付きで重大度や意図を提案するだけで、サーバー自身が認証・確認するまで authorizes_action は常に false です。",
+        "architecture_a_card4_title": "状態とオペレーターコンソール", "architecture_a_card4_body": "ARMOR-SERVER だけがカメラのパスワードや RTSP アドレスに触れます。Studio と Android アプリはその認証済みクライアントであり、新しいノードはスマートフォンから Bluetooth だけで設定できます。",
+        "architecture_a_flow_1": "フィールドノードとカメラ", "architecture_a_flow_2": "MQTT ブローカーとサーバー", "architecture_a_flow_3": "AI の提案", "architecture_a_flow_4": "認証済みクライアントセッション",
+        "architecture_a_rel_title": "A.R.M.O.R. 自身の境界：", "architecture_a_rel_body": "アクションを許可したり、カメラの認証情報を保持したりするのはサーバーだけです。映像・音声 AI は提案するだけであり、ソーラーと電気ノードは読み取るだけです — 電源切り替えのルールはソフトウェアではテスト済みですが、実際のハードウェアにはまだ接続されていません。",
     },
 }
 
@@ -3683,6 +3781,103 @@ def render_html(
       controller. URTC is its universal robot-tool subsystem, with independent
       firmware and maintenance tools. The MCU remains authoritative for physical
       limits and safe stop; UI, network and AI cannot bypass that boundary.</span>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
+       URTC SYSTEM ARCHITECTURE
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title" data-i18n="architecture_section_u">URTC: System architecture</div>
+
+    <div class="architecture-grid">
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_u_card1_title">Tool-head firmware</h3>
+        <p data-i18n="architecture_u_card1_body">An STM32F303 runs each tool head over CAN, reading its own 5-bit
+        hardware address to auto-configure power stages, sensors and safety logic for one of 25 built-in tool profiles.</p>
+        <ul><li>STM32F303</li><li>CAN bus</li><li>5-bit ID matrix</li><li>25 tool profiles</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_u_card2_title">Expansion and motion</h3>
+        <p data-i18n="architecture_u_card2_body">A 20-pin expansion connector adds a second stepper axis or sensor
+        board through one of six interchangeable variants, sharing STEP/DIR/EN wiring between a TMC2209 and a TMC5160 driver.</p>
+        <ul><li>TMC2209 / TMC5160</li><li>6 expansion boards</li><li>F-RAM persistence</li><li>OLED diagnostics</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_u_card3_title">Maintenance tools</h3>
+        <p data-i18n="architecture_u_card3_body">URTC-FLASHER updates firmware over CAN without removing the board,
+        URTC-TESTER exercises the protocol end to end and URTC-UPDATER keeps every desktop tool current from GitHub.</p>
+        <ul><li>URTC-FLASHER</li><li>URTC-TESTER</li><li>URTC-UPDATER</li><li>CAN-OTA</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_u_card4_title">Vision and operation</h3>
+        <p data-i18n="architecture_u_card4_body">URTC-VISION-TOOL adds camera-based tool inspection, URTC-WEB-STUDIO
+        gives it a browser console and URTC-SMART-RACK stores and identifies tool heads between changes.</p>
+        <ul><li>URTC-VISION-TOOL</li><li>URTC-WEB-STUDIO</li><li>URTC-SMART-RACK</li></ul>
+      </article>
+    </div>
+
+    <div class="architecture-flow" aria-label="URTC control flow">
+      <span data-i18n="architecture_u_flow_1">Tool head</span><b>→</b><span data-i18n="architecture_u_flow_2">STM32F303 firmware</span><b>→</b><span data-i18n="architecture_u_flow_3">CAN bus</span><b>→</b><span data-i18n="architecture_u_flow_4">HYDRA-UMC MCU / host</span>
+    </div>
+
+    <div class="relationship-note">
+      <strong data-i18n="architecture_u_rel_title">URTC on its own, and paired with HYDRA-UMC:</strong> <span data-i18n="architecture_u_rel_body">URTC is an independent, unofficial
+      project - a CAN-based tool-head controller built to work with PAROL6/Faze4-style arms, with its own firmware,
+      hardware and maintenance tools. When it is the tool subsystem of a HYDRA-UMC cell, HYDRA-UMC's own MCU keeps
+      authority over physical limits and safe stop; URTC never bypasses that boundary.</span>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
+       A.R.M.O.R. SYSTEM ARCHITECTURE
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title" data-i18n="architecture_section_a">A.R.M.O.R.: System architecture</div>
+
+    <div class="architecture-grid">
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_a_card1_title">Network segmentation</h3>
+        <p data-i18n="architecture_a_card1_body">Field nodes and cameras sit on their own VLAN with no internet
+        access; the MQTT broker and server live on a core VLAN; Studio and the Android app reach the server from a client VLAN.</p>
+        <ul><li>VLAN 10 field</li><li>VLAN 20 core</li><li>VLAN 30 clients</li><li>MQTT, one identity per node</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_a_card2_title">Field nodes</h3>
+        <p data-i18n="architecture_a_card2_body">ESP32-S3 radar, solar and electrical nodes publish sensor and
+        equipment readings; the solar and electrical ones only read, never write to an inverter, battery or meter.</p>
+        <ul><li>ARMOR-RADAR</li><li>ARMOR-SOLAR</li><li>ARMOR-ELECTRICAL</li><li>ARMOR-NETWORK</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_a_card3_title">Perception, never authority</h3>
+        <p data-i18n="architecture_a_card3_body">Visual and voice AI recommend a severity or an intent with reasons
+        attached; authorizes_action is always false until the server itself authenticates and confirms.</p>
+        <ul><li>ARMOR-SERVER-AI</li><li>ARMOR-VOICE-AI</li><li>Recommend, never act</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_a_card4_title">State and operator consoles</h3>
+        <p data-i18n="architecture_a_card4_body">ARMOR-SERVER is the only place that ever touches a camera password
+        or an RTSP address; Studio and the Android app are its authenticated clients, and a phone can set a new node up over Bluetooth alone.</p>
+        <ul><li>ARMOR-SERVER</li><li>ARMOR-STUDIO</li><li>ARMOR-ANDROID-CONTROL</li><li>BLE set-up only</li></ul>
+      </article>
+    </div>
+
+    <div class="architecture-flow" aria-label="A.R.M.O.R. control flow">
+      <span data-i18n="architecture_a_flow_1">Field nodes and cameras</span><b>→</b><span data-i18n="architecture_a_flow_2">MQTT broker and server</span><b>→</b><span data-i18n="architecture_a_flow_3">AI recommendation</span><b>→</b><span data-i18n="architecture_a_flow_4">Authenticated client session</span>
+    </div>
+
+    <div class="relationship-note">
+      <strong data-i18n="architecture_a_rel_title">A.R.M.O.R.'s own boundary:</strong> <span data-i18n="architecture_a_rel_body">The server is the only component that
+      authorises an action or holds a camera credential. Visual and voice AI only recommend; solar and electrical
+      nodes only read - the rules for switching an electrical source are tested in software but not yet linked to any real hardware.</span>
     </div>
 
   </section>
