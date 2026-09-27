@@ -325,11 +325,11 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 判断を説明し、決して動作しない視覚推論ポリシー |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | 偽造できない確認を備えたオフライン音声インテント |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.8 | Web コンソール：カメラ、レーダー、アラーム、太陽光発電、2D/3D サイト設計 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.5 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.6 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | 筐体、電子部品、ベンチ受け入れマトリクス |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.2 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.4 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.8 | アーキテクチャ、セキュリティ基準、機能マトリクス |
 
 ---
@@ -339,7 +339,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 エコシステム全体のリポジトリの Issue ラベルは、本リポジトリの [`.github/labels.yml`](.github/labels.yml) から統一管理され、[`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) によって各リポジトリへ同期されています——このファイル 1 つを編集するだけで、リポジトリごとに手作業で行うことなく、すべてのラベルを一括更新できます。下記のダッシュボードとは異なり、このリストは静的です（実際の GitHub Actions マトリクスであり、動的な検出ではありません）——新しいリポジトリを追加する際は、実際の `hydra-umc.project.json` だけでなく、ここにもエントリが必要です。
 
-自身の `hydra-umc.project.json` で `ecosystem: HYDRA-UMC` を宣言しているすべての公開リポジトリを対象とするライブステータスダッシュボード（技術スタック、デプロイ対象、現在のバージョン——各リポジトリのデフォルトブランチから直接取得、固定リストなしで動的に検出）は、[`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) によって毎時自動再生成され（関連するプッシュ後は即座にも実行されます）、GitHub Pages 経由で `docs/` から配信されています：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。v3 では、各プロジェクトに実際の成熟度分類（scaffolding / functional / established / production。それぞれ各プロジェクト自身の実際の CHANGELOG に基づいて判定されています——正確な判定基準は [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) モジュール自身の docstring を参照）、その役割（API / UI / CLI / ファームウェア / ライブラリ / サービス / ツール）、実際のファミリー/親子関係ツリー、そして現在実際に何が実装されているかについてのプロジェクトごとの注記が追加されています。
+自身の `hydra-umc.project.json` で `ecosystem: HYDRA-UMC` を宣言しているすべての公開リポジトリを対象とするライブステータスダッシュボード（技術スタック、デプロイ対象、現在のバージョン——各リポジトリのデフォルトブランチから直接取得、固定リストなしで動的に検出）は、[`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) によって毎時自動再生成され（関連するプッシュ後は即座にも実行されます）、GitHub Pages 経由で `docs/` から配信されています：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。各プロジェクトに実際の成熟度分類（scaffolding / functional / established / production。それぞれ各プロジェクト自身の実際の CHANGELOG に基づいて判定されています——正確な判定基準は [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) モジュール自身の docstring を参照）、その役割（API / UI / CLI / ファームウェア / ライブラリ / サービス / ツール）、実際のファミリー/親子関係ツリー、そして現在実際に何が実装されているかについてのプロジェクトごとの注記が追加されています。URTC と A.R.M.O.R. 自身のリポジトリも、HYDRA-UMC とまったく同じ方法でこの同じダッシュボード上でライブに検出されます（`scripts/generate_dashboard.py` を参照）。それぞれが自身の `urtc.project.json`/`armor.project.json` の中で自身の `ecosystem` フィールドを宣言しており、3つのどれについても固定リストはありません。
 
 ## 🧭 GitHub コラボレーション
 
