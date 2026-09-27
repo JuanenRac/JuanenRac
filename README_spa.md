@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="Banner del Ecosistema HYDRA-UMC" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ELECTRO_HOBBY_3D_BANNER.svg" alt="Banner de Electro Hobby 3D" width="100%">
 </p>
 
-# Ecosistema HYDRA-UMC / URTC 🤖🚀
+# Electro Hobby 3D 🤖🚀
 
 <p align="center">
   <a href="README.md">🇺🇸 English</a> |
@@ -17,6 +17,20 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Licencia-GPL%203.0-blue.svg" alt="Licencia GPL 3.0">
   <img src="https://img.shields.io/badge/Hardware-CERN%20OHL--S-orange.svg" alt="Hardware CERN OHL">
+  <img src="https://img.shields.io/badge/Ecosistemas-3-00E5FF.svg" alt="Tres ecosistemas">
+</p>
+
+Tres ecosistemas de ingeniería independientes, un mismo autor. **HYDRA-UMC** es una plataforma de robótica industrial de múltiples capas, desde firmware en tiempo real hasta IA cognitiva. **URTC** es su subsistema universal de herramientas robóticas: firmware en tiempo real y herramientas de escritorio/web para el efector final de un robot, desarrollado como producto propio con versión y mantenimiento independientes. **A.R.M.O.R.** es un ecosistema aparte, privado, de seguridad perimetral y automatización del hogar - detección de presencia por radar, monitorización solar y eléctrica, y un coordinador central con clientes web y móvil.
+
+---
+
+# 🐙 HYDRA-UMC
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="Banner del Ecosistema HYDRA-UMC" width="100%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Plataforma-STM32%20%7C%20CM5-red.svg" alt="Plataforma">
   <img src="https://img.shields.io/badge/IA-Hailo--8%20%7C%20Hailo--10-green.svg" alt="Poder de IA">
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
@@ -46,13 +60,13 @@ El ecosistema v1.1 es una plataforma de producto por capas: se apoya en tecnolog
 
 1.  **Base de plataforma**: Raspberry Pi OS ARM64 y los servicios Linux estándar proporcionan la base compatible para CM5.
 2.  **Plataforma y contratos**: **HYDRA-UMC-OS** empaqueta perfiles reproducibles, servicios, diagnóstico y actualizaciones sobre Raspberry Pi OS; **HYDRA-UMC-SDK** publica contratos versionados, clientes ligeros y pruebas de conformidad.
-3.  **Ejecución en tiempo real**: el firmware **HYDRA-UMC** y URTC sobre STM32/MCU mantienen los límites de movimiento, watchdogs y parada segura.
+3.  **Ejecución en tiempo real**: el firmware **HYDRA-UMC** mantiene los límites de movimiento, watchdogs y parada segura sobre STM32/MCU; la herramienta en sí, y su propia autoridad en tiempo real sobre el efector final, pertenece al ecosistema **URTC**, aparte, más abajo.
 4.  **Coordinación y operaciones**: los servicios de servidor, despacho de trabajos, telemetría y configuración coordinan dispositivos sin saltarse el límite de seguridad del MCU.
 5.  **Interfaces de operador**: Studio, Suite, DSI, web, escritorio, móvil y CLI consumen los contratos del SDK.
 6.  **Percepción e inteligencia**: visión, Hailo y servicios cognitivos proponen observaciones o planes; no tienen autoridad de seguridad física.
 7.  **Ingeniería, industria y datos**: Gemelo Digital, HIL/física, pasarelas OPC-UA/MQTT/MTConnect y datos validan e integran el sistema.
 
-Para desarrollar, se parte de la arquitectura y el modelo de servicios públicos de **HYDRA-UMC-OS** y se usan los contratos y reglas de conformidad de **HYDRA-UMC-SDK**. La autoridad de seguridad del MCU/URTC se conserva en todos los flujos.
+Para desarrollar, se parte de la arquitectura y el modelo de servicios públicos de **HYDRA-UMC-OS** y se usan los contratos y reglas de conformidad de **HYDRA-UMC-SDK**. La autoridad de seguridad del MCU se conserva en todos los flujos.
 
 ---
 
@@ -113,7 +127,7 @@ Esto no es un tutorial guiado (no hay un único carrier "correcto" para cada cas
 
 ---
 
-## 📁 Catálogo de Proyectos
+## 📁 Catálogo de Proyectos HYDRA-UMC
 
 ¿Nuevo en el ecosistema? `./starter-kit.sh` (o `starter-kit.bat` en
 Windows) clona 13 repositorios core - un conjunto inicial seleccionado a
@@ -130,7 +144,7 @@ completo de abajo.
 | Repositorio | Descripción |
 | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | Capa de plataforma Raspberry Pi OS para CM5: perfiles reproducibles, configuración, diagnóstico, ciclo de servicios y actualizaciones; no es una distribución Linux nueva. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contratos versionados, clientes ligeros y pruebas de conformidad compartidos para servicios, interfaces, adaptadores CM5 y URTC; no sustituye API de fabricantes. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | Contratos versionados, clientes ligeros y pruebas de conformidad compartidos para servicios, interfaces y adaptadores CM5; no sustituye API de fabricantes. |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | Registro declarativo y validador de manifiestos de adaptador para conectores de máquinas externas; extiende la propia idea de contrato del SDK a máquinas externas sin sustituir a los proyectos de pasarela industrial. |
 
 ### 💠 Control core e interfaces de operador
@@ -145,17 +159,6 @@ completo de abajo.
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | App móvil Flutter para iOS/iPadOS con sincronización WebSocket en tiempo real. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | Editor gráfico de URDF para validar y subir modelos de robots al catálogo. |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | Editor de escritorio de modelos STL - transforma, reemplaza, quita y añade piezas reales en el catálogo de modelos compartido. |
-
-
-### 🔧 Núcleo y herramientas URTC
-| Repositorio | Descripción |
-| :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | Firmware de controlador de herramientas universal para más de 25 herramientas especializadas. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | Herramienta de diagnóstico CAN-bus con paneles de telemetría por herramienta. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Cabezal con cámaras térmicas y RGB integradas para QA activo. |
 
 ### 👁️ Nodo de IA de Visión (Optimizado para Hailo-8)
 | Repositorio | Descripción |
@@ -234,12 +237,107 @@ completo de abajo.
 
 ---
 
+# 🔧 URTC
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/URTC_BANNER.svg" alt="Banner del Ecosistema URTC" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Plataforma-STM32-red.svg" alt="Plataforma">
+  <img src="https://img.shields.io/badge/Bus-CAN%20%2F%20CAN--OTA-orange.svg" alt="Bus">
+  <img src="https://img.shields.io/badge/Herramientas-25%2B%20perfiles-blueviolet.svg" alt="Herramientas">
+</p>
+
+**URTC (Universal Robot Tool Controller)** es un producto propio, no una carpeta subsistema de HYDRA-UMC: firmware en tiempo real y una familia de herramientas de escritorio/web para el efector final de un robot, desarrollado, versionado y mantenido de forma independiente. Un cambiador de herramientas equipado con URTC se coordina con el controlador de celda de HYDRA-UMC por FDCAN, pero el comportamiento en tiempo real de la propia herramienta, su watchdog y su estado seguro son autoridad propia de URTC - el controlador de celda no puede saltárselo, y URTC no depende de HYDRA-UMC para ser desarrollado, grabado o diagnosticado.
+
+## 🏗️ Cómo Funciona URTC
+
+1. **Firmware de herramienta**: el propio firmware STM32 de URTC ejecuta cada uno de más de 25 perfiles de herramienta especializados (pinzas, dosificadores, sondas, husillos y más), cada uno con su propio tiempo, límites y comportamiento ante fallos.
+2. **Actualización en campo**: CAN-OTA envía una nueva imagen de firmware por el mismo bus CAN que ya usa la herramienta, con una vía completa por chip SWD/JTAG (URTC-FLASHER) como respaldo que nunca depende de que el firmware propio de la herramienta esté vivo.
+3. **Diagnóstico en vivo**: URTC-TESTER valida el comportamiento CAN en tiempo real de una herramienta frente a su perfil declarado sin necesitar un taller completo; URTC-WEB-STUDIO hace lo mismo desde una pestaña del navegador por Web Serial, sin nada que instalar.
+4. **Almacenamiento y ciclo de vida**: URTC-SMART-RACK guarda las herramientas entre trabajos, precalienta una antes de un cambio y mantiene un registro de auditoría de ciclo de vida (ciclos, fallos, última calibración) por herramienta física, no por tipo de herramienta.
+5. **QA activo**: URTC-VISION-TOOL es en sí misma una herramienta - un cabezal con sus propias cámaras térmica y RGB para inspección de calidad durante el proceso, no una cámara externa atornillada a otra herramienta.
+
+## 🛠️ Stack Tecnológico
+
+- **Firmware**: STM32, FDCAN (bus compartido con el controlador de celda), CAN-OTA, respaldo SWD/JTAG.
+- **Herramientas de escritorio**: clientes GUI multiplataforma para grabar y diagnosticar (URTC-FLASHER, URTC-TESTER).
+- **Herramientas de navegador**: la API Web Serial para pruebas de hardware sin instalar nada (URTC-WEB-STUDIO).
+- **Datos de ciclo de vida**: registro de auditoría no volátil por herramienta, con el mismo criterio de integridad F-RAM que usa HYDRA-UMC.
+
+## 🔒 Seguridad
+
+Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos, independiente de la propia capa E-STOP del controlador de celda - una herramienta que pierde su propio margen de tiempo o el heartbeat CAN va a su estado seguro declarado por sí sola, en vez de esperar una orden externa. El precalentamiento de URTC-SMART-RACK está acotado por los mismos límites térmicos por herramienta que declara su perfil, auditados en el mismo registro de ciclo de vida que un taller usa para decidir si una herramienta sigue apta para servicio.
+
+## 📁 Catálogo de Proyectos URTC
+
+| Repositorio | Descripción |
+| :--- | :--- |
+| [URTC](https://github.com/JuanenRac/URTC) | Firmware de controlador de herramientas universal para más de 25 herramientas especializadas. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | Herramienta de diagnóstico CAN-bus con paneles de telemetría por herramienta. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Cabezal con cámaras térmicas y RGB integradas para QA activo. |
+
+---
+
+# 🛡️ A.R.M.O.R.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/ARMOR-DOCS/main/images/ARMOR_BANNER.svg" alt="Banner del Ecosistema A.R.M.O.R." width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Visibilidad-Privado-lightgrey.svg" alt="Repositorios privados">
+  <img src="https://img.shields.io/badge/Plataforma-ESP32--S3%20%7C%20Jetson-red.svg" alt="Plataforma">
+  <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
+</p>
+
+**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** es un ecosistema aparte, privado, de seguridad perimetral y automatización del hogar - sin relación con HYDRA-UMC ni URTC más allá del mismo autor y las mismas convenciones de ingeniería (manifiestos versionados, un contrato de mensajes compartido, interfaces en siete idiomas). Sus nodos de campo vigilan el perímetro de una propiedad y su instalación solar/eléctrica; su servidor central y sus clientes permiten a un operador ver y actuar sobre lo que reportan. Cada repositorio listado aquí es **privado**: los enlaces de abajo necesitan el acceso propio de la cuenta para abrirse, y las notas de versión y madurez salen directamente del manifiesto y la matriz de capacidades de cada repositorio, la misma convención de honestidad que ya usa el dashboard de HYDRA-UMC.
+
+## 🏗️ Cómo Está Construido A.R.M.O.R.
+
+1. **Contrato compartido**: **ARMOR-COMMON** es dueño del significado de los mensajes - JSON Schema, un validador en Python y tipos TypeScript/Kotlin generados que cada otro repositorio consume, nunca redefine.
+2. **Nodos de campo**: firmware ESP32-S3 para detección por radar/presencia (**ARMOR-RADAR**), monitorización de inversores y baterías solares (**ARMOR-SOLAR**), y medición eléctrica con maniobra (**ARMOR-ELECTRICAL**); un agente en Python (**ARMOR-NETWORK**) vigila la propia red local de la casa y si hay internet desde una máquina ya conectada a ella.
+3. **Coordinador central**: **ARMOR-SERVER** guarda el estado, usuarios, alarmas, automatizaciones y evidencia de cámaras; **ARMOR-SERVER-AI** y **ARMOR-VOICE-AI** añaden una política visual explicable e intenciones de voz sin conexión que nunca actúan por sí solas.
+4. **Clientes de operador**: **ARMOR-STUDIO** (web) y **ARMOR-ANDROID-CONTROL** (móvil) son clientes del servidor central, nunca de la red de campo directamente.
+5. **Despliegue y pruebas**: **ARMOR-DEVOPS** despliega todo el grafo de servicios; **ARMOR-SIMULATOR** reproduce escenarios y fallos repetibles sin hardware real; **ARMOR-HARDWARE** lleva el diseño de las cajas y su matriz de aceptación en banco.
+6. **Operación del ecosistema**: **ARMOR-UPDATER** descubre, instala y actualiza cada repositorio de A.R.M.O.R. en una máquina, el mismo diseño atómico-por-verificación que HYDRA-UMC-UPDATER, adaptado para un ecosistema privado; **ARMOR-DOCS** es la documentación de arquitectura canónica y la matriz de capacidades.
+
+## 🔒 Honestidad y Seguridad
+
+A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: una afirmación solo es real cuando está verificada, y cada repositorio dice con claridad qué se ha probado ya en hardware real y qué no. Nada en este ecosistema controla hoy la corriente eléctrica de la red ni el acceso físico; los nodos de campo observan y reportan, y cualquier capacidad de maniobra futura se diseña y revisa antes de activarse.
+
+## 📁 Catálogo de Proyectos A.R.M.O.R.
+
+| Repositorio | Versión | Descripción |
+| :--- | :--- | :--- |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.2.6 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
+| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.2 | La red local: sus dispositivos, internet y lo que cambia. |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.1 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y cámaras. |
+| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
+| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.8 | Consola web: cámaras, radar, alarmas, energía solar y el diseñador de sitio 2D/3D. |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.5 | Cliente Android del operador con radar 2D/3D en vivo. |
+| [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | Cajas, electrónica y la matriz de aceptación en banco. |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
+| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Simulador de telemetría sin conexión con fallos repetibles. |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.1 | Detecta, instala y actualiza los propios repositorios del ecosistema. |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.8 | Arquitectura, base de seguridad y la matriz de capacidades. |
+
+---
+
 ## 🤝 Contribuir
-Este ecosistema es parte de una iniciativa robótica de alta tecnología. Cada proyecto tiene sus propias pautas de contribución. Consulte los repositorios individuales para detalles técnicos.
+Cada ecosistema es su propia iniciativa con sus propios proyectos. Cada proyecto tiene sus propias pautas de contribución. Consulte los repositorios individuales para detalles técnicos.
 
-Las etiquetas de issues están estandarizadas en todos los repos del ecosistema a partir de [`.github/labels.yml`](.github/labels.yml) en este mismo repo, sincronizadas por [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - edita ese único archivo para cambiar una etiqueta en todos a la vez, en vez de hacerlo a mano repo por repo. A diferencia del dashboard de abajo, esta lista es estática (una matriz real de GitHub Actions, no descubrimiento dinámico) - un repo nuevo necesita también una entrada ahí, no solo un `hydra-umc.project.json` real.
+Las etiquetas de issues están estandarizadas en todos los repos de HYDRA-UMC a partir de [`.github/labels.yml`](.github/labels.yml) en este mismo repo, sincronizadas por [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - edita ese único archivo para cambiar una etiqueta en todos a la vez, en vez de hacerlo a mano repo por repo. A diferencia del dashboard de abajo, esta lista es estática (una matriz real de GitHub Actions, no descubrimiento dinámico) - un repo nuevo necesita también una entrada ahí, no solo un `hydra-umc.project.json` real.
 
-Un dashboard de estado en vivo que cubre todo repo público que declara `ecosystem: HYDRA-UMC` en su propio `hydra-umc.project.json` (stack, destino de despliegue, versión actual - leído directamente de la rama por defecto de cada repo, descubierto dinámicamente sin lista fija) se regenera cada hora (e inmediatamente tras un push relevante) mediante [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) y se sirve desde `docs/` vía GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. La v3 añade una clasificación real de madurez por proyecto (andamiaje / funcional / establecido / producción, cada una decidida a partir del propio CHANGELOG de ese proyecto - ver el docstring del propio módulo [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) para el criterio exacto), su rol (API / UI / CLI / firmware / librería / servicio / herramienta), un árbol real de familia/padre-hijo, y notas por proyecto sobre lo que está realmente implementado hoy.
+Un dashboard de estado en vivo que cubre todo repo público que declara `ecosystem: HYDRA-UMC` en su propio `hydra-umc.project.json` (stack, destino de despliegue, versión actual - leído directamente de la rama por defecto de cada repo, descubierto dinámicamente sin lista fija) se regenera cada hora (e inmediatamente tras un push relevante) mediante [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) y se sirve desde `docs/` vía GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. Añade una clasificación real de madurez por proyecto (andamiaje / funcional / establecido / producción, cada una decidida a partir del propio CHANGELOG de ese proyecto - ver el docstring del propio módulo [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) para el criterio exacto), su rol (API / UI / CLI / firmware / librería / servicio / herramienta), un árbol real de familia/padre-hijo, y notas por proyecto sobre lo que está realmente implementado hoy. Los propios repositorios de A.R.M.O.R. son privados y aparecen agrupados aparte en ese mismo dashboard, ya que necesitan el acceso propio de la cuenta para abrirse.
 
 ## 🧭 Colaboración en GitHub
 

@@ -1,0 +1,32 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">URTC</title>
+  <desc id="desc">URTC - Universal Robot Tool Controller, a real-time tool-changer subsystem for 25+ specialized tools</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090C"/>
+      <stop offset="100%" stop-color="#12161C"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bgGrad)"/>
+
+  <g fill="none" stroke="#FFB020" stroke-width="1" opacity="0.2">
+    <path d="M0 100L200 100L250 150L600 150"/>
+    <path d="M1200 300L1000 300L950 250L600 250"/>
+  </g>
+
+  <!-- Emblem: a tool-changer head with three interchangeable heads -->
+  <g transform="translate(600,190)" filter="url(#glow)" stroke="#FFB020" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="34"/>
+    <circle r="10" fill="#FFB020" stroke="none"/>
+    <path d="M0,-34 V-74 M-24,20 L-52,58 M24,20 L52,58" stroke="#00E5FF" stroke-width="3.4"/>
+    <rect x="-16" y="-98" width="32" height="24" rx="4"/>
+    <circle cx="-52" cy="66" r="12"/>
+    <path d="M46,50 L58,50 M52,44 L52,64" transform="translate(0,8)"/>
+    <circle cx="52" cy="66" r="12"/>
+  </g>
+
+  <text x="360" y="330" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#FFFFFF" letter-spacing="10" text-anchor="middle">URTC</text>
+  <text x="600" y="60" font-family="Arial, sans-serif" font-size="19" fill="#FFB020" letter-spacing="3" text-anchor="middle">UNIVERSAL ROBOT TOOL CONTROLLER</text>
+</svg>
