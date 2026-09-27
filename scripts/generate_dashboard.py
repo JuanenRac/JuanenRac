@@ -976,7 +976,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Operator interfaces", "architecture_flow_services": "Server and SDK", "architecture_flow_adapter": "CM5-MCU adapter", "architecture_flow_machine": "MCU / URTC / machine",
         "architecture_relationship_title": "HYDRA-UMC and URTC:", "architecture_relationship_body": "HYDRA-UMC is the platform and cell controller. URTC is its universal robot-tool subsystem, with independent firmware and maintenance tools. The MCU remains authoritative for physical limits and safe stop; UI, network and AI cannot bypass that boundary.",
         "table_urtc_banner": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "A separate, private ecosystem (perimeter security and home automation), same author. Every repository below is private - the links need the account's own access to open. Unlike the table above, this list is static, not fetched live.", "th_armor_desc": "Description",
+       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "A separate, public ecosystem (perimeter security and home automation), same author. Unlike the table above, this list is static (refreshed by hand alongside this generator), not fetched live.", "th_armor_desc": "Description",
     },
     "es": {
         "architecture_intro": "HYDRA-UMC es un ecosistema modular de ingeniería para control multieje, robótica, conectividad industrial, visión artificial e inteligencia de borde. Mantiene Raspberry Pi OS y las API oficiales de cada proveedor como base, y añade una capa de plataforma HYDRA-UMC versionada, contratos compartidos y servicios opcionales. Este panel explica el sistema; los manifiestos de los repositorios y la tabla generada aportan los datos específicos de cada proyecto.",
@@ -987,7 +987,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Interfaces de operador", "architecture_flow_services": "Server y SDK", "architecture_flow_adapter": "Adaptador CM5-MCU", "architecture_flow_machine": "MCU / URTC / máquina",
         "architecture_relationship_title": "HYDRA-UMC y URTC:", "architecture_relationship_body": "HYDRA-UMC es la plataforma y el controlador de celda. URTC es su subsistema universal de herramientas robóticas, con firmware y utilidades de mantenimiento independientes. El MCU conserva la autoridad sobre límites físicos y parada segura; UI, red e IA no pueden saltarse esa frontera.",
         "table_urtc_banner": "URTC - un producto independiente con firmware y utilidades de mantenimiento propios, coordinado con HYDRA-UMC por FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un ecosistema aparte, privado (seguridad perimetral y automatización del hogar), del mismo autor. Cada repositorio de abajo es privado - los enlaces necesitan el acceso propio de la cuenta para abrirse. A diferencia de la tabla de arriba, esta lista es estática, no se obtiene en vivo.", "th_armor_desc": "Descripción",
+       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un ecosistema aparte, público (seguridad perimetral y automatización del hogar), del mismo autor. A diferencia de la tabla de arriba, esta lista es estática (actualizada a mano junto con este generador), no se obtiene en vivo.", "th_armor_desc": "Descripción",
     },
     "fr": {
         "architecture_intro": "HYDRA-UMC est un écosystème d’ingénierie modulaire pour le contrôle multi-axes, la robotique, la connectivité industrielle, la vision et l’intelligence de périphérie. Il conserve Raspberry Pi OS et les API officielles comme base, puis ajoute une couche de plateforme HYDRA-UMC versionnée, des contrats partagés et des services optionnels. Ce tableau explique le système ; les manifestes des dépôts et le tableau généré fournissent les faits par projet.",
@@ -998,7 +998,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Interfaces opérateur", "architecture_flow_services": "Server et SDK", "architecture_flow_adapter": "Adaptateur CM5-MCU", "architecture_flow_machine": "MCU / URTC / machine",
         "architecture_relationship_title": "HYDRA-UMC et URTC :", "architecture_relationship_body": "HYDRA-UMC est la plateforme et le contrôleur de cellule. URTC est son sous-système universel d’outils robotiques, avec firmware et outils de maintenance indépendants. Le MCU garde l’autorité sur les limites physiques et l’arrêt sûr ; interface, réseau et IA ne peuvent pas contourner cette frontière.",
         "table_urtc_banner": "URTC - un produit indépendant avec son propre firmware et ses propres outils de maintenance, coordonné avec HYDRA-UMC via FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un écosystème séparé et privé (sécurité périmétrique et domotique), du même auteur. Chaque dépôt ci-dessous est privé - les liens nécessitent l'accès propre du compte pour s'ouvrir. Contrairement au tableau ci-dessus, cette liste est statique, non récupérée en direct.", "th_armor_desc": "Description",
+       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un écosystème séparé et public (sécurité périmétrique et domotique), du même auteur. Contrairement au tableau ci-dessus, cette liste est statique (mise à jour à la main avec ce générateur), non récupérée en direct.", "th_armor_desc": "Description",
     },
     "it": {
         "architecture_intro": "HYDRA-UMC è un ecosistema ingegneristico modulare per controllo multiasse, robotica, connettività industriale, visione artificiale e intelligenza edge. Mantiene Raspberry Pi OS e le API ufficiali dei fornitori come base, quindi aggiunge una piattaforma HYDRA-UMC versionata, contratti condivisi e servizi opzionali. Questa dashboard spiega il sistema; i manifesti dei repository e la tabella generata forniscono i fatti per progetto.",
@@ -1009,7 +1009,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Interfacce operatore", "architecture_flow_services": "Server e SDK", "architecture_flow_adapter": "Adattatore CM5-MCU", "architecture_flow_machine": "MCU / URTC / macchina",
         "architecture_relationship_title": "HYDRA-UMC e URTC:", "architecture_relationship_body": "HYDRA-UMC è la piattaforma e il controllore di cella. URTC è il suo sottosistema universale per utensili robotici, con firmware e strumenti di manutenzione indipendenti. Il MCU mantiene l’autorità sui limiti fisici e sull’arresto sicuro; UI, rete e IA non possono aggirare quel confine.",
         "table_urtc_banner": "URTC - un prodotto indipendente con firmware e strumenti di manutenzione propri, coordinato con HYDRA-UMC via FDCAN.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un ecosistema a parte, privato (sicurezza perimetrale e domotica), dello stesso autore. Ogni repository sotto è privata - i link richiedono l'accesso proprio dell'account per aprirsi. A differenza della tabella sopra, questo elenco è statico, non recuperato in tempo reale.", "th_armor_desc": "Descrizione",
+       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Un ecosistema a parte, pubblico (sicurezza perimetrale e domotica), dello stesso autore. A differenza della tabella sopra, questo elenco è statico (aggiornato a mano insieme a questo generatore), non recuperato in tempo reale.", "th_armor_desc": "Descrizione",
     },
     "de": {
         "architecture_intro": "HYDRA-UMC ist ein modulares Engineering-Ökosystem für Mehrachsensteuerung, Robotik, industrielle Konnektivität, maschinelles Sehen und Edge-Intelligenz. Raspberry Pi OS und offizielle Hersteller-APIs bleiben die Basis; darüber liegen eine versionierte HYDRA-UMC-Plattformschicht, gemeinsame Verträge und optionale Dienste. Dieses Dashboard erklärt das System; Repository-Manifeste und die erzeugte Tabelle liefern projektbezogene Fakten.",
@@ -1020,7 +1020,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "Bedienoberflächen", "architecture_flow_services": "Server und SDK", "architecture_flow_adapter": "CM5-MCU-Adapter", "architecture_flow_machine": "MCU / URTC / Maschine",
         "architecture_relationship_title": "HYDRA-UMC und URTC:", "architecture_relationship_body": "HYDRA-UMC ist Plattform und Zellensteuerung. URTC ist das universelle Roboterwerkzeug-Subsystem mit unabhängiger Firmware und Wartungswerkzeugen. Der MCU behält die Autorität über physische Grenzen und sicheren Stopp; UI, Netzwerk und KI können diese Grenze nicht umgehen.",
         "table_urtc_banner": "URTC - ein eigenständiges Produkt mit eigener Firmware und eigenen Wartungswerkzeugen, über FDCAN mit HYDRA-UMC koordiniert.",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Ein separates, privates Ökosystem (Perimetersicherheit und Hausautomation) desselben Autors. Jedes Repository unten ist privat - die Links benötigen den eigenen Zugang des Kontos zum Öffnen. Anders als die Tabelle oben ist diese Liste statisch, nicht live abgerufen.", "th_armor_desc": "Beschreibung",
+       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "Ein separates, öffentliches Ökosystem (Perimetersicherheit und Hausautomation) desselben Autors. Anders als die Tabelle oben ist diese Liste statisch (von Hand zusammen mit diesem Generator aktualisiert), nicht live abgerufen.", "th_armor_desc": "Beschreibung",
     },
     "zh": {
         "architecture_intro": "HYDRA-UMC 是面向多轴控制、机器人、工业连接、机器视觉和边缘智能的模块化工程生态系统。它以 Raspberry Pi OS 与厂商官方 API 为基础，并增加版本化的 HYDRA-UMC 平台层、共享契约和可选服务。本仪表板说明系统；各仓库的清单文件和生成的项目表提供项目事实。",
@@ -1031,7 +1031,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "操作员界面", "architecture_flow_services": "Server 和 SDK", "architecture_flow_adapter": "CM5-MCU 适配器", "architecture_flow_machine": "MCU / URTC / 机器",
         "architecture_relationship_title": "HYDRA-UMC 与 URTC：", "architecture_relationship_body": "HYDRA-UMC 是平台和单元控制器。URTC 是其通用机器人工具子系统，拥有独立的固件和维护工具。MCU 保留物理限制和安全停止的权力；UI、网络和 AI 都不能绕过这一边界。",
         "table_urtc_banner": "URTC - 一个独立产品，拥有自己的固件和维护工具，通过 FDCAN 与 HYDRA-UMC 协调。",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "一个完全独立的私有生态系统（周界安防与家庭自动化），同一作者。下面的每个仓库都是私有的——链接需要该账号自己的权限才能打开。与上面的表格不同，这份列表是静态的，不是实时获取的。", "th_armor_desc": "描述",
+       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "一个完全独立的公开生态系统（周界安防与家庭自动化），同一作者。与上面的表格不同，这份列表是静态的（随本生成器手动更新），不是实时获取的。", "th_armor_desc": "描述",
     },
     "ja": {
         "architecture_intro": "HYDRA-UMC は、多軸制御、ロボティクス、産業接続、マシンビジョン、エッジインテリジェンスのためのモジュール型エンジニアリングエコシステムです。Raspberry Pi OS と公式ベンダー API を基盤に、バージョン管理された HYDRA-UMC プラットフォーム層、共有契約、任意のサービスを追加します。このダッシュボードはシステムを説明し、各リポジトリのマニフェストと生成された表がプロジェクトごとの事実を提供します。",
@@ -1042,7 +1042,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_flow_operator": "オペレーターインターフェース", "architecture_flow_services": "Server と SDK", "architecture_flow_adapter": "CM5-MCU アダプター", "architecture_flow_machine": "MCU / URTC / 機械",
         "architecture_relationship_title": "HYDRA-UMC と URTC：", "architecture_relationship_body": "HYDRA-UMC はプラットフォームおよびセルコントローラーです。URTC は独立したファームウェアと保守ツールを持つ汎用ロボットツールサブシステムです。MCU は物理的な制限と安全停止の権限を維持し、UI、ネットワーク、AI はその境界を迂回できません。",
         "table_urtc_banner": "URTC - 独自のファームウェアと保守ツールを持つ独立した製品で、FDCAN 経由で HYDRA-UMC と協調します。",
-       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "同じ作者による、別個の非公開エコシステム（周辺セキュリティとホームオートメーション）です。以下の各リポジトリは非公開であり、リンクを開くにはそのアカウント自身のアクセス権が必要です。上の表とは異なり、このリストは静的で、リアルタイムには取得されません。", "th_armor_desc": "説明",
+       "armor_section_title": "A.R.M.O.R.", "armor_section_intro": "同じ作者による、別個の公開エコシステム（周辺セキュリティとホームオートメーション）です。上の表とは異なり、このリストは静的で（このジェネレーターと合わせて手動更新）、リアルタイムには取得されません。", "th_armor_desc": "説明",
     },
 }
 
@@ -1861,20 +1861,18 @@ def render_roadmap(
 
 
 # ---------------------------------------------------------------------------
-# A.R.M.O.R. - a separate, private ecosystem (perimeter security and home
+# A.R.M.O.R. - a separate, public ecosystem (perimeter security and home
 # automation), same author. It is NOT discovered live like HYDRA-UMC/URTC
-# above: every A.R.M.O.R.-* repository is private, so an unauthenticated
-# scan (or this workflow's own default GITHUB_TOKEN, which only ever grants
-# access to the repo the workflow itself runs in) sees none of them. This
-# section is therefore a real but STATIC catalogue - the same version,
-# maturity and description each repository's own armor.project.json and
-# ARMOR-DOCS/docs/PROJECT_CATALOG.md carry - refreshed by hand alongside
-# this file rather than fetched at generation time. A future revision could
-# fetch it live the same way, given a fine-grained token (with read access
-# to every ARMOR-* repository) added as a workflow secret and the
-# `armor_updater` package (ARMOR-UPDATER's own discovery client - the same
-# design as this file's `hydra_umc_updater` import, adapted for a private
-# ecosystem) installed alongside it.
+# above yet, even though every A.R.M.O.R.-* repository is now public and
+# `armor_updater.github_client.discover_remote_projects()` already works
+# with no token at all - this section is still a real but STATIC catalogue
+# for now: the same version, maturity and description each repository's own
+# armor.project.json and ARMOR-DOCS/docs/PROJECT_CATALOG.md carry, refreshed
+# by hand alongside this file rather than fetched at generation time. A
+# future revision should switch this to the same live-discovery pattern as
+# the `hydra_umc_updater` import above, installing the `armor_updater`
+# package (ARMOR-UPDATER's own discovery client) alongside it - now that
+# the ecosystem is public, nothing blocks that anymore except doing it.
 # ---------------------------------------------------------------------------
 
 ARMOR_PROJECTS: list[tuple[str, str, str, str]] = [
@@ -1892,7 +1890,7 @@ ARMOR_PROJECTS: list[tuple[str, str, str, str]] = [
     ("ARMOR-HARDWARE", "0.2.2", "functional", "Enclosure design and the bench acceptance matrix."),
     ("ARMOR-DEVOPS", "0.3.4", "functional", "Compose topology, central-server test-bench installer, backup and restore, TLS profile, own MQTT broker."),
     ("ARMOR-SIMULATOR", "0.2.3", "functional", "Scenarios and repeatable faults."),
-    ("ARMOR-UPDATER", "0.0.1", "scaffolding", "Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, adapted for a private ecosystem)."),
+    ("ARMOR-UPDATER", "0.0.2", "scaffolding", "Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required)."),
     ("ARMOR-DOCS", "0.4.8", "functional", "Canonical documentation and the capability matrix."),
 ]
 
@@ -1918,9 +1916,8 @@ def render_armor_section() -> str:
   <section class="section armor-section">
     <div class="section-title" data-i18n="armor_section_title">A.R.M.O.R.</div>
     <p class="armor-section-intro" data-i18n="armor_section_intro">
-      A separate, private ecosystem (perimeter security and home automation), same author. Every repository below is
-      private - the links need the account's own access to open. Unlike the table above, this list is static (refreshed
-      by hand alongside this generator), not fetched live at generation time.
+      A separate, public ecosystem (perimeter security and home automation), same author. Unlike the table above, this
+      list is static (refreshed by hand alongside this generator), not fetched live at generation time.
     </p>
     <table class="armor-table">
       <thead>

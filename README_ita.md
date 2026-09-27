@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Ecosistemi-3-00E5FF.svg" alt="Tre ecosistemi">
 </p>
 
-Tre ecosistemi ingegneristici indipendenti, un solo autore. **HYDRA-UMC** è una piattaforma di robotica industriale multistrato, dal firmware in tempo reale all'IA cognitiva. **URTC** è il suo sottosistema universale di utensili robotici: firmware in tempo reale e strumenti desktop/web per l'end-effector di un robot, sviluppato come prodotto proprio con versione e manutenzione indipendenti. **A.R.M.O.R.** è un ecosistema a parte, privato, di sicurezza perimetrale e domotica - rilevamento di presenza via radar, monitoraggio solare ed elettrico, e un coordinatore centrale con client web e mobile.
+Tre ecosistemi ingegneristici indipendenti, un solo autore. **HYDRA-UMC** è una piattaforma di robotica industriale multistrato, dal firmware in tempo reale all'IA cognitiva. **URTC** è il suo sottosistema universale di utensili robotici: firmware in tempo reale e strumenti desktop/web per l'end-effector di un robot, sviluppato come prodotto proprio con versione e manutenzione indipendenti. **A.R.M.O.R.** è un ecosistema a parte, pubblico, di sicurezza perimetrale e domotica - rilevamento di presenza via radar, monitoraggio solare ed elettrico, e un coordinatore centrale con client web e mobile.
 
 ---
 
@@ -291,12 +291,12 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Visibilit%C3%A0-Privato-lightgrey.svg" alt="Private repositories">
+  <img src="https://img.shields.io/badge/Visibilit%C3%A0-Pubblico-brightgreen.svg" alt="Public repositories">
   <img src="https://img.shields.io/badge/Platform-ESP32--S3%20%7C%20Jetson-red.svg" alt="Platform">
   <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
 </p>
 
-**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** è un ecosistema a parte, privato, di sicurezza perimetrale e domotica - senza relazione con HYDRA-UMC né con URTC oltre allo stesso autore e alle stesse convenzioni ingegneristiche (manifesti versionati, un contratto di messaggi condiviso, interfacce in sette lingue). I suoi nodi di campo sorvegliano il perimetro di una proprietà e il suo impianto solare/elettrico; il suo server centrale e i suoi client permettono a un operatore di vedere e agire su ciò che riportano. Ogni repository qui elencata è **privata**: i link sotto richiedono l'accesso proprio dell'account per aprirsi, e le note di versione e maturità provengono direttamente dal manifesto e dalla matrice delle capacità di ciascuna repository, la stessa convenzione di onestà già usata dalla dashboard di HYDRA-UMC.
+**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** è un ecosistema a parte, pubblico, di sicurezza perimetrale e domotica - senza relazione con HYDRA-UMC né con URTC oltre allo stesso autore e alle stesse convenzioni ingegneristiche (manifesti versionati, un contratto di messaggi condiviso, interfacce in sette lingue). I suoi nodi di campo sorvegliano il perimetro di una proprietà e il suo impianto solare/elettrico; il suo server centrale e i suoi client permettono a un operatore di vedere e agire su ciò che riportano. Le note di versione e maturità sotto provengono direttamente dal manifesto e dalla matrice delle capacità di ciascuna repository, la stessa convenzione di onestà già usata dalla dashboard di HYDRA-UMC.
 
 ## 🏗️ Come È Costruito A.R.M.O.R.
 
@@ -305,7 +305,7 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
 3. **Coordinatore centrale**: **ARMOR-SERVER** conserva stato, utenti, allarmi, automazioni ed evidenza delle telecamere; **ARMOR-SERVER-AI** e **ARMOR-VOICE-AI** aggiungono una politica visiva spiegabile e intenti vocali offline che non agiscono mai da soli.
 4. **Client operatore**: **ARMOR-STUDIO** (web) e **ARMOR-ANDROID-CONTROL** (mobile) sono client del server centrale, mai della rete di campo direttamente.
 5. **Distribuzione e test**: **ARMOR-DEVOPS** distribuisce l'intero grafo dei servizi; **ARMOR-SIMULATOR** riproduce scenari e guasti ripetibili senza hardware reale; **ARMOR-HARDWARE** porta il design dei contenitori e la sua matrice di accettazione da banco.
-6. **Operazioni dell'ecosistema**: **ARMOR-UPDATER** scopre, installa e aggiorna ogni repository di A.R.M.O.R. su una macchina, lo stesso design atomico-per-verifica di HYDRA-UMC-UPDATER, adattato per un ecosistema privato; **ARMOR-DOCS** è la documentazione di architettura canonica e la matrice delle capacità.
+6. **Operazioni dell'ecosistema**: **ARMOR-UPDATER** scopre, installa e aggiorna ogni repository di A.R.M.O.R. su una macchina, lo stesso design atomico-per-verifica di HYDRA-UMC-UPDATER; **ARMOR-DOCS** è la documentazione di architettura canonica e la matrice delle capacità.
 
 ## 🔒 Onestà e Sicurezza
 

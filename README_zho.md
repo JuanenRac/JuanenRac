@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/生态系统-3-00E5FF.svg" alt="三个生态系统">
 </p>
 
-三个独立的工程生态系统，同一个作者。**HYDRA-UMC** 是一个多层的工业机器人平台，从底层实时固件到高层认知 AI。**URTC** 是它的通用机器人工具子系统：为机器人末端执行器提供的实时固件和桌面/网页工具，作为独立产品开发，拥有自己的版本和维护体系。**A.R.M.O.R.** 是一个完全独立的私有生态系统，用于周界安防与家庭自动化——雷达存在检测、太阳能与电力监测，以及带网页和移动客户端的中央协调器。
+三个独立的工程生态系统，同一个作者。**HYDRA-UMC** 是一个多层的工业机器人平台，从底层实时固件到高层认知 AI。**URTC** 是它的通用机器人工具子系统：为机器人末端执行器提供的实时固件和桌面/网页工具，作为独立产品开发，拥有自己的版本和维护体系。**A.R.M.O.R.** 是一个完全独立的公开生态系统，用于周界安防与家庭自动化——雷达存在检测、太阳能与电力监测，以及带网页和移动客户端的中央协调器。
 
 ---
 
@@ -289,12 +289,12 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/可见性-私有-lightgrey.svg" alt="Private repositories">
+  <img src="https://img.shields.io/badge/可见性-公开-brightgreen.svg" alt="Public repositories">
   <img src="https://img.shields.io/badge/Platform-ESP32--S3%20%7C%20Jetson-red.svg" alt="Platform">
   <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
 </p>
 
-**A.R.M.O.R.（Autonomous Radar & Multimodal Observation Range）**是一个完全独立的私有生态系统，用于周界安防与家庭自动化——除了同一作者和相同的工程惯例（有版本的清单、共享的消息契约、七种语言的界面）之外，与 HYDRA-UMC 或 URTC 没有任何关系。它的现场节点监视物业的周界及其太阳能/电力系统；它的中央服务器和客户端让操作员看到并处理这些节点报告的内容。这里列出的每一个仓库都是**私有的**：下面的链接需要该账号自己的权限才能打开，版本和成熟度说明直接来自每个仓库自己的清单和能力矩阵，与 HYDRA-UMC 仪表板已经使用的诚实原则相同。
+**A.R.M.O.R.（Autonomous Radar & Multimodal Observation Range）**是一个完全独立的公开生态系统，用于周界安防与家庭自动化——除了同一作者和相同的工程惯例（有版本的清单、共享的消息契约、七种语言的界面）之外，与 HYDRA-UMC 或 URTC 没有任何关系。它的现场节点监视物业的周界及其太阳能/电力系统；它的中央服务器和客户端让操作员看到并处理这些节点报告的内容。下面的版本和成熟度说明直接来自每个仓库自己的清单和能力矩阵，与 HYDRA-UMC 仪表板已经使用的诚实原则相同。
 
 ## 🏗️ A.R.M.O.R. 的构成
 
@@ -303,7 +303,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、报警、自动化和摄像头证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 增加了一个可解释的视觉策略和从不自行执行动作的离线语音意图。
 4. **操作员客户端**：**ARMOR-STUDIO**（网页端）和 **ARMOR-ANDROID-CONTROL**（移动端）都是中央服务器的客户端，从不直接对接现场网络。
 5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下回放场景和可重复的故障；**ARMOR-HARDWARE** 负责外壳设计及其台架验收矩阵。
-6. **生态系统运维**：**ARMOR-UPDATER** 在一台机器上发现、安装并更新每一个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的以验证为准的原子化设计，并为私有生态系统做了改造；**ARMOR-DOCS** 是权威的架构文档和能力矩阵。
+6. **生态系统运维**：**ARMOR-UPDATER** 在一台机器上发现、安装并更新每一个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的以验证为准的原子化设计；**ARMOR-DOCS** 是权威的架构文档和能力矩阵。
 
 ## 🔒 诚实与安全
 
