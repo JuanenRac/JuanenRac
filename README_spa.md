@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Ecosistemas-3-00E5FF.svg" alt="Tres ecosistemas">
 </p>
 
-Tres ecosistemas de ingeniería independientes, un mismo autor. **HYDRA-UMC** es una plataforma de robótica industrial de múltiples capas, desde firmware en tiempo real hasta IA cognitiva. **URTC** es su subsistema universal de herramientas robóticas: firmware en tiempo real y herramientas de escritorio/web para el efector final de un robot, desarrollado como producto propio con versión y mantenimiento independientes. **A.R.M.O.R.** es un ecosistema aparte, privado, de seguridad perimetral y automatización del hogar - detección de presencia por radar, monitorización solar y eléctrica, y un coordinador central con clientes web y móvil.
+Tres ecosistemas de ingeniería independientes, un mismo autor. **HYDRA-UMC** es una plataforma de robótica industrial de múltiples capas, desde firmware en tiempo real hasta IA cognitiva. **URTC** es su subsistema universal de herramientas robóticas: firmware en tiempo real y herramientas de escritorio/web para el efector final de un robot, desarrollado como producto propio con versión y mantenimiento independientes. **A.R.M.O.R.** es un ecosistema aparte, público, de seguridad perimetral y automatización del hogar - detección de presencia por radar, monitorización solar y eléctrica, y un coordinador central con clientes web y móvil.
 
 ---
 
@@ -290,12 +290,12 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Visibilidad-Privado-lightgrey.svg" alt="Repositorios privados">
+  <img src="https://img.shields.io/badge/Visibilidad-P%C3%BAblico-brightgreen.svg" alt="Repositorios públicos">
   <img src="https://img.shields.io/badge/Plataforma-ESP32--S3%20%7C%20Jetson-red.svg" alt="Plataforma">
   <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
 </p>
 
-**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** es un ecosistema aparte, privado, de seguridad perimetral y automatización del hogar - sin relación con HYDRA-UMC ni URTC más allá del mismo autor y las mismas convenciones de ingeniería (manifiestos versionados, un contrato de mensajes compartido, interfaces en siete idiomas). Sus nodos de campo vigilan el perímetro de una propiedad y su instalación solar/eléctrica; su servidor central y sus clientes permiten a un operador ver y actuar sobre lo que reportan. Cada repositorio listado aquí es **privado**: los enlaces de abajo necesitan el acceso propio de la cuenta para abrirse, y las notas de versión y madurez salen directamente del manifiesto y la matriz de capacidades de cada repositorio, la misma convención de honestidad que ya usa el dashboard de HYDRA-UMC.
+**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** es un ecosistema aparte, público, de seguridad perimetral y automatización del hogar - sin relación con HYDRA-UMC ni URTC más allá del mismo autor y las mismas convenciones de ingeniería (manifiestos versionados, un contrato de mensajes compartido, interfaces en siete idiomas). Sus nodos de campo vigilan el perímetro de una propiedad y su instalación solar/eléctrica; su servidor central y sus clientes permiten a un operador ver y actuar sobre lo que reportan. Las notas de versión y madurez de abajo salen directamente del manifiesto y la matriz de capacidades de cada repositorio, la misma convención de honestidad que ya usa el dashboard de HYDRA-UMC.
 
 ## 🏗️ Cómo Está Construido A.R.M.O.R.
 
@@ -304,7 +304,7 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 3. **Coordinador central**: **ARMOR-SERVER** guarda el estado, usuarios, alarmas, automatizaciones y evidencia de cámaras; **ARMOR-SERVER-AI** y **ARMOR-VOICE-AI** añaden una política visual explicable e intenciones de voz sin conexión que nunca actúan por sí solas.
 4. **Clientes de operador**: **ARMOR-STUDIO** (web) y **ARMOR-ANDROID-CONTROL** (móvil) son clientes del servidor central, nunca de la red de campo directamente.
 5. **Despliegue y pruebas**: **ARMOR-DEVOPS** despliega todo el grafo de servicios; **ARMOR-SIMULATOR** reproduce escenarios y fallos repetibles sin hardware real; **ARMOR-HARDWARE** lleva el diseño de las cajas y su matriz de aceptación en banco.
-6. **Operación del ecosistema**: **ARMOR-UPDATER** descubre, instala y actualiza cada repositorio de A.R.M.O.R. en una máquina, el mismo diseño atómico-por-verificación que HYDRA-UMC-UPDATER, adaptado para un ecosistema privado; **ARMOR-DOCS** es la documentación de arquitectura canónica y la matriz de capacidades.
+6. **Operación del ecosistema**: **ARMOR-UPDATER** descubre, instala y actualiza cada repositorio de A.R.M.O.R. en una máquina, el mismo diseño atómico-por-verificación que HYDRA-UMC-UPDATER; **ARMOR-DOCS** es la documentación de arquitectura canónica y la matriz de capacidades.
 
 ## 🔒 Honestidad y Seguridad
 
@@ -337,7 +337,7 @@ Cada ecosistema es su propia iniciativa con sus propios proyectos. Cada proyecto
 
 Las etiquetas de issues están estandarizadas en todos los repos de HYDRA-UMC a partir de [`.github/labels.yml`](.github/labels.yml) en este mismo repo, sincronizadas por [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - edita ese único archivo para cambiar una etiqueta en todos a la vez, en vez de hacerlo a mano repo por repo. A diferencia del dashboard de abajo, esta lista es estática (una matriz real de GitHub Actions, no descubrimiento dinámico) - un repo nuevo necesita también una entrada ahí, no solo un `hydra-umc.project.json` real.
 
-Un dashboard de estado en vivo que cubre todo repo público que declara `ecosystem: HYDRA-UMC` en su propio `hydra-umc.project.json` (stack, destino de despliegue, versión actual - leído directamente de la rama por defecto de cada repo, descubierto dinámicamente sin lista fija) se regenera cada hora (e inmediatamente tras un push relevante) mediante [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) y se sirve desde `docs/` vía GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. Añade una clasificación real de madurez por proyecto (andamiaje / funcional / establecido / producción, cada una decidida a partir del propio CHANGELOG de ese proyecto - ver el docstring del propio módulo [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) para el criterio exacto), su rol (API / UI / CLI / firmware / librería / servicio / herramienta), un árbol real de familia/padre-hijo, y notas por proyecto sobre lo que está realmente implementado hoy. Los propios repositorios de A.R.M.O.R. son privados y aparecen agrupados aparte en ese mismo dashboard, ya que necesitan el acceso propio de la cuenta para abrirse.
+Un dashboard de estado en vivo que cubre todo repo público que declara `ecosystem: HYDRA-UMC` en su propio `hydra-umc.project.json` (stack, destino de despliegue, versión actual - leído directamente de la rama por defecto de cada repo, descubierto dinámicamente sin lista fija) se regenera cada hora (e inmediatamente tras un push relevante) mediante [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) y se sirve desde `docs/` vía GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. Añade una clasificación real de madurez por proyecto (andamiaje / funcional / establecido / producción, cada una decidida a partir del propio CHANGELOG de ese proyecto - ver el docstring del propio módulo [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) para el criterio exacto), su rol (API / UI / CLI / firmware / librería / servicio / herramienta), un árbol real de familia/padre-hijo, y notas por proyecto sobre lo que está realmente implementado hoy. Los propios repositorios de A.R.M.O.R. son públicos y aparecen agrupados aparte en ese mismo dashboard por ahora (ver la nota de cabecera de `scripts/generate_dashboard.py` sobre por qué esa lista sigue siendo estática, no obtenida en vivo).
 
 ## 🧭 Colaboración en GitHub
 

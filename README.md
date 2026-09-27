@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Ecosystems-3-00E5FF.svg" alt="Three ecosystems">
 </p>
 
-Three independent engineering ecosystems, one author. **HYDRA-UMC** is a multi-layered industrial robotics platform, from real-time firmware to cognitive AI. **URTC** is its universal robot-tool subsystem: real-time firmware and desktop/web tooling for a robot's own end-effector, developed as its own product with independent versioning and maintenance tools. **A.R.M.O.R.** is a separate, private perimeter-security and home-automation ecosystem - radar presence detection, solar and electrical monitoring, and a central coordinator with web and mobile clients.
+Three independent engineering ecosystems, one author. **HYDRA-UMC** is a multi-layered industrial robotics platform, from real-time firmware to cognitive AI. **URTC** is its universal robot-tool subsystem: real-time firmware and desktop/web tooling for a robot's own end-effector, developed as its own product with independent versioning and maintenance tools. **A.R.M.O.R.** is a separate, public perimeter-security and home-automation ecosystem - radar presence detection, solar and electrical monitoring, and a central coordinator with web and mobile clients.
 
 ---
 
@@ -288,12 +288,12 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Visibility-Private-lightgrey.svg" alt="Private repositories">
+  <img src="https://img.shields.io/badge/Visibility-Public-brightgreen.svg" alt="Public repositories">
   <img src="https://img.shields.io/badge/Platform-ESP32--S3%20%7C%20Jetson-red.svg" alt="Platform">
   <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
 </p>
 
-**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** is a separate, private perimeter-security and home-automation ecosystem - no relation to HYDRA-UMC or URTC beyond the same author and the same engineering conventions (versioned manifests, a shared message contract, seven-language interfaces). Its field nodes watch a property's perimeter and its solar/electrical installation; its central server and clients let an operator see and act on what they report. Every repository listed here is **private**: the links below need the account's own access to open, and the version and maturity notes come straight from each repository's own manifest and capability matrix, the same honesty convention HYDRA-UMC's dashboard already uses.
+**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** is a separate, public perimeter-security and home-automation ecosystem - no relation to HYDRA-UMC or URTC beyond the same author and the same engineering conventions (versioned manifests, a shared message contract, seven-language interfaces). Its field nodes watch a property's perimeter and its solar/electrical installation; its central server and clients let an operator see and act on what they report. The version and maturity notes below come straight from each repository's own manifest and capability matrix, the same honesty convention HYDRA-UMC's dashboard already uses.
 
 ## 🏗️ How A.R.M.O.R. Is Built
 
@@ -302,7 +302,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 3. **Central coordinator**: **ARMOR-SERVER** holds state, users, alarms, automations and camera evidence; **ARMOR-SERVER-AI** and **ARMOR-VOICE-AI** add an explainable visual policy and offline voice intents that never actuate anything on their own.
 4. **Operator clients**: **ARMOR-STUDIO** (web) and **ARMOR-ANDROID-CONTROL** (mobile) are clients of the central server, never of the field network directly.
 5. **Deployment and testing**: **ARMOR-DEVOPS** deploys the whole service graph; **ARMOR-SIMULATOR** replays scenarios and repeatable faults without real hardware; **ARMOR-HARDWARE** carries the enclosure design and its bench acceptance matrix.
-6. **Ecosystem operations**: **ARMOR-UPDATER** discovers, installs and updates every A.R.M.O.R. repository on a machine, the same atomic-by-verification design as HYDRA-UMC-UPDATER, adapted for a private ecosystem; **ARMOR-DOCS** is the canonical architecture documentation and capability matrix.
+6. **Ecosystem operations**: **ARMOR-UPDATER** discovers, installs and updates every A.R.M.O.R. repository on a machine, the same atomic-by-verification design as HYDRA-UMC-UPDATER; **ARMOR-DOCS** is the canonical architecture documentation and capability matrix.
 
 ## 🔒 Honesty and Safety
 
@@ -325,7 +325,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | Enclosure design and the bench acceptance matrix. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Compose topology, central-server test-bench installer, backup and restore, TLS profile, own MQTT broker. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Scenarios and repeatable faults. |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.2 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, adapted for a private ecosystem). |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.2 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.8 | Canonical documentation and the capability matrix. |
 
 ---
@@ -335,7 +335,7 @@ Each ecosystem is its own initiative with its own projects. Each project has its
 
 Issue labels are standardized across every HYDRA-UMC repo from [`.github/labels.yml`](.github/labels.yml) in this same repo, synced out by [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - edit that one file to change a label everywhere at once, rather than by hand per repo. Unlike the dashboard below, this list is static (a real GitHub Actions matrix, not dynamic discovery) - a newly added repo needs an entry there too, not just a real `hydra-umc.project.json`.
 
-A live status dashboard covering every public repo that declares `ecosystem: HYDRA-UMC` in its own `hydra-umc.project.json` (stack, deploy target, current version - read straight from each repo's own default branch, discovered dynamically with no fixed list) is regenerated hourly (and immediately on a relevant push) by [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) and served from `docs/` via GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. It adds a real maturity classification per project (scaffolding / functional / established / production, each decided from that project's own CHANGELOG - see [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)'s own module docstring for exactly how), its role (API / UI / CLI / firmware / library / service / tool), a real family/parent-child tree, and per-project notes on what's actually implemented today. A.R.M.O.R.'s own repositories are private and grouped separately on that same dashboard, since they need the account's own access to open.
+A live status dashboard covering every public repo that declares `ecosystem: HYDRA-UMC` in its own `hydra-umc.project.json` (stack, deploy target, current version - read straight from each repo's own default branch, discovered dynamically with no fixed list) is regenerated hourly (and immediately on a relevant push) by [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) and served from `docs/` via GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. It adds a real maturity classification per project (scaffolding / functional / established / production, each decided from that project's own CHANGELOG - see [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)'s own module docstring for exactly how), its role (API / UI / CLI / firmware / library / service / tool), a real family/parent-child tree, and per-project notes on what's actually implemented today. A.R.M.O.R.'s own repositories are public and grouped separately on that same dashboard for now (see `scripts/generate_dashboard.py`'s own header comment on why that list is still static, not live-fetched).
 
 ## 🧭 GitHub Collaboration
 
