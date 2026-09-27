@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="HYDRA-UMC Ökosystem Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ELECTRO_HOBBY_3D_BANNER.svg" alt="Electro Hobby 3D Banner" width="100%">
 </p>
 
-# HYDRA-UMC / URTC Ökosystem 🤖🚀
+# Electro Hobby 3D 🤖🚀
 
 <p align="center">
   <a href="README.md">🇺🇸 English</a> |
@@ -17,6 +17,20 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Lizenz-GPL%203.0-blue.svg" alt="Lizenz GPL 3.0">
   <img src="https://img.shields.io/badge/Hardware-CERN%20OHL--S-orange.svg" alt="Hardware CERN OHL">
+  <img src="https://img.shields.io/badge/%C3%96kosysteme-3-00E5FF.svg" alt="Drei Ökosysteme">
+</p>
+
+Drei unabhängige Engineering-Ökosysteme, ein Autor. **HYDRA-UMC** ist eine mehrschichtige industrielle Robotikplattform, von Echtzeit-Firmware bis zur kognitiven KI. **URTC** ist dessen universelles Roboterwerkzeug-Subsystem: Echtzeit-Firmware und Desktop-/Web-Werkzeuge für den Endeffektor eines Roboters, als eigenes Produkt mit unabhängiger Versionierung und Wartung entwickelt. **A.R.M.O.R.** ist ein separates, privates Ökosystem für Perimetersicherheit und Hausautomation - Radar-Anwesenheitserkennung, Solar- und Elektroüberwachung, und ein zentraler Koordinator mit Web- und Mobil-Clients.
+
+---
+
+# 🐙 HYDRA-UMC
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="HYDRA-UMC Ökosystem Banner" width="100%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Plattform-STM32%20%7C%20CM5-red.svg" alt="Plattform">
   <img src="https://img.shields.io/badge/KI-Hailo--8%20%7C%20Hailo--10-green.svg" alt="KI Power">
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
@@ -113,7 +127,7 @@ Das ist kein geführtes Tutorial (es gibt keinen einzigen "richtigen" Carrier f�
 
 ---
 
-## 📁 Projektkatalog
+## 📁 Projektkatalog — HYDRA-UMC
 
 Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter
 Windows) klont 13 Kern-Repositories - eine handverlesene Startauswahl,
@@ -146,16 +160,6 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | Grafischer URDF-Editor zum Validieren und Hochladen von Robotermodellen. |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | Desktop-STL-Modelleditor - transformiert, ersetzt, entfernt und fügt echte Teile im gemeinsamen Modellkatalog hinzu. |
 
-
-### 🔧 URTC-Kern und Werkzeuge
-| Repository | Beschreibung |
-| :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
 
 ### 👁️ Vision-KI-Knoten (Optimiert für Hailo-8)
 | Repository | Beschreibung |
@@ -234,6 +238,101 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 
 ---
 
+# 🔧 URTC
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/URTC_BANNER.svg" alt="URTC Ökosystem Banner" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Plattform-STM32-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Bus-CAN%20%2F%20CAN--OTA-orange.svg" alt="Bus">
+  <img src="https://img.shields.io/badge/Werkzeuge-25%2B%20Profile-blueviolet.svg" alt="Tools">
+</p>
+
+**URTC (Universal Robot Tool Controller)** ist ein eigenes Produkt, kein Unterordner von HYDRA-UMC: Echtzeit-Firmware und eine Familie von Desktop-/Web-Werkzeugen für den Endeffektor eines Roboters, unabhängig entwickelt, versioniert und gepflegt. Ein mit URTC ausgestatteter Werkzeugwechsler koordiniert sich über FDCAN mit dem Zellencontroller von HYDRA-UMC, aber das Echtzeitverhalten des Werkzeugs selbst, sein Watchdog und sein sicherer Zustand liegen in der eigenen Autorität von URTC - der Zellencontroller kann das nicht umgehen, und URTC hängt für Entwicklung, Flashen oder Diagnose nicht von HYDRA-UMC ab.
+
+## 🏗️ Wie URTC Funktioniert
+
+1. **Werkzeug-Firmware**: die eigene STM32-Firmware von URTC führt jedes der 25+ spezialisierten Werkzeugprofile aus (Greifer, Dosierer, Sonden, Spindeln und mehr), jedes mit eigenem Timing, Grenzwerten und Fehlerverhalten.
+2. **Aktualisierung im Feld**: CAN-OTA überträgt ein neues Firmware-Image über denselben CAN-Bus, den das Werkzeug bereits nutzt, mit einem vollständigen Chip-Weg über SWD/JTAG (URTC-FLASHER) als Rückfalloption, die nie davon abhängt, dass die eigene Firmware des Werkzeugs noch läuft.
+3. **Live-Diagnose**: URTC-TESTER validiert das Echtzeit-CAN-Verhalten eines Werkzeugs gegen sein deklariertes Profil, ohne eine komplette Werkstatt zu benötigen; URTC-WEB-STUDIO macht dasselbe aus einem Browser-Tab über Web Serial, ohne etwas zu installieren.
+4. **Lagerung und Lebenszyklus**: URTC-SMART-RACK bewahrt Werkzeuge zwischen Aufträgen auf, heizt eines vor einem Wechsel vor und führt ein Audit-Protokoll des Lebenszyklus (Zyklen, Fehler, letzte Kalibrierung) pro physischem Werkzeug, nicht pro Werkzeugtyp.
+5. **Aktive QS**: URTC-VISION-TOOL ist selbst ein Werkzeug - ein Kopf mit eigenen Thermal- und RGB-Kameras für die Qualitätsprüfung während des Prozesses, keine externe Kamera, die an ein anderes Werkzeug geschraubt ist.
+
+## 🛠️ Technologie-Stack
+
+- **Firmware**: STM32, FDCAN (gemeinsamer Bus mit dem Zellencontroller), CAN-OTA, SWD/JTAG-Rückfalloption.
+- **Desktop-Werkzeuge**: plattformübergreifende GUI-Clients zum Flashen und Diagnostizieren (URTC-FLASHER, URTC-TESTER).
+- **Browser-Werkzeuge**: die Web-Serial-API für Hardwaretests ohne Installation (URTC-WEB-STUDIO).
+- **Lebenszyklusdaten**: nichtflüchtiges Audit-Protokoll pro Werkzeug, mit demselben F-RAM-Integritätsansatz wie HYDRA-UMC.
+
+## 🔒 Sicherheit
+
+Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverhalten, unabhängig von der eigenen E-STOP-Schicht des Zellencontrollers - ein Werkzeug, das sein eigenes Zeitbudget oder den CAN-Heartbeat verliert, geht von sich aus in seinen deklarierten sicheren Zustand, statt auf einen externen Befehl zu warten. Das Vorheizen von URTC-SMART-RACK ist durch dieselben thermischen Grenzwerte pro Werkzeug begrenzt, die sein Profil deklariert, protokolliert im selben Lebenszyklus-Audit, den eine Werkstatt nutzt, um zu entscheiden, ob ein Werkzeug noch einsatzfähig ist.
+
+## 📁 URTC-Projektkatalog
+
+| Repository | Beschreibung |
+| :--- | :--- |
+| [URTC](https://github.com/JuanenRac/URTC) | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
+
+---
+
+# 🛡️ A.R.M.O.R.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/ARMOR-DOCS/main/images/ARMOR_BANNER.svg" alt="A.R.M.O.R. Ökosystem Banner" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Sichtbarkeit-Privat-lightgrey.svg" alt="Private repositories">
+  <img src="https://img.shields.io/badge/Platform-ESP32--S3%20%7C%20Jetson-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
+</p>
+
+**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** ist ein separates, privates Ökosystem für Perimetersicherheit und Hausautomation - ohne Bezug zu HYDRA-UMC oder URTC über denselben Autor und dieselben Engineering-Konventionen hinaus (versionierte Manifeste, ein gemeinsamer Nachrichtenvertrag, Schnittstellen in sieben Sprachen). Seine Feldknoten überwachen den Perimeter eines Grundstücks und dessen Solar-/Elektroanlage; sein zentraler Server und seine Clients lassen einen Bediener sehen und handeln, was sie melden. Jedes hier aufgeführte Repository ist **privat**: die folgenden Links benötigen den eigenen Zugang des Kontos zum Öffnen, und die Versions- und Reifegradnotizen stammen direkt aus dem Manifest und der Fähigkeitsmatrix jedes Repositorys - dieselbe Ehrlichkeitskonvention, die das HYDRA-UMC-Dashboard bereits verwendet.
+
+## 🏗️ Wie A.R.M.O.R. Aufgebaut Ist
+
+1. **Gemeinsamer Vertrag**: **ARMOR-COMMON** besitzt die Bedeutung der Nachrichten - JSON Schema, ein Python-Validierer und generierte TypeScript/Kotlin-Typen, die jedes andere Repository konsumiert, nie neu definiert.
+2. **Feldknoten**: ESP32-S3-Firmware für Radar-/Anwesenheitserkennung (**ARMOR-RADAR**), Überwachung von Solar-Wechselrichtern und -Batterien (**ARMOR-SOLAR**), und Elektromessung mit Schaltfunktion (**ARMOR-ELECTRICAL**); ein Python-Agent (**ARMOR-NETWORK**) überwacht das eigene lokale Netzwerk des Hauses und die Erreichbarkeit des Internets von einer bereits daran angeschlossenen Maschine aus.
+3. **Zentraler Koordinator**: **ARMOR-SERVER** hält Zustand, Benutzer, Alarme, Automatisierungen und Kamera-Nachweise; **ARMOR-SERVER-AI** und **ARMOR-VOICE-AI** fügen eine erklärbare visuelle Richtlinie und Offline-Sprachabsichten hinzu, die nie von selbst handeln.
+4. **Bedienerclients**: **ARMOR-STUDIO** (Web) und **ARMOR-ANDROID-CONTROL** (mobil) sind Clients des zentralen Servers, nie direkt des Feldnetzwerks.
+5. **Bereitstellung und Tests**: **ARMOR-DEVOPS** stellt den gesamten Servicegraphen bereit; **ARMOR-SIMULATOR** spielt Szenarien und wiederholbare Fehler ohne echte Hardware ab; **ARMOR-HARDWARE** trägt das Gehäusedesign und dessen Abnahmematrix am Prüfstand.
+6. **Ökosystembetrieb**: **ARMOR-UPDATER** erkennt, installiert und aktualisiert jedes A.R.M.O.R.-Repository auf einer Maschine, dasselbe atomar-durch-Verifikation-Design wie HYDRA-UMC-UPDATER, angepasst für ein privates Ökosystem; **ARMOR-DOCS** ist die kanonische Architekturdokumentation und die Fähigkeitsmatrix.
+
+## 🔒 Ehrlichkeit und Sicherheit
+
+A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: eine Behauptung ist erst real, wenn sie verifiziert ist, und jedes Repository sagt klar, was bereits an echter Hardware gelaufen ist und was nicht. Nichts in diesem Ökosystem steuert heute Netzstrom oder physischen Zugang; Feldknoten beobachten und melden, und jede zukünftige Schaltfähigkeit wird entworfen und geprüft, bevor sie jemals aktiviert wird.
+
+## 📁 A.R.M.O.R.-Projektkatalog
+
+| Repository | Version | Beschreibung |
+| :--- | :--- | :--- |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.2.6 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
+| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.2 | Das lokale Netzwerk: seine Geräte, das Internet und was sich ändert |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.1 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solarmesswerte und Kameras |
+| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
+| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.8 | Web-Konsole: Kameras, Radar, Alarme, Solarenergie und 2D/3D-Standortdesigner |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.5 | Android-Bedienclient mit Live-Radar in 2D/3D |
+| [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
+| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.1 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.8 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
+
+---
+
 ## 🤝 Mitwirken
 Dieses Ökosystem ist Teil einer High-Tech-Robotik-Initiative. Jedes Projekt hat seine eigenen Richtlinien für die Mitarbeit. Technische Details finden Sie in den einzelnen Repositories.
 
@@ -247,3 +346,4 @@ Das [GitHub-Zusammenarbeitsmodell](docs/GITHUB_COLLABORATION.md) definiert ein z
 
 Der Community-Health-Workflow ist manuell und standardmäßig ein Dry-Run. Nach dem Konfigurieren von `COMMUNITY_HEALTH_SYNC_TOKEN` kann er nur diese verwalteten Vorlagen in jedes Repository mit HYDRA-UMC-Manifest kopieren; projektspezifische Vorlagen werden niemals gelöscht.
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 Lizenz.
+
