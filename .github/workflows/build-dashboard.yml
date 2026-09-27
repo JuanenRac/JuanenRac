@@ -1,5 +1,5 @@
 # =============================================================================
-# HYDRA-UMC / URTC Ecosystem - .github/workflows/build-dashboard.yml
+# Electro Hobby 3D - .github/workflows/build-dashboard.yml
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 #
@@ -8,20 +8,25 @@
 #
 # Architecture:
 #
-#   github_client.py
-#        |
-#        v
-#   generate_dashboard.py
-#        |
-#        v
-#   docs/index.html
-#        |
-#        v
-#   GitHub Pages
+#   hydra_umc_updater.github_client   urtc_updater.github_client   armor_updater.github_client
+#        |                                  |                              |
+#        +----------------------------------+------------------------------+
+#                                            v
+#                                  generate_dashboard.py
+#                                            |
+#                                            v
+#                                     docs/index.html
+#                                            |
+#                                            v
+#                                     GitHub Pages
 #
-# Each repository's hydra-umc.project.json is the single source of truth for
-# its metadata and version. The workflow discovers GitHub repositories at
-# runtime; it contains no project list.
+# Three real, independent ecosystems by the same author - HYDRA-UMC, URTC
+# and A.R.M.O.R. - each discovered live through its own dedicated updater
+# package, merged into one dashboard. Each repository's own manifest
+# (hydra-umc.project.json / urtc.project.json / armor.project.json,
+# depending which ecosystem it belongs to) is the single source of truth
+# for its metadata and version. The workflow discovers GitHub repositories
+# at runtime; it contains no project list.
 #
 # The generated HTML deliberately contains no generation timestamp. This is
 # important: if a timestamp were written on every scheduled execution, the
@@ -125,6 +130,23 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git@76da45320d023603e4f58af9326de6b35121dde0"
+
+      # -----------------------------------------------------------------------
+      # Install URTC-UPDATER and ARMOR-UPDATER
+      # -----------------------------------------------------------------------
+      # URTC and A.R.M.O.R. are two more real, independent, now-public
+      # ecosystems by the same author, each with its own dedicated
+      # discovery client - same pinned-SHA convention as HYDRA-UMC-UPDATER
+      # above, and for the same reason (a mutable `@main` dependency could
+      # change this dashboard's behavior silently between runs). Bump
+      # these SHAs by hand, and re-pin after either repository's own
+      # history is ever reset, exactly like the HYDRA-UMC-UPDATER pin
+      # above already documents.
+      # -----------------------------------------------------------------------
+      - name: Install URTC-UPDATER and ARMOR-UPDATER
+        run: |
+          python -m pip install "git+https://github.com/JuanenRac/URTC-UPDATER.git@8e666e57f00c6a77925aa04849ef593cd72676b6"
+          python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@f1fb5538c6b8e16e26bfd003dd181fcb97dd739b"
 
       # -----------------------------------------------------------------------
       # Generate dashboard
