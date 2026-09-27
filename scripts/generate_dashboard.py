@@ -324,14 +324,28 @@ DEPLOY_LABELS = {
     "mobile": "Mobile",
     "wearable": "Wearable",
     "dev-server": "Dev Server",
+    # A.R.M.O.R.'s own manifest keeps `deployment_target` as free text
+    # rather than this same closed enum (see armor_updater.deploy_category,
+    # this dashboard's own single source of truth for classifying it) -
+    # these four are its real hardware-target categories, not present in
+    # HYDRA-UMC/URTC. "workstation" is folded into "user-pc" above instead
+    # of a fifth new one - the same real thing, a developer's own machine.
+    "field-node": "Field Node",
+    "server": "AI Server",
+    "browser": "Browser Client",
+    "shared": "Shared / Ecosystem-wide",
 }
 
 DEPLOY_ORDER = [
     "cm5",
+    "field-node",
+    "server",
     "user-pc",
     "mobile",
     "wearable",
+    "browser",
     "dev-server",
+    "shared",
 ]
 
 
@@ -420,6 +434,18 @@ ROLE_ICONS: dict[str, str] = {
     "tool": (
         '<path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4Z"/>'
     ),
+    # A.R.M.O.R.'s own manifest keeps `role` as free text rather than this
+    # same closed enum - "docs" and "hardware" are two real roles that
+    # exist for real among its projects (ARMOR-DOCS, ARMOR-HARDWARE) with
+    # no honest match in the enum above: neither is compiled/running code,
+    # so forcing either into "tool" or "firmware" would misclassify it.
+    "docs": (
+        '<path d="M6 2h9l3 3v17H6z"/><path d="M15 2v3h3M9 9h6M9 13h6M9 17h4"/>'
+    ),
+    "hardware": (
+        '<path d="M6 3v4M10 3v4M8 7v4M14 3v4M18 3v4M16 7v4'
+        'M4 11h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Z"/><path d="M10 18v3M14 18v3"/>'
+    ),
 }
 
 ROLE_LABELS: dict[str, str] = {
@@ -430,9 +456,11 @@ ROLE_LABELS: dict[str, str] = {
     "library": "Library",
     "service": "Service",
     "tool": "Tool",
+    "docs": "Documentation",
+    "hardware": "Hardware Design",
 }
 
-ROLE_ORDER = ["api", "ui", "cli", "firmware", "library", "service", "tool"]
+ROLE_ORDER = ["api", "ui", "cli", "firmware", "library", "service", "tool", "docs", "hardware"]
 
 # ---------------------------------------------------------------------------
 # Maturity (v3) - see registry.py's own module docstring for exactly how
@@ -532,6 +560,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_mobile": "Mobile",
         "deploy_wearable": "Wearable",
         "deploy_dev-server": "Dev Server",
+        "deploy_field-node": "Field Node",
+        "deploy_server": "AI Server",
+        "deploy_browser": "Browser Client",
+        "deploy_shared": "Shared / Ecosystem-wide",
         "maturity_production": "Production",
         "maturity_established": "Established",
         "maturity_functional": "Functional",
@@ -547,6 +579,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_library": "Library",
         "role_service": "Service",
         "role_tool": "Tool",
+        "role_docs": "Documentation",
+        "role_hardware": "Hardware Design",
     },
     "es": {
         "header_title": "Panel de Estado del Ecosistema",
@@ -603,6 +637,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_mobile": "Móvil",
         "deploy_wearable": "Wearable",
         "deploy_dev-server": "Servidor de desarrollo",
+        "deploy_field-node": "Nodo de campo",
+        "deploy_server": "Servidor de IA",
+        "deploy_browser": "Cliente de navegador",
+        "deploy_shared": "Compartido / todo el ecosistema",
         "maturity_production": "Producción",
         "maturity_established": "Establecido",
         "maturity_functional": "Funcional",
@@ -618,6 +656,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_library": "Librería",
         "role_service": "Servicio",
         "role_tool": "Herramienta",
+        "role_docs": "Documentación",
+        "role_hardware": "Diseño de hardware",
     },
     "fr": {
         "header_title": "Tableau de bord d'état de l'écosystème",
@@ -674,6 +714,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_mobile": "Mobile",
         "deploy_wearable": "Wearable",
         "deploy_dev-server": "Serveur de développement",
+        "deploy_field-node": "Nœud de terrain",
+        "deploy_server": "Serveur IA",
+        "deploy_browser": "Client navigateur",
+        "deploy_shared": "Partagé / tout l'écosystème",
         "maturity_production": "Production",
         "maturity_established": "Établi",
         "maturity_functional": "Fonctionnel",
@@ -689,6 +733,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_library": "Bibliothèque",
         "role_service": "Service",
         "role_tool": "Outil",
+        "role_docs": "Documentation",
+        "role_hardware": "Conception matérielle",
     },
     "it": {
         "header_title": "Dashboard di stato dell'ecosistema",
@@ -745,6 +791,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_mobile": "Mobile",
         "deploy_wearable": "Wearable",
         "deploy_dev-server": "Server di sviluppo",
+        "deploy_field-node": "Nodo di campo",
+        "deploy_server": "Server IA",
+        "deploy_browser": "Client browser",
+        "deploy_shared": "Condiviso / tutto l'ecosistema",
         "maturity_production": "Produzione",
         "maturity_established": "Consolidato",
         "maturity_functional": "Funzionale",
@@ -760,6 +810,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_library": "Libreria",
         "role_service": "Servizio",
         "role_tool": "Strumento",
+        "role_docs": "Documentazione",
+        "role_hardware": "Progettazione hardware",
     },
     "de": {
         "header_title": "Ökosystem-Statusdashboard",
@@ -816,6 +868,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_mobile": "Mobil",
         "deploy_wearable": "Wearable",
         "deploy_dev-server": "Entwicklungsserver",
+        "deploy_field-node": "Feldknoten",
+        "deploy_server": "KI-Server",
+        "deploy_browser": "Browser-Client",
+        "deploy_shared": "Gemeinsam / gesamtes Ökosystem",
         "maturity_production": "Produktion",
         "maturity_established": "Etabliert",
         "maturity_functional": "Funktional",
@@ -831,6 +887,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_library": "Bibliothek",
         "role_service": "Dienst",
         "role_tool": "Werkzeug",
+        "role_docs": "Dokumentation",
+        "role_hardware": "Hardware-Design",
     },
     "zh": {
         "header_title": "生态系统状态仪表盘",
@@ -887,6 +945,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_mobile": "移动端",
         "deploy_wearable": "可穿戴设备",
         "deploy_dev-server": "开发服务器",
+        "deploy_field-node": "现场节点",
+        "deploy_server": "AI 服务器",
+        "deploy_browser": "浏览器客户端",
+        "deploy_shared": "共享 / 整个生态系统",
         "maturity_production": "生产",
         "maturity_established": "成熟",
         "maturity_functional": "功能完备",
@@ -902,6 +964,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_library": "库",
         "role_service": "服务",
         "role_tool": "工具",
+        "role_docs": "文档",
+        "role_hardware": "硬件设计",
     },
     "ja": {
         "header_title": "エコシステム ステータスダッシュボード",
@@ -958,6 +1022,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "deploy_mobile": "モバイル",
         "deploy_wearable": "ウェアラブル",
         "deploy_dev-server": "開発サーバー",
+        "deploy_field-node": "フィールドノード",
+        "deploy_server": "AIサーバー",
+        "deploy_browser": "ブラウザクライアント",
+        "deploy_shared": "共有 / エコシステム全体",
         "maturity_production": "本番",
         "maturity_established": "定着済み",
         "maturity_functional": "機能実装済み",
@@ -973,6 +1041,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_library": "ライブラリ",
         "role_service": "サービス",
         "role_tool": "ツール",
+        "role_docs": "ドキュメント",
+        "role_hardware": "ハードウェア設計",
     },
 }
 
@@ -1179,7 +1249,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Advances only once real, physical hardware exists for it to run against - the exact board or machine this ecosystem's own hardware documentation describes.",
         "roadmap_advance_production": "The top of the ladder. Nothing advances past here - it just keeps shipping real fixes.",
         "compat_section": "Compatibility matrix",
-        "compat_intro": "Real project counts by role and deployment target, drawn straight from every repository's own manifest. A count, not a claim that any two specific projects interoperate.",
+        "compat_intro": "Real project counts by role and deployment target, spanning all three ecosystems (HYDRA-UMC, URTC and A.R.M.O.R.) and drawn straight from every repository's own manifest - A.R.M.O.R.'s own free-text role/deployment_target fields are classified into these same categories rather than a second, separate table. A count, not a claim that any two specific projects interoperate.",
         "compat_corner": "Role \\ Target",
     },
     "es": {
@@ -1190,7 +1260,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo cuando existe hardware físico real contra el que funcionar - la placa o máquina exacta que la propia documentación de hardware de este ecosistema describe.",
         "roadmap_advance_production": "La cima de la escalera. Nada avanza más allá de aquí - solo sigue entregando arreglos reales.",
         "compat_section": "Matriz de compatibilidad",
-        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, extraídos directamente del manifiesto propio de cada repositorio. Un recuento, no una afirmación de que dos proyectos concretos interoperen.",
+        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, abarcando los tres ecosistemas (HYDRA-UMC, URTC y A.R.M.O.R.) y extraídos directamente del manifiesto propio de cada repositorio - los campos de rol/destino de despliegue en texto libre propios de A.R.M.O.R. se clasifican en estas mismas categorías en vez de usar una segunda tabla aparte. Un recuento, no una afirmación de que dos proyectos concretos interoperen.",
         "compat_corner": "Rol \\ Destino",
     },
     "fr": {
@@ -1201,7 +1271,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "N'avance que lorsqu'un matériel physique réel existe pour qu'il puisse fonctionner face à lui - la carte ou la machine exacte que la documentation matérielle de cet écosystème décrit elle-même.",
         "roadmap_advance_production": "Le sommet de l'échelle. Rien n'avance au-delà d'ici - il continue simplement à livrer de vrais correctifs.",
         "compat_section": "Matrice de compatibilité",
-        "compat_intro": "Comptages réels de projets par rôle et cible de déploiement, tirés directement du manifeste propre de chaque dépôt. Un comptage, pas une affirmation que deux projets précis interopèrent.",
+        "compat_intro": "Comptages réels de projets par rôle et cible de déploiement, couvrant les trois écosystèmes (HYDRA-UMC, URTC et A.R.M.O.R.) et tirés directement du manifeste propre de chaque dépôt - les champs rôle/cible de déploiement en texte libre propres à A.R.M.O.R. sont classés dans ces mêmes catégories plutôt que dans un second tableau séparé. Un comptage, pas une affirmation que deux projets précis interopèrent.",
         "compat_corner": "Rôle \\ Cible",
     },
     "it": {
@@ -1212,7 +1282,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo quando esiste hardware fisico reale contro cui funzionare - la scheda o la macchina esatta che la documentazione hardware di questo ecosistema descrive.",
         "roadmap_advance_production": "La cima della scala. Nulla avanza oltre questo punto - continua solo a distribuire correzioni reali.",
         "compat_section": "Matrice di compatibilità",
-        "compat_intro": "Conteggi reali di progetti per ruolo e destinazione di distribuzione, presi direttamente dal manifesto proprio di ogni repository. Un conteggio, non un'affermazione che due progetti specifici interoperino.",
+        "compat_intro": "Conteggi reali di progetti per ruolo e destinazione di distribuzione, che coprono tutti e tre gli ecosistemi (HYDRA-UMC, URTC e A.R.M.O.R.) e presi direttamente dal manifesto proprio di ogni repository - i campi ruolo/destinazione in testo libero propri di A.R.M.O.R. sono classificati in queste stesse categorie invece di usare una seconda tabella separata. Un conteggio, non un'affermazione che due progetti specifici interoperino.",
         "compat_corner": "Ruolo \\ Destinazione",
     },
     "de": {
@@ -1223,7 +1293,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Steigt nur auf, sobald echte physische Hardware existiert, gegen die es laufen kann - genau die Platine oder Maschine, die die eigene Hardware-Dokumentation dieses Ökosystems beschreibt.",
         "roadmap_advance_production": "Die Spitze der Leiter. Nichts steigt hier weiter auf - es liefert einfach weiter echte Fixes.",
         "compat_section": "Kompatibilitätsmatrix",
-        "compat_intro": "Echte Projektzahlen nach Rolle und Deployment-Ziel, direkt aus dem eigenen Manifest jedes Repositories entnommen. Eine Zählung, keine Behauptung, dass zwei bestimmte Projekte zusammenarbeiten.",
+        "compat_intro": "Echte Projektzahlen nach Rolle und Deployment-Ziel, über alle drei Ökosysteme hinweg (HYDRA-UMC, URTC und A.R.M.O.R.), direkt aus dem eigenen Manifest jedes Repositories entnommen - A.R.M.O.R.s eigene Freitext-Felder für Rolle/Deployment-Ziel werden in dieselben Kategorien eingeordnet statt in eine zweite, separate Tabelle. Eine Zählung, keine Behauptung, dass zwei bestimmte Projekte zusammenarbeiten.",
         "compat_corner": "Rolle \\ Ziel",
     },
     "zh": {
@@ -1234,7 +1304,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "只有当真实的物理硬件存在、可供其运行时才会晋级——正是本生态系统自身硬件文档所描述的那块板卡或那台机器。",
         "roadmap_advance_production": "阶梯的顶端。到这里就不再晋级——只会持续交付真实的修复。",
         "compat_section": "兼容性矩阵",
-        "compat_intro": "按角色和部署目标统计的真实项目数量，直接取自每个仓库自身的清单文件。这是一个计数，而不是声称某两个具体项目能够互操作。",
+        "compat_intro": "按角色和部署目标统计的真实项目数量，涵盖全部三个生态系统（HYDRA-UMC、URTC 和 A.R.M.O.R.），直接取自每个仓库自身的清单文件——A.R.M.O.R. 自身以自由文本形式填写的角色/部署目标字段被归入这同一套分类，而不是另立一张单独的表格。这是一个计数，而不是声称某两个具体项目能够互操作。",
         "compat_corner": "角色 \\ 目标",
     },
     "ja": {
@@ -1245,7 +1315,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "本物の物理ハードウェアが存在し、それに対して実際に動作できるようになった時点でのみ昇格します——このエコシステム自身のハードウェアドキュメントが説明する、まさにそのボードやマシンです。",
         "roadmap_advance_production": "はしごの頂点です。ここから先に昇格することはありません——ただ本物の修正を届け続けるだけです。",
         "compat_section": "互換性マトリクス",
-        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、各リポジトリ自身のマニフェストから直接取得しています。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
+        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、3つのエコシステム（HYDRA-UMC、URTC、A.R.M.O.R.）すべてにまたがり、各リポジトリ自身のマニフェストから直接取得しています。A.R.M.O.R. 自身の自由記述の役割/デプロイ対象フィールドは、別の表を作るのではなく同じ分類に振り分けられます。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
         "compat_corner": "役割 \\ 対象",
     },
 }
@@ -1277,7 +1347,110 @@ DEPLOY_ICONS: dict[str, str] = {
         '<rect x="3" y="4" width="18" height="16" rx="2"/>'
         '<path d="M7 9l3 3-3 3M13 15h4"/>'
     ),
+    "field-node": (
+        '<circle cx="12" cy="12" r="2.5"/>'
+        '<path d="M7 7a7 7 0 0 1 10 0M4.5 4.5a10.5 10.5 0 0 1 15 0'
+        'M7 17a7 7 0 0 0 10 0M4.5 19.5a10.5 10.5 0 0 0 15 0"/>'
+    ),
+    "server": (
+        '<rect x="4" y="3" width="16" height="7" rx="1.5"/>'
+        '<rect x="4" y="14" width="16" height="7" rx="1.5"/>'
+        '<path d="M8 6.5h.01M8 17.5h.01"/>'
+    ),
+    "browser": (
+        '<rect x="3" y="4" width="18" height="16" rx="2"/>'
+        '<path d="M3 8h18M6 6h.01M9 6h.01"/>'
+    ),
+    "shared": (
+        '<circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/>'
+        '<path d="M8 7.2 10.5 16M16 7.2 13.5 16"/>'
+    ),
 }
+
+
+# ---------------------------------------------------------------------------
+# Free-text role/deploy categorisation (A.R.M.O.R. only - HYDRA-UMC and
+# URTC manifests already declare one of ROLE_ORDER/DEPLOY_ORDER's own
+# closed enum values directly, so the functions below pass those straight
+# through unchanged and never touch them).
+# ---------------------------------------------------------------------------
+#
+# A.R.M.O.R.'s manifest schema deliberately keeps `role`/`deployment_target`
+# as real, free-text descriptions instead (see ARMOR-UPDATER's own
+# armor.project.json notes) - a raw dict-key lookup on either field, as the
+# Deployment targets cards, the Role cards and the Compatibility matrix
+# below all did before this, left every one of A.R.M.O.R.'s real projects
+# invisible in all three sections at once (each one only ever counts an
+# entry whose raw value already equals a known enum key), not just the one
+# project a user went looking for under one specific filter and didn't
+# find.
+
+try:
+    from armor_updater.deploy_category import categorize_deployment_target as _armor_categorize_deploy
+except ImportError:  # pragma: no cover - armor-updater is a real, pinned CI dependency
+    _armor_categorize_deploy = None
+
+
+def categorize_deploy_for_stats(raw_deploy: str) -> str:
+    """A known enum value passes straight through; anything else is
+    A.R.M.O.R.'s own free text, classified by ARMOR-UPDATER's own real
+    deploy_category rules (the same ones its desktop GUI filter uses, not
+    a second, divergent copy) and folded into this dashboard's own set -
+    "workstation" becomes "user-pc" here, the same real thing (a
+    developer's own machine) under HYDRA-UMC/URTC's own existing name."""
+    if raw_deploy in DEPLOY_LABELS:
+        return raw_deploy
+    if _armor_categorize_deploy is None:
+        return raw_deploy
+    category = _armor_categorize_deploy(raw_deploy)
+    return "user-pc" if category == "workstation" else category
+
+
+#: Ordered (keyword, category) rules for A.R.M.O.R.'s own free-text `role`,
+#: checked top to bottom against the lower-cased text - the first match
+#: wins. Order matters: e.g. ARMOR-SOLAR's role contains "node:", "gateway"
+#: AND "library" all at once, and "node:" (a real field/gateway-node
+#: firmware project, matching ARMOR-RADAR/-ELECTRICAL) is the meaningful
+#: category here, not the incidental mention of "its own protocol library"
+#: later in the same sentence.
+_ARMOR_ROLE_KEYWORD_RULES: tuple[tuple[str, str], ...] = (
+    ("android", "ui"),
+    ("browser", "ui"),
+    ("console", "ui"),
+    ("client", "ui"),
+    ("web api", "api"),
+    ("event coordinator", "api"),
+    ("firmware", "firmware"),
+    ("node:", "firmware"),
+    ("library", "library"),
+    ("documentation", "docs"),
+    ("architecture", "docs"),
+    ("enclosure design", "hardware"),
+    ("hardware", "hardware"),
+    ("simulator", "tool"),
+    ("deployment and operations", "tool"),
+    ("installs and updates", "tool"),
+    ("monitor", "service"),
+    ("gateway", "service"),
+    ("service", "service"),
+)
+
+
+def categorize_role_for_stats(raw_role: str) -> str:
+    """A known enum value passes straight through; anything else is
+    A.R.M.O.R.'s own free-text role, classified by real keyword content -
+    the same spirit as armor_updater.deploy_category, kept here rather
+    than in that module since no A.R.M.O.R. tool needs a role FILTER the
+    way its own deploy filter needed a category - only this dashboard
+    does. Falls back to "tool" (never silently uncounted) for a future
+    role this ecosystem hasn't seen yet."""
+    if raw_role in ROLE_LABELS:
+        return raw_role
+    text = raw_role.strip().lower()
+    for needle, category in _ARMOR_ROLE_KEYWORD_RULES:
+        if needle in text:
+            return category
+    return "tool"
 
 
 def render_icon(inner: str, css_class: str = "tech-icon") -> str:
@@ -1442,7 +1615,16 @@ def _render_one_row(
     project_name = esc(entry.name)
     stack = esc(entry.stack)
     deploy = esc(deploy_label)
-    deploy_filter = esc(deploy_key)
+    # The card buttons filter by CATEGORY (categorize_deploy_for_stats/
+    # categorize_role_for_stats - see their own docstrings), not by this
+    # row's own raw manifest text, so this attribute (never shown, only
+    # matched against a clicked card's own data-filter-deploy) must be the
+    # same category or clicking "Field Node"/"AI Server"/etc would never
+    # match a single real A.R.M.O.R. row. The VISIBLE badge below (`deploy`/
+    # `deploy_label`) is unaffected and still shows this project's own real
+    # text.
+    deploy_filter = esc(categorize_deploy_for_stats(deploy_key))
+    role_filter = esc(categorize_role_for_stats(entry.role))
 
     version_html = esc(version)
     detail_html = esc(detail)
@@ -1531,7 +1713,7 @@ def _render_one_row(
             data-deploy="{deploy_filter}"
             data-stack="{stack.lower()}"
             data-maturity="{esc(entry.maturity)}"
-            data-role="{esc(entry.role)}"
+            data-role="{role_filter}"
             data-family="{esc(entry.family.lower())}"
         >
           <td class="project-name">
@@ -1622,7 +1804,7 @@ def _render_one_row(
             data-deploy="{deploy_filter}"
             data-stack="{stack.lower()}"
             data-maturity="{esc(entry.maturity)}"
-            data-role="{esc(entry.role)}"
+            data-role="{role_filter}"
             data-family="{esc(entry.family.lower())}"
             hidden
         >
@@ -1786,8 +1968,15 @@ def calculate_statistics(
     }
 
     for entry in entries:
-        deploy_counts[entry.deploy] = (
-            deploy_counts.get(entry.deploy, 0) + 1
+        # Categorized, not the raw manifest value - see
+        # categorize_deploy_for_stats/categorize_role_for_stats's own
+        # docstrings for why a raw dict-key lookup here left every real
+        # A.R.M.O.R. project invisible in every count below.
+        deploy_category = categorize_deploy_for_stats(entry.deploy)
+        role_category = categorize_role_for_stats(entry.role)
+
+        deploy_counts[deploy_category] = (
+            deploy_counts.get(deploy_category, 0) + 1
         )
 
         stack_counts[entry.stack] = (
@@ -1798,12 +1987,12 @@ def calculate_statistics(
             maturity_counts.get(entry.maturity, 0) + 1
         )
 
-        role_counts[entry.role] = (
-            role_counts.get(entry.role, 0) + 1
+        role_counts[role_category] = (
+            role_counts.get(role_category, 0) + 1
         )
 
-        if entry.role in role_deploy_matrix and entry.deploy in role_deploy_matrix[entry.role]:
-            role_deploy_matrix[entry.role][entry.deploy] += 1
+        if role_category in role_deploy_matrix and deploy_category in role_deploy_matrix[role_category]:
+            role_deploy_matrix[role_category][deploy_category] += 1
 
     return {
         "total": total,
