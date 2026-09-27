@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="HYDRA-UMC Ecosystem Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ELECTRO_HOBBY_3D_BANNER.svg" alt="Electro Hobby 3D 横幅" width="100%">
 </p>
 
-# HYDRA-UMC / URTC 生态系统 🤖🚀
+# Electro Hobby 3D 🤖🚀
 
 <p align="center">
   <a href="README.md">🇺🇸 English</a> |
@@ -17,6 +17,20 @@
 <p align="center">
   <img src="https://img.shields.io/badge/License-GPL%203.0-blue.svg" alt="License GPL 3.0">
   <img src="https://img.shields.io/badge/Hardware-CERN%20OHL--S-orange.svg" alt="Hardware CERN OHL">
+  <img src="https://img.shields.io/badge/生态系统-3-00E5FF.svg" alt="三个生态系统">
+</p>
+
+三个独立的工程生态系统，同一个作者。**HYDRA-UMC** 是一个多层的工业机器人平台，从底层实时固件到高层认知 AI。**URTC** 是它的通用机器人工具子系统：为机器人末端执行器提供的实时固件和桌面/网页工具，作为独立产品开发，拥有自己的版本和维护体系。**A.R.M.O.R.** 是一个完全独立的私有生态系统，用于周界安防与家庭自动化——雷达存在检测、太阳能与电力监测，以及带网页和移动客户端的中央协调器。
+
+---
+
+# 🐙 HYDRA-UMC
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="HYDRA-UMC Ecosystem Banner" width="100%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Platform-STM32%20%7C%20CM5-red.svg" alt="Platform">
   <img src="https://img.shields.io/badge/AI-Hailo--8%20%7C%20Hailo--10-green.svg" alt="AI Power">
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
@@ -113,7 +127,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 ---
 
-## 📁 项目目录
+## 📁 项目目录 — HYDRA-UMC
 
 刚接触本生态系统？运行 `./starter-kit.sh`（Windows 上为
 `starter-kit.bat`）即可将 13 个核心仓库——一份手工挑选的起步集合，
@@ -144,16 +158,6 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 图形化 URDF 编辑器，用于校验并推送机器人模型至目录。 |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 桌面 STL 模型编辑器 - 在共享模型目录中变换、替换、移除和添加真实部件。 |
 
-
-### 🔧 URTC 核心与工具
-| 仓库 | 说明 |
-| :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 智能工具存放架，具备自动预热与生命周期审计功能。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
 
 ### 👁️ Vision AI Node (Hailo-8 Optimized)
 | 仓库 | 说明 |
@@ -232,6 +236,101 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 ---
 
+# 🔧 URTC
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/URTC_BANNER.svg" alt="URTC 生态系统横幅" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/平台-STM32-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/总线-CAN%20%2F%20CAN--OTA-orange.svg" alt="Bus">
+  <img src="https://img.shields.io/badge/工具-25%2B%E7%A7%8D%E9%85%8D%E7%BD%AE-blueviolet.svg" alt="Tools">
+</p>
+
+**URTC（通用机器人工具控制器）**是一个独立的产品，而不是 HYDRA-UMC 的子系统文件夹：为机器人末端执行器提供的实时固件，以及一整套桌面/网页工具，独立开发、独立发布版本、独立维护。配备 URTC 的换刀器通过 FDCAN 与 HYDRA-UMC 的单元控制器协调，但工具自身的实时行为、看门狗和安全状态是 URTC 自己的权限——单元控制器无法绕过它，URTC 的开发、烧录或诊断也不依赖 HYDRA-UMC。
+
+## 🏗️ URTC 的工作原理
+
+1. **工具固件**：URTC 自己的 STM32 固件运行 25 种以上专用工具配置文件中的每一种（夹爪、点胶器、探头、主轴等），每种都有自己的时序、限值和故障行为。
+2. **现场更新**：CAN-OTA 通过工具已在使用的同一条 CAN 总线推送新的固件镜像，并以完整芯片级 SWD/JTAG（URTC-FLASHER）作为后备通道，永远不依赖工具自身固件是否存活。
+3. **实时诊断**：URTC-TESTER 在不需要完整工作台的情况下，对照声明的配置文件校验工具的实时 CAN 行为；URTC-WEB-STUDIO 通过 Web Serial 在浏览器标签页里做同样的事，无需安装任何东西。
+4. **存储与生命周期**：URTC-SMART-RACK 在工作之间存放工具，在交接前预热工具，并按每个物理工具（而非工具型号）维护生命周期审计记录（循环次数、故障、上次校准）。
+5. **主动质检**：URTC-VISION-TOOL 本身就是一种工具——一个带有自己热成像与 RGB 摄像头的工具头，用于过程中的质量检查，而不是拧在另一个工具上的外接摄像头。
+
+## 🛠️ 技术栈
+
+- **固件**：STM32、FDCAN（与单元控制器共用总线）、CAN-OTA、SWD/JTAG 后备通道。
+- **桌面工具**：用于烧录和诊断的跨平台 GUI 客户端（URTC-FLASHER、URTC-TESTER）。
+- **浏览器工具**：通过 Web Serial API 实现零安装的硬件测试（URTC-WEB-STUDIO）。
+- **生命周期数据**：按工具存储的非易失性审计记录，采用与 HYDRA-UMC 相同的 F-RAM 完整性方案。
+
+## 🔒 安全
+
+每个工具配置文件都携带自己的看门狗和故障行为，独立于单元控制器自身的 E-STOP 层——当一个工具失去自己的时间预算或 CAN 心跳时，会自行进入其声明的安全状态，而不是等待外部命令。URTC-SMART-RACK 的预热受其配置文件声明的同一套每工具热限值约束，并记录在同一份生命周期审计中，供车间据此判断一个工具是否仍适合使用。
+
+## 📁 URTC 项目目录
+
+| 仓库 | 描述 |
+| :--- | :--- |
+| [URTC](https://github.com/JuanenRac/URTC) | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 智能工具存放架，具备自动预热与生命周期审计功能。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
+
+---
+
+# 🛡️ A.R.M.O.R.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/ARMOR-DOCS/main/images/ARMOR_BANNER.svg" alt="A.R.M.O.R. 生态系统横幅" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/可见性-私有-lightgrey.svg" alt="Private repositories">
+  <img src="https://img.shields.io/badge/Platform-ESP32--S3%20%7C%20Jetson-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
+</p>
+
+**A.R.M.O.R.（Autonomous Radar & Multimodal Observation Range）**是一个完全独立的私有生态系统，用于周界安防与家庭自动化——除了同一作者和相同的工程惯例（有版本的清单、共享的消息契约、七种语言的界面）之外，与 HYDRA-UMC 或 URTC 没有任何关系。它的现场节点监视物业的周界及其太阳能/电力系统；它的中央服务器和客户端让操作员看到并处理这些节点报告的内容。这里列出的每一个仓库都是**私有的**：下面的链接需要该账号自己的权限才能打开，版本和成熟度说明直接来自每个仓库自己的清单和能力矩阵，与 HYDRA-UMC 仪表板已经使用的诚实原则相同。
+
+## 🏗️ A.R.M.O.R. 的构成
+
+1. **共享契约**：**ARMOR-COMMON** 拥有消息含义的所有权——JSON Schema、一个 Python 验证器，以及每个其他仓库只消费、从不重新定义的生成的 TypeScript/Kotlin 类型。
+2. **现场节点**：用于雷达/存在检测的 ESP32-S3 固件（**ARMOR-RADAR**）、太阳能逆变器与电池监测（**ARMOR-SOLAR**）、带开关功能的电力计量（**ARMOR-ELECTRICAL**）；一个 Python 代理（**ARMOR-NETWORK**）从已接入房屋本地网络的一台机器上监视这个网络本身及互联网是否可达。
+3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、报警、自动化和摄像头证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 增加了一个可解释的视觉策略和从不自行执行动作的离线语音意图。
+4. **操作员客户端**：**ARMOR-STUDIO**（网页端）和 **ARMOR-ANDROID-CONTROL**（移动端）都是中央服务器的客户端，从不直接对接现场网络。
+5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下回放场景和可重复的故障；**ARMOR-HARDWARE** 负责外壳设计及其台架验收矩阵。
+6. **生态系统运维**：**ARMOR-UPDATER** 在一台机器上发现、安装并更新每一个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的以验证为准的原子化设计，并为私有生态系统做了改造；**ARMOR-DOCS** 是权威的架构文档和能力矩阵。
+
+## 🔒 诚实与安全
+
+A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的说法才是真实的，每个仓库都清楚地说明目前哪些已经在真实硬件上运行过、哪些还没有。这个生态系统目前不控制市电或物理门禁；现场节点只观察和报告，任何未来的开关能力都会先设计和审查，再决定是否启用。
+
+## 📁 A.R.M.O.R. 项目目录
+
+| 仓库 | 版本 | 描述 |
+| :--- | :--- | :--- |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.2.6 | 消息契约、验证器、一致性向量和生成的类型 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | 电气节点：电表、电网读数消息和开关规则 |
+| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.2 | 本地网络：其设备、互联网以及变化 |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.1 | 中央协调器：遥测、报警、设备、太阳能读数和摄像头 |
+| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 会解释决策且从不执行动作的视觉推理策略 |
+| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | 带无法伪造确认的离线语音意图 |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.8 | 网页控制台：摄像头、雷达、报警、太阳能和 2D/3D 场地设计器 |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.5 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
+| [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | 外壳、电子器件和台架验收矩阵 |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | 部署、中央服务器测试台、备份与 TLS |
+| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 带可重复故障的离线遥测模拟器 |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.1 | 发现、安装并更新生态系统自身的仓库 |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.8 | 架构、安全基线和能力矩阵 |
+
+---
+
 ## 🤝 贡献指南
 本生态系统隶属于一项高科技机器人计划。每个项目都有各自的贡献指南，具体技术细节请参阅各仓库自身文档。
 
@@ -245,3 +344,4 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 社区健康工作流仅手动运行，默认采用 dry-run。配置 `COMMUNITY_HEALTH_SYNC_TOKEN` 后，它只会将这些受管理模板复制到发布 HYDRA-UMC 清单的仓库；绝不会删除项目专用模板。
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.
+
