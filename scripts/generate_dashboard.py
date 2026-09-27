@@ -486,7 +486,18 @@ MATURITY_CLASSES: dict[str, str] = {
 
 MATURITY_DESCRIPTIONS: dict[str, str] = {
     "production": "Real firmware for a real, physical PCB this ecosystem's own hardware docs describe.",
-    "established": "Original, pre-2026-expansion project with a long real version history - trusted on that history, not re-audited this pass.",
+    # Previously gated on when a project was created ("original,
+    # pre-2026-expansion"), a date no amount of real work can ever change -
+    # every one of URTC's and A.R.M.O.R.'s own real projects, and several
+    # of HYDRA-UMC's own newer ones, were permanently excluded from this
+    # tier by birth date alone, regardless of how substantial their own
+    # real record became. Redefined on real, checkable substance instead:
+    # a long version history under this ecosystem's own odometer scheme
+    # (each real build is one more digit, so the number itself is a real
+    # count, not a claim) AND real, sustained use beyond a passing test
+    # suite - deployed and actually operating, or actually depended on by
+    # other real, shipped projects, not simulated or one-off.
+    "established": "A real, substantial version history under this ecosystem's own odometer scheme, AND real, sustained use beyond a passing test suite - deployed and actually operating, or genuinely depended on by other real projects. Trusted on that record, not re-audited this pass.",
     "functional": "Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).",
     "scaffolding": "A real, compilable entry point exists; the feature the project exists for does not yet.",
 }
