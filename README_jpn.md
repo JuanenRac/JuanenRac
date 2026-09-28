@@ -153,11 +153,11 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.5 | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
-| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.5 | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
-| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.3 | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
+| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
+| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.0 | 7インチ産業用ディスプレイ（CM5）専用の Flutter 製タッチインターフェース。 |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.2 | 生体認証ログイン対応のネイティブ Kotlin 製モバイルアプリ。リモートでのロボット管理向け。 |
-| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.1.9 | iOS/iPadOS 向けの Flutter 製モバイルアプリ。リアルタイム WebSocket 同期に対応。 |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.3 | 生体認証ログイン対応のネイティブ Kotlin 製モバイルアプリ。リモートでのロボット管理向け。 |
+| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.0 | iOS/iPadOS 向けの Flutter 製モバイルアプリ。リアルタイム WebSocket 同期に対応。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.0 | ロボットモデルの検証とカタログへのプッシュを行う、グラフィカルな URDF エディタ。 |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.2 | 共有モデルカタログ内で実在するパーツを変換・置換・削除・追加するデスクトップ STL モデルエディタ。 |
 
