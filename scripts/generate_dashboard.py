@@ -398,6 +398,22 @@ STACK_ICONS: dict[str, str] = {
         '<path d="M3 7l9 5 9-5M12 12v9"/>'
         '<circle cx="12" cy="9" r="1.4"/>'
     ),
+    # A.R.M.O.R.'s own manifest keeps `stack` as a real, free-text
+    # description (its own technology list, not a single short token) -
+    # these three are real categories among its projects with no honest
+    # match in the enum above: a docker/ops-tooling repo, a documentation
+    # repo, and a hardware-CAD repo are none of them "a compiled language",
+    # so forcing any into "python"/"node"/etc would misrepresent it.
+    "docker": (
+        '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>'
+        '<rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>'
+    ),
+    "markdown": (
+        '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M6 15V9l3 3 3-3v6M15 9v6M13 13l2 2 2-2"/>'
+    ),
+    "cad": (
+        '<path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"/><path d="M12 2v20M3 7l9 5 9-5"/>'
+    ),
 }
 
 # ---------------------------------------------------------------------------
@@ -1464,6 +1480,47 @@ def categorize_role_for_stats(raw_role: str) -> str:
     return "tool"
 
 
+#: Ordered (keyword, category) rules for A.R.M.O.R.'s own free-text `stack`,
+#: checked top to bottom against the lower-cased text - the first match
+#: wins. The primary language/runtime is checked before incidental tooling
+#: mentions (e.g. "Node.js 22+ / TypeScript / Docker Compose" is real
+#: Node.js, "docker" there is just how it deploys, not what it's written
+#: in) - "docker"/"bash" are only reached once nothing else matched, for a
+#: repo whose own stack really is ops tooling and no application language
+#: at all (ARMOR-DEVOPS's own "Docker Compose / Bash / YAML").
+_ARMOR_STACK_KEYWORD_RULES: tuple[tuple[str, str], ...] = (
+    ("kotlin", "android"),
+    ("react", "node"),
+    ("node.js", "node"),
+    ("standard library only", "python-bare"),
+    ("python", "python"),
+    ("esp-idf", "firmware-c"),
+    ("c++17", "firmware-c"),
+    ("openscad", "cad"),
+    ("kicad", "cad"),
+    ("markdown", "markdown"),
+    ("docker", "docker"),
+    ("bash", "docker"),
+)
+
+
+def categorize_stack_for_stats(raw_stack: str) -> str:
+    """A known short stack token (HYDRA-UMC/URTC's own enum - see
+    STACK_ICONS) passes straight through; anything else is A.R.M.O.R.'s
+    own free-text stack description, classified by real keyword content -
+    the same spirit as categorize_role_for_stats/categorize_deploy_for_stats
+    above. Falls back to the raw text itself (never silently dropped) for
+    a stack description this ecosystem hasn't seen a keyword for yet -
+    long, but visible, is safer than a wrong category."""
+    if raw_stack in STACK_ICONS:
+        return raw_stack
+    text = raw_stack.strip().lower()
+    for needle, category in _ARMOR_STACK_KEYWORD_RULES:
+        if needle in text:
+            return category
+    return raw_stack
+
+
 def render_icon(inner: str, css_class: str = "tech-icon") -> str:
     return (
         f'<svg class="{css_class}" viewBox="0 0 24 24" width="14" '
@@ -1644,8 +1701,13 @@ def _render_one_row(
     project_actions = esc(actions_url(entry.name))
     project_issues = esc(issues_url(entry.name))
 
+    # The icon uses the categorized stack (see categorize_stack_for_stats's
+    # own docstring) so A.R.M.O.R.'s own free-text stack descriptions get a
+    # real icon too, never a blank slot - the visible text next to it
+    # (`entry.stack` below) is unchanged, still each project's own real
+    # description.
     stack_icon = render_icon(
-        STACK_ICONS.get(entry.stack, ""),
+        STACK_ICONS.get(categorize_stack_for_stats(entry.stack), ""),
     )
 
     deploy_icon = render_icon(
@@ -1985,13 +2047,14 @@ def calculate_statistics(
         # A.R.M.O.R. project invisible in every count below.
         deploy_category = categorize_deploy_for_stats(entry.deploy)
         role_category = categorize_role_for_stats(entry.role)
+        stack_category = categorize_stack_for_stats(entry.stack)
 
         deploy_counts[deploy_category] = (
             deploy_counts.get(deploy_category, 0) + 1
         )
 
-        stack_counts[entry.stack] = (
-            stack_counts.get(entry.stack, 0) + 1
+        stack_counts[stack_category] = (
+            stack_counts.get(stack_category, 0) + 1
         )
 
         maturity_counts[entry.maturity] = (
@@ -2079,7 +2142,7 @@ def render_stack_summary(
     return "".join(
         f"""
         <div class="stack-item">
-          <span>{esc(stack)}</span>
+          <span>{render_icon(STACK_ICONS.get(stack, ""))}{esc(stack)}</span>
           <strong>{count}</strong>
         </div>
         """
