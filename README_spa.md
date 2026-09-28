@@ -152,11 +152,11 @@ completo de abajo.
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | Firmware de control de movimiento core para STM32H745/G474 con cinemática S-Curve. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.5 | API Node.js headless y backend WebSocket para orquestación robótica. |
-| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.5 | Dashboard web avanzado basado en React para monitoreo y control 3D. |
-| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.3 | Aplicación de escritorio Python/Qt de alto rendimiento para automatización industrial. |
+| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | Dashboard web avanzado basado en React para monitoreo y control 3D. |
+| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | Aplicación de escritorio Python/Qt de alto rendimiento para automatización industrial. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.0 | Interfaz táctil basada en Flutter para pantallas industriales de 7" (CM5). |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.2 | App móvil nativa Kotlin con login biométrico para gestión remota. |
-| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.1.9 | App móvil Flutter para iOS/iPadOS con sincronización WebSocket en tiempo real. |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.3 | App móvil nativa Kotlin con login biométrico para gestión remota. |
+| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.0 | App móvil Flutter para iOS/iPadOS con sincronización WebSocket en tiempo real. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.0 | Editor gráfico de URDF para validar y subir modelos de robots al catálogo. |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.2 | Editor de escritorio de modelos STL - transforma, reemplaza, quita y añade piezas reales en el catálogo de modelos compartido. |
 
