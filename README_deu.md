@@ -323,7 +323,7 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.2 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solarmesswerte und Kameras |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.8 | Web-Konsole: Kameras, Radar, Alarme, Solarenergie und 2D/3D-Standortdesigner |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.9 | Web-Konsole: Kameras, Radar, Alarme, Solarenergie und 2D/3D-Standortdesigner |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.7 | Android-Bedienclient mit Live-Radar in 2D/3D |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
