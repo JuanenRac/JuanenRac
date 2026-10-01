@@ -315,22 +315,22 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 
 | Repository | Versione | Descrizione |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.2.9 | Contratti dei messaggi, validatori, vettori di conformità e tipi generati |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | Firmware del nodo di campo per ESP32-S3 con tre radar e un proprio pannello web |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | Protocolli di inverter e batterie solari e messaggi di un nodo gateway |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | Nodo elettrico: contatori, il messaggio delle letture della rete e le regole di manovra |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.1 | Pannello touch per la Waveshare ESP32-S3-Touch-LCD-7C-BOX: lo stato del sistema su uno schermo a parete, attiva/disattiva/riconosci, voce premi-per-parlare e la pagina web di un nodo; il firmware non è mai girato su una scheda. |
-| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.5 | La rete locale: i suoi dispositivi, internet e ciò che cambia |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.6 | Coordinatore centrale: telemetria, allarmi, dispositivi, letture solari e telecamere |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.1 | Contratti dei messaggi, validatori, vettori di conformità e tipi generati |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.1 | Firmware del nodo di campo per ESP32-S3 con tre radar e un proprio pannello web |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.1.0 | Protocolli di inverter e batterie solari e messaggi di un nodo gateway |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.6 | Nodo elettrico: contatori, il messaggio delle letture della rete e le regole di manovra |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.2 | Pannello touch per la Waveshare ESP32-S3-Touch-LCD-7C-BOX: lo stato del sistema su uno schermo a parete, attiva/disattiva/riconosci, voce premi-per-parlare e la pagina web di un nodo; il firmware non è mai girato su una scheda. |
+| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | La rete locale: i suoi dispositivi, internet e ciò che cambia |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.8 | Coordinatore centrale: telemetria, allarmi, dispositivi, letture solari e telecamere |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Politica di inferenza visiva che spiega le sue decisioni e non agisce mai |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | Intenti vocali offline con una conferma impossibile da falsificare |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.4.4 | Console web: telecamere, radar, allarmi, energia solare e progettista del sito 2D/3D |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.4.8 | Console web: telecamere, radar, allarmi, energia solare e progettista del sito 2D/3D |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.7 | Client Android dell'operatore con radar 2D/3D in tempo reale |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Contenitori, elettronica e matrice di accettazione da banco |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Distribuzione, banco di prova del server centrale, backup e TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Simulatore di telemetria offline con guasti ripetibili |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.4 | Rileva, installa e aggiorna i repository stessi dell'ecosistema |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.8 | Architettura, base di sicurezza e matrice delle capacità |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.4.9 | Architettura, base di sicurezza e matrice delle capacità |
 
 ---
 
