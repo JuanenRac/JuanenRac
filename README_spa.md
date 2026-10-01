@@ -314,17 +314,17 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.2.6 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.2.9 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
-| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.2 | La red local: sus dispositivos, internet y lo que cambia. |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.2 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y cámaras. |
+| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.5 | La red local: sus dispositivos, internet y lo que cambia. |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.6 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.3.9 | Consola web: cámaras, radar, alarmas, energía solar y el diseñador de sitio 2D/3D. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.4.4 | Consola web: cámaras, radar, alarmas, energía solar y el diseñador de sitio 2D/3D. |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.7 | Cliente Android del operador con radar 2D/3D en vivo. |
-| [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.2 | Cajas, electrónica y la matriz de aceptación en banco. |
+| [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Cajas, electrónica y la matriz de aceptación en banco. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Simulador de telemetría sin conexión con fallos repetibles. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.4 | Detecta, instala y actualiza los propios repositorios del ecosistema. |
