@@ -8,6 +8,15 @@ name: Bootstrap HYDRA-UMC Roadmap
 on:
   workflow_dispatch:
     inputs:
+      roadmap:
+        description: Which board - hydra-umc, urtc or armor.
+        required: true
+        default: hydra-umc
+        type: choice
+        options:
+          - hydra-umc
+          - urtc
+          - armor
       apply:
         description: Create or reconcile the public Project and its structure.
         required: true
@@ -27,6 +36,7 @@ jobs:
         with:
           sparse-checkout: |
             tools/bootstrap_ecosystem_project.py
+            tools/roadmap_defs.py
           sparse-checkout-cone-mode: false
       - name: Bootstrap HYDRA-UMC Roadmap
         env:
@@ -39,7 +49,7 @@ jobs:
             exit 1
           }
           if [[ '${{ inputs.apply }}' == 'true' ]]; then
-            python3 tools/bootstrap_ecosystem_project.py --apply
+            python3 tools/bootstrap_ecosystem_project.py --roadmap '${{ inputs.roadmap }}' --apply
           else
-            python3 tools/bootstrap_ecosystem_project.py
+            python3 tools/bootstrap_ecosystem_project.py --roadmap '${{ inputs.roadmap }}'
           fi
