@@ -315,16 +315,16 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.1 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.2 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.1.1 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.7 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.2 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.2 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.4 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.1.3 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.9 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.3 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | Das lokale Netzwerk: seine Geräte, das Internet und was sich ändert |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.8 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solarmesswerte und Kameras |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.0 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solarmesswerte und Kameras |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.0 | Web-Konsole: Kameras, Radar, Alarme, Solarenergie und 2D/3D-Standortdesigner |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.7 | Web-Konsole: Kameras, Radar, Alarme, Solarenergie und 2D/3D-Standortdesigner |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.3.8 | Android-Bedienclient mit Live-Radar in 2D/3D |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
