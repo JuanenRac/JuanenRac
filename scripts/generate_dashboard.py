@@ -4129,7 +4129,7 @@ def render_html(
         <h3 data-i18n="architecture_a_card4_title">State and operator consoles</h3>
         <p data-i18n="architecture_a_card4_body">ARMOR-SERVER is the only place that ever touches a camera password
         or an RTSP address; Studio and the Android app are its authenticated clients, and a phone can set a new node up over Bluetooth alone.</p>
-        <ul><li>ARMOR-SERVER</li><li>ARMOR-STUDIO</li><li>ARMOR-ANDROID-CONTROL</li><li>BLE set-up only</li></ul>
+        <ul><li>ARMOR-SERVER</li><li>ARMOR-STUDIO</li><li>ARMOR-ANDROID-CONTROL</li><li>ARMOR-HMI</li><li>BLE set-up only</li></ul>
       </article>
     </div>
 

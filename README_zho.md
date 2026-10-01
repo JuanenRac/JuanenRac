@@ -301,7 +301,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 1. **共享契约**：**ARMOR-COMMON** 拥有消息含义的所有权——JSON Schema、一个 Python 验证器，以及每个其他仓库只消费、从不重新定义的生成的 TypeScript/Kotlin 类型。
 2. **现场节点**：用于雷达/存在检测的 ESP32-S3 固件（**ARMOR-RADAR**）、太阳能逆变器与电池监测（**ARMOR-SOLAR**）、带开关功能的电力计量（**ARMOR-ELECTRICAL**）；一个 Python 代理（**ARMOR-NETWORK**）从已接入房屋本地网络的一台机器上监视这个网络本身及互联网是否可达。
 3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、报警、自动化和摄像头证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 增加了一个可解释的视觉策略和从不自行执行动作的离线语音意图。
-4. **操作员客户端**：**ARMOR-STUDIO**（网页端）和 **ARMOR-ANDROID-CONTROL**（移动端）都是中央服务器的客户端，从不直接对接现场网络。
+4. **操作员客户端**：**ARMOR-STUDIO**（网页端）和 **ARMOR-ANDROID-CONTROL**（移动端）都是中央服务器的客户端，从不直接对接现场网络。 **ARMOR-HMI** 是挂在墙上的触摸面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示状态、布防和确认，并将成为语音助手的所在。
 5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下回放场景和可重复的故障；**ARMOR-HARDWARE** 负责外壳设计及其台架验收矩阵。
 6. **生态系统运维**：**ARMOR-UPDATER** 在一台机器上发现、安装并更新每一个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的以验证为准的原子化设计；**ARMOR-DOCS** 是权威的架构文档和能力矩阵。
 
@@ -317,6 +317,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | 电气节点：电表、电网读数消息和开关规则 |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.1 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.5 | 本地网络：其设备、互联网以及变化 |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.6 | 中央协调器：遥测、报警、设备、太阳能读数和摄像头 |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 会解释决策且从不执行动作的视觉推理策略 |
