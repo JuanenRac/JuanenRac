@@ -150,3 +150,12 @@ reusable workflow may centralize only the deterministic common baseline;
 firmware, Android, Rust, Flutter and bridge-specific tests remain in their
 own repositories. Any caller must pin the reusable workflow deliberately and
 retain least-privilege permissions.
+
+## One board for each ecosystem
+
+There are three boards with the same fields and views, so whoever knows one knows
+all of them: **HYDRA-UMC Roadmap**, **URTC Roadmap** and **A.R.M.O.R. Roadmap**.
+Both workflows above take a `roadmap` input (`hydra-umc`, `urtc` or `armor`). The
+URTC and A.R.M.O.R. boards have their own families and hardware dependencies and
+their own curated list of items (`tools/roadmap_defs.py`); the coverage report of a
+run only lists the repositories that belong to the chosen board.
