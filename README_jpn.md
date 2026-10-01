@@ -304,7 +304,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 1. **共有契約**：**ARMOR-COMMON** がメッセージの意味を所有します - JSON Schema、Python の検証器、そして他のあらゆるリポジトリが消費するだけで再定義することのない、生成された TypeScript/Kotlin の型です。
 2. **フィールドノード**：レーダー・存在検知用の ESP32-S3 ファームウェア（**ARMOR-RADAR**）、太陽光インバーターとバッテリーの監視（**ARMOR-SOLAR**）、開閉機能を備えた電力計測（**ARMOR-ELECTRICAL**）；Python 製のエージェント（**ARMOR-NETWORK**）が、すでにその家のローカルネットワークに接続されたマシンから、そのネットワーク自体とインターネットの到達性を監視します。
 3. **中央コーディネーター**：**ARMOR-SERVER** が状態、ユーザー、アラーム、自動化、カメラの証跡を保持し、**ARMOR-SERVER-AI** と **ARMOR-VOICE-AI** が、説明可能な視覚ポリシーと、決して自ら動作しないオフライン音声インテントを追加します。
-4. **オペレータークライアント**：**ARMOR-STUDIO**（Web）と **ARMOR-ANDROID-CONTROL**（モバイル）は中央サーバーのクライアントであり、フィールドネットワークに直接接続することはありません。
+4. **オペレータークライアント**：**ARMOR-STUDIO**（Web）と **ARMOR-ANDROID-CONTROL**（モバイル）は中央サーバーのクライアントであり、フィールドネットワークに直接接続することはありません。 **ARMOR-HMI** は壁掛けのタッチパネル（Waveshare ESP32-S3-Touch-LCD-7C-BOX）で、状態の表示、警戒、確認を行い、将来は音声アシスタントの拠点になります。
 5. **デプロイとテスト**：**ARMOR-DEVOPS** がサービス全体のグラフをデプロイし、**ARMOR-SIMULATOR** が実機なしでシナリオと再現可能な故障を再生し、**ARMOR-HARDWARE** が筐体設計とそのベンチ受け入れマトリクスを担います。
 6. **エコシステム運用**：**ARMOR-UPDATER** が、HYDRA-UMC-UPDATER と同じ検証済みでのみ確定する原子的な設計で、マシン上のあらゆる A.R.M.O.R. リポジトリを検出・インストール・更新します；**ARMOR-DOCS** が正式なアーキテクチャ文書と機能マトリクスです。
 
@@ -320,6 +320,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.1 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.5 | ローカルネットワーク：機器、インターネット、そして変化 |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.6 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光の測定値、カメラ |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 判断を説明し、決して動作しない視覚推論ポリシー |

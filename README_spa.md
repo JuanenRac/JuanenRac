@@ -302,7 +302,7 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 1. **Contrato compartido**: **ARMOR-COMMON** es dueño del significado de los mensajes - JSON Schema, un validador en Python y tipos TypeScript/Kotlin generados que cada otro repositorio consume, nunca redefine.
 2. **Nodos de campo**: firmware ESP32-S3 para detección por radar/presencia (**ARMOR-RADAR**), monitorización de inversores y baterías solares (**ARMOR-SOLAR**), y medición eléctrica con maniobra (**ARMOR-ELECTRICAL**); un agente en Python (**ARMOR-NETWORK**) vigila la propia red local de la casa y si hay internet desde una máquina ya conectada a ella.
 3. **Coordinador central**: **ARMOR-SERVER** guarda el estado, usuarios, alarmas, automatizaciones y evidencia de cámaras; **ARMOR-SERVER-AI** y **ARMOR-VOICE-AI** añaden una política visual explicable e intenciones de voz sin conexión que nunca actúan por sí solas.
-4. **Clientes de operador**: **ARMOR-STUDIO** (web) y **ARMOR-ANDROID-CONTROL** (móvil) son clientes del servidor central, nunca de la red de campo directamente.
+4. **Clientes de operador**: **ARMOR-STUDIO** (web) y **ARMOR-ANDROID-CONTROL** (móvil) son clientes del servidor central, nunca de la red de campo directamente. **ARMOR-HMI** es un panel táctil de pared (una Waveshare ESP32-S3-Touch-LCD-7C-BOX) que muestra el estado, arma y reconoce, y será donde viva el asistente de voz.
 5. **Despliegue y pruebas**: **ARMOR-DEVOPS** despliega todo el grafo de servicios; **ARMOR-SIMULATOR** reproduce escenarios y fallos repetibles sin hardware real; **ARMOR-HARDWARE** lleva el diseño de las cajas y su matriz de aceptación en banco.
 6. **Operación del ecosistema**: **ARMOR-UPDATER** descubre, instala y actualiza cada repositorio de A.R.M.O.R. en una máquina, el mismo diseño atómico-por-verificación que HYDRA-UMC-UPDATER; **ARMOR-DOCS** es la documentación de arquitectura canónica y la matriz de capacidades.
 
@@ -318,6 +318,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.0 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.0.9 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.5 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.1 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.5 | La red local: sus dispositivos, internet y lo que cambia. |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.3.6 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
