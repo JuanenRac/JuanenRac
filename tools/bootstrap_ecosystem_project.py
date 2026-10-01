@@ -23,6 +23,7 @@ from collections.abc import Mapping
 
 
 API_URL = "https://api.github.com/graphql"
+ROADMAP_NAMES = ("hydra-umc", "urtc", "armor")
 PROJECT_TITLE = "HYDRA-UMC Roadmap"
 PROJECT_DESCRIPTION = "Central planning board for actionable HYDRA-UMC and URTC ecosystem work."
 PROJECT_README = """# HYDRA-UMC Roadmap
@@ -101,6 +102,21 @@ VIEWS = (
     ("CM5 Field Testing", "TABLE_LAYOUT"),
     ("Pending Human Decision", "TABLE_LAYOUT"),
 )
+
+
+def configure(name: str) -> None:
+    """Point this module at one of the three boards: the title, the text and the choices of Family, Hardware dependency and Evidence change; the rest is the same."""
+    global PROJECT_TITLE, PROJECT_DESCRIPTION, PROJECT_README
+    if name == "hydra-umc":
+        return
+    from roadmap_defs import ROADMAPS
+    definition = ROADMAPS[name]
+    PROJECT_TITLE = definition["title"]
+    PROJECT_DESCRIPTION = definition["description"]
+    PROJECT_README = definition["readme"]
+    SELECT_FIELDS["Family"] = list(definition["families"])
+    SELECT_FIELDS["Hardware dependency"] = list(definition["hardware"])
+    SELECT_FIELDS["Evidence"] = list(definition["evidence"])
 
 
 def graphql(token: str, query: str, variables: Mapping[str, object] | None = None) -> dict:
@@ -296,7 +312,9 @@ def upsert_views(token: str, project_id: str, views: dict[str, dict]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply", action="store_true", help="Create or reconcile the Project instead of reporting the plan.")
+    parser.add_argument("--roadmap", choices=ROADMAP_NAMES, default="hydra-umc", help="Which board to create or reconcile.")
     args = parser.parse_args()
+    configure(args.roadmap)
     token = os.environ.get("HYDRA_UMC_PROJECTS_TOKEN", "")
     if not token:
         print("PROJECT_BOOTSTRAP=FAIL HYDRA_UMC_PROJECTS_TOKEN is not configured", file=sys.stderr)

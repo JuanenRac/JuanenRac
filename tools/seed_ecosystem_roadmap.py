@@ -31,7 +31,8 @@ import sys
 import urllib.error
 import urllib.request
 
-from bootstrap_ecosystem_project import PROJECT_TITLE, graphql, upsert_field, viewer_projects
+import bootstrap_ecosystem_project as bootstrap
+from bootstrap_ecosystem_project import ROADMAP_NAMES, graphql, upsert_field, viewer_projects
 
 
 SEED_ITEMS = (
@@ -815,7 +816,26 @@ HARDWARE_ITEMS = (
     ),
 )
 
-SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS
+# The state of the board after the latest round: what shipped, what is waiting for something outside the code, and the one open investigation.
+CURRENT_ITEMS = (
+    _item("Shared documentation and README parity checks in every repository", "HYDRA-UMC-SDK + every repository", "Platform Foundation", "Established", "Local test", "Normal",
+          "One canonical documentation-policy check and one README translation-parity check, used by the CI of every repository, also rejecting internal codes and private links in public files.",
+          "A change that breaks the policy fails the CI of the repository it touches; the checks live in one place.", status="Done"),
+    _item("Every repository describes itself in its own manifest", "HYDRA-UMC-UPDATER + HYDRA-UMC", "Platform Foundation", "Established", "Local test", "Normal",
+          "The dashboard and the updater have no catalogue of projects: each repository publishes its manifest and is found by it.",
+          "A new repository with a manifest appears on the dashboard without editing anything else.", status="Done"),
+    _item("Reproducible profile builds of the operating system image", "HYDRA-UMC-OS", "Platform Foundation", "Established", "CM5", "Normal",
+          "Two builds of the same frozen commit still differ; the cause is not found yet (candidates: timestamps in package metadata, installation order, variable permissions or users).",
+          "Two builds of the same commit give identical results, or the remaining differences are listed and justified.", hardware="CM5"),
+    _item("Operations agent: a real diagnosis with a language model", "HYDRA-UMC-OPS-AGENT", "Vision & AI", "Functional", "Local test", "Low",
+          "Run the diagnosis against a real model provider and record what it proposes for a real fault.",
+          "A recorded run, with the human-approval step intact.", status="Blocked", blocked_by="Needs an API key for a model provider"),
+    _item("Operations agent: a real network between its two roles", "HYDRA-UMC-OPS-AGENT", "Platform Foundation", "Functional", "Local test", "Low",
+          "Today the edge and the control-plane roles exchange a snapshot file; a network transport needs two real hosts.",
+          "The same exchange over the network between two machines, with the same checks.", status="Blocked", blocked_by="Needs two real hosts"),
+)
+
+SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS
 
 
 
@@ -851,13 +871,33 @@ def discover_repository_names(token: str, owner: str) -> list[str]:
     return names
 
 
+_PREFIXES: tuple[str, ...] | None = None   # None: the HYDRA-UMC board, which covers what the other two do not
+
+
+def _belongs(name: str) -> bool:
+    if _PREFIXES is None:
+        return not name.startswith(("URTC", "ARMOR"))
+    return name.startswith(_PREFIXES)
+
+
+def configure(name: str) -> None:
+    """Choose the board: the seed items and the repositories it covers are those of that board."""
+    global SEED_ITEMS, _PREFIXES
+    bootstrap.configure(name)
+    if name == "hydra-umc":
+        return
+    from roadmap_defs import ROADMAPS
+    SEED_ITEMS = tuple(ROADMAPS[name]["items"])
+    _PREFIXES = tuple(ROADMAPS[name]["prefixes"])
+
+
 def uncovered_repositories(token: str, owner: str) -> list[str]:
     """Real repositories with zero SEED_ITEMS mentioning them anywhere in
     their own `repository` field (a multi-repo item like the SDK contract
     one above lists several names in one string, so this checks
     substring membership, not an exact match) - a coverage report only,
     never a reason to fabricate a seed item for one of these on its own."""
-    real_names = discover_repository_names(token, owner)
+    real_names = [name for name in discover_repository_names(token, owner) if _belongs(name)]
     covered = {
         name
         for name in real_names
@@ -868,9 +908,9 @@ def uncovered_repositories(token: str, owner: str) -> list[str]:
 
 def project(token: str) -> dict:
     _, projects = viewer_projects(token)
-    result = next((candidate for candidate in projects if candidate["title"] == PROJECT_TITLE), None)
+    result = next((candidate for candidate in projects if candidate["title"] == bootstrap.PROJECT_TITLE), None)
     if result is None:
-        raise RuntimeError(f"Project {PROJECT_TITLE!r} does not exist; run the bootstrap workflow first.")
+        raise RuntimeError(f"Project {bootstrap.PROJECT_TITLE!r} does not exist; run the bootstrap workflow first.")
     return result
 
 
@@ -1010,7 +1050,9 @@ def set_select(token: str, project_id: str, item_id: str, field: dict, option_na
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply", action="store_true", help="Create missing draft items instead of reporting the plan.")
+    parser.add_argument("--roadmap", choices=ROADMAP_NAMES, default="hydra-umc", help="Which board to seed.")
     args = parser.parse_args()
+    configure(args.roadmap)
     token = os.environ.get("HYDRA_UMC_PROJECTS_TOKEN", "")
     if not token:
         print("ROADMAP_SEED=FAIL HYDRA_UMC_PROJECTS_TOKEN is not configured", file=sys.stderr)
