@@ -8,6 +8,15 @@ name: Seed HYDRA-UMC Roadmap
 on:
   workflow_dispatch:
     inputs:
+      roadmap:
+        description: Which board - hydra-umc, urtc or armor.
+        required: true
+        default: hydra-umc
+        type: choice
+        options:
+          - hydra-umc
+          - urtc
+          - armor
       apply:
         description: Add missing evidence-based software planning items to the Roadmap.
         required: true
@@ -27,6 +36,7 @@ jobs:
         with:
           sparse-checkout: |
             tools/bootstrap_ecosystem_project.py
+            tools/roadmap_defs.py
             tools/seed_ecosystem_roadmap.py
           sparse-checkout-cone-mode: false
       - name: Seed evidence-based software work
@@ -40,7 +50,7 @@ jobs:
             exit 1
           }
           if [[ '${{ inputs.apply }}' == 'true' ]]; then
-            python3 tools/seed_ecosystem_roadmap.py --apply
+            python3 tools/seed_ecosystem_roadmap.py --roadmap '${{ inputs.roadmap }}' --apply
           else
-            python3 tools/seed_ecosystem_roadmap.py
+            python3 tools/seed_ecosystem_roadmap.py --roadmap '${{ inputs.roadmap }}'
           fi
