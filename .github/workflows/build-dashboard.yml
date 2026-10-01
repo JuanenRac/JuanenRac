@@ -68,9 +68,14 @@ on:
       - ".github/workflows/build-dashboard.yml"
 
   schedule:
-    # Hourly discovery: a newly pushed manifest repository appears without
-    # editing this repository or maintaining a dashboard project list.
-    - cron: "17 * * * *"
+    # Discovery every twenty minutes: a newly pushed manifest repository appears
+    # without editing this repository or maintaining a dashboard project list.
+    # GitHub runs scheduled workflows on a best-effort basis and skips some of
+    # them when its queues are busy (the hourly one went hours without running),
+    # so it is asked often; the push-triggered refresh (repository_dispatch from
+    # each project, which needs the ECOSYSTEM_DASHBOARD_DISPATCH_TOKEN secret) is
+    # the reliable path.
+    - cron: "7,27,47 * * * *"
 
 # Prevent two dashboard builds from modifying main at the same time.
 concurrency:
