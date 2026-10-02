@@ -314,7 +314,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.2 | 消息契约、验证器、一致性向量和生成的类型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.4 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.5 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.1.3 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.9 | 电气节点：电表、电网读数消息和开关规则 |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.3 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
@@ -322,7 +322,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.0 | 中央协调器：遥测、报警、设备、太阳能读数和摄像头 |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 会解释决策且从不执行动作的视觉推理策略 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | 带无法伪造确认的离线语音意图 |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.7 | 网页控制台：摄像头、雷达、报警、太阳能和 2D/3D 场地设计器 |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.8 | 网页控制台：摄像头、雷达、报警、太阳能和 2D/3D 场地设计器 |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.0 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | 外壳、电子器件和台架验收矩阵 |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | 部署、中央服务器测试台、备份与 TLS |
