@@ -316,19 +316,19 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.3 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.6 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.1.4 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.0 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.4 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.4 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.3.8 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.1.5 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.1 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.5 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | ローカルネットワーク：機器、インターネット、そして変化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.0 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.1 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 判断を説明し、決して動作しない視覚推論ポリシー |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | 偽造できない確認を備えたオフライン音声インテント |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.9 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.10 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.0 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | 筐体、電子部品、ベンチ受け入れマトリクス |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.5 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.6 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.4 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.5.2 | アーキテクチャ、セキュリティ基準、機能マトリクス |
