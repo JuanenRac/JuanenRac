@@ -321,10 +321,10 @@ A.R.M.O.R. suit la même règle déjà appliquée par le tableau de bord de HYDR
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.0.9 | Nœud électrique : compteurs, le message des relevés du réseau et les règles de manœuvre |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.3 | Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : l'état du système sur un écran mural, armer/désarmer/acquitter, voix en appuyer-pour-parler et la page web d'un nœud ; le firmware n'a jamais tourné sur une carte. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | Le réseau local : ses appareils, internet et ce qui change |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.0 | Coordinateur central : télémétrie, alarmes, appareils, relevés solaires et caméras |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.0 | Coordinateur central : télémétrie, alarmes, appareils, relevés solaires et électriques, le réseau local, les services système et caméras |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Politique d'inférence visuelle qui explique ses décisions et n'agit jamais |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | Intentions vocales hors ligne avec une confirmation impossible à falsifier |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.8 | Console web : caméras, radar, alarmes, énergie solaire et le concepteur de site 2D/3D |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.5.8 | Console web : caméras, radar, alarmes, menus solaire et électrique, réseau local, services système, météo, un chercheur de nœuds et le concepteur de site 2D/3D |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.0 | Client Android de l'opérateur avec radar 2D/3D en direct |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Boîtiers, électronique et la matrice d'acceptation au banc |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.4 | Déploiement, banc de test du serveur central, sauvegarde et TLS |
