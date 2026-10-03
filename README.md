@@ -313,8 +313,8 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.4 | Message contracts, validators, conformance vectors, generated types, OpenAPI, shared launcher. |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.4.5 | ESP32-S3 field-node firmware, decoders for the LD2450, LD2461 and presence sensors, and its host-tested core. |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.0 | Solar gateway node: the ESP32-S3 firmware and its panel (ten serial ports), and the protocols of Voltronic / MPP Solar inverters and Pylontech and ANT-BMS batteries. |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.4.8 | ESP32-S3 field-node firmware, decoders for the LD2450, LD2461 and presence sensors, and its host-tested core. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.2 | Solar gateway node: the ESP32-S3 firmware and its panel (ten serial ports), and the protocols of Voltronic / MPP Solar inverters and Pylontech and ANT-BMS batteries. |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.6 | Electrical node: the firmware (sixteen PZEM meters on one serial line, web panel, MQTT), the meters' frames, the message of the network's readings and the rules for switching. |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.0 | Touch panel for the Waveshare ESP32-S3-Touch-LCD-7C-BOX: the system's state on a wall screen, arm/disarm/acknowledge, push-to-talk voice and the web page of a node; the firmware has never run on a board. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | Local network monitor: the devices on the house's network, the state of the internet (and whose side an outage is on), what changes; it only observes. |
