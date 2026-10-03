@@ -317,9 +317,9 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.4 | Contratti dei messaggi, validatori, vettori di conformità e tipi generati |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.4.5 | Firmware del nodo di campo per ESP32-S3 con tre radar e un proprio pannello web |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.1.9 | Protocolli di inverter e batterie solari e messaggi di un nodo gateway |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.5 | Nodo elettrico: contatori, il messaggio delle letture della rete e le regole di manovra |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.0.9 | Pannello touch per la Waveshare ESP32-S3-Touch-LCD-7C-BOX: lo stato del sistema su uno schermo a parete, attiva/disattiva/riconosci, voce premi-per-parlare e la pagina web di un nodo; il firmware non è mai girato su una scheda. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.0 | Protocolli di inverter e batterie solari e messaggi di un nodo gateway |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.6 | Nodo elettrico: contatori, il messaggio delle letture della rete e le regole di manovra |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.0 | Pannello touch per la Waveshare ESP32-S3-Touch-LCD-7C-BOX: lo stato del sistema su uno schermo a parete, attiva/disattiva/riconosci, voce premi-per-parlare e la pagina web di un nodo; il firmware non è mai girato su una scheda. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | La rete locale: i suoi dispositivi, internet e ciò che cambia |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.1 | Coordinatore centrale: telemetria, allarmi, dispositivi, letture solari ed elettriche, la rete locale, i servizi di sistema e telecamere |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Politica di inferenza visiva che spiega le sue decisioni e non agisce mai |
