@@ -314,8 +314,8 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.4 | 消息契约、验证器、一致性向量和生成的类型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.4.5 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.0 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.4.8 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.2 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.6 | 电气节点：电表、电网读数消息和开关规则 |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.0 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | 本地网络：其设备、互联网以及变化 |
