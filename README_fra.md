@@ -231,7 +231,7 @@ du catalogue complet ci-dessous.
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.2 | Tableau de bord d'urgence portable avec alertes de sécurité haptiques. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.2 | Interface en ligne de commande pour l'automatisation, le flashage et le devops. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.1 | Extension IA pour tableaux de bord web fournissant des analyses textuelles. |
-| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.4 | Outil GUI/CLI multiplateforme pour détecter, installer et mettre à jour manuellement chaque projet de l'écosystème. |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.5 | Outil GUI/CLI multiplateforme pour détecter, installer et mettre à jour manuellement chaque projet de l'écosystème. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.2.7 | Outil de bureau Windows/Linux qui construit une image de la CM5 prête à graver, préchargée avec les versions les plus actuelles de l'écosystème, avec une configuration de premier démarrage façon Raspberry Pi Imager. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.4 | Coordinateur d'incidents de maintenance : un rôle edge à faible privilège collecte un instantané d'inventaire/santé assaini, un rôle control-plane le rend en lecture seule et demande à un fournisseur d'IA de suggérer un diagnostic - n'applique jamais de correctif ni ne déploie rien. |
 | [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.3 | Serveur de développement reproductible : aujourd'hui un schéma de configuration à permissions et un inventaire de manifestes, évoluant vers un exécuteur de tâches/espace de travail isolé coordonné avec OPS-AGENT - aucune tâche n'a de permission de déploiement sauf si un document l'accorde explicitement. |
@@ -316,7 +316,7 @@ A.R.M.O.R. suit la même règle déjà appliquée par le tableau de bord de HYDR
 | Dépôt | Version | Description |
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.5 | Contrats de messages, validateurs, vecteurs de conformité et types générés |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.0 | Firmware du nœud de terrain pour ESP32-S3 avec trois radars et son propre panneau web |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.2 | Firmware du nœud de terrain pour ESP32-S3 avec trois radars et son propre panneau web |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.3 | Protocoles des onduleurs et batteries solaires et les messages d'un nœud passerelle |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.7 | Nœud électrique : compteurs, le message des relevés du réseau et les règles de manœuvre |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.1 | Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : l'état du système sur un écran mural, armer/désarmer/acquitter, voix en appuyer-pour-parler et la page web d'un nœud ; le firmware n'a jamais tourné sur une carte. |
@@ -329,7 +329,7 @@ A.R.M.O.R. suit la même règle déjà appliquée par le tableau de bord de HYDR
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Boîtiers, électronique et la matrice d'acceptation au banc |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.7 | Déploiement, banc de test du serveur central, sauvegarde et TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Simulateur de télémétrie hors ligne avec pannes reproductibles |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.5 | Détecte, installe et met à jour les propres dépôts de l'écosystème |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.6 | Détecte, installe et met à jour les propres dépôts de l'écosystème |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.5.6 | Architecture, base de sécurité et la matrice des capacités |
 
 ---

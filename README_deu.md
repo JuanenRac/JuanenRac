@@ -231,7 +231,7 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.2 | Tragbares Notfall-Dashboard mit haptischen Sicherheitswarnungen. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.2 | Befehlszeilenschnittstelle für Flottenautomatisierung, Flashen und DevOps. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.1 | KI-Erweiterung für Web-Dashboards für Einblicke in natürlicher Sprache. |
-| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.4 | Plattformübergreifendes GUI/CLI-Tool zum Erkennen, Installieren und manuellen Aktualisieren jedes Ökosystem-Projekts. |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.5 | Plattformübergreifendes GUI/CLI-Tool zum Erkennen, Installieren und manuellen Aktualisieren jedes Ökosystem-Projekts. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.2.7 | Windows/Linux-Desktop-Tool, das ein flashbereites CM5-Image baut, vorgeladen mit den aktuellsten Versionen des Ökosystems, mit Ersteinrichtungs-Konfiguration im Stil von Raspberry Pi Imager. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.4 | Wartungsvorfall-Koordinator: eine schreibgeschützte Edge-Rolle mit niedrigem Privileg sammelt einen bereinigten Inventar-/Gesundheits-Snapshot, eine Control-Plane-Rolle rendert ihn schreibgeschützt und bittet einen KI-Anbieter um einen vorgeschlagenen Diagnosevorschlag - wendet nie einen Patch an und stellt nie etwas bereit. |
 | [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.3 | Reproduzierbarer Entwicklungsserver: heute ein rechtebasiertes Konfigurationsschema und eine Manifest-Inventarisierung, wachsend zu einem isolierten Aufgaben-/Workspace-Runner in Koordination mit OPS-AGENT - keine Aufgabe hat eine Deployment-Berechtigung, sofern nicht ein Dokument sie explizit gewährt. |
@@ -316,7 +316,7 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.5 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.0 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.2 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.3 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.7 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.1 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
@@ -329,7 +329,7 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.7 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.5 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.6 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.5.6 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
 
 ---
