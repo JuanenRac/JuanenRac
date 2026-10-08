@@ -51,7 +51,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from hydra_umc_updater.ecosystem_catalog import parse_catalog
+from hydra_umc_updater import github_client as _hydra_client
 from hydra_umc_updater.github_client import RemoteStatus, discover_remote_projects
+from hydra_umc_updater.project_manifest import ECOSYSTEM_ID as _HYDRA_ECOSYSTEM_ID, ManifestValidationError, parse_manifest
 from hydra_umc_updater.registry import ProjectEntry
 
 # URTC and A.R.M.O.R. ship their own dedicated updater/discovery client too
@@ -65,6 +67,78 @@ from hydra_umc_updater.registry import ProjectEntry
 # what this file actually reads.
 from urtc_updater.github_client import discover_remote_projects as discover_urtc_projects
 from armor_updater.github_client import discover_remote_projects as discover_armor_projects
+
+
+# ---------------------------------------------------------------------------
+# Electro Hobby 3D: the tools that sit above the three ecosystems
+# ---------------------------------------------------------------------------
+# ELECTRO-HOBBY-3D-UPDATER belongs to none of the three ecosystems above and has
+# no updater of its own that discovers it, so it declares `electro-hobby-3d.project.json`
+# (same shape as a HYDRA-UMC manifest, `ecosystem: ELECTRO-HOBBY-3D`). Any public
+# repository of the account with that file is listed here. The manifest is validated
+# with the HYDRA-UMC parser, which only insists on the ecosystem name, so the name is
+# swapped for the parser alone; the project keeps its own ecosystem in the dashboard.
+
+ELECTRO_HOBBY_ECOSYSTEM_ID = "ELECTRO-HOBBY-3D"
+ELECTRO_HOBBY_MANIFEST_FILE = "electro-hobby-3d.project.json"
+
+
+def _fetch_electro_hobby_manifest(owner: str, name: str, branch: str) -> RemoteStatus | None:
+    url = f"{_hydra_client.GITHUB_RAW_BASE}/{owner}/{name}/{branch}/{ELECTRO_HOBBY_MANIFEST_FILE}"
+    request = urllib.request.Request(url, headers={"User-Agent": API_USER_AGENT, "Accept": "application/json"}, method="GET")
+    try:
+        text = _hydra_client._urlopen_with_retries(request, timeout=_hydra_client.REQUEST_TIMEOUT_S).decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            return None
+        raise RuntimeError(f"{name}: manifest {_hydra_client.describe_http_error(exc)}") from exc
+    except (urllib.error.URLError, TimeoutError, socket.timeout, OSError) as exc:
+        raise RuntimeError(f"{name}: manifest lookup failed: {exc}") from exc
+    try:
+        data = json.loads(text)
+        if not isinstance(data, dict) or data.get("ecosystem") != ELECTRO_HOBBY_ECOSYSTEM_ID:
+            return None
+        data["ecosystem"] = _HYDRA_ECOSYSTEM_ID
+        manifest = parse_manifest(json.dumps(data), expected_name=name)
+    except (json.JSONDecodeError, ManifestValidationError) as exc:
+        raise RuntimeError(f"{name}: invalid manifest: {exc}") from exc
+    return RemoteStatus(
+        entry=_hydra_client.entry_from_manifest(manifest),
+        version=_hydra_client.Version.from_string(manifest.version),
+        url=url,
+        manifest=manifest,
+    )
+
+
+def discover_electro_hobby_projects(owner: str, *, token: str | None = None) -> _hydra_client.RemoteDiscovery:
+    """Every public repository of `owner` with an Electro Hobby 3D manifest."""
+    candidates: list[tuple[str, str]] = []
+    page = 1
+    while True:
+        payload = _api_get(f"https://api.github.com/users/{owner}/repos?type=owner&per_page=100&page={page}")
+        if not isinstance(payload, list):
+            raise RuntimeError(f"unable to list GitHub repositories for {owner}")
+        for item in payload:
+            if isinstance(item, dict) and isinstance(item.get("name"), str):
+                branch = item.get("default_branch")
+                candidates.append((item["name"], branch if isinstance(branch, str) and branch else "main"))
+        if len(payload) < 100:
+            break
+        page += 1
+    found: list[RemoteStatus] = []
+    errors: list[str] = []
+    with ThreadPoolExecutor(max_workers=API_MAX_CONCURRENT_REQUESTS) as pool:
+        futures = {pool.submit(_fetch_electro_hobby_manifest, owner, name, branch): name for name, branch in candidates}
+        for future in as_completed(futures):
+            try:
+                status = future.result()
+            except RuntimeError as exc:
+                errors.append(str(exc))
+                continue
+            if status is not None:
+                found.append(status)
+    found.sort(key=lambda status: status.entry.name.casefold())
+    return _hydra_client.RemoteDiscovery(projects=tuple(found), errors=tuple(sorted(errors)))
 
 
 # ---------------------------------------------------------------------------
@@ -1909,12 +1983,14 @@ ECOSYSTEM_BANNER_I18N_KEY: dict[str, str] = {
     "hydra-umc": "table_hydra_umc_banner",
     "urtc": "table_urtc_banner",
     "armor": "table_armor_banner",
+    "electro-hobby-3d": "table_electro_hobby_3d_banner",
 }
 
 ECOSYSTEM_BANNER_FALLBACK_TEXT: dict[str, str] = {
     "hydra-umc": "HYDRA-UMC - the industrial multi-robot platform and cell controller, this dashboard's first ecosystem.",
     "urtc": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.",
     "armor": "A.R.M.O.R. - a separate, public perimeter-security and home-automation ecosystem, same author.",
+    "electro-hobby-3d": "Electro Hobby 3D - the tools that sit above the three ecosystems and update any of them.",
 }
 
 
@@ -2202,6 +2278,7 @@ ECOSYSTEM_ORDER: tuple[tuple[str, str], ...] = (
     ("hydra-umc", "HYDRA-UMC"),
     ("urtc", "URTC"),
     ("armor", "A.R.M.O.R."),
+    ("electro-hobby-3d", "Electro Hobby 3D"),
 )
 
 
@@ -5171,6 +5248,7 @@ def main() -> int:
     for ecosystem_key, ecosystem_label, discover in (
         ("urtc", "URTC", discover_urtc_projects),
         ("armor", "A.R.M.O.R.", discover_armor_projects),
+        ("electro-hobby-3d", "Electro Hobby 3D", discover_electro_hobby_projects),
     ):
         print(f"Discovering {ecosystem_label} repositories for {catalog.github_owner} from GitHub...", file=sys.stderr)
         try:
@@ -5193,7 +5271,7 @@ def main() -> int:
 
     print(
         f"{ok}/{total} resolved "
-        f"({errors} errors/unknown) across all three ecosystems.",
+        f"({errors} errors/unknown) across all ecosystems.",
         file=sys.stderr,
     )
 
