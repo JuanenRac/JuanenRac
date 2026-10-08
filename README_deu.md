@@ -330,7 +330,7 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.8 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.7 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.5.8 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.5.9 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
 
 ---
 
