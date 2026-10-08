@@ -229,7 +229,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.2 | 可穿戴式应急仪表盘，具备触觉安全告警功能。 |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.2 | 命令行工具，用于舰队自动化、烧录与 DevOps。 |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.1 | 为 Web 仪表盘提供自然语言洞察的 AI 扩展。 |
-| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.3 | 跨平台 GUI/CLI 工具，用于检测、安装并手动更新生态系统中的每一个项目。 |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.4 | 跨平台 GUI/CLI 工具，用于检测、安装并手动更新生态系统中的每一个项目。 |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.2.7 | 构建即刻可烧录、预装生态系统最新版本的 CM5 镜像的 Windows/Linux 桌面工具，具备 Raspberry Pi Imager 风格的首次启动配置。 |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.4 | 维护事件协调器：一个低权限的边缘角色采集经过脱敏的库存/健康快照，一个控制面角色以只读方式渲染它，并请求某个 AI 提供方给出诊断建议——从不应用补丁，也从不部署任何内容。 |
 | [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.3 | 可复现的开发服务器：目前是一套具有权限控制的配置模式和清单库存，正逐步发展为与 OPS-AGENT 协同的隔离任务/工作区执行器——除非文档明确授予，否则任何任务都没有部署权限。 |
@@ -313,22 +313,22 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.4 | 消息契约、验证器、一致性向量和生成的类型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.4.8 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.2 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.6 | 电气节点：电表、电网读数消息和开关规则 |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.0 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.5 | 消息契约、验证器、一致性向量和生成的类型 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.0 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.3 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.7 | 电气节点：电表、电网读数消息和开关规则 |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.1 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | 本地网络：其设备、互联网以及变化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.1 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.2 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 会解释决策且从不执行动作的视觉推理策略 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.1 | 带无法伪造确认的离线语音意图 |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.0 | 网页控制台：摄像头、雷达、报警、太阳能与电气菜单、本地网络、系统服务、天气、节点查找器和 2D/3D 场地设计器 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.0 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.1 | 网页控制台：摄像头、雷达、报警、太阳能与电气菜单、本地网络、系统服务、天气、节点查找器和 2D/3D 场地设计器 |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.2 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | 外壳、电子器件和台架验收矩阵 |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.6 | 部署、中央服务器测试台、备份与 TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.7 | 部署、中央服务器测试台、备份与 TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 带可重复故障的离线遥测模拟器 |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.4 | 发现、安装并更新生态系统自身的仓库 |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.5.5 | 架构、安全基线和能力矩阵 |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.5 | 发现、安装并更新生态系统自身的仓库 |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.5.6 | 架构、安全基线和能力矩阵 |
 
 ---
 
