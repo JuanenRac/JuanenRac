@@ -319,6 +319,7 @@ A.R.M.O.R. suit la même règle déjà appliquée par le tableau de bord de HYDR
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.6 | Firmware du nœud de terrain pour ESP32-S3 avec trois radars et son propre panneau web |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.5 | Protocoles des onduleurs et batteries solaires et les messages d'un nœud passerelle |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.0 | Nœud électrique : compteurs, le message des relevés du réseau et les règles de manœuvre |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.0.1 | Nœud et centrale d'alarme : les zones, l'armement, les temporisations, la sirène et le PIN de l'alarme de la maison, testés sur un ordinateur ; conçu pour continuer à surveiller quand le serveur est absent. |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.4 | Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : l'état du système sur un écran mural, armer/désarmer/acquitter, voix en appuyer-pour-parler et la page web d'un nœud ; le firmware n'a jamais tourné sur une carte. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | Le réseau local : ses appareils, internet et ce qui change |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.1 | Coordinateur central : télémétrie, alarmes, appareils, relevés solaires et électriques, le réseau local, les services système et caméras |
