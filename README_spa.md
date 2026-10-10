@@ -317,14 +317,13 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.2 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.6 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.5 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.0 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.0.1 | Nodo y central de alarma: las zonas, el armado, los retardos, la sirena y el PIN de la alarma de la casa, probados en un ordenador; pensado para seguir vigilando cuando el servidor falta. |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.2 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.4 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | La red local: sus dispositivos, internet y lo que cambia. |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.1 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.3 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.5 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.7 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.8 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.9 | Cliente Android del operador con radar 2D/3D en vivo. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Cajas, electrónica y la matriz de aceptación en banco. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.3 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
