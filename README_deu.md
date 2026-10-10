@@ -151,7 +151,7 @@ Projekt aus dem vollständigen Katalog unten bauen/aktualisieren.
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | Kern-Bewegungssteuerungs-Firmware für STM32H745/G474 mit S-Curve-Kinematik. |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.5 | Headless Node.js API und WebSocket-Backend für die Roboter-Orchestrierung. |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | Headless Node.js API und WebSocket-Backend für die Roboter-Orchestrierung. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | Fortschrittliches React-basiertes Web-Dashboard für 3D-Roboter-Überwachung und -Steuerung. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | Hochleistungs-Python/Qt-Desktop-Anwendung für die industrielle Automatisierung. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.0 | Flutter-basierte Touch-Schnittstelle für industrielle 7"-Displays (CM5). |
@@ -276,8 +276,8 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 0.3.1 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.1 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.2 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.2 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.3 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.2 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.0 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
@@ -315,22 +315,22 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.7 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.2 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.4 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.3 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.8 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.2 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | Das lokale Netzwerk: seine Geräte, das Internet und was sich ändert |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.4 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solar- und Elektromesswerte, das lokale Netzwerk, Systemdienste und Kameras |
-| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
-| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.2 | Web-Konsole: Kameras, Radar, Alarme, Solar- und Elektromenüs, lokales Netzwerk, Systemdienste, Wetter, eine Knotensuche und 2D/3D-Standortdesigner |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.7 | Android-Bedienclient mit Live-Radar in 2D/3D |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.1 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solar- und Elektromesswerte, das lokale Netzwerk, Systemdienste und Kameras |
+| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.3 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
+| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.5 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.7 | Web-Konsole: Kameras, Radar, Alarme, Solar- und Elektromenüs, lokales Netzwerk, Systemdienste, Wetter, eine Knotensuche und 2D/3D-Standortdesigner |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.9 | Android-Bedienclient mit Live-Radar in 2D/3D |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.8 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.0 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.7 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.6.3 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.1 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
 
 ---
 
