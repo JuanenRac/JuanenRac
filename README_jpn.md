@@ -152,7 +152,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.5 | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.0 | 7インチ産業用ディスプレイ（CM5）専用の Flutter 製タッチインターフェース。 |
@@ -277,8 +277,8 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 0.3.1 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.1 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.2 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.2 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.3 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.2 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.0 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
@@ -316,22 +316,22 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.3.7 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.2 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.4 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.3 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.1.8 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.2 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | ローカルネットワーク：機器、インターネット、そして変化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.4.4 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
-| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.1 | 判断を説明し、決して動作しない視覚推論ポリシー |
-| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 偽造できない確認を備えたオフライン音声インテント |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.2 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.7 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.1 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
+| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.3 | 判断を説明し、決して動作しない視覚推論ポリシー |
+| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.5 | 偽造できない確認を備えたオフライン音声インテント |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.6.7 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.4.9 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | 筐体、電子部品、ベンチ受け入れマトリクス |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.3.8 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.0 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.7 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.6.3 | アーキテクチャ、セキュリティ基準、機能マトリクス |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.1 | アーキテクチャ、セキュリティ基準、機能マトリクス |
 
 ---
 
