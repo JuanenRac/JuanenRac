@@ -300,7 +300,7 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 ## 🏗️ Cómo Está Construido A.R.M.O.R.
 
 1. **Contrato compartido**: **ARMOR-COMMON** es dueño del significado de los mensajes - JSON Schema, un validador en Python y tipos TypeScript/Kotlin generados que cada otro repositorio consume, nunca redefine.
-2. **Nodos de campo**: firmware ESP32-S3 para detección por radar/presencia (**ARMOR-RADAR**), monitorización de inversores y baterías solares (**ARMOR-SOLAR**), y medición eléctrica con maniobra (**ARMOR-ELECTRICAL**); un agente en Python (**ARMOR-NETWORK**) vigila la propia red local de la casa y si hay internet desde una máquina ya conectada a ella.
+2. **Nodos de campo**: firmware ESP32-S3 para detección por radar/presencia (**ARMOR-RADAR**), monitorización de inversores y baterías solares (**ARMOR-SOLAR**), medición eléctrica con maniobra (**ARMOR-ELECTRICAL**) y la central de alarma de la casa (**ARMOR-ALARM**); un agente en Python (**ARMOR-NETWORK**) vigila la propia red local de la casa y si hay internet desde una máquina ya conectada a ella.
 3. **Coordinador central**: **ARMOR-SERVER** guarda el estado, usuarios, alarmas, automatizaciones y evidencia de cámaras; **ARMOR-SERVER-AI** y **ARMOR-VOICE-AI** añaden una política visual explicable e intenciones de voz sin conexión que nunca actúan por sí solas.
 4. **Clientes de operador**: **ARMOR-STUDIO** (web) y **ARMOR-ANDROID-CONTROL** (móvil) son clientes del servidor central, nunca de la red de campo directamente. **ARMOR-HMI** es un panel táctil de pared (una Waveshare ESP32-S3-Touch-LCD-7C-BOX) que muestra el estado, arma y reconoce, y será donde viva el asistente de voz.
 5. **Despliegue y pruebas**: **ARMOR-DEVOPS** despliega todo el grafo de servicios; **ARMOR-SIMULATOR** reproduce escenarios y fallos repetibles sin hardware real; **ARMOR-HARDWARE** lleva el diseño de las cajas y su matriz de aceptación en banco.
@@ -316,8 +316,9 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.4 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.7 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.9 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.2 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.4 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.0 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.5 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | La red local: sus dispositivos, internet y lo que cambia. |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.2 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
@@ -329,7 +330,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.5 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | Simulador de telemetría sin conexión con fallos repetibles. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.7 | Detecta, instala y actualiza los propios repositorios del ecosistema. |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.2 | Arquitectura, base de seguridad y la matriz de capacidades. |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.3 | Arquitectura, base de seguridad y la matriz de capacidades. |
 
 ---
 

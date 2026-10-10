@@ -302,7 +302,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 ## 🏗️ A.R.M.O.R. の構成
 
 1. **共有契約**：**ARMOR-COMMON** がメッセージの意味を所有します - JSON Schema、Python の検証器、そして他のあらゆるリポジトリが消費するだけで再定義することのない、生成された TypeScript/Kotlin の型です。
-2. **フィールドノード**：レーダー・存在検知用の ESP32-S3 ファームウェア（**ARMOR-RADAR**）、太陽光インバーターとバッテリーの監視（**ARMOR-SOLAR**）、開閉機能を備えた電力計測（**ARMOR-ELECTRICAL**）；Python 製のエージェント（**ARMOR-NETWORK**）が、すでにその家のローカルネットワークに接続されたマシンから、そのネットワーク自体とインターネットの到達性を監視します。
+2. **フィールドノード**：レーダー・存在検知用の ESP32-S3 ファームウェア（**ARMOR-RADAR**）、太陽光インバーターとバッテリーの監視（**ARMOR-SOLAR**）、開閉機能を備えた電力計測（**ARMOR-ELECTRICAL**）、住宅の警報盤（**ARMOR-ALARM**）；Python 製のエージェント（**ARMOR-NETWORK**）が、すでにその家のローカルネットワークに接続されたマシンから、そのネットワーク自体とインターネットの到達性を監視します。
 3. **中央コーディネーター**：**ARMOR-SERVER** が状態、ユーザー、アラーム、自動化、カメラの証跡を保持し、**ARMOR-SERVER-AI** と **ARMOR-VOICE-AI** が、説明可能な視覚ポリシーと、決して自ら動作しないオフライン音声インテントを追加します。
 4. **オペレータークライアント**：**ARMOR-STUDIO**（Web）と **ARMOR-ANDROID-CONTROL**（モバイル）は中央サーバーのクライアントであり、フィールドネットワークに直接接続することはありません。 **ARMOR-HMI** は壁掛けのタッチパネル（Waveshare ESP32-S3-Touch-LCD-7C-BOX）で、状態の表示、警戒、確認を行い、将来は音声アシスタントの拠点になります。
 5. **デプロイとテスト**：**ARMOR-DEVOPS** がサービス全体のグラフをデプロイし、**ARMOR-SIMULATOR** が実機なしでシナリオと再現可能な故障を再生し、**ARMOR-HARDWARE** が筐体設計とそのベンチ受け入れマトリクスを担います。
@@ -318,8 +318,9 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.4 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.7 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.9 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.2 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.4 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.0 | 警報ノードと警報盤：そのファームウェア（配線区域、サイレン、Zigbee のセンサーとサイレン、7 言語の Web パネル）と、警戒セット・遅延・警報・PIN の規則。コンピューターでテスト済みで、サーバーが不在でも警戒を続け、Zigbee 無線を引き継ぎます。基板上では一度も動作していません。 |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.5 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | ローカルネットワーク：機器、インターネット、そして変化 |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.2 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
@@ -331,7 +332,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.5 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.7 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.2 | アーキテクチャ、セキュリティ基準、機能マトリクス |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.3 | アーキテクチャ、セキュリティ基準、機能マトリクス |
 
 ---
 

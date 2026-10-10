@@ -299,7 +299,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 ## 🏗️ A.R.M.O.R. 的构成
 
 1. **共享契约**：**ARMOR-COMMON** 拥有消息含义的所有权——JSON Schema、一个 Python 验证器，以及每个其他仓库只消费、从不重新定义的生成的 TypeScript/Kotlin 类型。
-2. **现场节点**：用于雷达/存在检测的 ESP32-S3 固件（**ARMOR-RADAR**）、太阳能逆变器与电池监测（**ARMOR-SOLAR**）、带开关功能的电力计量（**ARMOR-ELECTRICAL**）；一个 Python 代理（**ARMOR-NETWORK**）从已接入房屋本地网络的一台机器上监视这个网络本身及互联网是否可达。
+2. **现场节点**：用于雷达/存在检测的 ESP32-S3 固件（**ARMOR-RADAR**）、太阳能逆变器与电池监测（**ARMOR-SOLAR**）、带开关功能的电力计量（**ARMOR-ELECTRICAL**）以及住宅的报警主机（**ARMOR-ALARM**）；一个 Python 代理（**ARMOR-NETWORK**）从已接入房屋本地网络的一台机器上监视这个网络本身及互联网是否可达。
 3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、报警、自动化和摄像头证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 增加了一个可解释的视觉策略和从不自行执行动作的离线语音意图。
 4. **操作员客户端**：**ARMOR-STUDIO**（网页端）和 **ARMOR-ANDROID-CONTROL**（移动端）都是中央服务器的客户端，从不直接对接现场网络。 **ARMOR-HMI** 是挂在墙上的触摸面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示状态、布防和确认，并将成为语音助手的所在。
 5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下回放场景和可重复的故障；**ARMOR-HARDWARE** 负责外壳设计及其台架验收矩阵。
@@ -315,8 +315,9 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.4 | 消息契约、验证器、一致性向量和生成的类型 |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.7 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.2.9 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.2 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.4 | 电气节点：电表、电网读数消息和开关规则 |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.0 | 报警节点与报警主机：其固件（有线防区、警笛、Zigbee 传感器与警笛、七种语言的网页面板）以及布防、延时、报警和 PIN 的规则，已在电脑上测试；服务器离线时继续守护，并接管 Zigbee 无线电。从未在电路板上运行过。 |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.5 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | 本地网络：其设备、互联网以及变化 |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.2 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
@@ -328,7 +329,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.5 | 部署、中央服务器测试台、备份与 TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.3 | 带可重复故障的离线遥测模拟器 |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.7 | 发现、安装并更新生态系统自身的仓库 |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.2 | 架构、安全基线和能力矩阵 |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.3 | 架构、安全基线和能力矩阵 |
 
 ---
 
