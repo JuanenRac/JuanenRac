@@ -276,11 +276,11 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.1 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.2 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.3 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.2 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.0 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.4 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.4 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.4 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.1 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
 
 ---

@@ -273,11 +273,11 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.1 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.2 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.3 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.2 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.0 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.4 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.4 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.4 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.1 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
 
 ---
