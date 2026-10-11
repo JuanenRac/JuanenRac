@@ -274,11 +274,11 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.1 | Firmware de controlador de herramientas universal para más de 25 herramientas especializadas. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.2 | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.3 | Herramienta de diagnóstico CAN-bus con paneles de telemetría por herramienta. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.2 | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.0 | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Firmware de controlador de herramientas universal para más de 25 herramientas especializadas. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.4 | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.4 | Herramienta de diagnóstico CAN-bus con paneles de telemetría por herramienta. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.4 | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.1 | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | Cabezal con cámaras térmicas y RGB integradas para QA activo. |
 
 ---
