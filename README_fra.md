@@ -314,12 +314,12 @@ A.R.M.O.R. suit la même règle déjà appliquée par le tableau de bord de HYDR
 
 | Dépôt | Version | Description |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.4 | Contrats de messages, validateurs, vecteurs de conformité et types générés |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.7 | Firmware du nœud de terrain pour ESP32-S3 avec trois radars et son propre panneau web |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.2 | Protocoles des onduleurs et batteries solaires et les messages d'un nœud passerelle |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.4 | Nœud électrique : compteurs, le message des relevés du réseau et les règles de manœuvre |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.0 | Nœud et centrale d'alarme : son firmware (zones câblées, la sirène, capteurs et sirènes Zigbee, un panneau web en sept langues) et les règles d'armement, de temporisation, d'alarme et de PIN, testés sur un ordinateur ; il continue à surveiller, et prend la radio Zigbee, quand le serveur est absent. Jamais exécuté sur une carte. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.5 | Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : l'état du système sur un écran mural, armer/désarmer/acquitter, voix en appuyer-pour-parler et la page web d'un nœud ; le firmware n'a jamais tourné sur une carte. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.5 | Contrats de messages, validateurs, vecteurs de conformité et types générés |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.8 | Firmware du nœud de terrain pour ESP32-S3 avec trois radars et son propre panneau web |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.3 | Protocoles des onduleurs et batteries solaires et les messages d'un nœud passerelle |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.5 | Nœud électrique : compteurs, le message des relevés du réseau et les règles de manœuvre |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.1 | Nœud et centrale d'alarme : son firmware (zones câblées, la sirène, capteurs et sirènes Zigbee, un panneau web en sept langues) et les règles d'armement, de temporisation, d'alarme et de PIN, testés sur un ordinateur ; il continue à surveiller, et prend la radio Zigbee, quand le serveur est absent. Jamais exécuté sur une carte. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.6 | Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : l'état du système sur un écran mural, armer/désarmer/acquitter, voix en appuyer-pour-parler et la page web d'un nœud ; le firmware n'a jamais tourné sur une carte. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | Le réseau local : ses appareils, internet et ce qui change |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.2 | Coordinateur central : télémétrie, alarmes, appareils, relevés solaires et électriques, le réseau local, les services système et caméras |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.3 | Politique d'inférence visuelle qui explique ses décisions et n'agit jamais |
