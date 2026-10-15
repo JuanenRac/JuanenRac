@@ -51,6 +51,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from hydra_umc_updater.ecosystem_catalog import parse_catalog
+from catalog_check import catalog_ecosystems, mismatches as catalog_mismatches
 from hydra_umc_updater import github_client as _hydra_client
 from hydra_umc_updater.github_client import RemoteStatus, discover_remote_projects
 from hydra_umc_updater.project_manifest import ECOSYSTEM_ID as _HYDRA_ECOSYSTEM_ID, ManifestValidationError, parse_manifest
@@ -5203,8 +5204,24 @@ def render_html(
 # Main
 # ---------------------------------------------------------------------------
 
+# Every ecosystem this dashboard discovers (key, label, manifest file) - must
+# match ecosystem-catalog.json's "ecosystems" list (scripts/catalog_check.py).
+DASHBOARD_ECOSYSTEMS: list[tuple[str, str, str]] = [
+    ("hydra-umc", "HYDRA-UMC", "hydra-umc.project.json"),
+    ("urtc", "URTC", "urtc.project.json"),
+    ("armor", "A.R.M.O.R.", "armor.project.json"),
+    ("electro-hobby-3d", "Electro Hobby 3D", ELECTRO_HOBBY_MANIFEST_FILE),
+]
+
+
 def main() -> int:
-    catalog = parse_catalog(CATALOG_PATH.read_text(encoding="utf-8"))
+    catalog_text = CATALOG_PATH.read_text(encoding="utf-8")
+    catalog = parse_catalog(catalog_text)
+    problems = catalog_mismatches(catalog_ecosystems(catalog_text), DASHBOARD_ECOSYSTEMS)
+    if problems:
+        for problem in problems:
+            print(f"ERROR: ecosystem-catalog.json: {problem}", file=sys.stderr)
+        return 1
 
     print(
         f"Discovering HYDRA-UMC repositories for "

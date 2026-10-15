@@ -60,13 +60,13 @@ L'écosystème v1.1 est une plateforme produit en couches : il s'appuie sur les 
 
 1.  **Base de plateforme** : Raspberry Pi OS ARM64 et les services Linux standard fournissent la base CM5 prise en charge.
 2.  **Plateforme et contrats** : **HYDRA-UMC-OS** fournit des profils reproductibles, services, diagnostics et mises à jour sur Raspberry Pi OS ; **HYDRA-UMC-SDK** publie des contrats versionnés, clients légers et tests de conformité.
-3.  **Exécution temps réel** : le firmware **HYDRA-UMC** et URTC sur STM32/MCU conservent limites de mouvement, watchdogs et arrêt sûr.
+3.  **Exécution temps réel** : le firmware **HYDRA-UMC** détient les limites de mouvement, les watchdogs et l'arrêt sûr sur STM32/MCU ; l'outil lui-même, et sa propre autorité temps réel sur l'effecteur, relèvent de l'écosystème **URTC** distinct, plus bas.
 4.  **Coordination et opérations** : services serveur, distribution des tâches, télémétrie et configuration coordonnent les équipements sans contourner la frontière de sécurité du MCU.
 5.  **Interfaces opérateur** : Studio, Suite, DSI, Web, bureau, mobile et CLI utilisent les contrats du SDK.
 6.  **Perception et intelligence** : vision, Hailo et services cognitifs proposent des observations ou plans ; ils n'ont aucune autorité de sécurité physique.
 7.  **Ingénierie, industrie et données** : Jumeau Numérique, HIL/physique, passerelles OPC-UA/MQTT/MTConnect et données valident et intègrent le système.
 
-Le développement commence par l'architecture et le modèle de services publics de **HYDRA-UMC-OS**, puis utilise les contrats et règles de conformité de **HYDRA-UMC-SDK**. L'autorité de sécurité du MCU/URTC est maintenue dans tous les flux.
+Le développement commence par l'architecture et le modèle de services publics de **HYDRA-UMC-OS**, puis utilise les contrats et règles de conformité de **HYDRA-UMC-SDK**. L'autorité de sécurité du MCU est maintenue dans tous les flux.
 
 ---
 
@@ -130,15 +130,14 @@ Ce n'est pas un tutoriel guidé (il n'existe pas un unique carrier « correct »
 ## 📁 Catalogue de Projets — HYDRA-UMC
 
 Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat`
-sous Windows) clone 13 dépôts principaux - un ensemble de départ choisi
-à la main, pas le catalogue complet ci-dessous - comme dossiers frères
-dans un même répertoire : la disposition standard que tout script
-inter-dépôts ici suppose déjà. Le relancer est sûr : tout ce qui est
-déjà cloné reste intact. À partir de là,
-[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-(l'un des 13 dépôts qui viennent d'être clonés) peut vérifier les
-versions et compiler/mettre à jour n'importe lequel des autres projets
-du catalogue complet ci-dessous.
+sous Windows) clone 13 dépôts principaux - une sélection de départ
+choisie à la main - côte à côte dans un même répertoire : la structure
+que supposent déjà tous les scripts inter-dépôts. Un second argument
+clone à la place un écosystème complet, découvert en direct par son
+manifeste : `hydra-umc`, `urtc`, `armor` ou `all` (par exemple `./starter-kit.sh ~/work armor`).
+Le relancer est sans risque : ce qui est déjà cloné n'est pas touché. Ensuite,
+l'outil de mise à jour de chaque écosystème - ou [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)
+pour les trois - vérifie les versions et compile/met à jour tout autre projet.
 
 ### 🧱 Fondation de plateforme et contrats
 | Dépôt | Version | Description |
@@ -340,7 +339,7 @@ Cet écosystème fait partie d'une initiative robotique de haute technologie. Ch
 
 Les labels d'issues sont standardisés sur tous les dépôts de l'écosystème à partir de [`.github/labels.yml`](.github/labels.yml) dans ce même dépôt, synchronisés par [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - modifiez ce seul fichier pour changer un label partout à la fois, plutôt qu'à la main dépôt par dépôt. Contrairement au tableau de bord ci-dessous, cette liste est statique (une vraie matrice GitHub Actions, pas une découverte dynamique) - un nouveau dépôt y nécessite aussi une entrée, pas seulement un vrai `hydra-umc.project.json`.
 
-Un tableau de bord d'état en direct couvrant chaque dépôt public déclarant `ecosystem: HYDRA-UMC` dans son propre `hydra-umc.project.json` (stack, cible de déploiement, version actuelle - lue directement depuis la branche par défaut de chaque dépôt, découvert dynamiquement sans liste fixe) est régénéré toutes les heures (et immédiatement après un push pertinent) par [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) et servi depuis `docs/` via GitHub Pages : **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. Il ajoute une véritable classification de maturité par projet (scaffolding / functional / established / production, chacune décidée à partir du propre CHANGELOG de ce projet - voir le docstring du module [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) pour le critère exact), son rôle (API / UI / CLI / firmware / bibliothèque / service / outil), un véritable arbre famille/parent-enfant, et des notes par projet sur ce qui est réellement implémenté aujourd'hui. Les propres dépôts d'URTC et d'A.R.M.O.R. sont découverts en direct sur ce même tableau de bord exactement de la même façon que ceux de HYDRA-UMC (voir `scripts/generate_dashboard.py`), chacun déclarant son propre champ `ecosystem` dans son propre `urtc.project.json`/`armor.project.json` - aucune liste fixe pour aucun des trois.
+Un tableau de bord d'état en direct couvrant chaque dépôt public des trois écosystèmes - chacun découvert par son propre manifeste (`hydra-umc.project.json`, `urtc.project.json`, `armor.project.json`, plus `electro-hobby-3d.project.json` pour les dépôts transversaux), lu directement depuis la branche par défaut de chaque dépôt, sans liste fixe - est régénéré par [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) dès qu'un projet pousse (via son propre `dashboard-dispatch.yml`) et, par sécurité, deux fois par heure, puis servi depuis `docs/` via GitHub Pages : **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. Il affiche la pile, la cible de déploiement et la version actuelle, une vraie classification de maturité par projet (échafaudage / fonctionnel / établi / production, chacune déduite du CHANGELOG du projet - voir [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)), son rôle (API / UI / CLI / firmware / bibliothèque / service / outil), un arbre famille/parent-enfant et des notes par projet sur ce qui est implémenté aujourd'hui. [`ecosystem-catalog.json`](ecosystem-catalog.json) liste ces écosystèmes et leurs manifestes au même endroit, et la génération du tableau de bord refuse de s'exécuter si les deux divergent.
 
 ## 🧭 Collaboration GitHub
 

@@ -60,13 +60,13 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 1.  **平台基础**：Raspberry Pi OS ARM64 与标准 Linux 服务构成受支持的 CM5 基础。
 2.  **平台与契约**：**HYDRA-UMC-OS** 在 Raspberry Pi OS 上提供可复现的配置文件、服务、诊断与更新；**HYDRA-UMC-SDK** 发布版本化契约、轻量客户端和一致性测试。
-3.  **实时执行**：运行于 STM32/MCU 的 **HYDRA-UMC** 固件和 URTC 保有运动限制、看门狗与安全停止权。
+3.  **实时执行**：运行于 STM32/MCU 的 **HYDRA-UMC** 固件掌握运动限制、看门狗与安全停止；工具本身及其对末端执行器的实时控制权属于下文独立的 **URTC** 生态系统。
 4.  **协调与运维**：服务器服务、任务分发、遥测与配置负责协调设备，且不会绕过 MCU 的安全边界。
 5.  **操作员界面**：Studio、Suite、DSI、Web、桌面、移动端和 CLI 均使用 SDK 契约。
 6.  **感知与智能**：视觉、Hailo 与认知服务提出观测或计划；它们不具备物理安全权限。
 7.  **工程、工业与数据**：数字孪生、HIL/物理、OPC-UA/MQTT/MTConnect 网关和数据服务用于验证和集成系统。
 
-开发应从 **HYDRA-UMC-OS** 的公共架构与服务模型开始，再使用 **HYDRA-UMC-SDK** 的契约和一致性规则。所有流程都保留 MCU/URTC 的安全权限。
+开发应从 **HYDRA-UMC-OS** 的公共架构与服务模型开始，再使用 **HYDRA-UMC-SDK** 的契约和一致性规则。所有流程都保留 MCU 的安全权限。
 
 ---
 
@@ -129,14 +129,14 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 ## 📁 项目目录 — HYDRA-UMC
 
-刚接触本生态系统？运行 `./starter-kit.sh`（Windows 上为
-`starter-kit.bat`）即可将 13 个核心仓库——一份手工挑选的起步集合，
-并非下方的完整目录——作为同级目录克隆到同一文件夹中：这正是本仓库
-所有跨仓库脚本已经默认采用的标准目录结构。重复运行是安全的：已经
-克隆的内容不会被改动。之后，
-[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-（刚刚克隆的 13 个仓库之一）即可检查版本，并构建/更新下方完整目录中
-的其他任意项目。
+初次接触这个生态系统？`./starter-kit.sh`（Windows 上为
+`starter-kit.bat`）会把 13 个精选的核心仓库作为同级目录克隆到同一个
+目录中：这正是这里所有跨仓库脚本所假定的标准布局。第二个参数则改为克隆
+整个生态系统，按其清单实时发现：`hydra-umc`、`urtc`、`armor` 或 `all`
+（例如 `./starter-kit.sh ~/work armor`）。重复运行是安全的：已克隆的内容
+不会被改动。之后，各生态系统自己的更新器——或用于全部三个生态系统的
+[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)——
+可以检查版本并构建／更新任何其他项目。
 
 ### 🧱 平台基础与契约
 | 仓库 | 版本 | 说明 |
@@ -338,7 +338,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 
 生态系统内所有仓库的 Issue 标签均从本仓库的 [`.github/labels.yml`](.github/labels.yml) 统一同步，由 [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) 负责推送——只需修改这一份文件，即可一次性更新所有仓库的标签，无需逐个手动维护。与下方的仪表盘不同，这份列表是静态的（一个真实的 GitHub Actions 矩阵，而非动态发现）——新增仓库也需要在其中添加一条记录，仅有真实的 `hydra-umc.project.json` 是不够的。
 
-覆盖每一个在自身 `hydra-umc.project.json` 中声明 `ecosystem: HYDRA-UMC` 的公开仓库的实时状态仪表盘（技术栈、部署目标、当前版本——直接从各仓库自身默认分支读取，动态发现、无固定列表）由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 每小时自动重新生成（并在相关推送后立即触发），并通过 GitHub Pages 从 `docs/` 目录提供访问：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。它为每个项目新增了真实的成熟度分类（scaffolding / functional / established / production，每一项都根据该项目自身真实的 CHANGELOG 决定——具体判定标准见[`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)模块自身的文档说明），以及其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、真实的家族/父子关系树，以及每个项目关于当前实际实现内容的说明。URTC 和 A.R.M.O.R. 自身的仓库在同一个仪表盘上以和 HYDRA-UMC 完全相同的方式被实时发现（见 `scripts/generate_dashboard.py`），各自在自己的 `urtc.project.json`/`armor.project.json` 中声明自己的 `ecosystem` 字段——三者都没有固定列表。
+实时状态看板涵盖三个生态系统的每个公开仓库——每个仓库都通过自己的清单（`hydra-umc.project.json`、`urtc.project.json`、`armor.project.json`，跨生态系统仓库则为 `electro-hobby-3d.project.json`）直接从其默认分支读取并被发现，没有固定列表——由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 在项目推送后立即重新生成（通过各仓库自己的 `dashboard-dispatch.yml`），并作为保障每小时再生成两次，通过 GitHub Pages 从 `docs/` 提供：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。它显示技术栈、部署目标和当前版本、根据各项目自身 CHANGELOG 判定的真实成熟度分类（脚手架／可用／成熟／生产，详见 [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)）、角色（API／UI／CLI／固件／库／服务／工具）、家族／父子树，以及每个项目当前实际实现内容的说明。[`ecosystem-catalog.json`](ecosystem-catalog.json) 在一个地方列出这些生态系统及其清单，两者不一致时看板构建会拒绝运行。
 
 ## 🧭 GitHub 协作
 

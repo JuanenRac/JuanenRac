@@ -130,15 +130,14 @@ Esto no es un tutorial guiado (no hay un único carrier "correcto" para cada cas
 ## 📁 Catálogo de Proyectos HYDRA-UMC
 
 ¿Nuevo en el ecosistema? `./starter-kit.sh` (o `starter-kit.bat` en
-Windows) clona 13 repositorios core - un conjunto inicial seleccionado a
-mano, no el catálogo completo de abajo - como carpetas hermanas en un
-mismo directorio: la disposición estándar que ya asume cualquier script
-entre repositorios de aquí. Volver a ejecutarlo es seguro: lo que ya
-esté clonado se deja intacto. A partir de ahí,
-[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-(uno de los 13 recién clonados) puede comprobar versiones y
-compilar/actualizar cualquiera de los demás proyectos del catálogo
-completo de abajo.
+Windows) clona 13 repositorios núcleo - un conjunto inicial elegido a
+mano - como carpetas hermanas en un mismo directorio: la estructura que
+ya asumen todos los scripts entre repos. Un segundo argumento clona en
+su lugar un ecosistema completo, descubierto en vivo por su manifiesto:
+`hydra-umc`, `urtc`, `armor` o `all` (por ejemplo `./starter-kit.sh ~/work armor`).
+Volver a ejecutarlo es seguro: lo ya clonado no se toca. A partir de ahí,
+el actualizador de cada ecosistema - o [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)
+para los tres - comprueba versiones y compila/actualiza cualquier otro proyecto.
 
 ### 🧱 Base de plataforma y contratos
 | Repositorio | Versión | Descripción |
@@ -339,7 +338,7 @@ Cada ecosistema es su propia iniciativa con sus propios proyectos. Cada proyecto
 
 Las etiquetas de issues están estandarizadas en todos los repos de HYDRA-UMC a partir de [`.github/labels.yml`](.github/labels.yml) en este mismo repo, sincronizadas por [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) - edita ese único archivo para cambiar una etiqueta en todos a la vez, en vez de hacerlo a mano repo por repo. A diferencia del dashboard de abajo, esta lista es estática (una matriz real de GitHub Actions, no descubrimiento dinámico) - un repo nuevo necesita también una entrada ahí, no solo un `hydra-umc.project.json` real.
 
-Un dashboard de estado en vivo que cubre todo repo público que declara `ecosystem: HYDRA-UMC` en su propio `hydra-umc.project.json` (stack, destino de despliegue, versión actual - leído directamente de la rama por defecto de cada repo, descubierto dinámicamente sin lista fija) se regenera cada hora (e inmediatamente tras un push relevante) mediante [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) y se sirve desde `docs/` vía GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. Añade una clasificación real de madurez por proyecto (andamiaje / funcional / establecido / producción, cada una decidida a partir del propio CHANGELOG de ese proyecto - ver el docstring del propio módulo [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) para el criterio exacto), su rol (API / UI / CLI / firmware / librería / servicio / herramienta), un árbol real de familia/padre-hijo, y notas por proyecto sobre lo que está realmente implementado hoy. Los propios repositorios de A.R.M.O.R. son públicos y aparecen agrupados aparte en ese mismo dashboard por ahora (ver la nota de cabecera de `scripts/generate_dashboard.py` sobre por qué esa lista sigue siendo estática, no obtenida en vivo).
+Un dashboard de estado en vivo que cubre todo repo público de los tres ecosistemas - cada uno descubierto por su propio manifiesto (`hydra-umc.project.json`, `urtc.project.json`, `armor.project.json`, más `electro-hobby-3d.project.json` para los repos transversales), leído directamente de la rama por defecto de cada repo, sin lista fija - lo regenera [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) en cuanto un proyecto hace push (el `dashboard-dispatch.yml` propio de cada repo) y, como red de seguridad, dos veces por hora, y se sirve desde `docs/` vía GitHub Pages: **[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**. Muestra stack, destino de despliegue y versión actual, una clasificación real de madurez por proyecto (andamiaje / funcional / establecido / producción, decidida a partir del propio CHANGELOG de cada proyecto - ver [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)), su rol (API / UI / CLI / firmware / librería / servicio / herramienta), un árbol de familias padre-hijo y notas por proyecto sobre lo que está implementado hoy. [`ecosystem-catalog.json`](ecosystem-catalog.json) reúne esos ecosistemas y sus manifiestos en un solo sitio, y el build del dashboard se niega a ejecutarse si ambos no coinciden.
 
 ## 🧭 Colaboración en GitHub
 
