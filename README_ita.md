@@ -328,7 +328,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.4 | Console web: telecamere, radar, allarmi, menu solare ed elettrico, rete locale, servizi di sistema, meteo, un cercatore di nodi e il progettista del sito 2D/3D |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.2 | Client Android dell'operatore con radar 2D/3D in tempo reale |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Contenitori, elettronica e matrice di accettazione da banco |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.9 | Distribuzione, banco di prova del server centrale, backup e TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.0 | Distribuzione, banco di prova del server centrale, backup e TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.4 | Simulatore di telemetria offline con guasti ripetibili |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.9 | Rileva, installa e aggiorna i repository stessi dell'ecosistema |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.6 | Architettura, base di sicurezza e matrice delle capacità |
