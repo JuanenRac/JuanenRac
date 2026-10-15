@@ -314,12 +314,12 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.4 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.7 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.2 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.4 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.0 | 警報ノードと警報盤：そのファームウェア（配線区域、サイレン、Zigbee のセンサーとサイレン、7 言語の Web パネル）と、警戒セット・遅延・警報・PIN の規則。コンピューターでテスト済みで、サーバーが不在でも警戒を続け、Zigbee 無線を引き継ぎます。基板上では一度も動作していません。 |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.5 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.5 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.5.8 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.3 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.5 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.1 | 警報ノードと警報盤：そのファームウェア（配線区域、サイレン、Zigbee のセンサーとサイレン、7 言語の Web パネル）と、警戒セット・遅延・警報・PIN の規則。コンピューターでテスト済みで、サーバーが不在でも警戒を続け、Zigbee 無線を引き継ぎます。基板上では一度も動作していません。 |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.1.6 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.6 | ローカルネットワーク：機器、インターネット、そして変化 |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.2 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.3 | 判断を説明し、決して動作しない視覚推論ポリシー |
