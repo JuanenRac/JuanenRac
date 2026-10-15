@@ -328,7 +328,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.4 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.2 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | 筐体、電子部品、ベンチ受け入れマトリクス |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.4.9 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.0 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.4 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.0.9 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.6 | アーキテクチャ、セキュリティ基準、機能マトリクス |
