@@ -64,18 +64,21 @@ on:
     paths:
       - "scripts/generate_dashboard.py"
       - "scripts/sync_readme_versions.py"
+      - "scripts/catalog_check.py"
       - "ecosystem-catalog.json"
       - ".github/workflows/build-dashboard.yml"
 
   schedule:
-    # Discovery every twenty minutes: a newly pushed manifest repository appears
-    # without editing this repository or maintaining a dashboard project list.
-    # GitHub runs scheduled workflows on a best-effort basis and skips some of
-    # them when its queues are busy (the hourly one went hours without running),
-    # so it is asked often; the push-triggered refresh (repository_dispatch from
-    # each project, which needs the ECOSYSTEM_DASHBOARD_DISPATCH_TOKEN secret) is
-    # the reliable path.
-    - cron: "7,27,47 * * * *"
+    # Safety-net discovery twice an hour: a newly pushed manifest repository
+    # appears without editing this repository or maintaining a project list.
+    # The push-triggered refresh (repository_dispatch from each project's own
+    # dashboard-dispatch.yml, which needs the ECOSYSTEM_DASHBOARD_DISPATCH_TOKEN
+    # secret) is the real, immediate path, so the schedule only has to catch
+    # what a dispatch missed. Two slots an hour instead of three: GitHub skips
+    # some scheduled runs when busy (a single hourly slot once went hours
+    # without running), but three regenerations an hour mostly produced
+    # back-to-back bot commits for the same change.
+    - cron: "17,47 * * * *"
 
 # Prevent two dashboard builds from modifying main at the same time.
 concurrency:
@@ -157,6 +160,10 @@ jobs:
       # -----------------------------------------------------------------------
       # Generate dashboard
       # -----------------------------------------------------------------------
+      - name: Check the ecosystem catalog against the dashboard
+        run: |
+          python -m unittest discover -s tests -v
+
       - name: Generate dashboard
         env:
           # Used only to read PUBLIC commit/Actions-run metadata on the

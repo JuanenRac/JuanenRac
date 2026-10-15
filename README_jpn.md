@@ -60,13 +60,13 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 
 1.  **プラットフォーム基盤**：Raspberry Pi OS ARM64 と標準 Linux サービスが、サポート対象の CM5 基盤を提供します。
 2.  **プラットフォームと契約**：**HYDRA-UMC-OS** は Raspberry Pi OS 上で再現可能なプロファイル、サービス、診断、更新を提供し、**HYDRA-UMC-SDK** はバージョン管理された契約、軽量クライアント、適合性テストを公開します。
-3.  **リアルタイム実行**：STM32/MCU 上の **HYDRA-UMC** ファームウェアと URTC が、動作制限、ウォッチドッグ、安全停止を保持します。
+3.  **リアルタイム実行**：STM32/MCU 上の **HYDRA-UMC** ファームウェアが動作制限、ウォッチドッグ、安全停止を担います。ツールそのものと、エンドエフェクタに対するツール自身のリアルタイム権限は、下記の別エコシステム **URTC** に属します。
 4.  **協調と運用**：サーバーサービス、ジョブ配信、テレメトリ、設定が、MCU の安全境界を越えずにデバイスを協調させます。
 5.  **オペレーターインターフェース**：Studio、Suite、DSI、Web、デスクトップ、モバイル、CLI は SDK 契約を使用します。
 6.  **知覚とインテリジェンス**：Vision、Hailo、認知サービスは観測または計画を提案しますが、物理安全の権限は持ちません。
 7.  **エンジニアリング、産業、データ**：デジタルツイン、HIL/物理、OPC-UA/MQTT/MTConnect ゲートウェイ、データサービスがシステムを検証・統合します。
 
-開発は **HYDRA-UMC-OS** の公開アーキテクチャとサービスモデルから開始し、その後 **HYDRA-UMC-SDK** の契約と適合性ルールを使用します。すべてのフローで MCU/URTC の安全権限を維持します。
+開発は **HYDRA-UMC-OS** の公開アーキテクチャとサービスモデルから開始し、その後 **HYDRA-UMC-SDK** の契約と適合性ルールを使用します。すべてのフローで MCU の安全権限を維持します。
 
 ---
 
@@ -129,17 +129,15 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 
 ## 📁 プロジェクトカタログ — HYDRA-UMC
 
-このエコシステムに初めて触れる方へ：`./starter-kit.sh`（Windows では
-`starter-kit.bat`）を実行すると、13 個のコアリポジトリ——下記の完全な
-カタログではなく、手作業で選んだ最初のセット——を、1 つのディレクトリ
-内に兄弟フォルダとしてクローンできます。これは、本リポジトリ内のあら
-ゆるクロスリポジトリスクリプトがすでに前提としている標準的なディレク
-トリ構成です。再実行しても安全です（すでにクローン済みのものには一切
-手を加えません）。その後は、
-[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)
-（今クローンしたばかりの 13 個のうちの 1 つ）を使って、下記の完全な
-カタログにある他の任意のプロジェクトのバージョン確認やビルド・更新が
-行えます。
+エコシステムが初めてですか？ `./starter-kit.sh`（Windows では
+`starter-kit.bat`）は、手作業で選んだ 13 のコアリポジトリを 1 つの
+ディレクトリに兄弟フォルダとしてクローンします。これはここにあるすべての
+リポジトリ横断スクリプトが前提とする標準構成です。2 番目の引数を指定すると、
+代わりにマニフェストでライブ検出したエコシステム全体をクローンします：
+`hydra-umc`、`urtc`、`armor`、`all`（例：`./starter-kit.sh ~/work armor`）。
+再実行しても安全で、クローン済みのものには触れません。その後は各エコシステムの
+アップデーター——3 つすべてなら [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)——
+でバージョン確認と他のプロジェクトのビルド／更新ができます。
 
 ### 🧱 プラットフォーム基盤と契約
 | リポジトリ | バージョン | 説明 |
@@ -341,7 +339,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 エコシステム全体のリポジトリの Issue ラベルは、本リポジトリの [`.github/labels.yml`](.github/labels.yml) から統一管理され、[`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) によって各リポジトリへ同期されています——このファイル 1 つを編集するだけで、リポジトリごとに手作業で行うことなく、すべてのラベルを一括更新できます。下記のダッシュボードとは異なり、このリストは静的です（実際の GitHub Actions マトリクスであり、動的な検出ではありません）——新しいリポジトリを追加する際は、実際の `hydra-umc.project.json` だけでなく、ここにもエントリが必要です。
 
-自身の `hydra-umc.project.json` で `ecosystem: HYDRA-UMC` を宣言しているすべての公開リポジトリを対象とするライブステータスダッシュボード（技術スタック、デプロイ対象、現在のバージョン——各リポジトリのデフォルトブランチから直接取得、固定リストなしで動的に検出）は、[`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) によって毎時自動再生成され（関連するプッシュ後は即座にも実行されます）、GitHub Pages 経由で `docs/` から配信されています：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。各プロジェクトに実際の成熟度分類（scaffolding / functional / established / production。それぞれ各プロジェクト自身の実際の CHANGELOG に基づいて判定されています——正確な判定基準は [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) モジュール自身の docstring を参照）、その役割（API / UI / CLI / ファームウェア / ライブラリ / サービス / ツール）、実際のファミリー/親子関係ツリー、そして現在実際に何が実装されているかについてのプロジェクトごとの注記が追加されています。URTC と A.R.M.O.R. 自身のリポジトリも、HYDRA-UMC とまったく同じ方法でこの同じダッシュボード上でライブに検出されます（`scripts/generate_dashboard.py` を参照）。それぞれが自身の `urtc.project.json`/`armor.project.json` の中で自身の `ecosystem` フィールドを宣言しており、3つのどれについても固定リストはありません。
+3 つのエコシステムのすべての公開リポジトリを対象とするライブステータスダッシュボード——各リポジトリは独自のマニフェスト（`hydra-umc.project.json`、`urtc.project.json`、`armor.project.json`、エコシステム横断リポジトリには `electro-hobby-3d.project.json`）によって、固定リストなしで各リポジトリのデフォルトブランチから直接検出されます——は、プロジェクトが push した直後（各リポジトリ自身の `dashboard-dispatch.yml` 経由）と、安全網として 1 時間に 2 回、[`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) によって再生成され、GitHub Pages で `docs/` から配信されます：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。スタック、デプロイ先、現在のバージョン、各プロジェクト自身の CHANGELOG から判定される実際の成熟度分類（スキャフォールディング／機能的／確立済み／本番、詳細は [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py) を参照）、役割（API／UI／CLI／ファームウェア／ライブラリ／サービス／ツール）、ファミリー／親子ツリー、そして現在実装されている内容に関するプロジェクトごとのメモを表示します。[`ecosystem-catalog.json`](ecosystem-catalog.json) はこれらのエコシステムとマニフェストを 1 か所にまとめており、両者が一致しない場合、ダッシュボードのビルドは実行を拒否します。
 
 ## 🧭 GitHub コラボレーション
 
