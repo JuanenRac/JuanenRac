@@ -143,13 +143,13 @@ for all three - can check versions and build/update any other project.
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.7 | Raspberry Pi OS platform layer for CM5: reproducible profiles, configuration, diagnostics, service lifecycle and updates; not a new Linux distribution. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.8 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.9 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.0 | Declarative adapter-manifest registry and validator for external-machine connectors; extends the SDK's own contract idea to external machines without replacing the industrial-gateway projects. |
 
 ### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | Headless Node.js API and WebSocket backend for robotic orchestration. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | High-performance Python/Qt desktop application for industrial automation. |
@@ -325,7 +325,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.1 | Camera zones, masks and detection rules for the Jetson Orin NX (no detector model yet). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.8 | Offline voice service: fifteen commands in seven languages, arm and disarm confirmed with a signed token. |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.9 | Operations console, alarms, devices, automations, users, history, alert rules, PTZ, radar map, solar and electrical menus, the local network, system services, weather, a node finder and configuration, node firmware updates, notifications, and a 2D/3D site designer. |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.7 | Android operator client: arm and disarm, alarms, devices, live radar, solar inverters and batteries, history, alarm notifications, an assistant for written and spoken commands and the configurator of the nodes. |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.8 | Android operator client: arm and disarm, alarms, devices, live radar, solar inverters and batteries, history, alarm notifications, an assistant for written and spoken commands and the configurator of the nodes. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Enclosure design and the bench acceptance matrix. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.2 | Compose topology, central-server test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, administration agent. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.4 | Scenarios and repeatable faults. |

@@ -143,13 +143,13 @@ pour les trois - vérifie les versions et compile/met à jour tout autre projet.
 | Dépôt | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.7 | Couche de plateforme Raspberry Pi OS pour CM5 : profils reproductibles, configuration, diagnostic, cycle de vie des services et mises à jour ; ce n'est pas une nouvelle distribution Linux. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.8 | Contrats versionnés, clients légers et tests de conformité communs pour services, interfaces, adaptateurs CM5 et URTC ; ne remplace pas les API des fournisseurs. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.9 | Contrats versionnés, clients légers et tests de conformité communs pour services, interfaces, adaptateurs CM5 et URTC ; ne remplace pas les API des fournisseurs. |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.0 | Registre déclaratif et validateur de manifestes d'adaptateur pour les connecteurs de machines externes ; étend la propre idée de contrat du SDK aux machines externes sans remplacer les projets de passerelle industrielle. |
 
 ### 💠 Contrôle central et clients opérateur
 | Dépôt | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | Micrologiciel de contrôle de mouvement core pour STM32H745/G474 avec cinématique S-Curve. |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | Micrologiciel de contrôle de mouvement core pour STM32H745/G474 avec cinématique S-Curve. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | API Node.js headless et backend WebSocket pour l'orchestration robotique. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | Application de bureau Python/Qt haute performance pour l'automatisation industrielle. |
@@ -326,7 +326,7 @@ A.R.M.O.R. suit la même règle déjà appliquée par le tableau de bord de HYDR
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.1 | Zones de caméra, masques et règles de détection pour la Jetson Orin NX (pas encore de modèle de détection). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.8 | Intentions vocales hors ligne avec une confirmation impossible à falsifier |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.9 | Console web : caméras, radar, alarmes, menus solaire et électrique, réseau local, services système, météo, un chercheur de nœuds et le concepteur de site 2D/3D |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.7 | Client Android de l'opérateur avec radar 2D/3D en direct |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.8 | Client Android de l'opérateur avec radar 2D/3D en direct |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Boîtiers, électronique et la matrice d'acceptation au banc |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.2 | Déploiement, banc de test du serveur central, sauvegarde et TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.4 | Simulateur de télémétrie hors ligne avec pannes reproductibles |
