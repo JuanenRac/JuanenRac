@@ -313,21 +313,21 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.4.9 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.2 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.3.7 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.2.9 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.5 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.0 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
-| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.8 | La red local: sus dispositivos, internet y lo que cambia. |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.5.8 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.2 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.5 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.0 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.2 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.8 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.3 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
+| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.0.9 | La red local: sus dispositivos, internet y lo que cambia. |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.6.0 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.4 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.1 | Zonas de cámara, máscaras y reglas de detección para la Jetson Orin NX (todavía sin modelo de detección). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.7 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.5 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.2 | Cliente Android del operador con radar 2D/3D en vivo. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.7 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.5 | Cliente Android del operador con radar 2D/3D en vivo. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | Cajas, electrónica y la matriz de aceptación en banco. |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.1 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.2 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.4 | Simulador de telemetría sin conexión con fallos repetibles. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.0 | Detecta, instala y actualiza los propios repositorios del ecosistema. |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.6 | Arquitectura, base de seguridad y la matriz de capacidades. |
