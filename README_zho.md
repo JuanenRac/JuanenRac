@@ -317,7 +317,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.6 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.1 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.3 | 电气节点：电表、电网读数消息和开关规则 |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.2.9 | 报警节点与报警主机：其固件（有线防区、警笛、Zigbee 传感器与警笛、七种语言的网页面板）以及布防、延时、报警和 PIN 的规则，已在电脑上测试；服务器离线时继续守护，并接管 Zigbee 无线电。从未在电路板上运行过。 |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.0 | 报警节点与报警主机：其固件（有线防区、警笛、Zigbee 传感器与警笛、七种语言的网页面板）以及布防、延时、报警和 PIN 的规则，已在电脑上测试；服务器离线时继续守护，并接管 Zigbee 无线电。从未在电路板上运行过。 |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.4 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.0 | 本地网络：其设备、互联网以及变化 |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.6.4 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
