@@ -142,13 +142,13 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.7 | 面向 CM5 的 Raspberry Pi OS 平台层：可复现配置、诊断、服务生命周期与更新；并非新的 Linux 发行版。 |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.8 | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.9 | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.0 | 面向外部机器连接器的声明式适配器清单注册与校验工具；把 SDK 自身的契约理念扩展到外部机器，而不取代工业网关类项目。 |
 
 ### 💠 核心控制与操作员客户端
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |
@@ -325,7 +325,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.1 | Jetson Orin NX 上的摄像头区域、遮罩与检测规则（尚无检测模型）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.8 | 带无法伪造确认的离线语音意图 |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.9 | 网页控制台：摄像头、雷达、报警、太阳能与电气菜单、本地网络、系统服务、天气、节点查找器和 2D/3D 场地设计器 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.7 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.8 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | 外壳、电子器件和台架验收矩阵 |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.2 | 部署、中央服务器测试台、备份与 TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.4 | 带可重复故障的离线遥测模拟器 |

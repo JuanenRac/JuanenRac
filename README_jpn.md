@@ -143,13 +143,13 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.7 | CM5 向け Raspberry Pi OS プラットフォーム層：再現可能なプロファイル、設定、診断、サービスのライフサイクル、更新を提供。新しい Linux ディストリビューションではありません。 |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.8 | サービス、UI、CM5 アダプター、URTC 向けの共有バージョン管理契約、軽量クライアント、適合性テスト。ベンダー API は置き換えません。 |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.9 | サービス、UI、CM5 アダプター、URTC 向けの共有バージョン管理契約、軽量クライアント、適合性テスト。ベンダー API は置き換えません。 |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.0 | 外部マシン用コネクタのための宣言的アダプターマニフェストのレジストリとバリデーター。SDK 自身の契約という発想を外部マシンにまで拡張し、産業用ゲートウェイ系のプロジェクトを置き換えることはありません。 |
 
 ### 💠 コア制御とオペレータークライアント
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.6 | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
@@ -326,7 +326,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.1 | Jetson Orin NX 向けのカメラのゾーン、マスク、検知ルール（検知モデルはまだありません）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.2.8 | 偽造できない確認を備えたオフライン音声インテント |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.7.9 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.7 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.8 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.3 | 筐体、電子部品、ベンチ受け入れマトリクス |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.2 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.4 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
