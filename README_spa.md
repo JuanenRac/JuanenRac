@@ -142,16 +142,16 @@ para los tres - comprueba versiones y compila/actualiza cualquier otro proyecto.
 ### 🧱 Base de plataforma y contratos
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.7 | Capa de plataforma Raspberry Pi OS para CM5: perfiles reproducibles, configuración, diagnóstico, ciclo de servicios y actualizaciones; no es una distribución Linux nueva. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.9 | Contratos versionados, clientes ligeros y pruebas de conformidad compartidos para servicios, interfaces y adaptadores CM5; no sustituye API de fabricantes. |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.8 | Capa de plataforma Raspberry Pi OS para CM5: perfiles reproducibles, configuración, diagnóstico, ciclo de servicios y actualizaciones; no es una distribución Linux nueva. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.3.0 | Contratos versionados, clientes ligeros y pruebas de conformidad compartidos para servicios, interfaces y adaptadores CM5; no sustituye API de fabricantes. |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.0 | Registro declarativo y validador de manifiestos de adaptador para conectores de máquinas externas; extiende la propia idea de contrato del SDK a máquinas externas sin sustituir a los proyectos de pasarela industrial. |
 
 ### 💠 Control core e interfaces de operador
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | Firmware de control de movimiento core para STM32H745/G474 con cinemática S-Curve. |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | API Node.js headless y backend WebSocket para orquestación robótica. |
-| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | Dashboard web avanzado basado en React para monitoreo y control 3D. |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.7 | API Node.js headless y backend WebSocket para orquestación robótica. |
+| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.7 | Dashboard web avanzado basado en React para monitoreo y control 3D. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | Aplicación de escritorio Python/Qt de alto rendimiento para automatización industrial. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.0 | Interfaz táctil basada en Flutter para pantallas industriales de 7" (CM5). |
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.3 | App móvil nativa Kotlin con login biométrico para gestión remota. |
@@ -165,14 +165,14 @@ para los tres - comprueba versiones y compila/actualiza cualquier otro proyecto.
 | [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.1.0 | Nodo de percepción de alta velocidad para 8 flujos simultáneos de cámaras USB 3.0. |
 | [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | 0.1.6 | Pipeline optimizado de GStreamer/MediaMTX para retransmisión de video industrial. |
 | [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.0.9 | Librería de modelos YOLO acelerados por hardware para QA de componentes y SMD. |
-| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.1.1 | Detección de intrusiones por IA en tiempo real para protección del volumen de trabajo. |
+| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.1.2 | Detección de intrusiones por IA en tiempo real para protección del volumen de trabajo. |
 | [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.1.4 | Feedback cinemático basado en imagen para corrección de pose submilimétrica. |
 
 ### 🧠 Nodo de IA Cognitiva (Optimizado para Hailo-10)
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | 0.1.1 | Nodo de razonamiento semántico para planificación lógica de misiones y control por voz. |
-| [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.1.4 | Implementación del modelo Vision-Language-Action para ejecución de tareas complejas. |
+| [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.1.5 | Implementación del modelo Vision-Language-Action para ejecución de tareas complejas. |
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.3 | Pipeline local y privado de STT/TTS para interacción natural con el operador. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.0 | Orquestador de misiones basado en LLM con recuperación de errores sensible al contexto. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.0 | Asistente de IA basado en RAG entrenado con manuales técnicos y código fuente. |
@@ -206,22 +206,22 @@ para los tres - comprueba versiones y compila/actualiza cualquier otro proyecto.
 ### 🏭 Pasarela Industrial
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.2 | Puente de interoperabilidad para estándares de fábrica (OPC-UA/MQTT). |
+| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.3 | Puente de interoperabilidad para estándares de fábrica (OPC-UA/MQTT). |
 | [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.1.5 | Mapeo de objetos robóticos HydraState a nodos estándar OPC-UA. |
-| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.2 | Puente de telemetría para integraciones IoT y dashboards externos. |
+| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.3 | Puente de telemetría para integraciones IoT y dashboards externos. |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 0.1.4 | Interfaz estandarizada para monitoreo de salud de máquinas y robots. |
 
 ### 🌉 Puentes de Automatización Externa
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 0.0.7 | Límite de coordinación bidireccional ROS 2: topics para observación, servicios para inspección y acciones cancelables para trabajos de celda. |
-| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | 0.1.4 | Coordinador trazable de entrega de PCB para OpenPnP y carga o descarga asistida por robots. |
-| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 0.1.3 | Puente seguro alrededor de software de impresión 3D; el primer adaptador valida Moonraker sin sustituir firmware. |
-| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | 0.1.4 | Coordinador de auxiliares de celda CNC; la trayectoria y la seguridad siguen siendo nativas del controlador. |
-| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.1.2 | Coordinador de auxiliares de celda láser que no puede armar, disparar ni anular interlocks. |
-| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.0.8 | Límite de coordinación para droides con patas/humanoides: vocabulario de acciones caminar/coger/soltar filtrado por el contrato de seguridad compartido; la marcha y el equilibrio siguen siendo del propio controlador del droide. |
-| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.0.8 | Límite de coordinación para flotas AGV/AMR: transformación de la trama de fábrica a la trama local más un vocabulario de órdenes inspirado en VDA-5050; la planificación de rutas sigue siendo de la propia navegación del AMR. |
-| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.0.9 | Límite de coordinación para UAV con cámara: vocabulario de solicitudes de vuelo con nombre más un watchdog determinista de heartbeat/pérdida de enlace. |
+| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 0.0.9 | Límite de coordinación bidireccional ROS 2: topics para observación, servicios para inspección y acciones cancelables para trabajos de celda. |
+| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | 0.1.6 | Coordinador trazable de entrega de PCB para OpenPnP y carga o descarga asistida por robots. |
+| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 0.1.5 | Puente seguro alrededor de software de impresión 3D; el primer adaptador valida Moonraker sin sustituir firmware. |
+| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | 0.1.6 | Coordinador de auxiliares de celda CNC; la trayectoria y la seguridad siguen siendo nativas del controlador. |
+| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.1.4 | Coordinador de auxiliares de celda láser que no puede armar, disparar ni anular interlocks. |
+| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.0.9 | Límite de coordinación para droides con patas/humanoides: vocabulario de acciones caminar/coger/soltar filtrado por el contrato de seguridad compartido; la marcha y el equilibrio siguen siendo del propio controlador del droide. |
+| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.1.0 | Límite de coordinación para flotas AGV/AMR: transformación de la trama de fábrica a la trama local más un vocabulario de órdenes inspirado en VDA-5050; la planificación de rutas sigue siendo de la propia navegación del AMR. |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.1.0 | Límite de coordinación para UAV con cámara: vocabulario de solicitudes de vuelo con nombre más un watchdog determinista de heartbeat/pérdida de enlace. |
 
 ### 🛠️ Herramientas Complementarias
 | Repositorio | Versión | Descripción |
