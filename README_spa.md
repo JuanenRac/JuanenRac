@@ -275,12 +275,12 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | Firmware de controlador de herramientas universal para más de 25 herramientas especializadas. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.8 | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.9 | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.8 | Herramienta de diagnóstico CAN-bus con paneles de telemetría por herramienta. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.7 | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.8 | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | Cabezal con cámaras térmicas y RGB integradas para QA activo. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.1 | Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos. |
 
 ---
 
@@ -315,19 +315,19 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.9 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.0 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.3 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.5 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.2 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.6 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.4 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.6 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.3 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.7 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | La red local: sus dispositivos, internet y lo que cambia. |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.0 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.1 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Zonas de cámara, máscaras y reglas de detección (todavía sin modelo de detección). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.2 | Cliente Android del operador con radar 2D/3D en vivo. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.3 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.3 | Cliente Android del operador con radar 2D/3D en vivo. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Cajas, electrónica y la matriz de aceptación en banco. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.9 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Simulador de telemetría sin conexión con fallos repetibles. |
