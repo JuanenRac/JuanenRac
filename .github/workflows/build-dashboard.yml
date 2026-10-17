@@ -138,7 +138,7 @@ jobs:
         # than silently falling back to anything.
         run: |
           python -m pip install --upgrade pip
-          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git@76da45320d023603e4f58af9326de6b35121dde0"
+          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git@ff0fb0ecdba51b24ca22d7d6ddae060d57ac854d"
 
       # -----------------------------------------------------------------------
       # Install URTC-UPDATER and ARMOR-UPDATER
@@ -154,8 +154,8 @@ jobs:
       # -----------------------------------------------------------------------
       - name: Install URTC-UPDATER and ARMOR-UPDATER
         run: |
-          python -m pip install "git+https://github.com/JuanenRac/URTC-UPDATER.git@8e666e57f00c6a77925aa04849ef593cd72676b6"
-          python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@bc3f556b206ec7ab656cacf1eb2010a6a344dd2f"
+          python -m pip install "git+https://github.com/JuanenRac/URTC-UPDATER.git@1a7033b97ae11a30733894848f182b776ff21599"
+          python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@ac87cf593298650dafd9da41995cb004a7ce71f4"
 
       # -----------------------------------------------------------------------
       # Generate dashboard
