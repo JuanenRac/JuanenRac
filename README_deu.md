@@ -276,12 +276,12 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.8 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.8 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.7 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.1 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
 
 ---
 
@@ -316,7 +316,7 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.7 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.8 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.3 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.5 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
@@ -330,10 +330,10 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | Web-Konsole: Kameras, Radar, Alarme, Solar- und Elektromenüs, lokales Netzwerk, Systemdienste, Wetter, eine Knotensuche und 2D/3D-Standortdesigner |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.2 | Android-Bedienclient mit Live-Radar in 2D/3D |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.9 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.9 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
 
 ---
 

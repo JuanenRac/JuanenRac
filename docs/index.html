@@ -9362,7 +9362,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.0
+            0.1.1
           </td>
 
           <td class="status-cell">
@@ -9377,7 +9377,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-UPDATER/commit/610303a2ce70a57f9147f050f33f880f71a5de79" target="_blank" rel="noopener noreferrer" class="commit-link" title="Workspace safety: single-instance lock, clean discovery, safer cleanup and carry-over">Workspace safety: single-instance lock, clean discovery, safer cleanup and carry-over</a>
+            <a href="https://github.com/JuanenRac/URTC-UPDATER/commit/4d59e8b63d6c88a2a096f8272acd1aec64ca699d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Translate install messages, compare by commit, keep and clean backups, add station commands">Translate install messages, compare by commit, keep and clean backups, add station commands</a>
           </td>
         </tr>
 
@@ -9615,7 +9615,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.7
+            0.2.8
           </td>
 
           <td class="status-cell">
@@ -9630,7 +9630,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/21df85182addadb88c0a4288cd3c1627f67b6ebb" target="_blank" rel="noopener noreferrer" class="commit-link" title="Listen-only bitrate auto-detect, verified GitHub downloads, honest ACK retry docs, consistent build scripts">Listen-only bitrate auto-detect, verified GitHub downloads, honest ACK retry docs, consistent build scripts</a>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/e390198bca3d0a1b6f63c66ba511f8757ae92f76" target="_blank" rel="noopener noreferrer" class="commit-link" title="Thread-safe Tk window, translated messages, version hints and update reports (0.2.8)">Thread-safe Tk window, translated messages, version hints and update reports (0.2.8)</a>
           </td>
         </tr>
 
@@ -9650,7 +9650,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real GUI flashing tool (CAN-OTA + full-chip SWD/JTAG). Qt Quick (`--qtquick`) is a real, full-parity front end for the entire workflow, not just CAN-OTA - CAN-OTA, read-only SWD/JTAG discovery, Board Snapshot, the 4 device-configuration writes, and full-chip SWD/JTAG programming (erase/write, dry run, back-up-before-erasing, RDP/option-byte check) all talk to the same production transport, validation and signed flashing code as the established Tkinter interface (31 real @Slot bindings in qt_flasher.py, cross-checked against assets/qml/FlasherDeck.qml&#x27;s own controls). Tkinter remains the default interface; nothing is Tkinter-only anymore. flasher_protocol.py&#x27;s deadline/duration math uses time.monotonic() throughout, not the civil clock, so an NTP sync or manual clock change mid-flash can never shorten or lengthen a real timeout.</div>
+                <div class="detail-text">Real GUI flashing tool (CAN-OTA + full-chip SWD/JTAG). Qt Quick (`--qtquick`) is a second front end over the same transport, validation and signed flashing code: CAN-OTA update of the main board, read-only SWD/JTAG discovery, Board Snapshot, the 4 device-configuration writes and full-chip SWD/JTAG programming. It does not have everything the Tkinter window has (no expansion-slave target, no already-in-bootloader option, no F-RAM erase, no downgrade authorisation, no CAN backup, no GitHub download, fixed 500 kbit/s bitrate, no bus-activity check). Tkinter remains the default interface. flasher_protocol.py&#x27;s deadline/duration math uses time.monotonic() throughout, not the civil clock, so an NTP sync or manual clock change mid-flash can never shorten or lengthen a real timeout.</div>
               </div>
 
               <div class="detail-block">
@@ -9859,7 +9859,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.7
+            0.2.8
           </td>
 
           <td class="status-cell">
@@ -9874,7 +9874,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/b0e07fe95decec91edad7f72f54c013d9bea44ce" target="_blank" rel="noopener noreferrer" class="commit-link" title="Reads that no longer collide, a stop for everything, a thermal image that keeps its shape and a board that cannot go sil">Reads that no longer collide, a stop for everything, a thermal image that keeps its shape and a board that cannot go sil</a>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/958dd81cb9d05bbb1ca8ec6b7eb7e3ddcb0dcf85" target="_blank" rel="noopener noreferrer" class="commit-link" title="A bit rate search that stays silent on a live bus, a stop for every output, confirmations and settings that are remember">A bit rate search that stays silent on a live bus, a stop for every output, confirmations and settings that are remember</a>
           </td>
         </tr>
 
@@ -9894,7 +9894,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real live CAN-bus diagnostic tool including CSV export of live graphs. Qt Quick is a staged, safety-first connection and identity-probe deck; the established Tkinter UI remains default until 25-tool control parity is complete. advanced_protocol.py&#x27;s protocol boundary (bounded_int/motion_frame/drill_frame, plus the same class of bug independently duplicated in qt_tester.py and tester_tool_panels.py) now strictly rejects an out-of-range or unrecognized-direction value instead of silently clamping/re-interpreting it as a different valid command.</div>
+                <div class="detail-text">Real live CAN-bus diagnostic tool including CSV export of live graphs. The Qt Quick deck is the default, safety-first interface; the 25-tool Tkinter window is kept behind --legacy. Every output the screens send goes through the encoders in advanced_protocol.py, which reject out-of-range values instead of clamping them.</div>
               </div>
 
               <div class="detail-block">
@@ -9904,7 +9904,7 @@
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_build">Build</div>
-                <div class="detail-text">Standalone Python desktop tool. pip install -r requirements.txt; Qt Quick diagnostics deck is started with --qtquick.</div>
+                <div class="detail-text">Standalone Python desktop tool. pip install -r requirements.txt; the Qt Quick diagnostics deck is the default, --legacy starts the classic Tkinter window.</div>
               </div>
             </div>
           </td>
@@ -10103,7 +10103,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.6
+            0.2.7
           </td>
 
           <td class="status-cell">
@@ -10118,7 +10118,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/977a813ad061ee4450280c4352f4fe9d8a6f5179" target="_blank" rel="noopener noreferrer" class="commit-link" title="Flash only real application images, validate manifests and typed frames, respect firmware limits (0.2.6)">Flash only real application images, validate manifests and typed frames, respect firmware limits (0.2.6)</a>
+            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/bc25eea6de9be6cd10fb18fa7b4ea2e1420a00ed" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bump to 0.2.7">Bump to 0.2.7</a>
           </td>
         </tr>
 
@@ -10499,7 +10499,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-STUDIO/commit/355135a9dcf6f3f9f56f7eb7c49ce78c4e16b963" target="_blank" rel="noopener noreferrer" class="commit-link" title="A step-by-step guide to reach the server from outside the house, with the real state of each step">A step-by-step guide to reach the server from outside the house, with the real state of each step</a>
+            <a href="https://github.com/JuanenRac/ARMOR-STUDIO/commit/321c174645764ed71db355f6d5d1bde3ea78120d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Lay out Configuration &gt; Security in sections and add the reach-the-house-from-outside guide">Lay out Configuration &gt; Security in sections and add the reach-the-house-from-outside guide</a>
           </td>
         </tr>
 
@@ -11112,7 +11112,7 @@
           </td>
 
           <td class="version status-ok">
-            0.7.8
+            0.7.9
           </td>
 
           <td class="status-cell">
@@ -11127,7 +11127,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/e990e42e68d24c8e0cf62e3778ffb7f2d9167768" target="_blank" rel="noopener noreferrer" class="commit-link" title="READMEs and catalogue follow the latest versions and test counts">READMEs and catalogue follow the latest versions and test counts</a>
+            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/d8b24cca9441f3d29b3099fdbc3ee601cf404335" target="_blank" rel="noopener noreferrer" class="commit-link" title="The publication check does not flag example addresses in test fixtures">The publication check does not flag example addresses in test fixtures</a>
           </td>
         </tr>
 
@@ -11243,7 +11243,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.3
+            0.1.4
           </td>
 
           <td class="status-cell">
@@ -11258,7 +11258,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-UPDATER/commit/9dafe568394f02c998bfd327a343b8bae3466384" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refuse updates from a non-default branch and use each repository default branch for manifest lookups (0.1.3)">Refuse updates from a non-default branch and use each repository default branch for manifest lookups (0.1.3)</a>
+            <a href="https://github.com/JuanenRac/ARMOR-UPDATER/commit/8dd40bdcb597332d590fe208dbf4826137912359" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add manifest requirements, warn-by-default signatures, fresh version reads and restore buttons (0.1.4)">Add manifest requirements, warn-by-default signatures, fresh version reads and restore buttons (0.1.4)</a>
           </td>
         </tr>
 
@@ -12124,7 +12124,7 @@
           </td>
 
           <td class="version status-ok">
-            0.5.8
+            0.5.9
           </td>
 
           <td class="status-cell">
@@ -12139,7 +12139,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-DEVOPS/commit/dcf0b33c12af5899dd4ae102194efe64728457e6" target="_blank" rel="noopener noreferrer" class="commit-link" title="The maintenance helper never removes the release it has just made or the one in use">The maintenance helper never removes the release it has just made or the one in use</a>
+            <a href="https://github.com/JuanenRac/ARMOR-DEVOPS/commit/beb4c99067cbf5b8ce259e1550ef29f78b74d509" target="_blank" rel="noopener noreferrer" class="commit-link" title="Require an Ed25519 signature on every package the maintenance helper installs">Require an Ed25519 signature on every package the maintenance helper installs</a>
           </td>
         </tr>
 
@@ -12255,7 +12255,7 @@
           </td>
 
           <td class="version status-ok">
-            0.5.7
+            0.5.8
           </td>
 
           <td class="status-cell">
@@ -12270,7 +12270,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/ac39d420347d2fc92f7ef4287095ba44605a4f7b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Host tests use addresses of the documentation range">Host tests use addresses of the documentation range</a>
+            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/64ae0ff86520421b6fe6a3629aaa411c72d7bcdc" target="_blank" rel="noopener noreferrer" class="commit-link" title="Document the project manifest and its optional requires field (0.5.8)">Document the project manifest and its optional requires field (0.5.8)</a>
           </td>
         </tr>
 

@@ -276,12 +276,12 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.8 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.8 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.7 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.1 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
 
 ---
 
@@ -316,7 +316,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.7 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.8 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.3 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.5 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
@@ -330,10 +330,10 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.2 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | 筐体、電子部品、ベンチ受け入れマトリクス |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.9 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | アーキテクチャ、セキュリティ基準、機能マトリクス |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.9 | アーキテクチャ、セキュリティ基準、機能マトリクス |
 
 ---
 
