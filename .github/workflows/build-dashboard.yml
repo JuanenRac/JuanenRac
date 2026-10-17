@@ -227,7 +227,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          readmes=(README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md)
+          readmes=(README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md README_por.md)
 
           workdir="$(mktemp -d)"
           cp docs/index.html "$workdir/index.html"

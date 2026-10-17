@@ -3,7 +3,7 @@
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 # =============================================================================
-"""The seven profile READMEs must stay parallel: same section structure,
+"""The eight profile READMEs must stay parallel: same section structure,
 same set of GitHub links and the same number of table rows, so a section
 added or dropped in one language cannot go unnoticed."""
 import re
@@ -11,7 +11,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TRANSLATIONS = ["README_spa.md", "README_deu.md", "README_fra.md", "README_ita.md", "README_jpn.md", "README_zho.md"]
+TRANSLATIONS = ["README_spa.md", "README_deu.md", "README_fra.md", "README_ita.md", "README_jpn.md", "README_zho.md", "README_por.md"]
 
 
 def shape(path: Path) -> dict:

@@ -44,13 +44,13 @@ RAW_REQUEST_TIMEOUT_S = 10
 
 README_FILES = [
     "README.md", "README_spa.md", "README_fra.md", "README_ita.md",
-    "README_deu.md", "README_zho.md", "README_jpn.md",
+    "README_deu.md", "README_zho.md", "README_jpn.md", "README_por.md",
 ]
 
 VERSION_HEADER = {
     "README.md": "Version", "README_spa.md": "Versión", "README_fra.md": "Version",
     "README_ita.md": "Versione", "README_deu.md": "Version", "README_zho.md": "版本",
-    "README_jpn.md": "バージョン",
+    "README_jpn.md": "バージョン", "README_por.md": "Versão",
 }
 
 # Each repository may use a different manifest filename depending on which
