@@ -279,6 +279,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.4 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.1 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
 
 ---
 

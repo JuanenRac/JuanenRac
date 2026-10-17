@@ -280,6 +280,7 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.4 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.1 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
 
 ---
 

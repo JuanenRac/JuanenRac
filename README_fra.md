@@ -280,6 +280,7 @@ Chaque profil d'outil porte son propre watchdog et son propre comportement en ca
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.4 | Outil Web Serial pour les tests et l'analyse instantanée du matériel. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.1 | Stockage d'outils intelligent avec préchauffage et audit de cycle de vie. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | Tête d'outil avec caméras thermique et RGB intégrées pour l'AQ active. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes. |
 
 ---
 

@@ -280,6 +280,7 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.4 | Strumento Web Serial per test e analisi istantanea dell'hardware. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.1 | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.5 | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | Rileva, installa e aggiorna i repository URTC su una macchina a partire dai loro manifesti. |
 
 ---
 
