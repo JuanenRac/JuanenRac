@@ -275,13 +275,13 @@ Cada perfil de ferramenta tem o seu próprio watchdog e comportamento perante fa
 
 | Repositório | Versão | Descrição |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Firmware do Universal Robot Tool Controller para mais de 25 ferramentas especializadas. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | Firmware do Universal Robot Tool Controller para mais de 25 ferramentas especializadas. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | Ferramenta GUI para atualizações de firmware por CAN-OTA e SWD/JTAG de chip completo. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | Ferramenta de diagnóstico para a validação em tempo real dos perfis de ferramentas URTC através de CAN. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.5 | Ferramenta Web Serial no navegador para testes e análises instantâneos de hardware. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.2 | Armazenamento inteligente de ferramentas com pré-aquecimento automático e auditoria do ciclo de vida. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.6 | Cabeçote com câmaras térmica e RGB integradas para controlo de qualidade ativo. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | Deteta, instala e atualiza num computador os repositórios do URTC a partir dos seus próprios manifestos. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | Ferramenta Web Serial no navegador para testes e análises instantâneos de hardware. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | Armazenamento inteligente de ferramentas com pré-aquecimento automático e auditoria do ciclo de vida. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | Cabeçote com câmaras térmica e RGB integradas para controlo de qualidade ativo. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | Deteta, instala e atualiza num computador os repositórios do URTC a partir dos seus próprios manifestos. |
 
 ---
 
@@ -332,7 +332,7 @@ O A.R.M.O.R. segue a mesma regra que o painel do próprio HYDRA-UMC já aplica: 
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Desenhos de caixas (a caixa de canto do radar; uma caixa verificada para os nós solar, elétrico e de alarme) e a matriz de aceitação em bancada. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | Topologia Compose, instalador de bancada de testes do servidor central, cópia de segurança e restauro, perfil TLS, broker MQTT próprio, serviços de observação e voz, agente de administração. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Cenários e falhas repetíveis. |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | Deteta, instala e atualiza os repositórios do próprio ecossistema (atómico por verificação, sem necessidade de GITHUB_TOKEN). |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | Deteta, instala e atualiza os repositórios do próprio ecossistema (atómico por verificação, sem necessidade de GITHUB_TOKEN). |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | Documentação canónica e matriz de capacidades. |
 
 ---

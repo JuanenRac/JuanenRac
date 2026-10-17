@@ -275,13 +275,13 @@ Chaque profil d'outil porte son propre watchdog et son propre comportement en ca
 
 | Dépôt | Version | Description |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Micrologiciel de contrôleur d'outils universel pour plus de 25 outils spécialisés. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | Micrologiciel de contrôleur d'outils universel pour plus de 25 outils spécialisés. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | Outil GUI pour les mises à jour de firmware CAN-OTA et SWD/JTAG. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | Outil de diagnostic CAN-bus avec panneaux de télémétrie par outil. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.5 | Outil Web Serial pour les tests et l'analyse instantanée du matériel. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.2 | Stockage d'outils intelligent avec préchauffage et audit de cycle de vie. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.6 | Tête d'outil avec caméras thermique et RGB intégrées pour l'AQ active. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | Outil Web Serial pour les tests et l'analyse instantanée du matériel. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | Stockage d'outils intelligent avec préchauffage et audit de cycle de vie. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | Tête d'outil avec caméras thermique et RGB intégrées pour l'AQ active. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes. |
 
 ---
 
@@ -332,7 +332,7 @@ A.R.M.O.R. suit la même règle déjà appliquée par le tableau de bord de HYDR
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Boîtiers, électronique et la matrice d'acceptation au banc |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | Déploiement, banc de test du serveur central, sauvegarde et TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Simulateur de télémétrie hors ligne avec pannes reproductibles |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | Détecte, installe et met à jour les propres dépôts de l'écosystème |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | Détecte, installe et met à jour les propres dépôts de l'écosystème |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | Architecture, base de sécurité et la matrice des capacités |
 
 ---

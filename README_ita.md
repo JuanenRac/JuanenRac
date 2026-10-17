@@ -275,13 +275,13 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
 
 | Repository | Versione | Descrizione |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Firmware per controller utensili universale per oltre 25 utensili specializzati. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | Firmware per controller utensili universale per oltre 25 utensili specializzati. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | Strumento GUI per aggiornamenti firmware CAN-OTA e SWD/JTAG. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | Strumento di diagnostica CAN-bus con pannelli di telemetria per utensile. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.5 | Strumento Web Serial per test e analisi istantanea dell'hardware. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.2 | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.6 | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | Rileva, installa e aggiorna i repository URTC su una macchina a partire dai loro manifesti. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | Strumento Web Serial per test e analisi istantanea dell'hardware. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | Rileva, installa e aggiorna i repository URTC su una macchina a partire dai loro manifesti. |
 
 ---
 
@@ -332,7 +332,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Contenitori, elettronica e matrice di accettazione da banco |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | Distribuzione, banco di prova del server centrale, backup e TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Simulatore di telemetria offline con guasti ripetibili |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | Rileva, installa e aggiorna i repository stessi dell'ecosistema |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | Rileva, installa e aggiorna i repository stessi dell'ecosistema |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | Architettura, base di sicurezza e matrice delle capacità |
 
 ---

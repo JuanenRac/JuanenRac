@@ -274,13 +274,13 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Universal Robot Tool Controller firmware for 25+ specialized tools. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | Universal Robot Tool Controller firmware for 25+ specialized tools. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | GUI tool for CAN-OTA and full-chip SWD/JTAG firmware updates. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | Diagnostic tool for real-time validation of URTC tool profiles over CAN. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.5 | Browser-based Web Serial tool for instant hardware testing and analysis. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.2 | Intelligent tool storage with automatic pre-heating and lifecycle audit. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.6 | Toolhead with integrated thermal and RGB cameras for active QA. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | Browser-based Web Serial tool for instant hardware testing and analysis. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | Intelligent tool storage with automatic pre-heating and lifecycle audit. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | Toolhead with integrated thermal and RGB cameras for active QA. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
 
 ---
 
@@ -331,7 +331,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | Compose topology, central-server test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, administration agent. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Scenarios and repeatable faults. |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | Canonical documentation and the capability matrix. |
 
 ---

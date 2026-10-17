@@ -275,13 +275,13 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.5 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.2 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.6 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
 
 ---
 
@@ -332,7 +332,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | 筐体、電子部品、ベンチ受け入れマトリクス |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | アーキテクチャ、セキュリティ基準、機能マトリクス |
 
 ---

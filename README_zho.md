@@ -274,13 +274,13 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.5 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.2 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.6 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.0.9 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.6 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.0 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
 
 ---
 
@@ -331,7 +331,7 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | 外壳、电子器件和台架验收矩阵 |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | 部署、中央服务器测试台、备份与 TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 带可重复故障的离线遥测模拟器 |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | 发现、安装并更新生态系统自身的仓库 |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.3 | 发现、安装并更新生态系统自身的仓库 |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | 架构、安全基线和能力矩阵 |
 
 ---
