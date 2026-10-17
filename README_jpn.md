@@ -275,12 +275,12 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.8 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.8 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.7 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.1 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
 
 ---
@@ -316,14 +316,14 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.8 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.9 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.3 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.5 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
 | [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.2 | 警報ノードと警報盤：そのファームウェア（配線区域、サイレン、Zigbee のセンサーとサイレン、7 言語の Web パネル）と、警戒セット・遅延・警報・PIN の規則。コンピューターでテスト済みで、サーバーが不在でも警戒を続け、Zigbee 無線を引き継ぎます。基板上では一度も動作していません。 |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.6 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | ローカルネットワーク：機器、インターネット、そして変化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.6.9 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.0 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | 判断を説明し、決して動作しない視覚推論ポリシー |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | カメラのゾーン、マスク、検知ルール（検知モデルはまだありません）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 偽造できない確認を備えたオフライン音声インテント |

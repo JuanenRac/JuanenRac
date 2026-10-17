@@ -274,12 +274,12 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.4 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.8 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.8 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.7 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.3 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.7 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.1 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
 
 ---
@@ -315,14 +315,14 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.8 | 消息契约、验证器、一致性向量和生成的类型 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.5.9 | 消息契约、验证器、一致性向量和生成的类型 |
 | [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
 | [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.3 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
 | [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.5 | 电气节点：电表、电网读数消息和开关规则 |
 | [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.2 | 报警节点与报警主机：其固件（有线防区、警笛、Zigbee 传感器与警笛、七种语言的网页面板）以及布防、延时、报警和 PIN 的规则，已在电脑上测试；服务器离线时继续守护，并接管 Zigbee 无线电。从未在电路板上运行过。 |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.6 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | 本地网络：其设备、互联网以及变化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.6.9 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.0 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | 会解释决策且从不执行动作的视觉推理策略 |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Jetson Orin NX 上的摄像头区域、遮罩与检测规则（尚无检测模型）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 带无法伪造确认的离线语音意图 |
