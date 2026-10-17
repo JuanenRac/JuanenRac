@@ -322,7 +322,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | La red local: sus dispositivos, internet y lo que cambia. |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.6.7 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
-| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Zonas de cámara, máscaras y reglas de detección para la Jetson Orin NX (todavía sin modelo de detección). |
+| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Zonas de cámara, máscaras y reglas de detección (todavía sin modelo de detección). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.0 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.9 | Cliente Android del operador con radar 2D/3D en vivo. |
