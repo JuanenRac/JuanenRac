@@ -141,16 +141,16 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 ### 🧱 平台基础与契约
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.7 | 面向 CM5 的 Raspberry Pi OS 平台层：可复现配置、诊断、服务生命周期与更新；并非新的 Linux 发行版。 |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.2.9 | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.4.8 | 面向 CM5 的 Raspberry Pi OS 平台层：可复现配置、诊断、服务生命周期与更新；并非新的 Linux 发行版。 |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.3.0 | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.0 | 面向外部机器连接器的声明式适配器清单注册与校验工具；把 SDK 自身的契约理念扩展到外部机器，而不取代工业网关类项目。 |
 
 ### 💠 核心控制与操作员客户端
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.6 | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
-| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.6 | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.7 | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
+| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.7 | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.4 | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.0 | 专为 7 英寸工业显示屏（CM5）打造的 Flutter 触控界面。 |
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.3 | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
@@ -165,14 +165,14 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.1.0 | 高速感知节点，支持 8 路 USB 3.0 摄像头同时取流。 |
 | [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | 0.1.6 | 经过优化的 GStreamer/MediaMTX 管线，用于工业视频转发。 |
 | [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.0.9 | 硬件加速 YOLO 模型库，用于 SMD 及元器件质检。 |
-| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.1.1 | 实时 AI 入侵检测，用于保护机器人作业空间。 |
+| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.1.2 | 实时 AI 入侵检测，用于保护机器人作业空间。 |
 | [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.1.4 | 基于图像的运动学反馈，用于亚毫米级位姿修正。 |
 
 ### 🧠 Cognitive AI Node (Hailo-10 Optimized)
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | 0.1.1 | 语义推理节点，用于逻辑任务规划与语音控制。 |
-| [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.1.4 | 视觉-语言-动作（VLA）模型实现，用于复杂任务执行。 |
+| [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.1.5 | 视觉-语言-动作（VLA）模型实现，用于复杂任务执行。 |
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.3 | 本地化、隐私优先的 STT/TTS 管线，用于自然语言操作员交互。 |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.0 | 基于 LLM 的任务编排器，具备上下文感知的错误恢复能力。 |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.0 | 基于 RAG 的 AI 助手，基于技术手册与源代码训练。 |
@@ -206,22 +206,22 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 ### 🏭 工业网关（工业网关）
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.2 | 工业 4.0 互操作性网关，对接工厂标准（OPC-UA/MQTT）。 |
+| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.3 | 工业 4.0 互操作性网关，对接工厂标准（OPC-UA/MQTT）。 |
 | [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.1.5 | 将 HydraState 机器人对象映射为标准 OPC-UA 节点。 |
-| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.2 | 遥测数据桥接器，用于 IoT 集成与外部仪表盘。 |
+| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.3 | 遥测数据桥接器，用于 IoT 集成与外部仪表盘。 |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 0.1.4 | 标准化接口，用于机床与机器人健康监测。 |
 
 ### 🌉 外部自动化桥接器
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 0.0.7 | 双向 ROS 2 协调边界：主题用于观测，服务用于检查，可取消动作用于单元任务。 |
-| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | 0.1.4 | 面向 OpenPnP 及机器人辅助上下料的可追溯 PCB 交接协调器。 |
-| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 0.1.3 | 围绕 3D 打印软件的安全桥接器；首个适配器验证 Moonraker 就绪状态而不替换固件。 |
-| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | 0.1.4 | CNC 单元辅助协调器；轨迹和安全性仍由原生控制器负责。 |
-| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.1.2 | 激光单元辅助协调器，不能解锁、发射或绕过激光互锁。 |
-| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.0.8 | 面向腿式/仿人机器人的协调边界：通过共享安全契约校验的行走/抓取/放置动作词表，步态与平衡控制仍由机器人自身控制器负责。 |
-| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.0.8 | 面向AGV/AMR车队的协调边界：从工厂坐标系到AMR本地坐标系的变换，加上受VDA-5050启发的订单动作词表，路径规划仍由AMR自身导航负责。 |
-| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.0.9 | 面向搭载摄像头的无人机的协调边界：命名飞行请求词表，加上确定性的心跳/失联故障保护看门狗。 |
+| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 0.0.9 | 双向 ROS 2 协调边界：主题用于观测，服务用于检查，可取消动作用于单元任务。 |
+| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | 0.1.6 | 面向 OpenPnP 及机器人辅助上下料的可追溯 PCB 交接协调器。 |
+| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 0.1.5 | 围绕 3D 打印软件的安全桥接器；首个适配器验证 Moonraker 就绪状态而不替换固件。 |
+| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | 0.1.6 | CNC 单元辅助协调器；轨迹和安全性仍由原生控制器负责。 |
+| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.1.4 | 激光单元辅助协调器，不能解锁、发射或绕过激光互锁。 |
+| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.0.9 | 面向腿式/仿人机器人的协调边界：通过共享安全契约校验的行走/抓取/放置动作词表，步态与平衡控制仍由机器人自身控制器负责。 |
+| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.1.0 | 面向AGV/AMR车队的协调边界：从工厂坐标系到AMR本地坐标系的变换，加上受VDA-5050启发的订单动作词表，路径规划仍由AMR自身导航负责。 |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.1.0 | 面向搭载摄像头的无人机的协调边界：命名飞行请求词表，加上确定性的心跳/失联故障保护看门狗。 |
 
 ### 🛠️ 配套工具（配套工具）
 | 仓库 | 版本 | 说明 |
