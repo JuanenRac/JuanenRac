@@ -327,9 +327,9 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Zonas de cámara, máscaras y reglas de detección (todavía sin modelo de detección). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.1 | Cliente Android del operador con radar 2D/3D en vivo. |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.2 | Cliente Android del operador con radar 2D/3D en vivo. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Cajas, electrónica y la matriz de aceptación en banco. |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.7 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Simulador de telemetría sin conexión con fallos repetibles. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | Detecta, instala y actualiza los propios repositorios del ecosistema. |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | Arquitectura, base de seguridad y la matriz de capacidades. |

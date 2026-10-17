@@ -328,9 +328,9 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | カメラのゾーン、マスク、検知ルール（検知モデルはまだありません）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 偽造できない確認を備えたオフライン音声インテント |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.1 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.2 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | 筐体、電子部品、ベンチ受け入れマトリクス |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.7 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | アーキテクチャ、セキュリティ基準、機能マトリクス |

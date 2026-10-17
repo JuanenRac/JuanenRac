@@ -328,9 +328,9 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Kamerazonen, Masken und Erkennungsregeln (noch ohne Erkennungsmodell). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | Web-Konsole: Kameras, Radar, Alarme, Solar- und Elektromenüs, lokales Netzwerk, Systemdienste, Wetter, eine Knotensuche und 2D/3D-Standortdesigner |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.1 | Android-Bedienclient mit Live-Radar in 2D/3D |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.2 | Android-Bedienclient mit Live-Radar in 2D/3D |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.7 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |

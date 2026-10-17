@@ -327,9 +327,9 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Jetson Orin NX 上的摄像头区域、遮罩与检测规则（尚无检测模型）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 带无法伪造确认的离线语音意图 |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | 网页控制台：摄像头、雷达、报警、太阳能与电气菜单、本地网络、系统服务、天气、节点查找器和 2D/3D 场地设计器 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.1 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.2 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | 外壳、电子器件和台架验收矩阵 |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.7 | 部署、中央服务器测试台、备份与 TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.8 | 部署、中央服务器测试台、备份与 TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 带可重复故障的离线遥测模拟器 |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.2 | 发现、安装并更新生态系统自身的仓库 |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.8 | 架构、安全基线和能力矩阵 |
