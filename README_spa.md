@@ -11,8 +11,7 @@
   <a href="README_ita.md">🇮🇹 Italiano</a> |
   <a href="README_deu.md">🇩🇪 Deutsch</a> |
   <a href="README_zho.md">🇨🇳 简体中文</a> |
-  <a href="README_jpn.md">🇯🇵 日本語</a> |
-  <a href="README_por.md">🇵🇹 Português</a>
+  <a href="README_jpn.md">🇯🇵 日本語</a>
 </p>
 
 <p align="center">
@@ -275,7 +274,7 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 0.3.3 | Firmware de controlador de herramientas universal para más de 25 herramientas especializadas. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.6 | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.2.7 | Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.2.7 | Herramienta de diagnóstico CAN-bus con paneles de telemetría por herramienta. |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.5 | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.2 | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
@@ -327,7 +326,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Zonas de cámara, máscaras y reglas de detección (todavía sin modelo de detección). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.2 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.0 | Cliente Android del operador con radar 2D/3D en vivo. |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.1 | Cliente Android del operador con radar 2D/3D en vivo. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Cajas, electrónica y la matriz de aceptación en banco. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.7 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Simulador de telemetría sin conexión con fallos repetibles. |
