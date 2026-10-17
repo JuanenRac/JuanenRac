@@ -323,7 +323,7 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | ローカルネットワーク：機器、インターネット、そして変化 |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.6.7 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | 判断を説明し、決して動作しない視覚推論ポリシー |
-| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Jetson Orin NX 向けのカメラのゾーン、マスク、検知ルール（検知モデルはまだありません）。 |
+| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | カメラのゾーン、マスク、検知ルール（検知モデルはまだありません）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 偽造できない確認を備えたオフライン音声インテント |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.0 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.5.9 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
