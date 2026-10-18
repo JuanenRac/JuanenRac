@@ -283,6 +283,7 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | Rileva, installa e aggiorna i repository URTC su una macchina a partire dai loro manifesti. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | Architettura, interfacce, base di sicurezza, matrice delle capacità, nota di studio sul protocollo CAN e catalogo dei progetti generato dell'ecosistema URTC, più gli strumenti che confrontano tutti i repository. |
 
 ---
 

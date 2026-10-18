@@ -283,6 +283,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | URTC エコシステムのアーキテクチャ、インターフェース、セキュリティ基準、能力マトリクス、CAN プロトコルの調査メモ、生成されたプロジェクトカタログ、そしてすべてのリポジトリを比較するツール。 |
 
 ---
 

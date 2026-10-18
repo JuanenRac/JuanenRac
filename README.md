@@ -282,6 +282,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | Intelligent tool storage with automatic pre-heating and lifecycle audit. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | Toolhead with integrated thermal and RGB cameras for active QA. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | Architecture, interfaces, security baseline, capability matrix, CAN protocol study note and generated project catalogue of the URTC ecosystem, plus the tools that compare all repositories. |
 
 ---
 

@@ -282,6 +282,7 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | Cabezal con cámaras térmicas y RGB integradas para QA activo. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | Arquitectura, interfaces, base de seguridad, matriz de capacidades, nota de estudio del protocolo CAN y catálogo de proyectos generado del ecosistema URTC, más las herramientas que comparan todos los repositorios. |
 
 ---
 
