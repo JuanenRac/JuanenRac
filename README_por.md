@@ -154,12 +154,12 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.1 | Firmware central de controlo de movimento para STM32H745/G474 com cinemática em curva S. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.9 | Backend headless de API e WebSocket em Node.js para a orquestração robótica. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.9 | Painel web avançado baseado em React para a monitorização e o controlo 3D de robôs. |
-| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.7 | Aplicação de ambiente de trabalho de alto desempenho em Python/Qt para automatização industrial. |
-| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.4 | Interface tátil dedicada, baseada em Flutter, para ecrãs industriais de 7" (CM5). |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.8 | Aplicação móvel nativa em Kotlin com início de sessão biométrico para a gestão remota de robôs. |
-| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.4 | Aplicação móvel Flutter para iOS/iPadOS com sincronização WebSocket em tempo real. |
-| [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.3 | Editor gráfico de URDF para validar e enviar modelos de robôs para o catálogo. |
-| [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.5 | Editor de modelos STL para ambiente de trabalho - transforma, substitui, remove e adiciona peças reais no catálogo de modelos partilhado. |
+| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.8 | Aplicação de ambiente de trabalho de alto desempenho em Python/Qt para automatização industrial. |
+| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.5 | Interface tátil dedicada, baseada em Flutter, para ecrãs industriais de 7" (CM5). |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.9 | Aplicação móvel nativa em Kotlin com início de sessão biométrico para a gestão remota de robôs. |
+| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.5 | Aplicação móvel Flutter para iOS/iPadOS com sincronização WebSocket em tempo real. |
+| [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | Editor gráfico de URDF para validar e enviar modelos de robôs para o catálogo. |
+| [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | Editor de modelos STL para ambiente de trabalho - transforma, substitui, remove e adiciona peças reais no catálogo de modelos partilhado. |
 
 ### 👁️ Nó de IA de visão (otimizado para Hailo-8)
 | Repositório | Versão | Descrição |
@@ -175,7 +175,7 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 | :--- | :--- | :--- |
 | [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | 0.1.4 | Nó de raciocínio semântico para o planeamento lógico de missões e o controlo por voz. |
 | [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.1.6 | Implementação de modelos Vision-Language-Action para a execução de tarefas complexas. |
-| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.5 | Pipeline STT/TTS local e privado para a interação do operador em linguagem natural. |
+| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.6 | Pipeline STT/TTS local e privado para a interação do operador em linguagem natural. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.2 | Orquestrador de missões baseado em LLM com recuperação de erros sensível ao contexto. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.3 | Assistente de IA baseado em RAG treinado com manuais técnicos e código-fonte. |
 | [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.6 | Técnico de manutenção de IA local e sujeito a políticas: hoje uma política fixa de níveis de risco e uma lista de ferramentas permitidas, com uma defesa real e testada que prova que um documento malicioso recuperado nunca pode desencadear uma chamada a uma ferramenta nem divulgar um segredo - a IA nunca obtém autoridade por gerar uma resposta. |
@@ -223,14 +223,14 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.1.7 | Coordenador auxiliar da célula laser que não pode armar, disparar nem anular os intertravamentos do laser. |
 | [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.1.2 | Fronteira de coordenação para droides com pernas/humanoides: vocabulário de ações nomeadas de andar/pegar/pousar controlado pelo contrato de segurança partilhado; a marcha e o equilíbrio permanecem no controlador do próprio droide. |
 | [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.1.3 | Fronteira de coordenação para frotas de AGV/AMR: transformação de coordenadas da fábrica para as locais mais um vocabulário de ordens inspirado no VDA-5050; o planeamento de trajetórias continua na navegação própria do AMR. |
-| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.1.3 | Fronteira de coordenação para UAV equipados com câmara: vocabulário de pedidos de voo nomeados mais um watchdog determinista de failsafe por heartbeat/perda de ligação. |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.1.4 | Fronteira de coordenação para UAV equipados com câmara: vocabulário de pedidos de voo nomeados mais um watchdog determinista de failsafe por heartbeat/perda de ligação. |
 
 ### 🛠️ Ferramentas complementares
 | Repositório | Versão | Descrição |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.4 | Painel de emergência para dispositivos vestíveis com alertas de segurança hápticos. |
-| [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.4 | Interface de linha de comandos para a automatização de frotas, o flash e o devops. |
-| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.4 | Extensão de IA para painéis web que fornece informações em linguagem natural. |
+| [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.5 | Painel de emergência para dispositivos vestíveis com alertas de segurança hápticos. |
+| [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.5 | Interface de linha de comandos para a automatização de frotas, o flash e o devops. |
+| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.5 | Extensão de IA para painéis web que fornece informações em linguagem natural. |
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.8 | Ferramenta multiplataforma GUI/CLI para detetar, instalar e atualizar manualmente todos os projetos do ecossistema. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.1 | Ferramenta de ambiente de trabalho para Windows/Linux que constrói uma imagem de CM5 pronta a gravar, pré-carregada com as versões mais recentes do ecossistema e com configuração de primeiro arranque ao estilo do Raspberry Pi Imager. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.8 | Coordenador de incidentes de manutenção: um papel de borda com poucos privilégios recolhe um instantâneo sanitizado de inventário/estado, um papel de plano de controlo mostra-o apenas para leitura e pede a um fornecedor de IA que sugira um diagnóstico - nunca aplica um patch nem implanta nada. |
