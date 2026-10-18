@@ -150,7 +150,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.7 | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.8 | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.7 | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.5 | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.1 | 专为 7 英寸工业显示屏（CM5）打造的 Flutter 触控界面。 |
@@ -209,7 +209,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | :--- | :--- | :--- |
 | [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.3 | 工业 4.0 互操作性网关，对接工厂标准（OPC-UA/MQTT）。 |
 | [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.1.6 | 将 HydraState 机器人对象映射为标准 OPC-UA 节点。 |
-| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.3 | 遥测数据桥接器，用于 IoT 集成与外部仪表盘。 |
+| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.4 | 遥测数据桥接器，用于 IoT 集成与外部仪表盘。 |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 0.1.5 | 标准化接口，用于机床与机器人健康监测。 |
 
 ### 🌉 外部自动化桥接器
@@ -233,7 +233,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.7 | 跨平台 GUI/CLI 工具，用于检测、安装并手动更新生态系统中的每一个项目。 |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.2.8 | 构建即刻可烧录、预装生态系统最新版本的 CM5 镜像的 Windows/Linux 桌面工具，具备 Raspberry Pi Imager 风格的首次启动配置。 |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.5 | 维护事件协调器：一个低权限的边缘角色采集经过脱敏的库存/健康快照，一个控制面角色以只读方式渲染它，并请求某个 AI 提供方给出诊断建议——从不应用补丁，也从不部署任何内容。 |
-| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.4 | 可复现的开发服务器：目前是一套具有权限控制的配置模式和清单库存，正逐步发展为与 OPS-AGENT 协同的隔离任务/工作区执行器——除非文档明确授予，否则任何任务都没有部署权限。 |
+| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.5 | 可复现的开发服务器：目前是一套具有权限控制的配置模式和清单库存，正逐步发展为与 OPS-AGENT 协同的隔离任务/工作区执行器——除非文档明确授予，否则任何任务都没有部署权限。 |
 
 ---
 
@@ -315,24 +315,24 @@ A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的�
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.1 | 消息契约、验证器、一致性向量和生成的类型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.4 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.6 | 电气节点：电表、电网读数消息和开关规则 |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.4 | 报警节点与报警主机：其固件（有线防区、警笛、Zigbee 传感器与警笛、七种语言的网页面板）以及布防、延时、报警和 PIN 的规则，已在电脑上测试；服务器离线时继续守护，并接管 Zigbee 无线电。从未在电路板上运行过。 |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.7 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.2 | 消息契约、验证器、一致性向量和生成的类型 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.9 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.5 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.7 | 电气节点：电表、电网读数消息和开关规则 |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.5 | 报警节点与报警主机：其固件（有线防区、警笛、Zigbee 传感器与警笛、七种语言的网页面板）以及布防、延时、报警和 PIN 的规则，已在电脑上测试；服务器离线时继续守护，并接管 Zigbee 无线电。从未在电路板上运行过。 |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.8 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | 本地网络：其设备、互联网以及变化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.2 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.3 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | 会解释决策且从不执行动作的视觉推理策略 |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Jetson Orin NX 上的摄像头区域、遮罩与检测规则（尚无检测模型）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 带无法伪造确认的离线语音意图 |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.3 | 网页控制台：摄像头、雷达、报警、太阳能与电气菜单、本地网络、系统服务、天气、节点查找器和 2D/3D 场地设计器 |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.4 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | 外壳、电子器件和台架验收矩阵 |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.9 | 部署、中央服务器测试台、备份与 TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.0 | 部署、中央服务器测试台、备份与 TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 带可重复故障的离线遥测模拟器 |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | 发现、安装并更新生态系统自身的仓库 |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.9 | 架构、安全基线和能力矩阵 |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.0 | 架构、安全基线和能力矩阵 |
 
 ---
 

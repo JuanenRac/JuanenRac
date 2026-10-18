@@ -151,7 +151,7 @@ para los tres - comprueba versiones y compila/actualiza cualquier otro proyecto.
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | Firmware de control de movimiento core para STM32H745/G474 con cinemática S-Curve. |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.7 | API Node.js headless y backend WebSocket para orquestación robótica. |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.8 | API Node.js headless y backend WebSocket para orquestación robótica. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.7 | Dashboard web avanzado basado en React para monitoreo y control 3D. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.5 | Aplicación de escritorio Python/Qt de alto rendimiento para automatización industrial. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.1 | Interfaz táctil basada en Flutter para pantallas industriales de 7" (CM5). |
@@ -209,7 +209,7 @@ para los tres - comprueba versiones y compila/actualiza cualquier otro proyecto.
 | :--- | :--- | :--- |
 | [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.3 | Puente de interoperabilidad para estándares de fábrica (OPC-UA/MQTT). |
 | [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.1.6 | Mapeo de objetos robóticos HydraState a nodos estándar OPC-UA. |
-| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.3 | Puente de telemetría para integraciones IoT y dashboards externos. |
+| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.4 | Puente de telemetría para integraciones IoT y dashboards externos. |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 0.1.5 | Interfaz estandarizada para monitoreo de salud de máquinas y robots. |
 
 ### 🌉 Puentes de Automatización Externa
@@ -233,7 +233,7 @@ para los tres - comprueba versiones y compila/actualiza cualquier otro proyecto.
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.7 | Herramienta multiplataforma GUI/CLI para detectar, instalar y actualizar a mano cada proyecto del ecosistema. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.2.8 | Herramienta de escritorio Windows/Linux que construye una imagen de la CM5 lista para grabar, precargada con las versiones más actuales del ecosistema, con configuración de primer arranque al estilo de Raspberry Pi Imager. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.5 | Coordinador de incidencias de mantenimiento: un rol edge de bajo privilegio recopila un snapshot de inventario/salud saneado, un rol control-plane lo renderiza de solo lectura y pide a un proveedor de IA que sugiera un diagnóstico - nunca aplica un parche ni despliega nada. |
-| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.4 | Servidor de desarrollo reproducible: hoy un esquema de configuración con permisos y un inventario de manifiestos, creciendo hacia un ejecutor de tareas/workspace aislado coordinado con OPS-AGENT - ninguna tarea tiene permiso de despliegue salvo que un documento lo conceda explícitamente. |
+| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.5 | Servidor de desarrollo reproducible: hoy un esquema de configuración con permisos y un inventario de manifiestos, creciendo hacia un ejecutor de tareas/workspace aislado coordinado con OPS-AGENT - ninguna tarea tiene permiso de despliegue salvo que un documento lo conceda explícitamente. |
 
 ---
 
@@ -315,24 +315,24 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.1 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.4 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.6 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.4 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.7 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.2 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.9 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.5 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.7 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.5 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.8 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | La red local: sus dispositivos, internet y lo que cambia. |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.2 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.3 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Política de inferencia visual que explica sus decisiones y nunca actúa. |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Zonas de cámara, máscaras y reglas de detección (todavía sin modelo de detección). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Intenciones de voz sin conexión con una confirmación imposible de falsificar. |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.3 | Consola web: cámaras, radar, alarmas, energía solar y eléctrica, red local, servicios del sistema, meteorología, un buscador de nodos y el diseñador de sitio 2D/3D. |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.4 | Cliente Android del operador con radar 2D/3D en vivo. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Cajas, electrónica y la matriz de aceptación en banco. |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.9 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.0 | Despliegue, el banco de pruebas del servidor central, copias de seguridad y TLS. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Simulador de telemetría sin conexión con fallos repetibles. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | Detecta, instala y actualiza los propios repositorios del ecosistema. |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.9 | Arquitectura, base de seguridad y la matriz de capacidades. |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.0 | Arquitectura, base de seguridad y la matriz de capacidades. |
 
 ---
 

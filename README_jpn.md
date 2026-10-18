@@ -151,7 +151,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.1.8 | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.7 | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.8 | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.7 | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.5 | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.1 | 7インチ産業用ディスプレイ（CM5）専用の Flutter 製タッチインターフェース。 |
@@ -210,7 +210,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | :--- | :--- | :--- |
 | [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.3 | 工場標準規格（OPC-UA/MQTT）に対応する、インダストリー4.0 相互運用ブリッジ。 |
 | [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.1.6 | HydraState のロボットオブジェクトを標準 OPC-UA ノードにマッピング。 |
-| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.3 | IoT 連携や外部ダッシュボード向けの、テレメトリブリッジ。 |
+| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.4 | IoT 連携や外部ダッシュボード向けの、テレメトリブリッジ。 |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 0.1.5 | 工作機械・ロボットの稼働監視向けの、標準化されたインターフェース。 |
 
 ### 🌉 外部オートメーションブリッジ
@@ -234,7 +234,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.7 | エコシステム内のあらゆるプロジェクトを検出・インストール・手動更新できる、クロスプラットフォーム GUI/CLI ツール。 |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.2.8 | エコシステムの最新バージョンをプリロードし、Raspberry Pi Imager方式の初回起動設定を備えた、書き込み可能なCM5イメージを構築するWindows/Linuxデスクトップツール。 |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.5 | 保守インシデントコーディネーター: 低権限のエッジ役割がサニタイズされたインベントリ/ヘルスのスナップショットを収集し、コントロールプレーン役割がそれを読み取り専用でレンダリングして AI プロバイダーに診断の提案を依頼します - パッチを適用することも、何かをデプロイすることも決してありません。 |
-| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.4 | 再現可能な開発サーバー: 現在は権限制御された設定スキーマとマニフェストの棚卸しであり、OPS-AGENTと連携した分離タスク/ワークスペースランナーへと成長していく - 文書が明示的に許可しない限り、どのタスクもデプロイ権限を持たない。 |
+| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.5 | 再現可能な開発サーバー: 現在は権限制御された設定スキーマとマニフェストの棚卸しであり、OPS-AGENTと連携した分離タスク/ワークスペースランナーへと成長していく - 文書が明示的に許可しない限り、どのタスクもデプロイ権限を持たない。 |
 
 ---
 
@@ -316,24 +316,24 @@ A.R.M.O.R. は、HYDRA-UMC のダッシュボードがすでに適用してい�
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.1 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.8 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.4 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.6 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.4 | 警報ノードと警報盤：そのファームウェア（配線区域、サイレン、Zigbee のセンサーとサイレン、7 言語の Web パネル）と、警戒セット・遅延・警報・PIN の規則。コンピューターでテスト済みで、サーバーが不在でも警戒を続け、Zigbee 無線を引き継ぎます。基板上では一度も動作していません。 |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.7 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.2 | メッセージ契約、検証器、適合性ベクトル、生成された型 |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.6.9 | ESP32-S3 用フィールドノードのファームウェア。レーダー 3 基と独自の Web パネル付き |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.5 | 太陽光インバーターとバッテリーのプロトコル、およびゲートウェイノードのメッセージ |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.7 | 電気ノード：電力量計、電力網の計測メッセージ、開閉のルール |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.5 | 警報ノードと警報盤：そのファームウェア（配線区域、サイレン、Zigbee のセンサーとサイレン、7 言語の Web パネル）と、警戒セット・遅延・警報・PIN の規則。コンピューターでテスト済みで、サーバーが不在でも警戒を続け、Zigbee 無線を引き継ぎます。基板上では一度も動作していません。 |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.8 | Waveshare ESP32-S3-Touch-LCD-7C-BOX 用タッチパネル：壁面ディスプレイでのシステム状態表示、警戒・解除・確認、プッシュトゥトーク音声、ノードのWebページ。ファームウェアはボード上で一度も動作していません。 |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | ローカルネットワーク：機器、インターネット、そして変化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.2 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.3 | 中央コーディネーター：テレメトリ、アラーム、デバイス、太陽光と電気の測定値、ローカルネットワーク、システムサービス、カメラ |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | 判断を説明し、決して動作しない視覚推論ポリシー |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | カメラのゾーン、マスク、検知ルール（検知モデルはまだありません）。 |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 偽造できない確認を備えたオフライン音声インテント |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.3 | Web コンソール：カメラ、レーダー、アラーム、太陽光と電気のメニュー、ローカルネットワーク、システムサービス、天気、ノード検索、2D/3D サイト設計 |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.4 | リアルタイム 2D/3D レーダー付きの Android オペレータークライアント |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | 筐体、電子部品、ベンチ受け入れマトリクス |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.5.9 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.0 | デプロイ、中央サーバーのテストベンチ、バックアップ、TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 再現可能な故障を備えたオフラインのテレメトリシミュレーター |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | エコシステム自身のリポジトリを検出し、インストールし、更新する |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.7.9 | アーキテクチャ、セキュリティ基準、機能マトリクス |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.0 | アーキテクチャ、セキュリティ基準、機能マトリクス |
 
 ---
 
