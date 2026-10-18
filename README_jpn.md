@@ -150,12 +150,12 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 ### 💠 コア制御とオペレータークライアント
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.1 | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.2 | STM32H745/G474 向けのコアモーション制御ファームウェア。S カーブ運動学に対応。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.9 | ロボットオーケストレーション用の、ヘッドレスな Node.js API・WebSocket バックエンド。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.9 | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.8 | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.5 | 7インチ産業用ディスプレイ（CM5）専用の Flutter 製タッチインターフェース。 |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.9 | 生体認証ログイン対応のネイティブ Kotlin 製モバイルアプリ。リモートでのロボット管理向け。 |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.0 | 生体認証ログイン対応のネイティブ Kotlin 製モバイルアプリ。リモートでのロボット管理向け。 |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.5 | iOS/iPadOS 向けの Flutter 製モバイルアプリ。リアルタイム WebSocket 同期に対応。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | ロボットモデルの検証とカタログへのプッシュを行う、グラフィカルな URDF エディタ。 |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | 共有モデルカタログ内で実在するパーツを変換・置換・削除・追加するデスクトップ STL モデルエディタ。 |
@@ -202,7 +202,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | :--- | :--- | :--- |
 | [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 0.1.7 | 大量の産業用ロボットデータを格納する、ビッグデータストレージ。 |
 | [HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR) | 0.1.6 | CAN・WebSocket・システムログ向けの、高スループット収集エンジン。 |
-| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.1.6 | モーター振動の特徴パターンに基づく、予知保全エンジン。 |
+| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.1.7 | モーター振動の特徴パターンに基づく、予知保全エンジン。 |
 | [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 0.1.4 | 工場の生産管理向けの、OEE・KPI 自動生成ツール。 |
 
 ### 🏭 産業用ゲートウェイ（産業用ゲートウェイ）
@@ -230,7 +230,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | :--- | :--- | :--- |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.5 | 触覚安全アラート機能を備えた、ウェアラブル緊急ダッシュボード。 |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.5 | フリート自動化・ファームウェア書き込み・DevOps 向けのコマンドラインインターフェース。 |
-| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.5 | 自然言語によるインサイトを Web ダッシュボードに提供する、AI 拡張機能。 |
+| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.6 | 自然言語によるインサイトを Web ダッシュボードに提供する、AI 拡張機能。 |
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.8 | エコシステム内のあらゆるプロジェクトを検出・インストール・手動更新できる、クロスプラットフォーム GUI/CLI ツール。 |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.1 | エコシステムの最新バージョンをプリロードし、Raspberry Pi Imager方式の初回起動設定を備えた、書き込み可能なCM5イメージを構築するWindows/Linuxデスクトップツール。 |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.8 | 保守インシデントコーディネーター: 低権限のエッジ役割がサニタイズされたインベントリ/ヘルスのスナップショットを収集し、コントロールプレーン役割がそれを読み取り専用でレンダリングして AI プロバイダーに診断の提案を依頼します - パッチを適用することも、何かをデプロイすることも決してありません。 |

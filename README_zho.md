@@ -149,12 +149,12 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 ### 💠 核心控制与操作员客户端
 | 仓库 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.1 | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.2 | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.9 | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.9 | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.8 | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.5 | 专为 7 英寸工业显示屏（CM5）打造的 Flutter 触控界面。 |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.9 | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.0 | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.5 | 面向 iOS/iPadOS 的 Flutter 移动应用，支持实时 WebSocket 同步。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | 图形化 URDF 编辑器，用于校验并推送机器人模型至目录。 |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | 桌面 STL 模型编辑器 - 在共享模型目录中变换、替换、移除和添加真实部件。 |
@@ -201,7 +201,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | :--- | :--- | :--- |
 | [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 0.1.7 | 用于海量工业机器人数据的大数据存储。 |
 | [HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR) | 0.1.6 | 高吞吐量采集器，用于 CAN、WebSocket 及系统日志。 |
-| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.1.6 | 基于电机振动特征的预测性维护引擎。 |
+| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.1.7 | 基于电机振动特征的预测性维护引擎。 |
 | [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 0.1.4 | 面向工厂生产管理的自动化 OEE 与 KPI 生成工具。 |
 
 ### 🏭 工业网关（工业网关）
@@ -229,7 +229,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | :--- | :--- | :--- |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.5 | 可穿戴式应急仪表盘，具备触觉安全告警功能。 |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.5 | 命令行工具，用于舰队自动化、烧录与 DevOps。 |
-| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.5 | 为 Web 仪表盘提供自然语言洞察的 AI 扩展。 |
+| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.6 | 为 Web 仪表盘提供自然语言洞察的 AI 扩展。 |
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.8 | 跨平台 GUI/CLI 工具，用于检测、安装并手动更新生态系统中的每一个项目。 |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.1 | 构建即刻可烧录、预装生态系统最新版本的 CM5 镜像的 Windows/Linux 桌面工具，具备 Raspberry Pi Imager 风格的首次启动配置。 |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.8 | 维护事件协调器：一个低权限的边缘角色采集经过脱敏的库存/健康快照，一个控制面角色以只读方式渲染它，并请求某个 AI 提供方给出诊断建议——从不应用补丁，也从不部署任何内容。 |

@@ -151,12 +151,12 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 ### 💠 Controlo central e clientes do operador
 | Repositório | Versão | Descrição |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.1 | Firmware central de controlo de movimento para STM32H745/G474 com cinemática em curva S. |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.2 | Firmware central de controlo de movimento para STM32H745/G474 com cinemática em curva S. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.0.9 | Backend headless de API e WebSocket em Node.js para a orquestração robótica. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.7.9 | Painel web avançado baseado em React para a monitorização e o controlo 3D de robôs. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.8 | Aplicação de ambiente de trabalho de alto desempenho em Python/Qt para automatização industrial. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.5 | Interface tátil dedicada, baseada em Flutter, para ecrãs industriais de 7" (CM5). |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.6.9 | Aplicação móvel nativa em Kotlin com início de sessão biométrico para a gestão remota de robôs. |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.0 | Aplicação móvel nativa em Kotlin com início de sessão biométrico para a gestão remota de robôs. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.5 | Aplicação móvel Flutter para iOS/iPadOS com sincronização WebSocket em tempo real. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | Editor gráfico de URDF para validar e enviar modelos de robôs para o catálogo. |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | Editor de modelos STL para ambiente de trabalho - transforma, substitui, remove e adiciona peças reais no catálogo de modelos partilhado. |
@@ -202,7 +202,7 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 | :--- | :--- | :--- |
 | [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 0.1.7 | Armazenamento Big Data para dados robóticos industriais massivos. |
 | [HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR) | 0.1.6 | Recetor de alto débito para registos de CAN, WebSocket e do sistema. |
-| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.1.6 | Motor de manutenção preditiva baseado nas assinaturas de vibração dos motores. |
+| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.1.7 | Motor de manutenção preditiva baseado nas assinaturas de vibração dos motores. |
 | [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 0.1.4 | Geração automática de OEE e KPI para a gestão de fábricas industriais. |
 
 ### 🏭 Gateway industrial
@@ -230,7 +230,7 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 | :--- | :--- | :--- |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.5 | Painel de emergência para dispositivos vestíveis com alertas de segurança hápticos. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.5 | Interface de linha de comandos para a automatização de frotas, o flash e o devops. |
-| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.5 | Extensão de IA para painéis web que fornece informações em linguagem natural. |
+| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.6 | Extensão de IA para painéis web que fornece informações em linguagem natural. |
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.8 | Ferramenta multiplataforma GUI/CLI para detetar, instalar e atualizar manualmente todos os projetos do ecossistema. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.1 | Ferramenta de ambiente de trabalho para Windows/Linux que constrói uma imagem de CM5 pronta a gravar, pré-carregada com as versões mais recentes do ecossistema e com configuração de primeiro arranque ao estilo do Raspberry Pi Imager. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.8 | Coordenador de incidentes de manutenção: um papel de borda com poucos privilégios recolhe um instantâneo sanitizado de inventário/estado, um papel de plano de controlo mostra-o apenas para leitura e pede a um fornecedor de IA que sugira um diagnóstico - nunca aplica um patch nem implanta nada. |
