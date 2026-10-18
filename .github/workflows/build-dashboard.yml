@@ -154,7 +154,7 @@ jobs:
       # -----------------------------------------------------------------------
       - name: Install URTC-UPDATER and ARMOR-UPDATER
         run: |
-          python -m pip install "git+https://github.com/JuanenRac/URTC-UPDATER.git@74f1d75a93768c262262955c23996129468a945d"
+          python -m pip install "git+https://github.com/JuanenRac/URTC-UPDATER.git@285d2b45ac0c8cdb136ccf980a9906cc103c64d4"
           python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@8dd40bdcb597332d590fe208dbf4826137912359"
 
       # -----------------------------------------------------------------------
