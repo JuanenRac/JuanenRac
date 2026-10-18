@@ -260,6 +260,7 @@ per tutti e tre - controlla le versioni e compila/aggiorna qualsiasi altro proge
 3. **Diagnostica in tempo reale**: URTC-TESTER convalida il comportamento CAN in tempo reale di un utensile rispetto al suo profilo dichiarato senza bisogno di un'officina completa; URTC-WEB-STUDIO fa lo stesso da una scheda del browser via Web Serial, senza nulla da installare.
 4. **Stoccaggio e ciclo di vita**: URTC-SMART-RACK conserva gli utensili tra un lavoro e l'altro, preriscalda un utensile prima di un cambio e mantiene un registro di audit del ciclo di vita (cicli, guasti, ultima calibrazione) per utensile fisico, non per tipo.
 5. **QA attivo**: URTC-VISION-TOOL è essa stessa un utensile - una testa con proprie telecamere termica e RGB per l'ispezione di qualità durante il processo, non una telecamera esterna avvitata su un altro utensile.
+6. **Base comune**: **URTC-COMMON** contiene il protocollo CAN della testa utensile come dati, con codice generato e vettori di conformità; **URTC-DOCS** contiene architettura, base di sicurezza e matrice delle capacità.
 
 ## 🛠️ Stack Tecnologico
 
@@ -300,7 +301,7 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
   <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
 </p>
 
-**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** è un ecosistema a parte, pubblico, di sicurezza perimetrale e domotica - senza relazione con HYDRA-UMC né con URTC oltre allo stesso autore e alle stesse convenzioni ingegneristiche (manifesti versionati, un contratto di messaggi condiviso, interfacce in sette lingue). I suoi nodi di campo sorvegliano il perimetro di una proprietà e il suo impianto solare/elettrico; il suo server centrale e i suoi client permettono a un operatore di vedere e agire su ciò che riportano. Le note di versione e maturità sotto provengono direttamente dal manifesto e dalla matrice delle capacità di ciascuna repository, la stessa convenzione di onestà già usata dalla dashboard di HYDRA-UMC.
+**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** è un ecosistema a parte, pubblico, di sicurezza perimetrale e domotica - senza relazione con HYDRA-UMC né con URTC oltre allo stesso autore e alle stesse convenzioni ingegneristiche (manifesti versionati, un contratto di messaggi condiviso, interfacce in otto lingue). I suoi nodi di campo sorvegliano il perimetro di una proprietà e il suo impianto solare/elettrico; il suo server centrale e i suoi client permettono a un operatore di vedere e agire su ciò che riportano. Le note di versione e maturità sotto provengono direttamente dal manifesto e dalla matrice delle capacità di ciascuna repository, la stessa convenzione di onestà già usata dalla dashboard di HYDRA-UMC.
 
 ## 🏗️ Come È Costruito A.R.M.O.R.
 
@@ -309,7 +310,7 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
 3. **Coordinatore centrale**: **ARMOR-SERVER** conserva stato, utenti, allarmi, automazioni ed evidenza delle telecamere; **ARMOR-SERVER-AI** e **ARMOR-VOICE-AI** aggiungono una politica visiva spiegabile e intenti vocali offline che non agiscono mai da soli.
 4. **Client operatore**: **ARMOR-STUDIO** (web) e **ARMOR-ANDROID-CONTROL** (mobile) sono client del server centrale, mai della rete di campo direttamente. **ARMOR-HMI** è un pannello touch a parete (una Waveshare ESP32-S3-Touch-LCD-7C-BOX) che mostra lo stato, attiva e riconosce, e sarà la casa dell'assistente vocale.
 5. **Distribuzione e test**: **ARMOR-DEVOPS** distribuisce l'intero grafo dei servizi; **ARMOR-SIMULATOR** riproduce scenari e guasti ripetibili senza hardware reale; **ARMOR-HARDWARE** porta il design dei contenitori e la sua matrice di accettazione da banco.
-6. **Operazioni dell'ecosistema**: **ARMOR-UPDATER** scopre, installa e aggiorna ogni repository di A.R.M.O.R. su una macchina, lo stesso design atomico-per-verifica di HYDRA-UMC-UPDATER; **ARMOR-DOCS** è la documentazione di architettura canonica e la matrice delle capacità.
+6. **Operazioni dell'ecosistema**: **ARMOR-UPDATER** scopre, installa e aggiorna ogni repository di A.R.M.O.R. su una macchina, lo stesso design atomico-per-verifica di HYDRA-UMC-UPDATER; **ARMOR-DOCS** è la documentazione di architettura canonica e la matrice delle capacità. **ARMOR-STUDIO** può anche aggiornare i servizi della macchina centrale da pacchetti firmati con la chiave di rilascio dell'ecosistema, verificando ogni firma prima dell'installazione.
 
 ## 🔒 Onestà e Sicurezza
 

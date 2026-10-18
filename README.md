@@ -259,6 +259,7 @@ for all three - can check versions and build/update any other project.
 3. **Live diagnostics**: URTC-TESTER validates a tool's real-time CAN behaviour against its declared profile without a full workshop setup; URTC-WEB-STUDIO does the same from a browser tab over Web Serial, with nothing to install.
 4. **Storage and lifecycle**: URTC-SMART-RACK holds tools between jobs, pre-heats one before a hand-off and keeps a lifecycle audit trail (cycles, faults, last calibration) per physical tool, not per tool type.
 5. **Active QA**: URTC-VISION-TOOL is itself a tool - a toolhead with its own thermal and RGB cameras for in-process quality inspection, not an external camera bolted onto another tool.
+6. **Shared base**: **URTC-COMMON** holds the CAN protocol of the tool head as data, with generated code and conformance vectors; **URTC-DOCS** holds the architecture, security baseline and capability matrix.
 
 ## 🛠️ Technology Stack
 
@@ -299,7 +300,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
   <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
 </p>
 
-**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** is a separate, public perimeter-security and home-automation ecosystem - no relation to HYDRA-UMC or URTC beyond the same author and the same engineering conventions (versioned manifests, a shared message contract, seven-language interfaces). Its field nodes watch a property's perimeter and its solar/electrical installation; its central server and clients let an operator see and act on what they report. The version and maturity notes below come straight from each repository's own manifest and capability matrix, the same honesty convention HYDRA-UMC's dashboard already uses.
+**A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** is a separate, public perimeter-security and home-automation ecosystem - no relation to HYDRA-UMC or URTC beyond the same author and the same engineering conventions (versioned manifests, a shared message contract, eight-language interfaces). Its field nodes watch a property's perimeter and its solar/electrical installation; its central server and clients let an operator see and act on what they report. The version and maturity notes below come straight from each repository's own manifest and capability matrix, the same honesty convention HYDRA-UMC's dashboard already uses.
 
 ## 🏗️ How A.R.M.O.R. Is Built
 
@@ -308,7 +309,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 3. **Central coordinator**: **ARMOR-SERVER** holds state, users, alarms, automations and camera evidence; **ARMOR-SERVER-AI** and **ARMOR-VOICE-AI** add an explainable visual policy and offline voice intents that never actuate anything on their own.
 4. **Operator clients**: **ARMOR-STUDIO** (web) and **ARMOR-ANDROID-CONTROL** (mobile) are clients of the central server, never of the field network directly. **ARMOR-HMI** is a touch panel on the wall (a Waveshare ESP32-S3-Touch-LCD-7C-BOX) that shows the state, arms and acknowledges, and will be where the voice assistant lives.
 5. **Deployment and testing**: **ARMOR-DEVOPS** deploys the whole service graph; **ARMOR-SIMULATOR** replays scenarios and repeatable faults without real hardware; **ARMOR-HARDWARE** carries the enclosure design and its bench acceptance matrix.
-6. **Ecosystem operations**: **ARMOR-UPDATER** discovers, installs and updates every A.R.M.O.R. repository on a machine, the same atomic-by-verification design as HYDRA-UMC-UPDATER; **ARMOR-DOCS** is the canonical architecture documentation and capability matrix.
+6. **Ecosystem operations**: **ARMOR-UPDATER** discovers, installs and updates every A.R.M.O.R. repository on a machine, the same atomic-by-verification design as HYDRA-UMC-UPDATER; **ARMOR-DOCS** is the canonical architecture documentation and capability matrix. **ARMOR-STUDIO** can also update the services on the central machine from packages signed with the ecosystem's release key, checking each signature before installing.
 
 ## 🔒 Honesty and Safety
 
