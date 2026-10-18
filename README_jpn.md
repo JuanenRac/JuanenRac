@@ -282,8 +282,14 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.8 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
+<<<<<<< Updated upstream
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.2 | URTC エコシステムのアーキテクチャ、インターフェース、セキュリティ基準、能力マトリクス、CAN プロトコルの調査メモ、生成されたプロジェクトカタログ、そしてすべてのリポジトリを比較するツール。 |
+=======
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | URTC エコシステムのアーキテクチャ、インターフェース、セキュリティ基準、能力マトリクス、CAN プロトコルの調査メモ、生成されたプロジェクトカタログ、そしてすべてのリポジトリを比較するツール。 |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.1 | ツールヘッドの CAN プロトコルをデータとして収めたもの：仕様、生成された C・TypeScript・Python コード、適合ベクトル、Python トランスポート。 |
+>>>>>>> Stashed changes
 
 ---
 

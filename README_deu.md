@@ -282,8 +282,14 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.8 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
+<<<<<<< Updated upstream
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.2 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
+=======
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.1 | Das CAN-Protokoll des Werkzeugkopfs als Daten: eine Spezifikation, erzeugter C-, TypeScript- und Python-Code, Konformitätsvektoren und die Python-Transporte. |
+>>>>>>> Stashed changes
 
 ---
 
