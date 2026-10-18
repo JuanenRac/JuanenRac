@@ -409,12 +409,21 @@ DEPLOY_LABELS = {
     "server": "AI Server",
     "browser": "Browser Client",
     "shared": "Shared / Ecosystem-wide",
+    # Two more categories, classified in this file (see
+    # categorize_deploy_for_entry) because the closed HYDRA-UMC/URTC enum
+    # and armor_updater.deploy_category have no value for them: firmware
+    # that runs on an STM32 microcontroller (its manifest names the PC that
+    # builds it), and a project meant for a container host.
+    "mcu": "STM32 MCU",
+    "container": "Container Host",
 }
 
 DEPLOY_ORDER = [
     "cm5",
     "field-node",
+    "mcu",
     "server",
+    "container",
     "user-pc",
     "mobile",
     "wearable",
@@ -597,7 +606,7 @@ MATURITY_DESCRIPTIONS: dict[str, str] = {
 # ---------------------------------------------------------------------------
 # Translations (v3) - the dashboard's own UI chrome and closed vocabulary
 # (deploy targets, maturity levels + their tooltip descriptions, roles,
-# real-vs-error status labels), in all 7 languages this ecosystem's own
+# real-vs-error status labels), in all 8 languages this ecosystem's own
 # READMEs already ship. Deliberately does NOT translate project names,
 # family names, or the free-text `notes`/`tech` content that comes straight
 # from each repository manifest. `{ok}`/`{total}`/`{percent}`/`{count}` placeholders below are
@@ -683,6 +692,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_tool": "Tool",
         "role_docs": "Documentation",
         "role_hardware": "Hardware Design",
+        "deploy_mcu": "STM32 MCU",
+        "deploy_container": "Container Host",
     },
     "es": {
         "header_title": "Panel de Estado del Ecosistema",
@@ -760,6 +771,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_tool": "Herramienta",
         "role_docs": "Documentación",
         "role_hardware": "Diseño de hardware",
+        "deploy_mcu": "MCU STM32",
+        "deploy_container": "Host de contenedores",
     },
     "fr": {
         "header_title": "Tableau de bord d'état de l'écosystème",
@@ -837,6 +850,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_tool": "Outil",
         "role_docs": "Documentation",
         "role_hardware": "Conception matérielle",
+        "deploy_mcu": "MCU STM32",
+        "deploy_container": "Hôte de conteneurs",
     },
     "it": {
         "header_title": "Dashboard di stato dell'ecosistema",
@@ -914,6 +929,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_tool": "Strumento",
         "role_docs": "Documentazione",
         "role_hardware": "Progettazione hardware",
+        "deploy_mcu": "MCU STM32",
+        "deploy_container": "Host di container",
     },
     "de": {
         "header_title": "Ökosystem-Statusdashboard",
@@ -991,6 +1008,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_tool": "Werkzeug",
         "role_docs": "Dokumentation",
         "role_hardware": "Hardware-Design",
+        "deploy_mcu": "STM32-Mikrocontroller",
+        "deploy_container": "Container-Host",
     },
     "zh": {
         "header_title": "生态系统状态仪表盘",
@@ -1068,6 +1087,8 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_tool": "工具",
         "role_docs": "文档",
         "role_hardware": "硬件设计",
+        "deploy_mcu": "STM32 单片机",
+        "deploy_container": "容器主机",
     },
     "ja": {
         "header_title": "エコシステム ステータスダッシュボード",
@@ -1145,6 +1166,87 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "role_tool": "ツール",
         "role_docs": "ドキュメント",
         "role_hardware": "ハードウェア設計",
+        "deploy_mcu": "STM32 マイコン",
+        "deploy_container": "コンテナホスト",
+    },
+    "pt": {
+        "header_title": "Painel de Estado do Ecossistema",
+        "subtitle_main": "{ok}/{total} repositórios resolvidos com sucesso · {percent} saudáveis · os metadados e as versões são lidos do manifesto de cada repositório · painel gerado pelo GitHub Actions · GitHub Pages estático",
+        "subtitle_v3": "v3: classificação real de maturidade/função, árvores de família/pai-filho e notas por projeto mais completas - consulte a legenda de Maturidade mais abaixo para saber exatamente como cada nível foi decidido.",
+        "freshness_checking_now": "A verificar a hora da última compilação...",
+        "freshness_unknown": "Hora da última verificação indisponível neste momento (não foi possível contactar a API do GitHub Actions).",
+        "freshness_failed": "Última verificação concluída: {conclusion} ({absolute}).",
+        "freshness_checking": "Última verificação bem-sucedida: há {age} ({absolute}).",
+        "theme_toggle": "Alternar tema claro/escuro",
+        "health_total": "Projetos no total",
+        "health_resolved": "Versão resolvida",
+        "health_errors": "Erros / desconhecido",
+        "health_registry": "Estado dos manifestos",
+        "section_deploy": "Destinos de implementação",
+        "section_stack": "Stacks tecnológicas",
+        "section_maturity": "Maturidade",
+        "section_maturity_hint": "clique num cartão para filtrar · passe o rato para ver como foi decidido",
+        "section_role": "Função",
+        "search_placeholder": "Pesquisar projeto, stack ou implementação...",
+        "search_aria": "Pesquisar projetos",
+        "filter_all": "Todos",
+        "filter_ok": "✓ OK",
+        "filter_error": "⚠ Erros",
+        "family_label": "Família:",
+        "family_all": "Todas as famílias",
+        "reset_filters": "⟲ Repor",
+        "reset_filters_title": "Limpa a pesquisa e todos os filtros ativos (estado, implementação, maturidade, função, família)",
+        "th_project": "Projeto",
+        "th_type": "Tipo",
+        "th_maturity": "Maturidade",
+        "th_stack": "Stack",
+        "th_deploy": "Destino de implementação",
+        "th_version": "Versão",
+        "th_status": "Estado",
+        "th_commit": "Último commit",
+        "link_actions": "Actions",
+        "link_issues": "Issues",
+        "detail_notes": "Notas",
+        "detail_technology": "Tecnologia",
+        "detail_build": "Build",
+        "notes_empty": "Ainda não há notas registadas para este projeto.",
+        "empty_results": "Nenhum projeto corresponde aos filtros atuais.",
+        "family_count": "{count} projeto(s)",
+        "family_parent_suffix": "é o pai de integração real desta família",
+        "footer_registry": "Fonte de dados:",
+        "footer_generator": "Gerador do painel:",
+        "footer_workflow": "Workflow:",
+        "footer_note": "O manifesto de cada repositório é a fonte de verdade dos seus metadados públicos e da sua versão.",
+        "version_status_ok": "OK",
+        "version_status_error": "ERRO",
+        "deploy_cm5": "CM5",
+        "deploy_user-pc": "PC do utilizador",
+        "deploy_mobile": "Telemóvel",
+        "deploy_wearable": "Wearable",
+        "deploy_dev-server": "Servidor de desenvolvimento",
+        "deploy_field-node": "Nó de campo",
+        "deploy_server": "Servidor de IA",
+        "deploy_browser": "Cliente de navegador",
+        "deploy_shared": "Partilhado / todo o ecossistema",
+        "maturity_production": "Produção",
+        "maturity_established": "Estabelecido",
+        "maturity_functional": "Funcional",
+        "maturity_scaffolding": "Estrutura inicial",
+        "maturity_desc_production": "Firmware real para uma placa física real que a própria documentação de hardware deste ecossistema descreve.",
+        "maturity_desc_established": "Um historial de versões real e substancial segundo o esquema de odómetro deste ecossistema, E uma utilização real e continuada para além de uma bateria de testes aprovada - implementado e em funcionamento, ou de que outros projetos reais dependem de facto. Confiado por esse historial, não reauditado neste passe.",
+        "maturity_desc_functional": "Lógica de negócio real e testada - verificada neste passe (bateria de testes própria / teste de fumo real de ponta a ponta / ida e volta real de um protocolo compilado).",
+        "maturity_desc_scaffolding": "Existe um ponto de entrada real e compilável; a funcionalidade para a qual o projeto existe ainda não.",
+        "role_api": "API",
+        "role_ui": "UI",
+        "role_cli": "CLI",
+        "role_firmware": "Firmware",
+        "role_library": "Biblioteca",
+        "role_service": "Serviço",
+        "role_tool": "Ferramenta",
+        "role_docs": "Documentação",
+        "role_hardware": "Desenho de hardware",
+        "deploy_mcu": "MCU STM32",
+        "deploy_container": "Anfitrião de contentores",
     },
 }
 
@@ -1170,11 +1272,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_u_rel_title": "URTC on its own, and paired with HYDRA-UMC:", "architecture_u_rel_body": "URTC is an independent, unofficial project - a CAN-based tool-head controller built to work with PAROL6/Faze4-style arms, with its own firmware, hardware and maintenance tools. When it is the tool subsystem of a HYDRA-UMC cell, HYDRA-UMC's own MCU keeps authority over physical limits and safe stop; URTC never bypasses that boundary.",
         "architecture_section_a": "A.R.M.O.R.: System architecture",
         "architecture_a_card1_title": "Network segmentation", "architecture_a_card1_body": "Field nodes and cameras sit on their own VLAN with no internet access; the MQTT broker and server live on a core VLAN; Studio and the Android app reach the server from a client VLAN.",
-        "architecture_a_card2_title": "Field nodes", "architecture_a_card2_body": "ESP32-S3 radar, solar and electrical nodes publish sensor and equipment readings; the solar and electrical ones only read, never write to an inverter, battery or meter.",
+        "architecture_a_card2_title": "Field nodes", "architecture_a_card2_body": "ESP32-S3 radar, solar, electrical, alarm and wall-panel nodes publish sensor and equipment readings or their state; the solar and electrical ones only read, never write to an inverter, battery or meter.",
         "architecture_a_card3_title": "Perception, never authority", "architecture_a_card3_body": "Visual and voice AI recommend a severity or an intent with reasons attached; authorizes_action is always false until the server itself authenticates and confirms.",
         "architecture_a_card4_title": "State and operator consoles", "architecture_a_card4_body": "ARMOR-SERVER is the only place that ever touches a camera password or an RTSP address; Studio and the Android app are its authenticated clients, and a phone can set a new node up over Bluetooth alone.",
         "architecture_a_flow_1": "Field nodes and cameras", "architecture_a_flow_2": "MQTT broker and server", "architecture_a_flow_3": "AI recommendation", "architecture_a_flow_4": "Authenticated client session",
         "architecture_a_rel_title": "A.R.M.O.R.'s own boundary:", "architecture_a_rel_body": "The server is the only component that authorises an action or holds a camera credential. Visual and voice AI only recommend; solar and electrical nodes only read - the rules for switching an electrical source are tested in software but not yet linked to any real hardware.",
+        "architecture_h_card5_title": "Contracts and tests",
+        "architecture_h_card5_body": "HYDRA-UMC-SDK holds the v1 JSON Schemas, a Python reference validator, Go, TypeScript and Rust clients that enforce them, conformance fixtures, an OpenAPI slice of the server and a job intake that never runs the same idempotency key twice; a compatibility matrix and a differential test keep validator and schemas in step.",
+        "architecture_h_card6_title": "Verified updates",
+        "architecture_h_card6_body": "HYDRA-UMC-UPDATER installs and updates a repository by cloning, staging, verifying and only then promoting it, so a failed check leaves the live copy untouched; an optional gate refuses a commit without a trusted signature before anything is built. Firmware images are checked with CRC32 and a shared-key HMAC-SHA256; an asymmetric signature is planned, not implemented.",
+        "architecture_u_card5_title": "Contracts and tests",
+        "architecture_u_card5_body": "URTC-COMMON writes the CAN protocol once as data, generates a C header, TypeScript and Python modules and a protocol table from it, and keeps the conformance vectors every implementation must reproduce. The firmware and the desktop tools still keep their own copies until each one migrates, so today it is compared against them rather than used by them.",
+        "architecture_u_card6_title": "Release assets and signing",
+        "architecture_u_card6_body": "Each firmware release is published as GitHub release assets with SHA-256 sidecars and a manifest, and the release tool refuses to publish images signed with the public development key as an official release. The bootloaders check CRC32 and a shared-key HMAC-SHA256; asymmetric signatures are planned, and nothing has been flashed to a real board yet.",
+        "architecture_a_card5_title": "Contracts and tests",
+        "architecture_a_card5_body": "ARMOR-COMMON defines every node message once as a JSON Schema, with a validator that refuses what it does not implement, accepted and rejected conformance vectors that each implementation must pass, the OpenAPI file of the server's routes and the firmware base shared by the five nodes, which a tool keeps identical in each of them.",
+        "architecture_a_card6_title": "Signed releases and updates",
+        "architecture_a_card6_body": "Node firmware is published with a SHA-256 and an Ed25519 signature, and both a node and ARMOR-SERVER refuse a release without a valid one. The maintenance helper of ARMOR-DEVOPS checks an Ed25519 signature on each service package before unpacking it, which is how ARMOR-STUDIO updates the central machine; the private key never goes to GitHub. A firmware file uploaded by hand is not checked.",
     },
     "es": {
         "architecture_intro": "Electro Hobby 3D son tres ecosistemas de ingeniería independientes del mismo autor: HYDRA-UMC (plataforma industrial multi-robot), URTC (su subsistema universal de herramientas, un producto independiente con firmware propio) y A.R.M.O.R. (seguridad perimetral y automatización del hogar). Este panel descubre y lista los tres en vivo; los grupos de familia de cada ecosistema aparecen etiquetados más abajo, y la arquitectura propia de cada uno se detalla en su propia sección más abajo.",
@@ -1195,11 +1309,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_u_rel_title": "URTC solo, y emparejado con HYDRA-UMC:", "architecture_u_rel_body": "URTC es un proyecto independiente y no oficial: un controlador de cabezal por CAN pensado para brazos tipo PAROL6/Faze4, con firmware, hardware y herramientas de mantenimiento propios. Cuando actúa como subsistema de herramientas de una celda HYDRA-UMC, el MCU de HYDRA-UMC conserva la autoridad sobre los límites físicos y la parada segura; URTC nunca se salta esa frontera.",
         "architecture_section_a": "A.R.M.O.R.: Arquitectura del sistema",
         "architecture_a_card1_title": "Segmentación de red", "architecture_a_card1_body": "Los nodos de campo y las cámaras están en su propia VLAN sin acceso a internet; el broker MQTT y el servidor viven en una VLAN núcleo; Studio y la app Android llegan al servidor desde una VLAN de clientes.",
-        "architecture_a_card2_title": "Nodos de campo", "architecture_a_card2_body": "Los nodos ESP32-S3 de radar, solares y eléctricos publican lecturas de sensores y equipos; los solares y eléctricos solo leen, nunca escriben en un inversor, una batería o un medidor.",
+        "architecture_a_card2_title": "Nodos de campo", "architecture_a_card2_body": "Los nodos ESP32-S3 de radar, solares, eléctricos, de alarma y de panel de pared publican lecturas de sensores y equipos o su estado; los solares y eléctricos solo leen, nunca escriben en un inversor, una batería o un medidor.",
         "architecture_a_card3_title": "Percepción, nunca autoridad", "architecture_a_card3_body": "La IA visual y de voz recomiendan una gravedad o una intención con sus razones; authorizes_action siempre es falso hasta que el propio servidor autentica y confirma.",
         "architecture_a_card4_title": "Estado y consolas de operador", "architecture_a_card4_body": "ARMOR-SERVER es el único lugar que toca una contraseña de cámara o una dirección RTSP; Studio y la app Android son sus clientes autenticados, y un teléfono puede configurar un nodo nuevo solo por Bluetooth.",
         "architecture_a_flow_1": "Nodos de campo y cámaras", "architecture_a_flow_2": "Broker MQTT y servidor", "architecture_a_flow_3": "Recomendación de IA", "architecture_a_flow_4": "Sesión de cliente autenticada",
         "architecture_a_rel_title": "La frontera propia de A.R.M.O.R.:", "architecture_a_rel_body": "El servidor es el único componente que autoriza una acción o guarda una credencial de cámara. La IA visual y de voz solo recomiendan; los nodos solares y eléctricos solo leen - las reglas para maniobrar una fuente eléctrica están probadas en software pero aún no conectadas a ningún hardware real.",
+        "architecture_h_card5_title": "Contratos y pruebas",
+        "architecture_h_card5_body": "HYDRA-UMC-SDK reúne los JSON Schemas v1, un validador de referencia en Python, clientes Go, TypeScript y Rust que los aplican, fixtures de conformidad, un tramo OpenAPI del servidor y una entrada de trabajos que nunca ejecuta dos veces la misma clave de idempotencia; una matriz de compatibilidad y una prueba diferencial mantienen validador y esquemas al mismo paso.",
+        "architecture_h_card6_title": "Actualizaciones verificadas",
+        "architecture_h_card6_body": "HYDRA-UMC-UPDATER instala y actualiza un repositorio clonando, preparando, verificando y solo entonces promoviéndolo, de modo que una comprobación fallida deja intacta la copia en uso; una puerta opcional rechaza un commit sin firma de confianza antes de compilar nada. Las imágenes de firmware se comprueban con CRC32 y un HMAC-SHA256 de clave compartida; una firma asimétrica está planificada, no implementada.",
+        "architecture_u_card5_title": "Contratos y pruebas",
+        "architecture_u_card5_body": "URTC-COMMON escribe el protocolo CAN una sola vez como datos, genera a partir de él una cabecera C, módulos TypeScript y Python y una tabla del protocolo, y guarda los vectores de conformidad que toda implementación debe reproducir. El firmware y las herramientas de escritorio aún conservan sus propias copias hasta que cada uno migre, así que hoy se compara con ellas en vez de ser usado por ellas.",
+        "architecture_u_card6_title": "Activos de release y firma",
+        "architecture_u_card6_body": "Cada release de firmware se publica como activos de release de GitHub con archivos SHA-256 y un manifiesto, y la herramienta de publicación se niega a publicar como release oficial imágenes firmadas con la clave de desarrollo pública. Los bootloaders comprueban CRC32 y un HMAC-SHA256 de clave compartida; las firmas asimétricas están planificadas y todavía no se ha grabado nada en una placa real.",
+        "architecture_a_card5_title": "Contratos y pruebas",
+        "architecture_a_card5_body": "ARMOR-COMMON define cada mensaje de los nodos una sola vez como JSON Schema, con un validador que rechaza lo que no implementa, vectores de conformidad aceptados y rechazados que toda implementación debe superar, el archivo OpenAPI de las rutas del servidor y la base de firmware que comparten los cinco nodos, que una herramienta mantiene idéntica en cada uno.",
+        "architecture_a_card6_title": "Releases y actualizaciones firmadas",
+        "architecture_a_card6_body": "El firmware de los nodos se publica con un SHA-256 y una firma Ed25519, y tanto un nodo como ARMOR-SERVER rechazan una release sin una firma válida. El ayudante de mantenimiento de ARMOR-DEVOPS comprueba una firma Ed25519 en cada paquete de servicio antes de desempaquetarlo, que es como ARMOR-STUDIO actualiza la máquina central; la clave privada nunca va a GitHub. Un archivo de firmware subido a mano no se comprueba.",
     },
     "fr": {
         "architecture_intro": "Electro Hobby 3D regroupe trois écosystèmes d'ingénierie indépendants du même auteur : HYDRA-UMC (plateforme industrielle multi-robot), URTC (son sous-système universel d'outils, un produit indépendant avec son propre firmware) et A.R.M.O.R. (sécurité périmétrique et domotique). Ce tableau de bord découvre et liste les trois en direct ; les groupes de famille de chaque écosystème sont indiqués plus bas, et l'architecture propre de chacun est détaillée dans sa propre section plus bas.",
@@ -1220,11 +1346,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_u_rel_title": "URTC seul, et associé à HYDRA-UMC :", "architecture_u_rel_body": "URTC est un projet indépendant et non officiel : un contrôleur de tête d'outil par CAN conçu pour des bras de type PAROL6/Faze4, avec son propre firmware, son propre matériel et ses propres outils de maintenance. Lorsqu'il est le sous-système d'outils d'une cellule HYDRA-UMC, le MCU de HYDRA-UMC garde l'autorité sur les limites physiques et l'arrêt sûr ; URTC ne contourne jamais cette frontière.",
         "architecture_section_a": "A.R.M.O.R. : Architecture du système",
         "architecture_a_card1_title": "Segmentation réseau", "architecture_a_card1_body": "Les nœuds de terrain et les caméras se trouvent sur leur propre VLAN sans accès à internet ; le broker MQTT et le serveur vivent sur un VLAN cœur ; Studio et l'application Android atteignent le serveur depuis un VLAN clients.",
-        "architecture_a_card2_title": "Nœuds de terrain", "architecture_a_card2_body": "Les nœuds ESP32-S3 radar, solaires et électriques publient les relevés des capteurs et des équipements ; les nœuds solaires et électriques ne font que lire, jamais écrire sur un onduleur, une batterie ou un compteur.",
+        "architecture_a_card2_title": "Nœuds de terrain", "architecture_a_card2_body": "Les nœuds ESP32-S3 radar, solaires, électriques, d'alarme et de panneau mural publient les relevés des capteurs et des équipements ou leur état ; les nœuds solaires et électriques ne font que lire, jamais écrire sur un onduleur, une batterie ou un compteur.",
         "architecture_a_card3_title": "Perception, jamais autorité", "architecture_a_card3_body": "L'IA visuelle et vocale recommande une gravité ou une intention avec ses raisons ; authorizes_action reste toujours faux tant que le serveur lui-même n'authentifie et ne confirme pas.",
         "architecture_a_card4_title": "État et consoles opérateur", "architecture_a_card4_body": "ARMOR-SERVER est le seul endroit qui touche un mot de passe de caméra ou une adresse RTSP ; Studio et l'application Android en sont les clients authentifiés, et un téléphone peut configurer un nouveau nœud uniquement par Bluetooth.",
         "architecture_a_flow_1": "Nœuds de terrain et caméras", "architecture_a_flow_2": "Broker MQTT et serveur", "architecture_a_flow_3": "Recommandation de l'IA", "architecture_a_flow_4": "Session client authentifiée",
         "architecture_a_rel_title": "La frontière propre d'A.R.M.O.R. :", "architecture_a_rel_body": "Le serveur est le seul composant à autoriser une action ou à détenir un identifiant de caméra. L'IA visuelle et vocale ne fait que recommander ; les nœuds solaires et électriques ne font que lire - les règles de manœuvre d'une source électrique sont testées en logiciel mais pas encore reliées à un matériel réel.",
+        "architecture_h_card5_title": "Contrats et tests",
+        "architecture_h_card5_body": "HYDRA-UMC-SDK réunit les JSON Schemas v1, un validateur de référence en Python, des clients Go, TypeScript et Rust qui les appliquent, des fixtures de conformité, une tranche OpenAPI du serveur et une entrée de tâches qui n'exécute jamais deux fois la même clé d'idempotence ; une matrice de compatibilité et un test différentiel gardent validateur et schémas alignés.",
+        "architecture_h_card6_title": "Mises à jour vérifiées",
+        "architecture_h_card6_body": "HYDRA-UMC-UPDATER installe et met à jour un dépôt en le clonant, le préparant, le vérifiant et seulement ensuite en le promouvant, de sorte qu'une vérification échouée laisse intacte la copie en service ; une porte optionnelle refuse un commit sans signature de confiance avant toute compilation. Les images de firmware sont vérifiées par CRC32 et un HMAC-SHA256 à clé partagée ; une signature asymétrique est prévue, pas implémentée.",
+        "architecture_u_card5_title": "Contrats et tests",
+        "architecture_u_card5_body": "URTC-COMMON écrit le protocole CAN une seule fois sous forme de données, en génère un en-tête C, des modules TypeScript et Python et un tableau du protocole, et conserve les vecteurs de conformité que toute implémentation doit reproduire. Le firmware et les outils de bureau gardent encore leurs propres copies jusqu'à leur migration : aujourd'hui il est comparé à elles plutôt qu'utilisé par elles.",
+        "architecture_u_card6_title": "Assets de release et signature",
+        "architecture_u_card6_body": "Chaque release de firmware est publiée sous forme d'assets de release GitHub avec des fichiers SHA-256 et un manifeste, et l'outil de publication refuse de publier comme release officielle des images signées avec la clé de développement publique. Les bootloaders vérifient un CRC32 et un HMAC-SHA256 à clé partagée ; les signatures asymétriques sont prévues et rien n'a encore été flashé sur une vraie carte.",
+        "architecture_a_card5_title": "Contrats et tests",
+        "architecture_a_card5_body": "ARMOR-COMMON définit chaque message des nœuds une seule fois sous forme de JSON Schema, avec un validateur qui refuse ce qu'il n'implémente pas, des vecteurs de conformité acceptés et refusés que chaque implémentation doit passer, le fichier OpenAPI des routes du serveur et la base de firmware partagée par les cinq nœuds, qu'un outil garde identique dans chacun.",
+        "architecture_a_card6_title": "Releases et mises à jour signées",
+        "architecture_a_card6_body": "Le firmware des nœuds est publié avec un SHA-256 et une signature Ed25519, et un nœud comme ARMOR-SERVER refusent une release sans signature valide. L'assistant de maintenance d'ARMOR-DEVOPS vérifie une signature Ed25519 sur chaque paquet de service avant de le décompresser, ce qui permet à ARMOR-STUDIO de mettre à jour la machine centrale ; la clé privée ne va jamais sur GitHub. Un fichier de firmware envoyé à la main n'est pas vérifié.",
     },
     "it": {
         "architecture_intro": "Electro Hobby 3D è composto da tre ecosistemi ingegneristici indipendenti dello stesso autore: HYDRA-UMC (piattaforma industriale multi-robot), URTC (il suo sottosistema universale di utensili, un prodotto indipendente con firmware proprio) e A.R.M.O.R. (sicurezza perimetrale e domotica). Questa dashboard scopre ed elenca tutti e tre dal vivo; i gruppi di famiglia di ogni ecosistema sono etichettati più sotto, e l'architettura propria di ciascuno è descritta nella sua sezione più sotto.",
@@ -1245,11 +1383,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_u_rel_title": "URTC da solo, e abbinato a HYDRA-UMC:", "architecture_u_rel_body": "URTC è un progetto indipendente e non ufficiale: un controllore di testa utensile via CAN pensato per bracci del tipo PAROL6/Faze4, con firmware, hardware e strumenti di manutenzione propri. Quando è il sottosistema utensili di una cella HYDRA-UMC, l'MCU di HYDRA-UMC mantiene l'autorità sui limiti fisici e sull'arresto sicuro; URTC non aggira mai questo confine.",
         "architecture_section_a": "A.R.M.O.R.: Architettura del sistema",
         "architecture_a_card1_title": "Segmentazione di rete", "architecture_a_card1_body": "I nodi di campo e le telecamere stanno su una propria VLAN senza accesso a internet; il broker MQTT e il server vivono su una VLAN core; Studio e l'app Android raggiungono il server da una VLAN client.",
-        "architecture_a_card2_title": "Nodi di campo", "architecture_a_card2_body": "I nodi ESP32-S3 radar, solari ed elettrici pubblicano le letture di sensori ed equipaggiamenti; quelli solari ed elettrici solo leggono, mai scrivono su un inverter, una batteria o un contatore.",
+        "architecture_a_card2_title": "Nodi di campo", "architecture_a_card2_body": "I nodi ESP32-S3 radar, solari, elettrici, di allarme e di pannello a parete pubblicano le letture di sensori ed equipaggiamenti o il proprio stato; quelli solari ed elettrici solo leggono, mai scrivono su un inverter, una batteria o un contatore.",
         "architecture_a_card3_title": "Percezione, mai autorità", "architecture_a_card3_body": "L'IA visiva e vocale raccomanda una gravità o un'intenzione con le proprie motivazioni; authorizes_action è sempre falso finché il server stesso non autentica e conferma.",
         "architecture_a_card4_title": "Stato e console operatore", "architecture_a_card4_body": "ARMOR-SERVER è l'unico punto che tocca una password di telecamera o un indirizzo RTSP; Studio e l'app Android ne sono i client autenticati, e un telefono può configurare un nuovo nodo solo via Bluetooth.",
         "architecture_a_flow_1": "Nodi di campo e telecamere", "architecture_a_flow_2": "Broker MQTT e server", "architecture_a_flow_3": "Raccomandazione dell'IA", "architecture_a_flow_4": "Sessione client autenticata",
         "architecture_a_rel_title": "Il confine proprio di A.R.M.O.R.:", "architecture_a_rel_body": "Il server è l'unico componente che autorizza un'azione o detiene una credenziale di telecamera. L'IA visiva e vocale solo raccomanda; i nodi solari ed elettrici solo leggono - le regole per manovrare una fonte elettrica sono testate via software ma non ancora collegate a hardware reale.",
+        "architecture_h_card5_title": "Contratti e test",
+        "architecture_h_card5_body": "HYDRA-UMC-SDK raccoglie i JSON Schema v1, un validatore di riferimento in Python, client Go, TypeScript e Rust che li applicano, fixture di conformità, una porzione OpenAPI del server e un ingresso dei job che non esegue mai due volte la stessa chiave di idempotenza; una matrice di compatibilità e un test differenziale tengono allineati validatore e schemi.",
+        "architecture_h_card6_title": "Aggiornamenti verificati",
+        "architecture_h_card6_body": "HYDRA-UMC-UPDATER installa e aggiorna un repository clonandolo, preparandolo, verificandolo e solo poi promuovendolo, così un controllo fallito lascia intatta la copia in uso; un blocco opzionale rifiuta un commit senza firma attendibile prima di compilare qualsiasi cosa. Le immagini del firmware sono controllate con CRC32 e un HMAC-SHA256 a chiave condivisa; una firma asimmetrica è prevista, non implementata.",
+        "architecture_u_card5_title": "Contratti e test",
+        "architecture_u_card5_body": "URTC-COMMON scrive il protocollo CAN una sola volta come dati, ne genera un header C, moduli TypeScript e Python e una tabella del protocollo, e conserva i vettori di conformità che ogni implementazione deve riprodurre. Il firmware e gli strumenti desktop mantengono ancora le proprie copie finché ciascuno non migra, quindi oggi viene confrontato con esse anziché essere usato da esse.",
+        "architecture_u_card6_title": "Asset di release e firma",
+        "architecture_u_card6_body": "Ogni release del firmware è pubblicata come asset di release GitHub con file SHA-256 e un manifesto, e lo strumento di pubblicazione si rifiuta di pubblicare come release ufficiale immagini firmate con la chiave di sviluppo pubblica. I bootloader controllano un CRC32 e un HMAC-SHA256 a chiave condivisa; le firme asimmetriche sono previste e nulla è ancora stato caricato su una scheda reale.",
+        "architecture_a_card5_title": "Contratti e test",
+        "architecture_a_card5_body": "ARMOR-COMMON definisce ogni messaggio dei nodi una sola volta come JSON Schema, con un validatore che rifiuta ciò che non implementa, vettori di conformità accettati e rifiutati che ogni implementazione deve superare, il file OpenAPI delle rotte del server e la base firmware condivisa dai cinque nodi, che uno strumento mantiene identica in ciascuno.",
+        "architecture_a_card6_title": "Release e aggiornamenti firmati",
+        "architecture_a_card6_body": "Il firmware dei nodi è pubblicato con uno SHA-256 e una firma Ed25519, e sia un nodo sia ARMOR-SERVER rifiutano una release senza firma valida. L'assistente di manutenzione di ARMOR-DEVOPS controlla una firma Ed25519 su ogni pacchetto di servizio prima di scompattarlo, ed è così che ARMOR-STUDIO aggiorna la macchina centrale; la chiave privata non va mai su GitHub. Un file firmware caricato a mano non viene controllato.",
     },
     "de": {
         "architecture_intro": "Electro Hobby 3D besteht aus drei unabhängigen Engineering-Ökosystemen desselben Autors: HYDRA-UMC (industrielle Multi-Roboter-Plattform), URTC (dessen universelles Werkzeug-Subsystem, ein eigenständiges Produkt mit eigener Firmware) und A.R.M.O.R. (Perimetersicherheit und Hausautomation). Dieses Dashboard entdeckt und listet alle drei live auf; die Familiengruppen jedes Ökosystems sind weiter unten gekennzeichnet, und die eigene Architektur jedes Ökosystems wird in seinem eigenen Abschnitt weiter unten beschrieben.",
@@ -1270,11 +1420,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_u_rel_title": "URTC allein, und im Verbund mit HYDRA-UMC:", "architecture_u_rel_body": "URTC ist ein unabhängiges, inoffizielles Projekt - ein CAN-basierter Werkzeugkopf-Controller für Arme vom Typ PAROL6/Faze4, mit eigener Firmware, eigener Hardware und eigenen Wartungswerkzeugen. Als Werkzeug-Subsystem einer HYDRA-UMC-Zelle behält der MCU von HYDRA-UMC die Autorität über physische Grenzen und den sicheren Stopp; URTC umgeht diese Grenze nie.",
         "architecture_section_a": "A.R.M.O.R.: Systemarchitektur",
         "architecture_a_card1_title": "Netzwerksegmentierung", "architecture_a_card1_body": "Feldknoten und Kameras befinden sich in einem eigenen VLAN ohne Internetzugang; der MQTT-Broker und der Server laufen in einem Kern-VLAN; Studio und die Android-App erreichen den Server aus einem Client-VLAN.",
-        "architecture_a_card2_title": "Feldknoten", "architecture_a_card2_body": "ESP32-S3-Radar-, Solar- und Elektroknoten veröffentlichen Sensor- und Anlagenwerte; die Solar- und Elektroknoten lesen nur, sie schreiben nie auf einen Wechselrichter, eine Batterie oder einen Zähler.",
+        "architecture_a_card2_title": "Feldknoten", "architecture_a_card2_body": "ESP32-S3-Radar-, Solar-, Elektro-, Alarm- und Wandpanel-Knoten veröffentlichen Sensor- und Anlagenwerte oder ihren Zustand; die Solar- und Elektroknoten lesen nur, sie schreiben nie auf einen Wechselrichter, eine Batterie oder einen Zähler.",
         "architecture_a_card3_title": "Wahrnehmung, niemals Autorität", "architecture_a_card3_body": "Visuelle und Sprach-KI empfehlen einen Schweregrad oder eine Absicht samt Begründung; authorizes_action bleibt immer falsch, bis der Server selbst authentifiziert und bestätigt.",
         "architecture_a_card4_title": "Zustand und Bedienkonsolen", "architecture_a_card4_body": "ARMOR-SERVER ist die einzige Stelle, die je ein Kamerapasswort oder eine RTSP-Adresse berührt; Studio und die Android-App sind seine authentifizierten Clients, und ein Telefon kann einen neuen Knoten allein über Bluetooth einrichten.",
         "architecture_a_flow_1": "Feldknoten & Kameras", "architecture_a_flow_2": "MQTT-Broker & Server", "architecture_a_flow_3": "KI-Empfehlung", "architecture_a_flow_4": "Authentifizierte Client-Sitzung",
         "architecture_a_rel_title": "Die eigene Grenze von A.R.M.O.R.:", "architecture_a_rel_body": "Der Server ist die einzige Komponente, die eine Aktion autorisiert oder eine Kamera-Zugangsdaten hält. Visuelle und Sprach-KI empfehlen nur; Solar- und Elektroknoten lesen nur - die Regeln zum Schalten einer Stromquelle sind in Software getestet, aber noch mit keiner echten Hardware verbunden.",
+        "architecture_h_card5_title": "Verträge und Tests",
+        "architecture_h_card5_body": "HYDRA-UMC-SDK enthält die JSON-Schemas v1, einen Python-Referenzvalidator, Go-, TypeScript- und Rust-Clients, die sie durchsetzen, Konformitäts-Fixtures, einen OpenAPI-Ausschnitt des Servers und einen Job-Eingang, der denselben Idempotenzschlüssel nie zweimal ausführt; eine Kompatibilitätsmatrix und ein Differenztest halten Validator und Schemas im Gleichschritt.",
+        "architecture_h_card6_title": "Geprüfte Updates",
+        "architecture_h_card6_body": "HYDRA-UMC-UPDATER installiert und aktualisiert ein Repository, indem es klont, bereitstellt, prüft und erst dann übernimmt, sodass eine fehlgeschlagene Prüfung die laufende Kopie unberührt lässt; eine optionale Sperre weist einen Commit ohne vertrauenswürdige Signatur ab, bevor etwas gebaut wird. Firmware-Images werden mit CRC32 und einem HMAC-SHA256 mit gemeinsamem Schlüssel geprüft; eine asymmetrische Signatur ist geplant, nicht umgesetzt.",
+        "architecture_u_card5_title": "Verträge und Tests",
+        "architecture_u_card5_body": "URTC-COMMON schreibt das CAN-Protokoll einmal als Daten, erzeugt daraus einen C-Header, TypeScript- und Python-Module sowie eine Protokolltabelle und hält die Konformitätsvektoren bereit, die jede Implementierung reproduzieren muss. Firmware und Desktop-Werkzeuge behalten bis zu ihrer Migration noch ihre eigenen Kopien; heute wird es mit ihnen verglichen, statt von ihnen genutzt.",
+        "architecture_u_card6_title": "Release-Assets und Signatur",
+        "architecture_u_card6_body": "Jedes Firmware-Release wird als GitHub-Release-Asset mit SHA-256-Dateien und einem Manifest veröffentlicht, und das Veröffentlichungswerkzeug weigert sich, mit dem öffentlichen Entwicklungsschlüssel signierte Images als offizielles Release zu veröffentlichen. Die Bootloader prüfen CRC32 und einen HMAC-SHA256 mit gemeinsamem Schlüssel; asymmetrische Signaturen sind geplant, und auf einer echten Platine wurde noch nichts geflasht.",
+        "architecture_a_card5_title": "Verträge und Tests",
+        "architecture_a_card5_body": "ARMOR-COMMON definiert jede Knotennachricht einmal als JSON-Schema, mit einem Validator, der ablehnt, was er nicht umsetzt, akzeptierten und abgelehnten Konformitätsvektoren, die jede Implementierung bestehen muss, der OpenAPI-Datei der Server-Routen und der Firmware-Basis, die sich die fünf Knoten teilen und die ein Werkzeug in jedem identisch hält.",
+        "architecture_a_card6_title": "Signierte Releases und Updates",
+        "architecture_a_card6_body": "Knoten-Firmware wird mit einem SHA-256 und einer Ed25519-Signatur veröffentlicht, und sowohl ein Knoten als auch ARMOR-SERVER lehnen ein Release ohne gültige Signatur ab. Der Wartungshelfer von ARMOR-DEVOPS prüft eine Ed25519-Signatur an jedem Dienstpaket, bevor er es entpackt; so aktualisiert ARMOR-STUDIO die zentrale Maschine, und der private Schlüssel gelangt nie zu GitHub. Eine von Hand hochgeladene Firmware-Datei wird nicht geprüft.",
     },
     "zh": {
         "architecture_intro": "Electro Hobby 3D 是同一作者打造的三个独立工程生态系统：HYDRA-UMC（工业多机器人平台）、URTC（其通用工具子系统，一个拥有自己固件的独立产品）和 A.R.M.O.R.（周界安防与家庭自动化）。本仪表板实时发现并列出这三者；下方按生态系统标注了各自的家族分组，每个生态系统自身的架构详见其下方的独立小节。",
@@ -1295,11 +1457,23 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_u_rel_title": "URTC 独立运行，以及与 HYDRA-UMC 配对时：", "architecture_u_rel_body": "URTC 是一个独立的非官方项目——一款为 PAROL6/Faze4 一类机械臂设计的基于 CAN 的工具头控制器，拥有自己的固件、硬件和维护工具。当它作为 HYDRA-UMC 单元的工具子系统时，HYDRA-UMC 自身的 MCU 保留对物理限位和安全停止的权力；URTC 从不绕过这一边界。",
         "architecture_section_a": "A.R.M.O.R.：系统架构",
         "architecture_a_card1_title": "网络分段", "architecture_a_card1_body": "现场节点和摄像头位于没有互联网访问的独立 VLAN 中；MQTT 代理和服务器运行在核心 VLAN 中；Studio 和 Android 应用从客户端 VLAN 访问服务器。",
-        "architecture_a_card2_title": "现场节点", "architecture_a_card2_body": "ESP32-S3 雷达、太阳能和电力节点发布传感器和设备读数；太阳能和电力节点仅读取，从不向逆变器、电池或电表写入。",
+        "architecture_a_card2_title": "现场节点", "architecture_a_card2_body": "ESP32-S3 雷达、太阳能、电力、报警和壁挂面板节点发布传感器和设备读数或自身状态；太阳能和电力节点仅读取，从不向逆变器、电池或电表写入。",
         "architecture_a_card3_title": "感知，从不拥有权限", "architecture_a_card3_body": "视觉和语音 AI 会给出带理由的严重等级或意图建议；在服务器自身完成认证和确认之前，authorizes_action 始终为 false。",
         "architecture_a_card4_title": "状态与操作控制台", "architecture_a_card4_body": "ARMOR-SERVER 是唯一接触摄像头密码或 RTSP 地址的地方；Studio 和 Android 应用是它的已认证客户端，手机仅通过蓝牙即可设置新节点。",
         "architecture_a_flow_1": "现场节点与摄像头", "architecture_a_flow_2": "MQTT 代理与服务器", "architecture_a_flow_3": "AI 建议", "architecture_a_flow_4": "已认证的客户端会话",
         "architecture_a_rel_title": "A.R.M.O.R. 自身的边界：", "architecture_a_rel_body": "服务器是唯一授权操作或持有摄像头凭证的组件。视觉和语音 AI 只提出建议；太阳能和电力节点只读取——切换电源的规则已在软件中测试，但尚未连接任何真实硬件。",
+        "architecture_h_card5_title": "契约与测试",
+        "architecture_h_card5_body": "HYDRA-UMC-SDK 包含 v1 JSON Schema、Python 参考验证器、强制执行这些模式的 Go、TypeScript 和 Rust 客户端、一致性测试夹具、服务器的 OpenAPI 片段，以及绝不会两次执行同一幂等键的作业入口；兼容性矩阵和差分测试使验证器与模式保持同步。",
+        "architecture_h_card6_title": "经过验证的更新",
+        "architecture_h_card6_body": "HYDRA-UMC-UPDATER 通过克隆、暂存、验证、最后才提升的方式安装和更新仓库，因此验证失败时正在使用的副本保持不变；可选的关卡会在构建任何内容之前拒绝没有可信签名的提交。固件镜像使用 CRC32 和共享密钥 HMAC-SHA256 校验；非对称签名已在计划中，尚未实现。",
+        "architecture_u_card5_title": "契约与测试",
+        "architecture_u_card5_body": "URTC-COMMON 把 CAN 协议作为数据只写一次，由它生成 C 头文件、TypeScript 和 Python 模块以及协议表，并保存每种实现都必须复现的一致性向量。固件和桌面工具在各自迁移之前仍保留自己的副本，因此目前是拿它与这些副本比对，而不是被它们使用。",
+        "architecture_u_card6_title": "发布资产与签名",
+        "architecture_u_card6_body": "每个固件版本都作为 GitHub 发布资产发布，附带 SHA-256 文件和清单；发布工具拒绝将使用公开开发密钥签名的镜像作为正式版本发布。引导程序检查 CRC32 和共享密钥 HMAC-SHA256；非对称签名在计划中，尚未向真实电路板刷写过任何内容。",
+        "architecture_a_card5_title": "契约与测试",
+        "architecture_a_card5_body": "ARMOR-COMMON 把每条节点消息只定义一次为 JSON Schema，配有拒绝其未实现内容的验证器、每种实现都必须通过的已接受与已拒绝一致性向量、服务器路由的 OpenAPI 文件，以及五个节点共用的固件基础，由工具保证每个节点中的副本一致。",
+        "architecture_a_card6_title": "签名发布与更新",
+        "architecture_a_card6_body": "节点固件附带 SHA-256 和 Ed25519 签名发布，节点和 ARMOR-SERVER 都会拒绝没有有效签名的发布。ARMOR-DEVOPS 的维护助手在解包每个服务包之前会校验其 Ed25519 签名，ARMOR-STUDIO 正是以此更新中央机器；私钥从不上传到 GitHub。手动上传的固件文件不做检查。",
     },
     "ja": {
         "architecture_intro": "Electro Hobby 3D は、同じ著者による3つの独立したエンジニアリングエコシステムです:HYDRA-UMC(産業用マルチロボットプラットフォーム)、URTC(その汎用ツールサブシステムで、独自のファームウェアを持つ独立した製品)、そして A.R.M.O.R.(周辺セキュリティとホームオートメーション)。このダッシュボードは3つ全てをライブで検出・一覧表示します。各エコシステムのファミリーグループは以下にラベル付けされており、それぞれの詳しいアーキテクチャは以下の各セクションで説明されます。",
@@ -1320,11 +1494,60 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_u_rel_title": "単体の URTC、そして HYDRA-UMC と組み合わせた場合：", "architecture_u_rel_body": "URTC は独立した非公式プロジェクトです — PAROL6/Faze4 系のアームに対応する CAN ベースのツールヘッドコントローラーで、独自のファームウェア、ハードウェア、メンテナンスツールを持ちます。HYDRA-UMC セルのツールサブシステムとして動作する場合、物理的な限界と安全停止の権限は HYDRA-UMC 自身の MCU が持ち続け、URTC がその境界を越えることはありません。",
         "architecture_section_a": "A.R.M.O.R.：システムアーキテクチャ",
         "architecture_a_card1_title": "ネットワークセグメンテーション", "architecture_a_card1_body": "フィールドノードとカメラはインターネットに接続されない専用 VLAN 上にあり、MQTT ブローカーとサーバーはコア VLAN 上で、Studio と Android アプリはクライアント VLAN からサーバーにアクセスします。",
-        "architecture_a_card2_title": "フィールドノード", "architecture_a_card2_body": "ESP32-S3 のレーダー、ソーラー、電気ノードがセンサーと機器の値を送信します。ソーラーと電気ノードは読み取り専用で、インバーター、バッテリー、メーターに書き込むことはありません。",
+        "architecture_a_card2_title": "フィールドノード", "architecture_a_card2_body": "ESP32-S3 のレーダー、ソーラー、電気、アラーム、壁面パネルのノードがセンサーと機器の値、またはその状態を送信します。ソーラーと電気ノードは読み取り専用で、インバーター、バッテリー、メーターに書き込むことはありません。",
         "architecture_a_card3_title": "認識するが権限は持たない", "architecture_a_card3_body": "映像・音声 AI は理由付きで重大度や意図を提案するだけで、サーバー自身が認証・確認するまで authorizes_action は常に false です。",
         "architecture_a_card4_title": "状態とオペレーターコンソール", "architecture_a_card4_body": "ARMOR-SERVER だけがカメラのパスワードや RTSP アドレスに触れます。Studio と Android アプリはその認証済みクライアントであり、新しいノードはスマートフォンから Bluetooth だけで設定できます。",
         "architecture_a_flow_1": "フィールドノードとカメラ", "architecture_a_flow_2": "MQTT ブローカーとサーバー", "architecture_a_flow_3": "AI の提案", "architecture_a_flow_4": "認証済みクライアントセッション",
         "architecture_a_rel_title": "A.R.M.O.R. 自身の境界：", "architecture_a_rel_body": "アクションを許可したり、カメラの認証情報を保持したりするのはサーバーだけです。映像・音声 AI は提案するだけであり、ソーラーと電気ノードは読み取るだけです — 電源切り替えのルールはソフトウェアではテスト済みですが、実際のハードウェアにはまだ接続されていません。",
+        "architecture_h_card5_title": "契約とテスト",
+        "architecture_h_card5_body": "HYDRA-UMC-SDK には、v1 の JSON Schema、Python のリファレンスバリデーター、それを強制する Go・TypeScript・Rust クライアント、適合性フィクスチャ、サーバーの OpenAPI の一部、同じ冪等キーを二度実行しないジョブ受付があり、互換性マトリクスと差分テストがバリデーターとスキーマの同期を保ちます。",
+        "architecture_h_card6_title": "検証付きアップデート",
+        "architecture_h_card6_body": "HYDRA-UMC-UPDATER はリポジトリをクローン、ステージング、検証し、その後でようやく昇格させる方法でインストールと更新を行うため、検証に失敗しても稼働中のコピーには手が付きません。任意のゲートは、信頼できる署名のないコミットをビルド前に拒否します。ファームウェアイメージは CRC32 と共有鍵の HMAC-SHA256 で検査され、非対称署名は計画中で未実装です。",
+        "architecture_u_card5_title": "契約とテスト",
+        "architecture_u_card5_body": "URTC-COMMON は CAN プロトコルをデータとして一度だけ記述し、そこから C ヘッダー、TypeScript と Python のモジュール、プロトコル表を生成し、すべての実装が再現すべき適合性ベクターを保持します。ファームウェアとデスクトップツールはそれぞれ移行するまで独自のコピーを保持しているため、現時点ではそれらから使われるのではなく、それらと照合されています。",
+        "architecture_u_card6_title": "リリースアセットと署名",
+        "architecture_u_card6_body": "各ファームウェアリリースは SHA-256 ファイルとマニフェストを添えた GitHub リリースアセットとして公開され、公開の開発用鍵で署名されたイメージを正式リリースとして公開することを公開ツールは拒否します。ブートローダーは CRC32 と共有鍵の HMAC-SHA256 を検査し、非対称署名は計画中で、実機のボードにはまだ何も書き込まれていません。",
+        "architecture_a_card5_title": "契約とテスト",
+        "architecture_a_card5_body": "ARMOR-COMMON はノードの各メッセージを JSON Schema として一度だけ定義し、未実装の内容を拒否するバリデーター、すべての実装が通過すべき受理・拒否の適合性ベクター、サーバーのルートの OpenAPI ファイル、5 つのノードが共有するファームウェアベースを備え、このベースはツールによって各ノードで同一に保たれます。",
+        "architecture_a_card6_title": "署名付きリリースとアップデート",
+        "architecture_a_card6_body": "ノードのファームウェアは SHA-256 と Ed25519 署名付きで公開され、ノードも ARMOR-SERVER も有効な署名のないリリースを拒否します。ARMOR-DEVOPS のメンテナンスヘルパーは各サービスパッケージを展開する前に Ed25519 署名を検証し、ARMOR-STUDIO はこの方法で中央マシンを更新します。秘密鍵は GitHub には置かれません。手動でアップロードしたファームウェアファイルは検査されません。",
+    },
+    "pt": {
+        "architecture_intro": "A Electro Hobby 3D é composta por três ecossistemas de engenharia independentes do mesmo autor: HYDRA-UMC (plataforma industrial multirrobô), URTC (o seu subsistema universal de ferramentas, um produto independente com firmware próprio) e A.R.M.O.R. (segurança perimetral e automação doméstica). Este painel descobre e lista os três em direto; os grupos de família de cada ecossistema aparecem identificados mais abaixo, e a arquitetura própria de cada um é descrita na sua própria secção mais abaixo.",
+        "architecture_section": "HYDRA-UMC: Arquitetura do sistema", "architecture_platform_title": "Base da plataforma", "architecture_platform_body": "O Raspberry Pi OS ARM64 continua a ser a base do sistema operativo. A camada HYDRA-UMC acrescenta perfis de dispositivo, diagnóstico e ciclo de vida dos serviços.",
+        "architecture_contracts_title": "Contratos e operações", "architecture_contracts_body": "O SDK define contratos estáveis de dados e comandos; o Server, as interfaces e as ferramentas usam-nos em vez de protocolos de hardware em bruto.",
+        "architecture_perception_title": "Perceção e inteligência", "architecture_perception_body": "A visão e a IA são capacidades opcionais. A sua saída é validada antes de poder influenciar uma missão e nunca tem autoridade de segurança.",
+        "architecture_engineering_title": "Engenharia e indústria", "architecture_engineering_body": "A simulação, a telemetria e as normas tornam a célula física observável, testável e interoperável.",
+        "architecture_flow_operator": "Interfaces de operador", "architecture_flow_services": "Server e SDK", "architecture_flow_adapter": "Adaptador CM5-MCU", "architecture_flow_machine": "MCU / URTC / máquina",
+        "architecture_relationship_title": "HYDRA-UMC e URTC:", "architecture_relationship_body": "O HYDRA-UMC é a plataforma e o controlador de célula. O URTC é o seu subsistema universal de ferramentas robóticas, com firmware e ferramentas de manutenção independentes. O MCU mantém a autoridade sobre os limites físicos e a paragem segura; a UI, a rede e a IA não podem contornar essa fronteira.",
+        "table_hydra_umc_banner": "HYDRA-UMC - a plataforma industrial multirrobô e controlador de célula, o primeiro ecossistema deste painel.", "table_urtc_banner": "URTC - um produto independente com firmware e ferramentas de manutenção próprios, coordenado com o HYDRA-UMC por FDCAN.", "table_armor_banner": "A.R.M.O.R. - um ecossistema à parte, público, de segurança perimetral e automação doméstica, do mesmo autor.",
+        "section_by_ecosystem": "Projetos por ecossistema",
+        "architecture_section_u": "URTC: Arquitetura do sistema",
+        "architecture_u_card1_title": "Firmware da cabeça de ferramenta", "architecture_u_card1_body": "Um STM32F303 controla cada cabeça de ferramenta por CAN, lendo o seu próprio endereço de hardware de 5 bits para configurar automaticamente os andares de potência, os sensores e a lógica de segurança de um dos 25 perfis de ferramenta integrados.",
+        "architecture_u_card2_title": "Expansão e movimento", "architecture_u_card2_body": "Um conector de expansão de 20 pinos acrescenta um segundo eixo de passo ou uma placa de sensores através de uma de seis variantes permutáveis, partilhando a cablagem STEP/DIR/EN entre um driver TMC2209 e um TMC5160.",
+        "architecture_u_card3_title": "Ferramentas de manutenção", "architecture_u_card3_body": "O URTC-FLASHER atualiza o firmware por CAN sem retirar a placa, o URTC-TESTER testa o protocolo de ponta a ponta e o URTC-UPDATER mantém todas as ferramentas de secretária atualizadas a partir do GitHub.",
+        "architecture_u_card4_title": "Visão e operação", "architecture_u_card4_body": "O URTC-VISION-TOOL acrescenta a inspeção de ferramentas por câmara, o URTC-WEB-STUDIO dá-lhe uma consola de navegador e o URTC-SMART-RACK guarda e identifica as cabeças de ferramenta entre trocas.",
+        "architecture_u_flow_1": "Cabeça de ferramenta", "architecture_u_flow_2": "Firmware STM32F303", "architecture_u_flow_3": "Barramento CAN", "architecture_u_flow_4": "MCU / anfitrião HYDRA-UMC",
+        "architecture_u_rel_title": "O URTC sozinho, e emparelhado com o HYDRA-UMC:", "architecture_u_rel_body": "O URTC é um projeto independente e não oficial: um controlador de cabeça de ferramenta por CAN pensado para braços do tipo PAROL6/Faze4, com firmware, hardware e ferramentas de manutenção próprios. Quando é o subsistema de ferramentas de uma célula HYDRA-UMC, o MCU do HYDRA-UMC mantém a autoridade sobre os limites físicos e a paragem segura; o URTC nunca contorna essa fronteira.",
+        "architecture_section_a": "A.R.M.O.R.: Arquitetura do sistema",
+        "architecture_a_card1_title": "Segmentação de rede", "architecture_a_card1_body": "Os nós de campo e as câmaras ficam na sua própria VLAN sem acesso à internet; o broker MQTT e o servidor vivem numa VLAN central; o Studio e a aplicação Android chegam ao servidor a partir de uma VLAN de clientes.",
+        "architecture_a_card2_title": "Nós de campo", "architecture_a_card2_body": "Os nós ESP32-S3 de radar, solares, elétricos, de alarme e de painel de parede publicam leituras de sensores e equipamentos ou o seu estado; os solares e os elétricos só leem, nunca escrevem num inversor, numa bateria ou num contador.",
+        "architecture_a_card3_title": "Perceção, nunca autoridade", "architecture_a_card3_body": "A IA visual e de voz recomenda uma gravidade ou uma intenção com as suas razões; authorizes_action é sempre falso até que o próprio servidor autentique e confirme.",
+        "architecture_a_card4_title": "Estado e consolas de operador", "architecture_a_card4_body": "O ARMOR-SERVER é o único sítio que toca numa palavra-passe de câmara ou num endereço RTSP; o Studio e a aplicação Android são os seus clientes autenticados, e um telemóvel pode configurar um nó novo apenas por Bluetooth.",
+        "architecture_a_flow_1": "Nós de campo e câmaras", "architecture_a_flow_2": "Broker MQTT e servidor", "architecture_a_flow_3": "Recomendação da IA", "architecture_a_flow_4": "Sessão de cliente autenticada",
+        "architecture_a_rel_title": "A fronteira própria do A.R.M.O.R.:", "architecture_a_rel_body": "O servidor é o único componente que autoriza uma ação ou guarda uma credencial de câmara. A IA visual e de voz só recomenda; os nós solares e elétricos só leem - as regras para manobrar uma fonte elétrica estão testadas em software mas ainda não ligadas a nenhum hardware real.",
+        "architecture_h_card5_title": "Contratos e testes",
+        "architecture_h_card5_body": "O HYDRA-UMC-SDK reúne os JSON Schemas v1, um validador de referência em Python, clientes Go, TypeScript e Rust que os aplicam, fixtures de conformidade, uma parte OpenAPI do servidor e uma entrada de trabalhos que nunca executa duas vezes a mesma chave de idempotência; uma matriz de compatibilidade e um teste diferencial mantêm validador e esquemas em sintonia.",
+        "architecture_h_card6_title": "Atualizações verificadas",
+        "architecture_h_card6_body": "O HYDRA-UMC-UPDATER instala e atualiza um repositório clonando, preparando, verificando e só depois promovendo, de modo que uma verificação falhada deixa intacta a cópia em uso; uma barreira opcional recusa um commit sem assinatura de confiança antes de compilar o que quer que seja. As imagens de firmware são verificadas com CRC32 e um HMAC-SHA256 de chave partilhada; uma assinatura assimétrica está planeada, não implementada.",
+        "architecture_u_card5_title": "Contratos e testes",
+        "architecture_u_card5_body": "O URTC-COMMON escreve o protocolo CAN uma só vez como dados, gera a partir dele um cabeçalho C, módulos TypeScript e Python e uma tabela do protocolo, e guarda os vetores de conformidade que toda a implementação deve reproduzir. O firmware e as ferramentas de secretária ainda mantêm as suas próprias cópias até cada um migrar, por isso hoje é comparado com elas em vez de ser usado por elas.",
+        "architecture_u_card6_title": "Ativos de release e assinatura",
+        "architecture_u_card6_body": "Cada release de firmware é publicada como ativos de release do GitHub com ficheiros SHA-256 e um manifesto, e a ferramenta de publicação recusa publicar como release oficial imagens assinadas com a chave de desenvolvimento pública. Os bootloaders verificam um CRC32 e um HMAC-SHA256 de chave partilhada; as assinaturas assimétricas estão planeadas e ainda nada foi gravado numa placa real.",
+        "architecture_a_card5_title": "Contratos e testes",
+        "architecture_a_card5_body": "O ARMOR-COMMON define cada mensagem dos nós uma só vez como JSON Schema, com um validador que recusa o que não implementa, vetores de conformidade aceites e recusados que toda a implementação tem de superar, o ficheiro OpenAPI das rotas do servidor e a base de firmware partilhada pelos cinco nós, que uma ferramenta mantém idêntica em cada um.",
+        "architecture_a_card6_title": "Releases e atualizações assinadas",
+        "architecture_a_card6_body": "O firmware dos nós é publicado com um SHA-256 e uma assinatura Ed25519, e tanto um nó como o ARMOR-SERVER recusam uma release sem assinatura válida. O auxiliar de manutenção do ARMOR-DEVOPS verifica uma assinatura Ed25519 em cada pacote de serviço antes de o desempacotar, e é assim que o ARMOR-STUDIO atualiza a máquina central; a chave privada nunca vai para o GitHub. Um ficheiro de firmware carregado à mão não é verificado.",
     },
 }
 
@@ -1351,8 +1574,11 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Advances only once real, physical hardware exists for it to run against - the exact board or machine this ecosystem's own hardware documentation describes.",
         "roadmap_advance_production": "The top of the ladder. Nothing advances past here - it just keeps shipping real fixes.",
         "compat_section": "Compatibility matrix",
-        "compat_intro": "Real project counts by role and deployment target, spanning all three ecosystems (HYDRA-UMC, URTC and A.R.M.O.R.) and drawn straight from every repository's own manifest - A.R.M.O.R.'s own free-text role/deployment_target fields are classified into these same categories rather than a second, separate table. A count, not a claim that any two specific projects interoperate.",
+        "compat_intro": "Real project counts by role and deployment target, with row, column and grand totals, for the three ecosystems together (HYDRA-UMC, URTC and A.R.M.O.R.) or for one at a time, drawn straight from every repository's own manifest - A.R.M.O.R.'s free-text role/deployment_target fields are classified into these same categories rather than a second table, and STM32 firmware and documentation hubs are counted under their own column and row. A count, not a claim that any two specific projects interoperate.",
         "compat_corner": "Role \\ Target",
+        "compat_total": "Total",
+        "compat_view_all": "All ecosystems",
+        "compat_view_label": "Ecosystem view",
     },
     "es": {
         "roadmap_section": "Hoja de ruta",
@@ -1362,8 +1588,11 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo cuando existe hardware físico real contra el que funcionar - la placa o máquina exacta que la propia documentación de hardware de este ecosistema describe.",
         "roadmap_advance_production": "La cima de la escalera. Nada avanza más allá de aquí - solo sigue entregando arreglos reales.",
         "compat_section": "Matriz de compatibilidad",
-        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, abarcando los tres ecosistemas (HYDRA-UMC, URTC y A.R.M.O.R.) y extraídos directamente del manifiesto propio de cada repositorio - los campos de rol/destino de despliegue en texto libre propios de A.R.M.O.R. se clasifican en estas mismas categorías en vez de usar una segunda tabla aparte. Un recuento, no una afirmación de que dos proyectos concretos interoperen.",
+        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, con totales por fila, por columna y total general, para los tres ecosistemas juntos (HYDRA-UMC, URTC y A.R.M.O.R.) o para uno solo, tomados directamente del manifiesto de cada repositorio - los campos de texto libre rol/deployment_target de A.R.M.O.R. se clasifican en estas mismas categorías en lugar de una segunda tabla, y el firmware STM32 y los repositorios de documentación se cuentan en su propia columna y fila. Es un recuento, no una afirmación de que dos proyectos concretos sean interoperables.",
         "compat_corner": "Rol \\ Destino",
+        "compat_total": "Total",
+        "compat_view_all": "Todos los ecosistemas",
+        "compat_view_label": "Vista por ecosistema",
     },
     "fr": {
         "roadmap_section": "Feuille de route",
@@ -1373,8 +1602,11 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "N'avance que lorsqu'un matériel physique réel existe pour qu'il puisse fonctionner face à lui - la carte ou la machine exacte que la documentation matérielle de cet écosystème décrit elle-même.",
         "roadmap_advance_production": "Le sommet de l'échelle. Rien n'avance au-delà d'ici - il continue simplement à livrer de vrais correctifs.",
         "compat_section": "Matrice de compatibilité",
-        "compat_intro": "Comptages réels de projets par rôle et cible de déploiement, couvrant les trois écosystèmes (HYDRA-UMC, URTC et A.R.M.O.R.) et tirés directement du manifeste propre de chaque dépôt - les champs rôle/cible de déploiement en texte libre propres à A.R.M.O.R. sont classés dans ces mêmes catégories plutôt que dans un second tableau séparé. Un comptage, pas une affirmation que deux projets précis interopèrent.",
+        "compat_intro": "Nombres réels de projets par rôle et par cible de déploiement, avec totaux par ligne, par colonne et total général, pour les trois écosystèmes réunis (HYDRA-UMC, URTC et A.R.M.O.R.) ou pour un seul, tirés directement du manifeste de chaque dépôt - les champs libres rôle/deployment_target d'A.R.M.O.R. sont classés dans ces mêmes catégories plutôt que dans un second tableau, et les firmwares STM32 et les dépôts de documentation sont comptés dans leur propre colonne et ligne. Un décompte, pas l'affirmation que deux projets précis sont interopérables.",
         "compat_corner": "Rôle \\ Cible",
+        "compat_total": "Total",
+        "compat_view_all": "Tous les écosystèmes",
+        "compat_view_label": "Vue par écosystème",
     },
     "it": {
         "roadmap_section": "Tabella di marcia",
@@ -1384,8 +1616,11 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo quando esiste hardware fisico reale contro cui funzionare - la scheda o la macchina esatta che la documentazione hardware di questo ecosistema descrive.",
         "roadmap_advance_production": "La cima della scala. Nulla avanza oltre questo punto - continua solo a distribuire correzioni reali.",
         "compat_section": "Matrice di compatibilità",
-        "compat_intro": "Conteggi reali di progetti per ruolo e destinazione di distribuzione, che coprono tutti e tre gli ecosistemi (HYDRA-UMC, URTC e A.R.M.O.R.) e presi direttamente dal manifesto proprio di ogni repository - i campi ruolo/destinazione in testo libero propri di A.R.M.O.R. sono classificati in queste stesse categorie invece di usare una seconda tabella separata. Un conteggio, non un'affermazione che due progetti specifici interoperino.",
+        "compat_intro": "Conteggi reali dei progetti per ruolo e destinazione di rilascio, con totali di riga, di colonna e totale generale, per i tre ecosistemi insieme (HYDRA-UMC, URTC e A.R.M.O.R.) o per uno solo, ricavati direttamente dal manifesto di ciascun repository - i campi a testo libero ruolo/deployment_target di A.R.M.O.R. sono classificati in queste stesse categorie invece che in una seconda tabella, e il firmware STM32 e i repository di documentazione sono contati nella propria colonna e riga. Un conteggio, non l'affermazione che due progetti specifici siano interoperabili.",
         "compat_corner": "Ruolo \\ Destinazione",
+        "compat_total": "Totale",
+        "compat_view_all": "Tutti gli ecosistemi",
+        "compat_view_label": "Vista per ecosistema",
     },
     "de": {
         "roadmap_section": "Fahrplan",
@@ -1395,8 +1630,11 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Steigt nur auf, sobald echte physische Hardware existiert, gegen die es laufen kann - genau die Platine oder Maschine, die die eigene Hardware-Dokumentation dieses Ökosystems beschreibt.",
         "roadmap_advance_production": "Die Spitze der Leiter. Nichts steigt hier weiter auf - es liefert einfach weiter echte Fixes.",
         "compat_section": "Kompatibilitätsmatrix",
-        "compat_intro": "Echte Projektzahlen nach Rolle und Deployment-Ziel, über alle drei Ökosysteme hinweg (HYDRA-UMC, URTC und A.R.M.O.R.), direkt aus dem eigenen Manifest jedes Repositories entnommen - A.R.M.O.R.s eigene Freitext-Felder für Rolle/Deployment-Ziel werden in dieselben Kategorien eingeordnet statt in eine zweite, separate Tabelle. Eine Zählung, keine Behauptung, dass zwei bestimmte Projekte zusammenarbeiten.",
+        "compat_intro": "Echte Projektzahlen nach Rolle und Einsatzziel, mit Zeilen-, Spalten- und Gesamtsummen, für alle drei Ökosysteme zusammen (HYDRA-UMC, URTC und A.R.M.O.R.) oder für jeweils eines, direkt aus dem Manifest jedes Repositorys gelesen - die Freitextfelder Rolle/deployment_target von A.R.M.O.R. werden in dieselben Kategorien eingeordnet statt in eine zweite Tabelle, und STM32-Firmware sowie Dokumentations-Repositorys erscheinen in eigener Spalte und Zeile. Eine Zählung, keine Aussage, dass zwei bestimmte Projekte zusammenarbeiten.",
         "compat_corner": "Rolle \\ Ziel",
+        "compat_total": "Gesamt",
+        "compat_view_all": "Alle Ökosysteme",
+        "compat_view_label": "Ansicht nach Ökosystem",
     },
     "zh": {
         "roadmap_section": "路线图",
@@ -1406,8 +1644,11 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "只有当真实的物理硬件存在、可供其运行时才会晋级——正是本生态系统自身硬件文档所描述的那块板卡或那台机器。",
         "roadmap_advance_production": "阶梯的顶端。到这里就不再晋级——只会持续交付真实的修复。",
         "compat_section": "兼容性矩阵",
-        "compat_intro": "按角色和部署目标统计的真实项目数量，涵盖全部三个生态系统（HYDRA-UMC、URTC 和 A.R.M.O.R.），直接取自每个仓库自身的清单文件——A.R.M.O.R. 自身以自由文本形式填写的角色/部署目标字段被归入这同一套分类，而不是另立一张单独的表格。这是一个计数，而不是声称某两个具体项目能够互操作。",
+        "compat_intro": "按角色和部署目标统计的真实项目数量，带有行合计、列合计和总计，可查看全部三个生态系统合计（HYDRA-UMC、URTC 和 A.R.M.O.R.）或单个生态系统，直接取自每个仓库自身的清单文件——A.R.M.O.R. 以自由文本填写的角色/部署目标字段被归入这些相同的类别，而不是另设一张表；STM32 固件和文档仓库分别计入各自的列和行。这只是计数，并不表示任何两个具体项目可以互操作。",
         "compat_corner": "角色 \\ 目标",
+        "compat_total": "合计",
+        "compat_view_all": "全部生态系统",
+        "compat_view_label": "按生态系统查看",
     },
     "ja": {
         "roadmap_section": "ロードマップ",
@@ -1417,8 +1658,25 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "本物の物理ハードウェアが存在し、それに対して実際に動作できるようになった時点でのみ昇格します——このエコシステム自身のハードウェアドキュメントが説明する、まさにそのボードやマシンです。",
         "roadmap_advance_production": "はしごの頂点です。ここから先に昇格することはありません——ただ本物の修正を届け続けるだけです。",
         "compat_section": "互換性マトリクス",
-        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、3つのエコシステム（HYDRA-UMC、URTC、A.R.M.O.R.）すべてにまたがり、各リポジトリ自身のマニフェストから直接取得しています。A.R.M.O.R. 自身の自由記述の役割/デプロイ対象フィールドは、別の表を作るのではなく同じ分類に振り分けられます。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
+        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、行・列・総合計を備え、3つのエコシステム（HYDRA-UMC、URTC、A.R.M.O.R.）をまとめて、または1つずつ表示できます。各リポジトリ自身のマニフェストから直接取得しており、A.R.M.O.R. の自由記述の役割/デプロイ対象フィールドは別の表ではなく同じカテゴリに分類され、STM32 ファームウェアとドキュメントのリポジトリはそれぞれ専用の列と行で数えられます。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
         "compat_corner": "役割 \\ 対象",
+        "compat_total": "合計",
+        "compat_view_all": "すべてのエコシステム",
+        "compat_view_label": "エコシステム別の表示",
+    },
+    "pt": {
+        "roadmap_section": "Roteiro",
+        "roadmap_intro": "Não é um calendário de funcionalidades com datas - é o caminho real que cada projeto deste ecossistema segue, e o ponto exato em que cada um se encontra neste momento (veja a secção Maturidade acima para as contagens em direto).",
+        "roadmap_advance_scaffolding": "Avança assim que existe, por trás, lógica de negócio real e testada: a sua própria bateria de testes, um teste de fumo real de ponta a ponta ou uma ida e volta real de um protocolo - nunca uma simulação que fica para sempre.",
+        "roadmap_advance_functional": "Avança assim que um consumidor real fora do seu próprio checkout - outro serviço real, ou um pacote realmente instalado em vez de deixado editável - depende dele e o demonstra num teste repetível, e não apenas com a sua própria CLI ou fixtures.",
+        "roadmap_advance_established": "Só avança quando existe hardware físico real contra o qual possa funcionar - a placa ou máquina exata que a documentação de hardware deste próprio ecossistema descreve.",
+        "roadmap_advance_production": "O topo da escada. Nada avança para além daqui - continua apenas a entregar correções reais.",
+        "compat_section": "Matriz de compatibilidade",
+        "compat_corner": "Função \\ Destino",
+        "compat_intro": "Contagens reais de projetos por função e destino de implementação, com totais por linha, por coluna e total geral, para os três ecossistemas em conjunto (HYDRA-UMC, URTC e A.R.M.O.R.) ou para um de cada vez, retiradas diretamente do manifesto de cada repositório - os campos de texto livre função/deployment_target do A.R.M.O.R. são classificados nestas mesmas categorias em vez de numa segunda tabela, e o firmware STM32 e os repositórios de documentação são contados na sua própria coluna e linha. Uma contagem, não uma afirmação de que dois projetos concretos sejam interoperáveis.",
+        "compat_total": "Total",
+        "compat_view_all": "Todos os ecossistemas",
+        "compat_view_label": "Vista por ecossistema",
     },
 }
 
@@ -1467,6 +1725,14 @@ DEPLOY_ICONS: dict[str, str] = {
         '<circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/>'
         '<path d="M8 7.2 10.5 16M16 7.2 13.5 16"/>'
     ),
+    "mcu": (
+        '<rect x="6" y="5" width="12" height="14" rx="1.5"/>'
+        '<path d="M3 8h3M3 12h3M3 16h3M18 8h3M18 12h3M18 16h3M10 9.5h4"/>'
+    ),
+    "container": (
+        '<rect x="3" y="9" width="18" height="11" rx="1.5"/>'
+        '<path d="M7 9V5h4v4M13 9V5h4v4M7 14v2M12 14v2M17 14v2"/>'
+    ),
 }
 
 
@@ -1508,6 +1774,31 @@ def categorize_deploy_for_stats(raw_deploy: str) -> str:
     return "user-pc" if category == "workstation" else category
 
 
+def categorize_deploy_for_entry(entry) -> str:
+    """The deployment category of one project. Starts from
+    categorize_deploy_for_stats and adds two classes that neither the
+    closed HYDRA-UMC/URTC enum nor ARMOR-UPDATER's rules can express:
+
+    - "mcu": a firmware project that names an STM32 among its technologies.
+      Its manifest says "user-pc" (the machine that builds it), but the
+      firmware itself runs on the microcontroller.
+    - "container": an A.R.M.O.R. project whose free-text target is not
+      otherwise classified and names a Docker or container host.
+    """
+    category = categorize_deploy_for_stats(entry.deploy)
+    technologies = " ".join(getattr(entry, "tech", ()) or ()).lower()
+    if (
+        categorize_role_for_stats(entry.role) == "firmware"
+        and "stm32" in technologies
+    ):
+        return "mcu"
+    if entry.deploy not in DEPLOY_LABELS and category == "shared":
+        text = entry.deploy.lower()
+        if "docker" in text or "container" in text:
+            return "container"
+    return category
+
+
 #: Ordered (keyword, category) rules for A.R.M.O.R.'s own free-text `role`,
 #: checked top to bottom against the lower-cased text - the first match
 #: wins. Order matters: e.g. ARMOR-SOLAR's role contains "node:", "gateway"
@@ -1524,6 +1815,8 @@ _ARMOR_ROLE_KEYWORD_RULES: tuple[tuple[str, str], ...] = (
     ("event coordinator", "api"),
     ("firmware", "firmware"),
     ("node:", "firmware"),
+    ("alarm node", "firmware"),
+    ("touch panel", "firmware"),
     ("library", "library"),
     ("documentation", "docs"),
     ("architecture", "docs"),
@@ -1532,6 +1825,7 @@ _ARMOR_ROLE_KEYWORD_RULES: tuple[tuple[str, str], ...] = (
     ("simulator", "tool"),
     ("deployment and operations", "tool"),
     ("installs and updates", "tool"),
+    ("detection rules", "service"),
     ("monitor", "service"),
     ("gateway", "service"),
     ("service", "service"),
@@ -1553,6 +1847,20 @@ def categorize_role_for_stats(raw_role: str) -> str:
         if needle in text:
             return category
     return "tool"
+
+
+def categorize_role_for_entry(entry) -> str:
+    """The role category of one project: categorize_role_for_stats, plus
+    the documentation hubs. HYDRA-UMC-DOCS, URTC-DOCS and the like declare
+    the closed enum role "tool" (it has no documentation value), but they
+    are written in Markdown and Mermaid and exist to document the
+    ecosystem, so they count as documentation."""
+    category = categorize_role_for_stats(entry.role)
+    if category == "tool":
+        technologies = {str(item).lower() for item in getattr(entry, "tech", ()) or ()}
+        if "markdown" in technologies:
+            return "docs"
+    return category
 
 
 #: Ordered (keyword, category) rules for A.R.M.O.R.'s own free-text `stack`,
@@ -1750,6 +2058,11 @@ def _render_one_row(
         detail = error_text(result)
 
     deploy_key = entry.deploy
+    deploy_effective = categorize_deploy_for_entry(entry)
+    if deploy_key in DEPLOY_LABELS:
+        # A curated enum value is shown as the category it really is (an
+        # STM32 firmware project says "user-pc", the machine that builds it).
+        deploy_key = deploy_effective
     deploy_label = DEPLOY_LABELS.get(
         deploy_key,
         deploy_key,
@@ -1766,8 +2079,12 @@ def _render_one_row(
     # match a single real A.R.M.O.R. row. The VISIBLE badge below (`deploy`/
     # `deploy_label`) is unaffected and still shows this project's own real
     # text.
-    deploy_filter = esc(categorize_deploy_for_stats(deploy_key))
-    role_filter = esc(categorize_role_for_stats(entry.role))
+    deploy_filter = esc(deploy_effective)
+    role_effective = categorize_role_for_entry(entry)
+    role_filter = esc(role_effective)
+    # Same idea for the role badge: a curated enum value shows its effective
+    # category, a free-text A.R.M.O.R. role keeps its own text.
+    role_key = role_effective if entry.role in ROLE_LABELS else entry.role
 
     version_html = esc(version)
     detail_html = esc(detail)
@@ -1790,10 +2107,10 @@ def _render_one_row(
     )
 
     role_icon = render_icon(
-        ROLE_ICONS.get(entry.role, ""),
+        ROLE_ICONS.get(role_key, ""),
         css_class="tech-icon role-icon",
     )
-    role_label = esc(ROLE_LABELS.get(entry.role, entry.role))
+    role_label = esc(ROLE_LABELS.get(role_key, role_key))
 
     # A.R.M.O.R.'s own `role`/`deployment_target` fields are real,
     # free-text one-line descriptions (up to ~140 characters), not the
@@ -1813,8 +2130,8 @@ def _render_one_row(
     # stylesheet below now truncate with an ellipsis - never grow the
     # table - and carry the untruncated text in a real `title` tooltip.
     role_known = entry.role in ROLE_LABELS
-    role_css_key = entry.role if role_known else "other"
-    role_i18n_attr = f' data-i18n="role_{esc(entry.role)}"' if role_known else ""
+    role_css_key = role_key if role_known else "other"
+    role_i18n_attr = f' data-i18n="role_{esc(role_key)}"' if role_known else ""
 
     deploy_known = deploy_key in DEPLOY_LABELS
     deploy_i18n_attr = f' data-i18n="deploy_{deploy_filter}"' if deploy_known else ""
@@ -2073,6 +2390,7 @@ def render_project_rows(
 def calculate_statistics(
     entries: list[ProjectEntry],
     results: dict[str, RemoteStatus],
+    ecosystem_by_name: dict[str, str] | None = None,
 ) -> dict[str, object]:
     total = len(entries)
 
@@ -2117,13 +2435,19 @@ def calculate_statistics(
         for role in ROLE_ORDER
     }
 
+    # The same cross-tab once per ecosystem, for the matrix's ecosystem view.
+    ecosystem_matrices: dict[str, dict[str, dict[str, int]]] = {
+        key: {role: {deploy: 0 for deploy in DEPLOY_ORDER} for role in ROLE_ORDER}
+        for key, _label in ECOSYSTEM_ORDER
+    }
+
     for entry in entries:
         # Categorized, not the raw manifest value - see
         # categorize_deploy_for_stats/categorize_role_for_stats's own
         # docstrings for why a raw dict-key lookup here left every real
         # A.R.M.O.R. project invisible in every count below.
-        deploy_category = categorize_deploy_for_stats(entry.deploy)
-        role_category = categorize_role_for_stats(entry.role)
+        deploy_category = categorize_deploy_for_entry(entry)
+        role_category = categorize_role_for_entry(entry)
         stack_category = categorize_stack_for_stats(entry.stack)
 
         deploy_counts[deploy_category] = (
@@ -2144,6 +2468,9 @@ def calculate_statistics(
 
         if role_category in role_deploy_matrix and deploy_category in role_deploy_matrix[role_category]:
             role_deploy_matrix[role_category][deploy_category] += 1
+            ecosystem_key = (ecosystem_by_name or {}).get(entry.name)
+            if ecosystem_key in ecosystem_matrices:
+                ecosystem_matrices[ecosystem_key][role_category][deploy_category] += 1
 
     return {
         "total": total,
@@ -2155,6 +2482,7 @@ def calculate_statistics(
         "maturity_counts": maturity_counts,
         "role_counts": role_counts,
         "role_deploy_matrix": role_deploy_matrix,
+        "ecosystem_matrices": ecosystem_matrices,
     }
 
 
@@ -2348,23 +2676,35 @@ def render_role_summary(
 
 def render_compatibility_matrix(
     role_deploy_matrix: dict[str, dict[str, int]],
-    role_counts: dict[str, int],
 ) -> str:
-    rows = [
-        role
+    """One role x deployment-target table with row, column and grand totals.
+    Only roles and targets with at least one real project get a row or a
+    column, so a single ecosystem's table stays compact."""
+    row_totals = {
+        role: sum(role_deploy_matrix.get(role, {}).values())
         for role in ROLE_ORDER
-        if role_counts.get(role, 0) > 0
-    ]
+    }
+    rows = [role for role in ROLE_ORDER if row_totals[role] > 0]
+
+    column_totals = {
+        deploy: sum(role_deploy_matrix.get(role, {}).get(deploy, 0) for role in ROLE_ORDER)
+        for deploy in DEPLOY_ORDER
+    }
+    columns = [deploy for deploy in DEPLOY_ORDER if column_totals[deploy] > 0]
+    grand_total = sum(row_totals.values())
+
+    if not rows:
+        return '<p class="compat-empty">–</p>'
 
     header_cells = "".join(
         f'<th data-i18n="deploy_{esc(deploy)}">{esc(DEPLOY_LABELS.get(deploy, deploy))}</th>'
-        for deploy in DEPLOY_ORDER
+        for deploy in columns
     )
 
     body_rows = []
     for role in rows:
         cells = []
-        for deploy in DEPLOY_ORDER:
+        for deploy in columns:
             count = role_deploy_matrix.get(role, {}).get(deploy, 0)
             cell_text = str(count) if count else "–"
             css_class = "compat-cell compat-cell-hit" if count else "compat-cell compat-cell-empty"
@@ -2378,9 +2718,15 @@ def render_compatibility_matrix(
                 <span data-i18n="role_{esc(role)}">{esc(ROLE_LABELS.get(role, role))}</span>
               </th>
               {"".join(cells)}
+              <td class="compat-cell compat-total">{row_totals[role]}</td>
             </tr>
             """
         )
+
+    footer_cells = "".join(
+        f'<td class="compat-cell compat-total">{column_totals[deploy]}</td>'
+        for deploy in columns
+    )
 
     return f"""
     <table class="compat-matrix">
@@ -2388,12 +2734,65 @@ def render_compatibility_matrix(
         <tr>
           <th data-i18n="compat_corner">Role \\ Target</th>
           {header_cells}
+          <th class="compat-total-head" data-i18n="compat_total">Total</th>
         </tr>
       </thead>
       <tbody>
         {"".join(body_rows)}
       </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row" data-i18n="compat_total">Total</th>
+          {footer_cells}
+          <td class="compat-cell compat-total compat-grand-total">{grand_total}</td>
+        </tr>
+      </tfoot>
     </table>
+    """
+
+
+def render_compatibility_views(
+    role_deploy_matrix: dict[str, dict[str, int]],
+    ecosystem_matrices: dict[str, dict[str, dict[str, int]]],
+) -> str:
+    """The matrix for the whole dashboard plus one compact matrix per
+    ecosystem, switched client-side by a row of buttons (every table is in
+    the page, so it works without a request and reads the same in every
+    language)."""
+    views: list[tuple[str, str, str]] = [
+        ("all", "All ecosystems", render_compatibility_matrix(role_deploy_matrix))
+    ]
+    for key, label in ECOSYSTEM_ORDER:
+        matrix = ecosystem_matrices.get(key, {})
+        if any(sum(by_deploy.values()) for by_deploy in matrix.values()):
+            views.append((key, label, render_compatibility_matrix(matrix)))
+
+    buttons = "".join(
+        f"""
+        <button
+            class="filter{' active' if view_key == 'all' else ''}"
+            type="button"
+            data-compat-view="{esc(view_key)}"
+            {'data-i18n="compat_view_all"' if view_key == 'all' else ''}
+        >{esc(label)}</button>
+        """
+        for view_key, label, _table in views
+    )
+
+    panels = "".join(
+        f"""
+        <div class="compat-view" data-compat-panel="{esc(view_key)}"{'' if view_key == 'all' else ' hidden'}>
+          {table}
+        </div>
+        """
+        for view_key, _label, table in views
+    )
+
+    return f"""
+    <div class="filters compat-views" role="group" data-i18n-aria-label="compat_view_label" aria-label="Ecosystem view">
+      {buttons}
+    </div>
+    {panels}
     """
 
 
@@ -2447,7 +2846,7 @@ def render_html(
     meta: dict[str, RepoMeta],
     ecosystem_by_name: dict[str, str],
 ) -> str:
-    stats = calculate_statistics(entries, results)
+    stats = calculate_statistics(entries, results, ecosystem_by_name)
 
     total = int(stats["total"])
     ok = int(stats["ok"])
@@ -2482,9 +2881,9 @@ def render_html(
         role_counts,
     )
 
-    compatibility_matrix = render_compatibility_matrix(
+    compatibility_matrix = render_compatibility_views(
         role_deploy_matrix,
-        role_counts,
+        stats["ecosystem_matrices"],
     )
 
     roadmap_steps = render_roadmap(
@@ -2806,7 +3205,7 @@ def render_html(
 
   .architecture-grid {{
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
   }}
 
@@ -3312,6 +3711,34 @@ def render_html(
   .compat-cell-empty {{
     color: var(--dim);
     opacity: .5;
+  }}
+
+  .compat-total,
+  .compat-total-head,
+  .compat-matrix tfoot th {{
+    background: var(--surface-2);
+    font-weight: 700;
+  }}
+
+  .compat-total {{
+    color: var(--text);
+  }}
+
+  .compat-grand-total {{
+    color: var(--accent);
+  }}
+
+  .compat-matrix tfoot th {{
+    text-align: left;
+    color: var(--dim);
+  }}
+
+  .compat-views {{
+    margin: 0 0 12px;
+  }}
+
+  .compat-view[hidden] {{
+    display: none;
   }}
 
   /* --- Roadmap (v3) -------------------------------------------------------
@@ -3975,7 +4402,7 @@ def render_html(
       </div>
 
       <div class="header-controls">
-        <select id="lang-select" class="lang-select" aria-label="Language / Idioma / Langue / Lingua / Sprache / 语言 / 言語">
+        <select id="lang-select" class="lang-select" aria-label="Language / Idioma / Langue / Lingua / Sprache / 语言 / 言語 / Língua">
           <option value="en">🇺🇸 English</option>
           <option value="es">🇪🇸 Español</option>
           <option value="fr">🇫🇷 Français</option>
@@ -3983,6 +4410,7 @@ def render_html(
           <option value="de">🇩🇪 Deutsch</option>
           <option value="zh">🇨🇳 简体中文</option>
           <option value="ja">🇯🇵 日本語</option>
+          <option value="pt">🇵🇹 Português</option>
         </select>
 
         <button
@@ -4111,6 +4539,16 @@ def render_html(
         observable, testable and interoperable.</p>
         <ul><li>Twin / Physics / HIL</li><li>Telemetry / DataLake</li><li>OPC-UA / MQTT</li><li>MTConnect / Gateway</li></ul>
       </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_h_card5_title">Contracts and tests</h3>
+        <p data-i18n="architecture_h_card5_body">HYDRA-UMC-SDK holds the v1 JSON Schemas, a Python reference validator, Go, TypeScript and Rust clients that enforce them, conformance fixtures, an OpenAPI slice of the server and a job intake that never runs the same idempotency key twice; a compatibility matrix and a differential test keep validator and schemas in step.</p>
+        <ul><li>HYDRA-UMC-SDK</li><li>JSON Schema / OpenAPI</li><li>Go / TypeScript / Rust clients</li><li>Job intake</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_h_card6_title">Verified updates</h3>
+        <p data-i18n="architecture_h_card6_body">HYDRA-UMC-UPDATER installs and updates a repository by cloning, staging, verifying and only then promoting it, so a failed check leaves the live copy untouched; an optional gate refuses a commit without a trusted signature before anything is built. Firmware images are checked with CRC32 and a shared-key HMAC-SHA256; an asymmetric signature is planned, not implemented.</p>
+        <ul><li>HYDRA-UMC-UPDATER</li><li>Staged install</li><li>Signed-commit gate</li><li>CRC32 + HMAC-SHA256</li></ul>
+      </article>
     </div>
 
     <div class="architecture-flow" aria-label="HYDRA-UMC control flow">
@@ -4160,6 +4598,16 @@ def render_html(
         gives it a browser console and URTC-SMART-RACK stores and identifies tool heads between changes.</p>
         <ul><li>URTC-VISION-TOOL</li><li>URTC-WEB-STUDIO</li><li>URTC-SMART-RACK</li></ul>
       </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_u_card5_title">Contracts and tests</h3>
+        <p data-i18n="architecture_u_card5_body">URTC-COMMON writes the CAN protocol once as data, generates a C header, TypeScript and Python modules and a protocol table from it, and keeps the conformance vectors every implementation must reproduce. The firmware and the desktop tools still keep their own copies until each one migrates, so today it is compared against them rather than used by them.</p>
+        <ul><li>URTC-COMMON</li><li>CAN spec + generators</li><li>Conformance vectors</li><li>Migration plan</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_u_card6_title">Release assets and signing</h3>
+        <p data-i18n="architecture_u_card6_body">Each firmware release is published as GitHub release assets with SHA-256 sidecars and a manifest, and the release tool refuses to publish images signed with the public development key as an official release. The bootloaders check CRC32 and a shared-key HMAC-SHA256; asymmetric signatures are planned, and nothing has been flashed to a real board yet.</p>
+        <ul><li>GitHub release assets</li><li>SHA-256 + manifest</li><li>Dev-key release gate</li><li>Asymmetric signing planned</li></ul>
+      </article>
     </div>
 
     <div class="architecture-flow" aria-label="URTC control flow">
@@ -4193,9 +4641,8 @@ def render_html(
       </article>
       <article class="architecture-card">
         <h3 data-i18n="architecture_a_card2_title">Field nodes</h3>
-        <p data-i18n="architecture_a_card2_body">ESP32-S3 radar, solar and electrical nodes publish sensor and
-        equipment readings; the solar and electrical ones only read, never write to an inverter, battery or meter.</p>
-        <ul><li>ARMOR-RADAR</li><li>ARMOR-SOLAR</li><li>ARMOR-ELECTRICAL</li><li>ARMOR-NETWORK</li></ul>
+        <p data-i18n="architecture_a_card2_body">ESP32-S3 radar, solar, electrical, alarm and wall-panel nodes publish sensor and equipment readings or their state; the solar and electrical ones only read, never write to an inverter, battery or meter.</p>
+        <ul><li>ARMOR-RADAR</li><li>ARMOR-SOLAR</li><li>ARMOR-ELECTRICAL</li><li>ARMOR-ALARM</li><li>ARMOR-HMI</li></ul>
       </article>
       <article class="architecture-card">
         <h3 data-i18n="architecture_a_card3_title">Perception, never authority</h3>
@@ -4208,6 +4655,16 @@ def render_html(
         <p data-i18n="architecture_a_card4_body">ARMOR-SERVER is the only place that ever touches a camera password
         or an RTSP address; Studio and the Android app are its authenticated clients, and a phone can set a new node up over Bluetooth alone.</p>
         <ul><li>ARMOR-SERVER</li><li>ARMOR-STUDIO</li><li>ARMOR-ANDROID-CONTROL</li><li>ARMOR-HMI</li><li>BLE set-up only</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_a_card5_title">Contracts and tests</h3>
+        <p data-i18n="architecture_a_card5_body">ARMOR-COMMON defines every node message once as a JSON Schema, with a validator that refuses what it does not implement, accepted and rejected conformance vectors that each implementation must pass, the OpenAPI file of the server's routes and the firmware base shared by the five nodes, which a tool keeps identical in each of them.</p>
+        <ul><li>ARMOR-COMMON</li><li>JSON Schema / OpenAPI</li><li>Conformance vectors</li><li>Shared firmware base</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_a_card6_title">Signed releases and updates</h3>
+        <p data-i18n="architecture_a_card6_body">Node firmware is published with a SHA-256 and an Ed25519 signature, and both a node and ARMOR-SERVER refuse a release without a valid one. The maintenance helper of ARMOR-DEVOPS checks an Ed25519 signature on each service package before unpacking it, which is how ARMOR-STUDIO updates the central machine; the private key never goes to GitHub. A firmware file uploaded by hand is not checked.</p>
+        <ul><li>Ed25519 firmware signatures</li><li>ARMOR-DEVOPS signed packages</li><li>ARMOR-STUDIO</li><li>Key never on GitHub</li></ul>
       </article>
     </div>
 
@@ -4366,9 +4823,10 @@ def render_html(
     </div>
 
     <p class="ecosystem-intro" data-i18n="compat_intro">
-      Real project counts by role and deployment target, drawn straight
-      from every repository's own manifest. A count, not a claim that any
-      two specific projects interoperate.
+      Real project counts by role and deployment target, with row, column
+      and grand totals, drawn straight from every repository's own
+      manifest. A count, not a claim that any two specific projects
+      interoperate.
     </p>
 
     <div class="compat-matrix-wrapper">
@@ -4564,7 +5022,7 @@ def render_html(
   //
   // I18N covers this page's own UI chrome and its closed vocabulary
   // (deploy targets, maturity levels + tooltips, roles, OK/ERROR) in all
-  // 7 languages - see TRANSLATIONS's own module docstring in
+  // 8 languages - see TRANSLATIONS's own module docstring in
   // generate_dashboard.py for exactly what is and isn't translated, and
   // why. Applied client-side (this script runs after every element below
   // it in the DOM has already parsed, so a brief flash of the English
@@ -4864,6 +5322,31 @@ def render_html(
     Array.from(
       document.querySelectorAll("[data-filter-role]")
     );
+
+  // Compatibility matrix: show the table of the chosen ecosystem only.
+  const compatButtons =
+    Array.from(
+      document.querySelectorAll("[data-compat-view]")
+    );
+
+  const compatPanels =
+    Array.from(
+      document.querySelectorAll("[data-compat-panel]")
+    );
+
+  compatButtons.forEach(function (button) {{
+    button.addEventListener("click", function () {{
+      const view = button.dataset.compatView;
+
+      compatButtons.forEach(function (other) {{
+        other.classList.toggle("active", other === button);
+      }});
+
+      compatPanels.forEach(function (panel) {{
+        panel.hidden = panel.dataset.compatPanel !== view;
+      }});
+    }});
+  }});
 
   let activeStatus = "all";
   let activeDeploy = "all";
