@@ -282,7 +282,7 @@ Chaque profil d'outil porte son propre watchdog et son propre comportement en ca
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | Outil de diagnostic CAN-bus avec panneaux de télémétrie par outil. |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.0 | Outil Web Serial pour les tests et l'analyse instantanée du matériel. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Stockage d'outils intelligent avec préchauffage et audit de cycle de vie. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.9 | Tête d'outil avec caméras thermique et RGB intégrées pour l'AQ active. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | Tête d'outil avec caméras thermique et RGB intégrées pour l'AQ active. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.4 | Architecture, interfaces, socle de sécurité, matrice des capacités, note d'étude sur le protocole CAN et catalogue de projets généré de l'écosystème URTC, ainsi que les outils qui comparent tous les dépôts. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.2 | Le protocole CAN de la tête d'outil comme données : une spécification, du code C, TypeScript et Python généré, des vecteurs de conformité et les transports Python. |
