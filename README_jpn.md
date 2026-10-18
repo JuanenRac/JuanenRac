@@ -155,7 +155,7 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.0.0 | 3D ロボット監視・制御向けの、React ベースの高度な Web ダッシュボード。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.9 | 産業用オートメーション向けの、高性能な Python/Qt デスクトップアプリケーション。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.6 | 7インチ産業用ディスプレイ（CM5）専用の Flutter 製タッチインターフェース。 |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.0 | 生体認証ログイン対応のネイティブ Kotlin 製モバイルアプリ。リモートでのロボット管理向け。 |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.1 | 生体認証ログイン対応のネイティブ Kotlin 製モバイルアプリ。リモートでのロボット管理向け。 |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.6 | iOS/iPadOS 向けの Flutter 製モバイルアプリ。リアルタイム WebSocket 同期に対応。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | ロボットモデルの検証とカタログへのプッシュを行う、グラフィカルな URDF エディタ。 |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | 共有モデルカタログ内で実在するパーツを変換・置換・削除・追加するデスクトップ STL モデルエディタ。 |
@@ -277,15 +277,15 @@ v1.1 のエコシステムは階層化された製品プラットフォームで
 
 | リポジトリ | バージョン | 説明 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.6 | 25 種類以上の専用工具に対応する、Universal Robot Tool Controller ファームウェア。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | CAN-OTA および全チップ SWD/JTAG ファームウェア更新用の GUI ツール。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | CAN 経由で URTC 工具プロファイルをリアルタイムに検証する診断ツール。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.0 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | ブラウザベースの Web Serial ツール。即座のハードウェアテストと解析が可能。 |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | 自動予熱とライフサイクル監査機能を備えた、インテリジェント工具保管ラック。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | 熱画像・RGB カメラを内蔵したツールヘッド。能動的な品質検査向け。 |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.4 | URTC エコシステムのアーキテクチャ、インターフェース、セキュリティ基準、能力マトリクス、CAN プロトコルの調査メモ、生成されたプロジェクトカタログ、そしてすべてのリポジトリを比較するツール。 |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.2 | ツールヘッドの CAN プロトコルをデータとして収めたもの：仕様、生成された C・TypeScript・Python コード、適合ベクトル、Python トランスポート。 |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.4 | 各リポジトリ自身のマニフェストに基づき、マシン上の URTC リポジトリを検出、インストール、更新します。 |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | URTC エコシステムのアーキテクチャ、インターフェース、セキュリティ基準、能力マトリクス、CAN プロトコルの調査メモ、生成されたプロジェクトカタログ、そしてすべてのリポジトリを比較するツール。 |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | ツールヘッドの CAN プロトコルをデータとして収めたもの：仕様、生成された C・TypeScript・Python コード、適合ベクトル、Python トランスポート。 |
 
 ---
 

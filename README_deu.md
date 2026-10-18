@@ -155,7 +155,7 @@ für alle drei - Versionen prüfen und jedes weitere Projekt bauen/aktualisieren
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.0.0 | Fortschrittliches React-basiertes Web-Dashboard für 3D-Roboter-Überwachung und -Steuerung. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.9 | Hochleistungs-Python/Qt-Desktop-Anwendung für die industrielle Automatisierung. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.6 | Flutter-basierte Touch-Schnittstelle für industrielle 7"-Displays (CM5). |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.0 | Native Kotlin-Mobile-App mit biometrischem Login für Fernmanagement. |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.1 | Native Kotlin-Mobile-App mit biometrischem Login für Fernmanagement. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.6 | Flutter-Mobile-App für iOS/iPadOS mit Live-WebSocket-Synchronisation. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | Grafischer URDF-Editor zum Validieren und Hochladen von Robotermodellen. |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | Desktop-STL-Modelleditor - transformiert, ersetzt, entfernt und fügt echte Teile im gemeinsamen Modellkatalog hinzu. |
@@ -277,15 +277,15 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.6 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.0 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.4 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.2 | Das CAN-Protokoll des Werkzeugkopfs als Daten: eine Spezifikation, erzeugter C-, TypeScript- und Python-Code, Konformitätsvektoren und die Python-Transporte. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.4 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | Das CAN-Protokoll des Werkzeugkopfs als Daten: eine Spezifikation, erzeugter C-, TypeScript- und Python-Code, Konformitätsvektoren und die Python-Transporte. |
 
 ---
 

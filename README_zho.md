@@ -154,7 +154,7 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.0.0 | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.9 | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.6 | 专为 7 英寸工业显示屏（CM5）打造的 Flutter 触控界面。 |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.0 | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.1 | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.6 | 面向 iOS/iPadOS 的 Flutter 移动应用，支持实时 WebSocket 同步。 |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | 图形化 URDF 编辑器，用于校验并推送机器人模型至目录。 |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | 桌面 STL 模型编辑器 - 在共享模型目录中变换、替换、移除和添加真实部件。 |
@@ -276,15 +276,15 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.6 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.0 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.4 | URTC 生态的架构、接口、安全基线、能力矩阵、CAN 协议研究说明和生成的项目目录，以及对所有仓库进行比较的工具。 |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.2 | 以数据形式保存的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量以及 Python 传输层。 |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.4 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | URTC 生态的架构、接口、安全基线、能力矩阵、CAN 协议研究说明和生成的项目目录，以及对所有仓库进行比较的工具。 |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | 以数据形式保存的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量以及 Python 传输层。 |
 
 ---
 

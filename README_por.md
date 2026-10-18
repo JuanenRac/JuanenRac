@@ -156,7 +156,7 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.0.0 | Painel web avançado baseado em React para a monitorização e o controlo 3D de robôs. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.9 | Aplicação de ambiente de trabalho de alto desempenho em Python/Qt para automatização industrial. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.6 | Interface tátil dedicada, baseada em Flutter, para ecrãs industriais de 7" (CM5). |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.0 | Aplicação móvel nativa em Kotlin com início de sessão biométrico para a gestão remota de robôs. |
+| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.1 | Aplicação móvel nativa em Kotlin com início de sessão biométrico para a gestão remota de robôs. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.6 | Aplicação móvel Flutter para iOS/iPadOS com sincronização WebSocket em tempo real. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | Editor gráfico de URDF para validar e enviar modelos de robôs para o catálogo. |
 | [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | Editor de modelos STL para ambiente de trabalho - transforma, substitui, remove e adiciona peças reais no catálogo de modelos partilhado. |
@@ -277,15 +277,15 @@ Cada perfil de ferramenta tem o seu próprio watchdog e comportamento perante fa
 
 | Repositório | Versão | Descrição |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | Firmware do Universal Robot Tool Controller para mais de 25 ferramentas especializadas. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.6 | Firmware do Universal Robot Tool Controller para mais de 25 ferramentas especializadas. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | Ferramenta GUI para atualizações de firmware por CAN-OTA e SWD/JTAG de chip completo. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | Ferramenta de diagnóstico para a validação em tempo real dos perfis de ferramentas URTC através de CAN. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.0 | Ferramenta Web Serial no navegador para testes e análises instantâneos de hardware. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | Ferramenta Web Serial no navegador para testes e análises instantâneos de hardware. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Armazenamento inteligente de ferramentas com pré-aquecimento automático e auditoria do ciclo de vida. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | Cabeçote com câmaras térmica e RGB integradas para controlo de qualidade ativo. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | Deteta, instala e atualiza num computador os repositórios do URTC a partir dos seus próprios manifestos. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.4 | Arquitetura, interfaces, base de segurança, matriz de capacidades, nota de estudo do protocolo CAN e catálogo de projetos gerado do ecossistema URTC, mais as ferramentas que comparam todos os repositórios. |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.2 | O protocolo CAN da cabeça de ferramenta como dados: uma especificação, código C, TypeScript e Python gerado, vetores de conformidade e os transportes Python. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.4 | Deteta, instala e atualiza num computador os repositórios do URTC a partir dos seus próprios manifestos. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | Arquitetura, interfaces, base de segurança, matriz de capacidades, nota de estudo do protocolo CAN e catálogo de projetos gerado do ecossistema URTC, mais as ferramentas que comparam todos os repositórios. |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | O protocolo CAN da cabeça de ferramenta como dados: uma especificação, código C, TypeScript e Python gerado, vetores de conformidade e os transportes Python. |
 
 ---
 
