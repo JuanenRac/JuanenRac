@@ -9859,7 +9859,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.1
+            0.0.2
           </td>
 
           <td class="status-cell">
@@ -9874,7 +9874,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/e2638dd60a6c1b3b7b4c99b68ed751e616a1021a" target="_blank" rel="noopener noreferrer" class="commit-link" title="READMEs: state what is planned and what is tested only against fakes; add the safety and security status note">READMEs: state what is planned and what is tested only against fakes; add the safety and security status note</a>
+            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/178a312a1b8fe91a057c0a34afe43c16c389f57d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Let the sibling tests read programs that adopted the generated module, fix its strict type check, and record the migrati">Let the sibling tests read programs that adopted the generated module, fix its strict type check, and record the migrati</a>
           </td>
         </tr>
 
@@ -9981,7 +9981,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.1
+            0.3.2
           </td>
 
           <td class="status-cell">
@@ -9996,7 +9996,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/1b02ae7395b9371dc3fc9fd9c912fdd52e1f8710" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rename the CI baseline workflow and the issue and pull request templates to URTC">Rename the CI baseline workflow and the issue and pull request templates to URTC</a>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/d13205e1761642679be4ff7489fd9c3dc08aeacd" target="_blank" rel="noopener noreferrer" class="commit-link" title="Verify release signatures of downloaded and flashed images, take the protocol constants from the shared generated module">Verify release signatures of downloaded and flashed images, take the protocol constants from the shared generated module</a>
           </td>
         </tr>
 
@@ -10103,7 +10103,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.5
+            0.1.6
           </td>
 
           <td class="status-cell">
@@ -10118,7 +10118,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/3edbd7103d68ffd161672d80960069fc2fa2daf6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rename the CI baseline workflow and the issue and pull request templates to URTC">Rename the CI baseline workflow and the issue and pull request templates to URTC</a>
+            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/2045cc46db1465f5d192b9089b01b8ff95240fe4" target="_blank" rel="noopener noreferrer" class="commit-link" title="Follow the URTC tool ID space, add per-tool pre-heat limits and make builds undo a failed version bump (0.1.6)">Follow the URTC tool ID space, add per-tool pre-heat limits and make builds undo a failed version bump (0.1.6)</a>
           </td>
         </tr>
 
@@ -10138,7 +10138,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real, hardware-independent pure-C logic (tool_id.c ID decoding, lifecycle.c usage/maintenance tracking, preheat.c Smart Idle activation + target temperature + real safe-state target), a real rack command protocol (protocol.c: versioned framing + CRC8; rack_command.c: real actuation-limit validation; link_watchdog.c: real timeout + idempotency), a real multi-slot tool inventory (rack_inventory.c: which tool is racked in which slot, a real tool never in two slots at once, per-slot pre-heat target by tool identity - I57), and a real host-side scenario harness playing valid/CRC-corrupted/out-of-range/timed-out/duplicate frames through the whole pipeline - 138 host-native test assertions total, plus the verified cross-compile toolchain (arm-none-eabi-gcc -&gt; .bin/.hex with a real size report). link_watchdog.c&#x27;s sequence check is now a real wraparound-aware &quot;genuinely newer&quot; comparison (not just &quot;different from the last one seen&quot;), with a real session/epoch reset on link-loss recovery. Real CAN/F-RAM/GPIO I/O to actually drive tool tracking and pre-heating needs a real PCB, which doesn&#x27;t exist yet.</div>
+                <div class="detail-text">Real, hardware-independent pure-C logic (tool_id.c ID decoding, lifecycle.c usage/maintenance tracking, preheat.c Smart Idle activation + target temperature + real safe-state target), a real rack command protocol (protocol.c: versioned framing + CRC8; rack_command.c: real actuation-limit validation; link_watchdog.c: real timeout + idempotency), a real multi-slot tool inventory (rack_inventory.c: which tool is racked in which slot, a real tool never in two slots at once, per-slot pre-heat target by tool identity - I57), and a real host-side scenario harness playing valid/CRC-corrupted/out-of-range/timed-out/duplicate frames through the whole pipeline, per-tool pre-heat limits (tool_limits.c) and the layer that applies a decision to the inventory and holds every slot in the safe state while the link is lost (rack_app.c) - 290 host-native test assertions total, plus the verified cross-compile toolchain (arm-none-eabi-gcc -&gt; .bin/.hex with a real size report). link_watchdog.c&#x27;s sequence check is now a real wraparound-aware &quot;genuinely newer&quot; comparison (not just &quot;different from the last one seen&quot;), with a real session/epoch reset on link-loss recovery. Real CAN/F-RAM/GPIO I/O to actually drive tool tracking and pre-heating needs a real PCB, which doesn&#x27;t exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -10225,7 +10225,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.0
+            0.3.1
           </td>
 
           <td class="status-cell">
@@ -10240,7 +10240,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/e37cab6422f79751007f459aa020332bb4090185" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the maturity as functional and state in the READMEs what is planned and what is tested only against fakes">Declare the maturity as functional and state in the READMEs what is planned and what is tested only against fakes</a>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/a84e26121ca41d61e7c1109def3e4c212e42ac26" target="_blank" rel="noopener noreferrer" class="commit-link" title="Take the protocol constants from the shared generated module, add a language selector and the wire feeder position to th">Take the protocol constants from the shared generated module, add a language selector and the wire feeder position to th</a>
           </td>
         </tr>
 
@@ -10469,7 +10469,7 @@
           </td>
 
           <td class="version status-ok">
-            0.2.9
+            0.3.0
           </td>
 
           <td class="status-cell">
@@ -10484,7 +10484,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/c087d74af164d62a6407746d01dd522acacd6f51" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rename the CI baseline workflow and the issue and pull request templates to URTC">Rename the CI baseline workflow and the issue and pull request templates to URTC</a>
+            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/54cef8d1516c9f40e58c40f7928bed151ace8c58" target="_blank" rel="noopener noreferrer" class="commit-link" title="Verify release signatures when syncing firmware, take the CAN identifiers from the shared generated module and read URTC">Verify release signatures when syncing firmware, take the CAN identifiers from the shared generated module and read URTC</a>
           </td>
         </tr>
 
@@ -10728,7 +10728,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.1
+            0.3.2
           </td>
 
           <td class="status-cell">
@@ -10743,7 +10743,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-HMI/commit/b73353b3c16505b04284374af3d3d0ffc2b219fa" target="_blank" rel="noopener noreferrer" class="commit-link" title="Tie stored secrets to their host and fix silent alarms past the sixth line">Tie stored secrets to their host and fix silent alarms past the sixth line</a>
+            <a href="https://github.com/JuanenRac/ARMOR-HMI/commit/331a3e96961571517a1746259be32b4ff6efb158" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base; remember more alarm ids and serialise saves">Update the shared node base; remember more alarm ids and serialise saves</a>
           </td>
         </tr>
 
@@ -10763,7 +10763,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The settings, what the panel knows of the server (the summary, the state of the link and when what it shows is old), the voice conversation, the pins of the board and the words of the screen in eight languages, and the glyphs of its fonts, are tested on a computer (1,836 checks in seven test programs, all passing), and the web page is tested in a real browser against a stand-in of the panel. The firmware (the screen, the touch, the sound and the link to ARMOR-SERVER, on top of the node firmware the family shares) has been built once with ESP-IDF 5.5.5 (not by the continuous integration) and has never run on a board: it is written from Waveshare&#x27;s examples for this family of boards. There is no wake word (it is push to talk) and the speech service the assistant would talk to does not exist yet.</div>
+                <div class="detail-text">The settings, what the panel knows of the server (the summary, the state of the link and when what it shows is old), the voice conversation, the pins of the board and the words of the screen in eight languages, and the glyphs of its fonts, are tested on a computer (26,325 checks in nine test programs, all passing), and the web page is tested in a real browser against a stand-in of the panel. The firmware (the screen, the touch, the sound and the link to ARMOR-SERVER, on top of the node firmware the family shares) has been built once with ESP-IDF 5.5.5 (not by the continuous integration) and has never run on a board: it is written from Waveshare&#x27;s examples for this family of boards. There is no wake word (it is push to talk) and the speech service the assistant would talk to does not exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -11478,7 +11478,7 @@
           </td>
 
           <td class="version status-ok">
-            0.8.0.3
+            0.8.0.4
           </td>
 
           <td class="status-cell">
@@ -11493,7 +11493,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/ebdbea2cd7dd17eeee4464269ec43faf90346823" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refresh the catalogue and the test counts and signing notes of the Studio and Android READMEs">Refresh the catalogue and the test counts and signing notes of the Studio and Android READMEs</a>
+            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/65ccf9bfcca53c3630d031476d64c7fb7224bb71" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refresh the node pages: test counts, the radar node scope and the catalogue">Refresh the node pages: test counts, the radar node scope and the catalogue</a>
           </td>
         </tr>
 
@@ -11740,7 +11740,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.8
+            0.3.9
           </td>
 
           <td class="status-cell">
@@ -11755,7 +11755,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-ALARM/commit/2fe29c7c54427f77de91cf95c679b5d5302736f3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Tie stored passwords to their host and fix three alarm panel edge cases">Tie stored passwords to their host and fix three alarm panel edge cases</a>
+            <a href="https://github.com/JuanenRac/ARMOR-ALARM/commit/f68db848779c1a2bb53ad1317e6fc8c1aae53b51" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base">Update the shared node base</a>
           </td>
         </tr>
 
@@ -11775,7 +11775,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The core (zones, the end-of-line loop with a debouncer, the panel: away and stay arming, exit and entry delays, a latching alarm, a siren that times out, forced bypass, PIN with lockout, a log of events) and, on it, the node firmware: the settings, eight wired zones, the siren on a relay, the web panel in eight languages, the update from GitHub, the Zigbee radio bridge and relays of the base board, and the messages armor/alarm/&lt;node&gt;/state|command|result (the server may arm and disarm only through three independent switches). 477,665 checks on a computer plus the panel in a real browser against a stand-in node; the firmware builds for both boards. Nothing has run on a board or on a real installation, no zone or siren has been wired, the node&#x27;s own Zigbee conversation with a coordinator (taking the radio over from the server) is written and tested against a stand-in, but nothing has talked to a real coordinator or sensor, and this is not a certified alarm system.</div>
+                <div class="detail-text">The core (zones, the end-of-line loop with a debouncer, the panel: away and stay arming, exit and entry delays, a latching alarm, a siren that times out, forced bypass, PIN with lockout, a log of events) and, on it, the node firmware: the settings, eight wired zones, the siren on a relay, the web panel in eight languages, the update from GitHub, the Zigbee radio bridge and relays of the base board, and the messages armor/alarm/&lt;node&gt;/state|command|result (the server may arm and disarm only through three independent switches). 486,024 checks on a computer plus the panel in a real browser against a stand-in node; the firmware builds for both boards. Nothing has run on a board or on a real installation, no zone or siren has been wired, the node&#x27;s own Zigbee conversation with a coordinator (taking the radio over from the server) is written and tested against a stand-in, but nothing has talked to a real coordinator or sensor, and this is not a certified alarm system.</div>
               </div>
 
               <div class="detail-block">
@@ -11862,7 +11862,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.0
+            0.4.1
           </td>
 
           <td class="status-cell">
@@ -11877,7 +11877,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-ELECTRICAL/commit/31f4900fe82cad437fa63150474bc76b39f57c6a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Tie stored passwords to their host and range-check switching timestamps">Tie stored passwords to their host and range-check switching timestamps</a>
+            <a href="https://github.com/JuanenRac/ARMOR-ELECTRICAL/commit/5206e19a5841e42cab65ae6bf9f2d5f5abddfe6a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base">Update the shared node base</a>
           </td>
         </tr>
 
@@ -11897,7 +11897,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The core (the meters&#x27; frames, the bus that asks them, the message, the switching rules) and the node&#x27;s settings are tested on a computer with stand-in meters and contactors: 376,272 checks across eleven host test programs (the interlock and switch-set suites are exhaustive/property-based), all passing. Every state, command and result it makes is accepted by ARMOR-COMMON&#x27;s shared contract checker. The commands to a switch and the node&#x27;s answers (`core/switch_set.hpp`) are tested the same way and against ARMOR-COMMON&#x27;s shared vectors. The firmware builds for both boards. It reads the meters and the analog inputs; its only outputs are the base board&#x27;s relays, which an administrator switches from the panel, and the Zigbee radio it lends to one address; neither the rules for switching nor the commands are linked into it. It has never run on a board, nothing has been connected to a meter, a contactor, a relay or the radio, and nothing here switches anything by itself.</div>
+                <div class="detail-text">The core (the meters&#x27; frames, the bus that asks them, the message, the switching rules) and the node&#x27;s settings are tested on a computer with stand-in meters and contactors: 379,581 checks across sixteen host test programs (the interlock and switch-set suites are exhaustive/property-based), all passing. Every state, command and result it makes is accepted by ARMOR-COMMON&#x27;s shared contract checker. The commands to a switch and the node&#x27;s answers (`core/switch_set.hpp`) are tested the same way and against ARMOR-COMMON&#x27;s shared vectors. The firmware builds for both boards. It reads the meters and the analog inputs; its only outputs are the base board&#x27;s relays, which an administrator switches from the panel, and the Zigbee radio it lends to one address; neither the rules for switching nor the commands are linked into it. It has never run on a board, nothing has been connected to a meter, a contactor, a relay or the radio, and nothing here switches anything by itself.</div>
               </div>
 
               <div class="detail-block">
@@ -12106,7 +12106,7 @@
           </td>
 
           <td class="version status-ok">
-            0.7.2
+            0.7.3
           </td>
 
           <td class="status-cell">
@@ -12121,7 +12121,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-RADAR/commit/49d19270173cf3683ee7ed6dfeeb3a56570ebb38" target="_blank" rel="noopener noreferrer" class="commit-link" title="Tie backup broker passwords to their host">Tie backup broker passwords to their host</a>
+            <a href="https://github.com/JuanenRac/ARMOR-RADAR/commit/85c85c92cd3afc8c676b3e14b71d9fbe87ef49dd" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base and keep an open access point off the cabled network">Update the shared node base and keep an open access point off the cabled network</a>
           </td>
         </tr>
 
@@ -12141,7 +12141,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The core, the node state machine, the sensor decoders and the Wi-Fi board layer are tested on a computer: 955 checks across five host test programs, all passing (no frame captured from a real LD2450 is kept as a fixture yet). Its emitted payloads and device states are all accepted by ARMOR-COMMON&#x27;s shared contract checker. The firmware runs on a real Waveshare ESP32-S3-ETH board with a radar; the LD2461 and presence-sensor decoders, the pin assignment of the PoE board and the Wi-Fi board have not been verified on hardware.</div>
+                <div class="detail-text">The core, the node state machine, the sensor decoders and the Wi-Fi board layer are tested on a computer: 2,212 checks across nine host test programs, all passing (no frame captured from a real LD2450 is kept as a fixture yet). Its emitted payloads and device states are all accepted by ARMOR-COMMON&#x27;s shared contract checker. The firmware runs on a real Waveshare ESP32-S3-ETH board with a radar; the LD2461 and presence-sensor decoders, the pin assignment of the PoE board and the Wi-Fi board have not been verified on hardware.</div>
               </div>
 
               <div class="detail-block">
@@ -12228,7 +12228,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.8
+            0.4.9
           </td>
 
           <td class="status-cell">
@@ -12243,7 +12243,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-SOLAR/commit/7162db5b51933c6ad6a1b6d46036d803a2203b50" target="_blank" rel="noopener noreferrer" class="commit-link" title="Tie stored passwords to their host and hold PI18 readings to their limits">Tie stored passwords to their host and hold PI18 readings to their limits</a>
+            <a href="https://github.com/JuanenRac/ARMOR-SOLAR/commit/722f6b43d0366a7e9fed7a06b5cf0cede2d84a2f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base and move the status lines into the tested core">Update the shared node base and move the status lines into the tested core</a>
           </td>
         </tr>
 
@@ -12263,7 +12263,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">The firmware builds in the ESP-IDF container and its core, node state machine and Ethernet board layer are tested on a computer with stand-in equipment: 3,090 checks across ten host test programs, all passing. Both the polled and the pushed messages it makes are accepted by ARMOR-COMMON&#x27;s shared contract checker. It has never run on a board and nothing has been connected to a real inverter or battery. The ANT-BMS decoder is tested with frames captured by other people on real units, not by this project.</div>
+                <div class="detail-text">The firmware builds in the ESP-IDF container and its core, node state machine and Ethernet board layer are tested on a computer with stand-in equipment: 5,412 checks across thirteen host test programs, all passing. Both the polled and the pushed messages it makes are accepted by ARMOR-COMMON&#x27;s shared contract checker. It has never run on a board and nothing has been connected to a real inverter or battery. The ANT-BMS decoder is tested with frames captured by other people on real units, not by this project.</div>
               </div>
 
               <div class="detail-block">
@@ -12621,7 +12621,7 @@
           </td>
 
           <td class="version status-ok">
-            0.6.6
+            0.6.7
           </td>
 
           <td class="status-cell">
@@ -12636,7 +12636,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/6df585da0f9b0f25538c452c17a8a2f557a2e977" target="_blank" rel="noopener noreferrer" class="commit-link" title="Tie stored node passwords to their host and tighten two settings rules">Tie stored node passwords to their host and tighten two settings rules</a>
+            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/0c9902cd91e1143f77c0e215b54207b6aad56791" target="_blank" rel="noopener noreferrer" class="commit-link" title="Widen the shared login table and make the shared text rules stricter">Widen the shared login table and make the shared text rules stricter</a>
           </td>
         </tr>
 

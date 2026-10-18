@@ -278,14 +278,14 @@ Cada perfil de ferramenta tem o seu próprio watchdog e comportamento perante fa
 | Repositório | Versão | Descrição |
 | :--- | :--- | :--- |
 | [URTC](https://github.com/JuanenRac/URTC) | 0.3.5 | Firmware do Universal Robot Tool Controller para mais de 25 ferramentas especializadas. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.1 | Ferramenta GUI para atualizações de firmware por CAN-OTA e SWD/JTAG de chip completo. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.0 | Ferramenta de diagnóstico para a validação em tempo real dos perfis de ferramentas URTC através de CAN. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.9 | Ferramenta Web Serial no navegador para testes e análises instantâneos de hardware. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.5 | Armazenamento inteligente de ferramentas com pré-aquecimento automático e auditoria do ciclo de vida. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | Ferramenta GUI para atualizações de firmware por CAN-OTA e SWD/JTAG de chip completo. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | Ferramenta de diagnóstico para a validação em tempo real dos perfis de ferramentas URTC através de CAN. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.0 | Ferramenta Web Serial no navegador para testes e análises instantâneos de hardware. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Armazenamento inteligente de ferramentas com pré-aquecimento automático e auditoria do ciclo de vida. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.9 | Cabeçote com câmaras térmica e RGB integradas para controlo de qualidade ativo. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | Deteta, instala e atualiza num computador os repositórios do URTC a partir dos seus próprios manifestos. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.4 | Arquitetura, interfaces, base de segurança, matriz de capacidades, nota de estudo do protocolo CAN e catálogo de projetos gerado do ecossistema URTC, mais as ferramentas que comparam todos os repositórios. |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.1 | O protocolo CAN da cabeça de ferramenta como dados: uma especificação, código C, TypeScript e Python gerado, vetores de conformidade e os transportes Python. |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.2 | O protocolo CAN da cabeça de ferramenta como dados: uma especificação, código C, TypeScript e Python gerado, vetores de conformidade e os transportes Python. |
 
 ---
 
@@ -320,12 +320,12 @@ O A.R.M.O.R. segue a mesma regra que o painel do próprio HYDRA-UMC já aplica: 
 
 | Repositório | Versão | Descrição |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.6 | Contratos de mensagens, validadores, vetores de conformidade, tipos gerados, OpenAPI, lançador partilhado. |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.2 | Firmware do nó de campo ESP32-S3, descodificadores para o LD2450, o LD2461 e sensores de presença, o seu núcleo testado no anfitrião, atualiza-se a partir do GitHub com barra de progresso e mapa em direto. |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.8 | Nó gateway solar: o firmware ESP32-S3 e o seu painel (dez portas série), e os protocolos dos inversores Voltronic / MPP Solar e das baterias Pylontech e ANT-BMS. |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.4.0 | Nó elétrico: o firmware (dezasseis medidores PZEM numa só linha série, painel web, MQTT), as tramas dos medidores, a mensagem das leituras da rede e as regras de comutação. |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.8 | Nó e painel de alarme: o seu firmware (zonas cabladas, a sirene, sensores e sirenes Zigbee, um painel web em sete idiomas) e as regras de armar, atrasos, alarme e PIN, testadas num computador; continua a vigiar, e assume o rádio Zigbee, quando o servidor está ausente. Nunca foi executado numa placa. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.1 | Painel tátil para o Waveshare ESP32-S3-Touch-LCD-7C-BOX: o estado do sistema num ecrã de parede, armar/desarmar/reconhecer, voz push-to-talk e a página web de um nó; o firmware nunca foi executado numa placa. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.7 | Contratos de mensagens, validadores, vetores de conformidade, tipos gerados, OpenAPI, lançador partilhado. |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.3 | Firmware do nó de campo ESP32-S3, descodificadores para o LD2450, o LD2461 e sensores de presença, o seu núcleo testado no anfitrião, atualiza-se a partir do GitHub com barra de progresso e mapa em direto. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.9 | Nó gateway solar: o firmware ESP32-S3 e o seu painel (dez portas série), e os protocolos dos inversores Voltronic / MPP Solar e das baterias Pylontech e ANT-BMS. |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.4.1 | Nó elétrico: o firmware (dezasseis medidores PZEM numa só linha série, painel web, MQTT), as tramas dos medidores, a mensagem das leituras da rede e as regras de comutação. |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.9 | Nó e painel de alarme: o seu firmware (zonas cabladas, a sirene, sensores e sirenes Zigbee, um painel web em sete idiomas) e as regras de armar, atrasos, alarme e PIN, testadas num computador; continua a vigiar, e assume o rádio Zigbee, quando o servidor está ausente. Nunca foi executado numa placa. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.2 | Painel tátil para o Waveshare ESP32-S3-Touch-LCD-7C-BOX: o estado do sistema num ecrã de parede, armar/desarmar/reconhecer, voz push-to-talk e a página web de um nó; o firmware nunca foi executado numa placa. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.3 | Monitor de rede local: os dispositivos da rede da casa, o estado da internet (e de que lado está uma falha), o que muda; apenas observa. |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.7 | Estado central (persistido), utilizadores, histórico de eventos, alarmes, dispositivos, automatizações, leituras solares e elétricas, a rede local, serviços do sistema, watchdog de câmaras, câmaras, provas, auditoria, atualizações de firmware dos nós que têm de ser assinadas, avisos por Telegram e Home Assistant, comandos de voz e utilização a partir do exterior da casa (segundo fator, sessões que podem ser terminadas, uma política remota). |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Serviço de vigilância de movimento, seleção de perfil visual, política de fusão explicável, registo de motores. |
@@ -337,7 +337,7 @@ O A.R.M.O.R. segue a mesma regra que o painel do próprio HYDRA-UMC já aplica: 
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.3 | Topologia Compose, instalador de bancada de testes do servidor central, cópia de segurança e restauro, perfil TLS, broker MQTT próprio, serviços de observação e voz, agente de administração. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Cenários e falhas repetíveis. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | Deteta, instala e atualiza os repositórios do próprio ecossistema (atómico por verificação, sem necessidade de GITHUB_TOKEN). |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.3 | Documentação canónica e matriz de capacidades. |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.4 | Documentação canónica e matriz de capacidades. |
 
 ---
 
