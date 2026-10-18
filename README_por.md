@@ -178,7 +178,7 @@ para os três - pode verificar versões e compilar/atualizar qualquer outro proj
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.5 | Pipeline STT/TTS local e privado para a interação do operador em linguagem natural. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.2 | Orquestrador de missões baseado em LLM com recuperação de erros sensível ao contexto. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.2 | Assistente de IA baseado em RAG treinado com manuais técnicos e código-fonte. |
-| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.4 | Técnico de manutenção de IA local e sujeito a políticas: hoje uma política fixa de níveis de risco e uma lista de ferramentas permitidas, com uma defesa real e testada que prova que um documento malicioso recuperado nunca pode desencadear uma chamada a uma ferramenta nem divulgar um segredo - a IA nunca obtém autoridade por gerar uma resposta. |
+| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.5 | Técnico de manutenção de IA local e sujeito a políticas: hoje uma política fixa de níveis de risco e uma lista de ferramentas permitidas, com uma defesa real e testada que prova que um documento malicioso recuperado nunca pode desencadear uma chamada a uma ferramenta nem divulgar um segredo - a IA nunca obtém autoridade por gerar uma resposta. |
 
 ### 🐝 Orquestração e enxame
 | Repositório | Versão | Descrição |

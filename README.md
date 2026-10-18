@@ -177,7 +177,7 @@ for all three - can check versions and build/update any other project.
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.5 | Local, private STT/TTS pipeline for natural language operator interaction. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.2 | LLM-based mission orchestrator with context-aware error recovery. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.2 | RAG-based AI assistant trained on technical manuals and source code. |
-| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.4 | Local, policy-gated AI maintenance technician: a fixed risk-level policy and tool allowlist today, with a real, tested defense proving a malicious retrieved document can never trigger a tool call or leak a secret - the AI never gets authority by generating a response. |
+| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.5 | Local, policy-gated AI maintenance technician: a fixed risk-level policy and tool allowlist today, with a real, tested defense proving a malicious retrieved document can never trigger a tool call or leak a secret - the AI never gets authority by generating a response. |
 
 ### 🐝 Orchestration & Swarm
 | Repository | Version | Description |

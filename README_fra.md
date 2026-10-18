@@ -178,7 +178,7 @@ pour les trois - vérifie les versions et compile/met à jour tout autre projet.
 | [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.5 | Pipeline local STT/TTS pour l'interaction naturelle avec l'opérateur. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.2 | Orchestrateur basé sur LLM avec récupération d'erreur contextuelle. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.2 | Assistant IA basé sur RAG entraîné sur les manuels techniques et le code source. |
-| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.4 | Technicien IA local à permissions contrôlées par politique : aujourd'hui une politique fixe de niveaux de risque et une liste blanche d'outils, avec une défense réelle et testée prouvant qu'un document malveillant récupéré ne peut jamais déclencher un appel d'outil ni divulguer un secret - l'IA n'obtient jamais d'autorité en générant une réponse. |
+| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.5 | Technicien IA local à permissions contrôlées par politique : aujourd'hui une politique fixe de niveaux de risque et une liste blanche d'outils, avec une défense réelle et testée prouvant qu'un document malveillant récupéré ne peut jamais déclencher un appel d'outil ni divulguer un secret - l'IA n'obtient jamais d'autorité en générant une réponse. |
 
 ### 🐝 Orchestration & Essaim
 | Dépôt | Version | Description |
