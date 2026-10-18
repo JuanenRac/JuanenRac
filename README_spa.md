@@ -281,7 +281,7 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.8 | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | Cabezal con cámaras térmicas y RGB integradas para QA activo. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | Arquitectura, interfaces, base de seguridad, matriz de capacidades, nota de estudio del protocolo CAN y catálogo de proyectos generado del ecosistema URTC, más las herramientas que comparan todos los repositorios. |
 
 ---
@@ -318,11 +318,11 @@ A.R.M.O.R. sigue la misma regla que ya aplica el propio dashboard de HYDRA-UMC: 
 | Repositorio | Versión | Descripción |
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.4 | Contratos de mensajes, validadores, vectores de conformidad y tipos generados. |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.0 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.6 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.8 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.6 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.9 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.1 | Firmware del nodo de campo para ESP32-S3 con tres radares y su propio panel web. |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.7 | Protocolos de inversores y baterías solares y los mensajes de un nodo pasarela. |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.9 | Nodo eléctrico: contadores, el mensaje de las lecturas de la red y las reglas para maniobrar. |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.7 | Nodo y central de alarma: su firmware (zonas cableadas, la sirena, sensores y sirenas Zigbee, un panel web en siete idiomas) y las reglas de armado, retardos, alarma y PIN, probados en un ordenador; sigue vigilando, y toma la radio Zigbee, cuando el servidor falta. Nunca ha corrido en una placa. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.0 | Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: el estado del sistema en una pantalla de pared, armar/desarmar/reconocer, voz de pulsar para hablar y la página web de un nodo; el firmware nunca se ha ejecutado en una placa. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | La red local: sus dispositivos, internet y lo que cambia. |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.4 | Coordinador central: telemetría, alarmas, dispositivos, lecturas solares y eléctricas, la red local, los servicios del sistema y cámaras. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Política de inferencia visual que explica sus decisiones y nunca actúa. |

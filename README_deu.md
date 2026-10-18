@@ -282,7 +282,7 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.2.8 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.4 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.0.8 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.2 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.3 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.1 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
 
 ---
@@ -319,11 +319,11 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
 | [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.4 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.0 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.6 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.8 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.6 | Alarmknoten und Alarmzentrale: seine Firmware (verdrahtete Zonen, die Sirene, Zigbee-Sensoren und -Sirenen, ein Web-Panel in sieben Sprachen) und die Regeln für Scharfschalten, Verzögerungen, Alarm und PIN, auf einem Rechner getestet; er überwacht weiter und übernimmt das Zigbee-Funkmodul, wenn der Server fehlt. Noch nie auf einer Platine gelaufen. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.2.9 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.1 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.7 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.3.9 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.7 | Alarmknoten und Alarmzentrale: seine Firmware (verdrahtete Zonen, die Sirene, Zigbee-Sensoren und -Sirenen, ein Web-Panel in sieben Sprachen) und die Regeln für Scharfschalten, Verzögerungen, Alarm und PIN, auf einem Rechner getestet; er überwacht weiter und übernimmt das Zigbee-Funkmodul, wenn der Server fehlt. Noch nie auf einer Platine gelaufen. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.0 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.1 | Das lokale Netzwerk: seine Geräte, das Internet und was sich ändert |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.4 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solar- und Elektromesswerte, das lokale Netzwerk, Systemdienste und Kameras |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
