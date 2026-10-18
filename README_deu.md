@@ -235,6 +235,7 @@ für alle drei - Versionen prüfen und jedes weitere Projekt bauen/aktualisieren
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.2.9 | Windows/Linux-Desktop-Tool, das ein flashbereites CM5-Image baut, vorgeladen mit den aktuellsten Versionen des Ökosystems, mit Ersteinrichtungs-Konfiguration im Stil von Raspberry Pi Imager. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.7 | Wartungsvorfall-Koordinator: eine schreibgeschützte Edge-Rolle mit niedrigem Privileg sammelt einen bereinigten Inventar-/Gesundheits-Snapshot, eine Control-Plane-Rolle rendert ihn schreibgeschützt und bittet einen KI-Anbieter um einen vorgeschlagenen Diagnosevorschlag - wendet nie einen Patch an und stellt nie etwas bereit. |
 | [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.7 | Reproduzierbarer Entwicklungsserver: heute ein rechtebasiertes Konfigurationsschema und eine Manifest-Inventarisierung, wachsend zu einem isolierten Aufgaben-/Workspace-Runner in Koordination mit OPS-AGENT - keine Aufgabe hat eine Deployment-Berechtigung, sofern nicht ein Dokument sie explizit gewährt. |
+| [HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS) | 0.0.1 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix und erzeugter Projektkatalog des Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
 
 ---
 
