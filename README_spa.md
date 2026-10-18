@@ -282,7 +282,7 @@ Cada perfil de herramienta lleva su propio watchdog y comportamiento ante fallos
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | Herramienta Web Serial para pruebas y análisis instantáneo de hardware. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Almacenamiento inteligente de herramientas con precalentamiento y auditoría. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | Cabezal con cámaras térmicas y RGB integradas para QA activo. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.4 | Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.5 | Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | Arquitectura, interfaces, base de seguridad, matriz de capacidades, nota de estudio del protocolo CAN y catálogo de proyectos generado del ecosistema URTC, más las herramientas que comparan todos los repositorios. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | El protocolo CAN del cabezal de herramienta como datos: una especificación, código C, TypeScript y Python generado, vectores de conformidad y los transportes Python. |
 

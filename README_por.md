@@ -283,7 +283,7 @@ Cada perfil de ferramenta tem o seu próprio watchdog e comportamento perante fa
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | Ferramenta Web Serial no navegador para testes e análises instantâneos de hardware. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Armazenamento inteligente de ferramentas com pré-aquecimento automático e auditoria do ciclo de vida. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | Cabeçote com câmaras térmica e RGB integradas para controlo de qualidade ativo. |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.4 | Deteta, instala e atualiza num computador os repositórios do URTC a partir dos seus próprios manifestos. |
+| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.5 | Deteta, instala e atualiza num computador os repositórios do URTC a partir dos seus próprios manifestos. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | Arquitetura, interfaces, base de segurança, matriz de capacidades, nota de estudo do protocolo CAN e catálogo de projetos gerado do ecossistema URTC, mais as ferramentas que comparam todos os repositórios. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | O protocolo CAN da cabeça de ferramenta como dados: uma especificação, código C, TypeScript e Python gerado, vetores de conformidade e os transportes Python. |
 
