@@ -276,14 +276,14 @@ v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 R
 
 | 仓库 | 版本 | 描述 |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.6 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.7 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.3 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.2 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.2 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.7 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.1 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.5 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | URTC 生态的架构、接口、安全基线、能力矩阵、CAN 协议研究说明和生成的项目目录，以及对所有仓库进行比较的工具。 |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.6 | URTC 生态的架构、接口、安全基线、能力矩阵、CAN 协议研究说明和生成的项目目录，以及对所有仓库进行比较的工具。 |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | 以数据形式保存的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量以及 Python 传输层。 |
 
 ---

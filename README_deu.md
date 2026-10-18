@@ -277,14 +277,14 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.6 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.7 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.3 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.2 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.2 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.7 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.1 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.5 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.6 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | Das CAN-Protokoll des Werkzeugkopfs als Daten: eine Spezifikation, erzeugter C-, TypeScript- und Python-Code, Konformitätsvektoren und die Python-Transporte. |
 
 ---

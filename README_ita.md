@@ -277,14 +277,14 @@ Ogni profilo di utensile porta il proprio watchdog e comportamento in caso di gu
 
 | Repository | Versione | Descrizione |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.6 | Firmware per controller utensili universale per oltre 25 utensili specializzati. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.2 | Strumento GUI per aggiornamenti firmware CAN-OTA e SWD/JTAG. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.1 | Strumento di diagnostica CAN-bus con pannelli di telemetria per utensile. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.1 | Strumento Web Serial per test e analisi istantanea dell'hardware. |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.6 | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.0 | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.7 | Firmware per controller utensili universale per oltre 25 utensili specializzati. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.3 | Strumento GUI per aggiornamenti firmware CAN-OTA e SWD/JTAG. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.2 | Strumento di diagnostica CAN-bus con pannelli di telemetria per utensile. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.2 | Strumento Web Serial per test e analisi istantanea dell'hardware. |
+| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.7 | Storage intelligente di utensili con preriscaldamento e audit del ciclo di vita. |
+| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.1 | Testa utensile con telecamere termica e RGB integrate per QA attiva. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.5 | Rileva, installa e aggiorna i repository URTC su una macchina a partire dai loro manifesti. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.5 | Architettura, interfacce, base di sicurezza, matrice delle capacità, nota di studio sul protocollo CAN e catalogo dei progetti generato dell'ecosistema URTC, più gli strumenti che confrontano tutti i repository. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.6 | Architettura, interfacce, base di sicurezza, matrice delle capacità, nota di studio sul protocollo CAN e catalogo dei progetti generato dell'ecosistema URTC, più gli strumenti che confrontano tutti i repository. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | Il protocollo CAN della testa utensile come dati: una specifica, codice C, TypeScript e Python generato, vettori di conformità e i trasporti Python. |
 
 ---
