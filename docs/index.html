@@ -9926,7 +9926,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.6
+            0.0.7
           </td>
 
           <td class="status-cell">
@@ -9941,7 +9941,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-DOCS/commit/1ec56dd2e2d35e415a4122c960a2e7f0fba5bd57" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bundle the 0.3.7 firmware images and sync the shared protocol copies">Bundle the 0.3.7 firmware images and sync the shared protocol copies</a>
+            <a href="https://github.com/JuanenRac/URTC-DOCS/commit/5127385096af7b5e764b47b3f651d1dcf201e459" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add the multinode extension to the capability matrix and refresh the generated catalogue and READMEs (0.0.7)">Add the multinode extension to the capability matrix and refresh the generated catalogue and READMEs (0.0.7)</a>
           </td>
         </tr>
 
@@ -10179,7 +10179,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.7
+            0.3.8
           </td>
 
           <td class="status-cell">
@@ -10194,7 +10194,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC/commit/f313b32591b4e73c6783987ac577eb2c457a81e6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add an explicit bump command and make builds leave the versions alone, declare manifest schema 1.1 with the four firmwar">Add an explicit bump command and make builds leave the versions alone, declare manifest schema 1.1 with the four firmwar</a>
+            <a href="https://github.com/JuanenRac/URTC/commit/48e319385e348b0a2c27132d37ad49b4a9b12717" target="_blank" rel="noopener noreferrer" class="commit-link" title="Implement several tool heads on one CAN bus in the main firmware behind a persistent switch that is off by default (0.3.">Implement several tool heads on one CAN bus in the main firmware behind a persistent switch that is off by default (0.3.</a>
           </td>
         </tr>
 
@@ -10301,7 +10301,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.3
+            0.0.5
           </td>
 
           <td class="status-cell">
@@ -10316,7 +10316,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/d59b1c957e4f2309033311e20ac166cf2557faf3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Design several tool heads on one CAN bus, extend the specification with it, and add shared interface helpers">Design several tool heads on one CAN bus, extend the specification with it, and add shared interface helpers</a>
+            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/090252b67d05feb2c4a9516febd2faf69b50040c" target="_blank" rel="noopener noreferrer" class="commit-link" title="Record the multinode extension as implemented in the firmware behind a switch, add the switch frames 0x1AC and 0x1AD, an">Record the multinode extension as implemented in the firmware behind a switch, add the switch frames 0x1AC and 0x1AD, an</a>
           </td>
         </tr>
 
@@ -10423,7 +10423,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.3
+            0.3.6
           </td>
 
           <td class="status-cell">
@@ -10438,7 +10438,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/02701b77f7f4be526c665759d0cb7e5374236bd6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bundle the 0.3.7 firmware images and sync the shared protocol copies">Bundle the 0.3.7 firmware images and sync the shared protocol copies</a>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/403d44f87859ad8365484269941b5a35ed68b9b6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Follow URTC-COMMON 0.0.5 and bundle the 0.3.8 firmware images">Follow URTC-COMMON 0.0.5 and bundle the 0.3.8 firmware images</a>
           </td>
         </tr>
 
@@ -10458,17 +10458,17 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">GUI flashing tool (CAN-OTA + full-chip SWD/JTAG), exercised only against a simulated bootloader (MockCAN), never against a real board. Qt Quick (`--qtquick`) is a second front end over the same transport, validation and flashing code: CAN-OTA update of the main board, read-only SWD/JTAG discovery, Board Snapshot, the 4 device-configuration writes and full-chip SWD/JTAG programming. It does not have everything the Tkinter window has (no expansion-slave target, no already-in-bootloader option, no F-RAM erase, no downgrade authorisation, no CAN backup, no GitHub download, fixed 500 kbit/s bitrate, no bus-activity check). Tkinter remains the default interface. flasher_protocol.py&#x27;s deadline/duration math uses time.monotonic() throughout, not the civil clock, so an NTP sync or manual clock change mid-flash can never shorten or lengthen a real timeout.</div>
+                <div class="detail-text">GUI flashing tool (CAN-OTA + full-chip SWD/JTAG), exercised only against a simulated bootloader (MockCAN), never against a real board. The Qt Quick deck is the only window: CAN-OTA update of the main board or the expansion slave (with the downgrade authorisation, F-RAM erase and CAN backup of the running firmware), bit-rate selector and listen-only search, GitHub release download, bus-activity check, Board Snapshot, the 4 device-configuration writes, read-only SWD/JTAG discovery and full-chip SWD/JTAG programming. flasher_protocol.py&#x27;s deadline/duration math uses time.monotonic() throughout, not the civil clock, so an NTP sync or manual clock change mid-flash can never shorten or lengthen a real timeout.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">Tkinter (legacy advanced workflow)</span><span class="tech-chip">PySide6</span><span class="tech-chip">Qt Quick</span><span class="tech-chip">CAN-OTA</span><span class="tech-chip">SWD/JTAG</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">PySide6</span><span class="tech-chip">Qt Quick</span><span class="tech-chip">CAN-OTA</span><span class="tech-chip">SWD/JTAG</span></div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_build">Build</div>
-                <div class="detail-text">Standalone Python desktop tool. pip install -r requirements.txt; Qt Quick CAN-OTA deck is started with --qtquick.</div>
+                <div class="detail-text">Standalone Python desktop tool. pip install -r requirements.txt; the Qt Quick deck starts with no arguments, --cli is the headless update.</div>
               </div>
             </div>
           </td>
@@ -10667,7 +10667,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.2
+            0.3.6
           </td>
 
           <td class="status-cell">
@@ -10682,7 +10682,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/9c41c0f9c1aa12b7138e1586dc57d726982f620c" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bundle the 0.3.7 firmware images and sync the shared protocol copies">Bundle the 0.3.7 firmware images and sync the shared protocol copies</a>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/ac2bf84834166a96328cba7841ee8186527bdf95" target="_blank" rel="noopener noreferrer" class="commit-link" title="Follow URTC-COMMON 0.0.5 and bundle the 0.3.8 firmware images">Follow URTC-COMMON 0.0.5 and bundle the 0.3.8 firmware images</a>
           </td>
         </tr>
 
@@ -10702,17 +10702,17 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Live CAN-bus diagnostic tool including CSV export of live graphs, exercised only against fake transports and never against a real board. The Qt Quick deck is the default interface and starts in listen-only mode; the 25-tool Tkinter window is kept behind --legacy. Every output the screens send goes through the encoders in advanced_protocol.py, which reject out-of-range values instead of clamping them.</div>
+                <div class="detail-text">Live CAN-bus diagnostic tool including CSV export of live graphs, exercised only against fake transports and never against a real board. The Qt Quick deck is the only interface and starts in listen-only mode. Every output the screens send goes through the encoders in advanced_protocol.py, which reject out-of-range values instead of clamping them.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">Tkinter (legacy 25-tool workflow)</span><span class="tech-chip">PySide6</span><span class="tech-chip">Qt Quick</span><span class="tech-chip">live CAN bus diagnostics</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python</span><span class="tech-chip">PySide6</span><span class="tech-chip">Qt Quick</span><span class="tech-chip">live CAN bus diagnostics</span></div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_build">Build</div>
-                <div class="detail-text">Standalone Python desktop tool. pip install -r requirements.txt; the Qt Quick diagnostics deck is the default, --legacy starts the classic Tkinter window.</div>
+                <div class="detail-text">Standalone Python desktop tool. pip install -r requirements.txt; it starts the Qt Quick diagnostics deck.</div>
               </div>
             </div>
           </td>
@@ -10911,7 +10911,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.2
+            0.3.3
           </td>
 
           <td class="status-cell">
@@ -10926,7 +10926,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/ef15e31f97893355176a1364bd6dc3b316b2a0c7" target="_blank" rel="noopener noreferrer" class="commit-link" title="Translated READMEs: versioning is raised only by the explicit bump step">Translated READMEs: versioning is raised only by the explicit bump step</a>
+            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/5266890bd3ea97d1dc5b42fab8cba1cc87fb73fe" target="_blank" rel="noopener noreferrer" class="commit-link" title="Follow URTC-COMMON 0.0.5 and bundle the 0.3.8 firmware images">Follow URTC-COMMON 0.0.5 and bundle the 0.3.8 firmware images</a>
           </td>
         </tr>
 
@@ -11048,7 +11048,7 @@
           </td>
 
           <td class="version status-ok">
-            0.7.0
+            0.7.1
           </td>
 
           <td class="status-cell">
@@ -11063,7 +11063,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/commit/98a6e6fe4a1b399a6185a22394772d5685feb686" target="_blank" rel="noopener noreferrer" class="commit-link" title="Make the update check at start a switch, off by default (0.7.0)">Make the update check at start a switch, off by default (0.7.0)</a>
+            <a href="https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/commit/73cca236035dcaad96d7ad8f1f844cb4bebe6910" target="_blank" rel="noopener noreferrer" class="commit-link" title="Follow the makers&#x27; manuals for the newer batteries and alert on a pack over the voltage its own protection acts at">Follow the makers&#x27; manuals for the newer batteries and alert on a pack over the voltage its own protection acts at</a>
           </td>
         </tr>
 
@@ -11170,7 +11170,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.2
+            0.3.3
           </td>
 
           <td class="status-cell">
@@ -11185,7 +11185,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-HMI/commit/331a3e96961571517a1746259be32b4ff6efb158" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base; remember more alarm ids and serialise saves">Update the shared node base; remember more alarm ids and serialise saves</a>
+            <a href="https://github.com/JuanenRac/ARMOR-HMI/commit/23a4c742014ccb15f7e87736e9d35704c5d12d98" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image">Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image</a>
           </td>
         </tr>
 
@@ -11292,7 +11292,7 @@
           </td>
 
           <td class="version status-ok">
-            0.8.0.3
+            0.8.0.4
           </td>
 
           <td class="status-cell">
@@ -11307,7 +11307,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-STUDIO/commit/47219c22c878fa84798260a7451fed92a06d7f23" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add a remote connection indicator to the top bar and an ESLint setup">Add a remote connection indicator to the top bar and an ESLint setup</a>
+            <a href="https://github.com/JuanenRac/ARMOR-STUDIO/commit/2ee92f2240be49f145066b4ec0219f788c3e1571" target="_blank" rel="noopener noreferrer" class="commit-link" title="ARMOR-STUDIO 0.8.0.4: connection history, node health, arming modes, daily cell extremes and a safer sign-in">ARMOR-STUDIO 0.8.0.4: connection history, node health, arming modes, daily cell extremes and a safer sign-in</a>
           </td>
         </tr>
 
@@ -11423,7 +11423,7 @@
           </td>
 
           <td class="version status-ok">
-            0.7.8
+            0.7.9
           </td>
 
           <td class="status-cell">
@@ -11438,7 +11438,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-SERVER/commit/5c846ece1d53f9c6c8d7affe7215196bd95e2908" target="_blank" rel="noopener noreferrer" class="commit-link" title="Limit refused sign-ins for the whole server and name every setting in the example env (0.7.8)">Limit refused sign-ins for the whole server and name every setting in the example env (0.7.8)</a>
+            <a href="https://github.com/JuanenRac/ARMOR-SERVER/commit/a016dd9bbd3bc81293c6f0e539ac06b43fe1b787" target="_blank" rel="noopener noreferrer" class="commit-link" title="Follow the makers&#x27; manuals for the newer batteries and alert on a pack over the voltage its own protection acts at">Follow the makers&#x27; manuals for the newer batteries and alert on a pack over the voltage its own protection acts at</a>
           </td>
         </tr>
 
@@ -11920,7 +11920,7 @@
           </td>
 
           <td class="version status-ok">
-            0.8.0.4
+            0.8.0.5
           </td>
 
           <td class="status-cell">
@@ -11935,7 +11935,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/498f5c44d8f56e6061ab9267ed81e1daed1bc393" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refresh test counters and the catalog">Refresh test counters and the catalog</a>
+            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/c63440db1e8fb0cd1ffb8f8109559d748abee4e5" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update test counters of the field nodes">Update test counters of the field nodes</a>
           </td>
         </tr>
 
@@ -12182,7 +12182,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.9
+            0.4.0
           </td>
 
           <td class="status-cell">
@@ -12197,7 +12197,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-ALARM/commit/f68db848779c1a2bb53ad1317e6fc8c1aae53b51" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base">Update the shared node base</a>
+            <a href="https://github.com/JuanenRac/ARMOR-ALARM/commit/3d4bc88340db34dbc9720e01f4de227aa84f3bf3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image">Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image</a>
           </td>
         </tr>
 
@@ -12304,7 +12304,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.1
+            0.4.2
           </td>
 
           <td class="status-cell">
@@ -12319,7 +12319,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-ELECTRICAL/commit/5206e19a5841e42cab65ae6bf9f2d5f5abddfe6a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base">Update the shared node base</a>
+            <a href="https://github.com/JuanenRac/ARMOR-ELECTRICAL/commit/860779fdbec7a2a22e81d47110515459da307374" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image">Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image</a>
           </td>
         </tr>
 
@@ -12548,7 +12548,7 @@
           </td>
 
           <td class="version status-ok">
-            0.7.3
+            0.7.4
           </td>
 
           <td class="status-cell">
@@ -12563,7 +12563,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-RADAR/commit/85c85c92cd3afc8c676b3e14b71d9fbe87ef49dd" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base and keep an open access point off the cabled network">Update the shared node base and keep an open access point off the cabled network</a>
+            <a href="https://github.com/JuanenRac/ARMOR-RADAR/commit/2de72ea1eb7e433685658ac002a86d24ba04d16e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image">Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image</a>
           </td>
         </tr>
 
@@ -12670,7 +12670,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.9
+            0.5.0
           </td>
 
           <td class="status-cell">
@@ -12685,7 +12685,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-SOLAR/commit/722f6b43d0366a7e9fed7a06b5cf0cede2d84a2f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Update the shared node base and move the status lines into the tested core">Update the shared node base and move the status lines into the tested core</a>
+            <a href="https://github.com/JuanenRac/ARMOR-SOLAR/commit/e3de60921dfbaf4c2c7a4d4bf19ed8df8e6c8d4d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image">Sync node base: tolerant stored settings, per-minute login limit, Bluetooth answer routing, missing board image</a>
           </td>
         </tr>
 
@@ -13063,7 +13063,7 @@
           </td>
 
           <td class="version status-ok">
-            0.6.7
+            0.6.8
           </td>
 
           <td class="status-cell">
@@ -13078,7 +13078,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/0c9902cd91e1143f77c0e215b54207b6aad56791" target="_blank" rel="noopener noreferrer" class="commit-link" title="Widen the shared login table and make the shared text rules stricter">Widen the shared login table and make the shared text rules stricter</a>
+            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/81b66270da23848c83ebe63e86477f38fcc493bf" target="_blank" rel="noopener noreferrer" class="commit-link" title="Read stored settings tolerantly, limit wrong passwords per minute, fix Bluetooth answer routing, report a missing board ">Read stored settings tolerantly, limit wrong passwords per minute, fix Bluetooth answer routing, report a missing board </a>
           </td>
         </tr>
 

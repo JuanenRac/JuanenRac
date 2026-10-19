@@ -277,15 +277,15 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.7 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.3 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.2 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.2 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.3.8 | Universelle Werkzeugsteuerungs-Firmware für über 25 spezialisierte Werkzeuge. |
+| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.6 | GUI-Tool für CAN-OTA- und SWD/JTAG-Firmware-Updates. |
+| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.6 | CAN-Bus-Diagnosetool mit Telemetrie-Panels pro Werkzeug. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.3 | Web-Serial-Tool für sofortige Hardware-Tests und -Analysen. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.7 | Intelligente Werkzeuglagerung mit Vorwärmung und Lebenszyklusprüfung. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.1 | Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.5 | Erkennt, installiert und aktualisiert die URTC-Repositories auf einem Rechner anhand ihrer eigenen Manifeste. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.6 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.3 | Das CAN-Protokoll des Werkzeugkopfs als Daten: eine Spezifikation, erzeugter C-, TypeScript- und Python-Code, Konformitätsvektoren und die Python-Transporte. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.7 | Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitenmatrix, Studiennotiz zum CAN-Protokoll und erzeugter Projektkatalog des URTC-Ökosystems sowie die Werkzeuge, die alle Repositories vergleichen. |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.5 | Das CAN-Protokoll des Werkzeugkopfs als Daten: eine Spezifikation, erzeugter C-, TypeScript- und Python-Code, Konformitätsvektoren und die Python-Transporte. |
 
 ---
 
@@ -320,24 +320,24 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 
 | Repository | Version | Beschreibung |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.7 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.3 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.4.9 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.4.1 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.9 | Alarmknoten und Alarmzentrale: seine Firmware (verdrahtete Zonen, die Sirene, Zigbee-Sensoren und -Sirenen, ein Web-Panel in sieben Sprachen) und die Regeln für Scharfschalten, Verzögerungen, Alarm und PIN, auf einem Rechner getestet; er überwacht weiter und übernimmt das Zigbee-Funkmodul, wenn der Server fehlt. Noch nie auf einer Platine gelaufen. |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.2 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.6.8 | Nachrichtenverträge, Validierer, Konformitätsvektoren und generierte Typen |
+| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.4 | Feldknoten-Firmware für ESP32-S3 mit drei Radaren und eigenem Web-Panel |
+| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.5.0 | Protokolle für Solar-Wechselrichter und -Batterien und die Nachrichten eines Gateway-Knotens |
+| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.4.2 | Elektroknoten: Zähler, die Nachricht der Netzmesswerte und die Regeln fürs Schalten |
+| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.4.0 | Alarmknoten und Alarmzentrale: seine Firmware (verdrahtete Zonen, die Sirene, Zigbee-Sensoren und -Sirenen, ein Web-Panel in sieben Sprachen) und die Regeln für Scharfschalten, Verzögerungen, Alarm und PIN, auf einem Rechner getestet; er überwacht weiter und übernimmt das Zigbee-Funkmodul, wenn der Server fehlt. Noch nie auf einer Platine gelaufen. |
+| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.3 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.3 | Das lokale Netzwerk: seine Geräte, das Internet und was sich ändert |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.8 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solar- und Elektromesswerte, das lokale Netzwerk, Systemdienste und Kameras |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.9 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solar- und Elektromesswerte, das lokale Netzwerk, Systemdienste und Kameras |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Kamerazonen, Masken und Erkennungsregeln (noch ohne Erkennungsmodell). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.3 | Web-Konsole: Kameras, Radar, Alarme, Solar- und Elektromenüs, lokales Netzwerk, Systemdienste, Wetter, eine Knotensuche und 2D/3D-Standortdesigner |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.7.0 | Android-Bedienclient mit Live-Radar in 2D/3D |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.4 | Web-Konsole: Kameras, Radar, Alarme, Solar- und Elektromenüs, lokales Netzwerk, Systemdienste, Wetter, eine Knotensuche und 2D/3D-Standortdesigner |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.7.1 | Android-Bedienclient mit Live-Radar in 2D/3D |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.3 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.4 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.5 | Architektur, Sicherheitsgrundlage und die Fähigkeitsmatrix |
 
 ---
 
