@@ -327,12 +327,12 @@ A.R.M.O.R. folgt derselben Regel, die das HYDRA-UMC-Dashboard bereits anwendet: 
 | [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.3.9 | Alarmknoten und Alarmzentrale: seine Firmware (verdrahtete Zonen, die Sirene, Zigbee-Sensoren und -Sirenen, ein Web-Panel in sieben Sprachen) und die Regeln für Scharfschalten, Verzögerungen, Alarm und PIN, auf einem Rechner getestet; er überwacht weiter und übernimmt das Zigbee-Funkmodul, wenn der Server fehlt. Noch nie auf einer Platine gelaufen. |
 | [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.2 | Touch-Panel für das Waveshare ESP32-S3-Touch-LCD-7C-BOX: der Systemzustand auf einem Wandbildschirm, Scharf-/Unscharfschalten/Quittieren, Push-to-talk-Sprache und die Webseite eines Knotens; die Firmware lief nie auf einem Board. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.3 | Das lokale Netzwerk: seine Geräte, das Internet und was sich ändert |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.7 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solar- und Elektromesswerte, das lokale Netzwerk, Systemdienste und Kameras |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.7.8 | Zentraler Koordinator: Telemetrie, Alarme, Geräte, Solar- und Elektromesswerte, das lokale Netzwerk, Systemdienste und Kameras |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | Visuelle Inferenzrichtlinie, die ihre Entscheidungen erklärt und nie handelt |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Kamerazonen, Masken und Erkennungsregeln (noch ohne Erkennungsmodell). |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | Offline-Sprachabsichten mit einer nicht fälschbaren Bestätigung |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.3 | Web-Konsole: Kameras, Radar, Alarme, Solar- und Elektromenüs, lokales Netzwerk, Systemdienste, Wetter, eine Knotensuche und 2D/3D-Standortdesigner |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.6.9 | Android-Bedienclient mit Live-Radar in 2D/3D |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.7.0 | Android-Bedienclient mit Live-Radar in 2D/3D |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.4 | Gehäuse, Elektronik und die Abnahmematrix am Prüfstand |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.3 | Bereitstellung, Prüfstand des Zentralservers, Backup und TLS |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | Offline-Telemetriesimulator mit wiederholbaren Fehlern |
