@@ -1,5 +1,5 @@
 # =============================================================================
-# HYDRA-UMC / URTC Ecosystem - Roadmap seed workflow
+# HYDRA-UMC / URTC / A.R.M.O.R. Ecosystem - Roadmap seed workflow
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 # =============================================================================
@@ -18,7 +18,12 @@ on:
           - urtc
           - armor
       apply:
-        description: Add missing evidence-based software planning items to the Roadmap.
+        description: Add missing evidence-based planning items to the Roadmap.
+        required: true
+        default: false
+        type: boolean
+      reconcile_status:
+        description: Also apply the board's explicit status decisions, renames and refreshed text to cards that already exist (only the listed ones).
         required: true
         default: false
         type: boolean
@@ -39,9 +44,12 @@ jobs:
             tools/roadmap_defs.py
             tools/seed_ecosystem_roadmap.py
           sparse-checkout-cone-mode: false
-      - name: Seed evidence-based software work
+      - name: Seed evidence-based work
         env:
           HYDRA_UMC_PROJECTS_TOKEN: ${{ secrets.HYDRA_UMC_PROJECTS_TOKEN }}
+          ROADMAP: ${{ inputs.roadmap }}
+          APPLY: ${{ inputs.apply }}
+          RECONCILE_STATUS: ${{ inputs.reconcile_status }}
         shell: bash
         run: |
           set -euo pipefail
@@ -49,8 +57,11 @@ jobs:
             echo '::error::HYDRA_UMC_PROJECTS_TOKEN is not configured.'
             exit 1
           }
-          if [[ '${{ inputs.apply }}' == 'true' ]]; then
-            python3 tools/seed_ecosystem_roadmap.py --roadmap '${{ inputs.roadmap }}' --apply
-          else
-            python3 tools/seed_ecosystem_roadmap.py --roadmap '${{ inputs.roadmap }}'
+          args=(--roadmap "$ROADMAP")
+          if [[ "$APPLY" == 'true' ]]; then
+            args+=(--apply)
           fi
+          if [[ "$RECONCILE_STATUS" == 'true' ]]; then
+            args+=(--reconcile-status)
+          fi
+          python3 tools/seed_ecosystem_roadmap.py "${args[@]}"

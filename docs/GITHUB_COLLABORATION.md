@@ -102,6 +102,19 @@ is never marked done on software evidence alone). Each entry may set its own
 `status`, `hardware` and `blocked_by`. A re-run sets Status and `Blocked by` only
 when it creates an item, so a card moved by hand stays where it was put.
 
+To keep the boards true to the real state of the work there is one explicit,
+reviewable list per board, `STATUS_UPDATES` (title, status and what blocks it),
+plus `RENAMES` (old title, new title) for cards whose wording changed. They are
+applied only when the seed workflow runs with `reconcile_status` (the
+`--reconcile-status` flag of the script): the listed cards get the decided Status,
+`Blocked by` and refreshed text, and a renamed card is renamed instead of
+duplicated. A card that is not listed is never touched, so finished work can be
+marked `Done` without undoing anybody's moves. The dry run prints every planned
+creation, rename and status change before anything is written, and an item that
+needs hardware stays `Blocked` and names it until a recorded bench result exists.
+The pure parts (the definitions, the planning, the option checks) have unit tests
+in `tests/test_roadmap_seed.py`.
+
 ## Issues, pull requests and Discussions
 
 The central issue forms in `.github/ISSUE_TEMPLATE/` collect reproducible
