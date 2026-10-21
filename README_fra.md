@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ELECTRO\_HOBBY\_3D\_BANNER.svg" alt="Bannière Electro Hobby 3D" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ELECTRO_HOBBY_3D_BANNER.svg" alt="Bannière Electro Hobby 3D" width="100%">
 </p>
 
 # Electro Hobby 3D 🤖🚀
@@ -28,7 +28,7 @@ Quatre écosystèmes d'ingénierie indépendants, un seul auteur. **HYDRA-UMC** 
 # 🐙 HYDRA-UMC
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA\_BANNER.svg" alt="Bannière de l'écosystème HYDRA-UMC" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="Bannière de l'écosystème HYDRA-UMC" width="100%">
 </p>
 
 <p align="center">
@@ -247,7 +247,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 # 🔧 URTC
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/URTC\_BANNER.svg" alt="Bannière de l'écosystème URTC" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/URTC_BANNER.svg" alt="Bannière de l'écosystème URTC" width="100%">
 </p>
 
 <p align="center">
@@ -297,7 +297,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 # 🛡️ A.R.M.O.R.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ARMOR\_BANNER.svg" alt="Bannière de l'écosystème A.R.M.O.R." width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ARMOR_BANNER.svg" alt="Bannière de l'écosystème A.R.M.O.R." width="100%">
 </p>
 
 <p align="center">
@@ -349,7 +349,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 # ⚡ EH3D FABRICATION SUITE
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/EH3D\_BANNER.svg" alt="Bannière EH3D Fabrication Suite" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/EH3D_BANNER.svg" alt="Bannière EH3D Fabrication Suite" width="100%">
 </p>
 
 <p align="center">
