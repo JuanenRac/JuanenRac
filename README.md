@@ -388,6 +388,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.1 | Shared C++/Python library containing Gerber/Excellon/G-Code/HP-GL parsers, 2D/3D geometry, and protocols. |
 | [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.0.1 | Data schemas, unified project (.eh3dproj) specifications, global constants, and UI graphic assets. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.1 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
+| [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.1 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 
 ---
 
