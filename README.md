@@ -291,7 +291,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 # 🛡️ A.R.M.O.R.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/ARMOR-DOCS/main/images/ARMOR_BANNER.svg" alt="A.R.M.O.R. Ecosystem Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ARMOR_BANNER.svg" alt="A.R.M.O.R. Ecosystem Banner" width="100%">
 </p>
 
 <p align="center">
