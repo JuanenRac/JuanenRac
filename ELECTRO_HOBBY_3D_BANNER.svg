@@ -1,112 +1,293 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
   <defs>
-    <!-- Gradiente de Fondo -->
+    <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#08090C" />
-      <stop offset="50%" stop-color="#0E1017" />
-      <stop offset="100%" stop-color="#08090C" />
+      <stop offset="0%" stop-color="#020407"/>
+      <stop offset="35%" stop-color="#050B14"/>
+      <stop offset="70%" stop-color="#08101E"/>
+      <stop offset="100%" stop-color="#020407"/>
     </linearGradient>
 
-    <!-- Gradientes de Neón -->
-    <linearGradient id="cyanNeon" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00E5FF" />
-      <stop offset="100%" stop-color="#0088FF" />
+    <!-- Title Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#00E5FF"/>
+      <stop offset="70%" stop-color="#00B0FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
     </linearGradient>
 
-    <linearGradient id="amberNeon" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFB300" />
-      <stop offset="100%" stop-color="#FF6D00" />
+    <!-- Card Neon Gradients -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0088FF"/>
     </linearGradient>
 
-    <!-- Filtro de Resplandor Neón -->
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#69F0AE"/>
+      <stop offset="100%" stop-color="#00C853"/>
+    </linearGradient>
+
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#40C4FF"/>
+      <stop offset="100%" stop-color="#2979FF"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowCyan" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="2" result="blur2"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <filter id="glowSoft" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="blur" />
+    <filter id="glowGold" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="2" result="blur2"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <filter id="glowGreen" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="2" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowBlue" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="2" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Background Cyberpunk Grid -->
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#0E1A2E" stroke-width="0.8"/>
+      <circle cx="24" cy="24" r="0.8" fill="#1C3254"/>
+    </pattern>
+
+    <!-- Embedded Native CSS Animations -->
+    <style>
+      @keyframes spinClockwise {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes spinCounter {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      .rotate-outer { transform-origin: 140px 175px; animation: spinClockwise 12s linear infinite; }
+      .rotate-inner { transform-origin: 140px 175px; animation: spinCounter 8s linear infinite; }
+
+      @keyframes nodePulse {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px currentColor); }
+        50% { transform: scale(1.15); filter: drop-shadow(0 0 10px currentColor); }
+      }
+      .node-top { transform-origin: 140px 125px; animation: nodePulse 2s ease-in-out infinite; color: #00E5FF; }
+      .node-right { transform-origin: 190px 175px; animation: nodePulse 2.2s ease-in-out infinite 0.3s; color: #FFD54F; }
+      .node-bottom { transform-origin: 140px 225px; animation: nodePulse 1.8s ease-in-out infinite 0.6s; color: #69F0AE; }
+      .node-left { transform-origin: 90px 175px; animation: nodePulse 2.4s ease-in-out infinite 0.2s; color: #40C4FF; }
+
+      @keyframes traceFlow {
+        from { stroke-dashoffset: 60; }
+        to { stroke-dashoffset: 0; }
+      }
+      .animated-trace {
+        stroke-dasharray: 8 8;
+        animation: traceFlow 1.8s linear infinite;
+      }
+
+      @keyframes titleGlow {
+        0%, 100% { opacity: 0.95; filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.4)); }
+        50% { opacity: 1; filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.8)); }
+      }
+      .animated-title { animation: titleGlow 3.5s ease-in-out infinite; }
+
+      @keyframes ledFlicker {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+      }
+      .led-active { animation: ledFlicker 1.5s ease-in-out infinite; }
+    </style>
   </defs>
 
-  <!-- Fondo -->
-  <rect width="1200" height="300" fill="url(#bgGrad)" />
+  <!-- BACKGROUND RECTS -->
+  <rect width="1200" height="300" fill="url(#bgGrad)"/>
+  <rect width="1200" height="300" fill="url(#grid)"/>
 
-  <!-- Pistas de Circuito de Fondo (PCB Traces) -->
-  <g stroke="#1A2332" stroke-width="1.5" fill="none">
-    <path d="M 0,60 L 150,60 L 190,100 L 320,100" />
-    <path d="M 0,240 L 120,240 L 160,200 L 280,200" />
-    <path d="M 880,50 L 1050,50 L 1090,90 L 1200,90" />
-    <path d="M 850,250 L 980,250 L 1020,210 L 1200,210" />
+  <!-- AMBIENT NEON GLOW ORBS -->
+  <circle cx="140" cy="175" r="160" fill="#00E5FF" opacity="0.08" filter="url(#textGlow)"/>
+  <circle cx="580" cy="150" r="220" fill="#2979FF" opacity="0.05" filter="url(#textGlow)"/>
+  <circle cx="1020" cy="150" r="180" fill="#00C853" opacity="0.05" filter="url(#textGlow)"/>
+
+  <!-- BUS / DATA TRACES -->
+  <g stroke="#162942" stroke-width="2" fill="none">
+    <path d="M 0,65 L 120,65 L 160,105 L 280,105"/>
+    <path d="M 0,255 L 100,255 L 140,215 L 250,215"/>
+    <path d="M 230,175 L 290,175"/>
+    <path d="M 820,55 L 980,55 L 1020,95 L 1200,95"/>
+    <path d="M 780,265 L 910,265 L 950,225 L 1200,225"/>
   </g>
 
-  <!-- TÍTULO PRINCIPAL -->
-  <g transform="translate(65, 55)">
-    <text x="0" y="0" font-family="system-ui, -apple-system, &#39;Segoe UI&#39;, Roboto, sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="3">ELECTRO HOBBY 3D</text>
-    <text x="0" y="22" font-family="system-ui, -apple-system, &#39;Segoe UI&#39;, Roboto, sans-serif" font-weight="600" font-size="12" fill="#00E5FF" letter-spacing="4">4 INDEPENDENT ENGINEERING ECOSYSTEMS</text>
+  <!-- ANIMATED DATA FLOW TRACES -->
+  <g stroke="#00E5FF" stroke-width="2" fill="none" class="animated-trace" opacity="0.7">
+    <path d="M 0,65 L 120,65 L 160,105 L 280,105"/>
+    <path d="M 230,175 L 290,175"/>
+    <path d="M 820,55 L 980,55 L 1020,95 L 1200,95"/>
+  </g>
+  <g stroke="#FFD54F" stroke-width="2" fill="none" class="animated-trace" opacity="0.5">
+    <path d="M 0,255 L 100,255 L 140,215 L 250,215"/>
   </g>
 
-  <!-- GRAFO CENTRAL DE 4 NODOS (HYDRA, URTC, ARMOR, EH3D) -->
-  <g transform="translate(180, 185)">
-    <!-- Conexiones desde el Núcleo a los 4 Nodos Satélite -->
-    <line x1="0" y1="0" x2="0" y2="-45" stroke="#FFB300" stroke-width="2.5" filter="url(#glowSoft)" />
-    <line x1="0" y1="0" x2="45" y2="0" stroke="#FFB300" stroke-width="2.5" filter="url(#glowSoft)" />
-    <line x1="0" y1="0" x2="0" y2="45" stroke="#FFB300" stroke-width="2.5" filter="url(#glowSoft)" />
-    <line x1="0" y1="0" x2="-45" y2="0" stroke="#FFB300" stroke-width="2.5" filter="url(#glowSoft)" />
+  <!-- MAIN HEADER / LOGO TEXT -->
+  <g transform="translate(290, 38)" class="animated-title">
+    <text x="0" y="24" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="34" fill="url(#titleGrad)" letter-spacing="5" filter="url(#textGlow)">ELECTRO HOBBY 3D</text>
 
-    <!-- Anillo de Órbita -->
-    <circle cx="0" cy="0" r="32" stroke="#00E5FF" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.5" />
+    <!-- HUD Badge Under Title -->
+    <g transform="translate(2, 34)">
+      <rect x="0" y="0" width="190" height="18" rx="4" fill="#0A1526" stroke="#00E5FF" stroke-width="1" opacity="0.9"/>
+      <text x="10" y="12" font-family="system-ui, sans-serif" font-weight="800" font-size="9" fill="#00E5FF" letter-spacing="2">INTEGRATED ARCHITECTURE</text>
+    </g>
 
-    <!-- Nodos Satélite (4 Ecosistemas) -->
-    <circle cx="0" cy="-45" r="10" fill="#08090C" stroke="#00E5FF" stroke-width="3" filter="url(#glow)" />
-    <circle cx="45" cy="0" r="10" fill="#08090C" stroke="#FFB300" stroke-width="3" filter="url(#glow)" />
-    <circle cx="0" cy="45" r="10" fill="#08090C" stroke="#00E676" stroke-width="3" filter="url(#glow)" />
-    <circle cx="-45" cy="0" r="10" fill="#08090C" stroke="#00B0FF" stroke-width="3" filter="url(#glow)" />
-
-    <!-- Núcleo Central -->
-    <circle cx="0" cy="0" r="16" fill="#0E1017" stroke="#00E5FF" stroke-width="3" filter="url(#glow)" />
-    <circle cx="0" cy="0" r="5" fill="#FFB300" />
+    <!-- Subtitle -->
+    <text x="2" y="68" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12.5" fill="#80D8FF" letter-spacing="3.5">4 INDEPENDENT ENGINEERING ECOSYSTEMS</text>
   </g>
 
-  <!-- CAJAS DE ECOSISTEMAS CON TEXTO ETIQUETADO -->
-  <g transform="translate(290, 125)">
-    <!-- 1. HYDRA-UMC -->
+  <!-- INTERACTIVE MODULAR CORE (LEFT) -->
+  <g transform="translate(0, 0)">
+    <g class="rotate-outer">
+      <circle cx="140" cy="175" r="48" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="6 6 2 6" fill="none" opacity="0.7"/>
+      <circle cx="140" cy="175" r="56" stroke="#FFD54F" stroke-width="0.8" stroke-dasharray="4 8" fill="none" opacity="0.4"/>
+    </g>
+
+    <g class="rotate-inner">
+      <polygon points="140,135 152,143 152,157 140,165 128,157 128,143" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.8"/>
+    </g>
+
+    <circle cx="140" cy="175" r="18" fill="#050B14" stroke="url(#cyanGrad)" stroke-width="3" filter="url(#glowCyan)"/>
+    <circle cx="140" cy="175" r="7" fill="url(#goldGrad)" filter="url(#glowGold)"/>
+
+    <g class="node-top">
+      <line x1="140" y1="157" x2="140" y2="138" stroke="#00E5FF" stroke-width="2"/>
+      <circle cx="140" cy="125" r="14" fill="#050B14" stroke="url(#cyanGrad)" stroke-width="2.5" filter="url(#glowCyan)"/>
+      <circle cx="140" cy="125" r="5" fill="#00E5FF"/>
+    </g>
+
+    <g class="node-right">
+      <line x1="158" y1="175" x2="176" y2="175" stroke="#FFD54F" stroke-width="2"/>
+      <circle cx="190" cy="175" r="14" fill="#050B14" stroke="url(#goldGrad)" stroke-width="2.5" filter="url(#glowGold)"/>
+      <circle cx="190" cy="175" r="5" fill="#FFD54F"/>
+    </g>
+
+    <g class="node-bottom">
+      <line x1="140" y1="193" x2="140" y2="212" stroke="#69F0AE" stroke-width="2"/>
+      <circle cx="140" cy="225" r="14" fill="#050B14" stroke="url(#greenGrad)" stroke-width="2.5" filter="url(#glowGreen)"/>
+      <circle cx="140" cy="225" r="5" fill="#69F0AE"/>
+    </g>
+
+    <g class="node-left">
+      <line x1="122" y1="175" x2="104" y2="175" stroke="#40C4FF" stroke-width="2"/>
+      <circle cx="90" cy="175" r="14" fill="#050B14" stroke="url(#blueGrad)" stroke-width="2.5" filter="url(#glowBlue)"/>
+      <circle cx="90" cy="175" r="5" fill="#40C4FF"/>
+    </g>
+  </g>
+
+  <!-- THE 4 ECOSYSTEM TELEMETRY CARDS -->
+  <g transform="translate(290, 132)">
+    <!-- 1. HYDRA-UMC CARD -->
     <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="200" height="48" rx="6" fill="#0E1017" stroke="#00E5FF" stroke-width="1.5" filter="url(#glowSoft)" />
-      <circle cx="18" cy="24" r="5" fill="#00E5FF" />
-      <text x="34" y="20" font-family="system-ui, sans-serif" font-weight="700" font-size="13" fill="#FFFFFF">HYDRA-UMC</text>
-      <text x="34" y="36" font-family="system-ui, sans-serif" font-weight="500" font-size="10" fill="#00E5FF">Robotics Platform</text>
+      <rect x="0" y="0" width="205" height="115" rx="12" fill="#060D1A" stroke="url(#cyanGrad)" stroke-width="2" filter="url(#glowCyan)"/>
+      <circle cx="20" cy="22" r="5" fill="#00E5FF" class="led-active"/>
+      <text x="34" y="26" font-family="system-ui, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" letter-spacing="1">HYDRA-UMC</text>
+      <text x="12" y="44" font-family="system-ui, sans-serif" font-weight="700" font-size="9.5" fill="#00E5FF" letter-spacing="0.5">ROBOTICS BASEBOARD</text>
+
+      <g transform="translate(12, 54)">
+        <rect x="0" y="0" width="38" height="38" rx="6" fill="#0B172A" stroke="#00E5FF" stroke-width="1.2"/>
+        <path d="M 12,10 L 26,10 L 26,24 L 12,24 Z" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+        <path d="M 19,6 L 19,10 M 19,24 L 19,28 M 6,17 L 10,17 M 26,17 L 30,17" stroke="#00E5FF" stroke-width="1.5"/>
+        <text x="46" y="14" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#80D8FF">Dual STM32H7 MCU</text>
+        <text x="46" y="27" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#80D8FF">Orin NX / Hailo AI</text>
+        <text x="46" y="40" font-family="system-ui, sans-serif" font-weight="700" font-size="8" fill="#00E5FF">SYS_VER 5.1 [READY]</text>
+      </g>
     </g>
 
-    <!-- 2. URTC -->
-    <g transform="translate(215, 0)">
-      <rect x="0" y="0" width="200" height="48" rx="6" fill="#0E1017" stroke="#FFB300" stroke-width="1.5" filter="url(#glowSoft)" />
-      <circle cx="18" cy="24" r="5" fill="#FFB300" />
-      <text x="34" y="20" font-family="system-ui, sans-serif" font-weight="700" font-size="13" fill="#FFFFFF">URTC</text>
-      <text x="34" y="36" font-family="system-ui, sans-serif" font-weight="500" font-size="10" fill="#FFB300">Tool Subsystem</text>
+    <!-- 2. URTC CARD -->
+    <g transform="translate(220, 0)">
+      <rect x="0" y="0" width="205" height="115" rx="12" fill="#060D1A" stroke="url(#goldGrad)" stroke-width="2" filter="url(#glowGold)"/>
+      <circle cx="20" cy="22" r="5" fill="#FFD54F" class="led-active"/>
+      <text x="34" y="26" font-family="system-ui, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" letter-spacing="1">URTC</text>
+      <text x="12" y="44" font-family="system-ui, sans-serif" font-weight="700" font-size="9.5" fill="#FFD54F" letter-spacing="0.5">TOOL SUBSYSTEM</text>
+
+      <g transform="translate(12, 54)">
+        <polygon points="0,5 18,19 0,33" fill="none" stroke="#FFD54F" stroke-width="1.2"/>
+        <polygon points="22,5 38,19 22,33" fill="none" stroke="#FFD54F" stroke-width="1.2"/>
+        <line x1="0" y1="19" x2="38" y2="19" stroke="#FF1744" stroke-width="1.5"/>
+        <text x="46" y="14" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#FFE082">Auto Tool Change</text>
+        <text x="46" y="27" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#FFE082">Laser &amp; Spindle Ctrl</text>
+        <text x="46" y="40" font-family="system-ui, sans-serif" font-weight="700" font-size="8" fill="#FFD54F">CAN-BUS ACTIVE</text>
+      </g>
     </g>
 
-    <!-- 3. A.R.M.O.R. -->
-    <g transform="translate(430, 0)">
-      <rect x="0" y="0" width="200" height="48" rx="6" fill="#0E1017" stroke="#00E676" stroke-width="1.5" filter="url(#glowSoft)" />
-      <circle cx="18" cy="24" r="5" fill="#00E676" />
-      <text x="34" y="20" font-family="system-ui, sans-serif" font-weight="700" font-size="13" fill="#FFFFFF">A.R.M.O.R.</text>
-      <text x="34" y="36" font-family="system-ui, sans-serif" font-weight="500" font-size="10" fill="#00E676">Perimeter and Home</text>
+    <!-- 3. A.R.M.O.R. CARD -->
+    <g transform="translate(440, 0)">
+      <rect x="0" y="0" width="205" height="115" rx="12" fill="#060D1A" stroke="url(#greenGrad)" stroke-width="2" filter="url(#glowGreen)"/>
+      <circle cx="20" cy="22" r="5" fill="#69F0AE" class="led-active"/>
+      <text x="34" y="26" font-family="system-ui, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" letter-spacing="1">A.R.M.O.R.</text>
+      <text x="12" y="44" font-family="system-ui, sans-serif" font-weight="700" font-size="9.5" fill="#69F0AE" letter-spacing="0.5">PERIMETER &amp; RADAR</text>
+
+      <g transform="translate(12, 54)">
+        <circle cx="18" cy="18" r="16" fill="none" stroke="#69F0AE" stroke-width="1"/>
+        <circle cx="18" cy="18" r="10" fill="none" stroke="#69F0AE" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <line x1="18" y1="2" x2="18" y2="34" stroke="#69F0AE" stroke-width="0.8"/>
+        <line x1="2" y1="18" x2="34" y2="18" stroke="#69F0AE" stroke-width="0.8"/>
+        <circle cx="24" cy="12" r="2.5" fill="#FF1744"/>
+        <text x="46" y="14" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#A5D6A7">3x LD2450 mmWave</text>
+        <text x="46" y="27" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#A5D6A7">Home Safety Node</text>
+        <text x="46" y="40" font-family="system-ui, sans-serif" font-weight="700" font-size="8" fill="#69F0AE">MONITORING 360°</text>
+      </g>
     </g>
 
-    <!-- 4. EH3D FABRICATION SUITE -->
-    <g transform="translate(645, 0)">
-      <rect x="0" y="0" width="200" height="48" rx="6" fill="#0E1017" stroke="#00B0FF" stroke-width="1.5" filter="url(#glowSoft)" />
-      <circle cx="18" cy="24" r="5" fill="#00B0FF" />
-      <text x="34" y="20" font-family="system-ui, sans-serif" font-weight="700" font-size="13" fill="#FFFFFF">EH3D SUITE</text>
-      <text x="34" y="36" font-family="system-ui, sans-serif" font-weight="500" font-size="10" fill="#00B0FF">PCB, CAM and CNC</text>
+    <!-- 4. EH3D SUITE CARD -->
+    <g transform="translate(660, 0)">
+      <rect x="0" y="0" width="205" height="115" rx="12" fill="#060D1A" stroke="url(#blueGrad)" stroke-width="2" filter="url(#glowBlue)"/>
+      <circle cx="20" cy="22" r="5" fill="#40C4FF" class="led-active"/>
+      <text x="34" y="26" font-family="system-ui, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" letter-spacing="1">EH3D SUITE</text>
+      <text x="12" y="44" font-family="system-ui, sans-serif" font-weight="700" font-size="9.5" fill="#40C4FF" letter-spacing="0.5">CAM, CNC &amp; FABRICATION</text>
+
+      <g transform="translate(12, 54)">
+        <path d="M 6,32 C 10,18 20,8 32,4 C 28,16 18,26 4,30 Z" fill="none" stroke="#40C4FF" stroke-width="1.5"/>
+        <circle cx="22" cy="14" r="3" fill="#40C4FF"/>
+        <path d="M 4,32 L 0,36 M 10,32 L 8,38" stroke="#40C4FF" stroke-width="1.5"/>
+        <text x="46" y="14" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#90CAF9">17 Open Repositories</text>
+        <text x="46" y="27" font-family="system-ui, sans-serif" font-weight="600" font-size="8.5" fill="#90CAF9">OpenPnP &amp; Laser CAM</text>
+        <text x="46" y="40" font-family="system-ui, sans-serif" font-weight="700" font-size="8" fill="#40C4FF">DEPLOYED v7.14</text>
+      </g>
     </g>
   </g>
 </svg>
