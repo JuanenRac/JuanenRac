@@ -1,34 +1,34 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ELECTRO_HOBBY_3D_BANNER.svg" alt="Electro Hobby 3D 横幅" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ELECTRO\_HOBBY\_3D\_BANNER.svg" alt="Electro Hobby 3D Banner" width="100%">
 </p>
 
 # Electro Hobby 3D 🤖🚀
 
 <p align="center">
-  <a href="README.md">🇺🇸 English</a> |
-  <a href="README_spa.md">🇪🇸 Español</a> |
-  <a href="README_fra.md">🇫🇷 Français</a> |
-  <a href="README_ita.md">🇮🇹 Italiano</a> |
-  <a href="README_deu.md">🇩🇪 Deutsch</a> |
-  🇨🇳 <b>简体中文</b> |
-  <a href="README_jpn.md">🇯🇵 日本語</a> |
-  <a href="README_por.md">🇵🇹 Português</a>
+  🇺🇸 <a href="README.md">English</a> |
+  <a href="README\_spa.md">🇪🇸 Español</a> |
+  <a href="README\_fra.md">🇫🇷 Français</a> |
+  <a href="README\_ita.md">🇮🇹 Italiano</a> |
+  <a href="README\_deu.md">🇩🇪 Deutsch</a> |
+  <b>🇨🇳 简体中文</b> |
+  <a href="README\_jpn.md">🇯🇵 日本語</a> |
+  <a href="README\_por.md">🇵🇹 Português</a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-GPL%203.0-blue.svg" alt="License GPL 3.0">
   <img src="https://img.shields.io/badge/Hardware-CERN%20OHL--S-orange.svg" alt="Hardware CERN OHL">
-  <img src="https://img.shields.io/badge/生态系统-3-00E5FF.svg" alt="三个生态系统">
+  <img src="https://img.shields.io/badge/Ecosystems-4-00E5FF.svg" alt="Four ecosystems">
 </p>
 
-三个独立的工程生态系统，同一个作者。**HYDRA-UMC** 是一个多层的工业机器人平台，从底层实时固件到高层认知 AI。**URTC** 是它的通用机器人工具子系统：为机器人末端执行器提供的实时固件和桌面/网页工具，作为独立产品开发，拥有自己的版本和维护体系。**A.R.M.O.R.** 是一个完全独立的公开生态系统，用于周界安防与家庭自动化——雷达存在检测、太阳能与电力监测，以及带网页和移动客户端的中央协调器。
+四个独立的工程生态系统，出自同一位作者。**HYDRA-UMC** 是一个多层工业机器人平台，涵盖从实时固件到认知 AI 的全栈技术。**URTC** 是其通用的机器人工具子系统：专为机器人的末端执行器开发的实时固件和桌面/Web 工具，作为独立产品开发，拥有独立版本控制和维护工具。**A.R.M.O.R.** 是一个独立且公开的周界安全与家庭自动化生态系统——雷达存在检测、太阳能与电力监测，以及带有网页端和移动端客户端的中央协调器。**EH3D Fabrication Suite** 是一个集成的软件生态系统，用于 PCB 原型制作、CAM 处理、计算机视觉检测、贴片机（Pick \& Place）管理以及与 HYDRA-UMC 硬件和专用车间机械对接的 CNC/激光控制。
 
----
+\---
 
 # 🐙 HYDRA-UMC
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA_BANNER.svg" alt="HYDRA-UMC Ecosystem Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/HYDRA\_BANNER.svg" alt="HYDRA-UMC Ecosystem Banner" width="100%">
 </p>
 
 <p align="center">
@@ -37,320 +37,381 @@
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
-欢迎来到 **HYDRA-UMC 生态系统**——一个覆盖底层实时固件到高层认知 AI 的多层工业机器人平台。本组织托管着众多专门项目，它们协同工作，共同服务于微工厂自动化与集群机器人应用。
+欢迎来到 **HYDRA-UMC 生态系统**，这是一个多层工业机器人平台，跨越了从底层实时固件到高层认知 AI 的各个领域。该组织托管了许多专门的项目，旨在完美协同工作，以实现微型工厂自动化和群集机器人技术。
 
-## 📈 生态系统进度
+## 📈 生态系统进展
 
-`[██████████▊░░░░░░░░░] 54%` —— 仅作参考。100% 里程碑是完整集成并在真实硬件上运行的生态系统。
+`\[██████████▊░░░░░░░░░] 54%` — 仅供参考。100% 的里程碑是一个在真实硬件上运行的完全集成的生态系统。
 
-> [!IMPORTANT]
-> 🛠️ **项目暂停——正在搭建真实硬件。** 当前开发工作暂停，团队正在真正搭建物理单元(机架、布线、真实的 CM5 和 STM32 板卡)，这样下一阶段的开发才有真实硬件可以运行和验证，而不只是一条不断上升的进度条。搭建完成后即恢复开发。
+> \[!IMPORTANT]
+> 🛠️ \*\*项目暂缓 — 正在构建真实硬件。\*\* 活跃开发已暂时搁置，同时正在切实构建物理机器人单元（框架、接线、真实的 CM5 和 STM32 板），以便下一阶段的工作有实际的硬件可供运行和验证，而不仅仅是一个上升的进度条。一旦该构建到位，工作将重新恢复。
 
----
+\---
 
 ## 🚀 核心特性与可扩展性
 
-- **多机器人可扩展性**：支持最多 8 台分布式机器人单元（目前支持 3、4、5、6 自由度；未来版本将扩展至 7、8、9 自由度及双机器人架构）。
-- **集成本地工作台**：HYDRA-UMC 主控板自带板载 **6 轴本地工作台**，可用于辅助任务，包括副机器人、ATC（自动换刀装置）转塔、传送带同步或 XYZ 工作台龙门架。
+* **多机器人可扩展性**：支持最多 8 个分布式机器人单元（目前支持 3、4、5 和 6 自由度；未来版本将扩展到 7、8、9 自由度以及双机器人架构）。
+* **集成局部工作台**：主 HYDRA-UMC 板集成了板载 **6 轴局部工作台**，用于辅助任务，包括辅助机器人、ATC（自动换刀）转盘、传送带同步或 XYZ 表格龙门架。
 
----
+\---
 
 ## 🏗️ 生态系统架构
 
-v1.1 生态系统是一套分层产品平台：它建立在成熟的 Linux 与 Raspberry Pi 技术之上，不重新开发操作系统，也不替代厂商 API。
+v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux 和 Raspberry Pi 技术之上，而不是创建一个新的操作系统或替代供应商的 API。
 
-1.  **平台基础**：Raspberry Pi OS ARM64 与标准 Linux 服务构成受支持的 CM5 基础。
-2.  **平台与契约**：**HYDRA-UMC-OS** 在 Raspberry Pi OS 上提供可复现的配置文件、服务、诊断与更新；**HYDRA-UMC-SDK** 发布版本化契约、轻量客户端和一致性测试。
-3.  **实时执行**：运行于 STM32/MCU 的 **HYDRA-UMC** 固件掌握运动限制、看门狗与安全停止；工具本身及其对末端执行器的实时控制权属于下文独立的 **URTC** 生态系统。
-4.  **协调与运维**：服务器服务、任务分发、遥测与配置负责协调设备，且不会绕过 MCU 的安全边界。
-5.  **操作员界面**：Studio、Suite、DSI、Web、桌面、移动端和 CLI 均使用 SDK 契约。
-6.  **感知与智能**：视觉、Hailo 与认知服务提出观测或计划；它们不具备物理安全权限。
-7.  **工程、工业与数据**：数字孪生、HIL/物理、OPC-UA/MQTT/MTConnect 网关和数据服务用于验证和集成系统。
+1. **平台基础**：Raspberry Pi OS ARM64 和标准的 Linux 服务提供了受支持的 CM5 基础。
+2. **平台与契约**：**HYDRA-UMC-OS** 在 Raspberry Pi OS 上打包了可重现的配置文件、服务、诊断和更新；**HYDRA-UMC-SDK** 发布了版本化的契约、瘦客户端和一致性夹具（conformance fixtures）。
+3. **实时执行**：**HYDRA-UMC** 固件在 STM32/MCU 上管理运动限制、看门狗和安全停止；工具本身及其对末端执行器的实时控制权属于下方独立的 **URTC** 生态系统。
+4. **协调与运维**：服务器服务、任务调度、遥测和配置在不绕过 MCU 安全边界的情况下协调设备。
+5. **操作员界面**：Studio、Suite、DSI、Web、桌面、移动和 CLI 客户端均使用 SDK 契约。
+6. **感知与智能**：视觉、Hailo 和认知服务提出观察结果或计划；它们不具有物理安全权限。
+7. **工程、工业与数据**：数字孪生（Digital Twin）、HIL/物理引擎、OPC-UA/MQTT/MTConnect 网关和数据服务验证并集成系统。
 
-开发应从 **HYDRA-UMC-OS** 的公共架构与服务模型开始，再使用 **HYDRA-UMC-SDK** 的契约和一致性规则。所有流程都保留 MCU 的安全权限。
+有关实现指导，请从 **HYDRA-UMC-OS** 中的公共架构和服务文档开始，然后使用 **HYDRA-UMC-SDK** 中的契约和一致性规则。MCU 的安全权限在每个流程中都得到严格维护。
 
----
+\---
 
 ## 🛠️ 技术栈与工具
 
-本生态系统采用现代化、高性能技术栈，以保证任务关键级的可靠性：
+该生态系统利用了现代的高性能技术栈，以确保关键任务的可靠性：
 
-### 💠 嵌入式与实时系统（执行层）
-- **微控制器**：STM32H745（双核 480MHz）、STM32G474（170MHz）、STM32F303。
-- **框架**：FreeRTOS（AMP 模式）、CMSIS-DSP、STM32 HAL/LL。
-- **协议**：FDCAN（1Mbps/5Mbps）、CAN-OTA、SPI（50MHz 从机 IPC）、I2C、UART。
-- **运动学**：S 曲线轨迹规划、实时逆运动学（IK）。
+### 💠 嵌入式与实时（执行层）
+
+* **微控制器**：STM32H745（双核 480MHz）、STM32G474（170MHz）、STM32F303。
+* **框架**：FreeRTOS（AMP 模式）、CMSIS-DSP、STM32 HAL/LL。
+* **协议**：FDCAN (1Mbps/5Mbps)、CAN-OTA、SPI（50MHz 从机 IPC）、I2C、UART。
+* **运动学**：S曲线配置文件生成、实时逆运动学（IK）。
 
 ### 🧠 边缘 AI 与感知（智能层）
-- **加速器**：Hailo-8（26 TOPS）用于 8 路摄像头视觉，Hailo-10（40 TOPS）用于生成式 AI。
-- **模型**：YOLOv10（检测）、OpenVLA（动作）、Whisper（语音）、Llama-3（推理）。
-- **节点间通信**：基于 Protobuf 的 gRPC 与高速 SPI-DMA 元数据交换。
+
+* **加速器**：Hailo-8（26 TOPS，用于 8 路摄像头视觉）、Hailo-10（40 TOPS，用于生成式 AI）。
+* **模型**：YOLOv10（检测）、OpenVLA（动作）、Whisper（语音）、Llama-3（推理）。
+* **节点间通信**：基于 Protobuf 的 gRPC 和高速 SPI-DMA 元数据交换。
 
 ### 🌐 后端与协调（协调层）
-- **运行时**：Node.js 20+（API）、Rust 1.80+（编排器）、Go（CLI）。
-- **基础设施**：Express、Fastify、Socket.io（WebSocket）、gRPC。
-- **数据库**：InfluxDB/TimescaleDB（遥测数据）、Redis（状态）、SQLite。
 
-### 💻 仪表盘与用户界面（接口层）
-- **Web 端**：React 19、Vite、Three.js（3D 视口）、Tailwind CSS。
-- **原生端**：Python 3.12/PySide6（Suite）、Kotlin（Android 原生）、Flutter 3.x（iOS 与 DSI）。
+* **运行时**：Node.js 20+ (API)、Rust 1.80+ (编排器)、Go (CLI)。
+* **基础设施**：Express、Fastify、Socket.io (WebSocket)、gRPC。
+* **数据库**：InfluxDB/TimescaleDB (遥测)、Redis (状态)、SQLite。
 
----
+### 💻 仪表板与用户界面（交互层）
+
+* **Web 端**：React 19、Vite、Three.js (3D 视口)、Tailwind CSS。
+* **原生端**：Python 3.12/PySide6 (Suite)、Kotlin (Android 原生)、Flutter 3.x (iOS \& DSI)。
+
+\---
 
 ## 📋 系统要求
 
-- **计算节点**：Raspberry Pi CM5（4GB+ 内存），配备 NVMe/eMMC 存储。
-- **AI 硬件**：Hailo-8/Hailo-10 M.2 模块（Key M）。
-- **现场总线**：千兆以太网用于局域网，FDCAN（ISO 11898-1:2015）用于执行器。
-- **客户端操作系统**：Android 10+、iOS 15+、Windows 10/11（高 DPI）、Ubuntu 22.04 LTS。
+* **计算节点**：配有 NVMe/eMMC 存储的 Raspberry Pi CM5（4GB+ RAM）。
+* **AI 硬件**：Hailo-8/Hailo-10 M.2 模块（Key M）。
+* **现场总线**：用于局域网的千兆以太网以及用于执行器的 FDCAN (ISO 11898-1:2015)。
+* **客户端操作系统**：Android 10+、iOS 15+、Windows 10/11（高DPI）、Ubuntu 22.04 LTS。
 
----
+\---
 
-## 🔒 工业安全与安全性
+## 🔒 工业安全与保障
 
-- **急停层**：硬线急停回路 + 高优先级 CAN 紧急帧（延迟 <1ms）。
-- **AI 安全**：3D 安全区域，检测到人员闯入时自动切断电机扭矩。
-- **网络安全**：基于 JWT 的无状态身份验证 + mTLS 保障节点间通信安全。
-- **完整性**：非易失性 F-RAM，用于工具生命周期审计与状态恢复。
+* **E-STOP 层**：硬接线紧急停止线路 + 高优先级 CAN 紧急帧（<1ms）。
+* **AI 安全**：3D 安全区域，在检测到人类闯入时自动切断电机扭矩。
+* **网络安全**：基于 JWT 的无状态认证 + 用于安全节点间流量的 mTLS。
+* **完整性**：用于工具生命周期审计和状态恢复的非易失性 F-RAM。
 
----
+\---
 
-## 🔧 硬件改造：搭建你自己的载板
+## 🔧 硬件极客：构建您自己的载板（Carrier Board）
 
-机器人控制板围绕 **Raspberry Pi CM5** 构建，而 CM5 自带的双 Hirose DF40 连接器拥有固定、官方、公开的引脚定义（源自 Raspberry Pi 官方 CM5 数据手册的 Table 5）——这并非本项目自行定义的内容。这意味着，兼容的第三方载板是一个真实可行的项目，而非逆向工程：
+机器人控制器板围绕 **Raspberry Pi CM5** 构建，CM5 自身的双 Hirose DF40 连接器是一个固定的、官方的、公开的引脚排列（Raspberry Pi 官方 CM5 数据手册表 5），并非由本项目定义。这意味着兼容的第三方载板是一个切实可行、能够完成的项目，而不是逆向工程练习：
 
-- **从这里开始**：[`HYDRA-UMC/docs/PINOUT_CM5_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT)——本板实际使用了 CM5 哪些固定引脚（以太网、2 路原生 USB3 SuperSpeed PHY、CM5 侧散热风扇接口）以及原因，按功能从官方引脚表重新整理而成。
-- **最简便的切入点**：标准的 **树莓派 40 针 GPIO 排针**（自 2014 年以来未变的同一套 "B+" 布局）在本板上以与任何树莓派完全相同的方式引出——现有的 RPi HAT 扩展板与 GPIO 工具无需修改即可使用。极少数已被本板自身 STM32 通信占用的位置在丝印上有标注，方便你知道该跳过哪些。
-- **深入了解**：[`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) 说明了 CM5、STM32H745「运动学大脑」与 STM32G474「机器人控制器」之间的实际通信方式（SPI1 + FDCAN1 + CM7↔CM4 IPC 邮箱）——如果重新设计的载板要与本项目固件保持兼容，就必须保留这一层。
-- 每份引脚文档都明确标注是 **CONFIRMED（已确认）**（直接取自官方数据手册表格）还是 **PROPOSED（提议）**（本项目自身的走线选择，衍生载板上完全可以采用不同方案）——在把某个信号分配当作固定不变之前，请先读清楚这行状态标注。
+* **从这里开始**：[`HYDRA-UMC/docs/PINOUT\_CM5\_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) —— 该板实际使用了哪些 CM5 的固定引脚（以太网、2 个原生的 USB3 SuperSpeed PHY、CM5 侧的冷却风扇接头）以及原因，已根据官方引脚表按功能重新整理。
+* **轻松上手的途径**：标准的 **Raspberry Pi 40 引脚 GPIO 接头**（自 2014 年以来保持不变的“B+”布局）在该板上的引出方式与任何 Raspberry Pi 完全相同——现有的 RPi HAT 和 GPIO 工具无需修改即可工作。该板自身的 STM32 链路已经使用的少数几个位置已进行了丝网印刷/注释，以便您知道跳过哪些位置。
+* **深入了解**：[`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) 涵盖了 CM5、STM32H745“运动大脑”以及 STM32G474“机器人控制器”之间实际的通信方式（SPI1 + FDCAN1 + CM7↔CM4 IPC 邮箱）——如果要保持与本项目自身固件的兼容性，重新设计载板时必须保留这一层。
+* 每个引脚排列文档都清楚地说明它是 **CONFIRMED（已确认）**（直接取自官方数据手册表）还是 **PROPOSED（建议）**（本项目自身的布线选择，在衍生载板上可以采用不同的选择）——在将信号分配视为固定之前，请先阅读该状态行。
 
-这不是一份手把手的教程（不存在适用于所有场景的唯一「正确」载板方案）——它是一位经验丰富的硬件工程师真正需要的参考资料，让你从一份已验证可靠的引脚图出发，而不是仅凭一份数据手册摸索。
+这不是一个引导式教程（没有适合每个用例的单一“正确”载板）——它是经验丰富的硬件设计人员需要的基础参考材料，使他们能够从已知良好的引脚图开始，而不是仅依靠数据手册。
 
----
+\---
 
-## 📁 项目目录 — HYDRA-UMC
+## 📁 HYDRA-UMC 项目目录
 
-初次接触这个生态系统？`./starter-kit.sh`（Windows 上为
-`starter-kit.bat`）会把 13 个精选的核心仓库作为同级目录克隆到同一个
-目录中：这正是这里所有跨仓库脚本所假定的标准布局。第二个参数则改为克隆
-整个生态系统，按其清单实时发现：`hydra-umc`、`urtc`、`armor` 或 `all`
-（例如 `./starter-kit.sh ~/work armor`）。重复运行是安全的：已克隆的内容
-不会被改动。之后，各生态系统自己的更新器——或用于全部三个生态系统的
-[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)——
-可以检查版本并构建／更新任何其他项目。
+生态系统新手？执行 `./starter-kit.sh`（或在 Windows 上执行 `starter-kit.bat`）会克隆 13 个核心仓库——一个精心挑选的起始集——作为同一目录下的同级目录：这里每个跨仓库脚本都已经假定的标准布局。第二个 argumento（第二个参数）会通过其清单动态发现并克隆整个生态系统：`hydra-umc`、`urtc`、`armor`、`eh3d` 或 `all`（例如 `./starter-kit.sh \~/work armor`）。重新运行它是安全的：任何已经克隆的内容都不会被触动。从那里开始，每个生态系统的更新程序——或者适用于所有四个的 [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)——可以检查版本并构建/更新任何其他项目。
 
 ### 🧱 平台基础与契约
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.5.2 | 面向 CM5 的 Raspberry Pi OS 平台层：可复现配置、诊断、服务生命周期与更新；并非新的 Linux 发行版。 |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.3.4 | 面向服务、界面、CM5 适配器和 URTC 的共享版本化契约、轻量客户端与一致性测试；不替代厂商 API。 |
-| [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.4 | 面向外部机器连接器的声明式适配器清单注册与校验工具；把 SDK 自身的契约理念扩展到外部机器，而不取代工业网关类项目。 |
+
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.5.2|针对 CM5 的 Raspberry Pi OS 平台层：可重现的配置、配置、诊断、服务生命周期和更新；不是新的 Linux 发行版。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.3.4|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
+|[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.4|外部机器连接器的声明式适配器清单注册表和验证器；将 SDK 自身的契约概念扩展到外部机器，而无需替换工业网关项目。|
 
 ### 💠 核心控制与操作员客户端
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.2 | 面向 STM32H745/G474 的核心运动控制固件，支持 S 曲线运动学。 |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.1.0 | 无头 Node.js API 与 WebSocket 后端，负责机器人编排。 |
-| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.0.0 | 基于 React 的高级 Web 仪表盘，用于 3D 机器人监控与控制。 |
-| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.6.9 | 高性能 Python/Qt 桌面应用，面向工业自动化场景。 |
-| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.2.6 | 专为 7 英寸工业显示屏（CM5）打造的 Flutter 触控界面。 |
-| [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.1 | 原生 Kotlin 移动应用，支持生物识别登录，用于远程机器人管理。 |
-| [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.2.6 | 面向 iOS/iPadOS 的 Flutter 移动应用，支持实时 WebSocket 同步。 |
-| [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.4 | 图形化 URDF 编辑器，用于校验并推送机器人模型至目录。 |
-| [HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL) | 0.1.6 | 桌面 STL 模型编辑器 - 在共享模型目录中变换、替换、移除和添加真实部件。 |
 
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.2|适用于 STM32H745/G474 且带 S 曲线运动学的核心运动控制固件。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.0|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.0|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.6.9|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
+|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.2.6|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.7.1|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
+|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.2.6|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
+|[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.1.4|用于验证机器人模型并将其推送到目录中的图形化 URDF 编辑器。|
+|[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.1.6|桌面 STL 模型编辑器——在共享模型目录中转换、替换、移除和添加真实部件。|
 
-### 👁️ Vision AI Node (Hailo-8 Optimized)
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.1.5 | 高速感知节点，支持 8 路 USB 3.0 摄像头同时取流。 |
-| [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | 0.2.0 | 经过优化的 GStreamer/MediaMTX 管线，用于工业视频转发。 |
-| [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.1.4 | 硬件加速 YOLO 模型库，用于 SMD 及元器件质检。 |
-| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.1.4 | 实时 AI 入侵检测，用于保护机器人作业空间。 |
-| [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.1.9 | 基于图像的运动学反馈，用于亚毫米级位姿修正。 |
+### 👁️ 视觉 AI 节点（Hailo-8 优化）
 
-### 🧠 Cognitive AI Node (Hailo-10 Optimized)
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | 0.1.4 | 语义推理节点，用于逻辑任务规划与语音控制。 |
-| [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.1.7 | 视觉-语言-动作（VLA）模型实现，用于复杂任务执行。 |
-| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.1.7 | 本地化、隐私优先的 STT/TTS 管线，用于自然语言操作员交互。 |
-| [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.3 | 基于 LLM 的任务编排器，具备上下文感知的错误恢复能力。 |
-| [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.4 | 基于 RAG 的 AI 助手，基于技术手册与源代码训练。 |
-| [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.1.6 | 由策略限权的本地 AI 技术员：目前是固定的风险等级策略与工具白名单，具备真实且经过测试的防御，证明恶意的被检索文档永远无法触发工具调用或泄露密钥——AI 永远不会因生成一段回复而获得权限。 |
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.1.5|用于 8 路同时接入的 USB 3.0 相机流的高速感知节点。|
+|[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.0|针对工业视频中继优化的 GStreamer/MediaMTX 管道。|
+|[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.1.4|用于 SMD 和元件质量保证（QA）的硬件加速 YOLO 模型库。|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.1.4|用于机器人工作空间保护的实时 AI 入侵检测。|
+|[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.1.9|用于亚毫米级位姿校正的基于图像的运动学反馈。|
 
-### 🐝 编排与集群（编排与集群）
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-ORCHESTRATOR](https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR) | 0.1.8 | 舰队管理器，用于多机器人协同与防碰撞。 |
-| [HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC) | 0.1.4 | PTP（精确时间协议）同步，实现纳秒级机器人同步。 |
-| [HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D) | 0.1.0 | 分布式路径优化器，用于共享工作空间内的机器人集群。 |
-| [HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER) | 0.2.2 | 基于优先级的任务调度器，用于异构机器人舰队。 |
-| [HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING) | 0.1.7 | 高可用监控器，支持任务的透明故障转移。 |
+### 🧠 认知 AI 节点（Hailo-10 优化）
 
-### 🎮 数字孪生与仿真（数字孪生与仿真）
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | 0.0.9 | 高保真物理仿真引擎，用于无风险的机器人测试。 |
-| [HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA) | 0.0.8 | URDF 运动链的真实物理仿真（MuJoCo/PhysX）。 |
-| [HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE) | 0.0.9 | 硬件在环（HIL）接口，用于真实与虚拟指令的同步。 |
-| [HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN) | 0.1.0 | 面向 Vision 节点的训练数据集程序化生成器。 |
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.4|用于逻辑任务规划和语音控制的语义推理节点。|
+|[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.1.7|用于复杂任务执行的视觉-语言-动作（Vision-Language-Action）模型实现。|
+|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.1.7|用于自然语言操作员交互的本地私有 STT/TTS 管道。|
+|[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.1.3|具有上下文感知错误恢复功能的基于 LLM 的任务编排器。|
+|[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.4|经技术手册和源代码训练的基于 RAG 的 AI 助手。|
+|[HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN)|0.1.6|本地策略门控 AI 维护技师：当前的固定风险级别策略和工具白名单，拥有经实际测试的防御机制，证明恶意检索到的文档绝不会触发工具调用或泄露机密——AI 绝不会通过生成响应来获取权限。|
 
-### 📊 数据与分析（数据与分析）
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 0.1.8 | 用于海量工业机器人数据的大数据存储。 |
-| [HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR) | 0.1.7 | 高吞吐量采集器，用于 CAN、WebSocket 及系统日志。 |
-| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.1.7 | 基于电机振动特征的预测性维护引擎。 |
-| [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 0.1.5 | 面向工厂生产管理的自动化 OEE 与 KPI 生成工具。 |
+### 🐝 编排与群控
 
-### 🏭 工业网关（工业网关）
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.1.5 | 工业 4.0 互操作性网关，对接工厂标准（OPC-UA/MQTT）。 |
-| [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.1.9 | 将 HydraState 机器人对象映射为标准 OPC-UA 节点。 |
-| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.1.6 | 遥测数据桥接器，用于 IoT 集成与外部仪表盘。 |
-| [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 0.1.8 | 标准化接口，用于机床与机器人健康监测。 |
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-ORCHESTRATOR](https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR)|0.1.8|用于多机器人协调和防碰撞的车队管理器。|
+|[HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC)|0.1.4|纳秒级机器人同步的 PTP（精时协议）同步。|
+|[HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D)|0.1.0|共享工作空间机器人群的分布式路径优化器。|
+|[HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER)|0.2.2|异构机器人车队的基于优先级的任务调度程序。|
+|[HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING)|0.1.7|具备透明任务故障转移的高可用性监视器。|
 
-### 🌉 外部自动化桥接器
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2) | 0.1.2 | 双向 ROS 2 协调边界：主题用于观测，服务用于检查，可取消动作用于单元任务。 |
-| [HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP) | 0.1.9 | 面向 OpenPnP 及机器人辅助上下料的可追溯 PCB 交接协调器。 |
-| [HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D) | 0.1.8 | 围绕 3D 打印软件的安全桥接器；首个适配器验证 Moonraker 就绪状态而不替换固件。 |
-| [HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC) | 0.1.9 | CNC 单元辅助协调器；轨迹和安全性仍由原生控制器负责。 |
-| [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.1.7 | 激光单元辅助协调器，不能解锁、发射或绕过激光互锁。 |
-| [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.1.2 | 面向腿式/仿人机器人的协调边界：通过共享安全契约校验的行走/抓取/放置动作词表，步态与平衡控制仍由机器人自身控制器负责。 |
-| [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.1.3 | 面向AGV/AMR车队的协调边界：从工厂坐标系到AMR本地坐标系的变换，加上受VDA-5050启发的订单动作词表，路径规划仍由AMR自身导航负责。 |
-| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.1.4 | 面向搭载摄像头的无人机的协调边界：命名飞行请求词表，加上确定性的心跳/失联故障保护看门狗。 |
+### 🎮 数字孪生与仿真
 
-### 🛠️ 配套工具（配套工具）
-| 仓库 | 版本 | 说明 |
-| :--- | :--- | :--- |
-| [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.2.5 | 可穿戴式应急仪表盘，具备触觉安全告警功能。 |
-| [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.1.6 | 命令行工具，用于舰队自动化、烧录与 DevOps。 |
-| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.1.6 | 为 Web 仪表盘提供自然语言洞察的 AI 扩展。 |
-| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.4.8 | 跨平台 GUI/CLI 工具，用于检测、安装并手动更新生态系统中的每一个项目。 |
-| [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.1 | 构建即刻可烧录、预装生态系统最新版本的 CM5 镜像的 Windows/Linux 桌面工具，具备 Raspberry Pi Imager 风格的首次启动配置。 |
-| [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.1.8 | 维护事件协调器：一个低权限的边缘角色采集经过脱敏的库存/健康快照，一个控制面角色以只读方式渲染它，并请求某个 AI 提供方给出诊断建议——从不应用补丁，也从不部署任何内容。 |
-| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.1.8 | 可复现的开发服务器：目前是一套具有权限控制的配置模式和清单库存，正逐步发展为与 OPS-AGENT 协同的隔离任务/工作区执行器——除非文档明确授予，否则任何任务都没有部署权限。 |
-| [HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS) | 0.0.3 | 生态的架构、接口、安全基线、能力矩阵和自动生成的项目目录，以及比较所有仓库的工具。 |
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.0.9|用于无风险机器人测试的高保真物理仿真引擎。|
+|[HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA)|0.0.8|URDF 链的真实世界物理仿真（MuJoCo/PhysX）。|
+|[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.0.9|用于真实与虚拟命令同步的硬件在环（Hardware-in-the-loop）接口。|
+|[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.0|视觉节点训练数据集的过程生成器。|
 
----
+### 📊 数据与分析
+
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE)|0.1.8|用于海量工业机器人数据的大数据存储。|
+|[HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR)|0.1.7|用于 CAN、WebSocket 和系统日志的高吞吐量摄取器。|
+|[HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR)|0.1.7|基于电机振动特征的预测性维护引擎。|
+|[HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS)|0.1.5|用于工业工厂管理的自动化 OEE 和 KPI 生成。|
+
+### 🏭 工业网关
+
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.1.5|适配工厂标准（OPC-UA/MQTT）的工业 4.0 互操作性桥梁。|
+|[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.1.9|将 HydraState 机器人对象映射到标准 OPC-UA 节点。|
+|[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.1.6|用于 IoT 集成和外部仪表板的遥测桥接器。|
+|[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.1.8|用于机床和机器人健康监测的标准化接口。|
+
+### 🌉 外部自动化桥接
+
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2)|0.1.2|双向 ROS 2 协调边界：用于观察的主题、用于检查的服务以及用于单元任务的可取消操作。|
+|[HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP)|0.1.9|适用于 OpenPnP 和机器人辅助上下料的可追溯 PCB 交接协调器。|
+|[HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D)|0.1.8|围绕原生 3D 打印机软件的安全桥接；首个适配器在不替换固件的情况下验证 Moonraker 的就绪状态。|
+|[HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC)|0.1.9|CNC 单元辅助协调器；控制器轨迹和机器安全性保持原生状态。|
+|[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.1.7|激光单元辅助协调器，无法对激光联锁进行布防、发射或越权。|
+|[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.2|针对足式/人形机器人的协调边界：通过共享安全契约门控的命名走/抓/放动作词汇；步态和平衡保持在机器人自身的控制器上。|
+|[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.3|AGV/AMR 车队协调边界：工厂到本地坐标系转换加上受到 VDA-5050 启发的指令词汇；路径规划由 AMR 自身的导航负责。|
+|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.1.4|配备相机的无人机（UAV）协调边界：命名的飞行请求词汇加上确定性的心跳/链路丢失故障保护看门狗。|
+
+### 🛠️ 辅助工具
+
+|仓库|版本|描述|
+|-|-|-|
+|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.2.5|具备触觉安全警报的可穿戴紧急仪表板。|
+|[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.1.6|用于车队自动化、刷机（flashing）和运维的命令行界面。|
+|[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.1.6|为 Web 仪表板提供自然语言见解的 AI 扩展。|
+|[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.4.8|用于检测、安装和手动更新每个生态系统项目的跨平台 GUI/CLI 工具。|
+|[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.1|Windows/Linux 桌面工具，构建预加载了生态系统最新版本和 Raspberry-Pi-Imager 风格首次启动配置的可烧录 CM5 镜像。|
+|[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.1.8|维护事件协调器：低特权边缘角色收集经过净化的库存/健康快照，控制平面角色将其设为只读并请求 AI 提供商建议诊断——绝不应用补丁或部署任何内容。|
+|[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.1.8|可重现的开发主机：当前是受策略门控的配置架构和清单库存，正在发展成为与 OPS-AGENT 协调的隔离任务/工作区运行器——除非文档明确授予，否则任何任务都没有部署权限。|
+|[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.0.3|生态系统的架构、接口、安全基线、能力矩阵以及生成的项目目录，外加比较所有仓库的工具。|
+
+\---
 
 # 🔧 URTC
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/URTC_BANNER.svg" alt="URTC 生态系统横幅" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/URTC\_BANNER.svg" alt="URTC Ecosystem Banner" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/平台-STM32-red.svg" alt="Platform">
-  <img src="https://img.shields.io/badge/总线-CAN%20%2F%20CAN--OTA-orange.svg" alt="Bus">
-  <img src="https://img.shields.io/badge/工具-25%2B%E7%A7%8D%E9%85%8D%E7%BD%AE-blueviolet.svg" alt="Tools">
+  <img src="https://img.shields.io/badge/Platform-STM32-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Bus-CAN%20%2F%20CAN--OTA-orange.svg" alt="Bus">
+  <img src="https://img.shields.io/badge/Tools-25%2B%20profiles-blueviolet.svg" alt="Tools">
 </p>
 
-**URTC（通用机器人工具控制器）**是一个独立的产品，而不是 HYDRA-UMC 的子系统文件夹：为机器人末端执行器提供的实时固件，以及一整套桌面/网页工具，独立开发、独立发布版本、独立维护。配备 URTC 的换刀器通过 FDCAN 与 HYDRA-UMC 的单元控制器协调，但工具自身的实时行为、看门狗和安全状态是 URTC 自己的权限——单元控制器无法绕过它，URTC 的开发、烧录或诊断也不依赖 HYDRA-UMC。
+**URTC (Universal Robot Tool Controller)** 是一个独立的产品，而不是 HYDRA-UMC 的子系统文件夹：它是针对机器人末端执行器的实时固件及一系列桌面/Web 工具，由独立开发、版本控制和维护。配备 URTC 的换刀装置通过 FDCAN 与 HYDRA-UMC 的单元控制器进行协调，但工具自身的实时行为、看门狗和安全状态属于 URTC 自己的权限——单元控制器无法绕过它，且 URTC 的开发、烧录或诊断也不依赖于 HYDRA-UMC。
 
 ## 🏗️ URTC 的工作原理
 
-1. **工具固件**：URTC 自己的 STM32 固件运行 25 种以上专用工具配置文件中的每一种（夹爪、点胶器、探头、主轴等），每种都有自己的时序、限值和故障行为。
-2. **现场更新**：CAN-OTA 通过工具已在使用的同一条 CAN 总线推送新的固件镜像，并以完整芯片级 SWD/JTAG（URTC-FLASHER）作为后备通道，永远不依赖工具自身固件是否存活。
-3. **实时诊断**：URTC-TESTER 在不需要完整工作台的情况下，对照声明的配置文件校验工具的实时 CAN 行为；URTC-WEB-STUDIO 通过 Web Serial 在浏览器标签页里做同样的事，无需安装任何东西。
-4. **存储与生命周期**：URTC-SMART-RACK 在工作之间存放工具，在交接前预热工具，并按每个物理工具（而非工具型号）维护生命周期审计记录（循环次数、故障、上次校准）。
-5. **主动质检**：URTC-VISION-TOOL 本身就是一种工具——一个带有自己热成像与 RGB 摄像头的工具头，用于过程中的质量检查，而不是拧在另一个工具上的外接摄像头。
-6. **共同基础**：**URTC-COMMON** 以数据形式保存工具头的 CAN 协议，并提供生成代码和一致性向量；**URTC-DOCS** 保存架构、安全基线和能力矩阵。
+1. **工具固件**：URTC 专有的 STM32 固件运行 25 种以上的专用工具配置文件（夹爪、分配器、探针、主轴等），每种工具都有其自己的时序、限制和故障行为。
+2. **现场更新**：CAN-OTA 通过工具已经在使用的同一条 CAN 总线推送新的固件镜像，并提供全芯片 SWD/JTAG 路径（URTC-FLASHER）作为后备方案，该方案绝不依赖于工具自身固件的存活状态。
+3. **实时诊断**：URTC-TESTER 无需完整的车间设置，即可根据其声明的配置文件验证工具的实时 CAN 行为；URTC-WEB-STUDIO 则通过 Web Serial 从浏览器标签页执行相同的操作，无需安装任何软件。
+4. **存储与生命周期**：URTC-SMART-RACK 在作业之间存放工具，在交接前预热工具，并针对每个物理工具（而非工具类型）维护生命周期审计追踪（循环次数、故障、最后校准）。
+5. **主动 QA**：URTC-VISION-TOOL 本身就是一个工具——一个带有集成热成像和 RGB 相机的工具头，用于在线质量检查，而不是螺栓固定在其他工具上的外部摄像头。
+6. **共享基础**：**URTC-COMMON** 将工具头的 CAN 协议作为数据保存，并带有生成的代码和一致性向量；**URTC-DOCS** 包含架构、安全基线和能力矩阵。
 
 ## 🛠️ 技术栈
 
-- **固件**：STM32、FDCAN（与单元控制器共用总线）、CAN-OTA、SWD/JTAG 后备通道。
-- **桌面工具**：用于烧录和诊断的跨平台 GUI 客户端（URTC-FLASHER、URTC-TESTER）。
-- **浏览器工具**：通过 Web Serial API 实现零安装的硬件测试（URTC-WEB-STUDIO）。
-- **生命周期数据**：按工具存储的非易失性审计记录，采用与 HYDRA-UMC 相同的 F-RAM 完整性方案。
+* **固件**：STM32、FDCAN（与单元控制器共享总线）、CAN-OTA、SWD/JTAG 后备。
+* **桌面工具**：用于刷机和诊断的跨平台 GUI 客户端（URTC-FLASHER、URTC-TESTER）。
+* **浏览器工具**：用于零安装硬件测试的 Web Serial API（URTC-WEB-STUDIO）。
+* **生命周期数据**：非易失性的每个工具审计追踪，与 HYDRA-UMC 自身的 F-RAM 完整性方法共享。
 
-## 🔒 安全
+## 🔒 安全性
 
-每个工具配置文件都携带自己的看门狗和故障行为，独立于单元控制器自身的 E-STOP 层——当一个工具失去自己的时间预算或 CAN 心跳时，会自行进入其声明的安全状态，而不是等待外部命令。URTC-SMART-RACK 的预热受其配置文件声明的同一套每工具热限值约束，并记录在同一份生命周期审计中，供车间据此判断一个工具是否仍适合使用。
+每个工具配置文件都带有其自己的看门狗和故障行为，独立于单元控制器自身的 E-STOP 层——失去其时间预算或 CAN 心搏（heartbeat）的工具会自行进入其声明的安全状态，而无需等待外部命令。URTC-SMART-RACK 的预热受限于其配置文件所声明的每个工具热限制，并在车间用于决定工具是否仍适合使用的同一生命周期追踪中进行审计。
 
 ## 📁 URTC 项目目录
 
-| 仓库 | 版本 | 描述 |
-| :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.3.8 | Universal Robot Tool Controller 固件，支持 25+ 种专用工具。 |
-| [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.3.6 | 图形化工具，用于 CAN-OTA 及整芯片 SWD/JTAG 固件更新。 |
-| [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.3.7 | 诊断工具，用于通过 CAN 总线实时校验 URTC 工具配置。 |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.3.3 | 基于浏览器 Web Serial 的工具，用于即时硬件测试与分析。 |
-| [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.1.7 | 智能工具存放架，具备自动预热与生命周期审计功能。 |
-| [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.1 | 集成热成像与 RGB 摄像头的工具头，用于主动质检。 |
-| [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.5 | 根据各自的清单，在一台机器上检测、安装和更新 URTC 仓库。 |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.7 | URTC 生态的架构、接口、安全基线、能力矩阵、CAN 协议研究说明和生成的项目目录，以及对所有仓库进行比较的工具。 |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.5 | 以数据形式保存的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量以及 Python 传输层。 |
+|仓库|版本|描述|
+|-|-|-|
+|[URTC](https://github.com/JuanenRac/URTC)|0.3.7|适用于 25+ 种专用工具的通用机器人工具控制器固件。|
+|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.3.3|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
+|[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.3.2|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.3.2|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
+|[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.1.7|具备自动预热和生命周期审计功能的智能工具存储。|
+|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.1|集成热成像和 RGB 相机以实现主动 QA 的工具头。|
+|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.1.5|根据自身的清单检测、安装和更新机器上的 URTC 仓库。|
+|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.0.6|URTC 生态系统的架构、接口、安全基线、能力矩阵、CAN 协议研究笔记和生成的项目目录，外加比较所有仓库的工具。|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.0.3|作为数据的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量以及 Python 传输层。|
 
----
+\---
 
 # 🛡️ A.R.M.O.R.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/ARMOR-DOCS/main/images/ARMOR_BANNER.svg" alt="A.R.M.O.R. 生态系统横幅" width="100%">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/ARMOR\_BANNER.svg" alt="A.R.M.O.R. Ecosystem Banner" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/可见性-公开-brightgreen.svg" alt="Public repositories">
+  <img src="https://img.shields.io/badge/Visibility-Public-brightgreen.svg" alt="Public repositories">
   <img src="https://img.shields.io/badge/Platform-ESP32--S3%20%7C%20Jetson-red.svg" alt="Platform">
   <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20Kotlin%20%7C%20C%2B%2B-blueviolet.svg" alt="Stack">
 </p>
 
-**A.R.M.O.R.（Autonomous Radar & Multimodal Observation Range）**是一个完全独立的公开生态系统，用于周界安防与家庭自动化——除了同一作者和相同的工程惯例（有版本的清单、共享的消息契约、八种语言的界面）之外，与 HYDRA-UMC 或 URTC 没有任何关系。它的现场节点监视物业的周界及其太阳能/电力系统；它的中央服务器和客户端让操作员看到并处理这些节点报告的内容。下面的版本和成熟度说明直接来自每个仓库自己的清单和能力矩阵，与 HYDRA-UMC 仪表板已经使用的诚实原则相同。
+**A.R.M.O.R. (Autonomous Radar \& Multimodal Observation Range)** 是一个独立的公开周界安全与家庭自动化生态系统——除了相同的作者和相同的工程惯例（版本化清单、共享消息契约、八语言接口）外，与 HYDRA-UMC 或 URTC 无关。其现场节点监视物业的周界以及太阳能/电气设施；其中央服务器和客户端允许操作员查看其报告的内容并采取行动。以下版本和成熟度说明直接来自各个仓库自身的清单和能力矩阵，这与 HYDRA-UMC 仪表板已经使用的诚实原则完全一致。
 
-## 🏗️ A.R.M.O.R. 的构成
+## 🏗️ A.R.M.O.R. 是如何构建的
 
-1. **共享契约**：**ARMOR-COMMON** 拥有消息含义的所有权——JSON Schema、一个 Python 验证器，以及每个其他仓库只消费、从不重新定义的生成的 TypeScript/Kotlin 类型。
-2. **现场节点**：用于雷达/存在检测的 ESP32-S3 固件（**ARMOR-RADAR**）、太阳能逆变器与电池监测（**ARMOR-SOLAR**）、带开关功能的电力计量（**ARMOR-ELECTRICAL**）以及住宅的报警主机（**ARMOR-ALARM**）；一个 Python 代理（**ARMOR-NETWORK**）从已接入房屋本地网络的一台机器上监视这个网络本身及互联网是否可达。
-3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、报警、自动化和摄像头证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 增加了一个可解释的视觉策略和从不自行执行动作的离线语音意图。
-4. **操作员客户端**：**ARMOR-STUDIO**（网页端）和 **ARMOR-ANDROID-CONTROL**（移动端）都是中央服务器的客户端，从不直接对接现场网络。 **ARMOR-HMI** 是挂在墙上的触摸面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示状态、布防和确认，并将成为语音助手的所在。
-5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下回放场景和可重复的故障；**ARMOR-HARDWARE** 负责外壳设计及其台架验收矩阵。
-6. **生态系统运维**：**ARMOR-UPDATER** 在一台机器上发现、安装并更新每一个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的以验证为准的原子化设计；**ARMOR-DOCS** 是权威的架构文档和能力矩阵。 **ARMOR-STUDIO** 还可以使用以生态系统发布密钥签名的软件包更新中央机器上的服务，并在安装前校验每个签名。
+1. **共享契约**：**ARMOR-COMMON** 拥有消息含义——JSON Schema、Python 验证器以及所有其他仓库消费且从不重新定义的生成的 TypeScript/Kotlin 类型。
+2. **现场节点**：用于雷达/存在感测的 ESP32-S3 固件（**ARMOR-RADAR**）、太阳能逆变器和电池监控（**ARMOR-SOLAR**）、带开关控制的电量计量（**ARMOR-ELECTRICAL**）以及房屋的报警面板（**ARMOR-ALARM**）；Python 代理（**ARMOR-NETWORK**）从已连接的机器上监视房屋自身的局域网和互联网连通性。
+3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、警报、自动化和相机证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 添加了可解释的视觉策略和离线语音意图，这些意图绝不会自行触发任何动作。
+4. **操作员客户端**：**ARMOR-STUDIO**（Web 端）和 **ARMOR-ANDROID-CONTROL**（移动端）是中央服务器的客户端，绝不直接连接现场网络。**ARMOR-HMI** 是墙上的触摸屏面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示系统状态、布防、撤防和确认，并将成为语音助理的驻留地。
+5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下重放场景和可重复的故障；**ARMOR-HARDWARE** 承载外壳设计及其台架验收矩阵。
+6. **生态系统运维**：**ARMOR-UPDATER** 在机器上发现、安装和更新每个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的通过验证实现原子化的设计；**ARMOR-DOCS** 是规范的架构文档和能力矩阵。**ARMOR-STUDIO** 还可以使用生态系统发布密钥签名的软件包更新中央机器上的服务，在安装前检查每个签名。
 
 ## 🔒 诚实与安全
 
-A.R.M.O.R. 遵循与 HYDRA-UMC 仪表板相同的规则：只有经过验证的说法才是真实的，每个仓库都清楚地说明目前哪些已经在真实硬件上运行过、哪些还没有。这个生态系统目前不控制市电或物理门禁；现场节点只观察和报告，任何未来的开关能力都会先设计和审查，再决定是否启用。
+A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项声明只有经过验证才是真实的，每个仓库都明确说明了哪些内容已经在真实硬件上运行过，哪些还没有。目前，该生态系统中的任何组件都不控制市电（mains electricity）或物理访问；现场节点负责观察和报告，任何未来的开关控制能力在启用之前都经过了设计和审查。
 
 ## 📁 A.R.M.O.R. 项目目录
 
-| 仓库 | 版本 | 描述 |
-| :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.7.3 | 消息契约、验证器、一致性向量和生成的类型 |
-| [ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR) | 0.7.8 | 适用于 ESP32-S3 的现场节点固件，带三个雷达和自带网页面板 |
-| [ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR) | 0.5.3 | 太阳能逆变器与电池的协议，以及网关节点的消息 |
-| [ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL) | 0.4.4 | 电气节点：电表、电网读数消息和开关规则 |
-| [ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM) | 0.4.2 | 报警节点与报警主机：其固件（有线防区、警笛、Zigbee 传感器与警笛、七种语言的网页面板）以及布防、延时、报警和 PIN 的规则，已在电脑上测试；服务器离线时继续守护，并接管 Zigbee 无线电。从未在电路板上运行过。 |
-| [ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI) | 0.3.5 | 适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：墙面屏幕上的系统状态、布防/撤防/确认、按键说话语音以及节点网页；固件从未在开发板上运行。 |
-| [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.3 | 本地网络：其设备、互联网以及变化 |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.8.0.3 | 中央协调器：遥测、报警、设备、太阳能与电气读数、本地网络、系统服务和摄像头 |
-| [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.2.6 | 会解释决策且从不执行动作的视觉推理策略 |
-| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.2 | Jetson Orin NX 上的摄像头区域、遮罩与检测规则（尚无检测模型）。 |
-| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.0 | 带无法伪造确认的离线语音意图 |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.0.6 | 网页控制台：摄像头、雷达、报警、太阳能与电气菜单、本地网络、系统服务、天气、节点查找器和 2D/3D 场地设计器 |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.7.3 | 带实时 2D/3D 雷达的 Android 操作员客户端 |
-| [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.5 | 外壳、电子器件和台架验收矩阵 |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.5 | 部署、中央服务器测试台、备份与 TLS |
-| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.2.5 | 带可重复故障的离线遥测模拟器 |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.4 | 发现、安装并更新生态系统自身的仓库 |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.0.9 | 架构、安全基线和能力矩阵 |
+|仓库|版本|描述|
+|-|-|-|
+|[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.6.7|消息契约、验证器、一致性向量、生成的类型、OpenAPI、共享启动器。|
+|[ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR)|0.7.3|ESP32-S3 现场节点固件、LD2450/LD2461 及存在传感器的解码器、其经主机测试的核心、带进度条和实时地图的 GitHub 更新。|
+|[ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR)|0.4.9|太阳能网关节点：ESP32-S3 固件及其面板（十个串口），以及 Voltronic/MPP Solar 逆变器和 Pylontech/ANT-BMS 电池的协议。|
+|[ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL)|0.4.1|电气节点：固件（单个串口上的 16 个 PZEM 电表、Web 面板、MQTT）、电表帧、网络读数消息以及开关切换规则。|
+|[ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM)|0.3.9|报警节点及面板：其固件（有线防区、警报器、Zigbee 传感器及警报器、七种语言的 Web 面板）以及布防、延迟、报警和 PIN 码规则，已在计算机上测试；在服务器离线时继续警戒并接管 Zigbee 无线电。从未在板卡上运行过。|
+|[ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI)|0.3.2|Waveshare ESP32-S3-Touch-LCD-7C-BOX 触摸面板：壁挂屏幕上的系统状态、布防/撤防/确认、一键通（push-to-talk）语音以及节点的网页；该固件从未在板卡上运行过。|
+|[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.3|局域网监视器：家中网络上的设备、互联网状态（以及中断归咎于哪一方）、变化情况；仅具备观察功能。|
+|[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.7.8|中央状态（持久化）、用户、事件历史记录、警报、设备、自动化、太阳能和电气读数、局域网、系统服务、相机看门狗、相机、证据、审计、必须签名的节点固件更新、Telegram 和 Home Assistant 通知、语音命令以及从外部使用（双因素认证、可终止的会话、远程策略）。|
+|[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.2.6|运动监视服务、视觉配置文件选择、可解释的融合策略、引擎注册表。|
+|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.0.2|相机区域、遮罩和检测规则（徘徊、每次访问一个事件）；暂无检测器模型。|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.0|离线语音服务：八种语言的十五条命令、壁挂面板的语音交互、通过签名令牌确认的布防和撤防。|
+|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.0.3|操作控制台、警报、设备、自动化、用户、历史记录、警报规则、PTZ、雷达地图、太阳能和电气菜单、局域网、系统服务、天气、节点查找器与配置、节点固件更新、通知以及 2D/3D 站点设计器。|
+|[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.7.0|Android 操作员客户端：布防和撤防、警报、设备、实时雷达、太阳能逆变器和电池、历史记录、警报通知、书面和口头命令助手以及节点配置器。|
+|[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.4|外壳设计（雷达角落外壳；太阳能、电气和报警节点的勾选框）以及台架验收矩阵。|
+|[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.6.3|Compose 拓扑、中央服务器测试台安装程序、备份与恢复、TLS 配置文件、自有 MQTT 经纪商、观察和语音服务、管理代理。|
+|[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.2.5|场景和可重复故障。|
+|[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.1.4|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
+|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.0.4|规范文档和能力矩阵。|
 
----
+\---
 
-## 🤝 贡献指南
-本生态系统隶属于一项高科技机器人计划。每个项目都有各自的贡献指南，具体技术细节请参阅各仓库自身文档。
+# ⚡ EH3D FABRICATION SUITE
 
-生态系统内所有仓库的 Issue 标签均从本仓库的 [`.github/labels.yml`](.github/labels.yml) 统一同步，由 [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) 负责推送——只需修改这一份文件，即可一次性更新所有仓库的标签，无需逐个手动维护。与下方的仪表盘不同，这份列表是静态的（一个真实的 GitHub Actions 矩阵，而非动态发现）——新增仓库也需要在其中添加一条记录，仅有真实的 `hydra-umc.project.json` 是不够的。
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/EH3D\_BANNER.svg" alt="EH3D Fabrication Suite Banner" width="100%">
+</p>
 
-实时状态看板涵盖三个生态系统的每个公开仓库——每个仓库都通过自己的清单（`hydra-umc.project.json`、`urtc.project.json`、`armor.project.json`，跨生态系统仓库则为 `electro-hobby-3d.project.json`）直接从其默认分支读取并被发现，没有固定列表——由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 在项目推送后立即重新生成（通过各仓库自己的 `dashboard-dispatch.yml`），并作为保障每小时再生成两次，通过 GitHub Pages 从 `docs/` 提供：**[juanenrac.github.io/JuanenRac](https://juanenrac.github.io/JuanenRac/)**。它显示技术栈、部署目标和当前版本、根据各项目自身 CHANGELOG 判定的真实成熟度分类（脚手架／可用／成熟／生产，详见 [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)）、角色（API／UI／CLI／固件／库／服务／工具）、家族／父子树，以及每个项目当前实际实现内容的说明。[`ecosystem-catalog.json`](ecosystem-catalog.json) 在一个地方列出这些生态系统及其清单，两者不一致时看板构建会拒绝运行。
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Desktop%20%7C%20Embedded-blue.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Stack-C%2B%2B%20%7C%20Python%20%7C%20Qt-orange.svg" alt="Stack">
+  <img src="https://img.shields.io/badge/Hardware-HYDRA--UMC%20%7C%20Bungard%20%7C%20ESP32-green.svg" alt="Hardware">
+</p>
+
+**EH3D Fabrication Suite** 是一个专门的、多仓库的软件生态系统，专为印制电路板（PCB）快速原型制作、CAM 刀具路径准备、计算机视觉检查、贴片机（PnP）管理以及多机 CNC/激光控制而定制。它提供与 **HYDRA-UMC** 硬件节点（STM32H7 + Jetson Orin NX + Hailo NPU）的原生互操作性，同时拥有一支车间机械车队，包括工业铣削系统（通过 ESP32-S3 RS-232 网关连接的 Bungard CCD）、CNC 雕刻机（JuanenCNC）和二极管激光雕刻机（JuanenLaser）。
+
+## 🏗️ EH3D Fabrication Suite 的工作原理
+
+1. **中央管理**：**EH3D-SUITE-LAUNCHER** 发现本地网络上的活动硬件节点（HYDRA-UMC 和 ESP32 网关），管理统一的 `.eh3dproj` 软件包，并编排工具更新。
+2. **CAM 处理管道**：专用的 CAD/CAM 工具处理各个制造阶段：
+
+   * **EH3D-ISOCAM**：Gerber RS-274X/X2 走线隔离、Voronoi 算法和清除铜箔（rubout）。
+   * **EH3D-DRILLPRO**：Excellon/NC 钻孔处理、钻头表和深孔钻孔循环。
+   * **EH3D-ROUTEPRO**：板边铣削、夹持凸耳（tab）创建和斜坡切入（ramping entry）策略。
+   * **EH3D-LASER-CAM**：用于激光切割的光栅抖动（dithering）算法和矢量功率调制。
+   * **EH3D-STENCILCAM**：用于 SMD 焊膏钢网生成的阻焊膏掩模（pastemask）处理。
+3. **执行与实时控制**：**EH3D-MOTIONCNC** 通过高速 G-Code/HP-GL 流式传输驱动机械运动，与用于地形 Z 探测的 **EH3D-AUTOLEVEL** 以及用于手持置零（G54/G55）和慢动微调（jogging）的 **EH3D-PENDANT-GUI** 集成。
+4. **边缘 AI 与检测**：**EH3D-VISION-STUDIO** 利用 HYDRA-UMC 的 Hailo NPU 执行实时相机对准、自动基准点（fiducial）检测和工具磨损检测。
+5. **组装与辅助数据**：**EH3D-PNP-MANAGER** 管理质心贴片（Pick \& Place）坐标和供料器（feeder），而 **EH3D-TOOL-MANAGER** 在所有 CAM 模块中维护统一的刀具库（tool crib）数据库。
+
+## 📁 EH3D Fabrication Suite 项目目录
+
+|仓库|版本|描述|
+|-|-|-|
+|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|用于项目管理（.eh3dproj）、更新、全局设置和节点发现的主生态系统仪表板。|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Gerber RS-274X/X2 CAM 处理应用、Voronoi/偏移走线隔离、rubout 及雕刻仿真。|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.1|Excellon/NC 钻孔 CAM 应用、钻头管理、路径优化和深孔钻孔循环。|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.1|板轮廓铣削 CAM 应用、型腔铣（pocketing）、保持凸耳和 CNC 斜坡切入策略。|
+|[EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM)|0.0.1|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
+|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|实时数字控制 GUI、3D G代码可视化工具、探测和多机流式传输支持。|
+|[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.1|地形高度网格处理器（Z 探测）和用于表面补偿的 G代码插值。|
+|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.1|用于 Gerber 图层对齐和快速可视化的轻量级 CAM 检查工具。|
+|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.1|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
+|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|受 OpenPnP 启发 SMD 组装管理器、质心读取器、供料器控制和视觉元件居中。|
+|[EH3D-PENDANT-GUI](https://github.com/JuanenRac/EH3D-PENDANT-GUI)|0.0.1|用于实时慢动微调、置零（G54/G55）和紧急停止（E-STOP）的触控/移动手持控制器。|
+|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|3D 刀具路径与材料去除模拟器、碰撞检测器以及 G-Code/HP-GL 周期时间估计器。|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|用于相机对准、基准标记训练以及通过 HYDRA-UMC 进行视觉检查的边缘 AI 视觉仪表板。|
+|[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|包含 Gerber/Excellon/G-Code/HP-GL 解析器、2D/3D 几何图形和协议的共享 C++/Python 库。|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.1|数据架构、统一项目（.eh3dproj）规范、全局常量和 UI 图形资产。|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.1|生态系统文档、组装指南、网关技术规范和集成手册。|
+|[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.1|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
+
+\---
+
+## 🤝 贡献 (Contributing)
+
+每个生态系统都是其自身项目的独立倡议。每个项目都有自己的贡献指南。有关技术详情，请参考各个独立的仓库。
+
+Issue 标签在所有 HYDRA-UMC 仓库中都是统一标准化的，其来源是本仓库中的 [`.github/labels.yml`](.github/labels.yml)，并通过 [`.github/workflows/sync-labels.yml`](.github/workflows/sync-labels.yml) 进行同步——只需修改这单个文件即可同时更改所有地方的标签，而无需在每个仓库中手动修改。与下方的仪表板不同，此列表是静态的（真正的 GitHub Actions 矩阵，而非动态发现）——新添加的仓库不仅需要真实的 `hydra-umc.project.json`，还需要在那里添加一个条目。
+
+一个覆盖四个生态系统所有公共仓库的实时状态仪表板——每个仓库通过其自身的清单（`hydra-umc.project.json`、`urtc.project.json`、`armor.project.json`、`eh3d.project.json`，以及用于跨生态系统仓库的 `electro-hobby-3d.project.json`）被自律发现，直接从每个仓库自身的默认分支读取，没有固定列表——由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 在项目推送时（通过每个仓库自身的 `dashboard-dispatch.yml`）立即重新生成，并且作为安全网每小时运行两次，通过 GitHub Pages 从 `docs/` 提供服务：[**juanenrac.github.io/JuanenRac**](https://juanenrac.github.io/JuanenRac/)。它展示了技术栈、部署目标和当前版本、每个项目的真实成熟度分类（scaffolding / functional / established / production，每个分类根据该项目自身的 CHANGELOG 决定——参见 [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)）、其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、家族/父子树以及关于当前已实现功能的按项目注释。[ecosystem-catalog.json](ecosystem-catalog.json) 在一个地方列出了这些生态系统及其清单，如果两者不一致，仪表板构建将拒绝运行。
 
 ## 🧭 GitHub 协作
 
-[GitHub 协作模型](docs/GITHUB_COLLABORATION.md)定义了一个中央 Wiki、一个生态系统 Project、Discussions 的使用范围、Release 标准及共享自动化边界。中央[Issue 表单](.github/ISSUE_TEMPLATE/)和[Pull Request 模板](.github/PULL_REQUEST_TEMPLATE.md)让软件、硬件验证和文档工作可追溯，同时不复制各项目的技术手册。
+[GitHub 协作模型](docs/GITHUB_COLLABORATION.md) 定义了一个中央 Wiki、一个生态系统 Project、Discussion 范围、发布标准以及共享的自动化边界。集中维护的 [issue 表单](.github/ISSUE_TEMPLATE/) 和 [PR 模板](.github/PULL_REQUEST_TEMPLATE.md) 使得软件、硬件验证和文档工作具有可追溯性，而无需重复编写项目手册。
 
-社区健康工作流仅手动运行，默认采用 dry-run。配置 `COMMUNITY_HEALTH_SYNC_TOKEN` 后，它只会将这些受管理模板复制到发布 HYDRA-UMC 清单的仓库；绝不会删除项目专用模板。
+社区健康工作流程默认有意设置为手动和乾跑（dry-run）模式。配置 `COMMUNITY\_HEALTH\_SYNC\_TOKEN` 后，它只能将这些受管理的模板复制到发布 HYDRA-UMC 清单的每个仓库中；它绝不会删除特定于项目的模板。
+
 **Copyright (C) 2026 JuanenRac (Electro Hobby 3D)** - GPL-3.0 License.
 
