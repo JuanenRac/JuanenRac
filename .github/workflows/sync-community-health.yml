@@ -18,6 +18,11 @@ on:
         required: true
         default: true
         type: boolean
+      only_missing:
+        description: Only create the templates that a repository does not have; leave the ones it already has alone.
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: read
@@ -119,6 +124,7 @@ jobs:
           GH_TOKEN: ${{ secrets.COMMUNITY_HEALTH_SYNC_TOKEN }}
           TARGET_REPOSITORY: JuanenRac/${{ matrix.repository }}
           DRY_RUN: ${{ inputs.dry_run }}
+          ONLY_MISSING: ${{ inputs.only_missing }}
         shell: bash
         run: |
           set -euo pipefail
@@ -139,6 +145,7 @@ jobs:
           token = os.environ["GH_TOKEN"]
           repository = os.environ["TARGET_REPOSITORY"]
           dry_run = os.environ["DRY_RUN"].lower() == "true"
+          only_missing = os.environ.get("ONLY_MISSING", "true").lower() == "true"
           root = Path.cwd()
           files = [
               *sorted((root / ".github" / "ISSUE_TEMPLATE").glob("*.yml")),
@@ -174,6 +181,9 @@ jobs:
               content = source.read_bytes()
               if status == 200 and base64.b64decode(current["content"].replace("\n", "")) == content:
                   print(f"[OK] {repository}:{relative}")
+                  continue
+              if status == 200 and only_missing:
+                  print(f"[KEEP] {repository}:{relative} (it has its own)")
                   continue
               action = "CREATE" if status == 404 else "UPDATE"
               print(f"[{action}] {repository}:{relative} dry_run={dry_run}")
