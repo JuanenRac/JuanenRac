@@ -16,6 +16,7 @@ DASHBOARD = [
     ("hydra-umc", "HYDRA-UMC", "hydra-umc.project.json"),
     ("urtc", "URTC", "urtc.project.json"),
     ("armor", "A.R.M.O.R.", "armor.project.json"),
+    ("eh3d", "EH3D", "eh3d.project.json"),
     ("electro-hobby-3d", "Electro Hobby 3D", "electro-hobby-3d.project.json"),
 ]
 

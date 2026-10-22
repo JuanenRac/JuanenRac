@@ -84,8 +84,8 @@ ELECTRO_HOBBY_ECOSYSTEM_ID = "ELECTRO-HOBBY-3D"
 ELECTRO_HOBBY_MANIFEST_FILE = "electro-hobby-3d.project.json"
 
 
-def _fetch_electro_hobby_manifest(owner: str, name: str, branch: str) -> RemoteStatus | None:
-    url = f"{_hydra_client.GITHUB_RAW_BASE}/{owner}/{name}/{branch}/{ELECTRO_HOBBY_MANIFEST_FILE}"
+def _fetch_electro_hobby_manifest(owner: str, name: str, branch: str, manifest_file: str = ELECTRO_HOBBY_MANIFEST_FILE, ecosystem_id: str = ELECTRO_HOBBY_ECOSYSTEM_ID) -> RemoteStatus | None:
+    url = f"{_hydra_client.GITHUB_RAW_BASE}/{owner}/{name}/{branch}/{manifest_file}"
     request = urllib.request.Request(url, headers={"User-Agent": API_USER_AGENT, "Accept": "application/json"}, method="GET")
     try:
         text = _hydra_client._urlopen_with_retries(request, timeout=_hydra_client.REQUEST_TIMEOUT_S).decode("utf-8", errors="replace")
@@ -97,7 +97,7 @@ def _fetch_electro_hobby_manifest(owner: str, name: str, branch: str) -> RemoteS
         raise RuntimeError(f"{name}: manifest lookup failed: {exc}") from exc
     try:
         data = json.loads(text)
-        if not isinstance(data, dict) or data.get("ecosystem") != ELECTRO_HOBBY_ECOSYSTEM_ID:
+        if not isinstance(data, dict) or data.get("ecosystem") != ecosystem_id:
             return None
         data["ecosystem"] = _HYDRA_ECOSYSTEM_ID
         manifest = parse_manifest(json.dumps(data), expected_name=name)
@@ -111,8 +111,8 @@ def _fetch_electro_hobby_manifest(owner: str, name: str, branch: str) -> RemoteS
     )
 
 
-def discover_electro_hobby_projects(owner: str, *, token: str | None = None) -> _hydra_client.RemoteDiscovery:
-    """Every public repository of `owner` with an Electro Hobby 3D manifest."""
+def discover_electro_hobby_projects(owner: str, *, token: str | None = None, manifest_file: str = ELECTRO_HOBBY_MANIFEST_FILE, ecosystem_id: str = ELECTRO_HOBBY_ECOSYSTEM_ID) -> _hydra_client.RemoteDiscovery:
+    """Every public repository of `owner` with a manifest of the given file and ecosystem (Electro Hobby 3D by default)."""
     candidates: list[tuple[str, str]] = []
     page = 1
     while True:
@@ -129,7 +129,7 @@ def discover_electro_hobby_projects(owner: str, *, token: str | None = None) -> 
     found: list[RemoteStatus] = []
     errors: list[str] = []
     with ThreadPoolExecutor(max_workers=API_MAX_CONCURRENT_REQUESTS) as pool:
-        futures = {pool.submit(_fetch_electro_hobby_manifest, owner, name, branch): name for name, branch in candidates}
+        futures = {pool.submit(_fetch_electro_hobby_manifest, owner, name, branch, manifest_file, ecosystem_id): name for name, branch in candidates}
         for future in as_completed(futures):
             try:
                 status = future.result()
@@ -140,6 +140,17 @@ def discover_electro_hobby_projects(owner: str, *, token: str | None = None) -> 
                 found.append(status)
     found.sort(key=lambda status: status.entry.name.casefold())
     return _hydra_client.RemoteDiscovery(projects=tuple(found), errors=tuple(sorted(errors)))
+
+
+# EH3D Fabrication Suite: the fourth ecosystem. It has no updater of its own yet that discovers it, so the dashboard reads its manifests the same way
+# (`eh3d.project.json`, `ecosystem: EH3D`) with the HYDRA-UMC parser; the project keeps its own ecosystem in the page.
+EH3D_ECOSYSTEM_ID = "EH3D"
+EH3D_MANIFEST_FILE = "eh3d.project.json"
+
+
+def discover_eh3d_projects(owner: str, *, token: str | None = None) -> _hydra_client.RemoteDiscovery:
+    """Every public repository of `owner` with an EH3D manifest."""
+    return discover_electro_hobby_projects(owner, token=token, manifest_file=EH3D_MANIFEST_FILE, ecosystem_id=EH3D_ECOSYSTEM_ID)
 
 
 # ---------------------------------------------------------------------------
@@ -1254,7 +1265,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
 # public technical model stays equally available in every dashboard language.
 ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
     "en": {
-        "architecture_intro": "Electro Hobby 3D is three independent engineering ecosystems by the same author: HYDRA-UMC (industrial multi-robot platform), URTC (its universal robot-tool subsystem, an independent product with its own firmware) and A.R.M.O.R. (perimeter security and home automation). This dashboard discovers and lists every one of them live; each ecosystem's own family groups are labeled below, and HYDRA-UMC's own deeper architecture is detailed in the section right after this one.",
+        "architecture_intro": "Electro Hobby 3D is four independent engineering ecosystems by the same author: HYDRA-UMC (industrial multi-robot platform), URTC (its universal robot-tool subsystem, an independent product with its own firmware) A.R.M.O.R. (perimeter security and home automation) and EH3D (a PCB, CNC and laser fabrication suite). This dashboard discovers and lists every one of them live; each ecosystem's own family groups are labeled below, and HYDRA-UMC's own deeper architecture is detailed in the section right after this one.",
         "architecture_section": "HYDRA-UMC: System architecture", "architecture_platform_title": "Platform foundation", "architecture_platform_body": "Raspberry Pi OS ARM64 remains the operating-system base. The HYDRA-UMC layer adds device profiles, diagnostics and service lifecycle.",
         "architecture_contracts_title": "Contracts and operations", "architecture_contracts_body": "The SDK defines stable data and command contracts; Server, UI and tools use those contracts instead of raw hardware protocols.",
         "architecture_perception_title": "Perception and intelligence", "architecture_perception_body": "Vision and AI are optional capabilities. Their output is validated before it can influence a mission; they are never safety authority.",
@@ -1289,9 +1300,29 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "ARMOR-COMMON defines every node message once as a JSON Schema, with a validator that refuses what it does not implement, accepted and rejected conformance vectors that each implementation must pass, the OpenAPI file of the server's routes and the firmware base shared by the five nodes, which a tool keeps identical in each of them.",
         "architecture_a_card6_title": "Signed releases and updates",
         "architecture_a_card6_body": "Node firmware is published with a SHA-256 and an Ed25519 signature, and both a node and ARMOR-SERVER refuse a release without a valid one. The maintenance helper of ARMOR-DEVOPS checks an Ed25519 signature on each service package before unpacking it, which is how ARMOR-STUDIO updates the central machine; the private key never goes to GitHub. A firmware file uploaded by hand is not checked.",
+        "table_eh3d_banner": "EH3D Fabrication Suite - the newest ecosystem, for PCB milling, CNC, laser and pick-and-place work, same author.",
+        "architecture_section_e": "EH3D: System architecture",
+        "architecture_e_card1_title": "One project file",
+        "architecture_e_card1_body": "EH3D-COMMON defines the .eh3dproj container: a ZIP archive with the project, its layers, toolpaths and vision data, a SHA-256 for every entry and limits that refuse unsafe or oversized names.",
+        "architecture_e_card2_title": "Parsers and geometry",
+        "architecture_e_card2_body": "EH3D-CORE-LIBS reads Gerber RS-274X, Excellon drill files and G-code and recovers from damaged files with a diagnostic for every problem; HP-GL and 2D offsets follow.",
+        "architecture_e_card3_title": "CAM tools",
+        "architecture_e_card3_body": "ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM and AUTOLEVEL turn PCB layers and images into isolation, drilling, contour, stencil, laser and height-compensated toolpaths.",
+        "architecture_e_card4_title": "Machine control",
+        "architecture_e_card4_body": "EH3D-MOTIONCNC streams G-code to the machine and EH3D-PENDANT-GUI jogs it from a touchscreen, with EH3D-CAM-DEBUGGER simulating every path first.",
+        "architecture_e_card5_title": "Assembly and vision",
+        "architecture_e_card5_body": "EH3D-PNP-MANAGER reads the centroid files for guided or automatic placement and EH3D-VISION-STUDIO aligns cameras and trains fiducials with the vision of HYDRA-UMC.",
+        "architecture_e_card6_title": "One suite, one tool crib",
+        "architecture_e_card6_body": "EH3D-SUITE-LAUNCHER opens the tools, EH3D-TOOL-MANAGER keeps bits, wear and feeds in one database, EH3D-UPDATER keeps every repository current and EH3D-DOCS holds the manuals.",
+        "architecture_e_flow_1": "Gerber, Excellon and images",
+        "architecture_e_flow_2": "Parsers and CAM tools",
+        "architecture_e_flow_3": "G-code and simulation",
+        "architecture_e_flow_4": "Machine",
+        "architecture_e_rel_title": "EH3D's honest state:",
+        "architecture_e_rel_body": "EH3D is the newest ecosystem. Only EH3D-COMMON (the project container and the machine types) exists as published code so far, the parsers of EH3D-CORE-LIBS are being written and every other repository of the suite is planned. Nothing here has run on a machine yet, and the link with the vision of HYDRA-UMC is a plan, not a feature.",
     },
     "es": {
-        "architecture_intro": "Electro Hobby 3D son tres ecosistemas de ingeniería independientes del mismo autor: HYDRA-UMC (plataforma industrial multi-robot), URTC (su subsistema universal de herramientas, un producto independiente con firmware propio) y A.R.M.O.R. (seguridad perimetral y automatización del hogar). Este panel descubre y lista los tres en vivo; los grupos de familia de cada ecosistema aparecen etiquetados más abajo, y la arquitectura propia de cada uno se detalla en su propia sección más abajo.",
+        "architecture_intro": "Electro Hobby 3D son cuatro ecosistemas de ingeniería independientes del mismo autor: HYDRA-UMC (plataforma industrial multi-robot), URTC (su subsistema universal de herramientas, un producto independiente con firmware propio) A.R.M.O.R. (seguridad perimetral y automatización del hogar) y EH3D (una suite de fabricación de PCB, CNC y láser). Este panel descubre y lista los cuatro en vivo; los grupos de familia de cada ecosistema aparecen etiquetados más abajo, y la arquitectura propia de cada uno se detalla en su propia sección más abajo.",
         "architecture_section": "HYDRA-UMC: Arquitectura del sistema", "architecture_platform_title": "Base de plataforma", "architecture_platform_body": "Raspberry Pi OS ARM64 mantiene el papel de sistema operativo base. La capa HYDRA-UMC aporta perfiles de dispositivo, diagnóstico y ciclo de vida de servicios.",
         "architecture_contracts_title": "Contratos y operaciones", "architecture_contracts_body": "El SDK define contratos estables de datos y comandos; Server, las interfaces y las herramientas los usan en lugar de protocolos de hardware sin abstraer.",
         "architecture_perception_title": "Percepción e inteligencia", "architecture_perception_body": "La visión y la IA son capacidades opcionales. Su salida se valida antes de influir en una misión y nunca tiene autoridad de seguridad.",
@@ -1326,9 +1357,29 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "ARMOR-COMMON define cada mensaje de los nodos una sola vez como JSON Schema, con un validador que rechaza lo que no implementa, vectores de conformidad aceptados y rechazados que toda implementación debe superar, el archivo OpenAPI de las rutas del servidor y la base de firmware que comparten los cinco nodos, que una herramienta mantiene idéntica en cada uno.",
         "architecture_a_card6_title": "Releases y actualizaciones firmadas",
         "architecture_a_card6_body": "El firmware de los nodos se publica con un SHA-256 y una firma Ed25519, y tanto un nodo como ARMOR-SERVER rechazan una release sin una firma válida. El ayudante de mantenimiento de ARMOR-DEVOPS comprueba una firma Ed25519 en cada paquete de servicio antes de desempaquetarlo, que es como ARMOR-STUDIO actualiza la máquina central; la clave privada nunca va a GitHub. Un archivo de firmware subido a mano no se comprueba.",
+        "table_eh3d_banner": "EH3D Fabrication Suite - el ecosistema más nuevo, para fresado de PCB, CNC, láser y pick and place, del mismo autor.",
+        "architecture_section_e": "EH3D: Arquitectura del sistema",
+        "architecture_e_card1_title": "Un solo fichero de proyecto",
+        "architecture_e_card1_body": "EH3D-COMMON define el contenedor .eh3dproj: un archivo ZIP con el proyecto, sus capas, trayectorias y datos de visión, un SHA-256 por cada entrada y límites que rechazan nombres inseguros o entradas demasiado grandes.",
+        "architecture_e_card2_title": "Lectores y geometría",
+        "architecture_e_card2_body": "EH3D-CORE-LIBS lee Gerber RS-274X, ficheros de taladros Excellon y G-code y se recupera de ficheros dañados con un diagnóstico por cada problema; HP-GL y los desplazamientos 2D vendrán después.",
+        "architecture_e_card3_title": "Herramientas CAM",
+        "architecture_e_card3_body": "ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM y AUTOLEVEL convierten capas de PCB e imágenes en trayectorias de aislamiento, taladrado, contorno, plantilla, láser y con compensación de altura.",
+        "architecture_e_card4_title": "Control de la máquina",
+        "architecture_e_card4_body": "EH3D-MOTIONCNC envía el G-code a la máquina y EH3D-PENDANT-GUI la mueve desde una pantalla táctil, con EH3D-CAM-DEBUGGER simulando antes cada trayectoria.",
+        "architecture_e_card5_title": "Montaje y visión",
+        "architecture_e_card5_body": "EH3D-PNP-MANAGER lee los ficheros de centroides para colocar de forma guiada o automática y EH3D-VISION-STUDIO alinea cámaras y entrena fiduciales con la visión de HYDRA-UMC.",
+        "architecture_e_card6_title": "Una suite, un almacén de herramientas",
+        "architecture_e_card6_body": "EH3D-SUITE-LAUNCHER abre las herramientas, EH3D-TOOL-MANAGER guarda fresas, desgaste y avances en una base de datos, EH3D-UPDATER mantiene al día cada repositorio y EH3D-DOCS reúne los manuales.",
+        "architecture_e_flow_1": "Gerber, Excellon e imágenes",
+        "architecture_e_flow_2": "Lectores y herramientas CAM",
+        "architecture_e_flow_3": "G-code y simulación",
+        "architecture_e_flow_4": "Máquina",
+        "architecture_e_rel_title": "El estado real de EH3D:",
+        "architecture_e_rel_body": "EH3D es el ecosistema más nuevo. Hasta ahora solo EH3D-COMMON (el contenedor de proyecto y los tipos de máquina) existe como código publicado, los lectores de EH3D-CORE-LIBS se están escribiendo y el resto de repositorios de la suite están planificados. Nada de esto se ha ejecutado aún en una máquina, y el enlace con la visión de HYDRA-UMC es un plan, no una funcionalidad.",
     },
     "fr": {
-        "architecture_intro": "Electro Hobby 3D regroupe trois écosystèmes d'ingénierie indépendants du même auteur : HYDRA-UMC (plateforme industrielle multi-robot), URTC (son sous-système universel d'outils, un produit indépendant avec son propre firmware) et A.R.M.O.R. (sécurité périmétrique et domotique). Ce tableau de bord découvre et liste les trois en direct ; les groupes de famille de chaque écosystème sont indiqués plus bas, et l'architecture propre de chacun est détaillée dans sa propre section plus bas.",
+        "architecture_intro": "Electro Hobby 3D regroupe quatre écosystèmes d'ingénierie indépendants du même auteur : HYDRA-UMC (plateforme industrielle multi-robot), URTC (son sous-système universel d'outils, un produit indépendant avec son propre firmware) A.R.M.O.R. (sécurité périmétrique et domotique) et EH3D (une suite de fabrication de circuits imprimés, CNC et laser). Ce tableau de bord découvre et liste les quatre en direct ; les groupes de famille de chaque écosystème sont indiqués plus bas, et l'architecture propre de chacun est détaillée dans sa propre section plus bas.",
         "architecture_section": "HYDRA-UMC : Architecture du système", "architecture_platform_title": "Fondation de plateforme", "architecture_platform_body": "Raspberry Pi OS ARM64 reste la base du système d’exploitation. La couche HYDRA-UMC apporte profils d’appareil, diagnostic et cycle de vie des services.",
         "architecture_contracts_title": "Contrats et opérations", "architecture_contracts_body": "Le SDK définit des contrats stables de données et de commandes ; Server, les interfaces et les outils les utilisent au lieu de protocoles matériels bruts.",
         "architecture_perception_title": "Perception et intelligence", "architecture_perception_body": "La vision et l’IA sont des capacités optionnelles. Leur sortie est validée avant d’influencer une mission et n’a jamais autorité sur la sécurité.",
@@ -1363,9 +1414,29 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "ARMOR-COMMON définit chaque message des nœuds une seule fois sous forme de JSON Schema, avec un validateur qui refuse ce qu'il n'implémente pas, des vecteurs de conformité acceptés et refusés que chaque implémentation doit passer, le fichier OpenAPI des routes du serveur et la base de firmware partagée par les cinq nœuds, qu'un outil garde identique dans chacun.",
         "architecture_a_card6_title": "Releases et mises à jour signées",
         "architecture_a_card6_body": "Le firmware des nœuds est publié avec un SHA-256 et une signature Ed25519, et un nœud comme ARMOR-SERVER refusent une release sans signature valide. L'assistant de maintenance d'ARMOR-DEVOPS vérifie une signature Ed25519 sur chaque paquet de service avant de le décompresser, ce qui permet à ARMOR-STUDIO de mettre à jour la machine centrale ; la clé privée ne va jamais sur GitHub. Un fichier de firmware envoyé à la main n'est pas vérifié.",
+        "table_eh3d_banner": "EH3D Fabrication Suite - l'écosystème le plus récent, pour le fraisage de circuits imprimés, la CNC, le laser et le pick and place, du même auteur.",
+        "architecture_section_e": "EH3D : Architecture du système",
+        "architecture_e_card1_title": "Un seul fichier de projet",
+        "architecture_e_card1_body": "EH3D-COMMON définit le conteneur .eh3dproj : une archive ZIP avec le projet, ses couches, ses trajectoires et ses données de vision, un SHA-256 pour chaque entrée et des limites qui refusent les noms dangereux ou les entrées trop grosses.",
+        "architecture_e_card2_title": "Lecteurs et géométrie",
+        "architecture_e_card2_body": "EH3D-CORE-LIBS lit le Gerber RS-274X, les fichiers de perçage Excellon et le G-code et se remet des fichiers abîmés avec un diagnostic pour chaque problème ; le HP-GL et les décalages 2D suivront.",
+        "architecture_e_card3_title": "Outils de FAO",
+        "architecture_e_card3_body": "ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM et AUTOLEVEL transforment les couches de circuit imprimé et les images en trajectoires d'isolation, de perçage, de contour, de pochoir, de laser et compensées en hauteur.",
+        "architecture_e_card4_title": "Commande de la machine",
+        "architecture_e_card4_body": "EH3D-MOTIONCNC envoie le G-code à la machine et EH3D-PENDANT-GUI la déplace depuis un écran tactile, EH3D-CAM-DEBUGGER simulant d'abord chaque trajectoire.",
+        "architecture_e_card5_title": "Assemblage et vision",
+        "architecture_e_card5_body": "EH3D-PNP-MANAGER lit les fichiers de centroïdes pour un placement guidé ou automatique et EH3D-VISION-STUDIO aligne les caméras et entraîne les repères avec la vision de HYDRA-UMC.",
+        "architecture_e_card6_title": "Une suite, une réserve d'outils",
+        "architecture_e_card6_body": "EH3D-SUITE-LAUNCHER ouvre les outils, EH3D-TOOL-MANAGER garde fraises, usure et avances dans une base de données, EH3D-UPDATER tient chaque dépôt à jour et EH3D-DOCS réunit les manuels.",
+        "architecture_e_flow_1": "Gerber, Excellon et images",
+        "architecture_e_flow_2": "Lecteurs et outils de FAO",
+        "architecture_e_flow_3": "G-code et simulation",
+        "architecture_e_flow_4": "Machine",
+        "architecture_e_rel_title": "L'état réel d'EH3D :",
+        "architecture_e_rel_body": "EH3D est l'écosystème le plus récent. Pour l'instant seul EH3D-COMMON (le conteneur de projet et les types de machine) existe comme code publié, les lecteurs d'EH3D-CORE-LIBS sont en cours d'écriture et tous les autres dépôts de la suite sont prévus. Rien de tout cela n'a encore tourné sur une machine, et le lien avec la vision de HYDRA-UMC est un projet, pas une fonction.",
     },
     "it": {
-        "architecture_intro": "Electro Hobby 3D è composto da tre ecosistemi ingegneristici indipendenti dello stesso autore: HYDRA-UMC (piattaforma industriale multi-robot), URTC (il suo sottosistema universale di utensili, un prodotto indipendente con firmware proprio) e A.R.M.O.R. (sicurezza perimetrale e domotica). Questa dashboard scopre ed elenca tutti e tre dal vivo; i gruppi di famiglia di ogni ecosistema sono etichettati più sotto, e l'architettura propria di ciascuno è descritta nella sua sezione più sotto.",
+        "architecture_intro": "Electro Hobby 3D è composto da quattro ecosistemi ingegneristici indipendenti dello stesso autore: HYDRA-UMC (piattaforma industriale multi-robot), URTC (il suo sottosistema universale di utensili, un prodotto indipendente con firmware proprio) A.R.M.O.R. (sicurezza perimetrale e domotica) ed EH3D (una suite di fabbricazione di PCB, CNC e laser). Questa dashboard scopre ed elenca tutti e quattro dal vivo; i gruppi di famiglia di ogni ecosistema sono etichettati più sotto, e l'architettura propria di ciascuno è descritta nella sua sezione più sotto.",
         "architecture_section": "HYDRA-UMC: Architettura del sistema", "architecture_platform_title": "Fondazione della piattaforma", "architecture_platform_body": "Raspberry Pi OS ARM64 rimane la base del sistema operativo. Il livello HYDRA-UMC aggiunge profili dispositivo, diagnostica e ciclo di vita dei servizi.",
         "architecture_contracts_title": "Contratti e operazioni", "architecture_contracts_body": "L’SDK definisce contratti stabili per dati e comandi; Server, UI e strumenti li usano invece di protocolli hardware grezzi.",
         "architecture_perception_title": "Percezione e intelligenza", "architecture_perception_body": "Visione e IA sono capacità opzionali. Il loro output viene convalidato prima di influire su una missione e non ha mai autorità sulla sicurezza.",
@@ -1400,9 +1471,29 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "ARMOR-COMMON definisce ogni messaggio dei nodi una sola volta come JSON Schema, con un validatore che rifiuta ciò che non implementa, vettori di conformità accettati e rifiutati che ogni implementazione deve superare, il file OpenAPI delle rotte del server e la base firmware condivisa dai cinque nodi, che uno strumento mantiene identica in ciascuno.",
         "architecture_a_card6_title": "Release e aggiornamenti firmati",
         "architecture_a_card6_body": "Il firmware dei nodi è pubblicato con uno SHA-256 e una firma Ed25519, e sia un nodo sia ARMOR-SERVER rifiutano una release senza firma valida. L'assistente di manutenzione di ARMOR-DEVOPS controlla una firma Ed25519 su ogni pacchetto di servizio prima di scompattarlo, ed è così che ARMOR-STUDIO aggiorna la macchina centrale; la chiave privata non va mai su GitHub. Un file firmware caricato a mano non viene controllato.",
+        "table_eh3d_banner": "EH3D Fabrication Suite - l'ecosistema più recente, per fresatura di PCB, CNC, laser e pick and place, dello stesso autore.",
+        "architecture_section_e": "EH3D: Architettura del sistema",
+        "architecture_e_card1_title": "Un solo file di progetto",
+        "architecture_e_card1_body": "EH3D-COMMON definisce il contenitore .eh3dproj: un archivio ZIP con il progetto, i suoi livelli, i percorsi utensile e i dati di visione, un SHA-256 per ogni voce e limiti che rifiutano nomi non sicuri o voci troppo grandi.",
+        "architecture_e_card2_title": "Lettori e geometria",
+        "architecture_e_card2_body": "EH3D-CORE-LIBS legge Gerber RS-274X, i file di foratura Excellon e il G-code e si riprende dai file danneggiati con una diagnostica per ogni problema; HP-GL e gli offset 2D seguiranno.",
+        "architecture_e_card3_title": "Strumenti CAM",
+        "architecture_e_card3_body": "ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM e AUTOLEVEL trasformano i livelli PCB e le immagini in percorsi di isolamento, foratura, contorno, stencil, laser e con compensazione dell'altezza.",
+        "architecture_e_card4_title": "Controllo della macchina",
+        "architecture_e_card4_body": "EH3D-MOTIONCNC invia il G-code alla macchina e EH3D-PENDANT-GUI la muove da un touchscreen, con EH3D-CAM-DEBUGGER che simula prima ogni percorso.",
+        "architecture_e_card5_title": "Assemblaggio e visione",
+        "architecture_e_card5_body": "EH3D-PNP-MANAGER legge i file dei centroidi per il posizionamento guidato o automatico e EH3D-VISION-STUDIO allinea le telecamere e addestra i fiduciali con la visione di HYDRA-UMC.",
+        "architecture_e_card6_title": "Una suite, un magazzino utensili",
+        "architecture_e_card6_body": "EH3D-SUITE-LAUNCHER apre gli strumenti, EH3D-TOOL-MANAGER conserva frese, usura e avanzamenti in un database, EH3D-UPDATER tiene aggiornato ogni repository ed EH3D-DOCS raccoglie i manuali.",
+        "architecture_e_flow_1": "Gerber, Excellon e immagini",
+        "architecture_e_flow_2": "Lettori e strumenti CAM",
+        "architecture_e_flow_3": "G-code e simulazione",
+        "architecture_e_flow_4": "Macchina",
+        "architecture_e_rel_title": "Lo stato reale di EH3D:",
+        "architecture_e_rel_body": "EH3D è l'ecosistema più recente. Finora solo EH3D-COMMON (il contenitore di progetto e i tipi di macchina) esiste come codice pubblicato, i lettori di EH3D-CORE-LIBS sono in scrittura e ogni altro repository della suite è pianificato. Nulla di tutto ciò è ancora stato eseguito su una macchina, e il collegamento con la visione di HYDRA-UMC è un piano, non una funzione.",
     },
     "de": {
-        "architecture_intro": "Electro Hobby 3D besteht aus drei unabhängigen Engineering-Ökosystemen desselben Autors: HYDRA-UMC (industrielle Multi-Roboter-Plattform), URTC (dessen universelles Werkzeug-Subsystem, ein eigenständiges Produkt mit eigener Firmware) und A.R.M.O.R. (Perimetersicherheit und Hausautomation). Dieses Dashboard entdeckt und listet alle drei live auf; die Familiengruppen jedes Ökosystems sind weiter unten gekennzeichnet, und die eigene Architektur jedes Ökosystems wird in seinem eigenen Abschnitt weiter unten beschrieben.",
+        "architecture_intro": "Electro Hobby 3D besteht aus vier unabhängigen Engineering-Ökosystemen desselben Autors: HYDRA-UMC (industrielle Multi-Roboter-Plattform), URTC (dessen universelles Werkzeug-Subsystem, ein eigenständiges Produkt mit eigener Firmware) A.R.M.O.R. (Perimetersicherheit und Hausautomation) und EH3D (eine Fertigungssuite für Leiterplatten, CNC und Laser). Dieses Dashboard entdeckt und listet alle vier live auf; die Familiengruppen jedes Ökosystems sind weiter unten gekennzeichnet, und die eigene Architektur jedes Ökosystems wird in seinem eigenen Abschnitt weiter unten beschrieben.",
         "architecture_section": "HYDRA-UMC: Systemarchitektur", "architecture_platform_title": "Plattformbasis", "architecture_platform_body": "Raspberry Pi OS ARM64 bleibt die Betriebssystembasis. Die HYDRA-UMC-Schicht ergänzt Geräteprofile, Diagnose und den Lebenszyklus der Dienste.",
         "architecture_contracts_title": "Verträge und Betrieb", "architecture_contracts_body": "Das SDK definiert stabile Daten- und Befehlsverträge; Server, Oberflächen und Werkzeuge verwenden sie statt roher Hardwareprotokolle.",
         "architecture_perception_title": "Wahrnehmung und Intelligenz", "architecture_perception_body": "Vision und KI sind optionale Fähigkeiten. Ihre Ausgabe wird validiert, bevor sie eine Mission beeinflussen kann; sie besitzen nie Sicherheitsautorität.",
@@ -1437,9 +1528,29 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "ARMOR-COMMON definiert jede Knotennachricht einmal als JSON-Schema, mit einem Validator, der ablehnt, was er nicht umsetzt, akzeptierten und abgelehnten Konformitätsvektoren, die jede Implementierung bestehen muss, der OpenAPI-Datei der Server-Routen und der Firmware-Basis, die sich die fünf Knoten teilen und die ein Werkzeug in jedem identisch hält.",
         "architecture_a_card6_title": "Signierte Releases und Updates",
         "architecture_a_card6_body": "Knoten-Firmware wird mit einem SHA-256 und einer Ed25519-Signatur veröffentlicht, und sowohl ein Knoten als auch ARMOR-SERVER lehnen ein Release ohne gültige Signatur ab. Der Wartungshelfer von ARMOR-DEVOPS prüft eine Ed25519-Signatur an jedem Dienstpaket, bevor er es entpackt; so aktualisiert ARMOR-STUDIO die zentrale Maschine, und der private Schlüssel gelangt nie zu GitHub. Eine von Hand hochgeladene Firmware-Datei wird nicht geprüft.",
+        "table_eh3d_banner": "EH3D Fabrication Suite - das neueste Ökosystem, für Leiterplattenfräsen, CNC, Laser und Bestücken, desselben Autors.",
+        "architecture_section_e": "EH3D: Systemarchitektur",
+        "architecture_e_card1_title": "Eine Projektdatei",
+        "architecture_e_card1_body": "EH3D-COMMON definiert den .eh3dproj-Container: ein ZIP-Archiv mit dem Projekt, seinen Ebenen, Werkzeugwegen und Bilddaten, einem SHA-256 für jeden Eintrag und Grenzen, die unsichere Namen oder zu große Einträge ablehnen.",
+        "architecture_e_card2_title": "Parser und Geometrie",
+        "architecture_e_card2_body": "EH3D-CORE-LIBS liest Gerber RS-274X, Excellon-Bohrdateien und G-Code und fängt beschädigte Dateien mit einer Diagnose für jedes Problem ab; HP-GL und 2D-Offsets folgen.",
+        "architecture_e_card3_title": "CAM-Werkzeuge",
+        "architecture_e_card3_body": "ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM und AUTOLEVEL machen aus Leiterplattenebenen und Bildern Isolier-, Bohr-, Kontur-, Schablonen-, Laser- und höhenkompensierte Werkzeugwege.",
+        "architecture_e_card4_title": "Maschinensteuerung",
+        "architecture_e_card4_body": "EH3D-MOTIONCNC schickt den G-Code an die Maschine und EH3D-PENDANT-GUI fährt sie vom Touchscreen aus, wobei EH3D-CAM-DEBUGGER jeden Weg zuerst simuliert.",
+        "architecture_e_card5_title": "Bestückung und Bildverarbeitung",
+        "architecture_e_card5_body": "EH3D-PNP-MANAGER liest die Centroid-Dateien für geführtes oder automatisches Bestücken, und EH3D-VISION-STUDIO richtet Kameras aus und trainiert Passmarken mit der Bildverarbeitung von HYDRA-UMC.",
+        "architecture_e_card6_title": "Eine Suite, ein Werkzeuglager",
+        "architecture_e_card6_body": "EH3D-SUITE-LAUNCHER startet die Werkzeuge, EH3D-TOOL-MANAGER hält Fräser, Verschleiß und Vorschübe in einer Datenbank, EH3D-UPDATER hält jedes Repository aktuell und EH3D-DOCS sammelt die Handbücher.",
+        "architecture_e_flow_1": "Gerber, Excellon und Bilder",
+        "architecture_e_flow_2": "Parser und CAM-Werkzeuge",
+        "architecture_e_flow_3": "G-Code und Simulation",
+        "architecture_e_flow_4": "Maschine",
+        "architecture_e_rel_title": "Der ehrliche Stand von EH3D:",
+        "architecture_e_rel_body": "EH3D ist das neueste Ökosystem. Bisher existiert nur EH3D-COMMON (der Projektcontainer und die Maschinentypen) als veröffentlichter Code, die Parser von EH3D-CORE-LIBS werden geschrieben und jedes andere Repository der Suite ist geplant. Nichts davon ist bisher auf einer Maschine gelaufen, und die Verbindung zur Bildverarbeitung von HYDRA-UMC ist ein Plan, keine Funktion.",
     },
     "zh": {
-        "architecture_intro": "Electro Hobby 3D 是同一作者打造的三个独立工程生态系统：HYDRA-UMC（工业多机器人平台）、URTC（其通用工具子系统，一个拥有自己固件的独立产品）和 A.R.M.O.R.（周界安防与家庭自动化）。本仪表板实时发现并列出这三者；下方按生态系统标注了各自的家族分组，每个生态系统自身的架构详见其下方的独立小节。",
+        "architecture_intro": "Electro Hobby 3D 是同一作者打造的四个独立工程生态系统：HYDRA-UMC（工业多机器人平台）、URTC（其通用工具子系统，一个拥有自己固件的独立产品）、A.R.M.O.R.（周界安防与家庭自动化）和 EH3D（PCB、CNC 与激光加工套件）。本仪表板实时发现并列出这四者；下方按生态系统标注了各自的家族分组，每个生态系统自身的架构详见其下方的独立小节。",
         "architecture_section": "HYDRA-UMC：系统架构", "architecture_platform_title": "平台基础", "architecture_platform_body": "Raspberry Pi OS ARM64 仍是操作系统基础。HYDRA-UMC 层增加设备配置文件、诊断和服务生命周期。",
         "architecture_contracts_title": "契约与运维", "architecture_contracts_body": "SDK 定义稳定的数据和命令契约；Server、界面和工具使用这些契约，而不是原始硬件协议。",
         "architecture_perception_title": "感知与智能", "architecture_perception_body": "视觉和 AI 是可选能力。其输出在影响任务前必须经过验证，且永远不拥有安全权限。",
@@ -1474,9 +1585,29 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "ARMOR-COMMON 把每条节点消息只定义一次为 JSON Schema，配有拒绝其未实现内容的验证器、每种实现都必须通过的已接受与已拒绝一致性向量、服务器路由的 OpenAPI 文件，以及五个节点共用的固件基础，由工具保证每个节点中的副本一致。",
         "architecture_a_card6_title": "签名发布与更新",
         "architecture_a_card6_body": "节点固件附带 SHA-256 和 Ed25519 签名发布，节点和 ARMOR-SERVER 都会拒绝没有有效签名的发布。ARMOR-DEVOPS 的维护助手在解包每个服务包之前会校验其 Ed25519 签名，ARMOR-STUDIO 正是以此更新中央机器；私钥从不上传到 GitHub。手动上传的固件文件不做检查。",
+        "table_eh3d_banner": "EH3D Fabrication Suite —— 最新的生态系统，用于 PCB 铣削、CNC、激光和贴片作业，同一作者。",
+        "architecture_section_e": "EH3D：系统架构",
+        "architecture_e_card1_title": "一个项目文件",
+        "architecture_e_card1_body": "EH3D-COMMON 定义 .eh3dproj 容器：一个 ZIP 归档，包含项目、图层、刀路和视觉数据，每个条目都有 SHA-256，并设有限制以拒绝不安全或过大的条目名。",
+        "architecture_e_card2_title": "解析器与几何",
+        "architecture_e_card2_body": "EH3D-CORE-LIBS 读取 Gerber RS-274X、Excellon 钻孔文件和 G-code，遇到损坏的文件时会逐个问题给出诊断并继续；HP-GL 和二维偏移随后加入。",
+        "architecture_e_card3_title": "CAM 工具",
+        "architecture_e_card3_body": "ISOCAM、DRILLPRO、ROUTEPRO、STENCILCAM、LASER-CAM 和 AUTOLEVEL 把 PCB 图层和图像转换为隔离、钻孔、轮廓、钢网、激光以及带高度补偿的刀路。",
+        "architecture_e_card4_title": "机器控制",
+        "architecture_e_card4_body": "EH3D-MOTIONCNC 把 G-code 发送给机器，EH3D-PENDANT-GUI 通过触摸屏手动移动机器，EH3D-CAM-DEBUGGER 会先模拟每条路径。",
+        "architecture_e_card5_title": "贴装与视觉",
+        "architecture_e_card5_body": "EH3D-PNP-MANAGER 读取坐标（centroid）文件以进行引导或自动贴装，EH3D-VISION-STUDIO 借助 HYDRA-UMC 的视觉对齐摄像头并训练基准点。",
+        "architecture_e_card6_title": "一个套件，一个刀具库",
+        "architecture_e_card6_body": "EH3D-SUITE-LAUNCHER 启动各个工具，EH3D-TOOL-MANAGER 在一个数据库中管理铣刀、磨损和进给，EH3D-UPDATER 让每个仓库保持最新，EH3D-DOCS 汇集手册。",
+        "architecture_e_flow_1": "Gerber、Excellon 与图像",
+        "architecture_e_flow_2": "解析器与 CAM 工具",
+        "architecture_e_flow_3": "G-code 与仿真",
+        "architecture_e_flow_4": "机器",
+        "architecture_e_rel_title": "EH3D 的真实状态：",
+        "architecture_e_rel_body": "EH3D 是最新的生态系统。到目前为止，只有 EH3D-COMMON（项目容器和机器类型）已作为已发布的代码存在，EH3D-CORE-LIBS 的解析器正在编写，套件中的其余仓库都只是计划。这里的一切都还没有在真实机器上运行过，与 HYDRA-UMC 视觉的联动是计划，而不是已有功能。",
     },
     "ja": {
-        "architecture_intro": "Electro Hobby 3D は、同じ著者による3つの独立したエンジニアリングエコシステムです:HYDRA-UMC(産業用マルチロボットプラットフォーム)、URTC(その汎用ツールサブシステムで、独自のファームウェアを持つ独立した製品)、そして A.R.M.O.R.(周辺セキュリティとホームオートメーション)。このダッシュボードは3つ全てをライブで検出・一覧表示します。各エコシステムのファミリーグループは以下にラベル付けされており、それぞれの詳しいアーキテクチャは以下の各セクションで説明されます。",
+        "architecture_intro": "Electro Hobby 3D は、同じ著者による4つの独立したエンジニアリングエコシステムです:HYDRA-UMC(産業用マルチロボットプラットフォーム)、URTC(その汎用ツールサブシステムで、独自のファームウェアを持つ独立した製品)、A.R.M.O.R.(周辺セキュリティとホームオートメーション)、そして EH3D(基板・CNC・レーザー加工スイート)。このダッシュボードは4つ全てをライブで検出・一覧表示します。各エコシステムのファミリーグループは以下にラベル付けされており、それぞれの詳しいアーキテクチャは以下の各セクションで説明されます。",
         "architecture_section": "HYDRA-UMC:システムアーキテクチャ", "architecture_platform_title": "プラットフォーム基盤", "architecture_platform_body": "Raspberry Pi OS ARM64 は OS の基盤として残ります。HYDRA-UMC 層はデバイスプロファイル、診断、サービスライフサイクルを追加します。",
         "architecture_contracts_title": "契約と運用", "architecture_contracts_body": "SDK は安定したデータおよびコマンド契約を定義し、Server、UI、ツールは生のハードウェアプロトコルの代わりにそれを使用します。",
         "architecture_perception_title": "知覚とインテリジェンス", "architecture_perception_body": "Vision と AI は任意の能力です。出力はミッションに影響する前に検証され、安全権限を持つことはありません。",
@@ -1511,9 +1642,29 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "ARMOR-COMMON はノードの各メッセージを JSON Schema として一度だけ定義し、未実装の内容を拒否するバリデーター、すべての実装が通過すべき受理・拒否の適合性ベクター、サーバーのルートの OpenAPI ファイル、5 つのノードが共有するファームウェアベースを備え、このベースはツールによって各ノードで同一に保たれます。",
         "architecture_a_card6_title": "署名付きリリースとアップデート",
         "architecture_a_card6_body": "ノードのファームウェアは SHA-256 と Ed25519 署名付きで公開され、ノードも ARMOR-SERVER も有効な署名のないリリースを拒否します。ARMOR-DEVOPS のメンテナンスヘルパーは各サービスパッケージを展開する前に Ed25519 署名を検証し、ARMOR-STUDIO はこの方法で中央マシンを更新します。秘密鍵は GitHub には置かれません。手動でアップロードしたファームウェアファイルは検査されません。",
+        "table_eh3d_banner": "EH3D Fabrication Suite — 基板切削、CNC、レーザー、ピックアンドプレース向けの最新のエコシステムです。同じ作者によるものです。",
+        "architecture_section_e": "EH3D：システムアーキテクチャ",
+        "architecture_e_card1_title": "ひとつのプロジェクトファイル",
+        "architecture_e_card1_body": "EH3D-COMMON は .eh3dproj コンテナを定義します。プロジェクト、レイヤー、ツールパス、ビジョンデータを収めた ZIP アーカイブで、各エントリに SHA-256 があり、安全でない名前や大きすぎるエントリは制限で拒否されます。",
+        "architecture_e_card2_title": "パーサーとジオメトリ",
+        "architecture_e_card2_body": "EH3D-CORE-LIBS は Gerber RS-274X、Excellon のドリルファイル、G-code を読み込み、壊れたファイルは問題ごとに診断を出して読み進めます。HP-GL と 2D オフセットは今後対応します。",
+        "architecture_e_card3_title": "CAM ツール",
+        "architecture_e_card3_body": "ISOCAM、DRILLPRO、ROUTEPRO、STENCILCAM、LASER-CAM、AUTOLEVEL は、基板のレイヤーや画像を、アイソレーション、穴あけ、外形、ステンシル、レーザー、高さ補正付きのツールパスに変換します。",
+        "architecture_e_card4_title": "マシン制御",
+        "architecture_e_card4_body": "EH3D-MOTIONCNC は G-code をマシンに送り、EH3D-PENDANT-GUI はタッチスクリーンから手動で動かします。EH3D-CAM-DEBUGGER が先にすべての経路をシミュレートします。",
+        "architecture_e_card5_title": "実装とビジョン",
+        "architecture_e_card5_body": "EH3D-PNP-MANAGER は座標（centroid）ファイルを読み込んでガイド付きまたは自動の実装を行い、EH3D-VISION-STUDIO は HYDRA-UMC のビジョンでカメラの位置合わせとフィデューシャルの学習を行います。",
+        "architecture_e_card6_title": "ひとつのスイート、ひとつの工具庫",
+        "architecture_e_card6_body": "EH3D-SUITE-LAUNCHER が各ツールを起動し、EH3D-TOOL-MANAGER がビット、摩耗、送りをひとつのデータベースで管理し、EH3D-UPDATER がすべてのリポジトリを最新に保ち、EH3D-DOCS がマニュアルをまとめます。",
+        "architecture_e_flow_1": "Gerber・Excellon・画像",
+        "architecture_e_flow_2": "パーサーと CAM ツール",
+        "architecture_e_flow_3": "G-code とシミュレーション",
+        "architecture_e_flow_4": "マシン",
+        "architecture_e_rel_title": "EH3D の正直な現状：",
+        "architecture_e_rel_body": "EH3D は最新のエコシステムです。これまでに公開されたコードとして存在するのは EH3D-COMMON（プロジェクトコンテナとマシンの型）だけで、EH3D-CORE-LIBS のパーサーは作成中、スイートのそれ以外のリポジトリはすべて計画段階です。ここにあるものはまだ実機で動かしたことがなく、HYDRA-UMC のビジョンとの連携は機能ではなく計画です。",
     },
     "pt": {
-        "architecture_intro": "A Electro Hobby 3D é composta por três ecossistemas de engenharia independentes do mesmo autor: HYDRA-UMC (plataforma industrial multirrobô), URTC (o seu subsistema universal de ferramentas, um produto independente com firmware próprio) e A.R.M.O.R. (segurança perimetral e automação doméstica). Este painel descobre e lista os três em direto; os grupos de família de cada ecossistema aparecem identificados mais abaixo, e a arquitetura própria de cada um é descrita na sua própria secção mais abaixo.",
+        "architecture_intro": "A Electro Hobby 3D é composta por quatro ecossistemas de engenharia independentes do mesmo autor: HYDRA-UMC (plataforma industrial multirrobô), URTC (o seu subsistema universal de ferramentas, um produto independente com firmware próprio) A.R.M.O.R. (segurança perimetral e automação doméstica) e EH3D (uma suite de fabrico de PCB, CNC e laser). Este painel descobre e lista os quatro em direto; os grupos de família de cada ecossistema aparecem identificados mais abaixo, e a arquitetura própria de cada um é descrita na sua própria secção mais abaixo.",
         "architecture_section": "HYDRA-UMC: Arquitetura do sistema", "architecture_platform_title": "Base da plataforma", "architecture_platform_body": "O Raspberry Pi OS ARM64 continua a ser a base do sistema operativo. A camada HYDRA-UMC acrescenta perfis de dispositivo, diagnóstico e ciclo de vida dos serviços.",
         "architecture_contracts_title": "Contratos e operações", "architecture_contracts_body": "O SDK define contratos estáveis de dados e comandos; o Server, as interfaces e as ferramentas usam-nos em vez de protocolos de hardware em bruto.",
         "architecture_perception_title": "Perceção e inteligência", "architecture_perception_body": "A visão e a IA são capacidades opcionais. A sua saída é validada antes de poder influenciar uma missão e nunca tem autoridade de segurança.",
@@ -1548,6 +1699,26 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card5_body": "O ARMOR-COMMON define cada mensagem dos nós uma só vez como JSON Schema, com um validador que recusa o que não implementa, vetores de conformidade aceites e recusados que toda a implementação tem de superar, o ficheiro OpenAPI das rotas do servidor e a base de firmware partilhada pelos cinco nós, que uma ferramenta mantém idêntica em cada um.",
         "architecture_a_card6_title": "Releases e atualizações assinadas",
         "architecture_a_card6_body": "O firmware dos nós é publicado com um SHA-256 e uma assinatura Ed25519, e tanto um nó como o ARMOR-SERVER recusam uma release sem assinatura válida. O auxiliar de manutenção do ARMOR-DEVOPS verifica uma assinatura Ed25519 em cada pacote de serviço antes de o desempacotar, e é assim que o ARMOR-STUDIO atualiza a máquina central; a chave privada nunca vai para o GitHub. Um ficheiro de firmware carregado à mão não é verificado.",
+        "table_eh3d_banner": "EH3D Fabrication Suite - o ecossistema mais recente, para fresagem de PCB, CNC, laser e pick and place, do mesmo autor.",
+        "architecture_section_e": "EH3D: Arquitetura do sistema",
+        "architecture_e_card1_title": "Um só ficheiro de projeto",
+        "architecture_e_card1_body": "O EH3D-COMMON define o contentor .eh3dproj: um arquivo ZIP com o projeto, as suas camadas, trajetórias e dados de visão, um SHA-256 por cada entrada e limites que recusam nomes inseguros ou entradas demasiado grandes.",
+        "architecture_e_card2_title": "Leitores e geometria",
+        "architecture_e_card2_body": "O EH3D-CORE-LIBS lê Gerber RS-274X, ficheiros de furação Excellon e G-code e recupera-se de ficheiros danificados com um diagnóstico por cada problema; o HP-GL e os desvios 2D virão depois.",
+        "architecture_e_card3_title": "Ferramentas CAM",
+        "architecture_e_card3_body": "ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM e AUTOLEVEL transformam camadas de PCB e imagens em trajetórias de isolamento, furação, contorno, stencil, laser e com compensação de altura.",
+        "architecture_e_card4_title": "Controlo da máquina",
+        "architecture_e_card4_body": "O EH3D-MOTIONCNC envia o G-code para a máquina e o EH3D-PENDANT-GUI move-a a partir de um ecrã tátil, com o EH3D-CAM-DEBUGGER a simular primeiro cada trajetória.",
+        "architecture_e_card5_title": "Montagem e visão",
+        "architecture_e_card5_body": "O EH3D-PNP-MANAGER lê os ficheiros de centroides para a colocação guiada ou automática e o EH3D-VISION-STUDIO alinha câmaras e treina fiduciais com a visão do HYDRA-UMC.",
+        "architecture_e_card6_title": "Uma suite, um armazém de ferramentas",
+        "architecture_e_card6_body": "O EH3D-SUITE-LAUNCHER abre as ferramentas, o EH3D-TOOL-MANAGER guarda fresas, desgaste e avanços numa base de dados, o EH3D-UPDATER mantém cada repositório atualizado e o EH3D-DOCS reúne os manuais.",
+        "architecture_e_flow_1": "Gerber, Excellon e imagens",
+        "architecture_e_flow_2": "Leitores e ferramentas CAM",
+        "architecture_e_flow_3": "G-code e simulação",
+        "architecture_e_flow_4": "Máquina",
+        "architecture_e_rel_title": "O estado real do EH3D:",
+        "architecture_e_rel_body": "O EH3D é o ecossistema mais recente. Até agora só o EH3D-COMMON (o contentor de projeto e os tipos de máquina) existe como código publicado, os leitores do EH3D-CORE-LIBS estão a ser escritos e todos os outros repositórios da suite estão planeados. Nada disto foi ainda executado numa máquina, e a ligação com a visão do HYDRA-UMC é um plano, não uma funcionalidade.",
     },
 }
 
@@ -1574,7 +1745,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Advances only once real, physical hardware exists for it to run against - the exact board or machine this ecosystem's own hardware documentation describes.",
         "roadmap_advance_production": "The top of the ladder. Nothing advances past here - it just keeps shipping real fixes.",
         "compat_section": "Compatibility matrix",
-        "compat_intro": "Real project counts by role and deployment target, with row, column and grand totals, for the three ecosystems together (HYDRA-UMC, URTC and A.R.M.O.R.) or for one at a time, drawn straight from every repository's own manifest - A.R.M.O.R.'s free-text role/deployment_target fields are classified into these same categories rather than a second table, and STM32 firmware and documentation hubs are counted under their own column and row. A count, not a claim that any two specific projects interoperate.",
+        "compat_intro": "Real project counts by role and deployment target, with row, column and grand totals, for the four ecosystems together (HYDRA-UMC, URTC, A.R.M.O.R. and EH3D) or for one at a time, drawn straight from every repository's own manifest - A.R.M.O.R.'s free-text role/deployment_target fields are classified into these same categories rather than a second table, and STM32 firmware and documentation hubs are counted under their own column and row. A count, not a claim that any two specific projects interoperate.",
         "compat_corner": "Role \\ Target",
         "compat_total": "Total",
         "compat_view_all": "All ecosystems",
@@ -1588,7 +1759,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo cuando existe hardware físico real contra el que funcionar - la placa o máquina exacta que la propia documentación de hardware de este ecosistema describe.",
         "roadmap_advance_production": "La cima de la escalera. Nada avanza más allá de aquí - solo sigue entregando arreglos reales.",
         "compat_section": "Matriz de compatibilidad",
-        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, con totales por fila, por columna y total general, para los tres ecosistemas juntos (HYDRA-UMC, URTC y A.R.M.O.R.) o para uno solo, tomados directamente del manifiesto de cada repositorio - los campos de texto libre rol/deployment_target de A.R.M.O.R. se clasifican en estas mismas categorías en lugar de una segunda tabla, y el firmware STM32 y los repositorios de documentación se cuentan en su propia columna y fila. Es un recuento, no una afirmación de que dos proyectos concretos sean interoperables.",
+        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, con totales por fila, por columna y total general, para los cuatro ecosistemas juntos (HYDRA-UMC, URTC, A.R.M.O.R. y EH3D) o para uno solo, tomados directamente del manifiesto de cada repositorio - los campos de texto libre rol/deployment_target de A.R.M.O.R. se clasifican en estas mismas categorías en lugar de una segunda tabla, y el firmware STM32 y los repositorios de documentación se cuentan en su propia columna y fila. Es un recuento, no una afirmación de que dos proyectos concretos sean interoperables.",
         "compat_corner": "Rol \\ Destino",
         "compat_total": "Total",
         "compat_view_all": "Todos los ecosistemas",
@@ -1602,7 +1773,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "N'avance que lorsqu'un matériel physique réel existe pour qu'il puisse fonctionner face à lui - la carte ou la machine exacte que la documentation matérielle de cet écosystème décrit elle-même.",
         "roadmap_advance_production": "Le sommet de l'échelle. Rien n'avance au-delà d'ici - il continue simplement à livrer de vrais correctifs.",
         "compat_section": "Matrice de compatibilité",
-        "compat_intro": "Nombres réels de projets par rôle et par cible de déploiement, avec totaux par ligne, par colonne et total général, pour les trois écosystèmes réunis (HYDRA-UMC, URTC et A.R.M.O.R.) ou pour un seul, tirés directement du manifeste de chaque dépôt - les champs libres rôle/deployment_target d'A.R.M.O.R. sont classés dans ces mêmes catégories plutôt que dans un second tableau, et les firmwares STM32 et les dépôts de documentation sont comptés dans leur propre colonne et ligne. Un décompte, pas l'affirmation que deux projets précis sont interopérables.",
+        "compat_intro": "Nombres réels de projets par rôle et par cible de déploiement, avec totaux par ligne, par colonne et total général, pour les quatre écosystèmes réunis (HYDRA-UMC, URTC, A.R.M.O.R. et EH3D) ou pour un seul, tirés directement du manifeste de chaque dépôt - les champs libres rôle/deployment_target d'A.R.M.O.R. sont classés dans ces mêmes catégories plutôt que dans un second tableau, et les firmwares STM32 et les dépôts de documentation sont comptés dans leur propre colonne et ligne. Un décompte, pas l'affirmation que deux projets précis sont interopérables.",
         "compat_corner": "Rôle \\ Cible",
         "compat_total": "Total",
         "compat_view_all": "Tous les écosystèmes",
@@ -1616,7 +1787,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo quando esiste hardware fisico reale contro cui funzionare - la scheda o la macchina esatta che la documentazione hardware di questo ecosistema descrive.",
         "roadmap_advance_production": "La cima della scala. Nulla avanza oltre questo punto - continua solo a distribuire correzioni reali.",
         "compat_section": "Matrice di compatibilità",
-        "compat_intro": "Conteggi reali dei progetti per ruolo e destinazione di rilascio, con totali di riga, di colonna e totale generale, per i tre ecosistemi insieme (HYDRA-UMC, URTC e A.R.M.O.R.) o per uno solo, ricavati direttamente dal manifesto di ciascun repository - i campi a testo libero ruolo/deployment_target di A.R.M.O.R. sono classificati in queste stesse categorie invece che in una seconda tabella, e il firmware STM32 e i repository di documentazione sono contati nella propria colonna e riga. Un conteggio, non l'affermazione che due progetti specifici siano interoperabili.",
+        "compat_intro": "Conteggi reali dei progetti per ruolo e destinazione di rilascio, con totali di riga, di colonna e totale generale, per i quattro ecosistemi insieme (HYDRA-UMC, URTC, A.R.M.O.R. ed EH3D) o per uno solo, ricavati direttamente dal manifesto di ciascun repository - i campi a testo libero ruolo/deployment_target di A.R.M.O.R. sono classificati in queste stesse categorie invece che in una seconda tabella, e il firmware STM32 e i repository di documentazione sono contati nella propria colonna e riga. Un conteggio, non l'affermazione che due progetti specifici siano interoperabili.",
         "compat_corner": "Ruolo \\ Destinazione",
         "compat_total": "Totale",
         "compat_view_all": "Tutti gli ecosistemi",
@@ -1630,7 +1801,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Steigt nur auf, sobald echte physische Hardware existiert, gegen die es laufen kann - genau die Platine oder Maschine, die die eigene Hardware-Dokumentation dieses Ökosystems beschreibt.",
         "roadmap_advance_production": "Die Spitze der Leiter. Nichts steigt hier weiter auf - es liefert einfach weiter echte Fixes.",
         "compat_section": "Kompatibilitätsmatrix",
-        "compat_intro": "Echte Projektzahlen nach Rolle und Einsatzziel, mit Zeilen-, Spalten- und Gesamtsummen, für alle drei Ökosysteme zusammen (HYDRA-UMC, URTC und A.R.M.O.R.) oder für jeweils eines, direkt aus dem Manifest jedes Repositorys gelesen - die Freitextfelder Rolle/deployment_target von A.R.M.O.R. werden in dieselben Kategorien eingeordnet statt in eine zweite Tabelle, und STM32-Firmware sowie Dokumentations-Repositorys erscheinen in eigener Spalte und Zeile. Eine Zählung, keine Aussage, dass zwei bestimmte Projekte zusammenarbeiten.",
+        "compat_intro": "Echte Projektzahlen nach Rolle und Einsatzziel, mit Zeilen-, Spalten- und Gesamtsummen, für alle vier Ökosysteme zusammen (HYDRA-UMC, URTC, A.R.M.O.R. und EH3D) oder für jeweils eines, direkt aus dem Manifest jedes Repositorys gelesen - die Freitextfelder Rolle/deployment_target von A.R.M.O.R. werden in dieselben Kategorien eingeordnet statt in eine zweite Tabelle, und STM32-Firmware sowie Dokumentations-Repositorys erscheinen in eigener Spalte und Zeile. Eine Zählung, keine Aussage, dass zwei bestimmte Projekte zusammenarbeiten.",
         "compat_corner": "Rolle \\ Ziel",
         "compat_total": "Gesamt",
         "compat_view_all": "Alle Ökosysteme",
@@ -1644,7 +1815,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "只有当真实的物理硬件存在、可供其运行时才会晋级——正是本生态系统自身硬件文档所描述的那块板卡或那台机器。",
         "roadmap_advance_production": "阶梯的顶端。到这里就不再晋级——只会持续交付真实的修复。",
         "compat_section": "兼容性矩阵",
-        "compat_intro": "按角色和部署目标统计的真实项目数量，带有行合计、列合计和总计，可查看全部三个生态系统合计（HYDRA-UMC、URTC 和 A.R.M.O.R.）或单个生态系统，直接取自每个仓库自身的清单文件——A.R.M.O.R. 以自由文本填写的角色/部署目标字段被归入这些相同的类别，而不是另设一张表；STM32 固件和文档仓库分别计入各自的列和行。这只是计数，并不表示任何两个具体项目可以互操作。",
+        "compat_intro": "按角色和部署目标统计的真实项目数量，带有行合计、列合计和总计，可查看全部四个生态系统合计（HYDRA-UMC、URTC、A.R.M.O.R. 和 EH3D）或单个生态系统，直接取自每个仓库自身的清单文件——A.R.M.O.R. 以自由文本填写的角色/部署目标字段被归入这些相同的类别，而不是另设一张表；STM32 固件和文档仓库分别计入各自的列和行。这只是计数，并不表示任何两个具体项目可以互操作。",
         "compat_corner": "角色 \\ 目标",
         "compat_total": "合计",
         "compat_view_all": "全部生态系统",
@@ -1658,7 +1829,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "本物の物理ハードウェアが存在し、それに対して実際に動作できるようになった時点でのみ昇格します——このエコシステム自身のハードウェアドキュメントが説明する、まさにそのボードやマシンです。",
         "roadmap_advance_production": "はしごの頂点です。ここから先に昇格することはありません——ただ本物の修正を届け続けるだけです。",
         "compat_section": "互換性マトリクス",
-        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、行・列・総合計を備え、3つのエコシステム（HYDRA-UMC、URTC、A.R.M.O.R.）をまとめて、または1つずつ表示できます。各リポジトリ自身のマニフェストから直接取得しており、A.R.M.O.R. の自由記述の役割/デプロイ対象フィールドは別の表ではなく同じカテゴリに分類され、STM32 ファームウェアとドキュメントのリポジトリはそれぞれ専用の列と行で数えられます。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
+        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、行・列・総合計を備え、4つのエコシステム（HYDRA-UMC、URTC、A.R.M.O.R.、EH3D）をまとめて、または1つずつ表示できます。各リポジトリ自身のマニフェストから直接取得しており、A.R.M.O.R. の自由記述の役割/デプロイ対象フィールドは別の表ではなく同じカテゴリに分類され、STM32 ファームウェアとドキュメントのリポジトリはそれぞれ専用の列と行で数えられます。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
         "compat_corner": "役割 \\ 対象",
         "compat_total": "合計",
         "compat_view_all": "すべてのエコシステム",
@@ -1673,7 +1844,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_production": "O topo da escada. Nada avança para além daqui - continua apenas a entregar correções reais.",
         "compat_section": "Matriz de compatibilidade",
         "compat_corner": "Função \\ Destino",
-        "compat_intro": "Contagens reais de projetos por função e destino de implementação, com totais por linha, por coluna e total geral, para os três ecossistemas em conjunto (HYDRA-UMC, URTC e A.R.M.O.R.) ou para um de cada vez, retiradas diretamente do manifesto de cada repositório - os campos de texto livre função/deployment_target do A.R.M.O.R. são classificados nestas mesmas categorias em vez de numa segunda tabela, e o firmware STM32 e os repositórios de documentação são contados na sua própria coluna e linha. Uma contagem, não uma afirmação de que dois projetos concretos sejam interoperáveis.",
+        "compat_intro": "Contagens reais de projetos por função e destino de implementação, com totais por linha, por coluna e total geral, para os quatro ecossistemas em conjunto (HYDRA-UMC, URTC, A.R.M.O.R. e EH3D) ou para um de cada vez, retiradas diretamente do manifesto de cada repositório - os campos de texto livre função/deployment_target do A.R.M.O.R. são classificados nestas mesmas categorias em vez de numa segunda tabela, e o firmware STM32 e os repositórios de documentação são contados na sua própria coluna e linha. Uma contagem, não uma afirmação de que dois projetos concretos sejam interoperáveis.",
         "compat_total": "Total",
         "compat_view_all": "Todos os ecossistemas",
         "compat_view_label": "Vista por ecossistema",
@@ -2301,6 +2472,7 @@ ECOSYSTEM_BANNER_I18N_KEY: dict[str, str] = {
     "hydra-umc": "table_hydra_umc_banner",
     "urtc": "table_urtc_banner",
     "armor": "table_armor_banner",
+    "eh3d": "table_eh3d_banner",
     "electro-hobby-3d": "table_electro_hobby_3d_banner",
 }
 
@@ -2308,7 +2480,8 @@ ECOSYSTEM_BANNER_FALLBACK_TEXT: dict[str, str] = {
     "hydra-umc": "HYDRA-UMC - the industrial multi-robot platform and cell controller, this dashboard's first ecosystem.",
     "urtc": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.",
     "armor": "A.R.M.O.R. - a separate, public perimeter-security and home-automation ecosystem, same author.",
-    "electro-hobby-3d": "Electro Hobby 3D - the tools that sit above the three ecosystems and update any of them.",
+    "eh3d": "EH3D Fabrication Suite - the newest ecosystem, for PCB milling, CNC, laser and pick-and-place work, same author.",
+    "electro-hobby-3d": "Electro Hobby 3D - the tools that sit above the four ecosystems and update any of them.",
 }
 
 
@@ -2590,7 +2763,7 @@ def render_maturity_cards(
 
 
 # ---------------------------------------------------------------------------
-# Per-ecosystem counters - HYDRA-UMC, URTC and A.R.M.O.R. are three real,
+# Per-ecosystem counters - HYDRA-UMC, URTC, A.R.M.O.R. and EH3D are four real,
 # independent ecosystems by the same author, each with its own dedicated
 # discovery client (see this file's own import comment). This renders the
 # grand total (all three combined, already shown by the health section
@@ -2607,6 +2780,7 @@ ECOSYSTEM_ORDER: tuple[tuple[str, str], ...] = (
     ("hydra-umc", "HYDRA-UMC"),
     ("urtc", "URTC"),
     ("armor", "A.R.M.O.R."),
+    ("eh3d", "EH3D"),
     ("electro-hobby-3d", "Electro Hobby 3D"),
 )
 
@@ -2919,7 +3093,7 @@ def render_html(
 
 <meta
   name="description"
-  content="Electro Hobby 3D ecosystem status dashboard: live status for {total} projects across the HYDRA-UMC, URTC and A.R.M.O.R. ecosystems"
+  content="Electro Hobby 3D ecosystem status dashboard: live status for {total} projects across the HYDRA-UMC, URTC, A.R.M.O.R. and EH3D ecosystems"
 >
 
 <title>Electro Hobby 3D - Ecosystem Status</title>
@@ -4495,10 +4669,11 @@ def render_html(
     </p>
 
     <p class="ecosystem-intro" data-i18n="architecture_intro">
-      Electro Hobby 3D is three independent engineering ecosystems by the
+      Electro Hobby 3D is four independent engineering ecosystems by the
       same author: HYDRA-UMC (industrial multi-robot platform), URTC (its
       universal robot-tool subsystem, an independent product with its own
-      firmware) and A.R.M.O.R. (perimeter security and home automation).
+      firmware), A.R.M.O.R. (perimeter security and home automation) and
+      EH3D (a PCB, CNC and laser fabrication suite).
       This dashboard discovers and lists every one of them live; each
       ecosystem's own family groups are labeled below, and HYDRA-UMC's own
       deeper architecture is detailed in the section right after this one.
@@ -4676,6 +4851,58 @@ def render_html(
       <strong data-i18n="architecture_a_rel_title">A.R.M.O.R.'s own boundary:</strong> <span data-i18n="architecture_a_rel_body">The server is the only component that
       authorises an action or holds a camera credential. Visual and voice AI only recommend; solar and electrical
       nodes only read - the rules for switching an electrical source are tested in software but not yet linked to any real hardware.</span>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
+       EH3D SYSTEM ARCHITECTURE
+       ================================================================ -->
+
+  <section class="section">
+
+    <div class="section-title" data-i18n="architecture_section_e">EH3D: System architecture</div>
+
+    <div class="architecture-grid">
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_e_card1_title">One project file</h3>
+        <p data-i18n="architecture_e_card1_body">EH3D-COMMON defines the .eh3dproj container: a ZIP archive with the project, its layers, toolpaths and vision data, a SHA-256 for every entry and limits that refuse unsafe or oversized names.</p>
+        <ul><li>EH3D-COMMON</li><li>.eh3dproj</li><li>SHA-256 integrity</li><li>Machine telemetry types</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_e_card2_title">Parsers and geometry</h3>
+        <p data-i18n="architecture_e_card2_body">EH3D-CORE-LIBS reads Gerber RS-274X, Excellon drill files and G-code and recovers from damaged files with a diagnostic for every problem; HP-GL and 2D offsets follow.</p>
+        <ul><li>EH3D-CORE-LIBS</li><li>Gerber RS-274X</li><li>Excellon</li><li>G-code</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_e_card3_title">CAM tools</h3>
+        <p data-i18n="architecture_e_card3_body">ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM and AUTOLEVEL turn PCB layers and images into isolation, drilling, contour, stencil, laser and height-compensated toolpaths.</p>
+        <ul><li>EH3D-ISOCAM</li><li>EH3D-DRILLPRO</li><li>EH3D-ROUTEPRO</li><li>EH3D-LASER-CAM</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_e_card4_title">Machine control</h3>
+        <p data-i18n="architecture_e_card4_body">EH3D-MOTIONCNC streams G-code to the machine and EH3D-PENDANT-GUI jogs it from a touchscreen, with EH3D-CAM-DEBUGGER simulating every path first.</p>
+        <ul><li>EH3D-MOTIONCNC</li><li>EH3D-PENDANT-GUI</li><li>EH3D-CAM-DEBUGGER</li><li>Simulator first</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_e_card5_title">Assembly and vision</h3>
+        <p data-i18n="architecture_e_card5_body">EH3D-PNP-MANAGER reads the centroid files for guided or automatic placement and EH3D-VISION-STUDIO aligns cameras and trains fiducials with the vision of HYDRA-UMC.</p>
+        <ul><li>EH3D-PNP-MANAGER</li><li>EH3D-VISION-STUDIO</li><li>HYDRA-UMC vision link</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_e_card6_title">One suite, one tool crib</h3>
+        <p data-i18n="architecture_e_card6_body">EH3D-SUITE-LAUNCHER opens the tools, EH3D-TOOL-MANAGER keeps bits, wear and feeds in one database, EH3D-UPDATER keeps every repository current and EH3D-DOCS holds the manuals.</p>
+        <ul><li>EH3D-SUITE-LAUNCHER</li><li>EH3D-TOOL-MANAGER</li><li>EH3D-UPDATER</li><li>EH3D-DOCS</li></ul>
+      </article>
+    </div>
+
+    <div class="architecture-flow" aria-label="EH3D flow">
+      <span data-i18n="architecture_e_flow_1">Gerber, Excellon and images</span><b>→</b><span data-i18n="architecture_e_flow_2">Parsers and CAM tools</span><b>→</b><span data-i18n="architecture_e_flow_3">G-code and simulation</span><b>→</b><span data-i18n="architecture_e_flow_4">Machine</span>
+    </div>
+
+    <div class="relationship-note">
+      <strong data-i18n="architecture_e_rel_title">EH3D's honest state:</strong> <span data-i18n="architecture_e_rel_body">EH3D is the newest ecosystem. Only EH3D-COMMON (the project container and the machine types) exists as published code so far, the parsers of EH3D-CORE-LIBS are being written and every other repository of the suite is planned. Nothing here has run on a machine yet, and the link with the vision of HYDRA-UMC is a plan, not a feature.</span>
     </div>
 
   </section>
@@ -5693,6 +5920,7 @@ DASHBOARD_ECOSYSTEMS: list[tuple[str, str, str]] = [
     ("hydra-umc", "HYDRA-UMC", "hydra-umc.project.json"),
     ("urtc", "URTC", "urtc.project.json"),
     ("armor", "A.R.M.O.R.", "armor.project.json"),
+    ("eh3d", "EH3D", EH3D_MANIFEST_FILE),
     ("electro-hobby-3d", "Electro Hobby 3D", ELECTRO_HOBBY_MANIFEST_FILE),
 ]
 
@@ -5748,12 +5976,13 @@ def main() -> int:
     for ecosystem_key, ecosystem_label, discover in (
         ("urtc", "URTC", discover_urtc_projects),
         ("armor", "A.R.M.O.R.", discover_armor_projects),
+        ("eh3d", "EH3D", discover_eh3d_projects),
         ("electro-hobby-3d", "Electro Hobby 3D", discover_electro_hobby_projects),
     ):
         print(f"Discovering {ecosystem_label} repositories for {catalog.github_owner} from GitHub...", file=sys.stderr)
         try:
             sub_discovery = discover(catalog.github_owner, token=GITHUB_TOKEN or None)
-        except Exception as exc:  # noqa: BLE001 - a real, unexpected client failure must not take down the other two ecosystems
+        except Exception as exc:  # noqa: BLE001 - a real, unexpected client failure must not take down the other ecosystems
             print(f"WARNING: {ecosystem_label} discovery failed: {exc}", file=sys.stderr)
             continue
         for status in sub_discovery.projects:

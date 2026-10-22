@@ -27,6 +27,14 @@
       "updater_module": "armor_updater"
     },
     {
+      "key": "eh3d",
+      "label": "EH3D",
+      "manifest_file": "eh3d.project.json",
+      "updater": null,
+      "updater_module": null,
+      "note": "EH3D Fabrication Suite: PCB, CNC, laser and pick-and-place tools. No updater of its own yet (EH3D-UPDATER is planned); the dashboard reads its manifests directly."
+    },
+    {
       "key": "electro-hobby-3d",
       "label": "Electro Hobby 3D",
       "manifest_file": "electro-hobby-3d.project.json",
