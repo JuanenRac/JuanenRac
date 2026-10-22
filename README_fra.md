@@ -309,6 +309,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.1.5|Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.0.6|Architecture, interfaces, base de référence de sécurité, matrice de capacités, note d'étude du protocole CAN et catalogue de projets généré de l'écosystème URTC, plus les outils qui comparent tous les dépôts.|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.0.3|Le protocole CAN de la tête d'outil sous forme de données : une spécification, du code généré en C, TypeScript et Python, des vecteurs de conformité et les transports Python.|
+|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.1|Passerelle devant le bus CAN d'URTC : liste d'identifiants autorisés, limite de débit et clé de session.|
 
 \---
 

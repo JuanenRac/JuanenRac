@@ -309,6 +309,7 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.1.5|Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.0.6|Arquitectura, interfaces, línea base de seguridad, matriz de capacidades, nota de estudio del protocolo CAN y catálogo de proyectos generado del ecosistema URTC, además de las herramientas que comparan todos los repositorios.|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.0.3|El protocolo CAN del cabezal de la herramienta como datos: una especificación, código C, TypeScript y Python generado, vectores de conformidad y transportes en Python.|
+|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.1|Pasarela delante del bus CAN de URTC: lista de identificadores permitidos, límite de tasa y clave de sesión.|
 
 \---
 

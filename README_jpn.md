@@ -309,6 +309,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.1.5|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.0.6|URTCエコシステムのアーキテクチャ、インターフェース、セキュリティベースライン、能力マトリックス、CANプロトコルスタディノート、生成されたプロジェクトカタログ、および全リポジトリを比較するツール。|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.0.3|データとしてのツールヘッドのCANプロトコル：仕様、生成されたC、TypeScript、Pythonコード、適合性ベクトル、Pythonトランスポート。|
+|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.1|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
 
 \---
 

@@ -303,6 +303,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.1.7 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.0.9 | Architecture, interfaces, security baseline, capability matrix, CAN protocol study note and generated project catalogue of the URTC ecosystem, plus the tools that compare all repositories. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.0.6 | The CAN protocol of the tool head as data: a specification, generated C, TypeScript and Python code, conformance vectors and the Python transports. |
+| [URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY) | 0.0.1 | Gateway in front of the URTC CAN bus: allowed identifier list, rate limit and session key. |
 
 ---
 
