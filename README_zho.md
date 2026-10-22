@@ -23,6 +23,20 @@
 
 四个独立的工程生态系统，出自同一位作者。**HYDRA-UMC** 是一个多层工业机器人平台，涵盖从实时固件到认知 AI 的全栈技术。**URTC** 是其通用的机器人工具子系统：专为机器人的末端执行器开发的实时固件和桌面/Web 工具，作为独立产品开发，拥有独立版本控制和维护工具。**A.R.M.O.R.** 是一个独立且公开的周界安全与家庭自动化生态系统——雷达存在检测、太阳能与电力监测，以及带有网页端和移动端客户端的中央协调器。**EH3D Fabrication Suite** 是一个集成的软件生态系统，用于 PCB 原型制作、CAM 处理、计算机视觉检测、贴片机（Pick \& Place）管理以及与 HYDRA-UMC 硬件和专用车间机械对接的 CNC/激光控制。
 
+
+## 🧭 关于 Electro Hobby 3D 及其更新器
+
+**Electro Hobby 3D** 是 JuanenRac 的工坊：电子、机器人和软件都在同一个地方设计、制造、编程和测试。每个仓库都用清单描述自己，带有自己的文档，并说明哪些在真实硬件上试过、哪些没有。
+
+[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 是**四个生态系统的更新器**：一个窗口和一个命令行，把工作交给各个生态系统自己的更新器，由后者发现、安装和更新其仓库。下面的每个生态系统都会点明自己的更新器。
+
+| 生态系统 | 是什么 | 更新器 |
+|---|---|---|
+| **HYDRA-UMC** | 工业机器人与机器控制，从实时固件到认知 AI | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) |
+| **URTC** | 机器人末端执行器的固件与工具 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) |
+| **A.R.M.O.R.** | 周界安防与家庭自动化 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
+| **EH3D Fabrication Suite** | PCB 原型制作、CAM、CNC 与激光、贴片 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
+
 \---
 
 # 🐙 HYDRA-UMC
@@ -38,6 +52,8 @@
 </p>
 
 欢迎来到 **HYDRA-UMC 生态系统**，这是一个多层工业机器人平台，跨越了从底层实时固件到高层认知 AI 的各个领域。该组织托管了许多专门的项目，旨在完美协同工作，以实现微型工厂自动化和群集机器人技术。
+
+**更新器：** [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 ## 📈 生态系统进展
 
@@ -258,6 +274,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 **URTC (Universal Robot Tool Controller)** 是一个独立的产品，而不是 HYDRA-UMC 的子系统文件夹：它是针对机器人末端执行器的实时固件及一系列桌面/Web 工具，由独立开发、版本控制和维护。配备 URTC 的换刀装置通过 FDCAN 与 HYDRA-UMC 的单元控制器进行协调，但工具自身的实时行为、看门狗和安全状态属于 URTC 自己的权限——单元控制器无法绕过它，且 URTC 的开发、烧录或诊断也不依赖于 HYDRA-UMC。
 
+**更新器：** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
+
 ## 🏗️ URTC 的工作原理
 
 1. **工具固件**：URTC 专有的 STM32 固件运行 25 种以上的专用工具配置文件（夹爪、分配器、探针、主轴等），每种工具都有其自己的时序、限制和故障行为。
@@ -307,6 +325,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 </p>
 
 **A.R.M.O.R. (Autonomous Radar \& Multimodal Observation Range)** 是一个独立的公开周界安全与家庭自动化生态系统——除了相同的作者和相同的工程惯例（版本化清单、共享消息契约、八语言接口）外，与 HYDRA-UMC 或 URTC 无关。其现场节点监视物业的周界以及太阳能/电气设施；其中央服务器和客户端允许操作员查看其报告的内容并采取行动。以下版本和成熟度说明直接来自各个仓库自身的清单和能力矩阵，这与 HYDRA-UMC 仪表板已经使用的诚实原则完全一致。
+
+**更新器：** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 ## 🏗️ A.R.M.O.R. 是如何构建的
 
@@ -359,6 +379,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 </p>
 
 **EH3D Fabrication Suite** 是一个专门的、多仓库的软件生态系统，专为印制电路板（PCB）快速原型制作、CAM 刀具路径准备、计算机视觉检查、贴片机（PnP）管理以及多机 CNC/激光控制而定制。它提供与 **HYDRA-UMC** 硬件节点（STM32H7 + Jetson Orin NX + Hailo NPU）的原生互操作性，同时拥有一支车间机械车队，包括工业铣削系统（通过 ESP32-S3 RS-232 网关连接的 Bungard CCD）、CNC 雕刻机（JuanenCNC）和二极管激光雕刻机（JuanenLaser）。
+
+**更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 ## 🏗️ EH3D Fabrication Suite 的工作原理
 

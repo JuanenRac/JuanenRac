@@ -23,6 +23,20 @@
 
 Four independent engineering ecosystems, one author. **HYDRA-UMC** is a multi-layered industrial robotics platform, from real-time firmware to cognitive AI. **URTC** is its universal robot-tool subsystem: real-time firmware and desktop/web tooling for a robot's own end-effector, developed as its own product with independent versioning and maintenance tools. **A.R.M.O.R.** is a separate, public perimeter-security and home-automation ecosystem - radar presence detection, solar and electrical monitoring, and a central coordinator with web and mobile clients. **EH3D Fabrication Suite** is an integrated software ecosystem for PCB prototyping, CAM processing, computer vision inspection, Pick & Place management, and CNC/Laser control interfacing with HYDRA-UMC hardware and specialized workshop machinery.
 
+
+## 🧭 About Electro Hobby 3D and its updater
+
+**Electro Hobby 3D** is the workshop of JuanenRac: electronics, robotics and software that are designed, built, programmed and tested in one place. Every repository describes itself with a manifest, carries its own documentation and says what has and has not been tried on real hardware.
+
+[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) is **the updater of the four ecosystems**: one window and one command line that hand over to the updater of each ecosystem, and those are the ones that discover, install and update its repositories. Every ecosystem below names its own updater.
+
+| Ecosystem | What it is | Updater |
+|---|---|---|
+| **HYDRA-UMC** | Industrial robotics and machine control, from real-time firmware to cognitive AI | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) |
+| **URTC** | Firmware and tools for a robot's end-effectors | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) |
+| **A.R.M.O.R.** | Perimeter security and home automation | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
+| **EH3D Fabrication Suite** | PCB prototyping, CAM, CNC and laser, pick and place | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
+
 ---
 
 # 🐙 HYDRA-UMC
@@ -38,6 +52,8 @@ Four independent engineering ecosystems, one author. **HYDRA-UMC** is a multi-la
 </p>
 
 Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics platform spanning from low-level real-time firmware to high-level cognitive AI. This organization hosts many specialized projects designed to work in perfect synchrony for micro-factory automation and swarm robotics.
+
+**Updater:** [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 ## 📈 Ecosystem Progress
 
@@ -252,6 +268,8 @@ for all four - can check versions and build/update any other project.
 
 **URTC (Universal Robot Tool Controller)** is its own product, not a HYDRA-UMC subsystem folder: real-time firmware and a family of desktop/web tools for a robot's end-effector, developed, versioned and maintained independently. A URTC-equipped tool changer coordinates with HYDRA-UMC's cell controller over FDCAN, but the tool's own real-time behaviour, watchdog and safe state are URTC's own authority - the cell controller cannot bypass it, and URTC does not depend on HYDRA-UMC to be developed, flashed or diagnosed.
 
+**Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
+
 ## 🏗️ How URTC Works
 
 1. **Tool firmware**: URTC's own STM32 firmware runs each of 25+ specialized tool profiles (grippers, dispensers, probes, spindles and more), each with its own timing, limits and fault behaviour.
@@ -301,6 +319,8 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 </p>
 
 **A.R.M.O.R. (Autonomous Radar & Multimodal Observation Range)** is a separate, public perimeter-security and home-automation ecosystem - no relation to HYDRA-UMC or URTC beyond the same author and the same engineering conventions (versioned manifests, a shared message contract, eight-language interfaces). Its field nodes watch a property's perimeter and its solar/electrical installation; its central server and clients let an operator see and act on what they report. The version and maturity notes below come straight from each repository's own manifest and capability matrix, the same honesty convention HYDRA-UMC's dashboard already uses.
+
+**Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 ## 🏗️ How A.R.M.O.R. Is Built
 
@@ -353,6 +373,8 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 </p>
 
 **EH3D Fabrication Suite** is a dedicated, multi-repository software ecosystem tailored for rapid Printed Circuit Board (PCB) prototyping, CAM toolpath preparation, computer vision inspection, Pick & Place (PnP) management, and multi-machine CNC/Laser control. It provides native interoperability with **HYDRA-UMC** hardware nodes (STM32H7 + Jetson Orin NX + Hailo NPU) alongside a workshop machine fleet comprising industrial milling systems (Bungard CCD via ESP32-S3 RS-232 gateways), CNC routers (JuanenCNC), and diode laser engravers (JuanenLaser).
+
+**Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 ## 🏗️ How EH3D Fabrication Suite Works
 

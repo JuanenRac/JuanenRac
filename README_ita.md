@@ -23,6 +23,20 @@
 
 Quattro ecosistemi ingegneristici indipendenti, un unico autore. **HYDRA-UMC** è una piattaforma di robotica industriale multistrato, che spazia dal firmware in tempo reale all'IA cognitiva. **URTC** è il suo sottosistema universale per gli strumenti robotici: firmware in tempo reale e strumenti desktop/web per l'effettore finale di un robot, sviluppato come prodotto autonomo con versionamento e strumenti di manutenzione indipendenti. **A.R.M.O.R.** è un ecosistema separato e pubblico di sicurezza perimetrale e domotica: rilevamento di presenza radar, monitoraggio solare ed elettrico, e un coordinatore centrale con client web e mobili. **EH3D Fabrication Suite** è un ecosistema software integrato per la prototipazione di PCB, la preparazione CAM, l'ispezione tramite visione artificiale, la gestione Pick \& Place e il controllo CNC/Laser interfacciato con l'hardware HYDRA-UMC e macchinari d'officina specializzati.
 
+
+## 🧭 Su Electro Hobby 3D e il suo aggiornatore
+
+**Electro Hobby 3D** è il laboratorio di JuanenRac: elettronica, robotica e software progettati, costruiti, programmati e provati nello stesso posto. Ogni repository si descrive con un manifest, ha la propria documentazione e dice cosa è stato provato e cosa no su hardware reale.
+
+[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) è **l'aggiornatore dei quattro ecosistemi**: una finestra e una riga di comando che passano il lavoro all'aggiornatore di ciascun ecosistema, i quali scoprono, installano e aggiornano i suoi repository. Ogni ecosistema qui sotto nomina il proprio.
+
+| Ecosistema | Cos'è | Aggiornatore |
+|---|---|---|
+| **HYDRA-UMC** | Robotica industriale e controllo di macchine, dal firmware in tempo reale all'IA cognitiva | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) |
+| **URTC** | Firmware e strumenti per gli organi terminali di un robot | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) |
+| **A.R.M.O.R.** | Sicurezza perimetrale e domotica | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
+| **EH3D Fabrication Suite** | Prototipazione di PCB, CAM, CNC e laser, pick and place | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
+
 \---
 
 # 🐙 HYDRA-UMC
@@ -38,6 +52,8 @@ Quattro ecosistemi ingegneristici indipendenti, un unico autore. **HYDRA-UMC** �
 </p>
 
 Benvenuti nell'**ecosistema HYDRA-UMC**, una piattaforma di robotica industriale multistrato che spazia dal firmware in tempo reale a basso livello all'IA cognitiva di alto livello. Questa organizzazione ospita molti progetti specializzati progettati per lavorare in perfetta sintonia per l'automazione di micro-fabbriche e la robotica a sciame.
+
+**Aggiornatore:** [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 ## 📈 Avanzamento dell'ecosistema
 
@@ -258,6 +274,8 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 
 **URTC (Universal Robot Tool Controller)** è un prodotto a sé stante e non una cartella di sottosistema di HYDRA-UMC: firmware in tempo reale e una famiglia di strumenti desktop/web per l'effettore finale di un robot, sviluppati, versionati e mantenuti in modo indipendente. Un cambia-utensili dotato di URTC si coordina con il controller di cella di HYDRA-UMC tramite FDCAN, ma il comportamento in tempo reale dell'utensile, il watchdog e lo stato sicuro sono di esclusiva competenza di URTC — il controller di cella non può aggirarli, e URTC non dipende da HYDRA-UMC per essere sviluppato, flashato o diagnosticato.
 
+**Aggiornatore:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
+
 ## 🏗️ Come funziona URTC
 
 1. **Firmware dell'utensile**: Il firmware STM32 proprietario di URTC esegue ciascuno dei 25+ profili di utensili specializzati (pinze, erogatori, sonde, mandrini e altro), ognuno con tempistiche, limiti e comportamenti in caso di guasto propri.
@@ -307,6 +325,8 @@ Ogni profilo di utensile gestisce il proprio watchdog e comportamento in caso di
 </p>
 
 **A.R.M.O.R. (Autonomous Radar \& Multimodal Observation Range)** è un ecosistema pubblico separato di sicurezza perimetrale e domotica — nessuna parentela con HYDRA-UMC o URTC se non per lo stesso autore e le stesse convenzioni ingegneristiche (manifest con versione, contratto di messaggistica condiviso, interfacce in otto lingue). I suoi nodi di campo sorvegliano il perimetro di una proprietà e il suo impianto solare/elettrico; il server centrale e i client permettono a un operatore di visualizzare e agire su ciò che essi segnalano. Le note di versione e maturità sottostanti derivano direttamente dal manifest e dalla matrice delle capacità di ciascuna repository, adottando la stessa convenzione di trasparenza già impiegata dalla dashboard di HYDRA-UMC.
+
+**Aggiornatore:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 ## 🏗️ Come è costruito A.R.M.O.R.
 
@@ -359,6 +379,8 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 </p>
 
 **EH3D Fabrication Suite** è un ecosistema software multi-repository dedicato, progettato su misura per la prototipazione rapida di circuiti stampati (PCB), la preparazione di percorsi utensile CAM, l'ispezione tramite visione artificiale, la gestione Pick \& Place (PnP) e il controllo CNC/Laser multi-macchina. Offre interoperabilità nativa con i nodi hardware **HYDRA-UMC** (STM32H7 + Jetson Orin NX + Hailo NPU) insieme a un parco macchine d'officina che comprende sistemi di fresatura industriali (Bungard CCD tramite gateway RS-232 ESP32-S3), router CNC (JuanenCNC) e incisori laser a diodo (JuanenLaser).
+
+**Aggiornatore:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 ## 🏗️ Come funziona EH3D Fabrication Suite
 

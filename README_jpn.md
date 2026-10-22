@@ -23,6 +23,20 @@
 
 4つの独立したエンジニアリングエコシステム、1人の作者。**HYDRA-UMC**は、リアルタイムファームウェアから認知AIまで網羅する多層構造の産業用ロボティクスプラットフォームです。**URTC**は、ロボットののエンドエフェクター専用のユニバーサル・ロボットツール・サブシステムであり、リアルタイムファームウェアとデスクトップ/Webツールを提供し、独立したバージョン管理と保守ツールを持つ独自製品として開発されています。\*\*A.R.M.O.R.\*\*は、レーダーによるプレゼンス検知、ソーラーおよび電気モニタリング、Web/モバイルクライアントを備えた中央コーディネーターを含む、独立した公開型の境界セキュリティおよびホームオートメーションエコシステムです。**EH3D Fabrication Suite**は、基板（PCB）試作、CAM処理、コンピュータビジョン検査、ピック＆プレース管理、およびHYDRA-UMCハードウェアや専門の工房機械と連携するCNC/レーザー制御のための統合ソフトウェアエコシステムです。
 
+
+## 🧭 Electro Hobby 3D とそのアップデーターについて
+
+**Electro Hobby 3D** は JuanenRac の工房です。電子工作、ロボティクス、ソフトウェアを同じ場所で設計し、作り、プログラムし、テストします。各リポジトリはマニフェストで自身を記述し、独自のドキュメントを持ち、実機で試したものと試していないものを明記しています。
+
+[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は**4つのエコシステムのアップデーター**です。1つのウィンドウと1つのコマンドラインから、各エコシステム専用のアップデーターに処理を引き渡し、リポジトリの検出・インストール・更新は各アップデーターが行います。以下の各エコシステムは、それぞれのアップデーターを示しています。
+
+| エコシステム | 概要 | アップデーター |
+|---|---|---|
+| **HYDRA-UMC** | 産業用ロボティクスと機械制御。リアルタイムファームウェアから認知 AI まで | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) |
+| **URTC** | ロボットのエンドエフェクター向けファームウェアとツール | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) |
+| **A.R.M.O.R.** | 境界防犯とホームオートメーション | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
+| **EH3D Fabrication Suite** | 基板プロトタイピング、CAM、CNC とレーザー、ピックアンドプレース | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
+
 \---
 
 # 🐙 HYDRA-UMC
@@ -38,6 +52,8 @@
 </p>
 
 **HYDRA-UMCエコシステム**へようこそ。これは、低レベルのリアルタイムファームウェアから高レベルの認知AIに及ぶ、多層構造の産業用ロボティクスプラットフォームです。この組織には、マイクロファクトリーの自動化や群ロボット工学において完璧に連携して動作するように設計された、多くの専門プロジェクトが集まっています。
+
+**アップデーター：** [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 ## 📈 エコシステムの進捗状況
 
@@ -258,6 +274,8 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 \*\*URTC（Universal Robot Tool Controller）\*\*は、HYDRA-UMCのサブシステムフォルダではなく、独自の製品です。ロボットのエンドエフェクター用のリアルタイムファームウェアおよびデスクトップ/Webツールのファミリーであり、独自に開発、バージョン管理、保守が行われます。URTCを搭載したツールチェンジャーはFDCANを介してHYDRA-UMCのセルコントローラーと協調しますが、ツールのリアルタイム動作、ウォッチドッグ、安全状態はURTC独自の権限です。セルコントローラーがこれらをバイパスすることはできず、URTCは開発、フラッシュ、診断のためにHYDRA-UMCに依存しません。
 
+**アップデーター：** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
+
 ## 🏗️ URTCの仕組み
 
 1. **ツールファームウェア**: URTC独自のSTM32ファームウェアは、25種類以上の特殊ツールプロファイル（グリッパー、ディスペンサー、プローブ、スピンドルなど）のそれぞれを、独自のタイミング、制限、障害動作で実行します。
@@ -307,6 +325,8 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 </p>
 
 **A.R.M.O.R. (Autonomous Radar \& Multimodal Observation Range)** は、HYDRA-UMCやURTCとは、作者が同じであることとエンジニアリングの規約（バージョン管理されたマニフェスト、共有メッセージ契約、8言語対応インターフェース）が共通している点を除き、関係のない独立した公開型の境界セキュリティおよびホームオートメーションエコシステムです。そのフィールドノードは敷地の境界とソーラー/電気設備を監視し、中央サーバーとクライアントにより、オペレーターはそれらの報告を確認して対応することができます。以下のバージョンおよび成熟度の注記は、HYDRA-UMCのダッシュボードですでに使用されているのと同じ誠実さの規約に従い、各リポジトリ独自のマニフェストと能力マトリックスから直接取得されています。
+
+**アップデーター：** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 ## 🏗️ A.R.M.O.R. の構築方法
 
@@ -359,6 +379,8 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 </p>
 
 **EH3D Fabrication Suite** は、プリント基板（PCB）の迅速な試作、CAMツールパスの準備、コンピュータビジョン検査、ピック＆プレース（PnP）管理、およびマルチマシーンCNC/レーザー制御に特化した、専用のマルチリポジトリソフトウェアエコシステムです。**HYDRA-UMC**ハードウェアノード（STM32H7 + Jetson Orin NX + Hailo NPU）とのネイティブな相互運用性を提供し、産業用フライスシステム（ESP32-S3 RS-232ゲートウェイ経由のBungard CCD）、CNCルーター（JuanenCNC）、ダイオードレーザー彫刻機（JuanenLaser）を含む工房の機械群と連携します。
+
+**アップデーター：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 ## 🏗️ EH3D Fabrication Suite の仕組み
 
