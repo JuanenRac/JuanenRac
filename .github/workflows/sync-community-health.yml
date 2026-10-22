@@ -1,10 +1,11 @@
 # =============================================================================
-# HYDRA-UMC / URTC Ecosystem - Community health synchronization
+# Electro Hobby 3D ecosystems - Community health synchronization
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 # =============================================================================
 # Copies only the centrally maintained issue and pull-request templates to
-# repositories that publish a HYDRA-UMC manifest. It never deletes repository-
+# repositories that publish a manifest of any of the four ecosystems (HYDRA-UMC, URTC,
+# A.R.M.O.R., EH3D). It never deletes repository-
 # specific templates. The workflow is manual and dry-run by default because it
 # changes multiple repositories through the GitHub Contents API.
 name: Sync community health across the ecosystem
@@ -55,7 +56,7 @@ jobs:
     outputs:
       repositories: ${{ steps.repositories.outputs.value }}
     steps:
-      - name: Discover public HYDRA-UMC manifests
+      - name: Discover the public repositories of the four ecosystems
         id: repositories
         env:
           GH_TOKEN: ${{ secrets.COMMUNITY_HEALTH_SYNC_TOKEN }}
@@ -73,13 +74,24 @@ jobs:
             --header "X-GitHub-Api-Version: 2022-11-28" \
             'https://api.github.com/users/JuanenRac/repos?per_page=100&type=public')"
 
+          # manifest file -> the ecosystem its "ecosystem" field must name
+          declare -A ecosystem_of=(
+            [hydra-umc.project.json]="HYDRA-UMC"
+            [urtc.project.json]="URTC"
+            [armor.project.json]="A.R.M.O.R."
+            [eh3d.project.json]="EH3D"
+          )
+
           selected='[]'
           while IFS= read -r repository; do
-            manifest="$(curl --silent --show-error --location \
-              "https://raw.githubusercontent.com/JuanenRac/${repository}/main/hydra-umc.project.json" || true)"
-            if printf '%s' "$manifest" | jq -e '.ecosystem == "HYDRA-UMC"' >/dev/null 2>&1; then
-              selected="$(jq --arg name "$repository" '. + [$name]' <<<"$selected")"
-            fi
+            for manifest_file in "${!ecosystem_of[@]}"; do
+              manifest="$(curl --silent --show-error --location \
+                "https://raw.githubusercontent.com/JuanenRac/${repository}/main/${manifest_file}" || true)"
+              if printf '%s' "$manifest" | jq -e --arg eco "${ecosystem_of[$manifest_file]}" '.ecosystem == $eco' >/dev/null 2>&1; then
+                selected="$(jq --arg name "$repository" '. + [$name]' <<<"$selected")"
+                break
+              fi
+            done
           done < <(jq -r '.[].name' <<<"$repos_json")
 
           test "$(jq 'length' <<<"$selected")" -gt 0
@@ -136,7 +148,7 @@ jobs:
               "Accept": "application/vnd.github+json",
               "Authorization": f"Bearer {token}",
               "X-GitHub-Api-Version": "2022-11-28",
-              "User-Agent": "HYDRA-UMC-community-health-sync",
+              "User-Agent": "ecosystem-community-health-sync",
           }
 
           def request(method: str, url: str, payload: dict | None = None):
@@ -168,7 +180,7 @@ jobs:
               if dry_run:
                   continue
               payload = {
-                  "message": f"docs: synchronize HYDRA-UMC community template {relative} [skip ci]",
+                  "message": f"docs: synchronize community template {relative} [skip ci]",
                   "content": base64.b64encode(content).decode("ascii"),
                   "branch": "main",
               }
