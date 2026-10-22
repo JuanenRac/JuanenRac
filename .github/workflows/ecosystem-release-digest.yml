@@ -1,0 +1,53 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/ecosystem-release-digest.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Weekly digest of what the four ecosystems published.
+#
+# Every Sunday evening it lists the releases (not drafts, not pre-releases) published in the last
+# days by any repository that has an ecosystem manifest, grouped by ecosystem, in the job summary of
+# the run. It changes nothing; the digest can be read on the Actions page or pasted into a post.
+# =============================================================================
+
+name: Ecosystem release digest
+
+on:
+  schedule:
+    - cron: "23 18 * * 0"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to look"
+        type: number
+        default: 7
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ecosystem-release-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    name: List the releases
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Digest
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DAYS: ${{ inputs.days }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/release_digest.py --days "${DAYS:-7}"

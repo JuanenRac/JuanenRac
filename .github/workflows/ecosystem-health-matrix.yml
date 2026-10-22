@@ -1,0 +1,62 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/ecosystem-health-matrix.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Repository health matrix for the four ecosystems.
+#
+# Every Wednesday it checks that every repository that has an ecosystem manifest has the files that a
+# project of the family is expected to have: a licence, the eight READMEs, a security policy, a code of
+# conduct, a contributing guide, a support file, a changelog, at least one workflow, issue and pull
+# request templates and a banner. The gaps go to the job summary and to ONE issue of this repository
+# ("Repository health: files that are missing"), closed by itself when nothing is missing.
+# =============================================================================
+
+name: Ecosystem health matrix
+
+on:
+  schedule:
+    - cron: "11 6 * * 3"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print the report without touching the issue"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ecosystem-health-matrix
+  cancel-in-progress: false
+
+jobs:
+  matrix:
+    name: Check the repositories
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Unit tests of the monitors
+        run: python -m unittest tests.test_monitors
+      - name: Check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${DRY_RUN:-false}" = "true" ]; then
+            python scripts/health_matrix.py --dry-run
+          else
+            python scripts/health_matrix.py
+          fi

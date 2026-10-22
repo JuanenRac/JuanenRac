@@ -1,0 +1,64 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/ecosystem-ci-watch.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# CI watch for the four ecosystems (HYDRA-UMC, URTC, A.R.M.O.R., EH3D) and the tools above them.
+#
+# Every six hours it looks at the newest finished run of every workflow of every repository that
+# has an ecosystem manifest, on its default branch. Red workflows go to the job summary and to ONE
+# issue of this repository ("CI watch: workflows that are red"), which is updated while something is
+# red and closed by itself when everything is green. No repository list lives here: the repositories
+# are discovered from their manifests (scripts/ecosystem_inventory.py).
+#
+# It only reads public data and writes one issue here, so the token of the run is enough.
+# =============================================================================
+
+name: Ecosystem CI watch
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print the report without touching the issue"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ecosystem-ci-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    name: Look at every workflow
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Unit tests of the monitors
+        run: python -m unittest tests.test_monitors
+      - name: Watch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${DRY_RUN:-false}" = "true" ]; then
+            python scripts/ci_watch.py --dry-run
+          else
+            python scripts/ci_watch.py
+          fi

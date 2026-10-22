@@ -1,0 +1,62 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/ecosystem-link-check.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Link check of the READMEs of the four ecosystems.
+#
+# Every Monday it reads the eight READMEs of every repository that has an ecosystem manifest and
+# checks the links that stay inside the account: a link to another repository must point to one that
+# exists, and a relative link (a document, an image) must point to a file that is in that repository.
+# What it finds goes to the job summary and to ONE issue of this repository ("Link check: broken links
+# in the READMEs"), closed by itself when every link resolves. Nothing outside the account is fetched.
+# =============================================================================
+
+name: Ecosystem link check
+
+on:
+  schedule:
+    - cron: "41 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print the report without touching the issue"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ecosystem-link-check
+  cancel-in-progress: false
+
+jobs:
+  links:
+    name: Check the links
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Unit tests of the monitors
+        run: python -m unittest tests.test_monitors
+      - name: Check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${DRY_RUN:-false}" = "true" ]; then
+            python scripts/link_check.py --dry-run
+          else
+            python scripts/link_check.py
+          fi
