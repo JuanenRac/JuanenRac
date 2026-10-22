@@ -30,9 +30,9 @@
       "key": "eh3d",
       "label": "EH3D",
       "manifest_file": "eh3d.project.json",
-      "updater": null,
-      "updater_module": null,
-      "note": "EH3D Fabrication Suite: PCB, CNC, laser and pick-and-place tools. No updater of its own yet (EH3D-UPDATER is planned); the dashboard reads its manifests directly."
+      "updater": "EH3D-UPDATER",
+      "updater_module": "eh3d_updater",
+      "note": "EH3D Fabrication Suite: PCB, CNC, laser and pick-and-place tools. EH3D-UPDATER detects, installs and updates its repositories; the dashboard reads their manifests directly."
     },
     {
       "key": "electro-hobby-3d",
@@ -40,7 +40,7 @@
       "manifest_file": "electro-hobby-3d.project.json",
       "updater": null,
       "updater_module": null,
-      "note": "Cross-ecosystem repositories (this profile, ELECTRO-HOBBY-3D-UPDATER): no updater of their own; ELECTRO-HOBBY-3D-UPDATER dispatches to the three ecosystem updaters."
+      "note": "Cross-ecosystem repositories (this profile, ELECTRO-HOBBY-3D-UPDATER): no updater of their own; ELECTRO-HOBBY-3D-UPDATER dispatches to the four ecosystem updaters."
     }
   ],
   "_about": "ecosystem/manifest_file/dashboard_exclude are the HYDRA-UMC discovery settings read by hydra_umc_updater.parse_catalog; 'ecosystems' lists every ecosystem the dashboard reports and is checked against scripts/generate_dashboard.py by scripts/catalog_check.py."
