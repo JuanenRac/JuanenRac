@@ -5991,6 +5991,13 @@ def main() -> int:
             ecosystem_by_name[status.entry.name] = ecosystem_key
         all_discovery_errors.extend(sub_discovery.errors)
         print(f"{ecosystem_label}: {len(sub_discovery.projects)} project(s) discovered.", file=sys.stderr)
+        # URTC and A.R.M.O.R. always have real projects: finding none means a parser or a manifest broke (an unknown field made every URTC project vanish from the page
+        # once), not that they are gone. Keep the page that is published instead of replacing it with one that has lost a whole ecosystem.
+        if ecosystem_key in ("urtc", "armor") and not sub_discovery.projects:
+            print(f"ERROR: no valid {ecosystem_label} manifests were discovered ({len(sub_discovery.errors)} error(s)); preserving the current dashboard.", file=sys.stderr)
+            for problem in sub_discovery.errors[:10]:
+                print(f"  - {problem}", file=sys.stderr)
+            return 1
 
     total = len(entries)
 
