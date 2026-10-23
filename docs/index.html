@@ -3947,7 +3947,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/252d12486457da970632697c076a6d07fe80a3e0" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add URTC-GATEWAY to related projects">docs: add URTC-GATEWAY to related projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/b7fdd8eae82a700871ea1370cb6472aec074ef23" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add reservations, safety limits and jog commands with a per-session controller id">Add reservations, safety limits and jog commands with a per-session controller id</a>
           </td>
         </tr>
 
@@ -3967,7 +3967,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real `version`/`status`/`robots`/`doctor`/`config validate`/`config apply --dry-run`/`shell` commands. `robots`/`status`/`doctor` are genuine clients of a live HYDRA-UMC-SERVER (GET /api/settings, GET /api/hydra-info). A --config file&#x27;s own &quot;server&quot;/&quot;timeoutSec&quot; (already schema-validated by `config validate`/`apply`) now really drives every live command&#x27;s HTTP target and request timeout via resolveTarget(), not just validation - a `shell` session persists both as session defaults too. A real, stable exit-code contract (exitcode.go) classifies every failure (usage/config/network/server/not-implemented/auth) instead of a bare exit 1. Over 85 tests via net/http/httptest and real temp-file config fixtures, including `doctor --json`&#x27;s structured checkId/severity/status report. Fleet-wide deploy/flash-all/audit commands and a live (non-dry-run) `config apply` remain future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
+                <div class="detail-text">Real `version`/`status`/`robots`/`doctor`/`config validate`/`config apply --dry-run`/`shell` commands, plus `claims`/`claim`/`release`/`limits`/`jog-arm`/`jog` (reservations with a per-session controller id, safety limits read from the server, jog arming; a jog above the model&#x27;s limit is refused before it is sent). `robots`/`status`/`doctor` are genuine clients of a live HYDRA-UMC-SERVER (GET /api/settings, GET /api/hydra-info). A --config file&#x27;s own &quot;server&quot;/&quot;timeoutSec&quot; (already schema-validated by `config validate`/`apply`) now really drives every live command&#x27;s HTTP target and request timeout via resolveTarget(), not just validation - a `shell` session persists both as session defaults too. A real, stable exit-code contract (exitcode.go) classifies every failure (usage/config/network/server/not-implemented/auth) instead of a bare exit 1. Over 85 tests via net/http/httptest and real temp-file config fixtures, including `doctor --json`&#x27;s structured checkId/severity/status report. Fleet-wide deploy/flash-all/audit commands and a live (non-dry-run) `config apply` remain future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -4322,7 +4322,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/5192fc0163655edcf1242dfdc4617c442779bebc" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add URTC-GATEWAY to related projects">docs: add URTC-GATEWAY to related projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/87e6104c911103f4913cd7a3fad56ff6c44cfc67" target="_blank" rel="noopener noreferrer" class="commit-link" title="Implement Bluetooth LE GATT client and optional configurable TLS">Implement Bluetooth LE GATT client and optional configurable TLS</a>
           </td>
         </tr>
 
@@ -4444,7 +4444,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/4551958dd096384382c9af58e9a0d3aadd7670f9" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add URTC-GATEWAY to related projects">docs: add URTC-GATEWAY to related projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/683fa0432d3c866694283f80b151583b56f8f2bb" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add reservations, controller id, safety limits and jog arming to the control screen">Add reservations, controller id, safety limits and jog arming to the control screen</a>
           </td>
         </tr>
 
@@ -4810,7 +4810,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/624d982894584e8ecadcf688f2d340a8ca596031" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add URTC-GATEWAY to related projects">docs: add URTC-GATEWAY to related projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/3b4b97b25b6afb8154844081006e3e82b6fa4da3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add reservations, controller id, safety limits and jog arming to the control screen">Add reservations, controller id, safety limits and jog arming to the control screen</a>
           </td>
         </tr>
 
@@ -4932,7 +4932,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/454fdb0604eebc86dbf5af347c3e3df1e3b0e3ad" target="_blank" rel="noopener noreferrer" class="commit-link" title="Reservations per window, server-side safety limits, jog arming, Live/Sim mode and rejected out-of-reach works">Reservations per window, server-side safety limits, jog arming, Live/Sim mode and rejected out-of-reach works</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/ab73fcbb644fa38708dd4f68797b8c8e889e2660" target="_blank" rel="noopener noreferrer" class="commit-link" title="Say in the user&#x27;s language when the server did not apply a jog">Say in the user&#x27;s language when the server did not apply a jog</a>
           </td>
         </tr>
 
@@ -5054,7 +5054,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/cc57f02194e9a12f78e9a542cdd7893ebacc3517" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add URTC-GATEWAY to related projects">docs: add URTC-GATEWAY to related projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/3264d1b759427b44393adc18a7399fe7d2e7ee90" target="_blank" rel="noopener noreferrer" class="commit-link" title="Retire the classic window, add reservations, safety limits, Live/Sim mode and remembered servers">Retire the classic window, add reservations, safety limits, Live/Sim mode and remembered servers</a>
           </td>
         </tr>
 
@@ -9283,7 +9283,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/96b535d927ee8854ee00ea07ce6f9e7d08da240a" target="_blank" rel="noopener noreferrer" class="commit-link" title="docs: add URTC-GATEWAY to related projects">docs: add URTC-GATEWAY to related projects</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/1f4e683d2bd9053993d9fe83c74f89a0b9b26b82" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add clients for the server claim, release, jog-arm, claims and safety-limit routes">Add clients for the server claim, release, jog-arm, claims and safety-limit routes</a>
           </td>
         </tr>
 
@@ -10024,7 +10024,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.9
+            0.1.0
           </td>
 
           <td class="status-cell">
@@ -10039,7 +10039,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-DOCS/commit/7802961ad80f893a9ca9d35a18dd43a9bd10a6b6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.0.9">Release 0.0.9</a>
+            <a href="https://github.com/JuanenRac/URTC-DOCS/commit/38290eb2181b4024ebe96dfb2bdffb5f4d15c697" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.1.0">Release 0.1.0</a>
           </td>
         </tr>
 
@@ -10292,7 +10292,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC/commit/f8fe03640073eca21d2e5f240ed10f83e72e0208" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.4.0">Release 0.4.0</a>
+            <a href="https://github.com/JuanenRac/URTC/commit/3faa761477e456295d9b5a748e632a35b679cef5" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the detached firmware signatures out of the repository">Keep the detached firmware signatures out of the repository</a>
           </td>
         </tr>
 
@@ -10399,7 +10399,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.6
+            0.0.7
           </td>
 
           <td class="status-cell">
@@ -10414,7 +10414,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/4db969b3285d48706a53dea948d5469ba8b9befa" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.0.6">Release 0.0.6</a>
+            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/9711cb63b1fc3cbf4582d77a5d45f27bdf088c13" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.0.7">Release 0.0.7</a>
           </td>
         </tr>
 
@@ -10521,7 +10521,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.9
+            0.4.0
           </td>
 
           <td class="status-cell">
@@ -10536,7 +10536,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/2dcb50dae585606f4887695b4c9bc17f4091a76e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.3.9">Release 0.3.9</a>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/446aa7de05a56f267618ac9f03cfdff9770e4a9b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.4.0">Release 0.4.0</a>
           </td>
         </tr>
 
@@ -10765,7 +10765,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.9
+            0.2.0
           </td>
 
           <td class="status-cell">
@@ -10780,7 +10780,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/2508da1ba889fac69bff9caf8272e00c8b0ad17b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.1.9">Release 0.1.9</a>
+            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/4865f911258c35850cd97c75279bbbd52e7b3e17" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.2.0">Release 0.2.0</a>
           </td>
         </tr>
 
@@ -10800,7 +10800,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Hardware-independent pure-C logic, host-tested on a PC only: tool-ID decoding, usage and maintenance tracking, the Smart Idle pre-heat target with a safe-state target, a versioned rack command protocol (framing with CRC8, actuation-limit validation, a link watchdog with a wraparound-aware sequence check and a session reset on recovery), a multi-slot inventory (a tool is never in two slots at once, per-slot pre-heat target by tool identity), per-tool limits, and the layer that applies a decision to the inventory and holds every slot in the safe state while the link is lost. A host-side scenario harness plays valid, corrupted, out-of-range, timed-out and duplicate frames through the whole pipeline, 439 host-native test assertions in all, and the ARM cross-compile is verified with a size report. Real CAN/F-RAM/GPIO I/O to drive tool tracking and pre-heating needs a real PCB, which does not exist yet.</div>
+                <div class="detail-text">Hardware-independent pure-C logic, host-tested on a PC only: tool-ID decoding, usage and maintenance tracking, the Smart Idle pre-heat target with a safe-state target, a versioned rack command protocol (framing with CRC8, actuation-limit validation, a link watchdog with a wraparound-aware sequence check and a session reset on recovery), a multi-slot inventory (a tool is never in two slots at once, per-slot pre-heat target by tool identity), per-tool limits, and the layer that applies a decision to the inventory and holds every slot in the safe state while the link is lost. A host-side scenario harness plays valid, corrupted, out-of-range, timed-out and duplicate frames through the whole pipeline, 441 host-native test assertions in all, and the ARM cross-compile is verified with a size report. Real CAN/F-RAM/GPIO I/O to drive tool tracking and pre-heating needs a real PCB, which does not exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -10887,7 +10887,7 @@
           </td>
 
           <td class="version status-ok">
-            0.4.0
+            0.4.1
           </td>
 
           <td class="status-cell">
@@ -10902,7 +10902,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/73999772e195e640a20ad96cc45d828feb38a1fa" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.4.0">Release 0.4.0</a>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/7d572cca89377d8f5a14e84fe41362b163e9edab" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.4.1">Release 0.4.1</a>
           </td>
         </tr>
 
@@ -11009,7 +11009,7 @@
           </td>
 
           <td class="version status-ok">
-            0.1.3
+            0.1.4
           </td>
 
           <td class="status-cell">
@@ -11024,7 +11024,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/169f153b1e9736cd454b8e2abda95334f1e32a82" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.1.3">Release 0.1.3</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/fb6229d92836da053bfbc0bda1fbd4d0c58cfb2b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.1.4">Release 0.1.4</a>
           </td>
         </tr>
 
@@ -11044,7 +11044,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Firmware has a hardware-independent sensor protocol, host-tested on a PC only and never run on a board or with a real sensor (versioned framing with CRC8, range validation, minimum-interval throttling, replay and stale-sensor detection, error and latency counters kept apart from any accept or reject decision), with a host-side sensor simulator covering valid, truncated, CRC-corrupt, out-of-range and disconnected frames - 154 host-native test assertions. The Python vision_companion package is test-covered: synthetic thermal and RGB frames, false-colour rendering, and RGB-to-thermal ROI alignment with temperature statistics, and a thermal calibration (gain, offsets, dead pixels) loaded from a JSON file, verified by 106 real pytest cases. Wiring a real MLX9064x/RGB sensor over I2C/SPI, real dual-modal capture and per-pixel calibration still need a real PCB and real cameras.</div>
+                <div class="detail-text">Firmware has a hardware-independent sensor protocol, host-tested on a PC only and never run on a board or with a real sensor (versioned framing with CRC8, range validation, minimum-interval throttling, replay and stale-sensor detection, error and latency counters kept apart from any accept or reject decision), with a host-side sensor simulator covering valid, truncated, CRC-corrupt, out-of-range and disconnected frames - 156 host-native test assertions. The Python vision_companion package is test-covered: synthetic thermal and RGB frames, false-colour rendering, and RGB-to-thermal ROI alignment with temperature statistics, and a thermal calibration (gain, offsets, dead pixels) loaded from a JSON file, verified by 106 real pytest cases. Wiring a real MLX9064x/RGB sensor over I2C/SPI, real dual-modal capture and per-pixel calibration still need a real PCB and real cameras.</div>
               </div>
 
               <div class="detail-block">
@@ -11131,7 +11131,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.5
+            0.3.6
           </td>
 
           <td class="status-cell">
@@ -11146,7 +11146,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/92c618348fa01bdb5aa6a797e4a008c6865c64ed" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.3.5">Release 0.3.5</a>
+            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/118c1de3be5df45b5a6c25b2d4ac363b4af0ed4f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Release 0.3.6">Release 0.3.6</a>
           </td>
         </tr>
 
