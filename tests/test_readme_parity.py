@@ -34,5 +34,38 @@ class ReadmeParityTests(unittest.TestCase):
                 self.assertEqual(other["table_rows"], english["table_rows"], "table row count differs")
 
 
+LIGHTS = ("🟢", "🟡", "🟠", "🔴")
+
+
+def status_lights(path: Path):
+    """The lights of the "Project status" table, or None when the section is missing or malformed.
+
+    The section is the first `## ` heading of the profile README (right after the introduction), has the legend with the
+    four lights and a table whose State column holds only a light."""
+    lines = path.read_text(encoding="utf-8").splitlines()
+    heads = [i for i, line in enumerate(lines) if line.startswith("## ")]
+    if len(heads) < 2 or not lines[heads[0]].startswith("## 🚦 "):
+        return None
+    block = lines[heads[0]:heads[1]]
+    if not all(light in " ".join(block) for light in LIGHTS):
+        return None
+    lights = []
+    for row in [line for line in block if line.startswith("|")][2:]:
+        cells = [part.strip() for part in re.split(r"(?<!\\)\|", row.strip().strip("|"))]
+        if len(cells) != 3 or cells[1] not in LIGHTS or not cells[0] or not cells[2]:
+            return None
+        lights.append(cells[1])
+    return lights if len(lights) >= 3 else None
+
+
+class ProjectStatusTests(unittest.TestCase):
+    def test_every_readme_has_the_project_status_table(self):
+        english = status_lights(ROOT / "README.md")
+        self.assertIsNotNone(english, "README.md has no valid 'Project status' table before its first section")
+        for name in TRANSLATIONS:
+            with self.subTest(readme=name):
+                self.assertEqual(status_lights(ROOT / name), english, "the 'Project status' table is missing or its lights differ")
+
+
 if __name__ == "__main__":
     unittest.main()

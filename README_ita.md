@@ -24,6 +24,22 @@
 Quattro ecosistemi ingegneristici indipendenti, un unico autore. **HYDRA-UMC** è una piattaforma di robotica industriale multistrato, che spazia dal firmware in tempo reale all'IA cognitiva. **URTC** è il suo sottosistema universale per gli strumenti robotici: firmware in tempo reale e strumenti desktop/web per l'effettore finale di un robot, sviluppato come prodotto autonomo con versionamento e strumenti di manutenzione indipendenti. **A.R.M.O.R.** è un ecosistema separato e pubblico di sicurezza perimetrale e domotica: rilevamento di presenza radar, monitoraggio solare ed elettrico, e un coordinatore centrale con client web e mobili. **EH3D Fabrication Suite** è un ecosistema software integrato per la prototipazione di PCB, la preparazione CAM, l'ispezione tramite visione artificiale, la gestione Pick \& Place e il controllo CNC/Laser interfacciato con l'hardware HYDRA-UMC e macchinari d'officina specializzati.
 
 
+## 🚦 Stato del progetto
+
+Ogni riga è una parte di questo repository e il semaforo dice a che punto è oggi. È scritta in base a ciò che il repository può mostrare (test, compilazioni, esecuzioni), non a ciò che è previsto.
+
+🟢 Fatto e verificato · 🟡 Funziona, con limiti noti · 🟠 Fatto a metà o non ancora verificato · 🔴 Non fatto o non funzionante
+
+| Area | Stato | Cosa significa qui |
+|---|---|---|
+| Dashboard e monitoraggio | 🟢 | Il dashboard di stato, il controllo della CI, la matrice di salute, il controllo dei link e il riepilogo dei rilasci girano in modo programmato in GitHub Actions e le loro ultime esecuzioni passano. |
+| Test | 🟢 | 44 test passano (`python -m unittest discover -s tests`): il catalogo, il monitoraggio, i banner, la creazione della roadmap e la parità dei README. |
+| Catalogo e versioni | 🟡 | La colonna Versione di ogni tabella di progetti è compilata da uno script a partire dal manifesto di ciascun repository e verificata, quindi non invecchia; le descrizioni di una riga sono scritte a mano. |
+| Barre di avanzamento | 🟠 | Le percentuali sotto ogni ecosistema sono impostate a mano e sono solo indicative: la tappa del 100% è un ecosistema pienamente integrato che funziona su hardware reale. |
+| Parità in otto lingue | 🟢 | Gli otto file README mantengono le stesse sezioni, gli stessi link GitHub e lo stesso numero di righe di tabella, e un test fallisce se uno di essi diverge. |
+| Hardware reale | 🟢 | Non applicabile: questo repository contiene il profilo e la sua automazione, nulla qui gira su hardware. |
+| Documentazione | 🟢 | README in otto lingue con i quattro ecosistemi, la guida alla collaborazione su GitHub e i file della community. |
+
 ## 🧭 Su Electro Hobby 3D e il suo aggiornatore
 
 **Electro Hobby 3D** è il laboratorio di JuanenRac: elettronica, robotica e software progettati, costruiti, programmati e provati nello stesso posto. Ogni repository si descrive con un manifest, ha la propria documentazione e dice cosa è stato provato e cosa no su hardware reale.

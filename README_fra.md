@@ -24,6 +24,22 @@
 Quatre écosystèmes d'ingénierie indépendants, un seul auteur. **HYDRA-UMC** est une plateforme de robotique industrielle multicouche, allant du micrologiciel en temps réel à l'IA cognitive. **URTC** est son sous-système universel d'outils robotiques : micrologiciel en temps réel et outils de bureau/web pour l'effecteur final d'un robot, développé comme un produit à part entière avec un versionnage et des outils de maintenance indépendants. **A.R.M.O.R.** est un écosystème public distinct de sécurité périmétrique et de domotique : détection de présence par radar, surveillance solaire et électrique, et un coordinateur central avec des clients web et mobiles. **EH3D Fabrication Suite** est un écosystème logiciel intégré pour le prototypage de circuits imprimés (PCB), le traitement FAO (CAM), l'inspection par vision par ordinateur, la gestion Pick \& Place et le contrôle CNC/Laser s'interfaçant avec le matériel HYDRA-UMC et les machines d'atelier spécialisées.
 
 
+## 🚦 État du projet
+
+Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'hui. Elle est écrite d'après ce que le dépôt peut montrer (tests, compilations, exécutions), pas d'après ce qui est prévu.
+
+🟢 Fait et vérifié · 🟡 Fonctionne, avec des limites connues · 🟠 À moitié fait ou pas encore vérifié · 🔴 Pas fait ou ne fonctionne pas
+
+| Domaine | État | Ce que cela veut dire ici |
+|---|---|---|
+| Tableau de bord et surveillance | 🟢 | Le tableau de bord d'état, la surveillance de la CI, la matrice de santé, la vérification des liens et le résumé des versions s'exécutent de façon planifiée dans GitHub Actions, et leurs dernières exécutions réussissent. |
+| Tests | 🟢 | 44 tests réussissent (`python -m unittest discover -s tests`) : le catalogue, la surveillance, les bannières, l'amorçage de la feuille de route et la parité des README. |
+| Catalogue et versions | 🟡 | La colonne Version de chaque tableau de projets est remplie par un script à partir du manifeste de chaque dépôt et vérifiée, donc elle ne se périme pas ; les descriptions d'une ligne sont écrites à la main. |
+| Barres de progression | 🟠 | Les pourcentages sous chaque écosystème sont fixés à la main et ne sont qu'indicatifs : le jalon des 100 % est un écosystème entièrement intégré fonctionnant sur du vrai matériel. |
+| Parité en huit langues | 🟢 | Les huit fichiers README gardent les mêmes sections, les mêmes liens GitHub et le même nombre de lignes de tableau, et un test échoue si l'un d'eux dérive. |
+| Matériel réel | 🟢 | Sans objet : ce dépôt contient le profil et son automatisation, rien ici ne tourne sur du matériel. |
+| Documentation | 🟢 | README en huit langues avec les quatre écosystèmes, le guide de collaboration sur GitHub et les fichiers de communauté. |
+
 ## 🧭 À propos d'Electro Hobby 3D et de son outil de mise à jour
 
 **Electro Hobby 3D** est l'atelier de JuanenRac : de l'électronique, de la robotique et du logiciel conçus, construits, programmés et testés au même endroit. Chaque dépôt se décrit par un manifeste, a sa propre documentation et dit ce qui a été essayé ou non sur du matériel réel.

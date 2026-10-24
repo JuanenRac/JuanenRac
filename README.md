@@ -24,6 +24,22 @@
 Four independent engineering ecosystems, one author. **HYDRA-UMC** is a multi-layered industrial robotics platform, from real-time firmware to cognitive AI. **URTC** is its universal robot-tool subsystem: real-time firmware and desktop/web tooling for a robot's own end-effector, developed as its own product with independent versioning and maintenance tools. **A.R.M.O.R.** is a separate, public perimeter-security and home-automation ecosystem - radar presence detection, solar and electrical monitoring, and a central coordinator with web and mobile clients. **EH3D Fabrication Suite** is an integrated software ecosystem for PCB prototyping, CAM processing, computer vision inspection, Pick & Place management, and CNC/Laser control interfacing with HYDRA-UMC hardware and specialized workshop machinery.
 
 
+## 🚦 Project status
+
+Each line is one part of this repository and the light says how far it is today. It is written from what the repository can show (tests, builds, runs), not from what is planned.
+
+🟢 Done and verified · 🟡 Works, with known limits · 🟠 Partly done or not verified yet · 🔴 Not done or not working
+
+| Area | State | What it means here |
+|---|---|---|
+| Dashboard and monitors | 🟢 | The status dashboard, the CI watch, the health matrix, the link check and the release digest run on a schedule in GitHub Actions, and their latest runs pass. |
+| Tests | 🟢 | 44 tests pass (`python -m unittest discover -s tests`): the catalogue, the monitors, the banners, the roadmap seed and the README parity. |
+| Catalogue and versions | 🟡 | The Version column of every project table is filled from each repository's own manifest by a script and checked, so it does not go stale; the one-line descriptions are written by hand. |
+| Progress bars | 🟠 | The percentages under each ecosystem are set by hand and are reference only: the 100% milestone is a fully integrated ecosystem working on real hardware. |
+| Eight-language parity | 🟢 | The eight README files keep the same sections, the same GitHub links and the same number of table rows, and a test fails when one of them drifts. |
+| Real hardware | 🟢 | Not applicable: this repository holds the profile and its automation, nothing here runs on hardware. |
+| Documentation | 🟢 | README in eight languages with the four ecosystems, the guide to the collaboration on GitHub and the community files. |
+
 ## 🧭 About Electro Hobby 3D and its updater
 
 **Electro Hobby 3D** is the workshop of JuanenRac: electronics, robotics and software that are designed, built, programmed and tested in one place. Every repository describes itself with a manifest, carries its own documentation and says what has and has not been tried on real hardware.

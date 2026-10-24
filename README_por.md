@@ -24,6 +24,22 @@
 Quatro ecossistemas de engenharia independentes, um único autor. **HYDRA-UMC** é uma plataforma de robótica industrial multicamadas, desde o firmware em tempo real até a IA cognitiva. **URTC** é o seu subsistema universal de ferramentas robóticas: firmware em tempo real e ferramentas de desktop/web para o próprio efetuador final de um robô, desenvolvido como um produto próprio com versionamento e ferramentas de manutenção independentes. **A.R.M.O.R.** é um ecossistema separado e público de segurança perimetral e automação residencial - detecção de presença por radar, monitoramento solar e elétrico, e um coordenador central com clientes web e móveis. **EH3D Fabrication Suite** é um ecossistema de software integrado para prototipagem de PCB, processamento CAM, inspeção por visão computacional, gestão de Pick \& Place e controle CNC/Laser interagindo com o hardware HYDRA-UMC e maquinário de oficina especializado.
 
 
+## 🚦 Estado do projeto
+
+Cada linha é uma parte deste repositório e a luz diz até onde chega hoje. É escrita com o que o repositório consegue demonstrar (testes, compilações, execuções), não com o que está previsto.
+
+🟢 Feito e verificado · 🟡 Funciona, com limites conhecidos · 🟠 Feito a meio ou ainda por verificar · 🔴 Por fazer ou a não funcionar
+
+| Área | Estado | O que significa aqui |
+|---|---|---|
+| Painel e vigilância | 🟢 | O painel de estado, a vigilância do CI, a matriz de saúde, a verificação de ligações e o resumo de versões correm de forma agendada no GitHub Actions, e as últimas execuções passam. |
+| Testes | 🟢 | Passam 44 testes (`python -m unittest discover -s tests`): o catálogo, a vigilância, os banners, a criação do roteiro e a paridade dos README. |
+| Catálogo e versões | 🟡 | A coluna Versão de cada tabela de projetos é preenchida por um script a partir do manifesto de cada repositório e verificada, por isso não fica desatualizada; as descrições de uma linha são escritas à mão. |
+| Barras de progresso | 🟠 | As percentagens sob cada ecossistema são fixadas à mão e são apenas indicativas: o marco dos 100% é um ecossistema totalmente integrado a funcionar em hardware real. |
+| Paridade em oito idiomas | 🟢 | Os oito README mantêm as mesmas secções, as mesmas ligações do GitHub e o mesmo número de linhas de tabela, e um teste falha quando um deles se desvia. |
+| Hardware real | 🟢 | Não se aplica: este repositório contém o perfil e a sua automatização, nada aqui corre em hardware. |
+| Documentação | 🟢 | README em oito idiomas com os quatro ecossistemas, o guia de colaboração no GitHub e os ficheiros da comunidade. |
+
 ## 🧭 Sobre a Electro Hobby 3D e o seu atualizador
 
 **Electro Hobby 3D** é a oficina de JuanenRac: eletrónica, robótica e software que se desenham, constroem, programam e testam no mesmo sítio. Cada repositório descreve-se com um manifesto, tem a sua própria documentação e diz o que foi experimentado e o que não foi em hardware real.
