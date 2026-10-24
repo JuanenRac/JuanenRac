@@ -33,7 +33,7 @@ Each line is one part of this repository and the light says how far it is today.
 | Area | State | What it means here |
 |---|---|---|
 | Dashboard and monitors | 🟢 | The status dashboard, the CI watch, the health matrix, the link check and the release digest run on a schedule in GitHub Actions, and their latest runs pass. |
-| Tests | 🟢 | 44 tests pass (`python -m unittest discover -s tests`): the catalogue, the monitors, the banners, the roadmap seed and the README parity. |
+| Tests | 🟢 | 45 tests pass (`python -m unittest discover -s tests`): the catalogue, the monitors, the banners, the roadmap seed and the README parity. |
 | Catalogue and versions | 🟡 | The Version column of every project table is filled from each repository's own manifest by a script and checked, so it does not go stale; the one-line descriptions are written by hand. |
 | Progress bars | 🟠 | The percentages under each ecosystem are set by hand and are reference only: the 100% milestone is a fully integrated ecosystem working on real hardware. |
 | Eight-language parity | 🟢 | The eight README files keep the same sections, the same GitHub links and the same number of table rows, and a test fails when one of them drifts. |
