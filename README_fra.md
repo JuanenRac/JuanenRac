@@ -33,7 +33,7 @@ Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'
 | Domaine | État | Ce que cela veut dire ici |
 |---|---|---|
 | Tableau de bord et surveillance | 🟢 | Le tableau de bord d'état, la surveillance de la CI, la matrice de santé, la vérification des liens et le résumé des versions s'exécutent de façon planifiée dans GitHub Actions, et leurs dernières exécutions réussissent. |
-| Tests | 🟢 | 45 tests réussissent (`python -m unittest discover -s tests`) : le catalogue, la surveillance, les bannières, l'amorçage de la feuille de route et la parité des README. |
+| Tests | 🟢 | 44 tests réussissent (`python -m unittest discover -s tests`) : le catalogue, la surveillance, les bannières, l'amorçage de la feuille de route et la parité des README. |
 | Catalogue et versions | 🟡 | La colonne Version de chaque tableau de projets est remplie par un script à partir du manifeste de chaque dépôt et vérifiée, donc elle ne se périme pas ; les descriptions d'une ligne sont écrites à la main. |
 | Barres de progression | 🟠 | Les pourcentages sous chaque écosystème sont fixés à la main et ne sont qu'indicatifs : le jalon des 100 % est un écosystème entièrement intégré fonctionnant sur du vrai matériel. |
 | Parité en huit langues | 🟢 | Les huit fichiers README gardent les mêmes sections, les mêmes liens GitHub et le même nombre de lignes de tableau, et un test échoue si l'un d'eux dérive. |

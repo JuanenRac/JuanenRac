@@ -33,7 +33,7 @@ Jede Zeile ist ein Teil dieses Repositorys, und die Ampel sagt, wie weit er heut
 | Bereich | Stand | Was das hier bedeutet |
 |---|---|---|
 | Dashboard und Überwachung | 🟢 | Das Status-Dashboard, die CI-Überwachung, die Gesundheitsmatrix, die Linkprüfung und die Release-Übersicht laufen zeitgesteuert in GitHub Actions, und ihre letzten Läufe bestehen. |
-| Tests | 🟢 | 45 Tests bestehen (`python -m unittest discover -s tests`): der Katalog, die Überwachung, die Banner, die Roadmap-Vorbefüllung und der Gleichstand der README. |
+| Tests | 🟢 | 44 Tests bestehen (`python -m unittest discover -s tests`): der Katalog, die Überwachung, die Banner, die Roadmap-Vorbefüllung und der Gleichstand der README. |
 | Katalog und Versionen | 🟡 | Die Spalte Version jeder Projekttabelle wird von einem Skript aus dem Manifest des jeweiligen Repositorys gefüllt und geprüft, sie veraltet also nicht; die einzeiligen Beschreibungen werden von Hand geschrieben. |
 | Fortschrittsbalken | 🟠 | Die Prozentwerte unter jedem Ökosystem werden von Hand gesetzt und sind nur ein Anhaltspunkt: Die 100-%-Marke ist ein voll integriertes Ökosystem auf echter Hardware. |
 | Gleichstand in acht Sprachen | 🟢 | Die acht README-Dateien behalten dieselben Abschnitte, dieselben GitHub-Links und dieselbe Zahl von Tabellenzeilen, und ein Test schlägt fehl, wenn eine davon abweicht. |
