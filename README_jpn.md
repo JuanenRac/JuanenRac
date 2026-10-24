@@ -415,6 +415,8 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|3Dツールパスおよび材料除去シミュレーター、衝突検出器、Gコード/HP-GLサイクルタイムエスティメーター。|
 |[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|カメラアライメント、フィデューシャルマーカーのトレーニング、HYDRA-UMC経由の視覚検査を行うエッジAIビジョンダッシュボード。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|すべてのEH3D CAMツールにわたって摩耗時間、切削プリセット、送りを追跡する共有ツールcribデータベース。|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.0.1|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
+|[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.1|Bungard CCD 機械の筐体に取り付ける ESP32-S3 ノード。制御ユニットの RS-232 を Ethernet または Wi-Fi で扱い、機械のランプとスピンドルのドライブを同じ基板に載せます。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|Gerber/Excellon/Gコード/HP-GLパーサー、2D/3Dジオメトリ、プロトコルを含む共有C++/Pythonライブラリ。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.1|データスキーマ、統一プロジェクト（.eh3dproj）仕様、グローバル定数、UIグラフィックアセット。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.1|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|

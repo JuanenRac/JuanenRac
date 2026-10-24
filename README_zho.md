@@ -415,6 +415,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|3D 刀具路径与材料去除模拟器、碰撞检测器以及 G-Code/HP-GL 周期时间估计器。|
 |[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|用于相机对准、基准标记训练以及通过 HYDRA-UMC 进行视觉检查的边缘 AI 视觉仪表板。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.0.1|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
+|[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.1|用于 Bungard CCD 机器机箱的 ESP32-S3 节点：通过以太网或 Wi-Fi 访问其控制单元的 RS-232，机器的指示灯和主轴驱动器在同一块板上。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|包含 Gerber/Excellon/G-Code/HP-GL 解析器、2D/3D 几何图形和协议的共享 C++/Python 库。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.1|数据架构、统一项目（.eh3dproj）规范、全局常量和 UI 图形资产。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.1|生态系统文档、组装指南、网关技术规范和集成手册。|

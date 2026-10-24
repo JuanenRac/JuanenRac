@@ -415,6 +415,8 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 |[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|3D-Werkzeugweg- und Materialabtragssimulator, Kollisionsdetektor und G-Code-/HP-GL-Zykluszeitschätzer.|
 |[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|Edge-KI-Visions-Dashboard für Kameraausrichtung, Passmarkentraining und visuelle Inspektion über HYDRA-UMC.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Geteilte Werkzeugkasten-Datenbank zur Nachverfolgung von Verschleißstunden, Schnittvoreinstellungen und Vorschüben über alle EH3D-CAM-Tools hinweg.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.0.1|Rust-Server mit REST- und Websocket-Schnittstelle: Benutzer, Maschinen und Aufträge, Planung von Bohr- und Fräsaufträgen mit den Bibliotheken von DRILLPRO und ROUTEPRO, ein Auftrag gleichzeitig pro Maschine.|
+|[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.1|ESP32-S3-Knoten für das Gehäuse einer Bungard-CCD-Maschine: der RS-232-Anschluss ihrer Steuereinheit über Ethernet oder WLAN, mit den Lampen der Maschine und dem Spindelantrieb auf derselben Platine.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|Geteilte C++/Python-Bibliothek mit Gerber-, Excellon-, G-Code- und HP-GL-Parsern, 2D/3D-Geometrie und Protokollen.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.1|Datenschemas, einheitliche Projekt-Spezifikationen (.eh3dproj), globale Konstanten und UI-Grafik-Assets.|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.1|Ökosystemdokumentation, Montageanleitungen, Gateway-technische Spezifikationen und Integrationshandbücher.|
