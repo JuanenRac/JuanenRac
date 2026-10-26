@@ -408,7 +408,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 
 ## 📁 EH3D Fabrication Suite Project Catalog
 
-Core projects:
+### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.1 | Main ecosystem dashboard for project management (.eh3dproj), updates, global settings, and node discovery. |
@@ -420,7 +420,7 @@ Core projects:
 | [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.0.1 | Rust Web client for EH3D-SERVER. |
 
 
-Drill/Router/Milling projects:
+### 💠 Drill/Router/Milling projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.0.1 | Excellon/NC Drill CAM app, drill bit management, path optimization, and deep drilling cycles. |
@@ -429,33 +429,33 @@ Drill/Router/Milling projects:
 | [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.1 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
 
-Laser projects:
+### 💠 Laser projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM) | 0.0.1 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
 
 
-CAM projects:
+### 💠 CAM projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM) | 0.0.1 | Gerber RS-274X/X2 CAM processing app, Voronoi/Offset track isolation, rubout, and engraving simulation. |
 | [EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER) | 0.0.1 | 3D toolpath & material removal simulator, collision detector, and G-Code/HP-GL cycle time estimator. |
 
 
-Gerber projects:
+### 💠 Gerber projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER) | 0.0.1 | Lightweight CAM inspection tool for Gerber layer alignment and rapid visualization. |
 
 
-Pick&Place projects:
+### 💠 Pick&Place projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.0.1 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
 | [EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER) | 0.0.1 | OpenPnP-inspired SMD assembly manager, centroid reader, feeder control, and vision component centering. |
 
 
-Node projects:
+### 💠 Node projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD) | 0.0.1 | ESP32-S3 node for the box of a Bungard CCD machine: RS-232 of its control unit over Ethernet or Wi-Fi, with the machine's lamps and the spindle drive on the same board. |
@@ -463,7 +463,7 @@ Node projects:
 | [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.0.1 | General porpuse ESP32-P4/ESP32-C6 Touchscreen 10 inch/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP. |
 
 
-FENIX projects:
+### 💠 FENIX projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB) | 0.0.1 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
@@ -479,14 +479,14 @@ FENIX projects:
 | [EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER) | 0.0.1 | Exploration environment for comparing and analyzing design alternatives or branches. |
 
 
-ANDROID/IOS projects:
+### 💠 ANDROID/IOS projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.1 | Android APP client of EH3D-SERVER. |
 | [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.1 | IOS APP client of EH3D-SERVER. |
 
 
-Others projects:
+### 🛠️ Complementary Tools
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.1 | Edge AI vision dashboard for camera alignment, fiducial marker training, and visual inspection via HYDRA-UMC. |
