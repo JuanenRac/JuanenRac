@@ -408,28 +408,89 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 
 ## 📁 EH3D Fabrication Suite Project Catalog
 
+Core projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.1 | Main ecosystem dashboard for project management (.eh3dproj), updates, global settings, and node discovery. |
-| [EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM) | 0.0.1 | Gerber RS-274X/X2 CAM processing app, Voronoi/Offset track isolation, rubout, and engraving simulation. |
-| [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.0.1 | Excellon/NC Drill CAM app, drill bit management, path optimization, and deep drilling cycles. |
-| [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.0.1 | Board contour milling CAM app, pocketing, holding tabs, and CNC ramp entry strategies. |
-| [EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM) | 0.0.1 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
-| [EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC) | 0.0.1 | Real-time numerical control GUI, 3D G-code visualizer, probing, and multi-machine streaming support. |
-| [EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL) | 0.0.1 | Topographic height mesh processor (Z-Probing) and G-code interpolation for surface compensation. |
-| [EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER) | 0.0.1 | Lightweight CAM inspection tool for Gerber layer alignment and rapid visualization. |
-| [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.0.1 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
-| [EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER) | 0.0.1 | OpenPnP-inspired SMD assembly manager, centroid reader, feeder control, and vision component centering. |
-| [EH3D-PENDANT-GUI](https://github.com/JuanenRac/EH3D-PENDANT-GUI) | 0.0.1 | Touchscreen/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP. |
-| [EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER) | 0.0.1 | 3D toolpath & material removal simulator, collision detector, and G-Code/HP-GL cycle time estimator. |
-| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.1 | Edge AI vision dashboard for camera alignment, fiducial marker training, and visual inspection via HYDRA-UMC. |
-| [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.1 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
-| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.0.1 | Rust server with a REST and websocket interface: users, machines and jobs, planning of drilling and routing jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine. |
-| [EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD) | 0.0.1 | ESP32-S3 node for the box of a Bungard CCD machine: RS-232 of its control unit over Ethernet or Wi-Fi, with the machine's lamps and the spindle drive on the same board. |
-| [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.1 | Shared C++/Python library containing Gerber/Excellon/G-Code/HP-GL parsers, 2D/3D geometry, and protocols. |
 | [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.0.1 | Data schemas, unified project (.eh3dproj) specifications, global constants, and UI graphic assets. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.1 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
+| [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.1 | Shared C++/Python library containing Gerber/Excellon/G-Code/HP-GL parsers, 2D/3D geometry, and protocols. |
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.1 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
+| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.0.1 | Rust server with a REST and websocket interface: users, machines and jobs, planning of drilling and routing jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine. |
+| [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.0.1 | Rust Web client for EH3D-SERVER. |
+
+
+Drill/Router/Milling projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.0.1 | Excellon/NC Drill CAM app, drill bit management, path optimization, and deep drilling cycles. |
+| [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.0.1 | Board contour milling CAM app, pocketing, holding tabs, and CNC ramp entry strategies. |
+| [EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC) | 0.0.1 | Real-time numerical control GUI, 3D G-code visualizer, probing, and multi-machine streaming support. |
+| [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.1 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
+
+
+Laser projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM) | 0.0.1 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
+
+
+CAM projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM) | 0.0.1 | Gerber RS-274X/X2 CAM processing app, Voronoi/Offset track isolation, rubout, and engraving simulation. |
+| [EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER) | 0.0.1 | 3D toolpath & material removal simulator, collision detector, and G-Code/HP-GL cycle time estimator. |
+
+
+Gerber projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER) | 0.0.1 | Lightweight CAM inspection tool for Gerber layer alignment and rapid visualization. |
+
+
+Pick&Place projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.0.1 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
+| [EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER) | 0.0.1 | OpenPnP-inspired SMD assembly manager, centroid reader, feeder control, and vision component centering. |
+
+
+Node projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD) | 0.0.1 | ESP32-S3 node for the box of a Bungard CCD machine: RS-232 of its control unit over Ethernet or Wi-Fi, with the machine's lamps and the spindle drive on the same board. |
+| [EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI) | 0.0.1 | Touchscreen/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP for Bungard CCD machines. |
+| [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.0.1 | Touchscreen/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP. |
+
+
+FENIX projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB) | 0.0.1 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
+| [EH3D-FENIX-CAD](https://github.com/JuanenRac/EH3D-FENIX-CAD) | 0.0.1 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
+| [EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER) | 0.0.1 | Comprehensive engineering verifier for cross-validations and design quality control. |
+| [EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB) | 0.0.1 | Testing environment responsible for managing reference use cases and system regression tests. |
+| [EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY) | 0.0.1 | Version control system that stores the semantic history and logical evolution of the design. |
+| [EH3D-PROJECT-PASSPORT](https://github.com/JuanenRac/EH3D-PROJECT-PASSPORT) | 0.0.1 | Generator of the storable and reproducible technical passport for complete project auditing. |
+| [EH3D-COMPONENT-INTELLIGENCE](https://github.com/JuanenRac/EH3D-COMPONENT-INTELLIGENCE) | 0.0.1 | Advanced technical database enriched with metadata regarding electronic components. |
+| [EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE) | 0.0.1 | Profile manager for specific factory machinery capabilities and supplier technical constraints. |
+| [EH3D-THERMAL-LAB](https://github.com/JuanenRac/EH3D-THERMAL-LAB) | 0.0.1 | Progressive thermal simulation laboratory directly coupled with the physical design. |
+| [EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE) | 0.0.1 | Correlation module serving as a direct bridge between simulation datasets and real laboratory measurements. |
+| [EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER) | 0.0.1 | Exploration environment for comparing and analyzing design alternatives or branches. |
+
+
+ANDROID/IOS projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.1 | Android APP client of EH3D-SERVER. |
+| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.1 | IOS APP client of EH3D-SERVER. |
+
+
+Others projects:
+| Repository | Version | Description |
+| :--- | :--- | :--- |
+| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.1 | Edge AI vision dashboard for camera alignment, fiducial marker training, and visual inspection via HYDRA-UMC. |
+| [EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL) | 0.0.1 | Topographic height mesh processor (Z-Probing) and G-code interpolation for surface compensation. |
 
 ---
 
