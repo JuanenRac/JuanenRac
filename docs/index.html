@@ -3365,7 +3365,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN/commit/eaf5b610473c6775b60e8c634bf512eb9c0242e5" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN/commit/21e1d2bf9055770c48389146e528868121279c07" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -3385,7 +3385,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Read-only diagnostic CLI for the HYDRA-UMC/URTC ecosystem: ten OBSERVE-level tools with real handlers (storage, ports, processes, systemd units, logs, temperature, connectivity, manifests, pending updates, local knowledge search) behind a symbolic allow-list, secret redaction at every output boundary, JSON Schema contracts (ToolRequest, ToolResult, MaintenanceProposal, EvidenceBundle, PatchVerificationReport), a local TF-IDF knowledge index, evidence-bundle and proposal builders grounded only in valid tool results, and an adversarial test that a poisoned document can never produce a tool execution or leak a secret. Its test suite (`pytest tests`) passes in full: 255 tests passed, 2 skipped, 30 subtests passed. There is no inference engine, no transport for the escalation outbox and no HYDRA-UMC-SERVER integration yet - see the README ROADMAP.</div>
+                <div class="detail-text">Read-only diagnostic CLI for the HYDRA-UMC/URTC ecosystem: ten OBSERVE-level tools with real handlers (storage, ports, processes, systemd units, logs, temperature, connectivity, manifests, pending updates, local knowledge search) behind a symbolic allow-list, secret redaction at every output boundary, JSON Schema contracts (ToolRequest, ToolResult, MaintenanceProposal, EvidenceBundle, PatchVerificationReport), a local TF-IDF knowledge index, evidence-bundle and proposal builders grounded only in valid tool results, and an adversarial test that a poisoned document can never produce a tool execution or leak a secret. Its test suite (`pytest tests`) passes in full. There is no inference engine, no transport for the escalation outbox and no HYDRA-UMC-SERVER integration yet - see the README ROADMAP.</div>
               </div>
 
               <div class="detail-block">
@@ -3487,7 +3487,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER/commit/dd04d66c79543d5e3796689ba9bfee34bae4d1e9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER/commit/693f6306e93f4dbcb4424154942a149d59d8afa3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -3609,7 +3609,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE/commit/9bceaff95bb16cb0c827f87c8a8a97a466a6090d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE/commit/61214aeb70459d325cab8d850f37e6df6d8a434b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -3629,7 +3629,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real action-token encoding/decoding (OpenVLA/RT-2-style 256-bin discretization per action dimension) and trajectory generation (delta-pose integration, absolute gripper state) - the &#x27;Action Tokens&#x27; and &#x27;Trajectory Generator&#x27; steps of the VLA flow, exposed via &#x27;tokens encode&#x27;/&#x27;tokens decode&#x27;/&#x27;trajectory integrate&#x27;. A real, versioned model manifest contract (model_manifest.py) plus shape/confidence validation for a future model&#x27;s inference output, and an honest &#x27;status&#x27; subcommand reporting real accelerator/model-weight availability (never a fake ready state). Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_vla_model() against the real confirmed API (VDevice, HEF, ConfigureParams, InputVStreamParams/OutputVStreamParams), lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_tokens() adapts a real InferVStreams result into this engine&#x27;s own token/confidence contract and is fully unit-tested without hailort. 98 tests. integrate_trajectory() now rejects an accumulated pose that silently overflowed to infinite (two individually-finite values, e.g. a start position and a delta, summing past float&#x27;s max range) instead of returning it as part of the trajectory. Real VLA model inference still needs a real .hef model and a physical Hailo-10 module, both future work.</div>
+                <div class="detail-text">Real action-token encoding/decoding (OpenVLA/RT-2-style 256-bin discretization per action dimension) and trajectory generation (delta-pose integration, absolute gripper state) - the &#x27;Action Tokens&#x27; and &#x27;Trajectory Generator&#x27; steps of the VLA flow, exposed via &#x27;tokens encode&#x27;/&#x27;tokens decode&#x27;/&#x27;trajectory integrate&#x27;. A real, versioned model manifest contract (model_manifest.py) plus shape/confidence validation for a future model&#x27;s inference output, and an honest &#x27;status&#x27; subcommand reporting real accelerator/model-weight availability (never a fake ready state). Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_vla_model() against the real confirmed API (VDevice, HEF, ConfigureParams, InputVStreamParams/OutputVStreamParams), lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_tokens() adapts a real InferVStreams result into this engine&#x27;s own token/confidence contract and is fully unit-tested without hailort. integrate_trajectory() now rejects an accumulated pose that silently overflowed to infinite (two individually-finite values, e.g. a start position and a delta, summing past float&#x27;s max range) instead of returning it as part of the trajectory. Real VLA model inference still needs a real .hef model and a physical Hailo-10 module, both future work.</div>
               </div>
 
               <div class="detail-block">
@@ -3731,7 +3731,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI/commit/6bb2f6394b74c4b4db239d03bb4fdc1e576a50f8" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI/commit/9e68277af73f32f8b3a1674e0d4964f0d245a68f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add a block-by-block voice activity detector and analyze-audio --stream">Add a block-by-block voice activity detector and analyze-audio --stream</a>
           </td>
         </tr>
 
@@ -3862,7 +3862,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/0f7b6e08c559b78977497bc3d141c7469a443d66" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI/commit/ff6544b257b0527c1fd54faae8d86752d826cd50" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -3984,7 +3984,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/1e272dbf70f52c07c036f37414a2cf4e363a44b9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/commit/2ee997cc7e5455ce0199fcd2be5c1c8dab3f41e9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -4004,7 +4004,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real `version`/`status`/`robots`/`doctor`/`config validate`/`config apply --dry-run`/`shell` commands, plus `claims`/`claim`/`release`/`limits`/`jog-arm`/`jog` (reservations with a per-session controller id, safety limits read from the server, jog arming; a jog above the model&#x27;s limit is refused before it is sent). `robots`/`status`/`doctor` are genuine clients of a live HYDRA-UMC-SERVER (GET /api/settings, GET /api/hydra-info). A --config file&#x27;s own &quot;server&quot;/&quot;timeoutSec&quot; (already schema-validated by `config validate`/`apply`) now really drives every live command&#x27;s HTTP target and request timeout via resolveTarget(), not just validation - a `shell` session persists both as session defaults too. A real, stable exit-code contract (exitcode.go) classifies every failure (usage/config/network/server/not-implemented/auth) instead of a bare exit 1. Over 85 tests via net/http/httptest and real temp-file config fixtures, including `doctor --json`&#x27;s structured checkId/severity/status report. Fleet-wide deploy/flash-all/audit commands and a live (non-dry-run) `config apply` remain future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
+                <div class="detail-text">Real `version`/`status`/`robots`/`doctor`/`config validate`/`config apply --dry-run`/`shell` commands, plus `claims`/`claim`/`release`/`limits`/`jog-arm`/`jog` (reservations with a per-session controller id, safety limits read from the server, jog arming; a jog above the model&#x27;s limit is refused before it is sent). `robots`/`status`/`doctor` are genuine clients of a live HYDRA-UMC-SERVER (GET /api/settings, GET /api/hydra-info). A --config file&#x27;s own &quot;server&quot;/&quot;timeoutSec&quot; (already schema-validated by `config validate`/`apply`) now really drives every live command&#x27;s HTTP target and request timeout via resolveTarget(), not just validation - a `shell` session persists both as session defaults too. A real, stable exit-code contract (exitcode.go) classifies every failure (usage/config/network/server/not-implemented/auth) instead of a bare exit 1. The tests use net/http/httptest and real temp-file config fixtures, including `doctor --json`&#x27;s structured checkId/severity/status report. Fleet-wide deploy/flash-all/audit commands and a live (non-dry-run) `config apply` remain future work, blocked on HYDRA-UMC-SERVER&#x27;s own fleet write endpoints that don&#x27;t exist yet.</div>
               </div>
 
               <div class="detail-block">
@@ -4106,7 +4106,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/1ff907384903b98900248630a8a1a0f188206bbf" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-WATCH/commit/531d50ef4980026aecb9eb37e952ddd62ec695cf" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -4237,7 +4237,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/442370f13fa1e373bbe8db8eb39d9f9b28ab6da6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SERVER/commit/6e78050be992952bdaed721957055182de88ac64" target="_blank" rel="noopener noreferrer" class="commit-link" title="Send flash progress only to administrator WebSocket connections">Send flash progress only to administrator WebSocket connections</a>
           </td>
         </tr>
 
@@ -4359,7 +4359,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/0860337be42e972e521d4f6ea5267ec74a5b5c39" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/commit/57481364933c1e0a61b4db45095fdcfedd4f396e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Offer the update again after the system installer is cancelled and run Android lint in the CI">Offer the update again after the system installer is cancelled and run Android lint in the CI</a>
           </td>
         </tr>
 
@@ -4481,7 +4481,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/b85607ae5c21317c9f40815f984a9810a643754e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DSI/commit/d5b3f7b0c82ae5e38b850dd064788a5b1155be93" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -4603,7 +4603,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL/commit/362afd6947c81e0b4d736207dd324408a7620091" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL/commit/ab81d436d59914dfa48ddc3e9ffd09a5e996a7c3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Take a calendar month out of the overview of the README">Take a calendar month out of the overview of the README</a>
           </td>
         </tr>
 
@@ -4725,7 +4725,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF/commit/4d3e315061ce857c1481587aeeeb226168e613d3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF/commit/85b3021b46dc949f90ea5d9608776884c0304e03" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -4847,7 +4847,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/fce20cd223940224c9c181293a29b6439b4bffb1" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL/commit/314b9cc20d1d2911669e6db6b1b504e824f180dd" target="_blank" rel="noopener noreferrer" class="commit-link" title="Restore the full source map of the app">Restore the full source map of the app</a>
           </td>
         </tr>
 
@@ -4969,7 +4969,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/d6a47c49d51b2e4c5627c031b8054768dcd9a522" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-STUDIO/commit/066fbfe3196a98741e7c609e854f4929a7a05422" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -5091,7 +5091,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/5cab556b6091f57a1ffd5a62ed65da1924814b97" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SUITE/commit/c63dd753c0e755fb38235faf08b360bd744b7267" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -5222,7 +5222,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC/commit/7127d7629978c6fc25ec80e86b5361b35a80df32" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC/commit/7948117fd8b9e033629341f8686b3f37cd67a0b9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -5597,7 +5597,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS/commit/3a5f37f6fee1af786299e69a72b1fa5c3ce4fd37" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS/commit/b23fb61bb02aaa6b7fa69f2f7aff9d92a5c2637f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -5719,7 +5719,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR/commit/2b543b32b6372b56ad0d128928d27fca1d80e317" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR/commit/3b4c8892a81c670ee3b516c0b3202152211d0677" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -5850,7 +5850,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-TWIN/commit/236a54ca4020777be5bb171531953c2cbdd1b905" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-TWIN/commit/78537a4bf53479d9fc21e7fffa2bd87ee1971101" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -5870,7 +5870,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real family-readiness check (`family-status` subcommand) reads each of the 3 real children&#x27;s own hydra-umc.project.json and reports presence/version/maturity/role. Plus a real state-sync contract (src/contract.rs): a child must be at least `functional` maturity and report a major version no higher than this Twin&#x27;s verified-compatible ceiling (0 today) before it is treated as sync-ready - an incompatible simulator version or an immature child is refused with a real reason, exposed via the new `family-sync` subcommand. 38 tests. Honest for an integration hub that runs no rendering/physics engine itself - the real Bevy-based engine and MuJoCo/PhysX backend stay future work, blocked on a real GPU/graphics toolchain and the children&#x27;s own engines maturing.</div>
+                <div class="detail-text">Functional v0: real family-readiness check (`family-status` subcommand) reads each of the 3 real children&#x27;s own hydra-umc.project.json and reports presence/version/maturity/role. Plus a real state-sync contract (src/contract.rs): a child must be at least `functional` maturity and report a major version no higher than this Twin&#x27;s verified-compatible ceiling (0 today) before it is treated as sync-ready - an incompatible simulator version or an immature child is refused with a real reason, exposed via the new `family-sync` subcommand. Honest for an integration hub that runs no rendering/physics engine itself - the real Bevy-based engine and MuJoCo/PhysX backend stay future work, blocked on a real GPU/graphics toolchain and the children&#x27;s own engines maturing.</div>
               </div>
 
               <div class="detail-block">
@@ -5972,7 +5972,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/commit/6cdc616519ffd0a85e1638bbd2c15be15c9a021e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/commit/9d7ac0d18af84aaabfcb2c8424fbc39b83afe925" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -5992,7 +5992,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0 mode-based command routing (`route`/`mirror` subcommands): a real safety interlock blocks commands to real hardware whenever the twin reports an imminent collision, simulation-mode commands are never gated, and mirroring shadows a command into the twin unconditionally. CommandSink::send() now returns Result&lt;(), TransportError&gt; (Timeout/Disconnected); a new SimulatedTransport implementation models a slow or disconnected link with configurable latency/timeout, so the bridge&#x27;s fail-safe behavior (a transport failure is reported as RouteOutcome::TransportFailure, never mistaken for SentReal/SentSimulation) is testable and exercisable via CLI flags without any real hardware. 47 tests. Real gRPC/WebSocket transport stays future work - genuinely blocked on no live HYDRA-UMC-TWIN/HYDRA-UMC controller to talk to yet, not just unwritten code.</div>
+                <div class="detail-text">Functional v0 mode-based command routing (`route`/`mirror` subcommands): a real safety interlock blocks commands to real hardware whenever the twin reports an imminent collision, simulation-mode commands are never gated, and mirroring shadows a command into the twin unconditionally. CommandSink::send() now returns Result&lt;(), TransportError&gt; (Timeout/Disconnected); a new SimulatedTransport implementation models a slow or disconnected link with configurable latency/timeout, so the bridge&#x27;s fail-safe behavior (a transport failure is reported as RouteOutcome::TransportFailure, never mistaken for SentReal/SentSimulation) is testable and exercisable via CLI flags without any real hardware. Real gRPC/WebSocket transport stays future work - genuinely blocked on no live HYDRA-UMC-TWIN/HYDRA-UMC controller to talk to yet, not just unwritten code.</div>
               </div>
 
               <div class="detail-block">
@@ -6094,7 +6094,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/8574b592a6bcc56c0905d78a1634a8cf56d78417" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/commit/edb84c9923a2fe1d9237c6bf92aa1e6ffec3b01b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -6114,7 +6114,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real forward kinematics and joint-limit validation (`fk`/`validate-limits` subcommands) over a real, documented-partial URDF subset (revolute/continuous/prismatic/fixed joints). src/urdf.rs now walks each joint&#x27;s real `parent`/`child` link names from the document&#x27;s own real root link into a single serial chain, in genuine root-to-leaf order regardless of `&lt;joint&gt;` element order in the file - a real branching tree (one link with more than one child joint) is refused, not flattened. Plus a real joint-limits corpus (src/corpus.rs) and a fail-safe `fk-checked` subcommand: forward_kinematics_checked() refuses to compute a world-frame pose for a joint position outside its declared URDF limit, closing the gap where plain fk would silently compute a physically-unreachable pose. 64 tests. Real MuJoCo/PhysX rigid-body and contact simulation stays future work - genuinely blocked on integrating an actual physics-engine dependency, not just unwritten code. Reader hardening: only joints directly under &lt;robot&gt; are read (ros_control transmissions parse), a link with two parents, duplicate joint names, unknown links and a zero axis are errors, a continuous or fixed joint has no position limit, and a misspelt or missing joint in --joints is an error instead of a pass. fk --json prints the position and the rotation as a unit quaternion.</div>
+                <div class="detail-text">Functional v0: real forward kinematics and joint-limit validation (`fk`/`validate-limits` subcommands) over a real, documented-partial URDF subset (revolute/continuous/prismatic/fixed joints). src/urdf.rs now walks each joint&#x27;s real `parent`/`child` link names from the document&#x27;s own real root link into a single serial chain, in genuine root-to-leaf order regardless of `&lt;joint&gt;` element order in the file - a real branching tree (one link with more than one child joint) is refused, not flattened. Plus a real joint-limits corpus (src/corpus.rs) and a fail-safe `fk-checked` subcommand: forward_kinematics_checked() refuses to compute a world-frame pose for a joint position outside its declared URDF limit, closing the gap where plain fk would silently compute a physically-unreachable pose. Real MuJoCo/PhysX rigid-body and contact simulation stays future work - genuinely blocked on integrating an actual physics-engine dependency, not just unwritten code. Reader hardening: only joints directly under &lt;robot&gt; are read (ros_control transmissions parse), a link with two parents, duplicate joint names, unknown links and a zero axis are errors, a continuous or fixed joint has no position limit, and a misspelt or missing joint in --joints is an error instead of a pass. fk --json prints the position and the rotation as a unit quaternion.</div>
               </div>
 
               <div class="detail-block">
@@ -6216,7 +6216,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN/commit/c3d5ed0429132744c6d7a7c2ed1a3b06b8533267" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN/commit/7868ae800af9f51e1829152c74e89f5c4bcc865f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -6347,7 +6347,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER/commit/c1b7e26fc8fecbb90adfa8cac62e36c4326d6276" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER/commit/b72a2612be17e3b7e92bf2d4a7e0891a6baf9ebe" target="_blank" rel="noopener noreferrer" class="commit-link" title="Give the local API consistent status codes: 405 with Allow, 401 challenge, 500 without a trace">Give the local API consistent status codes: 405 with Allow, 401 challenge, 500 without a trace</a>
           </td>
         </tr>
 
@@ -6469,7 +6469,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DOCS/commit/4d682c17a18b40fec20ad7c688e1a7fbc73d3bec" target="_blank" rel="noopener noreferrer" class="commit-link" title="Write the READMEs of the repositories from one source each in the universal layout">Write the READMEs of the repositories from one source each in the universal layout</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DOCS/commit/b0576f8ce71904757272cabb9bc70fd3b134bc7f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Stop promising the Pi 5 ISP for USB cameras in the VISION-STREAMER README source">Stop promising the Pi 5 ISP for USB cameras in the VISION-STREAMER README source</a>
           </td>
         </tr>
 
@@ -6591,7 +6591,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT/commit/de9c5c6d99f040e19a8e1aa57d33b705c43f25b1" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT/commit/800ca261825b9cc9ca87f16238a844df83bbe94a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -6611,12 +6611,12 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Its own real test suite (`pytest tests`) passes in full: 319 tests, 6 subtests (a few need the optional SDK and are skipped without it), including a real end-to-end canary-deploy cycle (git clone, apply, build, promote) run against a real throwaway git repository, not a mock. Deliveries 1-5 of the 6-delivery plan (&quot;Observabilidad read-only&quot; + &quot;Diagnostico&quot; + &quot;Cambio aprobado&quot; + &quot;Despliegue canario&quot; + &quot;Verificacion&quot;) from an explicit recommended-new-project proposal. Coordinates existing pieces (HYDRA-UMC-OS, COGNITIVE-NODE, VOICE-UI, SERVER/SDK, NODE-HEALING, UPDATER, SUITE/STUDIO) rather than reimplementing any of them - this repo owns the maintenance-incident lifecycle (evidence -&gt; diagnosis -&gt; human-approved change -&gt; canary deploy following the same atomic-by-verification pattern as HYDRA-UMC-UPDATER&#x27;s install.py, as its own implementation -&gt; verification), not inference, updates, or MCU safety themselves. Complementary to the proposal&#x27;s other recommended project, HYDRA-UMC-CONNECTOR-HUB (external machine/adapter capabilities) - this one operates the health and changes of the ecosystem&#x27;s own components instead. diagnosis.py is genuinely provider-agnostic (a minimal AIProvider Protocol, two real concrete implementations - Anthropic and OpenAI - either optional); canary_deploy.py never touches a live checkout until an independent staging clone with the approved diff applied has already proven it builds, verified end-to-end against a real throwaway git repository in this project&#x27;s own test suite (not a mock of subprocess/git). Delivery 6 (voice/notification via HYDRA-UMC-VOICE-UI) was investigated and found genuinely blocked, not just postponed: VOICE-UI&#x27;s own real contract (gateway.py) is a bounded, INBOUND transcript-to-intent gateway (a Watch sends text, gets a reply) with no real outbound-notification/push surface an external service like this one could honestly integrate with today - inventing one here would violate this project&#x27;s own no-fabrication standard. Real end-to-end calls against the live Anthropic/OpenAI APIs have not been exercised in this development session (no API key available here); every other real path (missing key, provider error, malformed response, diff-apply failure, build failure, promotion) is real and tested, including a live local git clone+apply+build+promote cycle.</div>
+                <div class="detail-text">Its own real test suite (`pytest tests`) passes in full (a few tests need the optional SDK and are skipped without it), including a real end-to-end canary-deploy cycle (git clone, apply, build, promote) run against a real throwaway git repository, not a mock. Deliveries 1-5 of the 6-delivery plan (&quot;Observabilidad read-only&quot; + &quot;Diagnostico&quot; + &quot;Cambio aprobado&quot; + &quot;Despliegue canario&quot; + &quot;Verificacion&quot;) from an explicit recommended-new-project proposal. Coordinates existing pieces (HYDRA-UMC-OS, COGNITIVE-NODE, VOICE-UI, SERVER/SDK, NODE-HEALING, UPDATER, SUITE/STUDIO) rather than reimplementing any of them - this repo owns the maintenance-incident lifecycle (evidence -&gt; diagnosis -&gt; human-approved change -&gt; canary deploy following the same atomic-by-verification pattern as HYDRA-UMC-UPDATER&#x27;s install.py, as its own implementation -&gt; verification), not inference, updates, or MCU safety themselves. Complementary to the proposal&#x27;s other recommended project, HYDRA-UMC-CONNECTOR-HUB (external machine/adapter capabilities) - this one operates the health and changes of the ecosystem&#x27;s own components instead. diagnosis.py is genuinely provider-agnostic (a minimal AIProvider Protocol, two real concrete implementations - Anthropic and OpenAI - either optional); canary_deploy.py never touches a live checkout until an independent staging clone with the approved diff applied has already proven it builds, verified end-to-end against a real throwaway git repository in this project&#x27;s own test suite (not a mock of subprocess/git). Delivery 6 (voice/notification via HYDRA-UMC-VOICE-UI) was investigated and found genuinely blocked, not just postponed: VOICE-UI&#x27;s own real contract (gateway.py) is a bounded, INBOUND transcript-to-intent gateway (a Watch sends text, gets a reply) with no real outbound-notification/push surface an external service like this one could honestly integrate with today - inventing one here would violate this project&#x27;s own no-fabrication standard. Real end-to-end calls against the live Anthropic/OpenAI APIs have not been exercised in this development session (no API key available here); every other real path (missing key, provider error, malformed response, diff-apply failure, build failure, promotion) is real and tested, including a live local git clone+apply+build+promote cycle.</div>
               </div>
 
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_technology">Technology</div>
-                <div class="tech-chips"><span class="tech-chip">Python 3.11+</span><span class="tech-chip">JSON Schema</span><span class="tech-chip">systemd (edge role, Linux only)</span><span class="tech-chip">Anthropic API and/or OpenAI API (optional, provider-agnostic diagnosis)</span><span class="tech-chip">git (staging clone + git apply for the real canary deploy path)</span></div>
+                <div class="tech-chips"><span class="tech-chip">Python 3.11+</span><span class="tech-chip">JSON Schema</span><span class="tech-chip">systemd (edge role, Linux only)</span><span class="tech-chip">two optional AI provider APIs (provider-agnostic diagnosis)</span><span class="tech-chip">git (staging clone + git apply for the real canary deploy path)</span></div>
               </div>
 
               <div class="detail-block">
@@ -6713,7 +6713,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/commit/0748cbae9ac4e1001a977085748b1ba8d032eb52" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/commit/5bb7beeaeeeddb3b7bca3f70209bae5e720381ba" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -6733,7 +6733,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Its own real test suite (`pytest tests`) passes in full: 139 tests passed. The real remote-build path (SSH to a Linux host, chroot, profile-build reproducibility) has already been exercised and fixed for real against the CM5&#x27;s own ecosystem checkout. Windows/Linux desktop tool, CLI and Qt Quick GUI (reusing HYDRA-UMC-UPDATER&#x27;s own visual language). Depends on hydra-umc-updater as a library for ecosystem discovery/version-checking rather than duplicating that logic. The image-build pipeline (loop-mount, chroot) is Linux-only and reports that honestly on Windows instead of pretending to run.</div>
+                <div class="detail-text">Its own real test suite (`pytest tests`) passes in full. The real remote-build path (SSH to a Linux host, chroot, profile-build reproducibility) has already been exercised and fixed for real against the CM5&#x27;s own ecosystem checkout. Windows/Linux desktop tool, CLI and Qt Quick GUI (reusing HYDRA-UMC-UPDATER&#x27;s own visual language). Depends on hydra-umc-updater as a library for ecosystem discovery/version-checking rather than duplicating that logic. The image-build pipeline (loop-mount, chroot) is Linux-only and reports that honestly on Windows instead of pretending to run.</div>
               </div>
 
               <div class="detail-block">
@@ -6835,7 +6835,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-UPDATER/commit/7ba561f37b8891f7e6a9052c185f23d0a79fd04e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Accept the node role in a project manifest">Accept the node role in a project manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-UPDATER/commit/adc81d4b34fbe3bbfdda4b167aea46628a3a60b3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Pin the shared SDK to its newest tag">Pin the shared SDK to its newest tag</a>
           </td>
         </tr>
 
@@ -6966,7 +6966,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/e5d67f7c1c058c42aa466f7df67ab4681a3d0412" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC/commit/646d0a72cf6b7592ffacf33222e9f0f79d35d17b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Test the real serial port over a pseudo-terminal and install pyserial in the CI">Test the real serial port over a pseudo-terminal and install pyserial in the CI</a>
           </td>
         </tr>
 
@@ -7088,7 +7088,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER/commit/549270adea17f05bf8efe26aa1ab9011892370b1" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER/commit/8eb787c35ac0c22b8bd32aabfc10d97206c5100a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Publish the answers to the commands at QoS 1 and pin the shared SDK to its newest tag">Publish the answers to the commands at QoS 1 and pin the shared SDK to its newest tag</a>
           </td>
         </tr>
 
@@ -7210,7 +7210,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP/commit/608b43c9df0ab3add06006f9bf91beb6f9a21847" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP/commit/b58039c897708e9ed3cb971d668ea23d8d95b9b4" target="_blank" rel="noopener noreferrer" class="commit-link" title="Pin the shared SDK to its newest tag">Pin the shared SDK to its newest tag</a>
           </td>
         </tr>
 
@@ -7332,7 +7332,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D/commit/b053451e75437c0dd1d43f85bd94ff02e31f3ea9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D/commit/e4e3d90301a10c5a64c2c125693c2f813233de05" target="_blank" rel="noopener noreferrer" class="commit-link" title="Pin the shared SDK to its newest tag">Pin the shared SDK to its newest tag</a>
           </td>
         </tr>
 
@@ -7454,7 +7454,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2/commit/4c7586d29e8522d56cd392f0fb6fd739f47c095c" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2/commit/97f3a1197e2f748d9555437db4f7353190962170" target="_blank" rel="noopener noreferrer" class="commit-link" title="Pin the shared SDK to its newest tag">Pin the shared SDK to its newest tag</a>
           </td>
         </tr>
 
@@ -7585,7 +7585,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL/commit/d996fec1f56e3062fab5e5fb7e5939cd66d64db1" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL/commit/e64cd1bfc1ee177dec5b15e03dd98dcb59aaf9ec" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -7605,7 +7605,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: GET /status makes a real, live reachability check against all 3 children on every request - verified end-to-end, including detecting a real killed sibling. Plus a real command allowlist + backpressure + timeout decision layer (src/command.ts, CommandDispatcher) in front of POST /command: default-deny per-protocol allowlist (only read-like/publish operations allowed in v0), bounded concurrency (no more than maxConcurrent commands in flight, rejected immediately beyond that), and a real timeout - all enforced before any relay attempt, mapped to real HTTP status codes (403/429/504/502). The default executor reuses the existing real reachability probes; an actual protocol-level write is not implemented yet, honestly. src/tls.ts now provides real, opt-in TLS 1.2+/mutual-TLS on this gateway&#x27;s own HTTP API (TLS_CERT_PATH/TLS_KEY_PATH, optionally TLS_CLIENT_CA_PATH), closing a real gap where the README already advertised mTLS as delivered while the server was actually plain HTTP - verified with a genuine end-to-end mTLS handshake test against real openssl-generated certificates. 85 tests.</div>
+                <div class="detail-text">Functional v0: GET /status makes a real, live reachability check against all 3 children on every request - verified end-to-end, including detecting a real killed sibling. Plus a real command allowlist + backpressure + timeout decision layer (src/command.ts, CommandDispatcher) in front of POST /command: default-deny per-protocol allowlist (only read-like/publish operations allowed in v0), bounded concurrency (no more than maxConcurrent commands in flight, rejected immediately beyond that), and a real timeout - all enforced before any relay attempt, mapped to real HTTP status codes (403/429/504/502). The default executor reuses the existing real reachability probes; an actual protocol-level write is not implemented yet, honestly. src/tls.ts now provides real, opt-in TLS 1.2+/mutual-TLS on this gateway&#x27;s own HTTP API (TLS_CERT_PATH/TLS_KEY_PATH, optionally TLS_CLIENT_CA_PATH), closing a real gap where the README already advertised mTLS as delivered while the server was actually plain HTTP - verified with a genuine end-to-end mTLS handshake test against real openssl-generated certificates.</div>
               </div>
 
               <div class="detail-block">
@@ -7707,7 +7707,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER/commit/a62bab1d2dcb9fc6785a747bd92b8df4fb296f0c" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER/commit/165af89caa0ce9f2162426daf6342472e2ca09c8" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -7829,7 +7829,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER/commit/bacdb8c046896306784dac97a8d83336af6abb5c" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER/commit/a9f84020c6816c6f85a2b345244198f40e300012" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -7951,7 +7951,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/229a0f78b80fd0b29ecbff8fb689c32e80d594ae" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER/commit/d64b49ce1fe7dc5d0db48e9a7fdd53f5875dd2b1" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -8082,7 +8082,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR/commit/f98edee6656ff4b4fee127f94572261b6da2973a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR/commit/87504bd50cdcec148f648fe3f3b41d2af10abed2" target="_blank" rel="noopener noreferrer" class="commit-link" title="Pin the shared SDK to its newest tag">Pin the shared SDK to its newest tag</a>
           </td>
         </tr>
 
@@ -8204,7 +8204,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS/commit/b920ac994b3a82a9e9675086db6f396f3226352f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS/commit/83ba0707cb74420c4809deb3fcdb626afbdfea5f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Pin the shared SDK to its newest tag">Pin the shared SDK to its newest tag</a>
           </td>
         </tr>
 
@@ -8326,7 +8326,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV/commit/a24e1cf3d1701ff53de583fe193996d7721897ab" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV/commit/abddfcb79c234a5c12ec8f8a774ba129f8cce76d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Revert &quot;Bring the README up to date with the signing and server options&quot;">Revert &quot;Bring the README up to date with the signing and server options&quot;</a>
           </td>
         </tr>
 
@@ -8457,7 +8457,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/9d66d33a7c3fff0724107042095d1ae4ab1e6f95" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/commit/7521120ef9a74c9166d21ae63b1fcd6f74973016" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -8477,7 +8477,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: a real mission state machine (src/mission.rs: Pending, Dispatched, InProgress, Completed, Cancelled, Failed, Unknown after an unclean restart; idempotent cancel; node-failure recovery; an attempt number that fences late reports and moves forward on every dispatch and every requeue) kept on disk, served over plain JSON/HTTP (tiny_http, a pool of worker threads) with an optional bearer token. src/job_dispatcher.rs is a real HTTP client for HYDRA-UMC-JOB-DISPATCHER (submit with routing hints, dispatch pass, close by cancelling queued work or completing assigned work, requeue after a lost node) with connect and total timeouts. A mission&#x27;s terminal outcome is recorded as unconfirmed in the registry and in a durable outbox (src/outbox.rs) before the dispatcher is asked, and retried with backoff. HYDRA-UMC-NODE-HEALING calls POST /nodes/:node/recover. The shared gRPC contract in proto/ is not used by this binary. Contract test against the real dispatcher binary (HYDRA_UMC_JOB_DISPATCHER_BIN). 111 tests.</div>
+                <div class="detail-text">Functional v0: a real mission state machine (src/mission.rs: Pending, Dispatched, InProgress, Completed, Cancelled, Failed, Unknown after an unclean restart; idempotent cancel; node-failure recovery; an attempt number that fences late reports and moves forward on every dispatch and every requeue) kept on disk, served over plain JSON/HTTP (tiny_http, a pool of worker threads) with an optional bearer token. src/job_dispatcher.rs is a real HTTP client for HYDRA-UMC-JOB-DISPATCHER (submit with routing hints, dispatch pass, close by cancelling queued work or completing assigned work, requeue after a lost node) with connect and total timeouts. A mission&#x27;s terminal outcome is recorded as unconfirmed in the registry and in a durable outbox (src/outbox.rs) before the dispatcher is asked, and retried with backoff. HYDRA-UMC-NODE-HEALING calls POST /nodes/:node/recover. The shared gRPC contract in proto/ is not used by this binary. Contract test against the real dispatcher binary (HYDRA_UMC_JOB_DISPATCHER_BIN).</div>
               </div>
 
               <div class="detail-block">
@@ -8701,7 +8701,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/commit/932efd0ba49ef2ab39becc7bba0ad93351935a00" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/commit/9c5fa4aae9b8b225e9ff541976a40c64c4619e0b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -8721,7 +8721,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: health watchdog (gRPC HealthService or HTTP health URL) with guarded recovery - OrchestratorReactor (watchdog.Reactor&#x27;s real implementation) calls HYDRA-UMC-ORCHESTRATOR&#x27;s own POST /nodes/:node/recover only for registry entries with a dispatchNode, for a node that stays UNREACHABLE, INVALID or UNHEALTHY past a confirmation wait, a start-up grace, a per-node cooldown and a global budget (a MISCONFIGURED health URL never recovers). checkNode retries a transport-level failure (dial/RPC error) via a bounded, deterministic RetryPolicy (default 3 attempts, exponential backoff 250ms-&gt;2s cap) before classifying a node UNREACHABLE, masking transient network blips without an open-ended retry loop. A node that answers but misreports its own identity (missing or mismatched NodeIdentity.Name) is classified StatusInvalid and never trusted or retried - retrying cannot fix a node lying about its own name. A registry entry with a healthUrl is probed with one HTTP GET (2xx healthy, 5xx unhealthy, no answer unreachable and retried, redirect or 4xx invalid and never retried) because no service of the ecosystem implements the gRPC HealthService; the recovery request carries a bearer token when -orchestrator-token or ORCHESTRATOR_TOKEN is set. 48 tests.</div>
+                <div class="detail-text">Functional v0: health watchdog (gRPC HealthService or HTTP health URL) with guarded recovery - OrchestratorReactor (watchdog.Reactor&#x27;s real implementation) calls HYDRA-UMC-ORCHESTRATOR&#x27;s own POST /nodes/:node/recover only for registry entries with a dispatchNode, for a node that stays UNREACHABLE, INVALID or UNHEALTHY past a confirmation wait, a start-up grace, a per-node cooldown and a global budget (a MISCONFIGURED health URL never recovers). checkNode retries a transport-level failure (dial/RPC error) via a bounded, deterministic RetryPolicy (default 3 attempts, exponential backoff 250ms-&gt;2s cap) before classifying a node UNREACHABLE, masking transient network blips without an open-ended retry loop. A node that answers but misreports its own identity (missing or mismatched NodeIdentity.Name) is classified StatusInvalid and never trusted or retried - retrying cannot fix a node lying about its own name. A registry entry with a healthUrl is probed with one HTTP GET (2xx healthy, 5xx unhealthy, no answer unreachable and retried, redirect or 4xx invalid and never retried) because no service of the ecosystem implements the gRPC HealthService; the recovery request carries a bearer token when -orchestrator-token or ORCHESTRATOR_TOKEN is set.</div>
               </div>
 
               <div class="detail-block">
@@ -8823,7 +8823,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/commit/8febe574141ffe81d58681793b8b8a2e7e0b7dba" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/commit/4d3ab71c08485fb89b2f53c799c29a6b7fbe6584" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -8843,7 +8843,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Real RRT-based 3D path planner, tested against real obstacle/workspace scenarios (not yet RRT* - no rewiring pass). Real wall-clock planning time limit (PlannerConfig.max_duration_ms) independent of max_iterations, a reusable obstacle/workspace test corpus, and a new `validate` subcommand that re-checks an externally-supplied path for safety (workspace bounds, obstacle clearance, segment-level collisions) before it is trusted for real execution. The nearest-neighbour search is a KD-tree rebuilt balanced as it grows and walked without recursion; the workspace is the volume the whole body must stay in (robot_radius is kept clear of its walls); validate also requires the path to begin at the scenario start and end at its goal; stdout carries only the JSON result; 66 tests.</div>
+                <div class="detail-text">Real RRT-based 3D path planner, tested against real obstacle/workspace scenarios (not yet RRT* - no rewiring pass). Real wall-clock planning time limit (PlannerConfig.max_duration_ms) independent of max_iterations, a reusable obstacle/workspace test corpus, and a new `validate` subcommand that re-checks an externally-supplied path for safety (workspace bounds, obstacle clearance, segment-level collisions) before it is trusted for real execution. The nearest-neighbour search is a KD-tree rebuilt balanced as it grows and walked without recursion; the workspace is the volume the whole body must stay in (robot_radius is kept clear of its walls); validate also requires the path to begin at the scenario start and end at its goal; stdout carries only the JSON result;</div>
               </div>
 
               <div class="detail-block">
@@ -8945,7 +8945,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/commit/6bc28f9c358f3be301014ccc43cf5d12c34977ce" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/commit/5a13465a3eed102f89d0fb04327f2a544aa8fdaa" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
           </td>
         </tr>
 
@@ -9076,7 +9076,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB/commit/f9893da8df7e5dda140d9f07893488ce43632029" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout and draw its architecture and file-tree pictures">Rewrite the README in the universal layout and draw its architecture and file-tree pictures</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB/commit/f79021cae50968a44e962bd1cf657b201010cc63" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -9096,7 +9096,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Its own real test suite (`pytest tests`) passes in full: 108 tests passed, 31 skipped (the skipped ones need the optional `[sdk]` extra or real hardware and are not silently counted as passing). v0.0.4 - a second independent review pass found and fixed 4 more real issues: the capability gate now enforces a write/abort capability&#x27;s own declared requiredPermission/requiredCellState/requiresHumanConfirmation and the manifest&#x27;s own requiredSafetyGates (previously ignored - a call was gate-allowed on the generic SDK motion check alone, zero policy enforced); adapterId is now restricted to a safe charset and save_certification_record() independently verifies its resolved path stays inside the target directory (previously a path-traversal adapterId could write outside it); the certification store now creates records with real atomic O_CREAT|O_EXCL semantics, refusing to silently overwrite a different record under the same id (previously not actually append-only despite documenting it as such); the JSON-Schema-subset validator no longer accepts a bool as a number or raises on an invalid regex pattern/non-string required entry (previously it could crash or silently accept wrong-typed evidence). Deliveries 1-4 of the 4-delivery plan (&quot;Esquema JSON, CLI validate y diez fixtures&quot; / &quot;Registro ... y endpoint read-only de catalogo&quot; / &quot;Integracion con SDK: validacion de capability + safety gate + evidencia&quot; [P0] / &quot;Certificar adaptadores uno a uno sobre sus maquinas&quot; [P1][HARDWARE]). Complementary to HYDRA-UMC-OPS-AGENT (maintenance-incident lifecycle for the ecosystem&#x27;s OWN components) - this one is about discovering, validating and safely invoking what an EXTERNAL machine/adapter can do, never about CAN/SPI/UART access or motor control directly (those stay owned by HYDRA-UMC-SERVER/SDK/MCU). Explicitly does not replace HYDRA-UMC-GATEWAY-INDUSTRIAL, HYDRA-UMC-OPCUA-SERVER, HYDRA-UMC-MQTT-BROKER or HYDRA-UMC-MTCONNECT-ADAPTER - it is a declarative registry/validator/gate ABOVE them, not a second protocol implementation. The ten fixtures reference those real projects (and the real bridge repos) as their own ownerProject, never an invented one. A capability whose mode is write/abort is rejected by the validator unless it also declares risk, requiredPermission, requiredCellState and timeoutMs - an explicit rule (&quot;las acciones write nunca son seleccionables si falta una de esas condiciones&quot;), enforced as a real, tested check. Delivery 3&#x27;s own gate never reimplements HYDRA-UMC-SDK&#x27;s safety logic - it calls the SDK&#x27;s real `evaluate_job()` directly (a `read` capability skips the SDK entirely; `write`/`abort` map onto a documented, honestly-simplified single JobPhase - see sdk_gate.py&#x27;s own module docstring for exactly why). Delivery 4&#x27;s own certification log is real, append-only record-keeping of a human-attested evidence payload checked against the adapter&#x27;s own evidenceSchema - it explicitly does NOT and cannot independently verify that evidence came from real hardware without the real hardware itself, which this development machine does not have; that gap is documented, not hidden.</div>
+                <div class="detail-text">Its own real test suite (`pytest tests`) passes in full (the tests that need the optional `[sdk]` extra or real hardware and are not silently counted as passing). v0.0.4 - a second independent review pass found and fixed 4 more real issues: the capability gate now enforces a write/abort capability&#x27;s own declared requiredPermission/requiredCellState/requiresHumanConfirmation and the manifest&#x27;s own requiredSafetyGates (previously ignored - a call was gate-allowed on the generic SDK motion check alone, zero policy enforced); adapterId is now restricted to a safe charset and save_certification_record() independently verifies its resolved path stays inside the target directory (previously a path-traversal adapterId could write outside it); the certification store now creates records with real atomic O_CREAT|O_EXCL semantics, refusing to silently overwrite a different record under the same id (previously not actually append-only despite documenting it as such); the JSON-Schema-subset validator no longer accepts a bool as a number or raises on an invalid regex pattern/non-string required entry (previously it could crash or silently accept wrong-typed evidence). Deliveries 1-4 of the 4-delivery plan (&quot;Esquema JSON, CLI validate y diez fixtures&quot; / &quot;Registro ... y endpoint read-only de catalogo&quot; / &quot;Integracion con SDK: validacion de capability + safety gate + evidencia&quot; [P0] / &quot;Certificar adaptadores uno a uno sobre sus maquinas&quot; [P1][HARDWARE]). Complementary to HYDRA-UMC-OPS-AGENT (maintenance-incident lifecycle for the ecosystem&#x27;s OWN components) - this one is about discovering, validating and safely invoking what an EXTERNAL machine/adapter can do, never about CAN/SPI/UART access or motor control directly (those stay owned by HYDRA-UMC-SERVER/SDK/MCU). Explicitly does not replace HYDRA-UMC-GATEWAY-INDUSTRIAL, HYDRA-UMC-OPCUA-SERVER, HYDRA-UMC-MQTT-BROKER or HYDRA-UMC-MTCONNECT-ADAPTER - it is a declarative registry/validator/gate ABOVE them, not a second protocol implementation. The ten fixtures reference those real projects (and the real bridge repos) as their own ownerProject, never an invented one. A capability whose mode is write/abort is rejected by the validator unless it also declares risk, requiredPermission, requiredCellState and timeoutMs - an explicit rule (&quot;las acciones write nunca son seleccionables si falta una de esas condiciones&quot;), enforced as a real, tested check. Delivery 3&#x27;s own gate never reimplements HYDRA-UMC-SDK&#x27;s safety logic - it calls the SDK&#x27;s real `evaluate_job()` directly (a `read` capability skips the SDK entirely; `write`/`abort` map onto a documented, honestly-simplified single JobPhase - see sdk_gate.py&#x27;s own module docstring for exactly why). Delivery 4&#x27;s own certification log is real, append-only record-keeping of a human-attested evidence payload checked against the adapter&#x27;s own evidenceSchema - it explicitly does NOT and cannot independently verify that evidence came from real hardware without the real hardware itself, which this development machine does not have; that gap is documented, not hidden.</div>
               </div>
 
               <div class="detail-block">
@@ -9198,7 +9198,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/c65d2a80bfaed610d211e3f15b5ce5bd0f956b38" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-OS/commit/d8de506961444c76e1d07e97898a62ab6a0f7fd7" target="_blank" rel="noopener noreferrer" class="commit-link" title="List the further documents of the OS layer under Documentation">List the further documents of the OS layer under Documentation</a>
           </td>
         </tr>
 
@@ -9305,7 +9305,7 @@
           </td>
 
           <td class="version status-ok">
-            0.3.7
+            0.3.8
           </td>
 
           <td class="status-cell">
@@ -9320,7 +9320,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/e720e5c92f2fe95956910312fc316d4a1fd281cc" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SDK/commit/e3371aa9a11c81889655e846fd50349050ec5bd7" target="_blank" rel="noopener noreferrer" class="commit-link" title="Reopen the serial device when discarding the input buffer fails">Reopen the serial device when discarding the input buffer fails</a>
           </td>
         </tr>
 
@@ -9451,7 +9451,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE/commit/5ede5c96e9c6e0eb29092289d09601a0a2a678e8" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE/commit/512721a49a39f7191905ffe8ef81e4ae0967585b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add family-status --live to ask the child services for their health">Add family-status --live to ask the child services for their health</a>
           </td>
         </tr>
 
@@ -9573,7 +9573,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF/commit/046dd8dbce7cc6a4abd551c59fc6c10115306608" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop the empty placeholder line of the unreleased changelog section">Drop the empty placeholder line of the unreleased changelog section</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF/commit/da269c4f5e36948398b778ad30a3289f1c770ca1" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -9593,7 +9593,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real compiled-model registry - JSON schema validation (including a required, validated hailo_arch field), duplicate-version detection, latest-version lookup by name/task, and sha256 checksum verification against local files, exposed via &#x27;registry validate&#x27;/&#x27;registry latest&#x27;. Real, combined safe-load gate (compatibility.py&#x27;s safe_load()) checks Hailo-architecture compatibility before checksum integrity and never reports a model ready unless both real checks pass - exposed via the new &#x27;registry load&#x27; subcommand. hef_path is now validated against path traversal (rejects an absolute path at parse time, and verify_checksum() confirms the resolved join stays inside models_dir) before any file is read or hashed. 70 tests. The ONNX/Dataflow-Compiler/HEF toolchain that would populate the registry still needs real Hailo hardware and is future work.</div>
+                <div class="detail-text">Functional v0: real compiled-model registry - JSON schema validation (including a required, validated hailo_arch field), duplicate-version detection, latest-version lookup by name/task, and sha256 checksum verification against local files, exposed via &#x27;registry validate&#x27;/&#x27;registry latest&#x27;. Real, combined safe-load gate (compatibility.py&#x27;s safe_load()) checks Hailo-architecture compatibility before checksum integrity and never reports a model ready unless both real checks pass - exposed via the new &#x27;registry load&#x27; subcommand. hef_path is now validated against path traversal (rejects an absolute path at parse time, and verify_checksum() confirms the resolved join stays inside models_dir) before any file is read or hashed. The ONNX/Dataflow-Compiler/HEF toolchain that would populate the registry still needs real Hailo hardware and is future work.</div>
               </div>
 
               <div class="detail-block">
@@ -9695,7 +9695,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES/commit/2aa04d917f897c3faf83d8b3fae31841f83904b8" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES/commit/41753ecf17333f0de1268e313539e38a4ba0843d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refresh the file-tree picture and keep the changelog free of internal wording">Refresh the file-tree picture and keep the changelog free of internal wording</a>
           </td>
         </tr>
 
@@ -9817,7 +9817,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER/commit/f595a19627047098f18af78f86b87be61f1230f0" target="_blank" rel="noopener noreferrer" class="commit-link" title="Name the family in the live panel from the manifest">Name the family in the live panel from the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER/commit/5893eae620baac631eced0ed412183d7c323e057" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -9837,7 +9837,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Established v0: real per-camera config validation, GStreamer pipeline description generation, and MediaMTX paths.yml generation, exposed via &#x27;config validate&#x27;/&#x27;config gst&#x27;/&#x27;config mediamtx&#x27;. Real bounded frame buffering (drop-oldest backpressure, provably bounded memory under a slow consumer) and a real deterministic reconnect/backoff policy for a dropped camera link, exposed via &#x27;stream simulate&#x27;. Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_detection_model() against the real confirmed API, lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; real pre-flight frame/input-shape validation against config.py&#x27;s CameraConfig, fully unit-tested without hailort. mjpeg_server.py&#x27;s real capture path now buffers a Frame (frame_id/session_id/capture_ts, not just bare bytes) - a genuinely new session_id on every real reconnect, HTTP wire format unchanged. 105 tests. Actually running the generated pipeline (and parsing a real model&#x27;s NMS output) against physical USB cameras and a real Hailo-8 module is future work.</div>
+                <div class="detail-text">Established v0: real per-camera config validation, GStreamer pipeline description generation, and MediaMTX paths.yml generation, exposed via &#x27;config validate&#x27;/&#x27;config gst&#x27;/&#x27;config mediamtx&#x27;. Real bounded frame buffering (drop-oldest backpressure, provably bounded memory under a slow consumer) and a real deterministic reconnect/backoff policy for a dropped camera link, exposed via &#x27;stream simulate&#x27;. Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_detection_model() against the real confirmed API, lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; real pre-flight frame/input-shape validation against config.py&#x27;s CameraConfig, fully unit-tested without hailort. mjpeg_server.py&#x27;s real capture path now buffers a Frame (frame_id/session_id/capture_ts, not just bare bytes) - a genuinely new session_id on every real reconnect, HTTP wire format unchanged. Actually running the generated pipeline (and parsing a real model&#x27;s NMS output) against physical USB cameras and a real Hailo-8 module is future work.</div>
               </div>
 
               <div class="detail-block">
@@ -9939,7 +9939,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API/commit/ea523584618732e284919b2c04e4a20c4bee07e2" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the port of the service next to its health path in the manifest">Declare the port of the service next to its health path in the manifest</a>
+            <a href="https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API/commit/191c099e4727ffebc1c34bc0d85ebea985d6c41d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Drop hand-written test counts from the project manifest notes">Drop hand-written test counts from the project manifest notes</a>
           </td>
         </tr>
 
@@ -9959,7 +9959,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Functional v0: real Position-Based Visual Servoing (PBVS) correction law - pose-delta computation with shortest-turn angle wrapping, proportional velocity command with direction-preserving clamping, and convergence check, exposed via the &#x27;correct&#x27; subcommand. Plus a safety-gated authorization layer (authorization.py) that refuses to turn a visual detection into motion unless the upstream safety_state is READY and the data is confident/fresh enough (INHIBITED wins over REJECTED, mirroring HYDRA-UMC-SAFETY-ZONES), exposed via the &#x27;request&#x27; subcommand. Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_pose_model() against the real confirmed API, lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_pose() adapts a real InferVStreams result into this project&#x27;s own Pose6D and is fully unit-tested without hailort. 128 tests. A non-object top-level JSON body and an extreme-but-individually-finite pose delta/gain combination that could overflow to inf/NaN now both surface as a real 400 instead of crashing the handler thread or returning a corrupted velocity command. Real 6-DOF pose *estimation* (needs the Hailo-8 NPU and a real compiled .hef) and the low-latency gRPC feed to the HYDRA-UMC core remain future work.</div>
+                <div class="detail-text">Functional v0: real Position-Based Visual Servoing (PBVS) correction law - pose-delta computation with shortest-turn angle wrapping, proportional velocity command with direction-preserving clamping, and convergence check, exposed via the &#x27;correct&#x27; subcommand. Plus a safety-gated authorization layer (authorization.py) that refuses to turn a visual detection into motion unless the upstream safety_state is READY and the data is confident/fresh enough (INHIBITED wins over REJECTED, mirroring HYDRA-UMC-SAFETY-ZONES), exposed via the &#x27;request&#x27; subcommand. Added hailo_runtime.py: a real HailoRT (hailo_platform) integration boundary - open_vdevice()/load_hailo_pose_model() against the real confirmed API, lazily imported so this dev machine (no hailort installed) degrades to a clear RuntimeError; hailo_output_to_pose() adapts a real InferVStreams result into this project&#x27;s own Pose6D and is fully unit-tested without hailort. A non-object top-level JSON body and an extreme-but-individually-finite pose delta/gain combination that could overflow to inf/NaN now both surface as a real 400 instead of crashing the handler thread or returning a corrupted velocity command. Real 6-DOF pose *estimation* (needs the Hailo-8 NPU and a real compiled .hef) and the low-latency gRPC feed to the HYDRA-UMC core remain future work.</div>
               </div>
 
               <div class="detail-block">
@@ -10076,7 +10076,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-DOCS/commit/e06b661fefa90129d0d7e601a0b4d2e9b46185fe" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe the versions in the interfaces document without the rule they follow">Describe the versions in the interfaces document without the rule they follow</a>
+            <a href="https://github.com/JuanenRac/URTC-DOCS/commit/2989ee7e6bf99ac542ddd09aca5bc2f2f7f7b1b2" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -10198,7 +10198,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-UPDATER/commit/049a74c4e565a6f0a3a0ac5ac1a476a60353b6d8" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refresh the shared update code with the stricter download checks">Refresh the shared update code with the stricter download checks</a>
+            <a href="https://github.com/JuanenRac/URTC-UPDATER/commit/5068a54565411f2e6ce281b0925454c7ee1699bf" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -10329,7 +10329,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC/commit/99bb52acb1a5794c3d901b8caa5ef64caa2bc6ab" target="_blank" rel="noopener noreferrer" class="commit-link" title="Run the complete CI baseline every night">Run the complete CI baseline every night</a>
+            <a href="https://github.com/JuanenRac/URTC/commit/4838c720264041713625c0896300aaf6ab7dfef0" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -10451,7 +10451,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/eeb3ace89de8ecd993b400dc0ed9c7f696192360" target="_blank" rel="noopener noreferrer" class="commit-link" title="Check every redirect of a download and bound the real extracted size">Check every redirect of a download and bound the real extracted size</a>
+            <a href="https://github.com/JuanenRac/URTC-COMMON/commit/bb0d21a611bc56ff10f65a06cb67f2f837a22db6" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -10573,7 +10573,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/9567b0ddb7baefbf210f27961af0248074aa760f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refresh the shared update code with the stricter download checks">Refresh the shared update code with the stricter download checks</a>
+            <a href="https://github.com/JuanenRac/URTC-FLASHER/commit/807d8131d400beafe9110358a83e27e4edf6d95f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -10695,7 +10695,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-GATEWAY/commit/73bb33e923a06acef4802ab5cf659c69bcbcfe17" target="_blank" rel="noopener noreferrer" class="commit-link" title="Run the complete CI baseline every night">Run the complete CI baseline every night</a>
+            <a href="https://github.com/JuanenRac/URTC-GATEWAY/commit/7268a6a8fa3a413989522f3980af8009fa1a2f45" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -10817,7 +10817,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/f9c32476f907e0ffeb4b5e29fdb8c11d32445e00" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add a receive ring buffer and power-cut-safe persistence of the lifecycle and the inventory">Add a receive ring buffer and power-cut-safe persistence of the lifecycle and the inventory</a>
+            <a href="https://github.com/JuanenRac/URTC-SMART-RACK/commit/9e9e1d76d1a395e8dbeaf85b2564320d91b17ba3" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -10939,7 +10939,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/9547eb02d8147cc65da333977142c48d62957ae8" target="_blank" rel="noopener noreferrer" class="commit-link" title="Refresh the shared update code with the stricter download checks">Refresh the shared update code with the stricter download checks</a>
+            <a href="https://github.com/JuanenRac/URTC-TESTER/commit/6741f92e3c3969af100e133f8add834a2759753e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -11061,7 +11061,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/407e41afc9660d2986c85ee84858e14527498728" target="_blank" rel="noopener noreferrer" class="commit-link" title="Run the complete CI baseline every night">Run the complete CI baseline every night</a>
+            <a href="https://github.com/JuanenRac/URTC-VISION-TOOL/commit/85bb902cb692e78c2ade4b2cb67e087e0022af0f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -11081,7 +11081,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Firmware has a hardware-independent sensor protocol, host-tested on a PC only and never run on a board or with a real sensor (versioned framing with CRC8, range validation, minimum-interval throttling, replay and stale-sensor detection, error and latency counters kept apart from any accept or reject decision), with a host-side sensor simulator covering valid, truncated, CRC-corrupt, out-of-range and disconnected frames - 165 host-native test assertions. The Python vision_companion package is test-covered: synthetic thermal and RGB frames, false-colour rendering, and RGB-to-thermal ROI alignment with temperature statistics, and a thermal calibration (gain, offsets, dead pixels) loaded from a JSON file, verified by 183 real pytest cases. Wiring a real MLX9064x/RGB sensor over I2C/SPI, real dual-modal capture and per-pixel calibration still need a real PCB and real cameras.</div>
+                <div class="detail-text">Firmware has a hardware-independent sensor protocol, host-tested on a PC only and never run on a board or with a real sensor (versioned framing with CRC8, range validation, minimum-interval throttling, replay and stale-sensor detection, error and latency counters kept apart from any accept or reject decision), with a host-side sensor simulator covering valid, truncated, CRC-corrupt, out-of-range and disconnected frames - 190 host-native test assertions. The Python vision_companion package is test-covered: synthetic thermal and RGB frames, false-colour rendering, and RGB-to-thermal ROI alignment with temperature statistics, and a thermal calibration (gain, offsets, dead pixels) loaded from a JSON file, verified by 183 real pytest cases. Wiring a real MLX9064x/RGB sensor over I2C/SPI, real dual-modal capture and per-pixel calibration still need a real PCB and real cameras.</div>
               </div>
 
               <div class="detail-block">
@@ -11183,7 +11183,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/8e02bb21b028386c50ef9fc1eec972d0c10e33c4" target="_blank" rel="noopener noreferrer" class="commit-link" title="Run the complete CI baseline every night">Run the complete CI baseline every night</a>
+            <a href="https://github.com/JuanenRac/URTC-WEB-STUDIO/commit/855870bbc688a7609a890cb2662d29f989b8d2bb" target="_blank" rel="noopener noreferrer" class="commit-link" title="Describe each repository of the family in one line under Related Projects">Describe each repository of the family in one line under Related Projects</a>
           </td>
         </tr>
 
@@ -11320,7 +11320,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/commit/2db0bc1841260c889cf1920af9428c452f0a9fc9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/commit/4521d43e2df4e341d43aba69a6262c77e80cf565" target="_blank" rel="noopener noreferrer" class="commit-link" title="Choose the sound and the voice of the alarms inside the app">Choose the sound and the voice of the alarms inside the app</a>
           </td>
         </tr>
 
@@ -11442,7 +11442,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-IOS-CONTROL/commit/0c64225cec2e20b4b1bdc18cac71656f0ad2d290" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-IOS-CONTROL/commit/bf457c8326077dfae2e95bf81c4dc1cc3ff55987" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -11564,7 +11564,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-NODE-HMI/commit/e39204d649690b5e421420bf1c5d5cedbd414fb8" target="_blank" rel="noopener noreferrer" class="commit-link" title="Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on">Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on</a>
+            <a href="https://github.com/JuanenRac/ARMOR-NODE-HMI/commit/8d648a3afc51315ea4ed58ba9d22668533e724d9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Document the sound chosen for each alarm source in the settings table of the HMI">Document the sound chosen for each alarm source in the settings table of the HMI</a>
           </td>
         </tr>
 
@@ -11686,7 +11686,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-STUDIO/commit/ddf328210ea70fb04faf668fa5714bafa4320c01" target="_blank" rel="noopener noreferrer" class="commit-link" title="Add a small animated logo before the title of six dialogs">Add a small animated logo before the title of six dialogs</a>
+            <a href="https://github.com/JuanenRac/ARMOR-STUDIO/commit/73b2396367c3bb5acc5a7d884454034dd664cb37" target="_blank" rel="noopener noreferrer" class="commit-link" title="Shorten the help of the installation, console and notification tabs in the eight languages">Shorten the help of the installation, console and notification tabs in the eight languages</a>
           </td>
         </tr>
 
@@ -11817,7 +11817,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-SERVER/commit/818be21b42b0c9ccf6d7df616436833a283cd1c9" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-SERVER/commit/d3ac3da8d9de8116741e0a4d7b55aac7b3394a9b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -11939,7 +11939,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-SERVER-AI/commit/fca426be344d7f2804f987510b5206e205e6eabb" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-SERVER-AI/commit/46e86444d557296e3165878db19522046dd2c8bc" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -12061,7 +12061,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-VISION/commit/cb7f87e87211612502722b45bfbcaf80581081eb" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-VISION/commit/65376b5bb81b2112aeab1043fe2e81f2d85fc031" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -12183,7 +12183,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-VOICE-AI/commit/efee3b363a23f508ab9a28afbe270778aced0458" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-VOICE-AI/commit/12e0991f353ddbbbb4992e4ee84a92bbfd8e8d14" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -12314,7 +12314,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/648b2d1694970cc97e727dba9ca23c7a560d40ac" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the text tree of each repository inside its README source">Keep the text tree of each repository inside its README source</a>
+            <a href="https://github.com/JuanenRac/ARMOR-DOCS/commit/3dcf8a406a2c9a0e209250f44b0a2539486a9be7" target="_blank" rel="noopener noreferrer" class="commit-link" title="Document the sound chosen for each alarm source in the settings table of the HMI">Document the sound chosen for each alarm source in the settings table of the HMI</a>
           </td>
         </tr>
 
@@ -12445,7 +12445,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-UPDATER/commit/6504f5e343aa53307d0d708a86141d872b4ab675" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout with the figures taken from the code">Rewrite the README in the universal layout with the figures taken from the code</a>
+            <a href="https://github.com/JuanenRac/ARMOR-UPDATER/commit/5a040e5c77720641c98c947ed36681c26101688e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -12576,7 +12576,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-NETWORK/commit/ef4dab6636c0a27d805f3d29b5e251d02061374a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout with the figures taken from the code">Rewrite the README in the universal layout with the figures taken from the code</a>
+            <a href="https://github.com/JuanenRac/ARMOR-NETWORK/commit/7fc83c16f13853883d04910c8d1e34053ea27406" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -12698,7 +12698,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-NODE-ALARM/commit/aea000f01d436c97fbcfb6891586a9c410263d6b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on">Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on</a>
+            <a href="https://github.com/JuanenRac/ARMOR-NODE-ALARM/commit/e25398e074f2991309d6fbe45a60e83fffe5be38" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -12820,7 +12820,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/commit/f80f34c02264f8416fccfa312c2215dad286eb81" target="_blank" rel="noopener noreferrer" class="commit-link" title="Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on">Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on</a>
+            <a href="https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/commit/4b7f4e1333a725044698ae102bc1e3a8c7032f1b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -12942,7 +12942,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-NODE-RADAR/commit/9d7f1321686119816295fb9ed1d35c2ed823563a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on">Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on</a>
+            <a href="https://github.com/JuanenRac/ARMOR-NODE-RADAR/commit/274763731ba29c01ba3c05912f1808b18faa8b09" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -13064,7 +13064,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-NODE-SOLAR/commit/803b59bab1ce7e9612972583b974d2ff1f633835" target="_blank" rel="noopener noreferrer" class="commit-link" title="Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on">Warn on the Wi-Fi page when the node&#x27;s own network and the router connection are both on</a>
+            <a href="https://github.com/JuanenRac/ARMOR-NODE-SOLAR/commit/fc21e40d09a78e5bf0a817aaaced154d055b433a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -13195,7 +13195,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-HARDWARE/commit/7f5c019c8fad2ab09c7e0ad4346b40bc6287cf08" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-HARDWARE/commit/0a4931cbb6a00fcf6cf5ac5ab3ecefb9bd983d37" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -13326,7 +13326,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-DEVOPS/commit/5f3fe4c2e034c94d63e39141ba08327ec23ba17d" target="_blank" rel="noopener noreferrer" class="commit-link" title="Rewrite the README in the universal layout with the figures taken from the code">Rewrite the README in the universal layout with the figures taken from the code</a>
+            <a href="https://github.com/JuanenRac/ARMOR-DEVOPS/commit/7158a321e5ff9ee11951acecf34257118088f057" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -13457,7 +13457,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/9cc75b82adf4ecf3607072742510cff568721064" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-COMMON/commit/59ae99ac61cfa002dac9ad28eec0d77bf83a53b7" target="_blank" rel="noopener noreferrer" class="commit-link" title="Fix the lint findings of the repository structure picture tool and allow a longer repository name">Fix the lint findings of the repository structure picture tool and allow a longer repository name</a>
           </td>
         </tr>
 
@@ -13588,7 +13588,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ARMOR-SIMULATOR/commit/81b90f821b4182a033e29e2ca34e5b822e75e01b" target="_blank" rel="noopener noreferrer" class="commit-link" title="Show the panel only to a person at a terminal, and plain lines to a log or a test">Show the panel only to a person at a terminal, and plain lines to a log or a test</a>
+            <a href="https://github.com/JuanenRac/ARMOR-SIMULATOR/commit/4e61bc2fd540ca4a1a6a9bbd75f58ee6fc5ebd4e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Re-vendor the repository structure picture tool with its lint fixes">Re-vendor the repository structure picture tool with its lint fixes</a>
           </td>
         </tr>
 
@@ -13710,7 +13710,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.3
           </td>
 
           <td class="status-cell">
@@ -13725,7 +13725,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-DRILLPRO/commit/15cbe8b575987154e55a435b1c6f3e570593faf7" target="_blank" rel="noopener noreferrer" class="commit-link" title="Optional vacuum output: vacuum = aux switches the auxiliary bit with the spindle">Optional vacuum output: vacuum = aux switches the auxiliary bit with the spindle</a>
+            <a href="https://github.com/JuanenRac/EH3D-DRILLPRO/commit/9f2c566bdcb7a7d5702563279f234c2c779c6b8e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Test: type the archive name with its real case (case-sensitive file systems)">Test: type the archive name with its real case (case-sensitive file systems)</a>
           </td>
         </tr>
 
@@ -13745,7 +13745,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Scaffolding v0.0.2: a re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines. It reads Excellon .NCD drill files, the tool table and the machine configuration, orders the holes and runs the job against a simulator, in a text-mode look-alike interface in eight languages. The serial protocol was worked out by watching how the original program talks to its control unit and has been tried on one Bungard CCD MTC: the reference run of the three axes and the moves of every axis. A whole job has not run on a machine yet, and the spindle, the vacuum output and the steps per millimetre are not confirmed.</div>
+                <div class="detail-text">Scaffolding v0.0.3: a re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines. It reads Excellon .NCD drill files, the tool table and the machine configuration, orders the holes and runs the job against a simulator, in a text-mode look-alike interface in eight languages. The serial protocol was worked out by watching how the original program talks to its control unit and has been tried on one Bungard CCD MTC: the reference run of the three axes and the moves of every axis. A whole job has not run on a machine yet, and the spindle, the vacuum output and the steps per millimetre are not confirmed.</div>
               </div>
 
               <div class="detail-block">
@@ -13847,7 +13847,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-NODE-BUNGARD/commit/524a4619c1d8c270ab88f7097c323d84bc5df15f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Declare the deployment target of the project manifest as mcu">Declare the deployment target of the project manifest as mcu</a>
+            <a href="https://github.com/JuanenRac/EH3D-NODE-BUNGARD/commit/1952414c6907ce40b083edc1401cade6dcb3d5d6" target="_blank" rel="noopener noreferrer" class="commit-link" title="End the dashboard notice workflow with a newline">End the dashboard notice workflow with a newline</a>
           </td>
         </tr>
 
@@ -13954,7 +13954,7 @@
           </td>
 
           <td class="version status-ok">
-            0.0.2
+            0.0.3
           </td>
 
           <td class="status-cell">
@@ -13969,7 +13969,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-ROUTEPRO/commit/b124e279726cec61a6edd27a4bc980ca45d1b51f" target="_blank" rel="noopener noreferrer" class="commit-link" title="Document the optional vacuum output">Document the optional vacuum output</a>
+            <a href="https://github.com/JuanenRac/EH3D-ROUTEPRO/commit/d17621f6cc24a7846815466109a43a4b0efaa795" target="_blank" rel="noopener noreferrer" class="commit-link" title="CI and release builds check out the sibling EH3D-COMMON; changelog for the ZIP support">CI and release builds check out the sibling EH3D-COMMON; changelog for the ZIP support</a>
           </td>
         </tr>
 
@@ -13989,7 +13989,7 @@
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
-                <div class="detail-text">Scaffolding v0.0.2: a re-implementation of the routing (milling) workflow of the classic DOS software for Bungard CCD machines. It reads HP-GL .PLT plot files, the tool table and the machine configuration, plans multi-pass milling paths (rapid move, plunge, cut, lift) and runs them against a simulator, in a text-mode look-alike interface in eight languages. It reuses the serial protocol, the screen and the language support of EH3D-DRILLPRO (a sibling folder is needed). The protocol has never been tried on a machine: the program drives no real machine, there is no calibration mode yet and the steps per millimetre are not calibrated. The serial protocol was worked out by watching how the original program talks to its control unit and has been tried on one Bungard CCD MTC: the reference run of the three axes and the moves of every axis. A whole job has not run on a machine yet, and the spindle, the vacuum output and the steps per millimetre are not confirmed.</div>
+                <div class="detail-text">Scaffolding v0.0.3: a re-implementation of the routing (milling) workflow of the classic DOS software for Bungard CCD machines. It reads HP-GL .PLT plot files, the tool table and the machine configuration, plans multi-pass milling paths (rapid move, plunge, cut, lift) and runs them against a simulator, in a text-mode look-alike interface in eight languages. It reuses the serial protocol, the screen and the language support of EH3D-DRILLPRO (a sibling folder is needed). The protocol has never been tried on a machine: the program drives no real machine, there is no calibration mode yet and the steps per millimetre are not calibrated. The serial protocol was worked out by watching how the original program talks to its control unit and has been tried on one Bungard CCD MTC: the reference run of the three axes and the moves of every axis. A whole job has not run on a machine yet, and the spindle, the vacuum output and the steps per millimetre are not confirmed.</div>
               </div>
 
               <div class="detail-block">
@@ -14091,7 +14091,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-SERVER/commit/a548ee31e05a0d670d6cd926be4065a5d4c69563" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the README check clean for the type checker">Keep the README check clean for the type checker</a>
+            <a href="https://github.com/JuanenRac/EH3D-SERVER/commit/fe7481d55893a701975444bc5646b7475eb40515" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bring the README to the universal layout in eight languages">Bring the README to the universal layout in eight languages</a>
           </td>
         </tr>
 
@@ -14222,7 +14222,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-DOCS/commit/b6e3c7dad0f841960bb864a9bec9100afc21c567" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the README check clean for the type checker">Keep the README check clean for the type checker</a>
+            <a href="https://github.com/JuanenRac/EH3D-DOCS/commit/c762b6d5f56a4589ff918d4a8a6f60e836d75d3a" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bring the README to the universal layout in eight languages">Bring the README to the universal layout in eight languages</a>
           </td>
         </tr>
 
@@ -14353,7 +14353,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-UPDATER/commit/9ad38b31f88b35cf2236290df348ea6bc118748c" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the README check clean for the type checker">Keep the README check clean for the type checker</a>
+            <a href="https://github.com/JuanenRac/EH3D-UPDATER/commit/f0338ad02ea17e50fcafd28646ee68a0a9c4bde1" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bring the README to the universal layout in eight languages">Bring the README to the universal layout in eight languages</a>
           </td>
         </tr>
 
@@ -14484,7 +14484,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-COMMON/commit/d5bb5e332f86d0894fe2e41116708d6a66d8741e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the README check clean for the type checker">Keep the README check clean for the type checker</a>
+            <a href="https://github.com/JuanenRac/EH3D-COMMON/commit/c0761952bb9eee155435cadc5aac1fde6c59cec2" target="_blank" rel="noopener noreferrer" class="commit-link" title="Document the shared crates in the structure and the changelog; the CI covers the workspace">Document the shared crates in the structure and the changelog; the CI covers the workspace</a>
           </td>
         </tr>
 
@@ -14606,7 +14606,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/EH3D-CORE-LIBS/commit/6f0e7c2d4fa55b12391d7350110065789c431698" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the README check clean for the type checker">Keep the README check clean for the type checker</a>
+            <a href="https://github.com/JuanenRac/EH3D-CORE-LIBS/commit/34191dfbcfac619ed64d32e6333a75684940e678" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bring the README to the universal layout in eight languages">Bring the README to the universal layout in eight languages</a>
           </td>
         </tr>
 
@@ -14743,7 +14743,7 @@
           </td>
 
           <td class="commit-cell">
-            <a href="https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER/commit/9e83c452e1eb26454e3c4fd3c760c5097303a921" target="_blank" rel="noopener noreferrer" class="commit-link" title="Keep the README check clean for the type checker">Keep the README check clean for the type checker</a>
+            <a href="https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER/commit/0c637247342e5d5921178b87d6861c61762a578e" target="_blank" rel="noopener noreferrer" class="commit-link" title="Bring the README to the universal layout in eight languages">Bring the README to the universal layout in eight languages</a>
           </td>
         </tr>
 
