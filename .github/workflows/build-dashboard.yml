@@ -64,6 +64,7 @@ on:
     paths:
       - "scripts/generate_dashboard.py"
       - "scripts/sync_readme_versions.py"
+      - "scripts/ecosystem_progress.py"
       - "scripts/catalog_check.py"
       - "ecosystem-catalog.json"
       - ".github/workflows/build-dashboard.yml"
@@ -192,6 +193,13 @@ jobs:
       - name: Sync README project versions
         run: |
           python scripts/sync_readme_versions.py
+
+      # The progress bar of every ecosystem is calculated from the maturity and
+      # the evidence each repository declares in its own manifest (see
+      # scripts/ecosystem_progress.py), never typed by hand.
+      - name: Calculate the progress of the ecosystems
+        run: |
+          python scripts/ecosystem_progress.py
 
       # -----------------------------------------------------------------------
       # Show generated files

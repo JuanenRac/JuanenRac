@@ -33,9 +33,9 @@ Jede Zeile ist ein Teil dieses Repositorys, und die Ampel sagt, wie weit er heut
 | Bereich | Stand | Was das hier bedeutet |
 |---|---|---|
 | Dashboard und Überwachung | 🟢 | Das Status-Dashboard, die CI-Überwachung, die Gesundheitsmatrix, die Linkprüfung und die Release-Übersicht laufen zeitgesteuert in GitHub Actions, und ihre letzten Läufe bestehen. |
-| Tests | 🟢 | 44 Tests bestehen (`python -m unittest discover -s tests`): der Katalog, die Überwachung, die Banner, die Roadmap-Vorbefüllung und der Gleichstand der README. |
+| Tests | 🟢 | 51 Tests bestehen (`python -m unittest discover -s tests`): der Katalog, die Überwachung, die Banner, die Roadmap-Vorbefüllung und der Gleichstand der README. |
 | Katalog und Versionen | 🟡 | Die Spalte Version jeder Projekttabelle wird von einem Skript aus dem Manifest des jeweiligen Repositorys gefüllt und geprüft, sie veraltet also nicht; die einzeiligen Beschreibungen werden von Hand geschrieben. |
-| Fortschrittsbalken | 🟠 | Die Prozentwerte unter jedem Ökosystem werden von Hand gesetzt und sind nur ein Anhaltspunkt: Die 100-%-Marke ist ein voll integriertes Ökosystem auf echter Hardware. |
+| Fortschrittsbalken | 🟢 | Der Prozentwert jedes Ökosystems wird von `scripts/ecosystem_progress.py` aus der Reife und dem Nachweis berechnet, die jedes Repository in seinem eigenen Manifest angibt, und mit dem Dashboard erneuert; der 100%-Meilenstein bleibt ein vollständig integriertes Ökosystem auf echter Hardware. |
 | Gleichstand in acht Sprachen | 🟢 | Die acht README-Dateien behalten dieselben Abschnitte, dieselben GitHub-Links und dieselbe Zahl von Tabellenzeilen, und ein Test schlägt fehl, wenn eine davon abweicht. |
 | Echte Hardware | 🟢 | Nicht zutreffend: Dieses Repository enthält das Profil und seine Automatisierung, nichts hier läuft auf Hardware. |
 | Dokumentation | 🟢 | README in acht Sprachen mit den vier Ökosystemen, die Anleitung zur Zusammenarbeit auf GitHub und die Community-Dateien. |
@@ -73,7 +73,9 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 
 ## 📈 Ökosystem-Fortschritt
 
-`\[██████████▊░░░░░░░░░] 54%` — Nur als Referenz. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem, das auf echter Hardware betrieben wird.
+<!-- progress:hydra-umc -->
+`\[█████████▎░░░░░░░░░░] 46%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 56 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+<!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
 > 🛠️ \*\*Projekt pausiert — physische Hardware wird gebaut.\*\* Die aktive Entwicklung ruht, während die physische Robotikzelle (Rahmen, Verkabelung, die echten CM5- und STM32-Platinen) real aufgebaut wird. So hat die nächste Arbeitsphase echte Hardware zum Ausführen und Validieren, anstatt nur eines Balkens, der nach oben geht. Die Arbeit wird fortgesetzt, sobald dieser Aufbau steht.
@@ -292,6 +294,10 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
+<!-- progress:urtc -->
+`\[███████▋░░░░░░░░░░░░] 38%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 10 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+<!-- /progress:urtc -->
+
 ## 🏗️ Funktionsweise von URTC
 
 1. **Werkzeug-Firmware**: Die eigene STM32-Firmware von URTC führt über 25+ spezialisierte Werkzeugprofile aus (Greifer, Dosierer, Sonden, Spindeln und mehr), jedes mit eigenen Timings, Grenzwerten und Fehlerverhalten.
@@ -344,6 +350,10 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 **A.R.M.O.R. (Autonomous Radar \& Multimodal Observation Range)** ist ein separates, öffentliches Perimetersicherheits- und Heimautomatisierungs-Ökosystem – keine Verbindung zu HYDRA-UMC oder URTC außer demselben Autor und denselben Engineering-Konventionen (versionierte Manifeste, ein gemeinsam genutzter Nachrichtenvertrag, achtsprachige Schnittstellen). Seine Feldknoten überwachen den Perimeter eines Anwesens und dessen Solar-/Elektroinstallation; sein zentraler Server und seine Clients ermöglichen es einem Bediener, zu sehen und zu handeln, was diese melden. Die Versions- und Reifehinweise unten stammen direkt aus den eigenen Manifesten und der Fähigkeitsmatrix jedes Repositories, derselben Ehrlichkeitstronvention, die das Dashboard von HYDRA-UMC bereits verwendet.
 
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
+
+<!-- progress:armor -->
+`\[█████████████░░░░░░░] 65%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 18 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+<!-- /progress:armor -->
 
 ## 🏗️ Wie A.R.M.O.R. aufgebaut ist
 
@@ -398,6 +408,10 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 **EH3D Fabrication Suite** ist ein dediziertes, aus mehreren Repositories bestehendes Software-Ökosystem, das auf schnelles Leiterplatten-Prototyping (PCB), CAM-Werkzeugwegvorbereitung, Computer-Vision-Inspektion, Pick-\&-Place-Management (PnP) und CNC-/Laser-Steuerung über mehrere Maschinen hinweg zugeschnitten ist. Es bietet native Interoperabilität mit **HYDRA-UMC**-Hardwareknoten (STM32H7 + Jetson Orin NX + Hailo NPU) neben einem Werkstatt-Maschinenpark, der industrielle Frässysteme (Bungard CCD über ESP32-S3 RS-232-Gateways), CNC-Fräsen (JuanenCNC) und Diodenlaser-Engraver (JuanenLaser) umfasst.
 
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
+
+<!-- progress:eh3d -->
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 8 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+<!-- /progress:eh3d -->
 
 ## 🏗️ Funktionsweise der EH3D Fabrication Suite
 

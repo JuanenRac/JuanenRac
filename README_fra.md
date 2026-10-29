@@ -33,9 +33,9 @@ Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'
 | Domaine | État | Ce que cela veut dire ici |
 |---|---|---|
 | Tableau de bord et surveillance | 🟢 | Le tableau de bord d'état, la surveillance de la CI, la matrice de santé, la vérification des liens et le résumé des versions s'exécutent de façon planifiée dans GitHub Actions, et leurs dernières exécutions réussissent. |
-| Tests | 🟢 | 44 tests réussissent (`python -m unittest discover -s tests`) : le catalogue, la surveillance, les bannières, l'amorçage de la feuille de route et la parité des README. |
+| Tests | 🟢 | 51 tests réussissent (`python -m unittest discover -s tests`) : le catalogue, la surveillance, les bannières, l'amorçage de la feuille de route et la parité des README. |
 | Catalogue et versions | 🟡 | La colonne Version de chaque tableau de projets est remplie par un script à partir du manifeste de chaque dépôt et vérifiée, donc elle ne se périme pas ; les descriptions d'une ligne sont écrites à la main. |
-| Barres de progression | 🟠 | Les pourcentages sous chaque écosystème sont fixés à la main et ne sont qu'indicatifs : le jalon des 100 % est un écosystème entièrement intégré fonctionnant sur du vrai matériel. |
+| Barres de progression | 🟢 | Le pourcentage de chaque écosystème est calculé par `scripts/ecosystem_progress.py` à partir de la maturité et de la preuve que chaque dépôt déclare dans son propre manifeste, et renouvelé avec le tableau de bord ; le jalon de 100 % reste un écosystème entièrement intégré fonctionnant sur du matériel réel. |
 | Parité en huit langues | 🟢 | Les huit fichiers README gardent les mêmes sections, les mêmes liens GitHub et le même nombre de lignes de tableau, et un test échoue si l'un d'eux dérive. |
 | Matériel réel | 🟢 | Sans objet : ce dépôt contient le profil et son automatisation, rien ici ne tourne sur du matériel. |
 | Documentation | 🟢 | README en huit langues avec les quatre écosystèmes, le guide de collaboration sur GitHub et les fichiers de communauté. |
@@ -73,7 +73,9 @@ Bienvenue dans l'**écosystème HYDRA-UMC**, une plateforme de robotique industr
 
 ## 📈 Progression de l'écosystème
 
-`\[██████████▊░░░░░░░░░] 54%` — À titre indicatif uniquement. Le jalon de 100 % correspond à un écosystème entièrement intégré fonctionnant sur du matériel réel.
+<!-- progress:hydra-umc -->
+`\[█████████▎░░░░░░░░░░] 46%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 56 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+<!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
 > 🛠️ \*\*Projet en pause — construction du matériel réel.\*\* Le développement actif est suspendu pendant que la cellule robotique physique (châssis, câblage, véritables cartes CM5 et STM32) est construite pour de vrai, afin que la prochaine phase de travail dispose de matériel réel pour s'exécuter et être validée, et non pas seulement d'une barre de progression qui avance. Le travail reprendra une fois cet assemblage en place.
@@ -292,6 +294,10 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 
 **Outil de mise à jour :** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
+<!-- progress:urtc -->
+`\[███████▋░░░░░░░░░░░░] 38%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 10 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+<!-- /progress:urtc -->
+
 ## 🏗️ Comment fonctionne URTC
 
 1. **Micrologiciel de l'outil** : Le micrologiciel STM32 propre à URTC exécute chacun des 25+ profils d'outils spécialisés (pinces, pondes, distributeurs, broches, etc.), chacun avec ses propres temporisations, limites et comportements en cas de défaut.
@@ -344,6 +350,10 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 **A.R.M.O.R. (Autonomous Radar \& Multimodal Observation Range)** est un écosystème public distinct de sécurité périmétrique et de domotique — aucun lien avec HYDRA-UMC ou URTC si ce n'est le même auteur et les mêmes conventions d'ingénierie (manifestes versionnés, contrat de message partagé, interfaces en huit langues). Ses nœuds de terrain surveillent le périmètre d'une propriété ainsi que son installation solaire/électrique ; son serveur central et ses clients permettent à un opérateur de voir et d'agir sur ce qu'ils signalent. Les notes de version et de maturité ci-dessous proviennent directement du manifeste et de la matrice de capacités de chaque dépôt, selon la même convention d'honnêteté qu'utilise déjà le tableau de bord d'HYDRA-UMC.
 
 **Outil de mise à jour :** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
+
+<!-- progress:armor -->
+`\[█████████████░░░░░░░] 65%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 18 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+<!-- /progress:armor -->
 
 ## 🏗️ Comment est construit A.R.M.O.R.
 
@@ -398,6 +408,10 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 **EH3D Fabrication Suite** est un écosystème logiciel multi-dépôt dédié, conçu sur mesure pour le prototypage rapide de circuits imprimés (PCB), la préparation de trajectoires d'outils FAO, l'inspection par vision par ordinateur, la gestion Pick \& Place (PnP) et le contrôle CNC/Laser multi-machines. Il offre une interopérabilité native avec les nœuds matériels **HYDRA-UMC** (STM32H7 + Jetson Orin NX + NPU Hailo) ainsi qu'une flotte de machines d'atelier comprenant des systèmes de fraisage industriels (Bungard CCD via passerelles RS-232 ESP32-S3), des routeurs CNC (JuanenCNC) et des graveurs laser à diode (JuanenLaser).
 
 **Outil de mise à jour :** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
+
+<!-- progress:eh3d -->
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 8 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+<!-- /progress:eh3d -->
 
 ## 🏗️ Comment fonctionne EH3D Fabrication Suite
 
