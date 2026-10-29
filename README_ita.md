@@ -421,6 +421,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
    * **EH3D-ISOCAM**: Isolamento delle tracce Gerber RS-274X/X2, algoritmi di Voronoi e rimozione del rame residuo (rubout).
    * **EH3D-DRILLPRO**: Elaborazione foratura Excellon/NC Drill, tabelle punte e cicli di foratura profonda.
    * **EH3D-ROUTEPRO**: Fresatura contorno scheda, creazione linguette di supporto (tabs) e strategie di ingresso in rampa.
+   * **EH3D-BUNGARD-GUI**: Interfaccia moderna per le macchine Bungard CCD: un launcher e un visualizzatore con le viste in pianta e isometrica del lavoro.
    * **EH3D-LASER-CAM**: Algoritmi di dithering raster e modulazione di potenza vettoriale per il taglio laser.
    * **EH3D-STENCILCAM**: Elaborazione di maschere di pasta saldante (pastemask) per la generazione di stencil SMD.
 3. **Esecuzione e Controllo in Tempo Reale**: **EH3D-MOTIONCNC** pilota i movimenti della macchina tramite streaming ad alta velocità G-Code/HP-GL, integrato con **EH3D-AUTOLEVEL** per la mappatura topografica dell'asse Z e **EH3D-PENDANT-GUI** per lo zero manuale (G54/G55) e il jog portatile.
@@ -445,6 +446,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.2|App CAM Excellon/NC Drill, gestione punte da trapano, ottimizzazione percorsi e cicli di foratura profonda.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.2|App CAM fresatura contorni scheda, svuotamento tasche (pocketing), linguette di tenuta e strategie di ingresso in rampa CNC.|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.1|Interfaccia moderna per le macchine Bungard CCD: un launcher dei programmi classici di foratura e fresatura e un visualizzatore del lavoro sul tavolo.|
 |[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|GUI di controllo numerico in tempo reale, visualizzatore G-code 3D, tastatura e supporto streaming multi-macchina.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Database di magazzino utensili condiviso per il monitoraggio delle ore d'usura, preset di taglio e avanzamenti su tutti i tool CAM EH3D.|
 

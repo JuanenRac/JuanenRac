@@ -421,6 +421,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
    * **EH3D-ISOCAM** : Isolation de pistes Gerber RS-274X/X2, algorithmes de Voronoï et enlèvement de cuivre résiduel (rubout).
    * **EH3D-DRILLPRO** : Traitement des perçages Excellon/NC Drill, tables de forets et cycles de perçage profond.
    * **EH3D-ROUTEPRO** : Fraisage de contours de cartes, création d'onglets de maintien (tabs) et stratégies d'entrée en rampe.
+   * **EH3D-BUNGARD-GUI** : Interface moderne pour les machines Bungard CCD : un lanceur et un visualiseur avec les vues en plan et isométrique du travail.
    * **EH3D-LASER-CAM** : Algorithmes de tramage (dithering) raster et modulation de puissance vectorielle pour la découpe laser.
    * **EH3D-STENCILCAM** : Traitement de masques de pâte (pastemask) pour la génération de pochoirs de pâte à braser CMS.
 3. **Exécution et Contrôle en Temps Réel** : **EH3D-MOTIONCNC** pilote le mouvement des machines via un streaming G-Code/HP-GL haute vitesse, intégré avec **EH3D-AUTOLEVEL** pour le palpage topographique en Z et **EH3D-PENDANT-GUI** pour la mise à l'origine manuelle (G54/G55) et les déplacements (jogging).
@@ -445,6 +446,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.2|Application FAO Excellon/NC Drill, gestion des forets, optimisation de trajectoire et cycles de perçage profond.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.2|Application FAO de fraisage de contours de cartes, alésage de cavités (pocketing), onglets de maintien et stratégies d'entrée en rampe CNC.|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.1|Interface moderne pour les machines Bungard CCD : un lanceur des programmes classiques de perçage et de fraisage et un visualiseur du travail sur la table.|
 |[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|GUI de commande numérique en temps réel, visualiseur de G-code 3D, palpage et support de streaming multi-machine.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Base de données de cribles d'outils partagée suivant les heures d'usure, les préréglages de coupe et les avances sur tous les outils FAO EH3D.|
 

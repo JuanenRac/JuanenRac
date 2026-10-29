@@ -421,6 +421,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
    * **EH3D-ISOCAM**: Gerber RS-274X/X2トレースのアイソレーション、ボロノイアルゴリズム、および余剰銅の除去（ラバウト）。
    * **EH3D-DRILLPRO**: Excellon/NCドリル処理、ドリルビットテーブル、ディープホール掘削サイクル。
    * **EH3D-ROUTEPRO**: 基板外形フライス加工、タブ作成、ランプエントリー戦略。
+   * **EH3D-BUNGARD-GUI**: Bungard CCD マシン向けのモダンなインターフェース：ランチャーと、作業の平面図・アイソメ図を表示するビューア。
    * **EH3D-LASER-CAM**: レーザー切断用のラスターディザリングアルゴリズムとベクトル出力変調。
    * **EH3D-STENCILCAM**: SMDはんだペーストステンシル生成のためのペーストマスク処理。
 3. **実行とリアルタイム制御**: **EH3D-MOTIONCNC**は、高速Gコード/HP-GLストリーミングを介して機械の動きを駆動し、地形Zプロービング用の**EH3D-AUTOLEVEL**および手動ゼロ設定（G54/G55）やジョギング用の**EH3D-PENDANT-GUI**と統合されています。
@@ -445,6 +446,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.2|Excellon/NCドリルCAMアプリ、ドリルビット管理、パス最適化、ディープドリルサイクル。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.2|基板輪郭フライス加工CAMアプリ、ポケティング、保持タブ、CNCランプエントリー戦略。|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.1|Bungard CCD マシン向けのモダンなインターフェース：従来の穴あけ・ルーティングプログラムのランチャーと、テーブル上の作業ビューア。|
 |[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|リアルタイム数値制御GUI、3D Gコードビジュアライザー、プロービング、マルチマシーンストリーミングサポート。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|すべてのEH3D CAMツールにわたって摩耗時間、切削プリセット、送りを追跡する共有ツールcribデータベース。|
 

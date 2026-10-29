@@ -421,6 +421,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
    * **EH3D-ISOCAM**: Isolamento de trilhas Gerber RS-274X/X2, algoritmos de Voronoi e remoção de cobre (rubout).
    * **EH3D-DRILLPRO**: Processamento Excellon/NC Drill, tabelas de brocas e ciclos de furação profunda.
    * **EH3D-ROUTEPRO**: Fresagem de contorno de placa, criação de abas (tabs) e estratégias de entrada em rampa.
+   * **EH3D-BUNGARD-GUI**: Interface moderna para as máquinas Bungard CCD: um lançador e um visualizador com as vistas em planta e isométrica do trabalho.
    * **EH3D-LASER-CAM**: Algoritmos de tramagem (dithering) raster e modulação de potência vetorial para corte a laser.
    * **EH3D-STENCILCAM**: Processamento de máscara de pasta para geração de stencils de pasta de solda SMD.
 3. **Execução e Controle em Tempo Real**: **EH3D-MOTIONCNC** aciona o movimento da máquina via streaming G-Code/HP-GL de alta velocidade, integrado com **EH3D-AUTOLEVEL** para apalpamento topográfico em Z e **EH3D-PENDANT-GUI** para definição manual de zero (G54/G55) e jogging.
@@ -445,6 +446,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.2|Aplicação CAM Excellon/NC Drill, gestão de brocas, otimização de caminhos e ciclos de furação profunda.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.2|Aplicação CAM de fresagem de contorno de placa, embolsamento (pocketing), abas de fixação e estratégias de entrada em rampa CNC.|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.1|Interface moderna para as máquinas Bungard CCD: um lançador dos programas clássicos de furação e fresagem e um visualizador do trabalho sobre a mesa.|
 |[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|GUI de controle numérico em tempo real, visualizador de G-code 3D, apalpamento e suporte a streaming multi-máquina.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Banco de dados de ferramentas compartilhado rastreando horas de desgaste, predefinições de corte e avanços em todas as ferramentas CAM EH3D.|
 

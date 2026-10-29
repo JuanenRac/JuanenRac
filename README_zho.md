@@ -421,6 +421,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
    * **EH3D-ISOCAM**：Gerber RS-274X/X2 走线隔离、Voronoi 算法和清除铜箔（rubout）。
    * **EH3D-DRILLPRO**：Excellon/NC 钻孔处理、钻头表和深孔钻孔循环。
    * **EH3D-ROUTEPRO**：板边铣削、夹持凸耳（tab）创建和斜坡切入（ramping entry）策略。
+   * **EH3D-BUNGARD-GUI**：Bungard CCD 机器的现代界面：启动器，以及显示作业平面图和等轴测图的查看器。
    * **EH3D-LASER-CAM**：用于激光切割的光栅抖动（dithering）算法和矢量功率调制。
    * **EH3D-STENCILCAM**：用于 SMD 焊膏钢网生成的阻焊膏掩模（pastemask）处理。
 3. **执行与实时控制**：**EH3D-MOTIONCNC** 通过高速 G-Code/HP-GL 流式传输驱动机械运动，与用于地形 Z 探测的 **EH3D-AUTOLEVEL** 以及用于手持置零（G54/G55）和慢动微调（jogging）的 **EH3D-PENDANT-GUI** 集成。
@@ -445,6 +446,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.2|Excellon/NC 钻孔 CAM 应用、钻头管理、路径优化和深孔钻孔循环。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.2|板轮廓铣削 CAM 应用、型腔铣（pocketing）、保持凸耳和 CNC 斜坡切入策略。|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.1|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
 |[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|实时数字控制 GUI、3D G代码可视化工具、探测和多机流式传输支持。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
 

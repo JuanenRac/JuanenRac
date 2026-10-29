@@ -421,6 +421,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
    * **EH3D-ISOCAM**: Aislamiento de pistas Gerber RS-274X/X2, algoritmos de Voronoi y eliminación de cobre sobrante (rubout).
    * **EH3D-DRILLPRO**: Procesamiento de taladros Excellon/NC, tablas de brocas y ciclos de perforación de agujeros profundos.
    * **EH3D-ROUTEPRO**: Fresado de contornos de placas, creación de pestañas de sujeción (tabs) y estrategias de entrada en rampa.
+   * **EH3D-BUNGARD-GUI**: Interfaz moderna para las máquinas Bungard CCD: un lanzador y un visor con las vistas en planta e isométrica del trabajo.
    * **EH3D-LASER-CAM**: Algoritmos de tramado (dithering) de imágenes y modulación vectorial de potencia para corte láser.
    * **EH3D-STENCILCAM**: Procesamiento de máscaras de pasta para la generación de plantillas de pasta de soldadura SMD.
 3. **Ejecución y Control en Tiempo Real**: **EH3D-MOTIONCNC** pilota el movimiento de la máquina mediante transmisión de código G/HP-GL de alta velocidad, integrado con **EH3D-AUTOLEVEL** para el sondeo topográfico de altura Z y **EH3D-PENDANT-GUI** para el establecimiento de ceros manuales (G54/G55) y desplazamiento (jogging).
@@ -445,6 +446,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.2|Aplicación CAM de taladrado Excellon/NC, gestión de brocas, optimización de trayectorias y ciclos de perforación profunda.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.2|Aplicación CAM de fresado de contornos de placa, vaciados (pocketing), pestañas de sujeción y estrategias de entrada en rampa CNC.|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.1|Interfaz moderna para las máquinas Bungard CCD: un lanzador de los programas clásicos de taladrado y fresado y un visor del trabajo sobre la mesa.|
 |[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|GUI de control numérico en tiempo real, visualizador de código G 3D, palpado y soporte de streaming multi-máquina.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Base de datos compartida de bancos de herramientas que rastrea horas de desgaste, ajustes de corte y avances en todas las herramientas EH3D CAM.|
 

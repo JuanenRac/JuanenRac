@@ -414,6 +414,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
    - **EH3D-ISOCAM**: Gerber RS-274X/X2 track isolation, Voronoi algorithms, and rubout copper removal.
    - **EH3D-DRILLPRO**: Excellon/NC Drill processing, drill bit tables, and deep hole drilling cycles.
    - **EH3D-ROUTEPRO**: Board edge milling, tab creation, and ramping entry strategies.
+   - **EH3D-BUNGARD-GUI**: Modern interface for the Bungard CCD machines: a launcher and a viewer with the plan and isometric views of the job.
    - **EH3D-LASER-CAM**: Raster dithering algorithms and vector power modulation for laser cutting.
    - **EH3D-STENCILCAM**: Pastemask processing for SMD solder paste stencil generation.
 3. **Execution & Real-Time Control**: **EH3D-MOTIONCNC** drives machine movement via high-speed G-Code/HP-GL streaming, integrated with **EH3D-AUTOLEVEL** for topographic Z-probing and **EH3D-PENDANT-GUI** for handheld zero-setting (G54/G55) and jogging.
@@ -439,6 +440,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | :--- | :--- | :--- |
 | [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.0.2 | Excellon/NC Drill CAM app, drill bit management, path optimization, and deep drilling cycles. |
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.0.2 | Board contour milling CAM app, pocketing, holding tabs, and CNC ramp entry strategies. |
+| [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.0.1 | Modern interface for Bungard CCD machines: a launcher for the classic drilling and routing programs and a viewer of the job on the table. |
 | [EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC) | 0.0.1 | Real-time numerical control GUI, 3D G-code visualizer, probing, and multi-machine streaming support. |
 | [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.1 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
