@@ -213,13 +213,15 @@ def main(argv: list[str]) -> int:
     stale = 0
     for file in README_FILES:
         path = ROOT / file
-        original = path.read_text(encoding="utf-8", newline="")
+        with open(path, encoding="utf-8", newline="") as handle:
+            original = handle.read()
         newline = "\r\n" if "\r\n" in original else "\n"
         fresh = update_readme(original.replace("\r\n", "\n"), file, numbers).replace("\n", newline)
         if fresh != original:
             stale += 1
             if "--check" not in argv:
-                path.write_text(fresh, encoding="utf-8", newline="")
+                with open(path, "w", encoding="utf-8", newline="") as handle:
+                    handle.write(fresh)
     if "--check" in argv:
         print(f"ECOSYSTEM_PROGRESS={'FAIL' if stale else 'PASS'} {stale} README file(s) out of date")
         return 1 if stale else 0
