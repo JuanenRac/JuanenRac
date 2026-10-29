@@ -415,28 +415,80 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 
 ## 📁 Catálogo de Proyectos EH3D Fabrication Suite
 
+### 💠 Control central y clientes del operador
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|Panel de control principal del ecosistema para la gestión de proyectos (.eh3dproj), actualizaciones, ajustes globales y descubrimiento de nodos.|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Aplicación de procesamiento CAM para Gerber RS-274X/X2, aislamiento de pistas por Voronoi/Offset, rubout y simulación de grabado.|
-|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.1|Aplicación CAM de taladrado Excellon/NC, gestión de brocas, optimización de trayectorias y ciclos de perforación profunda.|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.1|Aplicación CAM de fresado de contornos de placa, vaciados (pocketing), pestañas de sujeción y estrategias de entrada en rampa CNC.|
-|[EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM)|0.0.1|Aplicación CAM láser para tramado de imágenes, conversión ráster/vector y control dinámico de potencia PWM.|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|GUI de control numérico en tiempo real, visualizador de código G 3D, palpado y soporte de streaming multi-máquina.|
-|[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.1|Procesador de malla de altura topográfica (sondeo Z) e interpolación de código G para compensación de superficies.|
-|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.1|Herramienta de inspección CAM ligera para la alineación de capas Gerber y visualización rápida.|
-|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.1|Utilidad de conversión de máscaras de pasta que genera trayectorias de corte para la fabricación de plantillas SMD con láser y plotter.|
-|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|Gestor de ensamblaje SMD inspirado en OpenPnP, lector de centroides, control de alimentadores y centrado de componentes por visión.|
-|[EH3D-PENDANT-GUI](https://github.com/JuanenRac/EH3D-PENDANT-GUI)|0.0.1|Controlador manual táctil/móvil para desplazamiento en tiempo real, establecimiento de ceros (G54/G55) y paradas de emergencia (E-STOP).|
-|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|Simulador 3D de trayectorias de herramientas y retirada de material, detector de colisiones y estimador de tiempo de ciclo G-Code/HP-GL.|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|Panel de visión Edge AI para alineación de cámaras, entrenamiento de marcadores fiduciales e inspección visual a través de HYDRA-UMC.|
-|[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Base de datos compartida de bancos de herramientas que rastrea horas de desgaste, ajustes de corte y avances en todas las herramientas EH3D CAM.|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.0.1|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
-|[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.1|Nodo ESP32-S3 para la caja de una máquina Bungard CCD: el RS-232 de su unidad de control por Ethernet o Wi-Fi, con las lámparas de la máquina y el variador del husillo en la misma placa.|
-|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|Librería compartida en C++/Python que contiene analizadores sintácticos de Gerber/Excellon/G-Code/HP-GL, geometría 2D/3D y protocolos.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.1|Esquemas de datos, especificaciones de proyectos unificados (.eh3dproj), constantes globales y recursos gráficos de IU.|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.1|Documentación del ecosistema, guías de ensamblaje, especificaciones técnicas de pasarelas y manuales de integración.|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|Librería compartida en C++/Python que contiene analizadores sintácticos de Gerber/Excellon/G-Code/HP-GL, geometría 2D/3D y protocolos.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.1|Detecta, instala y actualiza los repositorios propios del ecosistema (atómico por verificación, sin necesidad de GITHUB\_TOKEN).|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.0.1|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.1|Cliente web en Rust de EH3D-SERVER.|
+
+### 💠 Proyectos de taladrado, fresado y contorneado:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.1|Aplicación CAM de taladrado Excellon/NC, gestión de brocas, optimización de trayectorias y ciclos de perforación profunda.|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.1|Aplicación CAM de fresado de contornos de placa, vaciados (pocketing), pestañas de sujeción y estrategias de entrada en rampa CNC.|
+|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.1|GUI de control numérico en tiempo real, visualizador de código G 3D, palpado y soporte de streaming multi-máquina.|
+|[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Base de datos compartida de bancos de herramientas que rastrea horas de desgaste, ajustes de corte y avances en todas las herramientas EH3D CAM.|
+
+### 💠 Proyectos láser:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM)|0.0.1|Aplicación CAM láser para tramado de imágenes, conversión ráster/vector y control dinámico de potencia PWM.|
+
+### 💠 Proyectos CAM:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Aplicación de procesamiento CAM para Gerber RS-274X/X2, aislamiento de pistas por Voronoi/Offset, rubout y simulación de grabado.|
+|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|Simulador 3D de trayectorias de herramientas y retirada de material, detector de colisiones y estimador de tiempo de ciclo G-Code/HP-GL.|
+
+### 💠 Proyectos Gerber:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.1|Herramienta de inspección CAM ligera para la alineación de capas Gerber y visualización rápida.|
+
+### 💠 Proyectos Pick&Place:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.1|Utilidad de conversión de máscaras de pasta que genera trayectorias de corte para la fabricación de plantillas SMD con láser y plotter.|
+|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|Gestor de ensamblaje SMD inspirado en OpenPnP, lector de centroides, control de alimentadores y centrado de componentes por visión.|
+
+### 💠 Proyectos de nodos:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.1|Nodo ESP32-S3 para la caja de una máquina Bungard CCD: el RS-232 de su unidad de control por Ethernet o Wi-Fi, con las lámparas de la máquina y el variador del husillo en la misma placa.|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.1|Controlador manual táctil de 10 pulgadas / móvil con ESP32-P4/ESP32-C6 para el movimiento en tiempo real (jog), la puesta a cero (G54/G55) y la parada de emergencia de las máquinas Bungard CCD.|
+|[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.1|Controlador manual táctil de 10 pulgadas / móvil de uso general con ESP32-P4/ESP32-C6 para el movimiento en tiempo real (jog), la puesta a cero (G54/G55) y la parada de emergencia.|
+
+### 💠 Proyectos FENIX:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB)|0.0.1|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
+|[EH3D-FENIX-CAD](https://github.com/JuanenRac/EH3D-FENIX-CAD)|0.0.1|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
+|[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.1|Verificador de ingeniería integral para validaciones cruzadas y control de calidad del diseño.|
+|[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.1|Entorno de pruebas encargado de gestionar los casos de uso de referencia y las pruebas de regresión del sistema.|
+|[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.1|Sistema de control de versiones que guarda el historial semántico y la evolución lógica del diseño.|
+|[EH3D-PROJECT-PASSPORT](https://github.com/JuanenRac/EH3D-PROJECT-PASSPORT)|0.0.1|Generador del pasaporte técnico almacenable y reproducible para la auditoría completa de un proyecto.|
+|[EH3D-COMPONENT-INTELLIGENCE](https://github.com/JuanenRac/EH3D-COMPONENT-INTELLIGENCE)|0.0.1|Base de datos técnica avanzada enriquecida con metadatos sobre componentes electrónicos.|
+|[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.1|Gestor de perfiles de las capacidades de la maquinaria de cada fábrica y de las restricciones técnicas de los proveedores.|
+|[EH3D-THERMAL-LAB](https://github.com/JuanenRac/EH3D-THERMAL-LAB)|0.0.1|Laboratorio de simulación térmica progresiva acoplado directamente al diseño físico.|
+|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.1|Módulo de correlación que sirve de puente directo entre los datos de simulación y las mediciones reales de laboratorio.|
+|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.1|Entorno de exploración para comparar y analizar alternativas o ramas del diseño.|
+
+### 💠 Proyectos ANDROID/IOS:
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.1|Aplicación Android cliente de EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.1|Aplicación iOS cliente de EH3D-SERVER.|
+
+### 🛠️ Herramientas complementarias
+|Repositorio|Versión|Descripción|
+|-|-|-|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|Panel de visión Edge AI para alineación de cámaras, entrenamiento de marcadores fiduciales e inspección visual a través de HYDRA-UMC.|
+|[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.1|Procesador de malla de altura topográfica (sondeo Z) e interpolación de código G para compensación de superficies.|
 
 \---
 
