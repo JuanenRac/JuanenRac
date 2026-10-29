@@ -55,7 +55,7 @@ VERSION_HEADER = {
 
 # Each repository may use a different manifest filename depending on which
 # ecosystem it belongs to - tried in this order, first one found wins.
-MANIFEST_CANDIDATES = ("armor.project.json", "urtc.project.json", "hydra-umc.project.json")
+MANIFEST_CANDIDATES = ("armor.project.json", "urtc.project.json", "hydra-umc.project.json", "eh3d.project.json", "electro-hobby-3d.project.json")
 
 REPO_LINK = re.compile(r"^\[([A-Za-z0-9.\-]+)\]\(https://github\.com/JuanenRac/([A-Za-z0-9.\-]+)\)")
 CELL_SPLIT = re.compile(r"(?<!\\)\|")
@@ -120,7 +120,7 @@ def split_row(line: str) -> list[str] | None:
 
 
 def is_separator_row(cells: list[str]) -> bool:
-    return all(re.fullmatch(r":?-{2,}:?", cell) for cell in cells)
+    return all(re.fullmatch(r":?-+:?", cell) for cell in cells)
 
 
 def process(lines: list[str], version_header: str) -> tuple[list[str], int]:
@@ -153,6 +153,8 @@ def process(lines: list[str], version_header: str) -> tuple[list[str], int]:
                 version = repo_version(match.group(2)) or (row_cells[1] if has_version_column else "?")
                 description = row_cells[-1]
                 new_line = f"| {row_cells[0]} | {version} | {description} |"
+                if not lines[i].startswith("| "):   # the translations keep their rows compact: |repo|version|description|
+                    new_line = f"|{row_cells[0]}|{version}|{description}|"
                 if new_line != lines[i]:
                     changed += 1
                 out.append(new_line)
