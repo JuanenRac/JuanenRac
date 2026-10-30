@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import bootstrap_ecosystem_project as bootstrap  # noqa: E402
 import seed_ecosystem_roadmap as seed  # noqa: E402
 
-BOARDS = ("hydra-umc", "urtc", "armor")
+BOARDS = ("hydra-umc", "urtc", "armor", "eh3d")
 
 
 def load(board: str):
@@ -62,7 +62,7 @@ class DefinitionTests(unittest.TestCase):
             _, boot = load(board)
             self.assertIn("None", {name for name, _ in boot.SELECT_FIELDS["Hardware dependency"]})
             seen.add(tuple(name for name, _ in boot.SELECT_FIELDS["Family"]))
-        self.assertEqual(len(seen), 3)
+        self.assertEqual(len(seen), 4)
 
     def test_every_status_decision_names_an_item_and_matches_its_definition(self):
         for board in BOARDS:
@@ -120,6 +120,80 @@ class DefinitionTests(unittest.TestCase):
         titles = {item["title"] for item in module.SEED_ITEMS}
         self.assertIn("Several tool heads on one CAN bus, behind a switch", titles)
         self.assertIn("Adopt URTC-COMMON in every URTC repository", titles)
+
+
+class Eh3dBoardTests(unittest.TestCase):
+    """The EH3D board is built only from what exists or is decided: planned programs are planning cards and nothing planned is ever done."""
+
+    KNOWN = {
+        "EH3D-COMMON", "EH3D-CORE-LIBS", "EH3D-DOCS", "EH3D-DRILLPRO", "EH3D-ROUTEPRO", "EH3D-BUNGARD-GUI", "EH3D-MOTIONCNC", "EH3D-SERVER", "EH3D-STUDIO",
+        "EH3D-NODE-BUNGARD", "EH3D-NODE-BUNGARD-HMI", "EH3D-UPDATER", "ELECTRO-HOBBY-3D-UPDATER",
+    }
+
+    def setUp(self):
+        self.module, self.boot = load("eh3d")
+        import roadmap_defs
+        self.planned = set(roadmap_defs.EH3D_PLANNED_REPOSITORIES)
+
+    @staticmethod
+    def repositories(item):
+        return {part.strip() for part in item["repository"].split("+")}
+
+    def test_every_cited_repository_exists_or_is_marked_planned(self):
+        for item in self.module.SEED_ITEMS:
+            for name in self.repositories(item):
+                self.assertTrue(name in self.KNOWN or name in self.planned, (item["title"], name))
+
+    def test_a_card_about_a_planned_repository_alone_is_a_planning_card(self):
+        for item in self.module.SEED_ITEMS:
+            names = self.repositories(item)
+            if names and names <= self.planned and item["family"] == "Planned applications":
+                self.assertEqual(item.get("status", "Backlog"), "Backlog", item["title"])
+                self.assertEqual(item["maturity"], "Scaffolding", item["title"])
+                self.assertEqual(item["evidence"], "Documentation", item["title"])
+            elif names & self.planned:
+                self.assertNotEqual(item.get("status", "Backlog"), "Done", item["title"])
+
+    def test_nothing_with_real_evidence_or_a_board_is_done(self):
+        for item in self.module.SEED_ITEMS:
+            if item["evidence"] in ("Real machine", "ESP32 board"):
+                self.assertNotEqual(item.get("status", "Backlog"), "Done", item["title"])
+
+    def test_every_planned_repository_has_a_card_and_every_card_has_an_acceptance(self):
+        cited = set()
+        for item in self.module.SEED_ITEMS:
+            cited |= self.repositories(item)
+            self.assertTrue(item["acceptance"].strip(), item["title"])
+            self.assertTrue(item["objective"].strip(), item["title"])
+        self.assertTrue(self.planned <= cited, sorted(self.planned - cited))
+        self.assertTrue(self.KNOWN <= cited, sorted(self.KNOWN - cited))
+
+    def test_the_board_has_the_same_fields_and_views_as_the_others(self):
+        self.assertEqual(self.boot.PROJECT_TITLE, "EH3D Fabrication Suite Roadmap")
+        self.assertEqual(set(self.boot.SELECT_FIELDS), {"Status", "Family", "Maturity", "Evidence", "Hardware dependency", "Priority"})
+        self.assertEqual([name for name, _ in self.boot.VIEWS][0], "Ecosystem Backlog")
+        self.assertIn("Planned applications", {name for name, _ in self.boot.SELECT_FIELDS["Family"]})
+
+
+class AcceptanceTests(unittest.TestCase):
+    def test_no_card_on_any_board_lacks_an_objective_and_an_acceptance(self):
+        for board in BOARDS:
+            module, _ = load(board)
+            for item in module.SEED_ITEMS:
+                self.assertTrue(item["objective"].strip() and item["acceptance"].strip(), (board, item["title"]))
+
+    def test_no_card_with_real_evidence_is_done_without_hardware(self):
+        for board in BOARDS:
+            module, _ = load(board)
+            for item in module.SEED_ITEMS:
+                if item["evidence"].startswith("Real") and item.get("status") == "Done":
+                    self.assertNotEqual(item.get("hardware", "None"), "None", (board, item["title"]))
+
+    def test_the_workflows_offer_every_board(self):
+        for name in ("bootstrap-ecosystem-project.yml", "seed-ecosystem-roadmap.yml"):
+            text = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
+            for board in BOARDS:
+                self.assertRegex(text, r"(?m)^ +- " + board + r"\s*$", (name, board))
 
 
 class PlanningTests(unittest.TestCase):

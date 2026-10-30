@@ -23,7 +23,7 @@ from collections.abc import Mapping
 
 
 API_URL = "https://api.github.com/graphql"
-ROADMAP_NAMES = ("hydra-umc", "urtc", "armor")
+ROADMAP_NAMES = ("hydra-umc", "urtc", "armor", "eh3d")
 PROJECT_TITLE = "HYDRA-UMC Roadmap"
 PROJECT_DESCRIPTION = "Central planning board for actionable HYDRA-UMC and URTC ecosystem work."
 PROJECT_README = """# HYDRA-UMC Roadmap
@@ -105,7 +105,7 @@ VIEWS = (
 
 
 def configure(name: str) -> None:
-    """Point this module at one of the three boards: the title, the text and the choices of Family, Hardware dependency and Evidence change; the rest is the same."""
+    """Point this module at one of the four boards: the title, the text and the choices of Family, Hardware dependency and Evidence change; the rest is the same."""
     global PROJECT_TITLE, PROJECT_DESCRIPTION, PROJECT_README
     if name == "hydra-umc":
         return

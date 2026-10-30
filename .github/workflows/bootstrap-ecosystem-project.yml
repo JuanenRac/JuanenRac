@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       roadmap:
-        description: Which board - hydra-umc, urtc or armor.
+        description: Which board - hydra-umc, urtc, armor or eh3d.
         required: true
         default: hydra-umc
         type: choice
@@ -17,6 +17,7 @@ on:
           - hydra-umc
           - urtc
           - armor
+          - eh3d
       apply:
         description: Create or reconcile the public Project and its structure.
         required: true

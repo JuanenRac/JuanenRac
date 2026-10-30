@@ -925,10 +925,10 @@ WAVE_ITEMS = (
           "All the bridges are functional and tested against fakes and emulators; none has touched a real machine, broker or controller.",
           "A recorded session per bridge showing each action, the stop and the refusal of what is not allowed.",
           status="Blocked", hardware="External machine", blocked_by="Needs the real machines; none has been connected"),
-    _item("Merge or archive the overlapping repositories", "HYDRA-UMC-STUDIO + HYDRA-UMC-SUITE + HYDRA-UMC-IOS-CONTROL + HYDRA-UMC-DSI + HYDRA-UMC-DEV-SERVER + HYDRA-UMC-UPDATER + ELECTRO-HOBBY-3D-UPDATER", "Platform Foundation", "Established", "Documentation", "Low",
-          "Some repositories do the same job (the two desktop clients, the two mobile clients, four updaters); a shared core would cut the number of repositories.",
-          "A written list of what is merged or archived, and each step with its tests passing.",
-          status="Blocked", blocked_by="Decision: which repositories to merge or archive"),
+    _item("Keep the overlapping repositories separate and share code instead", "HYDRA-UMC-STUDIO + HYDRA-UMC-SUITE + HYDRA-UMC-IOS-CONTROL + HYDRA-UMC-DSI + HYDRA-UMC-DEV-SERVER + HYDRA-UMC-UPDATER + ELECTRO-HOBBY-3D-UPDATER", "Platform Foundation", "Established", "Documentation", "Low",
+          "Some repositories do the same job (the two desktop clients, the two mobile clients, four updaters). The decision is that no repository is merged or archived; what they have in common moves into the SDK and shared packages instead.",
+          "Delivered: the decision is taken and recorded; the shared code continues in the SDK and the shared packages, and no repository is merged or archived.",
+          status="Done"),
     # ---- shipped (so the board shows what moved) ----
     _item("Deploy the ecosystem to the real CM5", "HYDRA-UMC-SERVER + HYDRA-UMC-OS + HYDRA-UMC-STUDIO", "Platform Foundation", "Functional", "CM5", "High",
           "Bring the server and its services on the owner's CM5 to the current versions, with a backup taken first.",
@@ -955,7 +955,39 @@ WAVE_ITEMS = (
           "One core used by the four, with each one's own tests passing unchanged. The updater is used daily, so the risk is high."),
 )
 
-SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS
+# The state after the latest round of safety and installation decisions. Everything here is tested on a computer (or against fakes); none of it has met a physical machine.
+LATEST_ITEMS = (
+    _item("Visual servoing asks the safety zones before it moves", "HYDRA-UMC-VISUAL-SERVOING-API + HYDRA-UMC-SAFETY-ZONES", "Robotics & Simulation", "Functional", "Local test", "High",
+          "A servo step is checked against the safety zones service, together with the age of the camera capture, before a motion is allowed; the check is a switch and it is configured in the service unit.",
+          "Delivered in code: a step into a forbidden zone or from a stale capture is refused, with tests on both sides. Open: the service unit has to carry the address of the safety zones service by default, and nothing was run on a robot.",
+          status="In progress"),
+    _item("Approvals for language-driven actions are signed, expire and name the robot", "HYDRA-UMC-SEMANTIC-PLANNER + HYDRA-UMC-VLA-ENGINE + HYDRA-UMC-VOICE-UI + HYDRA-UMC-SERVER", "Vision & AI", "Functional", "Local test", "High",
+          "An approval of an action proposed from language carries an HMAC, an expiry and the robot it is for, so it cannot be replayed on another robot or later; the risk table of the voice assistant is a configuration file.",
+          "Delivered: a forged, expired or mismatched approval is refused in the tests of the planner, the VLA engine and the server. No robot was moved.", status="Done"),
+    _item("Enable and disable a service from the server", "HYDRA-UMC-SERVER + HYDRA-UMC-SDK + HYDRA-UMC-STUDIO + HYDRA-UMC-SUITE", "SDK & Server", "Functional", "Local test", "Normal",
+          "A contract and a route to switch a service on or off, and the same control in both desktop clients, with the state shown in the panels.",
+          "Delivered: the contract is in the SDK with conformance vectors, the route is in the server and the clients call it. Not tried on the CM5 with the real units.", status="Done"),
+    _item("TLS by default in new installations, with the choice kept in the settings", "HYDRA-UMC-SERVER + HYDRA-UMC-OS + HYDRA-UMC-STUDIO", "Platform Foundation", "Functional", "Local test", "High",
+          "A fresh installation starts with TLS on and an existing one keeps its choice; the switch is in the settings of Studio.",
+          "Delivered in code and tested for a fresh and an upgraded installation. Open: a fresh installation on the CM5 and the clients that trust its certificate.", status="In progress", hardware="CM5"),
+    _item("The iOS and tablet apps trust a server certificate on first use and then pin it", "HYDRA-UMC-IOS-CONTROL + HYDRA-UMC-DSI", "Applications", "Functional", "Local test", "High",
+          "Trust on first use with a visible fingerprint, a pin afterwards and a clear refusal when it changes.",
+          "Delivered: the rules are unit tested in both apps. The screens have not run on a device.", status="Done"),
+    _item("Orientation as quaternions and a shared Pose in the SDK", "HYDRA-UMC-SDK + HYDRA-UMC-VISUAL-SERVOING-API + HYDRA-UMC-VLA-ENGINE", "SDK & Server", "Established", "Local test", "Normal",
+          "Angles and loose arrays gave frames that disagreed; a pose is a position in meters and a unit quaternion in a declared frame.",
+          "Delivered: the Pose contract is in the SDK and the servoing and the VLA engine use quaternions. Open: the Go, Rust and TypeScript types of the SDK.", status="In progress"),
+    _item("A stopped state that no job can start from", "HYDRA-UMC-SDK + HYDRA-UMC-SERVER + HYDRA-UMC-STUDIO", "Platform Foundation", "Functional", "Local test", "Normal",
+          "A machine that is stopped stays stopped until an operator resets it; it is not idle.",
+          "Delivered: the state is in the SDK, the server refuses jobs on it and the clients show it. Never seen on a real controller.", status="Done"),
+    _item("One GRBL line shared by several clients, off by default", "HYDRA-UMC-BRIDGE-CNC", "External Automation Bridges", "Functional", "Local test", "Low",
+          "A multiplexer lets more than one client talk to one GRBL controller without interleaving the commands; it is off unless it is switched on.",
+          "Delivered: tested against a scripted line. Not tried on a real GRBL controller.", status="Done"),
+    _item("Run the CM5 test bench end to end", "HYDRA-UMC-OS + HYDRA-UMC-SERVER + HYDRA-UMC-DOCS", "Platform Foundation", "Established", "CM5", "Normal",
+          "The bench document lists what to run on the real CM5: the services, TLS, the multiplexer, the canary of the operations agent and the update paths. None of it has been run as a bench.",
+          "A record per item with the versions and what was observed; a failure becomes a card.", hardware="CM5"),
+)
+
+SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS
 
 
 def _status(status: str, blocked_by: str = "None") -> dict:
@@ -971,6 +1003,8 @@ HYDRA_STATUS_UPDATES = {
     "Separate interpretation, proposal and authorization for language-driven actions": _status("In progress"),
     "Choose a shared signing scheme for releases": _status("In progress"),
     "Split read, propose and execute permissions in the ops agent": _status("In progress"),
+    "Keep the overlapping repositories separate and share code instead": _status("Done"),
+    "Ed25519 firmware signing in the STM32 bootloaders, with a transition period": _status("Blocked", "Postponed by decision until a populated board and a recovery path exist"),
     "Bench-validate FDCAN, SPI and watchdog start-up": _status("Blocked", "No populated board of the custom PCBs exists"),
     "Bring up the smart rack board and its presence sensors": _status("Blocked", "No smart rack board has been built"),
     "Validate the legged-robot bridge against a real platform": _status("Blocked", "Needs a real legged robot"),
@@ -978,7 +1012,9 @@ HYDRA_STATUS_UPDATES = {
     "Bench-test the laser interlock chain": _status("Blocked", "Needs a laser machine with its interlocks and an independent reviewer"),
 }
 
-HYDRA_RENAMES: dict = {}
+HYDRA_RENAMES: dict = {
+    "Merge or archive the overlapping repositories": "Keep the overlapping repositories separate and share code instead",
+}
 
 
 def apply_status_updates(items, updates):
@@ -1104,7 +1140,7 @@ _PREFIXES: tuple[str, ...] | None = None   # None: the HYDRA-UMC board, which co
 
 def _belongs(name: str) -> bool:
     if _PREFIXES is None:
-        return not name.startswith(("URTC", "ARMOR"))
+        return not name.startswith(("URTC", "ARMOR", "EH3D", "ELECTRO-HOBBY-3D"))
     return name.startswith(_PREFIXES)
 
 

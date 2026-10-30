@@ -33,7 +33,7 @@ Cada linha é uma parte deste repositório e a luz diz até onde chega hoje. É 
 | Área | Estado | O que significa aqui |
 |---|---|---|
 | Painel e vigilância | 🟢 | O painel de estado, a vigilância do CI, a matriz de saúde, a verificação de ligações e o resumo de versões correm de forma agendada no GitHub Actions, e as últimas execuções passam. |
-| Testes | 🟢 | Passam 51 testes (`python -m unittest discover -s tests`): o catálogo, a vigilância, os banners, a criação do roteiro e a paridade dos README. |
+| Testes | 🟢 | Passam 59 testes (`python -m unittest discover -s tests`): o catálogo, a vigilância, os banners, a criação do roteiro dos quatro quadros (HYDRA-UMC, URTC, A.R.M.O.R. e EH3D) e a paridade dos README. |
 | Catálogo e versões | 🟡 | A coluna Versão de cada tabela de projetos é preenchida por um script a partir do manifesto de cada repositório e verificada, por isso não fica desatualizada; as descrições de uma linha são escritas à mão. |
 | Barras de progresso | 🟢 | A percentagem de cada ecossistema é calculada por `scripts/ecosystem_progress.py` com a maturidade e a evidência que cada repositório declara no seu próprio manifesto, e renovada com o painel; o marco de 100% continua a ser um ecossistema totalmente integrado a funcionar em hardware real. |
 | Paridade em oito idiomas | 🟢 | Os oito README mantêm as mesmas secções, as mesmas ligações do GitHub e o mesmo número de linhas de tabela, e um teste falha quando um deles se desvia. |

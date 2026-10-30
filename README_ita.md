@@ -33,7 +33,7 @@ Ogni riga è una parte di questo repository e il semaforo dice a che punto è og
 | Area | Stato | Cosa significa qui |
 |---|---|---|
 | Dashboard e monitoraggio | 🟢 | Il dashboard di stato, il controllo della CI, la matrice di salute, il controllo dei link e il riepilogo dei rilasci girano in modo programmato in GitHub Actions e le loro ultime esecuzioni passano. |
-| Test | 🟢 | 51 test passano (`python -m unittest discover -s tests`): il catalogo, il monitoraggio, i banner, la creazione della roadmap e la parità dei README. |
+| Test | 🟢 | 59 test passano (`python -m unittest discover -s tests`): il catalogo, il monitoraggio, i banner, la creazione della roadmap delle quattro bacheche (HYDRA-UMC, URTC, A.R.M.O.R. ed EH3D) e la parità dei README. |
 | Catalogo e versioni | 🟡 | La colonna Versione di ogni tabella di progetti è compilata da uno script a partire dal manifesto di ciascun repository e verificata, quindi non invecchia; le descrizioni di una riga sono scritte a mano. |
 | Barre di avanzamento | 🟢 | La percentuale di ogni ecosistema è calcolata da `scripts/ecosystem_progress.py` con la maturità e la prova che ogni repository dichiara nel proprio manifesto, e si rinnova con il dashboard; il traguardo del 100% resta un ecosistema completamente integrato che funziona su hardware reale. |
 | Parità in otto lingue | 🟢 | Gli otto file README mantengono le stesse sezioni, gli stessi link GitHub e lo stesso numero di righe di tabella, e un test fallisce se uno di essi diverge. |

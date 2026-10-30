@@ -166,9 +166,19 @@ retain least-privilege permissions.
 
 ## One board for each ecosystem
 
-There are three boards with the same fields and views, so whoever knows one knows
-all of them: **HYDRA-UMC Roadmap**, **URTC Roadmap** and **A.R.M.O.R. Roadmap**.
-Both workflows above take a `roadmap` input (`hydra-umc`, `urtc` or `armor`). The
-URTC and A.R.M.O.R. boards have their own families and hardware dependencies and
-their own curated list of items (`tools/roadmap_defs.py`); the coverage report of a
-run only lists the repositories that belong to the chosen board.
+There are four boards with the same fields and views, so whoever knows one knows
+all of them: **HYDRA-UMC Roadmap**, **URTC Roadmap**, **A.R.M.O.R. Roadmap** and
+**EH3D Fabrication Suite Roadmap**. Both workflows above take a `roadmap` input
+(`hydra-umc`, `urtc`, `armor` or `eh3d`). The URTC, A.R.M.O.R. and EH3D boards have
+their own families, hardware dependencies and evidence levels and their own curated
+list of items (`tools/roadmap_defs.py`); the coverage report of a run only lists the
+repositories that belong to the chosen board.
+
+The EH3D board is built only from what exists or is decided. A program that is a plan
+(an empty or not yet created repository) appears as a planning card in the family
+*Planned applications*: Backlog, Scaffolding, documentation evidence, never done. The
+evidence levels of that board include `ESP32 board` and `Real machine`; a card with
+either of them is never marked `Done` until a recorded run exists. To create the board
+and fill it, run the bootstrap workflow with `roadmap=eh3d` and `apply=true`, then the
+seed workflow with `roadmap=eh3d` and `apply=true`; later, run the seed workflow with
+`reconcile_status=true` on any board to apply its `STATUS_UPDATES` and `RENAMES`.
