@@ -182,7 +182,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.3|S字運動学を備えたSTM32H745/G474用コアモーション制御ファームウェア。|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.4|S字運動学を備えたSTM32H745/G474用コアモーション制御ファームウェア。|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.3|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.3|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.2|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
@@ -412,7 +412,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 **アップデーター：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — 実際のデータから算出しています。11 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — 実際のデータから算出しています。12 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:eh3d -->
 
 ## 🏗️ EH3D Fabrication Suite の仕組み

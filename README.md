@@ -184,7 +184,7 @@ for all four - can check versions and build/update any other project.
 ### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.3 | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.4 | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.1.3 | Headless Node.js API and WebSocket backend for robotic orchestration. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.0.3 | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.7.2 | High-performance Python/Qt desktop application for industrial automation. |
@@ -406,7 +406,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[██░░░░░░░░░░░░░░░░░░] 10%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██░░░░░░░░░░░░░░░░░░] 10%` — Calculated from real data: the maturity and the evidence that each of its 12 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 ## 🏗️ How EH3D Fabrication Suite Works

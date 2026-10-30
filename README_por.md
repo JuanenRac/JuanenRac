@@ -182,7 +182,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.3|Firmware principal de controlo de movimento para STM32H745/G474 com cinemática de Curva S.|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.4|Firmware principal de controlo de movimento para STM32H745/G474 com cinemática de Curva S.|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.3|API Node.js sem interface (headless) e backend WebSocket para orquestração robótica.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.3|Dashboard web avançado baseado em React para monitorização e controlo 3D de robôs.|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.2|Aplicação de desktop Python/Qt de alto desempenho para automação industrial.|
@@ -412,7 +412,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 **Atualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 11 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 12 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:eh3d -->
 
 ## 🏗️ Como a EH3D Fabrication Suite Funciona

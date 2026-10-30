@@ -182,7 +182,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.3|适用于 STM32H745/G474 且带 S 曲线运动学的核心运动控制固件。|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.4|适用于 STM32H745/G474 且带 S 曲线运动学的核心运动控制固件。|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.3|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.3|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.2|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
@@ -412,7 +412,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — 根据真实数据计算：其 11 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — 根据真实数据计算：其 12 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 ## 🏗️ EH3D Fabrication Suite 的工作原理
