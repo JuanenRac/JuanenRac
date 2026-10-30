@@ -186,11 +186,11 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.3|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.3|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.2|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
-|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.2.7|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.7.2|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
-|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.2.7|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
+|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.2.8|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.7.3|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
+|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.2.8|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.1.5|用于验证机器人模型并将其推送到目录中的图形化 URDF 编辑器。|
-|[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.1.7|桌面 STL 模型编辑器——在共享模型目录中转换、替换、移除和添加真实部件。|
+|[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.1.8|桌面 STL 模型编辑器——在共享模型目录中转换、替换、移除和添加真实部件。|
 
 ### 👁️ 视觉 AI 节点（Hailo-8 优化）
 
@@ -207,7 +207,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.5|用于逻辑任务规划和语音控制的语义推理节点。|
-|[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.1.8|用于复杂任务执行的视觉-语言-动作（Vision-Language-Action）模型实现。|
+|[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.1.9|用于复杂任务执行的视觉-语言-动作（Vision-Language-Action）模型实现。|
 |[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.1.9|用于自然语言操作员交互的本地私有 STT/TTS 管道。|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.1.4|具有上下文感知错误恢复功能的基于 LLM 的任务编排器。|
 |[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.5|经技术手册和源代码训练的基于 RAG 的 AI 助手。|
@@ -227,7 +227,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.0|用于无风险机器人测试的高保真物理仿真引擎。|
+|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.1|用于无风险机器人测试的高保真物理仿真引擎。|
 |[HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA)|0.0.9|URDF 链的真实世界物理仿真（MuJoCo/PhysX）。|
 |[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.1.0|用于真实与虚拟命令同步的硬件在环（Hardware-in-the-loop）接口。|
 |[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.1|视觉节点训练数据集的过程生成器。|
@@ -248,7 +248,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.1.6|适配工厂标准（OPC-UA/MQTT）的工业 4.0 互操作性桥梁。|
 |[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.0|将 HydraState 机器人对象映射到标准 OPC-UA 节点。|
 |[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.1.7|用于 IoT 集成和外部仪表板的遥测桥接器。|
-|[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.1.9|用于机床和机器人健康监测的标准化接口。|
+|[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.2.0|用于机床和机器人健康监测的标准化接口。|
 
 ### 🌉 外部自动化桥接
 
@@ -267,7 +267,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.2.6|具备触觉安全警报的可穿戴紧急仪表板。|
+|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.2.7|具备触觉安全警报的可穿戴紧急仪表板。|
 |[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.1.9|用于车队自动化、刷机（flashing）和运维的命令行界面。|
 |[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.1.7|为 Web 仪表板提供自然语言见解的 AI 扩展。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.4.9|用于检测、安装和手动更新每个生态系统项目的跨平台 GUI/CLI 工具。|
@@ -295,7 +295,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 **更新器：** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:urtc -->
-`\[███████▋░░░░░░░░░░░░] 38%` — 根据真实数据计算：其 10 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[███████░░░░░░░░░░░░░] 35%` — 根据真实数据计算：其 11 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:urtc -->
 
 ## 🏗️ URTC 的工作原理
@@ -305,7 +305,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 3. **实时诊断**：URTC-TESTER 无需完整的车间设置，即可根据其声明的配置文件验证工具的实时 CAN 行为；URTC-WEB-STUDIO 则通过 Web Serial 从浏览器标签页执行相同的操作，无需安装任何软件。
 4. **存储与生命周期**：URTC-SMART-RACK 在作业之间存放工具，在交接前预热工具，并针对每个物理工具（而非工具类型）维护生命周期审计追踪（循环次数、故障、最后校准）。
 5. **主动 QA**：URTC-VISION-TOOL 本身就是一个工具——一个带有集成热成像和 RGB 相机的工具头，用于在线质量检查，而不是螺栓固定在其他工具上的外部摄像头。
-6. **共享基础**：**URTC-COMMON** 将工具头的 CAN 协议作为数据保存，并带有生成的代码和一致性向量；**URTC-DOCS** 包含架构、安全基线和能力矩阵。
+6. **共享基础**：**URTC-COMMON** 将工具头的 CAN 协议作为数据保存，并带有生成的代码和一致性向量；**URTC-DOCS** 包含架构、安全基线和能力矩阵。 **URTC-DEVTOOLS** 将整个家族共享的仓库工具作为一个带版本的集合保存。
 
 ## 🛠️ 技术栈
 
@@ -322,7 +322,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.1|适用于 25+ 种专用工具的通用机器人工具控制器固件。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.4.2|适用于 25+ 种专用工具的通用机器人工具控制器固件。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.4.2|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.4.3|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.3.8|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
@@ -332,6 +332,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.2|URTC 生态系统的架构、接口、安全基线、能力矩阵、CAN 协议研究笔记和生成的项目目录，外加比较所有仓库的工具。|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.0.9|作为数据的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量以及 Python 传输层。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.3|URTC CAN 总线前的网关：允许的标识符列表、速率限制和会话密钥。|
+|[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|URTC 家族共享的仓库工具，作为一个带版本的集合，每个仓库中有一个锁定文件。|
 
 \---
 
@@ -352,15 +353,15 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 **更新器：** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:armor -->
-`\[█████████████░░░░░░░] 65%` — 根据真实数据计算：其 18 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[████████████▍░░░░░░░] 62%` — 根据真实数据计算：其 19 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:armor -->
 
 ## 🏗️ A.R.M.O.R. 是如何构建的
 
 1. **共享契约**：**ARMOR-COMMON** 拥有消息含义——JSON Schema、Python 验证器以及所有其他仓库消费且从不重新定义的生成的 TypeScript/Kotlin 类型。
-2. **现场节点**：用于雷达/存在感测的 ESP32-S3 固件（**ARMOR-RADAR**）、太阳能逆变器和电池监控（**ARMOR-SOLAR**）、带开关控制的电量计量（**ARMOR-ELECTRICAL**）以及房屋的报警面板（**ARMOR-ALARM**）；Python 代理（**ARMOR-NETWORK**）从已连接的机器上监视房屋自身的局域网和互联网连通性。
+2. **现场节点**：用于雷达/存在感测的 ESP32-S3 固件（**ARMOR-NODE-RADAR**）、太阳能逆变器和电池监控（**ARMOR-NODE-SOLAR**）、带开关控制的电量计量（**ARMOR-NODE-ELECTRICAL**）以及房屋的报警面板（**ARMOR-NODE-ALARM**）；Python 代理（**ARMOR-NETWORK**）从已连接的机器上监视房屋自身的局域网和互联网连通性。
 3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、警报、自动化和相机证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 添加了可解释的视觉策略和离线语音意图，这些意图绝不会自行触发任何动作。
-4. **操作员客户端**：**ARMOR-STUDIO**（Web 端）和 **ARMOR-ANDROID-CONTROL**（移动端）是中央服务器的客户端，绝不直接连接现场网络。**ARMOR-HMI** 是墙上的触摸屏面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示系统状态、布防、撤防和确认，并将成为语音助理的驻留地。
+4. **操作员客户端**：**ARMOR-STUDIO**（Web 端）和 **ARMOR-ANDROID-CONTROL**（移动端）、**ARMOR-IOS-CONTROL**（iPhone）是中央服务器的客户端，绝不直接连接现场网络。**ARMOR-NODE-HMI** 是墙上的触摸屏面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示系统状态、布防、撤防和确认，并将成为语音助理的驻留地。
 5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下重放场景和可重复的故障；**ARMOR-HARDWARE** 承载外壳设计及其台架验收矩阵。
 6. **生态系统运维**：**ARMOR-UPDATER** 在机器上发现、安装和更新每个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的通过验证实现原子化的设计；**ARMOR-DOCS** 是规范的架构文档和能力矩阵。**ARMOR-STUDIO** 还可以使用生态系统发布密钥签名的软件包更新中央机器上的服务，在安装前检查每个签名。
 
@@ -373,11 +374,11 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.7.8|消息契约、验证器、一致性向量、生成的类型、OpenAPI、共享启动器。|
-|[ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR)|0.8.0.5|ESP32-S3 现场节点固件、LD2450/LD2461 及存在传感器的解码器、其经主机测试的核心、带进度条和实时地图的 GitHub 更新。|
-|[ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR)|0.6.0|太阳能网关节点：ESP32-S3 固件及其面板（十个串口），以及 Voltronic/MPP Solar 逆变器和 Pylontech/ANT-BMS 电池的协议。|
-|[ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL)|0.5.1|电气节点：固件（单个串口上的 16 个 PZEM 电表、Web 面板、MQTT）、电表帧、网络读数消息以及开关切换规则。|
-|[ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM)|0.4.9|报警节点及面板：其固件（有线防区、警报器、Zigbee 传感器及警报器、七种语言的 Web 面板）以及布防、延迟、报警和 PIN 码规则，已在计算机上测试；在服务器离线时继续警戒并接管 Zigbee 无线电。从未在板卡上运行过。|
-|[ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI)|0.4.1|Waveshare ESP32-S3-Touch-LCD-7C-BOX 触摸面板：壁挂屏幕上的系统状态、布防/撤防/确认、一键通（push-to-talk）语音以及节点的网页；该固件从未在板卡上运行过。|
+|[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.0.5|ESP32-S3 现场节点固件、LD2450/LD2461 及存在传感器的解码器、其经主机测试的核心、带进度条和实时地图的 GitHub 更新。|
+|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.0|太阳能网关节点：ESP32-S3 固件及其面板（十个串口），以及 Voltronic/MPP Solar 逆变器和 Pylontech/ANT-BMS 电池的协议。|
+|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.1|电气节点：固件（单个串口上的 16 个 PZEM 电表、Web 面板、MQTT）、电表帧、网络读数消息以及开关切换规则。|
+|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.4.9|报警节点及面板：其固件（有线防区、警报器、Zigbee 传感器及警报器、七种语言的 Web 面板）以及布防、延迟、报警和 PIN 码规则，已在计算机上测试；在服务器离线时继续警戒并接管 Zigbee 无线电。从未在板卡上运行过。|
+|[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.1|Waveshare ESP32-S3-Touch-LCD-7C-BOX 触摸面板：壁挂屏幕上的系统状态、布防/撤防/确认、一键通（push-to-talk）语音以及节点的网页；该固件从未在板卡上运行过。|
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.4|局域网监视器：家中网络上的设备、互联网状态（以及中断归咎于哪一方）、变化情况；仅具备观察功能。|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.0.7|中央状态（持久化）、用户、事件历史记录、警报、设备、自动化、太阳能和电气读数、局域网、系统服务、相机看门狗、相机、证据、审计、必须签名的节点固件更新、Telegram 和 Home Assistant 通知、语音命令以及从外部使用（双因素认证、可终止的会话、远程策略）。|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.2.7|运动监视服务、视觉配置文件选择、可解释的融合策略、引擎注册表。|
@@ -385,6 +386,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.1|离线语音服务：八种语言的十五条命令、壁挂面板的语音交互、通过签名令牌确认的布防和撤防。|
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.1.1|操作控制台、警报、设备、自动化、用户、历史记录、警报规则、PTZ、雷达地图、太阳能和电气菜单、局域网、系统服务、天气、节点查找器与配置、节点固件更新、通知以及 2D/3D 站点设计器。|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.7.8|Android 操作员客户端：布防和撤防、警报、设备、实时雷达、太阳能逆变器和电池、历史记录、警报通知、书面和口头命令助手以及节点配置器。|
+|[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.1|iPhone 操作员客户端：状态、布防、告警、报警面板、摄像头和助理，提供八种语言。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.6|外壳设计（雷达角落外壳；太阳能、电气和报警节点的勾选框）以及台架验收矩阵。|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.6.8|Compose 拓扑、中央服务器测试台安装程序、备份与恢复、TLS 配置文件、自有 MQTT 经纪商、观察和语音服务、管理代理。|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.2.6|场景和可重复故障。|
@@ -410,7 +412,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — 根据真实数据计算：其 10 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — 根据真实数据计算：其 11 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 ## 🏗️ EH3D Fabrication Suite 的工作原理
@@ -424,7 +426,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
    * **EH3D-BUNGARD-GUI**：Bungard CCD 机器的现代界面：启动器，以及显示作业平面图和等轴测图的查看器。
    * **EH3D-LASER-CAM**：用于激光切割的光栅抖动（dithering）算法和矢量功率调制。
    * **EH3D-STENCILCAM**：用于 SMD 焊膏钢网生成的阻焊膏掩模（pastemask）处理。
-3. **执行与实时控制**：**EH3D-MOTIONCNC** 通过高速 G-Code/HP-GL 流式传输驱动机械运动，与用于地形 Z 探测的 **EH3D-AUTOLEVEL** 以及用于手持置零（G54/G55）和慢动微调（jogging）的 **EH3D-PENDANT-GUI** 集成。
+3. **执行与实时控制**：**EH3D-MOTIONCNC** 在一个窗口中驱动机器（点动、置零、G 代码运行、路径显示；目前针对模拟机器），是机器控制程序的基础，并与通过机器节点规划和运行钻孔与铣削任务的 **EH3D-SERVER**、用于地形 Z 探测的 **EH3D-AUTOLEVEL** 以及用于手持置零（G54/G55）和慢动微调（jogging）的 **EH3D-NODE-HMI-GUI** 集成。
 4. **边缘 AI 与检测**：**EH3D-VISION-STUDIO** 利用 HYDRA-UMC 的 Hailo NPU 执行实时相机对准、自动基准点（fiducial）检测和工具磨损检测。
 5. **组装与辅助数据**：**EH3D-PNP-MANAGER** 管理质心贴片（Pick \& Place）坐标和供料器（feeder），而 **EH3D-TOOL-MANAGER** 在所有 CAM 模块中维护统一的刀具库（tool crib）数据库。
 
@@ -434,9 +436,9 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|用于项目管理（.eh3dproj）、更新、全局设置和节点发现的主生态系统仪表板。|
-|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.3|数据架构、统一项目（.eh3dproj）规范、全局常量和 UI 图形资产。|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.3|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.1|生态系统文档、组装指南、网关技术规范和集成手册。|
-|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|包含 Gerber/Excellon/G-Code/HP-GL 解析器、2D/3D 几何图形和协议的共享 C++/Python 库。|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.2|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.0.1|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.1|EH3D-SERVER 的 Rust Web 客户端。|
@@ -444,10 +446,10 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 钻孔／铣边／铣削项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.5|Excellon/NC 钻孔 CAM 应用、钻头管理、路径优化和深孔钻孔循环。|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.5|板轮廓铣削 CAM 应用、型腔铣（pocketing）、保持凸耳和 CNC 斜坡切入策略。|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.5|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的钻孔流程：八种语言的文本模式界面，可用模拟器或真实机器。|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.5|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.3|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.2|实时数字控制 GUI、3D G代码可视化工具、探测和多机流式传输支持。|
+|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.3|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
 
 ### 💠 激光项目：
@@ -476,7 +478,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.3|用于 Bungard CCD 机器机箱的 ESP32-S3 节点：通过以太网或 Wi-Fi 访问其控制单元的 RS-232，机器的指示灯和主轴驱动器在同一块板上。|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.1|用于 Bungard CCD 机器的 ESP32-P4/ESP32-C6 10 英寸触摸屏／移动手动控制器，支持实时点动、归零设置（G54/G55）和急停。|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.1|基于 ESP32-P4 的 10.1 英寸触摸屏，用于控制 Bungard CCD 机器：桌面程序的各个界面、八种语言的语音提示与语音指令，以及不经过屏幕的硬件急停。|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.1|通用的 ESP32-P4/ESP32-C6 10 英寸触摸屏／移动手动控制器，支持实时点动、归零设置（G54/G55）和急停。|
 
 ### 💠 FENIX 项目：

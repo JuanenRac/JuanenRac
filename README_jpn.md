@@ -186,11 +186,11 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.3|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.3|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.2|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
-|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.2.7|7インチ産業用ディスプレイ（CM5）向けの専用Flutterベースのタッチインターフェース。|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.7.2|リモートロボット管理用の生体認証を備えたネイティブKotlinモバイルアプリ。|
-|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.2.7|リアルタイムWebSocket同期を備えたiOS/iPadOS用Flutterモバイルアプリ。|
+|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.2.8|7インチ産業用ディスプレイ（CM5）向けの専用Flutterベースのタッチインターフェース。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.7.3|リモートロボット管理用の生体認証を備えたネイティブKotlinモバイルアプリ。|
+|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.2.8|リアルタイムWebSocket同期を備えたiOS/iPadOS用Flutterモバイルアプリ。|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.1.5|ロボットモデルを検証してカタログにプッシュするためのグラフィカルURDFエディター。|
-|[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.1.7|デスクトップSTLモデルエディター - 共有モデルカタログ内の実際のパーツの変換、置換、削除、追加を行います。|
+|[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.1.8|デスクトップSTLモデルエディター - 共有モデルカタログ内の実際のパーツの変換、置換、削除、追加を行います。|
 
 ### 👁️ ビジョンAIノード（Hailo-8最適化）
 
@@ -207,7 +207,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.5|論理的ミッションプランニングおよび音声制御用の意味的推論ノード。|
-|[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.1.8|複雑なタスク実行のためのVision-Language-Actionモデルの実装。|
+|[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.1.9|複雑なタスク実行のためのVision-Language-Actionモデルの実装。|
 |[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.1.9|オペレーターの自然言語インタラクションのためのローカルかつプライベートなSTT/TTSパイプライン。|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.1.4|コンテキスト認識エラー回復機能を備えたLLMベースのミッションオーケストレーター。|
 |[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.5|技術マニュアルとソースコードでトレーニングされたRAGベースのAIアシスタント。|
@@ -227,7 +227,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.0|リスクのないロボットテストのための高忠実度物理シミュレーションエンジン。|
+|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.1|リスクのないロボットテストのための高忠実度物理シミュレーションエンジン。|
 |[HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA)|0.0.9|URDFチェーンの実世界物理シミュレーション（MuJoCo/PhysX）。|
 |[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.1.0|実コマンドと仮想コマンドの同期のためのHardware-in-the-Loopインターフェース。|
 |[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.1|ビジョンノード向けトレーニングデータセットの手続き型ジェネレーター。|
@@ -248,7 +248,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.1.6|ファクトリー標準（OPC-UA/MQTT）のためのインダストリー4.0相互運用性ブリッジ。|
 |[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.0|HydraStateロボットオブジェクトの標準OPC-UAノードへのマッピング。|
 |[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.1.7|IoT統合および外部ダッシュボード向けのテレメトリブリッジ。|
-|[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.1.9|工作機械およびロボットの健康状態監視用の標準化されたインターフェース。|
+|[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.2.0|工作機械およびロボットの健康状態監視用の標準化されたインターフェース。|
 
 ### 🌉 外部自動化ブリッジ
 
@@ -267,7 +267,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.2.6|触覚による安全性アラートを備えたウェアラブル緊急ダッシュボード。|
+|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.2.7|触覚による安全性アラートを備えたウェアラブル緊急ダッシュボード。|
 |[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.1.9|フリートの自動化、フラッシング、DevOpsのためのコマンドラインインターフェース。|
 |[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.1.7|自然言語による洞察を提供するWebダッシュボード用AI拡張。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.4.9|すべてのエコシステムプロジェクトを検出し、インストールし、手動で更新するためのクロスプラットフォームGUI/CLIツール。|
@@ -295,7 +295,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 **アップデーター：** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:urtc -->
-`\[███████▋░░░░░░░░░░░░] 38%` — 実際のデータから算出しています。10 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[███████░░░░░░░░░░░░░] 35%` — 実際のデータから算出しています。11 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:urtc -->
 
 ## 🏗️ URTCの仕組み
@@ -305,7 +305,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 3. **ライブ診断**: URTC-TESTERは、完全な工房のセットアップを必要とせず、宣言されたプロファイルに対してツールのリアルタイムCAN動作を検証します。URTC-WEB-STUDIOは、インストール不要で、Web Serialを介したブラウザタブから同様の処理を行います。
 4. **ストレージとライフサイクル**: URTC-SMART-RACKはジョブ間にツールを保持し、ハンドオフ前に1つを予熱し、ツールタイプごとではなく物理ツールごとにライフサイクル監査証跡（サイクル、障害、最後の校正）を維持します。
 5. **アクティブQA**: URTC-VISION-TOOL自体がツールです。外部カメラを他のツールにボルト留めしたものではなく、プロセス内品質検査用の独自サーマルカメラおよびRGBカメラを備えたツールヘッドです。
-6. **共有ベース**: **URTC-COMMON**は、生成されたコードと適合性ベクトルを持つデータとしてのツールヘッドのCANプロトコルを保持します。**URTC-DOCS**は、アーキテクチャ、セキュリティベースライン、能力マトリックスを保持します。
+6. **共有ベース**: **URTC-COMMON**は、生成されたコードと適合性ベクトルを持つデータとしてのツールヘッドのCANプロトコルを保持します。**URTC-DOCS**は、アーキテクチャ、セキュリティベースライン、能力マトリックスを保持します。 **URTC-DEVTOOLS**は、ファミリー全体が共有するリポジトリツールを 1 つのバージョン管理されたセットとして保持します。
 
 ## 🛠️ 技術スタック
 
@@ -322,7 +322,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.1|25種類以上の特殊ツール向けユニバーサルロボットツールコントローラーファームウェア。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.4.2|25種類以上の特殊ツール向けユニバーサルロボットツールコントローラーファームウェア。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.4.2|CAN-OTAおよびフルチップSWD/JTAGファームウェアアップデート用GUIツール。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.4.3|CAN経由でのURTCツールプロファイルのリアルタイム検証用診断ツール。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.3.8|即時のハードウェアテストと分析のためのブラウザベースのWeb Serialツール。|
@@ -332,6 +332,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.2|URTCエコシステムのアーキテクチャ、インターフェース、セキュリティベースライン、能力マトリックス、CANプロトコルスタディノート、生成されたプロジェクトカタログ、および全リポジトリを比較するツール。|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.0.9|データとしてのツールヘッドのCANプロトコル：仕様、生成されたC、TypeScript、Pythonコード、適合性ベクトル、Pythonトランスポート。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.3|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
+|[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|URTC ファミリーが共有するリポジトリツールを 1 つのバージョン管理されたセットにまとめたもの。各リポジトリにロックファイルを置きます。|
 
 \---
 
@@ -352,15 +353,15 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 **アップデーター：** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:armor -->
-`\[█████████████░░░░░░░] 65%` — 実際のデータから算出しています。18 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[████████████▍░░░░░░░] 62%` — 実際のデータから算出しています。19 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:armor -->
 
 ## 🏗️ A.R.M.O.R. の構築方法
 
 1. **共有契約**: **ARMOR-COMMON**は、JSON Schema、Pythonバリデーター、および他のすべてのリポジトリが再定義することなく消費する生成済みのTypeScript/Kotlin型など、メッセージの意味を所有します。
-2. **フィールドノード**: レーダー/プレゼンス検知用ESP32-S3ファームウェア（**ARMOR-RADAR**）、ソーラーインバーターおよびバッテリー監視（**ARMOR-SOLAR**）、スイッチング付き電力計測（**ARMOR-ELECTRICAL**）、および家の警報パネル（**ARMOR-ALARM**）。Pythonエージェント（**ARMOR-NETWORK**）は、すでに接続されているマシンから家のローカルネットワークとインターネットの到達性を監視します。
+2. **フィールドノード**: レーダー/プレゼンス検知用ESP32-S3ファームウェア（**ARMOR-NODE-RADAR**）、ソーラーインバーターおよびバッテリー監視（**ARMOR-NODE-SOLAR**）、スイッチング付き電力計測（**ARMOR-NODE-ELECTRICAL**）、および家の警報パネル（**ARMOR-NODE-ALARM**）。Pythonエージェント（**ARMOR-NETWORK**）は、すでに接続されているマシンから家のローカルネットワークとインターネットの到達性を監視します。
 3. **中央コーディネーター**: **ARMOR-SERVER**は、状態、ユーザー、アラーム、自動化、カメラのエビデンスを保持します。**ARMOR-SERVER-AI**および**ARMOR-VOICE-AI**は、説明可能な視覚ポリシーと、自律的に動作を行わないオフラインの音声インテントを追加します。
-4. **オペレータークライアント**: **ARMOR-STUDIO**（Web）および **ARMOR-ANDROID-CONTROL**（モバイル）は中央サーバーのクライアントであり、フィールドネットワークと直接通信することはありません。**ARMOR-HMI**は壁面のタッチパネル（Waveshare ESP32-S3-Touch-LCD-7C-BOX）であり、状態の表示、武装、武装解除、確認を行い、音声アシスタントが常駐する場所となります。
+4. **オペレータークライアント**: **ARMOR-STUDIO**（Web）および **ARMOR-ANDROID-CONTROL**（モバイル）、**ARMOR-IOS-CONTROL**（iPhone）は中央サーバーのクライアントであり、フィールドネットワークと直接通信することはありません。**ARMOR-NODE-HMI**は壁面のタッチパネル（Waveshare ESP32-S3-Touch-LCD-7C-BOX）であり、状態の表示、武装、武装解除、確認を行い、音声アシスタントが常駐する場所となります。
 5. **デプロイとテスト**: **ARMOR-DEVOPS**はサービスグラフ全体をデプロイします。**ARMOR-SIMULATOR**は実際のハードウェアなしでシナリオや再現可能な障害をリプレイします。**ARMOR-HARDWARE**は筐体設計とベンチ受け入れマトリックスを担います。
 6. **エコシステム運用**: **ARMOR-UPDATER**は、HYDRA-UMC-UPDATERと同じ検証によるアトミック設計により、マシン上のすべてのA.R.M.O.R.リポジトリを検出し、インストールし、更新します。**ARMOR-DOCS**は正規のアーキテクチャドキュメントおよび能力マトリックスです。**ARMOR-STUDIO**は、エコシステムのリリースキーで署名されたパッケージから中央マシンのサービスを更新することもでき、インストール前に各署名を検証します。
 
@@ -373,11 +374,11 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.7.8|メッセージ契約、バリデーター、適合性ベクトル、生成済み型、OpenAPI、共有ランチャー。|
-|[ARMOR-RADAR](https://github.com/JuanenRac/ARMOR-RADAR)|0.8.0.5|ESP32-S3フィールドノードファームウェア、LD2450・LD2461およびプレゼンスセンサー用デコーダー、ホストテスト済みのコア、プログレスバー付きのGitHubからのアップデート、ライブマップ。|
-|[ARMOR-SOLAR](https://github.com/JuanenRac/ARMOR-SOLAR)|0.6.0|ソーラーゲートウェイノード：ESP32-S3ファームウェアとそのパネル（10シリアルポート）、Voltronic/MPP SolarインバーターおよびPylontech/ANT-BMSバッテリーのプロトコル。|
-|[ARMOR-ELECTRICAL](https://github.com/JuanenRac/ARMOR-ELECTRICAL)|0.5.1|電気ノード：ファームウェア（1つのシリアルライン上の16個のPZEMメーター、Webパネル、MQTT）、メーターのフレーム、ネットワーク読み取り値のメッセージ、スイッチング規則。|
-|[ARMOR-ALARM](https://github.com/JuanenRac/ARMOR-ALARM)|0.4.9|警報ノードとパネル：ファームウェア（有線ゾーン、サイレン、Zigbeeセンサー/サイレン、7言語のWebパネル）および武装、遅延、アラーム、PINのルール。コンピュータ上でテスト済みであり、サーバーが不在のときも警戒を続け、Zigbee無線を引き継ぎます。ボード上で実行されたことはありません。|
-|[ARMOR-HMI](https://github.com/JuanenRac/ARMOR-HMI)|0.4.1|Waveshare ESP32-S3-Touch-LCD-7C-BOX用タッチパネル：壁面画面でのシステム状態、武装/武装解除/確認、プッシュトーク音声、ノードのWebページ。ファームウェアはボード上で実行されたことがありません。|
+|[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.0.5|ESP32-S3フィールドノードファームウェア、LD2450・LD2461およびプレゼンスセンサー用デコーダー、ホストテスト済みのコア、プログレスバー付きのGitHubからのアップデート、ライブマップ。|
+|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.0|ソーラーゲートウェイノード：ESP32-S3ファームウェアとそのパネル（10シリアルポート）、Voltronic/MPP SolarインバーターおよびPylontech/ANT-BMSバッテリーのプロトコル。|
+|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.1|電気ノード：ファームウェア（1つのシリアルライン上の16個のPZEMメーター、Webパネル、MQTT）、メーターのフレーム、ネットワーク読み取り値のメッセージ、スイッチング規則。|
+|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.4.9|警報ノードとパネル：ファームウェア（有線ゾーン、サイレン、Zigbeeセンサー/サイレン、7言語のWebパネル）および武装、遅延、アラーム、PINのルール。コンピュータ上でテスト済みであり、サーバーが不在のときも警戒を続け、Zigbee無線を引き継ぎます。ボード上で実行されたことはありません。|
+|[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.1|Waveshare ESP32-S3-Touch-LCD-7C-BOX用タッチパネル：壁面画面でのシステム状態、武装/武装解除/確認、プッシュトーク音声、ノードのWebページ。ファームウェアはボード上で実行されたことがありません。|
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.4|ローカルネットワークモニター：家のネットワーク上のデバイス、インターネットの状態（および障害がどちら側にあるか）、変更点。観察のみを行います。|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.0.7|中央状態（永続化）、ユーザー、イベント履歴、アラーム、デバイス、自動化、ソーラーおよび電気の読み取り値、ローカルネットワーク、システムサービス、カメラウォッチドッグ、カメラ、エビデンス、監査、署名が必須のノードファームウェアアップデート、TelegramおよびHome Assistant通知、音声コマンド、外部からの利用（2要素認証、終了可能なセッション、リモートポリシー）。|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.2.7|モーション監視サービス、ビジュアルプロファイル選択、説明可能な融合ポリシー、エンジンレジストリ。|
@@ -385,6 +386,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.1|オフライン音声サービス：8言語の15コマンド、壁面パネルの音声ターン、署名付きトークンで確認された武装および武装解除。|
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.1.1|操作コンソール、アラーム、デバイス、自動化、ユーザー、履歴、アラート規則、PTZ、レーダーマップ、ソーラーおよび電気メニュー、ローカルネットワーク、システムサービス、天気、ノードファインダーと設定、ノードファームウェアアップデート、通知、2D/3Dサイトデザイナー。|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.7.8|Androidオペレータークライアント：武装と武装解除、アラーム、デバイス、ライブレーダー、ソーラーインバーターとバッテリー、履歴、アラーム通知、書き言葉/話し言葉用コマンドアシスタント、ノード設定ツール。|
+|[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.1|iPhone 用オペレータークライアント：状態、武装、アラーム、アラームパネル、カメラ、アシスタント。8 言語対応。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.6|筐体設計（レーダーコーナーエンクロージャー。ソーラー、電気、アラームノード用のチェックボックス付き）およびベンチ受け入れマトリックス。|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.6.8|Composeトポロジ、中央サーバーテストベンチインストーラー、バックアップと復元、TLSプロファイル、専用MQTTブローカー、観察および音声サービス、管理エージェント。|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.2.6|シナリオと再現可能な障害。|
@@ -410,7 +412,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 **アップデーター：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — 実際のデータから算出しています。10 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — 実際のデータから算出しています。11 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:eh3d -->
 
 ## 🏗️ EH3D Fabrication Suite の仕組み
@@ -424,7 +426,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
    * **EH3D-BUNGARD-GUI**: Bungard CCD マシン向けのモダンなインターフェース：ランチャーと、作業の平面図・アイソメ図を表示するビューア。
    * **EH3D-LASER-CAM**: レーザー切断用のラスターディザリングアルゴリズムとベクトル出力変調。
    * **EH3D-STENCILCAM**: SMDはんだペーストステンシル生成のためのペーストマスク処理。
-3. **実行とリアルタイム制御**: **EH3D-MOTIONCNC**は、高速Gコード/HP-GLストリーミングを介して機械の動きを駆動し、地形Zプロービング用の**EH3D-AUTOLEVEL**および手動ゼロ設定（G54/G55）やジョギング用の**EH3D-PENDANT-GUI**と統合されています。
+3. **実行とリアルタイム制御**: **EH3D-MOTIONCNC**は 1 つのウィンドウから機械を動かし（ジョグ、ゼロ設定、Gコード実行、経路表示。現在は模擬マシン上）、マシン制御プログラムの基盤となります。マシンのノードを通じて穴あけ・ルーティングのジョブを計画・実行する**EH3D-SERVER**、地形Zプロービング用の**EH3D-AUTOLEVEL**、手動ゼロ設定（G54/G55）やジョギング用の**EH3D-NODE-HMI-GUI**と統合されています。
 4. **エッジAIと検査**: **EH3D-VISION-STUDIO**は、HYDRA-UMCのHailo NPUを活用して、リアルタイムのカメラアライメント、自動位置合わせマーク（フィデューシャル）検出、およびツール摩耗検査を実行します。
 5. **アセンブリと補助データ**: **EH3D-PNP-MANAGER**はセントロイドのピック＆プレース座標とフィーダーを管理し、**EH3D-TOOL-MANAGER**はすべてのCAMモジュール間で統一されたツール crib データベースを維持します。
 
@@ -434,9 +436,9 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|プロジェクト管理（.eh3dproj）、アップデート、グローバル設定、ノード検出を行うメインのエコシステムダッシュボード。|
-|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.3|データスキーマ、統一プロジェクト（.eh3dproj）仕様、グローバル定数、UIグラフィックアセット。|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.3|共有データモデル：整合性チェック付きの .eh3dproj プロジェクトコンテナ、マシンテレメトリの型、そして各 ESP32 ノードがコピーして使うファームウェアベース。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.1|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|
-|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|Gerber/Excellon/Gコード/HP-GLパーサー、2D/3Dジオメトリ、プロトコルを含む共有C++/Pythonライブラリ。|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.1|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.2|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.0.1|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.1|EH3D-SERVER 向けの Rust 製 Web クライアント。|
@@ -444,10 +446,10 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 ドリル／ルーター／ミリングのプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.5|Excellon/NCドリルCAMアプリ、ドリルビット管理、パス最適化、ディープドリルサイクル。|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.5|基板輪郭フライス加工CAMアプリ、ポケティング、保持タブ、CNCランプエントリー戦略。|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.5|Bungard CCD マシン向けの従来の DOS ソフトの穴あけ作業フローを Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.5|Bungard CCD マシン向けの従来の DOS ソフトのルーティング（切削）作業フローを HP-GL プロットファイルから Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.3|Bungard CCD マシン向けのモダンなインターフェース：従来の穴あけ・ルーティングプログラムのランチャーと、テーブル上の作業ビューア。|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.2|リアルタイム数値制御GUI、3D Gコードビジュアライザー、プロービング、マルチマシーンストリーミングサポート。|
+|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.3|EH3D のマシン制御プログラムの共通基盤：ジョグ、ゼロ設定、G コード実行、経路表示で模擬マシンを動かすウィンドウ。8 言語対応。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|すべてのEH3D CAMツールにわたって摩耗時間、切削プリセット、送りを追跡する共有ツールcribデータベース。|
 
 ### 💠 レーザーのプロジェクト：
@@ -476,7 +478,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.3|Bungard CCD 機械の筐体に取り付ける ESP32-S3 ノード。制御ユニットの RS-232 を Ethernet または Wi-Fi で扱い、機械のランプとスピンドルのドライブを同じ基板に載せます。|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.1|Bungard CCD マシン向けの ESP32-P4/ESP32-C6 搭載 10 インチタッチスクリーン／モバイル手動コントローラー。リアルタイムのジョグ、ゼロ設定（G54/G55）、非常停止に対応。|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.1|ESP32-P4 搭載の 10.1 インチタッチスクリーンで Bungard CCD マシンを制御：デスクトップ版の画面、8 言語の音声警告と音声命令、画面を経由しないハードウェア停止。|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.1|汎用の ESP32-P4/ESP32-C6 搭載 10 インチタッチスクリーン／モバイル手動コントローラー。リアルタイムのジョグ、ゼロ設定（G54/G55）、非常停止に対応。|
 
 ### 💠 FENIX のプロジェクト：
