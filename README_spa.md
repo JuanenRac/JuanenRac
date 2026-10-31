@@ -480,6 +480,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.4|Nodo ESP32-S3 para la caja de una máquina Bungard CCD: el RS-232 de su unidad de control por Ethernet o Wi-Fi, con las lámparas de la máquina y el variador del husillo en la misma placa.|
 |[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.2|Pantalla táctil de 10,1 pulgadas con un ESP32-P4 que controla una máquina Bungard CCD: las pantallas del programa de escritorio, alertas y órdenes habladas en ocho idiomas y una parada por hardware que no pasa por la pantalla.|
+|[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.2|Nodo ESP32-S3 para el cabezal de taladro de una máquina Bungard CCD: el vídeo de su cámara (OV2640 u OV5640) como cámara IP (RTSP y ONVIF), la altura de la mesa medida con un láser, la velocidad y la temperatura del husillo y una salida de protección.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.1|Controlador manual táctil de 10 pulgadas / móvil de uso general con ESP32-P4/ESP32-C6 para el movimiento en tiempo real (jog), la puesta a cero (G54/G55) y la parada de emergencia.|
 
 ### 💠 Proyectos FENIX:

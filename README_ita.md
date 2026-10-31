@@ -480,6 +480,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.4|Nodo ESP32-S3 per la scatola di una macchina Bungard CCD: l'RS-232 della sua unità di controllo via Ethernet o Wi-Fi, con le lampade della macchina e l'azionamento del mandrino sulla stessa scheda.|
 |[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.2|Touchscreen da 10,1 pollici con ESP32-P4 che controlla una macchina Bungard CCD: le schermate del programma desktop, avvisi e comandi vocali in otto lingue e un arresto hardware che non passa dallo schermo.|
+|[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.2|Nodo ESP32-S3 per la testa di foratura di una macchina Bungard CCD: il video della sua telecamera (OV2640 o OV5640) come telecamera IP (RTSP e ONVIF), l'altezza del tavolo misurata con un laser, la velocità e la temperatura del mandrino e un'uscita di protezione.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.1|Controller manuale touch da 10 pollici / mobile di uso generale con ESP32-P4/ESP32-C6 per il jog in tempo reale, l'azzeramento (G54/G55) e l'arresto di emergenza.|
 
 ### 💠 Progetti FENIX:
