@@ -417,10 +417,10 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 
 ## 🏗️ EH3D Fabrication Suite の仕組み
 
-1. **中央管理**: **EH3D-SUITE-LAUNCHER**は、ローカルネットワーク上のアクティブなハードウェアノード（HYDRA-UMCおよびESP32ゲートウェイ）を検出し、統一された`.eh3dproj`パッケージを管理し、ツールの更新をオーケストレートします。
+1. **中央管理**: **EH3D-SUITE-LAUNCHER** マニフェストからスイートのプログラムを見つけて起動し、統一プロジェクト ファイル `.eh3dproj` を管理します。ネットワーク上の機械（HYDRA-UMC と ESP32 ゲートウェイ）の検出と更新の取りまとめは計画中です。
 2. **CAM処理パイプライン**: 特化したCAD/CAMツールが個々の製造ステージを処理します：
 
-   * **EH3D-ISOCAM**: Gerber RS-274X/X2トレースのアイソレーション、ボロノイアルゴリズム、および余剰銅の除去（ラバウト）。
+   * **EH3D-ISOCAM**: Gerber レイヤーの銅箔の絶縁を、正確なオフセットと複数パスで行います。銅箔の除去と Voronoi 方式は計画中です。
    * **EH3D-DRILLPRO**: Excellon/NCドリル処理、ドリルビットテーブル、ディープホール掘削サイクル。
    * **EH3D-ROUTEPRO**: 基板外形フライス加工、タブ作成、ランプエントリー戦略。
    * **EH3D-BUNGARD-GUI**: Bungard CCD マシン向けのモダンなインターフェース：ランチャーと、作業の平面図・アイソメ図を表示するビューア。
@@ -435,7 +435,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 中核制御とオペレーター向けクライアント
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|プロジェクト管理（.eh3dproj）、アップデート、グローバル設定、ノード検出を行うメインのエコシステムダッシュボード。|
+|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|マニフェストからスイートのプログラムを見つけて起動し、最近のプロジェクトと、ファイルの SHA-256 付きプロジェクト ファイル（.eh3dproj）を保持します。ウィンドウとネットワーク上の機械の検出は計画中です。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.5|共有データモデル：整合性チェック付きの .eh3dproj プロジェクトコンテナ、マシンテレメトリの型、そして各 ESP32 ノードがコピーして使うファームウェアベース。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.2|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.2|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
@@ -460,8 +460,8 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 CAM のプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Gerber RS-274X/X2 CAM処理アプリ、ボロノイ/オフセットトレースアイソレーション、ラバウト、彫刻シミュレーション。|
-|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|3Dツールパスおよび材料除去シミュレーター、衝突検出器、Gコード/HP-GLサイクルタイムエスティメーター。|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Gerber レイヤーの銅箔の絶縁ミリング：銅箔の正確なオフセット、複数パス、工具が切れない隙間の確認、G コード。ウィンドウ、銅箔の除去、Voronoi 方式は計画中です。|
+|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|機械に届く前に G コード プログラムを検査します。機械の加速度を考慮した所要時間と、材料への早送り、テーブル外の移動、主軸停止での切削、クランプ上を通るヘッドへの警報。3D シミュレーションは計画中です。|
 
 ### 💠 Gerber のプロジェクト：
 |リポジトリ|バージョン|説明|
@@ -472,7 +472,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.1|レーザーおよびプロッターSMDステンシル製造用の切削ツールパスを生成するペーストマスク変換ユーティリティ。|
-|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|OpenPnPにインスパイアされたSMDアセンブリマネージャー、セントロイドリーダー、フィーダー制御、ビジョンコンポーネント中心合わせ。|
+|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|ピック＆プレース実装：KiCad と CSV の位置ファイル、フィーダー、1〜6 ノズルのヘッドの実装順序。カメラと機械制御は計画中です。|
 
 ### 💠 ノードのプロジェクト：
 |リポジトリ|バージョン|説明|
@@ -505,7 +505,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 🛠️ 補完ツール
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|カメラアライメント、フィデューシャルマーカーのトレーニング、HYDRA-UMC経由の視覚検査を行うエッジAIビジョンダッシュボード。|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|画像から丸い基準マークを見つけ、画素をミリメートルに変換し、レンズの歪みを補正し、基板の回転と移動量を計算します。ライブカメラ、ニューラル ネットワーク、ウィンドウは計画中です。|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.1|表面補正のための地形高さメッシュプロセッサー（Zプロービング）およびGコード補間。|
 
 \---

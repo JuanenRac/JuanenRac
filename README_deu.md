@@ -417,10 +417,10 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 
 ## 🏗️ Funktionsweise der EH3D Fabrication Suite
 
-1. **Zentrale Verwaltung**: **EH3D-SUITE-LAUNCHER** entdeckt aktive Hardwareknoten im lokalen Netzwerk (HYDRA-UMC und ESP32-Gateways), verwaltet einheitliche `.eh3dproj`-Pakete und orchestriert Tool-Updates.
+1. **Zentrale Verwaltung**: **EH3D-SUITE-LAUNCHER** findet die Programme der Suite über ihre Manifeste, startet sie und verwaltet die einheitliche Projektdatei `.eh3dproj`; die Suche nach Maschinen im Netz (HYDRA-UMC und ESP32-Gateways) und die Steuerung der Updates sind geplant.
 2. **CAM-Verarbeitungspipeline**: Spezielle CAD/CAM-Tools behandeln einzelne Fertigungsstufen:
 
-   * **EH3D-ISOCAM**: Gerber RS-274X/X2-Leiterbahnisolierung, Voronoi-Algorithmen und Restkupferentfernung (Rubout).
+   * **EH3D-ISOCAM**: Isolation des Kupfers von Gerber-Lagen mit exakten Offsets und mehreren Durchgängen; die Kupferabtragung und die Voronoi-Strategie sind geplant.
    * **EH3D-DRILLPRO**: Excellon-/NC-Bohrverarbeitung, Bohrer-Tabellen und Tiefbohrzyklen.
    * **EH3D-ROUTEPRO**: Platinenkantenfräsen, Laschenerstellung (Tabs) und Rampeneingangsstrategien.
    * **EH3D-BUNGARD-GUI**: Moderne Oberfläche für die Bungard-CCD-Maschinen: ein Starter und ein Viewer mit Draufsicht und isometrischer Ansicht des Auftrags.
@@ -435,7 +435,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 ### 💠 Zentrale Steuerung und Bedienerclients
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|Haupt-Ökosystem-Dashboard für Projektverwaltung (.eh3dproj), Updates, globale Einstellungen und Knotenerkennung.|
+|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|Findet die Programme der Suite über ihre Manifeste, startet sie und führt die zuletzt verwendeten Projekte und die Projektdatei (.eh3dproj) mit dem SHA-256 ihrer Dateien; das Fenster und die Suche nach Maschinen im Netz sind geplant.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.5|Gemeinsames Datenmodell: der Projektcontainer .eh3dproj mit Integritätsprüfungen, die Typen der Maschinentelemetrie und die Firmware-Basis, die jeder ESP32-Knoten übernimmt.|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.2|Ökosystemdokumentation, Montageanleitungen, Gateway-technische Spezifikationen und Integrationshandbücher.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.2|Rust-Leser für Gerber RS-274X, Excellon-Bohrdateien und G-Code (Dialekte GRBL, Marlin und PlanetCNC), tolerant gegenüber beschädigten Dateien.|
@@ -460,8 +460,8 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 ### 💠 CAM-Projekte:
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Gerber RS-274X/X2 CAM-Verarbeitungs-App, Voronoi-/Offset-Bahnisolierung, Restkaufentfernung und Gravursimulation.|
-|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|3D-Werkzeugweg- und Materialabtragssimulator, Kollisionsdetektor und G-Code-/HP-GL-Zykluszeitschätzer.|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Isolationsfräsen des Kupfers einer Gerber-Lage: exakte Offsets des Kupfers, mehrere Durchgänge, Prüfung auf Lücken, die das Werkzeug nicht schneiden kann, und G-Code; das Fenster, die Kupferabtragung und die Voronoi-Strategie sind geplant.|
+|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|Prüft ein G-Code-Programm, bevor es eine Maschine erreicht: seine Zeit mit der Beschleunigung der Maschine und Warnungen bei Eilgängen ins Material, Bewegungen außerhalb des Tisches, Schnitten bei stehender Spindel und Köpfen über Spannern; die 3D-Simulation ist geplant.|
 
 ### 💠 Gerber-Projekte:
 |Repository|Version|Beschreibung|
@@ -472,7 +472,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.1|Pastemasken-Konvertierungsprogramm, das Schneidwerkzeugwege für die Laser- und Plotter-SMD-Schablonenfertigung generiert.|
-|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|OpenPnP-inspiriertes SMD-Bestückungsmanagement, Zentroid-Reader, Zubringersteuerung und visuelle Bauteilzentrierung.|
+|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|Pick-and-Place-Bestückung: Positionsdateien von KiCad und CSV, Zuführer und die Bestückungsreihenfolge für einen Kopf mit ein bis sechs Düsen; die Kamera und die Maschinensteuerung sind geplant.|
 
 ### 💠 Knotenprojekte:
 |Repository|Version|Beschreibung|
@@ -505,7 +505,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 ### 🛠️ Ergänzende Werkzeuge
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|Edge-KI-Visions-Dashboard für Kameraausrichtung, Passmarkentraining und visuelle Inspektion über HYDRA-UMC.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|Findet runde Passmarken in einem Bild, wandelt Pixel in Millimeter um, korrigiert die Verzeichnung des Objektivs und berechnet Drehung und Verschiebung einer Platine; die Live-Kamera, das neuronale Netz und das Fenster sind geplant.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.1|Topografischer Höhennetz-Prozessor (Z-Probing) und G-Code-Interpolation für den Oberflächenausgleich.|
 
 \---

@@ -417,10 +417,10 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 
 ## 🏗️ Cómo Funciona EH3D Fabrication Suite
 
-1. **Gestión Central**: **EH3D-SUITE-LAUNCHER** descubre los nodos de hardware activos en la red local (HYDRA-UMC y pasarelas ESP32), gestiona paquetes unificados `.eh3dproj` y orquesta las actualizaciones de herramientas.
+1. **Gestión Central**: **EH3D-SUITE-LAUNCHER** encuentra los programas de la suite por sus manifiestos, los arranca y gestiona el fichero de proyecto unificado `.eh3dproj`; el descubrimiento de máquinas en la red (HYDRA-UMC y pasarelas ESP32) y la orquestación de las actualizaciones están previstos.
 2. **Canalización de Procesamiento CAM**: Herramientas CAD/CAM especializadas gestionan las etapas de fabricación individuales:
 
-   * **EH3D-ISOCAM**: Aislamiento de pistas Gerber RS-274X/X2, algoritmos de Voronoi y eliminación de cobre sobrante (rubout).
+   * **EH3D-ISOCAM**: Aislamiento del cobre de capas Gerber con desplazamientos exactos y varias pasadas; el desbaste del cobre y la estrategia Voronoi están previstos.
    * **EH3D-DRILLPRO**: Procesamiento de taladros Excellon/NC, tablas de brocas y ciclos de perforación de agujeros profundos.
    * **EH3D-ROUTEPRO**: Fresado de contornos de placas, creación de pestañas de sujeción (tabs) y estrategias de entrada en rampa.
    * **EH3D-BUNGARD-GUI**: Interfaz moderna para las máquinas Bungard CCD: un lanzador y un visor con las vistas en planta e isométrica del trabajo.
@@ -435,7 +435,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 ### 💠 Control central y clientes del operador
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|Panel de control principal del ecosistema para la gestión de proyectos (.eh3dproj), actualizaciones, ajustes globales y descubrimiento de nodos.|
+|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.1|Encuentra los programas de la suite por sus manifiestos, los arranca y guarda los proyectos recientes y el fichero de proyecto (.eh3dproj) con el SHA-256 de sus ficheros; la ventana y el descubrimiento de máquinas en la red están previstos.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.0.5|Modelo de datos compartido: el contenedor de proyecto .eh3dproj con comprobaciones de integridad, los tipos de telemetría de máquina y la base de firmware que copia cada nodo ESP32.|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.2|Documentación del ecosistema, guías de ensamblaje, especificaciones técnicas de pasarelas y manuales de integración.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.2|Lectores en Rust para Gerber RS-274X, ficheros de taladrado Excellon y código G (dialectos GRBL, Marlin y PlanetCNC), tolerantes a ficheros dañados.|
@@ -460,8 +460,8 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 ### 💠 Proyectos CAM:
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Aplicación de procesamiento CAM para Gerber RS-274X/X2, aislamiento de pistas por Voronoi/Offset, rubout y simulación de grabado.|
-|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|Simulador 3D de trayectorias de herramientas y retirada de material, detector de colisiones y estimador de tiempo de ciclo G-Code/HP-GL.|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.0.1|Fresado de aislamiento del cobre de una capa Gerber: desplazamientos exactos del cobre, varias pasadas, comprobación de huecos que la herramienta no puede cortar y G-code; la ventana, el desbaste del cobre y la estrategia Voronoi están previstos.|
+|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.1|Revisa un programa G-code antes de llegar a una máquina: su tiempo con la aceleración de la máquina y alertas por movimientos rápidos al material, movimientos fuera de la mesa, cortes con el husillo parado y cabezales sobre pinzas; la simulación 3D está prevista.|
 
 ### 💠 Proyectos Gerber:
 |Repositorio|Versión|Descripción|
@@ -472,7 +472,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.1|Utilidad de conversión de máscaras de pasta que genera trayectorias de corte para la fabricación de plantillas SMD con láser y plotter.|
-|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|Gestor de ensamblaje SMD inspirado en OpenPnP, lector de centroides, control de alimentadores y centrado de componentes por visión.|
+|[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.1|Montaje pick and place: ficheros de posiciones de KiCad y CSV, alimentadores y el orden de colocación para un cabezal de una a seis boquillas; la cámara y el control de la máquina están previstos.|
 
 ### 💠 Proyectos de nodos:
 |Repositorio|Versión|Descripción|
@@ -505,7 +505,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 ### 🛠️ Herramientas complementarias
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|Panel de visión Edge AI para alineación de cámaras, entrenamiento de marcadores fiduciales e inspección visual a través de HYDRA-UMC.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.1|Encuentra marcas fiduciales redondas en una imagen, convierte píxeles en milímetros, corrige la distorsión de la lente y calcula el giro y el desplazamiento de una placa; la cámara en vivo, la red neuronal y la ventana están previstas.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.1|Procesador de malla de altura topográfica (sondeo Z) e interpolación de código G para compensación de superficies.|
 
 \---
