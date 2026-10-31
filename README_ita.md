@@ -175,7 +175,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.5.5|Livello di piattaforma Raspberry Pi OS per CM5: profili riproducibili, configurazione, diagnostica, ciclo di vita dei servizi e aggiornamenti; non è una nuova distribuzione Linux.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.4.1|Contratti condivisi con versione, client leggeri e banchi di conformità per servizi, UI e adattatori CM5; non sostituisce le API dei produttori.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.4.2|Contratti condivisi con versione, client leggeri e banchi di conformità per servizi, UI e adattatori CM5; non sostituisce le API dei produttori.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.6|Registro dichiarativo di manifesti di adattatori e validatore per connettori di macchine esterne; estende l'idea di contratto dell'SDK alle macchine esterne senza sostituire i progetti di gateway industriale.|
 
 ### 💠 Controllo Principale e Client Operatore
@@ -183,14 +183,15 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.4|Firmware di controllo del movimento principale per STM32H745/G474 con cinematica ad S.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.3|API Node.js headless e backend WebSocket per l'orchestrazione robotica.|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.3|Dashboard web avanzata basata su React per il monitoraggio e il controllo 3D del robot.|
-|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.3|Applicazione desktop Python/Qt ad alte prestazioni per l'automazione industriale.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.1.5|API Node.js headless e backend WebSocket per l'orchestrazione robotica.|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.0.5|Dashboard web avanzata basata su React per il monitoraggio e il controllo 3D del robot.|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.4|Applicazione desktop Python/Qt ad alte prestazioni per l'automazione industriale.|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.2.8|Interfaccia tattile dedicata basata su Flutter per display industriali da 7" (CM5).|
 |[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.7.4|App mobile nativa in Kotlin con accesso biometrico per la gestione remota del robot.|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.2.8|App mobile Flutter per iOS/iPadOS con sincronizzazione WebSocket in tempo reale.|
-|[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.1.6|Editor URDF grafico per validare e inviare modelli di robot al catalogo.|
-|[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.1.8|Editor di modelli STL desktop — trasforma, sostituisce, rimuove e aggiunge parti reali nel catalogo di modelli condiviso.|
+|[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.1.7|Editor URDF grafico per validare e inviare modelli di robot al catalogo.|
+|[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.1.9|Editor di modelli STL desktop — trasforma, sostituisce, rimuove e aggiunge parti reali nel catalogo di modelli condiviso.|
+| [HYDRA-UMC-MESHES](https://github.com/JuanenRac/HYDRA-UMC-MESHES) | 0.1.0 | Mesh 3D condivise (STL e GLB) delle applicazioni desktop e web, pubblicate una sola volta come pacchetto di release con checksum. |
 
 ### 👁️ Nodo di Visione IA (Ottimizzato per Hailo-8)
 
@@ -198,16 +199,16 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |-|-|-|
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.1.7|Nodo di percezione ad alta velocità per 8 flussi di telecamere USB 3.0 simultanei.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.2|Pipeline GStreamer/MediaMTX ottimizzata per il relay video industriale.|
-|[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.1.6|Libreria di modelli YOLO accelerati via hardware per il controllo qualità di componenti e SMD.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.1.6|Rilevamento di intrusioni IA in tempo reale per la protezione del volume di lavoro robotico.|
-|[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.1|Feedback cinematico basato su immagini per la correzione della posa sub-millimetrica.|
+|[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.1.7|Libreria di modelli YOLO accelerati via hardware per il controllo qualità di componenti e SMD.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.1.7|Rilevamento di intrusioni IA in tempo reale per la protezione del volume di lavoro robotico.|
+|[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.2|Feedback cinematico basato su immagini per la correzione della posa sub-millimetrica.|
 
 ### 🧠 Nodo di IA Cognitiva (Ottimizzato per Hailo-10)
 
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.6|Nodo di ragionamento semantico per la pianificazione logica delle missioni e il controllo vocale.|
-|[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.1.9|Implementazione del modello Vision-Language-Action per l'esecuzione di compiti complessi.|
+|[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.2.0|Implementazione del modello Vision-Language-Action per l'esecuzione di compiti complessi.|
 |[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.1.9|Pipeline STT/TTS locale e privata per l'interazione in linguaggio naturale con l'operatore.|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.1.5|Orchestratore di missioni basato su LLM con recupero degli errori contestuale.|
 |[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.6|Assistente IA basato su RAG addestrato su manuali tecnici e codice sorgente.|
@@ -246,9 +247,9 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.1.7|Bridge di interoperabilità Industria 4.0 per gli standard di fabbrica (OPC-UA/MQTT).|
-|[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.1|Mappatura degli oggetti robotici HydraState su nodi OPC-UA standard.|
+|[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.2|Mappatura degli oggetti robotici HydraState su nodi OPC-UA standard.|
 |[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.1.8|Bridge di telemetria per integrazioni IoT e dashboard esterne.|
-|[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.2.0|Interfaccia standardizzata per il monitoraggio dello stato di macchine utensili e robot.|
+|[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.2.1|Interfaccia standardizzata per il monitoraggio dello stato di macchine utensili e robot.|
 
 ### 🌉 Bridge di Automazione Esterni
 
@@ -257,7 +258,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |[HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2)|0.1.4|Confine di coordinamento bidirezionale ROS 2: topic per l'osservazione, servizi per l'ispezione e azioni annullabili per i lavori di cella.|
 |[HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP)|0.2.1|Coordinatore tracciabile di passaggio PCB per OpenPnP e caricamento/scaricamento assistito da robot.|
 |[HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D)|0.2.0|Bridge sicuro attorno al software nativo per stampanti 3D; il primo adattatore valida la prontezza di Moonraker senza sostituire il firmware.|
-|[HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC)|0.2.1|Coordinatore ausiliario per cella CNC; la traiettoria del controller e la sicurezza della macchina rimangono native.|
+|[HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC)|0.2.2|Coordinatore ausiliario per cella CNC; la traiettoria del controller e la sicurezza della macchina rimangono native.|
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.1.9|Coordinatore ausiliario per cella laser che non può armare, attivare o bypassare gli interblocchi laser.|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.4|Confine di coordinamento per droidi bipedi/umanoidi: vocabolario di azioni denominate (camminare/prendere/posare) regolato dal contratto di sicurezza condiviso; andatura e bilanciamento rimangono sul controller proprio del droide.|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.5|Confine di coordinamento per flotte AGV/AMR: trasformazione di coordinate da fabbrica a locale più un vocabolario di ordini ispirato a VDA-5050; la pianificazione del percorso rimane gestita dalla navigazione dell'AMR.|
@@ -324,11 +325,11 @@ Ogni profilo di utensile gestisce il proprio watchdog e comportamento in caso di
 |-|-|-|
 |[URTC](https://github.com/JuanenRac/URTC)|0.4.2|Firmware del controller universale per utensili robotici per oltre 25 utensili specializzati.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.4.2|Strumento GUI per aggiornamenti firmware CAN-OTA e SWD/JTAG full-chip.|
-|[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.4.3|Strumento diagnostico per la validazione in tempo reale dei profili utensile URTC su CAN.|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.3.8|Strumento Web Serial basato su browser per test e analisi hardware istantanei.|
+|[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.4.4|Strumento diagnostico per la validazione in tempo reale dei profili utensile URTC su CAN.|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.3.9|Strumento Web Serial basato su browser per test e analisi hardware istantanei.|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.2|Stoccaggio intelligente di utensili con preriscaldamento automatico e audit del ciclo di vita.|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.6|Testa utensile con telecamere termiche e RGB integrate per QA attiva.|
-|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.1.9|Rileva, installa e aggiorna le repository URTC su una macchina a partire dai relativi manifest.|
+|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.0|Rileva, installa e aggiorna le repository URTC su una macchina a partire dai relativi manifest.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.2|Architettura, interfacce, baseline di sicurezza, matrice delle capacità, nota di studio del protocollo CAN e catalogo di progetti generato dell'ecosistema URTC, oltre agli strumenti che confrontano tutte le repository.|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.0|Il protocollo CAN della testa utensile come dati: una specifica, codice C, TypeScript e Python generato, vettori di conformità e trasporti Python.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.3|Gateway davanti al bus CAN di URTC: elenco di identificatori consentiti, limite di frequenza e chiave di sessione.|
@@ -373,18 +374,18 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.7.8|Contratti di messaggio, validatori, vettori di conformità, tipi generati, OpenAPI, launcher condiviso.|
+|[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.7.9|Contratti di messaggio, validatori, vettori di conformità, tipi generati, OpenAPI, launcher condiviso.|
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.0.7|Firmware per nodo di campo ESP32-S3, decoder per sensori di presenza LD2450, LD2461, core testato su host, aggiornamenti da GitHub con barra di avanzamento e mappa live.|
 |[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.1|Nodo gateway solare: firmware ESP32-S3 e relativo pannello (dieci porte seriali), protocolli per inverter Voltronic / MPP Solar e batterie Pylontech e ANT-BMS.|
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.2|Nodo elettrico: firmware (sedici misuratori PZEM su una singola linea seriale, pannello web, MQTT), frame dei misuratori, messaggi delle letture di rete e regole di commutazione.|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.0|Nodo e pannello d'allarme: firmware (zone cablate, sirena, sensori e sirene Zigbee, pannello web in sette lingue) e regole di inserimento, ritardi, allarme e PIN, testato su computer; continua a sorvegliare e assume il controllo della radio Zigbee quando il server è offline. Mai eseguito su scheda fisica.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.2|Pannello touch per Waveshare ESP32-S3-Touch-LCD-7C-BOX: stato del sistema su schermo a muro, inserimento/disinserimento/riconoscimento, voce push-to-talk e pagina web di un nodo; il firmware non è mai stato eseguito su scheda fisica.|
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.5|Monitor di rete locale: dispositivi sulla rete domestica, stato di Internet (e di chi è la responsabilità di un'interruzione), variazioni; svolge solo funzioni di osservazione.|
-|[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.0.7|Stato centrale (persistito), utenti, cronologia eventi, allarmi, dispositivi, automazioni, letture solari ed elettriche, rete locale, servizi di sistema, watchdog telecamere, telecamere, prove video, audit, aggiornamenti firmware dei nodi firmati obbligatoriamente, notifiche Telegram e Home Assistant, comandi vocali e utilizzo da remoto (secondo fattore, sessioni terminabili, policy remota).|
+|[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.0.8|Stato centrale (persistito), utenti, cronologia eventi, allarmi, dispositivi, automazioni, letture solari ed elettriche, rete locale, servizi di sistema, watchdog telecamere, telecamere, prove video, audit, aggiornamenti firmware dei nodi firmati obbligatoriamente, notifiche Telegram e Home Assistant, comandi vocali e utilizzo da remoto (secondo fattore, sessioni terminabili, policy remota).|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.2.8|Servizio di monitoraggio del movimento, selezione del profilo visivo, policy di fusione spiegabile, registro dei motori.|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.0.4|Zone di telecamere, maschere e regole di rilevamento (loitering, un evento per visita); nessun modello di rilevamento integrato al momento.|
 |[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.2|Servizio vocale offline: quindici comandi in otto lingue, interazioni vocali del pannello a muro, inserimento e disinserimento confermati tramite token firmato.|
-|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.1.1|Console operativa, allarmi, dispositivi, automazioni, utenti, cronologia, regole di avviso, PTZ, mappa radar, menu solari ed elettrici, rete locale, servizi di sistema, meteo, ricerca e configurazione nodi, aggiornamenti firmware dei nodi, notifiche e designer di siti 2D/3D.|
+|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.1.2|Console operativa, allarmi, dispositivi, automazioni, utenti, cronologia, regole di avviso, PTZ, mappa radar, menu solari ed elettrici, rete locale, servizi di sistema, meteo, ricerca e configurazione nodi, aggiornamenti firmware dei nodi, notifiche e designer di siti 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.7.8|Client operatore Android: inserimento e disinserimento, allarmi, dispositivi, radar live, inverter solari e batterie, cronologia, notifiche di allarme, assistente per comandi scritti e vocali e configuratore dei nodi.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.1|Client operatore per iPhone: stato, inserimento, allarmi, centrali di allarme, telecamere e l'assistente, in otto lingue.|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.7|Design dei cabinet (custodia d'angolo per radar; checklist per i nodi solari, elettrici e d'allarme) e matrice di accettazione al banco.|
@@ -412,7 +413,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 **Aggiornatore:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 12 repository dichiara nel proprio manifesto. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 25 repository dichiara nel proprio manifesto. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:eh3d -->
 
 ## 🏗️ Come funziona EH3D Fabrication Suite
@@ -448,7 +449,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.0.7|Reimplementazione in Rust del flusso di foratura del software DOS classico per le macchine Bungard CCD: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.0.7|Reimplementazione in Rust del flusso di fresatura del software DOS classico per le macchine Bungard CCD, da file di tracciato HP-GL: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
-|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.5|Interfaccia moderna per le macchine Bungard CCD: un launcher dei programmi classici di foratura e fresatura e un visualizzatore del lavoro sul tavolo.|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.0.6|Interfaccia moderna per le macchine Bungard CCD: un launcher dei programmi classici di foratura e fresatura e un visualizzatore del lavoro sul tavolo.|
 |[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.4|Base comune dei programmi di controllo macchina di EH3D: una finestra che comanda una macchina simulata con jog, azzeramento, esecuzione di G-code e vista del percorso, in otto lingue.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.1|Database di magazzino utensili condiviso per il monitoraggio delle ore d'usura, preset di taglio e avanzamenti su tutti i tool CAM EH3D.|
 
@@ -478,7 +479,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.4|Nodo ESP32-S3 per la scatola di una macchina Bungard CCD: l'RS-232 della sua unità di controllo via Ethernet o Wi-Fi, con le lampade della macchina e l'azionamento del mandrino sulla stessa scheda.|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.1|Touchscreen da 10,1 pollici con ESP32-P4 che controlla una macchina Bungard CCD: le schermate del programma desktop, avvisi e comandi vocali in otto lingue e un arresto hardware che non passa dallo schermo.|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.0.2|Touchscreen da 10,1 pollici con ESP32-P4 che controlla una macchina Bungard CCD: le schermate del programma desktop, avvisi e comandi vocali in otto lingue e un arresto hardware che non passa dallo schermo.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.1|Controller manuale touch da 10 pollici / mobile di uso generale con ESP32-P4/ESP32-C6 per il jog in tempo reale, l'azzeramento (G54/G55) e l'arresto di emergenza.|
 
 ### 💠 Progetti FENIX:
