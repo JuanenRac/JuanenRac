@@ -368,23 +368,23 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.8.0.2 | Message contracts, validators, conformance vectors, generated types, OpenAPI, shared launcher. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.8.0.3 | Message contracts, validators, conformance vectors, generated types, OpenAPI, shared launcher. |
 | [ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR) | 0.8.0.7 | ESP32-S3 field-node firmware, decoders for the LD2450, LD2461 and presence sensors, its host-tested core, updates from GitHub with a progress bar and a live map. |
 | [ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR) | 0.6.1 | Solar gateway node: the ESP32-S3 firmware and its panel (ten serial ports), and the protocols of Voltronic / MPP Solar inverters and Pylontech and ANT-BMS batteries. |
 | [ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL) | 0.5.2 | Electrical node: the firmware (sixteen PZEM meters on one serial line, web panel, MQTT), the meters' frames, the message of the network's readings and the rules for switching. |
 | [ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM) | 0.5.0 | Alarm node and panel: its firmware (wired zones, the siren, Zigbee sensors and sirens, a web panel in seven languages) and the rules of arming, delays, alarm and PIN, tested on a computer; it keeps guarding, and takes the Zigbee radio over, when the server is away. Never run on a board. |
 | [ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI) | 0.4.2 | Touch panel for the Waveshare ESP32-S3-Touch-LCD-7C-BOX: the system's state on a wall screen, arm/disarm/acknowledge, push-to-talk voice and the web page of a node; the firmware has never run on a board. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.6 | Local network monitor: the devices on the house's network, the state of the internet (and whose side an outage is on), what changes; it only observes. |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.8.1.1 | Central state (persisted), users, event history, alarms, devices, automations, solar and electrical readings, the local network, system services, camera watchdog, cameras, evidence, audit, node firmware updates that must be signed, Telegram and Home Assistant notices, voice commands, and use from outside the house (second factor, sessions that can be ended, a remote policy). |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.8.1.2 | Central state (persisted), users, event history, alarms, devices, automations, solar and electrical readings, the local network, system services, camera watchdog, cameras, evidence, audit, node firmware updates that must be signed, Telegram and Home Assistant notices, voice commands, and use from outside the house (second factor, sessions that can be ended, a remote policy). |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.3.0 | Motion-watching service, visual profile selection, explainable fusion policy, engine registry. |
-| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.6 | Camera zones, masks and detection rules (loitering, one event per visit); no detector model yet. |
+| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.0.7 | Camera zones, masks and detection rules (loitering, one event per visit); no detector model yet. |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.2 | Offline voice service: fifteen commands in eight languages, the wall panel's spoken turns, arm and disarm confirmed with a signed token. |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.1.5 | Operations console, alarms, devices, automations, users, history, alert rules, PTZ, radar map, solar and electrical menus, the local network, system services, weather, a node finder and configuration, node firmware updates, notifications, and a 2D/3D site designer. |
-| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.7.9 | Android operator client: arm and disarm, alarms, devices, live radar, solar inverters and batteries, history, alarm notifications, an assistant for written and spoken commands and the configurator of the nodes. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.1.6 | Operations console, alarms, devices, automations, users, history, alert rules, PTZ, radar map, solar and electrical menus, the local network, system services, weather, a node finder and configuration, node firmware updates, notifications, and a 2D/3D site designer. |
+| [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.8.0.0 | Android operator client: arm and disarm, alarms, devices, live radar, solar inverters and batteries, history, alarm notifications, an assistant for written and spoken commands and the configurator of the nodes. |
 | [ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL) | 0.0.1 | iPhone operator client: status, arming, alarms, alarm panels, cameras and the assistant, in eight languages. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.7 | Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.6.9 | Compose topology, central-server test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, administration agent. |
-| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.3.0 | Scenarios and repeatable faults. |
+| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.3.1 | Scenarios and repeatable faults. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.7 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.1.4 | Canonical documentation and the capability matrix. |
 
@@ -430,11 +430,11 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.1 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
-| [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.0.9 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
+| [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.1.0 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.4 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.2 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.2 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
-| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.0.6 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
+| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.0.7 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
 | [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.0.6 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
 
@@ -478,9 +478,9 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD) | 0.0.4 | ESP32-S3 node for the box of a Bungard CCD machine: RS-232 of its control unit over Ethernet or Wi-Fi, with the machine's lamps and the spindle drive on the same board. |
-| [EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI) | 0.0.5 | 10.1-inch touch screen on an ESP32-P4 that controls a Bungard CCD machine: the screens of the desktop program, texts in 37 languages, spoken alerts and orders, resuming a stopped job through the server, and a hardware stop that does not go through the screen. |
+| [EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI) | 0.0.6 | 10.1-inch touch screen on an ESP32-P4 that controls a Bungard CCD machine: the screens of the desktop program, texts in 37 languages, spoken alerts and orders, resuming a stopped job through the server, and a hardware stop that does not go through the screen. |
 | [EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX) | 0.0.5 | ESP32-S3 node for the drill head of a Bungard CCD machine: the video of its camera (OV2640 or OV5640) as an IP camera (RTSP and ONVIF), the height of the table measured with a laser, the speed and the temperature of the spindle, and a protect output. |
-| [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.0.3 | General purpose ESP32-P4/ESP32-C6 Touchscreen 10 inch/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP, in 37 languages. |
+| [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.0.4 | General purpose ESP32-P4/ESP32-C6 Touchscreen 10 inch/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP, in 37 languages. |
 
 
 ### 💠 FENIX projects:
