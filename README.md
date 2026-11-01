@@ -74,7 +74,7 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 ## 📈 Ecosystem Progress
 
 <!-- progress:hydra-umc -->
-`[█████████▎░░░░░░░░░░] 46%` — Calculated from real data: the maturity and the evidence that each of its 57 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████▍░░░░░░░░░░] 47%` — Calculated from real data: the maturity and the evidence that each of its 57 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:hydra-umc -->
 
 > [!IMPORTANT]
@@ -290,7 +290,7 @@ for all four - can check versions and build/update any other project.
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:urtc -->
-`[███████░░░░░░░░░░░░░] 35%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[████████▎░░░░░░░░░░░] 41%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:urtc -->
 
 ## 🏗️ How URTC Works

@@ -74,7 +74,7 @@ Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial m
 ## 📈 Progreso del Ecosistema
 
 <!-- progress:hydra-umc -->
-`\[█████████▎░░░░░░░░░░] 46%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 57 repositorios declara en su propio manifiesto. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████▍░░░░░░░░░░] 47%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 57 repositorios declara en su propio manifiesto. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 **Actualizador:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:urtc -->
-`\[███████░░░░░░░░░░░░░] 35%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 11 repositorios declara en su propio manifiesto. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[████████▎░░░░░░░░░░░] 41%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 11 repositorios declara en su propio manifiesto. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:urtc -->
 
 ## 🏗️ Cómo Funciona URTC

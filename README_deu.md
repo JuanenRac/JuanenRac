@@ -74,7 +74,7 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 ## 📈 Ökosystem-Fortschritt
 
 <!-- progress:hydra-umc -->
-`\[█████████▎░░░░░░░░░░] 46%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 57 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[█████████▍░░░░░░░░░░] 47%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 57 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:urtc -->
-`\[███████░░░░░░░░░░░░░] 35%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 11 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[████████▎░░░░░░░░░░░] 41%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 11 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:urtc -->
 
 ## 🏗️ Funktionsweise von URTC

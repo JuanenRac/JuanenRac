@@ -74,7 +74,7 @@ Bienvenue dans l'**écosystème HYDRA-UMC**, une plateforme de robotique industr
 ## 📈 Progression de l'écosystème
 
 <!-- progress:hydra-umc -->
-`\[█████████▎░░░░░░░░░░] 46%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 57 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[█████████▍░░░░░░░░░░] 47%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 57 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 **Outil de mise à jour :** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:urtc -->
-`\[███████░░░░░░░░░░░░░] 35%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 11 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[████████▎░░░░░░░░░░░] 41%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 11 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:urtc -->
 
 ## 🏗️ Comment fonctionne URTC

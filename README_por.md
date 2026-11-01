@@ -74,7 +74,7 @@ Bem-vindo ao **Ecossistema HYDRA-UMC**, uma plataforma de robótica industrial m
 ## 📈 Progresso do Ecossistema
 
 <!-- progress:hydra-umc -->
-`\[█████████▎░░░░░░░░░░] 46%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 57 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[█████████▍░░░░░░░░░░] 47%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 57 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 **Atualizador:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:urtc -->
-`\[███████░░░░░░░░░░░░░] 35%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 11 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[████████▎░░░░░░░░░░░] 41%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 11 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:urtc -->
 
 ## 🏗️ Como o URTC Funciona
