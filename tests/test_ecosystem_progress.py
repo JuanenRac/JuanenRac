@@ -7,16 +7,29 @@ import ecosystem_progress as progress  # noqa: E402
 
 
 class PointsTest(unittest.TestCase):
-    def test_a_project_counts_for_its_maturity_and_for_a_real_hardware_proof(self):
-        self.assertEqual(progress.project_points({"maturity": "scaffolding"}), 10)
-        self.assertEqual(progress.project_points({"maturity": "functional", "evidence": "host-test"}), 45)
-        self.assertEqual(progress.project_points({"maturity": "established", "evidence": "hardware"}), 85)
-        self.assertEqual(progress.project_points({"maturity": "production", "evidence": "hardware"}), 100)
+    def test_a_project_counts_for_its_maturity_and_for_the_evidence_of_its_manifest(self):
+        self.assertEqual(progress.project_points({"maturity": "scaffolding"}), 5)
+        self.assertEqual(progress.project_points({"maturity": "functional", "evidence": "host-test"}), 23)
+        self.assertEqual(progress.project_points({"maturity": "functional", "evidence": "simulator"}), 28)
+        self.assertEqual(progress.project_points({"maturity": "established", "evidence": "bench"}), 50)
+        self.assertEqual(progress.project_points({"maturity": "production", "evidence": "field"}), 70)
         self.assertEqual(progress.project_points({}), 0)
+
+    def test_a_repository_that_is_not_bound_to_hardware_counts_as_tried_on_the_bench_once_it_is_functional(self):
+        self.assertEqual(progress.project_points({"maturity": "functional", "evidence": "none", "hardware_bound": False}), 35)
+        self.assertEqual(progress.project_points({"maturity": "scaffolding", "evidence": "none", "hardware_bound": False}), 5)
+
+    def test_releases_tests_a_green_ci_and_the_eight_readmes_add_their_points(self):
+        for releases, points in ((0, 0), (1, 4), (2, 4), (3, 8), (6, 11), (10, 13), (19, 13), (20, 15), (40, 15)):
+            self.assertEqual(progress.delivery_points(releases), points, releases)
+        full = {"releases": 20, "tests": True, "ci": True, "readmes": 8}
+        self.assertEqual(progress.project_points({"maturity": "production", "evidence": "field"}, full), 100)
+        self.assertEqual(progress.project_points({"maturity": "scaffolding", "evidence": "none"}, {"releases": 0, "tests": False, "ci": False, "readmes": 1}), 5)
+        self.assertEqual(progress.project_points({"maturity": "scaffolding", "evidence": "host-test"}, {"releases": 6, "tests": True, "ci": True, "readmes": 8}), 5 + 3 + 11 + 15)
 
     def test_the_ecosystem_is_the_mean_of_the_projects_whose_manifest_can_be_read(self):
         manifests = {"a": {"maturity": "established"}, "b": {"maturity": "scaffolding"}, "c": None}
-        self.assertEqual(progress.ecosystem_percent(["a", "b", "c"], manifests.get), (43, 2))
+        self.assertEqual(progress.ecosystem_percent(["a", "b", "c"], manifests.get), (20, 2))
         self.assertEqual(progress.ecosystem_percent(["c"], manifests.get), (0, 0))
 
 

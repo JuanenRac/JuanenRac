@@ -8,13 +8,15 @@
 # number typed by hand, and writes it into the eight README files.
 #
 # For each ecosystem the repositories are the ones its catalogue lists in
-# README.md; each repository's own manifest says how mature it is
-# ("maturity") and, when it has been tried, on what ("evidence"). A
-# repository counts for the points of its maturity (scaffolding 10,
-# functional 45, established 75, production 90), plus 10 when its evidence is
-# real hardware; the bar is the mean over the repositories of the ecosystem.
-# 100% therefore means every repository is in production and was tried on
-# real hardware - the milestone the profile has always named.
+# README.md. A repository scores up to 100 points, from facts only:
+#   maturity   (45)  its manifest: scaffolding 5, functional 20, established 35, production 45
+#   evidence   (25)  its manifest: none 0, host-test 3, simulator 8, bench 15, field 25
+#                    (a repository that is not bound to hardware counts as bench once it is functional)
+#   delivery   (15)  the releases it has published: 1-2 releases 4, 3-5 8, 6-9 11, 10-19 13, 20 or more 15
+#   quality    (15)  tests (5), a green CI on the main branch (5), the eight README files (5)
+# The bar is the mean over the repositories of the ecosystem. 100% therefore means
+# every repository is in production, was used in the field and is fully delivered,
+# tested and documented - the milestone the profile has always named.
 #
 # The manifest is read from the local sibling checkout when there is one and
 # otherwise from raw.githubusercontent.com (the only path in CI), exactly as
@@ -50,8 +52,11 @@ MANIFEST_CANDIDATES = (
     "hydra-umc.project.json", "urtc.project.json", "armor.project.json",
     "eh3d.project.json", "electro-hobby-3d.project.json",
 )
-MATURITY_POINTS = {"scaffolding": 10, "functional": 45, "established": 75, "production": 90}
-HARDWARE_BONUS = 10
+MATURITY_POINTS = {"scaffolding": 5, "functional": 20, "established": 35, "production": 45}
+EVIDENCE_POINTS = {"none": 0, "host-test": 3, "simulator": 8, "bench": 15, "field": 25}
+DELIVERY_STEPS = ((20, 15), (10, 13), (6, 11), (3, 8), (1, 4))
+QUALITY_POINT = 5
+ONLINE_MINIMUM = 0.9
 BAR_WIDTH = 20
 EIGHTHS = " ▏▎▍▌▋▊▉"
 
@@ -61,25 +66,25 @@ OLD_BAR = re.compile(r"^`\\?\[[█▉▊▋▌▍▎▏░]+\] \d+%`.*$", re.M)
 
 # The sentence after the bar, in the eight languages. {n} is the number of repositories.
 TEXT = {
-    "README.md": "Calculated from real data: the maturity and the evidence that each of its {n} repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.",
-    "README_spa.md": "Calculado con datos reales: la madurez y la evidencia que cada uno de sus {n} repositorios declara en su propio manifiesto. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.",
-    "README_deu.md": "Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner {n} Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.",
-    "README_fra.md": "Calculé à partir de données réelles : la maturité et la preuve que chacun de ses {n} dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.",
-    "README_ita.md": "Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi {n} repository dichiara nel proprio manifesto. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.",
-    "README_jpn.md": "実際のデータから算出しています。{n} 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠が元です。100% は、完全に統合され実機で動作するエコシステムを指します。",
-    "README_zho.md": "根据真实数据计算：其 {n} 个仓库各自在自己的清单中声明的成熟度和验证依据。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。",
-    "README_por.md": "Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus {n} repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.",
+    "README.md": "Calculated from real data: the maturity and the evidence that each of its {n} repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.",
+    "README_spa.md": "Calculado con datos reales: la madurez y la evidencia que cada uno de sus {n} repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.",
+    "README_deu.md": "Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner {n} Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.",
+    "README_fra.md": "Calculé à partir de données réelles : la maturité et la preuve que chacun de ses {n} dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.",
+    "README_ita.md": "Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi {n} repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.",
+    "README_jpn.md": "実際のデータから算出しています。{n} 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。",
+    "README_zho.md": "根据真实数据计算：其 {n} 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。",
+    "README_por.md": "Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus {n} repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.",
 }
 # The row of the status table at the top of each README.
 STATUS_ROW = {
-    "README.md": "| Progress bars | 🟢 | The percentage of every ecosystem is calculated by `scripts/ecosystem_progress.py` from the maturity and the evidence that each repository declares in its own manifest, and refreshed with the dashboard; the 100% milestone is still a fully integrated ecosystem working on real hardware. |",
-    "README_spa.md": "| Barras de progreso | 🟢 | El porcentaje de cada ecosistema lo calcula `scripts/ecosystem_progress.py` con la madurez y la evidencia que cada repositorio declara en su propio manifiesto, y se renueva con el panel; el hito del 100% sigue siendo un ecosistema totalmente integrado funcionando en hardware real. |",
-    "README_deu.md": "| Fortschrittsbalken | 🟢 | Der Prozentwert jedes Ökosystems wird von `scripts/ecosystem_progress.py` aus der Reife und dem Nachweis berechnet, die jedes Repository in seinem eigenen Manifest angibt, und mit dem Dashboard erneuert; der 100%-Meilenstein bleibt ein vollständig integriertes Ökosystem auf echter Hardware. |",
-    "README_fra.md": "| Barres de progression | 🟢 | Le pourcentage de chaque écosystème est calculé par `scripts/ecosystem_progress.py` à partir de la maturité et de la preuve que chaque dépôt déclare dans son propre manifeste, et renouvelé avec le tableau de bord ; le jalon de 100 % reste un écosystème entièrement intégré fonctionnant sur du matériel réel. |",
-    "README_ita.md": "| Barre di avanzamento | 🟢 | La percentuale di ogni ecosistema è calcolata da `scripts/ecosystem_progress.py` con la maturità e la prova che ogni repository dichiara nel proprio manifesto, e si rinnova con il dashboard; il traguardo del 100% resta un ecosistema completamente integrato che funziona su hardware reale. |",
-    "README_jpn.md": "| 進捗バー | 🟢 | 各エコシステムのパーセンテージは、各リポジトリが自分のマニフェストで宣言している成熟度と検証の根拠から `scripts/ecosystem_progress.py` が算出し、ダッシュボードとともに更新されます。100% の基準は、完全に統合され実機で動作するエコシステムのままです。 |",
-    "README_zho.md": "| 进度条 | 🟢 | 每个生态系统的百分比由 `scripts/ecosystem_progress.py` 根据各仓库在自己的清单中声明的成熟度和验证依据计算，并随仪表盘一起刷新；100% 的里程碑仍然是一个完全集成并在真实硬件上运行的生态系统。 |",
-    "README_por.md": "| Barras de progresso | 🟢 | A percentagem de cada ecossistema é calculada por `scripts/ecosystem_progress.py` com a maturidade e a evidência que cada repositório declara no seu próprio manifesto, e renovada com o painel; o marco de 100% continua a ser um ecossistema totalmente integrado a funcionar em hardware real. |",
+    "README.md": "| Progress bars | 🟢 | The percentage of every ecosystem is calculated by `scripts/ecosystem_progress.py` from the maturity and the evidence that each repository declares in its own manifest, plus its published releases, tests, green CI and documentation in eight languages, and refreshed with the dashboard; the 100% milestone is still a fully integrated ecosystem working on real hardware. |",
+    "README_spa.md": "| Barras de progreso | 🟢 | El porcentaje de cada ecosistema lo calcula `scripts/ecosystem_progress.py` con la madurez y la evidencia que cada repositorio declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas, y se renueva con el panel; el hito del 100% sigue siendo un ecosistema totalmente integrado funcionando en hardware real. |",
+    "README_deu.md": "| Fortschrittsbalken | 🟢 | Der Prozentwert jedes Ökosystems wird von `scripts/ecosystem_progress.py` aus der Reife und dem Nachweis berechnet, die jedes Repository in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, Tests, grünes CI und Dokumentation in acht Sprachen, und mit dem Dashboard erneuert; der 100%-Meilenstein bleibt ein vollständig integriertes Ökosystem auf echter Hardware. |",
+    "README_fra.md": "| Barres de progression | 🟢 | Le pourcentage de chaque écosystème est calculé par `scripts/ecosystem_progress.py` à partir de la maturité et de la preuve que chaque dépôt déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues, et renouvelé avec le tableau de bord ; le jalon de 100 % reste un écosystème entièrement intégré fonctionnant sur du matériel réel. |",
+    "README_ita.md": "| Barre di avanzamento | 🟢 | La percentuale di ogni ecosistema è calcolata da `scripts/ecosystem_progress.py` con la maturità e la prova che ogni repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue, e si rinnova con il dashboard; il traguardo del 100% resta un ecosistema completamente integrato che funziona su hardware reale. |",
+    "README_jpn.md": "| 進捗バー | 🟢 | 各エコシステムのパーセンテージは、各リポジトリが自分のマニフェストで宣言している成熟度と検証の根拠、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントから `scripts/ecosystem_progress.py` が算出し、ダッシュボードとともに更新されます。100% の基準は、完全に統合され実機で動作するエコシステムのままです。 |",
+    "README_zho.md": "| 进度条 | 🟢 | 每个生态系统的百分比由 `scripts/ecosystem_progress.py` 根据各仓库在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档计算，并随仪表盘一起刷新；100% 的里程碑仍然是一个完全集成并在真实硬件上运行的生态系统。 |",
+    "README_por.md": "| Barras de progresso | 🟢 | A percentagem de cada ecossistema é calculada por `scripts/ecosystem_progress.py` com a maturidade e a evidência que cada repositório declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas, e renovada com o painel; o marco de 100% continua a ser um ecossistema totalmente integrado a funcionar em hardware real. |",
 }
 
 ManifestReader = Callable[[str], "dict | None"]
@@ -132,16 +137,79 @@ def ecosystem_repos(readme_text: str) -> dict[str, list[str]]:
     return result
 
 
-def project_points(manifest: dict) -> int:
-    points = MATURITY_POINTS.get(str(manifest.get("maturity", "")).lower(), 0)
-    if str(manifest.get("evidence", "")).lower() == "hardware":
-        points += HARDWARE_BONUS
+def delivery_points(releases: int) -> int:
+    for minimum, points in DELIVERY_STEPS:
+        if releases >= minimum:
+            return points
+    return 0
+
+
+def project_points(manifest: dict, signals: dict | None = None) -> int:
+    """Up to 100 points of one repository: maturity, evidence, releases, tests, green CI and eight README files."""
+    maturity = str(manifest.get("maturity", "")).lower()
+    evidence = str(manifest.get("evidence", "")).lower()
+    points = MATURITY_POINTS.get(maturity, 0)
+    value = EVIDENCE_POINTS.get(evidence, 0)
+    if manifest.get("hardware_bound") is False and maturity != "scaffolding":
+        value = max(value, EVIDENCE_POINTS["bench"])
+    points += value
+    if signals:
+        points += delivery_points(int(signals.get("releases", 0)))
+        points += QUALITY_POINT * (bool(signals.get("tests")) + bool(signals.get("ci")) + (int(signals.get("readmes", 0)) >= 8))
     return min(100, points)
 
 
-def ecosystem_percent(repos: list[str], reader: ManifestReader) -> tuple[int, int]:
+def _api(path: str) -> object | None:
+    """A GitHub API answer as JSON: with the token of the CI when there is one, otherwise through the gh command."""
+    import os
+    import subprocess
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        request = urllib.request.Request(f"https://api.github.com/{path}", headers={
+            "User-Agent": USER_AGENT, "Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"})
+        try:
+            with urllib.request.urlopen(request, timeout=RAW_TIMEOUT_S * 3) as response:
+                return json.loads(response.read().decode("utf-8", errors="replace"))
+        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError):
+            return None
+    try:
+        out = subprocess.run(["gh", "api", path], capture_output=True, text=True, encoding="utf-8", timeout=60)
+        return json.loads(out.stdout) if out.returncode == 0 and out.stdout.strip() else None
+    except (OSError, subprocess.SubprocessError, json.JSONDecodeError):
+        return None
+
+
+def read_signals(name: str) -> dict | None:
+    """Facts about the delivery and the quality of one repository, from the GitHub API; None when they cannot be read."""
+    tags = _api(f"repos/JuanenRac/{name}/tags?per_page=100")
+    contents = _api(f"repos/JuanenRac/{name}/contents")
+    runs = _api(f"repos/JuanenRac/{name}/actions/runs?branch=main&status=completed&per_page=5")
+    if not isinstance(tags, list) or not isinstance(contents, list):
+        return None
+    names = {str(item.get("name", "")) for item in contents if isinstance(item, dict)}
+    readmes = sum(1 for n in names if re.fullmatch(r"README(_[a-z]{3})?\.md", n))
+    ci = False
+    if isinstance(runs, dict) and runs.get("workflow_runs"):
+        ci = runs["workflow_runs"][0].get("conclusion") == "success"
+    tests = bool(names & {"tests", "test", "__tests__", "spec"})
+    if not tests:
+        badge = _fetch_raw(name, "README.md") or ""
+        match = re.search(r"Tests-([\d,\.]+)", badge)
+        tests = bool(match and re.sub(r"[^\d]", "", match.group(1)) not in ("", "0"))
+    return {"releases": len(tags), "readmes": readmes, "ci": ci, "tests": tests}
+
+
+SignalReader = Callable[[str], "dict | None"]
+
+
+def ecosystem_percent(repos: list[str], reader: ManifestReader, signals: SignalReader | None = None) -> tuple[int, int]:
     """(percent, repositories counted): the mean points of the repositories whose manifest could be read."""
-    points = [project_points(manifest) for name in repos if (manifest := reader(name)) is not None]
+    points = []
+    for name in repos:
+        manifest = reader(name)
+        if manifest is None:
+            continue
+        points.append(project_points(manifest, signals(name) if signals else None))
     if not points:
         return 0, 0
     return int(sum(points) / len(points) + 0.5), len(points)
@@ -194,9 +262,21 @@ def update_readme(text: str, file: str, numbers: dict[str, tuple[int, int]]) -> 
     return "\n".join(lines)
 
 
-def compute(reader: ManifestReader = read_manifest) -> dict[str, tuple[int, int]]:
+def compute(reader: ManifestReader = read_manifest, signals: SignalReader | None = read_signals) -> dict[str, tuple[int, int]]:
     repos = ecosystem_repos((ROOT / "README.md").read_text(encoding="utf-8"))
-    return {eco: ecosystem_percent(repos.get(eco, []), reader) for eco in ECOSYSTEMS}
+    if signals is read_signals:
+        cache: dict[str, dict | None] = {}
+        missing = 0
+        total = 0
+        for names in repos.values():
+            for name in names:
+                total += 1
+                cache[name] = read_signals(name)
+                missing += cache[name] is None
+        if total and missing / total > 1 - ONLINE_MINIMUM:
+            raise SystemExit(f"ERROR: the delivery and quality facts could not be read for {missing} of {total} repositories; nothing written")
+        signals = lambda name: cache.get(name)  # noqa: E731 - the facts are read once per repository
+    return {eco: ecosystem_percent(repos.get(eco, []), reader, signals) for eco in ECOSYSTEMS}
 
 
 def main(argv: list[str]) -> int:
