@@ -35,7 +35,7 @@ Jede Zeile ist ein Teil dieses Repositorys, und die Ampel sagt, wie weit er heut
 | Dashboard und Überwachung | 🟢 | Das Status-Dashboard, die CI-Überwachung, die Gesundheitsmatrix, die Linkprüfung und die Release-Übersicht laufen zeitgesteuert in GitHub Actions, und ihre letzten Läufe bestehen. |
 | Tests | 🟢 | 59 Tests bestehen (`python -m unittest discover -s tests`): der Katalog, die Überwachung, die Banner, die Roadmap-Vorbefüllung der vier Boards (HYDRA-UMC, URTC, A.R.M.O.R. und EH3D) und der Gleichstand der README. |
 | Katalog und Versionen | 🟡 | Die Spalte Version jeder Projekttabelle wird von einem Skript aus dem Manifest des jeweiligen Repositorys gefüllt und geprüft, sie veraltet also nicht; die einzeiligen Beschreibungen werden von Hand geschrieben. |
-| Fortschrittsbalken | 🟢 | Der Prozentwert jedes Ökosystems wird von `scripts/ecosystem_progress.py` aus der Reife und dem Nachweis berechnet, die jedes Repository in seinem eigenen Manifest angibt, und mit dem Dashboard erneuert; der 100%-Meilenstein bleibt ein vollständig integriertes Ökosystem auf echter Hardware. |
+| Fortschrittsbalken | 🟢 | Der Prozentwert jedes Ökosystems wird von `scripts/ecosystem_progress.py` aus der Reife und dem Nachweis berechnet, die jedes Repository in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, Tests, grünes CI und Dokumentation in acht Sprachen, und mit dem Dashboard erneuert; der 100%-Meilenstein bleibt ein vollständig integriertes Ökosystem auf echter Hardware. |
 | Gleichstand in acht Sprachen | 🟢 | Die acht README-Dateien behalten dieselben Abschnitte, dieselben GitHub-Links und dieselbe Zahl von Tabellenzeilen, und ein Test schlägt fehl, wenn eine davon abweicht. |
 | Echte Hardware | 🟢 | Nicht zutreffend: Dieses Repository enthält das Profil und seine Automatisierung, nichts hier läuft auf Hardware. |
 | Dokumentation | 🟢 | README in acht Sprachen mit den vier Ökosystemen, die Anleitung zur Zusammenarbeit auf GitHub und die Community-Dateien. |
@@ -74,7 +74,7 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 ## 📈 Ökosystem-Fortschritt
 
 <!-- progress:hydra-umc -->
-`\[█████████▍░░░░░░░░░░] 47%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 57 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[███████████░░░░░░░░░] 55%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 57 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:urtc -->
-`\[████████▎░░░░░░░░░░░] 41%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 11 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[██████████▎░░░░░░░░░] 51%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 11 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:urtc -->
 
 ## 🏗️ Funktionsweise von URTC
@@ -354,7 +354,7 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:armor -->
-`\[████████████▍░░░░░░░] 62%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 19 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[█████████████▎░░░░░░] 66%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 19 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:armor -->
 
 ## 🏗️ Wie A.R.M.O.R. aufgebaut ist
@@ -413,7 +413,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 26 Repositories in seinem eigenen Manifest angibt. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[██████░░░░░░░░░░░░░░] 30%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 26 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:eh3d -->
 
 ## 🏗️ Funktionsweise der EH3D Fabrication Suite

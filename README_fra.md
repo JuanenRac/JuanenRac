@@ -35,7 +35,7 @@ Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'
 | Tableau de bord et surveillance | 🟢 | Le tableau de bord d'état, la surveillance de la CI, la matrice de santé, la vérification des liens et le résumé des versions s'exécutent de façon planifiée dans GitHub Actions, et leurs dernières exécutions réussissent. |
 | Tests | 🟢 | 59 tests réussissent (`python -m unittest discover -s tests`) : le catalogue, la surveillance, les bannières, l'amorçage de la feuille de route des quatre tableaux (HYDRA-UMC, URTC, A.R.M.O.R. et EH3D) et la parité des README. |
 | Catalogue et versions | 🟡 | La colonne Version de chaque tableau de projets est remplie par un script à partir du manifeste de chaque dépôt et vérifiée, donc elle ne se périme pas ; les descriptions d'une ligne sont écrites à la main. |
-| Barres de progression | 🟢 | Le pourcentage de chaque écosystème est calculé par `scripts/ecosystem_progress.py` à partir de la maturité et de la preuve que chaque dépôt déclare dans son propre manifeste, et renouvelé avec le tableau de bord ; le jalon de 100 % reste un écosystème entièrement intégré fonctionnant sur du matériel réel. |
+| Barres de progression | 🟢 | Le pourcentage de chaque écosystème est calculé par `scripts/ecosystem_progress.py` à partir de la maturité et de la preuve que chaque dépôt déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues, et renouvelé avec le tableau de bord ; le jalon de 100 % reste un écosystème entièrement intégré fonctionnant sur du matériel réel. |
 | Parité en huit langues | 🟢 | Les huit fichiers README gardent les mêmes sections, les mêmes liens GitHub et le même nombre de lignes de tableau, et un test échoue si l'un d'eux dérive. |
 | Matériel réel | 🟢 | Sans objet : ce dépôt contient le profil et son automatisation, rien ici ne tourne sur du matériel. |
 | Documentation | 🟢 | README en huit langues avec les quatre écosystèmes, le guide de collaboration sur GitHub et les fichiers de communauté. |
@@ -74,7 +74,7 @@ Bienvenue dans l'**écosystème HYDRA-UMC**, une plateforme de robotique industr
 ## 📈 Progression de l'écosystème
 
 <!-- progress:hydra-umc -->
-`\[█████████▍░░░░░░░░░░] 47%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 57 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[███████████░░░░░░░░░] 55%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 57 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 **Outil de mise à jour :** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:urtc -->
-`\[████████▎░░░░░░░░░░░] 41%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 11 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[██████████▎░░░░░░░░░] 51%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 11 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:urtc -->
 
 ## 🏗️ Comment fonctionne URTC
@@ -354,7 +354,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 **Outil de mise à jour :** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:armor -->
-`\[████████████▍░░░░░░░] 62%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 19 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[█████████████▎░░░░░░] 66%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 19 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:armor -->
 
 ## 🏗️ Comment est construit A.R.M.O.R.
@@ -413,7 +413,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 **Outil de mise à jour :** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 26 dépôts déclare dans son propre manifeste. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[██████░░░░░░░░░░░░░░] 30%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 26 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:eh3d -->
 
 ## 🏗️ Comment fonctionne EH3D Fabrication Suite

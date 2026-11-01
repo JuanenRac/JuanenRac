@@ -35,7 +35,7 @@ Each line is one part of this repository and the light says how far it is today.
 | Dashboard and monitors | 🟢 | The status dashboard, the CI watch, the health matrix, the link check and the release digest run on a schedule in GitHub Actions, and their latest runs pass. |
 | Tests | 🟢 | 59 tests pass (`python -m unittest discover -s tests`): the catalogue, the monitors, the banners, the roadmap seed of the four boards (HYDRA-UMC, URTC, A.R.M.O.R. and EH3D) and the README parity. |
 | Catalogue and versions | 🟡 | The Version column of every project table is filled from each repository's own manifest by a script and checked, so it does not go stale; the one-line descriptions are written by hand. |
-| Progress bars | 🟢 | The percentage of every ecosystem is calculated by `scripts/ecosystem_progress.py` from the maturity and the evidence that each repository declares in its own manifest, and refreshed with the dashboard; the 100% milestone is still a fully integrated ecosystem working on real hardware. |
+| Progress bars | 🟢 | The percentage of every ecosystem is calculated by `scripts/ecosystem_progress.py` from the maturity and the evidence that each repository declares in its own manifest, plus its published releases, tests, green CI and documentation in eight languages, and refreshed with the dashboard; the 100% milestone is still a fully integrated ecosystem working on real hardware. |
 | Eight-language parity | 🟢 | The eight README files keep the same sections, the same GitHub links and the same number of table rows, and a test fails when one of them drifts. |
 | Real hardware | 🟢 | Not applicable: this repository holds the profile and its automation, nothing here runs on hardware. |
 | Documentation | 🟢 | README in eight languages with the four ecosystems, the guide to the collaboration on GitHub and the community files. |
@@ -74,7 +74,7 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 ## 📈 Ecosystem Progress
 
 <!-- progress:hydra-umc -->
-`[█████████▍░░░░░░░░░░] 47%` — Calculated from real data: the maturity and the evidence that each of its 57 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[███████████░░░░░░░░░] 55%` — Calculated from real data: the maturity and the evidence that each of its 57 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:hydra-umc -->
 
 > [!IMPORTANT]
@@ -290,7 +290,7 @@ for all four - can check versions and build/update any other project.
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:urtc -->
-`[████████▎░░░░░░░░░░░] 41%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████████▎░░░░░░░░░] 51%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:urtc -->
 
 ## 🏗️ How URTC Works
@@ -348,7 +348,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:armor -->
-`[████████████▍░░░░░░░] 62%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████████▎░░░░░░] 66%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:armor -->
 
 ## 🏗️ How A.R.M.O.R. Is Built
@@ -407,7 +407,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[██░░░░░░░░░░░░░░░░░░] 10%` — Calculated from real data: the maturity and the evidence that each of its 26 repositories declares in its own manifest. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████░░░░░░░░░░░░░░] 30%` — Calculated from real data: the maturity and the evidence that each of its 26 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 ## 🏗️ How EH3D Fabrication Suite Works

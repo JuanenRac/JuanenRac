@@ -35,7 +35,7 @@ Cada linha é uma parte deste repositório e a luz diz até onde chega hoje. É 
 | Painel e vigilância | 🟢 | O painel de estado, a vigilância do CI, a matriz de saúde, a verificação de ligações e o resumo de versões correm de forma agendada no GitHub Actions, e as últimas execuções passam. |
 | Testes | 🟢 | Passam 59 testes (`python -m unittest discover -s tests`): o catálogo, a vigilância, os banners, a criação do roteiro dos quatro quadros (HYDRA-UMC, URTC, A.R.M.O.R. e EH3D) e a paridade dos README. |
 | Catálogo e versões | 🟡 | A coluna Versão de cada tabela de projetos é preenchida por um script a partir do manifesto de cada repositório e verificada, por isso não fica desatualizada; as descrições de uma linha são escritas à mão. |
-| Barras de progresso | 🟢 | A percentagem de cada ecossistema é calculada por `scripts/ecosystem_progress.py` com a maturidade e a evidência que cada repositório declara no seu próprio manifesto, e renovada com o painel; o marco de 100% continua a ser um ecossistema totalmente integrado a funcionar em hardware real. |
+| Barras de progresso | 🟢 | A percentagem de cada ecossistema é calculada por `scripts/ecosystem_progress.py` com a maturidade e a evidência que cada repositório declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas, e renovada com o painel; o marco de 100% continua a ser um ecossistema totalmente integrado a funcionar em hardware real. |
 | Paridade em oito idiomas | 🟢 | Os oito README mantêm as mesmas secções, as mesmas ligações do GitHub e o mesmo número de linhas de tabela, e um teste falha quando um deles se desvia. |
 | Hardware real | 🟢 | Não se aplica: este repositório contém o perfil e a sua automatização, nada aqui corre em hardware. |
 | Documentação | 🟢 | README em oito idiomas com os quatro ecossistemas, o guia de colaboração no GitHub e os ficheiros da comunidade. |
@@ -74,7 +74,7 @@ Bem-vindo ao **Ecossistema HYDRA-UMC**, uma plataforma de robótica industrial m
 ## 📈 Progresso do Ecossistema
 
 <!-- progress:hydra-umc -->
-`\[█████████▍░░░░░░░░░░] 47%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 57 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[███████████░░░░░░░░░] 55%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 57 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 **Atualizador:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:urtc -->
-`\[████████▎░░░░░░░░░░░] 41%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 11 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[██████████▎░░░░░░░░░] 51%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 11 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:urtc -->
 
 ## 🏗️ Como o URTC Funciona
@@ -354,7 +354,7 @@ Cada perfil de ferramenta carrega seu próprio watchdog e comportamento de falha
 **Atualizador:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:armor -->
-`\[████████████▍░░░░░░░] 62%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 19 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[█████████████▎░░░░░░] 66%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 19 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:armor -->
 
 ## 🏗️ Como o A.R.M.O.R. é Construído
@@ -413,7 +413,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 **Atualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 26 repositórios declara no seu próprio manifesto. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[██████░░░░░░░░░░░░░░] 30%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 26 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:eh3d -->
 
 ## 🏗️ Como a EH3D Fabrication Suite Funciona

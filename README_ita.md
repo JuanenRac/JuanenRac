@@ -35,7 +35,7 @@ Ogni riga è una parte di questo repository e il semaforo dice a che punto è og
 | Dashboard e monitoraggio | 🟢 | Il dashboard di stato, il controllo della CI, la matrice di salute, il controllo dei link e il riepilogo dei rilasci girano in modo programmato in GitHub Actions e le loro ultime esecuzioni passano. |
 | Test | 🟢 | 59 test passano (`python -m unittest discover -s tests`): il catalogo, il monitoraggio, i banner, la creazione della roadmap delle quattro bacheche (HYDRA-UMC, URTC, A.R.M.O.R. ed EH3D) e la parità dei README. |
 | Catalogo e versioni | 🟡 | La colonna Versione di ogni tabella di progetti è compilata da uno script a partire dal manifesto di ciascun repository e verificata, quindi non invecchia; le descrizioni di una riga sono scritte a mano. |
-| Barre di avanzamento | 🟢 | La percentuale di ogni ecosistema è calcolata da `scripts/ecosystem_progress.py` con la maturità e la prova che ogni repository dichiara nel proprio manifesto, e si rinnova con il dashboard; il traguardo del 100% resta un ecosistema completamente integrato che funziona su hardware reale. |
+| Barre di avanzamento | 🟢 | La percentuale di ogni ecosistema è calcolata da `scripts/ecosystem_progress.py` con la maturità e la prova che ogni repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue, e si rinnova con il dashboard; il traguardo del 100% resta un ecosistema completamente integrato che funziona su hardware reale. |
 | Parità in otto lingue | 🟢 | Gli otto file README mantengono le stesse sezioni, gli stessi link GitHub e lo stesso numero di righe di tabella, e un test fallisce se uno di essi diverge. |
 | Hardware reale | 🟢 | Non applicabile: questo repository contiene il profilo e la sua automazione, nulla qui gira su hardware. |
 | Documentazione | 🟢 | README in otto lingue con i quattro ecosistemi, la guida alla collaborazione su GitHub e i file della community. |
@@ -74,7 +74,7 @@ Benvenuti nell'**ecosistema HYDRA-UMC**, una piattaforma di robotica industriale
 ## 📈 Avanzamento dell'ecosistema
 
 <!-- progress:hydra-umc -->
-`\[█████████▍░░░░░░░░░░] 47%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 57 repository dichiara nel proprio manifesto. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[███████████░░░░░░░░░] 55%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 57 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:hydra-umc -->
 
 > \[!IMPORTANT]
@@ -296,7 +296,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 **Aggiornatore:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:urtc -->
-`\[████████▎░░░░░░░░░░░] 41%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 11 repository dichiara nel proprio manifesto. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[██████████▎░░░░░░░░░] 51%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 11 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:urtc -->
 
 ## 🏗️ Come funziona URTC
@@ -354,7 +354,7 @@ Ogni profilo di utensile gestisce il proprio watchdog e comportamento in caso di
 **Aggiornatore:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:armor -->
-`\[████████████▍░░░░░░░] 62%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 19 repository dichiara nel proprio manifesto. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[█████████████▎░░░░░░] 66%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 19 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:armor -->
 
 ## 🏗️ Come è costruito A.R.M.O.R.
@@ -413,7 +413,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 **Aggiornatore:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:eh3d -->
-`\[██░░░░░░░░░░░░░░░░░░] 10%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 26 repository dichiara nel proprio manifesto. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[██████░░░░░░░░░░░░░░] 30%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 26 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:eh3d -->
 
 ## 🏗️ Come funziona EH3D Fabrication Suite
