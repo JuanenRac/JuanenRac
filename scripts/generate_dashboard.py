@@ -4494,6 +4494,8 @@ def render_html(
     line-height: 1.6;
     padding: 0 2px;
     flex: 0 0 auto;
+    min-width: 24px;
+    min-height: 24px;
   }}
 
   .details-toggle:hover {{
