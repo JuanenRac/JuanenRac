@@ -52,9 +52,13 @@ from pathlib import Path
 
 from hydra_umc_updater.ecosystem_catalog import parse_catalog
 from catalog_check import catalog_ecosystems, mismatches as catalog_mismatches
+import dashboard_app
+import dashboard_app_texts
+import dashboard_charts
 import dashboard_integrity
 import dashboard_texts
 import ecosystem_progress
+import ecosystem_status
 from hydra_umc_updater import github_client as _hydra_client
 from hydra_umc_updater.github_client import RemoteStatus, discover_remote_projects
 from hydra_umc_updater.project_manifest import ECOSYSTEM_ID as _HYDRA_ECOSYSTEM_ID, ManifestValidationError, parse_manifest
@@ -1906,6 +1910,11 @@ for language, values in dashboard_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
     ROADMAP_COMPAT_TRANSLATIONS[language].update({key: value for key, value in values.items() if key.startswith("roadmap_advance_")})
 
+# Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
+for language, values in dashboard_app_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+    TRANSLATIONS[language].update({f"area_{area}": ecosystem_status.LABEL[area][language] for area in ecosystem_status.AREAS})
+
 DEPLOY_ICONS: dict[str, str] = {
     "cm5": (
         '<rect x="4" y="4" width="16" height="16" rx="2"/>'
@@ -2595,14 +2604,16 @@ def render_project_rows(
                 """
             )
 
+            stamp = f'data-ecosystem="{esc(ecosystem_key)}" class="project-row'
+
             if parent is not None:
                 rows.append(
-                    _render_one_row(parent, results=results, meta=meta, is_child=False)
+                    _render_one_row(parent, results=results, meta=meta, is_child=False).replace('class="project-row', stamp, 1)
                 )
 
             for child in children:
                 rows.append(
-                    _render_one_row(child, results=results, meta=meta, is_child=parent is not None)
+                    _render_one_row(child, results=results, meta=meta, is_child=parent is not None).replace('class="project-row', stamp, 1)
                 )
 
     return "".join(rows)
@@ -2837,7 +2848,7 @@ def check_integrity(
     ecosystem_by_name: dict[str, str],
     discovery_errors: list[str],
     api_failures: list[tuple[str, str]],
-) -> "tuple[list[dashboard_integrity.Issue], dashboard_integrity.Coverage]":
+) -> "tuple[list[dashboard_integrity.Issue], dashboard_integrity.Coverage, dict]":
     """Compare the dashboard with the README catalogue, the repositories of the owner and the raw manifests; see scripts/dashboard_integrity.py."""
     catalog: dict[str, list[str]] = {}
     readme = Path(__file__).resolve().parent.parent / "README.md"
@@ -2860,7 +2871,7 @@ def check_integrity(
         raw_manifests=raw,
         owner_repos=owner_repos,
         api_failures=list(api_failures) + failures,
-    ), cover
+    ), cover, raw
 
 
 def render_integrity(issues: "list[dashboard_integrity.Issue]", cover: "dashboard_integrity.Coverage | None" = None) -> str:
@@ -3162,6 +3173,9 @@ def render_html(
     ecosystem_by_name: dict[str, str],
     integrity: "list[dashboard_integrity.Issue] | None" = None,
     cover: "dashboard_integrity.Coverage | None" = None,
+    raw_manifests: "dict | None" = None,
+    activity: "dict | None" = None,
+    readme_text: "str | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3220,6 +3234,51 @@ def render_html(
         for name, parent, children in ordered_projects(entries)
     )
 
+    readme_path = Path(__file__).resolve().parent.parent / "README.md"
+    if readme_text is None:
+        try:
+            readme_text = readme_path.read_text(encoding="utf-8")
+        except OSError:
+            readme_text = ""
+    app_keys = [key for key, _label in dashboard_app.ECOSYSTEMS]
+    app_data = dashboard_app.AppData(
+        total=total,
+        ok=ok,
+        errors=errors,
+        success_percent_text=f"{success_percent:g}%",
+        ecosystem_by_name=ecosystem_by_name,
+        maturity_labels={**MATURITY_LABELS, dashboard_charts.UNKNOWN: "Unknown"},
+        evidence_labels={**{key: dashboard_texts.TEXTS["en"][f"evidence_{key}"] for key in dashboard_texts.EVIDENCE_KEYS}, dashboard_charts.UNKNOWN: "Unknown"},
+        status=dashboard_charts.parse_status(readme_text, app_keys),
+        progress=dashboard_charts.parse_progress(readme_text, app_keys),
+        maturity=dashboard_charts.count_by_ecosystem({entry.name: entry.maturity for entry in entries}, ecosystem_by_name, dashboard_charts.MATURITY_KEYS, app_keys),
+        evidence=dashboard_charts.count_by_ecosystem(dashboard_charts.evidence_values(raw_manifests or {}), ecosystem_by_name, dashboard_charts.EVIDENCE_KEYS, app_keys),
+        activity=activity or {},
+        issues=integrity,
+        unresolved=[(entry.name, error_text(results.get(entry.name))) for entry in entries if not (results.get(entry.name) and results[entry.name].version is not None)],
+    )
+    eco_counts: dict[str, int] = {}
+    for eco_key in ecosystem_by_name.values():
+        eco_counts[eco_key] = eco_counts.get(eco_key, 0) + 1
+    side_html = dashboard_app.sidebar(
+        [(key, MATURITY_LABELS.get(key, key), maturity_counts.get(key, 0)) for key in MATURITY_ORDER],
+        [(key, ROLE_LABELS.get(key, key), role_counts.get(key, 0)) for key in ROLE_ORDER if role_counts.get(key, 0) > 0],
+        [(key, DEPLOY_LABELS.get(key, key), deploy_counts.get(key, 0)) for key in DEPLOY_ORDER if deploy_counts.get(key, 0) > 0],
+        eco_counts,
+        family_options,
+    )
+    tab_list_html = dashboard_app.tab_list()
+    summary_html = dashboard_app.summary_panel(app_data, ecosystem_cards)
+    eco_panels_html = "".join(
+        dashboard_app.panel(key, dashboard_app.ecosystem_panel(app_data, key, label)) for key, label in dashboard_app.ECOSYSTEMS
+    )
+    errors_html = dashboard_app.errors_panel(app_data, integrity_html)
+    maturity_chart_html = dashboard_app.stacked_figure("maturity", app_data, dashboard_app.ECOSYSTEMS, wide=True)
+    evidence_chart_html = dashboard_app.stacked_figure("evidence", app_data, dashboard_app.ECOSYSTEMS, wide=True)
+    eh3d_architecture_html = dashboard_app.eh3d_architecture_section()
+    app_css = dashboard_app.CSS
+    app_js = dashboard_app.script()
+
     # Computed as a plain string, not built inside the f-string literal
     # below - the JSON itself is full of single `{`/`}` characters that
     # would otherwise collide with the f-string's own `{{`/`}}` escaping
@@ -3256,9 +3315,8 @@ def render_html(
     try {{
       var saved = localStorage.getItem("hydra-dashboard-theme");
 
-      if (saved === "dark" || saved === "light") {{
-        document.documentElement.setAttribute("data-theme", saved);
-      }}
+      // Dark is the default; a saved choice (dark or light) wins.
+      document.documentElement.setAttribute("data-theme", saved === "light" ? "light" : "dark");
     }} catch (e) {{
       // Private browsing / storage disabled - falls back to the
       // system theme, same as any other viewer without a saved choice.
@@ -4758,21 +4816,31 @@ def render_html(
       width: 100%;
     }}
   }}
+
+  {app_css}
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
+<a class="skip-link" href="#main" data-i18n="skip_link">Skip to the content</a>
 
-  <header class="header">
-    <div class="header-top">
-      <div class="eyebrow">
-        ELECTRO HOBBY 3D
-      </div>
+<div class="app">
 
-      <div class="header-controls">
-        <select id="lang-select" class="lang-select" aria-label="Language / Idioma / Langue / Lingua / Sprache / 语言 / 言語 / Língua">
+  <header class="topbar">
+    <div class="brand">
+      <div class="eyebrow">ELECTRO HOBBY 3D</div>
+      <h1><span data-i18n="header_title">Ecosystem Status Dashboard</span> <span class="version-pill">v3</span></h1>
+    </div>
+    {tab_list_html}
+    <div class="top-actions">
+      <a class="build-badge" href="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml" target="_blank" rel="noopener">
+        <img
+          src="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml/badge.svg"
+          alt="Ecosystem dashboard build status - click for the live run history"
+        >
+      </a>
+      <select id="lang-select" class="lang-select" aria-label="Language / Idioma / Langue / Lingua / Sprache / 语言 / 言語 / Língua">
           <option value="en">🇺🇸 English</option>
           <option value="es">🇪🇸 Español</option>
           <option value="fr">🇫🇷 Français</option>
@@ -4782,8 +4850,7 @@ def render_html(
           <option value="ja">🇯🇵 日本語</option>
           <option value="pt">🇵🇹 Português</option>
         </select>
-
-        <button
+      <button
           id="theme-toggle"
           class="theme-toggle"
           type="button"
@@ -4814,37 +4881,15 @@ def render_html(
             aria-hidden="true"
           ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
         </button>
-      </div>
     </div>
+  </header>
 
-    <h1>
-      <span data-i18n="header_title">Ecosystem Status Dashboard</span>
-      <span class="version-pill">v3</span>
-    </h1>
+  {side_html}
 
-    <!--
-      CAT-01 (P2): "content unchanged" and "the hourly check has silently
-      stopped running" used to look identical on this page - no
-      generation timestamp is written here on purpose (see this
-      script's own header comment on why), so there was no visible
-      signal at all distinguishing the two. GitHub's own Actions status
-      badge is a real, live, always-current answer to "did the last
-      scheduled check actually run and succeed" - it needs no sidecar
-      file/extra commit of its own to stay honest, unlike a timestamp
-      baked into this static page would.
-    -->
-    <p class="subtitle">
-      <a href="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml" target="_blank" rel="noopener">
-        <img
-          src="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml/badge.svg"
-          alt="Ecosystem dashboard build status - click for the live run history"
-        >
-      </a>
-    </p>
-
-    {freshness_html}
-
-    <p
+  <main class="content" id="main" tabindex="-1">
+    <section role="tabpanel" class="panel" id="panel-summary" aria-labelledby="tab-summary" tabindex="0" hidden data-testid="panel-summary">
+      <div class="panel-inner">
+        <p
         class="subtitle"
         data-i18n-template="subtitle_main"
         data-ok="{ok}"
@@ -4857,14 +4902,149 @@ def render_html(
       · dashboard generated by GitHub Actions
       · static GitHub Pages
     </p>
+        {summary_html}
+      </div>
+    </section>
+    {eco_panels_html}
+    <section role="tabpanel" class="panel" id="panel-projects" aria-labelledby="tab-projects" tabindex="0" hidden data-testid="panel-projects">
+      <div class="panel-inner">
+        <section class="table-wrapper">
 
-    <p class="subtitle subtitle-v3" data-i18n="subtitle_v3">
+    <table>
+
+      <thead>
+        <tr>
+          <th data-i18n="th_project">Project</th>
+          <th data-i18n="th_type">Type</th>
+          <th data-i18n="th_maturity">Maturity</th>
+          <th data-i18n="th_stack">Stack</th>
+          <th data-i18n="th_deploy">Deploy target</th>
+          <th data-i18n="th_version">Version</th>
+          <th data-i18n="th_status">Status</th>
+          <th data-i18n="th_commit">Last commit</th>
+        </tr>
+      </thead>
+
+      <tbody id="project-table">
+        {rows}
+      </tbody>
+
+    </table>
+
+    <div
+      id="empty-results"
+      class="empty"
+      data-i18n="empty_results"
+    >
+      No projects match the current filters.
+    </div>
+
+  </section>
+      </div>
+    </section>
+    <section role="tabpanel" class="panel" id="panel-evidence" aria-labelledby="tab-evidence" tabindex="0" hidden data-testid="panel-evidence">
+      <div class="panel-inner">
+        <p class="subtitle subtitle-v3" data-i18n="subtitle_v3">
       v3: real maturity/role classification, family/parent trees and richer
       per-project notes - see the Maturity legend below for exactly how
       each level was decided.
     </p>
+        <div class="evidence-split"><div class="card">{maturity_chart_html}</div><div class="card">{evidence_chart_html}</div></div>
+<section class="section">
 
-    <p class="ecosystem-intro" data-i18n="architecture_intro">
+    <div class="section-title">
+      <span data-i18n="section_maturity">Maturity</span>
+      <span class="section-title-hint" data-i18n="section_maturity_hint">click a card to filter · hover for how it was decided</span>
+    </div>
+
+    <div class="maturity-grid">
+      {maturity_cards}
+    </div>
+
+    <div class="section-title evidence-title">
+      <span data-i18n="section_evidence">Evidence</span>
+      <span class="section-title-hint" data-i18n="section_evidence_hint">{dt['section_evidence_hint']}</span>
+    </div>
+
+    <div class="evidence-grid">
+      {evidence_cards}
+    </div>
+
+  </section>
+<section class="section">
+
+    <div class="section-title" data-i18n="roadmap_section">
+      Roadmap
+    </div>
+
+    <p class="ecosystem-intro" data-i18n="roadmap_intro">
+      Not a feature timeline with dates - the real path every project in
+      this ecosystem follows, and exactly where each one sits on it right
+      now (see the Maturity section above for the live counts).
+    </p>
+
+    <ol class="roadmap-ladder">
+      {roadmap_steps}
+    </ol>
+
+  </section>
+      </div>
+    </section>
+    <section role="tabpanel" class="panel" id="panel-inventory" aria-labelledby="tab-inventory" tabindex="0" hidden data-testid="panel-inventory">
+      <div class="panel-inner">
+        <div class="inv-grid"><section class="section">
+
+    <div class="section-title" data-i18n="section_deploy">
+      Deployment targets
+    </div>
+
+    <div class="deploy-grid">
+      {deploy_cards}
+    </div>
+
+  </section><section class="section">
+
+    <div class="section-title" data-i18n="section_stack">
+      Technology stacks
+    </div>
+
+    <div class="stack-summary">
+      {stack_summary}
+    </div>
+
+  </section><section class="section">
+
+    <div class="section-title" data-i18n="section_role">
+      Role
+    </div>
+
+    <div class="role-summary">
+      {role_summary}
+    </div>
+
+  </section><div class="span-2"><section class="section">
+
+    <div class="section-title" data-i18n="compat_section">
+      Compatibility matrix
+    </div>
+
+    <p class="ecosystem-intro" data-i18n="compat_intro">
+      Real project counts by role and deployment target, with row, column
+      and grand totals, drawn straight from every repository's own
+      manifest. A count, not a claim that any two specific projects
+      interoperate.
+    </p>
+
+    <div class="compat-matrix-wrapper">
+      {compatibility_matrix}
+    </div>
+
+  </section></div></div>
+      </div>
+    </section>
+    <section role="tabpanel" class="panel" id="panel-architecture" aria-labelledby="tab-architecture" tabindex="0" hidden data-testid="panel-architecture">
+      <div class="panel-inner">
+        <p class="ecosystem-intro" data-i18n="architecture_intro">
       Electro Hobby 3D is four independent engineering ecosystems by the
       same author: HYDRA-UMC (industrial multi-robot platform), URTC (its
       universal robot-tool subsystem, an independent product with its own
@@ -4874,14 +5054,9 @@ def render_html(
       ecosystem's own family groups are labeled below, and HYDRA-UMC's own
       deeper architecture is detailed in the section right after this one.
     </p>
-  </header>
-
-
-  <!-- ================================================================
-       SYSTEM ARCHITECTURE
-       ================================================================ -->
-
-  <section class="section">
+        <div class="arch-switch" role="group" aria-label="Ecosystem architecture" data-i18n-aria-label="arch_switch_label"><button type="button" class="chip" data-arch-view="hydra-umc" aria-pressed="true" data-testid="arch-hydra-umc">HYDRA-UMC</button><button type="button" class="chip" data-arch-view="urtc" aria-pressed="false" data-testid="arch-urtc">URTC</button><button type="button" class="chip" data-arch-view="armor" aria-pressed="false" data-testid="arch-armor">A.R.M.O.R.</button><button type="button" class="chip" data-arch-view="eh3d" aria-pressed="false" data-testid="arch-eh3d">EH3D</button></div>
+      <div class="arch-panel" data-arch-panel="hydra-umc">
+<section class="section">
 
     <div class="section-title" data-i18n="architecture_section">HYDRA-UMC: System architecture</div>
 
@@ -4944,13 +5119,9 @@ def render_html(
     </div>
 
   </section>
-
-
-  <!-- ================================================================
-       URTC SYSTEM ARCHITECTURE
-       ================================================================ -->
-
-  <section class="section">
+      </div>
+      <div class="arch-panel" data-arch-panel="urtc" hidden>
+<section class="section">
 
     <div class="section-title" data-i18n="architecture_section_u">URTC: System architecture</div>
 
@@ -5008,13 +5179,9 @@ def render_html(
     </div>
 
   </section>
-
-
-  <!-- ================================================================
-       A.R.M.O.R. SYSTEM ARCHITECTURE
-       ================================================================ -->
-
-  <section class="section">
+      </div>
+      <div class="arch-panel" data-arch-panel="armor" hidden>
+<section class="section">
 
     <div class="section-title" data-i18n="architecture_section_a">A.R.M.O.R.: System architecture</div>
 
@@ -5070,362 +5237,22 @@ def render_html(
     </div>
 
   </section>
-
-
-  <!-- ================================================================
-       EH3D SYSTEM ARCHITECTURE
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title" data-i18n="architecture_section_e">EH3D: System architecture</div>
-
-    <div class="architecture-grid">
-      <article class="architecture-card">
-        <h3 data-i18n="architecture_e_card1_title">One project file</h3>
-        <p data-i18n="architecture_e_card1_body">EH3D-COMMON defines the .eh3dproj container: a ZIP archive with the project, its layers, toolpaths and vision data, a SHA-256 for every entry and limits that refuse unsafe or oversized names.</p>
-        <ul><li>EH3D-COMMON</li><li>.eh3dproj</li><li>SHA-256 integrity</li><li>Machine telemetry types</li></ul>
-      </article>
-      <article class="architecture-card">
-        <h3 data-i18n="architecture_e_card2_title">Parsers and geometry</h3>
-        <p data-i18n="architecture_e_card2_body">EH3D-CORE-LIBS reads Gerber RS-274X, Excellon drill files and G-code and recovers from damaged files with a diagnostic for every problem; HP-GL and 2D offsets follow.</p>
-        <ul><li>EH3D-CORE-LIBS</li><li>Gerber RS-274X</li><li>Excellon</li><li>G-code</li></ul>
-      </article>
-      <article class="architecture-card">
-        <h3 data-i18n="architecture_e_card3_title">CAM tools</h3>
-        <p data-i18n="architecture_e_card3_body">ISOCAM, DRILLPRO, ROUTEPRO, STENCILCAM, LASER-CAM and AUTOLEVEL turn PCB layers and images into isolation, drilling, contour, stencil, laser and height-compensated toolpaths.</p>
-        <ul><li>EH3D-ISOCAM</li><li>EH3D-DRILLPRO</li><li>EH3D-ROUTEPRO</li><li>EH3D-LASER-CAM</li></ul>
-      </article>
-      <article class="architecture-card">
-        <h3 data-i18n="architecture_e_card4_title">Machine control</h3>
-        <p data-i18n="architecture_e_card4_body">EH3D-MOTIONCNC streams G-code to the machine and EH3D-PENDANT-GUI jogs it from a touchscreen, with EH3D-CAM-DEBUGGER simulating every path first.</p>
-        <ul><li>EH3D-MOTIONCNC</li><li>EH3D-PENDANT-GUI</li><li>EH3D-CAM-DEBUGGER</li><li>Simulator first</li></ul>
-      </article>
-      <article class="architecture-card">
-        <h3 data-i18n="architecture_e_card5_title">Assembly and vision</h3>
-        <p data-i18n="architecture_e_card5_body">EH3D-PNP-MANAGER reads the centroid files for guided or automatic placement and EH3D-VISION-STUDIO aligns cameras and trains fiducials with the vision of HYDRA-UMC.</p>
-        <ul><li>EH3D-PNP-MANAGER</li><li>EH3D-VISION-STUDIO</li><li>HYDRA-UMC vision link</li></ul>
-      </article>
-      <article class="architecture-card">
-        <h3 data-i18n="architecture_e_card6_title">One suite, one tool crib</h3>
-        <p data-i18n="architecture_e_card6_body">EH3D-SUITE-LAUNCHER opens the tools, EH3D-TOOL-MANAGER keeps bits, wear and feeds in one database, EH3D-UPDATER keeps every repository current and EH3D-DOCS holds the manuals.</p>
-        <ul><li>EH3D-SUITE-LAUNCHER</li><li>EH3D-TOOL-MANAGER</li><li>EH3D-UPDATER</li><li>EH3D-DOCS</li></ul>
-      </article>
-    </div>
-
-    <div class="architecture-flow" aria-label="EH3D flow">
-      <span data-i18n="architecture_e_flow_1">Gerber, Excellon and images</span><b>→</b><span data-i18n="architecture_e_flow_2">Parsers and CAM tools</span><b>→</b><span data-i18n="architecture_e_flow_3">G-code and simulation</span><b>→</b><span data-i18n="architecture_e_flow_4">Machine</span>
-    </div>
-
-    <div class="relationship-note">
-      <strong data-i18n="architecture_e_rel_title">EH3D's honest state:</strong> <span data-i18n="architecture_e_rel_body">EH3D is the newest ecosystem. Only EH3D-COMMON (the project container and the machine types) exists as published code so far, the parsers of EH3D-CORE-LIBS are being written and every other repository of the suite is planned. Nothing here has run on a machine yet, and the link with the vision of HYDRA-UMC is a plan, not a feature.</span>
-    </div>
-
-  </section>
-
-
-  <!-- ================================================================
-       HEALTH
-       ================================================================ -->
-
-  <section class="health">
-
-    <div class="health-card">
-      <div id="health-total" class="number">
-        {total}
       </div>
-      <div class="label" data-i18n="health_total">
-        Total projects
+      <div class="arch-panel" data-arch-panel="eh3d" hidden>
+{eh3d_architecture_html}
       </div>
-    </div>
 
-    <div class="health-card ok">
-      <div id="health-resolved" class="number">
-        {ok}
       </div>
-      <div class="label" data-i18n="health_resolved">
-        Version resolved
+    </section>
+    <section role="tabpanel" class="panel" id="panel-errors" aria-labelledby="tab-errors" tabindex="0" hidden data-testid="panel-errors">
+      <div class="panel-inner">
+        {errors_html}
       </div>
-    </div>
+    </section>
+  </main>
 
-    <div class="health-card {error_card_class}">
-      <div id="health-errors" class="number">
-        {errors}
-      </div>
-      <div class="label" data-i18n="health_errors">
-        Errors / unknown
-      </div>
-    </div>
+  <footer class="app-footer">{freshness_html} ·
 
-    <div class="health-card">
-      <div id="health-percent" class="number">
-        {success_percent_text}
-      </div>
-      <div class="label" data-i18n="health_registry">
-        Registry health
-      </div>
-    </div>
-
-  </section>
-
-  {integrity_html}
-
-
-  <!-- ================================================================
-       PROJECTS BY ECOSYSTEM
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title" data-i18n="section_by_ecosystem">
-      Projects by ecosystem
-    </div>
-
-    <div class="health">
-      {ecosystem_cards}
-    </div>
-
-  </section>
-
-
-  <!-- ================================================================
-       DEPLOYMENT
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title" data-i18n="section_deploy">
-      Deployment targets
-    </div>
-
-    <div class="deploy-grid">
-      {deploy_cards}
-    </div>
-
-  </section>
-
-
-  <!-- ================================================================
-       STACK SUMMARY
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title" data-i18n="section_stack">
-      Technology stacks
-    </div>
-
-    <div class="stack-summary">
-      {stack_summary}
-    </div>
-
-  </section>
-
-
-  <!-- ================================================================
-       MATURITY (v3)
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title">
-      <span data-i18n="section_maturity">Maturity</span>
-      <span class="section-title-hint" data-i18n="section_maturity_hint">click a card to filter · hover for how it was decided</span>
-    </div>
-
-    <div class="maturity-grid">
-      {maturity_cards}
-    </div>
-
-    <div class="section-title evidence-title">
-      <span data-i18n="section_evidence">Evidence</span>
-      <span class="section-title-hint" data-i18n="section_evidence_hint">{dt['section_evidence_hint']}</span>
-    </div>
-
-    <div class="evidence-grid">
-      {evidence_cards}
-    </div>
-
-  </section>
-
-
-  <!-- ================================================================
-       ROLE (v3)
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title" data-i18n="section_role">
-      Role
-    </div>
-
-    <div class="role-summary">
-      {role_summary}
-    </div>
-
-  </section>
-
-
-  <!-- ================================================================
-       COMPATIBILITY MATRIX (v3)
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title" data-i18n="compat_section">
-      Compatibility matrix
-    </div>
-
-    <p class="ecosystem-intro" data-i18n="compat_intro">
-      Real project counts by role and deployment target, with row, column
-      and grand totals, drawn straight from every repository's own
-      manifest. A count, not a claim that any two specific projects
-      interoperate.
-    </p>
-
-    <div class="compat-matrix-wrapper">
-      {compatibility_matrix}
-    </div>
-
-  </section>
-
-
-  <!-- ================================================================
-       ROADMAP (v3)
-       ================================================================ -->
-
-  <section class="section">
-
-    <div class="section-title" data-i18n="roadmap_section">
-      Roadmap
-    </div>
-
-    <p class="ecosystem-intro" data-i18n="roadmap_intro">
-      Not a feature timeline with dates - the real path every project in
-      this ecosystem follows, and exactly where each one sits on it right
-      now (see the Maturity section above for the live counts).
-    </p>
-
-    <ol class="roadmap-ladder">
-      {roadmap_steps}
-    </ol>
-
-  </section>
-
-
-  <!-- ================================================================
-       SEARCH / FILTERS
-       ================================================================ -->
-
-  <section class="toolbar">
-
-    <div class="search">
-      <input
-        id="project-search"
-        type="search"
-        placeholder="Search project, stack or deployment..."
-        autocomplete="off"
-        aria-label="Search projects"
-        data-i18n-placeholder="search_placeholder"
-        data-i18n-aria-label="search_aria"
-      >
-    </div>
-
-    <div class="filters">
-
-      <button
-        class="filter active"
-        type="button"
-        data-filter-status="all"
-        data-i18n="filter_all"
-      >
-        All
-      </button>
-
-      <button
-        class="filter"
-        type="button"
-        data-filter-status="ok"
-        data-i18n="filter_ok"
-      >
-        ✓ OK
-      </button>
-
-      <button
-        class="filter"
-        type="button"
-        data-filter-status="error"
-        data-i18n="filter_error"
-      >
-        ⚠ Errors
-      </button>
-
-    </div>
-
-    <div class="family-filter">
-      <label for="family-select" data-i18n="family_label">Family:</label>
-      <select id="family-select">
-        <option value="all" data-i18n="family_all">All families</option>
-        {family_options}
-      </select>
-    </div>
-
-    <button
-        id="reset-filters"
-        class="reset-filters"
-        type="button"
-        data-i18n="reset_filters"
-        title="Clear the search box and every active filter (status, deploy, maturity, role, family)"
-        data-i18n-title="reset_filters_title"
-    >
-      ⟲ Reset
-    </button>
-
-  </section>
-
-
-  <!-- ================================================================
-       PROJECT TABLE
-       ================================================================ -->
-
-  <section class="table-wrapper">
-
-    <table>
-
-      <thead>
-        <tr>
-          <th data-i18n="th_project">Project</th>
-          <th data-i18n="th_type">Type</th>
-          <th data-i18n="th_maturity">Maturity</th>
-          <th data-i18n="th_stack">Stack</th>
-          <th data-i18n="th_deploy">Deploy target</th>
-          <th data-i18n="th_version">Version</th>
-          <th data-i18n="th_status">Status</th>
-          <th data-i18n="th_commit">Last commit</th>
-        </tr>
-      </thead>
-
-      <tbody id="project-table">
-        {rows}
-      </tbody>
-
-    </table>
-
-    <div
-      id="empty-results"
-      class="empty"
-      data-i18n="empty_results"
-    >
-      No projects match the current filters.
-    </div>
-
-  </section>
-
-  <!-- ================================================================
-       FOOTER
-       ================================================================ -->
-
-  <footer>
 
     <span data-i18n="footer_registry">Data source:</span>
     <a
@@ -5725,409 +5552,7 @@ def render_html(
     }});
   }}
 
-  const rows = Array.from(
-    document.querySelectorAll(".project-row")
-  );
-
-  const familyHeaderRows = Array.from(
-    document.querySelectorAll(".family-header-row")
-  );
-
-  const searchInput =
-    document.getElementById("project-search");
-
-  const emptyResults =
-    document.getElementById("empty-results");
-
-  const familySelect =
-    document.getElementById("family-select");
-
-  const resetFiltersBtn =
-    document.getElementById("reset-filters");
-
-  const healthTotal =
-    document.getElementById("health-total");
-
-  const healthResolved =
-    document.getElementById("health-resolved");
-
-  const healthErrors =
-    document.getElementById("health-errors");
-
-  const healthPercent =
-    document.getElementById("health-percent");
-
-  const statusFilters =
-    Array.from(
-      document.querySelectorAll("[data-filter-status]")
-    );
-
-  const deployFilters =
-    Array.from(
-      document.querySelectorAll("[data-filter-deploy]")
-    );
-
-  const maturityFilters =
-    Array.from(
-      document.querySelectorAll("[data-filter-maturity]")
-    );
-
-  const roleFilters =
-    Array.from(
-      document.querySelectorAll("[data-filter-role]")
-    );
-
-  // Compatibility matrix: show the table of the chosen ecosystem only.
-  const compatButtons =
-    Array.from(
-      document.querySelectorAll("[data-compat-view]")
-    );
-
-  const compatPanels =
-    Array.from(
-      document.querySelectorAll("[data-compat-panel]")
-    );
-
-  compatButtons.forEach(function (button) {{
-    button.addEventListener("click", function () {{
-      const view = button.dataset.compatView;
-
-      compatButtons.forEach(function (other) {{
-        other.classList.toggle("active", other === button);
-      }});
-
-      compatPanels.forEach(function (panel) {{
-        panel.hidden = panel.dataset.compatPanel !== view;
-      }});
-    }});
-  }});
-
-  let activeStatus = "all";
-  let activeDeploy = "all";
-  let activeMaturity = "all";
-  let activeRole = "all";
-
-
-  function applyFilters() {{
-    const query =
-      searchInput.value
-        .trim()
-        .toLowerCase();
-
-    const activeFamily =
-      familySelect ? familySelect.value : "all";
-
-    let visible = 0;
-    let visibleOk = 0;
-    const visibleFamilies = {{}};
-
-    rows.forEach(function (row) {{
-      const name =
-        row.dataset.name || "";
-
-      const status =
-        row.dataset.status || "";
-
-      const deploy =
-        row.dataset.deploy || "";
-
-      const stack =
-        row.dataset.stack || "";
-
-      const maturity =
-        row.dataset.maturity || "";
-
-      const role =
-        row.dataset.role || "";
-
-      const family =
-        row.dataset.family || "";
-
-      const matchesSearch =
-        !query ||
-        name.includes(query) ||
-        stack.includes(query) ||
-        deploy.includes(query) ||
-        family.includes(query);
-
-      const matchesStatus =
-        activeStatus === "all" ||
-        status === activeStatus;
-
-      const matchesDeploy =
-        activeDeploy === "all" ||
-        deploy === activeDeploy;
-
-      const matchesMaturity =
-        activeMaturity === "all" ||
-        maturity === activeMaturity;
-
-      const matchesRole =
-        activeRole === "all" ||
-        role === activeRole;
-
-      const matchesFamily =
-        activeFamily === "all" ||
-        family === activeFamily;
-
-      const show =
-        matchesSearch &&
-        matchesStatus &&
-        matchesDeploy &&
-        matchesMaturity &&
-        matchesRole &&
-        matchesFamily;
-
-      row.classList.toggle(
-        "hidden",
-        !show
-      );
-
-      // The detail row right after this project row shares its
-      // visibility gate - a hidden project row's notes can't stay open.
-      if (!show) {{
-        const toggle = row.querySelector(".details-toggle");
-        const targetId = toggle && toggle.dataset.detailsTarget;
-        const target = targetId && document.getElementById(targetId);
-        if (target) {{
-          target.hidden = true;
-        }}
-        if (toggle) {{
-          toggle.setAttribute("aria-expanded", "false");
-          toggle.textContent = "▸";
-        }}
-      }}
-
-      if (show) {{
-        visible += 1;
-        if (status === "ok") {{
-          visibleOk += 1;
-        }}
-        if (family) {{
-          visibleFamilies[family] = true;
-        }}
-      }}
-    }});
-
-    familyHeaderRows.forEach(function (headerRow) {{
-      const key = headerRow.dataset.familyHeader || "";
-      headerRow.classList.toggle(
-        "hidden",
-        !visibleFamilies[key]
-      );
-    }});
-
-    emptyResults.style.display =
-      visible === 0
-        ? "block"
-        : "none";
-
-    const visibleErrors = visible - visibleOk;
-    const visiblePercent = visible
-      ? Math.round((visibleOk / visible) * 1000) / 10
-      : 0;
-
-    if (healthTotal) {{ healthTotal.textContent = String(visible); }}
-    if (healthResolved) {{ healthResolved.textContent = String(visibleOk); }}
-    // #health-errors is not touched: it counts what is missing, unreadable or unknown for the whole dashboard, not what the filters show.
-    if (healthPercent) {{ healthPercent.textContent = String(visiblePercent) + "%"; }}
-
-    if (resetFiltersBtn) {{
-      const anyFilterActive =
-        query.length > 0 ||
-        activeStatus !== "all" ||
-        activeDeploy !== "all" ||
-        activeMaturity !== "all" ||
-        activeRole !== "all" ||
-        activeFamily !== "all";
-
-      resetFiltersBtn.disabled = !anyFilterActive;
-    }}
-  }}
-
-
-  searchInput.addEventListener(
-    "input",
-    applyFilters
-  );
-
-  if (familySelect) {{
-    familySelect.addEventListener(
-      "change",
-      applyFilters
-    );
-  }}
-
-  if (resetFiltersBtn) {{
-    resetFiltersBtn.addEventListener("click", function () {{
-      searchInput.value = "";
-
-      activeStatus = "all";
-      activeDeploy = "all";
-      activeMaturity = "all";
-      activeRole = "all";
-
-      statusFilters.forEach(function (item) {{
-        item.classList.toggle(
-          "active",
-          item.dataset.filterStatus === "all"
-        );
-      }});
-
-      deployFilters.forEach(function (item) {{
-        item.classList.remove("active");
-      }});
-
-      maturityFilters.forEach(function (item) {{
-        item.classList.remove("active");
-      }});
-
-      roleFilters.forEach(function (item) {{
-        item.classList.remove("active");
-      }});
-
-      if (familySelect) {{
-        familySelect.value = "all";
-      }}
-
-      applyFilters();
-    }});
-  }}
-
-
-  statusFilters.forEach(function (button) {{
-    button.addEventListener(
-      "click",
-      function () {{
-
-        activeStatus =
-          button.dataset.filterStatus;
-
-        statusFilters.forEach(
-          function (item) {{
-            item.classList.toggle(
-              "active",
-              item === button
-            );
-          }}
-        );
-
-        applyFilters();
-      }}
-    );
-  }});
-
-
-  deployFilters.forEach(function (button) {{
-    button.addEventListener(
-      "click",
-      function () {{
-
-        const selected =
-          button.dataset.filterDeploy;
-
-        if (activeDeploy === selected) {{
-          activeDeploy = "all";
-          button.classList.remove("active");
-        }} else {{
-          activeDeploy = selected;
-
-          deployFilters.forEach(
-            function (item) {{
-              item.classList.toggle(
-                "active",
-                item === button
-              );
-            }}
-          );
-        }}
-
-        applyFilters();
-      }}
-    );
-  }});
-
-
-  maturityFilters.forEach(function (button) {{
-    button.addEventListener(
-      "click",
-      function () {{
-
-        const selected =
-          button.dataset.filterMaturity;
-
-        if (activeMaturity === selected) {{
-          activeMaturity = "all";
-          button.classList.remove("active");
-        }} else {{
-          activeMaturity = selected;
-
-          maturityFilters.forEach(
-            function (item) {{
-              item.classList.toggle(
-                "active",
-                item === button
-              );
-            }}
-          );
-        }}
-
-        applyFilters();
-      }}
-    );
-  }});
-
-
-  roleFilters.forEach(function (button) {{
-    button.addEventListener(
-      "click",
-      function () {{
-
-        const selected =
-          button.dataset.filterRole;
-
-        if (activeRole === selected) {{
-          activeRole = "all";
-          button.classList.remove("active");
-        }} else {{
-          activeRole = selected;
-
-          roleFilters.forEach(
-            function (item) {{
-              item.classList.toggle(
-                "active",
-                item === button
-              );
-            }}
-          );
-        }}
-
-        applyFilters();
-      }}
-    );
-  }});
-
-
-  // --- Per-row notes toggle --------------------------------------------
-
-  Array.from(
-    document.querySelectorAll(".details-toggle")
-  ).forEach(function (button) {{
-    button.addEventListener("click", function () {{
-      const targetId = button.dataset.detailsTarget;
-      const target = document.getElementById(targetId);
-      if (!target) {{
-        return;
-      }}
-      const nowOpen = target.hidden;
-      target.hidden = !nowOpen;
-      button.setAttribute("aria-expanded", nowOpen ? "true" : "false");
-      button.textContent = nowOpen ? "▾" : "▸";
-    }});
-  }});
-
-
-  applyFilters();
+{app_js}
 
 }})();
 </script>
@@ -6268,10 +5693,12 @@ def main() -> int:
         file=sys.stderr,
     )
 
-    integrity, cover = check_integrity(catalog.github_owner, ecosystem_by_name, all_discovery_errors, api_failures)
+    integrity, cover, raw_manifests = check_integrity(catalog.github_owner, ecosystem_by_name, all_discovery_errors, api_failures)
     print(dashboard_integrity.report(integrity), file=sys.stderr)
 
     meta = fetch_all_meta(entries)
+    activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN)
+    print(f"{len(activity)} release/CI records read.", file=sys.stderr)
 
     meta_ok = sum(
         1
@@ -6294,7 +5721,7 @@ def main() -> int:
     # Template indentation must not leak as trailing whitespace into the
     # published static page. Normalising it here keeps local and CI-generated
     # output identical without manually editing generated HTML.
-    rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover)
+    rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(clean_rendered, encoding="utf-8")
 
