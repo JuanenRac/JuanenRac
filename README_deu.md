@@ -74,7 +74,7 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 ## 📈 Ökosystem-Fortschritt
 
 <!-- progress:hydra-umc -->
-`\[██████████▊░░░░░░░░░] 54%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 59 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[██████████▋░░░░░░░░░] 53%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 59 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -466,7 +466,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:eh3d -->
-`\[██████▎░░░░░░░░░░░░░] 31%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 35 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[██████░░░░░░░░░░░░░░] 30%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 37 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -476,14 +476,14 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 
 | Bereich | Status | Fortschritt | Hinweis |
 | --- | :---: | --- | --- |
-| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 von 35 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
-| Tests | 🟡 | `████████▉░ 89%` | 31 von 35 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 35 von 35 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
-| Veröffentlichte Versionen | 🟡 | `███████▍░░ 74%` | 26 von 35 Repositories haben mindestens eine Version veröffentlicht. |
-| Dokumentation | 🟢 | `██████████ 100%` | 35 von 35 Repositories haben die README in den acht Sprachen. |
-| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 von 35 Repositories wurden mindestens in einem Simulator geprüft. |
+| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 von 37 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
+| Tests | 🟡 | `████████▋░ 86%` | 32 von 37 Repositories haben automatische Tests. |
+| Kontinuierliche Integration | 🟢 | `█████████▊ 97%` | 36 von 37 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Veröffentlichte Versionen | 🟡 | `███████░░░ 70%` | 26 von 37 Repositories haben mindestens eine Version veröffentlicht. |
+| Dokumentation | 🟢 | `█████████▊ 97%` | 36 von 37 Repositories haben die README in den acht Sprachen. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 von 37 Repositories wurden mindestens in einem Simulator geprüft. |
 | Echte Hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 der 13 Repositories, die von Hardware abhängen, wurden auf dem Prüfstand oder im Feld geprüft; der Rest lief nie mit der echten Ausrüstung. |
-| Produktion | 🔴 | `░░░░░░░░░░ 0%` | 0 von 35 Repositories sind etabliert oder im Produktivbetrieb. |
+| Produktion | 🔴 | `░░░░░░░░░░ 0%` | 0 von 37 Repositories sind etabliert oder im Produktivbetrieb. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Funktionsweise der EH3D Fabrication Suite
@@ -508,9 +508,9 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.2|Findet die Programme der Suite über ihre Manifeste, startet sie und führt die zuletzt verwendeten Projekte und die Projektdatei (.eh3dproj) mit dem SHA-256 ihrer Dateien; das Fenster und die Suche nach Maschinen im Netz sind geplant.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.3|Gemeinsames Datenmodell: der Projektcontainer .eh3dproj mit Integritätsprüfungen, die Typen der Maschinentelemetrie und die Firmware-Basis, die jeder ESP32-Knoten übernimmt.|
-|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.5|Ökosystemdokumentation, Montageanleitungen, Gateway-technische Spezifikationen und Integrationshandbücher.|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.6|Ökosystemdokumentation, Montageanleitungen, Gateway-technische Spezifikationen und Integrationshandbücher.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.4|Rust-Leser für Gerber RS-274X, Excellon-Bohrdateien und G-Code (Dialekte GRBL, Marlin und PlanetCNC), tolerant gegenüber beschädigten Dateien.|
-|[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.4|Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems (atomar durch Verifizierung, kein GITHUB\_TOKEN erforderlich).|
+|[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.5|Erkennt, installiert und aktualisiert die eigenen Repositories des Ökosystems (atomar durch Verifizierung, kein GITHUB\_TOKEN erforderlich).|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.0|Rust-Server mit REST- und Websocket-Schnittstelle: Benutzer, Maschinen und Aufträge, Planung von Bohr- und Fräsaufträgen mit den Bibliotheken von DRILLPRO und ROUTEPRO, ein Auftrag gleichzeitig pro Maschine.|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.9|Rust-Webclient für EH3D-SERVER.|
 
@@ -572,7 +572,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.7|Android-App als Client von EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.6|iOS-App als Client von EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.7|iOS-App als Client von EH3D-SERVER.|
 
 ### 🛠️ Ergänzende Werkzeuge
 |Repository|Version|Beschreibung|

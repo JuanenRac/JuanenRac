@@ -74,7 +74,7 @@ Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial m
 ## 📈 Progreso del Ecosistema
 
 <!-- progress:hydra-umc -->
-`\[██████████▊░░░░░░░░░] 54%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 59 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[██████████▋░░░░░░░░░] 53%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 59 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -466,7 +466,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 **Actualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:eh3d -->
-`\[██████▎░░░░░░░░░░░░░] 31%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 35 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[██████░░░░░░░░░░░░░░] 30%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 37 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -476,14 +476,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
-| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 de 35 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟡 | `████████▉░ 89%` | 31 de 35 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 35 de 35 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟡 | `███████▍░░ 74%` | 26 de 35 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 35 de 35 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 35 repositorios se han comprobado al menos en un simulador. |
+| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 de 37 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟡 | `████████▋░ 86%` | 32 de 37 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `█████████▊ 97%` | 36 de 37 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟡 | `███████░░░ 70%` | 26 de 37 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `█████████▊ 97%` | 36 de 37 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 37 repositorios se han comprobado al menos en un simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 13 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
-| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 35 repositorios están consolidados o en producción. |
+| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 37 repositorios están consolidados o en producción. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Cómo Funciona EH3D Fabrication Suite
@@ -508,9 +508,9 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.2|Encuentra los programas de la suite por sus manifiestos, los arranca y guarda los proyectos recientes y el fichero de proyecto (.eh3dproj) con el SHA-256 de sus ficheros; la ventana y el descubrimiento de máquinas en la red están previstos.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.3|Modelo de datos compartido: el contenedor de proyecto .eh3dproj con comprobaciones de integridad, los tipos de telemetría de máquina y la base de firmware que copia cada nodo ESP32.|
-|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.5|Documentación del ecosistema, guías de ensamblaje, especificaciones técnicas de pasarelas y manuales de integración.|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.6|Documentación del ecosistema, guías de ensamblaje, especificaciones técnicas de pasarelas y manuales de integración.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.4|Lectores en Rust para Gerber RS-274X, ficheros de taladrado Excellon y código G (dialectos GRBL, Marlin y PlanetCNC), tolerantes a ficheros dañados.|
-|[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.4|Detecta, instala y actualiza los repositorios propios del ecosistema (atómico por verificación, sin necesidad de GITHUB\_TOKEN).|
+|[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.5|Detecta, instala y actualiza los repositorios propios del ecosistema (atómico por verificación, sin necesidad de GITHUB\_TOKEN).|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.0|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.9|Cliente web en Rust de EH3D-SERVER.|
 
@@ -572,7 +572,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.7|Aplicación Android cliente de EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.6|Aplicación iOS cliente de EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.7|Aplicación iOS cliente de EH3D-SERVER.|
 
 ### 🛠️ Herramientas complementarias
 |Repositorio|Versión|Descripción|

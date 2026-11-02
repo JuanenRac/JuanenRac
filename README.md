@@ -74,7 +74,7 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 ## 📈 Ecosystem Progress
 
 <!-- progress:hydra-umc -->
-`[██████████▊░░░░░░░░░] 54%` — Calculated from real data: the maturity and the evidence that each of its 59 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████████▋░░░░░░░░░] 53%` — Calculated from real data: the maturity and the evidence that each of its 59 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -460,7 +460,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[██████▎░░░░░░░░░░░░░] 31%` — Calculated from real data: the maturity and the evidence that each of its 35 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████░░░░░░░░░░░░░░] 30%` — Calculated from real data: the maturity and the evidence that each of its 37 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -470,14 +470,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
-| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 of 35 repositories are at least functional, by the maturity each declares in its own manifest. |
-| Tests | 🟡 | `████████▉░ 89%` | 31 of 35 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 35 of 35 repositories have the last CI run on the main branch green. |
-| Releases | 🟡 | `███████▍░░ 74%` | 26 of 35 repositories have published at least one release. |
-| Documentation | 🟢 | `██████████ 100%` | 35 of 35 repositories have the README in the eight languages. |
-| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 35 repositories have been checked at least in a simulator. |
+| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 of 37 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟡 | `████████▋░ 86%` | 32 of 37 repositories have automated tests. |
+| Continuous integration | 🟢 | `█████████▊ 97%` | 36 of 37 repositories have the last CI run on the main branch green. |
+| Releases | 🟡 | `███████░░░ 70%` | 26 of 37 repositories have published at least one release. |
+| Documentation | 🟢 | `█████████▊ 97%` | 36 of 37 repositories have the README in the eight languages. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 37 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 13 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
-| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 35 repositories are established or in production. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 37 repositories are established or in production. |
 <!-- /status:eh3d -->
 
 ## 🏗️ How EH3D Fabrication Suite Works
@@ -501,9 +501,9 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | :--- | :--- | :--- |
 | [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.2 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
 | [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.1.3 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
-| [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.5 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
+| [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.6 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.4 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
-| [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.4 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
+| [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.5 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.1.0 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
 | [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.0.9 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
@@ -573,7 +573,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.7 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
-| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.6 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
+| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.7 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
 
 
 ### 🛠️ Complementary Tools

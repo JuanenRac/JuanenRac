@@ -74,7 +74,7 @@
 ## 📈 生态系统进展
 
 <!-- progress:hydra-umc -->
-`\[██████████▊░░░░░░░░░] 54%` — 根据真实数据计算：其 59 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[██████████▋░░░░░░░░░] 53%` — 根据真实数据计算：其 59 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -466,7 +466,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[██████▎░░░░░░░░░░░░░] 31%` — 根据真实数据计算：其 35 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[██████░░░░░░░░░░░░░░] 30%` — 根据真实数据计算：其 37 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -476,14 +476,14 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 
 | 领域 | 状态 | 进度 | 说明 |
 | --- | :---: | --- | --- |
-| 软件 | 🔴 | `█▏░░░░░░░░ 11%` | 35 个仓库中有 4 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
-| 测试 | 🟡 | `████████▉░ 89%` | 35 个仓库中有 31 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 35 个仓库中有 35 个在主分支上最近一次 CI 运行为绿色。 |
-| 已发布版本 | 🟡 | `███████▍░░ 74%` | 35 个仓库中有 26 个至少发布过一个版本。 |
-| 文档 | 🟢 | `██████████ 100%` | 35 个仓库中有 35 个提供八种语言的 README。 |
-| 仿真 | 🔴 | `░░░░░░░░░░ 0%` | 35 个仓库中有 0 个至少在仿真器中验证过。 |
+| 软件 | 🔴 | `█▏░░░░░░░░ 11%` | 37 个仓库中有 4 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
+| 测试 | 🟡 | `████████▋░ 86%` | 37 个仓库中有 32 个有自动化测试。 |
+| 持续集成 | 🟢 | `█████████▊ 97%` | 37 个仓库中有 36 个在主分支上最近一次 CI 运行为绿色。 |
+| 已发布版本 | 🟡 | `███████░░░ 70%` | 37 个仓库中有 26 个至少发布过一个版本。 |
+| 文档 | 🟢 | `█████████▊ 97%` | 37 个仓库中有 36 个提供八种语言的 README。 |
+| 仿真 | 🔴 | `░░░░░░░░░░ 0%` | 37 个仓库中有 0 个至少在仿真器中验证过。 |
 | 真实硬件 | 🔴 | `░░░░░░░░░░ 0%` | 依赖硬件的 13 个仓库中有 0 个在台架或现场验证过；其余从未在真实设备上运行。 |
-| 生产 | 🔴 | `░░░░░░░░░░ 0%` | 35 个仓库中有 0 个已成熟或已投入生产。 |
+| 生产 | 🔴 | `░░░░░░░░░░ 0%` | 37 个仓库中有 0 个已成熟或已投入生产。 |
 <!-- /status:eh3d -->
 
 ## 🏗️ EH3D Fabrication Suite 的工作原理
@@ -508,9 +508,9 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.2|通过清单找到套件的程序并启动它们，保存最近的项目以及带各文件 SHA-256 的项目文件（.eh3dproj）；窗口和网络上机器的发现在计划中。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.3|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
-|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.5|生态系统文档、组装指南、网关技术规范和集成手册。|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.6|生态系统文档、组装指南、网关技术规范和集成手册。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.4|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
-|[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.4|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
+|[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.5|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.0|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.9|EH3D-SERVER 的 Rust Web 客户端。|
 
@@ -572,7 +572,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.7|EH3D-SERVER 的 Android 应用客户端。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.6|EH3D-SERVER 的 iOS 应用客户端。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.7|EH3D-SERVER 的 iOS 应用客户端。|
 
 ### 🛠️ 辅助工具
 |仓库|版本|描述|
