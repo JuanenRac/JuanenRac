@@ -65,6 +65,8 @@ on:
       - "scripts/generate_dashboard.py"
       - "scripts/sync_readme_versions.py"
       - "scripts/ecosystem_progress.py"
+      - "scripts/sync_readme_descriptions.py"
+      - "ecosystem-descriptions.json"
       - "scripts/catalog_check.py"
       - "ecosystem-catalog.json"
       - ".github/workflows/build-dashboard.yml"
@@ -193,6 +195,23 @@ jobs:
       - name: Sync README project versions
         run: |
           python scripts/sync_readme_versions.py
+
+      # The Description column of the same tables, and the "Catalogue and versions"
+      # status row, come from one checked file (ecosystem-descriptions.json) in the
+      # eight languages. The write step keeps the READMEs current; the check step
+      # fails the run when a listed repository has no description in any language
+      # or the source holds an entry no table lists.
+      - name: Sync README project descriptions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/sync_readme_descriptions.py
+
+      - name: Check README project descriptions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/sync_readme_descriptions.py --check
 
       # The progress bar of every ecosystem is calculated from the maturity and
       # the evidence each repository declares in its own manifest (see

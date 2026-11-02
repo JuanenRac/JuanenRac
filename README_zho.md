@@ -34,7 +34,7 @@
 |---|---|---|
 | 仪表板与监控 | 🟢 | 状态仪表板、CI 监控、健康矩阵、链接检查和发布摘要都在 GitHub Actions 中定时运行，最近一次运行均已通过。 |
 | 测试 | 🟢 | 59 项测试通过（`python -m unittest discover -s tests`）：目录、监控、横幅、四个看板（HYDRA-UMC、URTC、A.R.M.O.R. 和 EH3D）的路线图初始化和 README 一致性。 |
-| 目录与版本 | 🟡 | 每张项目表的版本列由脚本根据各仓库自己的清单填写并检查，因此不会过时；一行说明则是手写的。 |
+| 目录与版本 | 🟢 | 每张项目表的版本和说明都由脚本分别根据各仓库自己的清单和一个经过检查的说明文件填写；任何一项出现偏差，CI 就会失败。 |
 | 进度条 | 🟢 | 每个生态系统的百分比由 `scripts/ecosystem_progress.py` 根据各仓库在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档计算，并随仪表盘一起刷新；100% 的里程碑仍然是一个完全集成并在真实硬件上运行的生态系统。 |
 | 八种语言一致性 | 🟢 | 八份 README 保持相同的章节、相同的 GitHub 链接和相同的表格行数，其中任何一份偏离时测试都会失败。 |
 | 真实硬件 | 🟢 | 不适用：本仓库保存的是个人主页及其自动化，没有任何部分在硬件上运行。 |
@@ -191,9 +191,9 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.5.7|针对 CM5 的 Raspberry Pi OS 平台层：可重现的配置、配置、诊断、服务生命周期和更新；不是新的 Linux 发行版。|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.5.7|面向 CM5 的 Raspberry Pi OS 平台层：配置档案、配置、诊断、服务和更新；不是新的发行版。|
 |[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.4.9|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
-|[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.7|外部机器连接器的声明式适配器清单注册表和验证器；将 SDK 自身的契约概念扩展到外部机器，而无需替换工业网关项目。|
+|[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.7|面向外部机器连接器的适配器清单的声明式注册表与校验器。|
 
 ### 💠 核心控制与操作员客户端
 
@@ -224,12 +224,12 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.7|用于逻辑任务规划和语音控制的语义推理节点。|
+|[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.8|用于逻辑任务规划和语音控制的语义推理节点。|
 |[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.2.1|用于复杂任务执行的视觉-语言-动作（Vision-Language-Action）模型实现。|
 |[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.2|用于自然语言操作员交互的本地私有 STT/TTS 管道。|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.1.7|具有上下文感知错误恢复功能的基于 LLM 的任务编排器。|
 |[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.7|经技术手册和源代码训练的基于 RAG 的 AI 助手。|
-|[HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN)|0.2.0|本地策略门控 AI 维护技师：当前的固定风险级别策略和工具白名单，拥有经实际测试的防御机制，证明恶意检索到的文档绝不会触发工具调用或泄露机密——AI 绝不会通过生成响应来获取权限。|
+|[HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN)|0.2.0|在本地运行、由策略管控的 AI 维护技术员：风险等级和工具白名单；检索到的文档永远无法触发工具调用。|
 
 ### 🐝 编排与群控
 
@@ -239,7 +239,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC)|0.1.8|纳秒级机器人同步的 PTP（精时协议）同步。|
 |[HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D)|0.1.2|共享工作空间机器人群的分布式路径优化器。|
 |[HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER)|0.2.8|异构机器人车队的基于优先级的任务调度程序。|
-|[HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING)|0.2.2|具备透明任务故障转移的高可用性监视器。|
+|[HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING)|0.2.3|具备透明任务故障转移的高可用性监视器。|
 
 ### 🎮 数字孪生与仿真
 
@@ -277,8 +277,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D)|0.2.2|围绕原生 3D 打印机软件的安全桥接；首个适配器在不替换固件的情况下验证 Moonraker 的就绪状态。|
 |[HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC)|0.2.5|CNC 单元辅助协调器；控制器轨迹和机器安全性保持原生状态。|
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.1|激光单元辅助协调器，无法对激光联锁进行布防、发射或越权。|
-|[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.4|针对足式/人形机器人的协调边界：通过共享安全契约门控的命名走/抓/放动作词汇；步态和平衡保持在机器人自身的控制器上。|
-|[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.7|AGV/AMR 车队协调边界：工厂到本地坐标系转换加上受到 VDA-5050 启发的指令词汇；路径规划由 AMR 自身的导航负责。|
+|[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.4|面向足式和人形机器人的协调边界：具名的行走、拾取和放置动作，受共享安全契约约束。|
+|[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.7|面向 AGV/AMR 车队的协调边界：坐标系转换和指令词汇；路径规划仍由 AMR 自身的导航负责。|
 |[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.1.7|配备相机的无人机（UAV）协调边界：命名的飞行请求词汇加上确定性的心跳/链路丢失故障保护看门狗。|
 
 ### 🛠️ 辅助工具
@@ -289,10 +289,10 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.0|用于车队自动化、刷机（flashing）和运维的命令行界面。|
 |[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.2|为 Web 仪表板提供自然语言见解的 AI 扩展。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.4|用于检测、安装和手动更新每个生态系统项目的跨平台 GUI/CLI 工具。|
-|[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.5|Windows/Linux 桌面工具，构建预加载了生态系统最新版本和 Raspberry-Pi-Imager 风格首次启动配置的可烧录 CM5 镜像。|
-|[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.2.2|维护事件协调器：低特权边缘角色收集经过净化的库存/健康快照，控制平面角色将其设为只读并请求 AI 提供商建议诊断——绝不应用补丁或部署任何内容。|
-|[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.2|可重现的开发主机：当前是受策略门控的配置架构和清单库存，正在发展成为与 OPS-AGENT 协调的隔离任务/工作区运行器——除非文档明确授予，否则任何任务都没有部署权限。|
-|[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.0|生态系统的架构、接口、安全基线、能力矩阵以及生成的项目目录，外加比较所有仓库的工具。|
+|[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.5|适用于 Windows 和 Linux 的桌面工具：构建可直接烧录的 CM5 镜像，包含生态系统的当前版本和首次启动配置。|
+|[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.2.2|维护事件协调器：收集经过脱敏的状态快照并向 AI 服务商请求诊断；绝不自行应用补丁。|
+|[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.2|可复现的开发主机：由策略管控的配置与清单目录，将发展为隔离的任务运行器；默认没有部署权限。|
+|[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.0|生态系统的架构、接口、安全基线、能力矩阵和自动生成的项目目录，以及对比工具。|
 
 \---
 
@@ -357,15 +357,15 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.4|适用于 25+ 种专用工具的通用机器人工具控制器固件。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.4.4|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.4.9|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.0|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.4.4|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.4|具备自动预热和生命周期审计功能的智能工具存储。|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|集成热成像和 RGB 相机以实现主动 QA 的工具头。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|根据自身的清单检测、安装和更新机器上的 URTC 仓库。|
-|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|URTC 生态系统的架构、接口、安全基线、能力矩阵、CAN 协议研究笔记和生成的项目目录，外加比较所有仓库的工具。|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.7|作为数据的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量以及 Python 传输层。|
+|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|URTC 的架构、接口、安全基线、能力矩阵、CAN 协议说明和自动生成的项目目录。|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.7|以数据形式描述的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量和传输层。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|URTC CAN 总线前的网关：允许的标识符列表、速率限制和会话密钥。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|URTC 家族共享的仓库工具，作为一个带版本的集合，每个仓库中有一个锁定文件。|
 
@@ -426,21 +426,21 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.8.0.5|消息契约、验证器、一致性向量、生成的类型、OpenAPI、共享启动器。|
-|[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.0.8|ESP32-S3 现场节点固件、LD2450/LD2461 及存在传感器的解码器、其经主机测试的核心、带进度条和实时地图的 GitHub 更新。|
-|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.2|太阳能网关节点：ESP32-S3 固件及其面板（十个串口），以及 Voltronic/MPP Solar 逆变器和 Pylontech/ANT-BMS 电池的协议。|
-|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.4|电气节点：固件（单个串口上的 16 个 PZEM 电表、Web 面板、MQTT）、电表帧、网络读数消息以及开关切换规则。|
-|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.2|报警节点及面板：其固件（有线防区、警报器、Zigbee 传感器及警报器、七种语言的 Web 面板）以及布防、延迟、报警和 PIN 码规则，已在计算机上测试；在服务器离线时继续警戒并接管 Zigbee 无线电。从未在板卡上运行过。|
-|[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.3|Waveshare ESP32-S3-Touch-LCD-7C-BOX 触摸面板：壁挂屏幕上的系统状态、布防/撤防/确认、一键通（push-to-talk）语音以及节点的网页；该固件从未在板卡上运行过。|
-|[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.6|局域网监视器：家中网络上的设备、互联网状态（以及中断归咎于哪一方）、变化情况；仅具备观察功能。|
-|[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.1.5|中央状态（持久化）、用户、事件历史记录、警报、设备、自动化、太阳能和电气读数、局域网、系统服务、相机看门狗、相机、证据、审计、必须签名的节点固件更新、Telegram 和 Home Assistant 通知、语音命令以及从外部使用（双因素认证、可终止的会话、远程策略）。|
+|[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.0.8|ESP32-S3 现场节点固件：支持 LD2450、LD2461 和人体存在传感器的解码，可从 GitHub 更新，并提供实时地图。|
+|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.2|太阳能网关节点：ESP32-S3 固件、面板，以及 Voltronic / MPP Solar 逆变器和 Pylontech、ANT-BMS 电池的协议。|
+|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.4|电气节点：通过一条串行线路读取 PZEM 电表的固件、网页面板和 MQTT、电表数据帧以及开合操作规则。|
+|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.2|报警节点与面板：有线防区、警笛、Zigbee 设备，以及布防、延时、报警和 PIN 规则；服务器离线时仍继续守护。|
+|[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.3|适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：在壁挂屏幕上显示系统状态，布防、撤防、确认，以及按键通话语音。|
+|[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.6|本地网络监控：网络中的设备、互联网状态以及发生的变化；只观察，不干预。|
+|[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.1.5|中央服务器：持久化状态、用户、事件、报警、设备、自动化、摄像头、已签名的节点更新、通知和远程访问。|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.0|运动监视服务、视觉配置文件选择、可解释的融合策略、引擎注册表。|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.0.9|相机区域、遮罩和检测规则（徘徊、每次访问一个事件）；暂无检测器模型。|
 |[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.2|离线语音服务：八种语言的十五条命令、壁挂面板的语音交互、通过签名令牌确认的布防和撤防。|
-|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.1.9|操作控制台、警报、设备、自动化、用户、历史记录、警报规则、PTZ、雷达地图、太阳能和电气菜单、局域网、系统服务、天气、节点查找器与配置、节点固件更新、通知以及 2D/3D 站点设计器。|
-|[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.2|Android 操作员客户端：布防和撤防、警报、设备、实时雷达、太阳能逆变器和电池、历史记录、警报通知、书面和口头命令助手以及节点配置器。|
+|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.1.9|运维控制台：报警、设备、自动化、历史记录、PTZ、雷达地图、太阳能和电气菜单、节点更新以及 2D/3D 设计器。|
+|[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.2|Android 操作端：布防与撤防、报警、设备、实时雷达、太阳能、历史记录、通知、语音助手以及节点配置器。|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.1|iPhone 操作员客户端：状态、布防、告警、报警面板、摄像头和助理，提供八种语言。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.7|外壳设计（雷达角落外壳；太阳能、电气和报警节点的勾选框）以及台架验收矩阵。|
-|[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.6.9|Compose 拓扑、中央服务器测试台安装程序、备份与恢复、TLS 配置文件、自有 MQTT 经纪商、观察和语音服务、管理代理。|
+|[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.6.9|Compose 拓扑、测试台安装程序、备份与恢复、TLS 配置、自有 MQTT 代理、观测和语音服务以及管理代理。|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.3|场景和可重复故障。|
 |[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.1.8|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.1.4|规范文档和能力矩阵。|
