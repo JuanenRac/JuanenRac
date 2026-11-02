@@ -327,7 +327,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 de 11 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `█████████▏ 91%` | 10 de 11 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `█████████▏ 91%` | 10 de 11 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm o README nas oito línguas. |
 | Simulação | 🟠 | `███▋░░░░░░ 36%` | 4 de 11 repositórios foram verificados pelo menos num simulador. |
@@ -360,14 +360,14 @@ Cada perfil de ferramenta carrega seu próprio watchdog e comportamento de falha
 |Repositório|Versão|Descrição|
 |-|-|-|
 |[URTC](https://github.com/JuanenRac/URTC)|0.4.4|Firmware do Universal Robot Tool Controller para cabeças de ferramenta especializadas.|
-|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.4.9|Ferramenta GUI para atualizações de firmware CAN-OTA e SWD/JTAG de chip completo.|
+|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.0|Ferramenta GUI para atualizações de firmware CAN-OTA e SWD/JTAG de chip completo.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.0|Ferramenta de diagnóstico para validação em tempo real de perfis de ferramentas URTC via CAN.|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.4.4|Ferramenta Web Serial baseada em navegador para testes e análises de hardware instantâneos.|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.4.5|Ferramenta Web Serial baseada em navegador para testes e análises de hardware instantâneos.|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.4|Armazenamento inteligente de ferramentas com pré-aquecimento automático e auditoria de ciclo de vida.|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|Cabeça de ferramenta com câmaras térmica e RGB integradas para QA ativa.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|Detecta, instala e atualiza os repositórios URTC numa máquina a partir de seus próprios manifestos.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|Arquitetura, interfaces, linha de base de segurança, matriz de capacidades, notas do protocolo CAN e catálogo de projetos gerado do URTC.|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.7|O protocolo CAN da cabeça de ferramenta como dados: especificação, código C, TypeScript e Python gerado, vetores de conformidade e transportes.|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.8|O protocolo CAN da cabeça de ferramenta como dados: especificação, código C, TypeScript e Python gerado, vetores de conformidade e transportes.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|Gateway à frente do barramento CAN do URTC: lista de identificadores permitidos, limite de taxa e chave de sessão.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|As ferramentas de repositório partilhadas da família URTC num só conjunto versionado, com um ficheiro de bloqueio em cada repositório.|
 

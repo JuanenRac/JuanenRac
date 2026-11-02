@@ -327,7 +327,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 | --- | :---: | --- | --- |
 | ソフトウェア | 🟡 | `████████▎░ 82%` | 11 件中 9 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
 | テスト | 🟢 | `██████████ 100%` | 11 件中 11 件のリポジトリに自動テストがあります。 |
-| 継続的インテグレーション | 🟢 | `█████████▏ 91%` | 11 件中 10 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 継続的インテグレーション | 🟢 | `██████████ 100%` | 11 件中 11 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟢 | `█████████▏ 91%` | 11 件中 10 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 11 件中 11 件のリポジトリに、8 言語すべての README があります。 |
 | シミュレーション | 🟠 | `███▋░░░░░░ 36%` | 11 件中 4 件のリポジトリが、少なくともシミュレーターで検証されています。 |
@@ -360,14 +360,14 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[URTC](https://github.com/JuanenRac/URTC)|0.4.4|専用ツールヘッド向けの Universal Robot Tool Controller ファームウェア。|
-|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.4.9|CAN-OTAおよびフルチップSWD/JTAGファームウェアアップデート用GUIツール。|
+|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.0|CAN-OTAおよびフルチップSWD/JTAGファームウェアアップデート用GUIツール。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.0|CAN経由でのURTCツールプロファイルのリアルタイム検証用診断ツール。|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.4.4|即時のハードウェアテストと分析のためのブラウザベースのWeb Serialツール。|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.4.5|即時のハードウェアテストと分析のためのブラウザベースのWeb Serialツール。|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.4|自動予熱とライフサイクル監査を備えたインテリジェントなツールストレージ。|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|アクティブQA用にサーマルカメラとRGBカメラが統合されたツールヘッド。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|URTC のアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、CAN プロトコルのメモ、自動生成されるプロジェクトカタログ。|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.7|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.8|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|URTC ファミリーが共有するリポジトリツールを 1 つのバージョン管理されたセットにまとめたもの。各リポジトリにロックファイルを置きます。|
 
