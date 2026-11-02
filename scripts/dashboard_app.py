@@ -1131,8 +1131,8 @@ JS = r"""
   document.addEventListener("focusin", function (event) { const target = tipTarget(event.target); if (target) { showTip(target); } else { hideTip(); } });
   document.addEventListener("focusout", hideTip);
   document.addEventListener("keydown", function (event) { if (event.key === "Escape") { hideTip(); } });
-  // Scrolling a focused chart into view must not dismiss its own tooltip: it is only moved with it.
-  document.addEventListener("scroll", function () { if (tipFor && tipFor === document.activeElement) { showTip(tipFor); } else { hideTip(); } }, true);
+  // Scrolling moves the tooltip with its chart; it goes away when the pointer or the focus leaves the chart (the browser sends a mouse event after a scroll).
+  document.addEventListener("scroll", function () { if (tipFor && !tip.hidden) { showTip(tipFor); } }, true);
 
   function safeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
   function safeSet(key, value) { try { localStorage.setItem(key, value); } catch (e) { /* storage blocked */ } }
