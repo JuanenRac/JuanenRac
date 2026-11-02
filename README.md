@@ -227,7 +227,7 @@ for all four - can check versions and build/update any other project.
 | :--- | :--- | :--- |
 | [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | 0.1.8 | Semantic reasoning node for logical mission planning and voice control. |
 | [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.2.1 | Vision-Language-Action model implementation for complex task execution. |
-| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.2.2 | Local, private STT/TTS pipeline for natural language operator interaction. |
+| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.2.3 | Local, private STT/TTS pipeline for natural language operator interaction. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.1.8 | LLM-based mission orchestrator with context-aware error recovery. |
 | [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.7 | RAG-based AI assistant trained on technical manuals and source code. |
 | [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.2.0 | Local, policy-gated AI maintenance technician: risk levels and a tool allowlist; a retrieved document can never trigger a tool call. |
@@ -239,7 +239,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC) | 0.1.8 | PTP (Precision Time Protocol) sync for nanosecond robot synchronization. |
 | [HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D) | 0.1.2 | Distributed path optimizer for shared workspace robotic enjambres. |
 | [HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER) | 0.2.9 | Priority-based task scheduler for heterogeneous robot fleets. |
-| [HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING) | 0.2.3 | High-availability monitor with transparent mission failover. |
+| [HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING) | 0.2.4 | High-availability monitor with transparent mission failover. |
 
 ### 🎮 Digital Twin & Simulation
 | Repository | Version | Description |
@@ -472,7 +472,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 of 37 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟡 | `████████▉░ 89%` | 33 of 37 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 97%` | 36 of 37 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 37 of 37 repositories have the last CI run on the main branch green. |
 | Releases | 🟡 | `███████░░░ 70%` | 26 of 37 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 37 of 37 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 37 repositories have been checked at least in a simulator. |
@@ -500,12 +500,12 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.2 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
-| [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.1.3 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
+| [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.1.4 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.6 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.4 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.5 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
-| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.1.0 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
-| [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.0.9 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
+| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.1.1 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
+| [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.1.0 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
 
 ### 💠 Drill/Router/Milling projects:
@@ -514,7 +514,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.1.4 | Rust re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.1.3 | Rust re-implementation of the routing workflow of the classic DOS software for Bungard CCD machines, from HP-GL plot files: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.1.9 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
-| [EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC) | 0.0.8 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
+| [EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC) | 0.0.9 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
 | [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.2 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
 
@@ -572,8 +572,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 ANDROID/IOS projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.7 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
-| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.7 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
+| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.8 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
+| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.8 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
 
 
 ### 🛠️ Complementary Tools

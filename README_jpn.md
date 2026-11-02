@@ -227,7 +227,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |-|-|-|
 |[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.8|論理的ミッションプランニングおよび音声制御用の意味的推論ノード。|
 |[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.2.1|複雑なタスク実行のためのVision-Language-Actionモデルの実装。|
-|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.2|オペレーターの自然言語インタラクションのためのローカルかつプライベートなSTT/TTSパイプライン。|
+|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.3|オペレーターの自然言語インタラクションのためのローカルかつプライベートなSTT/TTSパイプライン。|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.1.8|コンテキスト認識エラー回復機能を備えたLLMベースのミッションオーケストレーター。|
 |[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.7|技術マニュアルとソースコードでトレーニングされたRAGベースのAIアシスタント。|
 |[HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN)|0.2.0|ローカルで動作しポリシーで制御される AI 保守技術者。リスクレベルとツールの許可リストを備え、取得した文書がツール呼び出しを起動することはありません。|
@@ -240,7 +240,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC)|0.1.8|ナノ秒単位のロボット同期のためのPTP（Precision Time Protocol）同期。|
 |[HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D)|0.1.2|共有ワークスペース内のロボット群のための分散型パスオプティマイザー。|
 |[HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER)|0.2.9|異種ロボットフリート向けの優先度ベースのタスクスケジューラー。|
-|[HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING)|0.2.3|透明性の高いミッションフェイルオーバーを備えた高可用性モニター。|
+|[HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING)|0.2.4|透明性の高いミッションフェイルオーバーを備えた高可用性モニター。|
 
 ### 🎮 デジタルツインとシミュレーション
 
@@ -478,7 +478,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 | --- | :---: | --- | --- |
 | ソフトウェア | 🔴 | `█▏░░░░░░░░ 11%` | 37 件中 4 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
 | テスト | 🟡 | `████████▉░ 89%` | 37 件中 33 件のリポジトリに自動テストがあります。 |
-| 継続的インテグレーション | 🟢 | `█████████▊ 97%` | 37 件中 36 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 継続的インテグレーション | 🟢 | `██████████ 100%` | 37 件中 37 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟡 | `███████░░░ 70%` | 37 件中 26 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 37 件中 37 件のリポジトリに、8 言語すべての README があります。 |
 | シミュレーション | 🔴 | `░░░░░░░░░░ 0%` | 37 件中 0 件のリポジトリが、少なくともシミュレーターで検証されています。 |
@@ -507,12 +507,12 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.2|マニフェストからスイートのプログラムを見つけて起動し、最近のプロジェクトと、ファイルの SHA-256 付きプロジェクト ファイル（.eh3dproj）を保持します。ウィンドウとネットワーク上の機械の検出は計画中です。|
-|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.3|共有データモデル：整合性チェック付きの .eh3dproj プロジェクトコンテナ、マシンテレメトリの型、そして各 ESP32 ノードがコピーして使うファームウェアベース。|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.4|共有データモデル：整合性チェック付きの .eh3dproj プロジェクトコンテナ、マシンテレメトリの型、そして各 ESP32 ノードがコピーして使うファームウェアベース。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.6|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.4|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.5|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.0|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.9|EH3D-SERVER 向けの Rust 製 Web クライアント。|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.1|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.0|EH3D-SERVER 向けの Rust 製 Web クライアント。|
 
 ### 💠 ドリル／ルーター／ミリングのプロジェクト：
 |リポジトリ|バージョン|説明|
@@ -520,7 +520,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.4|Bungard CCD マシン向けの従来の DOS ソフトの穴あけ作業フローを Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.3|Bungard CCD マシン向けの従来の DOS ソフトのルーティング（切削）作業フローを HP-GL プロットファイルから Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.1.9|Bungard CCD マシン向けのモダンなインターフェース：従来の穴あけ・ルーティングプログラムのランチャーと、テーブル上の作業ビューア。|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.8|EH3D のマシン制御プログラムの共通基盤：ジョグ、ゼロ設定、G コード実行、経路表示で模擬マシンを動かすウィンドウ。8 言語対応。|
+|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.9|EH3D のマシン制御プログラムの共通基盤：ジョグ、ゼロ設定、G コード実行、経路表示で模擬マシンを動かすウィンドウ。8 言語対応。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.2|すべてのEH3D CAMツールにわたって摩耗時間、切削プリセット、送りを追跡する共有ツールcribデータベース。|
 
 ### 💠 レーザーのプロジェクト：
@@ -571,8 +571,8 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 ANDROID/IOS のプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.7|EH3D-SERVER 向けの Android アプリ（クライアント）。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.7|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.8|EH3D-SERVER 向けの Android アプリ（クライアント）。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.8|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
 
 ### 🛠️ 補完ツール
 |リポジトリ|バージョン|説明|

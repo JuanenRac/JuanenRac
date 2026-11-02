@@ -227,7 +227,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 |-|-|-|
 |[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.1.8|Nó de raciocínio semântico para planeamento lógico de missões e controlo de voz.|
 |[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.2.1|Implementação de modelo Vision-Language-Action para execução de tarefas complexas.|
-|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.2|Pipeline STT/TTS local e privado para interação de operador em linguagem natural.|
+|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.3|Pipeline STT/TTS local e privado para interação de operador em linguagem natural.|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.1.8|Orquestrador de missões baseado em LLM com recuperação de erros consciente do contexto.|
 |[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.7|Assistente de IA baseado em RAG treinado em manuais técnicos e código-fonte.|
 |[HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN)|0.2.0|Técnico de manutenção com IA local e regido por políticas: níveis de risco e lista de ferramentas permitidas; um documento recuperado nunca pode acionar uma ferramenta.|
@@ -240,7 +240,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 |[HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC)|0.1.8|Sincronização PTP (Precision Time Protocol) para sincronização de robôs em nanossegundos.|
 |[HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D)|0.1.2|Otimizador de caminhos distribuído para enxames robóticos em espaço de trabalho partilhado.|
 |[HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER)|0.2.9|Agendador de tarefas baseado em prioridade para frotas de robôs heterogêneas.|
-|[HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING)|0.2.3|Monitor de alta disponibilidade com failover de missão transparente.|
+|[HYDRA-UMC-NODE-HEALING](https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING)|0.2.4|Monitor de alta disponibilidade com failover de missão transparente.|
 
 ### 🎮 Gêmeo Digital e Simulação
 
@@ -478,7 +478,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 de 37 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟡 | `████████▉░ 89%` | 33 de 37 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `█████████▊ 97%` | 36 de 37 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 37 de 37 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟡 | `███████░░░ 70%` | 26 de 37 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 37 de 37 repositórios têm o README nas oito línguas. |
 | Simulação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 37 repositórios foram verificados pelo menos num simulador. |
@@ -507,12 +507,12 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |Repositório|Versão|Descrição|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.2|Encontra os programas da suíte pelos seus manifestos, arranca-os e guarda os projetos recentes e o ficheiro de projeto (.eh3dproj) com o SHA-256 dos seus ficheiros; a janela e a descoberta de máquinas na rede estão previstas.|
-|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.3|Modelo de dados partilhado: o contentor de projeto .eh3dproj com verificações de integridade, os tipos de telemetria da máquina e a base de firmware copiada por cada nó ESP32.|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.4|Modelo de dados partilhado: o contentor de projeto .eh3dproj com verificações de integridade, os tipos de telemetria da máquina e a base de firmware copiada por cada nó ESP32.|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.6|Documentação do ecossistema, guias de montagem, especificações técnicas de gateway e manuais de integração.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.4|Leitores em Rust para Gerber RS-274X, ficheiros de furação Excellon e G-code (dialetos GRBL, Marlin e PlanetCNC), tolerantes a ficheiros danificados.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.5|Detecta, instala e atualiza os próprios repositórios do ecossistema (atômico por verificação, sem necessidade de GITHUB\_TOKEN).|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.0|Servidor em Rust com interface REST e websocket: utilizadores, máquinas e trabalhos, planeamento de trabalhos de furação e fresagem com as bibliotecas do DRILLPRO e do ROUTEPRO, um trabalho de cada vez por máquina.|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.0.9|Cliente web em Rust do EH3D-SERVER.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.1|Servidor em Rust com interface REST e websocket: utilizadores, máquinas e trabalhos, planeamento de trabalhos de furação e fresagem com as bibliotecas do DRILLPRO e do ROUTEPRO, um trabalho de cada vez por máquina.|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.0|Cliente web em Rust do EH3D-SERVER.|
 
 ### 💠 Projetos de furação, contorno e fresagem:
 |Repositório|Versão|Descrição|
@@ -520,7 +520,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.4|Reimplementação em Rust do fluxo de furação do software DOS clássico para as máquinas Bungard CCD: interface em modo de texto em oito idiomas, simulador ou máquina real.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.3|Reimplementação em Rust do fluxo de fresagem do software DOS clássico para as máquinas Bungard CCD, a partir de ficheiros de traçado HP-GL: interface em modo de texto em oito idiomas, simulador ou máquina real.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.1.9|Interface moderna para as máquinas Bungard CCD: um lançador dos programas clássicos de furação e fresagem e um visualizador do trabalho sobre a mesa.|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.8|Base comum dos programas de controlo de máquina do EH3D: uma janela que comanda uma máquina simulada com jog, definição de zero, execução de G-code e vista do trajeto, em oito idiomas.|
+|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.9|Base comum dos programas de controlo de máquina do EH3D: uma janela que comanda uma máquina simulada com jog, definição de zero, execução de G-code e vista do trajeto, em oito idiomas.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.2|Base de dados de ferramentas partilhado a rastrear horas de desgaste, predefinições de corte e avanços em todas as ferramentas CAM EH3D.|
 
 ### 💠 Projetos laser:
@@ -571,8 +571,8 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 ### 💠 Projetos ANDROID/IOS:
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.7|Aplicação Android cliente do EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.7|Aplicação iOS cliente do EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.8|Aplicação Android cliente do EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.8|Aplicação iOS cliente do EH3D-SERVER.|
 
 ### 🛠️ Ferramentas complementares
 |Repositório|Versão|Descrição|
