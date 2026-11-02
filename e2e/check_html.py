@@ -223,7 +223,7 @@ def check(path: Path) -> list[str]:
     keys: set[str] = set()
     for el in page.elements:
         for name, value in el["attrs"].items():
-            if name == "data-i18n" or (name.startswith("data-i18n-") and name != "data-i18n-template") or name == "data-i18n-template":
+            if name == "data-i18n" or (name.startswith("data-i18n-") and name != "data-i18n-template") or name == "data-i18n-template" or name in ("data-name-key", "data-a-name-key"):
                 keys.add(value)
     dictionaries = None
     for script in page.scripts:

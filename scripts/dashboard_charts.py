@@ -229,67 +229,102 @@ def oldest(activity: Mapping[str, Activity], field: str, limit: int, names: Iter
 # SVG charts
 # ---------------------------------------------------------------------------
 
+def _pct(n: int, total: int) -> int:
+    return round(n * 100 / total) if total else 0
+
+
 def stacked_bars_svg(rows: Sequence[tuple[str, Mapping[str, int]]], keys: Sequence[str], css_prefix: str, *,
-                     width: int = 380, bar_height: int = 26, gap: int = 12, label_width: int = 76) -> str:
+                     width: int = 380, bar_height: int = 26, gap: int = 12, label_width: int = 76,
+                     i18n_prefix: str = "", names: Mapping[str, str] | None = None) -> str:
     """One horizontal stacked bar per row. Each segment prints its own count (so no meaning rests on colour alone) and has a class
-    `seg seg-<prefix>-<key>` for the fill. Rows with nothing counted show an empty track and a dash."""
+    `seg seg-<prefix>-<key>` for the fill. Rows with nothing counted show an empty track and a dash.
+
+    Every row is one focusable group with an accessible name (`<row>: <name> <n>, ...`, English here, rewritten in the language of the page by the
+    script from the data-* attributes) and every segment carries data-name-key / data-n / data-total for the tooltip. The relief is drawn with plain
+    shapes (a shadow under the track, a dark lower half and a light edge on each segment); the entrance is a CSS animation (scale from the left)."""
+    names = names or {}
     height = len(rows) * (bar_height + gap) + gap
     track = width - label_width - 34
-    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" class="chart chart-stacked" viewBox="0 0 {width} {height}" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false">']
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" class="chart chart-stacked" viewBox="0 0 {width} {height}" preserveAspectRatio="xMinYMid meet" focusable="false">']
     for index, (label, counts) in enumerate(rows):
         y = gap + index * (bar_height + gap)
         total = sum(counts.get(key, 0) for key in keys)
+        english = ", ".join(f"{names.get(key, key)} {counts.get(key, 0)}" for key in keys if counts.get(key, 0))
+        aria = f"{label}: {english}" if total else f"{label}: no data"
+        parts.append(f'<g class="bar-row" tabindex="0" role="img" aria-label="{esc(aria)}" data-aria="row" data-row="{esc(label)}" data-total="{total}">')
         parts.append(f'<text class="chart-label" x="0" y="{y + bar_height / 2 + 4:.1f}">{esc(label)}</text>')
+        parts.append(f'<rect class="bar-depth" x="{label_width}" y="{y + 3}" width="{track}" height="{bar_height}" rx="5"/>')
         parts.append(f'<rect class="chart-track" x="{label_width}" y="{y}" width="{track}" height="{bar_height}" rx="5"/>')
         x = float(label_width)
+        fills, nums = [], []
         for key in keys:
             value = counts.get(key, 0)
             if not value or not total:
                 continue
             segment = track * value / total
-            parts.append(f'<rect class="seg seg-{css_prefix}-{esc(key)}" x="{x:.1f}" y="{y}" width="{segment:.1f}" height="{bar_height}"><title>{esc(label)}: {esc(key)} {value}</title></rect>')
+            key_i18n = "unknown" if key == UNKNOWN else f"{i18n_prefix}{key}"
+            fills.append(f'<rect class="seg seg-{css_prefix}-{esc(key)}" x="{x:.1f}" y="{y}" width="{segment:.1f}" height="{bar_height}" '
+                         f'data-name-key="{esc(key_i18n)}" data-name="{esc(names.get(key, key))}" data-n="{value}" data-total="{total}"/>')
+            fills.append(f'<rect class="seg-bevel" x="{x:.1f}" y="{y + bar_height / 2:.1f}" width="{segment:.1f}" height="{bar_height / 2:.1f}"/>')
+            fills.append(f'<rect class="seg-edge" x="{x:.1f}" y="{y}" width="{segment:.1f}" height="2"/>')
             if segment >= 18:
-                parts.append(f'<text class="seg-count seg-count-{css_prefix}-{esc(key)}" x="{x + segment / 2:.1f}" y="{y + bar_height / 2 + 4:.1f}" text-anchor="middle">{value}</text>')
+                nums.append(f'<text class="seg-count seg-count-{css_prefix}-{esc(key)}" x="{x + segment / 2:.1f}" y="{y + bar_height / 2 + 4:.1f}" text-anchor="middle">{value}</text>')
             x += segment
-        parts.append(f'<text class="chart-total" x="{width}" y="{y + bar_height / 2 + 4:.1f}" text-anchor="end">{total if total else "–"}</text>')
+        parts.append(f'<g class="bar-fill" style="--i:{index};transform-origin:{label_width}px 0">{"".join(fills)}</g><g class="bar-nums" style="--i:{index}">{"".join(nums)}</g>')
+        parts.append(f'<text class="chart-total" x="{width}" y="{y + bar_height / 2 + 4:.1f}" text-anchor="end">{total if total else "–"}</text></g>')
     parts.append("</svg>")
     return "".join(parts)
 
 
 def ring_svg(percent: int | None, css_class: str = "", *, size: int = 112, stroke: int = 12) -> str:
-    """A ring with the percentage in the middle; `None` draws an empty ring with a dash."""
+    """A ring with the percentage in the middle; `None` draws an empty ring with a dash. The arc is drawn on load by a CSS animation of
+    stroke-dashoffset (custom property --dash); a thin light arc on its outer edge gives it a little relief."""
     radius = (size - stroke) / 2
     circumference = 2 * 3.141592653589793 * radius
     shown = max(0, min(100, percent)) if percent is not None else 0
     dash = circumference * shown / 100
     centre = size / 2
     text = f"{shown}%" if percent is not None else "–"
+    sheen_radius = radius + stroke * 0.28
+    sheen_circ = 2 * 3.141592653589793 * sheen_radius
+    sheen_dash = sheen_circ * shown / 100
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" class="chart chart-ring {esc(css_class)}" viewBox="0 0 {size} {size}" aria-hidden="true" focusable="false">'
         f'<circle class="ring-track" cx="{centre}" cy="{centre}" r="{radius:.2f}" fill="none" stroke-width="{stroke}"/>'
         + ('' if percent is None else  # no data: the track alone, not even a zero-length round cap
            f'<circle class="ring-value" cx="{centre}" cy="{centre}" r="{radius:.2f}" fill="none" stroke-width="{stroke}" stroke-linecap="round" '
-           f'stroke-dasharray="{dash:.2f} {circumference:.2f}" transform="rotate(-90 {centre} {centre})"/>') +
+           f'stroke-dasharray="{dash:.2f} {circumference:.2f}" style="--dash:{dash:.2f}" transform="rotate(-90 {centre} {centre})"/>'
+           f'<circle class="ring-sheen" cx="{centre}" cy="{centre}" r="{sheen_radius:.2f}" fill="none" stroke-width="{stroke * 0.22:.2f}" stroke-linecap="round" '
+           f'stroke-dasharray="{sheen_dash:.2f} {sheen_circ:.2f}" style="--dash:{sheen_dash:.2f}" transform="rotate(-90 {centre} {centre})"/>') +
         f'<text class="ring-text" x="{centre}" y="{centre + 7}" text-anchor="middle">{text}</text></svg>'
     )
 
 
 def columns_svg(items: Sequence[tuple[str, int]], css_class: str = "", *, width: int = 480, height: int = 170) -> str:
-    """Vertical columns with the value above each one and the label below; an empty list gives an empty string."""
+    """Vertical columns with the value above each one and the label below; an empty list gives an empty string.
+    Each column is a light isometric block (front, top and side faces) in a focusable group with its name, count and share; it grows from the axis on load."""
     if not items:
         return ""
     top = max((value for _label, value in items), default=0) or 1
+    total = sum(value for _label, value in items)
     slot = width / len(items)
-    bar = slot * 0.56
-    plot = height - 44
-    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" class="chart chart-columns {esc(css_class)}" viewBox="0 0 {width} {height}" aria-hidden="true" focusable="false">',
-             f'<line class="chart-axis" x1="0" y1="{plot + 8}" x2="{width}" y2="{plot + 8}"/>']
+    bar = slot * 0.5
+    dx, dy = 7.0, 5.0
+    plot = height - 64   # headroom for the isometric top face and the value above the tallest column
+    base = plot + 26
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" class="chart chart-columns {esc(css_class)}" viewBox="0 0 {width} {height}" focusable="false">',
+             f'<line class="chart-axis" x1="0" y1="{base}" x2="{width}" y2="{base}"/>']
     for index, (label, value) in enumerate(items):
-        x = slot * index + (slot - bar) / 2
-        h = plot * value / top
-        parts.append(f'<rect class="col" x="{x:.1f}" y="{plot + 8 - h:.1f}" width="{bar:.1f}" height="{max(h, 1.5):.1f}" rx="3"><title>{esc(label)}: {value}</title></rect>')
-        parts.append(f'<text class="col-value" x="{x + bar / 2:.1f}" y="{plot + 2 - h:.1f}" text-anchor="middle">{value}</text>')
-        parts.append(f'<text class="chart-label" x="{x + bar / 2:.1f}" y="{height - 12}" text-anchor="middle">{esc(label)}</text>')
+        x = slot * index + (slot - bar - dx) / 2
+        h = max(plot * value / top, 1.5)
+        y = base - h
+        parts.append(f'<g class="col-g" tabindex="0" role="img" aria-label="{esc(f"{label}: {value}")}" data-aria="col" data-name="{esc(label)}" data-n="{value}" data-total="{total}" style="--i:{index}">')
+        parts.append(f'<g class="col-body" style="transform-origin:{x + bar / 2:.1f}px {base}px">'
+                     f'<rect class="col" x="{x:.1f}" y="{y:.1f}" width="{bar:.1f}" height="{h:.1f}" rx="2"/>'
+                     f'<polygon class="col-top" points="{x:.1f},{y:.1f} {x + dx:.1f},{y - dy:.1f} {x + bar + dx:.1f},{y - dy:.1f} {x + bar:.1f},{y:.1f}"/>'
+                     f'<polygon class="col-side" points="{x + bar:.1f},{y:.1f} {x + bar + dx:.1f},{y - dy:.1f} {x + bar + dx:.1f},{base - dy:.1f} {x + bar:.1f},{base:.1f}"/></g>')
+        parts.append(f'<text class="col-value" x="{x + (bar + dx) / 2:.1f}" y="{y - dy - 5:.1f}" text-anchor="middle">{value}</text>')
+        parts.append(f'<text class="chart-label" x="{x + (bar + dx) / 2:.1f}" y="{height - 12}" text-anchor="middle">{esc(label)}</text></g>')
     parts.append("</svg>")
     return "".join(parts)
 

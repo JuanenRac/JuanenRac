@@ -115,10 +115,12 @@ def meter_rows(areas: Mapping[str, Area] | None, eco_label: str, big: bool = Fal
         state = charts.LIGHT_CLASS.get(value.light, "bad")
         count = f"{value.count}/{value.total}" if value.count is not None else ""
         label = f"{AREA_ENGLISH[area]}: {value.percent}%" + (f" ({value.count} of {value.total})" if value.count is not None else "")
+        counts_attr = f' data-a-n="{value.count}" data-a-total="{value.total}"' if value.count is not None else ""
         rows.append(
             f'<li class="area area-{state}" data-area="{area}" data-testid="area-{esc(eco_label)}-{area}">'
             f'<span class="area-name"><span class="area-glyph" aria-hidden="true">{LIGHT_GLYPH[state]}</span><span data-i18n="area_{area}">{AREA_ENGLISH[area]}</span></span>'
-            f'<span class="area-bar" role="img" aria-label="{esc(label)}"><span class="area-fill" style="width:{value.percent}%"></span></span>'
+            f'<span class="area-bar" role="img" aria-label="{esc(label)}" data-aria="pct" data-a-name-key="area_{area}" data-a-name="{AREA_ENGLISH[area]}" data-a-pct="{value.percent}"{counts_attr}>'
+            f'<span class="area-fill" style="width:{value.percent}%"></span></span>'
             f'<span class="area-num"><b>{value.percent}%</b><small>{count}</small></span></li>'
         )
     return f'<ul class="areas{" areas-big" if big else ""}">{"".join(rows)}</ul>'
@@ -130,9 +132,10 @@ def progress_card(data: AppData, eco: str, label: str, big: bool = False, link_t
     counted_html = (f'<span class="muted" data-i18n-template="sum_repos_counted" data-n="{counted}">{counted} repositories counted</span>' if counted is not None else "")
     head = f'<button type="button" class="link-btn" data-goto-tab="{esc(eco)}">{esc(label)}</button>' if link_tab else f"<span>{esc(label)}</span>"
     summary = f"{label}: {percent}%" if percent is not None else f"{label}: no data"
+    pct_attr = f' data-a-pct="{percent}"' if percent is not None else ""
     return (
         f'<article class="eco-card eco-{esc(eco)}" data-testid="progress-{esc(eco)}">'
-        f'<header class="eco-head"><div class="ring-wrap" role="img" aria-label="{esc(summary)}">{ring}</div>'
+        f'<header class="eco-head"><div class="ring-wrap" role="img" tabindex="0" aria-label="{esc(summary)}" data-aria="pct" data-a-name="{esc(label)}"{pct_attr}>{ring}</div>'
         f'<div class="eco-title"><h3>{head}</h3><span class="muted" data-i18n="sum_overall">overall progress</span>{counted_html}</div></header>'
         f'{meter_rows(data.status.get(eco), eco, big)}</article>'
     )
@@ -155,7 +158,7 @@ def stacked_figure(kind: str, data: AppData, ecosystems: Sequence[tuple[str, str
     all_keys = (*keys, charts.UNKNOWN)
     rows = _rows_for(counts, ecosystems)
     wide = wide or len(ecosystems) == 1
-    chart = charts.stacked_bars_svg(rows, all_keys, prefix, **({"width": 780, "label_width": 96} if wide else {}))
+    chart = charts.stacked_bars_svg(rows, all_keys, prefix, i18n_prefix=i18n_prefix, names=labels, **({"width": 780, "label_width": 96} if wide else {}))
     head = [("chart_ecosystem_col", "Ecosystem")] + [(f"{i18n_prefix}{k}" if k != charts.UNKNOWN else "unknown", labels.get(k, "Unknown")) for k in all_keys] + [("chart_total_col", "Total")]
     table = charts.data_table(title_key, title, head, [[label, *(row.get(k, 0) for k in all_keys), sum(row.get(k, 0) for k in all_keys)] for label, row in rows])
     leg = legend(keys, prefix, i18n_prefix, labels, [(charts.UNKNOWN, "unknown", "Unknown")])
@@ -171,7 +174,8 @@ def ci_figure(data: AppData, ecosystems: Sequence[tuple[str, str]]) -> str:
         if eco in counts:
             counts[eco][data.activity.get(name, Activity()).ci] += 1
     rows = _rows_for(counts, ecosystems)
-    chart = charts.stacked_bars_svg(rows, charts.CI_KEYS, "ci", width=780 if len(ecosystems) == 1 else 480, bar_height=22, gap=10, label_width=96 if len(ecosystems) == 1 else 76)
+    chart = charts.stacked_bars_svg(rows, charts.CI_KEYS, "ci", width=780 if len(ecosystems) == 1 else 480, bar_height=22, gap=10, label_width=96 if len(ecosystems) == 1 else 76,
+                                    i18n_prefix="ci_", names=CI_LABELS)
     table = charts.data_table("sum_ci_title", "Continuous integration", [("chart_ecosystem_col", "Ecosystem")] + [(f"ci_{k}", CI_LABELS[k]) for k in charts.CI_KEYS],
                               [[label, *(row[k] for k in charts.CI_KEYS)] for label, row in rows])
     leg = legend(charts.CI_KEYS, "ci", "ci_", CI_LABELS)
@@ -260,7 +264,7 @@ def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
     )
     return f"""
     <div class="summary-grid">
-      <section class="kpi-strip" aria-label="Key figures">{kpis}</section>
+      <section class="kpi-strip" aria-label="Key figures" data-i18n-aria-label="aria_key_figures">{kpis}</section>
       <section class="card card-eco-counts" aria-labelledby="eco-counts-t">
         <h2 class="card-title" id="eco-counts-t" data-i18n="section_by_ecosystem">Projects by ecosystem</h2>
         <div class="eco-counts">{ecosystem_cards_html}</div>
@@ -270,7 +274,7 @@ def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
           <span class="muted" data-i18n="sum_progress_hint">Same figures as the README.</span></header>
         <div class="eco-grid">{cards}</div>
       </section>
-      <section class="card card-ci" aria-label="CI">
+      <section class="card card-ci" aria-label="Continuous integration" data-i18n-aria-label="sum_ci_title">
         {ci_figure(data, ECOSYSTEMS)}
         {red_ci_list(data, None)}
         {months_figure(data, None)}
@@ -350,6 +354,44 @@ def sidebar(maturity_keys: Sequence[tuple[str, str, int]], roles: Sequence[tuple
       </div>
     </aside>
     """
+
+
+SCOPES: tuple[tuple[str, str, str], ...] = (
+    ("all", "scope_all", "All"),
+    ("hydra-umc", "", "HYDRA-UMC"),
+    ("urtc", "", "URTC"),
+    ("armor", "", "A.R.M.O.R."),
+    ("eh3d", "", "EH3D"),
+    ("electro-hobby-3d", "scope_cross", "Cross-cutting"),
+)
+
+
+def scope_bar(eco_counts: Mapping[str, int], total: int) -> str:
+    """The bar over the project table: All / the four ecosystems / Cross-cutting, with the families (or types) of the chosen one under it.
+    Each button is a toggle (aria-pressed) and carries the number of projects of its scope; the script fills the second row."""
+    buttons = []
+    for ident, key, text in SCOPES:
+        count = total if ident == "all" else eco_counts.get(ident, 0)
+        label = f'<span data-i18n="{key}">{esc(text)}</span>' if key else f"<span>{esc(text)}</span>"
+        buttons.append(f'<button type="button" class="chip scope-btn" data-scope="{esc(ident)}" aria-pressed="false" data-testid="scope-{esc(ident)}">{label}<b>{count}</b></button>')
+    return (
+        '<div class="scope" data-testid="scope-bar">'
+        '<div class="scope-row" role="group" aria-labelledby="scope-t"><span class="scope-title" id="scope-t" data-i18n="scope_label">Scope</span>' + "".join(buttons) + '</div>'
+        '<div class="scope-row scope-sub" role="group" aria-labelledby="scope-sub-t"><span class="scope-title" id="scope-sub-t" data-i18n="scope_sub_label">Families</span>'
+        '<span class="scope-sub-hint" id="scope-sub-hint" data-i18n="scope_all_hint">Pick an ecosystem to browse its families.</span>'
+        '<span class="chip-row" id="scope-sub-chips" data-testid="scope-sub"></span></div></div>'
+    )
+
+
+def pager() -> str:
+    """Previous / next buttons and the range shown; the script hides the bar when everything fits in one page."""
+    return (
+        '<nav class="pager" id="pager" aria-label="Project list pages" data-i18n-aria-label="pager_label" data-testid="pager" hidden>'
+        '<button type="button" class="btn btn-ghost" id="pager-prev" data-i18n="pager_prev" data-testid="pager-prev">Previous</button>'
+        '<span class="pager-info" id="pager-info" aria-live="polite" data-i18n-template="pager_info" data-page="1" data-pages="1">Page 1 of 1</span>'
+        '<span id="pager-range" data-i18n-template="pager_range" data-from="0" data-to="0" data-n="0"></span>'
+        '<button type="button" class="btn btn-ghost" id="pager-next" data-i18n="pager_next" data-testid="pager-next">Next</button></nav>'
+    )
 
 
 def tab_list() -> str:
@@ -616,6 +658,65 @@ CSS = r"""
     .eco-grid { grid-template-columns: 1fr; }
     .kpi-number { font-size: 22px; }
   }
+
+  /* ======================= Charts: relief, hover and entrance ======================= */
+  .bar-row, .col-g { outline-offset: 3px; }
+  .bar-depth { fill: #000; opacity: .3; }
+  :root[data-theme="light"] .bar-depth { opacity: .16; }
+  .bar-nums, .seg-count, .col-value, .chart-label, .chart-total { pointer-events: none; }
+  .seg-bevel { fill: #000; opacity: .16; pointer-events: none; }
+  .seg-edge { fill: #fff; opacity: .45; pointer-events: none; }
+  .seg { transition: opacity .15s ease, filter .15s ease; cursor: default; }
+  .seg:hover, .bar-row:focus-visible .seg { stroke: var(--text); stroke-width: 2; filter: brightness(1.14); }
+  .chart-stacked:has(.seg:hover) .seg:not(:hover) { opacity: .62; }
+  .ring-value { filter: drop-shadow(0 2px 2px rgba(0,0,0,.45)); }
+  .ring-sheen { stroke: #fff; opacity: .34; pointer-events: none; }
+  .ring-wrap { border-radius: 50%; transition: transform .2s ease; }
+  .ring-wrap:hover, .ring-wrap:focus-visible { transform: scale(1.05); }
+  .col-top { fill: #fff; opacity: .34; }
+  .col-side { fill: #000; opacity: .3; }
+  .col-g { cursor: default; }
+  .col-g:hover .col, .col-g:focus-visible .col { filter: brightness(1.22); }
+  .col-g:hover .col-value, .col-g:focus-visible .col-value { font-size: 13.5px; }
+  .area-bar { box-shadow: inset 0 1px 2px rgba(0,0,0,.38); }
+  .area-fill { background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0) 55%, rgba(0,0,0,.18)); transform-origin: left center; }
+  .area:hover .area-bar { outline: 1px solid var(--text); outline-offset: 1px; }
+  .eco-card { transition: transform .2s ease, box-shadow .2s ease; }
+  .eco-card:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.28); }
+  .chart-tip { position: fixed; z-index: 100; max-width: min(360px, 90vw); padding: 6px 10px; border-radius: 8px; font-size: 12.5px; line-height: 1.35; font-variant-numeric: tabular-nums;
+               background: var(--panel-2); color: var(--text); border: 1px solid var(--border-strong); box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+  .chart-tip[hidden] { display: none; }
+  @keyframes t25-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes t25-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes t25-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes t25-ring { from { stroke-dashoffset: var(--dash); } to { stroke-dashoffset: 0; } }
+  @keyframes t25-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .bar-fill { animation: t25-grow-x .7s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+    .bar-nums, .col-value { animation: t25-fade .45s ease both; animation-delay: calc(var(--i, 0) * 90ms + 380ms); }
+    .col-body { animation: t25-grow-y .65s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 80ms); }
+    .ring-value, .ring-sheen { animation: t25-ring 1s cubic-bezier(.2,.7,.2,1) both; }
+    .area-fill { animation: t25-grow-x .8s cubic-bezier(.2,.7,.2,1) both; }
+    .eco-grid > .eco-card { animation: t25-rise .5s ease both; }
+    .eco-grid > .eco-card:nth-child(2) { animation-delay: 70ms; } .eco-grid > .eco-card:nth-child(3) { animation-delay: 140ms; } .eco-grid > .eco-card:nth-child(4) { animation-delay: 210ms; }
+  }
+
+  /* ======================= Projects: scope bar and pager ======================= */
+  #panel-projects .panel-inner { display: flex; flex-direction: column; gap: 10px; }
+  #panel-projects .table-wrapper { flex: 1 1 auto; min-height: 0; }
+  .scope { display: grid; gap: 8px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); flex: 0 0 auto; }
+  .scope-row { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; min-width: 0; }
+  .scope-title { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); font-weight: 700; margin-right: 4px; }
+  .scope-btn { padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .scope-btn[data-scope]:not([data-scope="all"])::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--eco-color, var(--c-electro-hobby-3d)); display: inline-block; }
+  .scope-btn[data-scope="hydra-umc"] { --eco-color: var(--c-hydra-umc); } .scope-btn[data-scope="urtc"] { --eco-color: var(--c-urtc); }
+  .scope-btn[data-scope="armor"] { --eco-color: var(--c-armor); } .scope-btn[data-scope="eh3d"] { --eco-color: var(--c-eh3d); }
+  .scope-sub-hint { font-size: 12px; color: var(--dim); }
+  .scope-sub .chip { font-size: 12px; }
+  .pager { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: center; font-size: 12.5px; color: var(--dim); flex: 0 0 auto; }
+  .pager[hidden] { display: none; }
+  .pager .btn { min-width: 84px; }
+  .pager-info { color: var(--text); font-variant-numeric: tabular-nums; }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 """
 
@@ -647,14 +748,87 @@ JS_FILTERS = r"""
 
   function currentDict() { return I18N[document.documentElement.lang] || I18N.en; }
 
-  function applyFilters() {
+  const PAGE_SIZE = 25;
+  let page = 1;
+  const pagerNav = document.getElementById("pager");
+  const pagerPrev = document.getElementById("pager-prev");
+  const pagerNext = document.getElementById("pager-next");
+  const pagerInfo = document.getElementById("pager-info");
+  const pagerRange = document.getElementById("pager-range");
+  const subChips = document.getElementById("scope-sub-chips");
+  const subHint = document.getElementById("scope-sub-hint");
+  let subBuiltFor = null;
+
+  // The scope is the ecosystem chosen in the bar over the table (state.eco); the families (or the types when an ecosystem has no families)
+  // of that scope are listed under it.
+  function buildSubChips() {
+    if (!subChips) { return; }
+    subBuiltFor = state.eco;
+    subChips.textContent = "";
+    if (subHint) { subHint.hidden = state.eco !== "all"; }
+    if (state.eco === "all") { return; }
+    const scoped = rows.filter(function (row) { return row.dataset.ecosystem === state.eco; });
+    function collect(field) {
+      const found = {};
+      scoped.forEach(function (row) { const v = row.dataset[field] || ""; if (v) { found[v] = (found[v] || 0) + 1; } });
+      return found;
+    }
+    let kind = "family";
+    let found = collect("family");
+    if (!Object.keys(found).length) { kind = "role"; found = collect("role"); }
+    Object.keys(found).sort().forEach(function (value) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "chip";
+      button.setAttribute("data-sub-" + kind, value);
+      button.setAttribute("aria-pressed", "false");
+      button.setAttribute("data-testid", "scope-sub-" + value);
+      const label = document.createElement("span");
+      if (kind === "family") {
+        const option = familySelect && Array.from(familySelect.options).find(function (o) { return o.value === value; });
+        label.textContent = option ? option.textContent.replace(/\s*\(\d+\)\s*$/, "") : value;
+      } else {
+        const source = document.querySelector("[data-filter-role='" + value + "'] span");
+        label.textContent = source ? source.textContent : value;
+        label.setAttribute("data-i18n", "role_" + value);
+      }
+      const count = document.createElement("b");
+      count.textContent = String(found[value]);
+      button.appendChild(label);
+      button.appendChild(count);
+      button.addEventListener("click", function () {
+        if (kind === "family") {
+          if (familySelect) { familySelect.value = familySelect.value === value ? "all" : value; }
+        } else {
+          state.role = state.role === value ? "all" : value;
+          syncButtons("role");
+        }
+        applyFilters();
+      });
+      subChips.appendChild(button);
+    });
+  }
+
+  function syncSubChips() {
+    if (!subChips) { return; }
+    Array.from(subChips.querySelectorAll("button")).forEach(function (button) {
+      const family = button.getAttribute("data-sub-family");
+      const on = family !== null ? (familySelect && familySelect.value === family) : state.role === button.getAttribute("data-sub-role");
+      button.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
+  function applyFilters(keepPage) {
     const query = searchInput.value.trim().toLowerCase();
     const activeFamily = familySelect ? familySelect.value : "all";
     let visible = 0;
     let visibleOk = 0;
     const visibleFamilies = {};
     const visibleEcosystems = {};
+    if (subBuiltFor !== state.eco) { buildSubChips(); }
 
+    // 1. which projects match the scope, the search and the filters (all of them, whatever page they are on)
+    const matched = [];
     rows.forEach(function (row) {
       const name = row.dataset.name || "";
       const status = row.dataset.status || "";
@@ -667,7 +841,17 @@ JS_FILTERS = r"""
         if (state[kind] !== "all" && (row.dataset[ROW_FIELD[kind]] || "") !== state[kind]) { show = false; }
       });
       if (activeFamily !== "all" && family !== activeFamily) { show = false; }
+      row.dataset.match = show ? "1" : "0";
+      if (show) { matched.push(row); }
+    });
 
+    // 2. only the page being looked at is painted
+    const pages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+    page = keepPage === true ? Math.min(Math.max(1, page), pages) : 1;
+    const first = (page - 1) * PAGE_SIZE;
+    const onPage = new Set(matched.slice(first, first + PAGE_SIZE));
+    rows.forEach(function (row) {
+      const show = onPage.has(row);
       row.classList.toggle("hidden", !show);
       if (!show) {
         const toggle = row.querySelector(".details-toggle");
@@ -676,12 +860,12 @@ JS_FILTERS = r"""
         if (target) { target.hidden = true; }
         if (toggle) { toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "▸"; }
       } else {
-        visible += 1;
-        if (status === "ok") { visibleOk += 1; }
+        const family = row.dataset.family || "";
         if (family) { visibleFamilies[(row.dataset.ecosystem || "") + "|" + family] = true; }
         if (row.dataset.ecosystem) { visibleEcosystems[row.dataset.ecosystem] = true; }
       }
     });
+    matched.forEach(function (row) { visible += 1; if (row.dataset.status === "ok") { visibleOk += 1; } });
 
     familyHeaderRows.forEach(function (headerRow) {
       headerRow.classList.toggle("hidden", !visibleFamilies[(headerRow.dataset.ecosystem || "") + "|" + (headerRow.dataset.familyHeader || "")]);
@@ -700,11 +884,48 @@ JS_FILTERS = r"""
       countLabel.setAttribute("data-total", String(rows.length));
       countLabel.textContent = fillTemplate(currentDict().filters_matches || "{shown} / {total}", countLabel);
     }
+    if (pagerNav) {
+      pagerNav.hidden = visible <= PAGE_SIZE;
+      pagerNav.setAttribute("data-page", String(page));
+      pagerNav.setAttribute("data-pages", String(pages));
+      if (pagerPrev) { pagerPrev.disabled = page <= 1; }
+      if (pagerNext) { pagerNext.disabled = page >= pages; }
+      [pagerInfo, pagerRange].forEach(function (el) {
+        if (!el) { return; }
+        el.setAttribute("data-page", String(page));
+        el.setAttribute("data-pages", String(pages));
+        el.setAttribute("data-from", String(visible ? first + 1 : 0));
+        el.setAttribute("data-to", String(Math.min(visible, first + PAGE_SIZE)));
+        el.setAttribute("data-n", String(visible));
+        el.textContent = fillTemplate(currentDict()[el.getAttribute("data-i18n-template")] || "", el);
+      });
+    }
+    syncScope();
+    syncSubChips();
+    if (typeof onScopeOrPageChanged === "function") { onScopeOrPageChanged(); }
     if (resetFiltersBtn) {
       const anyFilterActive = query.length > 0 || activeFamily !== "all" || FILTER_KINDS.some(function (kind) { return state[kind] !== "all"; });
       resetFiltersBtn.disabled = !anyFilterActive;
     }
   }
+
+  function syncScope() {
+    document.querySelectorAll("[data-scope]").forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-scope") === state.eco ? "true" : "false");
+    });
+  }
+
+  document.querySelectorAll("[data-scope]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      state.eco = button.getAttribute("data-scope");
+      if (familySelect) { familySelect.value = "all"; }
+      FILTER_KINDS.forEach(syncButtons);
+      applyFilters();
+    });
+  });
+  if (pagerPrev) { pagerPrev.addEventListener("click", function () { page -= 1; applyFilters(true); scrollTable(); }); }
+  if (pagerNext) { pagerNext.addEventListener("click", function () { page += 1; applyFilters(true); scrollTable(); }); }
+  function scrollTable() { const w = document.querySelector("#panel-projects .table-wrapper"); if (w) { w.scrollTop = 0; } }
 
   function showProjects() { if (typeof activateTab === "function") { activateTab("projects"); } }
 
@@ -773,6 +994,146 @@ JS = r"""
   const tabs = Array.from(document.querySelectorAll("[role='tab']"));
   const panels = Array.from(document.querySelectorAll("[role='tabpanel']"));
 
+
+  // ---------------- Scope and page in the address, and the remembered scope ----------------
+  const SCOPE_KEY = "hydra-dashboard-scope";
+  const SCOPES = Array.from(document.querySelectorAll("[data-scope]")).map(function (b) { return b.getAttribute("data-scope"); });
+  var currentTab = "summary";
+  var hashReady = false;
+  var scopeRestored = false;
+
+  function parseHash() {
+    const raw = location.hash.replace(/^#/, "");
+    const q = raw.indexOf("?");
+    const params = {};
+    if (q >= 0) {
+      raw.slice(q + 1).split("&").forEach(function (part) {
+        const kv = part.split("=");
+        try { if (kv[0]) { params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || ""); } } catch (e) { /* malformed escape: ignored */ }
+      });
+    }
+    return { tab: q >= 0 ? raw.slice(0, q) : raw, params: params };
+  }
+
+  function writeHash() {
+    let wanted = "#" + currentTab;
+    if (currentTab === "projects") {
+      const query = [];
+      if (state.eco !== "all") { query.push("scope=" + encodeURIComponent(state.eco)); }
+      if (page > 1) { query.push("page=" + page); }
+      if (query.length) { wanted += "?" + query.join("&"); }
+    }
+    if (location.hash !== wanted) {
+      try { history.replaceState(null, "", wanted); } catch (e) { location.hash = wanted.slice(1); }
+    }
+  }
+
+  function onScopeOrPageChanged() {
+    if (!hashReady) { return; }
+    safeSet(SCOPE_KEY, state.eco);
+    if (currentTab === "projects") { writeHash(); }
+  }
+
+  function applyHashState(parsed) {
+    const scope = parsed.params.scope;
+    if (scope && SCOPES.indexOf(scope) >= 0) {
+      scopeRestored = true;
+      if (scope !== state.eco) {
+        state.eco = scope;
+        if (familySelect) { familySelect.value = "all"; }
+        FILTER_KINDS.forEach(syncButtons);
+        applyFilters();
+      }
+    }
+    const n = parseInt(parsed.params.page, 10);
+    if (n > 1) { page = n; applyFilters(true); }
+  }
+
+  // The scope of the last visit comes back the first time the projects are opened, unless the address already names one.
+  function restoreScope() {
+    if (scopeRestored) { return; }
+    scopeRestored = true;
+    const stored = safeGet(SCOPE_KEY);
+    if (stored && stored !== "all" && SCOPES.indexOf(stored) >= 0 && state.eco === "all") {
+      state.eco = stored;
+      FILTER_KINDS.forEach(syncButtons);
+      applyFilters();
+    }
+  }
+
+  // ---------------- Charts: names in the language of the page, tooltip ----------------
+  function tpl(text, values) {
+    return String(text || "").replace(/\{(\w+)\}/g, function (_m, key) { return values[key] !== undefined ? values[key] : ""; });
+  }
+  function chartName(el, dict) {
+    const key = el.getAttribute("data-name-key") || el.getAttribute("data-a-name-key");
+    if (key && Object.prototype.hasOwnProperty.call(dict, key)) { return dict[key]; }
+    return el.getAttribute("data-name") || el.getAttribute("data-a-name") || "";
+  }
+  function pctOf(n, total) { return total > 0 ? Math.round(n * 100 / total) : 0; }
+  function chartText(el, dict) {
+    const kind = el.getAttribute("data-aria");
+    if (kind === "pct") {
+      const name = chartName(el, dict);
+      const pct = el.getAttribute("data-a-pct");
+      if (pct === null) { return tpl(dict.aria_no_data, { name: name }); }
+      const n = el.getAttribute("data-a-n");
+      return n !== null ? tpl(dict.aria_pct_counts, { name: name, pct: pct, n: n, total: el.getAttribute("data-a-total") }) : tpl(dict.aria_pct, { name: name, pct: pct });
+    }
+    if (kind === "col" || el.classList.contains("seg")) {
+      const n = Number(el.getAttribute("data-n"));
+      const total = Number(el.getAttribute("data-total"));
+      return tpl(dict.tip_count, { name: chartName(el, dict), n: n, total: total, pct: pctOf(n, total) });
+    }
+    if (kind === "row") {
+      const row = el.getAttribute("data-row") || "";
+      const segs = Array.from(el.querySelectorAll(".seg"));
+      if (!segs.length) { return tpl(dict.aria_no_data, { name: row }); }
+      return tpl(dict.aria_row, { row: row, parts: segs.map(function (s) { return chartName(s, dict) + " " + s.getAttribute("data-n"); }).join(", ") });
+    }
+    return "";
+  }
+  function applyChartLabels(dict) {
+    document.querySelectorAll("[data-aria]").forEach(function (el) {
+      const text = chartText(el, dict);
+      if (text) { el.setAttribute("aria-label", text); }
+    });
+  }
+
+  const tip = document.createElement("div");
+  tip.id = "chart-tip";
+  tip.className = "chart-tip";
+  tip.setAttribute("role", "tooltip");
+  tip.hidden = true;
+  document.body.appendChild(tip);
+  let tipFor = null;
+  function hideTip() { tip.hidden = true; tipFor = null; }
+  function showTip(target) {
+    tipFor = target;
+    const text = chartText(target, currentDict());
+    if (!text) { hideTip(); return; }
+    tip.textContent = text;
+    tip.hidden = false;
+    const r = target.getBoundingClientRect();
+    const w = tip.offsetWidth;
+    const h = tip.offsetHeight;
+    const left = Math.max(8, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 8));
+    const top = r.top - h >= 8 ? r.top - h : Math.min(r.bottom, window.innerHeight - h - 8);
+    tip.style.left = left + "px";
+    tip.style.top = top + "px";
+  }
+  function tipTarget(node) { return node && node.closest ? node.closest(".seg, .col-g, .ring-wrap, .area-bar, .bar-row") : null; }
+  document.addEventListener("mouseover", function (event) {
+    if (tip.contains(event.target)) { return; }
+    const target = tipTarget(event.target);
+    if (target) { showTip(target); } else { hideTip(); }
+  });
+  document.addEventListener("focusin", function (event) { const target = tipTarget(event.target); if (target) { showTip(target); } else { hideTip(); } });
+  document.addEventListener("focusout", hideTip);
+  document.addEventListener("keydown", function (event) { if (event.key === "Escape") { hideTip(); } });
+  // Scrolling a focused chart into view must not dismiss its own tooltip: it is only moved with it.
+  document.addEventListener("scroll", function () { if (tipFor && tipFor === document.activeElement) { showTip(tipFor); } else { hideTip(); } }, true);
+
   function safeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
   function safeSet(key, value) { try { localStorage.setItem(key, value); } catch (e) { /* storage blocked */ } }
 
@@ -798,9 +1159,9 @@ JS = r"""
     });
     panels.forEach(function (panel) { panel.hidden = panel.id !== "panel-" + id; });
     safeSet(TAB_KEY, id);
-    if (options.updateHash !== false && location.hash !== "#" + id) {
-      try { history.replaceState(null, "", "#" + id); } catch (e) { location.hash = id; }
-    }
+    currentTab = id;
+    if (options.updateHash !== false) { writeHash(); }
+    if (id === "projects") { restoreScope(); }
   }
 
   tabs.forEach(function (tab, index) {
@@ -820,12 +1181,15 @@ JS = r"""
   });
 
   window.addEventListener("hashchange", function () {
-    const id = location.hash.replace("#", "");
-    if (TAB_IDS.indexOf(id) >= 0) { activateTab(id, { updateHash: false }); }
+    const parsed = parseHash();
+    if (TAB_IDS.indexOf(parsed.tab) >= 0) { activateTab(parsed.tab, { updateHash: false }); applyHashState(parsed); }
   });
 
-  const hashId = location.hash.replace("#", "");
+  const startHash = parseHash();
+  const hashId = startHash.tab;
+  applyHashState(startHash);
   activateTab(TAB_IDS.indexOf(hashId) >= 0 ? hashId : (safeGet(TAB_KEY) || "summary"), { updateHash: TAB_IDS.indexOf(hashId) >= 0 });
+  hashReady = true;
 
   // Architecture switcher
   const archButtons = Array.from(document.querySelectorAll("[data-arch-view]"));
@@ -891,7 +1255,7 @@ def eh3d_architecture_section() -> str:
     return (
         '<section class="section"><div role="heading" aria-level="2" class="section-title" data-i18n="architecture_section_e">EH3D: System architecture</div>'
         f'<div class="architecture-grid">{"".join(cards)}</div>'
-        '<div class="architecture-flow" aria-label="EH3D flow"><span data-i18n="architecture_e_flow_1">Gerber, Excellon and images</span><b>→</b>'
+        '<div class="architecture-flow" aria-label="EH3D flow" data-i18n-aria-label="aria_eh3d_flow"><span data-i18n="architecture_e_flow_1">Gerber, Excellon and images</span><b>→</b>'
         '<span data-i18n="architecture_e_flow_2">Parsers and CAM tools</span><b>→</b><span data-i18n="architecture_e_flow_3">G-code and simulation</span><b>→</b>'
         '<span data-i18n="architecture_e_flow_4">Machine</span></div>'
         f'<div class="relationship-note"><strong data-i18n="architecture_e_rel_title">{esc(en["architecture_e_rel_title"])}</strong> '

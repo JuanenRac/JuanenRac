@@ -19,6 +19,8 @@ export default defineConfig({
     baseURL,
     screenshot: "only-on-failure",
     trace: "off",
+    contextOptions: { reducedMotion: "reduce" },
+    actionTimeout: 15_000,
   },
   projects: [{ name: "chromium", use: { browserName: "chromium" } }],
 });

@@ -129,7 +129,12 @@ class ChartTests(unittest.TestCase):
         root = ET.fromstring(svg)
         ns = "{http://www.w3.org/2000/svg}"
         self.assertEqual(root.tag, ns + "svg")
-        self.assertEqual(root.get("aria-hidden"), "true")
+        self.assertIsNone(root.get("aria-hidden"))   # the rows are focusable groups with a name, so the chart is not hidden
+        rows = [g for g in root.iter(ns + "g") if g.get("data-aria") == "row"]
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(rows[0].get("tabindex"), "0")
+        self.assertEqual(rows[0].get("aria-label"), "URTC: a 3, b 7")
+        self.assertEqual(rows[1].get("aria-label"), "EMPTY: no data")   # nothing counted is "no data", never zero or a guess
         texts = [t.text for t in root.iter(ns + "text")]
         for expected in ("URTC", "3", "7", "10", "EMPTY", "–"):
             self.assertIn(expected, texts)
@@ -150,6 +155,21 @@ class ChartTests(unittest.TestCase):
         ET.fromstring(cols)
         self.assertIn(">97<", cols)
         self.assertEqual(charts.columns_svg([]), "")
+
+    def test_relief_and_entrance_are_plain_shapes_and_css_hooks(self):
+        bars = charts.stacked_bars_svg([("X", {"a": 1, "b": 3})], ["a", "b"], "ev", i18n_prefix="evidence_", names={"a": "A", "b": "B"})
+        for hook in ("bar-depth", "seg-bevel", "seg-edge", "bar-fill", "bar-nums", 'data-name-key="evidence_a"', 'data-n="3"', 'data-total="4"'):
+            self.assertIn(hook, bars)
+        self.assertNotIn("<title>", bars)   # the tooltip is the page's own, in the language of the page
+        ring = charts.ring_svg(40)
+        for hook in ("ring-value", "ring-sheen", "--dash"):
+            self.assertIn(hook, ring)
+        cols = charts.columns_svg([("a", 2), ("b", 5)])
+        for hook in ("col-top", "col-side", "col-body", 'data-aria="col"', 'data-total="7"'):
+            self.assertIn(hook, cols)
+        for svg in (bars, ring, cols):
+            self.assertNotIn("<script", svg)
+            self.assertNotIn("url(#", svg)   # no gradients to define: the relief survives any renderer
 
     def test_data_table_escapes_and_is_hidden_from_sight_only(self):
         html = charts.data_table("k", "Cap", [("h1", "A"), ("", "B")], [["<b>", 2]])
@@ -329,8 +349,71 @@ class PageTests(unittest.TestCase):
     def test_family_headers_are_keyed_by_ecosystem(self):
         self.assertIn('(row.dataset.ecosystem || "") + "|" + family', self.html)
 
+    def test_every_chart_name_key_of_the_page_exists_in_the_eight_languages(self):
+        keys = set(re.findall(r'data-(?:a-)?name-key="([^"]+)"', self.html))
+        self.assertTrue(keys)
+        for code in ("en", "es", "de", "fr", "it", "ja", "zh", "pt"):
+            self.assertEqual(sorted(k for k in keys if k not in GENERATOR.TRANSLATIONS[code]), [], code)
+
+    def test_the_projects_tab_has_the_scope_bar_and_the_pager(self):
+        self.assertIn('data-testid="scope-bar"', self.html)
+        self.assertIn('id="pager"', self.html)
+        self.assertLess(self.html.index('data-testid="scope-bar"'), self.html.index('id="project-table"'))
+        self.assertLess(self.html.index('id="project-table"'), self.html.index('id="pager"'))
+
     def test_projects_carry_their_ecosystem(self):
         self.assertEqual(self.html.count('data-ecosystem="urtc" class="project-row'), 1)
+
+
+class ScopeAndChartLabelTests(unittest.TestCase):
+    """The scope bar of the projects tab, the pager and the names of the charts in the eight languages."""
+
+    def test_scope_bar_has_all_the_ecosystems_and_the_cross_cutting_one(self):
+        html = app.scope_bar({"urtc": 3, "electro-hobby-3d": 2}, 9)
+        for ident in ("all", "hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"):
+            self.assertIn(f'data-scope="{ident}"', html)
+            self.assertIn(f'data-testid="scope-{ident}"', html)
+        self.assertIn("<b>9</b>", html)
+        self.assertIn("<b>3</b>", html)
+        self.assertIn('data-i18n="scope_cross"', html)
+        self.assertNotIn("compare", html.lower())   # the owner did not ask for comparison boxes or a table/cards switch
+        ET.fromstring("<r>" + html + "</r>")
+
+    def test_pager_is_hidden_until_the_script_needs_it(self):
+        html = app.pager()
+        self.assertIn(' hidden>', html)
+        for marker in ('id="pager-prev"', 'id="pager-next"', 'data-i18n-template="pager_info"', 'data-i18n-aria-label="pager_label"'):
+            self.assertIn(marker, html)
+
+    def test_script_keeps_the_scope_in_the_address_and_in_storage_safely(self):
+        js = app.script()
+        for marker in ('"scope="', "SCOPE_KEY", "history.replaceState", "PAGE_SIZE", "function restoreScope", "function parseHash", "applyChartLabels"):
+            self.assertIn(marker, js)
+        self.assertIn("try { return localStorage", js)
+        self.assertIn("try { localStorage.setItem", js)
+        self.assertIn('event.key === "Escape"', js)   # the tooltip can be dismissed from the keyboard
+
+    def test_every_key_the_chart_script_needs_exists_in_the_eight_languages(self):
+        needed = ("aria_pct", "aria_pct_counts", "aria_no_data", "aria_row", "tip_count", "aria_key_figures", "aria_eh3d_flow", "scope_label", "scope_all",
+                  "scope_cross", "scope_sub_label", "scope_all_hint", "pager_label", "pager_prev", "pager_next", "pager_info", "pager_range",
+                  "unknown", "area_hardware", "maturity_functional", "evidence_bench", "ci_success")
+        import generate_dashboard as generator
+        for code in ("en", "es", "de", "fr", "it", "ja", "zh", "pt"):
+            missing = [key for key in needed if key not in generator.TRANSLATIONS[code]]
+            self.assertEqual(missing, [], code)
+
+    def test_the_templates_of_the_chart_names_are_translated_not_copied(self):
+        en = app_texts.TEXTS["en"]
+        for key in ("aria_no_data", "aria_pct_counts", "tip_count"):
+            for code in ("es", "de", "fr", "it", "ja", "zh", "pt"):
+                self.assertNotEqual(app_texts.TEXTS[code][key], en[key], f"{key} {code}")
+        self.assertIn("sem dados", app_texts.TEXTS["pt"]["aria_no_data"])   # european portuguese
+
+    def test_charts_carry_the_keys_that_name_them(self):
+        rows = app.meter_rows(charts.parse_status(README, ["hydra-umc"])["hydra-umc"], "hydra-umc")
+        self.assertEqual(rows.count('data-aria="pct"'), 8)
+        self.assertIn('data-a-name-key="area_hardware"', rows)
+        self.assertIn('data-a-n="4" data-a-total="38"', rows)
 
 
 if __name__ == "__main__":

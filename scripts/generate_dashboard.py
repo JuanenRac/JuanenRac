@@ -3285,6 +3285,8 @@ def render_html(
     maturity_chart_html = dashboard_app.stacked_figure("maturity", app_data, dashboard_app.ECOSYSTEMS, wide=True)
     evidence_chart_html = dashboard_app.stacked_figure("evidence", app_data, dashboard_app.ECOSYSTEMS, wide=True)
     eh3d_architecture_html = dashboard_app.eh3d_architecture_section()
+    scope_bar_html = dashboard_app.scope_bar(eco_counts, total)
+    pager_html = dashboard_app.pager()
     app_css = dashboard_app.CSS
     app_js = dashboard_app.script()
 
@@ -4925,6 +4927,7 @@ def render_html(
     {eco_panels_html}
     <section role="tabpanel" class="panel" id="panel-projects" aria-labelledby="tab-projects" tabindex="0" hidden data-testid="panel-projects">
       <div class="panel-inner">
+        {scope_bar_html}
         <section class="table-wrapper" tabindex="0" aria-labelledby="tab-projects">
 
     <table>
@@ -4957,6 +4960,7 @@ def render_html(
     </div>
 
   </section>
+        {pager_html}
       </div>
     </section>
     <section role="tabpanel" class="panel" id="panel-evidence" aria-labelledby="tab-evidence" tabindex="0" hidden data-testid="panel-evidence">
@@ -5406,6 +5410,10 @@ def render_html(
         el.setAttribute("aria-label", dict[key]);
       }}
     }});
+
+    if (typeof applyChartLabels === "function") {{
+      applyChartLabels(dict);
+    }}
 
     if (langSelect) {{
       langSelect.value = lang;

@@ -64,7 +64,7 @@ export async function shown(page: Page): Promise<{ shown: number; total: number 
 }
 
 export async function visibleRows(page: Page): Promise<number> {
-  return page.locator("tr.project-row:not(.hidden)").count();
+  return page.locator("tr.project-row[data-match=\"1\"]").count();
 }
 
 /** Texts that must never be on screen: an untranslated key, a JavaScript leftover or a template placeholder. */
@@ -75,4 +75,9 @@ const ALLOWED_TOKENS = /generate_dashboard|ecosystem_progress|ecosystem_status|d
 
 export async function visibleText(page: Page): Promise<string> {
   return (await page.evaluate(() => document.body.innerText)).replace(ALLOWED_TOKENS, "");
+}
+
+/** Rows that are painted (the page of the list being looked at), as opposed to visibleRows, which counts every project that matches. */
+export async function paintedRows(page: Page): Promise<number> {
+  return page.locator("tr.project-row:not(.hidden)").count();
 }

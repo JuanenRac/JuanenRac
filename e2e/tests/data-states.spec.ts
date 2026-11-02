@@ -81,7 +81,7 @@ test.describe("one project and no activity (minimal)", () => {
   test("the other ecosystems show zero projects and no data", async ({ page }) => {
     for (const eco of ["urtc", "armor", "eh3d"]) {
       await page.getByTestId(`filter-eco-${eco}`).click();
-      await expect(page.locator("tr.project-row:not(.hidden)")).toHaveCount(0);
+      await expect(page.locator("tr.project-row[data-match=\"1\"]")).toHaveCount(0);
       await expect(page.locator("#empty-results")).toBeVisible();
       await page.getByTestId("reset-filters").click();
     }

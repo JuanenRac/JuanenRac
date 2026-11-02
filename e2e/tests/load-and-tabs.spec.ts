@@ -122,6 +122,6 @@ test.describe("tabs", () => {
     await page.getByTestId("show-projects-urtc").click();
     await expect(panel(page, "projects")).toBeVisible();
     await expect(page.getByTestId("filter-eco-urtc")).toHaveAttribute("aria-pressed", "true");
-    await expect(page.locator("tr.project-row:not(.hidden)")).toHaveCount(10);
+    await expect(page.locator("tr.project-row[data-match=\"1\"]")).toHaveCount(10);
   });
 });
