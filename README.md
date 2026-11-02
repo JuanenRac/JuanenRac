@@ -219,7 +219,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.2.0 | High-speed perception node for 8x simultaneous USB 3.0 camera streams. |
 | [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | 0.2.3 | Optimized GStreamer/MediaMTX pipeline for industrial video relay. |
 | [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.1.8 | Library of hardware-accelerated YOLO models for SMD and component QA. |
-| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.1.9 | Real-time AI intrusion detection for robotic work volume protection. |
+| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.2.0 | Real-time AI intrusion detection for robotic work volume protection. |
 | [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.2.3 | Image-based kinematic feedback for sub-millimetric pose correction. |
 
 ### 🧠 Cognitive AI Node (Hailo-10 Optimized)
@@ -460,7 +460,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[██████▊░░░░░░░░░░░░░] 34%` — Calculated from real data: the maturity and the evidence that each of its 26 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████▎░░░░░░░░░░░░░] 31%` — Calculated from real data: the maturity and the evidence that each of its 35 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -470,14 +470,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
-| Software | 🔴 | `█▌░░░░░░░░ 15%` | 4 of 26 repositories are at least functional, by the maturity each declares in its own manifest. |
-| Tests | 🟡 | `████████▌░ 85%` | 22 of 26 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 26 of 26 repositories have the last CI run on the main branch green. |
-| Releases | 🟢 | `██████████ 100%` | 26 of 26 repositories have published at least one release. |
-| Documentation | 🟢 | `██████████ 100%` | 26 of 26 repositories have the README in the eight languages. |
-| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 26 repositories have been checked at least in a simulator. |
+| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 of 35 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟡 | `████████▉░ 89%` | 31 of 35 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 35 of 35 repositories have the last CI run on the main branch green. |
+| Releases | 🟡 | `███████▍░░ 74%` | 26 of 35 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 35 of 35 repositories have the README in the eight languages. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 35 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 13 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
-| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 26 repositories are established or in production. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 35 repositories are established or in production. |
 <!-- /status:eh3d -->
 
 ## 🏗️ How EH3D Fabrication Suite Works

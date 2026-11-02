@@ -218,7 +218,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.0|Nœud de perception haute vitesse pour 8 flux de caméras USB 3.0 simultanés.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.3|Pipeline GStreamer/MediaMTX optimisé pour le relais vidéo industriel.|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.1.8|Bibliothèque de modèles YOLO accélérés par matériel pour le contrôle qualité des composants CMS et cartes.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.1.9|Détection d'intrusion par IA en temps réel pour la protection du volume de travail robotique.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.0|Détection d'intrusion par IA en temps réel pour la protection du volume de travail robotique.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.3|Rétroaction cinématique basée sur l'image pour la correction de pose submillimétrique.|
 
 ### 🧠 Nœud d'IA Cognitive (Optimisé pour Hailo-10)
@@ -466,7 +466,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 **Outil de mise à jour :** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:eh3d -->
-`\[██████▊░░░░░░░░░░░░░] 34%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 26 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[██████▎░░░░░░░░░░░░░] 31%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 35 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -476,14 +476,14 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
-| Logiciel | 🔴 | `█▌░░░░░░░░ 15%` | 4 dépôts sur 26 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟡 | `████████▌░ 85%` | 22 dépôts sur 26 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 26 dépôts sur 26 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟢 | `██████████ 100%` | 26 dépôts sur 26 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 26 dépôts sur 26 ont le README dans les huit langues. |
-| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 26 ont été vérifiés au moins dans un simulateur. |
+| Logiciel | 🔴 | `█▏░░░░░░░░ 11%` | 4 dépôts sur 35 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟡 | `████████▉░ 89%` | 31 dépôts sur 35 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 35 dépôts sur 35 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟡 | `███████▍░░ 74%` | 26 dépôts sur 35 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 35 dépôts sur 35 ont le README dans les huit langues. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 35 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 13 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
-| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 26 sont établis ou en production. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 35 sont établis ou en production. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Comment fonctionne EH3D Fabrication Suite

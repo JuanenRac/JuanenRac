@@ -218,7 +218,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.0|Nodo di percezione ad alta velocità per 8 flussi di telecamere USB 3.0 simultanei.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.3|Pipeline GStreamer/MediaMTX ottimizzata per il relay video industriale.|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.1.8|Libreria di modelli YOLO accelerati via hardware per il controllo qualità di componenti e SMD.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.1.9|Rilevamento di intrusioni IA in tempo reale per la protezione del volume di lavoro robotico.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.0|Rilevamento di intrusioni IA in tempo reale per la protezione del volume di lavoro robotico.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.3|Feedback cinematico basato su immagini per la correzione della posa sub-millimetrica.|
 
 ### 🧠 Nodo di IA Cognitiva (Ottimizzato per Hailo-10)
@@ -466,7 +466,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 **Aggiornatore:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:eh3d -->
-`\[██████▊░░░░░░░░░░░░░] 34%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 26 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[██████▎░░░░░░░░░░░░░] 31%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 35 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -476,14 +476,14 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 
 | Area | Stato | Avanzamento | Nota |
 | --- | :---: | --- | --- |
-| Software | 🔴 | `█▌░░░░░░░░ 15%` | 4 repository su 26 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
-| Test | 🟡 | `████████▌░ 85%` | 22 repository su 26 hanno test automatici. |
-| Integrazione continua | 🟢 | `██████████ 100%` | 26 repository su 26 hanno l'ultima esecuzione della CI sul ramo principale verde. |
-| Versioni pubblicate | 🟢 | `██████████ 100%` | 26 repository su 26 hanno pubblicato almeno una versione. |
-| Documentazione | 🟢 | `██████████ 100%` | 26 repository su 26 hanno il README nelle otto lingue. |
-| Simulazione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 26 sono stati verificati almeno in un simulatore. |
+| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 repository su 35 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
+| Test | 🟡 | `████████▉░ 89%` | 31 repository su 35 hanno test automatici. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 35 repository su 35 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Versioni pubblicate | 🟡 | `███████▍░░ 74%` | 26 repository su 35 hanno pubblicato almeno una versione. |
+| Documentazione | 🟢 | `██████████ 100%` | 35 repository su 35 hanno il README nelle otto lingue. |
+| Simulazione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 35 sono stati verificati almeno in un simulatore. |
 | Hardware reale | 🔴 | `░░░░░░░░░░ 0%` | 0 dei 13 repository che dipendono dall'hardware sono stati verificati al banco o sul campo; gli altri non hanno mai funzionato con l'apparecchiatura reale. |
-| Produzione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 26 sono consolidati o in produzione. |
+| Produzione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 35 sono consolidati o in produzione. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Come funziona EH3D Fabrication Suite
