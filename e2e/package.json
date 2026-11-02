@@ -1,0 +1,15 @@
+{
+  "name": "profile-dashboard-ui-tests",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Browser tests of the profile status dashboard (docs/index.html).",
+  "scripts": {
+    "fixtures": "python fixture/build_fixture.py",
+    "html-check": "python check_html.py",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.49.1"
+  }
+}

@@ -143,6 +143,8 @@ class ChartTests(unittest.TestCase):
     def test_ring_and_columns(self):
         ET.fromstring(charts.ring_svg(54, "ring-x"))
         self.assertIn("–", charts.ring_svg(None))
+        self.assertNotIn("ring-value", charts.ring_svg(None))   # no data draws the track only, never a (zero-length) value arc
+        self.assertIn("ring-value", charts.ring_svg(0))
         self.assertIn("100%", charts.ring_svg(250))
         cols = charts.columns_svg([("2001-10", 14), ("2001-11", 97)])
         ET.fromstring(cols)
@@ -300,6 +302,32 @@ class PageTests(unittest.TestCase):
         self.assertIn('data-i18n="architecture_e_card6_title"', self.html)
         self.assertNotIn("Only EH3D-COMMON", self.html)
         self.assertIn("EH3D-NODE-BUNGARD-AUX", self.html)
+
+    def test_the_search_covers_the_description_and_every_translation_exists(self):
+        self.assertIn('data-notes="', self.html)
+        self.assertIn("notes.includes(query)", self.html)
+        for code in ("en", "es", "de", "fr", "it", "ja", "zh", "pt"):
+            self.assertIn("table_electro_hobby_3d_banner", GENERATOR.TRANSLATIONS[code], code)
+
+    def test_nothing_listed_is_never_painted_as_healthy(self):
+        def data(total, ok, errors):
+            return app.AppData(total=total, ok=ok, errors=errors, success_percent_text="–", ecosystem_by_name={}, maturity_labels={}, evidence_labels={},
+                               status={}, progress={}, maturity={}, evidence={}, activity={})
+        self.assertIn("kpi-none", app.errors_card(data(0, 0, 0)))
+        self.assertNotIn("kpi-ok", app.errors_card(data(0, 0, 0)))
+        self.assertIn("kpi-ok", app.errors_card(data(5, 5, 0)))
+        self.assertIn("kpi-bad", app.errors_card(data(5, 0, 5)))
+        for total, ok, expected in ((0, 0, "none"), (5, 5, "ok"), (5, 0, "bad"), (5, 3, "mid")):
+            panel = app.summary_panel(data(total, ok, 0), "")
+            self.assertIn(f'kpi kpi-{expected}" data-testid="kpi-resolved"', panel, (total, ok))
+
+    def test_headings_and_scrollable_table_are_reachable(self):
+        self.assertNotIn('<div class="section-title', self.html)
+        self.assertIn('role="heading" aria-level="2" class="section-title', self.html)
+        self.assertIn('class="table-wrapper" tabindex="0" aria-labelledby="tab-projects"', self.html)
+
+    def test_family_headers_are_keyed_by_ecosystem(self):
+        self.assertIn('(row.dataset.ecosystem || "") + "|" + family', self.html)
 
     def test_projects_carry_their_ecosystem(self):
         self.assertEqual(self.html.count('data-ecosystem="urtc" class="project-row'), 1)

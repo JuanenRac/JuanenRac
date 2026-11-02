@@ -267,8 +267,9 @@ def ring_svg(percent: int | None, css_class: str = "", *, size: int = 112, strok
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" class="chart chart-ring {esc(css_class)}" viewBox="0 0 {size} {size}" aria-hidden="true" focusable="false">'
         f'<circle class="ring-track" cx="{centre}" cy="{centre}" r="{radius:.2f}" fill="none" stroke-width="{stroke}"/>'
-        f'<circle class="ring-value" cx="{centre}" cy="{centre}" r="{radius:.2f}" fill="none" stroke-width="{stroke}" stroke-linecap="round" '
-        f'stroke-dasharray="{dash:.2f} {circumference:.2f}" transform="rotate(-90 {centre} {centre})"/>'
+        + ('' if percent is None else  # no data: the track alone, not even a zero-length round cap
+           f'<circle class="ring-value" cx="{centre}" cy="{centre}" r="{radius:.2f}" fill="none" stroke-width="{stroke}" stroke-linecap="round" '
+           f'stroke-dasharray="{dash:.2f} {circumference:.2f}" transform="rotate(-90 {centre} {centre})"/>') +
         f'<text class="ring-text" x="{centre}" y="{centre + 7}" text-anchor="middle">{text}</text></svg>'
     )
 

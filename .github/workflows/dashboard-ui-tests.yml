@@ -1,0 +1,116 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/dashboard-ui-tests.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Browser tests of the ecosystem status dashboard.
+#
+# The page is generated here from deterministic fixture data (e2e/fixture): no
+# token, no request to GitHub, so a run depends on nothing but this repository.
+# The battery (Playwright + axe-core, e2e/tests) then drives the page the way a
+# visitor does: tabs, languages, themes, filters, keyboard, four screen sizes,
+# poor and empty data. A structural check of the HTML runs first. Screenshots of
+# the failed tests are kept as an artifact.
+#
+# Locally: see e2e/README.md.
+# =============================================================================
+
+name: Dashboard UI tests
+
+on:
+  pull_request:
+    paths:
+      - "scripts/generate_dashboard.py"
+      - "scripts/dashboard_*.py"
+      - "tests/test_dashboard_*.py"
+      - "e2e/**"
+      - ".github/workflows/dashboard-ui-tests.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/generate_dashboard.py"
+      - "scripts/dashboard_*.py"
+      - "tests/test_dashboard_*.py"
+      - "e2e/**"
+      - ".github/workflows/dashboard-ui-tests.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: dashboard-ui-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ui:
+    name: Playwright and axe-core
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      FIXTURE_DIR: ${{ github.workspace }}/e2e/fixture/out
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # The generator imports the three updaters; they are pinned to the same
+      # commits as the dashboard build.
+      - name: Install the updaters
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "git+https://github.com/JuanenRac/HYDRA-UMC-UPDATER.git@b2474ee1e1ac1bde8e654d3962f5f7965412473c"
+          python -m pip install "git+https://github.com/JuanenRac/URTC-UPDATER.git@333cdec0c4636a1c006b72a8f20235b2537d1de4"
+          python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@39b19e1e58db9c2d521f035b6a0ebe5f71ba4f1d"
+
+      - name: Unit tests of the dashboard
+        run: python -m unittest tests.test_dashboard_app tests.test_dashboard_integrity -v
+
+      - name: Generate the dashboard from fixture data (no token, no network)
+        env:
+          GITHUB_TOKEN: ""
+        run: python e2e/fixture/build_fixture.py "$FIXTURE_DIR"
+
+      - name: Check the structure of the generated pages
+        run: python e2e/check_html.py "$FIXTURE_DIR/full/index.html" "$FIXTURE_DIR/minimal/index.html" "$FIXTURE_DIR/partial/index.html" "$FIXTURE_DIR/empty/index.html"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: npm
+          cache-dependency-path: e2e/package-lock.json
+
+      - name: Install the test dependencies
+        working-directory: e2e
+        run: npm ci
+
+      # The browser version follows @playwright/test, pinned in e2e/package-lock.json.
+      - name: Install Chromium
+        working-directory: e2e
+        run: npx playwright install --with-deps chromium
+
+      - name: Run the battery
+        working-directory: e2e
+        env:
+          CI: "true"
+        run: npx playwright test
+
+      - name: Keep the screenshots of the failed tests
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-ui-failures
+          path: |
+            e2e/test-results/
+            e2e/playwright-report/
+          if-no-files-found: ignore
+          retention-days: 7

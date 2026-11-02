@@ -226,9 +226,11 @@ def red_ci_list(data: AppData, names: set[str] | None) -> str:
 
 def errors_card(data: AppData) -> str:
     """The indicator of errors / unknown: the reconciled count and, when it is not zero, a dropdown with each repository and its reason."""
-    state = "bad" if data.errors else "ok"
+    # Nothing listed is not "all good": with no project at all the indicator stays neutral and says there is no data.
+    state = "bad" if data.errors else ("ok" if data.total else "none")
     hint = ('<span data-i18n="errors_card_hint">Open the detail: each repository and the reason.</span>' if data.errors
-            else '<span data-i18n="errors_none_card">Nothing is missing or unknown</span>')
+            else '<span data-i18n="errors_none_card">Nothing is missing or unknown</span>' if data.total
+            else '<span data-i18n="no_data">No data</span>')
     face = (f'<span class="kpi-number" id="health-errors">{data.errors}</span>'
             f'<span class="kpi-label"><b data-i18n="health_errors">Errors / unknown</b><small>{hint}</small></span>')
     if not data.issues:
@@ -248,9 +250,11 @@ def errors_card(data: AppData) -> str:
 def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
     cards = "".join(progress_card(data, key, label) for key, label in ECOSYSTEMS)
     latest, oldest = releases_lists(data, None, 7)
+    # Green only when every listed project resolved its version; red when none did; neutral otherwise (and with nothing listed).
+    resolved_state = "none" if not data.total else ("ok" if data.ok == data.total else "bad" if data.ok == 0 else "mid")
     kpis = (
         f'<div class="kpi" data-testid="kpi-total"><span class="kpi-number" id="health-total">{data.total}</span><span class="kpi-label"><b data-i18n="health_total">Total projects</b></span></div>'
-        f'<div class="kpi kpi-ok" data-testid="kpi-resolved"><span class="kpi-number" id="health-resolved">{data.ok}</span><span class="kpi-label"><b data-i18n="health_resolved">Version resolved</b></span></div>'
+        f'<div class="kpi kpi-{resolved_state}" data-testid="kpi-resolved"><span class="kpi-number" id="health-resolved">{data.ok}</span><span class="kpi-label"><b data-i18n="health_resolved">Version resolved</b></span></div>'
         f'{errors_card(data)}'
         f'<div class="kpi" data-testid="kpi-percent"><span class="kpi-number" id="health-percent">{esc(data.success_percent_text)}</span><span class="kpi-label"><b data-i18n="health_registry">Registry health</b></span></div>'
     )
@@ -323,7 +327,7 @@ def sidebar(maturity_keys: Sequence[tuple[str, str, int]], roles: Sequence[tuple
       <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-body"><span id="filters-t" data-i18n="filters_title">Search and filters</span><span aria-hidden="true">▾</span></button>
       <div class="filters-body" id="filters-body">
         <div class="side-search">
-          <input id="project-search" type="search" placeholder="Search project, stack or deployment..." autocomplete="off" aria-label="Search projects"
+          <input id="project-search" type="search" placeholder="Search project, description, stack or deployment..." autocomplete="off" aria-label="Search projects"
                  data-i18n-placeholder="search_placeholder" data-i18n-aria-label="search_aria" data-testid="project-search">
         </div>
         <div class="side-group" role="group" aria-labelledby="fg-status"><h2 id="fg-status" data-i18n="filter_status_title">Status</h2>
@@ -383,7 +387,11 @@ CSS = r"""
     --c-hydra-umc: #1d6fd6; --c-urtc: #7c4dd6; --c-armor: #0f8f68; --c-eh3d: #b45f06; --c-electro-hobby-3d: #566176;
     --m-scaffolding: #f59e0b; --m-functional: #38bdf8; --m-established: #34d399; --m-production: #a78bfa;
     --focus: #1d4ed8;
+    /* Darker accent, error and ok colours: the palette of the base page does not reach 4.5:1 for text on the light surfaces. */
+    --accent: #1d4ed8; --err: #b91c1c; --ok: #166534; --dim: #4b5563;
   }
+  /* A link inside a sentence must be told apart from the text without relying on colour alone. */
+  .app-footer a, .subtitle a, .detail-text a, .relationship-note a { text-decoration: underline; text-underline-offset: 2px; }
   html, body { height: 100%; }
   body { margin: 0; }
   .skip-link { position: absolute; left: 8px; top: -48px; background: var(--accent); color: #fff; padding: 8px 12px; border-radius: 8px; z-index: 50; }
@@ -653,7 +661,8 @@ JS_FILTERS = r"""
       const deploy = row.dataset.deploy || "";
       const stack = row.dataset.stack || "";
       const family = row.dataset.family || "";
-      let show = !query || name.includes(query) || stack.includes(query) || deploy.includes(query) || family.includes(query);
+      const notes = row.dataset.notes || "";
+      let show = !query || name.includes(query) || stack.includes(query) || deploy.includes(query) || family.includes(query) || notes.includes(query);
       FILTER_KINDS.forEach(function (kind) {
         if (state[kind] !== "all" && (row.dataset[ROW_FIELD[kind]] || "") !== state[kind]) { show = false; }
       });
@@ -669,13 +678,13 @@ JS_FILTERS = r"""
       } else {
         visible += 1;
         if (status === "ok") { visibleOk += 1; }
-        if (family) { visibleFamilies[family] = true; }
+        if (family) { visibleFamilies[(row.dataset.ecosystem || "") + "|" + family] = true; }
         if (row.dataset.ecosystem) { visibleEcosystems[row.dataset.ecosystem] = true; }
       }
     });
 
     familyHeaderRows.forEach(function (headerRow) {
-      headerRow.classList.toggle("hidden", !visibleFamilies[headerRow.dataset.familyHeader || ""]);
+      headerRow.classList.toggle("hidden", !visibleFamilies[(headerRow.dataset.ecosystem || "") + "|" + (headerRow.dataset.familyHeader || "")]);
     });
     bannerRows.forEach(function (banner) {
       banner.classList.toggle("hidden", !visibleEcosystems[banner.dataset.ecosystemBanner || ""]);
@@ -776,7 +785,15 @@ JS = r"""
       tab.tabIndex = on ? 0 : -1;
       if (on) {
         if (options.focus) { tab.focus(); }
-        if (tab.scrollIntoView) { tab.scrollIntoView({ block: "nearest", inline: "nearest" }); }
+        // Scrolls the tab bar by hand: scrollIntoView() would move the starting point of keyboard navigation to this tab, so the first Tab
+        // press of a visitor would skip the skip link and everything before the selected tab.
+        const bar = tab.closest("nav");
+        if (bar) {
+          const t = tab.getBoundingClientRect();
+          const b = bar.getBoundingClientRect();
+          if (t.left < b.left) { bar.scrollLeft -= b.left - t.left + 12; }
+          else if (t.right > b.right) { bar.scrollLeft += t.right - b.right + 12; }
+        }
       }
     });
     panels.forEach(function (panel) { panel.hidden = panel.id !== "panel-" + id; });
@@ -872,7 +889,7 @@ def eh3d_architecture_section() -> str:
             f'<p data-i18n="architecture_e_card{index}_body">{esc(en[f"architecture_e_card{index}_body"])}</p><ul>{lis}</ul></article>'
         )
     return (
-        '<section class="section"><div class="section-title" data-i18n="architecture_section_e">EH3D: System architecture</div>'
+        '<section class="section"><div role="heading" aria-level="2" class="section-title" data-i18n="architecture_section_e">EH3D: System architecture</div>'
         f'<div class="architecture-grid">{"".join(cards)}</div>'
         '<div class="architecture-flow" aria-label="EH3D flow"><span data-i18n="architecture_e_flow_1">Gerber, Excellon and images</span><b>→</b>'
         '<span data-i18n="architecture_e_flow_2">Parsers and CAM tools</span><b>→</b><span data-i18n="architecture_e_flow_3">G-code and simulation</span><b>→</b>'

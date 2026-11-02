@@ -696,7 +696,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "Maturity",
         "section_maturity_hint": "click a card to filter · hover for how it was decided",
         "section_role": "Role",
-        "search_placeholder": "Search project, stack or deployment...",
+        "search_placeholder": "Search project, description, stack or deployment...",
         "search_aria": "Search projects",
         "filter_all": "All",
         "filter_ok": "✓ OK",
@@ -775,7 +775,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "Madurez",
         "section_maturity_hint": "clic en una tarjeta para filtrar · pasa el ratón para ver cómo se decidió",
         "section_role": "Rol",
-        "search_placeholder": "Buscar proyecto, stack o despliegue...",
+        "search_placeholder": "Buscar proyecto, descripción, stack o despliegue...",
         "search_aria": "Buscar proyectos",
         "filter_all": "Todos",
         "filter_ok": "✓ OK",
@@ -854,7 +854,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "Maturité",
         "section_maturity_hint": "cliquez sur une carte pour filtrer · survolez pour voir comment c'est décidé",
         "section_role": "Rôle",
-        "search_placeholder": "Rechercher un projet, un stack ou un déploiement...",
+        "search_placeholder": "Rechercher un projet, une description, un stack ou un déploiement...",
         "search_aria": "Rechercher des projets",
         "filter_all": "Tous",
         "filter_ok": "✓ OK",
@@ -933,7 +933,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "Maturità",
         "section_maturity_hint": "clicca su una scheda per filtrare · passa il mouse per sapere come è stato deciso",
         "section_role": "Ruolo",
-        "search_placeholder": "Cerca progetto, stack o deployment...",
+        "search_placeholder": "Cerca progetto, descrizione, stack o deployment...",
         "search_aria": "Cerca progetti",
         "filter_all": "Tutti",
         "filter_ok": "✓ OK",
@@ -1012,7 +1012,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "Reifegrad",
         "section_maturity_hint": "Karte anklicken zum Filtern · Hover zeigt, wie es entschieden wurde",
         "section_role": "Rolle",
-        "search_placeholder": "Projekt, Stack oder Deploy-Ziel suchen...",
+        "search_placeholder": "Projekt, Beschreibung, Stack oder Deploy-Ziel suchen...",
         "search_aria": "Projekte durchsuchen",
         "filter_all": "Alle",
         "filter_ok": "✓ OK",
@@ -1091,7 +1091,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "成熟度",
         "section_maturity_hint": "点击卡片可筛选 · 悬停查看判定依据",
         "section_role": "角色",
-        "search_placeholder": "搜索项目、技术栈或部署目标……",
+        "search_placeholder": "搜索项目、描述、技术栈或部署目标……",
         "search_aria": "搜索项目",
         "filter_all": "全部",
         "filter_ok": "✓ 正常",
@@ -1170,7 +1170,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "成熟度",
         "section_maturity_hint": "カードをクリックして絞り込み · ホバーで判定理由を表示",
         "section_role": "役割",
-        "search_placeholder": "プロジェクト、スタック、デプロイ対象を検索...",
+        "search_placeholder": "プロジェクト、説明、スタック、デプロイ対象を検索...",
         "search_aria": "プロジェクトを検索",
         "filter_all": "すべて",
         "filter_ok": "✓ OK",
@@ -1249,7 +1249,7 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "section_maturity": "Maturidade",
         "section_maturity_hint": "clique num cartão para filtrar · passe o rato para ver como foi decidido",
         "section_role": "Função",
-        "search_placeholder": "Pesquisar projeto, stack ou implementação...",
+        "search_placeholder": "Pesquisar projeto, descrição, stack ou implementação...",
         "search_aria": "Pesquisar projetos",
         "filter_all": "Todos",
         "filter_ok": "✓ OK",
@@ -1352,6 +1352,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Signed releases and updates",
         "architecture_a_card6_body": "Node firmware is published with a SHA-256 and an Ed25519 signature, and both a node and ARMOR-SERVER refuse a release without a valid one. The maintenance helper of ARMOR-DEVOPS checks an Ed25519 signature on each service package before unpacking it, which is how ARMOR-STUDIO updates the central machine; the private key never goes to GitHub. A firmware file uploaded by hand is not checked.",
         "table_eh3d_banner": "EH3D Fabrication Suite - the newest ecosystem, for PCB milling, CNC, laser and pick-and-place work, same author.",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D - the tools that sit above the four ecosystems and update any of them.",
         "architecture_section_e": "EH3D: System architecture",
         "architecture_e_card1_title": "One project file",
         "architecture_e_card1_body": "EH3D-COMMON defines the .eh3dproj container: a ZIP archive with the project, its layers, toolpaths and vision data, a SHA-256 for every entry and limits that refuse unsafe or oversized names.",
@@ -1409,6 +1410,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Releases y actualizaciones firmadas",
         "architecture_a_card6_body": "El firmware de los nodos se publica con un SHA-256 y una firma Ed25519, y tanto un nodo como ARMOR-SERVER rechazan una release sin una firma válida. El ayudante de mantenimiento de ARMOR-DEVOPS comprueba una firma Ed25519 en cada paquete de servicio antes de desempaquetarlo, que es como ARMOR-STUDIO actualiza la máquina central; la clave privada nunca va a GitHub. Un archivo de firmware subido a mano no se comprueba.",
         "table_eh3d_banner": "EH3D Fabrication Suite - el ecosistema más nuevo, para fresado de PCB, CNC, láser y pick and place, del mismo autor.",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D - las herramientas que están por encima de los cuatro ecosistemas y actualizan cualquiera de ellos.",
         "architecture_section_e": "EH3D: Arquitectura del sistema",
         "architecture_e_card1_title": "Un solo fichero de proyecto",
         "architecture_e_card1_body": "EH3D-COMMON define el contenedor .eh3dproj: un archivo ZIP con el proyecto, sus capas, trayectorias y datos de visión, un SHA-256 por cada entrada y límites que rechazan nombres inseguros o entradas demasiado grandes.",
@@ -1466,6 +1468,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Releases et mises à jour signées",
         "architecture_a_card6_body": "Le firmware des nœuds est publié avec un SHA-256 et une signature Ed25519, et un nœud comme ARMOR-SERVER refusent une release sans signature valide. L'assistant de maintenance d'ARMOR-DEVOPS vérifie une signature Ed25519 sur chaque paquet de service avant de le décompresser, ce qui permet à ARMOR-STUDIO de mettre à jour la machine centrale ; la clé privée ne va jamais sur GitHub. Un fichier de firmware envoyé à la main n'est pas vérifié.",
         "table_eh3d_banner": "EH3D Fabrication Suite - l'écosystème le plus récent, pour le fraisage de circuits imprimés, la CNC, le laser et le pick and place, du même auteur.",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D - les outils placés au-dessus des quatre écosystèmes, qui mettent à jour n'importe lequel d'entre eux.",
         "architecture_section_e": "EH3D : Architecture du système",
         "architecture_e_card1_title": "Un seul fichier de projet",
         "architecture_e_card1_body": "EH3D-COMMON définit le conteneur .eh3dproj : une archive ZIP avec le projet, ses couches, ses trajectoires et ses données de vision, un SHA-256 pour chaque entrée et des limites qui refusent les noms dangereux ou les entrées trop grosses.",
@@ -1523,6 +1526,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Release e aggiornamenti firmati",
         "architecture_a_card6_body": "Il firmware dei nodi è pubblicato con uno SHA-256 e una firma Ed25519, e sia un nodo sia ARMOR-SERVER rifiutano una release senza firma valida. L'assistente di manutenzione di ARMOR-DEVOPS controlla una firma Ed25519 su ogni pacchetto di servizio prima di scompattarlo, ed è così che ARMOR-STUDIO aggiorna la macchina centrale; la chiave privata non va mai su GitHub. Un file firmware caricato a mano non viene controllato.",
         "table_eh3d_banner": "EH3D Fabrication Suite - l'ecosistema più recente, per fresatura di PCB, CNC, laser e pick and place, dello stesso autore.",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D - gli strumenti che stanno sopra i quattro ecosistemi e aggiornano ciascuno di essi.",
         "architecture_section_e": "EH3D: Architettura del sistema",
         "architecture_e_card1_title": "Un solo file di progetto",
         "architecture_e_card1_body": "EH3D-COMMON definisce il contenitore .eh3dproj: un archivio ZIP con il progetto, i suoi livelli, i percorsi utensile e i dati di visione, un SHA-256 per ogni voce e limiti che rifiutano nomi non sicuri o voci troppo grandi.",
@@ -1580,6 +1584,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Signierte Releases und Updates",
         "architecture_a_card6_body": "Knoten-Firmware wird mit einem SHA-256 und einer Ed25519-Signatur veröffentlicht, und sowohl ein Knoten als auch ARMOR-SERVER lehnen ein Release ohne gültige Signatur ab. Der Wartungshelfer von ARMOR-DEVOPS prüft eine Ed25519-Signatur an jedem Dienstpaket, bevor er es entpackt; so aktualisiert ARMOR-STUDIO die zentrale Maschine, und der private Schlüssel gelangt nie zu GitHub. Eine von Hand hochgeladene Firmware-Datei wird nicht geprüft.",
         "table_eh3d_banner": "EH3D Fabrication Suite - das neueste Ökosystem, für Leiterplattenfräsen, CNC, Laser und Bestücken, desselben Autors.",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D - die Werkzeuge oberhalb der vier Ökosysteme, mit denen sich jedes von ihnen aktualisieren lässt.",
         "architecture_section_e": "EH3D: Systemarchitektur",
         "architecture_e_card1_title": "Eine Projektdatei",
         "architecture_e_card1_body": "EH3D-COMMON definiert den .eh3dproj-Container: ein ZIP-Archiv mit dem Projekt, seinen Ebenen, Werkzeugwegen und Bilddaten, einem SHA-256 für jeden Eintrag und Grenzen, die unsichere Namen oder zu große Einträge ablehnen.",
@@ -1637,6 +1642,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "签名发布与更新",
         "architecture_a_card6_body": "节点固件附带 SHA-256 和 Ed25519 签名发布，节点和 ARMOR-SERVER 都会拒绝没有有效签名的发布。ARMOR-DEVOPS 的维护助手在解包每个服务包之前会校验其 Ed25519 签名，ARMOR-STUDIO 正是以此更新中央机器；私钥从不上传到 GitHub。手动上传的固件文件不做检查。",
         "table_eh3d_banner": "EH3D Fabrication Suite —— 最新的生态系统，用于 PCB 铣削、CNC、激光和贴片作业，同一作者。",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D —— 位于四个生态系统之上、可更新其中任何一个的工具。",
         "architecture_section_e": "EH3D：系统架构",
         "architecture_e_card1_title": "一个项目文件",
         "architecture_e_card1_body": "EH3D-COMMON 定义 .eh3dproj 容器：一个 ZIP 归档，包含项目、图层、刀路和视觉数据，每个条目都有 SHA-256，并设有限制以拒绝不安全或过大的条目名。",
@@ -1694,6 +1700,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "署名付きリリースとアップデート",
         "architecture_a_card6_body": "ノードのファームウェアは SHA-256 と Ed25519 署名付きで公開され、ノードも ARMOR-SERVER も有効な署名のないリリースを拒否します。ARMOR-DEVOPS のメンテナンスヘルパーは各サービスパッケージを展開する前に Ed25519 署名を検証し、ARMOR-STUDIO はこの方法で中央マシンを更新します。秘密鍵は GitHub には置かれません。手動でアップロードしたファームウェアファイルは検査されません。",
         "table_eh3d_banner": "EH3D Fabrication Suite — 基板切削、CNC、レーザー、ピックアンドプレース向けの最新のエコシステムです。同じ作者によるものです。",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D — 4つのエコシステムの上位に位置し、そのいずれも更新できるツールです。",
         "architecture_section_e": "EH3D：システムアーキテクチャ",
         "architecture_e_card1_title": "ひとつのプロジェクトファイル",
         "architecture_e_card1_body": "EH3D-COMMON は .eh3dproj コンテナを定義します。プロジェクト、レイヤー、ツールパス、ビジョンデータを収めた ZIP アーカイブで、各エントリに SHA-256 があり、安全でない名前や大きすぎるエントリは制限で拒否されます。",
@@ -1751,6 +1758,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Releases e atualizações assinadas",
         "architecture_a_card6_body": "O firmware dos nós é publicado com um SHA-256 e uma assinatura Ed25519, e tanto um nó como o ARMOR-SERVER recusam uma release sem assinatura válida. O auxiliar de manutenção do ARMOR-DEVOPS verifica uma assinatura Ed25519 em cada pacote de serviço antes de o desempacotar, e é assim que o ARMOR-STUDIO atualiza a máquina central; a chave privada nunca vai para o GitHub. Um ficheiro de firmware carregado à mão não é verificado.",
         "table_eh3d_banner": "EH3D Fabrication Suite - o ecossistema mais recente, para fresagem de PCB, CNC, laser e pick and place, do mesmo autor.",
+        "table_electro_hobby_3d_banner": "Electro Hobby 3D - as ferramentas que ficam acima dos quatro ecossistemas e atualizam qualquer um deles.",
         "architecture_section_e": "EH3D: Arquitetura do sistema",
         "architecture_e_card1_title": "Um só ficheiro de projeto",
         "architecture_e_card1_body": "O EH3D-COMMON define o contentor .eh3dproj: um arquivo ZIP com o projeto, as suas camadas, trajetórias e dados de visão, um SHA-256 por cada entrada e limites que recusam nomes inseguros ou entradas demasiado grandes.",
@@ -2406,6 +2414,7 @@ def _render_one_row(
         <tr
             class="project-row {status_class}{child_class}"
             data-name="{project_name.lower()}"
+            data-notes="{esc((entry.notes or entry.note or '').lower())}"
             data-status="{esc(status_key)}"
             data-deploy="{deploy_filter}"
             data-stack="{stack.lower()}"
@@ -3370,11 +3379,11 @@ def render_html(
     --ok-soft: #dcfce7;
     --err: #dc2626;
     --err-soft: #fee2e2;
-    --maturity-production: #16a34a;
+    --maturity-production: #166534;
     --maturity-production-soft: #dcfce7;
-    --maturity-established: #3b82f6;
+    --maturity-established: #1d4ed8;
     --maturity-established-soft: #dbeafe;
-    --maturity-scaffolding: #d97706;
+    --maturity-scaffolding: #b45309;
     --maturity-scaffolding-soft: #fef3c7;
     --shadow: 0 4px 18px rgba(15, 23, 42, .08);
     --bevel-highlight: rgba(255, 255, 255, .55);
@@ -4548,6 +4557,10 @@ def render_html(
     color: var(--accent);
     font-weight: 600;
     text-decoration: none;
+    display: inline-block;
+    padding: 3px 0;
+    min-height: 24px;
+    box-sizing: border-box;
   }}
 
   .project-title a:hover {{
@@ -4562,8 +4575,10 @@ def render_html(
 
   .project-links a {{
     color: var(--dim);
-    font-size: 10px;
+    font-size: 11px;
     text-decoration: none;
+    display: inline-block;
+    padding: 5px 7px;
   }}
 
   .project-links a:hover {{
@@ -4908,7 +4923,7 @@ def render_html(
     {eco_panels_html}
     <section role="tabpanel" class="panel" id="panel-projects" aria-labelledby="tab-projects" tabindex="0" hidden data-testid="panel-projects">
       <div class="panel-inner">
-        <section class="table-wrapper">
+        <section class="table-wrapper" tabindex="0" aria-labelledby="tab-projects">
 
     <table>
 
@@ -4952,7 +4967,7 @@ def render_html(
         <div class="evidence-split"><div class="card">{maturity_chart_html}</div><div class="card">{evidence_chart_html}</div></div>
 <section class="section">
 
-    <div class="section-title">
+    <div role="heading" aria-level="2" class="section-title">
       <span data-i18n="section_maturity">Maturity</span>
       <span class="section-title-hint" data-i18n="section_maturity_hint">click a card to filter · hover for how it was decided</span>
     </div>
@@ -4961,7 +4976,7 @@ def render_html(
       {maturity_cards}
     </div>
 
-    <div class="section-title evidence-title">
+    <div role="heading" aria-level="2" class="section-title evidence-title">
       <span data-i18n="section_evidence">Evidence</span>
       <span class="section-title-hint" data-i18n="section_evidence_hint">{dt['section_evidence_hint']}</span>
     </div>
@@ -4973,7 +4988,7 @@ def render_html(
   </section>
 <section class="section">
 
-    <div class="section-title" data-i18n="roadmap_section">
+    <div role="heading" aria-level="2" class="section-title" data-i18n="roadmap_section">
       Roadmap
     </div>
 
@@ -4994,7 +5009,7 @@ def render_html(
       <div class="panel-inner">
         <div class="inv-grid"><section class="section">
 
-    <div class="section-title" data-i18n="section_deploy">
+    <div role="heading" aria-level="2" class="section-title" data-i18n="section_deploy">
       Deployment targets
     </div>
 
@@ -5004,7 +5019,7 @@ def render_html(
 
   </section><section class="section">
 
-    <div class="section-title" data-i18n="section_stack">
+    <div role="heading" aria-level="2" class="section-title" data-i18n="section_stack">
       Technology stacks
     </div>
 
@@ -5014,7 +5029,7 @@ def render_html(
 
   </section><section class="section">
 
-    <div class="section-title" data-i18n="section_role">
+    <div role="heading" aria-level="2" class="section-title" data-i18n="section_role">
       Role
     </div>
 
@@ -5024,7 +5039,7 @@ def render_html(
 
   </section><div class="span-2"><section class="section">
 
-    <div class="section-title" data-i18n="compat_section">
+    <div role="heading" aria-level="2" class="section-title" data-i18n="compat_section">
       Compatibility matrix
     </div>
 
@@ -5058,7 +5073,7 @@ def render_html(
       <div class="arch-panel" data-arch-panel="hydra-umc">
 <section class="section">
 
-    <div class="section-title" data-i18n="architecture_section">HYDRA-UMC: System architecture</div>
+    <div role="heading" aria-level="2" class="section-title" data-i18n="architecture_section">HYDRA-UMC: System architecture</div>
 
     <div class="architecture-grid">
       <article class="architecture-card">
@@ -5123,7 +5138,7 @@ def render_html(
       <div class="arch-panel" data-arch-panel="urtc" hidden>
 <section class="section">
 
-    <div class="section-title" data-i18n="architecture_section_u">URTC: System architecture</div>
+    <div role="heading" aria-level="2" class="section-title" data-i18n="architecture_section_u">URTC: System architecture</div>
 
     <div class="architecture-grid">
       <article class="architecture-card">
@@ -5183,7 +5198,7 @@ def render_html(
       <div class="arch-panel" data-arch-panel="armor" hidden>
 <section class="section">
 
-    <div class="section-title" data-i18n="architecture_section_a">A.R.M.O.R.: System architecture</div>
+    <div role="heading" aria-level="2" class="section-title" data-i18n="architecture_section_a">A.R.M.O.R.: System architecture</div>
 
     <div class="architecture-grid">
       <article class="architecture-card">
