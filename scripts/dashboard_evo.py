@@ -81,8 +81,24 @@ def today_utc() -> str:
     return datetime.now(timezone.utc).date().isoformat()
 
 
-def snapshot(day: str, progress: Mapping[str, tuple[int | None, int | None]], status: Mapping[str, Mapping[str, object]], ecosystems: Iterable[str]) -> dict | None:
-    """The entry of one day: {"date", "progress": {eco: percent}, "areas": {eco: {area: percent}}}. None when there is nothing real to record."""
+def repo_facts(entries: Iterable[object], results: Mapping[str, object]) -> dict[str, list]:
+    """{repository: [maturity level 0-3, version]} for the snapshot: what the comparison of two dates needs. A maturity that is not one of the four levels is left out;
+    a version that did not resolve is the empty text."""
+    levels = ("scaffolding", "functional", "established", "production")
+    out: dict[str, list] = {}
+    for entry in entries:
+        maturity = getattr(entry, "maturity", None)
+        if maturity not in levels:
+            continue
+        version = getattr(results.get(entry.name), "version", None)
+        out[entry.name] = [levels.index(maturity), str(version) if version is not None else ""]
+    return out
+
+
+def snapshot(day: str, progress: Mapping[str, tuple[int | None, int | None]], status: Mapping[str, Mapping[str, object]], ecosystems: Iterable[str],
+             repos: Mapping[str, list] | None = None) -> dict | None:
+    """The entry of one day: {"date", "progress": {eco: percent}, "areas": {eco: {area: percent}}, "repos": {name: [maturity level, version]}}.
+    None when there is nothing real to record; "repos" is left out when it is not known."""
     prog: dict[str, int] = {}
     areas: dict[str, dict[str, int]] = {}
     for eco in ecosystems:
@@ -98,7 +114,10 @@ def snapshot(day: str, progress: Mapping[str, tuple[int | None, int | None]], st
             areas[eco] = found
     if not prog and not areas:
         return None
-    return {"date": day, "progress": prog, "areas": areas}
+    entry: dict = {"date": day, "progress": prog, "areas": areas}
+    if repos:
+        entry["repos"] = {name: list(value) for name, value in repos.items()}
+    return entry
 
 
 def _valid_entry(entry: object) -> bool:

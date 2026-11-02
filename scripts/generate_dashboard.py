@@ -60,6 +60,9 @@ import dashboard_evo
 import dashboard_evo_texts
 import dashboard_evo_ui
 import dashboard_health
+import dashboard_insight
+import dashboard_insight_texts
+import dashboard_insight_ui
 import dashboard_integrity
 import dashboard_texts
 import ecosystem_progress
@@ -1927,6 +1930,10 @@ for language, values in dashboard_texts.TEXTS.items():
 for language, values in dashboard_evo_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the analysis tab (maturity funnel, areas, weekly activity, dependencies, milestones, comparing dates, technical debt).
+for language, values in dashboard_insight_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
 for language, values in dashboard_app_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3217,6 +3224,7 @@ def page_data(
     config: dict,
     history: "list[dict] | None" = None,
     snap: "dict | None" = None,
+    insight: "dict | None" = None,
 ) -> dict:
     """What the script of the page reads, as plain data: the thresholds, each repository (manifest fields, CI, release, recent commits) and the repositories
     behind every percentage. A fact that was not read is null; the page prints "not verified" for it."""
@@ -3262,6 +3270,7 @@ def page_data(
         "checks": dashboard_evo.checks(ecosystem_by_name, manifests, signals),
         "history": list(history or []),
         "snap": snap,
+        "insight": insight,
     }
 
 
@@ -3279,6 +3288,10 @@ def render_html(
     build: "dashboard_health.BuildInfo | None" = None,
     config: "dict | None" = None,
     history: "list[dict] | None" = None,
+    facts: "dict | None" = None,
+    weekly: "dict | None" = None,
+    live_milestones: "dict | None" = None,
+    planned_milestones: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3367,9 +3380,15 @@ def render_html(
     app_data.incomplete = dashboard_health.completeness(total=total, activity=activity_map, ecosystem_by_name=ecosystem_by_name, issues=integrity)
     app_data.build = build
     today = dashboard_evo.today_utc()
-    snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys)
+    snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys, repos=dashboard_evo.repo_facts(entries, results))
+    full_history = dashboard_evo.add_snapshot(history, snap, today) if history is not None else []
     app_data.page_data = page_data(entries, results, ecosystem_by_name, raw_manifests or {}, activity_map, signals or {}, app_data.status, health_config,
-                                   history=dashboard_evo.add_snapshot(history, snap, today) if history is not None else [], snap=snap)
+                                   history=full_history, snap=snap)
+    app_data.page_data["insight"] = dashboard_insight.build(
+        repos=app_data.page_data["repos"], eco_by_name=ecosystem_by_name, manifests={name: _manifest_data((raw_manifests or {}).get(name)) for name in ecosystem_by_name},
+        status=app_data.status, history=full_history, today=today, config=health_config, ecosystems=app_keys, facts=facts, weekly=weekly,
+        live=live_milestones, planned=planned_milestones)
+    insight_panel_html = dashboard_app.panel("insight", dashboard_insight_ui.panel_html())
     description = (f"Electro Hobby 3D ecosystem status dashboard: live status for {total} projects across the HYDRA-UMC, URTC, A.R.M.O.R. and EH3D ecosystems")
     head_extra_html = dashboard_evo_ui.head_tags(total, description, SITE_URL)
     evidence_view_html = dashboard_evo_ui.evidence_view()
@@ -5078,6 +5097,7 @@ def render_html(
         {pager_html}
       </div>
     </section>
+    {insight_panel_html}
     <section role="tabpanel" class="panel" id="panel-evidence" aria-labelledby="tab-evidence" tabindex="0" hidden data-testid="panel-evidence">
       <div class="panel-inner">
         {evidence_view_html}
@@ -5856,6 +5876,14 @@ def main() -> int:
     print(f"{len(signals)} delivery/quality records read.", file=sys.stderr)
     build = dashboard_health.fetch_last_good_build(BUILD_REPOSITORY, BUILD_WORKFLOW_FILE, _api_get)
     print("Last good build: " + (f"{build.finished} {build.url}" if build else "not verified"), file=sys.stderr)
+    app_names = [key for key, _label in dashboard_app.ECOSYSTEMS]
+    facts = dashboard_insight.fetch_facts(catalog.github_owner, GITHUB_TOKEN)
+    print(f"{len(facts)} creation/release/file records read.", file=sys.stderr)
+    weekly = dashboard_insight.fetch_commit_weeks(catalog.github_owner, ecosystem_by_name, GITHUB_TOKEN)
+    print(f"{len(weekly)} weekly commit records read.", file=sys.stderr)
+    live_milestones = dashboard_insight.fetch_projects(catalog.github_owner, GITHUB_TOKEN)
+    planned_milestones = None if live_milestones else dashboard_insight.planned_items(Path(__file__).resolve().parent.parent / "tools")
+    print("Milestones: " + ("GitHub Projects" if live_milestones else "plans in this repository" if planned_milestones else "not verified"), file=sys.stderr)
     config, config_problems = dashboard_health.load_config()
     for problem in config_problems:
         print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
@@ -5887,7 +5915,8 @@ def main() -> int:
     for problem in history_problems:
         print(f"WARNING: {problem}; the history starts again from today.", file=sys.stderr)
     rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
-                           signals=signals, build=build, config=config, history=history)
+                           signals=signals, build=build, config=config, history=history, facts=facts, weekly=weekly,
+                           live_milestones=live_milestones, planned_milestones=planned_milestones)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     try:
         published = index_path.read_text(encoding="utf-8")
@@ -5899,7 +5928,7 @@ def main() -> int:
     readme_text = (Path(__file__).resolve().parent.parent / "README.md").read_text(encoding="utf-8")
     app_keys = [key for key, _label in dashboard_app.ECOSYSTEMS]
     progress_now = dashboard_charts.parse_progress(readme_text, app_keys)
-    snap = dashboard_evo.snapshot(today, progress_now, dashboard_charts.parse_status(readme_text, app_keys), app_keys)
+    snap = dashboard_evo.snapshot(today, progress_now, dashboard_charts.parse_status(readme_text, app_keys), app_keys, repos=dashboard_evo.repo_facts(entries, results))
     if snap is not None and not history_problems:
         if dashboard_evo.save_history(history_path, dashboard_evo.add_snapshot(history, snap, today)):
             print(f"Saved the snapshot of {today} in {history_path}", file=sys.stderr)

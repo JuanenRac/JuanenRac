@@ -20,6 +20,7 @@ import dashboard_app_texts
 import dashboard_charts as charts
 import dashboard_evo_ui
 import dashboard_health
+import dashboard_insight_ui
 from dashboard_charts import Activity, Area, esc
 
 ECOSYSTEMS: tuple[tuple[str, str], ...] = (
@@ -39,12 +40,13 @@ TABS: tuple[tuple[str, str, str], ...] = (
     ("eh3d", "", "EH3D"),
     ("projects", "tab_projects", ""),
     ("evidence", "tab_evidence", ""),
+    ("insight", "tab_insight", ""),
     ("inventory", "tab_inventory", ""),
     ("architecture", "tab_architecture", ""),
     ("errors", "tab_errors", ""),
 )
 TAB_IDS = tuple(tab[0] for tab in TABS)
-ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_inventory": "Inventory",
+ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_insight": "Analysis", "tab_inventory": "Inventory",
            "tab_architecture": "Architecture", "tab_errors": "Errors / unknown"}
 CI_LABELS = {"success": "Green", "failure": "Red", "pending": "Pending", "none": "No CI / unknown"}
 LIGHT_GLYPH = {"good": "●", "fair": "◐", "poor": "◔", "bad": "○"}
@@ -1686,7 +1688,7 @@ JS_HEALTH = r"""
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
-CSS = CSS + dashboard_evo_ui.CSS
+CSS = CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS
 
 
 def script() -> str:
@@ -1694,7 +1696,7 @@ def script() -> str:
     import json
     marker = "  dynReady = true;\n  applyLanguage("
     assert JS_HEALTH.count(marker) == 1
-    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_evo_ui.JS + marker)
+    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_evo_ui.JS + dashboard_insight_ui.JS + marker)
 
 
 # ---------------------------------------------------------------------------

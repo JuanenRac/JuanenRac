@@ -1,5 +1,6 @@
 {
   "activity_days": { "green_max": 14, "amber_max": 30 },
   "release_days": { "green_max": 90, "amber_max": 180 },
-  "alert_after_days": 30
+  "alert_after_days": 30,
+  "scaffolding_months": 6
 }

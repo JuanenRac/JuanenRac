@@ -617,7 +617,7 @@ JS = r"""
   window.addEventListener("beforeprint", function () { printRender(currentDict()); });
 
   function evoApplied(dict) {
-    evRender(dict); evoRender(dict); visitRender(dict); printRender(dict); presentLabel(dict);
+    evRender(dict); evoRender(dict); insightApplied(dict); visitRender(dict); printRender(dict); presentLabel(dict);
     if (panelFor) { evPanel(panelFor, dict); }
   }
   applyModes({ write: false });

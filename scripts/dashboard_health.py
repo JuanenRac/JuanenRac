@@ -28,6 +28,7 @@ DEFAULT_CONFIG: dict = {
     "activity_days": {"green_max": 14, "amber_max": 30},
     "release_days": {"green_max": 90, "amber_max": 180},
     "alert_after_days": 30,
+    "scaffolding_months": 6,
 }
 MANIFEST_KINDS = ("invalid_manifest", "unlisted_manifest", "unknown_maturity", "unknown_evidence", "catalog_missing")
 BUILD_BEGIN, BUILD_END = "<!--build-info-->", "<!--/build-info-->"
@@ -62,6 +63,12 @@ def parse_config(raw: object) -> tuple[dict, list[str]]:
             config["alert_after_days"] = value
         else:
             problems.append("alert_after_days: needs an integer number of days from 1")
+    if "scaffolding_months" in raw:
+        value = raw["scaffolding_months"]
+        if isinstance(value, int) and not isinstance(value, bool) and 1 <= value <= 120:
+            config["scaffolding_months"] = value
+        else:
+            problems.append("scaffolding_months: needs an integer number of months from 1 to 120")
     return config, problems
 
 
