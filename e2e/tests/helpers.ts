@@ -1,6 +1,6 @@
 import { test as base, expect, Page } from "@playwright/test";
 
-export const TABS = ["summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "inventory", "architecture", "errors"] as const;
+export const TABS = ["summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "insight", "inventory", "architecture", "errors"] as const;
 export const LANGS = ["en", "es", "de", "fr", "it", "ja", "zh", "pt"] as const;
 export const ECOSYSTEMS = ["hydra-umc", "urtc", "armor", "eh3d"] as const;
 export type Variant = "full" | "healthy" | "minimal" | "partial" | "empty";
@@ -71,7 +71,7 @@ export async function visibleRows(page: Page): Promise<number> {
 export const LEFTOVER = /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b|\b[a-z]+\.[a-z]+_[a-z_0-9]+\b|\bundefined\b|\bNaN\b|\[object Object\]|\{[a-z_]+\}/;
 
 /** File names and manifest or protocol field names the page prints on purpose; they look like keys but are not. */
-const ALLOWED_TOKENS = /generate_dashboard|ecosystem_progress|ecosystem_status|deployment_target|authorizes_action/g;
+const ALLOWED_TOKENS = /depends_on|generate_dashboard|ecosystem_progress|ecosystem_status|deployment_target|authorizes_action/g;
 
 export async function visibleText(page: Page): Promise<string> {
   return (await page.evaluate(() => document.body.innerText)).replace(ALLOWED_TOKENS, "");

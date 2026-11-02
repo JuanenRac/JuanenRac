@@ -29,6 +29,7 @@ for sibling in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):
 
 import dashboard_charts as charts  # noqa: E402
 import dashboard_health as health  # noqa: E402
+import dashboard_insight as insight_mod  # noqa: E402
 import dashboard_integrity as integrity_mod  # noqa: E402
 import generate_dashboard as gen  # noqa: E402
 from hydra_umc_updater.registry import ProjectEntry  # noqa: E402
@@ -97,7 +98,23 @@ def dataset(per_ecosystem: int = 10, healthy: bool = False):
             ok = index % 9 != 8
             results[name] = SimpleNamespace(version=f"0.{index % 7}.{index % 3}" if ok else None, error=None if ok else "not found", http_status=200 if ok else 404, url="https://example.invalid/" + name)
             eco[name] = key
-            raw[name] = integrity_mod.RawManifest(ecosystem=key, data={"evidence": EVIDENCE[index % 5], "maturity": MATURITY[index % 4]})
+            data = {"evidence": EVIDENCE[index % 5], "maturity": MATURITY[index % 4]}
+            if index % 3 == 0:
+                data["hardware_bound"] = True       # declares real hardware (some with no bench or field evidence)
+            deps = []
+            if number % 2 == 1:
+                deps.append(f"{PREFIX[key]}-FIXTURE-{number - 1:02d}")
+            if key == "hydra-umc" and number == 0:
+                deps.append(f"{PREFIX[key]}-FIXTURE-01")             # with 01 depending on 00: a cycle
+            if key == "hydra-umc" and number == 7:
+                deps.append("HYDRA-UMC-GHOST-REPO")                  # a repository that does not exist
+            if key == "urtc" and number == 3:
+                deps.append("HYDRA-UMC-FIXTURE-00")                  # another ecosystem
+            if deps:
+                data["depends_on"] = deps
+            if number == 9:
+                data["parent"] = f"{PREFIX[key]}-FIXTURE-00"
+            raw[name] = integrity_mod.RawManifest(ecosystem=key, data=data)
             nodes.append(_node(name, index, healthy))
             index += 1
     return entries, results, eco, raw, charts.parse_activity(nodes)
@@ -112,6 +129,35 @@ def signals_for(entries, activity) -> dict:
         out[entry.name] = {"releases": index % 25, "readmes": 8 if index % 7 else 3, "tests": index % 3 != 0, "ci": activity[entry.name].ci == "success"}
     return out
 
+
+def facts_for(entries) -> dict:
+    """Creation date, release dates and top-level files of every repository but one in seven (those stay unverified)."""
+    out = {}
+    for index, entry in enumerate(entries):
+        if index % 7 == 6:
+            continue
+        files = ["README.md", "src"] + (["tests", "tests/integration"] if index % 3 == 0 else ["tests"] if index % 3 == 1 else [])
+        out[entry.name] = {"created": f"2001-{1 + index % 9:02d}-{1 + index % 27:02d}T08:00:00Z",
+                           "releases": [f"2001-12-{10 + index % 10:02d}T10:00:00Z"] if index % 5 != 4 else [], "files": files}
+    return out
+
+
+def weekly_for(entries) -> dict:
+    """Commits per week for every repository but one in nine (the statistics of those were not ready)."""
+    weeks = insight_mod.week_starts("2001-12-21")
+    return {e.name: {w: (index * 3 + n * 2) % 11 for n, w in enumerate(weeks)} for index, e in enumerate(entries) if index % 9 != 4}
+
+
+PLANNED = {
+    "hydra-umc": [
+        {"title": "Fixture card in progress", "repository": "HYDRA-UMC-FIXTURE-00", "status": "In progress", "priority": "High", "hardware": "None", "blocked": "None"},
+        {"title": "Fixture card blocked", "repository": "HYDRA-UMC-FIXTURE-01", "status": "Blocked", "priority": "Normal", "hardware": "CM5", "blocked": "Needs a real board"},
+        {"title": "Fixture card done", "repository": "", "status": "Done", "priority": "Low", "hardware": "None", "blocked": "None"},
+    ],
+    "urtc": [{"title": "Fixture URTC backlog card", "repository": "URTC-FIXTURE-00", "status": "Backlog", "priority": "Critical", "hardware": "None", "blocked": "None"}],
+    "armor": [],
+    "eh3d": [{"title": "Fixture EH3D ready card", "repository": "", "status": "Ready", "priority": "Normal", "hardware": "None", "blocked": "None"}],
+}
 
 AREAS = ("software", "tests", "ci", "releases", "docs", "simulation", "hardware", "production")
 
@@ -128,7 +174,19 @@ def history_for(days: int = 45) -> list[dict]:
         areas = {eco: {area: max(0, 20 + 9 * j + 3 * i - back // 4) for j, area in enumerate(AREAS)} for i, eco in enumerate(ECOSYSTEMS)}
         if back == 10:
             del areas["urtc"]["ci"]
-        out.append({"date": day.isoformat(), "progress": progress, "areas": areas})
+        out.append({"date": day.isoformat(), "progress": progress, "areas": areas, **({} if back == 44 else {"repos": repos_at(back)})})   # an old snapshot with no repositories
+    return out
+
+
+def repos_at(back: int) -> dict:
+    """What the snapshot of `back` days ago recorded for each fixture repository: one in five was a level lower (and had an older version) before the last 20 days."""
+    out, index = {}, 0
+    for key in ECOSYSTEMS:
+        for number in range(10):
+            level = index % 4
+            older = back > 20 and index % 5 == 0
+            out[f"{PREFIX[key]}-FIXTURE-{number:02d}"] = [max(0, level - 1) if older else level, f"0.{index % 7}.{index % 3}" if not older else "0.0.0"]
+            index += 1
     return out
 
 
@@ -145,7 +203,8 @@ def build_full() -> str:
     ]
     cover = integrity_mod.Coverage(len(entries), len(entries) + 3, ("JuanenRac", "fixture-plain-a", "fixture-plain-b"))
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
-                           signals=signals_for(entries, activity), build=BUILD, history=history_for())
+                           signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
+                           planned_milestones=PLANNED)
 
 
 def build_single() -> str:
@@ -153,7 +212,8 @@ def build_single() -> str:
     entries, results, eco, raw, activity = dataset()
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
-                           signals=signals_for(entries, activity), build=BUILD, history=[])
+                           signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
+                           planned_milestones=PLANNED)
 
 
 def build_healthy() -> str:
@@ -164,7 +224,8 @@ def build_healthy() -> str:
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     cover = integrity_mod.Coverage(len(entries), len(entries), ())
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
-                           signals=signals_for(entries, activity), build=BUILD, history=history_for(60))
+                           signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
+                           planned_milestones=PLANNED)
 
 
 def build_minimal() -> str:
