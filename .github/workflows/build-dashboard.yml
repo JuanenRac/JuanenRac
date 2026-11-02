@@ -198,6 +198,10 @@ jobs:
       # the evidence each repository declares in its own manifest (see
       # scripts/ecosystem_progress.py), never typed by hand.
       - name: Calculate the progress of the ecosystems
+        env:
+          # Reads the tags, the files and the last runs of every repository of the account
+          # (public data); without the token the limit of 60 requests an hour is reached at once.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/ecosystem_progress.py
 
