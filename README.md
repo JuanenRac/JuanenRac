@@ -87,7 +87,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Software | 🟢 | `█████████▌ 95%` | 56 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have automated tests. |
 | Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
-| Releases | 🟢 | `█████████▊ 97%` | 57 of 59 repositories have published at least one release. |
+| Releases | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `██▍░░░░░░░ 24%` | 14 of 59 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `█▏░░░░░░░░ 11%` | 4 of the 38 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
@@ -286,7 +286,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.5.4 | Cross-platform GUI/CLI tool to detect, install, and manually update every ecosystem project. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.5 | Desktop tool for Windows and Linux that builds a ready-to-flash CM5 image with the ecosystem's current versions and first-boot setup. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.2.2 | Maintenance-incident coordinator: collects a sanitized health snapshot and asks an AI provider for a diagnosis; it never applies a patch. |
-| [HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE) | 0.0.1 | Developer node: checks incident evidence, runs approved repro cases and keeps a cache of checkouts by revision. |
+| [HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE) | 0.0.2 | Developer node: checks incident evidence, runs approved repro cases and keeps a cache of checkouts by revision. |
 | [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.2.2 | Reproducible development host: policy-gated configuration and manifest inventory, growing into an isolated task runner; no deploy rights. |
 | [HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS) | 0.1.1 | Architecture, interfaces, security baseline, capability matrix and generated project catalogue of the ecosystem, plus comparison tools. |
 

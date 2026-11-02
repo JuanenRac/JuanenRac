@@ -87,7 +87,7 @@
 | 软件 | 🟢 | `█████████▌ 95%` | 59 个仓库中有 56 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `█████████▊ 98%` | 59 个仓库中有 58 个有自动化测试。 |
 | 持续集成 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个在主分支上最近一次 CI 运行为绿色。 |
-| 已发布版本 | 🟢 | `█████████▊ 97%` | 59 个仓库中有 57 个至少发布过一个版本。 |
+| 已发布版本 | 🟢 | `█████████▊ 98%` | 59 个仓库中有 58 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个提供八种语言的 README。 |
 | 仿真 | 🔴 | `██▍░░░░░░░ 24%` | 59 个仓库中有 14 个至少在仿真器中验证过。 |
 | 真实硬件 | 🔴 | `█▏░░░░░░░░ 11%` | 依赖硬件的 38 个仓库中有 4 个在台架或现场验证过；其余从未在真实设备上运行。 |
@@ -292,7 +292,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.4|用于检测、安装和手动更新每个生态系统项目的跨平台 GUI/CLI 工具。|
 |[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.5|适用于 Windows 和 Linux 的桌面工具：构建可直接烧录的 CM5 镜像，包含生态系统的当前版本和首次启动配置。|
 |[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.2.2|维护事件协调器：收集经过脱敏的状态快照并向 AI 服务商请求诊断；绝不自行应用补丁。|
-|[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.1|开发节点：核查事件证据，运行已批准的复现用例，并按修订版本缓存检出。|
+|[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.2|开发节点：核查事件证据，运行已批准的复现用例，并按修订版本缓存检出。|
 |[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.2|可复现的开发主机：由策略管控的配置与清单目录，将发展为隔离的任务运行器；默认没有部署权限。|
 |[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.1|生态系统的架构、接口、安全基线、能力矩阵和自动生成的项目目录，以及对比工具。|
 
