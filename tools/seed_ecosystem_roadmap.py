@@ -987,7 +987,38 @@ LATEST_ITEMS = (
           "A record per item with the versions and what was observed; a failure becomes a card.", hardware="CM5"),
 )
 
-SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS
+# The developer node, the shared web kit and the shared meshes, and the server pieces that landed with them. Everything here is tested on a computer (or against fakes); none of it has met a physical machine.
+RECENT_ITEMS = (
+    _item("The developer node: evidence intake, repro cases, checkout cache and ecosystem CI, all closed by default", "HYDRA-UMC-DEVELOPER-NODE", "Platform Foundation", "Scaffolding", "Local test", "Normal",
+          "A node for a development host that reads the evidence bundles of the local technician, keeps a cache of checkouts by revision, runs repro cases and the shared CI of a workspace only after a person approved the exact plan, and writes a status document.",
+          "Delivered in code (first version): every part is off until switched on, every tuned value is in one configuration file, and the tests pass. It has not run on a real development host.", status="Done"),
+    _item("Run the developer node on a real development host", "HYDRA-UMC-DEVELOPER-NODE + HYDRA-UMC-DEV-SERVER", "Platform Foundation", "Scaffolding", "Local test", "Normal",
+          "Nothing of the node has run outside the tests: the bare mirror and the worktrees on a real disk, the approval at a terminal and the shared CI over a real workspace.",
+          "A recorded run on one development host: an evidence bundle ingested, a repro case approved and run, a checkout cached and removed by the size limit, and the report of the shared CI."),
+    _item("Show the status document of the developer node in Studio and the AI dashboard", "HYDRA-UMC-DEVELOPER-NODE + HYDRA-UMC-STUDIO + HYDRA-UMC-DASHBOARD-AI", "Applications", "Scaffolding", "Documentation", "Low",
+          "The node writes a status document with the switches, the queue, the journal and the health; no client reads it yet.",
+          "A panel that reads the document and shows the queue and the health, with tests in the eight languages."),
+    _item("A shared TypeScript kit for the web clients: session, connection history, tours, preferences and an HTTP client", "HYDRA-UMC-STUDIO-KIT", "Applications", "Scaffolding", "Local test", "Normal",
+          "One small package with no runtime dependencies for what the web clients repeat: the sign-in session, the connection history, guided tours, local preferences and an HTTP client with timeouts and bounded retries.",
+          "Delivered (first version): the package builds and its tests pass against fakes for the network and the storage; it has not run inside a real browser or against the real server.", status="Done"),
+    _item("Make Studio consume the shared web kit and try it in a browser", "HYDRA-UMC-STUDIO-KIT + HYDRA-UMC-STUDIO", "Applications", "Scaffolding", "Local test", "Normal",
+          "Studio does not use the kit yet; the migration steps and how to check each one are written down.",
+          "Studio uses the kit for its session and HTTP calls, its existing tests pass unchanged, and the sign-in, the history and a guided tour work in a real browser."),
+    _item("Check the shared mesh package in a clean install of Studio and the Suite", "HYDRA-UMC-MESHES + HYDRA-UMC-STUDIO + HYDRA-UMC-SUITE", "Applications", "Functional", "Local test", "Low",
+          "The meshes are published once as a release package with the SHA-256 of the archive and of each file; the repository holds only the manifest, and the CI checks that the manifest and the checksums agree. The download on demand and the refusal of a file that does not match have not been seen end to end.",
+          "A clean install of each app downloads the package, shows the models, and refuses a package with one changed file, with the result recorded."),
+    _item("The health of the whole ecosystem in one answer", "HYDRA-UMC-SERVER + HYDRA-UMC-SDK + HYDRA-UMC-STUDIO", "SDK & Server", "Functional", "Local test", "Normal",
+          "One route lists every service that declares a port or a unit as ok, degraded, down or unknown, with a reason, its version against the version of its manifest, and when it was last heard; the last contact survives a restart.",
+          "Delivered in code and tested; it is off until switched on. Not run against the full set of services on the CM5.", status="Done"),
+    _item("Dead-man of the presence of the operator, off by default", "HYDRA-UMC-SERVER + HYDRA-UMC-WATCH", "Platform Foundation", "Functional", "Local test", "High",
+          "When the numbered heartbeats of the watch stop, or the person says they left, the server acts on the robots that account holds; the heartbeat is authenticated and idempotent.",
+          "Delivered in code, with tests for the heartbeat and for the stop of the beats. It has not been tried with a watch worn by a person or with a moving robot.", status="Done"),
+    _item("The alarm of A.R.M.O.R. inhibits new starts in the safety zones, never stops a machine that runs", "HYDRA-UMC-SAFETY-ZONES", "Robotics & Simulation", "Functional", "Local test", "High",
+          "An optional reading of the alarm state of A.R.M.O.R. from an MQTT broker; while the alarm is on, no new start is allowed.",
+          "Delivered in code, off by default, tested against a fake broker. Not tried with a real broker or with the real alarm of A.R.M.O.R.", status="Done"),
+)
+
+SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS + RECENT_ITEMS
 
 
 def _status(status: str, blocked_by: str = "None") -> dict:
