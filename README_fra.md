@@ -200,7 +200,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 |Dépôt|Version|Description|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.6|Micrologiciel principal de contrôle de mouvement pour STM32H745/G474 avec cinématique en S.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.1|API Node.js sans tête (headless) et backend WebSocket pour l'orchestration robotique.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.2|API Node.js sans tête (headless) et backend WebSocket pour l'orchestration robotique.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.0|Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D du robot.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.1|Kit TypeScript partagé des clients web de HYDRA-UMC : session, client HTTP, historique des connexions, préférences et visites guidées.|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.9|Application de bureau haute performance Python/Qt pour l'automatisation industrielle.|
@@ -367,7 +367,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|Tête d'outil avec caméras thermique et RVB intégrées pour l'AQ active.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|Architecture, interfaces, socle de sécurité, matrice de capacités, notes sur le protocole CAN et catalogue de projets généré d'URTC.|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.8|Le protocole CAN de la tête d'outil sous forme de données : spécification, code C, TypeScript et Python généré, vecteurs de conformité et transports.|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.9|Le protocole CAN de la tête d'outil sous forme de données : spécification, code C, TypeScript et Python généré, vecteurs de conformité et transports.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|Passerelle devant le bus CAN d'URTC : liste d'identifiants autorisés, limite de débit et clé de session.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|Les outils de dépôt partagés de la famille URTC en un seul jeu versionné, avec un fichier de verrouillage dans chaque dépôt.|
 
@@ -478,7 +478,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🔴 | `█▏░░░░░░░░ 11%` | 4 dépôts sur 37 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟡 | `████████▉░ 89%` | 33 dépôts sur 37 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 37 dépôts sur 37 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `█████████▊ 97%` | 36 dépôts sur 37 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟡 | `███████░░░ 70%` | 26 dépôts sur 37 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 37 dépôts sur 37 ont le README dans les huit langues. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 37 ont été vérifiés au moins dans un simulateur. |

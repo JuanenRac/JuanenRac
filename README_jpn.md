@@ -200,7 +200,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.6|S字運動学を備えたSTM32H745/G474用コアモーション制御ファームウェア。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.1|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.2|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.0|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.1|HYDRA-UMC の Web クライアント共通の TypeScript キット：セッション、HTTP クライアント、接続履歴、設定、ツアー。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.9|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
@@ -367,7 +367,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|アクティブQA用にサーマルカメラとRGBカメラが統合されたツールヘッド。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|URTC のアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、CAN プロトコルのメモ、自動生成されるプロジェクトカタログ。|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.8|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.9|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|URTC ファミリーが共有するリポジトリツールを 1 つのバージョン管理されたセットにまとめたもの。各リポジトリにロックファイルを置きます。|
 
@@ -478,7 +478,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 | --- | :---: | --- | --- |
 | ソフトウェア | 🔴 | `█▏░░░░░░░░ 11%` | 37 件中 4 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
 | テスト | 🟡 | `████████▉░ 89%` | 37 件中 33 件のリポジトリに自動テストがあります。 |
-| 継続的インテグレーション | 🟢 | `██████████ 100%` | 37 件中 37 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 継続的インテグレーション | 🟢 | `█████████▊ 97%` | 37 件中 36 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟡 | `███████░░░ 70%` | 37 件中 26 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 37 件中 37 件のリポジトリに、8 言語すべての README があります。 |
 | シミュレーション | 🔴 | `░░░░░░░░░░ 0%` | 37 件中 0 件のリポジトリが、少なくともシミュレーターで検証されています。 |

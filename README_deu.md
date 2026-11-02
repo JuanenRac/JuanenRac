@@ -200,7 +200,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.6|Kern-Bewegungssteuerungs-Firmware für STM32H745/G474 mit S-Kurven-Kinematik.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.1|Headless Node.js-API und WebSocket-Backend für die robotergestützte Orchestrierung.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.2|Headless Node.js-API und WebSocket-Backend für die robotergestützte Orchestrierung.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.0|Fortgeschrittenes React-basiertes Web-Dashboard zur 3D-Roboterüberwachung und -steuerung.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.1|Gemeinsames TypeScript-Kit der HYDRA-UMC-Webclients: Sitzung, HTTP-Client, Verbindungsverlauf, Einstellungen und Rundgänge.|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.9|Leistungsstarke Python/Qt-Desktop-Anwendung für die Industrieautomation.|
@@ -367,7 +367,7 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|Erkennt, installiert und aktualisiert die URTC-Repositories auf einer Maschine aus deren eigenen Manifesten.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitsmatrix, Notizen zum CAN-Protokoll und generierter Projektkatalog von URTC.|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.8|Das CAN-Protokoll des Werkzeugkopfs als Daten: Spezifikation, generierter C-, TypeScript- und Python-Code, Konformitätsvektoren und Transporte.|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.9|Das CAN-Protokoll des Werkzeugkopfs als Daten: Spezifikation, generierter C-, TypeScript- und Python-Code, Konformitätsvektoren und Transporte.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|Gateway vor dem CAN-Bus von URTC: Liste erlaubter Kennungen, Ratenbegrenzung und Sitzungsschlüssel.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|Die gemeinsamen Repository-Werkzeuge der URTC-Familie als ein versionierter Satz, mit einer Lock-Datei in jedem Repository.|
 
@@ -478,7 +478,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 von 37 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟡 | `████████▉░ 89%` | 33 von 37 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 37 von 37 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `█████████▊ 97%` | 36 von 37 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟡 | `███████░░░ 70%` | 26 von 37 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 37 von 37 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 von 37 Repositories wurden mindestens in einem Simulator geprüft. |

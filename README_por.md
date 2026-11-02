@@ -200,7 +200,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 |Repositório|Versão|Descrição|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.6|Firmware principal de controlo de movimento para STM32H745/G474 com cinemática de Curva S.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.1|API Node.js sem interface (headless) e backend WebSocket para orquestração robótica.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.2|API Node.js sem interface (headless) e backend WebSocket para orquestração robótica.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.0|Dashboard web avançado baseado em React para monitorização e controlo 3D de robôs.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.1|Kit TypeScript partilhado dos clientes web do HYDRA-UMC: sessão, cliente HTTP, histórico de ligações, preferências e visitas guiadas.|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.9|Aplicação de desktop Python/Qt de alto desempenho para automação industrial.|
@@ -367,7 +367,7 @@ Cada perfil de ferramenta carrega seu próprio watchdog e comportamento de falha
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|Cabeça de ferramenta com câmaras térmica e RGB integradas para QA ativa.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|Detecta, instala e atualiza os repositórios URTC numa máquina a partir de seus próprios manifestos.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|Arquitetura, interfaces, linha de base de segurança, matriz de capacidades, notas do protocolo CAN e catálogo de projetos gerado do URTC.|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.8|O protocolo CAN da cabeça de ferramenta como dados: especificação, código C, TypeScript e Python gerado, vetores de conformidade e transportes.|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.9|O protocolo CAN da cabeça de ferramenta como dados: especificação, código C, TypeScript e Python gerado, vetores de conformidade e transportes.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|Gateway à frente do barramento CAN do URTC: lista de identificadores permitidos, limite de taxa e chave de sessão.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|As ferramentas de repositório partilhadas da família URTC num só conjunto versionado, com um ficheiro de bloqueio em cada repositório.|
 
@@ -478,7 +478,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 de 37 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟡 | `████████▉░ 89%` | 33 de 37 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 37 de 37 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `█████████▊ 97%` | 36 de 37 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟡 | `███████░░░ 70%` | 26 de 37 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 37 de 37 repositórios têm o README nas oito línguas. |
 | Simulação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 37 repositórios foram verificados pelo menos num simulador. |

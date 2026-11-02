@@ -1,0 +1,57 @@
+{
+ "days": 90,
+ "entries": [
+  {
+   "areas": {
+    "armor": {
+     "ci": 100,
+     "docs": 100,
+     "hardware": 53,
+     "production": 63,
+     "releases": 95,
+     "simulation": 53,
+     "software": 95,
+     "tests": 95
+    },
+    "eh3d": {
+     "ci": 100,
+     "docs": 100,
+     "hardware": 0,
+     "production": 0,
+     "releases": 70,
+     "simulation": 0,
+     "software": 11,
+     "tests": 89
+    },
+    "hydra-umc": {
+     "ci": 100,
+     "docs": 100,
+     "hardware": 11,
+     "production": 8,
+     "releases": 98,
+     "simulation": 24,
+     "software": 95,
+     "tests": 98
+    },
+    "urtc": {
+     "ci": 100,
+     "docs": 100,
+     "hardware": 0,
+     "production": 9,
+     "releases": 91,
+     "simulation": 36,
+     "software": 82,
+     "tests": 100
+    }
+   },
+   "date": "2026-11-02",
+   "progress": {
+    "armor": 66,
+    "eh3d": 30,
+    "hydra-umc": 54,
+    "urtc": 51
+   }
+  }
+ ],
+ "schema": 1
+}

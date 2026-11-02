@@ -200,7 +200,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.6|适用于 STM32H745/G474 且带 S 曲线运动学的核心运动控制固件。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.1|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.2|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.0|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.1|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.7.9|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
@@ -367,7 +367,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.8|集成热成像和 RGB 相机以实现主动 QA 的工具头。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.6|根据自身的清单检测、安装和更新机器上的 URTC 仓库。|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.3|URTC 的架构、接口、安全基线、能力矩阵、CAN 协议说明和自动生成的项目目录。|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.8|以数据形式描述的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量和传输层。|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.1.9|以数据形式描述的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量和传输层。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.4|URTC CAN 总线前的网关：允许的标识符列表、速率限制和会话密钥。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.1|URTC 家族共享的仓库工具，作为一个带版本的集合，每个仓库中有一个锁定文件。|
 
@@ -478,7 +478,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 | --- | :---: | --- | --- |
 | 软件 | 🔴 | `█▏░░░░░░░░ 11%` | 37 个仓库中有 4 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟡 | `████████▉░ 89%` | 37 个仓库中有 33 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 37 个仓库中有 37 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `█████████▊ 97%` | 37 个仓库中有 36 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟡 | `███████░░░ 70%` | 37 个仓库中有 26 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 37 个仓库中有 37 个提供八种语言的 README。 |
 | 仿真 | 🔴 | `░░░░░░░░░░ 0%` | 37 个仓库中有 0 个至少在仿真器中验证过。 |
