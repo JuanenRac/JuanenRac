@@ -63,6 +63,7 @@ on:
       - main
     paths:
       - "scripts/generate_dashboard.py"
+      - "scripts/dashboard_*.py"
       - "scripts/sync_readme_versions.py"
       - "scripts/ecosystem_progress.py"
       - "scripts/sync_readme_descriptions.py"
@@ -271,6 +272,12 @@ jobs:
           workdir="$(mktemp -d)"
           cp docs/index.html "$workdir/index.html"
           cp docs/.nojekyll "$workdir/.nojekyll"
+          # The daily snapshot of the progress and the small image of the social cards are written by the generator too.
+          extras=(data/history.json docs/og-image.png)
+          mkdir -p "$workdir/extras/data" "$workdir/extras/docs"
+          for extra in "${extras[@]}"; do
+            if [ -f "$extra" ]; then cp "$extra" "$workdir/extras/$extra"; fi
+          done
           for readme in "${readmes[@]}"; do
             cp "$readme" "$workdir/$readme"
           done
@@ -281,10 +288,17 @@ jobs:
             git reset --hard origin/main
             cp "$workdir/index.html" docs/index.html
             cp "$workdir/.nojekyll" docs/.nojekyll
+            mkdir -p data
+            for extra in "${extras[@]}"; do
+              if [ -f "$workdir/extras/$extra" ]; then cp "$workdir/extras/$extra" "$extra"; fi
+            done
             for readme in "${readmes[@]}"; do
               cp "$workdir/$readme" "$readme"
             done
             git add docs/index.html docs/.nojekyll "${readmes[@]}"
+            for extra in "${extras[@]}"; do
+              if [ -f "$extra" ]; then git add "$extra"; fi
+            done
 
             if git diff --cached --quiet; then
               echo "No dashboard/README changes detected against the current main."
