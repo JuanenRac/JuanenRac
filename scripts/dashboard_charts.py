@@ -116,11 +116,19 @@ def evidence_values(raw_manifests: Mapping[str, object]) -> dict[str, str | None
 # ---------------------------------------------------------------------------
 
 @dataclass(frozen=True)
+class Commit:
+    headline: str
+    date: str | None = None
+    url: str | None = None
+
+
+@dataclass(frozen=True)
 class Activity:
     release_tag: str | None = None
     release_date: str | None = None     # ISO 8601 as GitHub writes it
     commit_date: str | None = None
     ci: str = "none"                    # success | failure | pending | none (no check or not known)
+    commits: tuple[Commit, ...] = ()    # the newest commits of the default branch (empty when GitHub did not return them)
 
 
 _CI_STATE = {"SUCCESS": "success", "FAILURE": "failure", "ERROR": "failure", "PENDING": "pending", "EXPECTED": "pending"}
@@ -133,7 +141,7 @@ query($owner: String!, $cursor: String) {
       nodes {
         name
         latestRelease { tagName publishedAt }
-        defaultBranchRef { target { ... on Commit { committedDate statusCheckRollup { state } } } }
+        defaultBranchRef { target { ... on Commit { committedDate statusCheckRollup { state } history(first: 5) { nodes { messageHeadline committedDate url } } } } }
       }
     }
   }
@@ -141,7 +149,18 @@ query($owner: String!, $cursor: String) {
 """
 
 
-def parse_activity(nodes: Iterable[Mapping]) -> dict[str, Activity]:
+def _commits(target: Mapping, redact: Callable[[str], str] | None) -> tuple[Commit, ...]:
+    found = []
+    for node in ((target.get("history") or {}).get("nodes")) or []:
+        if not isinstance(node, Mapping) or not node.get("messageHeadline"):
+            continue
+        headline = str(node["messageHeadline"])[:120]
+        found.append(Commit(redact(headline) if redact else headline, node.get("committedDate") or None, node.get("url") or None))
+    return tuple(found)
+
+
+def parse_activity(nodes: Iterable[Mapping], redact: Callable[[str], str] | None = None) -> dict[str, Activity]:
+    """`redact` cleans a commit subject before it is kept (the generator hides the names of private notes)."""
     out: dict[str, Activity] = {}
     for node in nodes:
         if not isinstance(node, Mapping) or not node.get("name"):
@@ -154,6 +173,7 @@ def parse_activity(nodes: Iterable[Mapping]) -> dict[str, Activity]:
             release_date=release.get("publishedAt") or None,
             commit_date=target.get("committedDate") or None,
             ci=_CI_STATE.get(str(rollup), "none"),
+            commits=_commits(target, redact),
         )
     return out
 
@@ -170,7 +190,7 @@ def _post(body: bytes, headers: dict) -> "dict | None":
         return None
 
 
-def fetch_activity(owner: str, token: str, post: Poster = _post, max_pages: int = 5) -> dict[str, Activity]:
+def fetch_activity(owner: str, token: str, post: Poster = _post, max_pages: int = 5, redact: Callable[[str], str] | None = None) -> dict[str, Activity]:
     """The latest release, the latest commit and the CI state of every public repository of the owner in a handful of requests.
     Without a token (GraphQL needs one) or on any failure it returns {}: the page then says "no data" instead of showing a guess."""
     if not token:
@@ -182,7 +202,7 @@ def fetch_activity(owner: str, token: str, post: Poster = _post, max_pages: int 
         answer = post(json.dumps({"query": ACTIVITY_QUERY, "variables": {"owner": owner, "cursor": cursor}}).encode("utf-8"), headers)
         try:
             page = answer["data"]["repositoryOwner"]["repositories"]
-            found.update(parse_activity(page["nodes"]))
+            found.update(parse_activity(page["nodes"], redact))
             if not page["pageInfo"]["hasNextPage"]:
                 return found
             cursor = page["pageInfo"]["endCursor"]

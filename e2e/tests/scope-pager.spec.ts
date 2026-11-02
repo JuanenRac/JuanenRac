@@ -139,6 +139,7 @@ test.describe("scope in the address and remembered", () => {
     await expect(scope(page, "armor")).toHaveAttribute("aria-pressed", "true");
     expect(await paintedRows(page)).toBe(10);
     await page.goto("full/index.html#projects?scope=all&page=2");
+    expect(await paintedRows(page)).toBe(TOTAL - PAGE);   // let the change of address take effect before reloading
     await page.reload();
     expect(await paintedRows(page)).toBe(TOTAL - PAGE);
   });

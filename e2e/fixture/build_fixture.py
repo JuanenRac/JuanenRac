@@ -7,7 +7,7 @@
 
 Usage: python build_fixture.py [OUT_DIR]
 
-Writes OUT_DIR/full/index.html (a complete dataset), OUT_DIR/minimal/index.html (one project, no activity),
+Writes OUT_DIR/full/index.html (a complete dataset), OUT_DIR/healthy/index.html (a complete dataset with nothing wrong), OUT_DIR/minimal/index.html (one project, no activity),
 OUT_DIR/partial/index.html (failed lookups and an unreachable API) and OUT_DIR/empty/index.html (nothing at all).
 The data is made up: repository names are fake and live under a fixture owner, never queried.
 """
@@ -26,6 +26,7 @@ for sibling in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):
         sys.path.append(str(candidate))
 
 import dashboard_charts as charts  # noqa: E402
+import dashboard_health as health  # noqa: E402
 import dashboard_integrity as integrity_mod  # noqa: E402
 import generate_dashboard as gen  # noqa: E402
 from hydra_umc_updater.registry import ProjectEntry  # noqa: E402
@@ -60,17 +61,23 @@ README = """
 """
 
 
-def _node(name: str, index: int) -> dict:
-    ci = ("SUCCESS", "SUCCESS", "FAILURE", "PENDING")[index % 4]
-    month = 1 + index % 10
+def _node(name: str, index: int, healthy: bool = False) -> dict:
+    """healthy: every CI green and every date within the last days before the fixed clock of the tests (2001-12-21)."""
+    ci = "SUCCESS" if healthy else ("SUCCESS", "SUCCESS", "FAILURE", "PENDING")[index % 4]
+    month = 12 if healthy else 1 + index % 10
+    day = 10 + index % 8 if healthy else (index % 27) + 1
+    commit = f"2001-{month:02d}-{day + 1:02d}T09:00:00Z"
+    history = [{"messageHeadline": f"Fixture change {n} of {name}", "committedDate": commit, "url": f"https://github.com/JuanenRac/{name}/commit/c{n}"} for n in range(3)]
+    if index % 6 == 5:
+        history = []        # a repository whose recent commits were not returned
     return {
         "name": name,
-        "latestRelease": None if index % 5 == 4 else {"tagName": f"v0.{index % 7}.{index % 3}", "publishedAt": f"2001-{month:02d}-{(index % 27) + 1:02d}T10:00:00Z"},
-        "defaultBranchRef": {"target": {"committedDate": f"2001-{month:02d}-{(index % 27) + 2:02d}T09:00:00Z", "statusCheckRollup": {"state": ci}}},
+        "latestRelease": None if index % 5 == 4 and not healthy else {"tagName": f"v0.{index % 7}.{index % 3}", "publishedAt": f"2001-{month:02d}-{day:02d}T10:00:00Z"},
+        "defaultBranchRef": {"target": {"committedDate": commit, "statusCheckRollup": {"state": ci}, "history": {"nodes": history}}},
     }
 
 
-def dataset(per_ecosystem: int = 10):
+def dataset(per_ecosystem: int = 10, healthy: bool = False):
     entries, results, eco, raw, nodes = [], {}, {}, {}, []
     index = 0
     for key in ECOSYSTEMS:
@@ -87,9 +94,22 @@ def dataset(per_ecosystem: int = 10):
             results[name] = SimpleNamespace(version=f"0.{index % 7}.{index % 3}" if ok else None, error=None if ok else "not found", http_status=200 if ok else 404, url="https://example.invalid/" + name)
             eco[name] = key
             raw[name] = integrity_mod.RawManifest(ecosystem=key, data={"evidence": EVIDENCE[index % 5], "maturity": MATURITY[index % 4]})
-            nodes.append(_node(name, index))
+            nodes.append(_node(name, index, healthy))
             index += 1
     return entries, results, eco, raw, charts.parse_activity(nodes)
+
+
+def signals_for(entries, activity) -> dict:
+    """Delivery and quality facts of every repository but one in six (those stay unverified)."""
+    out = {}
+    for index, entry in enumerate(entries):
+        if index % 6 == 3:
+            continue
+        out[entry.name] = {"releases": index % 25, "readmes": 8 if index % 7 else 3, "tests": index % 3 != 0, "ci": activity[entry.name].ci == "success"}
+    return out
+
+
+BUILD = health.BuildInfo("https://github.com/JuanenRac/JuanenRac/actions/runs/123456", "2001-12-20T08:30:00Z")
 
 
 def build_full() -> str:
@@ -101,7 +121,19 @@ def build_full() -> str:
         integrity_mod.Issue("invalid_manifest", "ARMOR-FIXTURE-BAD", "armor", "version file missing"),
     ]
     cover = integrity_mod.Coverage(len(entries), len(entries) + 3, ("JuanenRac", "fixture-plain-a", "fixture-plain-b"))
-    return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme)
+    return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
+                           signals=signals_for(entries, activity), build=BUILD)
+
+
+def build_healthy() -> str:
+    """Every CI green, recent activity (with the clock at 2001-12-21), nothing unresolved and nothing unread: the only variant that may say "no alerts"."""
+    entries, results, eco, raw, activity = dataset(healthy=True)
+    for result in results.values():
+        result.version, result.error, result.http_status = "0.1.0", None, 200
+    readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
+    cover = integrity_mod.Coverage(len(entries), len(entries), ())
+    return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
+                           signals=signals_for(entries, activity), build=BUILD)
 
 
 def build_minimal() -> str:
@@ -125,7 +157,7 @@ def build_empty() -> str:
     return gen.render_html([], {}, {}, {}, [], None, raw_manifests={}, activity={}, readme_text="")
 
 
-BUILDERS = {"full": build_full, "minimal": build_minimal, "partial": build_partial, "empty": build_empty}
+BUILDERS = {"full": build_full, "healthy": build_healthy, "minimal": build_minimal, "partial": build_partial, "empty": build_empty}
 
 
 def main() -> int:

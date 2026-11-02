@@ -416,5 +416,117 @@ class ScopeAndChartLabelTests(unittest.TestCase):
         self.assertIn('data-a-n="4" data-a-total="38"', rows)
 
 
+@unittest.skipIf(GENERATOR is None, "the updater packages are not installed")
+class HealthPageTests(unittest.TestCase):
+    """Health alerts, the stamp of the last build, contributing repositories, activity column and repository panel in the generated page."""
+
+    @classmethod
+    def setUpClass(cls):
+        PageTests.setUpClass()
+        cls.html = PageTests.html
+        cls.empty = PageTests.empty
+        data = re.search(r'<script type="application/json" id="dashboard-data">(.*?)</script>', cls.html, re.S)
+        cls.data = json.loads(data.group(1)) if data else None
+
+    def test_the_data_for_the_script_is_valid_json_and_complete(self):
+        self.assertIsNotNone(self.data)
+        self.assertEqual(set(self.data), {"config", "repos", "contrib"})
+        self.assertEqual(self.data["config"]["alert_after_days"], 30)
+        self.assertEqual(self.data["config"]["repoUrl"], "https://github.com/JuanenRac/")
+        self.assertEqual(sorted(self.data["repos"]), ["ARMOR-C", "HYDRA-UMC-A", "URTC-B"])
+        hydra = self.data["repos"]["HYDRA-UMC-A"]
+        self.assertTrue(hydra["known"])
+        self.assertEqual((hydra["ci"], hydra["evidence"], hydra["release"]["tag"]), ("success", "bench", "v0.1.0"))
+        self.assertIsNone(hydra["commits"])   # the fixture of this test has no history: the panel says so
+        self.assertFalse(self.data["repos"]["URTC-B"]["known"])
+        self.assertIsNone(self.data["repos"]["URTC-B"]["ci"])   # not in the activity data: "not verified", not "none"
+        self.assertEqual(self.data["contrib"]["armor"]["progress"][0][0], "ARMOR-C")
+
+    def test_the_alerts_card_is_the_first_thing_of_the_summary(self):
+        grid = self.html[self.html.index('class="summary-grid"'):]
+        self.assertLess(grid.index('data-testid="health-alerts"'), grid.index('class="kpi-strip"'))
+        self.assertEqual(self.html.count('data-testid="health-alerts"'), 1)
+
+    def test_the_picture_with_missing_activity_is_incomplete_not_healthy(self):
+        self.assertIn('data-state="incomplete"', self.html)       # URTC-B and ARMOR-C have no activity record
+        self.assertIn("alerts_why_activity_partial", self.html)
+        self.assertIn('data-state="incomplete"', self.empty)
+        self.assertIn("alerts_why_nothing_listed", self.empty)
+        self.assertNotIn('data-i18n="alerts_none"', self.html)
+        self.assertNotIn('data-i18n="alerts_none"', self.empty)
+
+    def test_the_stamp_of_the_build_is_not_in_the_page_unless_it_was_read(self):
+        self.assertIn('data-state="unknown"', self.html[self.html.index("<!--build-info-->"):self.html.index("<!--/build-info-->")])
+
+    def test_projects_table_has_the_activity_column_and_every_row_has_its_cell(self):
+        end = self.html.index('id="project-table"')
+        head = self.html[self.html.rindex("<thead>", 0, end):self.html.rindex("</thead>", 0, end)]
+        self.assertEqual(len(re.findall(r"<th[\s>]", head)), 9)
+        self.assertIn('data-i18n="th_activity"', head)
+        rows = re.findall(r'<tr\s+(?:data-ecosystem="[^"]*"\s+)?class="project-row.*?</tr>', self.html, re.S)
+        self.assertEqual(len(rows), 3)
+        for row in rows:
+            self.assertEqual(row.count("<td"), 9)
+            self.assertIn('class="activity-cell"', row)
+            self.assertIn("data-open-repo=", row)
+        self.assertNotIn('colspan="8"', self.html)
+
+    def test_activity_cell_never_invents_a_state(self):
+        self.assertIn('data-known="0"', app.activity_cell(None))
+        self.assertIn("not_verified", app.activity_cell(None))
+        cell = app.activity_cell(charts.Activity(release_date="2001-10-01T00:00:00Z", commit_date="2001-10-05T00:00:00Z"))
+        self.assertIn('data-activity="2001-10-05T00:00:00Z"', cell)
+        self.assertIn('data-release="2001-10-01T00:00:00Z"', cell)
+        self.assertIn('data-release=""', app.activity_cell(charts.Activity(commit_date="2001-10-05T00:00:00Z")))
+
+    def test_the_panel_of_a_repository_is_one_hidden_dialog_with_four_links(self):
+        self.assertEqual(len(re.findall(r'(?<![-\w])id="repo-panel"', self.html)), 1)
+        panel = self.html[self.html.index('id="repo-panel"'):]
+        panel = panel[:panel.index("</aside>")]
+        self.assertIn('role="dialog"', panel)
+        self.assertIn(" hidden>", self.html[self.html.index('id="repo-panel"') - 30:self.html.index('id="repo-panel"') + 400])
+        for kind in ("actions", "issues", "releases", "readme"):
+            self.assertIn(f'data-link="{kind}"', panel)
+
+    def test_every_contrib_panel_has_a_unique_id_and_its_button_points_at_it(self):
+        ids = re.findall(r'\bid="([^"]+)"', self.html)
+        self.assertEqual(len(ids), len(set(ids)))
+        controls = re.findall(r'aria-controls="(contrib-[^"]+)"', self.html)
+        self.assertEqual(len(controls), 2 * (9 + 3))   # the summary and the tabs: one ecosystem with its eight areas and the four rings
+        for ident in controls:
+            self.assertIn(f'id="{ident}"', self.html)
+
+    def test_the_script_has_no_request_of_its_own(self):
+        self.assertEqual(self.html.count("fetch("), 1)            # only the freshness indicator that was already there
+        self.assertNotIn("XMLHttpRequest", app.JS_HEALTH)
+        self.assertNotIn("fetch(", app.JS_HEALTH)
+        for marker in ("onLanguageApplied", "closePanel", 'event.key === "Escape"', "toggleContrib", "alert_why_inactive", "aria-expanded"):
+            self.assertIn(marker, app.script())
+
+    def test_every_key_the_page_uses_exists_in_the_eight_languages(self):
+        keys = set(re.findall(r'data-i18n(?:-template|-aria-label|-title|-placeholder)?="([^"]+)"', self.html))
+        keys |= {"not_verified", "alert_why_inactive", "act_badge", "rel_badge", "rel_none", "contrib_summary", "contrib_progress_summary", "contrib_points", "contrib_partial",
+                 "contrib_no", "contrib_unknown", "contrib_readme_diff", "contrib_list_label", "contrib_none", "panel_f_ecosystem", "panel_f_evidence", "panel_f_family",
+                 "panel_f_parent", "panel_f_hardware", "panel_f_activity", "panel_f_release", "panel_hw_yes", "panel_hw_no", "panel_hw_unset"}
+        for code in ("en", "es", "de", "fr", "it", "ja", "zh", "pt"):
+            missing = sorted(k for k in keys if k not in GENERATOR.TRANSLATIONS[code])
+            self.assertEqual(missing, [], code)
+
+    def test_the_new_texts_are_translated_not_copied(self):
+        en = app_texts.TEXTS["en"]
+        for key in ("alerts_title", "alerts_none", "alerts_incomplete", "alert_kind_ci", "build_label", "not_verified", "contrib_summary", "panel_commits_none", "act_badge"):
+            for code in ("es", "de", "fr", "it", "ja", "zh", "pt"):
+                self.assertNotEqual(app_texts.TEXTS[code][key], en[key], f"{key} {code}")
+        self.assertIn("Sem alertas", app_texts.TEXTS["pt"]["alerts_none"])
+        self.assertIn("Ligações", app_texts.TEXTS["pt"]["panel_links"])      # not the "Links" of the Brazilian use
+        self.assertNotIn("celular", " ".join(app_texts.TEXTS["pt"].values()))
+
+    def test_the_thresholds_come_from_the_file_of_the_profile(self):
+        config, problems = app.dashboard_health.load_config()
+        self.assertEqual(problems, [])
+        self.assertEqual(self.data["config"]["activity_days"], config["activity_days"])
+        self.assertEqual(self.data["config"]["release_days"], config["release_days"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -12,11 +12,13 @@ scripts/dashboard_charts.py. The style sheet and the script are plain strings, n
 """
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
 from typing import Mapping, Sequence
 
 import dashboard_app_texts
 import dashboard_charts as charts
+import dashboard_health
 from dashboard_charts import Activity, Area, esc
 
 ECOSYSTEMS: tuple[tuple[str, str], ...] = (
@@ -67,6 +69,10 @@ class AppData:
     issues: Sequence[object] = field(default_factory=list)
     unresolved: Sequence[tuple[str, str]] = field(default_factory=list)   # (repository, reason) for a listed project without a version
     repo_url: str = "https://github.com/JuanenRac/"
+    alerts: Sequence[object] = field(default_factory=list)          # dashboard_health.Alert for what does not depend on today's date
+    incomplete: Sequence[str] = field(default_factory=list)         # dashboard_health.completeness codes; empty = the picture is complete
+    build: object | None = None                                     # dashboard_health.BuildInfo of the last good build, None = not verified
+    page_data: Mapping[str, object] = field(default_factory=dict)  # what the script reads: config, repos, contrib
 
 
 # ---------------------------------------------------------------------------
@@ -102,7 +108,7 @@ def no_data(text_key: str = "no_data", text: str = "No data") -> str:
     return f'<p class="no-data" data-i18n="{esc(text_key)}">{esc(text)}</p>'
 
 
-def meter_rows(areas: Mapping[str, Area] | None, eco_label: str, big: bool = False) -> str:
+def meter_rows(areas: Mapping[str, Area] | None, eco_label: str, big: bool = False, ctx: str = "s") -> str:
     """The eight status areas of one ecosystem as labelled bars: name, glyph for the light, percentage and k/n."""
     if not areas:
         return no_data()
@@ -116,28 +122,35 @@ def meter_rows(areas: Mapping[str, Area] | None, eco_label: str, big: bool = Fal
         count = f"{value.count}/{value.total}" if value.count is not None else ""
         label = f"{AREA_ENGLISH[area]}: {value.percent}%" + (f" ({value.count} of {value.total})" if value.count is not None else "")
         counts_attr = f' data-a-n="{value.count}" data-a-total="{value.total}"' if value.count is not None else ""
+        panel_id = f"contrib-{ctx}-{esc(eco_label)}-{area}"
         rows.append(
             f'<li class="area area-{state}" data-area="{area}" data-testid="area-{esc(eco_label)}-{area}">'
-            f'<span class="area-name"><span class="area-glyph" aria-hidden="true">{LIGHT_GLYPH[state]}</span><span data-i18n="area_{area}">{AREA_ENGLISH[area]}</span></span>'
+            f'<button type="button" class="area-name area-btn" aria-expanded="false" aria-controls="{panel_id}" data-contrib-eco="{esc(eco_label)}" data-contrib-area="{area}" data-testid="contrib-btn-{esc(eco_label)}-{area}">'
+            f'<span class="area-glyph" aria-hidden="true">{LIGHT_GLYPH[state]}</span><span data-i18n="area_{area}">{AREA_ENGLISH[area]}</span><span class="area-caret" aria-hidden="true">▸</span></button>'
             f'<span class="area-bar" role="img" aria-label="{esc(label)}" data-aria="pct" data-a-name-key="area_{area}" data-a-name="{AREA_ENGLISH[area]}" data-a-pct="{value.percent}"{counts_attr}>'
             f'<span class="area-fill" style="width:{value.percent}%"></span></span>'
-            f'<span class="area-num"><b>{value.percent}%</b><small>{count}</small></span></li>'
+            f'<span class="area-num"><b>{value.percent}%</b><small>{count}</small></span>'
+            f'<div class="contrib" id="{panel_id}" data-testid="contrib-{esc(eco_label)}-{area}" hidden></div></li>'
         )
     return f'<ul class="areas{" areas-big" if big else ""}">{"".join(rows)}</ul>'
 
 
-def progress_card(data: AppData, eco: str, label: str, big: bool = False, link_tab: bool = True) -> str:
+def progress_card(data: AppData, eco: str, label: str, big: bool = False, link_tab: bool = True, ctx: str = "s") -> str:
     percent, counted = data.progress.get(eco, (None, None))
     ring = charts.ring_svg(percent, f"ring-{eco}", size=124 if big else 104)
     counted_html = (f'<span class="muted" data-i18n-template="sum_repos_counted" data-n="{counted}">{counted} repositories counted</span>' if counted is not None else "")
     head = f'<button type="button" class="link-btn" data-goto-tab="{esc(eco)}">{esc(label)}</button>' if link_tab else f"<span>{esc(label)}</span>"
     summary = f"{label}: {percent}%" if percent is not None else f"{label}: no data"
     pct_attr = f' data-a-pct="{percent}"' if percent is not None else ""
+    panel_id = f"contrib-{ctx}-{esc(eco)}-progress"
+    toggle = (f'<button type="button" class="link-btn contrib-toggle" aria-expanded="false" aria-controls="{panel_id}" data-contrib-eco="{esc(eco)}" data-contrib-area="progress" '
+              f'data-testid="contrib-btn-{esc(eco)}-progress"><span data-i18n="contrib_repos">Repositories</span><span class="area-caret" aria-hidden="true">▸</span></button>')
     return (
         f'<article class="eco-card eco-{esc(eco)}" data-testid="progress-{esc(eco)}">'
         f'<header class="eco-head"><div class="ring-wrap" role="img" tabindex="0" aria-label="{esc(summary)}" data-aria="pct" data-a-name="{esc(label)}"{pct_attr}>{ring}</div>'
-        f'<div class="eco-title"><h3>{head}</h3><span class="muted" data-i18n="sum_overall">overall progress</span>{counted_html}</div></header>'
-        f'{meter_rows(data.status.get(eco), eco, big)}</article>'
+        f'<div class="eco-title"><h3>{head}</h3><span class="muted" data-i18n="sum_overall">overall progress</span>{counted_html}{toggle}</div></header>'
+        f'{meter_rows(data.status.get(eco), eco, big, ctx)}'
+        f'<div class="contrib contrib-progress" id="{panel_id}" data-testid="contrib-{esc(eco)}-progress" hidden></div></article>'
     )
 
 
@@ -248,11 +261,112 @@ def errors_card(data: AppData) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Health alerts, last good build, activity cell and the repository panel
+# ---------------------------------------------------------------------------
+
+_EN_ELSEWHERE = {"link_actions": "Actions", "link_issues": "Issues"}   # keys the generator itself translates
+
+
+def _en(key: str) -> str:
+    return dashboard_app_texts.TEXTS["en"].get(key) or _EN_ELSEWHERE[key]
+
+
+ALERT_GLYPH = {"ci": "✕", "manifest": "⚠", "version": "?", "inactive": "◷"}
+
+
+def alert_item(alert: object, repo_url: str) -> str:
+    kind = getattr(alert, "kind", "")
+    detail = getattr(alert, "detail", "")
+    why = (f'<span class="alert-why" data-i18n="alert_why_ci">{esc(_en("alert_why_ci"))}</span>' if kind == "ci"
+           else f'<span class="alert-why">{esc(detail)}</span>' if detail
+           else f'<span class="alert-why" data-i18n="alert_why_no_detail">{esc(_en("alert_why_no_detail"))}</span>')
+    return (f'<li class="alert alert-{esc(kind)}" data-kind="{esc(kind)}" data-testid="alert-{esc(kind)}">'
+            f'<span class="alert-kind"><span class="alert-glyph" aria-hidden="true">{ALERT_GLYPH.get(kind, "!")}</span><span data-i18n="alert_kind_{esc(kind)}">{esc(_en("alert_kind_" + kind))}</span></span>'
+            f'<a href="{esc(getattr(alert, "url", "") or repo_url + getattr(alert, "repo", ""))}" target="_blank" rel="noopener noreferrer">{esc(getattr(alert, "repo", ""))}</a>{why}</li>')
+
+
+def build_stamp(build: object | None) -> str:
+    """The time and the run of the last good build. The region between the two comments is what scripts/dashboard_health.merge_build_info keeps stable."""
+    label = f'<span class="build-label" data-i18n="build_label">{esc(_en("build_label"))}</span> '
+    if build is None:
+        inner = f'<span class="build-info" data-state="unknown">{label}<span data-i18n="not_verified">{esc(_en("not_verified"))}</span></span>'
+    else:
+        finished = str(getattr(build, "finished", ""))
+        shown = finished.replace("T", " ")[:16] + " UTC"
+        inner = (f'<span class="build-info" data-state="known">{label}<time datetime="{esc(finished)}">{esc(shown)}</time> · '
+                 f'<a href="{esc(getattr(build, "url", ""))}" target="_blank" rel="noopener noreferrer" data-i18n="build_run">{esc(_en("build_run"))}</a></span>')
+    return f'<p class="build-stamp muted" data-testid="build-stamp">{dashboard_health.BUILD_BEGIN}{inner}{dashboard_health.BUILD_END}</p>'
+
+
+def alerts_card(data: AppData) -> str:
+    """Health alerts: red CI, a manifest that cannot be read, a version that did not resolve, and (raised by the script, which knows today's date) no
+    activity for too long. The state is never "no alerts" when the picture is incomplete: a failed read says "incomplete data"."""
+    static = list(data.alerts)
+    incomplete = list(data.incomplete)
+    state = "incomplete" if incomplete else ("alerts" if static else "ok")
+    key = {"ok": "alerts_none", "alerts": "alerts_some", "incomplete": "alerts_incomplete_some" if static else "alerts_incomplete"}[state]
+    template = f' data-i18n-template="{key}" data-n="{len(static)}"' if key.endswith("some") else f' data-i18n="{key}"'
+    glyph = {"ok": "●", "alerts": "▲", "incomplete": "?"}[state]
+    status_text = _en(key).replace("{n}", str(len(static)))
+    why = "".join(f'<li data-i18n="alerts_why_{esc(code)}">{esc(_en("alerts_why_" + code))}</li>' for code in incomplete)
+    why_html = f'<ul class="alerts-why-list" data-testid="alerts-why">{why}</ul>' if why else ""
+    items = "".join(alert_item(alert, data.repo_url) for alert in static)
+    return (
+        f'<section class="card card-alerts" aria-labelledby="alerts-t" data-testid="health-alerts" data-state="{state}" data-incomplete="{1 if incomplete else 0}" data-static="{len(static)}">'
+        f'<header class="card-head"><h2 class="card-title" id="alerts-t" data-i18n="alerts_title">{esc(_en("alerts_title"))}</h2>'
+        f'<p class="alerts-status alerts-{state}" id="alerts-status" role="status" data-testid="alerts-status" data-state="{state}">'
+        f'<span class="alerts-glyph" aria-hidden="true">{glyph}</span><span id="alerts-status-text"{template}>{esc(status_text)}</span></p></header>'
+        f'{why_html}'
+        f'<div class="alerts-scroll" tabindex="0" role="region" aria-labelledby="alerts-t"><ul class="alerts-list" id="alerts-list" data-testid="alerts-list">{items}</ul></div>'
+        f'{build_stamp(data.build)}</section>'
+    )
+
+
+def activity_cell(act: Activity | None) -> str:
+    """The cell of the projects table: the script writes the badges (days, colour, glyph, text) from the dates of the last activity and of the last release."""
+    if act is None:
+        return ('<td class="activity-cell" data-known="0"><span class="act-badge act-unknown"><span class="act-glyph" aria-hidden="true">?</span>'
+                f'<span data-i18n="not_verified">{esc(_en("not_verified"))}</span></span></td>')
+    last = dashboard_health.last_activity(act.commit_date, act.release_date) or ""
+    return (f'<td class="activity-cell" data-known="1" data-activity="{esc(last)}" data-release="{esc(act.release_date or "")}">'
+            f'<span class="act-badge" data-kind="activity"></span><span class="act-badge" data-kind="release"></span></td>')
+
+
+def repo_panel() -> str:
+    """The side panel of a repository: one element for the whole page, filled by the script from the data embedded in the page."""
+    def h(key: str) -> str:
+        return f'data-i18n="{key}">{esc(_en(key))}'
+    return (
+        '<aside class="repo-panel" id="repo-panel" role="dialog" aria-modal="false" aria-labelledby="repo-panel-title" data-testid="repo-panel" hidden>'
+        '<header class="repo-panel-head"><h2 id="repo-panel-title" tabindex="-1" data-testid="repo-panel-title"></h2>'
+        f'<button type="button" class="btn btn-ghost" id="repo-panel-close" data-testid="repo-panel-close" data-i18n-aria-label="panel_close" aria-label="{esc(_en("panel_close"))}"><span aria-hidden="true">✕</span></button></header>'
+        '<div class="repo-panel-body">'
+        f'<section aria-labelledby="rp-manifest-t"><h3 id="rp-manifest-t" {h("panel_manifest")}</h3><dl class="repo-fields" id="repo-fields" data-testid="repo-fields"></dl></section>'
+        f'<section aria-labelledby="rp-ci-t"><h3 id="rp-ci-t" {h("panel_ci")}</h3><p id="rp-ci" data-testid="repo-ci"></p></section>'
+        f'<section aria-labelledby="rp-commits-t"><h3 id="rp-commits-t" {h("panel_commits")}</h3><ul class="repo-commits" id="rp-commits" data-testid="repo-commits"></ul>'
+        f'<p class="muted" id="rp-commits-none" data-testid="repo-commits-none" hidden {h("panel_commits_none")}</p></section>'
+        f'<nav aria-labelledby="rp-links-t"><h3 id="rp-links-t" {h("panel_links")}</h3><ul class="repo-links" id="rp-links" data-testid="repo-links">'
+        f'<li><a data-link="actions" href="https://github.com/JuanenRac/" target="_blank" rel="noopener noreferrer" {h("link_actions")}</a></li>'
+        f'<li><a data-link="issues" href="https://github.com/JuanenRac/" target="_blank" rel="noopener noreferrer" {h("link_issues")}</a></li>'
+        f'<li><a data-link="releases" href="https://github.com/JuanenRac/" target="_blank" rel="noopener noreferrer" {h("link_releases")}</a></li>'
+        f'<li><a data-link="readme" href="https://github.com/JuanenRac/" target="_blank" rel="noopener noreferrer" {h("link_readme")}</a></li></ul></nav>'
+        '</div></aside>'
+    )
+
+
+def data_script(payload: Mapping[str, object]) -> str:
+    """The data the script reads (thresholds, repositories, contributing repositories) as JSON that cannot close the script element."""
+    text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    text = text.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
+    return f'<script type="application/json" id="dashboard-data">{text}</script>'
+
+
+# ---------------------------------------------------------------------------
 # Panels
 # ---------------------------------------------------------------------------
 
 def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
-    cards = "".join(progress_card(data, key, label) for key, label in ECOSYSTEMS)
+    cards = "".join(progress_card(data, key, label, ctx="s") for key, label in ECOSYSTEMS)
     latest, oldest = releases_lists(data, None, 7)
     # Green only when every listed project resolved its version; red when none did; neutral otherwise (and with nothing listed).
     resolved_state = "none" if not data.total else ("ok" if data.ok == data.total else "bad" if data.ok == 0 else "mid")
@@ -264,6 +378,7 @@ def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
     )
     return f"""
     <div class="summary-grid">
+      {alerts_card(data)}
       <section class="kpi-strip" aria-label="Key figures" data-i18n-aria-label="aria_key_figures">{kpis}</section>
       <section class="card card-eco-counts" aria-labelledby="eco-counts-t">
         <h2 class="card-title" id="eco-counts-t" data-i18n="section_by_ecosystem">Projects by ecosystem</h2>
@@ -296,7 +411,7 @@ def ecosystem_panel(data: AppData, eco: str, label: str, extra_html: str = "") -
       <section class="card card-eco-main">
         <header class="card-head"><div><h2 class="card-title">{esc(label)}</h2><p class="muted" data-i18n="eco_intro_{esc(eco)}">{esc(dashboard_app_texts.TEXTS["en"].get("eco_intro_" + eco, ""))}</p></div>
           <button type="button" class="btn" data-show-eco="{esc(eco)}" data-testid="show-projects-{esc(eco)}" data-i18n="eco_view_projects">View the projects of this ecosystem</button></header>
-        {progress_card(data, eco, label, big=True, link_tab=False)}
+        {progress_card(data, eco, label, big=True, link_tab=False, ctx="e")}
       </section>
       <section class="card">{stacked_figure("maturity", data, one)}</section>
       <section class="card">{stacked_figure("evidence", data, one)}</section>
@@ -717,6 +832,75 @@ CSS = r"""
   .pager[hidden] { display: none; }
   .pager .btn { min-width: 84px; }
   .pager-info { color: var(--text); font-variant-numeric: tabular-nums; }
+
+  /* ======================= Health alerts, activity badges, contributing repositories, repository panel ======================= */
+  :root { --warn-ink: #fbbf24; }
+  :root[data-theme="light"] { --warn-ink: #8a5a00; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --warn-ink: #8a5a00; } }
+  .card-alerts { grid-column: span 12; display: grid; gap: 8px; }
+  .card-alerts .card-head { margin-bottom: 0; align-items: center; }
+  .alerts-status { margin: 0; display: inline-flex; gap: 8px; align-items: center; font-weight: 700; font-size: 13px; padding: 4px 12px; border-radius: 999px; border: 1px solid currentColor; }
+  .alerts-ok { color: var(--ok); } .alerts-alerts { color: var(--err); } .alerts-incomplete { color: var(--warn-ink); }
+  .alerts-why-list { margin: 0; padding-left: 20px; font-size: 12.5px; color: var(--warn-ink); }
+  .alerts-scroll { max-height: 148px; overflow: auto; border-radius: 8px; }
+  .alerts-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+  .alerts-list:empty { display: none; }
+  .alerts-scroll:has(.alerts-list:empty) { display: none; }
+  .alert { display: grid; grid-template-columns: 190px minmax(160px, 280px) minmax(0, 1fr); gap: 4px 12px; align-items: baseline; font-size: 12.5px; padding: 4px 8px; border: 1px solid var(--border); border-left: 4px solid var(--err); border-radius: 8px; background: var(--bg); }
+  .alert-manifest, .alert-version { border-left-color: var(--warn-ink); } .alert-inactive { border-left-color: var(--dim); }
+  .alert-kind { display: inline-flex; gap: 6px; font-weight: 700; } .alert-ci .alert-kind { color: var(--err); } .alert-manifest .alert-kind, .alert-version .alert-kind { color: var(--warn-ink); }
+  .alert a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .alert-why { color: var(--dim); min-width: 0; overflow-wrap: anywhere; }
+  .build-stamp { margin: 0; }
+  .build-stamp a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+  .activity-cell { white-space: nowrap; }
+  .act-badge { display: inline-flex; gap: 5px; align-items: center; font-size: 11.5px; font-weight: 600; padding: 1px 8px; margin: 1px 4px 1px 0; border-radius: 999px; border: 1px solid currentColor; font-variant-numeric: tabular-nums; }
+  .act-badge:empty { display: none; }
+  .act-good { color: var(--ok); } .act-warn { color: var(--warn-ink); } .act-bad { color: var(--err); } .act-unknown, .act-none { color: var(--dim); }
+  .activity-cell .act-badge { display: flex; width: max-content; }
+  .activity-cell .act-badge:empty { display: none; }
+
+  .area-btn { appearance: none; background: none; border: 0; padding: 0; margin: 0; color: inherit; font: inherit; cursor: pointer; text-align: left; border-radius: 6px; }
+  .area-btn:hover .area-caret, .contrib-toggle:hover .area-caret { color: var(--text); }
+  .area-caret { margin-left: auto; color: var(--dim); transition: transform .15s ease; display: inline-block; }
+  .contrib-toggle .area-caret { margin-left: 4px; }
+  [aria-expanded="true"] > .area-caret { transform: rotate(90deg); }
+  .area-bar { cursor: pointer; }
+  .contrib-toggle { margin-top: 4px; font-size: 12px; align-self: flex-start; }
+  .area { grid-template-areas: "name num" "bar bar" "contrib contrib"; }
+  .contrib { grid-area: contrib; margin-top: 6px; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--bg); font-size: 12.5px; min-width: 0; }
+  .contrib[hidden] { display: none; }
+  .contrib-progress { margin-top: 10px; }
+  .card-eco-main .contrib-progress { grid-column: 1 / -1; }
+  .contrib-head { margin: 0 0 6px; font-weight: 700; }
+  .contrib-note { margin: 0 0 6px; color: var(--warn-ink); font-size: 12px; }
+  .contrib-scroll { max-height: 190px; overflow: auto; }
+  .contrib-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+  .contrib-list li { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; border-bottom: 1px dashed var(--border); padding: 2px 0; }
+  .contrib-list a { overflow-wrap: anywhere; }
+  .contrib-mat { font-size: 11px; color: var(--dim); border: 1px solid var(--border-strong); border-radius: 6px; padding: 0 6px; }
+  .contrib-pts { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--dim); font-size: 11.5px; }
+  .contrib-more { margin-top: 6px; } .contrib-more > summary { cursor: pointer; color: var(--dim); min-height: 24px; display: flex; align-items: center; }
+
+  tr.project-row { cursor: pointer; }
+  .panel-open { appearance: none; background: transparent; color: var(--accent); border: 1px solid var(--border-strong); border-radius: 8px; padding: 2px 10px; min-height: 24px; font-size: 11.5px; cursor: pointer; margin-left: 6px; }
+  .panel-open:hover { border-color: var(--accent); }
+  .repo-panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); z-index: 70; background: var(--panel); border-left: 1px solid var(--border-strong); box-shadow: -10px 0 30px rgba(0,0,0,.35); display: flex; flex-direction: column; }
+  .repo-panel[hidden] { display: none; }
+  .repo-panel-head { display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+  .repo-panel-head h2 { margin: 0; font-size: 16px; overflow-wrap: anywhere; }
+  .repo-panel-body { overflow-y: auto; padding: 10px 14px 20px; display: grid; gap: 14px; align-content: start; }
+  .repo-panel h3 { margin: 0 0 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+  .repo-fields { margin: 0; display: grid; grid-template-columns: minmax(90px, 140px) minmax(0, 1fr); gap: 4px 12px; font-size: 13px; }
+  .repo-fields dt { color: var(--dim); } .repo-fields dd { margin: 0; overflow-wrap: anywhere; }
+  .repo-commits, .repo-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 13px; }
+  .repo-commits time { color: var(--dim); font-size: 11.5px; display: block; }
+  .repo-links { grid-auto-flow: column; justify-content: start; gap: 8px; } .repo-links a { display: inline-block; padding: 4px 12px; border: 1px solid var(--border-strong); border-radius: 999px; }
+  .repo-ci { font-weight: 700; }
+  @media (max-width: 1100px) { .alert { grid-template-columns: 1fr; } .alert a { white-space: normal; } }
+  @keyframes t27-slide { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: no-preference) { .repo-panel:not([hidden]) { animation: t27-slide .22s ease both; } }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 """
 
@@ -1217,6 +1401,277 @@ JS = r"""
     const when = Date.parse(el.dataset.iso);
     if (!isNaN(when)) { el.dataset.n = String(Math.max(0, Math.floor((Date.now() - when) / 86400000))); }
   });
+"""
+
+JS_HEALTH = r"""
+  // ---------------- Health alerts, activity badges, contributing repositories and the repository panel ----------------
+  // Everything here comes from the JSON embedded in the page (no request leaves the browser); the days are counted here, with today's date, so the page itself
+  // never changes only because time passes. Every text is built from the dictionary of the language in use and rebuilt when the language changes.
+  var dynReady = false;
+  let DATA = { config: {}, repos: {}, contrib: {} };
+  try { DATA = JSON.parse(document.getElementById("dashboard-data").textContent); } catch (e) { /* the page still works without it */ }
+  const CFG = DATA.config || {};
+  const REPO_URL = CFG.repoUrl || "https://github.com/JuanenRac/";
+  const GLYPH = { good: "●", warn: "▲", bad: "✕", unknown: "?", none: "–" };
+
+  function dayCount(iso) {
+    const t = Date.parse(iso || "");
+    return isNaN(t) ? null : Math.max(0, Math.floor((Date.now() - t) / 86400000));
+  }
+  function levelOf(days, band) {
+    if (days === null || !band) { return "unknown"; }
+    return days <= band.green_max ? "good" : days <= band.amber_max ? "warn" : "bad";
+  }
+  function newer(a, b) { return a && b ? (a > b ? a : b) : (a || b || ""); }
+  function lastOf(repo) { return newer(repo.commitDate, repo.release && repo.release.date); }
+  function make(tag, className, text) {
+    const el = document.createElement(tag);
+    if (className) { el.className = className; }
+    if (text !== undefined) { el.textContent = text; }
+    return el;
+  }
+  function badge(level, text) {
+    const el = make("span", "act-badge act-" + level);
+    el.appendChild(make("span", "act-glyph", GLYPH[level]));
+    el.lastChild.setAttribute("aria-hidden", "true");
+    el.appendChild(make("span", "", text));
+    return el;
+  }
+
+  // ---- Activity badges of the project table ----
+  function paintBadges(dict) {
+    document.querySelectorAll("td.activity-cell[data-known='1']").forEach(function (cell) {
+      const last = cell.getAttribute("data-activity");
+      const release = cell.getAttribute("data-release");
+      const first = cell.querySelector("[data-kind='activity']");
+      const second = cell.querySelector("[data-kind='release']");
+      const days = dayCount(last);
+      const relDays = dayCount(release);
+      const a = days === null ? badge("unknown", dict.not_verified) : badge(levelOf(days, CFG.activity_days), tpl(dict.act_badge, { n: days }));
+      const r = !release ? badge("none", dict.rel_none) : relDays === null ? badge("unknown", dict.not_verified) : badge(levelOf(relDays, CFG.release_days), tpl(dict.rel_badge, { n: relDays }));
+      first.className = a.className; first.replaceChildren.apply(first, Array.from(a.childNodes));
+      second.className = r.className; second.replaceChildren.apply(second, Array.from(r.childNodes));
+    });
+  }
+
+  // ---- Health alerts: the static ones come in the page, the ones about days without activity are raised here ----
+  function paintAlerts(dict) {
+    const card = document.querySelector(".card-alerts");
+    const list = document.getElementById("alerts-list");
+    if (!card || !list) { return; }
+    Array.from(list.querySelectorAll("li[data-kind='inactive']")).forEach(function (li) { li.remove(); });
+    const limit = CFG.alert_after_days;
+    const found = [];
+    Object.keys(DATA.repos || {}).forEach(function (name) {
+      const last = lastOf(DATA.repos[name]);
+      const days = dayCount(last);
+      if (last && days !== null && limit && days > limit) { found.push({ name: name, days: days, last: last }); }
+    });
+    found.sort(function (x, y) { return y.days - x.days || (x.name < y.name ? -1 : 1); });
+    found.forEach(function (item) {
+      const li = make("li", "alert alert-inactive");
+      li.setAttribute("data-kind", "inactive");
+      li.setAttribute("data-testid", "alert-inactive");
+      const kind = make("span", "alert-kind");
+      kind.appendChild(make("span", "alert-glyph", "◷"));
+      kind.firstChild.setAttribute("aria-hidden", "true");
+      kind.appendChild(make("span", "", dict.alert_kind_inactive));
+      const link = make("a", "", item.name);
+      link.href = REPO_URL + item.name + "/commits";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      li.appendChild(kind); li.appendChild(link);
+      li.appendChild(make("span", "alert-why", tpl(dict.alert_why_inactive, { n: item.days, date: item.last.slice(0, 10) })));
+      list.appendChild(li);
+    });
+    const total = Number(card.getAttribute("data-static") || "0") + found.length;
+    const incomplete = card.getAttribute("data-incomplete") === "1";
+    const state = incomplete ? "incomplete" : total ? "alerts" : "ok";
+    card.setAttribute("data-state", state);
+    const status = document.getElementById("alerts-status");
+    status.className = "alerts-status alerts-" + state;
+    status.setAttribute("data-state", state);
+    const text = document.getElementById("alerts-status-text");
+    const key = state === "ok" ? "alerts_none" : state === "alerts" ? "alerts_some" : total ? "alerts_incomplete_some" : "alerts_incomplete";
+    ["data-i18n", "data-i18n-template", "data-n"].forEach(function (name) { text.removeAttribute(name); });
+    if (key.slice(-4) === "some") { text.setAttribute("data-i18n-template", key); text.setAttribute("data-n", String(total)); text.textContent = tpl(dict[key], { n: total }); }
+    else { text.setAttribute("data-i18n", key); text.textContent = dict[key]; }
+    status.firstChild.textContent = state === "ok" ? "●" : state === "alerts" ? "▲" : "?";
+  }
+
+  // ---- Which repositories make up a percentage ----
+  const openContribs = [];
+  function fillContrib(panel, dict) {
+    const block = (DATA.contrib || {})[panel.getAttribute("data-eco")];
+    const area = panel.getAttribute("data-area");
+    panel.textContent = "";
+    if (!block) { panel.appendChild(make("p", "no-data", dict.no_data)); return; }
+    function item(name, maturity, extra) {
+      const li = make("li");
+      const link = make("a", "", name);
+      link.href = REPO_URL + name; link.target = "_blank"; link.rel = "noopener noreferrer";
+      li.appendChild(link);
+      li.appendChild(make("span", "contrib-mat", dict["maturity_" + maturity] || dict.unknown));
+      if (extra) { li.appendChild(extra); }
+      return li;
+    }
+    function listOf(rows, build) {
+      const ul = make("ul", "contrib-list");
+      rows.forEach(function (row) { ul.appendChild(build(row)); });
+      return ul;
+    }
+    function scroll(content, label) {
+      const box = make("div", "contrib-scroll");
+      box.tabIndex = 0; box.setAttribute("role", "region"); box.setAttribute("aria-label", label);
+      box.appendChild(content);
+      return box;
+    }
+    const areaName = area === "progress" ? dict.sum_progress_title : dict["area_" + area];
+    const label = tpl(dict.contrib_list_label, { name: areaName });
+    if (area === "progress") {
+      panel.appendChild(make("p", "contrib-head", tpl(dict.contrib_progress_summary, { n: block.progress.length })));
+      panel.appendChild(scroll(listOf(block.progress, function (row) {
+        const extra = make("span", "contrib-pts", tpl(dict.contrib_points, { p: row[2] }) + (row[3] ? "" : " · " + dict.contrib_partial));
+        return item(row[0], row[1], extra);
+      }), label));
+      return;
+    }
+    const a = block.areas[area];
+    const known = a.yes.length + a.no.length;
+    panel.appendChild(make("p", "contrib-head", tpl(dict.contrib_summary, { n: a.yes.length, total: known })));
+    if (a.readme && (a.readme[0] !== a.yes.length || a.readme[1] !== known)) {
+      panel.appendChild(make("p", "contrib-note", tpl(dict.contrib_readme_diff, { k: a.readme[0], n: a.readme[1] })));
+    }
+    if (a.yes.length) { panel.appendChild(scroll(listOf(a.yes, function (row) { return item(row[0], row[1]); }), label)); }
+    else { panel.appendChild(make("p", "no-data", dict.contrib_none)); }
+    [["no", "contrib_no"], ["unknown", "contrib_unknown"]].forEach(function (pair) {
+      const rows = a[pair[0]];
+      if (!rows.length) { return; }
+      const details = make("details", "contrib-more");
+      details.appendChild(make("summary", "", tpl(dict[pair[1]], { n: rows.length })));
+      details.appendChild(listOf(rows, function (row) { return item(row[0], row[1]); }));
+      panel.appendChild(details);
+    });
+  }
+  function toggleContrib(button) {
+    const panel = document.getElementById(button.getAttribute("aria-controls"));
+    if (!panel) { return; }
+    const open = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    panel.hidden = !open;
+    const at = openContribs.indexOf(panel);
+    if (at >= 0) { openContribs.splice(at, 1); }
+    if (open) {
+      panel.setAttribute("data-eco", button.getAttribute("data-contrib-eco"));
+      panel.setAttribute("data-area", button.getAttribute("data-contrib-area"));
+      openContribs.push(panel);
+      fillContrib(panel, currentDict());
+    }
+  }
+  document.querySelectorAll("button[data-contrib-area]").forEach(function (button) { button.addEventListener("click", function () { toggleContrib(button); }); });
+  document.querySelectorAll(".area-bar").forEach(function (bar) {
+    bar.addEventListener("click", function () { const button = bar.closest("li.area").querySelector("button[data-contrib-area]"); if (button) { toggleContrib(button); } });
+  });
+  document.querySelectorAll(".ring-wrap").forEach(function (ring) {
+    ring.addEventListener("click", function () { const button = ring.closest("article").querySelector("button.contrib-toggle"); if (button) { toggleContrib(button); } });
+  });
+
+  // ---- The panel of a repository ----
+  const repoPanel = document.getElementById("repo-panel");
+  const panelTitle = document.getElementById("repo-panel-title");
+  let panelFor = null;
+  let panelOpener = null;
+
+  function renderPanel(dict) {
+    const repo = DATA.repos[panelFor];
+    if (!repo) { return; }
+    panelTitle.textContent = panelFor;
+    const fields = document.getElementById("repo-fields");
+    fields.textContent = "";
+    function field(label, value) {
+      fields.appendChild(make("dt", "", label));
+      fields.appendChild(make("dd", "", value === "" || value === null || value === undefined ? dict.not_verified : value));
+    }
+    const lastDate = lastOf(repo);
+    const lastDays = dayCount(lastDate);
+    field(dict.panel_f_ecosystem, repo.ecoLabel);
+    field(dict.th_version, repo.version);
+    field(dict.th_maturity, dict["maturity_" + repo.maturity] || repo.maturity);
+    field(dict.panel_f_evidence, repo.evidence ? (dict["evidence_" + repo.evidence] || repo.evidence) : dict.not_verified);
+    field(dict.th_type, repo.roleKey ? dict["role_" + repo.roleKey] : repo.role);
+    field(dict.th_stack, repo.stack);
+    field(dict.th_deploy, repo.deployKey ? dict["deploy_" + repo.deployKey] : repo.deploy);
+    if (repo.family) { field(dict.panel_f_family, repo.family); }
+    if (repo.parent) { field(dict.panel_f_parent, repo.parent); }
+    field(dict.panel_f_hardware, repo.hardware === true ? dict.panel_hw_yes : repo.hardware === false ? dict.panel_hw_no : dict.panel_hw_unset);
+    field(dict.panel_f_activity, lastDate ? lastDate.slice(0, 10) + " · " + tpl(dict.act_badge, { n: lastDays }) : null);
+    field(dict.panel_f_release, repo.release ? repo.release.tag + (repo.release.date ? " · " + repo.release.date.slice(0, 10) : "") : repo.known ? dict.rel_none : null);
+
+    const ci = document.getElementById("rp-ci");
+    ci.textContent = "";
+    if (!repo.known) { ci.textContent = dict.not_verified; }
+    else {
+      const level = repo.ci === "success" ? "good" : repo.ci === "failure" ? "bad" : repo.ci === "pending" ? "warn" : "none";
+      ci.appendChild(badge(level, dict["ci_" + repo.ci] || dict.not_verified));
+    }
+    const commits = document.getElementById("rp-commits");
+    const none = document.getElementById("rp-commits-none");
+    commits.textContent = "";
+    const list = repo.commits || [];
+    none.hidden = list.length > 0;
+    list.forEach(function (c) {
+      const li = make("li");
+      const link = make("a", "", c[0]);
+      if (c[2]) { link.href = c[2]; link.target = "_blank"; link.rel = "noopener noreferrer"; }
+      li.appendChild(c[2] ? link : make("span", "", c[0]));
+      if (c[1]) { const t = make("time", "", c[1].slice(0, 10)); t.setAttribute("datetime", c[1]); li.appendChild(t); }
+      commits.appendChild(li);
+    });
+    const base = REPO_URL + panelFor;
+    repoPanel.querySelectorAll("[data-link]").forEach(function (a) {
+      const kind = a.getAttribute("data-link");
+      a.href = kind === "readme" ? base + "#readme" : base + "/" + kind;
+    });
+  }
+  function openPanel(name, opener) {
+    if (!DATA.repos[name]) { return; }
+    panelFor = name;
+    panelOpener = opener || null;
+    repoPanel.hidden = false;
+    renderPanel(currentDict());
+    panelTitle.focus();
+  }
+  function closePanel() {
+    if (repoPanel.hidden) { return; }
+    repoPanel.hidden = true;
+    panelFor = null;
+    const back = panelOpener && document.contains(panelOpener) && panelOpener.offsetParent !== null ? panelOpener : document.getElementById("main");
+    panelOpener = null;
+    if (back) { back.focus(); }
+  }
+  document.querySelectorAll("button[data-open-repo]").forEach(function (button) {
+    button.addEventListener("click", function () { openPanel(button.getAttribute("data-open-repo"), button); });
+  });
+  document.querySelectorAll("tr.project-row").forEach(function (row) {
+    row.addEventListener("click", function (event) {
+      if (event.target.closest("a, button, input, select, textarea, summary")) { return; }
+      const button = row.querySelector("button[data-open-repo]");
+      if (button) { openPanel(button.getAttribute("data-open-repo"), button); }
+    });
+  });
+  document.getElementById("repo-panel-close").addEventListener("click", closePanel);
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && !repoPanel.hidden) { event.preventDefault(); closePanel(); }
+  });
+
+  function onLanguageApplied(dict) {
+    if (!dynReady) { return; }
+    paintBadges(dict);
+    paintAlerts(dict);
+    openContribs.forEach(function (panel) { fillContrib(panel, dict); });
+    if (panelFor) { renderPanel(dict); }
+  }
+  dynReady = true;
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
@@ -1224,7 +1679,7 @@ JS = r"""
 def script() -> str:
     """The filters and the shell, ready to be placed inside the page's own script."""
     import json
-    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS)))
+    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH
 
 
 # ---------------------------------------------------------------------------

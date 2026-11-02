@@ -55,6 +55,8 @@ from catalog_check import catalog_ecosystems, mismatches as catalog_mismatches
 import dashboard_app
 import dashboard_app_texts
 import dashboard_charts
+import dashboard_contrib
+import dashboard_health
 import dashboard_integrity
 import dashboard_texts
 import ecosystem_progress
@@ -2284,6 +2286,7 @@ def _render_one_row(
     results: dict[str, RemoteStatus],
     meta: dict[str, RepoMeta],
     is_child: bool,
+    activity: "dict | None" = None,
 ) -> str:
     result = results.get(entry.name)
     repo_meta = meta.get(entry.name, RepoMeta())
@@ -2409,6 +2412,7 @@ def _render_one_row(
         commit_html = '<span class="cell-muted">—</span>'
 
     detail_row_id = f"detail-{project_name}"
+    activity_html = dashboard_app.activity_cell((activity or {}).get(entry.name))
 
     row = f"""
         <tr
@@ -2436,6 +2440,7 @@ def _render_one_row(
             <div class="project-title-wrap">
               <div class="project-title">
                 <a
+                  id="name-{project_name}"
                   href="{project_repo}"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -2456,6 +2461,16 @@ def _render_one_row(
                   rel="noopener noreferrer"
                   data-i18n="link_issues"
                 >Issues</a>
+
+                <button
+                  type="button"
+                  class="panel-open"
+                  id="open-{project_name}"
+                  aria-haspopup="dialog"
+                  aria-labelledby="open-{project_name} name-{project_name}"
+                  data-open-repo="{project_name}"
+                  data-i18n="repo_open"
+                >Panel</button>
               </div>
             </div>
           </td>
@@ -2500,6 +2515,8 @@ def _render_one_row(
           <td class="commit-cell">
             {commit_html}
           </td>
+
+          {activity_html}
         </tr>
 
         <tr
@@ -2514,7 +2531,7 @@ def _render_one_row(
             data-family="{esc(entry.family.lower())}"
             hidden
         >
-          <td colspan="8">
+          <td colspan="9">
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
@@ -2560,6 +2577,7 @@ def render_project_rows(
     results: dict[str, RemoteStatus],
     meta: dict[str, RepoMeta],
     ecosystem_by_name: dict[str, str],
+    activity: "dict | None" = None,
 ) -> str:
     rows: list[str] = []
 
@@ -2576,7 +2594,7 @@ def render_project_rows(
         banner_text = esc(ECOSYSTEM_BANNER_FALLBACK_TEXT[ecosystem_key])
         rows.append(
             f'\n            <tr class="ecosystem-banner-row" data-ecosystem-banner="{esc(ecosystem_key)}">'
-            f'\n              <td colspan="8">'
+            f'\n              <td colspan="9">'
             f'\n                <span data-i18n="{banner_key}">{banner_text}</span>'
             f'\n              </td>'
             f'\n            </tr>\n            '
@@ -2603,7 +2621,7 @@ def render_project_rows(
             rows.append(
                 f"""
             <tr class="family-header-row" data-family-header="{family_id}" data-ecosystem="{esc(ecosystem_key)}">
-              <td colspan="8">
+              <td colspan="9">
                 <span class="family-header-label">{esc(family_name)}</span>
                 <span class="family-header-count">
                     <span data-i18n-template="family_count" data-count="{member_count}">{member_count} project(s)</span>{parent_repo_link}
@@ -2617,12 +2635,12 @@ def render_project_rows(
 
             if parent is not None:
                 rows.append(
-                    _render_one_row(parent, results=results, meta=meta, is_child=False).replace('class="project-row', stamp, 1)
+                    _render_one_row(parent, results=results, meta=meta, is_child=False, activity=activity).replace('class="project-row', stamp, 1)
                 )
 
             for child in children:
                 rows.append(
-                    _render_one_row(child, results=results, meta=meta, is_child=parent is not None).replace('class="project-row', stamp, 1)
+                    _render_one_row(child, results=results, meta=meta, is_child=parent is not None, activity=activity).replace('class="project-row', stamp, 1)
                 )
 
     return "".join(rows)
@@ -3175,6 +3193,66 @@ def render_roadmap(
 # HTML
 # ---------------------------------------------------------------------------
 
+def _manifest_data(raw: object) -> "dict | None":
+    """The manifest fields of a raw manifest (a RawManifest of dashboard_integrity, or the plain dict), None when it could not be read."""
+    data = getattr(raw, "data", raw)
+    return data if isinstance(data, dict) else None
+
+
+def page_data(
+    entries: list[ProjectEntry],
+    results: dict[str, RemoteStatus],
+    ecosystem_by_name: dict[str, str],
+    raw_manifests: dict,
+    activity: dict,
+    signals: dict,
+    status: dict,
+    config: dict,
+) -> dict:
+    """What the script of the page reads, as plain data: the thresholds, each repository (manifest fields, CI, release, recent commits) and the repositories
+    behind every percentage. A fact that was not read is null; the page prints "not verified" for it."""
+    labels = dict(ECOSYSTEM_ORDER)
+    repos: dict[str, dict] = {}
+    for entry in entries:
+        name = entry.name
+        raw = _manifest_data(raw_manifests.get(name)) or {}
+        act = activity.get(name)
+        deploy_key = entry.deploy
+        if deploy_key in DEPLOY_LABELS:
+            deploy_key = categorize_deploy_for_entry(entry)
+        role_known = entry.role in ROLE_LABELS
+        role_key = categorize_role_for_entry(entry) if role_known else entry.role
+        result = results.get(name)
+        hardware = raw.get("hardware_bound")
+        repos[name] = {
+            "eco": ecosystem_by_name.get(name, ""),
+            "ecoLabel": labels.get(ecosystem_by_name.get(name, ""), ""),
+            "maturity": entry.maturity,
+            "evidence": raw.get("evidence") if isinstance(raw.get("evidence"), str) else "",
+            "role": ROLE_LABELS.get(role_key, role_key),
+            "roleKey": role_key if role_known else "",
+            "stack": entry.stack,
+            "deploy": DEPLOY_LABELS.get(deploy_key, deploy_key),
+            "deployKey": deploy_key if deploy_key in DEPLOY_LABELS else "",
+            "family": entry.family or "",
+            "parent": str(getattr(entry, "parent", "") or ""),
+            "hardware": hardware if isinstance(hardware, bool) else None,
+            "version": str(result.version) if result is not None and result.version is not None else None,
+            "known": act is not None,
+            "ci": act.ci if act is not None else None,
+            "release": {"tag": act.release_tag or "", "date": act.release_date or ""} if act is not None and act.release_date else None,
+            "commitDate": (act.commit_date if act is not None else None) or None,
+            "commits": [[c.headline, c.date or "", c.url or ""] for c in act.commits] if act is not None and act.commits else None,
+        }
+    manifests = {name: _manifest_data(raw_manifests.get(name)) for name in ecosystem_by_name}
+    readme_counts = {eco: {area: (value.count, value.total) for area, value in areas.items()} for eco, areas in status.items()}
+    return {
+        "config": {**config, "repoUrl": "https://github.com/JuanenRac/"},
+        "repos": repos,
+        "contrib": dashboard_contrib.build(ecosystem_by_name, manifests, signals, [key for key, _label in dashboard_app.ECOSYSTEMS], readme_counts),
+    }
+
+
 def render_html(
     entries: list[ProjectEntry],
     results: dict[str, RemoteStatus],
@@ -3185,6 +3263,9 @@ def render_html(
     raw_manifests: "dict | None" = None,
     activity: "dict | None" = None,
     readme_text: "str | None" = None,
+    signals: "dict | None" = None,
+    build: "dashboard_health.BuildInfo | None" = None,
+    config: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3207,7 +3288,7 @@ def render_html(
     role_counts = stats["role_counts"]
     role_deploy_matrix = stats["role_deploy_matrix"]
 
-    rows = render_project_rows(entries, results, meta, ecosystem_by_name)
+    rows = render_project_rows(entries, results, meta, ecosystem_by_name, activity)
 
     ecosystem_cards = render_ecosystem_cards(entries, ecosystem_by_name)
 
@@ -3266,6 +3347,13 @@ def render_html(
         issues=integrity,
         unresolved=[(entry.name, error_text(results.get(entry.name))) for entry in entries if not (results.get(entry.name) and results[entry.name].version is not None)],
     )
+    activity_map = activity or {}
+    health_config = config if config is not None else dashboard_health.load_config()[0]
+    app_data.alerts = dashboard_health.static_alerts(
+        activity=activity_map, ecosystem_by_name=ecosystem_by_name, issues=integrity, unresolved=app_data.unresolved)
+    app_data.incomplete = dashboard_health.completeness(total=total, activity=activity_map, ecosystem_by_name=ecosystem_by_name, issues=integrity)
+    app_data.build = build
+    app_data.page_data = page_data(entries, results, ecosystem_by_name, raw_manifests or {}, activity_map, signals or {}, app_data.status, health_config)
     eco_counts: dict[str, int] = {}
     for eco_key in ecosystem_by_name.values():
         eco_counts[eco_key] = eco_counts.get(eco_key, 0) + 1
@@ -3289,6 +3377,8 @@ def render_html(
     pager_html = dashboard_app.pager()
     app_css = dashboard_app.CSS
     app_js = dashboard_app.script()
+    repo_panel_html = dashboard_app.repo_panel()
+    data_script_html = dashboard_app.data_script(app_data.page_data)
 
     # Computed as a plain string, not built inside the f-string literal
     # below - the JSON itself is full of single `{`/`}` characters that
@@ -4942,6 +5032,7 @@ def render_html(
           <th data-i18n="th_version">Version</th>
           <th data-i18n="th_status">Status</th>
           <th data-i18n="th_commit">Last commit</th>
+          <th data-i18n="th_activity">Activity</th>
         </tr>
       </thead>
 
@@ -5272,6 +5363,8 @@ def render_html(
     </section>
   </main>
 
+  {repo_panel_html}
+
   <footer class="app-footer">{freshness_html} ·
 
 
@@ -5316,6 +5409,7 @@ def render_html(
 </div>
 
 
+{data_script_html}
 <script>
 (function () {{
   "use strict";
@@ -5413,6 +5507,10 @@ def render_html(
 
     if (typeof applyChartLabels === "function") {{
       applyChartLabels(dict);
+    }}
+
+    if (typeof onLanguageApplied === "function") {{
+      onLanguageApplied(dict);
     }}
 
     if (langSelect) {{
@@ -5593,6 +5691,10 @@ def render_html(
 
 # Every ecosystem this dashboard discovers (key, label, manifest file) - must
 # match ecosystem-catalog.json's "ecosystems" list (scripts/catalog_check.py).
+# The workflow whose latest good run is shown as "last published build".
+BUILD_REPOSITORY = "JuanenRac/JuanenRac"
+BUILD_WORKFLOW_FILE = "build-dashboard.yml"
+
 DASHBOARD_ECOSYSTEMS: list[tuple[str, str, str]] = [
     ("hydra-umc", "HYDRA-UMC", "hydra-umc.project.json"),
     ("urtc", "URTC", "urtc.project.json"),
@@ -5722,8 +5824,15 @@ def main() -> int:
     print(dashboard_integrity.report(integrity), file=sys.stderr)
 
     meta = fetch_all_meta(entries)
-    activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN)
+    activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN, redact=_redact_private_document_names)
     print(f"{len(activity)} release/CI records read.", file=sys.stderr)
+    signals = dashboard_contrib.fetch_signals(catalog.github_owner, GITHUB_TOKEN, activity)
+    print(f"{len(signals)} delivery/quality records read.", file=sys.stderr)
+    build = dashboard_health.fetch_last_good_build(BUILD_REPOSITORY, BUILD_WORKFLOW_FILE, _api_get)
+    print("Last good build: " + (f"{build.finished} {build.url}" if build else "not verified"), file=sys.stderr)
+    config, config_problems = dashboard_health.load_config()
+    for problem in config_problems:
+        print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
 
     meta_ok = sum(
         1
@@ -5746,9 +5855,14 @@ def main() -> int:
     # Template indentation must not leak as trailing whitespace into the
     # published static page. Normalising it here keeps local and CI-generated
     # output identical without manually editing generated HTML.
-    rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity)
+    rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
+                           signals=signals, build=build, config=config)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
-    index_path.write_text(clean_rendered, encoding="utf-8")
+    try:
+        published = index_path.read_text(encoding="utf-8")
+    except OSError:
+        published = None
+    index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 
     # Tell GitHub Pages that this is plain static HTML.
     (OUT_DIR / ".nojekyll").touch()

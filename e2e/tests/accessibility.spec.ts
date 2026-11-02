@@ -214,3 +214,51 @@ test.describe("keyboard", () => {
     expect(lang).not.toBeNull();
   });
 });
+
+test.describe("axe with the health alerts, a list of repositories and the repository panel open", () => {
+  for (const theme of ["dark", "light"] as const) {
+    for (const lang of ["en", "ja", "pt"] as const) {
+      test(`summary, projects and panel in ${theme}, ${lang}`, async ({ page }) => {
+        await page.clock.setFixedTime(new Date("2001-12-21T12:00:00Z"));
+        await openDashboard(page);
+        if (theme === "light") await page.locator("#theme-toggle").click();
+        await page.locator("#lang-select").selectOption(lang);
+        await gotoTab(page, "summary");
+        await page.locator("#panel-summary").getByTestId("contrib-btn-hydra-umc-tests").click();
+        await page.locator("#panel-summary").getByTestId("contrib-btn-armor-progress").click();
+        await expect(page.locator("#panel-summary .contrib:not([hidden])")).toHaveCount(2);
+        expect(await serious(page), "summary").toEqual([]);
+        await gotoTab(page, "projects");
+        expect(await serious(page), "projects with the activity column").toEqual([]);
+        await page.locator("button[data-open-repo]").first().click();
+        await expect(page.getByTestId("repo-panel")).toBeVisible();
+        expect(await serious(page), "with the repository panel").toEqual([]);
+      });
+    }
+  }
+
+  for (const variant of ["healthy", "partial", "empty"] as const) {
+    test(`the alerts card of the ${variant} dataset`, async ({ page }) => {
+      await page.clock.setFixedTime(new Date("2001-12-21T12:00:00Z"));
+      await openDashboard(page, variant);
+      expect(await serious(page)).toEqual([]);
+    });
+  }
+
+  test("keyboard only: a list opens with Enter, the panel opens, Escape closes it and the focus comes back", async ({ page }) => {
+    await openDashboard(page);
+    await page.getByTestId("contrib-btn-urtc-ci").first().focus();
+    await expect(page.getByTestId("contrib-btn-urtc-ci").first()).toBeFocused();
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("contrib-btn-urtc-ci").first()).toHaveAttribute("aria-expanded", "true");
+    await gotoTab(page, "projects");
+    const opener = page.locator("button[data-open-repo]").first();
+    await page.keyboard.press("Shift");   // the last input was the keyboard
+    await opener.focus();
+    expect(await opener.evaluate((el) => el.matches(":focus-visible"))).toBe(true);   // the ring of :focus-visible (3 px outline) applies
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId("repo-panel")).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(opener).toBeFocused();
+  });
+});
