@@ -77,6 +77,23 @@ Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial m
 `\[███████████░░░░░░░░░] 55%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 57 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:hydra-umc -->
 
+<!-- status:hydra-umc -->
+### 🚦 Estado del ecosistema
+
+Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla pasa a verde desde el 90 % de los repositorios, a amarillo desde el 60 % y a naranja desde el 30 %.
+
+| Área | Estado | Avance | Nota |
+| --- | :---: | --- | --- |
+| Software | 🟢 | `█████████▊ 98%` | 56 de 57 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟢 | `█████████▊ 98%` | 56 de 57 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 57 de 57 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `██████████ 100%` | 57 de 57 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 57 de 57 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🔴 | `██▌░░░░░░░ 25%` | 14 de 57 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🔴 | `█▏░░░░░░░░ 11%` | 4 de los 38 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🔴 | `▉░░░░░░░░░ 9%` | 5 de 57 repositorios están consolidados o en producción. |
+<!-- /status:hydra-umc -->
+
 > \[!IMPORTANT]
 > 🛠️ \*\*Proyecto en pausa — construyendo el hardware real.\*\* El desarrollo activo está pausado mientras se construye físicamente la celda de robótica (chasis, cableado, las placas reales CM5 y STM32), de modo que la siguiente fase de trabajo tenga hardware real sobre el cual ejecutarse y validarse, y no solo una barra de progreso que aumenta. El trabajo se reanudará una vez que dicha construcción esté lista.
 
@@ -299,6 +316,23 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 `\[██████████▎░░░░░░░░░] 51%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 11 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:urtc -->
 
+<!-- status:urtc -->
+### 🚦 Estado del ecosistema
+
+Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla pasa a verde desde el 90 % de los repositorios, a amarillo desde el 60 % y a naranja desde el 30 %.
+
+| Área | Estado | Avance | Nota |
+| --- | :---: | --- | --- |
+| Software | 🟡 | `████████▎░ 82%` | 9 de 11 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟡 | `████████▎░ 82%` | 9 de 11 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `█████████▏ 91%` | 10 de 11 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🟠 | `███▋░░░░░░ 36%` | 4 de 11 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 10 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🔴 | `▉░░░░░░░░░ 9%` | 1 de 11 repositorios están consolidados o en producción. |
+<!-- /status:urtc -->
+
 ## 🏗️ Cómo Funciona URTC
 
 1. **Firmware de la herramienta**: El firmware STM32 propio de URTC ejecuta cada uno de los más de 25 perfiles de herramientas especializados (pinzas, dispensadores, sondas, husillos y más), cada uno con sus propios tiempos, límites y comportamiento ante fallos.
@@ -356,6 +390,23 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 <!-- progress:armor -->
 `\[█████████████▎░░░░░░] 66%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 19 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:armor -->
+
+<!-- status:armor -->
+### 🚦 Estado del ecosistema
+
+Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla pasa a verde desde el 90 % de los repositorios, a amarillo desde el 60 % y a naranja desde el 30 %.
+
+| Área | Estado | Avance | Nota |
+| --- | :---: | --- | --- |
+| Software | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🟠 | `█████▎░░░░ 53%` | 10 de 19 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🟠 | `█████▎░░░░ 53%` | 9 de los 17 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🟡 | `██████▎░░░ 63%` | 12 de 19 repositorios están consolidados o en producción. |
+<!-- /status:armor -->
 
 ## 🏗️ Cómo Está Construido A.R.M.O.R.
 
@@ -415,6 +466,23 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 <!-- progress:eh3d -->
 `\[██████▎░░░░░░░░░░░░░] 31%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 26 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:eh3d -->
+
+<!-- status:eh3d -->
+### 🚦 Estado del ecosistema
+
+Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla pasa a verde desde el 90 % de los repositorios, a amarillo desde el 60 % y a naranja desde el 30 %.
+
+| Área | Estado | Avance | Nota |
+| --- | :---: | --- | --- |
+| Software | 🔴 | `░░░░░░░░░░ 0%` | 0 de 26 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟡 | `████████▌░ 85%` | 22 de 26 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 26 de 26 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `██████████ 100%` | 26 de 26 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 26 de 26 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 26 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 13 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 26 repositorios están consolidados o en producción. |
+<!-- /status:eh3d -->
 
 ## 🏗️ Cómo Funciona EH3D Fabrication Suite
 

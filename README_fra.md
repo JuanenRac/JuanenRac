@@ -77,6 +77,23 @@ Bienvenue dans l'**écosystème HYDRA-UMC**, une plateforme de robotique industr
 `\[███████████░░░░░░░░░] 55%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 57 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:hydra-umc -->
 
+<!-- status:hydra-umc -->
+### 🚦 État de l'écosystème
+
+Calculé pour tout l'écosystème à partir de données réelles, jamais à la main ; un voyant passe au vert dès 90 % des dépôts, au jaune dès 60 % et à l'orange dès 30 %.
+
+| Domaine | État | Avancement | Note |
+| --- | :---: | --- | --- |
+| Logiciel | 🟢 | `█████████▊ 98%` | 56 dépôts sur 57 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟢 | `█████████▊ 98%` | 56 dépôts sur 57 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 57 dépôts sur 57 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 57 dépôts sur 57 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 57 dépôts sur 57 ont le README dans les huit langues. |
+| Simulation | 🔴 | `██▌░░░░░░░ 25%` | 14 dépôts sur 57 ont été vérifiés au moins dans un simulateur. |
+| Matériel réel | 🔴 | `█▏░░░░░░░░ 11%` | 4 des 38 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Production | 🔴 | `▉░░░░░░░░░ 9%` | 5 dépôts sur 57 sont établis ou en production. |
+<!-- /status:hydra-umc -->
+
 > \[!IMPORTANT]
 > 🛠️ \*\*Projet en pause — construction du matériel réel.\*\* Le développement actif est suspendu pendant que la cellule robotique physique (châssis, câblage, véritables cartes CM5 et STM32) est construite pour de vrai, afin que la prochaine phase de travail dispose de matériel réel pour s'exécuter et être validée, et non pas seulement d'une barre de progression qui avance. Le travail reprendra une fois cet assemblage en place.
 
@@ -299,6 +316,23 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 `\[██████████▎░░░░░░░░░] 51%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 11 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:urtc -->
 
+<!-- status:urtc -->
+### 🚦 État de l'écosystème
+
+Calculé pour tout l'écosystème à partir de données réelles, jamais à la main ; un voyant passe au vert dès 90 % des dépôts, au jaune dès 60 % et à l'orange dès 30 %.
+
+| Domaine | État | Avancement | Note |
+| --- | :---: | --- | --- |
+| Logiciel | 🟡 | `████████▎░ 82%` | 9 dépôts sur 11 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont des tests automatiques. |
+| Intégration continue | 🟡 | `████████▎░ 82%` | 9 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `█████████▏ 91%` | 10 dépôts sur 11 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont le README dans les huit langues. |
+| Simulation | 🟠 | `███▋░░░░░░ 36%` | 4 dépôts sur 11 ont été vérifiés au moins dans un simulateur. |
+| Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 10 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Production | 🔴 | `▉░░░░░░░░░ 9%` | 1 dépôts sur 11 sont établis ou en production. |
+<!-- /status:urtc -->
+
 ## 🏗️ Comment fonctionne URTC
 
 1. **Micrologiciel de l'outil** : Le micrologiciel STM32 propre à URTC exécute chacun des 25+ profils d'outils spécialisés (pinces, pondes, distributeurs, broches, etc.), chacun avec ses propres temporisations, limites et comportements en cas de défaut.
@@ -356,6 +390,23 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 <!-- progress:armor -->
 `\[█████████████▎░░░░░░] 66%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 19 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:armor -->
+
+<!-- status:armor -->
+### 🚦 État de l'écosystème
+
+Calculé pour tout l'écosystème à partir de données réelles, jamais à la main ; un voyant passe au vert dès 90 % des dépôts, au jaune dès 60 % et à l'orange dès 30 %.
+
+| Domaine | État | Avancement | Note |
+| --- | :---: | --- | --- |
+| Logiciel | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont le README dans les huit langues. |
+| Simulation | 🟠 | `█████▎░░░░ 53%` | 10 dépôts sur 19 ont été vérifiés au moins dans un simulateur. |
+| Matériel réel | 🟠 | `█████▎░░░░ 53%` | 9 des 17 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Production | 🟡 | `██████▎░░░ 63%` | 12 dépôts sur 19 sont établis ou en production. |
+<!-- /status:armor -->
 
 ## 🏗️ Comment est construit A.R.M.O.R.
 
@@ -415,6 +466,23 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 <!-- progress:eh3d -->
 `\[██████▎░░░░░░░░░░░░░] 31%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 26 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:eh3d -->
+
+<!-- status:eh3d -->
+### 🚦 État de l'écosystème
+
+Calculé pour tout l'écosystème à partir de données réelles, jamais à la main ; un voyant passe au vert dès 90 % des dépôts, au jaune dès 60 % et à l'orange dès 30 %.
+
+| Domaine | État | Avancement | Note |
+| --- | :---: | --- | --- |
+| Logiciel | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 26 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟡 | `████████▌░ 85%` | 22 dépôts sur 26 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 26 dépôts sur 26 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 26 dépôts sur 26 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 26 dépôts sur 26 ont le README dans les huit langues. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 26 ont été vérifiés au moins dans un simulateur. |
+| Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 13 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 26 sont établis ou en production. |
+<!-- /status:eh3d -->
 
 ## 🏗️ Comment fonctionne EH3D Fabrication Suite
 

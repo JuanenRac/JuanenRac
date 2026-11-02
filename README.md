@@ -77,6 +77,23 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 `[███████████░░░░░░░░░] 55%` — Calculated from real data: the maturity and the evidence that each of its 57 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:hydra-umc -->
 
+<!-- status:hydra-umc -->
+### 🚦 Ecosystem status
+
+Calculated for the whole ecosystem from real data, never typed by hand; a light turns green from 90 % of the repositories, yellow from 60 %, orange from 30 %.
+
+| Area | Status | Progress | Note |
+| --- | :---: | --- | --- |
+| Software | 🟢 | `█████████▊ 98%` | 56 of 57 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟢 | `█████████▊ 98%` | 56 of 57 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 57 of 57 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `██████████ 100%` | 57 of 57 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 57 of 57 repositories have the README in the eight languages. |
+| Simulation | 🔴 | `██▌░░░░░░░ 25%` | 14 of 57 repositories have been checked at least in a simulator. |
+| Real hardware | 🔴 | `█▏░░░░░░░░ 11%` | 4 of the 38 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
+| Production | 🔴 | `▉░░░░░░░░░ 9%` | 5 of 57 repositories are established or in production. |
+<!-- /status:hydra-umc -->
+
 > [!IMPORTANT]
 > 🛠️ **Project on hold — building the real hardware.** Active development is paused while the physical robotics cell (frames, wiring, the real CM5 and STM32 boards) gets built for real, so the next phase of work has actual hardware to run and validate against, not just a bar going up. Work picks back up once that build is in place.
 
@@ -293,6 +310,23 @@ for all four - can check versions and build/update any other project.
 `[██████████▎░░░░░░░░░] 51%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:urtc -->
 
+<!-- status:urtc -->
+### 🚦 Ecosystem status
+
+Calculated for the whole ecosystem from real data, never typed by hand; a light turns green from 90 % of the repositories, yellow from 60 %, orange from 30 %.
+
+| Area | Status | Progress | Note |
+| --- | :---: | --- | --- |
+| Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
+| Continuous integration | 🟡 | `████████▎░ 82%` | 9 of 11 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
+| Simulation | 🟠 | `███▋░░░░░░ 36%` | 4 of 11 repositories have been checked at least in a simulator. |
+| Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 10 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
+| Production | 🔴 | `▉░░░░░░░░░ 9%` | 1 of 11 repositories are established or in production. |
+<!-- /status:urtc -->
+
 ## 🏗️ How URTC Works
 
 1. **Tool firmware**: URTC's own STM32 firmware runs each of 25+ specialized tool profiles (grippers, dispensers, probes, spindles and more), each with its own timing, limits and fault behaviour.
@@ -350,6 +384,23 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 <!-- progress:armor -->
 `[█████████████▎░░░░░░] 66%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:armor -->
+
+<!-- status:armor -->
+### 🚦 Ecosystem status
+
+Calculated for the whole ecosystem from real data, never typed by hand; a light turns green from 90 % of the repositories, yellow from 60 %, orange from 30 %.
+
+| Area | Status | Progress | Note |
+| --- | :---: | --- | --- |
+| Software | 🟢 | `█████████▌ 95%` | 18 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
+| Simulation | 🟠 | `█████▎░░░░ 53%` | 10 of 19 repositories have been checked at least in a simulator. |
+| Real hardware | 🟠 | `█████▎░░░░ 53%` | 9 of the 17 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
+| Production | 🟡 | `██████▎░░░ 63%` | 12 of 19 repositories are established or in production. |
+<!-- /status:armor -->
 
 ## 🏗️ How A.R.M.O.R. Is Built
 
@@ -409,6 +460,23 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 <!-- progress:eh3d -->
 `[██████▎░░░░░░░░░░░░░] 31%` — Calculated from real data: the maturity and the evidence that each of its 26 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
+
+<!-- status:eh3d -->
+### 🚦 Ecosystem status
+
+Calculated for the whole ecosystem from real data, never typed by hand; a light turns green from 90 % of the repositories, yellow from 60 %, orange from 30 %.
+
+| Area | Status | Progress | Note |
+| --- | :---: | --- | --- |
+| Software | 🔴 | `░░░░░░░░░░ 0%` | 0 of 26 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟡 | `████████▌░ 85%` | 22 of 26 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 26 of 26 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `██████████ 100%` | 26 of 26 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 26 of 26 repositories have the README in the eight languages. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 26 repositories have been checked at least in a simulator. |
+| Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 13 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 26 repositories are established or in production. |
+<!-- /status:eh3d -->
 
 ## 🏗️ How EH3D Fabrication Suite Works
 

@@ -205,6 +205,14 @@ jobs:
         run: |
           python scripts/ecosystem_progress.py
 
+      # The "Ecosystem status" table of every ecosystem (one line per area with its light,
+      # a bar and the count behind it) is written from the same real facts, never by hand.
+      - name: Calculate the status of the ecosystems
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/ecosystem_status.py
+
       # -----------------------------------------------------------------------
       # Show generated files
       # -----------------------------------------------------------------------
