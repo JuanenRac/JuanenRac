@@ -56,6 +56,9 @@ import dashboard_app
 import dashboard_app_texts
 import dashboard_charts
 import dashboard_contrib
+import dashboard_evo
+import dashboard_evo_texts
+import dashboard_evo_ui
 import dashboard_health
 import dashboard_integrity
 import dashboard_texts
@@ -1920,6 +1923,10 @@ for language, values in dashboard_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
     ROADMAP_COMPAT_TRANSLATIONS[language].update({key: value for key, value in values.items() if key.startswith("roadmap_advance_")})
 
+# Texts of the evidence checklist, the history, the last-visit notice and the display modes.
+for language, values in dashboard_evo_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
 for language, values in dashboard_app_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3208,6 +3215,8 @@ def page_data(
     signals: dict,
     status: dict,
     config: dict,
+    history: "list[dict] | None" = None,
+    snap: "dict | None" = None,
 ) -> dict:
     """What the script of the page reads, as plain data: the thresholds, each repository (manifest fields, CI, release, recent commits) and the repositories
     behind every percentage. A fact that was not read is null; the page prints "not verified" for it."""
@@ -3250,6 +3259,9 @@ def page_data(
         "config": {**config, "repoUrl": "https://github.com/JuanenRac/"},
         "repos": repos,
         "contrib": dashboard_contrib.build(ecosystem_by_name, manifests, signals, [key for key, _label in dashboard_app.ECOSYSTEMS], readme_counts),
+        "checks": dashboard_evo.checks(ecosystem_by_name, manifests, signals),
+        "history": list(history or []),
+        "snap": snap,
     }
 
 
@@ -3266,6 +3278,7 @@ def render_html(
     signals: "dict | None" = None,
     build: "dashboard_health.BuildInfo | None" = None,
     config: "dict | None" = None,
+    history: "list[dict] | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3353,7 +3366,15 @@ def render_html(
         activity=activity_map, ecosystem_by_name=ecosystem_by_name, issues=integrity, unresolved=app_data.unresolved)
     app_data.incomplete = dashboard_health.completeness(total=total, activity=activity_map, ecosystem_by_name=ecosystem_by_name, issues=integrity)
     app_data.build = build
-    app_data.page_data = page_data(entries, results, ecosystem_by_name, raw_manifests or {}, activity_map, signals or {}, app_data.status, health_config)
+    today = dashboard_evo.today_utc()
+    snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys)
+    app_data.page_data = page_data(entries, results, ecosystem_by_name, raw_manifests or {}, activity_map, signals or {}, app_data.status, health_config,
+                                   history=dashboard_evo.add_snapshot(history, snap, today) if history is not None else [], snap=snap)
+    description = (f"Electro Hobby 3D ecosystem status dashboard: live status for {total} projects across the HYDRA-UMC, URTC, A.R.M.O.R. and EH3D ecosystems")
+    head_extra_html = dashboard_evo_ui.head_tags(total, description, SITE_URL)
+    evidence_view_html = dashboard_evo_ui.evidence_view()
+    mode_buttons_html = dashboard_evo_ui.mode_buttons()
+    print_header_html = dashboard_evo_ui.print_header()
     eco_counts: dict[str, int] = {}
     for eco_key in ecosystem_by_name.values():
         eco_counts[eco_key] = eco_counts.get(eco_key, 0) + 1
@@ -3408,6 +3429,7 @@ def render_html(
 >
 
 <title>Electro Hobby 3D - Ecosystem Status</title>
+{head_extra_html}
 
 <script>
   // Applied synchronously, before first paint, so a saved manual theme
@@ -4936,6 +4958,7 @@ def render_html(
 
 <div class="app">
 
+  {print_header_html}
   <header class="topbar">
     <div class="brand">
       <div class="eyebrow">ELECTRO HOBBY 3D</div>
@@ -4943,6 +4966,7 @@ def render_html(
     </div>
     {tab_list_html}
     <div class="top-actions">
+      {mode_buttons_html}
       <a class="build-badge" href="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml" target="_blank" rel="noopener">
         <img
           src="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml/badge.svg"
@@ -5056,6 +5080,7 @@ def render_html(
     </section>
     <section role="tabpanel" class="panel" id="panel-evidence" aria-labelledby="tab-evidence" tabindex="0" hidden data-testid="panel-evidence">
       <div class="panel-inner">
+        {evidence_view_html}
         <p class="subtitle subtitle-v3" data-i18n="subtitle_v3">
       v3: real maturity/role classification, family/parent trees and richer
       per-project notes - see the Maturity legend below for exactly how
@@ -5692,6 +5717,7 @@ def render_html(
 # Every ecosystem this dashboard discovers (key, label, manifest file) - must
 # match ecosystem-catalog.json's "ecosystems" list (scripts/catalog_check.py).
 # The workflow whose latest good run is shown as "last published build".
+SITE_URL = "https://juanenrac.github.io/JuanenRac/"
 BUILD_REPOSITORY = "JuanenRac/JuanenRac"
 BUILD_WORKFLOW_FILE = "build-dashboard.yml"
 
@@ -5855,14 +5881,36 @@ def main() -> int:
     # Template indentation must not leak as trailing whitespace into the
     # published static page. Normalising it here keeps local and CI-generated
     # output identical without manually editing generated HTML.
+    today = dashboard_evo.today_utc()
+    history_path = Path(os.environ.get("DASHBOARD_HISTORY_PATH") or dashboard_evo.HISTORY_PATH)
+    history, history_problems = dashboard_evo.load_history(history_path, today)
+    for problem in history_problems:
+        print(f"WARNING: {problem}; the history starts again from today.", file=sys.stderr)
     rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
-                           signals=signals, build=build, config=config)
+                           signals=signals, build=build, config=config, history=history)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     try:
         published = index_path.read_text(encoding="utf-8")
     except OSError:
         published = None
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
+
+    # One snapshot per day of the progress and of the eight areas (at most 90 days), and the small image of the cards of social networks.
+    readme_text = (Path(__file__).resolve().parent.parent / "README.md").read_text(encoding="utf-8")
+    app_keys = [key for key, _label in dashboard_app.ECOSYSTEMS]
+    progress_now = dashboard_charts.parse_progress(readme_text, app_keys)
+    snap = dashboard_evo.snapshot(today, progress_now, dashboard_charts.parse_status(readme_text, app_keys), app_keys)
+    if snap is not None and not history_problems:
+        if dashboard_evo.save_history(history_path, dashboard_evo.add_snapshot(history, snap, today)):
+            print(f"Saved the snapshot of {today} in {history_path}", file=sys.stderr)
+    og_path = OUT_DIR / "og-image.png"
+    og_bytes = dashboard_evo.og_png(progress_now, app_keys)
+    try:
+        same = og_path.read_bytes() == og_bytes
+    except OSError:
+        same = False
+    if not same:
+        og_path.write_bytes(og_bytes)
 
     # Tell GitHub Pages that this is plain static HTML.
     (OUT_DIR / ".nojekyll").touch()

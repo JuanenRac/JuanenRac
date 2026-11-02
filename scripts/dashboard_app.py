@@ -18,6 +18,7 @@ from typing import Mapping, Sequence
 
 import dashboard_app_texts
 import dashboard_charts as charts
+import dashboard_evo_ui
 import dashboard_health
 from dashboard_charts import Activity, Area, esc
 
@@ -345,6 +346,7 @@ def repo_panel() -> str:
         f'<section aria-labelledby="rp-ci-t"><h3 id="rp-ci-t" {h("panel_ci")}</h3><p id="rp-ci" data-testid="repo-ci"></p></section>'
         f'<section aria-labelledby="rp-commits-t"><h3 id="rp-commits-t" {h("panel_commits")}</h3><ul class="repo-commits" id="rp-commits" data-testid="repo-commits"></ul>'
         f'<p class="muted" id="rp-commits-none" data-testid="repo-commits-none" hidden {h("panel_commits_none")}</p></section>'
+        f'{dashboard_evo_ui.panel_evidence()}'
         f'<nav aria-labelledby="rp-links-t"><h3 id="rp-links-t" {h("panel_links")}</h3><ul class="repo-links" id="rp-links" data-testid="repo-links">'
         f'<li><a data-link="actions" href="https://github.com/JuanenRac/" target="_blank" rel="noopener noreferrer" {h("link_actions")}</a></li>'
         f'<li><a data-link="issues" href="https://github.com/JuanenRac/" target="_blank" rel="noopener noreferrer" {h("link_issues")}</a></li>'
@@ -378,6 +380,7 @@ def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
     )
     return f"""
     <div class="summary-grid">
+      {dashboard_evo_ui.visit_card()}
       {alerts_card(data)}
       <section class="kpi-strip" aria-label="Key figures" data-i18n-aria-label="aria_key_figures">{kpis}</section>
       <section class="card card-eco-counts" aria-labelledby="eco-counts-t">
@@ -398,6 +401,7 @@ def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
       <section class="card card-evidence">{stacked_figure("evidence", data, ECOSYSTEMS)}</section>
       <section class="card card-releases"><h2 class="card-title" data-i18n="sum_releases_title">Latest releases</h2>{latest}</section>
       <section class="card card-oldest"><h2 class="card-title" data-i18n="sum_oldest_title">Longest without a release</h2>{oldest}</section>
+      {dashboard_evo_ui.history_card()}
     </div>
     """
 
@@ -1185,6 +1189,7 @@ JS = r"""
   var currentTab = "summary";
   var hashReady = false;
   var scopeRestored = false;
+  var modes = { compact: false, present: false, fromHash: false };
 
   function parseHash() {
     const raw = location.hash.replace(/^#/, "");
@@ -1201,12 +1206,14 @@ JS = r"""
 
   function writeHash() {
     let wanted = "#" + currentTab;
+    const query = [];
     if (currentTab === "projects") {
-      const query = [];
       if (state.eco !== "all") { query.push("scope=" + encodeURIComponent(state.eco)); }
       if (page > 1) { query.push("page=" + page); }
-      if (query.length) { wanted += "?" + query.join("&"); }
     }
+    if (modes.compact) { query.push("view=compact"); }
+    if (modes.present) { query.push("mode=present"); }
+    if (query.length) { wanted += "?" + query.join("&"); }
     if (location.hash !== wanted) {
       try { history.replaceState(null, "", wanted); } catch (e) { location.hash = wanted.slice(1); }
     }
@@ -1219,6 +1226,8 @@ JS = r"""
   }
 
   function applyHashState(parsed) {
+    if (parsed.params.view === "compact") { modes.compact = true; modes.fromHash = true; }
+    if (parsed.params.mode === "present") { modes.present = true; }
     const scope = parsed.params.scope;
     if (scope && SCOPES.indexOf(scope) >= 0) {
       scopeRestored = true;
@@ -1632,6 +1641,7 @@ JS_HEALTH = r"""
       const kind = a.getAttribute("data-link");
       a.href = kind === "readme" ? base + "#readme" : base + "/" + kind;
     });
+    evPanel(panelFor, dict);
   }
   function openPanel(name, opener) {
     if (!DATA.repos[name]) { return; }
@@ -1670,16 +1680,21 @@ JS_HEALTH = r"""
     paintAlerts(dict);
     openContribs.forEach(function (panel) { fillContrib(panel, dict); });
     if (panelFor) { renderPanel(dict); }
+    evoApplied(dict);
   }
   dynReady = true;
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
+CSS = CSS + dashboard_evo_ui.CSS
+
 
 def script() -> str:
     """The filters and the shell, ready to be placed inside the page's own script."""
     import json
-    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH
+    marker = "  dynReady = true;\n  applyLanguage("
+    assert JS_HEALTH.count(marker) == 1
+    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_evo_ui.JS + marker)
 
 
 # ---------------------------------------------------------------------------

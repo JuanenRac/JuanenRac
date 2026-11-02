@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+# =============================================================================
+# JuanenRac profile - scripts/dashboard_evo_texts.py
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+# =============================================================================
+"""Texts of the evidence checklist, the progress history, "since your last visit" and the display modes, in the eight languages.
+
+Each entry is (en, es, de, fr, it, ja, zh, pt); portuguese is the one of Portugal. generate_dashboard.py merges the result into its own tables. Stdlib only.
+"""
+from __future__ import annotations
+
+LANGUAGES = ("en", "es", "de", "fr", "it", "ja", "zh", "pt")
+
+_ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
+    # ---- Evidence checklist ----
+    "ev_title": ("Evidence checklist by repository", "Lista de evidencias por repositorio", "Nachweis-Checkliste je Repository", "Liste de preuves par dépôt", "Checklist delle evidenze per repository", "リポジトリ別エビデンスチェックリスト", "各仓库的证据清单", "Lista de evidências por repositório"),
+    "ev_hint": ("What each repository can show: tests, green CI, a release, a signed release, README in 8 languages, simulation and real hardware. Every item is verified, missing, not verified or not applicable.", "Qué puede demostrar cada repositorio: pruebas, CI en verde, una versión, una versión firmada, README en 8 idiomas, simulación y hardware real. Cada punto está verificado, falta, no está verificado o no aplica.", "Was jedes Repository belegen kann: Tests, grünes CI, eine Version, eine signierte Version, README in 8 Sprachen, Simulation und echte Hardware. Jeder Punkt ist geprüft, fehlt, ist nicht geprüft oder trifft nicht zu.", "Ce que chaque dépôt peut démontrer : tests, CI verte, une version, une version signée, README en 8 langues, simulation et matériel réel. Chaque point est vérifié, manquant, non vérifié ou sans objet.", "Che cosa può dimostrare ogni repository: test, CI verde, una versione, una versione firmata, README in 8 lingue, simulazione e hardware reale. Ogni voce è verificata, mancante, non verificata o non applicabile.", "各リポジトリが示せるもの：テスト、成功した CI、リリース、署名付きリリース、8言語の README、シミュレーション、実機。各項目は「確認済み」「不足」「未確認」「対象外」のいずれかです。", "每个仓库能证明的内容：测试、通过的 CI、版本、签名版本、8 种语言的 README、仿真和真实硬件。每一项为已验证、缺失、未验证或不适用。", "O que cada repositório consegue demonstrar: testes, CI verde, uma versão, uma versão assinada, README em 8 idiomas, simulação e hardware real. Cada ponto está verificado, em falta, não verificado ou não aplicável."),
+    "ev_signed_note": ("A signed release cannot be read from GitHub here: it is shown as not verified whenever a release exists, and as missing when there is none.", "Una versión firmada no se puede leer desde GitHub aquí: se muestra como no verificada si existe una versión y como falta si no hay ninguna.", "Eine signierte Version lässt sich hier nicht aus GitHub lesen: Sie gilt als nicht geprüft, sobald eine Version existiert, und als fehlend, wenn es keine gibt.", "Une version signée ne peut pas être lue sur GitHub ici : elle apparaît comme non vérifiée dès qu'une version existe, et comme manquante s'il n'y en a aucune.", "Una versione firmata qui non si può leggere da GitHub: appare come non verificata se esiste una versione e come mancante se non ce n'è nessuna.", "署名付きリリースはここでは GitHub から読み取れません。リリースがあれば「未確認」、なければ「不足」と表示します。", "此处无法从 GitHub 读取版本是否已签名：存在版本时显示为未验证，没有版本时显示为缺失。", "Uma versão assinada não pode ser lida do GitHub aqui: aparece como não verificada quando existe uma versão e como em falta quando não há nenhuma."),
+    "ev_item_tests": ("Tests", "Pruebas", "Tests", "Tests", "Test", "テスト", "测试", "Testes"),
+    "ev_item_ci": ("Green CI", "CI en verde", "Grünes CI", "CI verte", "CI verde", "CI 成功", "CI 通过", "CI verde"),
+    "ev_item_release": ("Release", "Versión publicada", "Veröffentlichung", "Version publiée", "Versione pubblicata", "リリース", "已发布版本", "Versão publicada"),
+    "ev_item_signed": ("Signed release", "Versión firmada", "Signierte Version", "Version signée", "Versione firmata", "署名付きリリース", "签名版本", "Versão assinada"),
+    "ev_item_docs": ("README in 8 languages", "README en 8 idiomas", "README in 8 Sprachen", "README en 8 langues", "README in 8 lingue", "8言語の README", "8 种语言的 README", "README em 8 idiomas"),
+    "ev_item_sim": ("Simulation", "Simulación", "Simulation", "Simulation", "Simulazione", "シミュレーション", "仿真", "Simulação"),
+    "ev_item_hw": ("Real hardware", "Hardware real", "Echte Hardware", "Matériel réel", "Hardware reale", "実機", "真实硬件", "Hardware real"),
+    "ev_st_yes": ("Verified", "Verificado", "Geprüft", "Vérifié", "Verificato", "確認済み", "已验证", "Verificado"),
+    "ev_st_no": ("Missing", "Falta", "Fehlt", "Manquant", "Mancante", "不足", "缺失", "Em falta"),
+    "ev_st_unverified": ("Not verified", "No verificado", "Nicht geprüft", "Non vérifié", "Non verificato", "未確認", "未验证", "Não verificado"),
+    "ev_st_na": ("Not applicable", "No aplica", "Nicht zutreffend", "Sans objet", "Non applicabile", "対象外", "不适用", "Não aplicável"),
+    "ev_filter_missing": ("Show repositories missing", "Ver repositorios a los que les falta", "Repositorys anzeigen, denen fehlt", "Voir les dépôts auxquels manque", "Mostra i repository a cui manca", "不足しているリポジトリを表示", "显示缺少以下项的仓库", "Ver repositórios a que falta"),
+    "ev_filter_unverified": ("With something not verified", "Con algo sin verificar", "Mit nicht geprüftem Punkt", "Avec un point non vérifié", "Con qualcosa di non verificato", "未確認の項目あり", "含未验证项", "Com algo por verificar"),
+    "ev_counts_title": ("Counts by ecosystem", "Recuento por ecosistema", "Anzahl je Ökosystem", "Décompte par écosystème", "Conteggio per ecosistema", "エコシステム別の件数", "各生态系统的统计", "Contagem por ecossistema"),
+    "ev_count_sr": ("{yes} verified, {no} missing, {unv} not verified, {na} not applicable", "{yes} verificados, {no} faltan, {unv} sin verificar, {na} no aplican", "{yes} geprüft, {no} fehlen, {unv} nicht geprüft, {na} nicht zutreffend", "{yes} vérifiés, {no} manquants, {unv} non vérifiés, {na} sans objet", "{yes} verificati, {no} mancanti, {unv} non verificati, {na} non applicabili", "確認済み {yes}、不足 {no}、未確認 {unv}、対象外 {na}", "已验证 {yes}，缺失 {no}，未验证 {unv}，不适用 {na}", "{yes} verificados, {no} em falta, {unv} não verificados, {na} não aplicáveis"),
+    "ev_col_repo": ("Repository", "Repositorio", "Repository", "Dépôt", "Repository", "リポジトリ", "仓库", "Repositório"),
+    "ev_table_caption": ("Evidence checklist of every repository", "Lista de evidencias de cada repositorio", "Nachweis-Checkliste jedes Repositorys", "Liste de preuves de chaque dépôt", "Checklist delle evidenze di ogni repository", "全リポジトリのエビデンスチェックリスト", "每个仓库的证据清单", "Lista de evidências de cada repositório"),
+    "ev_matches": ("{shown} of {total} repositories", "{shown} de {total} repositorios", "{shown} von {total} Repositorys", "{shown} dépôts sur {total}", "{shown} repository su {total}", "{total} 件中 {shown} 件のリポジトリ", "{total} 个仓库中的 {shown} 个", "{shown} de {total} repositórios"),
+    "ev_none": ("No repository matches these filters.", "Ningún repositorio cumple estos filtros.", "Kein Repository erfüllt diese Filter.", "Aucun dépôt ne correspond à ces filtres.", "Nessun repository corrisponde a questi filtri.", "条件に一致するリポジトリはありません。", "没有仓库符合这些筛选条件。", "Nenhum repositório cumpre estes filtros."),
+    "ev_no_checks": ("There is no repository data in this page, so no checklist is shown.", "Esta página no tiene datos de repositorios, así que no se muestra ninguna lista.", "Diese Seite enthält keine Repository-Daten, daher wird keine Checkliste angezeigt.", "Cette page ne contient aucune donnée de dépôt ; aucune liste n'est affichée.", "Questa pagina non contiene dati dei repository, quindi non si mostra nessuna checklist.", "このページにはリポジトリのデータがないため、チェックリストは表示されません。", "本页没有仓库数据，因此不显示清单。", "Esta página não tem dados de repositórios, pelo que não se mostra nenhuma lista."),
+    "ev_reset": ("Clear evidence filters", "Quitar filtros de evidencia", "Nachweis-Filter zurücksetzen", "Effacer les filtres de preuves", "Cancella i filtri delle evidenze", "エビデンスの絞り込みを解除", "清除证据筛选", "Limpar filtros de evidência"),
+    "ev_open_aria": ("Open the panel of {name}", "Abrir el panel de {name}", "Panel von {name} öffnen", "Ouvrir le panneau de {name}", "Apri il pannello di {name}", "{name} のパネルを開く", "打开 {name} 的面板", "Abrir o painel de {name}"),
+    # ---- History ----
+    "evo_title": ("Progress over time", "Evolución del progreso", "Fortschritt im Zeitverlauf", "Évolution de la progression", "Evoluzione dell'avanzamento", "進捗の推移", "进度变化", "Evolução do progresso"),
+    "evo_hint": ("One snapshot of the progress and of the eight areas is saved per day (at most 90 days). Days without a snapshot are not filled in.", "Se guarda una instantánea diaria del progreso y de las ocho áreas (como máximo 90 días). Los días sin instantánea no se rellenan.", "Pro Tag wird eine Momentaufnahme des Fortschritts und der acht Bereiche gespeichert (höchstens 90 Tage). Tage ohne Momentaufnahme werden nicht aufgefüllt.", "Un instantané de la progression et des huit domaines est enregistré chaque jour (90 jours au plus). Les jours sans instantané ne sont pas comblés.", "Ogni giorno si salva un'istantanea dell'avanzamento e delle otto aree (al massimo 90 giorni). I giorni senza istantanea non vengono riempiti.", "進捗と8つの領域のスナップショットを1日1回保存します（最大90日）。スナップショットのない日は補完しません。", "每天保存一次进度和八个领域的快照（最多 90 天）。没有快照的日子不会补齐。", "É guardado um instantâneo diário do progresso e das oito áreas (no máximo 90 dias). Os dias sem instantâneo não são preenchidos."),
+    "evo_period": ("Period", "Periodo", "Zeitraum", "Période", "Periodo", "期間", "时间范围", "Período"),
+    "evo_range_30": ("30 days", "30 días", "30 Tage", "30 jours", "30 giorni", "30日", "30 天", "30 dias"),
+    "evo_range_90": ("90 days", "90 días", "90 Tage", "90 jours", "90 giorni", "90日", "90 天", "90 dias"),
+    "evo_measure": ("Measure", "Medida", "Messgröße", "Mesure", "Misura", "指標", "指标", "Medida"),
+    "evo_metric_overall": ("Overall progress", "Progreso global", "Gesamtfortschritt", "Progression globale", "Avanzamento complessivo", "全体の進捗", "总体进度", "Progresso global"),
+    "evo_no_history": ("No history has been saved yet. The first snapshot appears after the next scheduled build; nothing is drawn until then.", "Todavía no se ha guardado ningún historial. La primera instantánea aparece tras la próxima generación programada; hasta entonces no se dibuja nada.", "Es wurde noch kein Verlauf gespeichert. Die erste Momentaufnahme erscheint nach dem nächsten geplanten Lauf; bis dahin wird nichts gezeichnet.", "Aucun historique n'a encore été enregistré. Le premier instantané apparaît après la prochaine génération planifiée ; rien n'est tracé d'ici là.", "Non è ancora stato salvato nessuno storico. La prima istantanea compare dopo la prossima generazione programmata; fino ad allora non si disegna nulla.", "履歴はまだ保存されていません。最初のスナップショットは次回の定期ビルド後に表示され、それまでは何も描画しません。", "尚未保存任何历史记录。第一份快照将在下次定时构建后出现，在此之前不绘制任何内容。", "Ainda não foi guardado nenhum histórico. O primeiro instantâneo aparece após a próxima geração agendada; até lá não se desenha nada."),
+    "evo_one_point": ("Only one snapshot ({date}) is available in this period: two are needed to draw a line.", "Solo hay una instantánea ({date}) en este periodo: hacen falta dos para dibujar una línea.", "In diesem Zeitraum gibt es nur eine Momentaufnahme ({date}); für eine Linie braucht es zwei.", "Un seul instantané ({date}) existe sur cette période : il en faut deux pour tracer une ligne.", "In questo periodo c'è una sola istantanea ({date}): ne servono due per tracciare una linea.", "この期間のスナップショットは1件（{date}）のみです。線を描くには2件必要です。", "此期间只有一份快照（{date}），画线至少需要两份。", "Neste período só existe um instantâneo ({date}): são precisos dois para desenhar uma linha."),
+    "evo_chart_desc": ("Lines: {metric} of each ecosystem over the last {days} days, from {first} to {last}. The same values are in the table below.", "Líneas: {metric} de cada ecosistema en los últimos {days} días, del {first} al {last}. Los mismos valores están en la tabla siguiente.", "Linien: {metric} je Ökosystem in den letzten {days} Tagen, vom {first} bis {last}. Dieselben Werte stehen in der Tabelle darunter.", "Lignes : {metric} de chaque écosystème sur les {days} derniers jours, du {first} au {last}. Les mêmes valeurs sont dans le tableau ci-dessous.", "Linee: {metric} di ogni ecosistema negli ultimi {days} giorni, dal {first} al {last}. Gli stessi valori sono nella tabella sotto.", "折れ線グラフ：直近{days}日間の各エコシステムの{metric}（{first}～{last}）。同じ値が下の表にあります。", "折线图：最近 {days} 天各生态系统的{metric}，从 {first} 到 {last}。相同数值见下方表格。", "Linhas: {metric} de cada ecossistema nos últimos {days} dias, de {first} a {last}. Os mesmos valores estão na tabela abaixo."),
+    "evo_col_date": ("Date", "Fecha", "Datum", "Date", "Data", "日付", "日期", "Data"),
+    "evo_snapshots": ("{n} snapshots in this period", "{n} instantáneas en este periodo", "{n} Momentaufnahmen in diesem Zeitraum", "{n} instantanés sur cette période", "{n} istantanee in questo periodo", "この期間のスナップショット：{n} 件", "此期间共 {n} 份快照", "{n} instantâneos neste período"),
+    "evo_unknown_value": ("not verified", "no verificado", "nicht geprüft", "non vérifié", "non verificato", "未確認", "未验证", "não verificado"),
+    # ---- Since the last visit ----
+    "visit_title": ("Since your last visit", "Desde tu última visita", "Seit deinem letzten Besuch", "Depuis votre dernière visite", "Dall'ultima visita", "前回の訪問以降", "自上次访问以来", "Desde a sua última visita"),
+    "visit_since": ("Compared with your visit of {date}", "Comparado con tu visita del {date}", "Verglichen mit deinem Besuch vom {date}", "Comparé à votre visite du {date}", "Rispetto alla tua visita del {date}", "{date} の訪問との比較", "与你 {date} 的访问相比", "Comparado com a sua visita de {date}"),
+    "visit_none": ("No change in the progress or in the areas since your last visit.", "Ningún cambio en el progreso ni en las áreas desde tu última visita.", "Keine Änderung bei Fortschritt oder Bereichen seit deinem letzten Besuch.", "Aucun changement de progression ni de domaines depuis votre dernière visite.", "Nessuna variazione di avanzamento o aree dall'ultima visita.", "前回の訪問以降、進捗と領域に変化はありません。", "自上次访问以来，进度和各领域没有变化。", "Nenhuma alteração no progresso nem nas áreas desde a sua última visita."),
+    "visit_item": ("{eco} · {what}: {from}% → {to}% ({delta})", "{eco} · {what}: {from}% → {to}% ({delta})", "{eco} · {what}: {from}% → {to}% ({delta})", "{eco} · {what} : {from}% → {to}% ({delta})", "{eco} · {what}: {from}% → {to}% ({delta})", "{eco}・{what}：{from}% → {to}%（{delta}）", "{eco} · {what}：{from}% → {to}%（{delta}）", "{eco} · {what}: {from}% → {to}% ({delta})"),
+    "visit_more": ("and {n} more changes", "y {n} cambios más", "und {n} weitere Änderungen", "et {n} autres changements", "e altre {n} variazioni", "ほか {n} 件の変更", "另有 {n} 项变化", "e mais {n} alterações"),
+    "visit_dismiss": ("Hide this notice", "Ocultar este aviso", "Hinweis ausblenden", "Masquer cet avis", "Nascondi questo avviso", "この通知を隠す", "隐藏此提示", "Ocultar este aviso"),
+    # ---- Modes ----
+    "mode_group": ("Display modes", "Modos de visualización", "Anzeigemodi", "Modes d'affichage", "Modalità di visualizzazione", "表示モード", "显示模式", "Modos de visualização"),
+    "mode_compact": ("Compact", "Compacto", "Kompakt", "Compact", "Compatto", "コンパクト", "紧凑", "Compacto"),
+    "mode_compact_title": ("Compact mode: denser layout (shortcut C)", "Modo compacto: diseño más denso (atajo C)", "Kompaktmodus: dichteres Layout (Kürzel C)", "Mode compact : mise en page plus dense (raccourci C)", "Modalità compatta: layout più denso (scorciatoia C)", "コンパクトモード：高密度レイアウト（ショートカット C）", "紧凑模式：更密集的布局（快捷键 C）", "Modo compacto: disposição mais densa (atalho C)"),
+    "mode_present": ("Presentation", "Presentación", "Präsentation", "Présentation", "Presentazione", "プレゼン", "演示", "Apresentação"),
+    "mode_present_title": ("Presentation mode: full screen, larger text, no side panel (shortcut P, Escape exits)", "Modo presentación: pantalla completa, texto mayor, sin panel lateral (atajo P, Escape sale)", "Präsentationsmodus: Vollbild, größere Schrift, ohne Seitenleiste (Kürzel P, Escape beendet)", "Mode présentation : plein écran, texte plus grand, sans panneau latéral (raccourci P, Échap pour quitter)", "Modalità presentazione: schermo intero, testo più grande, senza pannello laterale (scorciatoia P, Esc per uscire)", "プレゼンモード：全画面、大きな文字、サイドパネルなし（ショートカット P、Esc で終了）", "演示模式：全屏、更大的文字、无侧边栏（快捷键 P，按 Esc 退出）", "Modo apresentação: ecrã inteiro, texto maior, sem painel lateral (atalho P, Escape sai)"),
+    "mode_exit": ("Exit presentation", "Salir de la presentación", "Präsentation beenden", "Quitter la présentation", "Esci dalla presentazione", "プレゼンを終了", "退出演示", "Sair da apresentação"),
+    "mode_print": ("Print", "Imprimir", "Drucken", "Imprimer", "Stampa", "印刷", "打印", "Imprimir"),
+    "mode_print_title": ("Print the status report, or save it as a PDF", "Imprimir el informe de estado o guardarlo como PDF", "Statusbericht drucken oder als PDF speichern", "Imprimer le rapport d'état ou l'enregistrer en PDF", "Stampa il rapporto di stato o salvalo in PDF", "状況レポートを印刷、または PDF として保存", "打印状态报告，或另存为 PDF", "Imprimir o relatório de estado ou guardá-lo em PDF"),
+    "print_title": ("Ecosystem status report", "Informe de estado de los ecosistemas", "Statusbericht der Ökosysteme", "Rapport d'état des écosystèmes", "Rapporto di stato degli ecosistemi", "エコシステム状況レポート", "生态系统状态报告", "Relatório de estado dos ecossistemas"),
+    "print_data_of": ("Data of {date}", "Datos del {date}", "Daten vom {date}", "Données du {date}", "Dati del {date}", "データ日付：{date}", "数据日期：{date}", "Dados de {date}"),
+    "print_data_unknown": ("Date of the data: not verified", "Fecha de los datos: no verificada", "Datum der Daten: nicht geprüft", "Date des données : non vérifiée", "Data dei dati: non verificata", "データの日付：未確認", "数据日期：未验证", "Data dos dados: não verificada"),
+    "print_printed": ("Printed on {date}", "Impreso el {date}", "Gedruckt am {date}", "Imprimé le {date}", "Stampato il {date}", "印刷日：{date}", "打印日期：{date}", "Impresso em {date}"),
+}
+
+TEXTS: dict[str, dict[str, str]] = {
+    code: {key: row[index] for key, row in _ROWS.items()} for index, code in enumerate(LANGUAGES)
+}
+
+
+def problems() -> list[str]:
+    """Rows with a missing language, an empty text or placeholders that differ between languages (used by the tests)."""
+    import re
+    out = []
+    for key, row in _ROWS.items():
+        if len(row) != len(LANGUAGES):
+            out.append(f"{key}: {len(row)} languages")
+            continue
+        if any(not text.strip() for text in row):
+            out.append(f"{key}: empty text")
+        holders = [frozenset(re.findall(r"\{[a-z]+\}", text)) for text in row]
+        if len(set(holders)) != 1:
+            out.append(f"{key}: placeholders differ")
+    return out

@@ -13,7 +13,9 @@ The data is made up: repository names are fake and live under a fixture owner, n
 """
 from __future__ import annotations
 
+import os
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -30,6 +32,8 @@ import dashboard_health as health  # noqa: E402
 import dashboard_integrity as integrity_mod  # noqa: E402
 import generate_dashboard as gen  # noqa: E402
 from hydra_umc_updater.registry import ProjectEntry  # noqa: E402
+
+os.environ["DASHBOARD_TODAY"] = "2001-12-21"      # the fixture pages always carry the same day
 
 ECOSYSTEMS = ("hydra-umc", "urtc", "armor", "eh3d")
 PREFIX = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "ARMOR", "eh3d": "EH3D"}
@@ -109,6 +113,25 @@ def signals_for(entries, activity) -> dict:
     return out
 
 
+AREAS = ("software", "tests", "ci", "releases", "docs", "simulation", "hardware", "production")
+
+
+def history_for(days: int = 45) -> list[dict]:
+    """One snapshot a day before 2001-12-21, rising a little every day; two days are missing (never filled in) and one area is unknown on one day."""
+    today = date(2001, 12, 21)
+    out = []
+    for back in range(days, 0, -1):
+        if back in (20, 21):
+            continue
+        day = today - timedelta(days=back)
+        progress = {eco: max(0, 40 + 7 * i - back // 3) for i, eco in enumerate(ECOSYSTEMS)}
+        areas = {eco: {area: max(0, 20 + 9 * j + 3 * i - back // 4) for j, area in enumerate(AREAS)} for i, eco in enumerate(ECOSYSTEMS)}
+        if back == 10:
+            del areas["urtc"]["ci"]
+        out.append({"date": day.isoformat(), "progress": progress, "areas": areas})
+    return out
+
+
 BUILD = health.BuildInfo("https://github.com/JuanenRac/JuanenRac/actions/runs/123456", "2001-12-20T08:30:00Z")
 
 
@@ -122,7 +145,15 @@ def build_full() -> str:
     ]
     cover = integrity_mod.Coverage(len(entries), len(entries) + 3, ("JuanenRac", "fixture-plain-a", "fixture-plain-b"))
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
-                           signals=signals_for(entries, activity), build=BUILD)
+                           signals=signals_for(entries, activity), build=BUILD, history=history_for())
+
+
+def build_single() -> str:
+    """The full page with no earlier history: only today's snapshot exists, so no line can be drawn."""
+    entries, results, eco, raw, activity = dataset()
+    readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
+    return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
+                           signals=signals_for(entries, activity), build=BUILD, history=[])
 
 
 def build_healthy() -> str:
@@ -133,7 +164,7 @@ def build_healthy() -> str:
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     cover = integrity_mod.Coverage(len(entries), len(entries), ())
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
-                           signals=signals_for(entries, activity), build=BUILD)
+                           signals=signals_for(entries, activity), build=BUILD, history=history_for(60))
 
 
 def build_minimal() -> str:
@@ -157,7 +188,7 @@ def build_empty() -> str:
     return gen.render_html([], {}, {}, {}, [], None, raw_manifests={}, activity={}, readme_text="")
 
 
-BUILDERS = {"full": build_full, "healthy": build_healthy, "minimal": build_minimal, "partial": build_partial, "empty": build_empty}
+BUILDERS = {"full": build_full, "single": build_single, "healthy": build_healthy, "minimal": build_minimal, "partial": build_partial, "empty": build_empty}
 
 
 def main() -> int:
