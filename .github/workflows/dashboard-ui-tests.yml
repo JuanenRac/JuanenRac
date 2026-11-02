@@ -85,7 +85,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          # An LTS line, pinned: the newest Node release can be ahead of what the pinned Playwright supports.
+          node-version: "22"
           cache: npm
           cache-dependency-path: e2e/package-lock.json
 
@@ -96,6 +97,7 @@ jobs:
       # The browser version follows @playwright/test, pinned in e2e/package-lock.json.
       - name: Install Chromium
         working-directory: e2e
+        timeout-minutes: 10
         run: npx playwright install --with-deps chromium
 
       - name: Run the battery
