@@ -874,6 +874,26 @@
       "ja": "正規のドキュメントおよび能力マトリックス。",
       "zh": "规范文档和能力矩阵。",
       "pt": "Documentação canônica e matriz de capacidades."
+    },
+    "HYDRA-UMC-STUDIO-KIT": {
+      "en": "Shared TypeScript kit of the HYDRA-UMC web clients: session, HTTP client, connection history, preferences and tours.",
+      "es": "Kit TypeScript compartido de los clientes web de HYDRA-UMC: sesión, cliente HTTP, historial de conexiones, preferencias y recorridos.",
+      "de": "Gemeinsames TypeScript-Kit der HYDRA-UMC-Webclients: Sitzung, HTTP-Client, Verbindungsverlauf, Einstellungen und Rundgänge.",
+      "fr": "Kit TypeScript partagé des clients web de HYDRA-UMC : session, client HTTP, historique des connexions, préférences et visites guidées.",
+      "it": "Kit TypeScript condiviso dei client web di HYDRA-UMC: sessione, client HTTP, cronologia delle connessioni, preferenze e percorsi guidati.",
+      "ja": "HYDRA-UMC の Web クライアント共通の TypeScript キット：セッション、HTTP クライアント、接続履歴、設定、ツアー。",
+      "zh": "HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。",
+      "pt": "Kit TypeScript partilhado dos clientes web do HYDRA-UMC: sessão, cliente HTTP, histórico de ligações, preferências e visitas guiadas."
+    },
+    "HYDRA-UMC-DEVELOPER-NODE": {
+      "en": "Developer node: checks incident evidence, runs approved repro cases and keeps a cache of checkouts by revision.",
+      "es": "Nodo de desarrollo: comprueba la evidencia de incidencias, ejecuta casos de reproducción aprobados y guarda una caché de checkouts por revisión.",
+      "de": "Entwicklerknoten: prüft Störungsnachweise, führt freigegebene Reproduktionsfälle aus und hält einen Cache von Checkouts pro Revision.",
+      "fr": "Nœud de développement : vérifie les preuves d'incident, exécute des cas de reproduction approuvés et garde un cache de checkouts par révision.",
+      "it": "Nodo di sviluppo: verifica le prove degli incidenti, esegue casi di riproduzione approvati e mantiene una cache di checkout per revisione.",
+      "ja": "開発ノード：インシデントの証拠を検証し、承認された再現ケースを実行し、リビジョンごとのチェックアウトをキャッシュします。",
+      "zh": "开发节点：核查事件证据，运行已批准的复现用例，并按修订版本缓存检出。",
+      "pt": "Nó de desenvolvimento: verifica a evidência de incidentes, executa casos de reprodução aprovados e mantém uma cache de checkouts por revisão."
     }
   }
 }
