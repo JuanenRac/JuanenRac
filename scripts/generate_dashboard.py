@@ -52,6 +52,9 @@ from pathlib import Path
 
 from hydra_umc_updater.ecosystem_catalog import parse_catalog
 from catalog_check import catalog_ecosystems, mismatches as catalog_mismatches
+import dashboard_integrity
+import dashboard_texts
+import ecosystem_progress
 from hydra_umc_updater import github_client as _hydra_client
 from hydra_umc_updater.github_client import RemoteStatus, discover_remote_projects
 from hydra_umc_updater.project_manifest import ECOSYSTEM_ID as _HYDRA_ECOSYSTEM_ID, ManifestValidationError, parse_manifest
@@ -84,6 +87,65 @@ ELECTRO_HOBBY_ECOSYSTEM_ID = "ELECTRO-HOBBY-3D"
 ELECTRO_HOBBY_MANIFEST_FILE = "electro-hobby-3d.project.json"
 
 
+def parse_leniently(data: dict, name: str):
+    """Parse a manifest with the shared parser, setting aside the fields the dashboard never shows when the parser of one ecosystem does not know them.
+
+    The updaters are pinned to a revision and parse strictly: a field added to a manifest before the pin moves (hardware_bound, a dependency list
+    with the names of another ecosystem) made the whole repository vanish from the page. Only what the dashboard does not render is dropped
+    (an unknown field, the dependency list, a later 1.x schema revision); a manifest that is wrong in anything else stays an error, and is counted as one."""
+    data = dict(data)
+    for _ in range(6):
+        try:
+            return parse_manifest(json.dumps(data), expected_name=name)
+        except ManifestValidationError as exc:
+            text = str(exc)
+            unknown = re.match(r"unknown field\(s\): (.+)$", text)
+            if unknown:
+                fields = [field.strip() for field in unknown.group(1).split(",")]
+                if all(field in data for field in fields):
+                    for field in fields:
+                        del data[field]
+                    continue
+            if text.startswith("schema_version") and str(data.get("schema_version", "")).startswith("1."):
+                # a later 1.x revision only adds optional fields; the parser of this pin knows 1.0
+                data["schema_version"] = "1.0"
+                continue
+            if text.startswith("depends_on") and "depends_on" in data:
+                del data["depends_on"]
+                continue
+            raise
+    return parse_manifest(json.dumps(data), expected_name=name)
+
+
+# manifest file and ecosystem name of each ecosystem whose own updater may reject a manifest the dashboard can still show
+RESCUE_SOURCES: dict[str, tuple[str, str]] = {
+    "hydra-umc": ("hydra-umc.project.json", "HYDRA-UMC"),
+    "urtc": ("urtc.project.json", "URTC"),
+    "armor": ("armor.project.json", "A.R.M.O.R."),
+}
+
+
+def rescue_rejected(owner: str, ecosystem_key: str, errors: tuple[str, ...] | list[str]) -> tuple[list[RemoteStatus], list[str]]:
+    """Read again, leniently, every repository the ecosystem's own updater rejected as an invalid manifest. Returns (rescued, errors that remain)."""
+    source = RESCUE_SOURCES.get(ecosystem_key)
+    rescued: list[RemoteStatus] = []
+    remaining: list[str] = []
+    for text in errors:
+        name, sep, rest = text.partition(":")
+        if source and sep and "invalid manifest" in rest and re.fullmatch(r"[A-Za-z0-9._-]+", name.strip()):
+            try:
+                status = _fetch_electro_hobby_manifest(owner, name.strip(), "main", source[0], source[1])
+            except RuntimeError as exc:
+                remaining.append(str(exc))
+                continue
+            if status is not None:
+                print(f"NOTE: {name.strip()} ({ecosystem_key}) was rejected by the pinned updater ({rest.strip()}); listed from a lenient read.", file=sys.stderr)
+                rescued.append(status)
+                continue
+        remaining.append(text)
+    return rescued, remaining
+
+
 def _fetch_electro_hobby_manifest(owner: str, name: str, branch: str, manifest_file: str = ELECTRO_HOBBY_MANIFEST_FILE, ecosystem_id: str = ELECTRO_HOBBY_ECOSYSTEM_ID) -> RemoteStatus | None:
     url = f"{_hydra_client.GITHUB_RAW_BASE}/{owner}/{name}/{branch}/{manifest_file}"
     request = urllib.request.Request(url, headers={"User-Agent": API_USER_AGENT, "Accept": "application/json"}, method="GET")
@@ -100,7 +162,7 @@ def _fetch_electro_hobby_manifest(owner: str, name: str, branch: str, manifest_f
         if not isinstance(data, dict) or data.get("ecosystem") != ecosystem_id:
             return None
         data["ecosystem"] = _HYDRA_ECOSYSTEM_ID
-        manifest = parse_manifest(json.dumps(data), expected_name=name)
+        manifest = parse_leniently(data, name)
     except (json.JSONDecodeError, ManifestValidationError) as exc:
         raise RuntimeError(f"{name}: invalid manifest: {exc}") from exc
     return RemoteStatus(
@@ -595,23 +657,8 @@ MATURITY_CLASSES: dict[str, str] = {
     "scaffolding": "maturity-scaffolding",
 }
 
-MATURITY_DESCRIPTIONS: dict[str, str] = {
-    "production": "Real firmware for a real, physical PCB this ecosystem's own hardware docs describe.",
-    # Previously gated on when a project was created ("original,
-    # pre-2026-expansion"), a date no amount of real work can ever change -
-    # every one of URTC's and A.R.M.O.R.'s own real projects, and several
-    # of HYDRA-UMC's own newer ones, were permanently excluded from this
-    # tier by birth date alone, regardless of how substantial their own
-    # real record became. Redefined on real, checkable substance instead:
-    # a long version history under this ecosystem's own odometer scheme
-    # (each real build is one more digit, so the number itself is a real
-    # count, not a claim) AND real, sustained use beyond a passing test
-    # suite - deployed and actually operating, or actually depended on by
-    # other real, shipped projects, not simulated or one-off.
-    "established": "A real, substantial version history under this ecosystem's own odometer scheme, AND real, sustained use beyond a passing test suite - deployed and actually operating, or genuinely depended on by other real projects. Trusted on that record, not re-audited this pass.",
-    "functional": "Real, tested business logic - verified this pass (own test suite / real end-to-end smoke test / a real compiled protocol round-trip).",
-    "scaffolding": "A real, compilable entry point exists; the feature the project exists for does not yet.",
-}
+# The meaning of each level is the one the manifests use (HYDRA-UMC-SDK, docs/PROJECT_MANIFEST.md); the eight-language text lives in dashboard_texts.py.
+MATURITY_DESCRIPTIONS: dict[str, str] = dashboard_texts.MATURITY_DESCRIPTIONS_EN
 
 
 # ---------------------------------------------------------------------------
@@ -1854,6 +1901,11 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
 for language, values in ROADMAP_COMPAT_TRANSLATIONS.items():
     TRANSLATIONS[language].update(values)
 
+# Maturity and evidence definitions, the roadmap steps, the integrity indicator and the newest architecture cards (scripts/dashboard_texts.py).
+for language, values in dashboard_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+    ROADMAP_COMPAT_TRANSLATIONS[language].update({key: value for key, value in values.items() if key.startswith("roadmap_advance_")})
+
 DEPLOY_ICONS: dict[str, str] = {
     "cm5": (
         '<rect x="4" y="4" width="16" height="16" rx="2"/>'
@@ -2762,6 +2814,95 @@ def render_maturity_cards(
     return "".join(cards)
 
 
+def render_evidence_legend() -> str:
+    """The five kinds of evidence a manifest can declare, with what each one means (the text comes from dashboard_texts)."""
+    english = dashboard_texts.TEXTS["en"]
+    cards = []
+    for key in dashboard_texts.EVIDENCE_KEYS:
+        cards.append(
+            f'''<div class="evidence-card evidence-{esc(key)}">
+              <span class="evidence-card-label" data-i18n="evidence_{esc(key)}">{esc(english[f"evidence_{key}"])}</span>
+              <span class="evidence-card-desc" data-i18n="evidence_desc_{esc(key)}">{esc(english[f"evidence_desc_{key}"])}</span>
+            </div>'''
+        )
+    return "".join(cards)
+
+
+# ---------------------------------------------------------------------------
+# Integrity of the dashboard: what is missing, unreadable or unknown
+# ---------------------------------------------------------------------------
+
+def check_integrity(
+    owner: str,
+    ecosystem_by_name: dict[str, str],
+    discovery_errors: list[str],
+    api_failures: list[tuple[str, str]],
+) -> "tuple[list[dashboard_integrity.Issue], dashboard_integrity.Coverage]":
+    """Compare the dashboard with the README catalogue, the repositories of the owner and the raw manifests; see scripts/dashboard_integrity.py."""
+    catalog: dict[str, list[str]] = {}
+    readme = Path(__file__).resolve().parent.parent / "README.md"
+    try:
+        catalog = ecosystem_progress.ecosystem_repos(readme.read_text(encoding="utf-8"))
+    except OSError as exc:
+        api_failures = api_failures + [("README catalogue", f"could not be read: {exc}")]
+    raw, owner_repos, failures = dashboard_integrity.gather(
+        owner=owner,
+        listed=ecosystem_by_name,
+        list_repos=dashboard_integrity.github_listing(owner, GITHUB_TOKEN),
+        fetch=dashboard_integrity.raw_fetcher(owner),
+        max_workers=API_MAX_CONCURRENT_REQUESTS,
+    )
+    cover = dashboard_integrity.coverage(ecosystem_by_name, owner_repos, raw)
+    return dashboard_integrity.evaluate(
+        catalog=catalog,
+        listed=ecosystem_by_name,
+        discovery_errors=discovery_errors,
+        raw_manifests=raw,
+        owner_repos=owner_repos,
+        api_failures=list(api_failures) + failures,
+    ), cover
+
+
+def render_integrity(issues: "list[dashboard_integrity.Issue]", cover: "dashboard_integrity.Coverage | None" = None) -> str:
+    """The expandable detail of the "Errors / unknown" indicator: one chip per ecosystem and one line per problem, with the repository and the reason."""
+    counts = dashboard_integrity.counts_by_ecosystem(issues, [key for key, _label in ECOSYSTEM_ORDER])
+    labels = dict(ECOSYSTEM_ORDER)
+    chips = "".join(
+        f'<span class="integrity-chip{" bad" if counts[key] else ""}">{esc(label)} <b>{counts[key]}</b></span>'
+        for key, label in ECOSYSTEM_ORDER
+    )
+    if counts.get(""):
+        chips += f'<span class="integrity-chip bad"><span data-i18n="integrity_scope_general">General</span> <b>{counts[""]}</b></span>'
+    if not issues:
+        body = '<p class="integrity-ok" data-i18n="integrity_ok">Nothing is missing, unreadable or unknown: every repository of the catalogue is listed and every manifest declares a known maturity and evidence.</p>'
+        state = "ok"
+    else:
+        items = "".join(
+            '<li><code>{repo}</code> <span class="integrity-kind" data-i18n="integrity_kind_{kind}">{kind}</span>'
+            ' <span class="integrity-eco">{eco}</span> <span class="integrity-detail">{detail}</span></li>'.format(
+                repo=esc(issue.repo), kind=esc(issue.kind), eco=esc(labels.get(issue.ecosystem, "")), detail=esc(issue.detail)
+            )
+            for issue in issues
+        )
+        body = f'<ul class="integrity-list">{items}</ul>'
+        state = "bad"
+    criterion = ""
+    if cover is not None and cover.public is not None:
+        others = ", ".join(cover.without_manifest) or "-"
+        criterion = (
+            '<p class="integrity-intro" data-i18n-template="integrity_criterion" '
+            f'data-listed="{cover.listed}" data-public="{cover.public}" data-others="{esc(others)}">'
+            f'{cover.listed} of {cover.public} public repositories are listed: those with the manifest of an ecosystem. Without a manifest: {esc(others)}.</p>'
+        )
+    return (
+        f'<details class="integrity {state}"{" open" if issues and len(issues) <= 6 else ""}>'
+        f'<summary><span data-i18n="integrity_summary">What counts as an error or unknown</span> <span class="integrity-count">{len(issues)}</span></summary>'
+        '<p class="integrity-intro" data-i18n="integrity_intro">The number counts repositories the README catalogue promises that the dashboard does not show, manifests that could not be read, '
+        'maturity or evidence values that are missing or not recognised, and failures of the GitHub API while this page was generated.</p>'
+        f'{criterion}<div class="integrity-chips">{chips}</div>{body}</details>'
+    )
+
+
 # ---------------------------------------------------------------------------
 # Per-ecosystem counters - HYDRA-UMC, URTC, A.R.M.O.R. and EH3D are four real,
 # independent ecosystems by the same author, each with its own dedicated
@@ -3019,12 +3160,22 @@ def render_html(
     results: dict[str, RemoteStatus],
     meta: dict[str, RepoMeta],
     ecosystem_by_name: dict[str, str],
+    integrity: "list[dashboard_integrity.Issue] | None" = None,
+    cover: "dashboard_integrity.Coverage | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
+    integrity = list(integrity or [])
 
     total = int(stats["total"])
     ok = int(stats["ok"])
-    errors = int(stats["errors"])
+    # "Errors / unknown" counts every difference between what the dashboard lists and what the sources say (see scripts/dashboard_integrity.py),
+    # plus a listed project whose version could not be resolved. It never counts only what was listed, which could not report anything.
+    errors = int(stats["errors"]) + len(integrity)
+    integrity_html = render_integrity(integrity, cover)
+    evidence_cards = render_evidence_legend()
+    dt = dashboard_texts.TEXTS["en"]
+    error_card_class = "error" if errors else "ok"
+
     success_percent = float(stats["success_percent"])
 
     deploy_counts = stats["deploy_counts"]
@@ -3583,6 +3734,35 @@ def render_html(
     );
   }}
 
+  .integrity {{
+    margin: -12px 0 24px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 10px 14px;
+    font-size: 13px;
+  }}
+  .integrity.bad {{ border-color: color-mix(in srgb, var(--err) 45%, var(--border)); }}
+  .integrity.ok {{ border-color: color-mix(in srgb, var(--ok) 35%, var(--border)); }}
+  .integrity summary {{ cursor: pointer; font-weight: 600; }}
+  .integrity-count {{
+    font-family: "IBM Plex Mono", monospace;
+    margin-left: 6px;
+  }}
+  .integrity-intro {{ color: var(--dim); margin: 8px 0; }}
+  .integrity-chips {{ display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }}
+  .integrity-chip {{
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 12px;
+  }}
+  .integrity-chip.bad {{ border-color: var(--err); color: var(--err); }}
+  .integrity-list {{ margin: 8px 0 0; padding-left: 18px; }}
+  .integrity-list li {{ margin: 4px 0; overflow-wrap: anywhere; }}
+  .integrity-kind {{ font-weight: 600; }}
+  .integrity-eco, .integrity-detail {{ color: var(--dim); }}
+
   .health-card.error {{
     border-color: color-mix(
       in srgb,
@@ -3740,6 +3920,22 @@ def render_html(
     margin-top: 4px;
     line-height: 1.4;
   }}
+
+  .evidence-title {{ margin-top: 18px; }}
+  .evidence-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
+  }}
+  .evidence-card {{
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 9px;
+    padding: 11px 13px;
+    box-shadow: var(--shadow);
+  }}
+  .evidence-card-label {{ display: block; font-size: 12px; font-weight: 600; }}
+  .evidence-card-desc {{ display: block; color: var(--dim); font-size: 11px; margin-top: 4px; line-height: 1.4; }}
 
   .maturity-badge {{
     display: inline-flex;
@@ -4724,6 +4920,16 @@ def render_html(
         <p data-i18n="architecture_h_card6_body">HYDRA-UMC-UPDATER installs and updates a repository by cloning, staging, verifying and only then promoting it, so a failed check leaves the live copy untouched; an optional gate refuses a commit without a trusted signature before anything is built. Firmware images are checked with CRC32 and a shared-key HMAC-SHA256; an asymmetric signature is planned, not implemented.</p>
         <ul><li>HYDRA-UMC-UPDATER</li><li>Staged install</li><li>Signed-commit gate</li><li>CRC32 + HMAC-SHA256</li></ul>
       </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_h_card7_title">{dt['architecture_h_card7_title']}</h3>
+        <p data-i18n="architecture_h_card7_body">{dt['architecture_h_card7_body']}</p>
+        <ul><li>HYDRA-UMC-OPS-AGENT</li><li>HYDRA-UMC-NODE-HEALING</li><li>HYDRA-UMC-LOCAL-TECHNICIAN</li><li>HYDRA-UMC-DEVELOPER-NODE</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_h_card8_title">{dt['architecture_h_card8_title']}</h3>
+        <p data-i18n="architecture_h_card8_body">{dt['architecture_h_card8_body']}</p>
+        <ul><li>HYDRA-UMC-SAFETY-ZONES</li><li>HYDRA-UMC-TWIN / COGNITIVE-NODE</li><li>HYDRA-UMC-DATALAKE / DASHBOARD-AI</li><li>HYDRA-UMC-STUDIO-KIT</li></ul>
+      </article>
     </div>
 
     <div class="architecture-flow" aria-label="HYDRA-UMC control flow">
@@ -4783,6 +4989,11 @@ def render_html(
         <p data-i18n="architecture_u_card6_body">Each firmware release is published as GitHub release assets with SHA-256 sidecars and a manifest, and the release tool refuses to publish images signed with the public development key as an official release. The bootloaders check CRC32 and a shared-key HMAC-SHA256; asymmetric signatures are planned, and nothing has been flashed to a real board yet.</p>
         <ul><li>GitHub release assets</li><li>SHA-256 + manifest</li><li>Dev-key release gate</li><li>Asymmetric signing planned</li></ul>
       </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_u_card7_title">{dt['architecture_u_card7_title']}</h3>
+        <p data-i18n="architecture_u_card7_body">{dt['architecture_u_card7_body']}</p>
+        <ul><li>URTC-GATEWAY</li><li>URTC-DEVTOOLS</li><li>URTC-DOCS</li></ul>
+      </article>
     </div>
 
     <div class="architecture-flow" aria-label="URTC control flow">
@@ -4840,6 +5051,11 @@ def render_html(
         <h3 data-i18n="architecture_a_card6_title">Signed releases and updates</h3>
         <p data-i18n="architecture_a_card6_body">Node firmware is published with a SHA-256 and an Ed25519 signature, and both a node and ARMOR-SERVER refuse a release without a valid one. The maintenance helper of ARMOR-DEVOPS checks an Ed25519 signature on each service package before unpacking it, which is how ARMOR-STUDIO updates the central machine; the private key never goes to GitHub. A firmware file uploaded by hand is not checked.</p>
         <ul><li>Ed25519 firmware signatures</li><li>ARMOR-DEVOPS signed packages</li><li>ARMOR-STUDIO</li><li>Key never on GitHub</li></ul>
+      </article>
+      <article class="architecture-card">
+        <h3 data-i18n="architecture_a_card7_title">{dt['architecture_a_card7_title']}</h3>
+        <p data-i18n="architecture_a_card7_body">{dt['architecture_a_card7_body']}</p>
+        <ul><li>ARMOR-SIMULATOR</li><li>ARMOR-NETWORK</li><li>ARMOR-HARDWARE</li><li>ARMOR-IOS-CONTROL</li></ul>
       </article>
     </div>
 
@@ -4932,7 +5148,7 @@ def render_html(
       </div>
     </div>
 
-    <div class="health-card error">
+    <div class="health-card {error_card_class}">
       <div id="health-errors" class="number">
         {errors}
       </div>
@@ -4951,6 +5167,8 @@ def render_html(
     </div>
 
   </section>
+
+  {integrity_html}
 
 
   <!-- ================================================================
@@ -5017,6 +5235,15 @@ def render_html(
 
     <div class="maturity-grid">
       {maturity_cards}
+    </div>
+
+    <div class="section-title evidence-title">
+      <span data-i18n="section_evidence">Evidence</span>
+      <span class="section-title-hint" data-i18n="section_evidence_hint">{dt['section_evidence_hint']}</span>
+    </div>
+
+    <div class="evidence-grid">
+      {evidence_cards}
     </div>
 
   </section>
@@ -5702,7 +5929,7 @@ def render_html(
 
     if (healthTotal) {{ healthTotal.textContent = String(visible); }}
     if (healthResolved) {{ healthResolved.textContent = String(visibleOk); }}
-    if (healthErrors) {{ healthErrors.textContent = String(visibleErrors); }}
+    // #health-errors is not touched: it counts what is missing, unreadable or unknown for the whole dashboard, not what the filters show.
     if (healthPercent) {{ healthPercent.textContent = String(visiblePercent) + "%"; }}
 
     if (resetFiltersBtn) {{
@@ -5941,6 +6168,11 @@ def main() -> int:
     )
 
     discovery = discover_remote_projects(catalog.github_owner, token=GITHUB_TOKEN)
+    rescued, kept_errors = rescue_rejected(catalog.github_owner, "hydra-umc", discovery.errors)
+    discovery = _hydra_client.RemoteDiscovery(
+        projects=tuple(sorted([*discovery.projects, *rescued], key=lambda status: status.entry.name.casefold())),
+        errors=tuple(kept_errors),
+    )
     statuses = [
         status
         for status in discovery.projects
@@ -5950,6 +6182,7 @@ def main() -> int:
     entries: list[ProjectEntry] = [status.entry for status in statuses]
     ecosystem_by_name: dict[str, str] = {entry.name: "hydra-umc" for entry in entries}
     all_discovery_errors = list(discovery.errors)
+    api_failures: list[tuple[str, str]] = []
 
     hydra_umc_total = len(entries)
 
@@ -5984,7 +6217,10 @@ def main() -> int:
             sub_discovery = discover(catalog.github_owner, token=GITHUB_TOKEN or None)
         except Exception as exc:  # noqa: BLE001 - a real, unexpected client failure must not take down the other ecosystems
             print(f"WARNING: {ecosystem_label} discovery failed: {exc}", file=sys.stderr)
+            api_failures.append((f"{ecosystem_label} discovery", str(exc)))
             continue
+        rescued, kept_errors = rescue_rejected(catalog.github_owner, ecosystem_key, sub_discovery.errors)
+        sub_discovery = _hydra_client.RemoteDiscovery(projects=(*sub_discovery.projects, *rescued), errors=tuple(kept_errors))
         for status in sub_discovery.projects:
             results[status.entry.name] = status
             entries.append(status.entry)
@@ -6032,6 +6268,9 @@ def main() -> int:
         file=sys.stderr,
     )
 
+    integrity, cover = check_integrity(catalog.github_owner, ecosystem_by_name, all_discovery_errors, api_failures)
+    print(dashboard_integrity.report(integrity), file=sys.stderr)
+
     meta = fetch_all_meta(entries)
 
     meta_ok = sum(
@@ -6055,7 +6294,7 @@ def main() -> int:
     # Template indentation must not leak as trailing whitespace into the
     # published static page. Normalising it here keeps local and CI-generated
     # output identical without manually editing generated HTML.
-    rendered = render_html(entries, results, meta, ecosystem_by_name)
+    rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(clean_rendered, encoding="utf-8")
 
@@ -6066,6 +6305,14 @@ def main() -> int:
         f"Wrote {index_path}",
         file=sys.stderr,
     )
+
+    # --strict (or DASHBOARD_STRICT=1): the page is written first, then the run fails when a repository of the README catalogue is not on it
+    # or the GitHub API failed, so the gap cannot pass unnoticed. Without it the indicator on the page turns red and the report above names each case.
+    if "--strict" in sys.argv[1:] or os.environ.get("DASHBOARD_STRICT") == "1":
+        gaps = dashboard_integrity.blocking(integrity)
+        if gaps:
+            print(f"ERROR: {len(gaps)} repository(ies) of the catalogue are missing from the dashboard or the GitHub API failed (see INTEGRITY above).", file=sys.stderr)
+            return 2
 
     return 0
 
