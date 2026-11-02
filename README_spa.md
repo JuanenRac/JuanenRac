@@ -553,11 +553,11 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.6|Nodo ESP32-S3 para el cabezal de taladro de una máquina Bungard CCD: el vídeo de su cámara (OV2640 u OV5640) como cámara IP (RTSP y ONVIF), la altura de la mesa medida con un láser, la velocidad y la temperatura del husillo y una salida de protección.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.6|Controlador manual táctil de 10 pulgadas / móvil de uso general con ESP32-P4/ESP32-C6 para el movimiento en tiempo real (jog), la puesta a cero (G54/G55) y la parada de emergencia.|
 
-### 💠 Proyectos FENIX:
+### 💠 Proyectos PHOENIX:
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB)|0.0.1|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
-|[EH3D-FENIX-CAD](https://github.com/JuanenRac/EH3D-FENIX-CAD)|0.0.1|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.0.1|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.1|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.1|Verificador de ingeniería integral para validaciones cruzadas y control de calidad del diseño.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.1|Entorno de pruebas encargado de gestionar los casos de uso de referencia y las pruebas de regresión del sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.1|Sistema de control de versiones que guarda el historial semántico y la evolución lógica del diseño.|

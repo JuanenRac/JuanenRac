@@ -553,11 +553,11 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.0.6 | General purpose ESP32-P4/ESP32-C6 Touchscreen 10 inch/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP, in 37 languages. |
 
 
-### 💠 FENIX projects:
+### 💠 PHOENIX projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB) | 0.0.1 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
-| [EH3D-FENIX-CAD](https://github.com/JuanenRac/EH3D-FENIX-CAD) | 0.0.1 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
+| [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.0.1 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
+| [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.0.1 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
 | [EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER) | 0.0.1 | Comprehensive engineering verifier for cross-validations and design quality control. |
 | [EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB) | 0.0.1 | Testing environment responsible for managing reference use cases and system regression tests. |
 | [EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY) | 0.0.1 | Version control system that stores the semantic history and logical evolution of the design. |

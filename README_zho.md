@@ -553,11 +553,11 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.6|用于 Bungard CCD 机器钻头的 ESP32-S3 节点：其摄像头（OV2640 或 OV5640）的视频以 IP 摄像头形式（RTSP 和 ONVIF）提供，用激光测量工作台高度，测量主轴转速和温度，并带有保护输出。|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.6|通用的 ESP32-P4/ESP32-C6 10 英寸触摸屏／移动手动控制器，支持实时点动、归零设置（G54/G55）和急停。|
 
-### 💠 FENIX 项目：
+### 💠 PHOENIX 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB)|0.0.1|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
-|[EH3D-FENIX-CAD](https://github.com/JuanenRac/EH3D-FENIX-CAD)|0.0.1|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.0.1|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.1|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.1|用于交叉验证和设计质量控制的综合工程验证器。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.1|负责管理参考用例和系统回归测试的测试环境。|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.1|保存设计语义历史和逻辑演进的版本控制系统。|

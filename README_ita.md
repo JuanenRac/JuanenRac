@@ -553,11 +553,11 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.6|Nodo ESP32-S3 per la testa di foratura di una macchina Bungard CCD: il video della sua telecamera (OV2640 o OV5640) come telecamera IP (RTSP e ONVIF), l'altezza del tavolo misurata con un laser, la velocità e la temperatura del mandrino e un'uscita di protezione.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.6|Controller manuale touch da 10 pollici / mobile di uso generale con ESP32-P4/ESP32-C6 per il jog in tempo reale, l'azzeramento (G54/G55) e l'arresto di emergenza.|
 
-### 💠 Progetti FENIX:
+### 💠 Progetti PHOENIX:
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB)|0.0.1|Ambiente EDA: acquisizione di schemi, layout di PCB, strumenti di verifica, simulazione di circuiti e moduli specializzati per alimentatori switching (SMPS) e RF.|
-|[EH3D-FENIX-CAD](https://github.com/JuanenRac/EH3D-FENIX-CAD)|0.0.1|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.0.1|Ambiente EDA: acquisizione di schemi, layout di PCB, strumenti di verifica, simulazione di circuiti e moduli specializzati per alimentatori switching (SMPS) e RF.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.1|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.1|Verificatore ingegneristico completo per le validazioni incrociate e il controllo di qualità del progetto.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.1|Ambiente di test incaricato di gestire i casi d'uso di riferimento e i test di regressione del sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.1|Sistema di controllo di versione che conserva la storia semantica e l'evoluzione logica del progetto.|

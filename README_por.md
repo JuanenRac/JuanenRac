@@ -553,11 +553,11 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.6|Nó ESP32-S3 para a cabeça de furação de uma máquina Bungard CCD: o vídeo da sua câmara (OV2640 ou OV5640) como câmara IP (RTSP e ONVIF), a altura da mesa medida com um laser, a velocidade e a temperatura do fuso e uma saída de proteção.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.6|Controlador manual tátil de 10 polegadas / móvel de uso geral com ESP32-P4/ESP32-C6 para o movimento em tempo real (jog), a colocação a zero (G54/G55) e a paragem de emergência.|
 
-### 💠 Projetos FENIX:
+### 💠 Projetos PHOENIX:
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[EH3D-FENIX-PCB](https://github.com/JuanenRac/EH3D-FENIX-PCB)|0.0.1|Ambiente EDA: captura de esquemas, desenho de PCB, ferramentas de verificação, simulação de circuitos e módulos especializados para fontes comutadas (SMPS) e RF.|
-|[EH3D-FENIX-CAD](https://github.com/JuanenRac/EH3D-FENIX-CAD)|0.0.1|CAD mecânico paramétrico centrado no projeto de caixas, chassis e dissipadores térmicos.|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.0.1|Ambiente EDA: captura de esquemas, desenho de PCB, ferramentas de verificação, simulação de circuitos e módulos especializados para fontes comutadas (SMPS) e RF.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.1|CAD mecânico paramétrico centrado no projeto de caixas, chassis e dissipadores térmicos.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.1|Verificador de engenharia abrangente para validações cruzadas e controlo de qualidade do projeto.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.1|Ambiente de testes responsável por gerir os casos de uso de referência e os testes de regressão do sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.1|Sistema de controlo de versões que guarda o histórico semântico e a evolução lógica do projeto.|
