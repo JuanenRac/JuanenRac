@@ -66,6 +66,10 @@ on:
   repository_dispatch:
     types:
       - ecosystem_project_updated
+      # A build of a repository of the ecosystem has ended (sent by that repository's own dashboard-dispatch.yml, see docs/DASHBOARD_UPDATES.md).
+      # The "gate" job lets it through only for a repository of this owner and not more often than the minimum interval, so a busy day of builds cannot
+      # chain regenerations.
+      - ecosystem_build_finished
 
   push:
     branches:
@@ -118,8 +122,56 @@ concurrency:
 permissions: {}
 
 jobs:
+  # ---------------------------------------------------------------------------
+  # Gate: filters and rate-limits the event "a build of the ecosystem has ended"
+  # ---------------------------------------------------------------------------
+  # Every other trigger passes at once. For the build-finished event the payload is only checked (it is never used as data): the repository must belong
+  # to this owner and must not be this repository (its own builds would chain), and the last finished run of this workflow must be older than
+  # MIN_MINUTES. The twice-an-hour schedule picks up whatever was skipped. No third-party action, no secret and read-only.
+  gate:
+    name: Decide whether this run is needed
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      go: ${{ steps.decide.outputs.go }}
+    steps:
+      - name: Filter and rate-limit
+        id: decide
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_ACTION: ${{ github.event.action }}
+          SOURCE_REPO: ${{ github.event.client_payload.repository }}
+          THIS_REPO: ${{ github.repository }}
+          MIN_MINUTES: "15"
+        shell: bash
+        run: |
+          set -u
+          go=true
+          if [ "$EVENT_NAME" = "repository_dispatch" ] && [ "$EVENT_ACTION" = "ecosystem_build_finished" ]; then
+            owner="${THIS_REPO%%/*}"
+            if ! printf '%s' "$SOURCE_REPO" | grep -Eq "^${owner}/[A-Za-z0-9._-]+$" || [ "$SOURCE_REPO" = "$THIS_REPO" ]; then
+              echo "Skipped: the repository in the notification is not another repository of $owner."
+              go=false
+            else
+              last=$(gh api "repos/${THIS_REPO}/actions/workflows/build-dashboard.yml/runs?status=completed&per_page=1" --jq '.workflow_runs[0].created_at // empty' 2>/dev/null || true)
+              if [ -n "$last" ]; then
+                age=$(( ( $(date -u +%s) - $(date -u -d "$last" +%s) ) / 60 ))
+                if [ "$age" -lt "$MIN_MINUTES" ]; then
+                  echo "Skipped: the dashboard was built ${age} minutes ago (minimum ${MIN_MINUTES}); the schedule will catch up."
+                  go=false
+                fi
+              fi
+            fi
+          fi
+          echo "go=$go" >> "$GITHUB_OUTPUT"
+          echo "Run needed: $go"
+
   build:
     name: Generate ecosystem dashboard
+    needs: gate
+    if: needs.gate.outputs.go == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -310,7 +362,7 @@ jobs:
           mkdir -p "$out/extras/data" "$out/extras/docs"
           cp docs/index.html "$out/index.html"
           cp docs/.nojekyll "$out/nojekyll"
-          for extra in data/history.json docs/og-image.png; do
+          for extra in data/history.json data/actions-cache.json docs/og-image.png; do
             if [ -f "$extra" ]; then cp "$extra" "$out/extras/$extra"; fi
           done
           for readme in README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md README_por.md; do
@@ -368,7 +420,7 @@ jobs:
 
           readmes=(README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md README_por.md)
           workdir="$RUNNER_TEMP/dashboard-out"
-          extras=(data/history.json docs/og-image.png)
+          extras=(data/history.json data/actions-cache.json docs/og-image.png)
 
           max_attempts=5
           for attempt in $(seq 1 "$max_attempts"); do

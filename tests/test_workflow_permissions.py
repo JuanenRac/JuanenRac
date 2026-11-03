@@ -99,7 +99,8 @@ class BuildDashboardTests(unittest.TestCase):
             self.assertIn(f"\n  {trigger}", triggers)
 
     def test_two_jobs_and_only_the_publishing_one_writes(self):
-        self.assertEqual(list(self.jobs), ["build", "publish"])
+        self.assertEqual(list(self.jobs), ["gate", "build", "publish"])
+        self.assertEqual(permissions_of(self.jobs["gate"]), {"contents": "read"})
         self.assertEqual(permissions_of(self.jobs["build"]), {"contents": "read"})
         self.assertEqual(permissions_of(self.jobs["publish"]), {"contents": "write"})
 

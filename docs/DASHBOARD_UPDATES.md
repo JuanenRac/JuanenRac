@@ -16,6 +16,28 @@ repository publishes.
 3. **Manual recovery.** `Build ecosystem status dashboard` remains available
    from the Actions page when an operator needs an explicit refresh.
 
+4. **Build finished (Builds tab).** A project may also send the event type
+   `ecosystem_build_finished` when one of its workflows ends, so the Builds tab
+   (state, results, durations and open `build-failed` / `build-stuck` issues of every
+   repository) is almost live. The event is optional: without it the tab is refreshed
+   by the schedule every 30 minutes. A small gate job in `build-dashboard.yml`
+   lets the event through only when the repository named in the payload belongs to
+   this owner and is not this repository, and not when the dashboard was built less
+   than 15 minutes earlier (the schedule catches up); the run then uses the same
+   concurrency group as every other trigger, so runs never pile up. The gate is
+   read-only, uses no secret and no third-party action. The notifier of a project
+   only needs a `workflow_run` trigger next to its existing push trigger:
+
+   ```yaml
+   on:
+     workflow_run:
+       workflows: ["CI"]            # the name of the project's build workflow
+       types: [completed]
+   ```
+
+   and the same dispatch step it already has, with `event_type` set to
+   `ecosystem_build_finished` and `client_payload` holding `{"repository": "<owner>/<name>"}`.
+
 The generator never trusts a repository-dispatch payload as dashboard data.
 It independently discovers public repositories and reads their manifests, so
 one malformed or stale notification cannot publish invented project metadata.
@@ -40,7 +62,8 @@ dependent on dashboard credentials.
 - The token is exposed only to the single dispatch step and is never printed.
 - Fork pull requests do not trigger the notifier because it listens only to
   pushes on the repository's `main` branch.
-- The event contains only public repository name, commit SHA and ref.
+- The event contains only public repository name, commit SHA and ref (the build-finished event, only the repository name).
+- The Builds tab keeps state and numbers only: the result and duration of each run and the minutes of computing; never who started a run, the branch or the text of a commit.
 - The central workflow validates public manifests independently and serializes
   publication through its existing concurrency group.
 
