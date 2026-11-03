@@ -329,6 +329,48 @@
    "hydra-umc": 10,
    "urtc": 10
   },
+  "sentinel": {
+   "candidates": 6,
+   "checked": 54,
+   "hygiene": {
+    "allowed_missing": 2,
+    "gaps": 5,
+    "ruleset_checked": 37,
+    "ruleset_missing": 3,
+    "settings_checked": 5,
+    "sha_missing": 2
+   },
+   "minutes24": 1768,
+   "minutes7": 1878,
+   "parte": [
+    "head:bad",
+    "sig:bad",
+    "red:bad",
+    "cand:warn",
+    "hyg:warn",
+    "compute:warn",
+    "unread:info"
+   ],
+   "read": true,
+   "red": 8,
+   "repos": 40,
+   "repos_read": 37,
+   "signatures": {
+    "invalid": 3,
+    "invalid_repos": [
+     "ARMOR-FIXTURE-05",
+     "HYDRA-UMC-FIXTURE-00",
+     "URTC-FIXTURE-05"
+    ],
+    "none": 8,
+    "norelease": 8,
+    "unverifiable": 10,
+    "unverified": 8,
+    "verified": 3
+   },
+   "stale": null,
+   "trend_days": 12
+  },
   "signatures": {
    "armor": {
     "invalid": 1,
@@ -426,6 +468,7 @@
   },
   "ci_evidence_read": false,
   "history_days": 0,
+  "sentinel_read": false,
   "tests_read": false,
   "tests_states": {
    "unread": 16

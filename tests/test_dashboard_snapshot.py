@@ -66,6 +66,16 @@ def actions_figures(data: dict) -> dict:
     return out
 
 
+def sentinel_figures(data: dict) -> dict:
+    """The Sentinel tab as it adds up: red workflows, releases ready, signatures, hygiene gaps, computing and the report lines."""
+    block = data["sentinel"]
+    doc = block["doc"] or {}
+    return {"read": block["read"], "stale": block["stale"], "repos": doc.get("repos"), "repos_read": doc.get("read"),
+            "red": doc["ci"]["red_total"], "checked": doc["ci"]["checked"], "candidates": doc["releases"]["total"], "signatures": doc["signatures"],
+            "hygiene": {k: (len(v) if isinstance(v, list) else v) for k, v in sorted(doc["hygiene"].items())}, "minutes24": doc["compute"]["total24"], "minutes7": doc["compute"]["total7"],
+            "trend_days": len(doc["trend"]["dates"]), "parte": [f"{p['key']}:{p['level']}" for p in doc["parte"]]}
+
+
 def page_figures(html: str) -> dict:
     """Every number the page states about the ecosystems, as plain data."""
     data = json.loads(_DATA.search(html).group(1))
@@ -97,6 +107,7 @@ def page_figures(html: str) -> dict:
                                   sum(1 for r in repos.values() if r["eco"] == eco and (r.get("build") or {}).get("art") is False)] for eco in ecosystems},
         "tests": tests_figures(data),
         "actions": actions_figures(data),
+        "sentinel": sentinel_figures(data),
         "kpi_total": kpi("kpi-total"),
         "kpi_errors": kpi("kpi-errors")[:40],
         "kpi_registry": kpi("kpi-percent"),
@@ -139,7 +150,7 @@ def page_figures_light(html: str) -> dict:
     data = json.loads(_DATA.search(html).group(1))
     return {"total": len(data["repos"]), "ci_evidence": dict(sorted(Counter(v["state"] for v in data["ciEvidence"]["repos"].values()).items())),
             "ci_evidence_read": data["ciEvidence"]["read"], "history_days": len(data["history"]),
-            "tests_read": data["tests"]["read"], "actions_read": data["actions"]["read"], "actions_states": dict(sorted(Counter(r["state"] for r in data["actions"]["repos"].values()).items())), "tests_states": dict(sorted(Counter(r["state"] for r in data["tests"]["repos"].values()).items()))}
+            "tests_read": data["tests"]["read"], "actions_read": data["actions"]["read"], "sentinel_read": data["sentinel"]["read"], "actions_states": dict(sorted(Counter(r["state"] for r in data["actions"]["repos"].values()).items())), "tests_states": dict(sorted(Counter(r["state"] for r in data["tests"]["repos"].values()).items()))}
 
 
 def differences(expected, current, path: str = "") -> list:

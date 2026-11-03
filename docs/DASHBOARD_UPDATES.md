@@ -38,6 +38,18 @@ repository publishes.
    and the same dispatch step it already has, with `event_type` set to
    `ecosystem_build_finished` and `client_payload` holding `{"repository": "<owner>/<name>"}`.
 
+5. **Sentinel tab.** The same build also reads, with the read-only token of the
+   workflow, a small public-safe picture of the repositories: red workflows
+   (the last finished run of each workflow on the default branch), releases
+   ready (entries under `[Unreleased]` and the age of the last release), the
+   state of the signature already verified, the public rulesets and, when the
+   token may read them, the Actions settings, and the approximate computing
+   minutes. The result is a short report made by fixed rules (no AI) and is
+   written to `data/sentinel.json`, which is rebuilt from a whitelist: security
+   alerts (not even a count), titles of pull requests and issues, people and
+   branches are never kept or shown. Thresholds and sections are set in the
+   `sentinel` block of `dashboard-config.json`.
+
 The generator never trusts a repository-dispatch payload as dashboard data.
 It independently discovers public repositories and reads their manifests, so
 one malformed or stale notification cannot publish invented project metadata.

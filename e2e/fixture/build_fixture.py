@@ -30,6 +30,7 @@ for sibling in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):
 import dashboard_actions as actions_mod  # noqa: E402
 import dataclasses  # noqa: E402
 import dashboard_charts as charts  # noqa: E402
+import dashboard_sentinel as sentinel_mod  # noqa: E402
 import dashboard_health as health  # noqa: E402
 import dashboard_insight as insight_mod  # noqa: E402
 import dashboard_integrity as integrity_mod  # noqa: E402
@@ -301,6 +302,32 @@ def actions_for(entries, healthy: bool = False) -> dict:
     return {"asof": ACTIONS_NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "repos": repos, "errors": sum(1 for r in repos.values() if r["state"] == "unread")}
 
 
+def sentinel_for(entries, eco, activity, history, actions, healthy: bool = False) -> dict:
+    """The document of the tab Sentinel for the fixture, made with the real rules from a made-up reading: some repositories are red, some wait for a version (a
+    CHANGELOG with entries and an old or no release), some lack the ruleset, a few settings are readable and one in twelve could not be read (never with `healthy`)."""
+    config = sentinel_mod.check_config(None)[0]
+    if healthy:
+        config["compute_warn_minutes_24h"] = 100000      # the made-up builds of the fixture use more than a real day would
+    repos = {}
+    for index, entry in enumerate(entries):
+        if not healthy and index % 12 == 11:
+            repos[entry.name] = {"state": "unread"}
+            continue
+        red = [] if healthy or index % 5 != 2 else [{"wf": "ci.yml", "streak": 1 + index % 3, "since": f"2001-12-{19 + index % 3:02d}T0{index % 9}:15:00Z"}]
+        published = None if index % 4 == 0 and index % 8 != 0 else ("2001-12-10T10:00:00Z" if index % 3 == 0 else "2001-12-20T10:00:00Z")
+        record = {"state": "ok", "tag": None if published is None else f"0.1.{index % 7}", "published": published, "entries": (1 + index % 5) if index % 4 == 0 and not healthy else 0,
+                  "ci": red, "checked": 1 + index % 2, "rs": True if healthy or index % 6 != 5 else False, "perm": None}
+        if index % 7 == 0:
+            record["perm"] = {"sha": healthy or index % 14 == 0, "allowed": healthy or index % 14 == 0}
+        repos[entry.name] = record
+    read = {"asof": ACTIONS_NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "repos": repos}
+    return sentinel_mod.assemble(read, eco, config, {n: a.signature for n, a in activity.items()}, actions, history, "2001-12-21")
+
+
+def actions_block(entries, history, healthy: bool = False) -> dict:
+    return gen.dashboard_actions.build(actions_for(entries, healthy), None, {e.name: 'x' for e in entries}, history, '2001-12-21')
+
+
 def actions_history(days: int = 12) -> dict:
     """The compact daily summaries (by date) the fixture history carries."""
     return {(date(2001, 12, 21) - timedelta(days=back)).isoformat(): {"runs": 60 + back * 7 % 23, "ok": 50 + back * 5 % 17, "fail": 3 + back % 5, "other": 2, "min": 180 + back * 13}
@@ -324,7 +351,8 @@ def history_for(days: int = 45) -> list[dict]:
             del areas["urtc"]["ci"]
         out.append({"date": day.isoformat(), "progress": progress, "areas": areas, **({} if back == 44 else {"repos": repos_at(back)}),
                     **({"tests": tests_at(back)} if back <= 30 else {}),
-                    **({"actions": actions_history()[day.isoformat()]} if day.isoformat() in actions_history() else {})})   # the counts of the tests were recorded only in the last 30 days   # an old snapshot with no repositories
+                    **({"actions": actions_history()[day.isoformat()]} if day.isoformat() in actions_history() else {}),
+                    **({"sentinel": {"red": 2 + back % 4, "cand": 1 + back % 3, "gaps": 4 + back % 2, "min": 200 + back * 11}} if 0 < back <= 12 and back != 4 else {})})   # the counts of the tests were recorded only in the last 30 days   # an old snapshot with no repositories
     return out
 
 
@@ -387,7 +415,8 @@ def build_full() -> str:
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries),
-                           tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries))
+                           tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries),
+                           sentinel_doc=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())))
 
 
 def build_stale() -> str:
@@ -399,7 +428,8 @@ def build_stale() -> str:
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET, ci_evidence=ci_evidence_for(entries),
-                           tests_read=None, actions_read=None, actions_cache=actions_for(entries))
+                           tests_read=None, actions_read=None, actions_cache=actions_for(entries),
+                           sentinel_saved=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())))
 
 
 def build_single() -> str:
@@ -408,7 +438,8 @@ def build_single() -> str:
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries))
+                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries),
+                           sentinel_doc=sentinel_for(entries, eco, activity, [], actions_block(entries, [])))
 
 
 def build_healthy() -> str:
@@ -420,7 +451,8 @@ def build_healthy() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries), ())
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False), actions_read=actions_for(entries, healthy=True), builds=builds_for(entries))
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False), actions_read=actions_for(entries, healthy=True), builds=builds_for(entries),
+                           sentinel_doc=sentinel_for(entries, eco, activity, history_for(60), actions_block(entries, history_for(60), healthy=True), healthy=True))
 
 
 def build_minimal() -> str:

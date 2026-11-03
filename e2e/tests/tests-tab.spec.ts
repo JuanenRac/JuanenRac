@@ -23,7 +23,7 @@ const rows = (page: Page) => page.locator("#ts-list .ts-row");
 test.describe("tests tab: total per ecosystem", () => {
   test("the tab is there, says the figures are declared and explains how they are calculated", async ({ page }) => {
     await open(page);
-    await expect(page.locator("[role=tab]")).toHaveCount(14);
+    await expect(page.locator("[role=tab]")).toHaveCount(15);
     await expect(page.getByTestId("tab-tests")).toHaveText("Tests");
     await expect(page.getByTestId("ts-badge")).toHaveText("Declared, not run here");
     const help = page.getByTestId("ts-help");
