@@ -66,6 +66,9 @@ import dashboard_ci_ui
 import dashboard_actions
 import dashboard_actions_texts
 import dashboard_actions_ui
+import dashboard_sentinel
+import dashboard_sentinel_texts
+import dashboard_sentinel_ui
 import dashboard_tests
 import dashboard_tests_texts
 import dashboard_tests_ui
@@ -1971,6 +1974,10 @@ for language, values in dashboard_tests_texts.TEXTS.items():
 for language, values in dashboard_actions_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the tab "Sentinel" (public-safe watch decided by rules).
+for language, values in dashboard_sentinel_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the delivery pipeline, signatures, legends and navigation additions.
 for language, values in dashboard_delivery_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3366,6 +3373,9 @@ def render_html(
     actions_read: "dict | None" = None,
     actions_cache: "dict | None" = None,
     builds: "dict | None" = None,
+    sentinel_doc: "dict | None" = None,
+    sentinel_saved: "dict | None" = None,
+    sentinel_config: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3462,7 +3472,8 @@ def render_html(
     app_data.rack_html = dashboard_rack.panel_html(rack_snap, rack_problem)
     today = dashboard_evo.today_utc()
     snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys, repos=dashboard_evo.repo_facts(entries, results),
-                                  tests=dashboard_tests.fresh_counts(tests_read), actions=dashboard_actions.day_summary(actions_read))
+                                  tests=dashboard_tests.fresh_counts(tests_read), actions=dashboard_actions.day_summary(actions_read),
+                                  sentinel=dashboard_sentinel.day_summary(sentinel_doc))
     full_history = dashboard_evo.add_snapshot(history, snap, today) if history is not None else []
     app_data.page_data = page_data(entries, results, ecosystem_by_name, raw_manifests or {}, activity_map, signals or {}, app_data.status, health_config,
                                    history=full_history, snap=snap, builds=builds)
@@ -3476,8 +3487,10 @@ def render_html(
         owner="JuanenRac", today=today, config=ci_settings)
     app_data.page_data["tests"] = dashboard_tests.build(tests_read, ecosystem_by_name, full_history, today, tests_config)
     app_data.page_data["actions"] = dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, full_history, today)
+    app_data.page_data["sentinel"] = dashboard_sentinel.build(sentinel_doc, sentinel_saved, sentinel_config or dashboard_sentinel.check_config(None)[0], today)
     tests_panel_html = dashboard_app.panel("tests", dashboard_tests_ui.panel_html())
     actions_panel_html = dashboard_app.panel("actions", dashboard_actions_ui.panel_html())
+    sentinel_panel_html = dashboard_app.panel("sentinel", dashboard_sentinel_ui.panel_html())
     insight_panel_html = dashboard_app.panel("insight", dashboard_insight_ui.panel_html())
     rack_panel_html = dashboard_app.panel("rack", app_data.rack_html)
     help_button_html = dashboard_nav_ui.help_button()
@@ -5198,6 +5211,7 @@ def render_html(
     </section>
     {tests_panel_html}
     {actions_panel_html}
+    {sentinel_panel_html}
     {insight_panel_html}
     <section role="tabpanel" class="panel" id="panel-evidence" aria-labelledby="tab-evidence" tabindex="0" hidden data-testid="panel-evidence">
       <div class="panel-inner">
@@ -6019,6 +6033,14 @@ def main() -> int:
     else:
         print(f"{sum(1 for r in actions_read['repos'].values() if r['state'] == 'ok')} repositories with builds read, {actions_read['errors']} could not be read.", file=sys.stderr)
 
+    sentinel_config, sentinel_problems = dashboard_sentinel.load_config()
+    for problem in sentinel_problems:
+        print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
+    sentinel_read = dashboard_sentinel.read_all(catalog.github_owner, ecosystem_by_name, GITHUB_TOKEN, sentinel_config) if sentinel_config["enabled"] else None
+    sentinel_saved = dashboard_sentinel.load_saved(names=ecosystem_by_name)
+    if sentinel_config["enabled"] and sentinel_read is None:
+        print("WARNING: the sentinel could not read GitHub; " + (f"the last reading from {sentinel_saved['asof']} is shown, marked as such." if sentinel_saved else "the tab says not verified."), file=sys.stderr)
+
     meta = fetch_all_meta(entries)
     activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN, redact=_redact_private_document_names)
     print(f"{len(activity)} release/CI records read.", file=sys.stderr)
@@ -6095,12 +6117,19 @@ def main() -> int:
         built=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"), seconds=time.monotonic() - started,
         steps=(("versions", ok, total), ("manifests", health["valid"], health["repos"]), ("commits", meta_ok, total), ("activity", activity_read, total)),
         asof=stale_date or today)
+    sentinel_doc = dashboard_sentinel.assemble(
+        sentinel_read, ecosystem_by_name, sentinel_config, {n: a.signature for n, a in activity.items()},
+        dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, history, today), history, today)
+    sentinel_doc = dashboard_sentinel.stabilize(sentinel_doc, sentinel_saved, sentinel_config["stale_hours"])
+    if sentinel_doc:
+        print(f"Sentinel: {sentinel_doc['ci']['red_total']} red workflows, {sentinel_doc['releases']['total']} releases ready, {sentinel_doc['hygiene']['gaps']} hygiene gaps, {sentinel_doc['read']}/{sentinel_doc['repos']} repositories read.", file=sys.stderr)
     rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
                            signals=signals, build=build, config=config, history=history, facts=facts, weekly=weekly,
                            live_milestones=live_milestones, planned_milestones=planned_milestones,
                            generation=generation, stale_date=stale_date, rack=dashboard_rack.load(),
                            ci_evidence=ci_read, ci_config=ci_config, tests_read=tests_read, tests_config=tests_config,
-                           actions_read=actions_read, actions_cache=actions_cache, builds=builds)
+                           actions_read=actions_read, actions_cache=actions_cache, builds=builds,
+                           sentinel_doc=sentinel_doc, sentinel_saved=sentinel_saved, sentinel_config=sentinel_config)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 
@@ -6109,8 +6138,10 @@ def main() -> int:
     app_keys = [key for key, _label in dashboard_app.ECOSYSTEMS]
     progress_now = dashboard_charts.parse_progress(readme_text, app_keys)
     snap = dashboard_evo.snapshot(today, progress_now, dashboard_charts.parse_status(readme_text, app_keys), app_keys, repos=dashboard_evo.repo_facts(entries, results),
-                              tests=dashboard_tests.fresh_counts(tests_read), actions=dashboard_actions.day_summary(actions_read))
+                              tests=dashboard_tests.fresh_counts(tests_read), actions=dashboard_actions.day_summary(actions_read),
+                              sentinel=dashboard_sentinel.day_summary(sentinel_doc))
     dashboard_actions.save_cache(dashboard_actions.CACHE_PATH, actions_read)
+    dashboard_sentinel.save(dashboard_sentinel.DATA_PATH, sentinel_doc)
     if snap is not None and not history_problems:
         if dashboard_evo.save_history(history_path, dashboard_evo.add_snapshot(history, snap, today)):
             print(f"Saved the snapshot of {today} in {history_path}", file=sys.stderr)

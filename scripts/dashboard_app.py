@@ -21,6 +21,7 @@ import dashboard_charts as charts
 import dashboard_ci_ui
 import dashboard_tests_ui
 import dashboard_actions_ui
+import dashboard_sentinel_ui
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight_ui
@@ -50,6 +51,7 @@ TABS: tuple[tuple[str, str, str], ...] = (
     ("evidence", "tab_evidence", ""),
     ("tests", "tab_tests", ""),
     ("actions", "tab_actions", ""),
+    ("sentinel", "tab_sentinel", ""),
     ("insight", "tab_insight", ""),
     ("inventory", "tab_inventory", ""),
     ("rack", "tab_rack", ""),
@@ -57,7 +59,7 @@ TABS: tuple[tuple[str, str, str], ...] = (
     ("errors", "tab_errors", ""),
 )
 TAB_IDS = tuple(tab[0] for tab in TABS)
-ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_tests": "Tests", "tab_actions": "Builds", "tab_insight": "Analysis", "tab_inventory": "Inventory", "tab_rack": "Rack",
+ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_tests": "Tests", "tab_actions": "Builds", "tab_sentinel": "Sentinel", "tab_insight": "Analysis", "tab_inventory": "Inventory", "tab_rack": "Rack",
            "tab_architecture": "Architecture", "tab_errors": "Errors / unknown"}
 CI_LABELS = {"success": "Green", "failure": "Red", "pending": "Pending", "none": "No CI / unknown"}
 LIGHT_GLYPH = {"good": "●", "fair": "◐", "poor": "◔", "bad": "○"}
@@ -1817,7 +1819,7 @@ JS_HEALTH = r"""
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
-CSS = CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_actions_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + dashboard_delivery_ui.CSS + r"""
+CSS = CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_actions_ui.CSS + dashboard_sentinel_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + dashboard_delivery_ui.CSS + r"""
   /* ======================= Last known data, generation figures, manifest health and rack ======================= */
   .stale-banner { grid-column: 1 / -1; margin: 0; padding: 10px 14px; border: 1px solid var(--k-pending); border-left-width: 6px; border-radius: var(--radius); background: var(--panel-2); color: var(--text); font-weight: 600; }
   .stale-glyph { color: var(--k-pending); margin-right: 6px; }
@@ -1845,7 +1847,7 @@ def script() -> str:
     import json
     marker = "  dynReady = true;\n  applyLanguage("
     assert JS_HEALTH.count(marker) == 1
-    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_ci_ui.JS + dashboard_tests_ui.JS + dashboard_actions_ui.JS + dashboard_evo_ui.JS + dashboard_insight_ui.JS + dashboard_nav_ui.JS + dashboard_delivery_ui.JS + marker)
+    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_ci_ui.JS + dashboard_tests_ui.JS + dashboard_actions_ui.JS + dashboard_sentinel_ui.JS + dashboard_evo_ui.JS + dashboard_insight_ui.JS + dashboard_nav_ui.JS + dashboard_delivery_ui.JS + marker)
 
 
 # ---------------------------------------------------------------------------

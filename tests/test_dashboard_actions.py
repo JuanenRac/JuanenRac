@@ -302,6 +302,9 @@ class WorkflowTests(unittest.TestCase):
     def test_the_cache_travels_with_the_other_generated_files(self):
         self.assertEqual(self.text.count("data/actions-cache.json"), 2)
 
+    def test_the_public_safe_sentinel_file_travels_the_same_way(self):
+        self.assertEqual(self.text.count("data/sentinel.json"), 2)
+
     def test_the_concurrency_group_and_the_updater_pins_are_untouched(self):
         self.assertIn("group: ${{ github.event_name == 'pull_request' && format('ecosystem-dashboard-pr-{0}', github.event.number) || 'ecosystem-dashboard' }}", self.text)
         for repo in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):

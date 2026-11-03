@@ -107,7 +107,7 @@ def repo_facts(entries: Iterable[object], results: Mapping[str, object]) -> dict
 
 
 def snapshot(day: str, progress: Mapping[str, tuple[int | None, int | None]], status: Mapping[str, Mapping[str, object]], ecosystems: Iterable[str],
-             repos: Mapping[str, list] | None = None, tests: Mapping[str, int] | None = None, actions: Mapping[str, int] | None = None) -> dict | None:
+             repos: Mapping[str, list] | None = None, tests: Mapping[str, int] | None = None, actions: Mapping[str, int] | None = None, sentinel: Mapping[str, int] | None = None) -> dict | None:
     """The entry of one day: {"date", "progress": {eco: percent}, "areas": {eco: {area: percent}}, "repos": {name: [maturity level, version]}}.
     None when there is nothing real to record; "repos" is left out when it is not known. "tests" ({repository: number of tests it declares}) is left out when no count was
     read in this run, and a snapshot from before it existed simply has none."""
@@ -133,6 +133,8 @@ def snapshot(day: str, progress: Mapping[str, tuple[int | None, int | None]], st
         entry["tests"] = {name: int(value) for name, value in sorted(tests.items()) if isinstance(value, int) and not isinstance(value, bool) and value >= 0}
     if actions and all(isinstance(actions.get(k), int) and not isinstance(actions.get(k), bool) and actions[k] >= 0 for k in ("runs", "ok", "fail", "other", "min")):
         entry["actions"] = {k: int(actions[k]) for k in ("runs", "ok", "fail", "other", "min")}
+    if sentinel and all(isinstance(sentinel.get(k), int) and not isinstance(sentinel.get(k), bool) and sentinel[k] >= 0 for k in ("red", "cand", "gaps", "min")):
+        entry["sentinel"] = {k: int(sentinel[k]) for k in ("red", "cand", "gaps", "min")}
     return entry
 
 
