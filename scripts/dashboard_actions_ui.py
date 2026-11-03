@@ -70,7 +70,7 @@ def panel_html() -> str:
         '<div class="ts-field"><label class="scope-title" for="ac-search" data-i18n="ac_search">Search a repository</label>'
         '<input type="search" id="ac-search" data-testid="ac-search" autocomplete="off" maxlength="80"></div></div>'
         '<div class="ins-table-wrap ac-table-wrap" tabindex="0" role="region" aria-labelledby="ac-table-title" id="ac-table-wrap" data-testid="ac-table-wrap">'
-        '<table class="ins-table ac-table" id="ac-table" data-testid="ac-table"></table></div>'
+        '<table class="ins-table ac-table" id="ac-table" data-testid="ac-table"><thead><tr><th scope="col" data-i18n="ac_col_repo">Repository</th></tr></thead></table></div>'
         f'<p class="no-data" id="ac-none" data-testid="ac-none" hidden {_t("ac_none_match")}</p>'
         '<div class="ac-foot"><details class="ts-help" data-testid="ac-help">'
         f'<summary {_t("ac_help_summary")}</summary><p id="ac-help-body" data-testid="ac-help-body"></p></details>'
