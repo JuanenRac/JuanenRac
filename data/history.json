@@ -581,7 +581,7 @@
      "tests": 89
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 97,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -895,7 +895,7 @@
     ],
     "HYDRA-UMC-DASHBOARD-AI": [
      1,
-     "0.2.2"
+     "0.2.3"
     ],
     "HYDRA-UMC-DATALAKE": [
      1,
@@ -999,7 +999,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.5.0"
+     "0.5.1"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -1019,7 +1019,7 @@
     ],
     "HYDRA-UMC-SUITE": [
      1,
-     "0.7.9"
+     "0.8.0.0"
     ],
     "HYDRA-UMC-SWARM-SYNC": [
      1,
@@ -1047,11 +1047,11 @@
     ],
     "HYDRA-UMC-VISION-NODE": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-VISION-STREAMER": [
      2,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-VISUAL-SERVOING-API": [
      1,
