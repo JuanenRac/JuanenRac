@@ -74,7 +74,7 @@ Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial m
 ## 📈 Progreso del Ecosistema
 
 <!-- progress:hydra-umc -->
-`\[██████████▊░░░░░░░░░] 54%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 59 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[██████████▋░░░░░░░░░] 53%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 59 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -477,10 +477,10 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
 | Software | 🔴 | `█▎░░░░░░░░ 13%` | 5 de 39 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟡 | `█████████░ 90%` | 35 de 39 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟡 | `██████▉░░░ 69%` | 27 de 39 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen el README en los ocho idiomas. |
+| Pruebas | 🟢 | `█████████▎ 92%` | 33 de 36 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 36 de 36 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟡 | `███████▎░░ 72%` | 26 de 36 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 36 de 36 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositorios se han comprobado al menos en un simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 13 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
 | Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositorios están consolidados o en producción. |

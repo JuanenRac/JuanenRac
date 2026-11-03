@@ -74,7 +74,7 @@ Benvenuti nell'**ecosistema HYDRA-UMC**, una piattaforma di robotica industriale
 ## 📈 Avanzamento dell'ecosistema
 
 <!-- progress:hydra-umc -->
-`\[██████████▊░░░░░░░░░] 54%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 59 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[██████████▋░░░░░░░░░] 53%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 59 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -477,10 +477,10 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | Area | Stato | Avanzamento | Nota |
 | --- | :---: | --- | --- |
 | Software | 🔴 | `█▎░░░░░░░░ 13%` | 5 repository su 39 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
-| Test | 🟡 | `█████████░ 90%` | 35 repository su 39 hanno test automatici. |
-| Integrazione continua | 🟢 | `██████████ 100%` | 39 repository su 39 hanno l'ultima esecuzione della CI sul ramo principale verde. |
-| Versioni pubblicate | 🟡 | `██████▉░░░ 69%` | 27 repository su 39 hanno pubblicato almeno una versione. |
-| Documentazione | 🟢 | `██████████ 100%` | 39 repository su 39 hanno il README nelle otto lingue. |
+| Test | 🟢 | `█████████▎ 92%` | 33 repository su 36 hanno test automatici. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 36 repository su 36 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Versioni pubblicate | 🟡 | `███████▎░░ 72%` | 26 repository su 36 hanno pubblicato almeno una versione. |
+| Documentazione | 🟢 | `██████████ 100%` | 36 repository su 36 hanno il README nelle otto lingue. |
 | Simulazione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 39 sono stati verificati almeno in un simulatore. |
 | Hardware reale | 🔴 | `░░░░░░░░░░ 0%` | 0 dei 13 repository che dipendono dall'hardware sono stati verificati al banco o sul campo; gli altri non hanno mai funzionato con l'apparecchiatura reale. |
 | Produzione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 39 sono consolidati o in produzione. |

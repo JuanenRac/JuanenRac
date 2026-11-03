@@ -560,11 +560,11 @@
   },
   {
    "actions": {
-    "fail": 152,
-    "min": 5671,
-    "ok": 3477,
-    "other": 43,
-    "runs": 3672
+    "fail": 163,
+    "min": 6213,
+    "ok": 3670,
+    "other": 52,
+    "runs": 3885
    },
    "areas": {
     "armor": {
