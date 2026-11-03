@@ -14,6 +14,12 @@
       "electro-hobby-3d": { "readme": true }
     }
   },
+  "actions": {
+    "labels": { "failed": "build-failed", "stuck": "build-stuck" },
+    "timeline_max": 40,
+    "durations_max": 12,
+    "ignore_paths": { "JuanenRac": [".github/workflows/build-dashboard.yml"] }
+  },
   "ci_evidence": {
     "branch": "ci-evidence",
     "path": "ci-evidence.json",

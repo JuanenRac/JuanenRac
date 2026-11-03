@@ -51,6 +51,21 @@ def tests_figures(data: dict) -> dict:
     return out
 
 
+def actions_figures(data: dict) -> dict:
+    """The builds as the tab "Actions / Builds" adds them up: runs and minutes of the last 24 hours, open issues and the states, per ecosystem."""
+    repos, block = data["repos"], data["actions"]
+    out: dict = {"read": block["read"], "stale": block["stale"], "asof": block["asof"], "daily_days": len(block["daily"]), "ecosystems": {}}
+    for eco in sorted({r["eco"] for r in repos.values()}):
+        mine = {name: row for name, row in block["repos"].items() if repos[name]["eco"] == eco}
+        ok = [row for row in mine.values() if row["state"] == "ok"]
+        out["ecosystems"][eco] = {
+            "runs24": sum(sum(row["n"]) for row in ok), "success24": sum(row["n"][0] for row in ok), "failure24": sum(row["n"][1] for row in ok), "minutes24": sum(row["min"] for row in ok),
+            "build_failed": sum(row.get("bf", 0) for row in mine.values()), "build_stuck": sum(row.get("bs", 0) for row in mine.values()),
+            "states": dict(sorted(Counter(row["state"] for row in mine.values()).items())),
+        }
+    return out
+
+
 def page_figures(html: str) -> dict:
     """Every number the page states about the ecosystems, as plain data."""
     data = json.loads(_DATA.search(html).group(1))
@@ -77,6 +92,7 @@ def page_figures(html: str) -> dict:
         "checks_verified": [sum(1 for row in data["checks"].values() if row[i] == 1) for i in range(7)],
         "ci_evidence": dict(sorted(Counter(v["state"] for v in data["ciEvidence"]["repos"].values()).items())),
         "tests": tests_figures(data),
+        "actions": actions_figures(data),
         "kpi_total": kpi("kpi-total"),
         "kpi_errors": kpi("kpi-errors")[:40],
         "kpi_registry": kpi("kpi-percent"),
@@ -119,7 +135,7 @@ def page_figures_light(html: str) -> dict:
     data = json.loads(_DATA.search(html).group(1))
     return {"total": len(data["repos"]), "ci_evidence": dict(sorted(Counter(v["state"] for v in data["ciEvidence"]["repos"].values()).items())),
             "ci_evidence_read": data["ciEvidence"]["read"], "history_days": len(data["history"]),
-            "tests_read": data["tests"]["read"], "tests_states": dict(sorted(Counter(r["state"] for r in data["tests"]["repos"].values()).items()))}
+            "tests_read": data["tests"]["read"], "actions_read": data["actions"]["read"], "actions_states": dict(sorted(Counter(r["state"] for r in data["actions"]["repos"].values()).items())), "tests_states": dict(sorted(Counter(r["state"] for r in data["tests"]["repos"].values()).items()))}
 
 
 def differences(expected, current, path: str = "") -> list:

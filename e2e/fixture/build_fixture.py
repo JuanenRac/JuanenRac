@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import os
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -27,6 +27,7 @@ for sibling in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):
     if candidate.is_dir():
         sys.path.append(str(candidate))
 
+import dashboard_actions as actions_mod  # noqa: E402
 import dashboard_charts as charts  # noqa: E402
 import dashboard_health as health  # noqa: E402
 import dashboard_insight as insight_mod  # noqa: E402
@@ -228,6 +229,47 @@ def tests_for(entries, eco, errors: bool = True) -> dict:
     return {"records": records, "undeclared": undeclared, "errors": failed, "glance": {}}
 
 
+ACTIONS_NOW = datetime(2001, 12, 21, 12, 0, 0, tzinfo=timezone.utc)
+
+
+def actions_for(entries, healthy: bool = False) -> dict:
+    """What dashboard_actions.read_all returns for the fixture, built with the real summary function from made-up runs: most repositories build every few hours,
+    one in four fails now and then (never with `healthy`), one in nine has no workflows, one in twelve could not be read (never with `healthy`)."""
+    config = actions_mod.check_config(None)[0]
+    repos = {}
+    for index, entry in enumerate(entries):
+        if index % 9 == 8:
+            repos[entry.name] = {"state": "none", "bf": 0, "bs": 0}
+            continue
+        if not healthy and index % 12 == 11:
+            repos[entry.name] = {"state": "unread"}
+            continue
+        runs = []
+        for k in range(1 + (index * 5) % 14):
+            end = ACTIONS_NOW - timedelta(minutes=17 + k * (45 + (index % 5) * 30) + index)
+            result = "success"
+            if not healthy and index % 4 == 1 and k % 3 == 0:
+                result = "failure"
+            elif k % 7 == 6:
+                result = "cancelled"
+            started = end - timedelta(seconds=40 + (index * 37 + k * 11) % 900)
+            runs.append({"status": "completed", "conclusion": result, "created_at": started.isoformat(), "run_started_at": started.isoformat(), "updated_at": end.isoformat(), "path": ".github/workflows/ci.yml"})
+        if index % 10 == 3:
+            runs.append({"status": "in_progress", "conclusion": None, "created_at": (ACTIONS_NOW - timedelta(minutes=3)).isoformat(), "run_started_at": (ACTIONS_NOW - timedelta(minutes=3)).isoformat(),
+                         "updated_at": ACTIONS_NOW.isoformat(), "path": ".github/workflows/ci.yml"})
+        record = actions_mod.summarize(runs, ACTIONS_NOW, config)
+        record["bf"] = 0 if healthy else (2 if index % 4 == 1 else 0)
+        record["bs"] = 1 if (not healthy and index % 13 == 5) else 0
+        repos[entry.name] = record
+    return {"asof": ACTIONS_NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "repos": repos, "errors": sum(1 for r in repos.values() if r["state"] == "unread")}
+
+
+def actions_history(days: int = 12) -> dict:
+    """The compact daily summaries (by date) the fixture history carries."""
+    return {(date(2001, 12, 21) - timedelta(days=back)).isoformat(): {"runs": 60 + back * 7 % 23, "ok": 50 + back * 5 % 17, "fail": 3 + back % 5, "other": 2, "min": 180 + back * 13}
+            for back in range(1, days + 1) if back != 4}
+
+
 AREAS = ("software", "tests", "ci", "releases", "docs", "simulation", "hardware", "production")
 
 
@@ -244,7 +286,8 @@ def history_for(days: int = 45) -> list[dict]:
         if back == 10:
             del areas["urtc"]["ci"]
         out.append({"date": day.isoformat(), "progress": progress, "areas": areas, **({} if back == 44 else {"repos": repos_at(back)}),
-                    **({"tests": tests_at(back)} if back <= 30 else {})})   # the counts of the tests were recorded only in the last 30 days   # an old snapshot with no repositories
+                    **({"tests": tests_at(back)} if back <= 30 else {}),
+                    **({"actions": actions_history()[day.isoformat()]} if day.isoformat() in actions_history() else {})})   # the counts of the tests were recorded only in the last 30 days   # an old snapshot with no repositories
     return out
 
 
@@ -307,7 +350,7 @@ def build_full() -> str:
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries),
-                           tests_read=tests_for(entries, eco))
+                           tests_read=tests_for(entries, eco), actions_read=actions_for(entries))
 
 
 def build_stale() -> str:
@@ -319,7 +362,7 @@ def build_stale() -> str:
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET, ci_evidence=ci_evidence_for(entries),
-                           tests_read=None)
+                           tests_read=None, actions_read=None, actions_cache=actions_for(entries))
 
 
 def build_single() -> str:
@@ -328,7 +371,7 @@ def build_single() -> str:
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco))
+                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco), actions_read=actions_for(entries))
 
 
 def build_healthy() -> str:
@@ -340,7 +383,7 @@ def build_healthy() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries), ())
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False))
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False), actions_read=actions_for(entries, healthy=True))
 
 
 def build_minimal() -> str:

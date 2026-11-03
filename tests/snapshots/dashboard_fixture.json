@@ -1,5 +1,63 @@
 {
  "full": {
+  "actions": {
+   "asof": "2001-12-21T12:00:00Z",
+   "daily_days": 12,
+   "ecosystems": {
+    "armor": {
+     "build_failed": 6,
+     "build_stuck": 0,
+     "failure24": 10,
+     "minutes24": 409,
+     "runs24": 64,
+     "states": {
+      "none": 1,
+      "ok": 8,
+      "unread": 1
+     },
+     "success24": 50
+    },
+    "eh3d": {
+     "build_failed": 4,
+     "build_stuck": 1,
+     "failure24": 6,
+     "minutes24": 538,
+     "runs24": 70,
+     "states": {
+      "none": 1,
+      "ok": 9
+     },
+     "success24": 58
+    },
+    "hydra-umc": {
+     "build_failed": 6,
+     "build_stuck": 1,
+     "failure24": 8,
+     "minutes24": 215,
+     "runs24": 55,
+     "states": {
+      "none": 1,
+      "ok": 9
+     },
+     "success24": 43
+    },
+    "urtc": {
+     "build_failed": 2,
+     "build_stuck": 1,
+     "failure24": 4,
+     "minutes24": 606,
+     "runs24": 59,
+     "states": {
+      "none": 1,
+      "ok": 8,
+      "unread": 1
+     },
+     "success24": 50
+    }
+   },
+   "read": true,
+   "stale": null
+  },
   "areas": {
    "armor": {
     "ci": 70,
@@ -280,6 +338,10 @@
   }
  },
  "partial": {
+  "actions_read": false,
+  "actions_states": {
+   "unread": 16
+  },
   "ci_evidence": {
    "unread": 16
   },
