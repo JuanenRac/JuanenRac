@@ -3,6 +3,15 @@
   "release_days": { "green_max": 90, "amber_max": 180 },
   "alert_after_days": 30,
   "scaffolding_months": 6,
+  "tests": {
+    "sources": {
+      "hydra-umc": { "glance": "HYDRA-UMC-DOCS/data/glance.json", "readme": true },
+      "urtc": { "glance": "URTC-DOCS/data/glance.json", "readme": true },
+      "armor": { "readme": true },
+      "eh3d": { "readme": true },
+      "electro-hobby-3d": { "readme": true }
+    }
+  },
   "ci_evidence": {
     "branch": "ci-evidence",
     "path": "ci-evidence.json",

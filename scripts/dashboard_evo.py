@@ -96,9 +96,10 @@ def repo_facts(entries: Iterable[object], results: Mapping[str, object]) -> dict
 
 
 def snapshot(day: str, progress: Mapping[str, tuple[int | None, int | None]], status: Mapping[str, Mapping[str, object]], ecosystems: Iterable[str],
-             repos: Mapping[str, list] | None = None) -> dict | None:
+             repos: Mapping[str, list] | None = None, tests: Mapping[str, int] | None = None) -> dict | None:
     """The entry of one day: {"date", "progress": {eco: percent}, "areas": {eco: {area: percent}}, "repos": {name: [maturity level, version]}}.
-    None when there is nothing real to record; "repos" is left out when it is not known."""
+    None when there is nothing real to record; "repos" is left out when it is not known. "tests" ({repository: number of tests it declares}) is left out when no count was
+    read in this run, and a snapshot from before it existed simply has none."""
     prog: dict[str, int] = {}
     areas: dict[str, dict[str, int]] = {}
     for eco in ecosystems:
@@ -117,6 +118,8 @@ def snapshot(day: str, progress: Mapping[str, tuple[int | None, int | None]], st
     entry: dict = {"date": day, "progress": prog, "areas": areas}
     if repos:
         entry["repos"] = {name: list(value) for name, value in repos.items()}
+    if tests:
+        entry["tests"] = {name: int(value) for name, value in sorted(tests.items()) if isinstance(value, int) and not isinstance(value, bool) and value >= 0}
     return entry
 
 
