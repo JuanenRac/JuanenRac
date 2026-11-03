@@ -18,6 +18,7 @@ from typing import Mapping, Sequence
 
 import dashboard_app_texts
 import dashboard_charts as charts
+import dashboard_ci_ui
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight_ui
@@ -1742,7 +1743,7 @@ JS_HEALTH = r"""
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
-CSS = CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + r"""
+CSS = CSS + dashboard_ci_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + r"""
   /* ======================= Last known data, generation figures, manifest health and rack ======================= */
   .stale-banner { grid-column: 1 / -1; margin: 0; padding: 10px 14px; border: 1px solid var(--k-pending); border-left-width: 6px; border-radius: var(--radius); background: var(--panel-2); color: var(--text); font-weight: 600; }
   .stale-glyph { color: var(--k-pending); margin-right: 6px; }
@@ -1770,7 +1771,7 @@ def script() -> str:
     import json
     marker = "  dynReady = true;\n  applyLanguage("
     assert JS_HEALTH.count(marker) == 1
-    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_evo_ui.JS + dashboard_insight_ui.JS + dashboard_nav_ui.JS + marker)
+    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_ci_ui.JS + dashboard_evo_ui.JS + dashboard_insight_ui.JS + dashboard_nav_ui.JS + marker)
 
 
 # ---------------------------------------------------------------------------

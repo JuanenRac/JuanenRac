@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://juanenrac.github.io/JuanenRac/evidence-schema.json",
+  "title": "CI evidence of a repository",
+  "description": "What the continuous integration of a repository publishes so that the status dashboard can compare what the manifest declares (evidence) with what ran. One file per repository, read from the branch and path set in dashboard-config.json (ci_evidence.branch and ci_evidence.path; by default the file ci-evidence.json on the branch ci-evidence). A repository that publishes nothing is shown as not verified.",
+  "type": "object",
+  "required": ["schema_version", "records"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "records": {
+      "type": "array",
+      "maxItems": 50,
+      "description": "The latest record of each workflow and kind of test. Records older than the limit of their kind (dashboard-config.json, ci_evidence.expire_days) no longer prove anything.",
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo", "workflow", "commit", "branch", "date", "version", "test_type", "result", "environment", "hardware", "url"],
+      "properties": {
+        "repo": { "type": "string", "minLength": 1, "description": "Name of the repository that publishes the record. A record that names another repository is refused." },
+        "workflow": { "type": "string", "minLength": 1, "description": "File name of the workflow, for example ci.yml." },
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{7,40}$", "description": "Commit that was tested." },
+        "branch": { "type": "string", "minLength": 1, "description": "Branch that was tested. Only the default branch (main) counts." },
+        "date": { "type": "string", "format": "date-time", "description": "When the run finished, ISO 8601 (UTC)." },
+        "version": { "type": "string", "minLength": 1, "description": "Version of the project that was tested." },
+        "test_type": {
+          "enum": ["unit", "integration", "host-test", "simulator", "bench", "field"],
+          "description": "unit, integration and host-test prove the host-test level; simulator, bench and field prove their own."
+        },
+        "result": { "enum": ["pass", "fail", "partial", "skipped"], "description": "Only pass proves a level." },
+        "environment": { "type": "string", "minLength": 1, "description": "Where it ran, for example ubuntu-24.04, a simulator name or a bench." },
+        "hardware": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["bound"],
+              "additionalProperties": false,
+              "properties": {
+                "bound": { "type": "boolean", "description": "true when the run used the real hardware." },
+                "device": { "type": ["string", "null"], "description": "Board or machine used. Required, with bound true, for bench and field." }
+              }
+            }
+          ]
+        },
+        "url": { "type": "string", "pattern": "^https://github\\.com/[A-Za-z0-9._-]+/[A-Za-z0-9._-]+/", "description": "Link to the run, inside the repository that publishes the record." },
+        "details": { "type": "object", "description": "Anything else worth keeping (numbers of tests, notes). The dashboard does not read it." }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "test_type": { "enum": ["bench", "field"] } } },
+          "then": {
+            "properties": { "hardware": { "type": "object", "required": ["bound", "device"], "properties": { "bound": { "const": true }, "device": { "type": "string", "minLength": 1 } } } }
+          }
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "schema_version": "1.0",
+      "records": [
+        {
+          "repo": "EXAMPLE-REPOSITORY",
+          "workflow": "ci.yml",
+          "commit": "0123456789abcdef0123456789abcdef01234567",
+          "branch": "main",
+          "date": "2000-01-01T12:00:00Z",
+          "version": "1.2.3",
+          "test_type": "host-test",
+          "result": "pass",
+          "environment": "ubuntu-24.04",
+          "hardware": null,
+          "url": "https://github.com/JuanenRac/EXAMPLE-REPOSITORY/actions/runs/1"
+        },
+        {
+          "repo": "EXAMPLE-REPOSITORY",
+          "workflow": "bench.yml",
+          "commit": "0123456789abcdef0123456789abcdef01234567",
+          "branch": "main",
+          "date": "2000-01-01T12:30:00Z",
+          "version": "1.2.3",
+          "test_type": "bench",
+          "result": "pass",
+          "environment": "self-hosted bench runner",
+          "hardware": { "bound": true, "device": "example control board, revision A" },
+          "url": "https://github.com/JuanenRac/EXAMPLE-REPOSITORY/actions/runs/2",
+          "details": { "tests": 42 }
+        }
+      ]
+    }
+  ]
+}

@@ -60,6 +60,9 @@ import dashboard_charts
 import dashboard_contrib
 import dashboard_evo
 import dashboard_evo_texts
+import dashboard_ci_evidence
+import dashboard_ci_texts
+import dashboard_ci_ui
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight
@@ -1944,6 +1947,10 @@ for language, values in dashboard_insight_texts.TEXTS.items():
 for language, values in dashboard_robust_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the view "declared against verified" (technical evidence published by the CI).
+for language, values in dashboard_ci_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
 for language, values in dashboard_app_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3305,6 +3312,8 @@ def render_html(
     generation: "dashboard_robust.Generation | None" = None,
     stale_date: "str | None" = None,
     rack: "tuple[dict | None, str] | None" = None,
+    ci_evidence: "dict | None" = None,
+    ci_config: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3408,6 +3417,10 @@ def render_html(
         repos=app_data.page_data["repos"], eco_by_name=ecosystem_by_name, manifests={name: _manifest_data((raw_manifests or {}).get(name)) for name in ecosystem_by_name},
         status=app_data.status, history=full_history, today=today, config=health_config, ecosystems=app_keys, facts=facts, weekly=weekly,
         live=live_milestones, planned=planned_milestones)
+    ci_settings = ci_config if ci_config is not None else dashboard_ci_evidence.load_config()[0]
+    app_data.page_data["ciEvidence"] = dashboard_ci_evidence.build(
+        {name: (_manifest_data((raw_manifests or {}).get(name)) or {}).get("evidence") for name in ecosystem_by_name}, ci_evidence,
+        owner="JuanenRac", today=today, config=ci_settings)
     insight_panel_html = dashboard_app.panel("insight", dashboard_insight_ui.panel_html())
     rack_panel_html = dashboard_app.panel("rack", app_data.rack_html)
     help_button_html = dashboard_nav_ui.help_button()
@@ -3415,7 +3428,7 @@ def render_html(
     crumbs_html = dashboard_nav_ui.crumbs()
     description = (f"Electro Hobby 3D ecosystem status dashboard: live status for {total} projects across the HYDRA-UMC, URTC, A.R.M.O.R. and EH3D ecosystems")
     head_extra_html = dashboard_evo_ui.head_tags(total, description, SITE_URL)
-    evidence_view_html = dashboard_evo_ui.evidence_view()
+    evidence_view_html = dashboard_evo_ui.evidence_view() + dashboard_ci_ui.view()
     mode_buttons_html = dashboard_evo_ui.mode_buttons()
     print_header_html = dashboard_evo_ui.print_header()
     eco_counts: dict[str, int] = {}
@@ -5921,6 +5934,12 @@ def main() -> int:
     integrity, cover, raw_manifests = check_integrity(catalog.github_owner, ecosystem_by_name, all_discovery_errors, api_failures)
     print(dashboard_integrity.report(integrity), file=sys.stderr)
 
+    ci_config, ci_problems = dashboard_ci_evidence.load_config()
+    for problem in ci_problems:
+        print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
+    ci_read = dashboard_ci_evidence.read_all(catalog.github_owner, ecosystem_by_name, dashboard_ci_evidence.raw_fetch(catalog.github_owner), ci_config)
+    print(f"{len(ci_read['records'])} repositories publish CI evidence, {len(ci_read['errors'])} could not be read.", file=sys.stderr)
+
     meta = fetch_all_meta(entries)
     activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN, redact=_redact_private_document_names)
     print(f"{len(activity)} release/CI records read.", file=sys.stderr)
@@ -5985,7 +6004,8 @@ def main() -> int:
     rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
                            signals=signals, build=build, config=config, history=history, facts=facts, weekly=weekly,
                            live_milestones=live_milestones, planned_milestones=planned_milestones,
-                           generation=generation, stale_date=stale_date, rack=dashboard_rack.load())
+                           generation=generation, stale_date=stale_date, rack=dashboard_rack.load(),
+                           ci_evidence=ci_read, ci_config=ci_config)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 

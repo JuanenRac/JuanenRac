@@ -130,6 +130,41 @@ def signals_for(entries, activity) -> dict:
     return out
 
 
+def ci_evidence_for(entries) -> dict:
+    """What the CI of the repositories published (read at the fixed day 2001-12-21): one repository in eight shows each way of being verified or not."""
+    type_of = {"none": "unit", "host-test": "host-test", "simulator": "simulator", "bench": "bench", "field": "field"}
+    records, errors = {}, {}
+    for index, entry in enumerate(entries):
+        name = entry.name
+        declared = EVIDENCE[index % 5]
+
+        def record(test_type, result="pass", date="2001-12-15", branch="main"):
+            data = {"repo": name, "workflow": "ci.yml", "commit": f"{index:040x}"[-40:], "branch": branch, "date": date + "T09:00:00Z", "version": "0.1.0",
+                    "test_type": test_type, "result": result, "environment": "ubuntu-24.04", "hardware": None,
+                    "url": f"https://github.com/JuanenRac/{name}/actions/runs/{1000 + index}"}
+            if test_type in ("bench", "field"):
+                data["hardware"] = {"bound": True, "device": "fixture board"}
+            return data
+        kind = index % 8
+        if kind == 1:
+            records[name] = [record(type_of[declared])]
+        elif kind == 2:
+            records[name] = [record("host-test")]
+        elif kind == 3:
+            records[name] = [record("host-test", date="2001-01-01")]
+        elif kind == 4:
+            records[name] = [record(type_of[declared], "fail")]
+        elif kind == 5:
+            broken = record("host-test")
+            del broken["workflow"]
+            records[name] = [broken]
+        elif kind == 6:
+            errors[name] = "HTTP 503"
+        elif kind == 7:
+            records[name] = [record("host-test", branch="feature")]
+    return {"records": records, "errors": errors}
+
+
 def facts_for(entries) -> dict:
     """Creation date, release dates and top-level files of every repository but one in seven (those stay unverified)."""
     out = {}
@@ -225,7 +260,7 @@ def build_full() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries) + 3, ("JuanenRac", "fixture-plain-a", "fixture-plain-b"))
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM)
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries))
 
 
 def build_stale() -> str:
@@ -236,7 +271,7 @@ def build_stale() -> str:
         ("versions", 40, 40), ("manifests", 40, 40), ("commits", 0, 40), ("activity", 0, 40)))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET)
+                           planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET, ci_evidence=ci_evidence_for(entries))
 
 
 def build_single() -> str:
@@ -245,7 +280,7 @@ def build_single() -> str:
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED)
+                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries))
 
 
 def build_healthy() -> str:

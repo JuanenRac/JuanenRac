@@ -1,0 +1,253 @@
+{
+ "full": {
+  "areas": {
+   "armor": {
+    "ci": 70,
+    "docs": 100,
+    "hardware": 11,
+    "production": 8,
+    "releases": 97,
+    "simulation": 24,
+    "software": 95,
+    "tests": 98
+   },
+   "eh3d": {
+    "ci": 70,
+    "docs": 100,
+    "hardware": 11,
+    "production": 8,
+    "releases": 97,
+    "simulation": 24,
+    "software": 95,
+    "tests": 98
+   },
+   "hydra-umc": {
+    "ci": 70,
+    "docs": 100,
+    "hardware": 11,
+    "production": 8,
+    "releases": 97,
+    "simulation": 24,
+    "software": 95,
+    "tests": 98
+   },
+   "urtc": {
+    "ci": 70,
+    "docs": 100,
+    "hardware": 11,
+    "production": 8,
+    "releases": 97,
+    "simulation": 24,
+    "software": 95,
+    "tests": 98
+   }
+  },
+  "checks": {
+   "ARMOR-FIXTURE-00": [
+    1,
+    1,
+    1,
+    null,
+    1,
+    0,
+    0
+   ],
+   "ARMOR-FIXTURE-01": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    0
+   ],
+   "ARMOR-FIXTURE-02": [
+    1,
+    0,
+    1,
+    null,
+    1,
+    1,
+    0
+   ],
+   "ARMOR-FIXTURE-03": [
+    1,
+    0,
+    1,
+    null,
+    1,
+    1,
+    1
+   ],
+   "ARMOR-FIXTURE-04": [
+    0,
+    1,
+    1,
+    null,
+    1,
+    1,
+    1
+   ],
+   "ARMOR-FIXTURE-05": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+   ]
+  },
+  "checks_verified": [
+   26,
+   17,
+   31,
+   0,
+   28,
+   24,
+   16
+  ],
+  "ci": {
+   "armor": {
+    "failure": 2,
+    "pending": 2,
+    "success": 6
+   },
+   "eh3d": {
+    "failure": 3,
+    "pending": 3,
+    "success": 4
+   },
+   "hydra-umc": {
+    "failure": 2,
+    "pending": 2,
+    "success": 6
+   },
+   "urtc": {
+    "failure": 3,
+    "pending": 3,
+    "success": 4
+   }
+  },
+  "ci_evidence": {
+   "below": 3,
+   "expired": 5,
+   "failing": 5,
+   "invalid": 5,
+   "nodata": 10,
+   "unread": 5,
+   "verified": 7
+  },
+  "evidence": {
+   "armor": {
+    "bench": 2,
+    "field": 2,
+    "host-test": 2,
+    "none": 2,
+    "simulator": 2
+   },
+   "eh3d": {
+    "bench": 2,
+    "field": 2,
+    "host-test": 2,
+    "none": 2,
+    "simulator": 2
+   },
+   "hydra-umc": {
+    "bench": 2,
+    "field": 2,
+    "host-test": 2,
+    "none": 2,
+    "simulator": 2
+   },
+   "urtc": {
+    "bench": 2,
+    "field": 2,
+    "host-test": 2,
+    "none": 2,
+    "simulator": 2
+   }
+  },
+  "hardware_bound": {
+   "armor": 3,
+   "eh3d": 4,
+   "hydra-umc": 4,
+   "urtc": 3
+  },
+  "history_days": 44,
+  "integrity_counts": [
+   "2",
+   "4"
+  ],
+  "integrity_criterion": [
+   "40",
+   "43"
+  ],
+  "kpi_errors": "6 Errors / unknown Open the detail: each",
+  "kpi_registry": "95.2% Registry health 40 of 42 valid <div class=",
+  "kpi_total": "40 Total projects 36 <span class=\"kpi-l",
+  "maturity": {
+   "armor": {
+    "established": 2,
+    "functional": 3,
+    "production": 2,
+    "scaffolding": 3
+   },
+   "eh3d": {
+    "established": 3,
+    "functional": 2,
+    "production": 3,
+    "scaffolding": 2
+   },
+   "hydra-umc": {
+    "established": 2,
+    "functional": 3,
+    "production": 2,
+    "scaffolding": 3
+   },
+   "urtc": {
+    "established": 3,
+    "functional": 2,
+    "production": 3,
+    "scaffolding": 2
+   }
+  },
+  "progress": {
+   "armor": 54,
+   "eh3d": 61,
+   "hydra-umc": 40,
+   "urtc": 47
+  },
+  "repositories": {
+   "armor": 10,
+   "eh3d": 10,
+   "hydra-umc": 10,
+   "urtc": 10
+  },
+  "total": 40,
+  "version_unresolved": [
+   "ARMOR-FIXTURE-06",
+   "EH3D-FIXTURE-05",
+   "HYDRA-UMC-FIXTURE-08",
+   "URTC-FIXTURE-07"
+  ],
+  "with_release": {
+   "armor": 8,
+   "eh3d": 8,
+   "hydra-umc": 8,
+   "urtc": 8
+  }
+ },
+ "partial": {
+  "ci_evidence": {
+   "unread": 16
+  },
+  "ci_evidence_read": false,
+  "history_days": 0,
+  "total": 16
+ },
+ "single": {
+  "history_days": 1,
+  "total": 40
+ }
+}
