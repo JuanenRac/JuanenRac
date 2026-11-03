@@ -561,7 +561,10 @@ def tab_list() -> str:
             f'<button type="button" role="tab" class="tab{accent}" id="tab-{ident}" aria-controls="panel-{ident}" aria-selected="false" tabindex="-1" '
             f'data-tab="{ident}" data-testid="tab-{ident}">{text}</button>'
         )
-    return f'<nav class="tabs" aria-label="Dashboard sections" data-i18n-aria-label="tabs_label"><div role="tablist" aria-orientation="horizontal" id="tablist">{"".join(buttons)}</div></nav>'
+    more = ('<button type="button" class="tabs-more tabs-more-{d}" data-tabs-scroll="{s}" data-i18n-aria-label="tabs_scroll_{d}" aria-label="{e}" hidden tabindex="-1" data-testid="tabs-scroll-{d}">{g}</button>')
+    return (f'<div class="tabs-wrap">' + more.format(d="prev", s="-1", e="Show the previous sections", g="‹")
+            + f'<nav class="tabs" aria-label="Dashboard sections" data-i18n-aria-label="tabs_label"><div role="tablist" aria-orientation="horizontal" id="tablist">{"".join(buttons)}</div></nav>'
+            + more.format(d="next", s="1", e="Show the next sections", g="›") + '</div>')
 
 
 def panel(ident: str, inner: str) -> str:
@@ -605,7 +608,12 @@ CSS = r"""
   .brand .eyebrow { margin: 0; font-size: 10px; letter-spacing: .22em; color: var(--dim); font-weight: 600; }
   .brand h1 { margin: 2px 0 0; font-size: 17px; display: flex; gap: 8px; align-items: center; white-space: nowrap; }
   .brand .version-pill { font-size: 10px; }
-  .tabs { flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: thin; }
+  .tabs-wrap { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 4px; }
+  .tabs { flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs-more { flex: 0 0 auto; appearance: none; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-strong); border-radius: 8px; width: 28px; height: 32px; font-size: 18px; line-height: 1; cursor: pointer; }
+  .tabs-more[hidden] { display: none; }
+  @media (prefers-reduced-motion: reduce) { .tabs { scroll-behavior: auto; } }
   [role="tablist"] { display: flex; gap: 4px; width: max-content; }
   .tab { appearance: none; background: transparent; border: 1px solid transparent; color: var(--dim); padding: 8px 14px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 13px; white-space: nowrap; position: relative; }
   .tab:hover { color: var(--text); background: var(--panel-2); }
@@ -775,7 +783,7 @@ CSS = r"""
   /* ---- laptop: the tabs go to their own row and the summary is two columns wide ---- */
   @media (max-width: 1500px) {
     .topbar { flex-wrap: wrap; row-gap: 4px; padding-bottom: 4px; }
-    .tabs { order: 3; flex: 1 1 100%; }
+    .tabs-wrap { order: 3; flex: 1 1 100%; }
     .top-actions { margin-left: auto; }
     .kpi-strip, .card-eco-counts, .card-progress, .card-ci { grid-column: span 12; }
     .card-maturity, .card-evidence, .card-releases, .card-oldest { grid-column: span 6; }
@@ -795,7 +803,7 @@ CSS = r"""
     html, body { height: auto; }
     .app { display: block; height: auto; overflow: visible; }
     .topbar { position: sticky; top: 0; z-index: 20; flex-wrap: wrap; gap: 8px 12px; padding: 8px 12px; }
-    .tabs { order: 3; flex: 1 1 100%; }
+    .tabs-wrap { order: 3; flex: 1 1 100%; }
     .top-actions { margin-left: auto; flex-wrap: wrap; max-width: 100%; }
     .top-actions .lang-select { max-width: 150px; }
     .top-actions .freshness-indicator { display: none; }
@@ -1400,6 +1408,27 @@ JS = r"""
     if (crumbRefresh) { crumbRefresh(); }
     if (id === "projects") { restoreScope(); }
   }
+
+  // Scroll arrows of the tab bar: they appear only when some tabs do not fit (the bar keeps working with the arrow keys either way).
+  (function () {
+    const bar = document.querySelector(".tabs");
+    const prev = document.querySelector("[data-tabs-scroll='-1']");
+    const next = document.querySelector("[data-tabs-scroll='1']");
+    if (!bar || !prev || !next) { return; }
+    function refresh() {
+      const over = bar.scrollWidth - bar.clientWidth > 2;
+      prev.hidden = !over || bar.scrollLeft <= 2;
+      next.hidden = !over || bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 2;
+    }
+    [prev, next].forEach(function (button) {
+      button.addEventListener("click", function () { bar.scrollLeft += Number(button.dataset.tabsScroll) * Math.max(120, bar.clientWidth * 0.6); setTimeout(refresh, 400); });
+    });
+    bar.addEventListener("scroll", refresh);
+    window.addEventListener("resize", refresh);
+    window.addEventListener("load", refresh);
+    refresh();
+    setTimeout(refresh, 300);
+  })();
 
   tabs.forEach(function (tab, index) {
     tab.addEventListener("click", function () { activateTab(tab.dataset.tab); });

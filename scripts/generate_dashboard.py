@@ -66,6 +66,7 @@ import dashboard_ci_ui
 import dashboard_tests
 import dashboard_tests_texts
 import dashboard_tests_ui
+import dashboard_t86_texts
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight
@@ -1956,6 +1957,10 @@ for language, values in dashboard_ci_texts.TEXTS.items():
 
 # Texts of the tab "Tests" (automated tests declared per ecosystem and per project).
 for language, values in dashboard_tests_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
+# Texts of the delivery pipeline, signatures, legends and navigation additions.
+for language, values in dashboard_t86_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
