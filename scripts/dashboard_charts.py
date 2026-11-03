@@ -136,7 +136,7 @@ _CI_STATE = {"SUCCESS": "success", "FAILURE": "failure", "ERROR": "failure", "PE
 ACTIVITY_QUERY = """
 query($owner: String!, $cursor: String) {
   repositoryOwner(login: $owner) {
-    repositories(first: 100, after: $cursor, privacy: PUBLIC, ownerAffiliations: OWNER) {
+    repositories(first: 20, after: $cursor, privacy: PUBLIC, ownerAffiliations: OWNER) {
       pageInfo { hasNextPage endCursor }
       nodes {
         name
@@ -190,7 +190,7 @@ def _post(body: bytes, headers: dict) -> "dict | None":
         return None
 
 
-def fetch_activity(owner: str, token: str, post: Poster = _post, max_pages: int = 5, redact: Callable[[str], str] | None = None) -> dict[str, Activity]:
+def fetch_activity(owner: str, token: str, post: Poster = _post, max_pages: int = 20, redact: Callable[[str], str] | None = None) -> dict[str, Activity]:
     """The latest release, the latest commit and the CI state of every public repository of the owner in a handful of requests.
     Without a token (GraphQL needs one) or on any failure it returns {}: the page then says "no data" instead of showing a guess."""
     if not token:
@@ -199,7 +199,8 @@ def fetch_activity(owner: str, token: str, post: Poster = _post, max_pages: int 
     found: dict[str, Activity] = {}
     cursor = None
     for _ in range(max_pages):
-        answer = post(json.dumps({"query": ACTIVITY_QUERY, "variables": {"owner": owner, "cursor": cursor}}).encode("utf-8"), headers)
+        body = json.dumps({"query": ACTIVITY_QUERY, "variables": {"owner": owner, "cursor": cursor}}).encode("utf-8")
+        answer = post(body, headers) or post(body, headers)   # one more try: a gateway timeout of GitHub is usually gone a second later
         try:
             page = answer["data"]["repositoryOwner"]["repositories"]
             found.update(parse_activity(page["nodes"], redact))
