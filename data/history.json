@@ -560,11 +560,11 @@
   },
   {
    "actions": {
-    "fail": 163,
-    "min": 6213,
-    "ok": 3670,
-    "other": 52,
-    "runs": 3885
+    "fail": 188,
+    "min": 7080,
+    "ok": 3988,
+    "other": 11,
+    "runs": 4187
    },
    "areas": {
     "armor": {
@@ -582,10 +582,10 @@
      "docs": 100,
      "hardware": 0,
      "production": 0,
-     "releases": 69,
+     "releases": 72,
      "simulation": 0,
      "software": 13,
-     "tests": 90
+     "tests": 92
     },
     "hydra-umc": {
      "ci": 100,
@@ -612,7 +612,7 @@
    "progress": {
     "armor": 66,
     "eh3d": 31,
-    "hydra-umc": 54,
+    "hydra-umc": 53,
     "urtc": 51
    },
    "repos": {
@@ -634,11 +634,11 @@
     ],
     "ARMOR-HARDWARE": [
      1,
-     "0.2.7"
+     "0.2.8"
     ],
     "ARMOR-IOS-CONTROL": [
      0,
-     "0.0.1"
+     "0.0.2"
     ],
     "ARMOR-NETWORK": [
      2,
@@ -702,7 +702,7 @@
     ],
     "EH3D-BUNGARD-GUI": [
      0,
-     "0.2.0"
+     "0.2.1"
     ],
     "EH3D-CAM-DEBUGGER": [
      0,
@@ -710,7 +710,7 @@
     ],
     "EH3D-COMMON": [
      0,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
@@ -834,7 +834,7 @@
     ],
     "EH3D-UPDATER": [
      1,
-     "0.0.6"
+     "0.0.7"
     ],
     "EH3D-VALIDATION-LAB": [
      0,
@@ -862,7 +862,7 @@
     ],
     "HYDRA-UMC-BRIDGE-AMR": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "HYDRA-UMC-BRIDGE-CNC": [
      1,
@@ -870,15 +870,15 @@
     ],
     "HYDRA-UMC-BRIDGE-DROIDS": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "HYDRA-UMC-BRIDGE-LASER": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-BRIDGE-OPENPNP": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-BRIDGE-PRINTER3D": [
      1,
@@ -894,7 +894,7 @@
     ],
     "HYDRA-UMC-COGNITIVE-NODE": [
      1,
-     "0.1.8"
+     "0.1.9"
     ],
     "HYDRA-UMC-CONNECTOR-HUB": [
      1,
@@ -1030,7 +1030,7 @@
     ],
     "HYDRA-UMC-STUDIO-KIT": [
      0,
-     "0.0.1"
+     "0.0.2"
     ],
     "HYDRA-UMC-SUITE": [
      1,
@@ -1046,7 +1046,7 @@
     ],
     "HYDRA-UMC-TELEMETRY-COLLECTOR": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "HYDRA-UMC-TOOL-CLI": [
      1,
@@ -1094,11 +1094,11 @@
     ],
     "URTC-DEVTOOLS": [
      0,
-     "0.0.1"
+     "0.0.2"
     ],
     "URTC-DOCS": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "URTC-FLASHER": [
      1,
@@ -1136,19 +1136,19 @@
     "ARMOR-HARDWARE": 22,
     "ARMOR-IOS-CONTROL": 270,
     "ARMOR-NETWORK": 187,
-    "ARMOR-SERVER": 990,
+    "ARMOR-SERVER": 1013,
     "ARMOR-SERVER-AI": 141,
     "ARMOR-SIMULATOR": 236,
     "ARMOR-STUDIO": 1363,
     "ARMOR-UPDATER": 386,
     "ARMOR-VISION": 138,
-    "ARMOR-VOICE-AI": 134,
+    "ARMOR-VOICE-AI": 138,
     "EH3D-AUTOLEVEL": 50,
-    "EH3D-BUNGARD-GUI": 234,
+    "EH3D-BUNGARD-GUI": 274,
     "EH3D-CAM-DEBUGGER": 48,
-    "EH3D-COMMON": 280,
+    "EH3D-COMMON": 319,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
-    "EH3D-CORE-LIBS": 233,
+    "EH3D-CORE-LIBS": 256,
     "EH3D-DESIGN-EXPLORER": 3,
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
@@ -1172,7 +1172,7 @@
     "EH3D-SUITE-LAUNCHER": 42,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 37,
-    "EH3D-UPDATER": 358,
+    "EH3D-UPDATER": 477,
     "EH3D-VALIDATION-LAB": 44,
     "EH3D-VISION-STUDIO": 25,
     "HYDRA-UMC": 178,
