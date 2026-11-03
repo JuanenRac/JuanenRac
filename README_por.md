@@ -476,14 +476,14 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 
 | Área | Estado | Progresso | Nota |
 | --- | :---: | --- | --- |
-| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 de 37 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
-| Testes | 🟡 | `████████▉░ 89%` | 33 de 37 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 37 de 37 repositórios têm a última execução do CI no ramo principal em verde. |
-| Versões publicadas | 🟡 | `███████░░░ 70%` | 26 de 37 repositórios publicaram pelo menos uma versão. |
-| Documentação | 🟢 | `██████████ 100%` | 37 de 37 repositórios têm o README nas oito línguas. |
-| Simulação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 37 repositórios foram verificados pelo menos num simulador. |
+| Software | 🔴 | `█▎░░░░░░░░ 13%` | 5 de 39 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
+| Testes | 🟡 | `█████████░ 90%` | 35 de 39 repositórios têm testes automáticos. |
+| Integração contínua | 🟢 | `██████████ 100%` | 39 de 39 repositórios têm a última execução do CI no ramo principal em verde. |
+| Versões publicadas | 🟡 | `██████▉░░░ 69%` | 27 de 39 repositórios publicaram pelo menos uma versão. |
+| Documentação | 🟢 | `██████████ 100%` | 39 de 39 repositórios têm o README nas oito línguas. |
+| Simulação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositórios foram verificados pelo menos num simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 dos 13 repositórios que dependem de hardware foram verificados em bancada ou no terreno; os restantes nunca funcionaram com o equipamento real. |
-| Produção | 🔴 | `░░░░░░░░░░ 0%` | 0 de 37 repositórios estão consolidados ou em produção. |
+| Produção | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositórios estão consolidados ou em produção. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Como a EH3D Fabrication Suite Funciona

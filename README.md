@@ -470,14 +470,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
-| Software | 🔴 | `█▏░░░░░░░░ 11%` | 4 of 37 repositories are at least functional, by the maturity each declares in its own manifest. |
-| Tests | 🟡 | `████████▉░ 89%` | 33 of 37 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 37 of 37 repositories have the last CI run on the main branch green. |
-| Releases | 🟡 | `███████░░░ 70%` | 26 of 37 repositories have published at least one release. |
-| Documentation | 🟢 | `██████████ 100%` | 37 of 37 repositories have the README in the eight languages. |
-| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 37 repositories have been checked at least in a simulator. |
+| Software | 🔴 | `█▎░░░░░░░░ 13%` | 5 of 39 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟡 | `█████████░ 90%` | 35 of 39 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 39 of 39 repositories have the last CI run on the main branch green. |
+| Releases | 🟡 | `██████▉░░░ 69%` | 27 of 39 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 39 of 39 repositories have the README in the eight languages. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 39 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 13 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
-| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 37 repositories are established or in production. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 39 repositories are established or in production. |
 <!-- /status:eh3d -->
 
 ## 🏗️ How EH3D Fabrication Suite Works

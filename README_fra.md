@@ -476,14 +476,14 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
-| Logiciel | 🔴 | `█▏░░░░░░░░ 11%` | 4 dépôts sur 37 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟡 | `████████▉░ 89%` | 33 dépôts sur 37 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 37 dépôts sur 37 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟡 | `███████░░░ 70%` | 26 dépôts sur 37 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 37 dépôts sur 37 ont le README dans les huit langues. |
-| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 37 ont été vérifiés au moins dans un simulateur. |
+| Logiciel | 🔴 | `█▎░░░░░░░░ 13%` | 5 dépôts sur 39 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟡 | `█████████░ 90%` | 35 dépôts sur 39 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟡 | `██████▉░░░ 69%` | 27 dépôts sur 39 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont le README dans les huit langues. |
+| Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 39 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 13 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
-| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 37 sont établis ou en production. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 39 sont établis ou en production. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Comment fonctionne EH3D Fabrication Suite
