@@ -20,10 +20,10 @@ test.describe("initial load", () => {
     }
   });
 
-  test("has exactly 13 tabs, each with its own panel", async ({ page }) => {
+  test("has exactly 14 tabs, each with its own panel", async ({ page }) => {
     await openDashboard(page);
-    await expect(page.locator("[role=tab]")).toHaveCount(13);
-    await expect(page.locator("[role=tabpanel]")).toHaveCount(13);
+    await expect(page.locator("[role=tab]")).toHaveCount(14);
+    await expect(page.locator("[role=tabpanel]")).toHaveCount(14);
   });
 });
 
