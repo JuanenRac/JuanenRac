@@ -40,25 +40,26 @@ concurrency:
   group: dashboard-ui-tests-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   ui:
     name: Playwright and axe-core
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     timeout-minutes: 25
     env:
       FIXTURE_DIR: ${{ github.workspace }}/e2e/fixture/out
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 1
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
 
@@ -72,7 +73,7 @@ jobs:
           python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@39b19e1e58db9c2d521f035b6a0ebe5f71ba4f1d"
 
       - name: Unit tests of the dashboard
-        run: python -m unittest tests.test_dashboard_app tests.test_dashboard_integrity -v
+        run: python -m unittest tests.test_dashboard_app tests.test_dashboard_integrity tests.test_dashboard_ci_evidence tests.test_dashboard_snapshot -v
 
       - name: Generate the dashboard from fixture data (no token, no network)
         env:
@@ -83,7 +84,7 @@ jobs:
         run: python e2e/check_html.py "$FIXTURE_DIR/full/index.html" "$FIXTURE_DIR/minimal/index.html" "$FIXTURE_DIR/partial/index.html" "$FIXTURE_DIR/empty/index.html"
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           # An LTS line, pinned: the newest Node release can be ahead of what the pinned Playwright supports.
           node-version: "22"
@@ -108,7 +109,7 @@ jobs:
 
       - name: Keep the screenshots of the failed tests
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: dashboard-ui-failures
           path: |

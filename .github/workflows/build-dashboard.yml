@@ -6,6 +6,15 @@
 # Builds the central ecosystem status dashboard and publishes it through
 # GitHub Pages from main/docs.
 #
+# Two jobs, so that the permission to write exists only where it is needed:
+#
+#   build    (every trigger, read-only token) tests, generates and checks the
+#            dashboard and the README files, then reconciles the figures of the
+#            ecosystem (scripts/ecosystem_integrity_test.py). On a pull request
+#            this is all that runs: nothing is published.
+#   publish  (only main, the schedule, a dispatch and a manual run; the only job
+#            with contents: write) commits what the build job generated.
+#
 # Architecture:
 #
 #   hydra_umc_updater.github_client   urtc_updater.github_client   armor_updater.github_client
@@ -66,10 +75,25 @@ on:
       - "scripts/dashboard_*.py"
       - "scripts/sync_readme_versions.py"
       - "scripts/ecosystem_progress.py"
+      - "scripts/ecosystem_integrity_test.py"
       - "scripts/sync_readme_descriptions.py"
       - "ecosystem-descriptions.json"
       - "scripts/catalog_check.py"
       - "ecosystem-catalog.json"
+      - "dashboard-config.json"
+      - "docs/evidence-schema.json"
+      - ".github/workflows/build-dashboard.yml"
+
+  # The same build, never published: it proves that a change still generates the dashboard and passes the tests.
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "tests/**"
+      - "e2e/fixture/**"
+      - "ecosystem-descriptions.json"
+      - "ecosystem-catalog.json"
+      - "dashboard-config.json"
+      - "docs/evidence-schema.json"
       - ".github/workflows/build-dashboard.yml"
 
   schedule:
@@ -84,18 +108,21 @@ on:
     # back-to-back bot commits for the same change.
     - cron: "17,47 * * * *"
 
-# Prevent two dashboard builds from modifying main at the same time.
+# Prevent two dashboard builds from modifying main at the same time. A pull request
+# has a group of its own, so it can neither wait for nor replace a publishing run.
 concurrency:
-  group: ecosystem-dashboard
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('ecosystem-dashboard-pr-{0}', github.event.number) || 'ecosystem-dashboard' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
-permissions:
-  contents: write
+# No permission by default: every job asks for exactly what it needs.
+permissions: {}
 
 jobs:
   build:
     name: Generate ecosystem dashboard
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       # -----------------------------------------------------------------------
@@ -104,7 +131,7 @@ jobs:
       # checkout v6 runs on Node.js 24 and avoids the old Node.js 20 warning.
       # -----------------------------------------------------------------------
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 1
 
@@ -112,7 +139,7 @@ jobs:
       # Python
       # -----------------------------------------------------------------------
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
 
@@ -245,20 +272,92 @@ jobs:
           git status --short
 
       # -----------------------------------------------------------------------
-      # Commit only when the generated dashboard actually changed
+      # Reconcile the figures of the ecosystem
       # -----------------------------------------------------------------------
-      # CAT-01 (P2): the concurrency group above only ever serialized two runs of
-      # THIS SAME workflow against each other - it does nothing for a
-      # genuine human push to main landing between this job's checkout
-      # and its own push, which used to just fail outright (a real
-      # non-fast-forward rejection) and silently lose this run's
-      # regenerated dashboard until the next scheduled hour. The
-      # generated docs/index.html/.nojekyll content, and the seven
-      # version-synced READMEs, are saved to a real temp location BEFORE
-      # touching git at all, so a retry can re-apply the exact same
-      # already-computed output onto a freshly re-fetched main - never
-      # regenerating (and never re-hitting the GitHub API) partway
-      # through a retry.
+      # Inventory, manifests, the README and its seven translations, the catalogue,
+      # the dashboard just generated and the progress numbers are compared, and each
+      # figure is explained in the job summary. The step never turns an unreadable
+      # source into "healthy"; a real incoherence is a warning here (it lives in
+      # other repositories and must not stop the dashboard that reports it), and
+      # the tool itself exits with a code other than 0.
+      - name: Reconcile the figures of the ecosystem
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set +e
+          python scripts/ecosystem_integrity_test.py --json "$RUNNER_TEMP/integrity-report.json"
+          code=$?
+          if [ "$code" -ne 0 ]; then
+            echo "::warning title=Ecosystem integrity::The reconciliation found incoherences or could not verify the sources (exit code $code). See the job summary."
+          fi
+          exit 0
+
+      # -----------------------------------------------------------------------
+      # Hand the generated files to the publishing job (never on a pull request)
+      # -----------------------------------------------------------------------
+      # The generated docs/index.html and docs/.nojekyll, the seven version-synced
+      # READMEs and the daily snapshot are saved BEFORE git is touched, so a retry
+      # of the publishing job can re-apply the exact same already-computed output
+      # onto a freshly re-fetched main - never regenerating (and never re-hitting
+      # the GitHub API) partway through a retry.
+      - name: Collect the generated files
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/dashboard-out"
+          mkdir -p "$out/extras/data" "$out/extras/docs"
+          cp docs/index.html "$out/index.html"
+          cp docs/.nojekyll "$out/nojekyll"
+          for extra in data/history.json docs/og-image.png; do
+            if [ -f "$extra" ]; then cp "$extra" "$out/extras/$extra"; fi
+          done
+          for readme in README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md README_por.md; do
+            cp "$readme" "$out/$readme"
+          done
+
+      - name: Keep the generated files for the publishing job
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: dashboard-out
+          path: ${{ runner.temp }}/dashboard-out
+          if-no-files-found: error
+          retention-days: 1
+
+  # ---------------------------------------------------------------------------
+  # Publish: the only job that may write to the repository
+  # ---------------------------------------------------------------------------
+  # GitHub Pages publishes from the branch main (folder /docs), so committing to main
+  # is the whole deployment: no Pages permission and no OIDC token are needed.
+  # CAT-01 (P2): the concurrency group above only ever serialized two runs of THIS
+  # SAME workflow against each other - it does nothing for a genuine human push to
+  # main landing between this job's checkout and its own push, which used to just
+  # fail outright (a real non-fast-forward rejection) and silently lose this run's
+  # regenerated dashboard until the next scheduled hour; the retry loop below
+  # re-fetches main and re-applies the saved output.
+  publish:
+    name: Publish the dashboard
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 1
+
+      - name: Fetch the generated files
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: dashboard-out
+          path: ${{ runner.temp }}/dashboard-out
+
+      # Commit only when the generated dashboard actually changed.
       - name: Commit dashboard if changed
         shell: bash
         run: |
@@ -268,26 +367,15 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           readmes=(README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md README_por.md)
-
-          workdir="$(mktemp -d)"
-          cp docs/index.html "$workdir/index.html"
-          cp docs/.nojekyll "$workdir/.nojekyll"
-          # The daily snapshot of the progress and the small image of the social cards are written by the generator too.
+          workdir="$RUNNER_TEMP/dashboard-out"
           extras=(data/history.json docs/og-image.png)
-          mkdir -p "$workdir/extras/data" "$workdir/extras/docs"
-          for extra in "${extras[@]}"; do
-            if [ -f "$extra" ]; then cp "$extra" "$workdir/extras/$extra"; fi
-          done
-          for readme in "${readmes[@]}"; do
-            cp "$readme" "$workdir/$readme"
-          done
 
           max_attempts=5
           for attempt in $(seq 1 "$max_attempts"); do
             git fetch origin main
             git reset --hard origin/main
             cp "$workdir/index.html" docs/index.html
-            cp "$workdir/.nojekyll" docs/.nojekyll
+            cp "$workdir/nojekyll" docs/.nojekyll
             mkdir -p data
             for extra in "${extras[@]}"; do
               if [ -f "$workdir/extras/$extra" ]; then cp "$workdir/extras/$extra" "$extra"; fi

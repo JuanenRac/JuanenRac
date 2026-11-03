@@ -55,8 +55,7 @@ on:
   schedule:
     - cron: "0 6 * * 1"
 
-permissions:
-  contents: read
+permissions: {}
 
 concurrency:
   group: sync-labels-ecosystem
@@ -70,6 +69,8 @@ jobs:
     name: sync (${{ matrix.repo }})
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     strategy:
 
@@ -160,7 +161,7 @@ jobs:
 
       - name: Checkout label configuration
 
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
         with:
           sparse-checkout: |
