@@ -827,7 +827,7 @@
     ],
     "EH3D-UPDATER": [
      1,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-VALIDATION-LAB": [
      0,
@@ -899,7 +899,7 @@
     ],
     "HYDRA-UMC-DATALAKE": [
      1,
-     "0.2.4"
+     "0.2.5"
     ],
     "HYDRA-UMC-DETECTION-HEF": [
      1,
@@ -945,6 +945,10 @@
      1,
      "0.3.0"
     ],
+    "HYDRA-UMC-JOB-DISPATCHER": [
+     1,
+     "0.2.9"
+    ],
     "HYDRA-UMC-LOCAL-TECHNICIAN": [
      1,
      "0.2.0"
@@ -972,6 +976,10 @@
     "HYDRA-UMC-OPS-AGENT": [
      1,
      "0.2.2"
+    ],
+    "HYDRA-UMC-ORCHESTRATOR": [
+     1,
+     "0.2.5"
     ],
     "HYDRA-UMC-OS": [
      1,
@@ -1186,12 +1194,14 @@
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 177,
     "HYDRA-UMC-HIL-BRIDGE": 172,
     "HYDRA-UMC-IOS-CONTROL": 503,
+    "HYDRA-UMC-JOB-DISPATCHER": 285,
     "HYDRA-UMC-LOCAL-TECHNICIAN": 367,
     "HYDRA-UMC-MQTT-BROKER": 173,
     "HYDRA-UMC-MTCONNECT-ADAPTER": 180,
     "HYDRA-UMC-NODE-HEALING": 172,
     "HYDRA-UMC-OPCUA-SERVER": 219,
     "HYDRA-UMC-OPS-AGENT": 350,
+    "HYDRA-UMC-ORCHESTRATOR": 234,
     "HYDRA-UMC-OS": 20,
     "HYDRA-UMC-OS-REBUILDER": 212,
     "HYDRA-UMC-PATH-PLANNER-3D": 75,
