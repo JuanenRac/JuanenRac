@@ -2,15 +2,15 @@
  "builds": {
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-03T12:10:50Z",
-   "exp": "2026-11-10T12:08:46Z",
-   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/41631669142",
+   "at": "2026-11-03T16:46:19Z",
+   "checked": true,
+   "exp": "2026-11-10T16:44:41Z",
+   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/41676104964",
    "wf": "apk-build.yml"
   },
   "ARMOR-NETWORK": {
    "art": true,
    "at": "2026-11-03T16:43:36Z",
-   "checked": true,
    "exp": "2026-11-10T16:41:26Z",
    "url": "https://github.com/JuanenRac/ARMOR-NETWORK/actions/runs/41676685238",
    "wf": "package-build.yml"
@@ -18,7 +18,6 @@
   "ARMOR-NODE-ALARM": {
    "art": true,
    "at": "2026-11-03T16:42:48Z",
-   "checked": true,
    "exp": "2026-11-10T16:39:05Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/41675827700",
    "wf": "firmware-build.yml"
@@ -26,7 +25,6 @@
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
    "at": "2026-11-03T16:42:51Z",
-   "checked": true,
    "exp": "2026-11-10T16:39:53Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/41675856363",
    "wf": "firmware-build.yml"
@@ -34,7 +32,6 @@
   "ARMOR-NODE-HMI": {
    "art": true,
    "at": "2026-11-03T16:43:01Z",
-   "checked": true,
    "exp": "2026-11-10T16:41:07Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/41675750764",
    "wf": "firmware-build.yml"
@@ -42,7 +39,6 @@
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-03T16:43:00Z",
-   "checked": true,
    "exp": "2026-11-10T16:39:56Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/41675888244",
    "wf": "firmware-build.yml"
@@ -50,7 +46,6 @@
   "ARMOR-NODE-SOLAR": {
    "art": true,
    "at": "2026-11-03T16:43:05Z",
-   "checked": true,
    "exp": "2026-11-10T16:40:16Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/41675921704",
    "wf": "firmware-build.yml"
@@ -58,7 +53,6 @@
   "ARMOR-SERVER": {
    "art": true,
    "at": "2026-11-03T16:44:05Z",
-   "checked": true,
    "exp": "2026-11-10T16:41:44Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/41676647651",
    "wf": "package-build.yml"
@@ -66,7 +60,6 @@
   "ARMOR-SERVER-AI": {
    "art": true,
    "at": "2026-11-03T16:40:07Z",
-   "checked": true,
    "exp": "2026-11-10T16:37:02Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER-AI/actions/runs/41675977690",
    "wf": "package-build.yml"
@@ -81,7 +74,6 @@
   "ARMOR-VOICE-AI": {
    "art": true,
    "at": "2026-11-03T16:42:34Z",
-   "checked": true,
    "exp": "2026-11-10T16:37:35Z",
    "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/41676017989",
    "wf": "package-build.yml"
@@ -89,7 +81,6 @@
   "HYDRA-UMC": {
    "art": true,
    "at": "2026-11-03T16:44:16Z",
-   "checked": true,
    "exp": "2026-11-10T16:42:41Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/41676299440",
    "wf": "firmware-build.yml"
@@ -104,7 +95,6 @@
   "HYDRA-UMC-HIL-BRIDGE": {
    "art": true,
    "at": "2026-11-03T16:44:15Z",
-   "checked": true,
    "exp": "2026-11-10T16:42:49Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/actions/runs/41676785899",
    "wf": "binaries-build.yml"
@@ -112,7 +102,6 @@
   "HYDRA-UMC-JOB-DISPATCHER": {
    "art": true,
    "at": "2026-11-03T16:44:34Z",
-   "checked": true,
    "exp": "2026-11-10T16:43:28Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/actions/runs/41676734831",
    "wf": "binaries-build.yml"
@@ -120,7 +109,6 @@
   "HYDRA-UMC-NODE-HEALING": {
    "art": true,
    "at": "2026-11-03T16:44:17Z",
-   "checked": true,
    "exp": "2026-11-10T16:42:31Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/actions/runs/41676711773",
    "wf": "binaries-build.yml"
@@ -128,7 +116,6 @@
   "HYDRA-UMC-ORCHESTRATOR": {
    "art": true,
    "at": "2026-11-03T16:44:52Z",
-   "checked": true,
    "exp": "2026-11-10T16:43:16Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/actions/runs/41676759853",
    "wf": "binaries-build.yml"
@@ -136,7 +123,6 @@
   "HYDRA-UMC-OS-REBUILDER": {
    "art": true,
    "at": "2026-11-03T16:44:44Z",
-   "checked": true,
    "exp": "2026-11-10T16:43:14Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/actions/runs/41676891749",
    "wf": "package-build.yml"
@@ -144,7 +130,6 @@
   "HYDRA-UMC-PATH-PLANNER-3D": {
    "art": true,
    "at": "2026-11-03T16:44:50Z",
-   "checked": true,
    "exp": "2026-11-10T16:43:44Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/actions/runs/41676813252",
    "wf": "binaries-build.yml"
@@ -152,7 +137,6 @@
   "HYDRA-UMC-PHYSICS-REPLICA": {
    "art": true,
    "at": "2026-11-03T16:44:21Z",
-   "checked": true,
    "exp": "2026-11-10T16:43:25Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/actions/runs/41676840851",
    "wf": "binaries-build.yml"
@@ -173,17 +157,18 @@
   },
   "HYDRA-UMC-SUITE": {
    "art": true,
-   "at": "2026-11-03T16:44:56Z",
+   "at": "2026-11-03T16:54:08Z",
    "checked": true,
-   "exp": "2026-11-10T16:43:40Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/41676930675",
-   "wf": "package-build.yml"
+   "exp": "2026-11-10T16:48:01Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/41676957273",
+   "wf": "exe-build.yml"
   },
   "HYDRA-UMC-SWARM-SYNC": {
    "art": true,
-   "at": "2026-11-03T10:44:03Z",
-   "exp": "2026-11-10T10:41:04Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/actions/runs/41620904822",
+   "at": "2026-11-03T16:45:25Z",
+   "checked": true,
+   "exp": "2026-11-10T16:44:04Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/actions/runs/41676865724",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-TOOL-CLI": {
@@ -224,7 +209,6 @@
   "URTC-COMMON": {
    "art": true,
    "at": "2026-11-03T16:43:46Z",
-   "checked": true,
    "exp": "2026-11-10T16:41:27Z",
    "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/41676274195",
    "wf": "release-files-build.yml"
@@ -232,7 +216,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-03T16:43:56Z",
-   "checked": true,
    "exp": "2026-11-10T16:41:08Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/41676140234",
    "wf": "exe-build.yml"
@@ -240,22 +223,21 @@
   "URTC-SMART-RACK": {
    "art": true,
    "at": "2026-11-03T16:44:00Z",
-   "checked": true,
    "exp": "2026-11-10T16:42:24Z",
    "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/41676198509",
    "wf": "firmware-build.yml"
   },
   "URTC-TESTER": {
    "art": true,
-   "at": "2026-11-03T12:44:50Z",
-   "exp": "2026-11-10T12:40:30Z",
-   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/41636932674",
+   "at": "2026-11-03T16:48:24Z",
+   "checked": true,
+   "exp": "2026-11-10T16:42:12Z",
+   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/41676168923",
    "wf": "exe-build.yml"
   },
   "URTC-VISION-TOOL": {
    "art": true,
    "at": "2026-11-03T16:43:55Z",
-   "checked": true,
    "exp": "2026-11-10T16:41:18Z",
    "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/41676224186",
    "wf": "firmware-build.yml"
@@ -263,7 +245,6 @@
   "URTC-WEB-STUDIO": {
    "art": true,
    "at": "2026-11-03T16:44:13Z",
-   "checked": true,
    "exp": "2026-11-10T16:43:22Z",
    "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/41676245603",
    "wf": "site-build.yml"

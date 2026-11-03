@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-03T16:44:00Z",
+ "asof": "2026-11-03T16:58:03Z",
  "ci": {
   "checked": 422,
   "red": [
@@ -62,19 +62,19 @@
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 212,
-    "min7": 249,
-    "repo": "ARMOR-SERVER"
-   },
-   {
-    "min24": 212,
-    "min7": 221,
+    "min24": 224,
+    "min7": 233,
     "repo": "HYDRA-UMC-SDK"
    },
    {
-    "min24": 205,
-    "min7": 219,
+    "min24": 220,
+    "min7": 220,
     "repo": "ARMOR-STUDIO"
+   },
+   {
+    "min24": 215,
+    "min7": 253,
+    "repo": "ARMOR-SERVER"
    },
    {
     "min24": 186,
@@ -82,23 +82,23 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 157,
-    "min7": 190,
+    "min24": 161,
+    "min7": 193,
     "repo": "HYDRA-UMC-ORCHESTRATOR"
    },
    {
-    "min24": 148,
-    "min7": 255,
+    "min24": 157,
+    "min7": 264,
     "repo": "ARMOR-ANDROID-CONTROL"
    },
    {
-    "min24": 142,
-    "min7": 255,
+    "min24": 148,
+    "min7": 261,
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 7478,
-  "total7": 11558,
+  "total24": 7585,
+  "total7": 11658,
   "warn": false
  },
  "hygiene": {
@@ -220,7 +220,7 @@
    0
   ],
   "min": [
-   7478
+   7585
   ],
   "red": [
    8
