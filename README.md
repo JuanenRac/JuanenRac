@@ -460,7 +460,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[██████░░░░░░░░░░░░░░] 30%` — Calculated from real data: the maturity and the evidence that each of its 37 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████▎░░░░░░░░░░░░░] 31%` — Calculated from real data: the maturity and the evidence that each of its 37 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -499,7 +499,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.2 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
+| [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.3 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
 | [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.1.5 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.6 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.4 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
@@ -515,7 +515,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.1.3 | Rust re-implementation of the routing workflow of the classic DOS software for Bungard CCD machines, from HP-GL plot files: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.2.0 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
 | [EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC) | 0.0.9 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
-| [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.2 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
+| [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.3 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
 
 ### 💠 Laser projects:
@@ -527,8 +527,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 CAM projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM) | 0.0.6 | Isolation milling of the copper of a Gerber layer: exact offsets of the copper, several tools and passes, copper rubout, direction and order of the cuts, drills and outline, alignment holes, design rules, solder mask, G-code and HP-GL; the window is planned. |
-| [EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER) | 0.0.3 | Checks a G-code program before it reaches a machine: its time with the acceleration of the machine and alerts for rapid moves into the material, moves outside the table, cuts with the spindle off and heads over clamps; the 3D simulation is planned. |
+| [EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM) | 0.0.7 | Isolation milling of the copper of a Gerber layer: exact offsets of the copper, several tools and passes, copper rubout, direction and order of the cuts, drills and outline, alignment holes, design rules, solder mask, G-code and HP-GL; the window is planned. |
+| [EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER) | 0.0.4 | Checks a G-code program before it reaches a machine: its time with the acceleration of the machine and alerts for rapid moves into the material, moves outside the table, cuts with the spindle off and heads over clamps; the 3D simulation is planned. |
 
 
 ### 💠 Gerber projects:
@@ -540,8 +540,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Pick&Place projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.0.3 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
-| [EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER) | 0.0.2 | Pick and place assembly: KiCad and CSV position files, feeders, and the order of the placements for a head with one to six nozzles; the camera and the control of the machine are planned. |
+| [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.0.4 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
+| [EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER) | 0.0.3 | Pick and place assembly: KiCad and CSV position files, feeders, and the order of the placements for a head with one to six nozzles; the camera and the control of the machine are planned. |
 
 
 ### 💠 Node projects:
@@ -580,7 +580,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.2 | Finds round fiducial marks in an image, turns pixels into millimetres, corrects the distortion of the lens and works out the turn and the shift of a board; the live camera, the neural network and the window are planned. |
-| [EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL) | 0.0.3 | Topographic height mesh processor (Z-Probing) and G-code interpolation for surface compensation. |
+| [EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL) | 0.0.4 | Topographic height mesh processor (Z-Probing) and G-code interpolation for surface compensation. |
 
 ---
 
