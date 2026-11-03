@@ -559,6 +559,13 @@
    }
   },
   {
+   "actions": {
+    "fail": 152,
+    "min": 5671,
+    "ok": 3477,
+    "other": 43,
+    "runs": 3672
+   },
    "areas": {
     "armor": {
      "ci": 100,
@@ -1180,7 +1187,7 @@
     "HYDRA-UMC-BRIDGE-ROS2": 119,
     "HYDRA-UMC-BRIDGE-UAV": 165,
     "HYDRA-UMC-COGNITIVE-NODE": 202,
-    "HYDRA-UMC-CONNECTOR-HUB": 238,
+    "HYDRA-UMC-CONNECTOR-HUB": 253,
     "HYDRA-UMC-DASHBOARD-AI": 261,
     "HYDRA-UMC-DATALAKE": 299,
     "HYDRA-UMC-DETECTION-HEF": 201,
@@ -1210,7 +1217,7 @@
     "HYDRA-UMC-SAFETY-ZONES": 953,
     "HYDRA-UMC-SDK": 834,
     "HYDRA-UMC-SEMANTIC-PLANNER": 273,
-    "HYDRA-UMC-SERVER": 669,
+    "HYDRA-UMC-SERVER": 683,
     "HYDRA-UMC-STUDIO": 904,
     "HYDRA-UMC-STUDIO-KIT": 86,
     "HYDRA-UMC-SUITE": 56,
