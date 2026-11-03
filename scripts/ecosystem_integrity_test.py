@@ -458,7 +458,7 @@ def reconcile(src: Sources) -> Report:
             else:
                 add("history", OK, f"data/history.json ({last.get('date')})", f"the last daily snapshot holds the same {len(snap_repos)} repositories as the dashboard")
 
-    figures = explain(src, names, ecosystem_repos, manifest_repos, unreadable, listed_dash, sections.get("README.md"))
+    figures = explain(src, names, ecosystem_repos, manifest_repos, unreadable, listed_dash, sections.get("README.md"), page_issues)
     order = {state: index for index, state in enumerate(STATES)}
     findings.sort(key=lambda f: (order[f.state], f.check, f.subject.casefold()))
     return Report(findings, figures)
@@ -466,7 +466,7 @@ def reconcile(src: Sources) -> Report:
 
 # --------------------------------------------------------------------------- the figures
 
-def explain(src: Sources, names: dict, ecosystem_repos: dict, manifest_repos: set, unreadable: list, listed_dash: set, readme_rows: "dict | None") -> list:
+def explain(src: Sources, names: dict, ecosystem_repos: dict, manifest_repos: set, unreadable: list, listed_dash: set, readme_rows: "dict | None", page_issues: "dict | None" = None) -> list:
     out: list = []
     if src.repos is None:
         out.append(Figure("Public repositories", "not verified", "the listing of the repositories of the owner could not be read, so no figure that depends on it can be explained"))
@@ -485,8 +485,11 @@ def explain(src: Sources, names: dict, ecosystem_repos: dict, manifest_repos: se
                       "the manifest is a JSON object, names its own repository and declares a known maturity and evidence" + (f"; not valid: {', '.join(bad)}" if bad else "")))
     if src.dashboard is not None:
         not_listed = sorted(set(valid) - listed_dash, key=str.casefold)
-        out.append(Figure("Listed by the dashboard", f"{len(listed_dash)}",
-                          "repositories whose manifest the pinned updaters accept" + (f"; valid but not listed: {', '.join(not_listed)}" if not_listed else "")))
+        reasons = page_issues or {}
+        detail = ", ".join(f"{n} ({reasons[n][1]})" if n in reasons else n for n in not_listed)
+        out.append(Figure("Listed by the dashboard", f"{len(listed_dash)} of {projects}" if projects else f"{len(listed_dash)}",
+                          "repositories whose manifest the updaters pinned in the workflows accept (the 'registry health' card of the page)"
+                          + (f"; valid by the rules above but not listed: {detail}" if not_listed else "")))
     else:
         out.append(Figure("Listed by the dashboard", "not verified", "the dashboard data could not be read"))
     for key in ("hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"):

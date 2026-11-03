@@ -85,7 +85,7 @@ class ConsistentWorldTests(unittest.TestCase):
         self.assertEqual(figures["Projects"].value, "8")
         self.assertIn("JuanenRac (profile repository)", figures["Projects"].why)
         self.assertEqual(figures["Valid manifests"].value, "8 of 8")
-        self.assertEqual(figures["Listed by the dashboard"].value, "8")
+        self.assertEqual(figures["Listed by the dashboard"].value, "8 of 8")
         self.assertEqual(figures["URTC"].value, "2")
         self.assertIn("2 in the README catalogue", figures["URTC"].why)
 
@@ -307,8 +307,8 @@ class DashboardTests(unittest.TestCase):
         self.assertIn("grpc_port", found[0].detail)
         figures = {f.label: f for f in report.figures}
         self.assertEqual(figures["Valid manifests"].value, "8 of 8")
-        self.assertEqual(figures["Listed by the dashboard"].value, "7")
-        self.assertIn("HYDRA-UMC-ITEM-1", figures["Listed by the dashboard"].why)
+        self.assertEqual(figures["Listed by the dashboard"].value, "7 of 8")
+        self.assertIn("HYDRA-UMC-ITEM-1 (unknown field(s) in service: grpc_port)", figures["Listed by the dashboard"].why)
 
     def test_a_listed_repository_that_vanished_or_is_in_the_wrong_ecosystem_fails(self):
         src = good_sources()
