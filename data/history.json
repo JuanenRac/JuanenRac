@@ -560,11 +560,11 @@
   },
   {
    "actions": {
-    "fail": 209,
-    "min": 7294,
-    "ok": 4186,
-    "other": 20,
-    "runs": 4415
+    "fail": 213,
+    "min": 7478,
+    "ok": 4252,
+    "other": 32,
+    "runs": 4497
    },
    "areas": {
     "armor": {
@@ -578,7 +578,7 @@
      "tests": 95
     },
     "eh3d": {
-     "ci": 100,
+     "ci": 97,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -598,7 +598,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -611,9 +611,9 @@
    "date": "2026-11-03",
    "progress": {
     "armor": 66,
-    "eh3d": 31,
+    "eh3d": 32,
     "hydra-umc": 54,
-    "urtc": 51
+    "urtc": 52
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -1132,7 +1132,7 @@
    "sentinel": {
     "cand": 5,
     "gaps": 0,
-    "min": 7294,
+    "min": 7478,
     "red": 8
    },
    "tests": {
@@ -1180,7 +1180,7 @@
     "EH3D-TOOL-MANAGER": 57,
     "EH3D-UPDATER": 477,
     "EH3D-VALIDATION-LAB": 44,
-    "EH3D-VISION-STUDIO": 25,
+    "EH3D-VISION-STUDIO": 66,
     "HYDRA-UMC": 178,
     "HYDRA-UMC-ANDROID-CONTROL": 356,
     "HYDRA-UMC-ANOMALY-DETECTOR": 262,
