@@ -196,17 +196,9 @@
      0,
      "0.0.1"
     ],
-    "EH3D-PHOENIX-LASER": [
-     0,
-     "0.0.2"
-    ],
     "EH3D-MANUFACTURING-PROFILE": [
      0,
      "0.0.1"
-    ],
-    "EH3D-PHOENIX-CNC": [
-     0,
-     "0.0.9"
     ],
     "EH3D-NODE-BUNGARD": [
      0,
@@ -227,6 +219,14 @@
     "EH3D-PHOENIX-CAD": [
      0,
      "0.0.1"
+    ],
+    "EH3D-PHOENIX-CNC": [
+     0,
+     "0.0.9"
+    ],
+    "EH3D-PHOENIX-LASER": [
+     0,
+     "0.0.2"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
@@ -560,11 +560,11 @@
   },
   {
    "actions": {
-    "fail": 234,
-    "min": 8079,
-    "ok": 4510,
-    "other": 19,
-    "runs": 4763
+    "fail": 237,
+    "min": 8105,
+    "ok": 4537,
+    "other": 20,
+    "runs": 4794
    },
    "areas": {
     "armor": {
@@ -582,7 +582,7 @@
      "docs": 100,
      "hardware": 0,
      "production": 0,
-     "releases": 69,
+     "releases": 72,
      "simulation": 0,
      "software": 13,
      "tests": 90
@@ -613,7 +613,7 @@
     "armor": 66,
     "eh3d": 32,
     "hydra-umc": 54,
-    "urtc": 52
+    "urtc": 51
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -630,7 +630,7 @@
     ],
     "ARMOR-DOCS": [
      2,
-     "0.8.1.5"
+     "0.8.1.6"
     ],
     "ARMOR-HARDWARE": [
      1,
@@ -674,7 +674,7 @@
     ],
     "ARMOR-SIMULATOR": [
      2,
-     "0.3.4"
+     "0.3.5"
     ],
     "ARMOR-STUDIO": [
      2,
@@ -760,10 +760,6 @@
      0,
      "0.0.1"
     ],
-    "EH3D-PHOENIX-LASER": [
-     0,
-     "0.0.3"
-    ],
     "EH3D-MANUFACTURING-PROFILE": [
      0,
      "0.0.1"
@@ -788,9 +784,21 @@
      0,
      "0.0.2"
     ],
+    "EH3D-PHOENIX-CNC": [
+     0,
+     "0.0.9"
+    ],
+    "EH3D-PHOENIX-LASER": [
+     0,
+     "0.0.3"
+    ],
     "EH3D-PHOENIX-PCB": [
      0,
      "0.0.2"
+    ],
+    "EH3D-PHOENIX-PNP": [
+     0,
+     "0.0.4"
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -1124,7 +1132,7 @@
    "sentinel": {
     "cand": 11,
     "gaps": 0,
-    "min": 8079,
+    "min": 8105,
     "red": 3
    },
    "tests": {
@@ -1156,10 +1164,12 @@
     "EH3D-HYDRA-BRIDGE": 3,
     "EH3D-ISOCAM": 198,
     "EH3D-LAB-BRIDGE": 3,
-    "EH3D-PHOENIX-LASER": 74,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 27,
+    "EH3D-PHOENIX-CNC": 126,
+    "EH3D-PHOENIX-LASER": 74,
     "EH3D-PHOENIX-PCB": 223,
+    "EH3D-PHOENIX-PNP": 53,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 77,
     "EH3D-SERVER": 160,
@@ -1176,7 +1186,7 @@
     "HYDRA-UMC-ANOMALY-DETECTOR": 262,
     "HYDRA-UMC-BRIDGE-AMR": 157,
     "HYDRA-UMC-BRIDGE-CNC": 302,
-    "HYDRA-UMC-BRIDGE-DROIDS": 79,
+    "HYDRA-UMC-BRIDGE-DROIDS": 118,
     "HYDRA-UMC-BRIDGE-LASER": 222,
     "HYDRA-UMC-BRIDGE-OPENPNP": 255,
     "HYDRA-UMC-BRIDGE-PRINTER3D": 164,

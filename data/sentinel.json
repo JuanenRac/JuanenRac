@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-03T23:24:45Z",
+ "asof": "2026-11-03T23:47:12Z",
  "ci": {
-  "checked": 457,
+  "checked": 465,
   "red": [
    {
     "repo": "EH3D-NODE-HMI-GUI",
@@ -16,9 +16,9 @@
     "wf": "firmware-build.yml"
    },
    {
-    "repo": "URTC-WEB-STUDIO",
-    "since": "2026-11-03T23:21:48Z",
-    "streak": 1,
+    "repo": "HYDRA-UMC-BRIDGE-DROIDS",
+    "since": "2026-11-03T23:47:25Z",
+    "streak": 2,
     "wf": "ci.yml"
    }
   ],
@@ -28,7 +28,7 @@
   "top": [
    {
     "min24": 318,
-    "min7": 343,
+    "min7": 339,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
@@ -47,7 +47,7 @@
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 234,
+    "min24": 228,
     "min7": 237,
     "repo": "HYDRA-UMC-SDK"
    },
@@ -57,14 +57,14 @@
     "repo": "ARMOR-STUDIO"
    }
   ],
-  "total24": 8079,
-  "total7": 11909,
+  "total24": 8105,
+  "total7": 12073,
   "warn": false
  },
  "hygiene": {
   "allowed_missing": [],
   "gaps": 0,
-  "ruleset_checked": 125,
+  "ruleset_checked": 128,
   "ruleset_missing": [],
   "settings_checked": 0,
   "sha_missing": []
@@ -72,7 +72,7 @@
  "parte": [
   {
    "key": "head",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "bad": 0,
     "cand": 11,
@@ -82,11 +82,11 @@
   },
   {
    "key": "red",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "list": [
      "EH3D-NODE-HMI-GUI",
-     "URTC-WEB-STUDIO"
+     "HYDRA-UMC-BRIDGE-DROIDS"
     ],
     "n": 3
    }
@@ -115,20 +115,12 @@
    "key": "settings",
    "level": "info",
    "p": {
-    "m": 125,
+    "m": 128,
     "n": 0
-   }
-  },
-  {
-   "key": "unread",
-   "level": "info",
-   "p": {
-    "m": 126,
-    "n": 1
    }
   }
  ],
- "read": 125,
+ "read": 128,
  "releases": {
   "candidates": [
    {
@@ -202,15 +194,15 @@
   "min_entries": 1,
   "total": 11
  },
- "repos": 126,
+ "repos": 128,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 99,
+  "none": 102,
   "norelease": 11,
   "unverifiable": 2,
-  "unverified": 1,
+  "unverified": 0,
   "verified": 13
  },
  "trend": {
@@ -224,7 +216,7 @@
    0
   ],
   "min": [
-   8079
+   8105
   ],
   "red": [
    3
