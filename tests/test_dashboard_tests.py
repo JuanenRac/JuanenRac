@@ -116,6 +116,12 @@ class ReadTests(unittest.TestCase):
         self.assertIn("HYDRA-UMC-A", got["errors"])        # no README row for it and the glance file could not be read: not verified
         self.assertNotIn("HYDRA-UMC-A", got["undeclared"])
 
+    def test_a_repository_missing_from_a_glance_file_that_was_read_is_undeclared_when_its_readme_has_no_count(self):
+        eco = {**ECO, "HYDRA-UMC-C": "hydra-umc"}                  # not in the glance file of the fake, no README row either
+        got = ts.read_all(eco, fake_fetch(), self.config)
+        self.assertIn("HYDRA-UMC-C", got["undeclared"])
+        self.assertNotIn("HYDRA-UMC-C", got["errors"])
+
     def test_a_glance_file_that_is_not_json_is_reported(self):
         def fetch(path):
             return ("ok", "not json") if path.endswith("glance.json") else fake_fetch()(path)

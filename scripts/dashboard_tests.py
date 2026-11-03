@@ -172,7 +172,7 @@ def read_all(ecosystem_by_name: Mapping[str, str], fetch: Fetch, config: Mapping
         glance = glance_data.get(eco)
         if glance is not None and glance.get(name):
             return name, {**glance[name], "src": "glance"}, "", False
-        has_glance = bool(source.get("glance"))
+        glance_failed = bool(source.get("glance")) and glance is None
         # The glance file is the first source: when it could not be read, a README without the row does not prove that the repository declares nothing.
         answered = glance is not None and name in glance
         reason = ""
@@ -182,9 +182,9 @@ def read_all(ecosystem_by_name: Mapping[str, str], fetch: Fetch, config: Mapping
                 parsed = parse_readme(text if isinstance(text, str) else "")
                 if parsed and parsed["n"] is not None:
                     return name, {**parsed, "src": "readme"}, "", False
-                answered = answered or not has_glance
+                answered = answered or not glance_failed
             elif status == "absent":
-                answered = answered or not has_glance
+                answered = answered or not glance_failed
             else:
                 reason = str(text)
         if answered:
