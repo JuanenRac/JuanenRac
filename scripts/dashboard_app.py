@@ -519,7 +519,6 @@ def sidebar(maturity_keys: Sequence[tuple[str, str, int]], roles: Sequence[tuple
         <div class="side-group" role="group" aria-labelledby="fg-mat"><h2 id="fg-mat" data-i18n="filter_maturity">Maturity</h2><div class="chip-row">{chips("maturity", maturity_keys, "maturity_")}</div></div>
         <div class="side-group" role="group" aria-labelledby="fg-type"><h2 id="fg-type" data-i18n="filter_type">Type</h2><div class="chip-row">{chips("role", roles, "role_")}</div></div>
         <div class="side-group" role="group" aria-labelledby="fg-target"><h2 id="fg-target" data-i18n="filter_target">Deploy target</h2><div class="chip-row">{chips("deploy", deploys, "deploy_")}</div></div>
-        {dashboard_delivery_ui.pipeline_filter()}
         <div class="side-group family-filter"><label for="family-select" data-i18n="family_label">Family:</label>
           <select id="family-select" data-testid="filter-family"><option value="all" data-i18n="family_all">All families</option>{family_options}</select></div>
         <div class="side-foot">
@@ -556,7 +555,8 @@ def scope_bar(eco_counts: Mapping[str, int], total: int) -> str:
         '<div class="scope-row" role="group" aria-labelledby="scope-t"><span class="scope-title" id="scope-t" data-i18n="scope_label">Scope</span>' + "".join(buttons) + '</div>'
         '<div class="scope-row scope-sub" role="group" aria-labelledby="scope-sub-t"><span class="scope-title" id="scope-sub-t" data-i18n="scope_sub_label">Families</span>'
         '<span class="scope-sub-hint" id="scope-sub-hint" data-i18n="scope_all_hint">Pick an ecosystem to browse its families.</span>'
-        '<span class="chip-row" id="scope-sub-chips" data-testid="scope-sub"></span></div></div>'
+        '<span class="chip-row" id="scope-sub-chips" data-testid="scope-sub"></span></div>'
+        + dashboard_delivery_ui.pipeline_filter() + '</div>'
     )
 
 

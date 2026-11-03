@@ -31,12 +31,12 @@ def side_toggle() -> str:
 
 
 def pipeline_filter() -> str:
-    """The group of chips of the side bar that filters the projects by the state of their delivery pipeline."""
+    """The row of chips under the scope bar of the projects that filters the projects by the state of their delivery pipeline."""
     chips = "".join(
         f'<button type="button" class="chip" data-filter-pipeline="{state}" aria-pressed="false" data-testid="filter-pipeline-{state}">'
         f'<span data-i18n="pipe_{state}">{_esc(EN["pipe_" + state])}</span><b>0</b></button>' for state in PIPE_STATES)
-    return (f'<div class="side-group" role="group" aria-labelledby="fg-pipe"><h2 id="fg-pipe" data-i18n="filter_pipeline">{_esc(EN["filter_pipeline"])}</h2>'
-            f'<div class="chip-row">{chips}</div></div>')
+    return (f'<div class="scope-row scope-pipe" role="group" aria-labelledby="fg-pipe"><span class="scope-title" id="fg-pipe" data-i18n="filter_pipeline">{_esc(EN["filter_pipeline"])}</span>'
+            f'<span class="chip-row">{chips}</span></div>')
 
 
 def pipeline_th() -> str:
