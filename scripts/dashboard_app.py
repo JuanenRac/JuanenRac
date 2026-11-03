@@ -24,6 +24,8 @@ import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight_ui
 import dashboard_nav_ui
+import dashboard_delivery_ui
+import dashboard_delivery_texts
 import dashboard_robust
 import dashboard_robust_texts
 from dashboard_charts import Activity, Area, esc
@@ -122,7 +124,22 @@ def no_data(text_key: str = "no_data", text: str = "No data") -> str:
     return f'<p class="no-data" data-i18n="{esc(text_key)}">{esc(text)}</p>'
 
 
-def meter_rows(areas: Mapping[str, Area] | None, eco_label: str, big: bool = False, ctx: str = "s") -> str:
+def live_ci_note(data: "AppData", eco: str) -> str:
+    """The latest run of main of every repository of the ecosystem as this page read it: next to the bar of the README, which was measured earlier."""
+    if not data.activity:
+        return ""
+    names = [n for n, key in data.ecosystem_by_name.items() if key == eco and n in data.activity]
+    if not names:
+        return ""
+    green = sum(1 for n in names if data.activity[n].ci == "success")
+    red = sum(1 for n in names if data.activity[n].ci == "failure")
+    en = dashboard_delivery_texts.TEXTS["en"]
+    title = esc(en["ci_live_title"])
+    return (f'<p class="area-live" data-testid="ci-live-{esc(eco)}" title="{title}" data-i18n-title="ci_live_title" data-i18n-template="ci_live_note" '
+            f'data-g="{green}" data-n="{len(names)}" data-r="{red}">{esc(en["ci_live_note"].format(g=green, n=len(names), r=red))}</p>')
+
+
+def meter_rows(areas: Mapping[str, Area] | None, eco_label: str, big: bool = False, ctx: str = "s", live_ci: str = "") -> str:
     """The eight status areas of one ecosystem as labelled bars: name, glyph for the light, percentage and k/n."""
     if not areas:
         return no_data()
@@ -144,6 +161,7 @@ def meter_rows(areas: Mapping[str, Area] | None, eco_label: str, big: bool = Fal
             f'<span class="area-bar" role="img" aria-label="{esc(label)}" data-aria="pct" data-a-name-key="area_{area}" data-a-name="{AREA_ENGLISH[area]}" data-a-pct="{value.percent}"{counts_attr}>'
             f'<span class="area-fill" style="width:{value.percent}%"></span></span>'
             f'<span class="area-num"><b>{value.percent}%</b><small>{count}</small></span>'
+            f'{live_ci if area == "ci" else ""}'
             f'<div class="contrib" id="{panel_id}" data-testid="contrib-{esc(eco_label)}-{area}" hidden></div></li>'
         )
     return f'<ul class="areas{" areas-big" if big else ""}">{"".join(rows)}</ul>'
@@ -163,7 +181,7 @@ def progress_card(data: AppData, eco: str, label: str, big: bool = False, link_t
         f'<article class="eco-card eco-{esc(eco)}" data-testid="progress-{esc(eco)}">'
         f'<header class="eco-head"><div class="ring-wrap" role="img" tabindex="0" aria-label="{esc(summary)}" data-aria="pct" data-a-name="{esc(label)}"{pct_attr}>{ring}</div>'
         f'<div class="eco-title"><h3>{head}</h3><span class="muted" data-i18n="sum_overall">overall progress</span>{counted_html}{toggle}</div></header>'
-        f'{meter_rows(data.status.get(eco), eco, big, ctx)}'
+        f'{meter_rows(data.status.get(eco), eco, big, ctx, live_ci_note(data, eco))}'
         f'<div class="contrib contrib-progress" id="{panel_id}" data-testid="contrib-{esc(eco)}-progress" hidden></div></article>'
     )
 
@@ -485,7 +503,7 @@ def sidebar(maturity_keys: Sequence[tuple[str, str, int]], roles: Sequence[tuple
         f'<button type="button" class="chip" data-filter-eco="{esc(key)}" aria-pressed="false" data-testid="filter-eco-{esc(key)}"><span>{esc(label)}</span><b>{eco_counts.get(key, 0)}</b></button>'
         for key, label in ECOSYSTEM_FILTERS)
     return f"""
-    <aside class="sidebar" aria-labelledby="filters-t">
+    <aside class="sidebar" id="sidebar" aria-labelledby="filters-t">
       <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-body"><span id="filters-t" data-i18n="filters_title">Search and filters</span><span aria-hidden="true">▾</span></button>
       <div class="filters-body" id="filters-body">
         <div class="side-search">
@@ -501,6 +519,7 @@ def sidebar(maturity_keys: Sequence[tuple[str, str, int]], roles: Sequence[tuple
         <div class="side-group" role="group" aria-labelledby="fg-mat"><h2 id="fg-mat" data-i18n="filter_maturity">Maturity</h2><div class="chip-row">{chips("maturity", maturity_keys, "maturity_")}</div></div>
         <div class="side-group" role="group" aria-labelledby="fg-type"><h2 id="fg-type" data-i18n="filter_type">Type</h2><div class="chip-row">{chips("role", roles, "role_")}</div></div>
         <div class="side-group" role="group" aria-labelledby="fg-target"><h2 id="fg-target" data-i18n="filter_target">Deploy target</h2><div class="chip-row">{chips("deploy", deploys, "deploy_")}</div></div>
+        {dashboard_delivery_ui.pipeline_filter()}
         <div class="side-group family-filter"><label for="family-select" data-i18n="family_label">Family:</label>
           <select id="family-select" data-testid="filter-family"><option value="all" data-i18n="family_all">All families</option>{family_options}</select></div>
         <div class="side-foot">
@@ -608,11 +627,14 @@ CSS = r"""
   .brand .eyebrow { margin: 0; font-size: 10px; letter-spacing: .22em; color: var(--dim); font-weight: 600; }
   .brand h1 { margin: 2px 0 0; font-size: 17px; display: flex; gap: 8px; align-items: center; white-space: nowrap; }
   .brand .version-pill { font-size: 10px; }
-  .tabs-wrap { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 4px; }
+  .topbar { flex-wrap: wrap; row-gap: 4px; padding-bottom: 4px; }
+  .top-actions { margin-left: auto; }
+  .tabs-wrap { order: 3; flex: 1 1 100%; min-width: 0; display: flex; align-items: center; position: relative; }
+  .tabs-wrap.over .tabs { padding-inline: 34px; }
   .tabs { flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth; }
   .tabs::-webkit-scrollbar { display: none; }
-  .tabs-more { flex: 0 0 auto; appearance: none; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-strong); border-radius: 8px; width: 28px; height: 32px; font-size: 18px; line-height: 1; cursor: pointer; }
-  .tabs-more[hidden] { display: none; }
+  .tabs-more { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; appearance: none; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-strong); border-radius: 8px; width: 28px; height: 32px; font-size: 18px; line-height: 1; cursor: pointer; }
+  .tabs-more[hidden] { display: none; } .tabs-more-prev { left: 0; } .tabs-more-next { right: 0; }
   @media (prefers-reduced-motion: reduce) { .tabs { scroll-behavior: auto; } }
   [role="tablist"] { display: flex; gap: 4px; width: max-content; }
   .tab { appearance: none; background: transparent; border: 1px solid transparent; color: var(--dim); padding: 8px 14px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 13px; white-space: nowrap; position: relative; }
@@ -969,9 +991,9 @@ JS_FILTERS = r"""
   const healthPercent = document.getElementById("health-percent");
   const countLabel = document.getElementById("filters-count");
 
-  const FILTER_KINDS = ["status", "eco", "maturity", "role", "deploy"];
-  const state = { status: "all", eco: "all", maturity: "all", role: "all", deploy: "all" };
-  const ROW_FIELD = { status: "status", eco: "ecosystem", maturity: "maturity", role: "role", deploy: "deploy" };
+  const FILTER_KINDS = ["status", "eco", "maturity", "role", "deploy", "pipeline"];
+  const state = { status: "all", eco: "all", maturity: "all", role: "all", deploy: "all", pipeline: "all" };
+  const ROW_FIELD = { status: "status", eco: "ecosystem", maturity: "maturity", role: "role", deploy: "deploy", pipeline: "pipeline" };
 
   function syncButtons(kind) {
     document.querySelectorAll("[data-filter-" + kind + "]").forEach(function (button) {
@@ -1073,7 +1095,7 @@ JS_FILTERS = r"""
       const notes = row.dataset.notes || "";
       let show = !query || name.includes(query) || stack.includes(query) || deploy.includes(query) || family.includes(query) || notes.includes(query);
       FILTER_KINDS.forEach(function (kind) {
-        if (state[kind] !== "all" && (row.dataset[ROW_FIELD[kind]] || "") !== state[kind]) { show = false; }
+        if (state[kind] !== "all" && (row.dataset[ROW_FIELD[kind]] || (kind === "pipeline" ? "undeclared" : "")) !== state[kind]) { show = false; }
       });
       if (activeFamily !== "all" && family !== activeFamily) { show = false; }
       row.dataset.match = show ? "1" : "0";
@@ -1237,6 +1259,8 @@ JS = r"""
   var navRepo = null;          // the repository whose panel is open, for the breadcrumb and the address
   var crumbRefresh = null;
   var hashReady = false;
+  var hashWriters = [];        // functions that add parameters to the address (filters, search, period...)
+  var hashAppliers = [];       // functions that read those parameters back
   var scopeRestored = false;
   var modes = { compact: false, present: false, fromHash: false };
 
@@ -1263,6 +1287,7 @@ JS = r"""
     if (navRepo) { query.push("repo=" + encodeURIComponent(navRepo)); }
     if (modes.compact) { query.push("view=compact"); }
     if (modes.present) { query.push("mode=present"); }
+    hashWriters.forEach(function (write) { write(query); });
     if (query.length) { wanted += "?" + query.join("&"); }
     if (location.hash !== wanted) {
       try { history.replaceState(null, "", wanted); } catch (e) { location.hash = wanted.slice(1); }
@@ -1277,6 +1302,7 @@ JS = r"""
   }
 
   function applyHashState(parsed) {
+    hashAppliers.forEach(function (apply) { apply(parsed.params); });
     if (parsed.params.view === "compact") { modes.compact = true; modes.fromHash = true; }
     if (parsed.params.mode === "present") { modes.present = true; }
     const scope = parsed.params.scope;
@@ -1381,6 +1407,15 @@ JS = r"""
   function safeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
   function safeSet(key, value) { try { localStorage.setItem(key, value); } catch (e) { /* storage blocked */ } }
 
+  function revealTab(tab) {
+    const bar = tab.closest("nav");
+    if (!bar) { return; }
+    const t = tab.getBoundingClientRect();
+    const b = bar.getBoundingClientRect();
+    if (t.left < b.left + 40) { bar.scrollLeft -= b.left + 40 - t.left; }
+    else if (t.right > b.right - 40) { bar.scrollLeft += t.right - (b.right - 40); }
+  }
+
   function activateTab(id, options) {
     options = options || {};
     if (TAB_IDS.indexOf(id) < 0) { id = "summary"; }
@@ -1392,13 +1427,7 @@ JS = r"""
         if (options.focus) { tab.focus(); }
         // Scrolls the tab bar by hand: scrollIntoView() would move the starting point of keyboard navigation to this tab, so the first Tab
         // press of a visitor would skip the skip link and everything before the selected tab.
-        const bar = tab.closest("nav");
-        if (bar) {
-          const t = tab.getBoundingClientRect();
-          const b = bar.getBoundingClientRect();
-          if (t.left < b.left) { bar.scrollLeft -= b.left - t.left + 12; }
-          else if (t.right > b.right) { bar.scrollLeft += t.right - b.right + 12; }
-        }
+        revealTab(tab);
       }
     });
     panels.forEach(function (panel) { panel.hidden = panel.id !== "panel-" + id; });
@@ -1416,7 +1445,10 @@ JS = r"""
     const next = document.querySelector("[data-tabs-scroll='1']");
     if (!bar || !prev || !next) { return; }
     function refresh() {
-      const over = bar.scrollWidth - bar.clientWidth > 2;
+      const over = bar.firstElementChild.offsetWidth > bar.parentNode.clientWidth + 1;
+      const was = bar.parentNode.classList.contains("over");
+      bar.parentNode.classList.toggle("over", over);
+      if (over && !was) { const on = document.querySelector("[role='tab'][aria-selected='true']"); if (on) { revealTab(on); } }
       prev.hidden = !over || bar.scrollLeft <= 2;
       next.hidden = !over || bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 2;
     }
@@ -1520,6 +1552,9 @@ JS_HEALTH = r"""
     return el;
   }
 
+  // The exact UTC moment behind a number of days (the days are whole days elapsed since it, counted in the browser).
+  function utcStamp(iso) { return String(iso).replace("T", " ").slice(0, 16) + " UTC"; }
+
   // ---- Activity badges of the project table ----
   function paintBadges(dict) {
     document.querySelectorAll("td.activity-cell[data-known='1']").forEach(function (cell) {
@@ -1533,6 +1568,8 @@ JS_HEALTH = r"""
       const r = !release ? badge("none", dict.rel_none) : relDays === null ? badge("unknown", dict.not_verified) : badge(levelOf(relDays, CFG.release_days), tpl(dict.rel_badge, { n: relDays }));
       first.className = a.className; first.replaceChildren.apply(first, Array.from(a.childNodes));
       second.className = r.className; second.replaceChildren.apply(second, Array.from(r.childNodes));
+      first.title = last ? tpl(dict.act_utc, { date: utcStamp(last), n: days === null ? "?" : days }) : "";
+      second.title = release ? tpl(dict.rel_utc, { date: utcStamp(release), n: relDays === null ? "?" : relDays }) : "";
     });
   }
 
@@ -1541,7 +1578,7 @@ JS_HEALTH = r"""
     const card = document.querySelector(".card-alerts");
     const list = document.getElementById("alerts-list");
     if (!card || !list) { return; }
-    Array.from(list.querySelectorAll("li[data-kind='inactive']")).forEach(function (li) { li.remove(); });
+    Array.from(list.querySelectorAll("li[data-kind='inactive'], li[data-kind='unsigned']")).forEach(function (li) { li.remove(); });
     const limit = CFG.alert_after_days;
     const found = [];
     Object.keys(DATA.repos || {}).forEach(function (name) {
@@ -1566,7 +1603,7 @@ JS_HEALTH = r"""
       li.appendChild(make("span", "alert-why", tpl(dict.alert_why_inactive, { n: item.days, date: item.last.slice(0, 10) })));
       list.appendChild(li);
     });
-    const total = Number(card.getAttribute("data-static") || "0") + found.length;
+    const total = Number(card.getAttribute("data-static") || "0") + found.length + deliveryUnsignedAlerts(list, dict);
     const incomplete = card.getAttribute("data-incomplete") === "1";
     const state = incomplete ? "incomplete" : total ? "alerts" : "ok";
     card.setAttribute("data-state", state);
@@ -1716,6 +1753,7 @@ JS_HEALTH = r"""
       a.href = kind === "readme" ? base + "#readme" : base + "/" + kind;
     });
     evPanel(panelFor, dict);
+    deliveryPanel(panelFor, dict);
   }
   function openPanel(name, opener) {
     if (!DATA.repos[name]) { return; }
@@ -1762,6 +1800,7 @@ JS_HEALTH = r"""
     if (panelFor) { renderPanel(dict); }
     evoApplied(dict);
     rackApplied(dict);
+    deliveryApplied(dict);
     if (crumbRefresh) { crumbRefresh(dict); }
   }
   // The thermal verdict inside an alarm of the rack is a code the snapshot carries: it is translated here, in the sentence of the alarm.
@@ -1775,7 +1814,7 @@ JS_HEALTH = r"""
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
-CSS = CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + r"""
+CSS = CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + dashboard_delivery_ui.CSS + r"""
   /* ======================= Last known data, generation figures, manifest health and rack ======================= */
   .stale-banner { grid-column: 1 / -1; margin: 0; padding: 10px 14px; border: 1px solid var(--k-pending); border-left-width: 6px; border-radius: var(--radius); background: var(--panel-2); color: var(--text); font-weight: 600; }
   .stale-glyph { color: var(--k-pending); margin-right: 6px; }
@@ -1803,7 +1842,7 @@ def script() -> str:
     import json
     marker = "  dynReady = true;\n  applyLanguage("
     assert JS_HEALTH.count(marker) == 1
-    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_ci_ui.JS + dashboard_tests_ui.JS + dashboard_evo_ui.JS + dashboard_insight_ui.JS + dashboard_nav_ui.JS + marker)
+    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_ci_ui.JS + dashboard_tests_ui.JS + dashboard_evo_ui.JS + dashboard_insight_ui.JS + dashboard_nav_ui.JS + dashboard_delivery_ui.JS + marker)
 
 
 # ---------------------------------------------------------------------------

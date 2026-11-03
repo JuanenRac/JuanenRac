@@ -29,6 +29,8 @@ DEFAULT_CONFIG: dict = {
     "release_days": {"green_max": 90, "amber_max": 180},
     "alert_after_days": 30,
     "scaffolding_months": 6,
+    "signature_alert": {"enabled": False, "after_days": 14},
+    "history_min_days": 7,
 }
 MANIFEST_KINDS = ("invalid_manifest", "unlisted_manifest", "unknown_maturity", "unknown_evidence", "catalog_missing")
 BUILD_BEGIN, BUILD_END = "<!--build-info-->", "<!--/build-info-->"
@@ -71,6 +73,16 @@ def parse_config(raw: object) -> tuple[dict, list[str]]:
             config["scaffolding_months"] = value
         else:
             problems.append("scaffolding_months: needs an integer number of months from 1 to 120")
+    if "history_min_days" in raw:
+        value = raw["history_min_days"]
+        if isinstance(value, int) and not isinstance(value, bool) and 2 <= value <= 90:
+            config["history_min_days"] = value
+        else:
+            problems.append("history_min_days: needs an integer number of days from 2 to 90")
+    if "signature_alert" in raw:
+        import dashboard_delivery
+        config["signature_alert"], extra = dashboard_delivery.parse_alert(raw["signature_alert"])
+        problems.extend(extra)
     return config, problems
 
 

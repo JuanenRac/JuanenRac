@@ -170,7 +170,7 @@ test.describe("tests tab: per project", () => {
       else expect(parseFloat(w as string)).toBeCloseTo(Math.max(1.5, (Number(n) / 359) * 100), 0);
     }
     const checks = page.locator('#ts-list .ts-row[data-state="declared"]:not([data-n])').first();
-    await expect(checks).toContainText("checks (not tests)");
+    await expect(checks).toContainText("host-program checks (not unit tests)");
     await expect(checks.locator(".ts-fill")).toHaveCount(0);
   });
 
@@ -243,7 +243,7 @@ test.describe("tests tab: per project", () => {
     const undeclared = await page.locator('#ts-list .ts-row[data-state="undeclared"]').first().getAttribute("data-repo");
     expect(await value(undeclared!)).toBe("Not declared");
     const checks = await page.locator('#ts-list .ts-row[data-state="declared"]:not([data-n])').first().getAttribute("data-repo");
-    expect(await value(checks!)).toMatch(/^\d+ checks \(not tests\) · /);
+    expect(await value(checks!)).toMatch(/^\d+ host-program checks \(not unit tests\) · /);
   });
 
   test("the projects table has a Tests column", async ({ page }) => {

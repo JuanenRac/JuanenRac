@@ -24,7 +24,7 @@ test.describe("evidence checklist", () => {
     for (const cell of await page.locator("#ev-table td.ev-cell").all()) {
       states.add((await cell.getAttribute("data-status")) || "");
       // never colour alone: a visible glyph and a text for screen readers
-      expect((await cell.locator("[aria-hidden=true]").textContent())?.trim()).toMatch(/^[✓✕?–]$/);
+      expect((await cell.locator("[aria-hidden=true]").textContent())?.trim()).toMatch(/^[✓✕?–◐]$/);
       expect((await cell.locator(".sr-only").textContent())?.length).toBeGreaterThan(3);
     }
     expect(states.has("yes") && states.has("no") && states.has("unverified")).toBe(true);
@@ -81,7 +81,7 @@ test.describe("evidence checklist", () => {
     await gotoTab(page, "evidence");
     const name = (await page.locator("#ev-table tbody tr").first().getAttribute("data-repo"))!;
     const status = await page.locator("#ev-table tbody tr").first().locator('td[data-item="tests"]').getAttribute("data-status");
-    await page.locator("#ev-table tbody tr").first().locator("button").click();
+    await page.locator("#ev-table tbody tr").first().locator("th button").click();
     await expect(page.getByTestId("repo-panel")).toBeVisible();
     await expect(page.getByTestId("repo-panel-title")).toHaveText(name);
     await expect(page.locator("#rp-ev li")).toHaveCount(ITEMS.length);

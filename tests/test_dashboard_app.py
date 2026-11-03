@@ -461,13 +461,15 @@ class HealthPageTests(unittest.TestCase):
     def test_projects_table_has_the_activity_column_and_every_row_has_its_cell(self):
         end = self.html.index('id="project-table"')
         head = self.html[self.html.rindex("<thead>", 0, end):self.html.rindex("</thead>", 0, end)]
-        self.assertEqual(len(re.findall(r"<th[\s>]", head)), 10)
+        self.assertEqual(len(re.findall(r"<th[\s>]", head)), 11)
+        self.assertIn('data-i18n="th_pipeline"', head)
         self.assertIn('data-i18n="th_activity"', head)
         rows = re.findall(r'<tr\s+(?:data-ecosystem="[^"]*"\s+)?class="project-row.*?</tr>', self.html, re.S)
         self.assertEqual(len(rows), 3)
         for row in rows:
-            self.assertEqual(row.count("<td"), 10)
+            self.assertEqual(row.count("<td"), 11)
             self.assertIn('class="tests-cell"', row)
+            self.assertIn('class="pipe-cell"', row)
             self.assertIn('class="activity-cell"', row)
             self.assertIn("data-open-repo=", row)
         self.assertNotIn('colspan="8"', self.html)

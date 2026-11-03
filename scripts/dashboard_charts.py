@@ -25,6 +25,8 @@ import urllib.request
 from dataclasses import dataclass
 from typing import Callable, Iterable, Mapping, Sequence
 
+import dashboard_delivery
+
 AREAS = ("software", "tests", "ci", "releases", "docs", "simulation", "hardware", "production")
 ECOSYSTEM_KEYS = ("hydra-umc", "urtc", "armor", "eh3d")
 MATURITY_KEYS = ("scaffolding", "functional", "established", "production")
@@ -129,6 +131,7 @@ class Activity:
     commit_date: str | None = None
     ci: str = "none"                    # success | failure | pending | none (no check or not known)
     commits: tuple[Commit, ...] = ()    # the newest commits of the default branch (empty when GitHub did not return them)
+    signature: str | None = None        # present | none | norelease; None = not verified (see dashboard_delivery.signature_state)
 
 
 _CI_STATE = {"SUCCESS": "success", "FAILURE": "failure", "ERROR": "failure", "PENDING": "pending", "EXPECTED": "pending"}
@@ -140,7 +143,7 @@ query($owner: String!, $cursor: String) {
       pageInfo { hasNextPage endCursor }
       nodes {
         name
-        latestRelease { tagName publishedAt }
+        latestRelease { tagName publishedAt releaseAssets(first: 100) { nodes { name } } }
         defaultBranchRef { target { ... on Commit { committedDate statusCheckRollup { state } history(first: 5) { nodes { messageHeadline committedDate url } } } } }
       }
     }
@@ -168,7 +171,10 @@ def parse_activity(nodes: Iterable[Mapping], redact: Callable[[str], str] | None
         release = node.get("latestRelease") or {}
         target = ((node.get("defaultBranchRef") or {}).get("target")) or {}
         rollup = (target.get("statusCheckRollup") or {}).get("state")
+        assets = ((release.get("releaseAssets") or {}).get("nodes")) if release else None
+        names = [str(a.get("name", "")) for a in assets if isinstance(a, Mapping)] if isinstance(assets, list) else None
         out[str(node["name"])] = Activity(
+            signature=dashboard_delivery.signature_state(bool(release), names),
             release_tag=release.get("tagName") or None,
             release_date=release.get("publishedAt") or None,
             commit_date=target.get("committedDate") or None,

@@ -16,6 +16,20 @@
     }
   },
   "$defs": {
+    "delivery_fields": {
+      "description": "Optional fields of the project manifest (the project.json file of every repository) that tell the dashboard how a release was made. They are never required: a repository that declares none is shown as not declared, and the dashboard derives the state built-on-GHA -> signed-locally -> published only from what is declared plus the real release. A value outside these lists is ignored.",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "built_on": { "enum": ["gha", "local", "unknown"], "description": "Where the binary of the release was built: gha (GitHub Actions), local (the owner's computer) or unknown." },
+        "last_build_artifact_url": { "type": "string", "pattern": "^https://github\\.com/JuanenRac/[A-Za-z0-9._-]+/", "maxLength": 300, "description": "Link to the last green build that produced the artifact (a run or its artifact page), inside a repository of the owner." },
+        "signature_kind": { "enum": ["none", "dev", "release"], "description": "none: unsigned; dev: signed with a development key; release: signed with the release key." },
+        "signed_on": { "enum": ["local", "unknown"], "description": "Where the signing was done: local (the owner's computer, where the key lives) or unknown." }
+      },
+      "examples": [
+        { "built_on": "gha", "last_build_artifact_url": "https://github.com/JuanenRac/EXAMPLE-REPOSITORY/actions/runs/1", "signature_kind": "release", "signed_on": "local" }
+      ]
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,

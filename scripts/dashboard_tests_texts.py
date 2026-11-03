@@ -80,7 +80,7 @@ _ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
     "ts_col_eco": ("Ecosystem", "Ecosistema", "Ökosystem", "Écosystème", "Ecosistema", "エコシステム", "生态系统", "Ecossistema"),
     "ts_col_tests": ("Tests", "Pruebas", "Tests", "Tests", "Test", "テスト", "测试", "Testes"),
     "ts_col_checks": (
-        "Checks (apart)", "Comprobaciones (aparte)", "Prüfungen (getrennt)", "Vérifications (à part)", "Verifiche (a parte)", "チェック数(別枠)", "检查数(另计)", "Verificações (à parte)"),
+        "Host-program checks (apart)", "Comprobaciones de programas de host (aparte)", "Prüfungen von Host-Programmen (getrennt)", "Vérifications de programmes hôte (à part)", "Verifiche di programmi host (a parte)", "ホストプログラムのチェック数(別枠)", "主机程序检查数(另计)", "Verificações de programas de anfitrião (à parte)"),
     "ts_col_declared": (
         "Repositories that declare", "Repositorios que declaran", "Deklarierende Repositorys", "Dépôts qui déclarent", "Repository che dichiarano", "宣言しているリポジトリ", "已声明的仓库", "Repositórios que declaram"),
     "ts_col_undeclared": (
@@ -161,8 +161,7 @@ _ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
         "Last known ({date})", "Último conocido ({date})", "Zuletzt bekannt ({date})", "Dernier connu ({date})", "Ultimo noto ({date})", "最後に判明した値({date})",
         "最后已知({date})", "Último conhecido ({date})"),
     "ts_unit_checks": (
-        "{n} checks (not tests)", "{n} comprobaciones (no son pruebas)", "{n} Prüfungen (keine Tests)", "{n} vérifications (pas des tests)", "{n} verifiche (non test)",
-        "{n} チェック(テストではない)", "{n} 项检查(不是测试)", "{n} verificações (não são testes)"),
+        "{n} host-program checks (not unit tests)", "{n} comprobaciones de programas de host (no son pruebas unitarias)", "{n} Prüfungen von Host-Programmen (keine Unit-Tests)", "{n} vérifications de programmes hôte (pas des tests unitaires)", "{n} verifiche di programmi host (non test unitari)", "ホストプログラムのチェック {n} 件(単体テストではありません)", "{n} 项主机程序检查(不是单元测试)", "{n} verificações de programas de anfitrião (não são testes unitários)"),
     "ts_row_aria": (
         "{name}: {value}. Open its panel", "{name}: {value}. Abrir su panel", "{name}: {value}. Panel öffnen", "{name} : {value}. Ouvrir son panneau",
         "{name}: {value}. Apri il pannello", "{name}:{value}。パネルを開く", "{name}:{value}。打开其面板", "{name}: {value}. Abrir o painel"),

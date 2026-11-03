@@ -35,16 +35,26 @@ SCHEMA = 1
 # The pieces of evidence, in the order of the checklist. Values per repository: 1 verified, 0 missing, None not verified, 2 not applicable.
 ITEMS: tuple[str, ...] = ("tests", "ci", "release", "signed", "docs", "sim", "hw")
 YES, NO, NA = 1, 0, 2
+# Only for the item "signed": a signature file is published with the latest release but this page does not verify it; VERIFIED is reserved for the day it does.
+PRESENT, VERIFIED = 3, 4
 
 
 def _flag(value: bool | None) -> int | None:
     return None if value is None else (YES if value else NO)
 
 
-def checks(listed: Mapping[str, str], manifests: Mapping[str, Mapping | None], signals: Mapping[str, Mapping]) -> dict[str, list[int | None]]:
+def _signed(release: int | None, signature: str | None, known: bool) -> int | None:
+    if known:
+        return {"present": PRESENT, "none": NO, "norelease": NO}.get(signature or "", None)
+    return NO if release == NO else None
+
+
+def checks(listed: Mapping[str, str], manifests: Mapping[str, Mapping | None], signals: Mapping[str, Mapping],
+           signatures: Mapping[str, str | None] | None = None) -> dict[str, list[int | None]]:
     """{repository: [tests, ci, release, signed, docs, sim, hw]}.
-    A repository whose manifest could not be read has nothing verified. A signed release cannot be read from GitHub: it is None (not verified)
-    when a release exists, 0 (missing) when the repository has none, and None when the releases themselves are unknown."""
+    A repository whose manifest could not be read has nothing verified. `signatures` ({repository: present | none | norelease | None}, see dashboard_delivery) says what
+    the latest release published: a signature file is 3 (present, not verified here), a release without one or no release is 0 (missing), an answer that could not be
+    read is None (not verified). Without `signatures` a signature cannot be read: None when a release exists and 0 when there is none."""
     out: dict[str, list[int | None]] = {}
     for name in listed:
         manifest = manifests.get(name)
@@ -58,7 +68,7 @@ def checks(listed: Mapping[str, str], manifests: Mapping[str, Mapping | None], s
             _flag(flags.get("tests")),
             _flag(flags.get("ci")),
             release,
-            NO if release == NO else None,
+            _signed(release, (signatures or {}).get(name) if signatures is not None else None, signatures is not None),
             _flag(flags.get("docs")),
             _flag(flags.get("simulation")),
             _flag(flags["hardware"]) if "hardware" in flags else NA,

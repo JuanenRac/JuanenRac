@@ -66,7 +66,9 @@ import dashboard_ci_ui
 import dashboard_tests
 import dashboard_tests_texts
 import dashboard_tests_ui
-import dashboard_t86_texts
+import dashboard_delivery
+import dashboard_delivery_ui
+import dashboard_delivery_texts
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight
@@ -1960,7 +1962,7 @@ for language, values in dashboard_tests_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
 # Texts of the delivery pipeline, signatures, legends and navigation additions.
-for language, values in dashboard_t86_texts.TEXTS.items():
+for language, values in dashboard_delivery_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
@@ -2546,6 +2548,8 @@ def _render_one_row(
 
           <td class="tests-cell" data-tests-for="{project_name}"></td>
 
+          {dashboard_delivery_ui.pipeline_td(project_name)}
+
           <td class="status-cell">
             <span class="status-badge {status_class}">
               <span class="status-dot"></span>
@@ -2576,7 +2580,7 @@ def _render_one_row(
             data-family="{esc(entry.family.lower())}"
             hidden
         >
-          <td colspan="10">
+          <td colspan="11">
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
@@ -2639,7 +2643,7 @@ def render_project_rows(
         banner_text = esc(ECOSYSTEM_BANNER_FALLBACK_TEXT[ecosystem_key])
         rows.append(
             f'\n            <tr class="ecosystem-banner-row" data-ecosystem-banner="{esc(ecosystem_key)}">'
-            f'\n              <td colspan="10">'
+            f'\n              <td colspan="11">'
             f'\n                <span data-i18n="{banner_key}">{banner_text}</span>'
             f'\n              </td>'
             f'\n            </tr>\n            '
@@ -2666,7 +2670,7 @@ def render_project_rows(
             rows.append(
                 f"""
             <tr class="family-header-row" data-family-header="{family_id}" data-ecosystem="{esc(ecosystem_key)}">
-              <td colspan="10">
+              <td colspan="11">
                 <span class="family-header-label">{esc(family_name)}</span>
                 <span class="family-header-count">
                     <span data-i18n-template="family_count" data-count="{member_count}">{member_count} project(s)</span>{parent_repo_link}
@@ -3272,6 +3276,8 @@ def page_data(
         role_key = categorize_role_for_entry(entry) if role_known else entry.role
         result = results.get(name)
         hardware = raw.get("hardware_bound")
+        fields = dashboard_delivery.manifest_fields(raw)
+        pipeline = {**fields, "pipeline": dashboard_delivery.pipeline_state(fields, (bool(act.release_date) if act is not None else None))}
         repos[name] = {
             "eco": ecosystem_by_name.get(name, ""),
             "ecoLabel": labels.get(ecosystem_by_name.get(name, ""), ""),
@@ -3290,6 +3296,8 @@ def page_data(
             "ci": act.ci if act is not None else None,
             "release": {"tag": act.release_tag or "", "date": act.release_date or ""} if act is not None and act.release_date else None,
             "commitDate": (act.commit_date if act is not None else None) or None,
+            "sig": act.signature if act is not None else None,
+            **pipeline,
             "commits": [[c.headline, c.date or "", c.url or ""] for c in act.commits] if act is not None and act.commits else None,
         }
     manifests = {name: _manifest_data(raw_manifests.get(name)) for name in ecosystem_by_name}
@@ -3298,7 +3306,7 @@ def page_data(
         "config": {**config, "repoUrl": "https://github.com/JuanenRac/"},
         "repos": repos,
         "contrib": dashboard_contrib.build(ecosystem_by_name, manifests, signals, [key for key, _label in dashboard_app.ECOSYSTEMS], readme_counts),
-        "checks": dashboard_evo.checks(ecosystem_by_name, manifests, signals),
+        "checks": dashboard_evo.checks(ecosystem_by_name, manifests, signals, {n: a.signature for n, a in (activity or {}).items()} if activity else None),
         "history": list(history or []),
         "snap": snap,
         "insight": insight,
@@ -5043,6 +5051,7 @@ def render_html(
     {tab_list_html}
     <div class="top-actions">
       {mode_buttons_html}
+      {dashboard_delivery_ui.side_toggle()}
       {help_button_html}
       <a class="build-badge" href="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml" target="_blank" rel="noopener">
         <img
@@ -5132,6 +5141,7 @@ def render_html(
           <th data-i18n="th_deploy">Deploy target</th>
           <th data-i18n="th_version">Version</th>
           <th data-i18n="th_tests">Tests</th>
+          {dashboard_delivery_ui.pipeline_th()}
           <th data-i18n="th_status">Status</th>
           <th data-i18n="th_commit">Last commit</th>
           <th data-i18n="th_activity">Activity</th>

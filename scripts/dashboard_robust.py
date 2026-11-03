@@ -137,7 +137,8 @@ def activity_from_page(html: str | None) -> dict[str, Activity]:
             release_tag=(release.get("tag") or None) if release else None,
             release_date=(release.get("date") or None) if release else None,
             commit_date=repo.get("commitDate") if isinstance(repo.get("commitDate"), str) else None,
-            ci=ci, commits=commits)
+            ci=ci, commits=commits,
+            signature=repo.get("sig") if repo.get("sig") in ("present", "none", "norelease") else None)
     return out
 
 

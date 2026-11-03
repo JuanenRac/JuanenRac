@@ -75,9 +75,15 @@ def _node(name: str, index: int, healthy: bool = False) -> dict:
     history = [{"messageHeadline": f"Fixture change {n} of {name}", "committedDate": commit, "url": f"https://github.com/JuanenRac/{name}/commit/c{n}"} for n in range(3)]
     if index % 6 == 5:
         history = []        # a repository whose recent commits were not returned
+    # The assets of the latest release: a signature file for one in five, a minisig for another, none for another, and the assets not returned for another.
+    kind = index % 5
+    assets = {"nodes": [{"name": f"{name}.bin"}] + ([{"name": f"{name}.bin.sig"}] if kind == 0 else [{"name": f"{name}.bin.minisig"}] if kind == 3 else [])} if kind != 2 else None
+    release = {"tagName": f"v0.{index % 7}.{index % 3}", "publishedAt": f"2001-{month:02d}-{day:02d}T10:00:00Z"}
+    if assets is not None:
+        release["releaseAssets"] = assets
     return {
         "name": name,
-        "latestRelease": None if index % 5 == 4 and not healthy else {"tagName": f"v0.{index % 7}.{index % 3}", "publishedAt": f"2001-{month:02d}-{day:02d}T10:00:00Z"},
+        "latestRelease": None if index % 5 == 4 and not healthy else release,
         "defaultBranchRef": {"target": {"committedDate": commit, "statusCheckRollup": {"state": ci}, "history": {"nodes": history}}},
     }
 
@@ -101,6 +107,12 @@ def dataset(per_ecosystem: int = 10, healthy: bool = False):
             data = {"evidence": EVIDENCE[index % 5], "maturity": MATURITY[index % 4]}
             if index % 3 == 0:
                 data["hardware_bound"] = True       # declares real hardware (some with no bench or field evidence)
+            if index % 4 == 0:
+                data.update({"built_on": "gha", "signature_kind": "release", "signed_on": "local", "last_build_artifact_url": f"https://github.com/JuanenRac/{name}/actions/runs/{index + 1}"})
+            elif index % 4 == 1:
+                data["built_on"] = "gha"                           # built on GitHub Actions, nothing declared about the signature
+            elif index % 7 == 3:
+                data.update({"signature_kind": "dev", "signed_on": "unknown", "built_on": "not-a-known-value"})
             deps = []
             if number % 2 == 1:
                 deps.append(f"{PREFIX[key]}-FIXTURE-{number - 1:02d}")

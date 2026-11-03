@@ -3,6 +3,8 @@
   "release_days": { "green_max": 90, "amber_max": 180 },
   "alert_after_days": 30,
   "scaffolding_months": 6,
+  "history_min_days": 7,
+  "signature_alert": { "enabled": false, "after_days": 14 },
   "tests": {
     "sources": {
       "hydra-umc": { "glance": "HYDRA-UMC-DOCS/data/glance.json", "readme": true },

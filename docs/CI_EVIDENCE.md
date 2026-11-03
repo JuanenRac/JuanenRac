@@ -140,3 +140,30 @@ jobs:
 
 A bench or field run is published by whoever operates the bench (a self-hosted runner, or a person), with `test_type` `bench` or `field`,
 `hardware.bound` `true` and the board in `hardware.device`. The dashboard never invents it: no record, no proof.
+
+## Delivery pipeline: where a release was built and signed
+
+The dashboard also shows how each release was made: built on GitHub Actions, signed on the owner's computer, then published. Two things feed it.
+
+**What the dashboard reads itself, nothing to declare.** The assets of the latest release of every repository. A file ending in `.sig`, `.asc` or `.minisig`
+is shown as "signature present, not verified here" (the page does not verify signatures); a release without one is shown as "no signature"; no release
+means there is nothing to sign; assets that could not be read are "not verified". The column "Versión firmada" / "Signed release" of the evidence tab and its
+summary use this. A cell that is missing or not verified explains why when it is pressed and links to the repository.
+
+**Optional fields of the project manifest** (`hydra-umc.project.json`, `urtc.project.json`, `armor.project.json`, `eh3d.project.json`...). They are never
+required: what is not declared is shown as "not declared". The formal description is `$defs.delivery_fields` of [`evidence-schema.json`](evidence-schema.json).
+
+| Field | Values | Meaning |
+| --- | --- | --- |
+| `built_on` | `gha`, `local`, `unknown` | where the binary of the release was built |
+| `last_build_artifact_url` | `https://github.com/JuanenRac/<repository>/...` | the last green build that produced the artifact (a run or its artifact page) |
+| `signature_kind` | `none`, `dev`, `release` | unsigned, signed with a development key, signed with the release key |
+| `signed_on` | `local`, `unknown` | where the signing was done |
+
+From them and from the real release the dashboard derives one state per repository, shown as a column and a filter of the projects tab and in the panel of
+the repository: `built` (built on GitHub Actions), `signed` (signed locally with a development or release key), `published` (a release exists and a build or a
+signature is declared), `release_only` (a release, nothing declared about how it was made) and `undeclared`. A value outside the lists is ignored.
+
+**Optional alert.** `dashboard-config.json` has `signature_alert` (`enabled`, off by default, and `after_days`): when it is on, a repository declared as built on
+GitHub Actions with a green CI whose latest release has no signature file, more than `after_days` days after its last commit, raises a health alert.
+`history_min_days` sets the days of history the analysis views need before they stop saying "insufficient history".

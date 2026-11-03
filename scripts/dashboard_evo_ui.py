@@ -35,7 +35,7 @@ def evidence_view() -> str:
         eco.append(f'<button type="button" class="chip" data-ev-eco="{key}" aria-pressed="false" data-testid="ev-eco-{key}">{label}</button>')
     missing = "".join(
         f'<button type="button" class="chip" data-ev-missing="{item}" aria-pressed="false" data-testid="ev-missing-{item}"><span data-i18n="ev_item_{item}">{esc(EN["ev_item_" + item])}</span></button>'
-        for item in dashboard_evo.ITEMS if item != "signed")
+        for item in dashboard_evo.ITEMS)
     return (
         '<section class="card ev-view" id="evidence-view" aria-labelledby="ev-title" data-testid="evidence-view">'
         f'<header class="card-head"><h2 class="card-title" id="ev-title" {_t("ev_title")}</h2></header>'
@@ -155,7 +155,7 @@ CSS = r"""
   .ev-counts small { color: var(--dim); margin-left: 4px; }
   .ev-cell { font-weight: 700; }
   .ev-st { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 22px; border-radius: 6px; border: 1px solid currentColor; font-size: 13px; line-height: 1; padding: 0 4px; }
-  .ev-yes { color: var(--ok); } .ev-no { color: var(--err); } .ev-unverified { color: var(--dim); border-style: dashed; } .ev-na { color: var(--dim); border-color: transparent; }
+  .ev-present { color: var(--k-pending, var(--warn-ink)); border-style: dotted; } .ev-yes { color: var(--ok); } .ev-no { color: var(--err); } .ev-unverified { color: var(--dim); border-style: dashed; } .ev-na { color: var(--dim); border-color: transparent; }
   .ev-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
   .ev-list li { display: flex; gap: 8px; align-items: center; justify-content: space-between; font-size: 13px; }
   .ev-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 8px 0 0; padding: 0; list-style: none; font-size: 12px; color: var(--dim); }
@@ -249,13 +249,13 @@ JS = r"""
   // Everything here is drawn from the JSON embedded in the page; no request leaves the browser. A fact that is not in the data is printed as "not verified".
   const EV_ITEMS = ["tests", "ci", "release", "signed", "docs", "sim", "hw"];
   const EV_ECOS = ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"];
-  const EV_GLYPH = { yes: "✓", no: "✕", unverified: "?", na: "–" };
+  const EV_GLYPH = { yes: "✓", no: "✕", unverified: "?", na: "–", present: "◐" };
   const CHECKS = (DATA.checks && typeof DATA.checks === "object") ? DATA.checks : {};
   const evState = { eco: "all", missing: [], unverified: false };
   const evAll = document.getElementById("ev-table");
   const evCounts = document.getElementById("ev-counts");
 
-  function evStatus(value) { return value === 1 ? "yes" : value === 0 ? "no" : value === 2 ? "na" : "unverified"; }
+  function evStatus(value) { return value === 1 || value === 4 ? "yes" : value === 0 ? "no" : value === 2 ? "na" : value === 3 ? "present" : "unverified"; }
   function evMark(status, dict, itemKey) {
     const cell = make("span", "ev-st ev-" + status);
     cell.appendChild(make("span", "", EV_GLYPH[status])).setAttribute("aria-hidden", "true");
@@ -305,12 +305,13 @@ JS = r"""
       const label = (DATA.repos[members[0]] || {}).ecoLabel || eco;
       tr.appendChild(make("th", "", label)).setAttribute("scope", "row");
       EV_ITEMS.forEach(function (item, index) {
-        const tally = { yes: 0, no: 0, unverified: 0, na: 0 };
+        const tally = { yes: 0, no: 0, unverified: 0, na: 0, present: 0 };
         members.forEach(function (n) { tally[evStatus(CHECKS[n][index])] += 1; });
         const td = make("td"); td.setAttribute("data-item", item);
         const applicable = members.length - tally.na;
         td.appendChild(make("span", "", tally.yes + "/" + applicable));
         if (tally.unverified) { const s = make("small", "", "?" + tally.unverified); s.setAttribute("aria-hidden", "true"); td.appendChild(s); }
+        if (tally.present) { const s = make("small", "", "◐" + tally.present); s.setAttribute("aria-hidden", "true"); td.appendChild(s); }
         td.appendChild(make("span", "sr-only", tpl(dict.ev_count_sr, { yes: tally.yes, no: tally.no, unv: tally.unverified, na: tally.na })));
         td.title = tpl(dict.ev_count_sr, { yes: tally.yes, no: tally.no, unv: tally.unverified, na: tally.na });
         tr.appendChild(td);
@@ -340,7 +341,7 @@ JS = r"""
       CHECKS[name].forEach(function (value, index) {
         const status = evStatus(value);
         const td = make("td", "ev-cell"); td.setAttribute("data-item", EV_ITEMS[index]); td.setAttribute("data-status", status);
-        td.appendChild(evMark(status, dict, EV_ITEMS[index]));
+        td.appendChild(status === "no" || status === "unverified" || status === "present" ? deliveryWhyButton(name, EV_ITEMS[index], status, dict) : evMark(status, dict, EV_ITEMS[index]));
         tr.appendChild(td);
       });
       tb.appendChild(tr);
@@ -351,11 +352,12 @@ JS = r"""
     counter.setAttribute("data-shown", String(shown)); counter.setAttribute("data-total", String(names.length));
     document.getElementById("ev-none").hidden = shown > 0;
     evAll.hidden = shown === 0;
+    deliveryEvidence(dict, names);
     // Legend (text and glyph, never colour alone)
     let legend = document.getElementById("ev-legend");
     if (!legend) { legend = make("ul", "ev-legend"); legend.id = "ev-legend"; document.getElementById("ev-matches").after(legend); }
     legend.textContent = "";
-    ["yes", "no", "unverified", "na"].forEach(function (status) {
+    ["yes", "present", "no", "unverified", "na"].forEach(function (status) {
       const li = make("li"); const mark = evMark(status, dict, null); mark.querySelector(".sr-only").remove(); li.appendChild(mark);
       li.appendChild(make("span", "", " " + dict["ev_st_" + status])); legend.appendChild(li);
     });
