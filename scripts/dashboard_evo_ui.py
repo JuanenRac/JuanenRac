@@ -600,7 +600,7 @@ JS = r"""
     const target = event.target;
     const typing = target && target.closest && target.closest("input, select, textarea, [contenteditable='true']");
     if (event.key === "Escape") { if (modes.present && !event.defaultPrevented) { setPresent(false, true); } return; }
-    if (typing) { return; }
+    if (typing || !shortcutsOn) { return; }
     if (event.key === "c" || event.key === "C") { modes.compact = !modes.compact; applyModes(); }
     else if (event.key === "p" || event.key === "P") { setPresent(!modes.present, true); }
   });

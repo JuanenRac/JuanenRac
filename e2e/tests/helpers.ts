@@ -1,9 +1,9 @@
 import { test as base, expect, Page } from "@playwright/test";
 
-export const TABS = ["summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "insight", "inventory", "architecture", "errors"] as const;
+export const TABS = ["summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "insight", "inventory", "rack", "architecture", "errors"] as const;
 export const LANGS = ["en", "es", "de", "fr", "it", "ja", "zh", "pt"] as const;
 export const ECOSYSTEMS = ["hydra-umc", "urtc", "armor", "eh3d"] as const;
-export type Variant = "full" | "healthy" | "minimal" | "partial" | "empty";
+export type Variant = "full" | "stale" | "healthy" | "minimal" | "partial" | "empty";
 
 const SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>';
 

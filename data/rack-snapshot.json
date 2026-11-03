@@ -1,0 +1,115 @@
+{
+  "alarms": [
+    "slot 0: maintenance due for unit 0:7"
+  ],
+  "heating": 1,
+  "maintenance_due": 1,
+  "name": "Simulated rack",
+  "occupied": 3,
+  "schema": 1,
+  "slot_count": 8,
+  "slots": [
+    {
+      "expired": false,
+      "maintenance_due": true,
+      "occupied": true,
+      "serial": 7,
+      "slot": 0,
+      "target_c": 250,
+      "thermal": "reached",
+      "tool_id": 0,
+      "unit": "0:7",
+      "wear": {
+        "cycles": 3,
+        "faults": 0,
+        "heater_seconds": 90,
+        "maintenance": true
+      }
+    },
+    {
+      "expired": false,
+      "maintenance_due": false,
+      "occupied": true,
+      "serial": 2,
+      "slot": 1,
+      "target_c": 0,
+      "thermal": "idle_ok",
+      "tool_id": 19,
+      "unit": "19:2",
+      "wear": null
+    },
+    {
+      "expired": false,
+      "maintenance_due": false,
+      "occupied": true,
+      "serial": 5,
+      "slot": 2,
+      "target_c": 0,
+      "thermal": "idle_ok",
+      "tool_id": 4,
+      "unit": "4:5",
+      "wear": null
+    },
+    {
+      "expired": false,
+      "maintenance_due": false,
+      "occupied": false,
+      "serial": null,
+      "slot": 3,
+      "target_c": 0,
+      "thermal": null,
+      "tool_id": null,
+      "unit": null,
+      "wear": null
+    },
+    {
+      "expired": false,
+      "maintenance_due": false,
+      "occupied": false,
+      "serial": null,
+      "slot": 4,
+      "target_c": 0,
+      "thermal": null,
+      "tool_id": null,
+      "unit": null,
+      "wear": null
+    },
+    {
+      "expired": false,
+      "maintenance_due": false,
+      "occupied": false,
+      "serial": null,
+      "slot": 5,
+      "target_c": 0,
+      "thermal": null,
+      "tool_id": null,
+      "unit": null,
+      "wear": null
+    },
+    {
+      "expired": false,
+      "maintenance_due": false,
+      "occupied": false,
+      "serial": null,
+      "slot": 6,
+      "target_c": 0,
+      "thermal": null,
+      "tool_id": null,
+      "unit": null,
+      "wear": null
+    },
+    {
+      "expired": false,
+      "maintenance_due": false,
+      "occupied": false,
+      "serial": null,
+      "slot": 7,
+      "target_c": 0,
+      "thermal": null,
+      "tool_id": null,
+      "unit": null,
+      "wear": null
+    }
+  ],
+  "source": "simulation"
+}

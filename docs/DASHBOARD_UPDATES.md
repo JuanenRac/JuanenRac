@@ -43,3 +43,20 @@ dependent on dashboard credentials.
 - The event contains only public repository name, commit SHA and ref.
 - The central workflow validates public manifests independently and serializes
   publication through its existing concurrency group.
+
+## When GitHub cannot be read
+
+The generator never replaces what is published with a gap:
+
+- If the CI, release and commit data cannot be read, the page keeps the last
+  known version of them (read back from the page that is published), marks
+  them with the date of that version and never shows them as current or as
+  "no alerts".
+- If an ecosystem that is on the published page cannot be read at all, the
+  published page is kept as it is until GitHub answers again.
+- The Errors / unknown tab lists the exact reason for each repository and
+  shows when the page was generated, how long it took and how many
+  repositories were resolved out of those attempted.
+- The URTC rack tab shows the snapshot published in `data/rack-snapshot.json`
+  (the format written by URTC-COMMON). Without that file, or with an unusable
+  one, it says there is no data and shows no state.

@@ -202,7 +202,7 @@ class TextTests(unittest.TestCase):
 
 class ShellTests(unittest.TestCase):
     def test_tabs(self):
-        self.assertEqual(app.TAB_IDS, ("summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "insight", "inventory", "architecture", "errors"))
+        self.assertEqual(app.TAB_IDS, ("summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "insight", "inventory", "rack", "architecture", "errors"))
         html = app.tab_list()
         self.assertEqual(html.count('role="tab"'), len(app.TAB_IDS))
         self.assertIn('role="tablist"', html)

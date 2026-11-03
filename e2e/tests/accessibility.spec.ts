@@ -132,7 +132,7 @@ test.describe("keyboard", () => {
         w.__prev = el;
         w.__n = (w.__n || 0) + 1;
         return {
-          desc: `${el.tagName.toLowerCase()}${el.id ? "#" + el.id : ""}${el.getAttribute("data-testid") ? "[" + el.getAttribute("data-testid") + "]" : ""}`,
+          desc: `${el.tagName.toLowerCase()}${el.id ? "#" + el.id : ""}${el.getAttribute("data-testid") ? "[" + el.getAttribute("data-testid") + "]" : ""}${el.getAttribute("href") ? "{" + el.getAttribute("href") + "}" : ""}`,
           indicator: border && (outline || !!shadow),
           visible: rect.width > 0 && rect.height > 0 && cs.visibility !== "hidden",
           inOrder, tabindex: el.tabIndex, id: w.__n,

@@ -105,9 +105,15 @@ test.describe("links", () => {
 
   test("every in-page anchor points to an element that exists", async ({ page }) => {
     await openDashboard(page);
-    const missing = await page.evaluate(() => Array.from(document.querySelectorAll("a[href^='#']"))
+    const missing = await page.evaluate(() => Array.from(document.querySelectorAll("a[href^='#']:not(.crumbs a)"))
       .map((a) => a.getAttribute("href")!.slice(1)).filter((id) => id && !document.getElementById(id)));
     expect(missing).toEqual([]);
+  });
+
+  test("the links of the breadcrumb are routes of the page itself", async ({ page }) => {
+    await openDashboard(page, "full", "#projects?scope=urtc");
+    const hrefs = await page.locator(".crumbs a").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+    expect(hrefs).toEqual(["#summary", "#projects"]);
   });
 
   test("the release lists link to the repositories", async ({ page }) => {

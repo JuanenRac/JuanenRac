@@ -190,6 +190,27 @@ def repos_at(back: int) -> dict:
     return out
 
 
+def _rack(name: str, source: str, alarms: bool) -> dict:
+    """A rack snapshot in the shape URTC-COMMON writes (rack_status.snapshot, schema 1); the values are made up for the tests."""
+    slots = []
+    for i in range(8):
+        occupied = i < 3
+        slots.append({"slot": i, "occupied": occupied, "tool_id": (i + 1) if occupied else None, "serial": (7 + i) if occupied else None,
+                      "unit": f"{i + 1}:{7 + i}" if occupied else None, "target_c": 250 if i == 1 else 0, "expired": alarms and i == 2,
+                      "wear": {"cycles": 3 + i, "heater_seconds": 90 * (i + 1), "faults": 0, "maintenance": alarms and i == 0} if occupied else None,
+                      "thermal": ("overshoot" if alarms and i == 1 else "reached" if i == 1 else "idle_ok") if occupied else None,
+                      "maintenance_due": bool(alarms and i == 0)})
+    found = ([f"slot 0: maintenance due for unit 1:7", "slot 2: pre-heat limit reached, the target was switched off", "slot 1: thermal check says overshoot"] if alarms else [])
+    return {"schema": 1, "name": name, "source": source, "occupied": 3, "slot_count": 8, "heating": 1, "maintenance_due": 1 if alarms else 0, "alarms": found, "slots": slots}
+
+
+RACK_ALARM = (_rack("Fixture rack <b>", "simulation", True), "")
+RACK_QUIET = (_rack("Fixture bench rack", "bench-log", False), "")
+RACK_INVALID = (None, "schema 2 is not 1")
+
+GENERATION = gen.dashboard_robust.Generation(built="2001-12-20T08:31:12", seconds=47.6, asof="2001-12-20", steps=(
+    ("versions", 38, 40), ("manifests", 36, 41), ("commits", 20, 40), ("activity", 40, 40)))
+
 BUILD = health.BuildInfo("https://github.com/JuanenRac/JuanenRac/actions/runs/123456", "2001-12-20T08:30:00Z")
 
 
@@ -204,7 +225,18 @@ def build_full() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries) + 3, ("JuanenRac", "fixture-plain-a", "fixture-plain-b"))
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED)
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM)
+
+
+def build_stale() -> str:
+    """The full page when GitHub could not be read in the last generation: the CI, release and commit data are the last known version of 2001-12-19."""
+    entries, results, eco, raw, activity = dataset()
+    readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
+    generation = gen.dashboard_robust.Generation(built="2001-12-20T08:31:12", seconds=12.2, asof="2001-12-19", steps=(
+        ("versions", 40, 40), ("manifests", 40, 40), ("commits", 0, 40), ("activity", 0, 40)))
+    return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
+                           signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
+                           planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET)
 
 
 def build_single() -> str:
@@ -225,7 +257,7 @@ def build_healthy() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries), ())
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED)
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET)
 
 
 def build_minimal() -> str:
@@ -242,14 +274,14 @@ def build_partial() -> str:
         result.version, result.error, result.http_status = None, "HTTP 403 rate limited", 403
     issues = [integrity_mod.Issue("api", "repository listing", "", "the GitHub API did not answer")]
     cover = integrity_mod.Coverage(len(entries), None, ())
-    return gen.render_html(entries, results, {}, eco, issues, cover, raw_manifests={}, activity={}, readme_text="")
+    return gen.render_html(entries, results, {}, eco, issues, cover, raw_manifests={}, activity={}, readme_text="", rack=RACK_INVALID)
 
 
 def build_empty() -> str:
     return gen.render_html([], {}, {}, {}, [], None, raw_manifests={}, activity={}, readme_text="")
 
 
-BUILDERS = {"full": build_full, "single": build_single, "healthy": build_healthy, "minimal": build_minimal, "partial": build_partial, "empty": build_empty}
+BUILDERS = {"full": build_full, "stale": build_stale, "single": build_single, "healthy": build_healthy, "minimal": build_minimal, "partial": build_partial, "empty": build_empty}
 
 
 def main() -> int:

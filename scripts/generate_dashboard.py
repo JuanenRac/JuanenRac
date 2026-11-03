@@ -44,10 +44,12 @@ import os
 import re
 import socket
 import sys
+import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 
 from hydra_umc_updater.ecosystem_catalog import parse_catalog
@@ -64,6 +66,10 @@ import dashboard_insight
 import dashboard_insight_texts
 import dashboard_insight_ui
 import dashboard_integrity
+import dashboard_nav_ui
+import dashboard_rack
+import dashboard_robust
+import dashboard_robust_texts
 import dashboard_texts
 import ecosystem_progress
 import ecosystem_status
@@ -1934,6 +1940,10 @@ for language, values in dashboard_evo_texts.TEXTS.items():
 for language, values in dashboard_insight_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the keyboard help, the breadcrumb, the generation figures, the last known data and the URTC rack page.
+for language, values in dashboard_robust_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
 for language, values in dashboard_app_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3292,6 +3302,9 @@ def render_html(
     weekly: "dict | None" = None,
     live_milestones: "dict | None" = None,
     planned_milestones: "dict | None" = None,
+    generation: "dashboard_robust.Generation | None" = None,
+    stale_date: "str | None" = None,
+    rack: "tuple[dict | None, str] | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3379,6 +3392,13 @@ def render_html(
         activity=activity_map, ecosystem_by_name=ecosystem_by_name, issues=integrity, unresolved=app_data.unresolved)
     app_data.incomplete = dashboard_health.completeness(total=total, activity=activity_map, ecosystem_by_name=ecosystem_by_name, issues=integrity)
     app_data.build = build
+    app_data.manifest = dashboard_robust.manifest_health(ecosystem_by_name, raw_manifests, integrity)
+    app_data.stale_date = stale_date
+    if stale_date:
+        app_data.incomplete = [*app_data.incomplete, "activity_stale"]
+    app_data.generation_html = dashboard_robust.generation_html(generation, stale=bool(stale_date))
+    rack_snap, rack_problem = rack if rack is not None else (None, "")
+    app_data.rack_html = dashboard_rack.panel_html(rack_snap, rack_problem)
     today = dashboard_evo.today_utc()
     snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys, repos=dashboard_evo.repo_facts(entries, results))
     full_history = dashboard_evo.add_snapshot(history, snap, today) if history is not None else []
@@ -3389,6 +3409,10 @@ def render_html(
         status=app_data.status, history=full_history, today=today, config=health_config, ecosystems=app_keys, facts=facts, weekly=weekly,
         live=live_milestones, planned=planned_milestones)
     insight_panel_html = dashboard_app.panel("insight", dashboard_insight_ui.panel_html())
+    rack_panel_html = dashboard_app.panel("rack", app_data.rack_html)
+    help_button_html = dashboard_nav_ui.help_button()
+    help_dialog_html = dashboard_nav_ui.help_dialog()
+    crumbs_html = dashboard_nav_ui.crumbs()
     description = (f"Electro Hobby 3D ecosystem status dashboard: live status for {total} projects across the HYDRA-UMC, URTC, A.R.M.O.R. and EH3D ecosystems")
     head_extra_html = dashboard_evo_ui.head_tags(total, description, SITE_URL)
     evidence_view_html = dashboard_evo_ui.evidence_view()
@@ -4982,10 +5006,12 @@ def render_html(
     <div class="brand">
       <div class="eyebrow">ELECTRO HOBBY 3D</div>
       <h1><span data-i18n="header_title">Ecosystem Status Dashboard</span> <span class="version-pill">v3</span></h1>
+      {crumbs_html}
     </div>
     {tab_list_html}
     <div class="top-actions">
       {mode_buttons_html}
+      {help_button_html}
       <a class="build-badge" href="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml" target="_blank" rel="noopener">
         <img
           src="https://github.com/JuanenRac/JuanenRac/actions/workflows/build-dashboard.yml/badge.svg"
@@ -5199,6 +5225,7 @@ def render_html(
   </section></div></div>
       </div>
     </section>
+    {rack_panel_html}
     <section role="tabpanel" class="panel" id="panel-architecture" aria-labelledby="tab-architecture" tabindex="0" hidden data-testid="panel-architecture">
       <div class="panel-inner">
         <p class="ecosystem-intro" data-i18n="architecture_intro">
@@ -5409,6 +5436,7 @@ def render_html(
   </main>
 
   {repo_panel_html}
+  {help_dialog_html}
 
   <footer class="app-footer">{freshness_html} ·
 
@@ -5750,7 +5778,18 @@ DASHBOARD_ECOSYSTEMS: list[tuple[str, str, str]] = [
 ]
 
 
+def read_published_page(path: Path) -> "str | None":
+    """The page that is published now (the last known version of everything this run cannot read), None when there is none."""
+    try:
+        return path.read_text(encoding="utf-8")
+    except OSError:
+        return None
+
+
 def main() -> int:
+    started = time.monotonic()
+    published = read_published_page(OUT_DIR / "index.html")
+    failed_ecosystems: list[str] = []
     catalog_text = CATALOG_PATH.read_text(encoding="utf-8")
     catalog = parse_catalog(catalog_text)
     problems = catalog_mismatches(catalog_ecosystems(catalog_text), DASHBOARD_ECOSYSTEMS)
@@ -5816,6 +5855,7 @@ def main() -> int:
         except Exception as exc:  # noqa: BLE001 - a real, unexpected client failure must not take down the other ecosystems
             print(f"WARNING: {ecosystem_label} discovery failed: {exc}", file=sys.stderr)
             api_failures.append((f"{ecosystem_label} discovery", str(exc)))
+            failed_ecosystems.append(ecosystem_key)
             continue
         rescued, kept_errors = rescue_rejected(catalog.github_owner, ecosystem_key, sub_discovery.errors)
         sub_discovery = _hydra_client.RemoteDiscovery(projects=(*sub_discovery.projects, *rescued), errors=tuple(kept_errors))
@@ -5825,6 +5865,8 @@ def main() -> int:
             ecosystem_by_name[status.entry.name] = ecosystem_key
         all_discovery_errors.extend(sub_discovery.errors)
         print(f"{ecosystem_label}: {len(sub_discovery.projects)} project(s) discovered.", file=sys.stderr)
+        if not sub_discovery.projects:
+            failed_ecosystems.append(ecosystem_key)
         # URTC and A.R.M.O.R. always have real projects: finding none means a parser or a manifest broke (an unknown field made every URTC project vanish from the page
         # once), not that they are gone. Keep the page that is published instead of replacing it with one that has lost a whole ecosystem.
         if ecosystem_key in ("urtc", "armor") and not sub_discovery.projects:
@@ -5832,6 +5874,16 @@ def main() -> int:
             for problem in sub_discovery.errors[:10]:
                 print(f"  - {problem}", file=sys.stderr)
             return 1
+
+    # An ecosystem that the published page lists and that this run could not read at all is not replaced by an empty one: the published page (the last
+    # known version of everything) stays as it is until GitHub answers again.
+    now_counts: dict[str, int] = {}
+    for eco_key in ecosystem_by_name.values():
+        now_counts[eco_key] = now_counts.get(eco_key, 0) + 1
+    lost = dashboard_robust.lost_ecosystems(dashboard_robust.previous_ecosystem_counts(published), now_counts, failed_ecosystems)
+    if lost:
+        print(f"WARNING: could not read {', '.join(lost)} on GitHub; the published page, which lists them, is kept as the last known version.", file=sys.stderr)
+        return 0
 
     total = len(entries)
 
@@ -5872,6 +5924,18 @@ def main() -> int:
     meta = fetch_all_meta(entries)
     activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN, redact=_redact_private_document_names)
     print(f"{len(activity)} release/CI records read.", file=sys.stderr)
+    today = dashboard_evo.today_utc()
+    stale_date: "str | None" = None
+    activity_read = len([name for name in ecosystem_by_name if name in activity])
+    if not activity:
+        # GitHub could not be read for the CI, the releases and the commits: the page that is published keeps showing the last known version of them,
+        # marked with its date, and the page never calls it current.
+        known = dashboard_robust.activity_from_page(published)
+        if known:
+            activity = known
+            stale_date = dashboard_robust.previous_asof(published) or today
+            activity_read = 0
+            print(f"WARNING: the CI, release and commit data could not be read; the last known version from {stale_date} is shown, marked as such.", file=sys.stderr)
     signals = dashboard_contrib.fetch_signals(catalog.github_owner, GITHUB_TOKEN, activity)
     print(f"{len(signals)} delivery/quality records read.", file=sys.stderr)
     build = dashboard_health.fetch_last_good_build(BUILD_REPOSITORY, BUILD_WORKFLOW_FILE, _api_get)
@@ -5909,19 +5973,20 @@ def main() -> int:
     # Template indentation must not leak as trailing whitespace into the
     # published static page. Normalising it here keeps local and CI-generated
     # output identical without manually editing generated HTML.
-    today = dashboard_evo.today_utc()
     history_path = Path(os.environ.get("DASHBOARD_HISTORY_PATH") or dashboard_evo.HISTORY_PATH)
     history, history_problems = dashboard_evo.load_history(history_path, today)
     for problem in history_problems:
         print(f"WARNING: {problem}; the history starts again from today.", file=sys.stderr)
+    health = dashboard_robust.manifest_health(ecosystem_by_name, raw_manifests, integrity)
+    generation = dashboard_robust.Generation(
+        built=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"), seconds=time.monotonic() - started,
+        steps=(("versions", ok, total), ("manifests", health["valid"], health["repos"]), ("commits", meta_ok, total), ("activity", activity_read, total)),
+        asof=stale_date or today)
     rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
                            signals=signals, build=build, config=config, history=history, facts=facts, weekly=weekly,
-                           live_milestones=live_milestones, planned_milestones=planned_milestones)
+                           live_milestones=live_milestones, planned_milestones=planned_milestones,
+                           generation=generation, stale_date=stale_date, rack=dashboard_rack.load())
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
-    try:
-        published = index_path.read_text(encoding="utf-8")
-    except OSError:
-        published = None
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 
     # One snapshot per day of the progress and of the eight areas (at most 90 days), and the small image of the cards of social networks.

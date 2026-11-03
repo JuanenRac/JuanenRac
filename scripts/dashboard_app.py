@@ -21,6 +21,9 @@ import dashboard_charts as charts
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight_ui
+import dashboard_nav_ui
+import dashboard_robust
+import dashboard_robust_texts
 from dashboard_charts import Activity, Area, esc
 
 ECOSYSTEMS: tuple[tuple[str, str], ...] = (
@@ -42,11 +45,12 @@ TABS: tuple[tuple[str, str, str], ...] = (
     ("evidence", "tab_evidence", ""),
     ("insight", "tab_insight", ""),
     ("inventory", "tab_inventory", ""),
+    ("rack", "tab_rack", ""),
     ("architecture", "tab_architecture", ""),
     ("errors", "tab_errors", ""),
 )
 TAB_IDS = tuple(tab[0] for tab in TABS)
-ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_insight": "Analysis", "tab_inventory": "Inventory",
+ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_insight": "Analysis", "tab_inventory": "Inventory", "tab_rack": "Rack",
            "tab_architecture": "Architecture", "tab_errors": "Errors / unknown"}
 CI_LABELS = {"success": "Green", "failure": "Red", "pending": "Pending", "none": "No CI / unknown"}
 LIGHT_GLYPH = {"good": "●", "fair": "◐", "poor": "◔", "bad": "○"}
@@ -76,6 +80,10 @@ class AppData:
     incomplete: Sequence[str] = field(default_factory=list)         # dashboard_health.completeness codes; empty = the picture is complete
     build: object | None = None                                     # dashboard_health.BuildInfo of the last good build, None = not verified
     page_data: Mapping[str, object] = field(default_factory=dict)  # what the script reads: config, repos, contrib
+    manifest: Mapping[str, object] = field(default_factory=dict)   # dashboard_robust.manifest_health: valid, repos, percent (None = not verified)
+    generation_html: str = ""                                      # dashboard_robust.generation_html: the figures of the generation
+    stale_date: str | None = None                                  # the CI, release and commit data are the last known version of this date
+    rack_html: str = ""                                            # dashboard_rack.panel_html
 
 
 # ---------------------------------------------------------------------------
@@ -244,6 +252,25 @@ def red_ci_list(data: AppData, names: set[str] | None) -> str:
     return f'<div class="red-ci" data-testid="ci-red"><span class="card-subtitle" data-i18n="ci_red_title">Repositories with a red CI</span><ul class="chip-list">{links}</ul></div>'
 
 
+def registry_card(data: AppData) -> str:
+    """Manifest health: valid manifests over repositories (the same problems the Errors / unknown indicator counts), with how it is calculated in a dropdown.
+    With no repository, or when no manifest could be read, there is no percentage: it says it is not verified."""
+    m = dict(data.manifest)
+    valid, repos, percent = int(m.get("valid", 0) or 0), int(m.get("repos", 0) or 0), m.get("percent")
+    en = dashboard_robust_texts.TEXTS["en"]
+    if percent is None:
+        state, number = "none", "–"
+        sub = f'<small data-i18n="not_verified">{esc(_en("not_verified"))}</small>'
+    else:
+        state = "ok" if valid == repos else ("bad" if valid == 0 else "mid")
+        number = f"{percent:g}%"
+        sub = (f'<small data-i18n-template="registry_sub" data-ok="{valid}" data-repos="{repos}">{esc(en["registry_sub"].replace("{ok}", str(valid)).replace("{repos}", str(repos)))}</small>')
+    face = (f'<span class="kpi-number" id="health-percent">{esc(number)}</span>'
+            f'<span class="kpi-label"><b data-i18n="health_registry">Registry health</b>{sub}</span>')
+    return (f'<details class="kpi kpi-{state} kpi-drop kpi-registry" data-testid="kpi-percent" data-valid="{valid}" data-repos="{repos}"><summary>{face}</summary>'
+            f'<div class="kpi-drop-panel kpi-help-panel"><p data-i18n="registry_help" data-testid="registry-help">{esc(en["registry_help"])}</p></div></details>')
+
+
 def errors_card(data: AppData) -> str:
     """The indicator of errors / unknown: the reconciled count and, when it is not zero, a dropdown with each repository and its reason."""
     # Nothing listed is not "all good": with no project at all the indicator stays neutral and says there is no data.
@@ -311,7 +338,12 @@ def alerts_card(data: AppData) -> str:
     template = f' data-i18n-template="{key}" data-n="{len(static)}"' if key.endswith("some") else f' data-i18n="{key}"'
     glyph = {"ok": "●", "alerts": "▲", "incomplete": "?"}[state]
     status_text = _en(key).replace("{n}", str(len(static)))
-    why = "".join(f'<li data-i18n="alerts_why_{esc(code)}">{esc(_en("alerts_why_" + code))}</li>' for code in incomplete)
+    def why_item(code: str) -> str:
+        if code == "activity_stale" and data.stale_date:
+            return (f'<li data-i18n-template="alerts_why_activity_stale" data-date="{esc(data.stale_date)}">'
+                    f'{esc(dashboard_robust_texts.TEXTS["en"]["alerts_why_activity_stale"].replace("{date}", data.stale_date))}</li>')
+        return f'<li data-i18n="alerts_why_{esc(code)}">{esc(_en("alerts_why_" + code))}</li>'
+    why = "".join(why_item(code) for code in incomplete)
     why_html = f'<ul class="alerts-why-list" data-testid="alerts-why">{why}</ul>' if why else ""
     items = "".join(alert_item(alert, data.repo_url) for alert in static)
     return (
@@ -378,10 +410,12 @@ def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
         f'<div class="kpi" data-testid="kpi-total"><span class="kpi-number" id="health-total">{data.total}</span><span class="kpi-label"><b data-i18n="health_total">Total projects</b></span></div>'
         f'<div class="kpi kpi-{resolved_state}" data-testid="kpi-resolved"><span class="kpi-number" id="health-resolved">{data.ok}</span><span class="kpi-label"><b data-i18n="health_resolved">Version resolved</b></span></div>'
         f'{errors_card(data)}'
-        f'<div class="kpi" data-testid="kpi-percent"><span class="kpi-number" id="health-percent">{esc(data.success_percent_text)}</span><span class="kpi-label"><b data-i18n="health_registry">Registry health</b></span></div>'
+        f'{registry_card(data)}'
     )
+    banner = dashboard_robust.stale_banner_html(data.stale_date)
     return f"""
     <div class="summary-grid">
+      {banner}
       {dashboard_evo_ui.visit_card()}
       {alerts_card(data)}
       <section class="kpi-strip" aria-label="Key figures" data-i18n-aria-label="aria_key_figures">{kpis}</section>
@@ -433,7 +467,7 @@ def errors_panel(data: AppData, integrity_html: str) -> str:
     rows = "".join(f'<li><code>{esc(name)}</code> <span class="integrity-detail">{esc(reason)}</span></li>' for name, reason in data.unresolved)
     unresolved = (f'<details class="integrity bad" open><summary><span data-i18n="th_status">Status</span> · <span data-i18n="health_errors">Errors / unknown</span> '
                   f'<span class="integrity-count">{len(data.unresolved)}</span></summary><ul class="integrity-list">{rows}</ul></details>' if rows else "")
-    return f'<div class="errors-panel" data-testid="errors-panel">{integrity_html.replace("<details class=", "<details open class=", 1)}{unresolved}</div>'
+    return f'<div class="errors-panel" data-testid="errors-panel">{data.generation_html}{integrity_html.replace("<details class=", "<details open class=", 1)}{unresolved}</div>'
 
 
 def sidebar(maturity_keys: Sequence[tuple[str, str, int]], roles: Sequence[tuple[str, str, int]], deploys: Sequence[tuple[str, str, int]],
@@ -1068,7 +1102,6 @@ JS_FILTERS = r"""
     const visiblePercent = visible ? Math.round((visibleOk / visible) * 1000) / 10 : 0;
     if (healthTotal) { healthTotal.textContent = String(visible); }
     if (healthResolved) { healthResolved.textContent = String(visibleOk); }
-    if (healthPercent) { healthPercent.textContent = String(visiblePercent) + "%"; }
     if (countLabel) {
       countLabel.setAttribute("data-shown", String(visible));
       countLabel.setAttribute("data-total", String(rows.length));
@@ -1189,6 +1222,9 @@ JS = r"""
   const SCOPE_KEY = "hydra-dashboard-scope";
   const SCOPES = Array.from(document.querySelectorAll("[data-scope]")).map(function (b) { return b.getAttribute("data-scope"); });
   var currentTab = "summary";
+  var shortcutsOn = true;      // single-key shortcuts (the help dialog switches them off)
+  var navRepo = null;          // the repository whose panel is open, for the breadcrumb and the address
+  var crumbRefresh = null;
   var hashReady = false;
   var scopeRestored = false;
   var modes = { compact: false, present: false, fromHash: false };
@@ -1213,6 +1249,7 @@ JS = r"""
       if (state.eco !== "all") { query.push("scope=" + encodeURIComponent(state.eco)); }
       if (page > 1) { query.push("page=" + page); }
     }
+    if (navRepo) { query.push("repo=" + encodeURIComponent(navRepo)); }
     if (modes.compact) { query.push("view=compact"); }
     if (modes.present) { query.push("mode=present"); }
     if (query.length) { wanted += "?" + query.join("&"); }
@@ -1225,6 +1262,7 @@ JS = r"""
     if (!hashReady) { return; }
     safeSet(SCOPE_KEY, state.eco);
     if (currentTab === "projects") { writeHash(); }
+    if (crumbRefresh) { crumbRefresh(); }
   }
 
   function applyHashState(parsed) {
@@ -1356,6 +1394,7 @@ JS = r"""
     safeSet(TAB_KEY, id);
     currentTab = id;
     if (options.updateHash !== false) { writeHash(); }
+    if (crumbRefresh) { crumbRefresh(); }
     if (id === "projects") { restoreScope(); }
   }
 
@@ -1648,15 +1687,21 @@ JS_HEALTH = r"""
   function openPanel(name, opener) {
     if (!DATA.repos[name]) { return; }
     panelFor = name;
+    navRepo = name;
     panelOpener = opener || null;
     repoPanel.hidden = false;
     renderPanel(currentDict());
     panelTitle.focus();
+    if (hashReady) { writeHash(); }
+    if (crumbRefresh) { crumbRefresh(); }
   }
   function closePanel() {
     if (repoPanel.hidden) { return; }
     repoPanel.hidden = true;
     panelFor = null;
+    navRepo = null;
+    if (hashReady) { writeHash(); }
+    if (crumbRefresh) { crumbRefresh(); }
     const back = panelOpener && document.contains(panelOpener) && panelOpener.offsetParent !== null ? panelOpener : document.getElementById("main");
     panelOpener = null;
     if (back) { back.focus(); }
@@ -1683,12 +1728,41 @@ JS_HEALTH = r"""
     openContribs.forEach(function (panel) { fillContrib(panel, dict); });
     if (panelFor) { renderPanel(dict); }
     evoApplied(dict);
+    rackApplied(dict);
+    if (crumbRefresh) { crumbRefresh(dict); }
+  }
+  // The thermal verdict inside an alarm of the rack is a code the snapshot carries: it is translated here, in the sentence of the alarm.
+  function rackApplied(dict) {
+    document.querySelectorAll("li[data-verdict-key]").forEach(function (li) {
+      const verdict = dict[li.getAttribute("data-verdict-key")] || li.getAttribute("data-verdict") || "";
+      li.textContent = tpl(dict.rack_alarm_thermal, { slot: li.getAttribute("data-slot"), verdict: verdict });
+    });
   }
   dynReady = true;
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
-CSS = CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS
+CSS = CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + r"""
+  /* ======================= Last known data, generation figures, manifest health and rack ======================= */
+  .stale-banner { grid-column: 1 / -1; margin: 0; padding: 10px 14px; border: 1px solid var(--k-pending); border-left-width: 6px; border-radius: var(--radius); background: var(--panel-2); color: var(--text); font-weight: 600; }
+  .stale-glyph { color: var(--k-pending); margin-right: 6px; }
+  .card-gen { margin-bottom: 14px; }
+  .gen-steps { margin: 6px 0 10px; padding-left: 18px; display: grid; gap: 2px; font-size: 13px; }
+  .kpi-registry .kpi-drop-panel { left: auto; right: 0; width: min(520px, 90vw); border-color: var(--border-strong); }
+  .kpi-registry .kpi-drop-panel p { margin: 0; font-size: 12.5px; line-height: 1.45; }
+  .rack-state { display: inline-flex; gap: 8px; align-items: center; margin: 0 0 6px; font-weight: 700; padding: 4px 10px; border: 1px solid var(--border-strong); border-radius: 999px; }
+  .rack-glyph { font-size: 14px; }
+  .rack-state[data-state="alarm"] .rack-glyph { color: var(--err); }
+  .rack-state[data-state="ok"] .rack-glyph { color: var(--ok); }
+  .rack-sub { margin: 14px 0 6px; font-size: 13px; }
+  .rack-sim { margin: 4px 0; padding: 6px 10px; border-left: 4px solid var(--k-pending); background: var(--panel-2); border-radius: 6px; }
+  .rack-scroll { overflow-x: auto; }
+  .rack-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .rack-table th, .rack-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  .rack-table thead th { color: var(--dim); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .rack-flag { font-weight: 700; color: var(--err); }
+  .rack-alarms { margin: 0; padding-left: 18px; display: grid; gap: 3px; font-size: 13px; }
+"""
 
 
 def script() -> str:
@@ -1696,7 +1770,7 @@ def script() -> str:
     import json
     marker = "  dynReady = true;\n  applyLanguage("
     assert JS_HEALTH.count(marker) == 1
-    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_evo_ui.JS + dashboard_insight_ui.JS + marker)
+    return JS_FILTERS + JS.replace("__TAB_IDS__", json.dumps(list(TAB_IDS))) + JS_HEALTH.replace(marker, dashboard_evo_ui.JS + dashboard_insight_ui.JS + dashboard_nav_ui.JS + marker)
 
 
 # ---------------------------------------------------------------------------

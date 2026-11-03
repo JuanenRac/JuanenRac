@@ -32,6 +32,8 @@ DEFAULT_CONFIG: dict = {
 }
 MANIFEST_KINDS = ("invalid_manifest", "unlisted_manifest", "unknown_maturity", "unknown_evidence", "catalog_missing")
 BUILD_BEGIN, BUILD_END = "<!--build-info-->", "<!--/build-info-->"
+# The time of the generation and how long it took change on every run too, so they are kept stable the same way.
+GEN_BEGIN, GEN_END = "<!--gen-info-->", "<!--/gen-info-->"
 
 
 def _ordered(block: object, default: Mapping[str, int]) -> dict[str, int] | None:
@@ -185,8 +187,14 @@ def _region(text: str) -> tuple[int, int] | None:
 
 
 def strip_build_info(text: str) -> str:
+    """The page without the regions that move on every run (the last good build and the generation figures)."""
     span = _region(text)
-    return text if span is None else text[:span[0]] + text[span[1]:]
+    if span is not None:
+        text = text[:span[0]] + text[span[1]:]
+    a, b = text.find(GEN_BEGIN), text.find(GEN_END)
+    if 0 <= a < b:
+        text = text[:a] + text[b + len(GEN_END):]
+    return text
 
 
 def merge_build_info(new: str, old: str | None) -> str:
