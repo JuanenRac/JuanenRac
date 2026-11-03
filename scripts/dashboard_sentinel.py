@@ -51,7 +51,7 @@ DEFAULT_CONFIG: dict = {
     "skip_candidate_prefixes": ["EH3D-", "ELECTRO-HOBBY-3D"],
     "red_streak_warn": 2,
     "compute_warn_minutes_24h": 12000,
-    "compute_top": 8,
+    "compute_top": 6,
     "ruleset_name": "protect-main",
     "read_actions_settings": True,
     "list_max": 40,

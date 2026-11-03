@@ -92,7 +92,7 @@ test.describe("sentinel tab: figures", () => {
     await open(page);
     await expect(page.getByTestId("sn-cmp-total")).toHaveText("Total: 1 768 min in 24 h, 1 878 min in 7 days");
     const bars = page.locator("#sn-cmp .ac-bar");
-    expect(await bars.count()).toBe(8);
+    expect(await bars.count()).toBe(6);
     await expect(page.locator("#sn-trend li")).toHaveCount(4);
     await expect(page.locator("#sn-trend li .sn-chart").first()).toHaveAttribute("aria-label", /^Red workflows: now 8, from \d+ to \d+; .+ \(from 2001-12-\d\d to 2001-12-21\)$/);
     await expect(page.locator("#sn-trend .sn-spark")).toHaveCount(4);
