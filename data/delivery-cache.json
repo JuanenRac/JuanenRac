@@ -199,7 +199,6 @@
   "URTC": {
    "art": true,
    "at": "2026-11-03T17:32:52Z",
-   "checked": true,
    "exp": "2026-11-10T17:31:13Z",
    "url": "https://github.com/JuanenRac/URTC/actions/runs/41676667285",
    "wf": "firmware-build.yml"
