@@ -24,18 +24,20 @@ test.describe("evidence checklist", () => {
     for (const cell of await page.locator("#ev-table td.ev-cell").all()) {
       states.add((await cell.getAttribute("data-status")) || "");
       // never colour alone: a visible glyph and a text for screen readers
-      expect((await cell.locator("[aria-hidden=true]").textContent())?.trim()).toMatch(/^[✓✕?–◐]$/);
+      expect((await cell.locator("[aria-hidden=true]").textContent())?.trim()).toMatch(/^[✓✕?–◐⚠]$/);
       expect((await cell.locator(".sr-only").textContent())?.length).toBeGreaterThan(3);
     }
     expect(states.has("yes") && states.has("no") && states.has("unverified")).toBe(true);
   });
 
-  test("a signed release is never shown as verified", async ({ page }) => {
+  test("a signature is shown as verified only where the generator verified it, and a file it could not check is never verified", async ({ page }) => {
     await openDashboard(page);
     await gotoTab(page, "evidence");
     const signed = await page.locator('#ev-table td[data-item="signed"]').evaluateAll((cells) => cells.map((c) => c.getAttribute("data-status")));
     expect(signed.length).toBe(40);
-    expect(signed).not.toContain("yes");
+    expect(signed.filter((s) => s === "yes").length).toBe(3);       // the three repositories whose signature the fixture marks as verified
+    expect(signed.filter((s) => s === "invalid").length).toBe(3);
+    expect(signed.filter((s) => s === "present").length).toBe(10);  // present, not verifiable here: never "yes"
   });
 
   test("the counters per ecosystem add up to the rows of the table", async ({ page }) => {

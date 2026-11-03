@@ -76,6 +76,9 @@ CSS = r"""
   .hist-gap { margin: 0 0 8px; padding: 8px 12px; border: 1px dashed var(--border-strong); border-radius: var(--radius); font-size: 13px; background: var(--panel-2); }
   .hist-gap-glyph { margin-right: 6px; }
   .alert-unsigned { border-left-color: var(--warn-ink); }
+  .alert-badsig { border-left-color: var(--err); }
+  .repo-fields dd { overflow-wrap: anywhere; word-break: break-word; }
+  .pipe-inf { color: var(--dim); font-size: 11px; }
   .area-live { grid-column: 1 / -1; margin: 2px 0 0; font-size: 11.5px; color: var(--dim); cursor: help; }
   .arch-repo { appearance: none; background: transparent; border: 0; padding: 0; color: var(--accent); font: inherit; text-decoration: underline; cursor: pointer; text-align: left; }
   .arch-repo:hover { text-decoration-thickness: 2px; }
@@ -102,6 +105,9 @@ JS = r"""
       const span = make("span", "pipe-badge pipe-" + state);
       span.appendChild(make("span", "pipe-glyph", DELIVERY_GLYPH[state])).setAttribute("aria-hidden", "true");
       span.appendChild(make("span", "", dict["pipe_" + state]));
+      if (deliveryRepo(name).pipeInf) {
+        const mark = make("span", "pipe-inf", "(" + dict.pv_inferred + ")"); mark.title = dict.pv_inferred; span.appendChild(mark);
+      }
       cell.textContent = "";
       cell.appendChild(span);
       cell.title = dict.pipe_help;
@@ -123,22 +129,42 @@ JS = r"""
       if (value && value.nodeType) { dd.appendChild(value); } else { dd.textContent = value === "" || value === null || value === undefined ? dict.not_verified : value; }
       fields.appendChild(dd);
     }
-    field(dict.pf_pipeline, dict["pipe_" + deliveryPipe(name)]);
-    field(dict.pf_built_on, repo.builtOn ? dict["pv_" + (repo.builtOn === "gha" ? "gha" : repo.builtOn)] : dict.pv_undeclared);
-    const kind = repo.sigKind ? dict["pv_" + repo.sigKind] : dict.pv_undeclared;
+    // What a manifest declares always wins; a value inferred from GitHub is used only where nothing is declared and says so.
+    const inf = repo.inf || {};
+    const tag = " · " + dict.pv_inferred;
+    field(dict.pf_pipeline, dict["pipe_" + deliveryPipe(name)] + (repo.pipeInf ? tag : ""));
+    const builtOn = repo.builtOn || inf.builtOn;
+    field(dict.pf_built_on, builtOn ? dict["pv_" + builtOn] + (repo.builtOn ? "" : tag) : dict.pv_undeclared);
+    const sigKind = repo.sigKind || inf.sigKind;
+    const kind = sigKind ? dict["pv_" + sigKind] + (repo.sigKind ? "" : tag) : dict.pv_undeclared;
     field(dict.pf_signature, repo.signedOn ? kind + " · " + dict["pv_signed_" + repo.signedOn] : kind);
-    field(dict.pf_release_sig, dict["sig_" + (repo.sig || "unverified")]);
-    if (repo.artifact) {
-      const a = make("a", "", repo.artifact.replace("https://github.com/", ""));
-      a.href = repo.artifact; a.target = "_blank"; a.rel = "noopener noreferrer";
-      field(dict.pf_artifact, a);
+    field(dict.pf_release_sig, dict["sig_" + (repo.sig || "unverified")] + deliverySigDetail(repo, dict));
+    const artifact = repo.artifact || inf.artifact;
+    if (artifact) {
+      const a = make("a", "", artifact.replace("https://github.com/", ""));
+      a.href = artifact; a.target = "_blank"; a.rel = "noopener noreferrer";
+      if (repo.artifact) { field(dict.pf_artifact, a); } else { const box = make("span"); box.appendChild(a); box.appendChild(document.createTextNode(tag)); field(dict.pf_artifact, box); }
     } else { field(dict.pf_artifact, dict.pv_undeclared); }
+    if (repo.build) {
+      field(dict.pf_last_build, tpl(repo.build.art ? dict.pv_build : dict.pv_build_noart, { wf: repo.build.wf, date: String(repo.build.at).slice(0, 10) }));
+    }
+  }
+
+  // ---- the detail of a signature check: how many files, which scheme, why some could not be checked ----
+  function deliverySigDetail(repo, dict) {
+    const x = repo && repo.sigx;
+    if (!x || typeof x !== "object") { return ""; }
+    const parts = [tpl(dict.sig_detail, { ok: x.ok || 0, bad: x.bad || 0, unk: x.unk || 0 })];
+    if (Array.isArray(x.sch) && x.sch.length) { parts.push(tpl(dict.sig_scheme, { list: x.sch.join(", ") })); }
+    if (x.ho) { parts.push(tpl(dict.sig_detail_ho, { n: x.ho })); }
+    (Array.isArray(x.why) ? x.why : []).forEach(function (code) { if (dict["sig_why_" + code]) { parts.push(dict["sig_why_" + code]); } });
+    return " (" + parts.join(" · ") + ")";
   }
 
   // ---- evidence: summary on top and the reason of every cell that is not verified ----
   function deliveryReason(name, item, status, dict) {
     const repo = deliveryRepo(name);
-    if (item === "signed") { return dict["ev_why_signed_" + (repo.sig || "unverified")]; }
+    if (item === "signed") { return dict["ev_why_signed_" + (repo.sig || "unverified")] + deliverySigDetail(repo, dict); }
     if (status === "unverified") { return tpl(dict.ev_why_unverified, { item: dict["ev_item_" + item] }); }
     if (item === "hw") { return dict.ev_why_hw_no; }
     return tpl(dict.ev_why_no, { item: dict["ev_item_" + item] });
@@ -198,16 +224,18 @@ JS = r"""
     sum.textContent = "";
     sum.appendChild(make("h3", "", dict.ev_sum_title));
     const col = EV_ITEMS.indexOf("signed"), rel = EV_ITEMS.indexOf("release"), hw = EV_ITEMS.indexOf("hw");
-    let unsigned = 0, present = 0, unread = 0, nohw = 0, needHw = 0;
+    let unsigned = 0, verified = 0, invalid = 0, present = 0, unread = 0, nohw = 0, needHw = 0;
     names.forEach(function (n) {
       const r = CHECKS[n];
       if (r[rel] === 1 && r[col] === 0) { unsigned += 1; }
-      if (r[col] === 3 || r[col] === 4) { present += 1; }
+      if (r[col] === 4) { verified += 1; }
+      if (r[col] === 5) { invalid += 1; }
+      if (r[col] === 3) { present += 1; }
       if (r[rel] === 1 && r[col] === null) { unread += 1; }
       if (r[hw] !== 2) { needHw += 1; if (r[hw] !== 1) { nohw += 1; } }
     });
     const ul = make("ul");
-    [["unsigned", unsigned, {}], ["present", present, {}], ["sigunk", unread, {}], ["nohw", nohw, { m: needHw }]].forEach(function (row) {
+    [["unsigned", unsigned, {}], ["verified", verified, {}], ["invalid", invalid, {}], ["present", present, {}], ["sigunk", unread, {}], ["nohw", nohw, { m: needHw }]].forEach(function (row) {
       const li = make("li"); li.setAttribute("data-sum", row[0]); li.setAttribute("data-n", String(row[1]));
       li.textContent = tpl(dict["ev_sum_" + row[0]], Object.assign({ n: row[1] }, row[2]));
       ul.appendChild(li);
@@ -256,23 +284,48 @@ JS = r"""
   }
 
   // ---- the build that is green but has no signed release (optional alert, off unless the configuration turns it on) ----
+  // A signature that does not verify is always an alert (it is a fact, not a threshold).
+  function deliveryBadSignatureAlerts(list, dict) {
+    const found = Object.keys(DATA.repos || {}).filter(function (name) { return DATA.repos[name].sig === "invalid"; }).sort();
+    found.forEach(function (name) {
+      const r = DATA.repos[name];
+      const li = make("li", "alert alert-badsig"); li.setAttribute("data-kind", "badsig"); li.setAttribute("data-testid", "alert-badsig");
+      const kind = make("span", "alert-kind"); kind.appendChild(make("span", "alert-glyph", "⚠")).setAttribute("aria-hidden", "true");
+      kind.appendChild(make("span", "", dict.alert_kind_badsig));
+      const link = make("a", "", name); link.href = REPO_URL + name + "/releases"; link.target = "_blank"; link.rel = "noopener noreferrer";
+      li.appendChild(kind); li.appendChild(link);
+      li.appendChild(make("span", "alert-why", tpl(dict.alert_why_badsig, { tag: (r.release && r.release.tag) || "" })));
+      list.appendChild(li);
+    });
+    return found.length;
+  }
+
   function deliveryUnsignedAlerts(list, dict) {
     const cfg = CFG.signature_alert;
     if (!cfg || cfg.enabled !== true) { return 0; }
     const found = [];
+    const limitHours = Number(cfg.after_hours) > 0 ? Number(cfg.after_hours) : cfg.after_days * 24;
     Object.keys(DATA.repos || {}).forEach(function (name) {
       const r = DATA.repos[name];
+      const inf = r.inf || {};
+      const signedAny = r.sig === "verified" || r.sig === "unverifiable" || r.sig === "present" || r.sig === "invalid";
+      if (!(r.builtOn === "gha" || inf.builtOn === "gha") || r.ci !== "success" || signedAny) { return; }
+      const hours = r.build && r.build.art && r.build.at ? (Date.now() - Date.parse(r.build.at)) / 3600000 : null;
+      if (hours !== null) {
+        if (hours > limitHours) { found.push({ name: name, hours: Math.floor(hours), days: Math.floor(hours / 24), date: String(r.build.at).slice(0, 10), build: true }); }
+        return;
+      }
       const days = dayCount(r.commitDate);
-      if (r.builtOn === "gha" && r.ci === "success" && r.sig !== "present" && days !== null && days > cfg.after_days) { found.push({ name: name, days: days, date: r.commitDate.slice(0, 10) }); }
+      if (days !== null && days * 24 > limitHours) { found.push({ name: name, hours: days * 24, days: days, date: r.commitDate.slice(0, 10), build: false }); }
     });
-    found.sort(function (x, y) { return y.days - x.days || (x.name < y.name ? -1 : 1); });
+    found.sort(function (x, y) { return y.hours - x.hours || (x.name < y.name ? -1 : 1); });
     found.forEach(function (item) {
       const li = make("li", "alert alert-unsigned"); li.setAttribute("data-kind", "unsigned"); li.setAttribute("data-testid", "alert-unsigned");
       const kind = make("span", "alert-kind"); kind.appendChild(make("span", "alert-glyph", "✎")).setAttribute("aria-hidden", "true");
       kind.appendChild(make("span", "", dict.alert_kind_unsigned));
       const link = make("a", "", item.name); link.href = REPO_URL + item.name + "/releases"; link.target = "_blank"; link.rel = "noopener noreferrer";
       li.appendChild(kind); li.appendChild(link);
-      li.appendChild(make("span", "alert-why", tpl(dict.alert_why_unsigned, { n: item.days, date: item.date })));
+      li.appendChild(make("span", "alert-why", item.build ? tpl(dict.alert_why_unsigned_build, { n: item.hours, date: item.date }) : tpl(dict.alert_why_unsigned, { n: item.days, date: item.date })));
       list.appendChild(li);
     });
     return found.length;

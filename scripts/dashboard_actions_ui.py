@@ -342,7 +342,7 @@ JS = r"""
   }
   function acSigText(name, dict) {
     const r = DATA.repos[name] || {};
-    const sig = r.sig === "present" ? dict.ac_sig_present : r.sig === "none" ? dict.ac_sig_none : r.sig === "norelease" ? dict.ac_sig_norelease : dict.ac_sig_unverified;
+    const sig = r.sig === "verified" ? dict.ac_sig_verified : r.sig === "invalid" ? dict.ac_sig_invalid : r.sig === "unverifiable" ? dict.ac_sig_unverifiable : r.sig === "present" ? dict.ac_sig_present : r.sig === "none" ? dict.ac_sig_none : r.sig === "norelease" ? dict.ac_sig_norelease : dict.ac_sig_unverified;
     return (dict["pipe_" + (r.pipeline || "undeclared")] || "") + " · " + sig;
   }
   function acSortKey(name) {

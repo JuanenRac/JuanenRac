@@ -44,25 +44,26 @@ test.describe("tab bar", () => {
 });
 
 test.describe("signatures in the evidence tab", () => {
-  test("a signature file is present but not verified, no file is no signature, unreadable assets are not verified", async ({ page }) => {
+  test("a verified signature, a file that cannot be verified here, no file and unreadable assets are four different answers", async ({ page }) => {
     await openDashboard(page, "full", "#evidence");
     const cell = (name: string) => page.locator(`#ev-table tr[data-repo="${name}"] td[data-item="signed"]`);
-    await expect(cell("ARMOR-FIXTURE-00")).toHaveAttribute("data-status", "present");   // index 10: .sig
-    await expect(cell("ARMOR-FIXTURE-03")).toHaveAttribute("data-status", "present");   // .minisig
+    await expect(cell("ARMOR-FIXTURE-00")).toHaveAttribute("data-status", "yes");       // .sig, verified
+    await expect(cell("ARMOR-FIXTURE-03")).toHaveAttribute("data-status", "present");   // .minisig: cannot be verified here
     await expect(cell("ARMOR-FIXTURE-01")).toHaveAttribute("data-status", "no");        // a release without a signature file
     await expect(cell("ARMOR-FIXTURE-02")).toHaveAttribute("data-status", "unverified"); // the assets were not returned
     await expect(cell("ARMOR-FIXTURE-04")).toHaveAttribute("data-status", "no");        // no release at all
-    await expect(cell("ARMOR-FIXTURE-00")).toContainText("Signature present, not verified here");
+    await expect(cell("ARMOR-FIXTURE-03")).toContainText("Signature present, not verifiable here");
   });
 
   test("the summary on top counts what is missing and links to nothing it cannot prove", async ({ page }) => {
     await openDashboard(page, "full", "#evidence");
     const sum = page.getByTestId("ev-summary");
     await expect(sum).toBeVisible();
-    for (const key of ["unsigned", "present", "sigunk", "nohw"]) await expect(sum.locator(`li[data-sum="${key}"]`)).toHaveCount(1);
+    for (const key of ["unsigned", "verified", "invalid", "present", "sigunk", "nohw"]) await expect(sum.locator(`li[data-sum="${key}"]`)).toHaveCount(1);
     const n = async (key: string) => Number(await sum.locator(`li[data-sum="${key}"]`).getAttribute("data-n"));
-    // 8 .sig + 8 .minisig = 16 with a signature file
-    expect(await n("present")).toBe(16);
+    // 6 .sig take turns (3 verified, 3 invalid, none left over) and the .minisig and the rest cannot be verified: 10
+    expect(await n("verified")).toBe(3);
+    expect(await n("present")).toBe(10);
     expect(await n("sigunk")).toBeGreaterThan(0);
     expect(await n("unsigned")).toBeGreaterThan(0);
     expect(await n("nohw")).toBeGreaterThan(0);
@@ -109,7 +110,7 @@ test.describe("signatures in the evidence tab", () => {
     await expect(fields).toContainText("GitHub Actions");
     await expect(fields).toContainText("signed with the release key");
     await expect(fields).toContainText("signed on this computer");
-    await expect(fields).toContainText("signature file present (not verified here)");
+    await expect(fields).toContainText("signature verified with the pinned public key");
     await expect(fields.getByRole("link", { name: /actions\/runs\// })).toHaveAttribute("href", /^https:\/\/github\.com\/JuanenRac\/ARMOR-FIXTURE-00\/actions\/runs\//);
   });
 

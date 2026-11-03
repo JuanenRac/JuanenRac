@@ -64,6 +64,8 @@ dependent on dashboard credentials.
   pushes on the repository's `main` branch.
 - The event contains only public repository name, commit SHA and ref (the build-finished event, only the repository name).
 - The Builds tab keeps state and numbers only: the result and duration of each run and the minutes of computing; never who started a run, the branch or the text of a commit.
+- The signatures of the releases are verified in the same read-only job, with public keys only (see `CI_EVIDENCE.md`); the page itself never calls GitHub and holds no key.
+- `data/delivery-cache.json` (the verdict per release and the inferred builds) travels with the other generated files and is written only when its content changes.
 - The central workflow validates public manifests independently and serializes
   publication through its existing concurrency group.
 

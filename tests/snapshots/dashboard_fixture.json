@@ -100,12 +100,30 @@
     "tests": 98
    }
   },
+  "builds_inferred": {
+   "armor": [
+    3,
+    1
+   ],
+   "eh3d": [
+    4,
+    2
+   ],
+   "hydra-umc": [
+    4,
+    2
+   ],
+   "urtc": [
+    3,
+    2
+   ]
+  },
   "checks": {
    "ARMOR-FIXTURE-00": [
     1,
     1,
     1,
-    3,
+    4,
     1,
     0,
     0
@@ -150,7 +168,7 @@
     1,
     1,
     0,
-    3,
+    5,
     1,
     0,
     0
@@ -270,6 +288,35 @@
     "scaffolding": 2
    }
   },
+  "pipeline": {
+   "armor": {
+    "built": 1,
+    "published": 4,
+    "published (inferred)": 1,
+    "release_only": 3,
+    "signed": 1
+   },
+   "eh3d": {
+    "built (inferred)": 1,
+    "published": 4,
+    "published (inferred)": 2,
+    "release_only": 2,
+    "undeclared": 1
+   },
+   "hydra-umc": {
+    "built": 1,
+    "published": 4,
+    "published (inferred)": 2,
+    "release_only": 2,
+    "signed": 1
+   },
+   "urtc": {
+    "published": 4,
+    "published (inferred)": 3,
+    "release_only": 1,
+    "undeclared": 2
+   }
+  },
   "progress": {
    "armor": 54,
    "eh3d": 61,
@@ -281,6 +328,38 @@
    "eh3d": 10,
    "hydra-umc": 10,
    "urtc": 10
+  },
+  "signatures": {
+   "armor": {
+    "invalid": 1,
+    "none": 2,
+    "norelease": 2,
+    "unread": 2,
+    "unverifiable": 2,
+    "verified": 1
+   },
+   "eh3d": {
+    "none": 2,
+    "norelease": 2,
+    "unread": 2,
+    "unverifiable": 3,
+    "verified": 1
+   },
+   "hydra-umc": {
+    "invalid": 1,
+    "none": 2,
+    "norelease": 2,
+    "unread": 2,
+    "unverifiable": 3
+   },
+   "urtc": {
+    "invalid": 1,
+    "none": 2,
+    "norelease": 2,
+    "unread": 2,
+    "unverifiable": 2,
+    "verified": 1
+   }
   },
   "tests": {
    "ecosystems": {

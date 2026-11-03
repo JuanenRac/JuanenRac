@@ -28,6 +28,7 @@ for sibling in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):
         sys.path.append(str(candidate))
 
 import dashboard_actions as actions_mod  # noqa: E402
+import dataclasses  # noqa: E402
 import dashboard_charts as charts  # noqa: E402
 import dashboard_health as health  # noqa: E402
 import dashboard_insight as insight_mod  # noqa: E402
@@ -130,7 +131,43 @@ def dataset(per_ecosystem: int = 10, healthy: bool = False):
             raw[name] = integrity_mod.RawManifest(ecosystem=key, data=data)
             nodes.append(_node(name, index, healthy))
             index += 1
-    return entries, results, eco, raw, charts.parse_activity(nodes)
+    return entries, results, eco, raw, _with_verification(charts.parse_activity(nodes), healthy)
+
+
+def _with_verification(activity: dict, healthy: bool) -> dict:
+    """What the verification of the signatures would have answered for the fixture (no network): the repositories with a .sig take turns to be verified, invalid
+    (never in the healthy variant) and not verifiable; a .minisig is never verifiable here. The detail is the one dashboard_signatures.aggregate gives."""
+    out = dict(activity)
+    turn = 0
+    for name in sorted(activity):
+        act = activity[name]
+        if act.signature != "present":
+            continue
+        names = [a[0] for a in act.assets]
+        if any(n.endswith(".sig") for n in names):
+            state = ("verified", "invalid", "unverifiable")[turn % 3]
+            turn += 1
+            if healthy and state == "invalid":
+                state = "verified"
+        else:
+            state = "unverifiable"
+        detail = {"verified": {"ok": 2, "bad": 0, "unk": 0, "sch": ["armor-fw/1", "armor-fw/1 (hash)"], "why": [], "ho": 0},
+                  "invalid": {"ok": 1, "bad": 1, "unk": 0, "sch": ["armor-pkg/1"], "why": ["mismatch"], "ho": 0},
+                  "unverifiable": {"ok": 0, "bad": 0, "unk": 1, "sch": [], "why": ["format" if not any(n.endswith(".sig") for n in names) else "family"], "ho": 0}}[state]
+        out[name] = dataclasses.replace(act, signature=state, sigx=detail)
+    return out
+
+
+def builds_for(entries) -> dict:
+    """The inferred builds (what dashboard_pipeline.read_all returns): every third repository has a green build with an artifact, one in six a green build whose
+    artifact expired, the rest have no build workflow."""
+    out = {}
+    for index, entry in enumerate(entries):
+        if index % 3 == 0:
+            out[entry.name] = {"wf": "package-build.yml", "at": "2001-12-19T10:00:00Z", "url": f"https://github.com/JuanenRac/{entry.name}/actions/runs/{100 + index}", "art": True}
+        elif index % 6 == 1:
+            out[entry.name] = {"wf": "firmware-build.yml", "at": "2001-10-01T10:00:00Z", "url": f"https://github.com/JuanenRac/{entry.name}/actions/runs/{100 + index}", "art": False}
+    return out
 
 
 def signals_for(entries, activity) -> dict:
@@ -350,7 +387,7 @@ def build_full() -> str:
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries),
-                           tests_read=tests_for(entries, eco), actions_read=actions_for(entries))
+                           tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries))
 
 
 def build_stale() -> str:
@@ -371,7 +408,7 @@ def build_single() -> str:
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco), actions_read=actions_for(entries))
+                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries))
 
 
 def build_healthy() -> str:
@@ -383,7 +420,7 @@ def build_healthy() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries), ())
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False), actions_read=actions_for(entries, healthy=True))
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False), actions_read=actions_for(entries, healthy=True), builds=builds_for(entries))
 
 
 def build_minimal() -> str:

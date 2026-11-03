@@ -70,8 +70,11 @@ import dashboard_tests
 import dashboard_tests_texts
 import dashboard_tests_ui
 import dashboard_delivery
+import dashboard_pipeline
+import dashboard_signatures
 import dashboard_delivery_ui
 import dashboard_delivery_texts
+import dashboard_signatures_texts
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight
@@ -1972,6 +1975,10 @@ for language, values in dashboard_actions_texts.TEXTS.items():
 for language, values in dashboard_delivery_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the signature verification and of the inferred pipeline (after the ones above: two of their entries are replaced).
+for language, values in dashboard_signatures_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
 for language, values in dashboard_app_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3267,6 +3274,7 @@ def page_data(
     history: "list[dict] | None" = None,
     snap: "dict | None" = None,
     insight: "dict | None" = None,
+    builds: "dict | None" = None,
 ) -> dict:
     """What the script of the page reads, as plain data: the thresholds, each repository (manifest fields, CI, release, recent commits) and the repositories
     behind every percentage. A fact that was not read is null; the page prints "not verified" for it."""
@@ -3284,7 +3292,16 @@ def page_data(
         result = results.get(name)
         hardware = raw.get("hardware_bound")
         fields = dashboard_delivery.manifest_fields(raw)
-        pipeline = {**fields, "pipeline": dashboard_delivery.pipeline_state(fields, (bool(act.release_date) if act is not None else None))}
+        build = (builds or {}).get(name) or None
+        stage = dashboard_pipeline.stages(fields, (bool(act.release_date) if act is not None else None), (len(act.assets) if act is not None and act.assets else None),
+                                          build, act.signature if act is not None else None)
+        inferred = {}
+        if not fields["builtOn"] and stage["built"] == "inferred":
+            inferred["builtOn"], inferred["artifact"] = "gha", build["url"]
+        if not fields["sigKind"] and act is not None and act.signature == "verified":
+            inferred["sigKind"] = "release"
+        pipeline = {**fields, "pipeline": stage["state"], "pipeInf": stage["inferred"], "stBuilt": stage["built"] or "", "stSigned": stage["signed"] or "",
+                    "inf": inferred, "build": {k: build[k] for k in ("wf", "at", "url", "art")} if build else None}
         repos[name] = {
             "eco": ecosystem_by_name.get(name, ""),
             "ecoLabel": labels.get(ecosystem_by_name.get(name, ""), ""),
@@ -3304,6 +3321,7 @@ def page_data(
             "release": {"tag": act.release_tag or "", "date": act.release_date or ""} if act is not None and act.release_date else None,
             "commitDate": (act.commit_date if act is not None else None) or None,
             "sig": act.signature if act is not None else None,
+            "sigx": dict(act.sigx) if act is not None and act.sigx else None,
             **pipeline,
             "commits": [[c.headline, c.date or "", c.url or ""] for c in act.commits] if act is not None and act.commits else None,
         }
@@ -3347,6 +3365,7 @@ def render_html(
     tests_config: "dict | None" = None,
     actions_read: "dict | None" = None,
     actions_cache: "dict | None" = None,
+    builds: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3446,7 +3465,7 @@ def render_html(
                                   tests=dashboard_tests.fresh_counts(tests_read), actions=dashboard_actions.day_summary(actions_read))
     full_history = dashboard_evo.add_snapshot(history, snap, today) if history is not None else []
     app_data.page_data = page_data(entries, results, ecosystem_by_name, raw_manifests or {}, activity_map, signals or {}, app_data.status, health_config,
-                                   history=full_history, snap=snap)
+                                   history=full_history, snap=snap, builds=builds)
     app_data.page_data["insight"] = dashboard_insight.build(
         repos=app_data.page_data["repos"], eco_by_name=ecosystem_by_name, manifests={name: _manifest_data((raw_manifests or {}).get(name)) for name in ecosystem_by_name},
         status=app_data.status, history=full_history, today=today, config=health_config, ecosystems=app_keys, facts=facts, weekly=weekly,
@@ -6015,6 +6034,21 @@ def main() -> int:
             stale_date = dashboard_robust.previous_asof(published) or today
             activity_read = 0
             print(f"WARNING: the CI, release and commit data could not be read; the last known version from {stale_date} is shown, marked as such.", file=sys.stderr)
+    # The signature of the latest release of every repository is verified here, in the read-only job, with the public key of its family; the builds that
+    # feed the pipeline are read for the repositories that have a build workflow. Both are cached (data/delivery-cache.json) and skipped when GitHub could not be read.
+    sig_config, sig_problems = dashboard_signatures.load_config()
+    for problem in sig_problems:
+        print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
+    delivery_cache = dashboard_signatures.load_cache()
+    builds: dict = {name: rec for name, rec in (delivery_cache.get("builds") or {}).items() if isinstance(rec, dict)}
+    if activity and not stale_date:
+        activity, signature_cache = dashboard_signatures.verify_activity(catalog.github_owner, activity, GITHUB_TOKEN, sig_config, delivery_cache)
+        fetcher = dashboard_signatures.LiveFetch(catalog.github_owner, GITHUB_TOKEN)
+        build_read, build_cache = dashboard_pipeline.read_all(catalog.github_owner, {n: a.workflows for n, a in activity.items()}, fetcher, cache=delivery_cache)
+        builds = {n: r for n, r in build_read.items() if r}
+        dashboard_signatures.save_cache(dashboard_signatures.CACHE_PATH, signature_cache, build_cache)
+        counts = {k: sum(1 for a in activity.values() if a.signature == k) for k in ("verified", "invalid", "unverifiable", "none", "norelease")}
+        print(f"Signatures of the latest releases: {counts}; builds with an artifact: {sum(1 for r in builds.values() if r.get('art'))}.", file=sys.stderr)
     signals = dashboard_contrib.fetch_signals(catalog.github_owner, GITHUB_TOKEN, activity)
     print(f"{len(signals)} delivery/quality records read.", file=sys.stderr)
     build = dashboard_health.fetch_last_good_build(BUILD_REPOSITORY, BUILD_WORKFLOW_FILE, _api_get)
@@ -6066,7 +6100,7 @@ def main() -> int:
                            live_milestones=live_milestones, planned_milestones=planned_milestones,
                            generation=generation, stale_date=stale_date, rack=dashboard_rack.load(),
                            ci_evidence=ci_read, ci_config=ci_config, tests_read=tests_read, tests_config=tests_config,
-                           actions_read=actions_read, actions_cache=actions_cache)
+                           actions_read=actions_read, actions_cache=actions_cache, builds=builds)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 

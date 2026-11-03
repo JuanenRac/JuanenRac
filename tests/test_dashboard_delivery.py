@@ -18,6 +18,7 @@ import dashboard_health as health  # noqa: E402
 import dashboard_robust as robust  # noqa: E402
 import dashboard_delivery as delivery  # noqa: E402
 import dashboard_delivery_texts as texts  # noqa: E402
+import dashboard_signatures_texts as sig_texts  # noqa: E402
 import dashboard_delivery_ui as ui  # noqa: E402
 
 
@@ -148,7 +149,7 @@ class TextTests(unittest.TestCase):
         import re
         used = set(re.findall(r'dict\.([a-z_0-9]+)', ui.JS)) | set(re.findall(r'dict\["([a-z_]+_)"', ui.JS))
         wanted = {key for key in used if key in texts.TEXTS["en"] or key.startswith(("hist_", "ev_why", "ev_sum", "pf_", "pipe_", "sig_", "alert_", "arch_", "ra_", "ts_checks"))}
-        self.assertEqual([key for key in wanted if key not in texts.TEXTS["en"] and key not in ("not_verified", "ev_item_", "ev_why_signed_", "ev_sum_", "pipe_", "pv_", "sig_", "area_")], [])
+        self.assertEqual([key for key in wanted if key not in texts.TEXTS["en"] and key not in sig_texts.TEXTS["en"] and key not in ("not_verified", "ev_item_", "ev_why_signed_", "ev_sum_", "pipe_", "pv_", "sig_", "sig_why_", "area_")], [])
 
     def test_the_pipeline_states_have_a_text_and_a_glyph(self):
         for state in ui.PIPE_STATES:

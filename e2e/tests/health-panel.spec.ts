@@ -33,12 +33,12 @@ test.describe("health alerts", () => {
     for (let i = 0; i < (await items.count()); i++) {
       const item = items.nth(i);
       const href = await item.locator("a").getAttribute("href");
-      expect(href, await item.innerText()).toMatch(/^https:\/\/github\.com\/JuanenRac\/[A-Za-z0-9._-]+(\/(actions|commits))?$/);
+      expect(href, await item.innerText()).toMatch(/^https:\/\/github\.com\/JuanenRac\/[A-Za-z0-9._-]+(\/(actions|commits|releases))?$/);
       expect((await item.locator("a").innerText()).trim().length).toBeGreaterThan(3);
       expect((await item.locator(".alert-why").innerText()).trim().length).toBeGreaterThan(3);
       expect((await item.locator(".alert-kind").innerText()).trim().length).toBeGreaterThan(3);   // the kind is words, not only a colour or a glyph
     }
-    await expect(status(page)).toContainText("56 alerts");
+    await expect(status(page)).toContainText("59 alerts");
     await expect(page.locator("#alerts-list > li[data-kind=ci] a").first()).toHaveAttribute("href", /\/actions$/);
   });
 
@@ -103,7 +103,7 @@ test.describe("health alerts", () => {
         expect(title, lang).not.toBe(english);
         expect(inactive, lang).not.toMatch(/No commit or release/);
       }
-      expect(state).toMatch(/56/);
+      expect(state).toMatch(/59/);
       expect(`${title}${state}${inactive}`.match(LEFTOVER), lang).toBeNull();
       seen.add(title);
     }

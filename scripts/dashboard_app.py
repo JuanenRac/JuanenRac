@@ -1580,7 +1580,8 @@ JS_HEALTH = r"""
     const card = document.querySelector(".card-alerts");
     const list = document.getElementById("alerts-list");
     if (!card || !list) { return; }
-    Array.from(list.querySelectorAll("li[data-kind='inactive'], li[data-kind='unsigned']")).forEach(function (li) { li.remove(); });
+    Array.from(list.querySelectorAll("li[data-kind='inactive'], li[data-kind='unsigned'], li[data-kind='badsig']")).forEach(function (li) { li.remove(); });
+    const badSignatures = deliveryBadSignatureAlerts(list, dict);        // a fact, not a threshold: before the alerts that depend on the date
     const limit = CFG.alert_after_days;
     const found = [];
     Object.keys(DATA.repos || {}).forEach(function (name) {
@@ -1605,7 +1606,7 @@ JS_HEALTH = r"""
       li.appendChild(make("span", "alert-why", tpl(dict.alert_why_inactive, { n: item.days, date: item.last.slice(0, 10) })));
       list.appendChild(li);
     });
-    const total = Number(card.getAttribute("data-static") || "0") + found.length + deliveryUnsignedAlerts(list, dict);
+    const total = Number(card.getAttribute("data-static") || "0") + found.length + badSignatures + deliveryUnsignedAlerts(list, dict);
     const incomplete = card.getAttribute("data-incomplete") === "1";
     const state = incomplete ? "incomplete" : total ? "alerts" : "ok";
     card.setAttribute("data-state", state);

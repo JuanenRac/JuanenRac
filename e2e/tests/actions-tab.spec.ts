@@ -120,7 +120,9 @@ test.describe("builds tab: the table", () => {
     await open(page);
     const cells = await rows(page).evaluateAll((r) => r.map((x) => x.querySelector("td:last-child")!.textContent));
     expect(cells.every((c) => /·/.test(c || ""))).toBe(true);
-    expect(cells.some((c) => /signature file/.test(c || ""))).toBe(true);
+    expect(cells.some((c) => /signature verified/.test(c || ""))).toBe(true);
+    expect(cells.some((c) => /signature INVALID/.test(c || ""))).toBe(true);
+    expect(cells.some((c) => /not verifiable here/.test(c || ""))).toBe(true);
     expect(cells.some((c) => /no signature/.test(c || ""))).toBe(true);
   });
 
