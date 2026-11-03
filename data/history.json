@@ -768,13 +768,6 @@
      0,
      "0.0.1"
     ],
-<<<<<<< Updated upstream
-=======
-    "EH3D-PHOENIX-CNC": [
-     0,
-     "0.0.9"
-    ],
->>>>>>> Stashed changes
     "EH3D-NODE-BUNGARD": [
      0,
      "0.0.5"
@@ -797,15 +790,7 @@
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-<<<<<<< Updated upstream
      "0.0.2"
-=======
-     "0.0.1"
-    ],
-    "EH3D-PHOENIX-PNP": [
-     0,
-     "0.0.3"
->>>>>>> Stashed changes
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -1173,15 +1158,8 @@
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-PHOENIX-LASER": 74,
     "EH3D-MANUFACTURING-PROFILE": 3,
-<<<<<<< Updated upstream
     "EH3D-PHOENIX-CAD": 27,
     "EH3D-PHOENIX-PCB": 223,
-=======
-    "EH3D-PHOENIX-CNC": 126,
-    "EH3D-PHOENIX-CAD": 3,
-    "EH3D-PHOENIX-PCB": 180,
-    "EH3D-PHOENIX-PNP": 53,
->>>>>>> Stashed changes
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 77,
     "EH3D-SERVER": 160,
