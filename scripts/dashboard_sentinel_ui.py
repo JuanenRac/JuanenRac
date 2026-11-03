@@ -69,13 +69,14 @@ def panel_html() -> str:
 
 CSS = r"""
   /* ======================= Sentinel ======================= */
-  #panel-sentinel .panel-inner { height: 100%; max-width: none; }
-  .sn { display: flex; flex-direction: column; gap: 8px; height: 100%; min-height: 0; }
+  #panel-sentinel .panel-inner { max-width: none; }
+  .sn { display: flex; flex-direction: column; gap: 8px; }
+  .sn > * { flex-shrink: 0; }
   .sn .ins-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
   .sn-asof { font-size: 12px; margin-left: auto; font-variant-numeric: tabular-nums; }
   .sn-hint { margin: 0; font-size: 12.5px; }
   .sn-kpis { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .sn-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; flex: 1 1 auto; min-height: 0; align-content: start; }
+  .sn-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; flex: 0 0 auto; align-content: start; }
   .sn-card { padding: 9px 12px; min-width: 0; }
   .sn-card .card-head { margin-bottom: 4px; }
   .sn-wide { grid-column: span 2; }
@@ -112,9 +113,9 @@ CSS = r"""
     @keyframes sn-draw { to { stroke-dashoffset: 0; } }
   }
   @media (max-width: 1250px) { .sn-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 1100px) { #panel-sentinel .panel-inner, .sn { height: auto; } .sn-grid { grid-template-columns: minmax(0, 1fr); } .sn-wide { grid-column: auto; } .sn-trend { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 1100px) { .sn-grid { grid-template-columns: minmax(0, 1fr); } .sn-wide { grid-column: auto; } .sn-trend { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 760px) { .sn-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sn-asof { margin-left: 0; } .sn-lvl { min-width: 0; } .sn-parte li { flex-wrap: wrap; } .sn-trend li { grid-template-columns: minmax(0, 1fr); } }
-  @media print { #panel-sentinel .panel-inner, .sn { height: auto !important; } .sn-scroll { max-height: none !important; overflow: visible !important; } .sn-spark polyline { animation: none !important; stroke-dashoffset: 0 !important; } }
+  @media print { .sn-scroll { max-height: none !important; overflow: visible !important; } .sn-spark polyline { animation: none !important; stroke-dashoffset: 0 !important; } }
 """
 
 JS = r"""

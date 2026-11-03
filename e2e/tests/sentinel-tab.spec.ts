@@ -44,14 +44,14 @@ test.describe("sentinel tab: figures", () => {
   test("the report is made by rules: headline first, then the worst, each line with a glyph and a word", async ({ page }) => {
     await open(page);
     const keys = await page.locator("#sn-parte li").evaluateAll((items) => items.map((i) => `${i.getAttribute("data-key")}:${i.getAttribute("data-level")}`));
-    expect(keys).toEqual(["head:bad", "sig:bad", "red:bad", "cand:warn", "hyg:warn", "compute:warn", "unread:info"]);
+    expect(keys).toEqual(["head:bad", "sig:bad", "red:bad", "cand:warn", "hyg:warn", "unread:info"]);
     await expect(page.locator("#sn-parte li").first()).toContainText("8 red workflows, 6 releases ready, 3 invalid signatures, 5 repositories with a hygiene gap.");
     await expect(page.locator("#sn-parte li[data-key=sig]")).toContainText("INVALID signature of the latest release");
     await expect(page.locator("#sn-parte li[data-key=sig]")).toContainText("Do not install it");
     await expect(page.locator("#sn-parte li[data-key=sig] .sn-gl")).toHaveText("✕");
     await expect(page.locator("#sn-parte li[data-key=sig] .sn-lvl")).toContainText("Problem");
     await expect(page.locator("#sn-parte li[data-key=unread]")).toContainText("3 of 40 repositories could not be read");
-    await expect(page.locator("#sn-parte li[data-key=compute]")).toContainText("1768 minutes");
+    await expect(page.locator("#sn-parte li[data-key=compute]")).toHaveCount(0);      // 1 768 minutes are under the configured limit
   });
 
   test("the red table follows the single criterion and the release table follows the rule of the owner", async ({ page }) => {

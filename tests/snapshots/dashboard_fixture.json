@@ -348,7 +348,6 @@
     "red:bad",
     "cand:warn",
     "hyg:warn",
-    "compute:warn",
     "unread:info"
    ],
    "read": true,

@@ -130,7 +130,7 @@ class AssembleTests(unittest.TestCase):
     def test_everything_that_needs_a_decision_gets_a_line_and_the_worst_comes_first(self):
         read = read_of(ARMOR_A=record(ci=[{"wf": "ci.yml", "streak": 3, "since": "2001-12-20T10:00:00Z"}], entries=2, published="2001-12-01T00:00:00Z", tag="0.1.0"),
                        URTC_C=record(rs=False), HYDRA_UMC_D=record(state="unread"))
-        actions = {"repos": {"ARMOR-A": {"state": "ok", "min": 2000, "min7": 4000}}}
+        actions = {"repos": {"ARMOR-A": {"state": "ok", "min": 20000, "min7": 40000}}}
         doc = self.doc(read, {"ARMOR-B": "invalid"}, actions)
         keys = [(p["key"], p["level"]) for p in doc["parte"]]
         self.assertEqual(keys, [("head", "bad"), ("sig", "bad"), ("red", "bad"), ("cand", "warn"), ("hyg", "warn"), ("settings", "info"), ("compute", "warn"), ("unread", "info")])
