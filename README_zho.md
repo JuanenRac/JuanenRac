@@ -495,11 +495,11 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
    * **EH3D-DRILLPRO**：Excellon/NC 钻孔处理、钻头表和深孔钻孔循环。
    * **EH3D-ROUTEPRO**：板边铣削、夹持凸耳（tab）创建和斜坡切入（ramping entry）策略。
    * **EH3D-BUNGARD-GUI**：Bungard CCD 机器的现代界面：启动器，以及显示作业平面图和等轴测图的查看器。
-   * **EH3D-LASER-CAM**：用于激光切割的光栅抖动（dithering）算法和矢量功率调制。
+   * **EH3D-PHOENIX-LASER**：用于激光切割的光栅抖动（dithering）算法和矢量功率调制。
    * **EH3D-STENCILCAM**：用于 SMD 焊膏钢网生成的阻焊膏掩模（pastemask）处理。
-3. **执行与实时控制**：**EH3D-MOTIONCNC** 在一个窗口中驱动机器（点动、置零、G 代码运行、路径显示；目前针对模拟机器），是机器控制程序的基础，并与通过机器节点规划和运行钻孔与铣削任务的 **EH3D-SERVER**、用于地形 Z 探测的 **EH3D-AUTOLEVEL** 以及用于手持置零（G54/G55）和慢动微调（jogging）的 **EH3D-NODE-HMI-GUI** 集成。
+3. **执行与实时控制**：**EH3D-PHOENIX-CNC** 在一个窗口中驱动机器（点动、置零、G 代码运行、路径显示；目前针对模拟机器），是机器控制程序的基础，并与通过机器节点规划和运行钻孔与铣削任务的 **EH3D-SERVER**、用于地形 Z 探测的 **EH3D-AUTOLEVEL** 以及用于手持置零（G54/G55）和慢动微调（jogging）的 **EH3D-NODE-HMI-GUI** 集成。
 4. **边缘 AI 与检测**：**EH3D-VISION-STUDIO** 利用 HYDRA-UMC 的 Hailo NPU 执行实时相机对准、自动基准点（fiducial）检测和工具磨损检测。
-5. **组装与辅助数据**：**EH3D-PNP-MANAGER** 管理质心贴片（Pick \& Place）坐标和供料器（feeder），而 **EH3D-TOOL-MANAGER** 在所有 CAM 模块中维护统一的刀具库（tool crib）数据库。
+5. **组装与辅助数据**：**EH3D-PHOENIX-PNP** 管理质心贴片（Pick \& Place）坐标和供料器（feeder），而 **EH3D-TOOL-MANAGER** 在所有 CAM 模块中维护统一的刀具库（tool crib）数据库。
 
 ## 📁 EH3D Fabrication Suite 项目目录
 
@@ -522,13 +522,17 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.4|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的钻孔流程：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.3|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.1|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.9|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.0.9|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.3|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
 
 ### 💠 激光项目：
 |仓库|版本|描述|
 |-|-|-|
+<<<<<<< Updated upstream
 |[EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM)|0.0.3|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
+=======
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.2|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
+>>>>>>> Stashed changes
 
 ### 💠 CAM 项目：
 |仓库|版本|描述|
@@ -545,7 +549,11 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.4|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
+<<<<<<< Updated upstream
 |[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.4|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
+=======
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.3|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
+>>>>>>> Stashed changes
 
 ### 💠 节点项目：
 |仓库|版本|描述|

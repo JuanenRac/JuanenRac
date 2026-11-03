@@ -495,11 +495,11 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
    * **EH3D-DRILLPRO**: Excellon/NCドリル処理、ドリルビットテーブル、ディープホール掘削サイクル。
    * **EH3D-ROUTEPRO**: 基板外形フライス加工、タブ作成、ランプエントリー戦略。
    * **EH3D-BUNGARD-GUI**: Bungard CCD マシン向けのモダンなインターフェース：ランチャーと、作業の平面図・アイソメ図を表示するビューア。
-   * **EH3D-LASER-CAM**: レーザー切断用のラスターディザリングアルゴリズムとベクトル出力変調。
+   * **EH3D-PHOENIX-LASER**: レーザー切断用のラスターディザリングアルゴリズムとベクトル出力変調。
    * **EH3D-STENCILCAM**: SMDはんだペーストステンシル生成のためのペーストマスク処理。
-3. **実行とリアルタイム制御**: **EH3D-MOTIONCNC**は 1 つのウィンドウから機械を動かし（ジョグ、ゼロ設定、Gコード実行、経路表示。現在は模擬マシン上）、マシン制御プログラムの基盤となります。マシンのノードを通じて穴あけ・ルーティングのジョブを計画・実行する**EH3D-SERVER**、地形Zプロービング用の**EH3D-AUTOLEVEL**、手動ゼロ設定（G54/G55）やジョギング用の**EH3D-NODE-HMI-GUI**と統合されています。
+3. **実行とリアルタイム制御**: **EH3D-PHOENIX-CNC**は 1 つのウィンドウから機械を動かし（ジョグ、ゼロ設定、Gコード実行、経路表示。現在は模擬マシン上）、マシン制御プログラムの基盤となります。マシンのノードを通じて穴あけ・ルーティングのジョブを計画・実行する**EH3D-SERVER**、地形Zプロービング用の**EH3D-AUTOLEVEL**、手動ゼロ設定（G54/G55）やジョギング用の**EH3D-NODE-HMI-GUI**と統合されています。
 4. **エッジAIと検査**: **EH3D-VISION-STUDIO**は、HYDRA-UMCのHailo NPUを活用して、リアルタイムのカメラアライメント、自動位置合わせマーク（フィデューシャル）検出、およびツール摩耗検査を実行します。
-5. **アセンブリと補助データ**: **EH3D-PNP-MANAGER**はセントロイドのピック＆プレース座標とフィーダーを管理し、**EH3D-TOOL-MANAGER**はすべてのCAMモジュール間で統一されたツール crib データベースを維持します。
+5. **アセンブリと補助データ**: **EH3D-PHOENIX-PNP**はセントロイドのピック＆プレース座標とフィーダーを管理し、**EH3D-TOOL-MANAGER**はすべてのCAMモジュール間で統一されたツール crib データベースを維持します。
 
 ## 📁 EH3D Fabrication Suite プロジェクトカタログ
 
@@ -522,13 +522,17 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.4|Bungard CCD マシン向けの従来の DOS ソフトの穴あけ作業フローを Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.3|Bungard CCD マシン向けの従来の DOS ソフトのルーティング（切削）作業フローを HP-GL プロットファイルから Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.1|Bungard CCD マシン向けのモダンなインターフェース：従来の穴あけ・ルーティングプログラムのランチャーと、テーブル上の作業ビューア。|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.9|EH3D のマシン制御プログラムの共通基盤：ジョグ、ゼロ設定、G コード実行、経路表示で模擬マシンを動かすウィンドウ。8 言語対応。|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.0.9|EH3D のマシン制御プログラムの共通基盤：ジョグ、ゼロ設定、G コード実行、経路表示で模擬マシンを動かすウィンドウ。8 言語対応。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.3|すべてのEH3D CAMツールにわたって摩耗時間、切削プリセット、送りを追跡する共有ツールcribデータベース。|
 
 ### 💠 レーザーのプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
+<<<<<<< Updated upstream
 |[EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM)|0.0.3|画像ディザリング、ラスター/ベクター変換、動的PWM電力制御のためのレーザーCAMアプリ。|
+=======
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.2|画像ディザリング、ラスター/ベクター変換、動的PWM電力制御のためのレーザーCAMアプリ。|
+>>>>>>> Stashed changes
 
 ### 💠 CAM のプロジェクト：
 |リポジトリ|バージョン|説明|
@@ -545,7 +549,11 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.4|レーザーおよびプロッターSMDステンシル製造用の切削ツールパスを生成するペーストマスク変換ユーティリティ。|
+<<<<<<< Updated upstream
 |[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.4|ピック＆プレース実装：KiCad と CSV の位置ファイル、フィーダー、1〜6 ノズルのヘッドの実装順序。カメラと機械制御は計画中です。|
+=======
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.3|ピック＆プレース実装：KiCad と CSV の位置ファイル、フィーダー、1〜6 ノズルのヘッドの実装順序。カメラと機械制御は計画中です。|
+>>>>>>> Stashed changes
 
 ### 💠 ノードのプロジェクト：
 |リポジトリ|バージョン|説明|

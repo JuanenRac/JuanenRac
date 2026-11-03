@@ -126,7 +126,7 @@ class Eh3dBoardTests(unittest.TestCase):
     """The EH3D board is built only from what exists or is decided: planned programs are planning cards and nothing planned is ever done."""
 
     KNOWN = {
-        "EH3D-COMMON", "EH3D-CORE-LIBS", "EH3D-DOCS", "EH3D-DRILLPRO", "EH3D-ROUTEPRO", "EH3D-BUNGARD-GUI", "EH3D-MOTIONCNC", "EH3D-SERVER", "EH3D-STUDIO",
+        "EH3D-COMMON", "EH3D-CORE-LIBS", "EH3D-DOCS", "EH3D-DRILLPRO", "EH3D-ROUTEPRO", "EH3D-BUNGARD-GUI", "EH3D-PHOENIX-CNC", "EH3D-SERVER", "EH3D-STUDIO",
         "EH3D-NODE-BUNGARD", "EH3D-NODE-BUNGARD-HMI", "EH3D-UPDATER", "ELECTRO-HOBBY-3D-UPDATER",
     }
 

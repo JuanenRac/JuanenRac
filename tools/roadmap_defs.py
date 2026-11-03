@@ -380,8 +380,8 @@ EH3D_EVIDENCE = [("Documentation", "GRAY"), ("Local test", "BLUE"), ("Host harne
 
 # Repositories that are only a plan today (an empty repository, or one not created yet). A card that names one of them is a planning card: nothing exists to run.
 EH3D_PLANNED_REPOSITORIES = (
-    "EH3D-SUITE-LAUNCHER", "EH3D-TOOL-MANAGER", "EH3D-ISOCAM", "EH3D-LASER-CAM", "EH3D-GERBERVIEWER", "EH3D-STENCILCAM", "EH3D-AUTOLEVEL",
-    "EH3D-PNP-MANAGER", "EH3D-PENDANT-GUI", "EH3D-CAM-DEBUGGER", "EH3D-VISION-STUDIO", "EH3D-NODE-BUNGARD-PROBE",
+    "EH3D-SUITE-LAUNCHER", "EH3D-TOOL-MANAGER", "EH3D-ISOCAM", "EH3D-PHOENIX-LASER", "EH3D-GERBERVIEWER", "EH3D-STENCILCAM", "EH3D-AUTOLEVEL",
+    "EH3D-PHOENIX-PNP", "EH3D-PENDANT-GUI", "EH3D-CAM-DEBUGGER", "EH3D-VISION-STUDIO", "EH3D-NODE-BUNGARD-PROBE",
 )
 
 
@@ -438,14 +438,14 @@ EH3D_ITEMS = (
           "Start, pause, stop and an emergency button that the person can place, on a real machine through the server and the node.",
           "A job started and stopped from the window on a machine, with the emergency button tested, written down.",
           status="Blocked", hardware="CNC machine", blocked_by="Needs the machine, a flashed node and a person at it"),
-    _item("Machine control after the model of PlanetCNC, over a simulated controller", "EH3D-MOTIONCNC", "Bungard CNC applications", "Functional", "Simulator", "Normal",
+    _item("Machine control after the model of PlanetCNC, over a simulated controller", "EH3D-PHOENIX-CNC", "Bungard CNC applications", "Functional", "Simulator", "Normal",
           "Position, jog, zeros, stored positions, a G-code program with its path, pause, stop, menus, settings and the Open and Save windows, in eight languages. The emergency stop of the window is not a safety circuit.",
           "A window that does all of that over the simulated controller with tests; real controllers are the next card.", status="In progress"),
-    _item("Connect a real GRBL controller", "EH3D-MOTIONCNC + EH3D-COMMON", "Bungard CNC applications", "Functional", "Real machine", "Normal",
+    _item("Connect a real GRBL controller", "EH3D-PHOENIX-CNC + EH3D-COMMON", "Bungard CNC applications", "Functional", "Real machine", "Normal",
           "The GRBL interface runs on a scripted line; it has never been connected to a serial port, and the other controller families are listed as not driven.",
           "A GRBL controller on a serial port moves under the window, and an alarm and a stop are handled; recorded.",
           status="Blocked", hardware="CNC machine", blocked_by="Needs a GRBL controller on a serial port"),
-    _item("Keep the work of a program that stopped and offer to continue it", "EH3D-BUNGARD-GUI + EH3D-MOTIONCNC + EH3D-DRILLPRO + EH3D-ROUTEPRO", "Bungard CNC applications", "Scaffolding", "Local test", "Normal",
+    _item("Keep the work of a program that stopped and offer to continue it", "EH3D-BUNGARD-GUI + EH3D-PHOENIX-CNC + EH3D-DRILLPRO + EH3D-ROUTEPRO", "Bungard CNC applications", "Scaffolding", "Local test", "Normal",
           "A recovery file written as the person works; after a crash the program asks whether to continue or cancel. It exists in the modern interface and is missing in the other programs.",
           "Every desktop program offers to continue after a forced stop, with a test that restores a saved state.", status="In progress"),
     # ---- Nodes ----
@@ -499,7 +499,7 @@ EH3D_ITEMS = (
     _item("Hand the projects of the four ecosystems over to their updaters", "ELECTRO-HOBBY-3D-UPDATER + EH3D-UPDATER", "Platform & Updater", "Functional", "Local test", "Low",
           "A thin dispatcher above the updaters of the four ecosystems. The status command has run against a real checkout of three of them and install once; the hand-over to the EH3D updater has not been run against a real checkout.",
           "The hand-over runs against a real checkout of the suite and the result is documented."),
-    _item("Update every desktop program and node from GitHub releases", "EH3D-UPDATER + EH3D-BUNGARD-GUI + EH3D-DRILLPRO + EH3D-ROUTEPRO + EH3D-MOTIONCNC + EH3D-NODE-BUNGARD", "Platform & Updater", "Scaffolding", "Documentation", "Normal",
+    _item("Update every desktop program and node from GitHub releases", "EH3D-UPDATER + EH3D-BUNGARD-GUI + EH3D-DRILLPRO + EH3D-ROUTEPRO + EH3D-PHOENIX-CNC + EH3D-NODE-BUNGARD", "Platform & Updater", "Scaffolding", "Documentation", "Normal",
           "Each program and each node should check for a newer release, verify it and install it, as the sibling ecosystems do.",
           "A check, a digest verification, an install and a rollback in each program, tested against a fake release server."),
     _item("The map, the matrix of what works and the architecture of the suite", "EH3D-DOCS", "Platform & Updater", "Functional", "Documentation", "Normal",
@@ -509,11 +509,11 @@ EH3D_ITEMS = (
     _planned("The central window of the suite", "EH3D-SUITE-LAUNCHER", "Workspaces, projects and a way to start the other programs.", "A design note and a first window that lists and starts the installed programs, with tests."),
     _planned("The inventory of drill bits, V-bits and routers", "EH3D-TOOL-MANAGER", "A tool inventory shared by the drilling, routing and CAM programs.", "A format for a tool and its wear, a program that edits it, and its use from the drilling program."),
     _planned("Copper isolation toolpaths from Gerber layers", "EH3D-ISOCAM", "A CAM program that makes isolation toolpaths from the copper layers.", "A first version produces the paths of a written example, checked by tests, before any real board."),
-    _planned("Job preparation for laser cutting and engraving", "EH3D-LASER-CAM", "A CAM program for laser cutting and engraving.", "A design note with the safety rules for a laser, and a first version on written examples."),
+    _planned("Job preparation for laser cutting and engraving", "EH3D-PHOENIX-LASER", "A CAM program for laser cutting and engraving.", "A design note with the safety rules for a laser, and a first version on written examples."),
     _planned("A light viewer for Gerber and drill files", "EH3D-GERBERVIEWER", "A small viewer built on the readers of the core libraries.", "It opens and draws a set of Gerber and drill files, and reports what the readers could not understand."),
     _planned("Solder paste stencils from the paste layers", "EH3D-STENCILCAM", "A CAM program that makes a stencil from the paste layers.", "A first version produces the cut paths of a written example, checked by tests."),
     _planned("Height maps from probing and G-code correction", "EH3D-AUTOLEVEL", "A utility that corrects a G-code program with a height map; it relies on the levelling crate of the common library.", "A program corrects a written G-code example with a written height map, and the correction is tested."),
-    _planned("Pick-and-place assembly management", "EH3D-PNP-MANAGER", "A program to manage the parts and the placement of an assembly.", "A design note and a first version that reads a placement file and lists the parts."),
+    _planned("Pick-and-place assembly management", "EH3D-PHOENIX-PNP", "A program to manage the parts and the placement of an assembly.", "A design note and a first version that reads a placement file and lists the parts."),
     _planned("A remote manual controller for small touch screens", "EH3D-PENDANT-GUI", "A pendant interface for jogging a machine from a small touch screen.", "A design note that says what it shares with the touch-screen node and the modern interface."),
     _planned("A layer-by-layer simulator and analyser of toolpaths", "EH3D-CAM-DEBUGGER", "A program that plays a toolpath layer by layer and reports problems.", "A first version plays a written G-code example layer by layer and reports one problem class, with tests."),
     _planned("Camera calibration and fiducial alignment", "EH3D-VISION-STUDIO", "A program for calibrating a camera and aligning a board by its fiducials.", "A design note and a first version that finds fiducials in recorded images, with tests."),

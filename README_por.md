@@ -495,11 +495,11 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
    * **EH3D-DRILLPRO**: Processamento Excellon/NC Drill, tabelas de brocas e ciclos de furação profunda.
    * **EH3D-ROUTEPRO**: Fresagem de contorno de placa, criação de abas (tabs) e estratégias de entrada em rampa.
    * **EH3D-BUNGARD-GUI**: Interface moderna para as máquinas Bungard CCD: um lançador e um visualizador com as vistas em planta e isométrica do trabalho.
-   * **EH3D-LASER-CAM**: Algoritmos de tramagem (dithering) raster e modulação de potência vetorial para corte a laser.
+   * **EH3D-PHOENIX-LASER**: Algoritmos de tramagem (dithering) raster e modulação de potência vetorial para corte a laser.
    * **EH3D-STENCILCAM**: Processamento de máscara de pasta para geração de stencils de pasta de solda SMD.
-3. **Execução e Controlo em Tempo Real**: **EH3D-MOTIONCNC** comanda uma máquina a partir de uma só janela (jog, definição de zero, execução de G-code, vista do trajeto; hoje sobre uma máquina simulada) e é a base dos programas de controlo de máquina, integrado com o **EH3D-SERVER**, que planeia e executa trabalhos de furação e fresagem através do nó da máquina, com o **EH3D-AUTOLEVEL** para o apalpamento topográfico em Z e o **EH3D-NODE-HMI-GUI** para a definição manual de zero (G54/G55) e jogging.
+3. **Execução e Controlo em Tempo Real**: **EH3D-PHOENIX-CNC** comanda uma máquina a partir de uma só janela (jog, definição de zero, execução de G-code, vista do trajeto; hoje sobre uma máquina simulada) e é a base dos programas de controlo de máquina, integrado com o **EH3D-SERVER**, que planeia e executa trabalhos de furação e fresagem através do nó da máquina, com o **EH3D-AUTOLEVEL** para o apalpamento topográfico em Z e o **EH3D-NODE-HMI-GUI** para a definição manual de zero (G54/G55) e jogging.
 4. **IA de Borda e Inspeção**: **EH3D-VISION-STUDIO** aproveita a NPU Hailo do HYDRA-UMC para realizar alinhamento de câmara em tempo real, deteção automática de fiduciais e inspeção de desgaste de ferramentas.
-5. **Montagem e Dados Auxiliares**: **EH3D-PNP-MANAGER** gere coordenadas centroides Pick \& Place e alimentadores (feeders), enquanto **EH3D-TOOL-MANAGER** mantém um base de dados de ferramentas unificado em todos os módulos CAM.
+5. **Montagem e Dados Auxiliares**: **EH3D-PHOENIX-PNP** gere coordenadas centroides Pick \& Place e alimentadores (feeders), enquanto **EH3D-TOOL-MANAGER** mantém um base de dados de ferramentas unificado em todos os módulos CAM.
 
 ## 📁 Catálogo de Projetos EH3D Fabrication Suite
 
@@ -522,13 +522,17 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.4|Reimplementação em Rust do fluxo de furação do software DOS clássico para as máquinas Bungard CCD: interface em modo de texto em oito idiomas, simulador ou máquina real.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.3|Reimplementação em Rust do fluxo de fresagem do software DOS clássico para as máquinas Bungard CCD, a partir de ficheiros de traçado HP-GL: interface em modo de texto em oito idiomas, simulador ou máquina real.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.1|Interface moderna para as máquinas Bungard CCD: um lançador dos programas clássicos de furação e fresagem e um visualizador do trabalho sobre a mesa.|
-|[EH3D-MOTIONCNC](https://github.com/JuanenRac/EH3D-MOTIONCNC)|0.0.9|Base comum dos programas de controlo de máquina do EH3D: uma janela que comanda uma máquina simulada com jog, definição de zero, execução de G-code e vista do trajeto, em oito idiomas.|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.0.9|Base comum dos programas de controlo de máquina do EH3D: uma janela que comanda uma máquina simulada com jog, definição de zero, execução de G-code e vista do trajeto, em oito idiomas.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.3|Base de dados de ferramentas partilhado a rastrear horas de desgaste, predefinições de corte e avanços em todas as ferramentas CAM EH3D.|
 
 ### 💠 Projetos laser:
 |Repositório|Versão|Descrição|
 |-|-|-|
+<<<<<<< Updated upstream
 |[EH3D-LASER-CAM](https://github.com/JuanenRac/EH3D-LASER-CAM)|0.0.3|Aplicação CAM a laser para dithering de imagem, conversão raster/vetor e controlo dinâmico de potência PWM.|
+=======
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.2|Aplicação CAM a laser para dithering de imagem, conversão raster/vetor e controlo dinâmico de potência PWM.|
+>>>>>>> Stashed changes
 
 ### 💠 Projetos CAM:
 |Repositório|Versão|Descrição|
@@ -545,7 +549,11 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |Repositório|Versão|Descrição|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.4|Utilitário de conversão de máscara de pasta gerando caminhos de corte para fabricação de stencils SMD a laser e plotter.|
+<<<<<<< Updated upstream
 |[EH3D-PNP-MANAGER](https://github.com/JuanenRac/EH3D-PNP-MANAGER)|0.0.4|Montagem pick and place: ficheiros de posições do KiCad e CSV, alimentadores e a ordem de colocação para um cabeçote de um a seis bicos; a câmara e o controlo da máquina estão previstos.|
+=======
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.3|Montagem pick and place: ficheiros de posições do KiCad e CSV, alimentadores e a ordem de colocação para um cabeçote de um a seis bicos; a câmara e o controlo da máquina estão previstos.|
+>>>>>>> Stashed changes
 
 ### 💠 Projetos de nós:
 |Repositório|Versão|Descrição|
