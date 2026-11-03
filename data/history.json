@@ -560,11 +560,11 @@
   },
   {
    "actions": {
-    "fail": 219,
-    "min": 7582,
-    "ok": 4205,
-    "other": 11,
-    "runs": 4435
+    "fail": 234,
+    "min": 8079,
+    "ok": 4510,
+    "other": 19,
+    "runs": 4763
    },
    "areas": {
     "armor": {
@@ -698,7 +698,7 @@
     ],
     "EH3D-AUTOLEVEL": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-BUNGARD-GUI": [
      0,
@@ -734,7 +734,7 @@
     ],
     "EH3D-DOCS": [
      1,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-DRILLPRO": [
      0,
@@ -742,7 +742,7 @@
     ],
     "EH3D-GERBERVIEWER": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-HYDRA-BRIDGE": [
      0,
@@ -762,15 +762,11 @@
     ],
     "EH3D-LASER-CAM": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-MANUFACTURING-PROFILE": [
      0,
      "0.0.1"
-    ],
-    "EH3D-MOTIONCNC": [
-     0,
-     "0.0.9"
     ],
     "EH3D-NODE-BUNGARD": [
      0,
@@ -790,15 +786,11 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.0.1"
+     "0.0.2"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-     "0.0.1"
-    ],
-    "EH3D-PNP-MANAGER": [
-     0,
-     "0.0.3"
+     "0.0.2"
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -822,7 +814,7 @@
     ],
     "EH3D-SUITE-LAUNCHER": [
      0,
-     "0.0.3"
+     "0.0.4"
     ],
     "EH3D-THERMAL-LAB": [
      0,
@@ -950,7 +942,7 @@
     ],
     "HYDRA-UMC-IOS-CONTROL": [
      1,
-     "0.3.0"
+     "0.3.1"
     ],
     "HYDRA-UMC-JOB-DISPATCHER": [
      1,
@@ -958,7 +950,7 @@
     ],
     "HYDRA-UMC-LOCAL-TECHNICIAN": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-MESHES": [
      1,
@@ -990,7 +982,7 @@
     ],
     "HYDRA-UMC-OS": [
      1,
-     "0.5.8"
+     "0.5.9"
     ],
     "HYDRA-UMC-OS-REBUILDER": [
      1,
@@ -1014,11 +1006,11 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.5.1"
+     "0.5.2"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
-     "0.1.8"
+     "0.1.9"
     ],
     "HYDRA-UMC-SERVER": [
      1,
@@ -1130,10 +1122,10 @@
     ]
    },
    "sentinel": {
-    "cand": 5,
+    "cand": 11,
     "gaps": 0,
-    "min": 7582,
-    "red": 8
+    "min": 8079,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 422,
@@ -1144,7 +1136,7 @@
     "ARMOR-NETWORK": 187,
     "ARMOR-SERVER": 1013,
     "ARMOR-SERVER-AI": 141,
-    "ARMOR-SIMULATOR": 236,
+    "ARMOR-SIMULATOR": 253,
     "ARMOR-STUDIO": 1363,
     "ARMOR-UPDATER": 386,
     "ARMOR-VISION": 138,
@@ -1166,10 +1158,8 @@
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-LASER-CAM": 74,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-MOTIONCNC": 126,
-    "EH3D-PHOENIX-CAD": 3,
-    "EH3D-PHOENIX-PCB": 180,
-    "EH3D-PNP-MANAGER": 53,
+    "EH3D-PHOENIX-CAD": 27,
+    "EH3D-PHOENIX-PCB": 223,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 77,
     "EH3D-SERVER": 160,
@@ -1225,7 +1215,7 @@
     "HYDRA-UMC-SEMANTIC-PLANNER": 273,
     "HYDRA-UMC-SERVER": 683,
     "HYDRA-UMC-STUDIO": 904,
-    "HYDRA-UMC-STUDIO-KIT": 86,
+    "HYDRA-UMC-STUDIO-KIT": 87,
     "HYDRA-UMC-SUITE": 56,
     "HYDRA-UMC-SWARM-SYNC": 151,
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": 164,

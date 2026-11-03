@@ -1,100 +1,70 @@
 {
- "asof": "2026-11-03T18:20:17Z",
+ "asof": "2026-11-03T23:24:45Z",
  "ci": {
-  "checked": 442,
+  "checked": 457,
   "red": [
    {
-    "repo": "ARMOR-STUDIO",
-    "since": "2026-11-03T16:11:31Z",
+    "repo": "EH3D-NODE-HMI-GUI",
+    "since": "2026-11-03T19:02:36Z",
     "streak": 1,
     "wf": "ci.yml"
    },
    {
-    "repo": "EH3D-COMPONENT-INTELLIGENCE",
-    "since": "2026-11-03T15:58:39Z",
+    "repo": "EH3D-NODE-HMI-GUI",
+    "since": "2026-11-03T23:10:36Z",
     "streak": 1,
-    "wf": "ci.yml"
+    "wf": "firmware-build.yml"
    },
    {
-    "repo": "EH3D-DESIGN-HISTORY",
-    "since": "2026-11-03T15:58:47Z",
+    "repo": "URTC-WEB-STUDIO",
+    "since": "2026-11-03T23:21:48Z",
     "streak": 1,
     "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-DESIGN-VERIFIER",
-    "since": "2026-11-03T15:58:38Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-IOS-CONTROL",
-    "since": "2026-11-03T16:05:06Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-MANUFACTURING-PROFILE",
-    "since": "2026-11-03T15:59:04Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-PROJECT-PASSPORT",
-    "since": "2026-11-03T15:59:02Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "URTC-GATEWAY",
-    "since": "2026-11-03T10:44:26Z",
-    "streak": 1,
-    "wf": "nightly.yml"
    }
   ],
-  "red_total": 8
+  "red_total": 3
  },
  "compute": {
   "top": [
    {
-    "min24": 333,
+    "min24": 318,
     "min7": 343,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 224,
-    "min7": 233,
-    "repo": "HYDRA-UMC-SDK"
-   },
-   {
-    "min24": 220,
-    "min7": 220,
-    "repo": "ARMOR-STUDIO"
-   },
-   {
-    "min24": 215,
-    "min7": 253,
-    "repo": "ARMOR-SERVER"
-   },
-   {
-    "min24": 186,
-    "min7": 280,
+    "min24": 266,
+    "min7": 296,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 177,
-    "min7": 233,
+    "min24": 264,
+    "min7": 264,
     "repo": "URTC"
+   },
+   {
+    "min24": 260,
+    "min7": 264,
+    "repo": "ARMOR-SERVER"
+   },
+   {
+    "min24": 234,
+    "min7": 237,
+    "repo": "HYDRA-UMC-SDK"
+   },
+   {
+    "min24": 223,
+    "min7": 223,
+    "repo": "ARMOR-STUDIO"
    }
   ],
-  "total24": 7582,
-  "total7": 11704,
+  "total24": 8079,
+  "total7": 11909,
   "warn": false
  },
  "hygiene": {
   "allowed_missing": [],
   "gaps": 0,
-  "ruleset_checked": 128,
+  "ruleset_checked": 125,
   "ruleset_missing": [],
   "settings_checked": 0,
   "sha_missing": []
@@ -105,9 +75,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 5,
+    "cand": 11,
     "hyg": 0,
-    "red": 8
+    "red": 3
    }
   },
   {
@@ -115,16 +85,10 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-STUDIO",
-     "EH3D-COMPONENT-INTELLIGENCE",
-     "EH3D-DESIGN-HISTORY",
-     "EH3D-DESIGN-VERIFIER",
-     "EH3D-IOS-CONTROL",
-     "EH3D-MANUFACTURING-PROFILE",
-     "EH3D-PROJECT-PASSPORT",
-     "URTC-GATEWAY"
+     "EH3D-NODE-HMI-GUI",
+     "URTC-WEB-STUDIO"
     ],
-    "n": 8
+    "n": 3
    }
   },
   {
@@ -133,31 +97,93 @@
    "p": {
     "list": [
      "ARMOR-NETWORK",
+     "ARMOR-NODE-ALARM",
+     "ARMOR-NODE-ELECTRICAL",
+     "ARMOR-NODE-HMI",
+     "ARMOR-NODE-RADAR",
+     "ARMOR-NODE-SOLAR",
      "HYDRA-UMC-TOOL-CLI",
      "URTC",
+     "URTC-GATEWAY",
      "URTC-TESTER",
      "URTC-UPDATER"
     ],
-    "n": 5
+    "n": 11
    }
   },
   {
    "key": "settings",
    "level": "info",
    "p": {
-    "m": 128,
+    "m": 125,
     "n": 0
+   }
+  },
+  {
+   "key": "unread",
+   "level": "info",
+   "p": {
+    "m": 126,
+    "n": 1
    }
   }
  ],
- "read": 128,
+ "read": 125,
  "releases": {
   "candidates": [
    {
-    "entries": 9,
+    "entries": 16,
     "published": "2026-11-01T16:03:00Z",
     "repo": "URTC",
     "tag": "v0.4.4"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-01T20:32:10Z",
+    "repo": "ARMOR-NODE-HMI",
+    "tag": "v0.4.3"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-01T20:30:19Z",
+    "repo": "ARMOR-NODE-RADAR",
+    "tag": "v0.8.0.8"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-01T20:30:36Z",
+    "repo": "ARMOR-NODE-SOLAR",
+    "tag": "v0.6.2"
+   },
+   {
+    "entries": 4,
+    "published": "2026-11-01T20:31:11Z",
+    "repo": "ARMOR-NODE-ALARM",
+    "tag": "v0.5.1"
+   },
+   {
+    "entries": 3,
+    "published": "2026-11-01T20:30:54Z",
+    "repo": "ARMOR-NODE-ELECTRICAL",
+    "tag": "v0.5.3"
+   },
+   {
+    "entries": 3,
+    "published": "2026-11-01T15:54:39Z",
+    "repo": "URTC-TESTER",
+    "tag": "v0.5.0"
+   },
+   {
+    "entries": 3,
+    "published": "2026-11-01T15:54:59Z",
+    "repo": "URTC-UPDATER",
+    "tag": "v0.2.6"
+   },
+   {
+    "entries": 2,
+    "published": "2026-10-31T14:41:36Z",
+    "repo": "ARMOR-NETWORK",
+    "tag": "v0.1.6"
    },
    {
     "entries": 2,
@@ -166,42 +192,30 @@
     "tag": "v0.2.0"
    },
    {
-    "entries": 2,
-    "published": "2026-11-01T15:54:39Z",
-    "repo": "URTC-TESTER",
-    "tag": "v0.5.0"
-   },
-   {
-    "entries": 2,
-    "published": "2026-11-01T15:54:59Z",
-    "repo": "URTC-UPDATER",
-    "tag": "v0.2.6"
-   },
-   {
     "entries": 1,
-    "published": "2026-10-31T14:41:36Z",
-    "repo": "ARMOR-NETWORK",
-    "tag": "v0.1.6"
+    "published": "2026-10-31T16:18:33Z",
+    "repo": "URTC-GATEWAY",
+    "tag": "v0.0.4"
    }
   ],
   "days": 2.0,
   "min_entries": 1,
-  "total": 5
+  "total": 11
  },
- "repos": 128,
+ "repos": 126,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 101,
-  "norelease": 12,
+  "none": 99,
+  "norelease": 11,
   "unverifiable": 2,
-  "unverified": 0,
+  "unverified": 1,
   "verified": 13
  },
  "trend": {
   "cand": [
-   5
+   11
   ],
   "dates": [
    "2026-11-03"
@@ -210,10 +224,10 @@
    0
   ],
   "min": [
-   7582
+   8079
   ],
   "red": [
-   8
+   3
   ]
  }
 }
