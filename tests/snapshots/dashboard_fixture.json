@@ -224,6 +224,47 @@
    "hydra-umc": 10,
    "urtc": 10
   },
+  "tests": {
+   "ecosystems": {
+    "armor": {
+     "checks": 85781,
+     "states": {
+      "declared": 8,
+      "lastknown": 1,
+      "undeclared": 1
+     },
+     "tests": 1032
+    },
+    "eh3d": {
+     "checks": 44182,
+     "states": {
+      "declared": 8,
+      "lastknown": 1,
+      "undeclared": 1
+     },
+     "tests": 1617
+    },
+    "hydra-umc": {
+     "checks": 40738,
+     "states": {
+      "declared": 10
+     },
+     "tests": 1551
+    },
+    "urtc": {
+     "checks": 41599,
+     "states": {
+      "declared": 8,
+      "lastknown": 1,
+      "undeclared": 1
+     },
+     "tests": 1410
+    }
+   },
+   "read": true,
+   "series_days": 29,
+   "stale_date": "2001-12-20"
+  },
   "total": 40,
   "version_unresolved": [
    "ARMOR-FIXTURE-06",
@@ -244,6 +285,10 @@
   },
   "ci_evidence_read": false,
   "history_days": 0,
+  "tests_read": false,
+  "tests_states": {
+   "unread": 16
+  },
   "total": 16
  },
  "single": {

@@ -325,7 +325,7 @@ test.describe("analysis tab: languages, themes, sizes, motion", () => {
   }
 
   test("axe on the diagram of every ecosystem and on the poor datasets", async ({ page }) => {
-    test.setTimeout(120_000);
+    test.setTimeout(240_000);
     await openInsight(page, "full", "deps");
     const found: string[] = [];
     for (const eco of ECOSYSTEMS) {

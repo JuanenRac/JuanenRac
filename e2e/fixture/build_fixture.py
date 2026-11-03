@@ -194,6 +194,28 @@ PLANNED = {
     "eh3d": [{"title": "Fixture EH3D ready card", "repository": "", "status": "Ready", "priority": "Normal", "hardware": "None", "blocked": "None"}],
 }
 
+def declared_tests(index: int) -> int:
+    """The number of tests the fixture repository of this index declares today (a made-up, deterministic figure)."""
+    return 12 + (index * 37) % 400
+
+
+def tests_for(entries, eco, errors: bool = True) -> dict:
+    """What dashboard_tests.read_all returns for the fixture: most repositories declare tests (the glance file for HYDRA-UMC and URTC, the README for the others),
+    one in seven counts checks instead of tests, one in eleven declares nothing and (with `errors`) one in thirteen could not be read."""
+    records, undeclared, failed = {}, [], {}
+    for index, entry in enumerate(entries):
+        name = entry.name
+        if index % 11 == 10:
+            undeclared.append(name)
+        elif errors and index % 13 == 12:
+            failed[name] = "HTTP 502"
+        elif index % 7 == 6:
+            records[name] = {"n": 40000 + index * 123, "unit": "checks", "src": "readme"}
+        else:
+            records[name] = {"n": declared_tests(index), "unit": "tests", "src": "glance" if eco[name] in ("hydra-umc", "urtc") else "readme"}
+    return {"records": records, "undeclared": undeclared, "errors": failed, "glance": {}}
+
+
 AREAS = ("software", "tests", "ci", "releases", "docs", "simulation", "hardware", "production")
 
 
@@ -209,7 +231,19 @@ def history_for(days: int = 45) -> list[dict]:
         areas = {eco: {area: max(0, 20 + 9 * j + 3 * i - back // 4) for j, area in enumerate(AREAS)} for i, eco in enumerate(ECOSYSTEMS)}
         if back == 10:
             del areas["urtc"]["ci"]
-        out.append({"date": day.isoformat(), "progress": progress, "areas": areas, **({} if back == 44 else {"repos": repos_at(back)})})   # an old snapshot with no repositories
+        out.append({"date": day.isoformat(), "progress": progress, "areas": areas, **({} if back == 44 else {"repos": repos_at(back)}),
+                    **({"tests": tests_at(back)} if back <= 30 else {})})   # the counts of the tests were recorded only in the last 30 days   # an old snapshot with no repositories
+    return out
+
+
+def tests_at(back: int) -> dict:
+    """The tests the fixture repositories declared `back` days ago: fewer before, and the repositories with the index 5 mod 17 had not started to declare them yet."""
+    out, index = {}, 0
+    for key in ECOSYSTEMS:
+        for number in range(10):
+            if index % 7 != 6 and index % 11 != 10 and not (index % 17 == 5 and back > 12):
+                out[f"{PREFIX[key]}-FIXTURE-{number:02d}"] = max(1, declared_tests(index) - back // 3 - (index % 4))
+            index += 1
     return out
 
 
@@ -260,7 +294,8 @@ def build_full() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries) + 3, ("JuanenRac", "fixture-plain-a", "fixture-plain-b"))
     return gen.render_html(entries, results, meta, eco, issues, cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries))
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries),
+                           tests_read=tests_for(entries, eco))
 
 
 def build_stale() -> str:
@@ -271,7 +306,8 @@ def build_stale() -> str:
         ("versions", 40, 40), ("manifests", 40, 40), ("commits", 0, 40), ("activity", 0, 40)))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET, ci_evidence=ci_evidence_for(entries))
+                           planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET, ci_evidence=ci_evidence_for(entries),
+                           tests_read=None)
 
 
 def build_single() -> str:
@@ -280,7 +316,7 @@ def build_single() -> str:
     readme = "".join(README.format(key=k, pct=40 + 7 * i, n=10) for i, k in enumerate(ECOSYSTEMS))
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries))
+                           planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco))
 
 
 def build_healthy() -> str:
@@ -292,7 +328,7 @@ def build_healthy() -> str:
     cover = integrity_mod.Coverage(len(entries), len(entries), ())
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
-                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET)
+                           planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False))
 
 
 def build_minimal() -> str:

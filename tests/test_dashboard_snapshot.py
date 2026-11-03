@@ -37,6 +37,20 @@ except ImportError as exc:          # the updaters are not installed: the CI ins
 _DATA = re.compile(r'<script type="application/json" id="dashboard-data">(.*?)</script>', re.S)
 
 
+def tests_figures(data: dict) -> dict:
+    """The tests declared per ecosystem, as the tab "Tests" adds them up: tests of the repositories that declare (or have a last known value), checks apart, states."""
+    repos, block = data["repos"], data["tests"]["repos"]
+    out: dict = {"series_days": len(data["tests"]["series"]), "stale_date": data["tests"]["staleDate"], "read": data["tests"]["read"], "ecosystems": {}}
+    for eco in sorted({r["eco"] for r in repos.values()}):
+        mine = {name: row for name, row in block.items() if repos[name]["eco"] == eco}
+        out["ecosystems"][eco] = {
+            "tests": sum(r["n"] for r in mine.values() if r["unit"] == "tests" and r["state"] in ("declared", "lastknown")),
+            "checks": sum(r["n"] for r in mine.values() if r["unit"] == "checks" and r["state"] == "declared"),
+            "states": dict(sorted(Counter(r["state"] for r in mine.values()).items())),
+        }
+    return out
+
+
 def page_figures(html: str) -> dict:
     """Every number the page states about the ecosystems, as plain data."""
     data = json.loads(_DATA.search(html).group(1))
@@ -62,6 +76,7 @@ def page_figures(html: str) -> dict:
         "checks": {name: list(row) for name, row in sorted(data["checks"].items())[:6]},
         "checks_verified": [sum(1 for row in data["checks"].values() if row[i] == 1) for i in range(7)],
         "ci_evidence": dict(sorted(Counter(v["state"] for v in data["ciEvidence"]["repos"].values()).items())),
+        "tests": tests_figures(data),
         "kpi_total": kpi("kpi-total"),
         "kpi_errors": kpi("kpi-errors")[:40],
         "kpi_registry": kpi("kpi-percent"),
@@ -103,7 +118,8 @@ def page_figures_light(html: str) -> dict:
     """The page built from poor data: the counts that must stay at zero or unknown."""
     data = json.loads(_DATA.search(html).group(1))
     return {"total": len(data["repos"]), "ci_evidence": dict(sorted(Counter(v["state"] for v in data["ciEvidence"]["repos"].values()).items())),
-            "ci_evidence_read": data["ciEvidence"]["read"], "history_days": len(data["history"])}
+            "ci_evidence_read": data["ciEvidence"]["read"], "history_days": len(data["history"]),
+            "tests_read": data["tests"]["read"], "tests_states": dict(sorted(Counter(r["state"] for r in data["tests"]["repos"].values()).items()))}
 
 
 def differences(expected, current, path: str = "") -> list:

@@ -63,6 +63,9 @@ import dashboard_evo_texts
 import dashboard_ci_evidence
 import dashboard_ci_texts
 import dashboard_ci_ui
+import dashboard_tests
+import dashboard_tests_texts
+import dashboard_tests_ui
 import dashboard_evo_ui
 import dashboard_health
 import dashboard_insight
@@ -1951,6 +1954,10 @@ for language, values in dashboard_robust_texts.TEXTS.items():
 for language, values in dashboard_ci_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the tab "Tests" (automated tests declared per ecosystem and per project).
+for language, values in dashboard_tests_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the application shell (tabs, side panel, charts) and the names of the eight status areas, the same ones the README uses.
 for language, values in dashboard_app_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -2532,6 +2539,8 @@ def _render_one_row(
             {version_html}
           </td>
 
+          <td class="tests-cell" data-tests-for="{project_name}"></td>
+
           <td class="status-cell">
             <span class="status-badge {status_class}">
               <span class="status-dot"></span>
@@ -2562,7 +2571,7 @@ def _render_one_row(
             data-family="{esc(entry.family.lower())}"
             hidden
         >
-          <td colspan="9">
+          <td colspan="10">
             <div class="detail-panel">
               <div class="detail-block">
                 <div class="detail-label" data-i18n="detail_notes">Notes</div>
@@ -2625,7 +2634,7 @@ def render_project_rows(
         banner_text = esc(ECOSYSTEM_BANNER_FALLBACK_TEXT[ecosystem_key])
         rows.append(
             f'\n            <tr class="ecosystem-banner-row" data-ecosystem-banner="{esc(ecosystem_key)}">'
-            f'\n              <td colspan="9">'
+            f'\n              <td colspan="10">'
             f'\n                <span data-i18n="{banner_key}">{banner_text}</span>'
             f'\n              </td>'
             f'\n            </tr>\n            '
@@ -2652,7 +2661,7 @@ def render_project_rows(
             rows.append(
                 f"""
             <tr class="family-header-row" data-family-header="{family_id}" data-ecosystem="{esc(ecosystem_key)}">
-              <td colspan="9">
+              <td colspan="10">
                 <span class="family-header-label">{esc(family_name)}</span>
                 <span class="family-header-count">
                     <span data-i18n-template="family_count" data-count="{member_count}">{member_count} project(s)</span>{parent_repo_link}
@@ -3314,6 +3323,8 @@ def render_html(
     rack: "tuple[dict | None, str] | None" = None,
     ci_evidence: "dict | None" = None,
     ci_config: "dict | None" = None,
+    tests_read: "dict | None" = None,
+    tests_config: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3409,7 +3420,8 @@ def render_html(
     rack_snap, rack_problem = rack if rack is not None else (None, "")
     app_data.rack_html = dashboard_rack.panel_html(rack_snap, rack_problem)
     today = dashboard_evo.today_utc()
-    snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys, repos=dashboard_evo.repo_facts(entries, results))
+    snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys, repos=dashboard_evo.repo_facts(entries, results),
+                                  tests=dashboard_tests.fresh_counts(tests_read))
     full_history = dashboard_evo.add_snapshot(history, snap, today) if history is not None else []
     app_data.page_data = page_data(entries, results, ecosystem_by_name, raw_manifests or {}, activity_map, signals or {}, app_data.status, health_config,
                                    history=full_history, snap=snap)
@@ -3421,6 +3433,8 @@ def render_html(
     app_data.page_data["ciEvidence"] = dashboard_ci_evidence.build(
         {name: (_manifest_data((raw_manifests or {}).get(name)) or {}).get("evidence") for name in ecosystem_by_name}, ci_evidence,
         owner="JuanenRac", today=today, config=ci_settings)
+    app_data.page_data["tests"] = dashboard_tests.build(tests_read, ecosystem_by_name, full_history, today, tests_config)
+    tests_panel_html = dashboard_app.panel("tests", dashboard_tests_ui.panel_html())
     insight_panel_html = dashboard_app.panel("insight", dashboard_insight_ui.panel_html())
     rack_panel_html = dashboard_app.panel("rack", app_data.rack_html)
     help_button_html = dashboard_nav_ui.help_button()
@@ -5112,6 +5126,7 @@ def render_html(
           <th data-i18n="th_stack">Stack</th>
           <th data-i18n="th_deploy">Deploy target</th>
           <th data-i18n="th_version">Version</th>
+          <th data-i18n="th_tests">Tests</th>
           <th data-i18n="th_status">Status</th>
           <th data-i18n="th_commit">Last commit</th>
           <th data-i18n="th_activity">Activity</th>
@@ -5136,6 +5151,7 @@ def render_html(
         {pager_html}
       </div>
     </section>
+    {tests_panel_html}
     {insight_panel_html}
     <section role="tabpanel" class="panel" id="panel-evidence" aria-labelledby="tab-evidence" tabindex="0" hidden data-testid="panel-evidence">
       <div class="panel-inner">
@@ -5940,6 +5956,12 @@ def main() -> int:
     ci_read = dashboard_ci_evidence.read_all(catalog.github_owner, ecosystem_by_name, dashboard_ci_evidence.raw_fetch(catalog.github_owner), ci_config)
     print(f"{len(ci_read['records'])} repositories publish CI evidence, {len(ci_read['errors'])} could not be read.", file=sys.stderr)
 
+    tests_config, tests_problems = dashboard_tests.load_config()
+    for problem in tests_problems:
+        print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
+    tests_read = dashboard_tests.read_all(ecosystem_by_name, dashboard_tests.raw_fetch(catalog.github_owner), tests_config)
+    print(f"{len(tests_read['records'])} repositories declare tests, {len(tests_read['undeclared'])} declare none, {len(tests_read['errors'])} could not be read.", file=sys.stderr)
+
     meta = fetch_all_meta(entries)
     activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN, redact=_redact_private_document_names)
     print(f"{len(activity)} release/CI records read.", file=sys.stderr)
@@ -6005,7 +6027,7 @@ def main() -> int:
                            signals=signals, build=build, config=config, history=history, facts=facts, weekly=weekly,
                            live_milestones=live_milestones, planned_milestones=planned_milestones,
                            generation=generation, stale_date=stale_date, rack=dashboard_rack.load(),
-                           ci_evidence=ci_read, ci_config=ci_config)
+                           ci_evidence=ci_read, ci_config=ci_config, tests_read=tests_read, tests_config=tests_config)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 
@@ -6013,7 +6035,8 @@ def main() -> int:
     readme_text = (Path(__file__).resolve().parent.parent / "README.md").read_text(encoding="utf-8")
     app_keys = [key for key, _label in dashboard_app.ECOSYSTEMS]
     progress_now = dashboard_charts.parse_progress(readme_text, app_keys)
-    snap = dashboard_evo.snapshot(today, progress_now, dashboard_charts.parse_status(readme_text, app_keys), app_keys, repos=dashboard_evo.repo_facts(entries, results))
+    snap = dashboard_evo.snapshot(today, progress_now, dashboard_charts.parse_status(readme_text, app_keys), app_keys, repos=dashboard_evo.repo_facts(entries, results),
+                              tests=dashboard_tests.fresh_counts(tests_read))
     if snap is not None and not history_problems:
         if dashboard_evo.save_history(history_path, dashboard_evo.add_snapshot(history, snap, today)):
             print(f"Saved the snapshot of {today} in {history_path}", file=sys.stderr)
