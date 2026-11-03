@@ -560,11 +560,11 @@
   },
   {
    "actions": {
-    "fail": 188,
-    "min": 7080,
-    "ok": 3988,
-    "other": 11,
-    "runs": 4187
+    "fail": 209,
+    "min": 7294,
+    "ok": 4186,
+    "other": 20,
+    "runs": 4415
    },
    "areas": {
     "armor": {
@@ -572,7 +572,7 @@
      "docs": 100,
      "hardware": 53,
      "production": 63,
-     "releases": 95,
+     "releases": 100,
      "simulation": 53,
      "software": 95,
      "tests": 95
@@ -582,27 +582,27 @@
      "docs": 100,
      "hardware": 0,
      "production": 0,
-     "releases": 72,
+     "releases": 69,
      "simulation": 0,
      "software": 13,
-     "tests": 92
+     "tests": 90
     },
     "hydra-umc": {
      "ci": 100,
      "docs": 100,
      "hardware": 11,
      "production": 8,
-     "releases": 98,
+     "releases": 100,
      "simulation": 24,
      "software": 95,
      "tests": 98
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
-     "releases": 91,
+     "releases": 100,
      "simulation": 36,
      "software": 82,
      "tests": 100
@@ -612,7 +612,7 @@
    "progress": {
     "armor": 66,
     "eh3d": 31,
-    "hydra-umc": 53,
+    "hydra-umc": 54,
     "urtc": 51
    },
    "repos": {
@@ -718,7 +718,7 @@
     ],
     "EH3D-CORE-LIBS": [
      0,
-     "0.0.4"
+     "0.0.6"
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
@@ -1129,6 +1129,12 @@
      "0.4.5"
     ]
    },
+   "sentinel": {
+    "cand": 5,
+    "gaps": 0,
+    "min": 7294,
+    "red": 8
+   },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 422,
     "ARMOR-COMMON": 267,
@@ -1143,35 +1149,35 @@
     "ARMOR-UPDATER": 386,
     "ARMOR-VISION": 138,
     "ARMOR-VOICE-AI": 138,
-    "EH3D-AUTOLEVEL": 50,
+    "EH3D-AUTOLEVEL": 63,
     "EH3D-BUNGARD-GUI": 274,
-    "EH3D-CAM-DEBUGGER": 48,
+    "EH3D-CAM-DEBUGGER": 61,
     "EH3D-COMMON": 319,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
-    "EH3D-CORE-LIBS": 256,
+    "EH3D-CORE-LIBS": 257,
     "EH3D-DESIGN-EXPLORER": 3,
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 151,
     "EH3D-DRILLPRO": 303,
-    "EH3D-GERBERVIEWER": 32,
+    "EH3D-GERBERVIEWER": 51,
     "EH3D-HYDRA-BRIDGE": 3,
-    "EH3D-ISOCAM": 184,
+    "EH3D-ISOCAM": 198,
     "EH3D-LAB-BRIDGE": 3,
-    "EH3D-LASER-CAM": 32,
+    "EH3D-LASER-CAM": 74,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-MOTIONCNC": 91,
+    "EH3D-MOTIONCNC": 126,
     "EH3D-PHOENIX-CAD": 3,
-    "EH3D-PHOENIX-PCB": 67,
-    "EH3D-PNP-MANAGER": 38,
+    "EH3D-PHOENIX-PCB": 180,
+    "EH3D-PNP-MANAGER": 53,
     "EH3D-PROJECT-PASSPORT": 3,
-    "EH3D-ROUTEPRO": 72,
+    "EH3D-ROUTEPRO": 77,
     "EH3D-SERVER": 160,
-    "EH3D-STENCILCAM": 56,
+    "EH3D-STENCILCAM": 66,
     "EH3D-STUDIO": 110,
-    "EH3D-SUITE-LAUNCHER": 42,
+    "EH3D-SUITE-LAUNCHER": 63,
     "EH3D-THERMAL-LAB": 3,
-    "EH3D-TOOL-MANAGER": 37,
+    "EH3D-TOOL-MANAGER": 57,
     "EH3D-UPDATER": 477,
     "EH3D-VALIDATION-LAB": 44,
     "EH3D-VISION-STUDIO": 25,

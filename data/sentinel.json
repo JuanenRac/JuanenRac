@@ -1,0 +1,236 @@
+{
+ "asof": "2026-11-03T16:21:59Z",
+ "ci": {
+  "checked": 422,
+  "red": [
+   {
+    "repo": "ARMOR-STUDIO",
+    "since": "2026-11-03T16:11:31Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "EH3D-COMPONENT-INTELLIGENCE",
+    "since": "2026-11-03T15:58:39Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "EH3D-DESIGN-HISTORY",
+    "since": "2026-11-03T15:58:47Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "EH3D-DESIGN-VERIFIER",
+    "since": "2026-11-03T15:58:38Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "EH3D-IOS-CONTROL",
+    "since": "2026-11-03T16:05:06Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "EH3D-MANUFACTURING-PROFILE",
+    "since": "2026-11-03T15:59:04Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "EH3D-PROJECT-PASSPORT",
+    "since": "2026-11-03T15:59:02Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "URTC-GATEWAY",
+    "since": "2026-11-03T10:44:26Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   }
+  ],
+  "red_total": 8
+ },
+ "compute": {
+  "top": [
+   {
+    "min24": 310,
+    "min7": 343,
+    "repo": "HYDRA-UMC-SERVER"
+   },
+   {
+    "min24": 215,
+    "min7": 251,
+    "repo": "ARMOR-SERVER"
+   },
+   {
+    "min24": 207,
+    "min7": 219,
+    "repo": "HYDRA-UMC-SDK"
+   },
+   {
+    "min24": 205,
+    "min7": 219,
+    "repo": "ARMOR-STUDIO"
+   },
+   {
+    "min24": 186,
+    "min7": 284,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
+   },
+   {
+    "min24": 157,
+    "min7": 191,
+    "repo": "HYDRA-UMC-ORCHESTRATOR"
+   },
+   {
+    "min24": 148,
+    "min7": 259,
+    "repo": "ARMOR-ANDROID-CONTROL"
+   },
+   {
+    "min24": 137,
+    "min7": 256,
+    "repo": "URTC-FLASHER"
+   }
+  ],
+  "total24": 7294,
+  "total7": 11436,
+  "warn": true
+ },
+ "hygiene": {
+  "allowed_missing": [],
+  "gaps": 0,
+  "ruleset_checked": 128,
+  "ruleset_missing": [],
+  "settings_checked": 0,
+  "sha_missing": []
+ },
+ "parte": [
+  {
+   "key": "head",
+   "level": "warn",
+   "p": {
+    "bad": 0,
+    "cand": 5,
+    "hyg": 0,
+    "red": 8
+   }
+  },
+  {
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "ARMOR-STUDIO",
+     "EH3D-COMPONENT-INTELLIGENCE",
+     "EH3D-DESIGN-HISTORY",
+     "EH3D-DESIGN-VERIFIER",
+     "EH3D-IOS-CONTROL",
+     "EH3D-MANUFACTURING-PROFILE",
+     "EH3D-PROJECT-PASSPORT",
+     "URTC-GATEWAY"
+    ],
+    "n": 8
+   }
+  },
+  {
+   "key": "cand",
+   "level": "warn",
+   "p": {
+    "list": [
+     "ARMOR-NETWORK",
+     "HYDRA-UMC-TOOL-CLI",
+     "URTC",
+     "URTC-TESTER",
+     "URTC-UPDATER"
+    ],
+    "n": 5
+   }
+  },
+  {
+   "key": "settings",
+   "level": "info",
+   "p": {
+    "m": 128,
+    "n": 0
+   }
+  },
+  {
+   "key": "compute",
+   "level": "warn",
+   "p": {
+    "min": 7294
+   }
+  }
+ ],
+ "read": 128,
+ "releases": {
+  "candidates": [
+   {
+    "entries": 6,
+    "published": "2026-11-01T16:03:00Z",
+    "repo": "URTC",
+    "tag": "v0.4.4"
+   },
+   {
+    "entries": 2,
+    "published": "2026-10-31T14:05:56Z",
+    "repo": "HYDRA-UMC-TOOL-CLI",
+    "tag": "v0.2.0"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-01T15:54:39Z",
+    "repo": "URTC-TESTER",
+    "tag": "v0.5.0"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-01T15:54:59Z",
+    "repo": "URTC-UPDATER",
+    "tag": "v0.2.6"
+   },
+   {
+    "entries": 1,
+    "published": "2026-10-31T14:41:36Z",
+    "repo": "ARMOR-NETWORK",
+    "tag": "v0.1.6"
+   }
+  ],
+  "days": 2.0,
+  "min_entries": 1,
+  "total": 5
+ },
+ "repos": 128,
+ "schema": 1,
+ "signatures": {
+  "invalid": 0,
+  "invalid_repos": [],
+  "none": 101,
+  "norelease": 12,
+  "unverifiable": 2,
+  "unverified": 0,
+  "verified": 13
+ },
+ "trend": {
+  "cand": [
+   5
+  ],
+  "dates": [
+   "2026-11-03"
+  ],
+  "gaps": [
+   0
+  ],
+  "min": [
+   7294
+  ],
+  "red": [
+   8
+  ]
+ }
+}
