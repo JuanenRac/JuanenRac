@@ -575,10 +575,10 @@
      "docs": 100,
      "hardware": 0,
      "production": 0,
-     "releases": 70,
+     "releases": 69,
      "simulation": 0,
-     "software": 11,
-     "tests": 89
+     "software": 13,
+     "tests": 90
     },
     "hydra-umc": {
      "ci": 100,
@@ -1217,7 +1217,7 @@
     "HYDRA-UMC-SWARM-SYNC": 151,
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": 164,
     "HYDRA-UMC-TELEMETRY-COLLECTOR": 138,
-    "HYDRA-UMC-TOOL-CLI": 256,
+    "HYDRA-UMC-TOOL-CLI": 271,
     "HYDRA-UMC-TWIN": 173,
     "HYDRA-UMC-UPDATER": 464,
     "HYDRA-UMC-VISION-NODE": 386,
