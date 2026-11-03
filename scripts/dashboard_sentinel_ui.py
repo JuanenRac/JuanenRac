@@ -81,7 +81,7 @@ CSS = r"""
   .sn-card .card-head { margin-bottom: 4px; }
   .sn-wide { grid-column: span 2; }
   .sn-small { margin: 0 0 4px; font-size: 11.5px; }
-  .sn-scroll { max-height: 128px; overflow: auto; }
+  .sn-scroll { max-height: 100px; overflow: auto; }
   #panel-sentinel .sn-table th, #panel-sentinel .sn-table td { white-space: nowrap; font-size: 12px; padding: 0 8px; height: 26px; text-align: left; }
   .sn-table .ac-link { min-height: 24px; min-width: 24px; }
   #panel-sentinel .sn-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
