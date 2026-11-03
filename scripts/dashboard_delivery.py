@@ -18,7 +18,7 @@ from __future__ import annotations
 
 from typing import Iterable, Mapping
 
-SIGNATURE_SUFFIXES = (".sig", ".asc", ".minisig")
+SIGNATURE_SUFFIXES = (".sig", ".sig2", ".asc", ".minisig")
 BUILT_ON = ("gha", "local", "unknown")
 SIGNATURE_KIND = ("none", "dev", "release")
 SIGNED_ON = ("local", "unknown")
@@ -74,7 +74,8 @@ def pipeline_state(fields: Mapping[str, str], has_release: bool | None) -> str:
 
 
 def parse_alert(raw: object) -> tuple[dict, list[str]]:
-    """The optional alert 'a green build without a signed release for more than N days' (off by default): (config, problems)."""
+    """The optional alert 'a green build without a signed release for more than N days' (off by default): (config, problems).
+    `after_hours` (optional, from 1 to 87600) replaces `after_days` as the threshold when it is present."""
     config = dict(DEFAULT_ALERT)
     if raw is None:
         return config, []
@@ -86,6 +87,12 @@ def parse_alert(raw: object) -> tuple[dict, list[str]]:
             config["enabled"] = raw["enabled"]
         else:
             problems.append("signature_alert.enabled: needs true or false")
+    if "after_hours" in raw:
+        value = raw["after_hours"]
+        if isinstance(value, int) and not isinstance(value, bool) and 1 <= value <= 87600:
+            config["after_hours"] = value
+        else:
+            problems.append("signature_alert.after_hours: needs an integer number of hours from 1")
     if "after_days" in raw:
         value = raw["after_days"]
         if isinstance(value, int) and not isinstance(value, bool) and 1 <= value <= 3650:

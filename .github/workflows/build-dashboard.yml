@@ -362,7 +362,7 @@ jobs:
           mkdir -p "$out/extras/data" "$out/extras/docs"
           cp docs/index.html "$out/index.html"
           cp docs/.nojekyll "$out/nojekyll"
-          for extra in data/history.json data/actions-cache.json docs/og-image.png; do
+          for extra in data/history.json data/actions-cache.json data/delivery-cache.json docs/og-image.png; do
             if [ -f "$extra" ]; then cp "$extra" "$out/extras/$extra"; fi
           done
           for readme in README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md README_por.md; do
@@ -420,7 +420,7 @@ jobs:
 
           readmes=(README.md README_spa.md README_fra.md README_ita.md README_deu.md README_zho.md README_jpn.md README_por.md)
           workdir="$RUNNER_TEMP/dashboard-out"
-          extras=(data/history.json data/actions-cache.json docs/og-image.png)
+          extras=(data/history.json data/actions-cache.json data/delivery-cache.json docs/og-image.png)
 
           max_attempts=5
           for attempt in $(seq 1 "$max_attempts"); do

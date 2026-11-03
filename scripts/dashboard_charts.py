@@ -131,7 +131,10 @@ class Activity:
     commit_date: str | None = None
     ci: str = "none"                    # success | failure | pending | none (no check or not known)
     commits: tuple[Commit, ...] = ()    # the newest commits of the default branch (empty when GitHub did not return them)
-    signature: str | None = None        # present | none | norelease; None = not verified (see dashboard_delivery.signature_state)
+    signature: str | None = None        # verified | invalid | unverifiable | none | norelease; None = not verified (see dashboard_delivery.signature_state)
+    assets: tuple[tuple[str, int, str], ...] = ()   # (name, size, update time) of the assets of the latest release, empty when none or not returned
+    workflows: tuple[str, ...] = ()     # file names in .github/workflows of the default branch
+    sigx: Mapping | None = None         # the detail of the signature check (see dashboard_signatures.aggregate), None when no signature was checked
 
 
 _CI_STATE = {"SUCCESS": "success", "FAILURE": "failure", "ERROR": "failure", "PENDING": "pending", "EXPECTED": "pending"}
@@ -143,7 +146,8 @@ query($owner: String!, $cursor: String) {
       pageInfo { hasNextPage endCursor }
       nodes {
         name
-        latestRelease { tagName publishedAt releaseAssets(first: 100) { nodes { name } } }
+        latestRelease { tagName publishedAt releaseAssets(first: 100) { nodes { name size updatedAt } } }
+        workflows: object(expression: "HEAD:.github/workflows") { ... on Tree { entries { name } } }
         defaultBranchRef { target { ... on Commit { committedDate statusCheckRollup { state } history(first: 5) { nodes { messageHeadline committedDate url } } } } }
       }
     }
@@ -173,8 +177,11 @@ def parse_activity(nodes: Iterable[Mapping], redact: Callable[[str], str] | None
         rollup = (target.get("statusCheckRollup") or {}).get("state")
         assets = ((release.get("releaseAssets") or {}).get("nodes")) if release else None
         names = [str(a.get("name", "")) for a in assets if isinstance(a, Mapping)] if isinstance(assets, list) else None
+        detail = tuple((str(a.get("name", "")), int(a.get("size") or 0), str(a.get("updatedAt") or "")) for a in assets if isinstance(a, Mapping)) if isinstance(assets, list) else ()
+        flows = tuple(str(e.get("name", "")) for e in ((node.get("workflows") or {}).get("entries") or []) if isinstance(e, Mapping))
         out[str(node["name"])] = Activity(
             signature=dashboard_delivery.signature_state(bool(release), names),
+            assets=detail, workflows=flows,
             release_tag=release.get("tagName") or None,
             release_date=release.get("publishedAt") or None,
             commit_date=target.get("committedDate") or None,
