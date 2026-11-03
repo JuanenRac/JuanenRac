@@ -3,7 +3,6 @@
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-03T16:46:19Z",
-   "checked": true,
    "exp": "2026-11-10T16:44:41Z",
    "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/41676104964",
    "wf": "apk-build.yml"
@@ -158,7 +157,6 @@
   "HYDRA-UMC-SUITE": {
    "art": true,
    "at": "2026-11-03T16:54:08Z",
-   "checked": true,
    "exp": "2026-11-10T16:48:01Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/41676957273",
    "wf": "exe-build.yml"
@@ -166,7 +164,6 @@
   "HYDRA-UMC-SWARM-SYNC": {
    "art": true,
    "at": "2026-11-03T16:45:25Z",
-   "checked": true,
    "exp": "2026-11-10T16:44:04Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/actions/runs/41676865724",
    "wf": "binaries-build.yml"
@@ -201,9 +198,10 @@
   },
   "URTC": {
    "art": true,
-   "at": "2026-11-03T09:44:20Z",
-   "exp": "2026-11-10T09:42:29Z",
-   "url": "https://github.com/JuanenRac/URTC/actions/runs/41612983189",
+   "at": "2026-11-03T17:32:52Z",
+   "checked": true,
+   "exp": "2026-11-10T17:31:13Z",
+   "url": "https://github.com/JuanenRac/URTC/actions/runs/41676667285",
    "wf": "firmware-build.yml"
   },
   "URTC-COMMON": {
@@ -230,7 +228,6 @@
   "URTC-TESTER": {
    "art": true,
    "at": "2026-11-03T16:48:24Z",
-   "checked": true,
    "exp": "2026-11-10T16:42:12Z",
    "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/41676168923",
    "wf": "exe-build.yml"
