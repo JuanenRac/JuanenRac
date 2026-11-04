@@ -1253,11 +1253,11 @@
   },
   {
    "actions": {
-    "fail": 259,
-    "min": 8036,
-    "ok": 4553,
-    "other": 28,
-    "runs": 4840
+    "fail": 229,
+    "min": 6442,
+    "ok": 3461,
+    "other": 29,
+    "runs": 3719
    },
    "areas": {
     "armor": {
@@ -1271,11 +1271,11 @@
      "tests": 95
     },
     "eh3d": {
-     "ci": 97,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
-     "releases": 72,
+     "releases": 74,
      "simulation": 0,
      "software": 13,
      "tests": 90
@@ -1291,7 +1291,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -1306,7 +1306,7 @@
     "armor": 66,
     "eh3d": 32,
     "hydra-umc": 54,
-    "urtc": 51
+    "urtc": 52
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -1499,7 +1499,7 @@
     ],
     "EH3D-ROUTEPRO": [
      0,
-     "0.1.3"
+     "0.1.4"
     ],
     "EH3D-SERVER": [
      1,
@@ -1823,14 +1823,14 @@
     ]
    },
    "sentinel": {
-    "cand": 16,
+    "cand": 28,
     "gaps": 0,
-    "min": 8036,
-    "red": 0
+    "min": 6442,
+    "red": 4
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 422,
-    "ARMOR-COMMON": 290,
+    "ARMOR-COMMON": 292,
     "ARMOR-DOCS": 251,
     "ARMOR-HARDWARE": 22,
     "ARMOR-IOS-CONTROL": 270,
@@ -1838,7 +1838,7 @@
     "ARMOR-SERVER": 1013,
     "ARMOR-SERVER-AI": 141,
     "ARMOR-SIMULATOR": 253,
-    "ARMOR-STUDIO": 1443,
+    "ARMOR-STUDIO": 1446,
     "ARMOR-UPDATER": 386,
     "ARMOR-VISION": 138,
     "ARMOR-VOICE-AI": 138,
@@ -1853,20 +1853,20 @@
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 151,
     "EH3D-DRILLPRO": 303,
-    "EH3D-GERBERVIEWER": 51,
+    "EH3D-GERBERVIEWER": 106,
     "EH3D-HYDRA-BRIDGE": 3,
-    "EH3D-ISOCAM": 206,
+    "EH3D-ISOCAM": 255,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 121,
     "EH3D-PHOENIX-CNC": 126,
     "EH3D-PHOENIX-LASER": 74,
     "EH3D-PHOENIX-PCB": 237,
-    "EH3D-PHOENIX-PNP": 198,
+    "EH3D-PHOENIX-PNP": 248,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 77,
     "EH3D-SERVER": 160,
-    "EH3D-STENCILCAM": 66,
+    "EH3D-STENCILCAM": 112,
     "EH3D-STUDIO": 110,
     "EH3D-SUITE-LAUNCHER": 73,
     "EH3D-THERMAL-LAB": 3,
