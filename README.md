@@ -206,7 +206,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.1.1 | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT) | 0.0.2 | Shared TypeScript kit of the HYDRA-UMC web clients: session, HTTP client, connection history, preferences and tours. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.8.0.0 | High-performance Python/Qt desktop application for industrial automation. |
-| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.3.1 | Dedicated Flutter-based touch interface for 7" industrial displays (CM5). |
+| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.3.2 | Dedicated Flutter-based touch interface for 7" industrial displays (CM5). |
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.7.8 | Native Kotlin mobile app with biometric login for remote robot management. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.3.1 | Flutter mobile app for iOS/iPadOS with real-time WebSocket sync. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.1.9 | Graphical URDF editor to validate and push robot models to the catalog. |
@@ -218,7 +218,7 @@ for all four - can check versions and build/update any other project.
 | :--- | :--- | :--- |
 | [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.2.1 | High-speed perception node for 8x simultaneous USB 3.0 camera streams. |
 | [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | 0.2.4 | Optimized GStreamer/MediaMTX pipeline for industrial video relay. |
-| [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.1.8 | Library of hardware-accelerated YOLO models for SMD and component QA. |
+| [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.1.9 | Library of hardware-accelerated YOLO models for SMD and component QA. |
 | [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.2.1 | Real-time AI intrusion detection for robotic work volume protection. |
 | [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.2.3 | Image-based kinematic feedback for sub-millimetric pose correction. |
 
@@ -254,7 +254,7 @@ for all four - can check versions and build/update any other project.
 | :--- | :--- | :--- |
 | [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 0.2.5 | Big Data storage for massive industrial robotic data. |
 | [HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR) | 0.2.0 | High-throughput ingester for CAN, WebSocket, and system logs. |
-| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.2.1 | Predictive maintenance engine based on motor vibration signatures. |
+| [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.2.2 | Predictive maintenance engine based on motor vibration signatures. |
 | [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 0.1.9 | Automated OEE and KPI generation for industrial plant management. |
 
 ### 🏭 Industrial Gateway
@@ -309,7 +309,7 @@ for all four - can check versions and build/update any other project.
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:urtc -->
-`[██████████▎░░░░░░░░░] 51%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████████▍░░░░░░░░░] 52%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -321,7 +321,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟠 | `███▋░░░░░░ 36%` | 4 of 11 repositories have been checked at least in a simulator. |
@@ -421,24 +421,24 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.8.0.6 | Message contracts, validators, conformance vectors, generated types, OpenAPI, shared launcher. |
+| [ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON) | 0.8.0.7 | Message contracts, validators, conformance vectors, generated types, OpenAPI, shared launcher. |
 | [ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR) | 0.8.0.8 | ESP32-S3 field-node firmware with decoders for the LD2450, LD2461 and presence sensors, GitHub updates and a live map. |
 | [ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR) | 0.6.2 | Solar gateway node: ESP32-S3 firmware, panel and protocols of Voltronic / MPP Solar inverters and Pylontech and ANT-BMS batteries. |
 | [ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL) | 0.5.4 | Electrical node: firmware with PZEM meters on one serial line, web panel and MQTT, the meters' frames and the switching rules. |
 | [ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM) | 0.5.2 | Alarm node and panel: wired zones, siren, Zigbee devices and the rules of arming, delays, alarm and PIN; it guards without the server. |
 | [ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI) | 0.4.3 | Touch panel for the Waveshare ESP32-S3-Touch-LCD-7C-BOX: system state on a wall screen, arm/disarm/acknowledge and push-to-talk voice. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.6 | Local network monitor: devices on the network, state of the internet and what changes; it only observes. |
-| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.8.1.5 | Central server: persisted state, users, events, alarms, devices, automations, cameras, signed node updates, notifications and remote access. |
+| [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.8.1.6 | Central server: persisted state, users, events, alarms, devices, automations, cameras, signed node updates, notifications and remote access. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.3.1 | Motion-watching service, visual profile selection, explainable fusion policy, engine registry. |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.1.1 | Camera zones, masks and detection rules (loitering, one event per visit); no detector model yet. |
-| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.3 | Offline voice service: fifteen commands in eight languages, the wall panel's spoken turns, arm and disarm confirmed with a signed token. |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.2.0 | Operations console: alarms, devices, automations, history, PTZ, radar map, solar and electrical menus, node updates and a 2D/3D designer. |
+| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.4 | Offline voice service: fifteen commands in eight languages, the wall panel's spoken turns, arm and disarm confirmed with a signed token. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.2.1 | Operations console: alarms, devices, automations, history, PTZ, radar map, solar and electrical menus, node updates and a 2D/3D designer. |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.8.0.3 | Android operator client: arm and disarm, alarms, devices, live radar, solar, history, notifications, voice assistant and node configurator. |
 | [ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL) | 0.0.2 | iPhone operator client: status, arming, alarms, alarm panels, cameras and the assistant, in eight languages. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.8 | Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix. |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.7.0 | Compose topology, test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, admin agent. |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.7.1 | Compose topology, test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, admin agent. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.3.5 | Scenarios and repeatable faults. |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.8 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.1.9 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.1.6 | Canonical documentation and the capability matrix. |
 
 ---
@@ -472,8 +472,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🔴 | `█▎░░░░░░░░ 13%` | 5 of 39 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟡 | `█████████░ 90%` | 35 of 39 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 97%` | 38 of 39 repositories have the last CI run on the main branch green. |
-| Releases | 🟡 | `███████▎░░ 72%` | 28 of 39 repositories have published at least one release. |
+| Continuous integration | 🟢 | `██████████ 100%` | 39 of 39 repositories have the last CI run on the main branch green. |
+| Releases | 🟡 | `███████▍░░ 74%` | 29 of 39 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 39 of 39 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 39 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 13 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
@@ -500,9 +500,9 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.4 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
-| [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.1.6 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
+| [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.1.7 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.0.8 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
-| [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.6 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
+| [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.0.7 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.7 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE) | 0.0.1 | Adapter between the EH3D and HYDRA-UMC ecosystems (planned; no code yet). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.4 | The updater of the four ecosystems: one window and one command line that hand over to each ecosystem's own updater. |
@@ -513,11 +513,11 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Drill/Router/Milling projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.1.4 | Rust re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines: text-mode interface in eight languages, simulator or real machine. |
+| [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.1.5 | Rust re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.1.3 | Rust re-implementation of the routing workflow of the classic DOS software for Bungard CCD machines, from HP-GL plot files: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.2.1 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
 | [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.0.9 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
-| [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.3 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
+| [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.4 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
 
 ### 💠 Laser projects:

@@ -1,64 +1,45 @@
 {
- "asof": "2026-11-03T23:47:12Z",
+ "asof": "2026-11-04T03:21:21Z",
  "ci": {
-  "checked": 465,
-  "red": [
-   {
-    "repo": "EH3D-NODE-HMI-GUI",
-    "since": "2026-11-03T19:02:36Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-NODE-HMI-GUI",
-    "since": "2026-11-03T23:10:36Z",
-    "streak": 1,
-    "wf": "firmware-build.yml"
-   },
-   {
-    "repo": "HYDRA-UMC-BRIDGE-DROIDS",
-    "since": "2026-11-03T23:47:25Z",
-    "streak": 2,
-    "wf": "ci.yml"
-   }
-  ],
-  "red_total": 3
+  "checked": 469,
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 318,
-    "min7": 339,
+    "min24": 342,
+    "min7": 342,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 266,
-    "min7": 296,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
-   },
-   {
-    "min24": 264,
-    "min7": 264,
+    "min24": 267,
+    "min7": 267,
     "repo": "URTC"
    },
    {
-    "min24": 260,
-    "min7": 264,
+    "min24": 252,
+    "min7": 259,
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 228,
+    "min24": 226,
     "min7": 237,
     "repo": "HYDRA-UMC-SDK"
    },
    {
-    "min24": 223,
-    "min7": 223,
+    "min24": 214,
+    "min7": 293,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
+   },
+   {
+    "min24": 162,
+    "min7": 162,
     "repo": "ARMOR-STUDIO"
    }
   ],
-  "total24": 8105,
-  "total7": 12073,
+  "total24": 8036,
+  "total7": 12233,
   "warn": false
  },
  "hygiene": {
@@ -72,23 +53,12 @@
  "parte": [
   {
    "key": "head",
-   "level": "bad",
+   "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 11,
+    "cand": 16,
     "hyg": 0,
-    "red": 3
-   }
-  },
-  {
-   "key": "red",
-   "level": "bad",
-   "p": {
-    "list": [
-     "EH3D-NODE-HMI-GUI",
-     "HYDRA-UMC-BRIDGE-DROIDS"
-    ],
-    "n": 3
+    "red": 0
    }
   },
   {
@@ -102,13 +72,18 @@
      "ARMOR-NODE-HMI",
      "ARMOR-NODE-RADAR",
      "ARMOR-NODE-SOLAR",
+     "HYDRA-UMC-DEV-SERVER",
+     "HYDRA-UMC-EDITOR-STL",
+     "HYDRA-UMC-EDITOR-URDF",
      "HYDRA-UMC-TOOL-CLI",
+     "HYDRA-UMC-VISUAL-SERVOING-API",
+     "HYDRA-UMC-VLA-ENGINE",
      "URTC",
      "URTC-GATEWAY",
      "URTC-TESTER",
      "URTC-UPDATER"
     ],
-    "n": 11
+    "n": 16
    }
   },
   {
@@ -124,7 +99,7 @@
  "releases": {
   "candidates": [
    {
-    "entries": 16,
+    "entries": 18,
     "published": "2026-11-01T16:03:00Z",
     "repo": "URTC",
     "tag": "v0.4.4"
@@ -179,9 +154,39 @@
    },
    {
     "entries": 2,
+    "published": "2026-11-02T01:51:39Z",
+    "repo": "HYDRA-UMC-DEV-SERVER",
+    "tag": "v0.2.2"
+   },
+   {
+    "entries": 2,
     "published": "2026-10-31T14:05:56Z",
     "repo": "HYDRA-UMC-TOOL-CLI",
     "tag": "v0.2.0"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-02T02:45:26Z",
+    "repo": "HYDRA-UMC-VISUAL-SERVOING-API",
+    "tag": "v0.2.3"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-02T02:45:13Z",
+    "repo": "HYDRA-UMC-VLA-ENGINE",
+    "tag": "v0.2.1"
+   },
+   {
+    "entries": 1,
+    "published": "2026-11-02T01:13:13Z",
+    "repo": "HYDRA-UMC-EDITOR-STL",
+    "tag": "v0.2.0"
+   },
+   {
+    "entries": 1,
+    "published": "2026-11-02T01:13:28Z",
+    "repo": "HYDRA-UMC-EDITOR-URDF",
+    "tag": "v0.1.9"
    },
    {
     "entries": 1,
@@ -192,34 +197,39 @@
   ],
   "days": 2.0,
   "min_entries": 1,
-  "total": 11
+  "total": 16
  },
  "repos": 128,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 102,
-  "norelease": 11,
+  "none": 103,
+  "norelease": 10,
   "unverifiable": 2,
   "unverified": 0,
   "verified": 13
  },
  "trend": {
   "cand": [
-   11
+   11,
+   16
   ],
   "dates": [
-   "2026-11-03"
+   "2026-11-03",
+   "2026-11-04"
   ],
   "gaps": [
+   0,
    0
   ],
   "min": [
-   8105
+   8105,
+   8036
   ],
   "red": [
-   3
+   3,
+   0
   ]
  }
 }
