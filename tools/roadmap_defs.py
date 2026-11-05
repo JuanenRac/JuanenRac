@@ -436,14 +436,13 @@ ARMOR_RENAMES = {
 
 # ---- EH3D Fabrication Suite ---------------------------------------------------------------------------------------------------------------
 
-EH3D_FAMILIES = [("Core & Common", "BLUE"), ("Bungard CNC applications", "GREEN"), ("Nodes", "ORANGE"), ("Platform & Updater", "GRAY"), ("Planned applications", "PURPLE")]
+EH3D_FAMILIES = [("Core & Common", "BLUE"), ("Bungard CNC applications", "GREEN"), ("Nodes", "ORANGE"), ("Platform & Updater", "GRAY"), ("CAM & design applications", "YELLOW"), ("Planned applications", "PURPLE")]
 EH3D_HARDWARE = [("None", "GREEN"), ("CNC machine", "RED"), ("ESP32 node", "ORANGE"), ("HMI panel ESP32-P4", "PURPLE"), ("CM5 server", "YELLOW"), ("Probe sensor", "PINK")]
 EH3D_EVIDENCE = [("Documentation", "GRAY"), ("Local test", "BLUE"), ("Host harness", "PURPLE"), ("Simulator", "YELLOW"), ("CM5", "PINK"), ("ESP32 board", "ORANGE"), ("Real machine", "RED")]
 
 # Repositories that are only a plan today (an empty repository, or one not created yet). A card that names one of them is a planning card: nothing exists to run.
 EH3D_PLANNED_REPOSITORIES = (
-    "EH3D-SUITE-LAUNCHER", "EH3D-TOOL-MANAGER", "EH3D-ISOCAM", "EH3D-PHOENIX-LASER", "EH3D-GERBERVIEWER", "EH3D-STENCILCAM", "EH3D-AUTOLEVEL",
-    "EH3D-PHOENIX-PNP", "EH3D-PENDANT-GUI", "EH3D-CAM-DEBUGGER", "EH3D-VISION-STUDIO", "EH3D-NODE-BUNGARD-PROBE",
+    "EH3D-PENDANT-GUI", "EH3D-NODE-BUNGARD-PROBE",
 )
 
 
@@ -567,21 +566,71 @@ EH3D_ITEMS = (
     _item("The map, the matrix of what works and the architecture of the suite", "EH3D-DOCS", "Platform & Updater", "Functional", "Documentation", "Normal",
           "One place that says what each repository is for, whether it exists, and what has been run on a machine.",
           "Delivered: the map of the suite, the capability matrix with a tested and a run-on-a-machine column, and the architecture rules. They are kept true to the repositories.", status="Done"),
+    _item("Mobile apps of the suite: Android and iOS with the same screens", "EH3D-ANDROID-CONTROL + EH3D-IOS-CONTROL", "Platform & Updater", "Scaffolding", "Local test", "Normal",
+          "The same screens on Android and on iOS (iOS is a port kept in step with Android), in 37 languages, with the texts of the server errors.",
+          "Both apps build in their continuous integration and pass their tests; neither has been used with a real machine or a server on a phone.", status="In progress"),
+    _item("Aux node: camera, optical distance, spindle speed and ring light on the machine", "EH3D-NODE-BUNGARD-AUX", "Nodes", "Scaffolding", "Host harness", "Normal",
+          "A node on the drill that measures height, speed and temperature, gives a picture and drives a ring light.",
+          "Built, flashed on a board and the measurements recorded on a real machine. Today only the code and the host tests exist.",
+          status="Blocked", hardware="ESP32 node", blocked_by="Needs an ESP32-S3-ETH board and the camera"),
+    _item("The HMI panel of the machine: touch screen with its window", "EH3D-NODE-HMI-GUI", "Nodes", "Scaffolding", "Local test", "Normal",
+          "The interface of the touch panel of the machine, shared with the other programs of the suite.",
+          "Built in continuous integration and tested on the host; never run on the panel.", status="Blocked", hardware="HMI panel ESP32-P4", blocked_by="Needs the ESP32-P4 panel"),
+    _item("PCB design tools: rules, stack-up, RF and manufacturing output", "EH3D-PHOENIX-PCB", "CAM & design applications", "Scaffolding", "Local test", "Normal",
+          "Design rules and connectivity, stack-up with impedance and loss, RF tools (S-parameters, matching, filters) and the manufacturing files (Gerber X2, Excellon, assembly, bill of materials).",
+          "Released as prototypes and tested on generated boards; not compared with a reference tool, not opened in two independent viewers and not used on a real design.", status="In progress"),
+    _item("Parametric design of an enclosure for a board", "EH3D-PHOENIX-CAD", "CAM & design applications", "Scaffolding", "Local test", "Normal",
+          "A box around a board with holes, rounded edges, screws from a table, expressions and mass, written as OpenSCAD and STEP.",
+          "Released and tested on generated boxes; the STEP file leaves out the special holes and no printed part has been checked.", status="In progress"),
+    _item("The database of board materials", "EH3D-COMMON", "Core & Common", "Functional", "Local test", "Normal",
+          "One crate with the laminates, prepregs, metal cores and RF boards of the makers (723 materials) and a classified catalogue of their data sheets, for the board programs and the CNC programs.",
+          "Values are copied from the data sheets and nothing is invented; some tables could not be read and are left empty, and a few sheets were read from pictures.", status="In progress"),
     # ---- Planned applications (designed, nothing to run) ----
-    _planned("The central window of the suite", "EH3D-SUITE-LAUNCHER", "Workspaces, projects and a way to start the other programs.", "A design note and a first window that lists and starts the installed programs, with tests."),
-    _planned("The inventory of drill bits, V-bits and routers", "EH3D-TOOL-MANAGER", "A tool inventory shared by the drilling, routing and CAM programs.", "A format for a tool and its wear, a program that edits it, and its use from the drilling program."),
-    _planned("Copper isolation toolpaths from Gerber layers", "EH3D-ISOCAM", "A CAM program that makes isolation toolpaths from the copper layers.", "A first version produces the paths of a written example, checked by tests, before any real board."),
-    _planned("Job preparation for laser cutting and engraving", "EH3D-PHOENIX-LASER", "A CAM program for laser cutting and engraving.", "A design note with the safety rules for a laser, and a first version on written examples."),
-    _planned("A light viewer for Gerber and drill files", "EH3D-GERBERVIEWER", "A small viewer built on the readers of the core libraries.", "It opens and draws a set of Gerber and drill files, and reports what the readers could not understand."),
-    _planned("Solder paste stencils from the paste layers", "EH3D-STENCILCAM", "A CAM program that makes a stencil from the paste layers.", "A first version produces the cut paths of a written example, checked by tests."),
-    _planned("Height maps from probing and G-code correction", "EH3D-AUTOLEVEL", "A utility that corrects a G-code program with a height map; it relies on the levelling crate of the common library.", "A program corrects a written G-code example with a written height map, and the correction is tested."),
-    _planned("Pick-and-place assembly management", "EH3D-PHOENIX-PNP", "A program to manage the parts and the placement of an assembly.", "A design note and a first version that reads a placement file and lists the parts."),
+    _item("The central window of the suite", "EH3D-SUITE-LAUNCHER", "Platform & Updater", "Scaffolding", "Local test", "Normal",
+          "Workspaces, projects and a way to start the other programs.",
+          "A first window that lists and starts the installed programs, with tests. Not yet tried on a real desktop with every program installed.", status="In progress"),
+    _item("The inventory of drill bits, V-bits and routers", "EH3D-TOOL-MANAGER", "Platform & Updater", "Scaffolding", "Local test", "Normal",
+          "A tool inventory shared by the drilling, routing and CAM programs.",
+          "The format of a tool and its wear is released and tested; the use from the drilling program and a window are still to do.", status="In progress"),
+    _item("Copper isolation toolpaths from Gerber layers", "EH3D-ISOCAM", "CAM & design applications", "Functional", "Local test", "Normal",
+          "A CAM program that makes isolation toolpaths from the copper layers, with drills, outline, mirror, panel, reference marks and a mask, from the command line and from a window.",
+          "Released and tested on written examples; the window has not been looked at on a screen and no real board has been milled.", status="In progress"),
+    _item("Job preparation for laser cutting and engraving", "EH3D-PHOENIX-LASER", "CAM & design applications", "Functional", "Local test", "Normal",
+          "A program that prepares laser engraving from a picture (dither, engrave, calibration grid) and writes G-code, from the command line and from a window.",
+          "Tested on written examples; vector cutting is not there yet, the window has not been looked at on a screen and no laser has run it.", status="In progress"),
+    _item("A light viewer for Gerber and drill files", "EH3D-GERBERVIEWER", "CAM & design applications", "Functional", "Local test", "Normal",
+          "A viewer built on the readers of the core libraries, with several layers and drill files at once, measurements and a checker, from the command line and from a window.",
+          "Released and tested on written examples; the window has not been looked at on a screen and it was not tried on a collection of real boards.", status="In progress"),
+    _item("Solder paste stencils from the paste layers", "EH3D-STENCILCAM", "CAM & design applications", "Functional", "Local test", "Normal",
+          "A CAM program that makes the cut paths of a stencil from the paste layers, from the command line and from a window.",
+          "Released and tested on written examples; the window has not been looked at on a screen and no stencil has been cut.", status="In progress"),
+    _item("Height maps from probing and G-code correction", "EH3D-AUTOLEVEL", "CAM & design applications", "Functional", "Local test", "Normal",
+          "A utility that corrects a G-code program with a height map, from the command line and from a window that shows the map.",
+          "Released and tested with simulated tables; it has never worked with a real probe.", status="In progress"),
+    _item("Pick-and-place assembly management", "EH3D-PHOENIX-PNP", "CAM & design applications", "Scaffolding", "Local test", "Normal",
+          "A planner and simulator of a pick-and-place job (feeders, tips, panels, load sheet) with a window; it does not drive a machine.",
+          "Released and tested in simulation; no machine has run it and the window has not been looked at on a screen.", status="In progress"),
     _planned("A remote manual controller for small touch screens", "EH3D-PENDANT-GUI", "A pendant interface for jogging a machine from a small touch screen.", "A design note that says what it shares with the touch-screen node and the modern interface."),
-    _planned("A layer-by-layer simulator and analyser of toolpaths", "EH3D-CAM-DEBUGGER", "A program that plays a toolpath layer by layer and reports problems.", "A first version plays a written G-code example layer by layer and reports one problem class, with tests."),
-    _planned("Camera calibration and fiducial alignment", "EH3D-VISION-STUDIO", "A program for calibrating a camera and aligning a board by its fiducials.", "A design note and a first version that finds fiducials in recorded images, with tests."),
+    _item("A layer-by-layer simulator and analyser of toolpaths", "EH3D-CAM-DEBUGGER", "CAM & design applications", "Functional", "Local test", "Normal",
+          "A program that plays a toolpath move by move and reports problems, from the command line and from a window.",
+          "Released and tested on written examples; the window has not been looked at on a screen.", status="In progress"),
+    _item("Camera calibration and fiducial alignment", "EH3D-VISION-STUDIO", "CAM & design applications", "Scaffolding", "Local test", "Normal",
+          "A program for calibrating a camera and aligning a board by its fiducials.",
+          "Released and tested on synthetic pictures; no real camera has been used.", status="In progress"),
 )
 
-EH3D_STATUS_UPDATES: dict[str, dict[str, str]] = {}
+EH3D_STATUS_UPDATES: dict[str, dict[str, str]] = {
+    "The central window of the suite": _status("In progress"),
+    "The inventory of drill bits, V-bits and routers": _status("In progress"),
+    "Copper isolation toolpaths from Gerber layers": _status("In progress"),
+    "Job preparation for laser cutting and engraving": _status("In progress"),
+    "A light viewer for Gerber and drill files": _status("In progress"),
+    "Solder paste stencils from the paste layers": _status("In progress"),
+    "Height maps from probing and G-code correction": _status("In progress"),
+    "Pick-and-place assembly management": _status("In progress"),
+    "A layer-by-layer simulator and analyser of toolpaths": _status("In progress"),
+    "Camera calibration and fiducial alignment": _status("In progress"),
+}
 EH3D_RENAMES: dict[str, str] = {}
 
 ROADMAPS: dict[str, dict[str, Any]] = {
