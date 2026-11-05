@@ -16,51 +16,58 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-04T03:44:41Z",
-   "exp": "2026-11-11T03:43:59Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/41768535065",
+   "at": "2026-11-05T14:08:00Z",
+   "checked": true,
+   "exp": "2026-11-12T14:06:51Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/42041248477",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-04T03:58:23Z",
-   "exp": "2026-11-11T03:56:05Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/41769741955",
+   "at": "2026-11-05T14:13:35Z",
+   "checked": true,
+   "exp": "2026-11-12T14:11:59Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/42042187933",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-04T04:31:22Z",
-   "exp": "2026-11-11T04:30:39Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/41773066327",
+   "at": "2026-11-05T14:42:07Z",
+   "checked": true,
+   "exp": "2026-11-12T14:41:25Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/42046706585",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
-   "at": "2026-11-04T04:23:34Z",
-   "exp": "2026-11-11T04:22:14Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/41772460372",
+   "at": "2026-11-05T14:47:54Z",
+   "checked": true,
+   "exp": "2026-11-12T14:46:52Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/42047682061",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-04T04:03:51Z",
-   "exp": "2026-11-11T03:59:09Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/41769987744",
+   "at": "2026-11-05T14:53:31Z",
+   "checked": true,
+   "exp": "2026-11-12T14:52:39Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/42048637125",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-04T03:50:34Z",
-   "exp": "2026-11-11T03:49:54Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/41769480989",
+   "at": "2026-11-05T13:51:38Z",
+   "checked": true,
+   "exp": "2026-11-12T13:51:00Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/42039379447",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
    "art": true,
-   "at": "2026-11-03T16:40:07Z",
-   "exp": "2026-11-10T16:37:02Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER-AI/actions/runs/41675977690",
+   "at": "2026-11-05T13:53:12Z",
+   "checked": true,
+   "exp": "2026-11-12T13:52:35Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER-AI/actions/runs/42039630556",
    "wf": "package-build.yml"
   },
   "ARMOR-STUDIO": {
@@ -156,9 +163,10 @@
   },
   "HYDRA-UMC-OS": {
    "art": true,
-   "at": "2026-11-04T00:29:15Z",
-   "exp": "2026-11-11T00:28:46Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-OS/actions/runs/41747013083",
+   "at": "2026-11-05T11:04:22Z",
+   "checked": true,
+   "exp": "2026-11-12T11:03:51Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-OS/actions/runs/42015723936",
    "wf": "package-build.yml"
   },
   "HYDRA-UMC-OS-REBUILDER": {
@@ -240,9 +248,10 @@
   },
   "URTC": {
    "art": true,
-   "at": "2026-11-04T04:14:09Z",
-   "exp": "2026-11-11T04:10:11Z",
-   "url": "https://github.com/JuanenRac/URTC/actions/runs/41770844983",
+   "at": "2026-11-05T11:40:47Z",
+   "checked": true,
+   "exp": "2026-11-12T11:38:54Z",
+   "url": "https://github.com/JuanenRac/URTC/actions/runs/42020302676",
    "wf": "firmware-build.yml"
   },
   "URTC-COMMON": {
@@ -291,7 +300,7 @@
  "schema": 1,
  "signatures": {
   "ARMOR-DEVOPS": {
-   "fp": "6cb22a9cdc699c3a",
+   "fp": "ad242ca10f9dbc66",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -398,7 +407,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "74ad9b92ae14715f",
+   "fp": "dd1ec075ce699b00",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -414,7 +423,7 @@
    }
   },
   "ARMOR-SERVER-AI": {
-   "fp": "5555dd71b0bc9e31",
+   "fp": "859c7487ccf4fc9a",
    "r": {
     "bad": 0,
     "ho": 0,
