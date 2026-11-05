@@ -290,6 +290,33 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("--reconcile-status", text)
         self.assertIn("tools/roadmap_defs.py", text)
 
+    def test_the_workflow_runs_every_day_for_the_four_boards_with_named_jobs(self):
+        text = (ROOT / ".github" / "workflows" / "seed-ecosystem-roadmap.yml").read_text(encoding="utf-8")
+        self.assertRegex(text, r"(?m)^  schedule:\n    - cron: '\d+ \d+ \* \* \*'")
+        self.assertIn("workflow_dispatch:", text)
+        self.assertIn('boards=["hydra-umc","urtc","armor","eh3d"]', text)
+        self.assertIn("name: Seed ${{ matrix.board }}", text)
+        self.assertIn("group: roadmap-seed-${{ matrix.board }}", text)
+        self.assertIn("cancel-in-progress: false", text)
+
+    def test_a_failure_opens_or_updates_one_issue_per_board_and_a_good_run_closes_it(self):
+        text = (ROOT / ".github" / "workflows" / "seed-ecosystem-roadmap.yml").read_text(encoding="utf-8")
+        self.assertIn('title="Roadmap sync failed: ${BOARD}"', text)
+        self.assertIn("gh issue edit", text)
+        self.assertIn("gh issue create", text)
+        self.assertIn("gh issue close", text)
+        self.assertNotRegex(text, r"(?i)claude|sonnet")
+
+    def test_the_cards_added_for_the_signing_and_hardening_work_exist(self):
+        module, _ = load("urtc")
+        titles = {item["title"] for item in module.SEED_ITEMS}
+        self.assertIn("Official signed firmware: built in Actions, signed on the owner's machine, published", titles)
+        self.assertIn("Verify Ed25519 image signatures in the STM32 bootloaders: key table, signed counter, the master confirms the slave", titles)
+        module, _ = load("armor")
+        self.assertIn("Component packages built in Actions and signed on the owner's machine", {item["title"] for item in module.SEED_ITEMS})
+        module, _ = load("hydra-umc")
+        self.assertIn("One identity of the server for the services of the ecosystem", {item["title"] for item in module.SEED_ITEMS})
+
 
 if __name__ == "__main__":
     unittest.main()

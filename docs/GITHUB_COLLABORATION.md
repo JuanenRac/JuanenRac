@@ -182,3 +182,12 @@ either of them is never marked `Done` until a recorded run exists. To create the
 and fill it, run the bootstrap workflow with `roadmap=eh3d` and `apply=true`, then the
 seed workflow with `roadmap=eh3d` and `apply=true`; later, run the seed workflow with
 `reconcile_status=true` on any board to apply its `STATUS_UPDATES` and `RENAMES`.
+
+The seed workflow also runs once a day on its own for the four boards (one job per board,
+named `Seed <board>`), with `apply` and `reconcile_status` on, using the definitions on
+`main`: it creates the cards that are missing and touches only the cards the definitions
+list. Two runs of the same board never overlap. If a run fails (for example because the
+`HYDRA_UMC_PROJECTS_TOKEN` secret is missing or expired), it opens one issue named
+`Roadmap sync failed: <board>` with the reason, updates it on later failures instead of
+opening more, and closes it after the next good run. To change a card, edit the
+definitions and push; the next run applies it.

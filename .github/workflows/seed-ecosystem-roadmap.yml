@@ -1,11 +1,15 @@
 # =============================================================================
-# HYDRA-UMC / URTC / A.R.M.O.R. Ecosystem - Roadmap seed workflow
+# HYDRA-UMC / URTC / A.R.M.O.R. / EH3D Ecosystem - Roadmap seed workflow
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0 - see LICENSE.md
 # =============================================================================
 name: Seed HYDRA-UMC Roadmap
 
+# Runs by hand for one board, and every day for all four. The daily run applies the definitions that are on main
+# (it creates the missing cards and touches only the cards the definitions list), so the boards keep up with them.
 on:
+  schedule:
+    - cron: '17 4 * * *'
   workflow_dispatch:
     inputs:
       roadmap:
@@ -32,33 +36,67 @@ on:
 permissions: {}
 
 jobs:
+  plan:
+    name: Choose the boards
+    runs-on: ubuntu-latest
+    permissions:
+      contents: none
+    outputs:
+      boards: ${{ steps.pick.outputs.boards }}
+    steps:
+      - name: Pick the boards of this run
+        id: pick
+        env:
+          EVENT: ${{ github.event_name }}
+          ROADMAP: ${{ inputs.roadmap }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT" == 'schedule' ]]; then
+            echo 'boards=["hydra-umc","urtc","armor","eh3d"]' >> "$GITHUB_OUTPUT"
+          else
+            echo "boards=[\"$ROADMAP\"]" >> "$GITHUB_OUTPUT"
+          fi
+
   seed:
-    name: Seed missing ecosystem planning items
+    name: Seed ${{ matrix.board }}
+    needs: plan
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
+    concurrency:
+      group: roadmap-seed-${{ matrix.board }}
+      cancel-in-progress: false
+    strategy:
+      fail-fast: false
+      matrix:
+        board: ${{ fromJSON(needs.plan.outputs.boards) }}
     steps:
       - name: Checkout Roadmap automation source
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
+          persist-credentials: false
           sparse-checkout: |
             tools/bootstrap_ecosystem_project.py
             tools/roadmap_defs.py
             tools/seed_ecosystem_roadmap.py
           sparse-checkout-cone-mode: false
       - name: Seed evidence-based work
+        id: seed
         env:
           HYDRA_UMC_PROJECTS_TOKEN: ${{ secrets.HYDRA_UMC_PROJECTS_TOKEN }}
-          ROADMAP: ${{ inputs.roadmap }}
-          APPLY: ${{ inputs.apply }}
-          RECONCILE_STATUS: ${{ inputs.reconcile_status }}
+          ROADMAP: ${{ matrix.board }}
+          APPLY: ${{ github.event_name == 'schedule' && 'true' || inputs.apply }}
+          RECONCILE_STATUS: ${{ github.event_name == 'schedule' && 'true' || inputs.reconcile_status }}
         shell: bash
         run: |
-          set -euo pipefail
-          test -n "$HYDRA_UMC_PROJECTS_TOKEN" || {
+          set -uo pipefail
+          if [[ -z "$HYDRA_UMC_PROJECTS_TOKEN" ]]; then
             echo '::error::HYDRA_UMC_PROJECTS_TOKEN is not configured.'
+            echo 'reason=The Actions secret HYDRA_UMC_PROJECTS_TOKEN is not configured (or this run may not read it).' >> "$GITHUB_OUTPUT"
             exit 1
-          }
+          fi
           args=(--roadmap "$ROADMAP")
           if [[ "$APPLY" == 'true' ]]; then
             args+=(--apply)
@@ -66,4 +104,50 @@ jobs:
           if [[ "$RECONCILE_STATUS" == 'true' ]]; then
             args+=(--reconcile-status)
           fi
-          python3 tools/seed_ecosystem_roadmap.py "${args[@]}"
+          if python3 tools/seed_ecosystem_roadmap.py "${args[@]}" 2> seed-errors.txt; then
+            cat seed-errors.txt >&2
+            exit 0
+          fi
+          cat seed-errors.txt >&2
+          reason="$(tail -n 5 seed-errors.txt | tr -d '\r' | cut -c 1-300 | tr '\n' ' ')"
+          echo "reason=${reason:-The seeder failed; see the log of the run.}" >> "$GITHUB_OUTPUT"
+          exit 1
+      - name: Report a failure in an issue that is updated, not repeated
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BOARD: ${{ matrix.board }}
+          REASON: ${{ steps.seed.outputs.reason }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          title="Roadmap sync failed: ${BOARD}"
+          body="The scheduled or manual sync of the ${BOARD} Roadmap board failed.
+
+          Reason: ${REASON:-the seeder stopped before it could say why.}
+
+          Run: ${RUN_URL}
+
+          If the reason is the token: create or renew the secret HYDRA_UMC_PROJECTS_TOKEN (a token that can read and write the user Projects). This issue is closed by the next successful run."
+          number="$(gh issue list -R "$REPO" --state open --search "\"$title\" in:title" --json number,title --jq "[.[] | select(.title == \"$title\")][0].number // empty")"
+          if [[ -n "$number" ]]; then
+            gh issue edit "$number" -R "$REPO" --body "$body"
+          else
+            gh issue create -R "$REPO" --title "$title" --body "$body"
+          fi
+      - name: Close the failure issue after a good run
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BOARD: ${{ matrix.board }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          title="Roadmap sync failed: ${BOARD}"
+          number="$(gh issue list -R "$REPO" --state open --search "\"$title\" in:title" --json number,title --jq "[.[] | select(.title == \"$title\")][0].number // empty")"
+          if [[ -n "$number" ]]; then
+            gh issue close "$number" -R "$REPO" --comment "The next run of the sync succeeded."
+          fi

@@ -20,6 +20,7 @@ WRITERS = {
     ("ecosystem-ci-watch.yml", "watch"): {"contents": "read", "issues": "write"},
     ("ecosystem-health-matrix.yml", "matrix"): {"contents": "read", "issues": "write"},
     ("ecosystem-link-check.yml", "links"): {"contents": "read", "issues": "write"},
+    ("seed-ecosystem-roadmap.yml", "seed"): {"contents": "read", "issues": "write"},
 }
 
 
