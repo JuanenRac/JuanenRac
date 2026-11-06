@@ -204,9 +204,9 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.5|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC の Web クライアント共通の TypeScript キット：セッション、HTTP クライアント、接続履歴、設定、ツアー。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.2|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
-|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.4|7インチ産業用ディスプレイ（CM5）向けの専用Flutterベースのタッチインターフェース。|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.1|リモートロボット管理用の生体認証を備えたネイティブKotlinモバイルアプリ。|
-|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.4|リアルタイムWebSocket同期を備えたiOS/iPadOS用Flutterモバイルアプリ。|
+|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.5|7インチ産業用ディスプレイ（CM5）向けの専用Flutterベースのタッチインターフェース。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.2|リモートロボット管理用の生体認証を備えたネイティブKotlinモバイルアプリ。|
+|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.5|リアルタイムWebSocket同期を備えたiOS/iPadOS用Flutterモバイルアプリ。|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.2.0|ロボットモデルを検証してカタログにプッシュするためのグラフィカルURDFエディター。|
 |[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.2.1|デスクトップSTLモデルエディター - 共有モデルカタログ内の実際のパーツの変換、置換、削除、追加を行います。|
 | [HYDRA-UMC-MESHES](https://github.com/JuanenRac/HYDRA-UMC-MESHES) | 0.1.0 | デスクトップアプリとウェブアプリで共有する 3D メッシュ（STL と GLB）。チェックサム付きのリリースパッケージとして一度だけ公開します。 |
@@ -330,7 +330,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 | 継続的インテグレーション | 🟢 | `██████████ 100%` | 11 件中 11 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟢 | `██████████ 100%` | 11 件中 11 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 11 件中 11 件のリポジトリに、8 言語すべての README があります。 |
-| シミュレーション | 🟠 | `███▋░░░░░░ 36%` | 11 件中 4 件のリポジトリが、少なくともシミュレーターで検証されています。 |
+| シミュレーション | 🟠 | `████▌░░░░░ 45%` | 11 件中 5 件のリポジトリが、少なくともシミュレーターで検証されています。 |
 | 実機 | 🔴 | `░░░░░░░░░░ 0%` | ハードウェアに依存する 10 件のうち 0 件が、ベンチまたは現場で検証されています。残りは実機で動かしたことがありません。 |
 | 本番運用 | 🔴 | `▉░░░░░░░░░ 9%` | 11 件中 1 件のリポジトリが、確立済みまたは本番運用の段階です。 |
 <!-- /status:urtc -->
@@ -509,7 +509,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.5|マニフェストからスイートのプログラムを見つけて起動し、最近のプロジェクトと、ファイルの SHA-256 付きプロジェクト ファイル（.eh3dproj）を保持します。ウィンドウとネットワーク上の機械の検出は計画中です。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.9|共有データモデル：整合性チェック付きの .eh3dproj プロジェクトコンテナ、マシンテレメトリの型、そして各 ESP32 ノードがコピーして使うファームウェアベース。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.8|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|
-|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.7|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.8|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D と HYDRA-UMC の両エコシステムをつなぐアダプター(計画中・コードはまだありません)。|
 |[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|4つのエコシステムのアップデーター。1つのウィンドウとコマンドラインから、各エコシステム専用のアップデーターへ引き継ぎます。|

@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-06T10:00:29Z",
+ "asof": "2026-11-06T10:38:51Z",
  "ci": {
   "checked": 496,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 460,
-    "min7": 596,
+    "min24": 462,
+    "min7": 595,
     "repo": "EH3D-BUNGARD-GUI"
    },
    {
@@ -25,8 +25,8 @@
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 312,
-    "min7": 312,
+    "min24": 315,
+    "min7": 315,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
@@ -40,13 +40,13 @@
     "repo": "EH3D-DRILLPRO"
    },
    {
-    "min24": 273,
-    "min7": 273,
+    "min24": 274,
+    "min7": 274,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 7026,
-  "total7": 15716,
+  "total24": 7165,
+  "total7": 15749,
   "warn": false
  },
  "ecosystems": {
@@ -76,7 +76,7 @@
    "read": 59,
    "red": 0,
    "repos": 59,
-   "unpub": 0
+   "unpub": 1
   },
   "urtc": {
    "cand": 0,
@@ -87,6 +87,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-06T10:38:51Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-DSI",
+   "tag": "v0.3.5"
+  },
+  {
+   "at": "2026-11-06T10:38:51Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-IOS-CONTROL",
+   "tag": "v0.3.5"
+  },
   {
    "at": "2026-11-06T10:00:29Z",
    "kind": "red_ok",
@@ -142,6 +154,16 @@
      "HYDRA-UMC-SWARM-SYNC"
     ],
     "n": 12
+   }
+  },
+  {
+   "key": "unpub",
+   "level": "warn",
+   "p": {
+    "list": [
+     "HYDRA-UMC-ANDROID-CONTROL"
+    ],
+    "n": 1
    }
   },
   {
@@ -323,12 +345,12 @@
   "HYDRA-UMC-DEVELOPER-NODE": "v0.0.3",
   "HYDRA-UMC-DOCS": "v0.1.2",
   "HYDRA-UMC-DOCS-QA": "v0.1.8",
-  "HYDRA-UMC-DSI": "v0.3.4",
+  "HYDRA-UMC-DSI": "v0.3.5",
   "HYDRA-UMC-EDITOR-STL": "v0.2.1",
   "HYDRA-UMC-EDITOR-URDF": "v0.2.0",
   "HYDRA-UMC-GATEWAY-INDUSTRIAL": "v0.2.0",
   "HYDRA-UMC-HIL-BRIDGE": "v0.1.5",
-  "HYDRA-UMC-IOS-CONTROL": "v0.3.4",
+  "HYDRA-UMC-IOS-CONTROL": "v0.3.5",
   "HYDRA-UMC-JOB-DISPATCHER": "v0.3.0",
   "HYDRA-UMC-LOCAL-TECHNICIAN": "v0.2.2",
   "HYDRA-UMC-MESHES": "meshes-1",
@@ -397,7 +419,7 @@
    8105,
    2782,
    4421,
-   7026
+   7165
   ],
   "red": [
    3,
@@ -407,7 +429,13 @@
   ]
  },
  "unpublished": {
-  "rows": [],
-  "total": 0
+  "rows": [
+   {
+    "repo": "HYDRA-UMC-ANDROID-CONTROL",
+    "tag": "v0.8.0.1",
+    "version": "0.8.0.2"
+   }
+  ],
+  "total": 1
  }
 }

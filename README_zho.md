@@ -204,9 +204,9 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.5|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.2|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
-|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.4|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.1|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
-|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.4|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
+|[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.5|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.2|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
+|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.5|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.2.0|用于验证机器人模型并将其推送到目录中的图形化 URDF 编辑器。|
 |[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.2.1|桌面 STL 模型编辑器——在共享模型目录中转换、替换、移除和添加真实部件。|
 | [HYDRA-UMC-MESHES](https://github.com/JuanenRac/HYDRA-UMC-MESHES) | 0.1.0 | 桌面和网页应用共用的 3D 网格（STL 和 GLB），以带校验和的发布包形式只发布一次。 |
@@ -330,7 +330,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 | 持续集成 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个提供八种语言的 README。 |
-| 仿真 | 🟠 | `███▋░░░░░░ 36%` | 11 个仓库中有 4 个至少在仿真器中验证过。 |
+| 仿真 | 🟠 | `████▌░░░░░ 45%` | 11 个仓库中有 5 个至少在仿真器中验证过。 |
 | 真实硬件 | 🔴 | `░░░░░░░░░░ 0%` | 依赖硬件的 10 个仓库中有 0 个在台架或现场验证过；其余从未在真实设备上运行。 |
 | 生产 | 🔴 | `▉░░░░░░░░░ 9%` | 11 个仓库中有 1 个已成熟或已投入生产。 |
 <!-- /status:urtc -->
@@ -509,7 +509,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.5|通过清单找到套件的程序并启动它们，保存最近的项目以及带各文件 SHA-256 的项目文件（.eh3dproj）；窗口和网络上机器的发现在计划中。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.1.9|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.8|生态系统文档、组装指南、网关技术规范和集成手册。|
-|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.7|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.8|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
 |[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|四个生态系统的更新器:一个窗口和一条命令行,交由各生态系统自己的更新器处理。|

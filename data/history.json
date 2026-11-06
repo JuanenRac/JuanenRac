@@ -2639,11 +2639,11 @@
   },
   {
    "actions": {
-    "fail": 242,
-    "min": 7026,
-    "ok": 3389,
-    "other": 45,
-    "runs": 3676
+    "fail": 249,
+    "min": 7165,
+    "ok": 3507,
+    "other": 43,
+    "runs": 3799
    },
    "areas": {
     "armor": {
@@ -2797,7 +2797,7 @@
     ],
     "EH3D-CORE-LIBS": [
      0,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
@@ -2933,7 +2933,7 @@
     ],
     "HYDRA-UMC-ANDROID-CONTROL": [
      1,
-     "0.8.0.1"
+     "0.8.0.2"
     ],
     "HYDRA-UMC-ANOMALY-DETECTOR": [
      1,
@@ -3009,7 +3009,7 @@
     ],
     "HYDRA-UMC-DSI": [
      1,
-     "0.3.4"
+     "0.3.5"
     ],
     "HYDRA-UMC-EDITOR-STL": [
      1,
@@ -3029,7 +3029,7 @@
     ],
     "HYDRA-UMC-IOS-CONTROL": [
      1,
-     "0.3.4"
+     "0.3.5"
     ],
     "HYDRA-UMC-JOB-DISPATCHER": [
      1,
@@ -3211,7 +3211,7 @@
    "sentinel": {
     "cand": 12,
     "gaps": 0,
-    "min": 7026,
+    "min": 7165,
     "red": 1
    },
    "tests": {
