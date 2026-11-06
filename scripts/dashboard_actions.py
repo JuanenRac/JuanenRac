@@ -31,6 +31,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Callable, Iterable, Mapping, Sequence
 
+import ci_rules
+
 CACHE_PATH = Path(__file__).resolve().parent.parent / "data" / "actions-cache.json"
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "dashboard-config.json"
 DAY_MINUTES = 24 * 60
@@ -122,7 +124,7 @@ def code_of(run: Mapping) -> str:
         return "p"
     if conclusion == "success":
         return "s"
-    if conclusion in ("failure", "timed_out", "startup_failure", "action_required"):
+    if ci_rules.is_red(conclusion):
         return "f"
     if conclusion == "cancelled":
         return "c"

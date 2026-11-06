@@ -14,9 +14,10 @@ import sys
 from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor
 
+import ci_rules
 from ecosystem_inventory import Api, Repo, inventory, of_ecosystems, sync_issue, write_summary
 
-RED = {"failure", "timed_out", "startup_failure", "action_required"}
+RED = set(ci_rules.RED_CONCLUSIONS)
 LABEL = "ci-watch"
 TITLE = "CI watch: workflows that are red"
 
@@ -39,7 +40,7 @@ def latest_runs(api: Api, owner: str, repo: Repo) -> list[Run]:
         conclusion = item.get("conclusion") or ""
         name = item.get("name") or str(item.get("workflow_id"))
         key = str(item.get("workflow_id") or name)   # by workflow, not by name: a run of an older, invalid version of the file carries its path as name
-        if conclusion in ("skipped", "cancelled", "neutral", "") or key in seen:
+        if not ci_rules.decides(item) or key in seen:
             continue
         seen[key] = Run(repo.name, repo.ecosystem or "", name, conclusion, item.get("html_url", ""), (item.get("head_sha") or "")[:7])
     return list(seen.values())

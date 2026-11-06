@@ -35,13 +35,14 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterable, Mapping, Sequence
 
+import ci_rules
 import dashboard_actions
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "sentinel.json"
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "dashboard-config.json"
 SCHEMA = 1
-BAD = ("failure", "timed_out", "startup_failure")
-IGNORED = ("cancelled", "skipped", "neutral", "stale", "action_required")
+BAD = ci_rules.RED_CONCLUSIONS             # one criterion for the whole dashboard (see ci_rules.py)
+IGNORED = ci_rules.IGNORED_CONCLUSIONS
 SIGNATURE_STATES = ("verified", "invalid", "unverifiable", "none", "norelease", "unverified")
 SECTIONS = ("ci", "releases", "signatures", "hygiene", "compute", "trend")
 DEFAULT_CONFIG: dict = {
@@ -180,7 +181,7 @@ def red_workflows(runs: Iterable[object], current: Sequence[str] | None = None) 
     for run in sorted((r for r in runs if isinstance(r, Mapping)), key=lambda r: str(r.get("at") or "")):
         path = str(run.get("path") or "")
         base = path.rsplit("/", 1)[-1]
-        if run.get("conclusion") in IGNORED or not run.get("conclusion") or not WORKFLOW_RE.match(base):
+        if not ci_rules.decides(run) or not WORKFLOW_RE.match(base):
             continue
         if current is not None and base not in current:
             continue
@@ -229,7 +230,7 @@ def _slim_runs(payload: object) -> list[dict] | None:
     out = []
     for run in payload["workflow_runs"]:
         if isinstance(run, Mapping):
-            out.append({"path": run.get("path"), "conclusion": run.get("conclusion"), "at": run.get("updated_at") or run.get("created_at")})
+            out.append({"path": run.get("path"), "conclusion": run.get("conclusion"), "event": run.get("event"), "at": run.get("updated_at") or run.get("created_at")})
     return out
 
 
