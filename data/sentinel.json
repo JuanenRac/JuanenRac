@@ -1,12 +1,12 @@
 {
- "asof": "2026-11-06T02:28:12Z",
+ "asof": "2026-11-06T09:37:38Z",
  "ci": {
-  "checked": 490,
+  "checked": 496,
   "red": [
    {
-    "repo": "EH3D-ISOCAM",
-    "since": "2026-11-06T00:37:20Z",
-    "streak": 1,
+    "repo": "ARMOR-COMMON",
+    "since": "2026-11-06T09:34:33Z",
+    "streak": 2,
     "wf": "ci.yml"
    },
    {
@@ -21,38 +21,38 @@
  "compute": {
   "top": [
    {
-    "min24": 338,
-    "min7": 338,
-    "repo": "HYDRA-UMC-SERVER"
-   },
-   {
-    "min24": 240,
-    "min7": 391,
+    "min24": 456,
+    "min7": 596,
     "repo": "EH3D-BUNGARD-GUI"
    },
    {
-    "min24": 183,
-    "min7": 338,
-    "repo": "URTC-SMART-RACK"
+    "min24": 402,
+    "min7": 489,
+    "repo": "HYDRA-UMC"
    },
    {
-    "min24": 173,
-    "min7": 272,
+    "min24": 312,
+    "min7": 312,
+    "repo": "HYDRA-UMC-SERVER"
+   },
+   {
+    "min24": 280,
+    "min7": 422,
+    "repo": "EH3D-ROUTEPRO"
+   },
+   {
+    "min24": 271,
+    "min7": 415,
+    "repo": "EH3D-DRILLPRO"
+   },
+   {
+    "min24": 267,
+    "min7": 273,
     "repo": "HYDRA-UMC-IOS-CONTROL"
-   },
-   {
-    "min24": 168,
-    "min7": 235,
-    "repo": "URTC"
-   },
-   {
-    "min24": 164,
-    "min7": 196,
-    "repo": "EH3D-PHOENIX-PCB"
    }
   ],
-  "total24": 5169,
-  "total7": 14731,
+  "total24": 6938,
+  "total7": 15734,
   "warn": false
  },
  "hygiene": {
@@ -79,7 +79,7 @@
    "level": "bad",
    "p": {
     "list": [
-     "EH3D-ISOCAM",
+     "ARMOR-COMMON",
      "URTC"
     ],
     "n": 2
@@ -91,14 +91,14 @@
    "p": {
     "list": [
      "ARMOR-HARDWARE",
+     "ARMOR-SIMULATOR",
+     "ARMOR-STUDIO",
      "ARMOR-VOICE-AI",
      "HYDRA-UMC-BRIDGE-CNC",
      "HYDRA-UMC-BRIDGE-LASER",
      "HYDRA-UMC-BRIDGE-PRINTER3D",
      "HYDRA-UMC-BRIDGE-ROS2",
-     "HYDRA-UMC-DASHBOARD-AI",
      "HYDRA-UMC-MESHES",
-     "HYDRA-UMC-MQTT-BROKER",
      "HYDRA-UMC-OPS-AGENT",
      "HYDRA-UMC-PATH-PLANNER-3D",
      "HYDRA-UMC-SWARM-SYNC"
@@ -119,16 +119,28 @@
  "releases": {
   "candidates": [
    {
-    "entries": 7,
+    "entries": 8,
     "published": "2026-11-02T11:02:28Z",
     "repo": "HYDRA-UMC-OPS-AGENT",
     "tag": "v0.2.2"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-04T02:14:02Z",
+    "repo": "ARMOR-STUDIO",
+    "tag": "v0.8.2.1"
    },
    {
     "entries": 1,
     "published": "2026-11-03T14:26:28Z",
     "repo": "ARMOR-HARDWARE",
     "tag": "v0.2.8"
+   },
+   {
+    "entries": 1,
+    "published": "2026-11-03T23:34:42Z",
+    "repo": "ARMOR-SIMULATOR",
+    "tag": "v0.3.5"
    },
    {
     "entries": 1,
@@ -162,21 +174,9 @@
    },
    {
     "entries": 1,
-    "published": "2026-11-03T00:53:53Z",
-    "repo": "HYDRA-UMC-DASHBOARD-AI",
-    "tag": "v0.2.3"
-   },
-   {
-    "entries": 1,
     "published": "2026-10-31T07:31:01Z",
     "repo": "HYDRA-UMC-MESHES",
     "tag": "meshes-1"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-02T05:18:51Z",
-    "repo": "HYDRA-UMC-MQTT-BROKER",
-    "tag": "v0.2.0"
    },
    {
     "entries": 1,
@@ -200,11 +200,11 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 85,
-  "norelease": 5,
-  "unverifiable": 12,
+  "none": 83,
+  "norelease": 0,
+  "unverifiable": 17,
   "unverified": 0,
-  "verified": 26
+  "verified": 28
  },
  "trend": {
   "cand": [
@@ -229,7 +229,7 @@
    8105,
    2782,
    4421,
-   5169
+   6938
   ],
   "red": [
    3,
