@@ -2,17 +2,18 @@
  "builds": {
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-05T22:02:49Z",
+   "at": "2026-11-06T02:16:20Z",
    "checked": true,
-   "exp": "2026-11-12T22:01:19Z",
-   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/42117203957",
+   "exp": "2026-11-13T02:15:04Z",
+   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/42148655836",
    "wf": "apk-build.yml"
   },
   "ARMOR-NETWORK": {
    "art": true,
-   "at": "2026-11-03T16:43:36Z",
-   "exp": "2026-11-10T16:41:26Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NETWORK/actions/runs/41676685238",
+   "at": "2026-11-05T23:38:50Z",
+   "checked": true,
+   "exp": "2026-11-12T23:37:58Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NETWORK/actions/runs/42130819167",
    "wf": "package-build.yml"
   },
   "ARMOR-NODE-ALARM": {
@@ -31,16 +32,15 @@
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-05T19:07:54Z",
+   "at": "2026-11-06T02:17:13Z",
    "checked": true,
-   "exp": "2026-11-12T19:07:05Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/42090094282",
+   "exp": "2026-11-13T02:16:29Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/42148655903",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-05T19:07:39Z",
-   "checked": true,
    "exp": "2026-11-12T19:06:18Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/42090102847",
    "wf": "firmware-build.yml"
@@ -54,9 +54,10 @@
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-05T13:51:38Z",
-   "exp": "2026-11-12T13:51:00Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/42039379447",
+   "at": "2026-11-06T02:00:16Z",
+   "checked": true,
+   "exp": "2026-11-13T01:59:40Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/42147394709",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -68,9 +69,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-04T03:59:31Z",
-   "exp": "2026-11-11T03:58:03Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/41770069846",
+   "at": "2026-11-06T01:58:54Z",
+   "checked": true,
+   "exp": "2026-11-13T01:58:03Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/42147212093",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -117,23 +119,23 @@
   },
   "HYDRA-UMC": {
    "art": true,
-   "at": "2026-11-05T19:12:04Z",
+   "at": "2026-11-06T01:43:01Z",
    "checked": true,
-   "exp": "2026-11-12T19:10:42Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/42091175540",
+   "exp": "2026-11-13T01:41:47Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/42145416429",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-04T04:14:27Z",
-   "exp": "2026-11-11T04:11:00Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/41770700769",
+   "at": "2026-11-06T02:16:29Z",
+   "checked": true,
+   "exp": "2026-11-13T02:15:54Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/42148657239",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-HIL-BRIDGE": {
    "art": true,
    "at": "2026-11-05T21:03:09Z",
-   "checked": true,
    "exp": "2026-11-12T21:02:20Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/actions/runs/42108848398",
    "wf": "binaries-build.yml"
@@ -141,7 +143,6 @@
   "HYDRA-UMC-JOB-DISPATCHER": {
    "art": true,
    "at": "2026-11-05T21:02:50Z",
-   "checked": true,
    "exp": "2026-11-12T21:01:59Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/actions/runs/42108721420",
    "wf": "binaries-build.yml"
@@ -149,7 +150,6 @@
   "HYDRA-UMC-NODE-HEALING": {
    "art": true,
    "at": "2026-11-05T21:03:07Z",
-   "checked": true,
    "exp": "2026-11-12T21:02:16Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/actions/runs/42108793018",
    "wf": "binaries-build.yml"
@@ -157,7 +157,6 @@
   "HYDRA-UMC-ORCHESTRATOR": {
    "art": true,
    "at": "2026-11-05T21:03:27Z",
-   "checked": true,
    "exp": "2026-11-12T21:02:47Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/actions/runs/42108765282",
    "wf": "binaries-build.yml"
@@ -172,7 +171,6 @@
   "HYDRA-UMC-OS-REBUILDER": {
    "art": true,
    "at": "2026-11-05T21:03:24Z",
-   "checked": true,
    "exp": "2026-11-12T21:02:35Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/actions/runs/42108909671",
    "wf": "package-build.yml"
@@ -187,7 +185,6 @@
   "HYDRA-UMC-PHYSICS-REPLICA": {
    "art": true,
    "at": "2026-11-05T21:03:33Z",
-   "checked": true,
    "exp": "2026-11-12T21:02:33Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/actions/runs/42108869439",
    "wf": "binaries-build.yml"
@@ -195,25 +192,24 @@
   "HYDRA-UMC-SERVER": {
    "art": true,
    "at": "2026-11-05T21:04:04Z",
-   "checked": true,
    "exp": "2026-11-12T21:03:18Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/42108994829",
    "wf": "dist-build.yml"
   },
   "HYDRA-UMC-STUDIO": {
    "art": true,
-   "at": "2026-11-05T21:04:50Z",
+   "at": "2026-11-06T01:49:56Z",
    "checked": true,
-   "exp": "2026-11-12T21:03:54Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42109020995",
+   "exp": "2026-11-13T01:49:01Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42146212709",
    "wf": "dist-build.yml"
   },
   "HYDRA-UMC-SUITE": {
    "art": true,
-   "at": "2026-11-05T21:13:15Z",
+   "at": "2026-11-06T01:59:46Z",
    "checked": true,
-   "exp": "2026-11-12T21:07:47Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42109044715",
+   "exp": "2026-11-13T01:52:29Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42146231054",
    "wf": "exe-build.yml"
   },
   "HYDRA-UMC-SWARM-SYNC": {
@@ -233,7 +229,6 @@
   "HYDRA-UMC-TWIN": {
    "art": true,
    "at": "2026-11-05T21:03:37Z",
-   "checked": true,
    "exp": "2026-11-12T21:02:48Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-TWIN/actions/runs/42108823631",
    "wf": "binaries-build.yml"
@@ -241,22 +236,21 @@
   "HYDRA-UMC-UPDATER": {
    "art": true,
    "at": "2026-11-05T21:03:08Z",
-   "checked": true,
    "exp": "2026-11-12T21:02:25Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-UPDATER/actions/runs/42108889631",
    "wf": "package-build.yml"
   },
   "HYDRA-UMC-WATCH": {
    "art": true,
-   "at": "2026-11-04T04:15:01Z",
-   "exp": "2026-11-11T04:09:50Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-WATCH/actions/runs/41771031197",
+   "at": "2026-11-06T00:23:58Z",
+   "checked": true,
+   "exp": "2026-11-13T00:23:15Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-WATCH/actions/runs/42136084666",
    "wf": "binaries-build.yml"
   },
   "URTC": {
    "art": true,
    "at": "2026-11-05T19:43:34Z",
-   "checked": true,
    "exp": "2026-11-12T19:41:59Z",
    "url": "https://github.com/JuanenRac/URTC/actions/runs/42095965354",
    "wf": "firmware-build.yml"
@@ -264,7 +258,6 @@
   "URTC-COMMON": {
    "art": true,
    "at": "2026-11-05T18:23:03Z",
-   "checked": true,
    "exp": "2026-11-12T18:22:16Z",
    "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42083511408",
    "wf": "release-files-build.yml"
@@ -272,7 +265,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-05T18:26:18Z",
-   "checked": true,
    "exp": "2026-11-12T18:25:22Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/42083581366",
    "wf": "exe-build.yml"
@@ -280,7 +272,6 @@
   "URTC-SMART-RACK": {
    "art": true,
    "at": "2026-11-05T18:24:14Z",
-   "checked": true,
    "exp": "2026-11-12T18:23:27Z",
    "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/42083626944",
    "wf": "firmware-build.yml"
@@ -288,7 +279,6 @@
   "URTC-TESTER": {
    "art": true,
    "at": "2026-11-05T18:26:35Z",
-   "checked": true,
    "exp": "2026-11-12T18:25:24Z",
    "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/42083604563",
    "wf": "exe-build.yml"
@@ -296,7 +286,6 @@
   "URTC-VISION-TOOL": {
    "art": true,
    "at": "2026-11-05T18:24:42Z",
-   "checked": true,
    "exp": "2026-11-12T18:23:58Z",
    "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/42083650566",
    "wf": "firmware-build.yml"
@@ -304,7 +293,6 @@
   "URTC-WEB-STUDIO": {
    "art": true,
    "at": "2026-11-05T18:23:17Z",
-   "checked": true,
    "exp": "2026-11-12T18:22:35Z",
    "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/42083552202",
    "wf": "site-build.yml"
@@ -329,7 +317,7 @@
    }
   },
   "ARMOR-NETWORK": {
-   "fp": "15d227af480b16a3",
+   "fp": "432dcae002bdf291",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -420,7 +408,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "dd1ec075ce699b00",
+   "fp": "d96d62d90cc45ad1",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -484,7 +472,7 @@
    }
   },
   "EH3D-AUTOLEVEL": {
-   "fp": "357395fb3c051c71",
+   "fp": "e263ca01b247df45",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -499,6 +487,62 @@
   },
   "EH3D-BUNGARD-GUI": {
    "fp": "eb96c082c615f48a",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-CAM-DEBUGGER": {
+   "fp": "9097814c917debaf",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-GERBERVIEWER": {
+   "fp": "e96043d8ee884f3c",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-ISOCAM": {
+   "fp": "dbbaf93ea157b83a",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-PHOENIX-CNC": {
+   "fp": "d7927354e934057d",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -539,6 +583,20 @@
     ]
    }
   },
+  "EH3D-PHOENIX-PNP": {
+   "fp": "618b13b1f0f53232",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "EH3D-SERVER": {
    "fp": "73090e1b0fa8032f",
    "r": {
@@ -548,6 +606,20 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 3,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-STENCILCAM": {
+   "fp": "10fcc3e4ffef75f2",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
     "why": [
      "family"
     ]
@@ -667,7 +739,7 @@
    }
   },
   "HYDRA-UMC-STUDIO": {
-   "fp": "7364ba984bcb04ae",
+   "fp": "6394fcd82e681542",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -683,7 +755,7 @@
    }
   },
   "HYDRA-UMC-SUITE": {
-   "fp": "d5c73a94346d7cfb",
+   "fp": "9bc26a7db3be10f1",
    "r": {
     "bad": 0,
     "ho": 0,
