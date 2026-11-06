@@ -36,6 +36,7 @@
     "compute_top": 6,
     "ruleset_name": "protect-main",
     "read_actions_settings": true,
-    "sections": { "ci": true, "releases": true, "signatures": true, "hygiene": true, "compute": true, "trend": true }
+    "events_max": 30,
+    "sections": { "ci": true, "releases": true, "signatures": true, "hygiene": true, "compute": true, "trend": true, "ecosystems": true, "events": true }
   }
 }

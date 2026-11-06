@@ -6121,7 +6121,8 @@ def main() -> int:
         asof=stale_date or today)
     sentinel_doc = dashboard_sentinel.assemble(
         sentinel_read, ecosystem_by_name, sentinel_config, {n: a.signature for n, a in activity.items()},
-        dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, history, today), history, today)
+        dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, history, today), history, today,
+        ecosystem_of=ecosystem_by_name, versions={n: getattr(r, "version", None) for n, r in results.items()}, saved=sentinel_saved)
     sentinel_doc = dashboard_sentinel.stabilize(sentinel_doc, sentinel_saved, sentinel_config["stale_hours"])
     if sentinel_doc:
         print(f"Sentinel: {sentinel_doc['ci']['red_total']} red workflows, {sentinel_doc['releases']['total']} releases ready, {sentinel_doc['hygiene']['gaps']} hygiene gaps, {sentinel_doc['read']}/{sentinel_doc['repos']} repositories read.", file=sys.stderr)

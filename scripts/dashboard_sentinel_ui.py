@@ -57,6 +57,14 @@ def panel_html() -> str:
         + _card("hyg", "sn_hyg_title", body='<ul class="sn-hyg" id="sn-hyg" data-testid="sn-hyg"></ul>')
         # compute
         + _card("cmp", "sn_cmp_title", body='<p class="muted sn-small" id="sn-cmp-total" data-testid="sn-cmp-total"></p><p class="no-data" id="sn-cmp-none" hidden></p><ul class="ac-bars" id="sn-cmp" data-testid="sn-cmp"></ul>')
+        # by ecosystem
+        + _card("eco", "sn_eco_title", "sn-wide", body='<p class="no-data" id="sn-eco-none" data-testid="sn-eco-none" hidden></p>'
+                '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-eco-title" id="sn-eco-wrap"><table class="ins-table sn-table" id="sn-eco-table" data-testid="sn-eco-table"><thead><tr><th scope="col" data-i18n="sn_col_eco">Ecosystem</th></tr></thead></table></div>')
+        # versions raised and not published
+        + _card("unpub", "sn_unpub_title", body='<p class="muted sn-small" data-i18n="sn_unpub_rule">' + esc(EN["sn_unpub_rule"]) + '</p><p class="no-data" id="sn-unpub-none" data-testid="sn-unpub-none" hidden></p>'
+                '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-unpub-title" id="sn-unpub-wrap"><table class="ins-table sn-table" id="sn-unpub-table" data-testid="sn-unpub-table"><thead><tr><th scope="col" data-i18n="sn_col_repo">Repository</th></tr></thead></table></div>')
+        # feed of changes
+        + _card("ev", "sn_ev_title", "sn-wide", body='<p class="no-data" id="sn-ev-none" data-testid="sn-ev-none" hidden></p><ul class="sn-events" id="sn-events" data-testid="sn-events"></ul>')
         # trend
         + _card("trend", "sn_trend_title", "sn-wide", body='<p class="no-data" id="sn-trend-none" data-testid="sn-trend-none" hidden></p><ul class="sn-trend" id="sn-trend" data-testid="sn-trend"></ul>')
         + '</div>'
@@ -107,6 +115,9 @@ CSS = r"""
   .sn-spark { width: 100%; height: 38px; display: block; }
   .sn-spark polyline { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
   .sn-trend b { font-variant-numeric: tabular-nums; }
+  .sn-events { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: 12.5px; max-height: 132px; overflow: auto; }
+  .sn-events li { display: flex; gap: 8px; align-items: baseline; min-width: 0; overflow-wrap: anywhere; }
+  .sn-events time { flex: 0 0 auto; min-width: 74px; font-size: 11.5px; color: var(--dim); font-variant-numeric: tabular-nums; }
   .sn-foot { margin-top: 0; }
   @media (prefers-reduced-motion: no-preference) {
     .sn-spark polyline { stroke-dasharray: 400; stroke-dashoffset: 400; animation: sn-draw .8s ease forwards; }
@@ -225,6 +236,49 @@ JS = r"""
         return [r.repo, r.entries, r.published ? ((r.tag ? r.tag + " · " : "") + snAgoIso(r.published, dict)) : dict.sn_rel_never]; }), dict);
     }
   }
+  const SN_ECO_NAMES = { "hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D", "electro-hobby-3d": "Electro Hobby 3D" };
+  function snEco(doc, dict) {
+    const table = document.getElementById("sn-eco-table"), none = document.getElementById("sn-eco-none"), wrap = document.getElementById("sn-eco-wrap");
+    table.textContent = "";
+    const keys = doc && doc.ecosystems ? Object.keys(doc.ecosystems) : [];
+    if (!snOn("ecosystems") || !doc || !keys.length) { none.hidden = false; none.textContent = !snOn("ecosystems") ? dict.sn_off_section : (doc ? dict.sn_eco_none : dict.not_verified); wrap.hidden = true; return; }
+    none.hidden = true; wrap.hidden = false;
+    const heads = [dict.sn_col_eco, dict.sn_col_repos, dict.sn_col_red, dict.sn_col_ready, dict.sn_col_unpub];
+    const hr = make("tr"); heads.forEach(function (h) { const th = make("th", "", h); th.setAttribute("scope", "col"); hr.appendChild(th); });
+    const thead = make("thead"); thead.appendChild(hr); table.appendChild(thead);
+    const body = make("tbody");
+    keys.forEach(function (k) {
+      const r = doc.ecosystems[k], name = SN_ECO_NAMES[k] || k, tr = make("tr");
+      tr.setAttribute("data-eco", k); tr.title = tpl(dict.sn_eco_row, { eco: name, repos: r.repos, read: r.read, red: r.red, cand: r.cand, unpub: r.unpub });
+      const th = make("th", "", name); th.setAttribute("scope", "row"); tr.appendChild(th);
+      [r.repos, r.red, r.cand, r.unpub].forEach(function (n) { tr.appendChild(make("td", "num", String(n))); });
+      body.appendChild(tr);
+    });
+    table.appendChild(body);
+  }
+  function snUnpub(doc, dict) {
+    const table = document.getElementById("sn-unpub-table"), none = document.getElementById("sn-unpub-none"), wrap = document.getElementById("sn-unpub-wrap");
+    table.textContent = "";
+    const rows = doc && doc.unpublished ? doc.unpublished.rows : [];
+    if (!snOn("releases") || !doc) { none.hidden = false; none.textContent = !snOn("releases") ? dict.sn_off_section : dict.not_verified; wrap.hidden = true; return; }
+    none.hidden = rows.length > 0; none.textContent = dict.sn_unpub_none; wrap.hidden = rows.length === 0;
+    if (rows.length) { snTable(table, [dict.sn_col_repo, dict.sn_col_manifest, dict.sn_col_last], rows.map(function (r) { return [r.repo, r.version, r.tag]; }), dict); }
+  }
+  function snEvents(doc, dict) {
+    const ul = document.getElementById("sn-events"), none = document.getElementById("sn-ev-none");
+    ul.textContent = "";
+    if (!snOn("events") || !doc) { none.hidden = false; none.textContent = !snOn("events") ? dict.sn_off_section : dict.not_verified; return; }
+    const events = doc.events || [];
+    none.hidden = events.length > 0; none.textContent = dict.sn_ev_none;
+    const level = { red_new: "bad", red_ok: "ok", released: "info" };
+    events.forEach(function (e) {
+      const li = make("li"); li.setAttribute("data-kind", e.kind);
+      const t = make("time", "", snAgoIso(e.at, dict)); t.setAttribute("datetime", e.at); t.title = e.at;
+      li.appendChild(t); li.appendChild(snGlyph(level[e.kind] || "info", dict));
+      li.appendChild(make("span", "", tpl(dict["sn_ev_" + e.kind] || "", { repo: e.repo, wf: e.wf || "", tag: e.tag || "" })));
+      ul.appendChild(li);
+    });
+  }
   function snHyg(doc, dict) {
     const ul = document.getElementById("sn-hyg");
     ul.textContent = "";
@@ -282,6 +336,6 @@ JS = r"""
     banner.hidden = !SN.stale; banner.textContent = SN.stale ? tpl(dict.sn_stale, { date: String(SN.stale).slice(0, 10) }) : "";
     document.getElementById("sn-asof").textContent = doc && doc.asof ? tpl(dict.sn_asof, { time: String(doc.asof).slice(11, 16) }) : "";
     document.getElementById("sn-help-body").textContent = dict.sn_help_body;
-    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict);
+    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict);
   }
 """

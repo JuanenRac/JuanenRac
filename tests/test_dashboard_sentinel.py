@@ -221,7 +221,7 @@ class NothingSensitiveIsPublishedTests(unittest.TestCase):
         self.assertEqual(out["ci"]["red"], [{"repo": "ARMOR-A", "wf": "ci.yml", "streak": 1, "since": "2001-12-21T00:00:00Z"}])
         self.assertEqual(out["releases"]["candidates"][0]["tag"], "")
         self.assertEqual(out["parte"], [{"key": "red", "level": "bad", "p": {"list": ["ARMOR-A"]}}])
-        self.assertEqual(set(out), {"schema", "asof", "repos", "read", "ci", "releases", "signatures", "hygiene", "compute", "trend", "parte"})
+        self.assertEqual(set(out), {"schema", "asof", "repos", "read", "ci", "releases", "signatures", "hygiene", "compute", "trend", "parte", "ecosystems", "unpublished", "tags", "events"})
 
     def test_every_text_of_the_report_is_a_fixed_text_of_the_page(self):
         """The report holds the kind of line and its numbers; the words come from the translation table, never from the reading."""

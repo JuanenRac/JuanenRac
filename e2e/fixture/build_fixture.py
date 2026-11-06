@@ -321,7 +321,7 @@ def sentinel_for(entries, eco, activity, history, actions, healthy: bool = False
             record["perm"] = {"sha": healthy or index % 14 == 0, "allowed": healthy or index % 14 == 0}
         repos[entry.name] = record
     read = {"asof": ACTIONS_NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "repos": repos}
-    return sentinel_mod.assemble(read, eco, config, {n: a.signature for n, a in activity.items()}, actions, history, "2001-12-21")
+    return sentinel_mod.assemble(read, eco, config, {n: a.signature for n, a in activity.items()}, actions, history, "2001-12-21", ecosystem_of=eco)
 
 
 def actions_block(entries, history, healthy: bool = False) -> dict:

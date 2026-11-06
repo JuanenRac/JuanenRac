@@ -69,6 +69,17 @@ test.describe("sentinel tab: figures", () => {
     await expect(page.getByTestId("sn-rel-table")).toContainText("no release");
   });
 
+  test("the table by ecosystem adds up to the repositories and the two new cards say so when they are empty", async ({ page }) => {
+    await open(page);
+    const rows = await page.getByTestId("sn-eco-table").locator("tbody tr").evaluateAll((r) => r.map((x) => ({ n: Number(x.querySelectorAll("td")[0].textContent), red: Number(x.querySelectorAll("td")[1].textContent) })));
+    expect(rows.length).toBeGreaterThan(0);
+    expect(rows.reduce((a, r) => a + r.n, 0)).toBe(40);
+    expect(rows.reduce((a, r) => a + r.red, 0)).toBeLessThanOrEqual(8);
+    await expect(page.getByTestId("sn-eco-table").locator("thead th")).toHaveText(["Ecosystem", "Repositories", "Red", "Ready", "Not published"]);
+    await expect(page.getByTestId("sn-unpub-none")).toHaveText("No version is waiting to be published.");
+    await expect(page.getByTestId("sn-ev-none")).toHaveText("No change recorded yet.");
+  });
+
   test("signatures: the six answers add up to the repositories and an invalid one is named", async ({ page }) => {
     await open(page);
     const counts = await page.locator("#sn-sigs li").evaluateAll((items) => items.map((i) => ({ s: i.getAttribute("data-state"), n: Number(i.querySelector("b")!.textContent) })));

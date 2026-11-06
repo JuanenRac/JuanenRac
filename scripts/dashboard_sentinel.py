@@ -44,7 +44,7 @@ SCHEMA = 1
 BAD = ci_rules.RED_CONCLUSIONS             # one criterion for the whole dashboard (see ci_rules.py)
 IGNORED = ci_rules.IGNORED_CONCLUSIONS
 SIGNATURE_STATES = ("verified", "invalid", "unverifiable", "none", "norelease", "unverified")
-SECTIONS = ("ci", "releases", "signatures", "hygiene", "compute", "trend")
+SECTIONS = ("ci", "releases", "signatures", "hygiene", "compute", "trend", "ecosystems", "events")
 DEFAULT_CONFIG: dict = {
     "enabled": True,
     "candidate_days": 2.0,
@@ -56,6 +56,7 @@ DEFAULT_CONFIG: dict = {
     "ruleset_name": "protect-main",
     "read_actions_settings": True,
     "list_max": 40,
+    "events_max": 30,
     "stale_hours": 6,
     "sections": {name: True for name in SECTIONS},
 }
@@ -63,6 +64,9 @@ REPO_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$")
 WORKFLOW_RE = re.compile(r"^[A-Za-z0-9_.-]{1,60}\.ya?ml$")
 TAG_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._+-]{0,39}$")
 TIME_RE = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$")
+ECO_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,29}$")
+EVENT_KINDS = ("red_new", "red_ok", "released")
+VERSION_RE = re.compile(r"^v?(\d+(?:\.\d+){0,5})")
 
 QUERY = """
 query($owner: String!, $cursor: String) {
@@ -107,7 +111,7 @@ def check_config(raw: object) -> tuple[dict, list[str]]:
                 config[key] = value
             else:
                 problems.append(f"sentinel.{key}: needs a number from {low} to {high}")
-    for key, low, high in (("candidate_min_entries", 1, 100), ("red_streak_warn", 1, 100), ("compute_top", 1, 30), ("list_max", 5, 200), ("stale_hours", 1, 168)):
+    for key, low, high in (("candidate_min_entries", 1, 100), ("red_streak_warn", 1, 100), ("compute_top", 1, 30), ("list_max", 5, 200), ("stale_hours", 1, 168), ("events_max", 5, 200)):
         if key in raw:
             value = raw[key]
             if isinstance(value, int) and not isinstance(value, bool) and low <= value <= high:
@@ -211,6 +215,72 @@ def release_candidates(unreleased: Mapping[str, int], published: Mapping[str, st
             continue
         rows.append({"repo": repo, "entries": count, "tag": tags.get(repo, "") if moment else "", "published": _stamp(published.get(repo))})
     return sorted(rows, key=lambda r: (-r["entries"], r["repo"]))
+
+
+def version_key(text: object) -> tuple[int, ...] | None:
+    """The numbers of a version or tag ("v0.8.0.1" -> (0, 8, 0, 1)); None when it does not start with a number. Missing trailing parts count as zero."""
+    found = VERSION_RE.match(str(text or "").strip())
+    if not found:
+        return None
+    parts = [int(p) for p in found.group(1).split(".")]
+    while len(parts) > 1 and parts[-1] == 0:
+        parts.pop()
+    return tuple(parts)
+
+
+def unpublished_versions(versions: Mapping[str, str | None], tags: Mapping[str, str], skip_prefixes: Sequence[str] = ()) -> list[dict]:
+    """Repositories whose manifest declares a newer version than their latest release: a version that was raised and never published. A repository
+    without any release, or with a version that is not numeric, is not listed (nothing was raised over a published version)."""
+    rows = []
+    for repo, version in versions.items():
+        if repo.startswith(tuple(skip_prefixes)):
+            continue
+        tag = tags.get(repo) or ""
+        declared, released = version_key(version), version_key(tag)
+        if declared is None or released is None or declared <= released:
+            continue
+        rows.append({"repo": repo, "version": str(version).strip(), "tag": tag})
+    return sorted(rows, key=lambda r: r["repo"])
+
+
+def ecosystem_table(names: Iterable[str], ecosystem_of: Mapping[str, str], ok: Iterable[str], red: Iterable[Mapping], candidates: Iterable[Mapping],
+                    unpublished: Iterable[Mapping]) -> dict[str, dict]:
+    """{ecosystem: {repos, read, red (repositories with a red workflow), cand, unpub}} from the same lists the rest of the tab uses."""
+    ok = set(ok)
+    red_repos = {r["repo"] for r in red}
+    cand_repos = {c["repo"] for c in candidates}
+    unpub_repos = {u["repo"] for u in unpublished}
+    table: dict[str, dict] = {}
+    for name in sorted(set(names)):
+        eco = str(ecosystem_of.get(name) or "other")
+        row = table.setdefault(eco, {"repos": 0, "read": 0, "red": 0, "cand": 0, "unpub": 0})
+        row["repos"] += 1
+        row["read"] += name in ok
+        row["red"] += name in red_repos
+        row["cand"] += name in cand_repos
+        row["unpub"] += name in unpub_repos
+    return table
+
+
+def new_events(saved: Mapping | None, red: Iterable[Mapping], ok: Iterable[str], tags: Mapping[str, str], at: str | None, limit: int) -> list[dict]:
+    """The feed: what changed since the saved reading (a workflow that turned red or green again, a release that appeared), newest first, the saved ones after.
+    Nothing is invented without a previous reading, and a repository that could not be read this time cannot recover or fail."""
+    if not isinstance(saved, Mapping) or at is None:
+        return []
+    old = [e for e in (saved.get("events") or []) if isinstance(e, Mapping)]
+    found: list[dict] = []
+    ci = saved.get("ci") if isinstance(saved.get("ci"), Mapping) else {}
+    saved_red = ci.get("red") if isinstance(ci.get("red"), list) else []
+    if ci.get("red_total") == len(saved_red):                       # a cut list cannot tell what recovered
+        before = {(r["repo"], r["wf"]) for r in saved_red if isinstance(r, Mapping) and "repo" in r and "wf" in r}
+        now = {(r["repo"], r["wf"]) for r in red}
+        readable = set(ok)
+        found += [{"at": at, "kind": "red_new", "repo": repo, "wf": wf} for repo, wf in sorted(now - before)]
+        found += [{"at": at, "kind": "red_ok", "repo": repo, "wf": wf} for repo, wf in sorted(before - now) if repo in readable]
+    before_tags = saved.get("tags") if isinstance(saved.get("tags"), Mapping) else None
+    if before_tags:
+        found += [{"at": at, "kind": "released", "repo": repo, "tag": tag} for repo, tag in sorted(tags.items()) if tag and before_tags.get(repo) != tag]
+    return (found + old)[:limit]
 
 
 def ruleset_active(rulesets: object, name: str) -> bool | None:
@@ -348,6 +418,36 @@ def clean(doc: Mapping, names: Iterable[str], limit: int = 40) -> dict:
                           "published": _stamp(item.get("published"))})
     out["releases"] = {"days": float(releases["days"]) if isinstance(releases.get("days"), (int, float)) and not isinstance(releases.get("days"), bool) else 0.0,
                        "min_entries": _count(releases.get("min_entries"), 100), "candidates": sorted(cands, key=lambda r: (-r["entries"], r["repo"]))[:limit], "total": max(len(cands), _count(releases.get("total")))}
+    eco_in = doc.get("ecosystems") if isinstance(doc.get("ecosystems"), Mapping) else {}
+    out["ecosystems"] = {eco: {k: _count(row.get(k)) for k in ("repos", "read", "red", "cand", "unpub")}
+                         for eco, row in sorted(eco_in.items()) if isinstance(eco, str) and ECO_RE.match(eco) and isinstance(row, Mapping)}
+    unpub = doc.get("unpublished") if isinstance(doc.get("unpublished"), Mapping) else {}
+    rows = []
+    for item in (unpub.get("rows") or []) if isinstance(unpub.get("rows"), list) else []:
+        if isinstance(item, Mapping) and isinstance(item.get("repo"), str) and item["repo"] in known:
+            version, tag = item.get("version"), item.get("tag")
+            if isinstance(version, str) and TAG_RE.match(version) and isinstance(tag, str) and TAG_RE.match(tag):
+                rows.append({"repo": item["repo"], "version": version, "tag": tag})
+    out["unpublished"] = {"rows": sorted(rows, key=lambda r: r["repo"])[:limit], "total": max(len(rows), _count(unpub.get("total")))}
+    tags_in = doc.get("tags") if isinstance(doc.get("tags"), Mapping) else {}
+    out["tags"] = {repo: tag for repo, tag in sorted(tags_in.items()) if repo in known and isinstance(tag, str) and TAG_RE.match(tag)}
+    events = []
+    for item in (doc.get("events") or []) if isinstance(doc.get("events"), list) else []:
+        if not (isinstance(item, Mapping) and item.get("kind") in EVENT_KINDS and isinstance(item.get("repo"), str) and item["repo"] in known and _stamp(item.get("at"))):
+            continue
+        event = {"at": _stamp(item["at"]), "kind": item["kind"], "repo": item["repo"]}
+        if item["kind"] == "released":
+            tag = item.get("tag")
+            if not (isinstance(tag, str) and TAG_RE.match(tag)):
+                continue
+            event["tag"] = tag
+        else:
+            wf = item.get("wf")
+            if not (isinstance(wf, str) and WORKFLOW_RE.match(wf)):
+                continue
+            event["wf"] = wf
+        events.append(event)
+    out["events"] = events[:200]                 # the length is chosen by `events_max` where the feed is made
     sigs = doc.get("signatures") if isinstance(doc.get("signatures"), Mapping) else {}
     out["signatures"] = {state: _count(sigs.get(state)) for state in SIGNATURE_STATES}
     out["signatures"]["invalid_repos"] = _repo_list(sigs.get("invalid_repos"), known, limit)
@@ -371,7 +471,7 @@ def clean(doc: Mapping, names: Iterable[str], limit: int = 40) -> dict:
     return out
 
 
-PARTE_KEYS = ("head", "all_ok", "red", "cand", "sig", "hyg", "settings", "compute", "unread")
+PARTE_KEYS = ("head", "all_ok", "red", "cand", "unpub", "sig", "hyg", "settings", "compute", "unread")
 LEVELS = ("ok", "info", "warn", "bad")
 
 
@@ -408,6 +508,9 @@ def build_parte(doc: Mapping, config: Mapping) -> list[dict]:
         lines.append({"key": "red", "level": "bad" if persistent else "warn", "p": {"list": sorted(set(red)), "n": len(red)}})
     if cands:
         lines.append({"key": "cand", "level": "warn", "p": {"list": cands, "n": len(cands)}})
+    unpub = [u["repo"] for u in doc["unpublished"]["rows"]] if sections["releases"] else []
+    if unpub:
+        lines.append({"key": "unpub", "level": "warn", "p": {"list": unpub, "n": len(unpub)}})
     if gaps:
         lines.append({"key": "hyg", "level": "warn", "p": {"list": gaps, "n": len(gaps)}})
     if sections["hygiene"] and hygiene["settings_checked"] == 0 and doc["read"] > 0:
@@ -443,8 +546,10 @@ def trend_of(history: Sequence[Mapping], today: str, current: Mapping | None, da
 
 
 def assemble(read: Mapping | None, names: Iterable[str], config: Mapping, signatures: Mapping[str, str] | None, actions_block: Mapping | None,
-             history: Sequence[Mapping], today: str) -> dict | None:
-    """The document from a reading. None when there is no reading (the page then uses the last saved document)."""
+             history: Sequence[Mapping], today: str, ecosystem_of: Mapping[str, str] | None = None, versions: Mapping[str, str | None] | None = None,
+             saved: Mapping | None = None) -> dict | None:
+    """The document from a reading. None when there is no reading (the page then uses the last saved document). `ecosystem_of` (repository -> ecosystem) feeds the
+    table by ecosystem, `versions` (repository -> version declared by its manifest) the versions raised without a release and `saved` (the previous document) the feed."""
     if not read:
         return None
     names = sorted(set(names))
@@ -481,7 +586,11 @@ def assemble(read: Mapping | None, names: Iterable[str], config: Mapping, signat
     rows.sort(key=lambda r: (-r["min24"], -r["min7"], r["repo"]))
     total24 = sum(r["min24"] for r in rows)
     compute = {"total24": total24, "total7": sum(r["min7"] for r in rows), "top": rows[: config["compute_top"]], "warn": total24 > config["compute_warn_minutes_24h"]}
-    doc = {"asof": read["asof"], "repos": len(names), "read": len(ok),
+    tags = {n: r["tag"] for n, r in ok.items() if r.get("tag")}
+    unpublished = unpublished_versions({n: v for n, v in (versions or {}).items() if n in ok}, tags, config["skip_candidate_prefixes"])
+    ecosystems = ecosystem_table(names, ecosystem_of or {}, ok, red, candidates, unpublished)
+    events = new_events(saved, red, ok, tags, _stamp(read["asof"]), config["events_max"])
+    doc = {"asof": read["asof"], "repos": len(names), "read": len(ok), "ecosystems": ecosystems, "unpublished": {"rows": unpublished}, "tags": tags, "events": events,
            "ci": {"checked": checked, "red": red},
            "releases": {"days": config["candidate_days"], "min_entries": config["candidate_min_entries"], "candidates": candidates},
            "signatures": sig, "hygiene": hygiene, "compute": compute, "trend": {}, "parte": []}
