@@ -55,18 +55,20 @@ def panel_html() -> str:
                 '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-rel-title" id="sn-rel-wrap"><table class="ins-table sn-table" id="sn-rel-table" data-testid="sn-rel-table"><thead><tr><th scope="col" data-i18n="sn_col_repo">Repository</th></tr></thead></table></div>')
         # hygiene
         + _card("hyg", "sn_hyg_title", body='<ul class="sn-hyg" id="sn-hyg" data-testid="sn-hyg"></ul>')
+        # by ecosystem
+        + _card("eco", "sn_eco_title", body='<p class="no-data" id="sn-eco-none" data-testid="sn-eco-none" hidden></p>'
+                '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-eco-title" id="sn-eco-wrap" style="max-height: 160px"><table class="ins-table sn-table" id="sn-eco-table" data-testid="sn-eco-table"><thead><tr><th scope="col" data-i18n="sn_col_eco">Ecosystem</th></tr></thead></table></div>')
         # compute
         + _card("cmp", "sn_cmp_title", body='<p class="muted sn-small" id="sn-cmp-total" data-testid="sn-cmp-total"></p><p class="no-data" id="sn-cmp-none" hidden></p><ul class="ac-bars" id="sn-cmp" data-testid="sn-cmp"></ul>')
-        # by ecosystem
-        + _card("eco", "sn_eco_title", "sn-wide", body='<p class="no-data" id="sn-eco-none" data-testid="sn-eco-none" hidden></p>'
-                '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-eco-title" id="sn-eco-wrap"><table class="ins-table sn-table" id="sn-eco-table" data-testid="sn-eco-table"><thead><tr><th scope="col" data-i18n="sn_col_eco">Ecosystem</th></tr></thead></table></div>')
-        # versions raised and not published
+        # trend
+        + _card("trend", "sn_trend_title", "sn-wide", body='<p class="no-data" id="sn-trend-none" data-testid="sn-trend-none" hidden></p><ul class="sn-trend" id="sn-trend" data-testid="sn-trend"></ul>')
+        # versions raised and not published, and the feed of changes: two small cards stacked in one grid cell
+        + '<div class="sn-stack">'
         + _card("unpub", "sn_unpub_title", body='<p class="muted sn-small" data-i18n="sn_unpub_rule">' + esc(EN["sn_unpub_rule"]) + '</p><p class="no-data" id="sn-unpub-none" data-testid="sn-unpub-none" hidden></p>'
                 '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-unpub-title" id="sn-unpub-wrap"><table class="ins-table sn-table" id="sn-unpub-table" data-testid="sn-unpub-table"><thead><tr><th scope="col" data-i18n="sn_col_repo">Repository</th></tr></thead></table></div>')
         # feed of changes
-        + _card("ev", "sn_ev_title", "sn-wide", body='<p class="no-data" id="sn-ev-none" data-testid="sn-ev-none" hidden></p><ul class="sn-events" id="sn-events" data-testid="sn-events"></ul>')
-        # trend
-        + _card("trend", "sn_trend_title", "sn-wide", body='<p class="no-data" id="sn-trend-none" data-testid="sn-trend-none" hidden></p><ul class="sn-trend" id="sn-trend" data-testid="sn-trend"></ul>')
+        + _card("ev", "sn_ev_title", body='<p class="no-data" id="sn-ev-none" data-testid="sn-ev-none" hidden></p><ul class="sn-events" id="sn-events" data-testid="sn-events"></ul>')
+        + '</div>'
         + '</div>'
         '<div class="ac-foot sn-foot"><details class="ts-help" data-testid="sn-help">'
         f'<summary {_t("sn_help_summary")}</summary><p id="sn-help-body" data-testid="sn-help-body"></p></details>'
@@ -118,10 +120,26 @@ CSS = r"""
   .sn-events { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: 12.5px; max-height: 132px; overflow: auto; }
   .sn-events li { display: flex; gap: 8px; align-items: baseline; min-width: 0; overflow-wrap: anywhere; }
   .sn-events time { flex: 0 0 auto; min-width: 74px; font-size: 11.5px; color: var(--dim); font-variant-numeric: tabular-nums; }
+  .sn-grid { grid-auto-flow: dense; }
   .sn-foot { margin-top: 0; }
   @media (prefers-reduced-motion: no-preference) {
     .sn-spark polyline { stroke-dasharray: 400; stroke-dashoffset: 400; animation: sn-draw .8s ease forwards; }
     @keyframes sn-draw { to { stroke-dashoffset: 0; } }
+  }
+  .sn-stack { display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 8px; min-width: 0; }
+  .sn-stack .sn-card { overflow: hidden; }
+  .sn-stack .sn-scroll { max-height: 46px; }
+  .sn-stack .sn-events { max-height: 52px; }
+  #sn-eco-table th { white-space: normal; letter-spacing: 0; }
+  /* a wide screen: twelve columns, so that the figures fit in three rows without scrolling the page */
+  @media (min-width: 1600px) {
+    .sn-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+    .sn-grid > .sn-card { grid-column: span 4; }
+    .sn-grid > .sn-wide { grid-column: span 8; }
+    .sn-grid > [data-testid="sn-card-trend"], .sn-grid > [data-testid="sn-card-cmp"], .sn-grid > [data-testid="sn-card-eco"], .sn-grid > .sn-stack { grid-column: span 3; }
+    .sn-grid [data-testid="sn-card-trend"] .sn-trend { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+    .sn-grid [data-testid="sn-card-trend"] .sn-trend li { grid-template-columns: 92px minmax(0, 1fr) 40px; }
+    #panel-sentinel #sn-eco-table th, #panel-sentinel #sn-eco-table td { padding: 0 3px; font-size: 11px; }
   }
   @media (max-width: 1250px) { .sn-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 1100px) { .sn-grid { grid-template-columns: minmax(0, 1fr); } .sn-wide { grid-column: auto; } .sn-trend { grid-template-columns: minmax(0, 1fr); } }
