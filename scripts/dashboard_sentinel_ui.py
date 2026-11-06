@@ -59,8 +59,6 @@ def panel_html() -> str:
         # by ecosystem
         + _card("eco", "sn_eco_title", body='<p class="no-data" id="sn-eco-none" data-testid="sn-eco-none" hidden></p>'
                 '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-eco-title" id="sn-eco-wrap" style="max-height: 160px"><table class="ins-table sn-table" id="sn-eco-table" data-testid="sn-eco-table"><thead><tr><th scope="col" data-i18n="sn_col_eco">Ecosystem</th></tr></thead></table></div>')
-        # presence of a signature and of a build attestation
-        + dashboard_presence_ui.card()
         # compute
         + _card("cmp", "sn_cmp_title", body='<p class="muted sn-small" id="sn-cmp-total" data-testid="sn-cmp-total"></p><p class="no-data" id="sn-cmp-none" hidden></p><ul class="ac-bars" id="sn-cmp" data-testid="sn-cmp"></ul>')
         # trend
@@ -72,6 +70,8 @@ def panel_html() -> str:
         # feed of changes
         + _card("ev", "sn_ev_title", body='<p class="no-data" id="sn-ev-none" data-testid="sn-ev-none" hidden></p><ul class="sn-events" id="sn-events" data-testid="sn-events"></ul>')
         + '</div>'
+        # presence of a signature and of a build attestation, after the cards seen at a glance
+        + dashboard_presence_ui.card()
         + '</div>'
         '<div class="ac-foot sn-foot"><details class="ts-help" data-testid="sn-help">'
         f'<summary {_t("sn_help_summary")}</summary><p id="sn-help-body" data-testid="sn-help-body"></p></details>'

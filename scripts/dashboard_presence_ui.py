@@ -35,6 +35,11 @@ CSS = r"""
   .pr-scroll { max-height: 190px; }
   .pr-st { display: inline-flex; align-items: center; gap: 5px; }
   .pr-st small { font-size: 11px; opacity: 0.8; }
+  @media print {
+    .pr-scroll { max-height: none; overflow: visible; }
+    #panel-sentinel #pr-card .sn-table { width: 100%; table-layout: fixed; }
+    #panel-sentinel #pr-card .sn-table th, #panel-sentinel #pr-card .sn-table td { white-space: normal; overflow-wrap: anywhere; height: auto; }
+  }
 """
 
 JS = r"""

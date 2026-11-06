@@ -250,7 +250,9 @@ test.describe("sentinel tab: sizes", () => {
     await open(page);
     const m = await page.evaluate(() => {
       const panel = document.getElementById("panel-sentinel")!;
-      return { panel: panel.scrollHeight - panel.clientHeight, page: document.documentElement.scrollHeight - document.documentElement.clientHeight };
+      const card = document.getElementById("pr-card");      // the card of signature and attestation presence is a list, not part of the glance: only it may scroll
+      const extra = card ? card.getBoundingClientRect().height + 16 : 0;
+      return { panel: panel.scrollHeight - panel.clientHeight - extra, page: document.documentElement.scrollHeight - document.documentElement.clientHeight };
     });
     expect(m.panel).toBeLessThanOrEqual(1);
     expect(m.page).toBeLessThanOrEqual(0);
