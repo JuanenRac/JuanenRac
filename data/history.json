@@ -2639,11 +2639,11 @@
   },
   {
    "actions": {
-    "fail": 238,
-    "min": 6938,
-    "ok": 3340,
-    "other": 45,
-    "runs": 3623
+    "fail": 240,
+    "min": 7007,
+    "ok": 3382,
+    "other": 48,
+    "runs": 3670
    },
    "areas": {
     "armor": {
@@ -2657,11 +2657,11 @@
      "tests": 95
     },
     "eh3d": {
-     "ci": 97,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
-     "releases": 87,
+     "releases": 100,
      "simulation": 0,
      "software": 13,
      "tests": 90
@@ -2690,7 +2690,7 @@
    "date": "2026-11-06",
    "progress": {
     "armor": 66,
-    "eh3d": 33,
+    "eh3d": 34,
     "hydra-umc": 55,
     "urtc": 52
    },
@@ -3133,7 +3133,7 @@
     ],
     "HYDRA-UMC-TWIN": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "HYDRA-UMC-UPDATER": [
      2,
@@ -3211,12 +3211,12 @@
    "sentinel": {
     "cand": 12,
     "gaps": 0,
-    "min": 6938,
-    "red": 2
+    "min": 7007,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 422,
-    "ARMOR-COMMON": 311,
+    "ARMOR-COMMON": 324,
     "ARMOR-DOCS": 265,
     "ARMOR-HARDWARE": 22,
     "ARMOR-IOS-CONTROL": 270,
@@ -3270,7 +3270,7 @@
     "HYDRA-UMC-BRIDGE-OPENPNP": 272,
     "HYDRA-UMC-BRIDGE-PRINTER3D": 164,
     "HYDRA-UMC-BRIDGE-ROS2": 119,
-    "HYDRA-UMC-BRIDGE-UAV": 201,
+    "HYDRA-UMC-BRIDGE-UAV": 212,
     "HYDRA-UMC-COGNITIVE-NODE": 206,
     "HYDRA-UMC-CONNECTOR-HUB": 264,
     "HYDRA-UMC-DASHBOARD-AI": 261,
