@@ -956,7 +956,7 @@ WAVE_ITEMS = (
     # ---- the state after the latest round ----
     _item("The safety zones publish a fault event when their state changes", "HYDRA-UMC-SAFETY-ZONES + HYDRA-UMC-SERVER + HYDRA-UMC-DOCS", "Robotics & Simulation", "Functional", "Local test", "Normal",
           "The safety zones publish a retained fault event on the broker when the safety state changes (inhibited as a warning, fault as an error, safe stop as critical, ready clears it), with the broker identity read from files, only on changes and with a minimum interval; it is off by default, only observes, and a broker that is down never changes or delays the verdict. The ops agent also hands the server the before and after of live HTTP and systemd incidents, not only manifest ones.",
-          "Tested with a fake broker; documented. Open: a run against a real broker and the server, a switch in Studio, an emitter on the controller firmware and a JSON schema of the event in the SDK.",
+          "Tested with a fake broker; documented. The JSON schema of the event is now a contract of the SDK and the server tells the kind of fingerprint apart. Open: a run against a real broker and the server, a switch in Studio and an emitter on the controller firmware.",
           status="In progress"),
 )
 
@@ -1046,6 +1046,23 @@ RECENT_ITEMS = (
     _item("The industrial gateway behind the common identity, then MQTT and OPC UA", "HYDRA-UMC-GATEWAY-INDUSTRIAL + HYDRA-UMC-HIL-BRIDGE", "External Automation Bridges", "Functional", "Local test", "Normal",
           "The HTTP side of the gateway asks for the server's token (readers read, operators and administrators send commands); the broker credentials and the OPC UA side still use their own accounts.",
           "MQTT credentials derive from the common identity through the broker rules and OPC UA follows, each with tests; a field device that cannot sign in keeps its own account.", status="In progress"),
+    # ---- the state after the latest overnight round ----
+    _item("The SDK carries thirty-one contracts, with the fault event and the incident evidence bundle", "HYDRA-UMC-SDK + HYDRA-UMC-SERVER + HYDRA-UMC-OPS-AGENT", "SDK & Server", "Functional", "Local test", "Normal",
+          "The fault event and the evidence bundle of an incident are closed contracts of the SDK with valid and invalid vectors; the server accepts the fault event, tells the kind of fingerprint apart and relays a trajectory check, and the ops agent can write a redacted, sealed evidence bundle (off by default).",
+          "Delivered: the SDK tests, the contract checks and the server tests pass, and the readmes now count the contracts that exist. Open: a run of the emitter, the server and the ops agent together, and every consumer pinned to the latest SDK tag.",
+          status="In progress"),
+    _item("The trajectory check says when the orientation was not checked", "HYDRA-UMC-SEMANTIC-PLANNER + HYDRA-UMC-PHYSICS-REPLICA + HYDRA-UMC-SERVER + HYDRA-UMC-STUDIO", "Vision & AI", "Functional", "Local test", "Normal",
+          "The replica solves position only, so a check that asks for an orientation returns an unchecked verdict instead of a pass; the server relays the check and Studio shows the verdict, with a ledger entry in the map panel.",
+          "Delivered in code with tests on each side. Open: orientation in the replica itself, and the same panel in the Suite.",
+          status="In progress"),
+    _item("A signed, published package of the Studio kit that Studio can consume", "HYDRA-UMC-STUDIO-KIT + HYDRA-UMC-STUDIO", "Applications", "Scaffolding", "Local test", "Normal",
+          "The kit is built in Actions as a tarball and published with its checksum and signature, so that Studio can depend on a released file instead of a git address.",
+          "Delivered: the first signed tarball of the kit is published. Open: Studio consuming it, and the migration of its panels one by one.",
+          status="In progress"),
+    _item("Mobile control apps: a connection manager, a queue per robot and pairing by link", "HYDRA-UMC-ANDROID-CONTROL + HYDRA-UMC-IOS-CONTROL + HYDRA-UMC-DSI + HYDRA-UMC-WATCH", "Applications", "Functional", "Local test", "Normal",
+          "The Android app keeps its connections in one manager with a command queue per robot and cancellation of jogs; the shared Dart package reads a pairing link, and the iOS and DSI apps and the watch follow the Android app.",
+          "Delivered: the apps and the shared package pass their tests and the Android and watch packages are published. Open: trying it on a phone and a watch, and one rule for accepting a pairing link without a fingerprint.",
+          status="In progress"),
 )
 
 SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS + RECENT_ITEMS

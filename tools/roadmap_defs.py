@@ -166,6 +166,9 @@ URTC_ITEMS = (
     _item("The shell and the batch firmware builds give identical images", "URTC", "Firmware", "Established", "Local test", "Normal",
           "The Linux script and the Windows batch file linked the objects in a different order, so the images differed. Both now sort the objects the same way, and a manual workflow builds with each and compares.",
           "Delivered: the comparison in Actions reports identical images for the four pieces. Not run on a board.", status="Done"),
+    _item("The web studio and the desktop tools are tested to about ninety percent of their branches", "URTC-WEB-STUDIO + URTC-TESTER + URTC-FLASHER", "Ecosystem Operations", "Established", "Browser", "Normal",
+          "The logic of the keep-alive, the sidebar and the other pure parts of the web studio got their own tests, the coverage of the tester and the flasher is measured in Actions, and the thresholds were raised to what is measured.",
+          "Delivered: the measured coverage of the web studio is above ninety percent of its branches and the thresholds hold it there. Nothing here talks to a real adapter or board.", status="Done"),
 )
 
 URTC_STATUS_UPDATES = {
@@ -391,15 +394,30 @@ ARMOR_ITEMS = (
     _item("Pair a node by a QR code shown in Studio and scanned by the phones", "ARMOR-STUDIO + ARMOR-ANDROID-CONTROL + ARMOR-IOS-CONTROL + ARMOR-COMMON", "Apps & Panels", "Functional", "Local test", "Normal",
           "The form that adds a node in Studio draws a QR code with the name of the node and the address of the server (no password, token or certificate) and reads one from the camera or a picture; the Bluetooth setup in the Android and iOS apps shows and scans the same text, which the shared library also writes and reads. The texts are in the eight languages.",
           "Tested in each app, including drawing a code and reading it back; the Android app builds in Actions. Open: scanning with the camera of a real phone and adopting a real node with it.",
-          status="In progress", hardware="Phone / panel"),
+          status="In progress", hardware="Phone / panel", blocked_by="Studio and the Android app show and scan it; the iOS camera scan is not written yet and no real phone has scanned one"),
     _item("The wall panel names itself to the voice gateway", "ARMOR-NODE-HMI + ARMOR-VOICE-AI + ARMOR-SERVER", "Apps & Panels", "Functional", "Local test", "Normal",
           "The touch panel sends a header that says which panel is speaking, in the voice turn in two request forms, and the gateway reads it and returns it with the command and the panic check, so a command can be tied to the panel that heard it.",
           "Tested on the host and the firmware builds in Actions. Open: a real panel talking to a real gateway.",
           status="In progress", hardware="Phone / panel"),
+    # ---- the state after the latest overnight round ----
+    _item("The server and the Android app use the types generated from the shared contracts", "ARMOR-COMMON + ARMOR-SERVER + ARMOR-ANDROID-CONTROL", "Core: Server, Common, Studio", "Functional", "Local test", "Normal",
+          "The hand-written contract and alarm types of the server and the data classes of the Android app are replaced by the ones the shared library generates, so a change of a contract reaches every consumer from one place; the nodes already publish the kind of each message.",
+          "Delivered for the server and the Android app, with the suites of both passing. Open: the tables of the nodes generated the same way, and the remaining rejection messages in the clients.",
+          status="In progress"),
+    _item("Record the traffic of the nodes and replay it in the simulator", "ARMOR-SERVER + ARMOR-STUDIO + ARMOR-SIMULATOR", "Core: Server, Common, Studio", "Functional", "Simulator", "Normal",
+          "The server can keep an optional copy of the traffic of the nodes, switched on in the Security panel of Studio and off by default, and the simulator plays such a recording back.",
+          "Delivered in code with tests on each side. Open: a recording made on the CM5 with real nodes and played back in the simulator.",
+          status="In progress"),
+    _item("The vision service reads the crossing lines of each camera from the AI context", "ARMOR-VISION + ARMOR-SERVER-AI", "AI & Voice", "Functional", "Local test", "Normal",
+          "The lines drawn over each camera in Studio reach the vision service in the context of the AI service, one set per camera, and the service uses them with its zones and masks.",
+          "Delivered: the vision tests pass with lines per camera. Not run on a camera or on the Jetson.", status="Done"),
+    _item("The figures of the readmes are read from the repositories", "ARMOR-DOCS + ARMOR-VISION + ARMOR-VOICE-AI + ARMOR-NODE-ALARM", "Operations & Docs", "Functional", "Local test", "Low",
+          "The counts of tests and host programs in the readmes are markers that the generator fills from the repositories, so they cannot fall behind; the vision, voice and alarm readmes were moved to markers first.",
+          "Delivered for those three; the other readmes still carry typed counts that a check should catch.", status="In progress"),
 )
 
 ARMOR_STATUS_UPDATES = {
-    "Pair a node by a QR code shown in Studio and scanned by the phones": _status("In progress"),
+    "Pair a node by a QR code shown in Studio and scanned by the phones": _status("In progress", "Studio and the Android app show and scan it; the iOS camera scan is not written yet and no real phone has scanned one"),
     "The wall panel names itself to the voice gateway": _status("In progress"),
     "Sessions that last and a design that cannot be lost": _status("Done"),
     "Alarms that say what happened": _status("Done"),
