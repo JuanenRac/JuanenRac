@@ -104,7 +104,7 @@ URTC_ITEMS = (
           "A manual update button (checking at start-up is off by default) that downloads after a click, verifies the digest and the Ed25519 signature with the pinned key, installs without administrator rights, keeps the two previous versions and rolls back if the self-test fails.",
           "Tests against a fake release server: a bad digest, signature, key or host is refused, a network cut leaves the old version, and the button is disabled while a CAN operation runs. The update dialog and the check for updates button exist in the Flasher and the Tester; the install with rollback is the open part.", status="In progress"),
     _item("Publish a production release and retire the bundled older firmware copy", "URTC + URTC-FLASHER + URTC-WEB-STUDIO", "Ecosystem Operations", "Established", "Documentation", "Normal",
-          "Firmware 0.4.2 is published as a signed release with its manifest and digests, and the Flasher and the web studio still keep an older packaged copy that works offline. No board has run the 0.4.2 image.",
+          "A firmware release is published signed with its manifest and digests, and the Flasher and the web studio now package the images of that release for offline use instead of older copies (a check refuses stale ones). No board has run the image.",
           "The image is flashed and run on a populated board, the result is written down, and the packaged copy is replaced by the release assets.",
           status="Blocked", hardware="STM32 / PCB", blocked_by="Needs a bench-tested firmware to sign as production"),
     # ---- the state after the latest round ----
@@ -147,8 +147,8 @@ URTC_ITEMS = (
     # ---- the state after the signing and hardening rounds ----
     _item("Official signed firmware: built in Actions, signed on the owner's machine, published", "URTC + URTC-SMART-RACK + URTC-VISION-TOOL + URTC-FLASHER + URTC-WEB-STUDIO", "Ecosystem Operations", "Functional", "Local test", "High",
           "The images are compiled in Actions from the exact commit, fetched and signed locally with the release key, and published with a digest and an Ed25519 record per image; an official release without those files is refused and a bench set can go out as a pre-release.",
-          "The signed set is published and flashed on a populated board, and the result is written down. The fetch, the signing and the publishing checks are tested on the host with a throw-away key.",
-          status="Blocked", hardware="STM32 / PCB", blocked_by="Needs a bench-tested firmware and a populated board before it is signed as official"),
+          "The signed set is published and flashed on a populated board, and the result is written down. The fetch, the signing and the publishing checks are tested on the host with a throw-away key. The first set signed with the release key is published, and both desktop tools and the web studio accept it (an image with a valid signature record and no shared-secret record is taken; an official image without one is refused); no board has run it.",
+          status="Blocked", hardware="STM32 / PCB", blocked_by="Published and signed, but never flashed on a populated board; needs the first populated board"),
     _item("Tool-head serial number written by a signed CAN command", "URTC + URTC-COMMON + URTC-FLASHER", "Firmware", "Functional", "Host harness", "Normal",
           "The serial that selects one head among several is programmed by a signed command that names the head, counts upward and needs a key from the trust table; the record survives the recycling of the metadata page.",
           "Several heads on a bench are programmed, addressed one at a time and refuse a replayed command. The specification, the vectors and the host tests exist.",
@@ -162,6 +162,10 @@ URTC_ITEMS = (
     _item("Health information frame: protocol version, reset cause and uptime", "URTC + URTC-COMMON", "Firmware", "Functional", "Host harness", "Normal",
           "A second health frame carries the protocol version, the cause of the last reset, the firmware version and the uptime; the specification, the tables and the vectors were regenerated.",
           "Delivered: the layer test and the send-every-ten-frames test pass on the host. Not read from a board.", status="Done"),
+    # ---- the state after the latest round ----
+    _item("The shell and the batch firmware builds give identical images", "URTC", "Firmware", "Established", "Local test", "Normal",
+          "The Linux script and the Windows batch file linked the objects in a different order, so the images differed. Both now sort the objects the same way, and a manual workflow builds with each and compares.",
+          "Delivered: the comparison in Actions reports identical images for the four pieces. Not run on a board.", status="Done"),
 )
 
 URTC_STATUS_UPDATES = {
@@ -178,7 +182,8 @@ URTC_STATUS_UPDATES = {
     "Verify Ed25519 image signatures in the STM32 bootloaders: key table, signed counter, the master confirms the slave": _status("Blocked", "Needs a populated board to run the bench test; the software and host tests are done"),
     "Shared repository tools as one versioned set (URTC-DEVTOOLS)": _status("In progress"),
     "Run the nightly comparison of every URTC repository over time": _status("In progress"),
-    "Official signed firmware: built in Actions, signed on the owner's machine, published": _status("Blocked", "Needs a bench-tested firmware and a populated board before it is signed as official"),
+    "Official signed firmware: built in Actions, signed on the owner's machine, published": _status("Blocked", "Published and signed, but never flashed on a populated board; needs the first populated board"),
+    "The shell and the batch firmware builds give identical images": _status("Done"),
     "Tool-head serial number written by a signed CAN command": _status("Blocked", "Needs several tool heads on a bench"),
     "No heavy local build: firmware and installers are built in Actions": _status("Done"),
     "Dependency updates and code scanning on the URTC repositories": _status("Done"),
@@ -382,9 +387,20 @@ ARMOR_ITEMS = (
     _item("Dependency updates and code scanning, with the alerts closed", "ARMOR-SERVER + ARMOR-NODE-RADAR + ARMOR-STUDIO + ARMOR-DEVOPS", "Operations & Docs", "Established", "Local test", "Normal",
           "Weekly grouped dependency updates without automatic merging and weekly code scanning with the findings as warnings.",
           "Delivered: the alerts found in the code and in the workflows were fixed, and builds use the exact commit that launched them.", status="Done"),
+    # ---- the state after the latest round ----
+    _item("Pair a node by a QR code shown in Studio and scanned by the phones", "ARMOR-STUDIO + ARMOR-ANDROID-CONTROL + ARMOR-IOS-CONTROL + ARMOR-COMMON", "Apps & Panels", "Functional", "Local test", "Normal",
+          "The form that adds a node in Studio draws a QR code with the name of the node and the address of the server (no password, token or certificate) and reads one from the camera or a picture; the Bluetooth setup in the Android and iOS apps shows and scans the same text, which the shared library also writes and reads. The texts are in the eight languages.",
+          "Tested in each app, including drawing a code and reading it back; the Android app builds in Actions. Open: scanning with the camera of a real phone and adopting a real node with it.",
+          status="In progress", hardware="Phone / panel"),
+    _item("The wall panel names itself to the voice gateway", "ARMOR-NODE-HMI + ARMOR-VOICE-AI + ARMOR-SERVER", "Apps & Panels", "Functional", "Local test", "Normal",
+          "The touch panel sends a header that says which panel is speaking, in the voice turn in two request forms, and the gateway reads it and returns it with the command and the panic check, so a command can be tied to the panel that heard it.",
+          "Tested on the host and the firmware builds in Actions. Open: a real panel talking to a real gateway.",
+          status="In progress", hardware="Phone / panel"),
 )
 
 ARMOR_STATUS_UPDATES = {
+    "Pair a node by a QR code shown in Studio and scanned by the phones": _status("In progress"),
+    "The wall panel names itself to the voice gateway": _status("In progress"),
     "Sessions that last and a design that cannot be lost": _status("Done"),
     "Alarms that say what happened": _status("Done"),
     "Orders for the network node": _status("Done"),

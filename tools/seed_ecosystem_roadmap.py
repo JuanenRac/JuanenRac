@@ -864,8 +864,8 @@ WAVE_ITEMS = (
           "The host tests cover the update and verification paths of the bootloaders, and the nightly bench starts the stack and runs a scripted session."),
     # ---- wave 3: signed packages ----
     _item("Signed packages for every CM5 component", "HYDRA-UMC-UPDATER + HYDRA-UMC-OS + HYDRA-UMC-SERVER + HYDRA-UMC-STUDIO", "Platform Foundation", "Scaffolding", "Local test", "High",
-          "The release key exists; each component should be published as an archive with a checksum and a detached Ed25519 signature, and the update manifest signed instead of carrying a SHA-256 only.",
-          "A component is packaged, signed and verified by the updater with the pinned key; an altered archive, a wrong key and a downgrade are refused."),
+          "The release key exists; each component should be published as an archive with a checksum and a detached Ed25519 signature, and the update manifest signed instead of carrying a SHA-256 only. The packaging tool now gives identical bytes from the same commit (tested) and a workflow builds the archives in Actions; the update manifest accepts an optional signature, key id, minimum bootloader and target.",
+          "A component is packaged, signed and verified by the updater with the pinned key; an altered archive, a wrong key and a downgrade are refused. Not done yet: publishing the signed archives with each release and installing one on the CM5 through the updater."),
     # ---- wave 4: the CM5 update agent and security ----
     _item("Maintenance agent and Updates panel for the CM5", "HYDRA-UMC-OS + HYDRA-UMC-SERVER + HYDRA-UMC-STUDIO + HYDRA-UMC-SUITE", "Platform Foundation", "Scaffolding", "Local test", "High",
           "A privileged helper on the CM5 that installs signed packages, with routes in the server and an Updates panel in Studio, release notes first and a rollback that has been rehearsed.",
@@ -914,9 +914,9 @@ WAVE_ITEMS = (
           "A health frame sent by a board, read by the server and shown in Studio.",
           status="Blocked", hardware="MCU", blocked_by="Needs a populated controller board"),
     _item("Emergency stop path, software limits and safety interlocks", "HYDRA-UMC + HYDRA-UMC-BRIDGE-CNC + HYDRA-UMC-BRIDGE-LASER + HYDRA-UMC-SAFETY-ZONES", "Robotics & Simulation", "Scaffolding", "Safety validation", "Critical",
-          "The firmware repository states that the emergency stop, the software limits and the interlocks are not built, so nothing may rely on them; the global stop reaches the server state only.",
-          "A safety validation record for each path with an independent reviewer; nothing is armed by software alone.",
-          status="Blocked", hardware="Robot/actuator", blocked_by="Not written and never validated; needs a populated board and an independent safety review"),
+          "The controller firmware now has, in software and tested on the host only, a stop category per axis (immediate cut of the driver enable by default, set in the machine configuration), a normally-closed stop input with debounce and a stop frame on the CAN bus; the first of the two that fires latches. The global stop still reaches the server state; the limits and the interlocks are not built, so nothing may rely on any of it.",
+          "A safety validation record for each path with an independent reviewer; nothing is armed by software alone. Nothing here has run on a populated board.",
+          status="Blocked", hardware="Robot/actuator", blocked_by="Written in software and tested on the host only; needs a populated board and an independent safety review"),
     _item("Real six-axis motion generation on the controller boards", "HYDRA-UMC", "Robotics & Simulation", "Scaffolding", "MCU", "High",
           "The README describes the design; real six-axis motion and S-curve profiles are not written, and the H745 CM7 program is a smoke-test stub.",
           "Motion measured on a board with the firmware version and the measured values recorded.",
@@ -951,8 +951,13 @@ WAVE_ITEMS = (
           "Delivered: the release package is signed with the project's own key and the loop no longer repeats the sign-in.",
           status="Done"),
     _item("Share one updater core among the four updaters", "ELECTRO-HOBBY-3D-UPDATER + HYDRA-UMC-UPDATER + URTC-UPDATER + ARMOR-UPDATER", "Platform Foundation", "Established", "Local test", "Low",
-          "Four updaters of similar size keep their own translations, catalogue and git code; one core with a catalogue per ecosystem would remove the copies.",
-          "One core used by the four, with each one's own tests passing unchanged. The updater is used daily, so the risk is high."),
+          "Four updaters of similar size keep their own translations, catalogue and git code; one core with a catalogue per ecosystem would remove the copies. The first step is in: the names a family uses (user agent, environment variables, hidden files, state folder, manifest file) come from one profile class, the same file in three of the updaters with a test that pins its digest.",
+          "One core used by the four, with each one's own tests passing unchanged. The updater is used daily, so the risk is high. The fourth updater is looked after separately and the rest of the core is not moved yet."),
+    # ---- the state after the latest round ----
+    _item("The safety zones publish a fault event when their state changes", "HYDRA-UMC-SAFETY-ZONES + HYDRA-UMC-SERVER + HYDRA-UMC-DOCS", "Robotics & Simulation", "Functional", "Local test", "Normal",
+          "The safety zones publish a retained fault event on the broker when the safety state changes (inhibited as a warning, fault as an error, safe stop as critical, ready clears it), with the broker identity read from files, only on changes and with a minimum interval; it is off by default, only observes, and a broker that is down never changes or delays the verdict. The ops agent also hands the server the before and after of live HTTP and systemd incidents, not only manifest ones.",
+          "Tested with a fake broker; documented. Open: a run against a real broker and the server, a switch in Studio, an emitter on the controller firmware and a JSON schema of the event in the SDK.",
+          status="In progress"),
 )
 
 # The state after the latest round of safety and installation decisions. Everything here is tested on a computer (or against fakes); none of it has met a physical machine.
@@ -1067,6 +1072,10 @@ HYDRA_STATUS_UPDATES = {
     "Validate the legged-robot bridge against a real platform": _status("Blocked", "Needs a real legged robot"),
     "Validate zone geometry and calibration on a physical cell": _status("Blocked", "Needs a physical cell and an independent reviewer"),
     "Bench-test the laser interlock chain": _status("Blocked", "Needs a laser machine with its interlocks and an independent reviewer"),
+    "Emergency stop path, software limits and safety interlocks": _status("Blocked", "Written in software and tested on the host only; needs a populated board and an independent safety review"),
+    "Signed packages for every CM5 component": _status("In progress"),
+    "Share one updater core among the four updaters": _status("In progress"),
+    "The safety zones publish a fault event when their state changes": _status("In progress"),
 }
 
 HYDRA_RENAMES: dict = {
