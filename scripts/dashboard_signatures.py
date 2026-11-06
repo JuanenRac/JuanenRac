@@ -319,10 +319,13 @@ def load_cache(path: Path = CACHE_PATH) -> dict:
     return raw if isinstance(raw, dict) and raw.get("schema") == SCHEMA and isinstance(raw.get("signatures"), dict) else {}
 
 
-def save_cache(path: Path, signatures: Mapping, builds: Mapping | None = None) -> bool:
-    """Writes data/delivery-cache.json only when its text changes. The builds part is kept as it is when `builds` is None."""
+def save_cache(path: Path, signatures: Mapping, builds: Mapping | None = None, presence: Mapping | None = None) -> bool:
+    """Writes data/delivery-cache.json only when its text changes. The builds and presence parts are kept as they are when they are None."""
     previous = load_cache(path)
     body = {"schema": SCHEMA, "signatures": dict(signatures), "builds": dict(builds if builds is not None else previous.get("builds") or {})}
+    kept = presence if presence is not None else previous.get("presence")
+    if kept:
+        body["presence"] = dict(kept)
     text = json.dumps(body, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
     try:
         if path.read_text(encoding="utf-8") == text:

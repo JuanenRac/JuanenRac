@@ -5,6 +5,15 @@
   "scaffolding_months": 6,
   "history_min_days": 7,
   "signature_alert": { "enabled": false, "after_days": 14 },
+  "presence": {
+    "enabled": true,
+    "attestations": true,
+    "max_repos_per_run": 30,
+    "api_budget": 120,
+    "attestation_files_per_release": 3,
+    "recheck_days": 3,
+    "release_extensions": [".bin", ".tgz", ".tar.gz", ".gz", ".xz", ".zip", ".7z", ".apk", ".aab", ".whl", ".exe", ".msi", ".deb", ".img", ".jar"]
+  },
   "tests": {
     "sources": {
       "hydra-umc": { "glance": "HYDRA-UMC-DOCS/data/glance.json", "readme": true },

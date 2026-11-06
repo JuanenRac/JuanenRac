@@ -14,6 +14,7 @@ builds tab); `snRender` is called by `evoApplied` whenever the language changes.
 """
 from __future__ import annotations
 
+import dashboard_presence_ui
 import dashboard_sentinel_texts
 from dashboard_charts import esc
 
@@ -58,6 +59,8 @@ def panel_html() -> str:
         # by ecosystem
         + _card("eco", "sn_eco_title", body='<p class="no-data" id="sn-eco-none" data-testid="sn-eco-none" hidden></p>'
                 '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-eco-title" id="sn-eco-wrap" style="max-height: 160px"><table class="ins-table sn-table" id="sn-eco-table" data-testid="sn-eco-table"><thead><tr><th scope="col" data-i18n="sn_col_eco">Ecosystem</th></tr></thead></table></div>')
+        # presence of a signature and of a build attestation
+        + dashboard_presence_ui.card()
         # compute
         + _card("cmp", "sn_cmp_title", body='<p class="muted sn-small" id="sn-cmp-total" data-testid="sn-cmp-total"></p><p class="no-data" id="sn-cmp-none" hidden></p><ul class="ac-bars" id="sn-cmp" data-testid="sn-cmp"></ul>')
         # trend
@@ -77,7 +80,7 @@ def panel_html() -> str:
     )
 
 
-CSS = r"""
+CSS = dashboard_presence_ui.CSS + r"""
   /* ======================= Sentinel ======================= */
   #panel-sentinel .panel-inner { max-width: none; }
   .sn { display: flex; flex-direction: column; gap: 8px; }
@@ -147,7 +150,7 @@ CSS = r"""
   @media print { .sn-scroll { max-height: none !important; overflow: visible !important; } .sn-spark polyline { animation: none !important; stroke-dashoffset: 0 !important; } }
 """
 
-JS = r"""
+JS = dashboard_presence_ui.JS + r"""
   // ---------------- Sentinel: public-safe watch decided by rules, read when the page was generated ----------------
   // Drawn from the JSON embedded in the page; nothing is requested. What could not be read is "not verified", never a green state.
   const SN = (DATA.sentinel && typeof DATA.sentinel === "object") ? DATA.sentinel : { enabled: false, read: false, stale: null, sections: {}, doc: null };
@@ -354,6 +357,6 @@ JS = r"""
     banner.hidden = !SN.stale; banner.textContent = SN.stale ? tpl(dict.sn_stale, { date: String(SN.stale).slice(0, 10) }) : "";
     document.getElementById("sn-asof").textContent = doc && doc.asof ? tpl(dict.sn_asof, { time: String(doc.asof).slice(11, 16) }) : "";
     document.getElementById("sn-help-body").textContent = dict.sn_help_body;
-    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict);
+    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict); prRender(dict);
   }
 """

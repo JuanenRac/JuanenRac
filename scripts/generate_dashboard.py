@@ -38,6 +38,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 import html
 import json
 import os
@@ -74,6 +75,9 @@ import dashboard_tests_texts
 import dashboard_tests_ui
 import dashboard_delivery
 import dashboard_pipeline
+import dashboard_presence
+import dashboard_presence_texts
+import dashboard_presence_ui
 import dashboard_signatures
 import dashboard_delivery_ui
 import dashboard_delivery_texts
@@ -1980,6 +1984,10 @@ for language, values in dashboard_actions_texts.TEXTS.items():
 for language, values in dashboard_sentinel_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the presence of signatures and build attestations.
+for language, values in dashboard_presence_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the delivery pipeline, signatures, legends and navigation additions.
 for language, values in dashboard_delivery_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3331,6 +3339,7 @@ def page_data(
             "commitDate": (act.commit_date if act is not None else None) or None,
             "sig": act.signature if act is not None else None,
             "sigx": dict(act.sigx) if act is not None and act.sigx else None,
+            "prs": dict(act.presence) if act is not None and act.presence else None,
             **pipeline,
             "commits": [[c.headline, c.date or "", c.url or ""] for c in act.commits] if act is not None and act.commits else None,
         }
@@ -6065,12 +6074,22 @@ def main() -> int:
         print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
     delivery_cache = dashboard_signatures.load_cache()
     builds: dict = {name: rec for name, rec in (delivery_cache.get("builds") or {}).items() if isinstance(rec, dict)}
+    presence_cache: "dict | None" = None
     if activity and not stale_date:
+        # Presence of a signature file and of a build attestation: decided before the signatures are verified (from the names of the assets).
+        presence_config, presence_problems = dashboard_presence.load_config()
+        for problem in presence_problems:
+            print(f"WARNING: {problem}; the defaults are used for that part.", file=sys.stderr)
+        if presence_config["enabled"]:
+            presence_found, presence_cache = dashboard_presence.assess(
+                catalog.github_owner, activity, dashboard_signatures.LiveFetch(catalog.github_owner, GITHUB_TOKEN), presence_config, delivery_cache, today)
+            activity = {n: dataclasses.replace(a, presence=presence_found.get(n)) for n, a in activity.items()}
+            print("Presence of signature and attestation: " + str(dashboard_presence.summarize(presence_found, ecosystem_by_name)), file=sys.stderr)
         activity, signature_cache = dashboard_signatures.verify_activity(catalog.github_owner, activity, GITHUB_TOKEN, sig_config, delivery_cache)
         fetcher = dashboard_signatures.LiveFetch(catalog.github_owner, GITHUB_TOKEN)
         build_read, build_cache = dashboard_pipeline.read_all(catalog.github_owner, {n: a.workflows for n, a in activity.items()}, fetcher, cache=delivery_cache)
         builds = {n: r for n, r in build_read.items() if r}
-        dashboard_signatures.save_cache(dashboard_signatures.CACHE_PATH, signature_cache, build_cache)
+        dashboard_signatures.save_cache(dashboard_signatures.CACHE_PATH, signature_cache, build_cache, presence_cache)
         counts = {k: sum(1 for a in activity.values() if a.signature == k) for k in ("verified", "invalid", "unverifiable", "none", "norelease")}
         print(f"Signatures of the latest releases: {counts}; builds with an artifact: {sum(1 for r in builds.values() if r.get('art'))}.", file=sys.stderr)
     signals = dashboard_contrib.fetch_signals(catalog.github_owner, GITHUB_TOKEN, activity)

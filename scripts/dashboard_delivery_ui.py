@@ -139,6 +139,7 @@ JS = r"""
     const kind = sigKind ? dict["pv_" + sigKind] + (repo.sigKind ? "" : tag) : dict.pv_undeclared;
     field(dict.pf_signature, repo.signedOn ? kind + " · " + dict["pv_signed_" + repo.signedOn] : kind);
     field(dict.pf_release_sig, dict["sig_" + (repo.sig || "unverified")] + deliverySigDetail(repo, dict));
+    if (typeof prPanel === "function") { prPanel(name, dict); }
     const artifact = repo.artifact || inf.artifact;
     if (artifact) {
       const a = make("a", "", artifact.replace("https://github.com/", ""));

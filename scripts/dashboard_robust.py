@@ -24,6 +24,7 @@ from typing import Iterable, Mapping
 
 import dashboard_health
 import dashboard_integrity
+import dashboard_presence
 from dashboard_charts import Activity, Commit, esc
 
 # A manifest the dashboard lists but whose maturity or evidence is not a known value, and a manifest it cannot list.
@@ -139,7 +140,8 @@ def activity_from_page(html: str | None) -> dict[str, Activity]:
             commit_date=repo.get("commitDate") if isinstance(repo.get("commitDate"), str) else None,
             ci=ci, commits=commits,
             signature=repo.get("sig") if repo.get("sig") in ("present", "verified", "invalid", "unverifiable", "none", "norelease") else None,
-            sigx=repo.get("sigx") if isinstance(repo.get("sigx"), dict) else None)
+            sigx=repo.get("sigx") if isinstance(repo.get("sigx"), dict) else None,
+            presence=dashboard_presence.valid(repo.get("prs")))
     return out
 
 

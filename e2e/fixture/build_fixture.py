@@ -32,6 +32,7 @@ import dataclasses  # noqa: E402
 import dashboard_charts as charts  # noqa: E402
 import dashboard_sentinel as sentinel_mod  # noqa: E402
 import dashboard_health as health  # noqa: E402
+import dashboard_presence as presence_mod  # noqa: E402
 import dashboard_insight as insight_mod  # noqa: E402
 import dashboard_integrity as integrity_mod  # noqa: E402
 import generate_dashboard as gen  # noqa: E402
@@ -132,7 +133,23 @@ def dataset(per_ecosystem: int = 10, healthy: bool = False):
             raw[name] = integrity_mod.RawManifest(ecosystem=key, data=data)
             nodes.append(_node(name, index, healthy))
             index += 1
-    return entries, results, eco, raw, _with_verification(charts.parse_activity(nodes), healthy)
+    return entries, results, eco, raw, _with_verification(_with_presence(charts.parse_activity(nodes)), healthy)
+
+
+def _with_presence(activity: dict) -> dict:
+    """The presence of the signature files comes from the names of the assets (no request); the attestations take turns to be present, absent, partial and
+    unknown, the way the answers of the API would fall."""
+    found, _cache = presence_mod.assess("JuanenRac", activity, None, {**presence_mod.DEFAULT_CONFIG, "attestations": False}, None, "2001-12-21")
+    cycle = (("present", 1, 1), ("absent", 1, 0), ("partial", 2, 1), ("unknown", 0, 0))
+    out = dict(activity)
+    turn = 0
+    for name in sorted(found):
+        entry = dict(found[name])
+        if entry["sg"] not in ("na", "unknown"):
+            entry["at"], entry["an"], entry["ak"] = cycle[turn % 4]
+            turn += 1
+        out[name] = dataclasses.replace(activity[name], presence=entry)
+    return out
 
 
 def _with_verification(activity: dict, healthy: bool) -> dict:

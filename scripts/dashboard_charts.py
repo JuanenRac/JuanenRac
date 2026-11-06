@@ -135,6 +135,7 @@ class Activity:
     assets: tuple[tuple[str, int, str], ...] = ()   # (name, size, update time) of the assets of the latest release, empty when none or not returned
     workflows: tuple[str, ...] = ()     # file names in .github/workflows of the default branch
     sigx: Mapping | None = None         # the detail of the signature check (see dashboard_signatures.aggregate), None when no signature was checked
+    presence: Mapping | None = None     # presence of a signature file and of a build attestation on the latest release (see dashboard_presence)
 
 
 _CI_STATE = {"SUCCESS": "success", "FAILURE": "failure", "ERROR": "failure", "PENDING": "pending", "EXPECTED": "pending"}
