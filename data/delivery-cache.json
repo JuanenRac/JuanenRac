@@ -17,7 +17,6 @@
   "ARMOR-NODE-ALARM": {
    "art": true,
    "at": "2026-11-06T13:59:59Z",
-   "checked": true,
    "exp": "2026-11-13T13:58:33Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/42229401249",
    "wf": "firmware-build.yml"
@@ -25,7 +24,6 @@
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
    "at": "2026-11-06T13:59:55Z",
-   "checked": true,
    "exp": "2026-11-13T13:58:39Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/42229421271",
    "wf": "firmware-build.yml"
@@ -33,7 +31,6 @@
   "ARMOR-NODE-HMI": {
    "art": true,
    "at": "2026-11-06T14:02:01Z",
-   "checked": true,
    "exp": "2026-11-13T14:01:10Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/42229441286",
    "wf": "firmware-build.yml"
@@ -41,7 +38,6 @@
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-06T14:00:37Z",
-   "checked": true,
    "exp": "2026-11-13T13:59:10Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/42229463099",
    "wf": "firmware-build.yml"
@@ -49,7 +45,6 @@
   "ARMOR-NODE-SOLAR": {
    "art": true,
    "at": "2026-11-06T14:00:25Z",
-   "checked": true,
    "exp": "2026-11-13T13:59:28Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/42229483147",
    "wf": "firmware-build.yml"
@@ -57,7 +52,6 @@
   "ARMOR-SERVER": {
    "art": true,
    "at": "2026-11-06T16:30:20Z",
-   "checked": true,
    "exp": "2026-11-13T16:29:36Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/42252702198",
    "wf": "package-build.yml"
@@ -71,9 +65,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-06T01:58:54Z",
-   "exp": "2026-11-13T01:58:03Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/42147212093",
+   "at": "2026-11-06T20:38:17Z",
+   "checked": true,
+   "exp": "2026-11-13T20:37:38Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/42289885845",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -85,15 +80,15 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-03T23:11:21Z",
-   "exp": "2026-11-10T23:09:23Z",
-   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/41736481933",
+   "at": "2026-11-06T19:05:56Z",
+   "checked": true,
+   "exp": "2026-11-13T19:05:12Z",
+   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/42276065042",
    "wf": "apk-build.yml"
   },
   "EH3D-NODE-BUNGARD": {
    "art": true,
    "at": "2026-11-06T16:27:12Z",
-   "checked": true,
    "exp": "2026-11-13T16:22:40Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/42251099966",
    "wf": "firmware-build.yml"
@@ -101,7 +96,6 @@
   "EH3D-NODE-BUNGARD-AUX": {
    "art": true,
    "at": "2026-11-06T16:26:28Z",
-   "checked": true,
    "exp": "2026-11-13T16:25:30Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/42251125438",
    "wf": "firmware-build.yml"
@@ -109,16 +103,16 @@
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
    "at": "2026-11-06T16:26:12Z",
-   "checked": true,
    "exp": "2026-11-13T16:25:09Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/42251146761",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-HMI-GUI": {
    "art": true,
-   "at": "2026-11-04T01:11:00Z",
-   "exp": "2026-11-11T01:10:19Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/41751700464",
+   "at": "2026-11-06T19:06:42Z",
+   "checked": true,
+   "exp": "2026-11-13T19:05:53Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/42276039791",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC": {
@@ -138,7 +132,6 @@
   "HYDRA-UMC-HIL-BRIDGE": {
    "art": true,
    "at": "2026-11-06T16:17:25Z",
-   "checked": true,
    "exp": "2026-11-13T16:16:36Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/actions/runs/42250775909",
    "wf": "binaries-build.yml"
@@ -202,7 +195,6 @@
   "HYDRA-UMC-STUDIO": {
    "art": true,
    "at": "2026-11-06T12:51:47Z",
-   "checked": true,
    "exp": "2026-11-13T12:50:44Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42220684361",
    "wf": "dist-build.yml"
@@ -245,7 +237,6 @@
   "HYDRA-UMC-UPDATER": {
    "art": true,
    "at": "2026-11-06T16:49:45Z",
-   "checked": true,
    "exp": "2026-11-13T16:49:05Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-UPDATER/actions/runs/42255841450",
    "wf": "package-build.yml"
@@ -259,15 +250,15 @@
   },
   "URTC": {
    "art": true,
-   "at": "2026-11-05T19:43:34Z",
-   "exp": "2026-11-12T19:41:59Z",
-   "url": "https://github.com/JuanenRac/URTC/actions/runs/42095965354",
+   "at": "2026-11-06T20:26:55Z",
+   "checked": true,
+   "exp": "2026-11-13T20:25:28Z",
+   "url": "https://github.com/JuanenRac/URTC/actions/runs/42287932712",
    "wf": "firmware-build.yml"
   },
   "URTC-COMMON": {
    "art": true,
    "at": "2026-11-06T15:36:32Z",
-   "checked": true,
    "exp": "2026-11-13T15:35:43Z",
    "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42244462081",
    "wf": "release-files-build.yml"
@@ -275,7 +266,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-06T15:39:52Z",
-   "checked": true,
    "exp": "2026-11-13T15:38:51Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/42244496065",
    "wf": "exe-build.yml"
@@ -283,7 +273,6 @@
   "URTC-SMART-RACK": {
    "art": true,
    "at": "2026-11-06T15:37:29Z",
-   "checked": true,
    "exp": "2026-11-13T15:36:44Z",
    "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/42244535134",
    "wf": "firmware-build.yml"
@@ -313,15 +302,6 @@
  "presence": {
   "ARMOR-ANDROID-CONTROL": {
    "fp": "d43aa419fa427835",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 0,
-    "an": 1,
-    "at": "absent"
-   }
-  },
-  "ARMOR-DEVOPS": {
-   "fp": "ad242ca10f9dbc66",
    "on": "2026-11-06",
    "r": {
     "ak": 0,
@@ -402,7 +382,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "9542558740382af6",
+   "fp": "a3d31a43989f7510",
    "on": "2026-11-06",
    "r": {
     "ak": 1,
@@ -420,7 +400,7 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "8b9912bde606dfed",
+   "fp": "4915954468e60437",
    "on": "2026-11-06",
    "r": {
     "ak": 0,
@@ -429,7 +409,7 @@
    }
   },
   "EH3D-AUTOLEVEL": {
-   "fp": "e263ca01b247df45",
+   "fp": "e75b7312dda0a47b",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -438,7 +418,7 @@
    }
   },
   "EH3D-BUNGARD-GUI": {
-   "fp": "9e63473da00185ce",
+   "fp": "0c1bcd07211a98a2",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -456,7 +436,7 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "9c6a99bdcb186479",
+   "fp": "bc66e731d88f2463",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -474,7 +454,7 @@
    }
   },
   "EH3D-ISOCAM": {
-   "fp": "dbbaf93ea157b83a",
+   "fp": "d5f4d216d70e9c9e",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -483,39 +463,39 @@
    }
   },
   "EH3D-NODE-BUNGARD": {
-   "fp": "568bb09c2ef2381f",
+   "fp": "e7b86438ab608f89",
    "on": "2026-11-06",
    "r": {
-    "ak": 0,
+    "ak": 3,
     "an": 3,
-    "at": "absent"
+    "at": "present"
    }
   },
   "EH3D-NODE-BUNGARD-AUX": {
-   "fp": "de2e0de66c993bb4",
+   "fp": "0adbad4c4be8f967",
    "on": "2026-11-06",
    "r": {
-    "ak": 0,
+    "ak": 3,
     "an": 3,
-    "at": "absent"
+    "at": "present"
    }
   },
   "EH3D-NODE-BUNGARD-HMI": {
-   "fp": "e062c333fd116ed5",
+   "fp": "eb09cef6864ccf93",
    "on": "2026-11-06",
    "r": {
-    "ak": 0,
+    "ak": 2,
     "an": 2,
-    "at": "absent"
+    "at": "present"
    }
   },
   "EH3D-NODE-HMI-GUI": {
-   "fp": "53ae838f500b81a8",
+   "fp": "ee2b6809d0b0f4b9",
    "on": "2026-11-06",
    "r": {
-    "ak": 0,
+    "ak": 2,
     "an": 2,
-    "at": "absent"
+    "at": "present"
    }
   },
   "EH3D-PHOENIX-CNC": {
@@ -537,7 +517,7 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "90ee9226b4214057",
+   "fp": "62ace16c5e4095d6",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -555,7 +535,7 @@
    }
   },
   "EH3D-ROUTEPRO": {
-   "fp": "d83178d5de7c3edd",
+   "fp": "90b9c5311de5f7c3",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -564,7 +544,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "96dec5415e102e13",
+   "fp": "c5e2c28763dae316",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -573,7 +553,7 @@
    }
   },
   "EH3D-STENCILCAM": {
-   "fp": "10fcc3e4ffef75f2",
+   "fp": "c2248f6f03b04230",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -582,12 +562,12 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "0e95718a0d2ed402",
+   "fp": "2d44a38c7fa29bf0",
    "on": "2026-11-06",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "EH3D-SUITE-LAUNCHER": {
@@ -600,7 +580,7 @@
    }
   },
   "EH3D-TOOL-MANAGER": {
-   "fp": "11e6a8d72eecc578",
+   "fp": "11a08b0608faa71b",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -708,12 +688,12 @@
    }
   },
   "URTC": {
-   "fp": "54ff06acae2a152d",
+   "fp": "b3665f074d76a3ca",
    "on": "2026-11-06",
    "r": {
-    "ak": 3,
+    "ak": 0,
     "an": 3,
-    "at": "present"
+    "at": "absent"
    }
   },
   "URTC-COMMON": {
@@ -764,22 +744,6 @@
  },
  "schema": 1,
  "signatures": {
-  "ARMOR-DEVOPS": {
-   "fp": "ad242ca10f9dbc66",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 1,
-    "s": "verified",
-    "sch": [
-     "armor-pkg/1"
-    ],
-    "unk": 1,
-    "why": [
-     "scheme"
-    ]
-   }
-  },
   "ARMOR-NETWORK": {
    "fp": "432dcae002bdf291",
    "r": {
@@ -904,7 +868,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "9542558740382af6",
+   "fp": "a3d31a43989f7510",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -936,7 +900,7 @@
    }
   },
   "EH3D-AUTOLEVEL": {
-   "fp": "e263ca01b247df45",
+   "fp": "e75b7312dda0a47b",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -950,7 +914,7 @@
    }
   },
   "EH3D-BUNGARD-GUI": {
-   "fp": "9e63473da00185ce",
+   "fp": "0c1bcd07211a98a2",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -978,7 +942,7 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "9c6a99bdcb186479",
+   "fp": "bc66e731d88f2463",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1006,7 +970,7 @@
    }
   },
   "EH3D-ISOCAM": {
-   "fp": "dbbaf93ea157b83a",
+   "fp": "d5f4d216d70e9c9e",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1014,6 +978,62 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-NODE-BUNGARD": {
+   "fp": "e7b86438ab608f89",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 4,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-NODE-BUNGARD-AUX": {
+   "fp": "0adbad4c4be8f967",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 4,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-NODE-BUNGARD-HMI": {
+   "fp": "eb09cef6864ccf93",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 2,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-NODE-HMI-GUI": {
+   "fp": "ee2b6809d0b0f4b9",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 2,
     "why": [
      "family"
     ]
@@ -1048,7 +1068,7 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "90ee9226b4214057",
+   "fp": "62ace16c5e4095d6",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1076,7 +1096,7 @@
    }
   },
   "EH3D-ROUTEPRO": {
-   "fp": "d83178d5de7c3edd",
+   "fp": "90b9c5311de5f7c3",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1090,7 +1110,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "96dec5415e102e13",
+   "fp": "c5e2c28763dae316",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1104,7 +1124,7 @@
    }
   },
   "EH3D-STENCILCAM": {
-   "fp": "10fcc3e4ffef75f2",
+   "fp": "c2248f6f03b04230",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1118,7 +1138,7 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "0e95718a0d2ed402",
+   "fp": "2d44a38c7fa29bf0",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1146,7 +1166,7 @@
    }
   },
   "EH3D-TOOL-MANAGER": {
-   "fp": "11e6a8d72eecc578",
+   "fp": "11a08b0608faa71b",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1363,7 +1383,7 @@
    }
   },
   "URTC": {
-   "fp": "54ff06acae2a152d",
+   "fp": "b3665f074d76a3ca",
    "r": {
     "bad": 0,
     "ho": 0,
