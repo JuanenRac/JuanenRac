@@ -327,7 +327,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 de 11 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `█████████▏ 91%` | 10 de 11 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 11 de 11 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟡 | `████████▎░ 82%` | 9 de 11 repositorios se han comprobado al menos en un simulador. |
@@ -513,7 +513,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|Detecta, instala y actualiza los repositorios propios del ecosistema (atómico por verificación, sin necesidad de GITHUB\_TOKEN).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adaptador entre los ecosistemas EH3D y HYDRA-UMC (previsto; aún sin código).|
 |[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|El actualizador de los cuatro ecosistemas: una ventana y una línea de órdenes que ceden el paso al actualizador de cada ecosistema.|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.3|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.4|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.1|Cliente web en Rust de EH3D-SERVER.|
 
 ### 💠 Proyectos de taladrado, fresado y contorneado:

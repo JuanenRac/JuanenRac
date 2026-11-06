@@ -327,7 +327,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 | --- | :---: | --- | --- |
 | 软件 | 🟡 | `████████▎░ 82%` | 11 个仓库中有 9 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个有自动化测试。 |
-| 持续集成 | 🟢 | `█████████▏ 91%` | 11 个仓库中有 10 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个提供八种语言的 README。 |
 | 仿真 | 🟡 | `████████▎░ 82%` | 11 个仓库中有 9 个至少在仿真器中验证过。 |
@@ -513,7 +513,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
 |[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|四个生态系统的更新器:一个窗口和一条命令行,交由各生态系统自己的更新器处理。|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.3|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.4|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.1|EH3D-SERVER 的 Rust Web 客户端。|
 
 ### 💠 钻孔／铣边／铣削项目：

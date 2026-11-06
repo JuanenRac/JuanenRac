@@ -321,7 +321,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟡 | `████████▎░ 82%` | 9 of 11 repositories have been checked at least in a simulator. |
@@ -506,7 +506,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.8 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE) | 0.0.2 | Adapter between the EH3D and HYDRA-UMC ecosystems (planned; no code yet). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | The updater of the four ecosystems: one window and one command line that hand over to each ecosystem's own updater. |
-| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.1.3 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
+| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.1.4 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
 | [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.1.1 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
 

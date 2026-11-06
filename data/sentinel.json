@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-06T22:25:39Z",
+ "asof": "2026-11-06T23:16:43Z",
  "ci": {
   "checked": 518,
   "red": [],
@@ -8,14 +8,14 @@
  "compute": {
   "top": [
    {
-    "min24": 317,
-    "min7": 487,
-    "repo": "HYDRA-UMC"
+    "min24": 334,
+    "min7": 430,
+    "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 312,
-    "min7": 404,
-    "repo": "EH3D-PHOENIX-PCB"
+    "min24": 316,
+    "min7": 487,
+    "repo": "HYDRA-UMC"
    },
    {
     "min24": 308,
@@ -28,8 +28,8 @@
     "repo": "EH3D-ROUTEPRO"
    },
    {
-    "min24": 292,
-    "min7": 446,
+    "min24": 299,
+    "min7": 450,
     "repo": "EH3D-DRILLPRO"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 5560,
-  "total7": 16615,
+  "total24": 5648,
+  "total7": 16630,
   "warn": false
  },
  "ecosystems": {
@@ -465,7 +465,7 @@
    8105,
    2782,
    4421,
-   5560
+   5648
   ],
   "red": [
    3,

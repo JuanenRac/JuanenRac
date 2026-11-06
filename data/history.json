@@ -2639,15 +2639,15 @@
   },
   {
    "actions": {
-    "fail": 218,
-    "min": 5560,
-    "ok": 2683,
-    "other": 23,
-    "runs": 2924
+    "fail": 219,
+    "min": 5648,
+    "ok": 2733,
+    "other": 20,
+    "runs": 2972
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 53,
      "production": 63,
@@ -2657,7 +2657,7 @@
      "tests": 95
     },
     "eh3d": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -2677,7 +2677,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -2889,7 +2889,7 @@
     ],
     "EH3D-SERVER": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "EH3D-STENCILCAM": [
      1,
@@ -3211,7 +3211,7 @@
    "sentinel": {
     "cand": 0,
     "gaps": 0,
-    "min": 5560,
+    "min": 5648,
     "red": 0
    },
    "tests": {
@@ -3231,27 +3231,27 @@
     "EH3D-AUTOLEVEL": 172,
     "EH3D-BUNGARD-GUI": 385,
     "EH3D-CAM-DEBUGGER": 123,
-    "EH3D-COMMON": 350,
+    "EH3D-COMMON": 361,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 297,
     "EH3D-DESIGN-EXPLORER": 3,
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 191,
-    "EH3D-DRILLPRO": 320,
+    "EH3D-DRILLPRO": 326,
     "EH3D-GERBERVIEWER": 119,
     "EH3D-HYDRA-BRIDGE": 3,
     "EH3D-ISOCAM": 330,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-PHOENIX-CAD": 343,
+    "EH3D-PHOENIX-CAD": 375,
     "EH3D-PHOENIX-CNC": 126,
     "EH3D-PHOENIX-LASER": 304,
-    "EH3D-PHOENIX-PCB": 3985,
-    "EH3D-PHOENIX-PNP": 344,
+    "EH3D-PHOENIX-PCB": 3999,
+    "EH3D-PHOENIX-PNP": 391,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 85,
-    "EH3D-SERVER": 328,
+    "EH3D-SERVER": 347,
     "EH3D-STENCILCAM": 160,
     "EH3D-STUDIO": 311,
     "EH3D-SUITE-LAUNCHER": 113,

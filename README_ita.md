@@ -327,7 +327,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 repository su 11 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 11 repository su 11 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▏ 91%` | 10 repository su 11 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 11 repository su 11 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 11 repository su 11 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 11 repository su 11 hanno il README nelle otto lingue. |
 | Simulazione | 🟡 | `████████▎░ 82%` | 9 repository su 11 sono stati verificati almeno in un simulatore. |
@@ -513,7 +513,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|Rileva, installa e aggiorna le repository dell'ecosistema (atomico tramite verifica, nessun GITHUB\_TOKEN richiesto).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adattatore tra gli ecosistemi EH3D e HYDRA-UMC (previsto; ancora senza codice).|
 |[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|L'updater dei quattro ecosistemi: una finestra e una riga di comando che passano la mano all'updater di ciascun ecosistema.|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.3|Server in Rust con interfaccia REST e websocket: utenti, macchine e lavori, pianificazione di lavori di foratura e fresatura con le librerie di DRILLPRO e ROUTEPRO, un lavoro alla volta per macchina.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.4|Server in Rust con interfaccia REST e websocket: utenti, macchine e lavori, pianificazione di lavori di foratura e fresatura con le librerie di DRILLPRO e ROUTEPRO, un lavoro alla volta per macchina.|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.1|Client web in Rust per EH3D-SERVER.|
 
 ### 💠 Progetti di foratura, contornatura e fresatura:
