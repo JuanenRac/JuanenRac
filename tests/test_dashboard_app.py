@@ -430,7 +430,7 @@ class HealthPageTests(unittest.TestCase):
 
     def test_the_data_for_the_script_is_valid_json_and_complete(self):
         self.assertIsNotNone(self.data)
-        self.assertEqual(set(self.data), {"config", "repos", "contrib", "checks", "history", "snap", "insight", "ciEvidence", "tests", "actions", "sentinel"})
+        self.assertEqual(set(self.data), {"config", "repos", "contrib", "checks", "history", "snap", "insight", "ciEvidence", "tests", "actions", "sentinel", "pins"})
         self.assertEqual(self.data["config"]["alert_after_days"], 30)
         self.assertEqual(self.data["config"]["repoUrl"], "https://github.com/JuanenRac/")
         self.assertEqual(sorted(self.data["repos"]), ["ARMOR-C", "HYDRA-UMC-A", "URTC-B"])

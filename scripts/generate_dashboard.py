@@ -75,6 +75,8 @@ import dashboard_tests_texts
 import dashboard_tests_ui
 import dashboard_delivery
 import dashboard_pipeline
+import dashboard_pins
+import dashboard_pins_texts
 import dashboard_presence
 import dashboard_presence_texts
 import dashboard_presence_ui
@@ -1984,6 +1986,10 @@ for language, values in dashboard_actions_texts.TEXTS.items():
 for language, values in dashboard_sentinel_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the shared contract pins card.
+for language, values in dashboard_pins_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the presence of signatures and build attestations.
 for language, values in dashboard_presence_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3387,6 +3393,7 @@ def render_html(
     sentinel_doc: "dict | None" = None,
     sentinel_saved: "dict | None" = None,
     sentinel_config: "dict | None" = None,
+    pins_doc: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3498,6 +3505,7 @@ def render_html(
         owner="JuanenRac", today=today, config=ci_settings)
     app_data.page_data["tests"] = dashboard_tests.build(tests_read, ecosystem_by_name, full_history, today, tests_config)
     app_data.page_data["actions"] = dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, full_history, today)
+    app_data.page_data["pins"] = dashboard_pins.build(pins_doc)
     app_data.page_data["sentinel"] = dashboard_sentinel.build(sentinel_doc, sentinel_saved, sentinel_config or dashboard_sentinel.check_config(None)[0], today)
     tests_panel_html = dashboard_app.panel("tests", dashboard_tests_ui.panel_html())
     actions_panel_html = dashboard_app.panel("actions", dashboard_actions_ui.panel_html())
@@ -6145,13 +6153,15 @@ def main() -> int:
     sentinel_doc = dashboard_sentinel.stabilize(sentinel_doc, sentinel_saved, sentinel_config["stale_hours"])
     if sentinel_doc:
         print(f"Sentinel: {sentinel_doc['ci']['red_total']} red workflows, {sentinel_doc['releases']['total']} releases ready, {sentinel_doc['hygiene']['gaps']} hygiene gaps, {sentinel_doc['read']}/{sentinel_doc['repos']} repositories read.", file=sys.stderr)
+    pins_doc = dashboard_pins.read_all(catalog.github_owner, ecosystem_by_name, dashboard_signatures.LiveFetch(catalog.github_owner, GITHUB_TOKEN).rest)
+    print("Contract pins: " + str({k: (len(v['rows']) if v['read'] else 'not read') for k, v in pins_doc.items()}), file=sys.stderr)
     rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
                            signals=signals, build=build, config=config, history=history, facts=facts, weekly=weekly,
                            live_milestones=live_milestones, planned_milestones=planned_milestones,
                            generation=generation, stale_date=stale_date, rack=dashboard_rack.load(),
                            ci_evidence=ci_read, ci_config=ci_config, tests_read=tests_read, tests_config=tests_config,
                            actions_read=actions_read, actions_cache=actions_cache, builds=builds,
-                           sentinel_doc=sentinel_doc, sentinel_saved=sentinel_saved, sentinel_config=sentinel_config)
+                           sentinel_doc=sentinel_doc, sentinel_saved=sentinel_saved, sentinel_config=sentinel_config, pins_doc=pins_doc)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 

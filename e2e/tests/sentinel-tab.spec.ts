@@ -251,7 +251,8 @@ test.describe("sentinel tab: sizes", () => {
     const m = await page.evaluate(() => {
       const panel = document.getElementById("panel-sentinel")!;
       const card = document.getElementById("pr-card");      // the card of signature and attestation presence is a list, not part of the glance: only it may scroll
-      const extra = card ? card.getBoundingClientRect().height + 16 : 0;
+      const pins = document.getElementById("pn-card");      // the card of the shared contract pins is a list too
+      const extra = (card ? card.getBoundingClientRect().height + 16 : 0) + (pins ? pins.getBoundingClientRect().height + 16 : 0);
       return { panel: panel.scrollHeight - panel.clientHeight - extra, page: document.documentElement.scrollHeight - document.documentElement.clientHeight };
     });
     expect(m.panel).toBeLessThanOrEqual(1);

@@ -417,6 +417,14 @@ RACK_INVALID = (None, "schema 2 is not 1")
 GENERATION = gen.dashboard_robust.Generation(built="2001-12-20T08:31:12", seconds=47.6, asof="2001-12-20", steps=(
     ("versions", 38, 40), ("manifests", 36, 41), ("commits", 20, 40), ("activity", 40, 40)))
 
+PINS = {
+    "armor": {"source": "contract_pins", "read": True, "current": "0.8.1.1", "rows": [
+        {"repo": "ARMOR-FIXTURE-00", "pin": "0.8.0.7", "state": "behind"}, {"repo": "ARMOR-FIXTURE-01", "pin": "0.8.1.1", "state": "current"}]},
+    "urtc": {"source": "lock_files", "read": True, "partial": True, "current": "0.2.3", "rows": [
+        {"repo": "URTC-FIXTURE-00", "pin": "0.1.9", "state": "behind"}]},
+    "hydra-umc": {"source": "none", "read": True, "current": None, "rows": []},
+}
+
 BUILD = health.BuildInfo("https://github.com/JuanenRac/JuanenRac/actions/runs/123456", "2001-12-20T08:30:00Z")
 
 
@@ -433,7 +441,8 @@ def build_full() -> str:
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries),
                            tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries),
-                           sentinel_doc=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())))
+                           sentinel_doc=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())),
+                           pins_doc=PINS)
 
 
 def build_stale() -> str:

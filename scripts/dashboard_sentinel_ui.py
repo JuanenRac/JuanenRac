@@ -14,6 +14,7 @@ builds tab); `snRender` is called by `evoApplied` whenever the language changes.
 """
 from __future__ import annotations
 
+import dashboard_pins_ui
 import dashboard_presence_ui
 import dashboard_sentinel_texts
 from dashboard_charts import esc
@@ -72,6 +73,7 @@ def panel_html() -> str:
         + '</div>'
         # presence of a signature and of a build attestation, after the cards seen at a glance
         + dashboard_presence_ui.card()
+        + dashboard_pins_ui.card()
         + '</div>'
         '<div class="ac-foot sn-foot"><details class="ts-help" data-testid="sn-help">'
         f'<summary {_t("sn_help_summary")}</summary><p id="sn-help-body" data-testid="sn-help-body"></p></details>'
@@ -80,7 +82,7 @@ def panel_html() -> str:
     )
 
 
-CSS = dashboard_presence_ui.CSS + r"""
+CSS = dashboard_presence_ui.CSS + dashboard_pins_ui.CSS + r"""
   /* ======================= Sentinel ======================= */
   #panel-sentinel .panel-inner { max-width: none; }
   .sn { display: flex; flex-direction: column; gap: 8px; }
@@ -150,7 +152,7 @@ CSS = dashboard_presence_ui.CSS + r"""
   @media print { .sn-scroll { max-height: none !important; overflow: visible !important; } .sn-spark polyline { animation: none !important; stroke-dashoffset: 0 !important; } }
 """
 
-JS = dashboard_presence_ui.JS + r"""
+JS = dashboard_presence_ui.JS + dashboard_pins_ui.JS + r"""
   // ---------------- Sentinel: public-safe watch decided by rules, read when the page was generated ----------------
   // Drawn from the JSON embedded in the page; nothing is requested. What could not be read is "not verified", never a green state.
   const SN = (DATA.sentinel && typeof DATA.sentinel === "object") ? DATA.sentinel : { enabled: false, read: false, stale: null, sections: {}, doc: null };
@@ -357,6 +359,6 @@ JS = dashboard_presence_ui.JS + r"""
     banner.hidden = !SN.stale; banner.textContent = SN.stale ? tpl(dict.sn_stale, { date: String(SN.stale).slice(0, 10) }) : "";
     document.getElementById("sn-asof").textContent = doc && doc.asof ? tpl(dict.sn_asof, { time: String(doc.asof).slice(11, 16) }) : "";
     document.getElementById("sn-help-body").textContent = dict.sn_help_body;
-    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict); prRender(dict);
+    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict); prRender(dict); pnRender(dict);
   }
 """
