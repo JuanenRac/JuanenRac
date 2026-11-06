@@ -2639,15 +2639,15 @@
   },
   {
    "actions": {
-    "fail": 245,
-    "min": 7154,
-    "ok": 3489,
-    "other": 41,
-    "runs": 3775
+    "fail": 236,
+    "min": 6772,
+    "ok": 3227,
+    "other": 27,
+    "runs": 3490
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 53,
      "production": 63,
@@ -2682,7 +2682,7 @@
      "hardware": 0,
      "production": 9,
      "releases": 100,
-     "simulation": 45,
+     "simulation": 73,
      "software": 82,
      "tests": 100
     }
@@ -2692,7 +2692,7 @@
     "armor": 66,
     "eh3d": 34,
     "hydra-umc": 55,
-    "urtc": 52
+    "urtc": 54
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -2829,7 +2829,7 @@
     ],
     "EH3D-IOS-CONTROL": [
      0,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-ISOCAM": [
      0,
@@ -3105,7 +3105,7 @@
     ],
     "HYDRA-UMC-STUDIO": [
      1,
-     "0.8.1.5"
+     "0.8.1.6"
     ],
     "HYDRA-UMC-STUDIO-KIT": [
      0,
@@ -3113,7 +3113,7 @@
     ],
     "HYDRA-UMC-SUITE": [
      1,
-     "0.8.0.2"
+     "0.8.0.3"
     ],
     "HYDRA-UMC-SWARM-SYNC": [
      1,
@@ -3211,8 +3211,8 @@
    "sentinel": {
     "cand": 2,
     "gaps": 0,
-    "min": 7154,
-    "red": 2
+    "min": 6772,
+    "red": 4
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 422,
@@ -3253,7 +3253,7 @@
     "EH3D-ROUTEPRO": 77,
     "EH3D-SERVER": 238,
     "EH3D-STENCILCAM": 117,
-    "EH3D-STUDIO": 173,
+    "EH3D-STUDIO": 303,
     "EH3D-SUITE-LAUNCHER": 100,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 126,

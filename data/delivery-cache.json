@@ -17,7 +17,6 @@
   "ARMOR-NODE-ALARM": {
    "art": true,
    "at": "2026-11-06T10:43:55Z",
-   "checked": true,
    "exp": "2026-11-13T10:42:48Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/42204337396",
    "wf": "firmware-build.yml"
@@ -192,9 +191,10 @@
   },
   "HYDRA-UMC-STUDIO": {
    "art": true,
-   "at": "2026-11-06T09:16:40Z",
-   "exp": "2026-11-13T09:15:58Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42193606991",
+   "at": "2026-11-06T11:19:56Z",
+   "checked": true,
+   "exp": "2026-11-13T11:18:44Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42209202642",
    "wf": "dist-build.yml"
   },
   "HYDRA-UMC-STUDIO-KIT": {
@@ -206,9 +206,10 @@
   },
   "HYDRA-UMC-SUITE": {
    "art": true,
-   "at": "2026-11-06T01:59:46Z",
-   "exp": "2026-11-13T01:52:29Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42146231054",
+   "at": "2026-11-06T11:29:15Z",
+   "checked": true,
+   "exp": "2026-11-13T11:22:36Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42209219613",
    "wf": "exe-build.yml"
   },
   "HYDRA-UMC-SWARM-SYNC": {
@@ -294,6 +295,278 @@
    "exp": "2026-11-13T03:08:16Z",
    "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/42154633093",
    "wf": "site-build.yml"
+  }
+ },
+ "presence": {
+  "ARMOR-ANDROID-CONTROL": {
+   "fp": "d43aa419fa427835",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "ARMOR-DEVOPS": {
+   "fp": "ad242ca10f9dbc66",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "ARMOR-NETWORK": {
+   "fp": "432dcae002bdf291",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "ARMOR-NODE-ALARM": {
+   "fp": "d9ddb96ba52df7d7",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "ARMOR-NODE-ELECTRICAL": {
+   "fp": "5ae31f7d3bb505b5",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "ARMOR-NODE-HMI": {
+   "fp": "27e9a7b12fc1ebd9",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 2,
+    "an": 2,
+    "at": "present"
+   }
+  },
+  "ARMOR-NODE-RADAR": {
+   "fp": "e2b82e97021db12e",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "ARMOR-NODE-SOLAR": {
+   "fp": "ef1503cb67cd1d59",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "ARMOR-SERVER": {
+   "fp": "d96d62d90cc45ad1",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "ARMOR-SERVER-AI": {
+   "fp": "859c7487ccf4fc9a",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "ARMOR-STUDIO": {
+   "fp": "9542558740382af6",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "ARMOR-VOICE-AI": {
+   "fp": "94f9a343f3c9b6c3",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "EH3D-ANDROID-CONTROL": {
+   "fp": "8b9912bde606dfed",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "EH3D-AUTOLEVEL": {
+   "fp": "e263ca01b247df45",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-BUNGARD-GUI": {
+   "fp": "9e63473da00185ce",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-CAM-DEBUGGER": {
+   "fp": "9097814c917debaf",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-DRILLPRO": {
+   "fp": "9c6a99bdcb186479",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-GERBERVIEWER": {
+   "fp": "e96043d8ee884f3c",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-ISOCAM": {
+   "fp": "dbbaf93ea157b83a",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-NODE-BUNGARD": {
+   "fp": "568bb09c2ef2381f",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 3,
+    "at": "absent"
+   }
+  },
+  "EH3D-NODE-BUNGARD-AUX": {
+   "fp": "de2e0de66c993bb4",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 3,
+    "at": "absent"
+   }
+  },
+  "EH3D-NODE-BUNGARD-HMI": {
+   "fp": "e062c333fd116ed5",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 2,
+    "at": "absent"
+   }
+  },
+  "EH3D-NODE-HMI-GUI": {
+   "fp": "53ae838f500b81a8",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 2,
+    "at": "absent"
+   }
+  },
+  "EH3D-PHOENIX-CNC": {
+   "fp": "d7927354e934057d",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-PHOENIX-LASER": {
+   "fp": "270d44f9087181de",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-PHOENIX-PCB": {
+   "fp": "90ee9226b4214057",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-PHOENIX-PNP": {
+   "fp": "618b13b1f0f53232",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-ROUTEPRO": {
+   "fp": "d83178d5de7c3edd",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-SERVER": {
+   "fp": "96dec5415e102e13",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-STENCILCAM": {
+   "fp": "10fcc3e4ffef75f2",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
   }
  },
  "schema": 1,
@@ -823,7 +1096,7 @@
    }
   },
   "HYDRA-UMC-STUDIO": {
-   "fp": "5b54295f2663c02b",
+   "fp": "5d030d9002c52f38",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -853,7 +1126,7 @@
    }
   },
   "HYDRA-UMC-SUITE": {
-   "fp": "9bc26a7db3be10f1",
+   "fp": "dea50936fc41b7c1",
    "r": {
     "bad": 0,
     "ho": 0,
