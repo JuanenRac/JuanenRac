@@ -1,8 +1,14 @@
 {
- "asof": "2026-11-06T10:38:51Z",
+ "asof": "2026-11-06T11:01:49Z",
  "ci": {
   "checked": 496,
   "red": [
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-06T10:51:52Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   },
    {
     "repo": "URTC",
     "since": "2026-11-04T04:56:04Z",
@@ -10,12 +16,12 @@
     "wf": "windows-build-compare.yml"
    }
   ],
-  "red_total": 1
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 462,
+    "min24": 459,
     "min7": 595,
     "repo": "EH3D-BUNGARD-GUI"
    },
@@ -45,15 +51,15 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 7165,
-  "total7": 15749,
+  "total24": 7154,
+  "total7": 15758,
   "warn": false
  },
  "ecosystems": {
   "armor": {
-   "cand": 4,
+   "cand": 1,
    "read": 19,
-   "red": 0,
+   "red": 1,
    "repos": 19,
    "unpub": 0
   },
@@ -72,11 +78,11 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 8,
+   "cand": 1,
    "read": 59,
    "red": 0,
    "repos": 59,
-   "unpub": 1
+   "unpub": 0
   },
   "urtc": {
    "cand": 0,
@@ -87,6 +93,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-06T11:01:49Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-06T11:01:49Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-ANDROID-CONTROL",
+   "tag": "v0.8.0.2"
+  },
   {
    "at": "2026-11-06T10:38:51Z",
    "kind": "released",
@@ -120,9 +138,9 @@
    "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 12,
+    "cand": 2,
     "hyg": 0,
-    "red": 1
+    "red": 2
    }
   },
   {
@@ -130,9 +148,10 @@
    "level": "bad",
    "p": {
     "list": [
+     "ARMOR-DOCS",
      "URTC"
     ],
-    "n": 1
+    "n": 2
    }
   },
   {
@@ -140,30 +159,10 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-HARDWARE",
-     "ARMOR-SIMULATOR",
      "ARMOR-STUDIO",
-     "ARMOR-VOICE-AI",
-     "HYDRA-UMC-BRIDGE-CNC",
-     "HYDRA-UMC-BRIDGE-LASER",
-     "HYDRA-UMC-BRIDGE-PRINTER3D",
-     "HYDRA-UMC-BRIDGE-ROS2",
-     "HYDRA-UMC-MESHES",
-     "HYDRA-UMC-OPS-AGENT",
-     "HYDRA-UMC-PATH-PLANNER-3D",
-     "HYDRA-UMC-SWARM-SYNC"
+     "HYDRA-UMC-OPS-AGENT"
     ],
-    "n": 12
-   }
-  },
-  {
-   "key": "unpub",
-   "level": "warn",
-   "p": {
-    "list": [
-     "HYDRA-UMC-ANDROID-CONTROL"
-    ],
-    "n": 1
+    "n": 2
    }
   },
   {
@@ -189,71 +188,11 @@
     "published": "2026-11-04T02:14:02Z",
     "repo": "ARMOR-STUDIO",
     "tag": "v0.8.2.1"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-03T14:26:28Z",
-    "repo": "ARMOR-HARDWARE",
-    "tag": "v0.2.8"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-03T23:34:42Z",
-    "repo": "ARMOR-SIMULATOR",
-    "tag": "v0.3.5"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-03T23:56:53Z",
-    "repo": "ARMOR-VOICE-AI",
-    "tag": "v0.3.4"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-01T09:27:00Z",
-    "repo": "HYDRA-UMC-BRIDGE-CNC",
-    "tag": "v0.2.5"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-03T15:15:18Z",
-    "repo": "HYDRA-UMC-BRIDGE-LASER",
-    "tag": "v0.2.2"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-01T09:27:24Z",
-    "repo": "HYDRA-UMC-BRIDGE-PRINTER3D",
-    "tag": "v0.2.2"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-01T09:27:11Z",
-    "repo": "HYDRA-UMC-BRIDGE-ROS2",
-    "tag": "v0.1.6"
-   },
-   {
-    "entries": 1,
-    "published": "2026-10-31T07:31:01Z",
-    "repo": "HYDRA-UMC-MESHES",
-    "tag": "meshes-1"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-03T02:16:40Z",
-    "repo": "HYDRA-UMC-PATH-PLANNER-3D",
-    "tag": "v0.1.3"
-   },
-   {
-    "entries": 1,
-    "published": "2026-11-03T02:16:23Z",
-    "repo": "HYDRA-UMC-SWARM-SYNC",
-    "tag": "v0.1.9"
    }
   ],
   "days": 2.0,
-  "min_entries": 1,
-  "total": 12
+  "min_entries": 2,
+  "total": 2
  },
  "repos": 128,
  "schema": 1,
@@ -326,7 +265,7 @@
   "EH3D-VISION-STUDIO": "v0.0.3",
   "ELECTRO-HOBBY-3D-UPDATER": "v0.1.5",
   "HYDRA-UMC": "v0.2.8",
-  "HYDRA-UMC-ANDROID-CONTROL": "v0.8.0.1",
+  "HYDRA-UMC-ANDROID-CONTROL": "v0.8.0.2",
   "HYDRA-UMC-ANOMALY-DETECTOR": "v0.2.3",
   "HYDRA-UMC-BRIDGE-AMR": "v0.1.9",
   "HYDRA-UMC-BRIDGE-CNC": "v0.2.5",
@@ -401,7 +340,7 @@
    11,
    35,
    23,
-   12
+   2
   ],
   "dates": [
    "2026-11-03",
@@ -419,23 +358,17 @@
    8105,
    2782,
    4421,
-   7165
+   7154
   ],
   "red": [
    3,
    5,
    3,
-   1
+   2
   ]
  },
  "unpublished": {
-  "rows": [
-   {
-    "repo": "HYDRA-UMC-ANDROID-CONTROL",
-    "tag": "v0.8.0.1",
-    "version": "0.8.0.2"
-   }
-  ],
-  "total": 1
+  "rows": [],
+  "total": 0
  }
 }

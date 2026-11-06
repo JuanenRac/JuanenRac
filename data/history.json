@@ -2639,11 +2639,11 @@
   },
   {
    "actions": {
-    "fail": 249,
-    "min": 7165,
-    "ok": 3507,
-    "other": 43,
-    "runs": 3799
+    "fail": 245,
+    "min": 7154,
+    "ok": 3489,
+    "other": 41,
+    "runs": 3775
    },
    "areas": {
     "armor": {
@@ -2682,7 +2682,7 @@
      "hardware": 0,
      "production": 9,
      "releases": 100,
-     "simulation": 36,
+     "simulation": 45,
      "software": 82,
      "tests": 100
     }
@@ -3209,10 +3209,10 @@
     ]
    },
    "sentinel": {
-    "cand": 12,
+    "cand": 2,
     "gaps": 0,
-    "min": 7165,
-    "red": 1
+    "min": 7154,
+    "red": 2
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 422,
@@ -3303,9 +3303,9 @@
     "HYDRA-UMC-SDK": 891,
     "HYDRA-UMC-SEMANTIC-PLANNER": 315,
     "HYDRA-UMC-SERVER": 816,
-    "HYDRA-UMC-STUDIO": 1192,
+    "HYDRA-UMC-STUDIO": 1205,
     "HYDRA-UMC-STUDIO-KIT": 87,
-    "HYDRA-UMC-SUITE": 62,
+    "HYDRA-UMC-SUITE": 63,
     "HYDRA-UMC-SWARM-SYNC": 151,
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": 171,
     "HYDRA-UMC-TELEMETRY-COLLECTOR": 138,

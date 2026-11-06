@@ -16,9 +16,10 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-05T14:08:00Z",
-   "exp": "2026-11-12T14:06:51Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/42041248477",
+   "at": "2026-11-06T10:43:55Z",
+   "checked": true,
+   "exp": "2026-11-13T10:42:48Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/42204337396",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
@@ -122,7 +123,6 @@
   "HYDRA-UMC-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-06T10:37:08Z",
-   "checked": true,
    "exp": "2026-11-13T10:36:28Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/42203298784",
    "wf": "binaries-build.yml"
