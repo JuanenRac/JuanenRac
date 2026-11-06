@@ -192,7 +192,6 @@
   "HYDRA-UMC-STUDIO": {
    "art": true,
    "at": "2026-11-06T11:19:56Z",
-   "checked": true,
    "exp": "2026-11-13T11:18:44Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42209202642",
    "wf": "dist-build.yml"
@@ -207,7 +206,6 @@
   "HYDRA-UMC-SUITE": {
    "art": true,
    "at": "2026-11-06T11:29:15Z",
-   "checked": true,
    "exp": "2026-11-13T11:22:36Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42209219613",
    "wf": "exe-build.yml"
@@ -256,9 +254,10 @@
   },
   "URTC-COMMON": {
    "art": true,
-   "at": "2026-11-06T03:12:22Z",
-   "exp": "2026-11-13T03:11:42Z",
-   "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42154957228",
+   "at": "2026-11-06T12:08:19Z",
+   "checked": true,
+   "exp": "2026-11-13T12:07:36Z",
+   "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42215248692",
    "wf": "release-files-build.yml"
   },
   "URTC-FLASHER": {
@@ -565,6 +564,186 @@
    "r": {
     "ak": 3,
     "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-STUDIO": {
+   "fp": "0e95718a0d2ed402",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "EH3D-SUITE-LAUNCHER": {
+   "fp": "8f818ae2230b87cd",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-TOOL-MANAGER": {
+   "fp": "11e6a8d72eecc578",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-VISION-STUDIO": {
+   "fp": "89a0801b71120ce4",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC": {
+   "fp": "48cd2c135187f09e",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-ANDROID-CONTROL": {
+   "fp": "cf07836016f4f69c",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "HYDRA-UMC-MESHES": {
+   "fp": "bed485331987538b",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "HYDRA-UMC-OS-REBUILDER": {
+   "fp": "481834c4941d0cd5",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-SERVER": {
+   "fp": "35f52c79006adb69",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 2,
+    "an": 2,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-STUDIO": {
+   "fp": "5d030d9002c52f38",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 2,
+    "an": 2,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-STUDIO-KIT": {
+   "fp": "c313a8b81e118fba",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-SUITE": {
+   "fp": "dea50936fc41b7c1",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-UPDATER": {
+   "fp": "5c0c9df924ccb00d",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-WATCH": {
+   "fp": "2ffb262f35f694a3",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "URTC": {
+   "fp": "54ff06acae2a152d",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "URTC-COMMON": {
+   "fp": "54bf56f795ad5660",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 2,
+    "an": 2,
+    "at": "present"
+   }
+  },
+  "URTC-FLASHER": {
+   "fp": "a22b0c649adc46a2",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "URTC-SMART-RACK": {
+   "fp": "5f8e3237eb367343",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "URTC-TESTER": {
+   "fp": "cda6bf468ccf3d23",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "URTC-VISION-TOOL": {
+   "fp": "422fec13b169d9e1",
+   "on": "2026-11-06",
+   "r": {
+    "ak": 1,
+    "an": 1,
     "at": "present"
    }
   }
@@ -1184,7 +1363,7 @@
    }
   },
   "URTC-COMMON": {
-   "fp": "5d6f15676f0938cd",
+   "fp": "54bf56f795ad5660",
    "r": {
     "bad": 0,
     "ho": 0,

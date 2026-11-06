@@ -2639,15 +2639,15 @@
   },
   {
    "actions": {
-    "fail": 236,
-    "min": 6772,
-    "ok": 3227,
-    "other": 27,
-    "runs": 3490
+    "fail": 230,
+    "min": 6762,
+    "ok": 3211,
+    "other": 26,
+    "runs": 3467
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 53,
      "production": 63,
@@ -2667,7 +2667,7 @@
      "tests": 90
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -2677,7 +2677,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -2692,7 +2692,7 @@
     "armor": 66,
     "eh3d": 34,
     "hydra-umc": 55,
-    "urtc": 54
+    "urtc": 53
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -2773,7 +2773,7 @@
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-AUTOLEVEL": [
      0,
@@ -3169,7 +3169,7 @@
     ],
     "URTC-COMMON": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "URTC-DEVTOOLS": [
      0,
@@ -3211,7 +3211,7 @@
    "sentinel": {
     "cand": 2,
     "gaps": 0,
-    "min": 6772,
+    "min": 6762,
     "red": 4
    },
    "tests": {
@@ -3229,7 +3229,7 @@
     "ARMOR-VISION": 151,
     "ARMOR-VOICE-AI": 140,
     "EH3D-AUTOLEVEL": 140,
-    "EH3D-BUNGARD-GUI": 346,
+    "EH3D-BUNGARD-GUI": 380,
     "EH3D-CAM-DEBUGGER": 113,
     "EH3D-COMMON": 350,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
@@ -3251,13 +3251,13 @@
     "EH3D-PHOENIX-PNP": 298,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 77,
-    "EH3D-SERVER": 238,
+    "EH3D-SERVER": 328,
     "EH3D-STENCILCAM": 117,
     "EH3D-STUDIO": 303,
     "EH3D-SUITE-LAUNCHER": 100,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 126,
-    "EH3D-UPDATER": 422,
+    "EH3D-UPDATER": 432,
     "EH3D-VALIDATION-LAB": 44,
     "EH3D-VISION-STUDIO": 128,
     "HYDRA-UMC": 326,

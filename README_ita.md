@@ -367,7 +367,7 @@ Ogni profilo di utensile gestisce il proprio watchdog e comportamento in caso di
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.9|Testa utensile con telecamere termiche e RGB integrate per QA attiva.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.7|Rileva, installa e aggiorna le repository URTC su una macchina a partire dai relativi manifest.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.5|Architettura, interfacce, base di sicurezza, matrice delle capacità, note sul protocollo CAN e catalogo dei progetti generato di URTC.|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.1|Il protocollo CAN della testa utensile come dati: specifica, codice C, TypeScript e Python generato, vettori di conformità e trasporti.|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.2|Il protocollo CAN della testa utensile come dati: specifica, codice C, TypeScript e Python generato, vettori di conformità e trasporti.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.5|Gateway davanti al bus CAN di URTC: elenco di identificatori consentiti, limite di frequenza e chiave di sessione.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.3|Gli strumenti di repository condivisi della famiglia URTC come un unico insieme versionato, con un file di lock in ogni repository.|
 
@@ -573,7 +573,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 ### 💠 Progetti ANDROID/IOS:
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.8|App Android client di EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|App Android client di EH3D-SERVER.|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|App iOS client di EH3D-SERVER.|
 
 ### 🛠️ Strumenti complementari

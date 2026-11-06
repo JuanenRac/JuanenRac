@@ -367,7 +367,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.9|アクティブQA用にサーマルカメラとRGBカメラが統合されたツールヘッド。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.7|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.5|URTC のアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、CAN プロトコルのメモ、自動生成されるプロジェクトカタログ。|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.1|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.2|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.5|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.3|URTC ファミリーが共有するリポジトリツールを 1 つのバージョン管理されたセットにまとめたもの。各リポジトリにロックファイルを置きます。|
 
@@ -573,7 +573,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 ANDROID/IOS のプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.8|EH3D-SERVER 向けの Android アプリ（クライアント）。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|EH3D-SERVER 向けの Android アプリ（クライアント）。|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
 
 ### 🛠️ 補完ツール

@@ -361,7 +361,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.1.9 | Toolhead with integrated thermal and RGB cameras for active QA. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.2.7 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.5 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.2.1 | The CAN protocol of the tool head as data: specification, generated C, TypeScript and Python code, conformance vectors and transports. |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.2.2 | The CAN protocol of the tool head as data: specification, generated C, TypeScript and Python code, conformance vectors and transports. |
 | [URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY) | 0.0.5 | Gateway in front of the URTC CAN bus: allowed identifier list, rate limit and session key. |
 | [URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS) | 0.0.3 | The shared repository tools of the URTC family as one versioned set, with a lock file in each repository. |
 
@@ -574,7 +574,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 ANDROID/IOS projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.8 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
+| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.9 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
 | [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.9 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
 
 

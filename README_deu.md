@@ -367,7 +367,7 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.9|Werkzeugkopf mit integrierten Thermal- und RGB-Kameras für aktive QS.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.7|Erkennt, installiert und aktualisiert die URTC-Repositories auf einer Maschine aus deren eigenen Manifesten.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.5|Architektur, Schnittstellen, Sicherheitsbasis, Fähigkeitsmatrix, Notizen zum CAN-Protokoll und generierter Projektkatalog von URTC.|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.1|Das CAN-Protokoll des Werkzeugkopfs als Daten: Spezifikation, generierter C-, TypeScript- und Python-Code, Konformitätsvektoren und Transporte.|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.2|Das CAN-Protokoll des Werkzeugkopfs als Daten: Spezifikation, generierter C-, TypeScript- und Python-Code, Konformitätsvektoren und Transporte.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.5|Gateway vor dem CAN-Bus von URTC: Liste erlaubter Kennungen, Ratenbegrenzung und Sitzungsschlüssel.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.3|Die gemeinsamen Repository-Werkzeuge der URTC-Familie als ein versionierter Satz, mit einer Lock-Datei in jedem Repository.|
 
@@ -573,7 +573,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 ### 💠 ANDROID/IOS-Projekte:
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.8|Android-App als Client von EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|Android-App als Client von EH3D-SERVER.|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|iOS-App als Client von EH3D-SERVER.|
 
 ### 🛠️ Ergänzende Werkzeuge

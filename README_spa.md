@@ -367,7 +367,7 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.1.9|Cabezal de herramienta con cámaras térmicas y RGB integradas para control de calidad activo.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.7|Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.5|Arquitectura, interfaces, línea base de seguridad, matriz de capacidades, notas del protocolo CAN y catálogo de proyectos generado de URTC.|
-|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.1|El protocolo CAN del cabezal como datos: especificación, código C, TypeScript y Python generado, vectores de conformidad y transportes.|
+|[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.2|El protocolo CAN del cabezal como datos: especificación, código C, TypeScript y Python generado, vectores de conformidad y transportes.|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.5|Pasarela delante del bus CAN de URTC: lista de identificadores permitidos, límite de tasa y clave de sesión.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.3|Las herramientas de repositorio compartidas de la familia URTC como un solo conjunto versionado, con un fichero de bloqueo en cada repositorio.|
 
@@ -573,7 +573,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 ### 💠 Proyectos ANDROID/IOS:
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.8|Aplicación Android cliente de EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|Aplicación Android cliente de EH3D-SERVER.|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|Aplicación iOS cliente de EH3D-SERVER.|
 
 ### 🛠️ Herramientas complementarias

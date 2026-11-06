@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-06T11:48:52Z",
+ "asof": "2026-11-06T12:09:52Z",
  "ci": {
   "checked": 496,
   "red": [
@@ -33,13 +33,13 @@
  "compute": {
   "top": [
    {
-    "min24": 453,
+    "min24": 460,
     "min7": 603,
     "repo": "EH3D-BUNGARD-GUI"
    },
    {
     "min24": 402,
-    "min7": 489,
+    "min7": 488,
     "repo": "HYDRA-UMC"
    },
    {
@@ -63,8 +63,8 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 6772,
-  "total7": 15825,
+  "total24": 6762,
+  "total7": 15820,
   "warn": false
  },
  "ecosystems": {
@@ -105,6 +105,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-06T12:09:52Z",
+   "kind": "released",
+   "repo": "URTC-COMMON",
+   "tag": "v0.2.2"
+  },
   {
    "at": "2026-11-06T11:48:52Z",
    "kind": "red_new",
@@ -362,7 +368,7 @@
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.2",
   "URTC": "v0.4.5",
-  "URTC-COMMON": "v0.2.1",
+  "URTC-COMMON": "v0.2.2",
   "URTC-DEVTOOLS": "v0.0.3",
   "URTC-DOCS": "v0.1.5",
   "URTC-FLASHER": "v0.5.2",
@@ -396,7 +402,7 @@
    8105,
    2782,
    4421,
-   6772
+   6762
   ],
   "red": [
    3,
