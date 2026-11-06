@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-06T09:50:42Z",
+ "asof": "2026-11-06T10:00:29Z",
  "ci": {
   "checked": 496,
   "red": [
@@ -15,7 +15,7 @@
  "compute": {
   "top": [
    {
-    "min24": 456,
+    "min24": 460,
     "min7": 596,
     "repo": "EH3D-BUNGARD-GUI"
    },
@@ -30,13 +30,13 @@
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 280,
-    "min7": 418,
+    "min24": 286,
+    "min7": 422,
     "repo": "EH3D-ROUTEPRO"
    },
    {
-    "min24": 275,
-    "min7": 417,
+    "min24": 278,
+    "min7": 421,
     "repo": "EH3D-DRILLPRO"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 7007,
-  "total7": 15704,
+  "total24": 7026,
+  "total7": 15716,
   "warn": false
  },
  "ecosystems": {
@@ -76,7 +76,7 @@
    "read": 59,
    "red": 0,
    "repos": 59,
-   "unpub": 1
+   "unpub": 0
   },
   "urtc": {
    "cand": 0,
@@ -88,7 +88,7 @@
  },
  "events": [
   {
-   "at": "2026-11-06T09:50:42Z",
+   "at": "2026-11-06T10:00:29Z",
    "kind": "red_ok",
    "repo": "ARMOR-COMMON",
    "wf": "ci.yml"
@@ -142,16 +142,6 @@
      "HYDRA-UMC-SWARM-SYNC"
     ],
     "n": 12
-   }
-  },
-  {
-   "key": "unpub",
-   "level": "warn",
-   "p": {
-    "list": [
-     "HYDRA-UMC-TWIN"
-    ],
-    "n": 1
    }
   },
   {
@@ -354,7 +344,7 @@
   "HYDRA-UMC-PHYSICS-REPLICA": "v0.1.4",
   "HYDRA-UMC-PRODUCTION-REPORTS": "v0.2.0",
   "HYDRA-UMC-SAFETY-ZONES": "v0.2.3",
-  "HYDRA-UMC-SDK": "v0.5.6",
+  "HYDRA-UMC-SDK": "v0.5.7",
   "HYDRA-UMC-SEMANTIC-PLANNER": "v0.2.0",
   "HYDRA-UMC-SERVER": "v0.8.2.6",
   "HYDRA-UMC-STUDIO": "v0.8.1.5",
@@ -364,7 +354,7 @@
   "HYDRA-UMC-SYNTHETIC-DATA-GEN": "v0.1.5",
   "HYDRA-UMC-TELEMETRY-COLLECTOR": "v0.2.1",
   "HYDRA-UMC-TOOL-CLI": "v0.2.1",
-  "HYDRA-UMC-TWIN": "v0.1.6",
+  "HYDRA-UMC-TWIN": "v0.1.7",
   "HYDRA-UMC-UPDATER": "v0.5.6",
   "HYDRA-UMC-VISION-NODE": "v0.2.2",
   "HYDRA-UMC-VISION-STREAMER": "v0.2.5",
@@ -407,7 +397,7 @@
    8105,
    2782,
    4421,
-   7007
+   7026
   ],
   "red": [
    3,
@@ -417,13 +407,7 @@
   ]
  },
  "unpublished": {
-  "rows": [
-   {
-    "repo": "HYDRA-UMC-TWIN",
-    "tag": "v0.1.6",
-    "version": "0.1.7"
-   }
-  ],
-  "total": 1
+  "rows": [],
+  "total": 0
  }
 }

@@ -2639,11 +2639,11 @@
   },
   {
    "actions": {
-    "fail": 240,
-    "min": 7007,
-    "ok": 3382,
-    "other": 48,
-    "runs": 3670
+    "fail": 242,
+    "min": 7026,
+    "ok": 3389,
+    "other": 45,
+    "runs": 3676
    },
    "areas": {
     "armor": {
@@ -3093,7 +3093,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.5.6"
+     "0.5.7"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -3211,7 +3211,7 @@
    "sentinel": {
     "cand": 12,
     "gaps": 0,
-    "min": 7007,
+    "min": 7026,
     "red": 1
    },
    "tests": {
