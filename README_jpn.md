@@ -53,6 +53,19 @@
 | **A.R.M.O.R.** | 境界防犯とホームオートメーション | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
 | **EH3D Fabrication Suite** | 基板プロトタイピング、CAM、CNC とレーザー、ピックアンドプレース | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
 
+### 🧰 ツール
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="TOOLS エコシステムのバナー" width="100%">
+</p>
+
+4つのエコシステムとは別に、第5のグループがあります。単独で成り立ち、時間とともに増えていく独立したツールです。
+
+| ツール | 概要 |
+|---|---|
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
+
 \---
 
 # 🐙 HYDRA-UMC

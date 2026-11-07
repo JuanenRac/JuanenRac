@@ -53,6 +53,19 @@ Ogni riga è una parte di questo repository e il semaforo dice a che punto è og
 | **A.R.M.O.R.** | Sicurezza perimetrale e domotica | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
 | **EH3D Fabrication Suite** | Prototipazione di PCB, CAM, CNC e laser, pick and place | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
 
+### 🧰 Strumenti
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="Banner dell'ecosistema TOOLS" width="100%">
+</p>
+
+Oltre ai quattro ecosistemi c'è un quinto gruppo: strumenti indipendenti che stanno in piedi da soli e crescono nel tempo.
+
+| Strumento | Cos'è |
+|---|---|
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |
+
 \---
 
 # 🐙 HYDRA-UMC

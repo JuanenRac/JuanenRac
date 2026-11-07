@@ -53,6 +53,19 @@ Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'
 | **A.R.M.O.R.** | Sécurité périmétrique et domotique | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
 | **EH3D Fabrication Suite** | Prototypage de circuits imprimés, FAO, CNC et laser, pick and place | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
 
+### 🧰 Outils
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="Bannière de l'écosystème TOOLS" width="100%">
+</p>
+
+En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils indépendants qui se suffisent à eux-mêmes et s'enrichissent avec le temps.
+
+| Outil | Ce que c'est |
+|---|---|
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
+
 \---
 
 # 🐙 HYDRA-UMC
