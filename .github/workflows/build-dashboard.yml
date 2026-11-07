@@ -71,6 +71,15 @@ on:
       # chain regenerations.
       - ecosystem_build_finished
 
+  # The code counter (code-stats.yml) commits data/code-stats.json and data/scripts-stats.json with the token of its own workflow, which does not start a push run.
+  # The dashboard is therefore rebuilt when the counter has finished, so the Code, Changelog and Scripts tabs never go out without the figures it just wrote.
+  # No loop: the counter runs on a schedule or by hand only, and nothing here starts it.
+  workflow_run:
+    workflows:
+      - "Count the code of the ecosystems"
+    types:
+      - completed
+
   push:
     branches:
       - main
@@ -132,6 +141,8 @@ jobs:
   # MIN_MINUTES. The twice-an-hour schedule picks up whatever was skipped. No third-party action, no secret and read-only.
   gate:
     name: Decide whether this run is needed
+    # a counter run that failed wrote no new figures: nothing to rebuild for it
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -260,6 +271,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/generate_dashboard.py
+
+      # The Code, Changelog and Scripts tabs draw data/*.json: a page generated without them says "not verified" and must not be published as if it were fine.
+      - name: Check that the figures of the Code, Changelog and Scripts tabs were read
+        run: python scripts/check_data_read.py docs/index.html
 
       # -----------------------------------------------------------------------
       # Sync README project-catalog versions
