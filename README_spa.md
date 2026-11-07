@@ -86,7 +86,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 56 de 59 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `█████████▊ 98%` | 58 de 59 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `█████████▊ 98%` | 58 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `██▊░░░░░░░ 27%` | 16 de 59 repositorios se han comprobado al menos en un simulador. |
@@ -478,7 +478,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▋░░░░ 56%` | 22 de 39 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟡 | `█████████░ 90%` | 35 de 39 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `█████████▊ 97%` | 38 de 39 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 39 de 39 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `██▎░░░░░░░ 23%` | 9 de 39 repositorios se han comprobado al menos en un simulador. |

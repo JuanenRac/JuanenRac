@@ -3332,15 +3332,15 @@
   },
   {
    "actions": {
-    "fail": 200,
-    "min": 3593,
-    "ok": 2433,
-    "other": 22,
-    "runs": 2655
+    "fail": 202,
+    "min": 3592,
+    "ok": 2450,
+    "other": 23,
+    "runs": 2675
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -3360,7 +3360,7 @@
      "tests": 90
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -3902,16 +3902,16 @@
     ]
    },
    "sentinel": {
-    "cand": 4,
+    "cand": 5,
     "gaps": 0,
-    "min": 3593,
-    "red": 0
+    "min": 3592,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,
     "ARMOR-COMMON": 343,
     "ARMOR-DOCS": 275,
-    "ARMOR-HARDWARE": 22,
+    "ARMOR-HARDWARE": 34,
     "ARMOR-IOS-CONTROL": 338,
     "ARMOR-NETWORK": 187,
     "ARMOR-SERVER": 1013,
@@ -3953,7 +3953,7 @@
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 143,
-    "HYDRA-UMC": 472,
+    "HYDRA-UMC": 491,
     "HYDRA-UMC-ANDROID-CONTROL": 531,
     "HYDRA-UMC-ANOMALY-DETECTOR": 275,
     "HYDRA-UMC-BRIDGE-AMR": 209,

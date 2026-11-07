@@ -1,9 +1,16 @@
 {
- "asof": "2026-11-07T15:33:10Z",
+ "asof": "2026-11-07T15:45:06Z",
  "ci": {
   "checked": 529,
-  "red": [],
-  "red_total": 0
+  "red": [
+   {
+    "repo": "HYDRA-UMC-DOCS",
+    "since": "2026-11-07T15:44:18Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   }
+  ],
+  "red_total": 1
  },
  "compute": {
   "top": [
@@ -18,33 +25,33 @@
     "repo": "URTC"
    },
    {
-    "min24": 142,
+    "min24": 135,
+    "min7": 135,
+    "repo": "HYDRA-UMC"
+   },
+   {
+    "min24": 134,
     "min7": 142,
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 129,
-    "min7": 130,
-    "repo": "HYDRA-UMC"
-   },
-   {
-    "min24": 125,
+    "min24": 119,
     "min7": 399,
     "repo": "EH3D-SERVER"
    },
    {
     "min24": 117,
-    "min7": 291,
+    "min7": 287,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    }
   ],
-  "total24": 3593,
-  "total7": 15934,
+  "total24": 3592,
+  "total7": 15928,
   "warn": false
  },
  "ecosystems": {
   "armor": {
-   "cand": 1,
+   "cand": 2,
    "read": 19,
    "red": 0,
    "repos": 19,
@@ -67,7 +74,7 @@
   "hydra-umc": {
    "cand": 3,
    "read": 59,
-   "red": 0,
+   "red": 1,
    "repos": 59,
    "unpub": 0
   },
@@ -80,6 +87,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T15:45:06Z",
+   "kind": "red_new",
+   "repo": "HYDRA-UMC-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-07T15:45:06Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-CAD",
+   "tag": "v0.0.5"
+  },
   {
    "at": "2026-11-07T15:33:10Z",
    "kind": "red_ok",
@@ -247,18 +266,6 @@
    "kind": "red_ok",
    "repo": "EH3D-STUDIO",
    "wf": "release-dist.yml"
-  },
-  {
-   "at": "2026-11-06T22:25:39Z",
-   "kind": "red_ok",
-   "repo": "EH3D-TOOL-MANAGER",
-   "wf": "release-binaries.yml"
-  },
-  {
-   "at": "2026-11-06T22:25:39Z",
-   "kind": "red_ok",
-   "repo": "HYDRA-UMC-DOCS",
-   "wf": "nightly.yml"
   }
  ],
  "hygiene": {
@@ -275,9 +282,19 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 4,
+    "cand": 5,
     "hyg": 0,
-    "red": 0
+    "red": 1
+   }
+  },
+  {
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "HYDRA-UMC-DOCS"
+    ],
+    "n": 1
    }
   },
   {
@@ -285,12 +302,13 @@
    "level": "warn",
    "p": {
     "list": [
+     "ARMOR-HARDWARE",
      "ARMOR-VOICE-AI",
      "HYDRA-UMC-VISION-NODE",
      "HYDRA-UMC-VISION-STREAMER",
      "HYDRA-UMC-VISUAL-SERVOING-API"
     ],
-    "n": 4
+    "n": 5
    }
   },
   {
@@ -331,6 +349,12 @@
    },
    {
     "entries": 2,
+    "published": "2026-11-03T14:26:28Z",
+    "repo": "ARMOR-HARDWARE",
+    "tag": "v0.2.8"
+   },
+   {
+    "entries": 2,
     "published": "2026-11-03T23:56:53Z",
     "repo": "ARMOR-VOICE-AI",
     "tag": "v0.3.4"
@@ -344,7 +368,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 4
+  "total": 5
  },
  "repos": 128,
  "schema": 1,
@@ -399,7 +423,7 @@
   "EH3D-NODE-BUNGARD-AUX": "v0.0.8",
   "EH3D-NODE-BUNGARD-HMI": "v0.0.9",
   "EH3D-NODE-HMI-GUI": "v0.0.8",
-  "EH3D-PHOENIX-CAD": "v0.0.4",
+  "EH3D-PHOENIX-CAD": "v0.0.5",
   "EH3D-PHOENIX-CNC": "v0.1.0",
   "EH3D-PHOENIX-LASER": "v0.0.4",
   "EH3D-PHOENIX-PCB": "v0.0.6",
@@ -493,7 +517,7 @@
    35,
    23,
    0,
-   4
+   5
   ],
   "dates": [
    "2026-11-03",
@@ -514,14 +538,14 @@
    2782,
    4421,
    5648,
-   3593
+   3592
   ],
   "red": [
    3,
    5,
    3,
    0,
-   0
+   1
   ]
  },
  "unpublished": {
