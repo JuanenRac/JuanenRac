@@ -198,7 +198,9 @@ test.describe("relief", () => {
     expect(await page.locator(".bar-depth").count()).toBeGreaterThan(8);
     expect(await page.locator(".seg-bevel").count()).toBeGreaterThan(8);
     expect(await page.locator(".col-top").count()).toBe(await page.locator(".col-side").count());
-    expect(await page.locator(".ring-sheen").count()).toBe(await page.locator(".ring-value").count());
+    expect(await page.locator("svg.chart-ring .ring-sheen").count()).toBe(await page.locator(".ring-value").count());
+    // the rings of the Builds tab and the donut of the Changelog tab carry their own light arc
+    expect(await page.locator(".ac-ring-sheen, .ch-donut-grid .ring-sheen").count()).toBeGreaterThan(0);
   });
 
   test("every number is printed as text (the chart does not rest on colour or on the shape)", async ({ page }) => {
