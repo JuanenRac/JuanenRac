@@ -14,6 +14,7 @@ motion stops with prefers-reduced-motion. The script is placed into the shell's 
 """
 from __future__ import annotations
 
+import dashboard_changes_ui
 import dashboard_code_texts
 from dashboard_charts import esc
 
@@ -39,6 +40,11 @@ def panel_html() -> str:
               + "".join(f'<li><span class="cd-swatch cd-c-{k}" aria-hidden="true"></span><span {_t("cd_series_" + k)}</span></li>' for k in ("code", "tests", "docs")) + '</ul>')
     return (
         '<section class="ins cd" id="cd-root" aria-labelledby="cd-title" data-testid="code-root">'
+        '<div class="cd-views" role="group" aria-labelledby="cd-views-t" data-testid="cd-views">'
+        f'<span class="scope-title" id="cd-views-t" {_t("ch_view_label")}</span>'
+        f'<button type="button" class="chip" data-view="code" aria-pressed="true" data-testid="cd-view-code" {_t("ch_view_code")}</button>'
+        f'<button type="button" class="chip" data-view="changes" aria-pressed="false" data-testid="cd-view-changes" {_t("ch_view_changes")}</button></div>'
+        '<div id="cd-code-view" data-testid="cd-code-view" class="ins">'
         f'<header class="ins-head"><h2 class="card-title" id="cd-title" {_t("cd_title")}</h2>'
         f'<span class="ts-badge" data-testid="cd-badge" {_t("cd_badge")}</span></header>'
         f'<p class="muted" {_t("cd_hint")}</p>'
@@ -87,13 +93,14 @@ def panel_html() -> str:
         '<div class="cd-table-wrap" id="cd-table-wrap" tabindex="0" role="region" aria-labelledby="cd-table-title" data-testid="cd-table-wrap">'
         '<table class="cd-table" id="cd-table" data-testid="cd-table"><thead><tr><th scope="col" data-i18n="cd_col_name">Repository</th></tr></thead></table></div>'
         f'<p class="no-data" id="cd-none" data-testid="cd-none" hidden {_t("cd_none")}</p></section>'
-        '</div>'
+        '</div></div>'
+        + dashboard_changes_ui.panel_html() +
         '<div class="cd-tip" id="cd-tip" role="tooltip" data-testid="cd-tip" hidden></div>'
         '</section>'
     )
 
 
-CSS = r"""
+CSS = dashboard_changes_ui.CSS + r"""
   /* ======================= Code: lines of code, tests and documentation ======================= */
   :root {
     --cd-code: #5aa9ff; --cd-tests: #3ecf8e; --cd-docs: #f5b84b;
@@ -181,7 +188,7 @@ JS = r"""
   const CD_KINDS = ["code", "tests", "docs"];
   const CD_SERIES_KEY = { code: "cd_series_code", tests: "cd_series_tests", docs: "cd_series_docs" };
   const CD_TOP_LANGS = 10;
-  const cdState = { eco: "all", type: "all", q: "", group: "repo", sort: "code", dir: -1, metric: "code", top: 20 };
+  const cdState = { view: "code", eco: "all", type: "all", q: "", group: "repo", sort: "code", dir: -1, metric: "code", top: 20 };
   const CD_COLUMNS = [
     ["name", "cd_col_name", false], ["eco", "cd_col_eco", false], ["type", "cd_col_type", false], ["repos", "cd_col_repos", true], ["code", "cd_col_code", true],
     ["comment", "cd_col_comment", true], ["blank", "cd_col_blank", true], ["tests", "cd_col_tests", true], ["testFiles", "cd_col_testfiles", true], ["cases", "cd_col_cases", true],
@@ -429,7 +436,7 @@ JS = r"""
   }
   function cdLineChart(holder, legend, series, pts, dict, metricName, testid) {
     holder.textContent = ""; legend.textContent = "";
-    const W = 900, H = 270, L = 64, R = 130, T = 14, B = 30;
+    const W = 900, H = 270, L = 64, R = 200, T = 14, B = 30;
     const first = pts[0].d, last = pts[pts.length - 1].d;
     let top = 0;
     series.forEach(function (s) { pts.forEach(function (p) { const v = s.get(p); if (v !== null) { top = Math.max(top, v); } }); });
@@ -685,9 +692,16 @@ JS = r"""
     [["repo", dict.cd_by_repo], ["eco", dict.cd_by_eco], ["type", dict.cd_by_type]].forEach(function (o) { const el = make("option", "", o[1]); el.value = o[0]; sel.appendChild(el); });
     sel.value = cdState.group;
   }
+  function cdApplyView() {
+    document.getElementById("cd-code-view").hidden = cdState.view !== "code";
+    document.getElementById("ch-body").hidden = cdState.view !== "changes";
+    document.querySelectorAll("#cd-root [data-view]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-view") === cdState.view ? "true" : "false"); });
+  }
   function cdRender(dict) {
     const root = document.getElementById("cd-root");
     if (!root) { return; }
+    cdApplyView();
+    chRender(dict);
     const names = cdRepoNames();
     const unread = names.filter(function (n) { return CD.repos[n].state === "unread"; });
     const kept = names.filter(function (n) { return CD.repos[n].state === "lastknown"; });
@@ -709,6 +723,9 @@ JS = r"""
     cdKpis(dict); cdRenderProp(dict); cdRenderLanguages(dict); cdRenderEvolution(dict); cdRenderTop(dict); cdRenderControls(dict); cdRenderTable(dict);
   }
   (function () {
+    document.querySelectorAll("#cd-root [data-view]").forEach(function (b) {
+      b.addEventListener("click", function () { cdState.view = b.getAttribute("data-view"); cdApplyView(); });
+    });
     const sel = document.getElementById("cd-group");
     const search = document.getElementById("cd-search");
     const top = document.getElementById("cd-top-n");
@@ -717,3 +734,5 @@ JS = r"""
     if (top) { top.addEventListener("change", function () { cdState.top = parseInt(top.value, 10) || 20; cdRenderTop(currentDict()); }); }
   })();
 """
+
+JS = JS + dashboard_changes_ui.JS

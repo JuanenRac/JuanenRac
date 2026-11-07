@@ -255,6 +255,10 @@ _ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
     "cd_type_docs": ("Documentation", "Documentación", "Dokumentation", "Documentation", "Documentazione", "ドキュメント", "文档", "Documentação"),
 }
 
+import dashboard_changes_texts
+
+_ROWS.update(dashboard_changes_texts.ROWS)
+
 TEXTS: dict[str, dict[str, str]] = {
     code: {key: row[index] for key, row in _ROWS.items()} for index, code in enumerate(LANGUAGES)
 }

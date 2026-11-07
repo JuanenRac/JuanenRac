@@ -50,6 +50,8 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Callable, Iterable, Mapping, Sequence
 
+import changelog_stats
+
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "code-stats-config.json"
 STATS_FILE = "code-stats.json"
@@ -207,6 +209,7 @@ def check_config(config: object) -> list[str]:
         for name in names:
             if not isinstance(config[section].get(name), list):
                 problems.append(f"{section}.{name} must be a list")
+    problems.extend(changelog_stats.check_rules(config.get("changelog")))
     for name in ("max_file_bytes", "max_line_chars"):
         if not isinstance(config["exclude"].get(name), int) or config["exclude"][name] <= 0:
             problems.append(f"exclude.{name} must be a positive number")
@@ -487,6 +490,41 @@ def last_commit_day(path: Path, run: Runner = subprocess.run) -> str | None:
     return text if done.returncode == 0 and re.fullmatch(r"\d{4}-\d{2}-\d{2}", text) else None
 
 
+def tag_info(owner: str, name: str, token: str | None, today: str, opener: Callable = urllib.request.urlopen) -> dict | None:
+    """The pace of publishing from the tags of GitHub (the changelogs hold no dates): {tags, last, d30, d90, gap}, or None when it cannot be read.
+
+    `tags` is the total number of tags, `last` the day of the newest one, `d30` and `d90` how many of the newest 20 are that recent and `gap` the mean days
+    between consecutive tags of those 20. Needs a token (the GraphQL API does not answer without one).
+    """
+    if not token:
+        return None
+    query = ("query($o:String!,$n:String!){repository(owner:$o,name:$n){refs(refPrefix:\"refs/tags/\",first:20,orderBy:{field:TAG_COMMIT_DATE,direction:DESC})"
+             "{totalCount nodes{target{... on Commit{committedDate} ... on Tag{tagger{date} target{... on Commit{committedDate}}}}}}}}")
+    request = urllib.request.Request(f"{API}/graphql", data=json.dumps({"query": query, "variables": {"o": owner, "n": name}}).encode(), headers={
+        "Authorization": f"Bearer {token}", "Content-Type": "application/json", "User-Agent": "code-stats"})
+    try:
+        with opener(request, timeout=60) as response:
+            refs = json.loads(response.read().decode("utf-8"))["data"]["repository"]["refs"]
+    except (urllib.error.URLError, OSError, ValueError, KeyError, TypeError):
+        return None
+    days: list[date] = []
+    for node in refs.get("nodes") or []:
+        target = node.get("target") or {}
+        stamp = target.get("committedDate") or (target.get("tagger") or {}).get("date") or ((target.get("target") or {}).get("committedDate"))
+        try:
+            days.append(date.fromisoformat(str(stamp)[:10]))
+        except ValueError:
+            continue
+    total = refs.get("totalCount")
+    if not isinstance(total, int):
+        return None
+    days.sort(reverse=True)
+    now = date.fromisoformat(today)
+    gaps = [(a - b).days for a, b in zip(days, days[1:])]
+    return {"tags": total, "last": days[0].isoformat() if days else None, "d30": sum(1 for d in days if 0 <= (now - d).days <= 30),
+            "d90": sum(1 for d in days if 0 <= (now - d).days <= 90), "gap": round(sum(gaps) / len(gaps), 1) if gaps else None}
+
+
 def list_repos(owner: str, token: str | None, opener: Callable = urllib.request.urlopen) -> list[dict]:
     """The public repositories of the owner: [{name, pushed (YYYY-MM-DD), fork, archived}]. Raises when GitHub cannot be read."""
     out: list[dict] = []
@@ -535,7 +573,7 @@ def _remove_tree(path: Path) -> None:
 
 
 def measure(repo: Mapping, config: Mapping, workdir: Path, token: str | None, local_root: Path | None = None,
-            run: Runner = subprocess.run) -> tuple[dict | None, dict]:
+            run: Runner = subprocess.run, tags: Callable | None = None, today: str = "") -> tuple[dict | None, dict]:
     """(record or None when the repository could not be read, {path: text} of the declared-test files wanted from it)."""
     name = repo["name"]
     wanted = config["declared_tests"].get(name)
@@ -551,6 +589,13 @@ def measure(repo: Mapping, config: Mapping, workdir: Path, token: str | None, lo
             return None, {}
     try:
         figures = scan_tree(target, config)
+        changelog = target / "CHANGELOG.md"
+        changes = None
+        if changelog.is_file():
+            try:
+                changes = changelog_stats.summarize(changelog.read_text(encoding="utf-8", errors="replace"), config["changelog"])
+            except OSError:
+                changes = None
         commit = last_commit_day(target, run) if (target / ".git").exists() else None
         side: dict = {}
         if wanted and (target / wanted).is_file():
@@ -561,7 +606,9 @@ def measure(repo: Mapping, config: Mapping, workdir: Path, token: str | None, lo
     finally:
         if owned and target.exists():
             _remove_tree(target)
-    record = {"eco": repo["eco"], "type": repo["type"], "state": "ok", "pushed": repo.get("pushed"), "commit": commit, **figures}
+    record = {"eco": repo["eco"], "type": repo["type"], "state": "ok", "pushed": repo.get("pushed"), "commit": commit, **figures, "changes": changes}
+    if tags is not None:
+        record["rel"] = tags(config["owner"], name, token, today)
     return record, side
 
 
@@ -599,6 +646,27 @@ def totals(repos: Mapping[str, Mapping]) -> dict:
     return out
 
 
+def change_totals(repos: Mapping[str, Mapping], field: str | None = None) -> dict:
+    """Entries of the changelogs, whole or grouped by `field` ('eco' or 'type'): {versions, entries, unreleased, fix, unclassified}."""
+    def empty():
+        return {"repos": 0, "versions": 0, "entries": 0, "unreleased": 0, "fix": 0, "unclassified": 0}
+    groups: dict[str, dict] = {}
+    for record in repos.values():
+        changes = record.get("changes")
+        if record.get("state") not in ("ok", "lastknown") or not isinstance(changes, Mapping):
+            continue
+        entry = groups.setdefault(record[field] if field else "all", empty())
+        entry["repos"] += 1
+        entry["versions"] += changes["versions"]
+        entry["entries"] += changes["entries"]
+        entry["unreleased"] += changes["unreleased"]
+        entry["fix"] += changes["kinds"].get("fix", 0)
+        entry["unclassified"] += changes["kinds"].get("unclassified", 0)
+    if field is None:
+        return groups.get("all", empty())
+    return dict(sorted(groups.items()))
+
+
 def _group(repos: Mapping[str, Mapping], field: str) -> dict:
     groups: dict[str, dict] = {}
     for record in repos.values():
@@ -616,13 +684,14 @@ def snapshot_point(day: str, repos: Mapping[str, Mapping]) -> dict:
     """One point of the history: the totals, by ecosystem and by type."""
     whole = totals(repos)
     return {"d": day, "t": {k: whole[k] for k in ("repos", "code", "comment", "tests", "docs", "files", "size", "cases", "l10n_files")},
-            "e": _group(repos, "eco"), "y": _group(repos, "type")}
+            "e": _group(repos, "eco"), "y": _group(repos, "type"), "c": change_totals(repos), "ce": change_totals(repos, "eco")}
 
 
 def make_document(day: str, config: Mapping, repos: Mapping[str, Mapping]) -> dict:
     return {"schema": SCHEMA, "day": day, "owner": config["owner"],
             "ecosystems": [{"key": e["key"], "label": e["label"]} for e in config["ecosystems"]],
             "types": list(config["types"]["order"]),
+            "kinds": changelog_stats.kind_keys(config["changelog"]),
             "repos": dict(sorted(repos.items())), "totals": totals(repos)}
 
 
@@ -681,7 +750,7 @@ def render(document: object) -> str:
 
 
 def run_all(config: Mapping, out_dir: Path, workdir: Path, token: str | None, today: str, *, repos: Sequence[Mapping] | None = None,
-            local_root: Path | None = None, run: Runner = subprocess.run, log: Callable[[str], None] = lambda text: print(text, file=sys.stderr)) -> dict:
+            local_root: Path | None = None, run: Runner = subprocess.run, tags: Callable | None = None, log: Callable[[str], None] = lambda text: print(text, file=sys.stderr)) -> dict:
     """Measure everything and write both documents into `out_dir`. Returns {'fresh': n, 'wanted': n, 'history_written': bool}."""
     listing = list(repos) if repos is not None else list_repos(config["owner"], token)
     chosen = select(listing, config)
@@ -690,7 +759,7 @@ def run_all(config: Mapping, out_dir: Path, workdir: Path, token: str | None, to
 
     def one(repo: Mapping):
         try:
-            return repo, *measure(repo, config, workdir, token, local_root, run)
+            return repo, *measure(repo, config, workdir, token, local_root, run, tags, today)
         except Exception as error:               # one broken repository must not stop the others
             log(f"{repo['name']}: {type(error).__name__}")
             return repo, None, {}
@@ -759,7 +828,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     workdir = Path(tempfile.mkdtemp(prefix="code-stats-")) if created else args.workdir
     workdir.mkdir(parents=True, exist_ok=True)
     try:
-        result = run_all(config, args.out, workdir, token, today, local_root=args.local_root)
+        result = run_all(config, args.out, workdir, token, today, local_root=args.local_root, tags=None if args.local_root else tag_info)
     except (urllib.error.URLError, OSError, ValueError) as error:
         print(f"The repositories could not be listed ({type(error).__name__}); nothing was changed.", file=sys.stderr)
         return 1

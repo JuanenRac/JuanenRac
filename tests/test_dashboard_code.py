@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import dashboard_changes_ui as chui  # noqa: E402
 import dashboard_code as dc  # noqa: E402
 import dashboard_code_texts as texts  # noqa: E402
 import dashboard_code_ui as ui  # noqa: E402
@@ -84,6 +85,59 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(dc.load_history(ROOT / "nothing.json"), [])
 
 
+KINDS = ["fix", "added", "unclassified"]
+
+
+def with_changes(**changes):
+    base = {"versions": 2, "entries": 5, "unreleased": 1, "avg": 2.5, "kinds": {"fix": 2, "added": 3, "unclassified": 1}, "published_kinds": {"fix": 2, "added": 3, "unclassified": 0},
+            "u": [[2, "Panel"]], "v": [["1.0.0", 3, [1, 2, 0], [[0, "Fix"], [1, "Added"], [1, "Added two"]]], ["0.9.0", 2, [1, 1, 0]]]}
+    base.update(changes)
+    return base
+
+
+class ChangesBuildTests(unittest.TestCase):
+    def doc(self, **extra):
+        document = document_with(A=repo(changes=with_changes(), rel={"tags": 5, "last": "2001-12-19", "d30": 1, "d90": 2, "gap": 4.5}, **extra))
+        document["kinds"] = KINDS
+        return document
+
+    def test_the_changes_and_the_pace_are_embedded(self):
+        got = dc.build(self.doc(), [])["repos"]["A"]
+        self.assertEqual(got["changes"]["entries"], 5)
+        self.assertEqual(got["changes"]["v"][0][3][1], [1, "Added"])
+        self.assertEqual(len(got["changes"]["v"][1]), 3)               # the older version has no entries kept
+        self.assertEqual(got["rel"], {"tags": 5, "last": "2001-12-19", "d30": 1, "d90": 2, "gap": 4.5})
+        self.assertEqual(dc.build(self.doc(), [])["kinds"], KINDS)
+
+    def test_a_repository_without_changelog_or_tags_has_none(self):
+        document = document_with(A=repo())
+        document["kinds"] = KINDS
+        got = dc.build(document, [])["repos"]["A"]
+        self.assertIsNone(got["changes"])
+        self.assertIsNone(got["rel"])
+
+    def test_wrong_shapes_are_dropped(self):
+        broken = with_changes(v=[["1.0.0", 3, [1, 2]], "x", ["0.1.0", 1, [0, 0, 1], [[9, "bad kind"], [0, "ok"], ["a", "b"]]]], u=[[7, "bad"]], entries=-3, avg="many")
+        document = document_with(A=repo(changes=broken, rel={"tags": "x", "last": "nope", "gap": -1}))
+        document["kinds"] = KINDS
+        got = dc.build(document, [])["repos"]["A"]
+        self.assertEqual([v[0] for v in got["changes"]["v"]], ["0.1.0"])
+        self.assertEqual(got["changes"]["v"][0][3], [[0, "ok"]])
+        self.assertEqual((got["changes"]["u"], got["changes"]["entries"], got["changes"]["avg"]), ([], 0, 0))
+        self.assertEqual(got["rel"], {"tags": 0, "last": None, "d30": 0, "d90": 0, "gap": None})
+
+    def test_the_history_keeps_the_changes_of_known_ecosystems_only(self):
+        point = {"d": "2001-12-20", "t": {}, "c": {"entries": 4, "repos": 1, "bad": 9}, "ce": {"armor": {"entries": 4}, "nobody": {"entries": 1}}}
+        got = dc.build(self.doc(), [point])["history"][0]
+        self.assertEqual(got["c"]["entries"], 4)
+        self.assertNotIn("bad", got["c"])
+        self.assertEqual(sorted(got["ce"]), ["armor"])
+
+
+def document_with(**repos):
+    return document(**repos)
+
+
 class TextTests(unittest.TestCase):
     def test_eight_languages_same_placeholders(self):
         self.assertEqual(texts.problems(), [])
@@ -117,11 +171,26 @@ class TextTests(unittest.TestCase):
 
     def test_the_script_uses_only_known_texts(self):
         import re
-        for key in set(re.findall(r"dict\.(cd_[a-z0-9_]+)", ui.JS)):
+        for key in set(re.findall(r"dict\.((?:cd|ch)_[a-z0-9_]+)", ui.JS)):
             self.assertIn(key, texts.TEXTS["en"], key)
         for key in re.findall(r'"(cd_[a-z0-9_]+)"', ui.JS):
             if not key.endswith("_"):                  # a prefix completed at run time ("cd_type_" + the type)
                 self.assertIn(key, texts.TEXTS["en"], key)
+
+    def test_the_changes_view_uses_only_known_texts(self):
+        import re
+        html = chui.panel_html()
+        for key in re.findall(r'data-i18n(?:-aria-label)?="([a-z0-9_]+)"', html):
+            self.assertIn(key, texts.TEXTS["en"], key)
+        for key in set(re.findall(r"dict\.((?:cd|ch)_[a-z0-9_]+)", chui.JS)):
+            self.assertIn(key, texts.TEXTS["en"], key)
+        for ident in ("ch-donut-table", "ch-stack-table", "ch-evo-table", "ch-rank-vol-table", "ch-rank-fix-table", "ch-det-alt"):
+            self.assertIn(f'id="{ident}"', html)
+
+    def test_the_changes_text_is_complete_and_translated(self):
+        for key in ("ch_title", "ch_hint", "ch_help_body", "ch_donut_title", "ch_rank_title", "ch_det_hint", "ch_table_hint", "ch_export_note"):
+            for code in ("es", "de", "fr", "it", "ja", "zh", "pt"):
+                self.assertNotEqual(texts.TEXTS[code][key], texts.TEXTS["en"][key], f"{code} {key}")
 
     def test_the_script_draws_nothing_from_a_library(self):
         self.assertNotIn("http://", ui.JS.replace("http://www.w3.org", ""))

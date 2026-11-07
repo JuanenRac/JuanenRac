@@ -592,7 +592,7 @@ Issue 标签在所有 HYDRA-UMC 仓库中都是统一标准化的，其来源是
 
 一个覆盖四个生态系统所有公共仓库的实时状态仪表板——每个仓库通过其自身的清单（`hydra-umc.project.json`、`urtc.project.json`、`armor.project.json`、`eh3d.project.json`，以及用于跨生态系统仓库的 `electro-hobby-3d.project.json`）被自律发现，直接从每个仓库自身的默认分支读取，没有固定列表——由 [`.github/workflows/build-dashboard.yml`](.github/workflows/build-dashboard.yml) 在项目推送时（通过每个仓库自身的 `dashboard-dispatch.yml`）立即重新生成，并且作为安全网每小时运行两次，通过 GitHub Pages 从 `docs/` 提供服务：[**juanenrac.github.io/JuanenRac**](https://juanenrac.github.io/JuanenRac/)。它展示了技术栈、部署目标和当前版本、每个项目的真实成熟度分类（scaffolding / functional / established / production，每个分类根据该项目自身的 CHANGELOG 决定——参见 [`HYDRA-UMC-UPDATER/registry.py`](https://github.com/JuanenRac/HYDRA-UMC-UPDATER/blob/main/src/hydra_umc_updater/registry.py)）、其角色（API / UI / CLI / 固件 / 库 / 服务 / 工具）、家族/父子树以及关于当前已实现功能的按项目注释。[ecosystem-catalog.json](ecosystem-catalog.json) 在一个地方列出了这些生态系统及其清单，如果两者不一致，仪表板构建将拒绝运行。
 
-仪表板的 **代码** 标签页显示每个仓库的代码、注释、测试和文档行数,包括代码、测试与文档的堆叠条形图、编程语言构成、每日历史,以及可按仓库、生态系统和类型排序与筛选的表格。[`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) 每天使用 [`scripts/code_stats.py`](scripts/code_stats.py) 和 [`code-stats-config.json`](code-stats-config.json) 中的规则在浅克隆上统计一次;详见 [`docs/CODE_STATS.md`](docs/CODE_STATS.md)。
+仪表板的 **代码** 标签页显示每个仓库的代码、注释、测试和文档行数,包括代码、测试与文档的堆叠条形图、编程语言构成、每日历史,以及可按仓库、生态系统和类型排序与筛选的表格。其 **变更** 视图读取每个仓库的 CHANGELOG:版本、条目、按可编辑关键词判定的每个条目的类型(修复、新增、安全、文档等)、GitHub 标签的发布节奏、排名、各版本的条目,以及将表格导出为 CSV 或 JSON。[`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) 每天使用 [`scripts/code_stats.py`](scripts/code_stats.py) 和 [`code-stats-config.json`](code-stats-config.json) 中的规则在浅克隆上统计一次;详见 [`docs/CODE_STATS.md`](docs/CODE_STATS.md)。
 
 ## 🧭 GitHub 协作
 

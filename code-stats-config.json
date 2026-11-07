@@ -80,6 +80,23 @@
     "extensions": ["md", "markdown", "rst", "adoc", "txt"],
     "not_docs": ["requirements*.txt", "constraints*.txt", "CMakeLists.txt", "robots.txt", "*.cmake.txt", "CODEOWNERS"]
   },
+  "changelog": {
+    "max_versions": 30,
+    "detail_versions": 5,
+    "title_chars": 80,
+    "text_chars": 200,
+    "headings": {"added": "added", "new": "added", "changed": "changed", "deprecated": "changed", "removed": "changed", "fixed": "fix", "fix": "fix", "security": "security", "documentation": "docs", "docs": "docs", "tests": "tests", "performance": "performance"},
+    "kinds": [
+      {"key": "security", "keywords": ["security", "vulnerab", "cve-", "exploit", "secret", "credential", "leak", "injection", "xss", "csrf", "sanitiz", "harden", "traversal", "unauthori"]},
+      {"key": "fix", "keywords": ["fix", "bug", "regression", "crash", "broken", "incorrect", "wrong", "no longer", "failed", "fails", "failure", "corrected", "repair", "race", "hang", "freez", "panic", "overflow", "resolve", "stale", "mishandl", "misreport", "mistaken"]},
+      {"key": "performance", "keywords": ["performance", "faster", "speed", "latency", "cache", "memory use", "memory usage", "optimi", "throughput", "slow"]},
+      {"key": "docs", "keywords": ["documentation", "docs", "readme", "changelog", "guide", "translation", "docstring", "manual", "help text", "wording", "typo"]},
+      {"key": "tests", "keywords": ["test", "coverage", "fuzz", "e2e", "property-based", "sanitizer", "ctest"]},
+      {"key": "refactor", "keywords": ["refactor", "clean up", "cleanup", "rename", "split", "extract", "simplif", "dead code", "dedup", "reorganiz", "restructur", "tidy", "consolidat"]},
+      {"key": "added", "keywords": ["add", "new", "introduc", "implement", "support", "enable", "create", "provide", "can now", "feature", "first", "ship"]},
+      {"key": "changed", "keywords": ["chang", "update", "replace", "switch", "upgrade", "bump", "migrat", "now", "instead", "rework", "improv", "default", "deprecat", "remov", "drop", "move", "rewrite"]}
+    ]
+  },
   "history": {"daily_days": 120, "weekly_days": 730, "max_points": 700},
   "clone": {"workers": 4, "timeout_seconds": 300}
 }

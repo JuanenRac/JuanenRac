@@ -1,5 +1,7 @@
 # Code tab
 
+The tab has two views, chosen with the buttons at its top: **Code** (lines of code, tests and documentation) and **Changes** (statistics of the changelogs, at the end of this page).
+
 The Code tab of the status dashboard shows how much code, how many tests and how much documentation every repository of the four ecosystems has, and how
 that changes day by day. The figures are counted, not declared: a script reads the files of a fresh shallow copy of each repository.
 
@@ -65,3 +67,33 @@ python scripts/code_stats.py --out data
 needs `git` and, to read more than the public limit of the API, a `GITHUB_TOKEN` in the environment (it is handed to git through the environment, never in a
 command). `--local-root DIR` counts directories that are already cloned (`DIR/<repository>`) instead of cloning. The tests of the counter are in
 `tests/test_code_stats.py` and run without network.
+
+## The Changes view
+
+The Changes view reads the `CHANGELOG.md` of every repository in the same daily run and answers how much is published, how often, and what kind of work it is.
+
+| Figure | Where it comes from |
+|---|---|
+| Published versions | the sections of the changelog headed `## [x.y.z]` (a bracketed name that is not a version number is not counted) |
+| Published entries, entries waiting | the top-level list items under those sections, and under `## [Unreleased]` |
+| Entries per version | published entries divided by published versions |
+| The kind of each entry | the sub-heading it sits under (Added, Changed, Fixed, Security...) or, when there is none, the first rule of `changelog.kinds` in `code-stats-config.json` that matches its title and then the start of its text |
+| Tags, tags in 30 and 90 days, days between tags, last tag | the tags of GitHub (the newest 20 of each repository, read with the token of the workflow); the changelogs themselves hold no dates |
+
+The kinds are bug fix, added, security, documentation, tests, performance, refactor and changed. The rules are words, tried in the order of the file, and the
+configuration is the place to edit them. An entry that no rule recognises is counted as **unclassified**, and the tab shows how many there are: the figures
+never guess. A repository with no changelog, or whose tags could not be read, is shown as not available, never as zero.
+
+The view shows:
+
+* Nine figures for the repositories selected by the filters.
+* A donut of the kinds and stacked bars of the kinds for the whole, each ecosystem and each type.
+* Lines over time (published entries, entries waiting, fixes, and published entries by ecosystem) from the daily history, which keeps the totals of the
+  changelogs next to the code figures.
+* A ranking: the repositories with most changes (stacked by kind) and the highest share of fixes (only repositories with at least 10 entries).
+* The detail of a repository: its versions, the entries of each one by kind, a range of versions, and, for the newest versions, the entries themselves, which can be
+  searched and filtered by kind (the text of an entry is cut to 80 characters; `changelog.detail_versions` says how many versions keep it).
+* A table by repository, ecosystem or type that can be sorted and filtered, with a total, and an export of what the table shows as CSV or JSON.
+
+Every chart has a table with the same figures, a name for assistive technology and a tooltip on hover and on keyboard focus. The texts are in the eight languages.
+

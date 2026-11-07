@@ -27,6 +27,7 @@ for sibling in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):
     if candidate.is_dir():
         sys.path.append(str(candidate))
 
+import changelog_stats  # noqa: E402
 import code_stats  # noqa: E402
 import dashboard_actions as actions_mod  # noqa: E402
 import dataclasses  # noqa: E402
@@ -289,6 +290,28 @@ CODE_TYPES = ("firmware", "apps", "services", "tools", "docs")
 CODE_LANGS = ("Python", "Rust", "C++", "TypeScript", "Kotlin")
 
 
+ENTRY_TITLES = (
+    "**Fix:** the parser no longer crashes on an empty file.", "**Added:** support for a second input format.", "**Security:** a path is checked before it is opened.",
+    "**Faster start:** the cache is warmed once.", "**Documentation:** the guide explains the settings.", "**Tests:** more cases for the limits.",
+    "**Cleanup:** the helpers moved to one module.", "**Changed:** the default is now stricter.", "**Panel:** shows the figures of the day.",
+)
+
+
+def _changelog_text(index: int, scale: int) -> str:
+    """A CHANGELOG.md made up for the fixture: a few versions with entries of every kind, one with Keep a Changelog sub-headings."""
+    lines = ["# Changelog", "", "## [Unreleased]", ""]
+    for n in range(1 + index % 4):
+        lines.append("- " + ENTRY_TITLES[(index + n * 2) % len(ENTRY_TITLES)])
+    for v in range(max(1, (3 + index % 9) * scale // 100)):
+        lines += ["", f"## [0.{(3 + index % 9) - v}.0] - Version {v}", ""]
+        if index % 11 == 3 and v == 0:
+            lines += ["### Fixed", "", "- **Crash:** a second fix.", "", "### Added", "", "- **Feature:** another item.", "- Plain item with no words of a kind.", ""]
+            continue
+        for n in range(2 + (index + v) % 6):
+            lines.append("- " + ENTRY_TITLES[(index + v + n) % len(ENTRY_TITLES)])
+    return chr(10).join(lines) + chr(10)
+
+
 def _code_record(index: int, key: str, scale: int = 100) -> dict:
     """The figures of one repository of the fixture (counted by nothing: made up, but shaped like the real record and adding up the way the counter does)."""
     main = CODE_LANGS[index % 5]
@@ -306,6 +329,8 @@ def _code_record(index: int, key: str, scale: int = 100) -> dict:
     }
     if index % 3 == 0:
         record["declared_tests"] = 90 + index * 5
+    record["changes"] = changelog_stats.summarize(_changelog_text(index, scale), code_stats.load_config()["changelog"]) if index % 12 != 11 else None
+    record["rel"] = {"tags": 4 + index % 9, "last": f"2001-12-{10 + index % 11:02d}", "d30": 1 + index % 4, "d90": 2 + index % 6, "gap": 3.5 + index % 5} if index % 10 != 9 else None
     return record
 
 
