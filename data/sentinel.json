@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-07T14:25:55Z",
+ "asof": "2026-11-07T14:33:18Z",
  "ci": {
   "checked": 529,
   "red": [
@@ -10,29 +10,23 @@
     "wf": "nightly.yml"
    },
    {
-    "repo": "HYDRA-UMC-DOCS",
-    "since": "2026-11-07T14:10:14Z",
-    "streak": 9,
-    "wf": "nightly.yml"
-   },
-   {
     "repo": "HYDRA-UMC-VISION-STREAMER",
     "since": "2026-11-07T14:03:12Z",
     "streak": 5,
     "wf": "publish-real.yml"
    }
   ],
-  "red_total": 3
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 404,
+    "min24": 395,
     "min7": 532,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 283,
+    "min24": 274,
     "min7": 307,
     "repo": "URTC"
    },
@@ -42,7 +36,7 @@
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 134,
+    "min24": 125,
     "min7": 291,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
@@ -52,13 +46,13 @@
     "repo": "EH3D-SERVER"
    },
    {
-    "min24": 116,
+    "min24": 115,
     "min7": 198,
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 3975,
-  "total7": 16232,
+  "total24": 3937,
+  "total7": 16234,
   "warn": false
  },
  "ecosystems": {
@@ -86,7 +80,7 @@
   "hydra-umc": {
    "cand": 3,
    "read": 59,
-   "red": 2,
+   "red": 1,
    "repos": 59,
    "unpub": 0
   },
@@ -100,67 +94,61 @@
  },
  "events": [
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "red_new",
    "repo": "ARMOR-DOCS",
    "wf": "nightly.yml"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
-   "kind": "red_new",
-   "repo": "HYDRA-UMC-DOCS",
-   "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "red_new",
    "repo": "HYDRA-UMC-VISION-STREAMER",
    "wf": "publish-real.yml"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "red_ok",
    "repo": "ARMOR-COMMON",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "red_ok",
    "repo": "HYDRA-UMC-BRIDGE-UAV",
    "wf": "sitl.yml"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "released",
    "repo": "EH3D-COMPONENT-INTELLIGENCE",
    "tag": "v0.0.3"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "released",
    "repo": "EH3D-NODE-BUNGARD-AUX",
    "tag": "v0.0.8"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "released",
    "repo": "EH3D-NODE-HMI-GUI",
    "tag": "v0.0.8"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "released",
    "repo": "HYDRA-UMC-PATH-PLANNER-3D",
    "tag": "v0.1.4"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "released",
    "repo": "HYDRA-UMC-PRODUCTION-REPORTS",
    "tag": "v0.2.1"
   },
   {
-   "at": "2026-11-07T14:25:55Z",
+   "at": "2026-11-07T14:33:18Z",
    "kind": "released",
    "repo": "HYDRA-UMC-SWARM-SYNC",
    "tag": "v0.2.0"
@@ -278,6 +266,12 @@
    "kind": "red_ok",
    "repo": "URTC-DEVTOOLS",
    "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-06T22:25:39Z",
+   "kind": "red_ok",
+   "repo": "URTC-DOCS",
+   "wf": "nightly.yml"
   }
  ],
  "hygiene": {
@@ -296,7 +290,7 @@
     "bad": 0,
     "cand": 4,
     "hyg": 0,
-    "red": 3
+    "red": 2
    }
   },
   {
@@ -305,10 +299,9 @@
    "p": {
     "list": [
      "ARMOR-DOCS",
-     "HYDRA-UMC-DOCS",
      "HYDRA-UMC-VISION-STREAMER"
     ],
-    "n": 3
+    "n": 2
    }
   },
   {
@@ -545,14 +538,14 @@
    2782,
    4421,
    5648,
-   3975
+   3937
   ],
   "red": [
    3,
    5,
    3,
    0,
-   3
+   2
   ]
  },
  "unpublished": {
