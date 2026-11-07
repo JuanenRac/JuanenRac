@@ -114,6 +114,8 @@ CSS = r"""
   .ch-legend { flex-direction: column; flex-wrap: nowrap; gap: 5px; font-size: 13px; }
   .ch-legend li { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 8px; align-items: center; font-variant-numeric: tabular-nums; }
   .ch-legend b { font-weight: 600; }
+  .ch-donut-grid svg .cd-seg path { filter: drop-shadow(0 2px 2px rgba(0,0,0,.45)); }
+  .ch-donut-grid svg .ring-sheen { stroke: #fff; opacity: .2; pointer-events: none; }
   .ch-donut-total { fill: var(--text); font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
   .ch-donut-label { fill: var(--dim); font-size: 12px; }
   .cd-seg path { stroke: var(--panel); stroke-width: 1.5; }
@@ -173,6 +175,8 @@ JS = r"""
       const y = 4 + i * ROW;
       const g = svgEl("g", { "data-row": r.name });
       g.appendChild(svgEl("text", { x: 0, y: y + 15, class: "cd-text" }, r.label || r.name));
+      cdDepth(g, L, y + 2, W - L - R, ROW - 7, 2);
+      g.appendChild(svgEl("rect", { x: L, y: y + 2, width: W - L - R, height: ROW - 7, rx: 2, class: "cd-track" }));
       let x = L;
       chKinds().forEach(function (k, ki) {
         const v = r.kinds[k] || 0;
@@ -181,6 +185,7 @@ JS = r"""
         const seg = svgEl("g", { class: "cd-seg", "data-kind": k, "data-value": String(v), style: "--i:" + i });
         cdTipped(seg, tpl(dict.ch_seg_tip, { name: r.label || r.name, kind: chKindLabel(k, dict), n: cdNum(v), total: cdNum(r.total), pc: cdNum(cdPct(v, r.total)) }));
         seg.appendChild(svgEl("rect", { x: x, y: y + 2, width: Math.max(1, w), height: ROW - 7, rx: 2, class: chKindClass(ki) }));
+        cdRelief(seg, x, y + 2, w, ROW - 7);
         g.appendChild(seg);
         x += w;
       });
@@ -233,6 +238,7 @@ JS = r"""
       svg.appendChild(seg);
       angle += sweep;
     });
+    if (total > 0) { svg.appendChild(svgEl("circle", { cx: 120, cy: 120, r: 106, fill: "none", "stroke-width": 2.4, class: "ring-sheen", "aria-hidden": "true" })); }
     svg.appendChild(svgEl("text", { x: 120, y: 123, "text-anchor": "middle", class: "ch-donut-total" }, cdNum(total)));
     svg.appendChild(svgEl("text", { x: 120, y: 144, "text-anchor": "middle", class: "ch-donut-label" }, dict.ch_entries));
     holder.appendChild(svg);
@@ -291,10 +297,12 @@ JS = r"""
       const y = 4 + i * ROW;
       const g = svgEl("g", { "data-row": r.name });
       g.appendChild(svgEl("text", { x: 0, y: y + 15, class: "cd-text" }, r.name));
+      cdDepth(svg, L, y + 2, W - L - R, ROW - 7, 2);
       svg.appendChild(svgEl("rect", { x: L, y: y + 2, width: W - L - R, height: ROW - 7, rx: 2, class: "cd-track" }));
       const seg = svgEl("g", { class: "cd-seg", "data-value": String(Math.round(r.share * 1000) / 10), style: "--i:" + i });
       cdTipped(seg, tpl(dict.ch_rank_fix_tip, { name: r.name, fix: cdNum(r.fix), n: cdNum(r.entries), pc: cdNum(cdPct(r.fix, r.entries)) }));
       seg.appendChild(svgEl("rect", { x: L, y: y + 2, width: Math.max(1, (W - L - R) * r.share), height: ROW - 7, rx: 2, class: "cd-c-code" }));
+      cdRelief(seg, L, y + 2, Math.max(1, (W - L - R) * r.share), ROW - 7);
       g.appendChild(seg);
       g.appendChild(svgEl("text", { x: W, y: y + 15, "text-anchor": "end", class: "cd-val" }, cdNum(cdPct(r.fix, r.entries)) + " %"));
       svg.appendChild(g);

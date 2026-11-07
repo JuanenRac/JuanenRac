@@ -104,7 +104,8 @@ CSS = r"""
   .ac-wide { grid-column: span 2; }
   .ac-ring-box { display: flex; align-items: center; gap: 14px; }
   .ac-ring-box svg { width: 128px; height: 128px; flex: 0 0 auto; }
-  .ac-ring-seg { fill: none !important; stroke-width: 15; }
+  .ac-ring-seg { fill: none !important; stroke-width: 15; filter: drop-shadow(0 2px 2px rgba(0,0,0,.45)); }
+  .ac-ring-sheen { fill: none; stroke: #fff; stroke-width: 3.4; opacity: .3; pointer-events: none; }
   .ac-ring-num { fill: var(--text); font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
   .ac-ring-sub { fill: var(--dim); font-size: 10px; }
   .ac-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: 12.5px; min-width: 0; }
@@ -121,8 +122,8 @@ CSS = r"""
             padding: 2px 6px; min-height: 24px; color: var(--text); font: inherit; font-size: 12px; cursor: pointer; }
   .ac-bar:hover { background: var(--panel-2); }
   .ac-bar-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ac-track { height: 9px; border-radius: 5px; background: var(--panel-2); overflow: hidden; }
-  .ac-fill { display: block; height: 100%; width: var(--w, 0%); border-radius: 5px; transform-origin: left center; }
+  .ac-track { height: 9px; border-radius: 5px; background: var(--panel-2); box-shadow: inset 0 1px 2px rgba(0,0,0,.3); overflow: hidden; }
+  .ac-fill { display: block; height: 100%; width: var(--w, 0%); border-radius: 5px; transform-origin: left center; background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0) 55%, rgba(0,0,0,.18)); }
   .ac-bar-val { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; white-space: nowrap; }
   .ac-tl { width: 100%; height: auto; max-height: 190px; display: block; }
   .ac-tl-name { fill: var(--text); font-size: 11.5px; }
@@ -146,7 +147,7 @@ CSS = r"""
   @media (prefers-reduced-motion: no-preference) {
     .ac-fill { animation: t25-grow-x .7s cubic-bezier(.2,.7,.2,1) both; }
     .ac-ring-seg { animation: t25-fade .6s ease both; }
-    .ac-col rect { transform-box: fill-box; transform-origin: bottom center; animation: t25-grow-y .6s cubic-bezier(.2,.7,.2,1) both; }
+    .ac-col rect, .ac-col polygon { transform-box: fill-box; transform-origin: bottom center; animation: t25-grow-y .6s cubic-bezier(.2,.7,.2,1) both; }
   }
   @media (max-width: 1250px) { .ac-kpi b { font-size: 19px; } }
   @media (max-width: 1100px) { .ac-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } #panel-actions .panel-inner, .ac { height: auto; } .ac-grid { grid-template-columns: minmax(0, 1fr); } .ac-wide { grid-column: auto; } .ac-table-wrap { max-height: 60vh; } }
@@ -235,6 +236,7 @@ JS = r"""
         "stroke-dashoffset": (-offset).toFixed(2), transform: "rotate(-90 60 60)", "data-code": c, "data-n": n }));
       offset += len;
     });
+    if (total > 0) { svg.appendChild(svgEl("circle", { cx: 60, cy: 60, r: R + 5.5, class: "ac-ring-sheen", "aria-hidden": "true" })); }
     svg.appendChild(svgEl("text", { x: 60, y: 62, "text-anchor": "middle", class: "ac-ring-num" }, AC.read ? acNum(total) : "–"));
     svg.appendChild(svgEl("text", { x: 60, y: 77, "text-anchor": "middle", class: "ac-ring-sub" }, dict.ac_ring_total));
     holder.appendChild(svg);
@@ -335,6 +337,11 @@ JS = r"""
         const h = p[1] * scale;
         if (h > 0) { y -= h; g.appendChild(svgEl("rect", { x: x, y: y, width: w, height: h, rx: 1.5, class: "ac-c-" + p[0], style: "animation-delay:" + (i * 40) + "ms" })); }
       });
+      if (y < H - B) {            // the light top face and the dark side face of the other tabs' columns
+        const dx = Math.min(5, w * 0.2), dy = 3.5, st = "animation-delay:" + (i * 40) + "ms";
+        g.appendChild(svgEl("polygon", { points: x + "," + y + " " + (x + dx) + "," + (y - dy) + " " + (x + w + dx) + "," + (y - dy) + " " + (x + w) + "," + y, class: "col-top", style: st, "aria-hidden": "true" }));
+        g.appendChild(svgEl("polygon", { points: (x + w) + "," + y + " " + (x + w + dx) + "," + (y - dy) + " " + (x + w + dx) + "," + (H - B - dy) + " " + (x + w) + "," + (H - B), class: "col-side", style: st, "aria-hidden": "true" }));
+      }
       g.appendChild(svgEl("text", { x: x + w / 2, y: y - 3, "text-anchor": "middle", class: "ac-tl-axis" }, String(d.runs || 0)));
       if (i === 0 || i === days.length - 1) { g.appendChild(svgEl("text", { x: x + w / 2, y: H - 6, "text-anchor": i === 0 ? "start" : "end", class: "ac-tl-axis" }, d.date.slice(5))); }
       svg.appendChild(g);

@@ -129,6 +129,8 @@ CSS = dashboard_changes_ui.CSS + r"""
   .cd-head { fill: var(--dim); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
   .cd-seg { outline-offset: 2px; cursor: default; }
   .cd-seg rect { stroke: var(--panel); stroke-width: 1.5; }
+  .cd-seg rect.seg-bevel, .cd-seg rect.seg-edge { stroke: none; }
+  .cd-seg:hover .seg-bevel, .cd-seg:focus-visible .seg-bevel { filter: none; }
   .cd-seg:hover rect, .cd-seg:focus-visible rect { filter: brightness(1.18); }
   .cd-seg:focus-visible { outline: 2px solid var(--focus); }
   .cd-track { fill: var(--panel-2); }
@@ -241,6 +243,13 @@ JS = r"""
     tip.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, x + 12)) + "px";
     tip.style.top = Math.max(8, (y - h - 12 < 8) ? y + 18 : y - h - 12) + "px";
   }
+  /* The relief of the other tabs (dashboard_charts.stacked_bars_svg): a shadow under the track, a dark lower half and a light edge on every segment. */
+  function cdDepth(parent, x, y, w, h, rx) { parent.appendChild(svgEl("rect", { x: x, y: y + 3, width: w, height: h, rx: rx, class: "bar-depth", "aria-hidden": "true" })); }
+  function cdRelief(parent, x, y, w, h) {
+    const wide = Math.max(1, w);
+    parent.appendChild(svgEl("rect", { x: x, y: y + h / 2, width: wide, height: h / 2, class: "seg-bevel", "aria-hidden": "true" }));
+    parent.appendChild(svgEl("rect", { x: x, y: y, width: wide, height: 2, class: "seg-edge", "aria-hidden": "true" }));
+  }
   function cdTipHide() { const tip = document.getElementById("cd-tip"); if (tip) { tip.hidden = true; } }
   function cdTipped(el, text, focusable) {
     el.setAttribute("data-tip", text); el.setAttribute("aria-label", text); el.setAttribute("role", "img");
@@ -321,6 +330,7 @@ JS = r"""
       if (it.r.head) { svg.appendChild(svgEl("text", { x: 0, y: it.y - 8, class: "cd-head" }, it.r.head)); }
       const g = svgEl("g", { "data-row": it.r.key });
       g.appendChild(svgEl("text", { x: 0, y: it.y + 17, class: "cd-name" }, it.r.name));
+      cdDepth(g, L, it.y + 3, track, ROW - 8, 4);
       g.appendChild(svgEl("rect", { x: L, y: it.y + 3, width: track, height: ROW - 8, rx: 4, class: "cd-track" }));
       let x = L;
       CD_KINDS.forEach(function (k) {
@@ -329,6 +339,7 @@ JS = r"""
         const seg = svgEl("g", { class: "cd-seg", "data-kind": k, "data-value": String(f[k]), style: "--i:" + i });
         cdTipped(seg, cdStackTip(it.r.name, f, dict));
         seg.appendChild(svgEl("rect", { x: x, y: it.y + 3, width: Math.max(1, w), height: ROW - 8, rx: 3, class: "cd-c-" + k }));
+        cdRelief(seg, x, it.y + 3, w, ROW - 8);
         if (w > 46) { seg.appendChild(svgEl("text", { x: x + w / 2, y: it.y + 18, "text-anchor": "middle", class: "cd-ink" }, cdNum(cdPct(f[k], sum)) + " %")); }
         g.appendChild(seg);
         x += w;
@@ -384,6 +395,7 @@ JS = r"""
       cdTipped(seg, tpl(dict.cd_lang_tip, { lang: it.name, code: cdNum(it.code), pc: cdNum(cdPct(it.code, allCode)), comment: cdNum(it.comment), blank: cdNum(it.blank), files: cdNum(it.files) }));
       seg.appendChild(svgEl("text", { x: 0, y: y + 16, class: "cd-name" }, it.name));
       seg.appendChild(svgEl("rect", { x: L, y: y + 3, width: Math.max(2, (W - L - R) * it.code / maxCode), height: ROW - 8, rx: 3, class: it.cls }));
+      cdRelief(seg, L, y + 3, Math.max(2, (W - L - R) * it.code / maxCode), ROW - 8);
       seg.appendChild(svgEl("text", { x: W, y: y + 16, "text-anchor": "end", class: "cd-val" }, cdNum(it.code) + " · " + cdNum(cdPct(it.code, allCode)) + " %"));
       svg.appendChild(seg);
     });
@@ -403,6 +415,7 @@ JS = r"""
     ecoRows.forEach(function (row, i) {
       const y = 4 + i * ROW2;
       svg2.appendChild(svgEl("text", { x: 0, y: y + 18, class: "cd-name" }, row.eco.label));
+      cdDepth(svg2, L2, y + 4, W2 - L2 - R2, ROW2 - 10, 4);
       svg2.appendChild(svgEl("rect", { x: L2, y: y + 4, width: W2 - L2 - R2, height: ROW2 - 10, rx: 4, class: "cd-track" }));
       let x = L2;
       row.parts.forEach(function (p) {
@@ -411,6 +424,7 @@ JS = r"""
         const seg = svgEl("g", { class: "cd-seg", "data-lang": p.name, "data-eco": row.eco.key, "data-value": String(p.v), style: "--i:" + i });
         cdTipped(seg, row.eco.label + " · " + tpl(dict.cd_lang_tip, { lang: p.name, code: cdNum(p.v), pc: cdNum(cdPct(p.v, row.total)), comment: cdNum(p.e.comment), blank: cdNum(p.e.blank), files: cdNum(p.e.files) }));
         seg.appendChild(svgEl("rect", { x: x, y: y + 4, width: Math.max(1, w), height: ROW2 - 10, rx: 3, class: p.cls }));
+        cdRelief(seg, x, y + 4, w, ROW2 - 10);
         svg2.appendChild(seg);
         x += w;
       });
@@ -534,6 +548,7 @@ JS = r"""
         const seg = svgEl("g", { class: "cd-seg", "data-kind": k, "data-value": String(r.f[k]), style: "--i:" + i });
         cdTipped(seg, cdStackTip(r.name, r.f, dict));
         seg.appendChild(svgEl("rect", { x: x, y: y + 2, width: Math.max(1, w), height: ROW - 7, rx: 2, class: "cd-c-" + k }));
+        cdRelief(seg, x, y + 2, w, ROW - 7);
         g.appendChild(seg);
         x += w;
       });

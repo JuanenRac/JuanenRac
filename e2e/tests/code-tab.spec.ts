@@ -58,7 +58,7 @@ test.describe("code tab: charts", () => {
     for (const kind of ["code", "tests", "docs"]) await expect(rows.first().locator(`.cd-seg[data-kind=${kind}]`)).toHaveCount(1);
     const values = await rows.first().locator(".cd-seg").evaluateAll((els) => els.map((e) => Number(e.getAttribute("data-value"))));
     expect(values.every((v) => v > 0)).toBe(true);
-    const widths = await rows.first().locator(".cd-seg rect").evaluateAll((els) => els.map((e) => e.getBoundingClientRect().width));
+    const widths = await rows.first().locator(".cd-seg rect:not(.seg-bevel):not(.seg-edge)").evaluateAll((els) => els.map((e) => e.getBoundingClientRect().width));
     expect(widths[0]).toBeGreaterThan(widths[2]);
     expect(await page.getByTestId("cd-prop-legend").locator("li").allInnerTexts()).toEqual(["Code", "Tests", "Documentation"]);
     await expect(page.getByTestId("cd-prop-table").locator("tbody tr")).toHaveCount(10);
