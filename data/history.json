@@ -3332,11 +3332,11 @@
   },
   {
    "actions": {
-    "fail": 202,
-    "min": 3592,
-    "ok": 2450,
+    "fail": 191,
+    "min": 3475,
+    "ok": 2378,
     "other": 23,
-    "runs": 2675
+    "runs": 2592
    },
    "areas": {
     "armor": {
@@ -3350,7 +3350,7 @@
      "tests": 95
     },
     "eh3d": {
-     "ci": 100,
+     "ci": 97,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -3360,7 +3360,7 @@
      "tests": 90
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -3570,7 +3570,7 @@
     ],
     "EH3D-PHOENIX-PNP": [
      1,
-     "0.0.6"
+     "0.0.7"
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -3904,7 +3904,7 @@
    "sentinel": {
     "cand": 5,
     "gaps": 0,
-    "min": 3592,
+    "min": 3475,
     "red": 1
    },
    "tests": {
@@ -3941,18 +3941,18 @@
     "EH3D-PHOENIX-CNC": 126,
     "EH3D-PHOENIX-LASER": 309,
     "EH3D-PHOENIX-PCB": 4102,
-    "EH3D-PHOENIX-PNP": 536,
+    "EH3D-PHOENIX-PNP": 572,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 85,
-    "EH3D-SERVER": 347,
-    "EH3D-STENCILCAM": 160,
-    "EH3D-STUDIO": 314,
-    "EH3D-SUITE-LAUNCHER": 113,
+    "EH3D-SERVER": 358,
+    "EH3D-STENCILCAM": 164,
+    "EH3D-STUDIO": 323,
+    "EH3D-SUITE-LAUNCHER": 119,
     "EH3D-THERMAL-LAB": 3,
-    "EH3D-TOOL-MANAGER": 139,
+    "EH3D-TOOL-MANAGER": 147,
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
-    "EH3D-VISION-STUDIO": 143,
+    "EH3D-VISION-STUDIO": 146,
     "HYDRA-UMC": 491,
     "HYDRA-UMC-ANDROID-CONTROL": 531,
     "HYDRA-UMC-ANOMALY-DETECTOR": 275,
@@ -3969,18 +3969,18 @@
     "HYDRA-UMC-DASHBOARD-AI": 261,
     "HYDRA-UMC-DATALAKE": 306,
     "HYDRA-UMC-DETECTION-HEF": 225,
-    "HYDRA-UMC-DEV-SERVER": 536,
+    "HYDRA-UMC-DEV-SERVER": 549,
     "HYDRA-UMC-DEVELOPER-NODE": 95,
     "HYDRA-UMC-DOCS": 217,
     "HYDRA-UMC-DOCS-QA": 137,
     "HYDRA-UMC-DSI": 331,
     "HYDRA-UMC-EDITOR-STL": 302,
     "HYDRA-UMC-EDITOR-URDF": 607,
-    "HYDRA-UMC-GATEWAY-INDUSTRIAL": 187,
+    "HYDRA-UMC-GATEWAY-INDUSTRIAL": 294,
     "HYDRA-UMC-HIL-BRIDGE": 217,
     "HYDRA-UMC-IOS-CONTROL": 535,
     "HYDRA-UMC-JOB-DISPATCHER": 303,
-    "HYDRA-UMC-LOCAL-TECHNICIAN": 370,
+    "HYDRA-UMC-LOCAL-TECHNICIAN": 377,
     "HYDRA-UMC-MQTT-BROKER": 187,
     "HYDRA-UMC-MTCONNECT-ADAPTER": 189,
     "HYDRA-UMC-NODE-HEALING": 174,
@@ -4006,7 +4006,7 @@
     "HYDRA-UMC-TWIN": 235,
     "HYDRA-UMC-UPDATER": 485,
     "HYDRA-UMC-VISION-NODE": 399,
-    "HYDRA-UMC-VISION-STREAMER": 298,
+    "HYDRA-UMC-VISION-STREAMER": 302,
     "HYDRA-UMC-VISUAL-SERVOING-API": 348,
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 434,

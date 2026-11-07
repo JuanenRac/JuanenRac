@@ -86,7 +86,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████▌ 95%` | 56 dépôts sur 59 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `█████████▊ 98%` | 58 dépôts sur 59 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▊ 98%` | 58 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont le README dans les huit langues. |
 | Simulation | 🔴 | `██▊░░░░░░░ 27%` | 16 dépôts sur 59 ont été vérifiés au moins dans un simulateur. |
@@ -478,7 +478,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟠 | `█████▋░░░░ 56%` | 22 dépôts sur 39 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟡 | `█████████░ 90%` | 35 dépôts sur 39 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▊ 97%` | 38 dépôts sur 39 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont le README dans les huit langues. |
 | Simulation | 🔴 | `██▎░░░░░░░ 23%` | 9 dépôts sur 39 ont été vérifiés au moins dans un simulateur. |
@@ -545,7 +545,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |Dépôt|Version|Description|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.6|Utilitaire de conversion de masque de pâte générant des trajectoires de découpe pour la fabrication de pochoirs CMS par laser et traceur.|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.6|Assemblage pick and place : fichiers de positions de KiCad et CSV, chargeurs et ordre de pose pour une tête d'une à six buses ; la caméra et la commande de la machine sont prévues.|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.7|Assemblage pick and place : fichiers de positions de KiCad et CSV, chargeurs et ordre de pose pour une tête d'une à six buses ; la caméra et la commande de la machine sont prévues.|
 
 ### 💠 Projets de nœuds :
 |Dépôt|Version|Description|

@@ -1,13 +1,13 @@
 {
- "asof": "2026-11-07T15:45:06Z",
+ "asof": "2026-11-07T16:29:16Z",
  "ci": {
-  "checked": 529,
+  "checked": 528,
   "red": [
    {
-    "repo": "HYDRA-UMC-DOCS",
-    "since": "2026-11-07T15:44:18Z",
+    "repo": "URTC-WEB-STUDIO",
+    "since": "2026-11-07T16:29:12Z",
     "streak": 1,
-    "wf": "nightly.yml"
+    "wf": "pages.yml"
    }
   ],
   "red_total": 1
@@ -15,12 +15,12 @@
  "compute": {
   "top": [
    {
-    "min24": 383,
-    "min7": 540,
+    "min24": 384,
+    "min7": 539,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 274,
+    "min24": 270,
     "min7": 307,
     "repo": "URTC"
    },
@@ -30,23 +30,23 @@
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 134,
-    "min7": 142,
-    "repo": "ARMOR-STUDIO"
+    "min24": 125,
+    "min7": 286,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 119,
-    "min7": 399,
+    "min24": 123,
+    "min7": 401,
     "repo": "EH3D-SERVER"
    },
    {
-    "min24": 117,
-    "min7": 287,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
+    "min24": 114,
+    "min7": 140,
+    "repo": "ARMOR-STUDIO"
    }
   ],
-  "total24": 3592,
-  "total7": 15928,
+  "total24": 3475,
+  "total7": 15943,
   "warn": false
  },
  "ecosystems": {
@@ -74,19 +74,31 @@
   "hydra-umc": {
    "cand": 3,
    "read": 59,
-   "red": 1,
+   "red": 0,
    "repos": 59,
    "unpub": 0
   },
   "urtc": {
    "cand": 0,
    "read": 11,
-   "red": 0,
+   "red": 1,
    "repos": 11,
    "unpub": 3
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T16:29:16Z",
+   "kind": "red_new",
+   "repo": "URTC-WEB-STUDIO",
+   "wf": "pages.yml"
+  },
+  {
+   "at": "2026-11-07T16:29:16Z",
+   "kind": "red_ok",
+   "repo": "HYDRA-UMC-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-07T15:45:06Z",
    "kind": "red_new",
@@ -254,18 +266,6 @@
    "kind": "released",
    "repo": "EH3D-SERVER",
    "tag": "v0.1.4"
-  },
-  {
-   "at": "2026-11-06T22:25:39Z",
-   "kind": "red_ok",
-   "repo": "ARMOR-DOCS",
-   "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-06T22:25:39Z",
-   "kind": "red_ok",
-   "repo": "EH3D-STUDIO",
-   "wf": "release-dist.yml"
   }
  ],
  "hygiene": {
@@ -292,7 +292,7 @@
    "level": "warn",
    "p": {
     "list": [
-     "HYDRA-UMC-DOCS"
+     "URTC-WEB-STUDIO"
     ],
     "n": 1
    }
@@ -336,16 +336,16 @@
  "releases": {
   "candidates": [
    {
+    "entries": 4,
+    "published": "2026-11-05T13:14:04Z",
+    "repo": "HYDRA-UMC-VISION-STREAMER",
+    "tag": "v0.2.5"
+   },
+   {
     "entries": 3,
     "published": "2026-11-05T13:09:54Z",
     "repo": "HYDRA-UMC-VISION-NODE",
     "tag": "v0.2.2"
-   },
-   {
-    "entries": 3,
-    "published": "2026-11-05T13:14:04Z",
-    "repo": "HYDRA-UMC-VISION-STREAMER",
-    "tag": "v0.2.5"
    },
    {
     "entries": 2,
@@ -538,7 +538,7 @@
    2782,
    4421,
    5648,
-   3592
+   3475
   ],
   "red": [
    3,

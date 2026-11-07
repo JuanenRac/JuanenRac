@@ -86,7 +86,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 56 repository su 59 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `█████████▊ 98%` | 58 repository su 59 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▊ 98%` | 58 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 59 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 59 repository su 59 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 59 repository su 59 hanno il README nelle otto lingue. |
 | Simulazione | 🔴 | `██▊░░░░░░░ 27%` | 16 repository su 59 sono stati verificati almeno in un simulatore. |
@@ -478,7 +478,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▋░░░░ 56%` | 22 repository su 39 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟡 | `█████████░ 90%` | 35 repository su 39 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▊ 97%` | 38 repository su 39 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 39 repository su 39 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 39 repository su 39 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 39 repository su 39 hanno il README nelle otto lingue. |
 | Simulazione | 🔴 | `██▎░░░░░░░ 23%` | 9 repository su 39 sono stati verificati almeno in un simulatore. |
@@ -545,7 +545,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.6|Utility di conversione pastemask per la generazione di percorsi di taglio per stencil SMD tramite laser e plotter.|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.6|Assemblaggio pick and place: file di posizioni di KiCad e CSV, alimentatori e l'ordine di posizionamento per una testa da uno a sei ugelli; la telecamera e il controllo della macchina sono previsti.|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.7|Assemblaggio pick and place: file di posizioni di KiCad e CSV, alimentatori e l'ordine di posizionamento per una testa da uno a sei ugelli; la telecamera e il controllo della macchina sono previsti.|
 
 ### 💠 Progetti di nodi:
 |Repository|Versione|Descrizione|
