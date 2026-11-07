@@ -1,15 +1,22 @@
 {
- "asof": "2026-11-07T17:53:51Z",
+ "asof": "2026-11-07T19:25:44Z",
  "ci": {
-  "checked": 528,
-  "red": [],
-  "red_total": 0
+  "checked": 529,
+  "red": [
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-07T19:09:15Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   }
+  ],
+  "red_total": 1
  },
  "compute": {
   "top": [
    {
-    "min24": 384,
-    "min7": 550,
+    "min24": 400,
+    "min7": 561,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
@@ -18,35 +25,35 @@
     "repo": "URTC"
    },
    {
-    "min24": 136,
-    "min7": 145,
-    "repo": "ARMOR-STUDIO"
-   },
-   {
-    "min24": 135,
-    "min7": 135,
-    "repo": "HYDRA-UMC"
-   },
-   {
-    "min24": 134,
-    "min7": 281,
+    "min24": 172,
+    "min7": 294,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 129,
-    "min7": 192,
+    "min24": 162,
+    "min7": 162,
+    "repo": "HYDRA-UMC"
+   },
+   {
+    "min24": 152,
+    "min7": 152,
+    "repo": "ARMOR-STUDIO"
+   },
+   {
+    "min24": 141,
+    "min7": 190,
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 3445,
-  "total7": 15896,
+  "total24": 3658,
+  "total7": 15952,
   "warn": false
  },
  "ecosystems": {
   "armor": {
    "cand": 2,
    "read": 19,
-   "red": 0,
+   "red": 1,
    "repos": 19,
    "unpub": 0
   },
@@ -72,7 +79,7 @@
    "unpub": 0
   },
   "urtc": {
-   "cand": 0,
+   "cand": 2,
    "read": 11,
    "red": 0,
    "repos": 11,
@@ -80,6 +87,24 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T19:25:44Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-07T19:25:44Z",
+   "kind": "released",
+   "repo": "EH3D-COMMON",
+   "tag": "v0.2.0"
+  },
+  {
+   "at": "2026-11-07T19:25:44Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-PNP",
+   "tag": "v0.0.7"
+  },
   {
    "at": "2026-11-07T17:53:51Z",
    "kind": "released",
@@ -241,24 +266,6 @@
    "kind": "released",
    "repo": "HYDRA-UMC-STUDIO",
    "tag": "v0.8.1.8"
-  },
-  {
-   "at": "2026-11-07T09:18:01Z",
-   "kind": "released",
-   "repo": "URTC-GATEWAY",
-   "tag": "v0.0.6"
-  },
-  {
-   "at": "2026-11-07T09:18:01Z",
-   "kind": "released",
-   "repo": "URTC-WEB-STUDIO",
-   "tag": "v0.4.9"
-  },
-  {
-   "at": "2026-11-07T02:24:46Z",
-   "kind": "red_new",
-   "repo": "HYDRA-UMC-SDK",
-   "wf": "ci.yml"
   }
  ],
  "hygiene": {
@@ -275,9 +282,19 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 5,
+    "cand": 7,
     "hyg": 0,
-    "red": 0
+    "red": 1
+   }
+  },
+  {
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "ARMOR-DOCS"
+    ],
+    "n": 1
    }
   },
   {
@@ -289,9 +306,11 @@
      "ARMOR-VOICE-AI",
      "HYDRA-UMC-VISION-NODE",
      "HYDRA-UMC-VISION-STREAMER",
-     "HYDRA-UMC-VISUAL-SERVOING-API"
+     "HYDRA-UMC-VISUAL-SERVOING-API",
+     "URTC-DOCS",
+     "URTC-VISION-TOOL"
     ],
-    "n": 5
+    "n": 7
    }
   },
   {
@@ -319,6 +338,12 @@
  "releases": {
   "candidates": [
    {
+    "entries": 6,
+    "published": "2026-11-05T18:44:08Z",
+    "repo": "URTC-VISION-TOOL",
+    "tag": "v0.1.9"
+   },
+   {
     "entries": 4,
     "published": "2026-11-05T13:14:04Z",
     "repo": "HYDRA-UMC-VISION-STREAMER",
@@ -329,6 +354,12 @@
     "published": "2026-11-05T13:09:54Z",
     "repo": "HYDRA-UMC-VISION-NODE",
     "tag": "v0.2.2"
+   },
+   {
+    "entries": 3,
+    "published": "2026-11-05T18:48:25Z",
+    "repo": "URTC-DOCS",
+    "tag": "v0.1.5"
    },
    {
     "entries": 2,
@@ -351,7 +382,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 5
+  "total": 7
  },
  "repos": 128,
  "schema": 1,
@@ -388,7 +419,7 @@
   "EH3D-AUTOLEVEL": "v0.0.7",
   "EH3D-BUNGARD-GUI": "v0.2.5",
   "EH3D-CAM-DEBUGGER": "v0.0.5",
-  "EH3D-COMMON": "v0.1.9",
+  "EH3D-COMMON": "v0.2.0",
   "EH3D-COMPONENT-INTELLIGENCE": "v0.0.3",
   "EH3D-CORE-LIBS": "v0.0.8",
   "EH3D-DESIGN-EXPLORER": "v0.0.2",
@@ -410,7 +441,7 @@
   "EH3D-PHOENIX-CNC": "v0.1.0",
   "EH3D-PHOENIX-LASER": "v0.0.4",
   "EH3D-PHOENIX-PCB": "v0.0.6",
-  "EH3D-PHOENIX-PNP": "v0.0.6",
+  "EH3D-PHOENIX-PNP": "v0.0.7",
   "EH3D-PROJECT-PASSPORT": "v0.0.2",
   "EH3D-ROUTEPRO": "v0.1.5",
   "EH3D-SERVER": "v0.1.4",
@@ -500,7 +531,7 @@
    35,
    23,
    0,
-   5
+   7
   ],
   "dates": [
    "2026-11-03",
@@ -521,14 +552,14 @@
    2782,
    4421,
    5648,
-   3445
+   3658
   ],
   "red": [
    3,
    5,
    3,
    0,
-   0
+   1
   ]
  },
  "unpublished": {

@@ -396,7 +396,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 19 of 19 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have been checked at least in a simulator. |
