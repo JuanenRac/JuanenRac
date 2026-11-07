@@ -85,6 +85,7 @@ on:
       - "scripts/catalog_check.py"
       - "ecosystem-catalog.json"
       - "dashboard-config.json"
+      - "code-stats-config.json"
       - "docs/evidence-schema.json"
       - ".github/workflows/build-dashboard.yml"
 
@@ -97,6 +98,7 @@ on:
       - "ecosystem-descriptions.json"
       - "ecosystem-catalog.json"
       - "dashboard-config.json"
+      - "code-stats-config.json"
       - "docs/evidence-schema.json"
       - ".github/workflows/build-dashboard.yml"
 

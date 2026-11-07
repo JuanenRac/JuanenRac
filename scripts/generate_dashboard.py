@@ -73,6 +73,9 @@ import dashboard_sentinel_ui
 import dashboard_tests
 import dashboard_tests_texts
 import dashboard_tests_ui
+import dashboard_code
+import dashboard_code_texts
+import dashboard_code_ui
 import dashboard_delivery
 import dashboard_pipeline
 import dashboard_pins
@@ -1978,6 +1981,10 @@ for language, values in dashboard_ci_texts.TEXTS.items():
 for language, values in dashboard_tests_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the tab "Code" (lines of code, tests and documentation).
+for language, values in dashboard_code_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the tab "Actions / Builds" (state and charts of the GitHub Actions runs).
 for language, values in dashboard_actions_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3394,6 +3401,8 @@ def render_html(
     sentinel_saved: "dict | None" = None,
     sentinel_config: "dict | None" = None,
     pins_doc: "dict | None" = None,
+    code_doc: "dict | None" = None,
+    code_history: "list | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3504,10 +3513,12 @@ def render_html(
         {name: (_manifest_data((raw_manifests or {}).get(name)) or {}).get("evidence") for name in ecosystem_by_name}, ci_evidence,
         owner="JuanenRac", today=today, config=ci_settings)
     app_data.page_data["tests"] = dashboard_tests.build(tests_read, ecosystem_by_name, full_history, today, tests_config)
+    app_data.page_data["code"] = dashboard_code.build(code_doc, code_history, today)
     app_data.page_data["actions"] = dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, full_history, today)
     app_data.page_data["pins"] = dashboard_pins.build(pins_doc)
     app_data.page_data["sentinel"] = dashboard_sentinel.build(sentinel_doc, sentinel_saved, sentinel_config or dashboard_sentinel.check_config(None)[0], today)
     tests_panel_html = dashboard_app.panel("tests", dashboard_tests_ui.panel_html())
+    code_panel_html = dashboard_app.panel("code", dashboard_code_ui.panel_html())
     actions_panel_html = dashboard_app.panel("actions", dashboard_actions_ui.panel_html())
     sentinel_panel_html = dashboard_app.panel("sentinel", dashboard_sentinel_ui.panel_html())
     insight_panel_html = dashboard_app.panel("insight", dashboard_insight_ui.panel_html())
@@ -5229,6 +5240,7 @@ def render_html(
       </div>
     </section>
     {tests_panel_html}
+    {code_panel_html}
     {actions_panel_html}
     {sentinel_panel_html}
     {insight_panel_html}
@@ -6161,7 +6173,8 @@ def main() -> int:
                            generation=generation, stale_date=stale_date, rack=dashboard_rack.load(),
                            ci_evidence=ci_read, ci_config=ci_config, tests_read=tests_read, tests_config=tests_config,
                            actions_read=actions_read, actions_cache=actions_cache, builds=builds,
-                           sentinel_doc=sentinel_doc, sentinel_saved=sentinel_saved, sentinel_config=sentinel_config, pins_doc=pins_doc)
+                           sentinel_doc=sentinel_doc, sentinel_saved=sentinel_saved, sentinel_config=sentinel_config, pins_doc=pins_doc,
+                           code_doc=dashboard_code.load(), code_history=dashboard_code.load_history())
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 

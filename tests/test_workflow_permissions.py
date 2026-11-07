@@ -17,6 +17,7 @@ FILES = sorted(WORKFLOWS.glob("*.yml"))
 # The only jobs that may hold a write permission, and which. Anything else must be read-only.
 WRITERS = {
     ("build-dashboard.yml", "publish"): {"contents": "write"},
+    ("code-stats.yml", "publish"): {"contents": "write"},
     ("ecosystem-ci-watch.yml", "watch"): {"contents": "read", "issues": "write"},
     ("ecosystem-health-matrix.yml", "matrix"): {"contents": "read", "issues": "write"},
     ("ecosystem-link-check.yml", "links"): {"contents": "read", "issues": "write"},

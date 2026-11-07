@@ -1,0 +1,123 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/code-stats.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Counts the lines of code, tests and documentation of every repository of the
+# ecosystems once a day and keeps the figures for the "Code" tab of the status
+# dashboard (data/code-stats.json) and one snapshot per day (data/code-history.json).
+#
+# Two jobs, so that the permission to write exists only where it is needed:
+#
+#   count    (read-only token) lists the public repositories of the owner, takes a
+#            shallow clone of each one in a temporary directory of its own, counts
+#            the lines (scripts/code_stats.py, standard library only) and keeps the
+#            two documents as an artifact. The rules are in code-stats-config.json.
+#   publish  (the only job with contents: write) commits the two documents when they
+#            changed. The dashboard build picks them up in its next regular run.
+#
+# Only actions already used by the other workflows of this repository, each pinned to a full commit.
+# =============================================================================
+
+name: Count the code of the ecosystems
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "37 3 * * *"
+
+concurrency:
+  group: code-stats
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  count:
+    name: Count the lines
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests of the counter
+        run: python -m unittest tests.test_code_stats -v
+
+      # The history is read from this checkout, today's figures are added and both files are written to a directory of the runner.
+      - name: Count
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/code-stats-out"
+          mkdir -p "$out"
+          for file in code-stats.json code-history.json; do
+            if [ -f "data/$file" ]; then cp "data/$file" "$out/$file"; fi
+          done
+          python scripts/code_stats.py --out "$out" --workdir "$RUNNER_TEMP/code-stats-clones"
+
+      - name: Keep the figures for the publishing job
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: code-stats-out
+          path: ${{ runner.temp }}/code-stats-out
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish the figures
+    needs: count
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 1
+
+      - name: Fetch the figures
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: code-stats-out
+          path: ${{ runner.temp }}/code-stats-out
+
+      - name: Commit the figures if they changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          workdir="$RUNNER_TEMP/code-stats-out"
+          max_attempts=5
+          for attempt in $(seq 1 "$max_attempts"); do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p data
+            cp "$workdir/code-stats.json" data/code-stats.json
+            cp "$workdir/code-history.json" data/code-history.json
+            git add data/code-stats.json data/code-history.json
+            if git diff --cached --quiet; then
+              echo "The figures did not change."
+              exit 0
+            fi
+            git commit -m "data: refresh the code statistics"
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt/$max_attempts."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt/$max_attempts): main moved, fetching it again."
+          done
+          echo "::error::Could not push the code statistics after $max_attempts attempts."
+          exit 1

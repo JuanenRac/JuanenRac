@@ -27,6 +27,7 @@ for sibling in ("HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER"):
     if candidate.is_dir():
         sys.path.append(str(candidate))
 
+import code_stats  # noqa: E402
 import dashboard_actions as actions_mod  # noqa: E402
 import dataclasses  # noqa: E402
 import dashboard_charts as charts  # noqa: E402
@@ -284,6 +285,51 @@ def tests_for(entries, eco, errors: bool = True) -> dict:
     return {"records": records, "undeclared": undeclared, "errors": failed, "glance": {}}
 
 
+CODE_TYPES = ("firmware", "apps", "services", "tools", "docs")
+CODE_LANGS = ("Python", "Rust", "C++", "TypeScript", "Kotlin")
+
+
+def _code_record(index: int, key: str, scale: int = 100) -> dict:
+    """The figures of one repository of the fixture (counted by nothing: made up, but shaped like the real record and adding up the way the counter does)."""
+    main = CODE_LANGS[index % 5]
+    code, comment, blank = (1000 + index * 137) * scale // 100, (100 + index * 11) * scale // 100, (150 + index * 9) * scale // 100
+    tests, docs = (300 + index * 53) * scale // 100, (400 + index * 41) * scale // 100
+    minor = code // 10
+    record = {
+        "eco": key, "type": CODE_TYPES[index % 5], "state": "ok", "pushed": "2001-12-20", "commit": f"2001-12-{10 + index % 11:02d}",
+        "files": 20 + index, "size": 90000 + index * 7919, "skipped": 0,
+        "langs": {main: {"files": 8 + index % 5, "code": code - minor + tests, "comment": comment, "blank": blank},
+                  "Shell": {"files": 2, "code": minor, "comment": 5, "blank": 3}},
+        "code": {"files": 10 + index % 5, "code": code, "comment": comment, "blank": blank},
+        "tests": {"files": 3 + index % 4, "code": tests, "comment": 20, "blank": 30, "cases": 40 + index * 3},
+        "docs": {"files": 9 + index % 3, "lines": docs, "blank": 80}, "l10n": {"files": index % 9, "lines": (index % 9) * 12}, "data": {"files": 2, "lines": 300},
+    }
+    if index % 3 == 0:
+        record["declared_tests"] = 90 + index * 5
+    return record
+
+
+def code_for(entries, eco, history_days: int = 45, age_days: int = 0) -> tuple[dict, list]:
+    """The documents of scripts/code_stats.py for the fixture: one repository in seventeen is a last known figure, one is not measured, and the history grows."""
+    repos = {}
+    for index, entry in enumerate(entries):
+        record = _code_record(index, eco[entry.name])
+        if index == 13:
+            record = {"eco": eco[entry.name], "type": CODE_TYPES[index % 5], "state": "unread", "pushed": None}
+        elif index % 17 == 5:
+            record["state"] = "lastknown"
+        repos[entry.name] = record
+    config = code_stats.load_config()
+    day = (date(2001, 12, 21) - timedelta(days=age_days)).isoformat()
+    document = code_stats.make_document(day, config, repos)
+    points = []
+    for back in range(history_days, 0, -1):
+        grown = {name: _code_record(i, eco[name], 60 + (history_days - back) * 40 // max(1, history_days)) for i, name in enumerate(repos) if repos[name]["state"] != "unread"}
+        points.append(code_stats.snapshot_point((date(2001, 12, 21) - timedelta(days=back)).isoformat(), grown))
+    points.append(code_stats.snapshot_point(day, repos))
+    return document, points
+
+
 ACTIONS_NOW = datetime(2001, 12, 21, 12, 0, 0, tzinfo=timezone.utc)
 
 
@@ -442,7 +488,7 @@ def build_full() -> str:
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries),
                            tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries),
                            sentinel_doc=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())),
-                           pins_doc=PINS)
+                           pins_doc=PINS, code_doc=code_for(entries, eco)[0], code_history=code_for(entries, eco)[1])
 
 
 def build_stale() -> str:
@@ -455,7 +501,8 @@ def build_stale() -> str:
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET, ci_evidence=ci_evidence_for(entries),
                            tests_read=None, actions_read=None, actions_cache=actions_for(entries),
-                           sentinel_saved=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())))
+                           sentinel_saved=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())),
+                           code_doc=code_for(entries, eco, age_days=4)[0], code_history=code_for(entries, eco, age_days=4)[1])
 
 
 def build_single() -> str:
@@ -465,7 +512,8 @@ def build_single() -> str:
     return gen.render_html(entries, results, {}, eco, [], None, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries),
-                           sentinel_doc=sentinel_for(entries, eco, activity, [], actions_block(entries, [])))
+                           sentinel_doc=sentinel_for(entries, eco, activity, [], actions_block(entries, [])),
+                           code_doc=code_for(entries, eco, history_days=0)[0], code_history=code_for(entries, eco, history_days=0)[1])
 
 
 def build_healthy() -> str:
@@ -478,7 +526,8 @@ def build_healthy() -> str:
     return gen.render_html(entries, results, {}, eco, [], cover, raw_manifests=raw, activity=activity, readme_text=readme,
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False), actions_read=actions_for(entries, healthy=True), builds=builds_for(entries),
-                           sentinel_doc=sentinel_for(entries, eco, activity, history_for(60), actions_block(entries, history_for(60), healthy=True), healthy=True))
+                           sentinel_doc=sentinel_for(entries, eco, activity, history_for(60), actions_block(entries, history_for(60), healthy=True), healthy=True),
+                           code_doc=code_for(entries, eco)[0], code_history=code_for(entries, eco)[1])
 
 
 def build_minimal() -> str:
