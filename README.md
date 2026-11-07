@@ -484,10 +484,10 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▋░░░░ 56%` | 22 of 39 repositories are at least functional, by the maturity each declares in its own manifest. |
-| Tests | 🟡 | `█████████░ 90%` | 35 of 39 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 39 of 39 repositories have the last CI run on the main branch green. |
-| Releases | 🟢 | `██████████ 100%` | 39 of 39 repositories have published at least one release. |
-| Documentation | 🟢 | `██████████ 100%` | 39 of 39 repositories have the README in the eight languages. |
+| Tests | 🟢 | `█████████▎ 93%` | 28 of 30 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 30 of 30 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `██████████ 100%` | 30 of 30 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 30 of 30 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `██▎░░░░░░░ 23%` | 9 of 39 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 13 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
 | Production | 🔴 | `░░░░░░░░░░ 0%` | 0 of 39 repositories are established or in production. |

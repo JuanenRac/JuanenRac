@@ -490,10 +490,10 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
 | Logiciel | 🟠 | `█████▋░░░░ 56%` | 22 dépôts sur 39 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟡 | `█████████░ 90%` | 35 dépôts sur 39 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont le README dans les huit langues. |
+| Tests | 🟢 | `█████████▎ 93%` | 28 dépôts sur 30 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 30 dépôts sur 30 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 30 dépôts sur 30 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 30 dépôts sur 30 ont le README dans les huit langues. |
 | Simulation | 🔴 | `██▎░░░░░░░ 23%` | 9 dépôts sur 39 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 13 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
 | Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 39 sont établis ou en production. |

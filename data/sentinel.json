@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-07T22:27:40Z",
+ "asof": "2026-11-07T22:39:09Z",
  "ci": {
   "checked": 528,
   "red": [
@@ -15,7 +15,7 @@
  "compute": {
   "top": [
    {
-    "min24": 268,
+    "min24": 258,
     "min7": 561,
     "repo": "EH3D-PHOENIX-PCB"
    },
@@ -31,7 +31,7 @@
    },
    {
     "min24": 157,
-    "min7": 187,
+    "min7": 183,
     "repo": "URTC-FLASHER"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "URTC"
    }
   ],
-  "total24": 3579,
-  "total7": 15870,
+  "total24": 3565,
+  "total7": 15861,
   "warn": false
  },
  "ecosystems": {
@@ -88,13 +88,13 @@
  },
  "events": [
   {
-   "at": "2026-11-07T22:27:40Z",
+   "at": "2026-11-07T22:39:09Z",
    "kind": "red_new",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-07T22:27:40Z",
+   "at": "2026-11-07T22:39:09Z",
    "kind": "released",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "tag": "v1.5.0"
@@ -628,7 +628,7 @@
    2782,
    4421,
    5648,
-   3579
+   3565
   ],
   "red": [
    3,
