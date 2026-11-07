@@ -53,6 +53,7 @@ TABS: tuple[tuple[str, str, str], ...] = (
     ("tests", "tab_tests", ""),
     ("code", "tab_code", ""),
     ("changelog", "tab_changelog", ""),
+    ("scripts", "tab_scripts", ""),
     ("actions", "tab_actions", ""),
     ("sentinel", "tab_sentinel", ""),
     ("insight", "tab_insight", ""),
@@ -62,7 +63,7 @@ TABS: tuple[tuple[str, str, str], ...] = (
     ("errors", "tab_errors", ""),
 )
 TAB_IDS = tuple(tab[0] for tab in TABS)
-ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_tests": "Tests", "tab_code": "Code", "tab_changelog": "Changelog", "tab_actions": "Builds", "tab_sentinel": "Sentinel", "tab_insight": "Analysis", "tab_inventory": "Inventory", "tab_rack": "Rack",
+ENGLISH = {"tab_summary": "Summary", "tab_projects": "Projects", "tab_evidence": "Evidence", "tab_tests": "Tests", "tab_code": "Code", "tab_changelog": "Changelog", "tab_scripts": "Scripts", "tab_actions": "Builds", "tab_sentinel": "Sentinel", "tab_insight": "Analysis", "tab_inventory": "Inventory", "tab_rack": "Rack",
            "tab_architecture": "Architecture", "tab_errors": "Errors / unknown"}
 CI_LABELS = {"success": "Green", "failure": "Red", "pending": "Pending", "none": "No CI / unknown"}
 LIGHT_GLYPH = {"good": "●", "fair": "◐", "poor": "◔", "bad": "○"}

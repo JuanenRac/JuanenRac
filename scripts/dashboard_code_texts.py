@@ -256,8 +256,10 @@ _ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
 }
 
 import dashboard_changes_texts
+import dashboard_scripts_texts
 
 _ROWS.update(dashboard_changes_texts.ROWS)
+_ROWS.update(dashboard_scripts_texts.ROWS)
 
 TEXTS: dict[str, dict[str, str]] = {
     code: {key: row[index] for key, row in _ROWS.items()} for index, code in enumerate(LANGUAGES)

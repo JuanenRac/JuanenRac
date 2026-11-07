@@ -51,10 +51,12 @@ from pathlib import Path
 from typing import Callable, Iterable, Mapping, Sequence
 
 import changelog_stats
+import scripts_stats
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "code-stats-config.json"
 STATS_FILE = "code-stats.json"
+SCRIPTS_FILE = "scripts-stats.json"
 HISTORY_FILE = "code-history.json"
 SCHEMA = 1
 API = "https://api.github.com"
@@ -597,6 +599,10 @@ def measure(repo: Mapping, config: Mapping, workdir: Path, token: str | None, lo
             except OSError:
                 changes = None
         commit = last_commit_day(target, run) if (target / ".git").exists() else None
+        try:
+            scripts = scripts_stats.summarize(target)
+        except OSError:
+            scripts = None
         side: dict = {}
         if wanted and (target / wanted).is_file():
             try:
@@ -606,7 +612,8 @@ def measure(repo: Mapping, config: Mapping, workdir: Path, token: str | None, lo
     finally:
         if owned and target.exists():
             _remove_tree(target)
-    record = {"eco": repo["eco"], "type": repo["type"], "state": "ok", "pushed": repo.get("pushed"), "commit": commit, **figures, "changes": changes}
+    record = {"eco": repo["eco"], "type": repo["type"], "state": "ok", "pushed": repo.get("pushed"), "commit": commit, **figures, "changes": changes,
+              "scripts": scripts}
     if tags is not None:
         record["rel"] = tags(config["owner"], name, token, today)
     return record, side
@@ -737,6 +744,29 @@ def read_json(path: Path) -> object | None:
         return None
 
 
+def load_previous_scripts(out_dir: Path) -> dict:
+    document = read_json(out_dir / SCRIPTS_FILE)
+    repos = document.get("repos") if isinstance(document, dict) and isinstance(document.get("repos"), dict) else {}
+    return {name: record for name, record in repos.items() if isinstance(record, dict)}
+
+
+def scripts_document(day: str, config: Mapping, records: Mapping[str, Mapping], previous: Mapping[str, Mapping]) -> dict:
+    """The document of the workflows and own scripts: one record per repository, the last known one when today's read failed."""
+    repos = {}
+    for name, record in records.items():
+        entry = {"eco": record["eco"], "type": record["type"], "state": record["state"]}
+        if record["state"] == "ok":
+            entry["scripts"] = record.get("scripts")
+        elif record["state"] == "lastknown":
+            if isinstance(previous.get(name), Mapping) and "scripts" in previous[name]:
+                entry["scripts"] = previous[name]["scripts"]
+            else:
+                entry["state"] = "unread"
+        repos[name] = entry
+    return {"schema": SCHEMA, "day": day, "owner": config["owner"], "ecosystems": [{"key": e["key"], "label": e["label"]} for e in config["ecosystems"]],
+            "types": list(config["types"]["order"]), "repos": dict(sorted(repos.items()))}
+
+
 def load_previous(out_dir: Path) -> tuple[dict, list[dict]]:
     stats = read_json(out_dir / STATS_FILE)
     history = read_json(out_dir / HISTORY_FILE)
@@ -755,6 +785,7 @@ def run_all(config: Mapping, out_dir: Path, workdir: Path, token: str | None, to
     listing = list(repos) if repos is not None else list_repos(config["owner"], token)
     chosen = select(listing, config)
     previous, old_points = load_previous(out_dir)
+    previous_scripts = load_previous_scripts(out_dir)
     log(f"{len(chosen)} repositories to measure.")
 
     def one(repo: Mapping):
@@ -802,8 +833,12 @@ def run_all(config: Mapping, out_dir: Path, workdir: Path, token: str | None, to
             elif record["state"] == "ok":
                 record.pop("declared_tests", None)
 
+    scripts_doc = scripts_document(today, config, records, previous_scripts)
+    for record in records.values():
+        record.pop("scripts", None)             # kept in its own document, not in the one of the code figures
     document = make_document(today, config, records)
     out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / SCRIPTS_FILE).write_text(render(scripts_doc), encoding="utf-8", newline="\n")
     (out_dir / STATS_FILE).write_text(render(document), encoding="utf-8", newline="\n")
     enough = bool(chosen) and fresh * 2 >= len(chosen)
     points = merge_history(old_points, snapshot_point(today, records) if enough else None, today, config)

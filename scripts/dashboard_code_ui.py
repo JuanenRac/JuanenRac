@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import dashboard_changes_ui
 import dashboard_code_texts
+import dashboard_scripts_ui
 from dashboard_charts import esc
 
 EN = dashboard_code_texts.TEXTS["en"]
@@ -98,7 +99,7 @@ def tip_html() -> str:
     return '<div class="cd-tip" id="cd-tip" role="tooltip" data-testid="cd-tip" hidden></div>'
 
 
-CSS = dashboard_changes_ui.CSS + r"""
+CSS = dashboard_changes_ui.CSS + dashboard_scripts_ui.CSS + r"""
   /* ======================= Code: lines of code, tests and documentation ======================= */
   :root {
     --cd-code: #5aa9ff; --cd-tests: #3ecf8e; --cd-docs: #f5b84b;
@@ -258,7 +259,7 @@ JS = r"""
     return el;
   }
   (function () {
-    ["cd-root", "ch-root"].forEach(function (id) {
+    ["cd-root", "ch-root", "sc-root"].forEach(function (id) {
       const root = document.getElementById(id);
       if (!root) { return; }
       ["pointerover", "pointermove", "focusin"].forEach(function (type) {
@@ -742,4 +743,4 @@ JS = r"""
   })();
 """
 
-JS = JS + dashboard_changes_ui.JS
+JS = JS + dashboard_changes_ui.JS + dashboard_scripts_ui.JS

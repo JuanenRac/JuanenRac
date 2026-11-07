@@ -5,7 +5,8 @@
 #
 # Counts the lines of code, tests and documentation of every repository of the
 # ecosystems once a day and keeps the figures for the "Code" tab of the status
-# dashboard (data/code-stats.json) and one snapshot per day (data/code-history.json).
+# dashboard (data/code-stats.json) and one snapshot per day (data/code-history.json); the same
+# clones give the workflows and own scripts of every repository for the "Scripts" tab (data/scripts-stats.json).
 #
 # Two jobs, so that the permission to write exists only where it is needed:
 #
@@ -51,7 +52,7 @@ jobs:
           python-version: "3.12"
 
       - name: Unit tests of the counter
-        run: python -m unittest tests.test_code_stats -v
+        run: python -m unittest tests.test_code_stats tests.test_scripts_stats -v
 
       # The history is read from this checkout, today's figures are added and both files are written to a directory of the runner.
       - name: Count
@@ -62,7 +63,7 @@ jobs:
           set -euo pipefail
           out="$RUNNER_TEMP/code-stats-out"
           mkdir -p "$out"
-          for file in code-stats.json code-history.json; do
+          for file in code-stats.json code-history.json scripts-stats.json; do
             if [ -f "data/$file" ]; then cp "data/$file" "$out/$file"; fi
           done
           python scripts/code_stats.py --out "$out" --workdir "$RUNNER_TEMP/code-stats-clones"
@@ -107,7 +108,8 @@ jobs:
             mkdir -p data
             cp "$workdir/code-stats.json" data/code-stats.json
             cp "$workdir/code-history.json" data/code-history.json
-            git add data/code-stats.json data/code-history.json
+            cp "$workdir/scripts-stats.json" data/scripts-stats.json
+            git add data/code-stats.json data/code-history.json data/scripts-stats.json
             if git diff --cached --quiet; then
               echo "The figures did not change."
               exit 0

@@ -355,6 +355,36 @@ def code_for(entries, eco, history_days: int = 45, age_days: int = 0) -> tuple[d
     return document, points
 
 
+SCRIPT_ACTIONS = [("actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803", "sha"), ("actions/setup-python@v5", "tag"), ("actions/upload-artifact@v4", "tag"),
+                  ("softprops/action-gh-release@master", "branch"), ("JuanenRac/shared-checks@d23441a48e516b6c34aea4fa41551a30e30af803", "sha"), ("./.github/actions/setup", "local"),
+                  ("docker://alpine:3.19", "docker"), ("pnpm/action-setup@v4", "tag")]
+SCRIPT_TRIGGERS = [["push", "pull_request"], ["schedule", "workflow_dispatch"], ["release"], ["push", "workflow_dispatch", "workflow_run"], ["workflow_call"], ["push", "other"]]
+
+
+def scripts_for(entries, eco, age_days: int = 0) -> dict:
+    """The document of the workflows and own scripts for the fixture (made up, with the shape of scripts/scripts_stats.py): one repository in nine has none,
+    one in seventeen is a last known figure, one is not read."""
+    config = code_stats.load_config()
+    records = {}
+    for index, entry in enumerate(entries):
+        record = {"eco": eco[entry.name], "type": CODE_TYPES[index % 5], "state": "ok"}
+        if index == 13:
+            record["state"] = "unread"
+        else:
+            if index % 17 == 5:
+                record["state"] = "lastknown"
+            workflows = [] if index % 9 == 8 else [[f"flow-{n}.yml", f"Flow {n}", SCRIPT_TRIGGERS[(index + n) % 6], 1 + (index + n) % 3, ["ubuntu-latest"]] for n in range(1 + index % 4)]
+            acts: dict = {}
+            for n in range(len(workflows) * 2):
+                key, pin = SCRIPT_ACTIONS[(index + n) % len(SCRIPT_ACTIONS)]
+                acts.setdefault(key, [0, pin])[0] += 1 + (n % 2)
+            sc = {lang: [1 + (index + k) % 5, 20 + (index * 7 + k * 13) % 200] for k, lang in enumerate(("py", "sh", "ps1", "bat", "js")) if (index + k) % 3 != 2}
+            record["scripts"] = {"wf": workflows, "acts": acts, "sc": sc}
+        records[entry.name] = record
+    day = (date(2001, 12, 21) - timedelta(days=age_days)).isoformat()
+    return code_stats.scripts_document(day, config, records, {n: r for n, r in records.items() if r["state"] == "lastknown"})
+
+
 ACTIONS_NOW = datetime(2001, 12, 21, 12, 0, 0, tzinfo=timezone.utc)
 
 
@@ -513,7 +543,7 @@ def build_full() -> str:
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_ALARM, ci_evidence=ci_evidence_for(entries),
                            tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries),
                            sentinel_doc=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())),
-                           pins_doc=PINS, code_doc=code_for(entries, eco)[0], code_history=code_for(entries, eco)[1])
+                           pins_doc=PINS, code_doc=code_for(entries, eco)[0], code_history=code_for(entries, eco)[1], scripts_doc=scripts_for(entries, eco))
 
 
 def build_stale() -> str:
@@ -527,7 +557,8 @@ def build_stale() -> str:
                            planned_milestones=PLANNED, generation=generation, stale_date="2001-12-19", rack=RACK_QUIET, ci_evidence=ci_evidence_for(entries),
                            tests_read=None, actions_read=None, actions_cache=actions_for(entries),
                            sentinel_saved=sentinel_for(entries, eco, activity, history_for(), actions_block(entries, history_for())),
-                           code_doc=code_for(entries, eco, age_days=4)[0], code_history=code_for(entries, eco, age_days=4)[1])
+                           code_doc=code_for(entries, eco, age_days=4)[0], code_history=code_for(entries, eco, age_days=4)[1],
+                           scripts_doc=scripts_for(entries, eco, age_days=4))
 
 
 def build_single() -> str:
@@ -538,7 +569,8 @@ def build_single() -> str:
                            signals=signals_for(entries, activity), build=BUILD, history=[], facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, ci_evidence=ci_evidence_for(entries), tests_read=tests_for(entries, eco), actions_read=actions_for(entries), builds=builds_for(entries),
                            sentinel_doc=sentinel_for(entries, eco, activity, [], actions_block(entries, [])),
-                           code_doc=code_for(entries, eco, history_days=0)[0], code_history=code_for(entries, eco, history_days=0)[1])
+                           code_doc=code_for(entries, eco, history_days=0)[0], code_history=code_for(entries, eco, history_days=0)[1],
+                           scripts_doc=scripts_for(entries, eco))
 
 
 def build_healthy() -> str:
@@ -552,7 +584,7 @@ def build_healthy() -> str:
                            signals=signals_for(entries, activity), build=BUILD, history=history_for(60), facts=facts_for(entries), weekly=weekly_for(entries),
                            planned_milestones=PLANNED, generation=GENERATION, rack=RACK_QUIET, tests_read=tests_for(entries, eco, errors=False), actions_read=actions_for(entries, healthy=True), builds=builds_for(entries),
                            sentinel_doc=sentinel_for(entries, eco, activity, history_for(60), actions_block(entries, history_for(60), healthy=True), healthy=True),
-                           code_doc=code_for(entries, eco)[0], code_history=code_for(entries, eco)[1])
+                           code_doc=code_for(entries, eco)[0], code_history=code_for(entries, eco)[1], scripts_doc=scripts_for(entries, eco))
 
 
 def build_minimal() -> str:

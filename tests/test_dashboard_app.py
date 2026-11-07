@@ -202,7 +202,7 @@ class TextTests(unittest.TestCase):
 
 class ShellTests(unittest.TestCase):
     def test_tabs(self):
-        self.assertEqual(app.TAB_IDS, ("summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "tests", "code", "changelog", "actions", "sentinel", "insight", "inventory", "rack", "architecture", "errors"))
+        self.assertEqual(app.TAB_IDS, ("summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "tests", "code", "changelog", "scripts", "actions", "sentinel", "insight", "inventory", "rack", "architecture", "errors"))
         html = app.tab_list()
         self.assertEqual(html.count('role="tab"'), len(app.TAB_IDS))
         self.assertIn('role="tablist"', html)
@@ -430,7 +430,7 @@ class HealthPageTests(unittest.TestCase):
 
     def test_the_data_for_the_script_is_valid_json_and_complete(self):
         self.assertIsNotNone(self.data)
-        self.assertEqual(set(self.data), {"config", "repos", "contrib", "checks", "history", "snap", "insight", "ciEvidence", "tests", "code", "actions", "sentinel", "pins"})
+        self.assertEqual(set(self.data), {"config", "repos", "contrib", "checks", "history", "snap", "insight", "ciEvidence", "tests", "code", "scripts", "actions", "sentinel", "pins"})
         self.assertEqual(self.data["config"]["alert_after_days"], 30)
         self.assertEqual(self.data["config"]["repoUrl"], "https://github.com/JuanenRac/")
         self.assertEqual(sorted(self.data["repos"]), ["ARMOR-C", "HYDRA-UMC-A", "URTC-B"])
