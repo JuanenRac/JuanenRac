@@ -2,7 +2,8 @@
   "_about": "Single source of the Description column of the HYDRA-UMC, URTC and A.R.M.O.R. project tables in the eight README files. scripts/sync_readme_descriptions.py writes it and checks it. Repositories whose name starts with an exempt prefix keep their own hand-kept descriptions until their owner adopts the same file.",
   "exempt_prefixes": [
     "EH3D-",
-    "ELECTRO-HOBBY-3D-"
+    "ELECTRO-HOBBY-3D-",
+    "TOOLS-"
   ],
   "descriptions": {
     "HYDRA-UMC-OS": {
