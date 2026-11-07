@@ -1,28 +1,15 @@
 {
- "asof": "2026-11-07T14:33:18Z",
+ "asof": "2026-11-07T15:21:23Z",
  "ci": {
   "checked": 529,
-  "red": [
-   {
-    "repo": "ARMOR-DOCS",
-    "since": "2026-11-07T14:00:48Z",
-    "streak": 4,
-    "wf": "nightly.yml"
-   },
-   {
-    "repo": "HYDRA-UMC-VISION-STREAMER",
-    "since": "2026-11-07T14:03:12Z",
-    "streak": 5,
-    "wf": "publish-real.yml"
-   }
-  ],
-  "red_total": 2
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
     "min24": 395,
-    "min7": 532,
+    "min7": 540,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
@@ -36,30 +23,30 @@
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 125,
-    "min7": 291,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
-   },
-   {
-    "min24": 121,
-    "min7": 389,
+    "min24": 137,
+    "min7": 399,
     "repo": "EH3D-SERVER"
    },
    {
-    "min24": 115,
-    "min7": 198,
+    "min24": 129,
+    "min7": 130,
+    "repo": "HYDRA-UMC"
+   },
+   {
+    "min24": 121,
+    "min7": 194,
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 3937,
-  "total7": 16234,
+  "total24": 3740,
+  "total7": 15939,
   "warn": false
  },
  "ecosystems": {
   "armor": {
    "cand": 1,
    "read": 19,
-   "red": 1,
+   "red": 0,
    "repos": 19,
    "unpub": 0
   },
@@ -80,7 +67,7 @@
   "hydra-umc": {
    "cand": 3,
    "read": 59,
-   "red": 1,
+   "red": 0,
    "repos": 59,
    "unpub": 0
   },
@@ -93,6 +80,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T15:21:23Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-07T15:21:23Z",
+   "kind": "red_ok",
+   "repo": "HYDRA-UMC-VISION-STREAMER",
+   "wf": "publish-real.yml"
+  },
   {
    "at": "2026-11-07T14:33:18Z",
    "kind": "red_new",
@@ -260,18 +259,6 @@
    "kind": "red_ok",
    "repo": "HYDRA-UMC-DOCS",
    "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-06T22:25:39Z",
-   "kind": "red_ok",
-   "repo": "URTC-DEVTOOLS",
-   "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-06T22:25:39Z",
-   "kind": "red_ok",
-   "repo": "URTC-DOCS",
-   "wf": "nightly.yml"
   }
  ],
  "hygiene": {
@@ -285,23 +272,12 @@
  "parte": [
   {
    "key": "head",
-   "level": "bad",
+   "level": "warn",
    "p": {
     "bad": 0,
     "cand": 4,
     "hyg": 0,
-    "red": 2
-   }
-  },
-  {
-   "key": "red",
-   "level": "bad",
-   "p": {
-    "list": [
-     "ARMOR-DOCS",
-     "HYDRA-UMC-VISION-STREAMER"
-    ],
-    "n": 2
+    "red": 0
    }
   },
   {
@@ -538,14 +514,14 @@
    2782,
    4421,
    5648,
-   3937
+   3740
   ],
   "red": [
    3,
    5,
    3,
    0,
-   2
+   0
   ]
  },
  "unpublished": {

@@ -3332,15 +3332,15 @@
   },
   {
    "actions": {
-    "fail": 208,
-    "min": 3937,
-    "ok": 2577,
-    "other": 22,
-    "runs": 2807
+    "fail": 203,
+    "min": 3740,
+    "ok": 2458,
+    "other": 19,
+    "runs": 2680
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -3360,7 +3360,7 @@
      "tests": 90
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -3474,7 +3474,7 @@
     ],
     "EH3D-BUNGARD-GUI": [
      1,
-     "0.2.4"
+     "0.2.5"
     ],
     "EH3D-CAM-DEBUGGER": [
      1,
@@ -3904,8 +3904,8 @@
    "sentinel": {
     "cand": 4,
     "gaps": 0,
-    "min": 3937,
-    "red": 2
+    "min": 3740,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,
@@ -3921,8 +3921,8 @@
     "ARMOR-UPDATER": 386,
     "ARMOR-VISION": 184,
     "ARMOR-VOICE-AI": 145,
-    "EH3D-AUTOLEVEL": 172,
-    "EH3D-BUNGARD-GUI": 385,
+    "EH3D-AUTOLEVEL": 174,
+    "EH3D-BUNGARD-GUI": 408,
     "EH3D-CAM-DEBUGGER": 123,
     "EH3D-COMMON": 372,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
@@ -3940,20 +3940,20 @@
     "EH3D-PHOENIX-CAD": 613,
     "EH3D-PHOENIX-CNC": 126,
     "EH3D-PHOENIX-LASER": 309,
-    "EH3D-PHOENIX-PCB": 4073,
+    "EH3D-PHOENIX-PCB": 4102,
     "EH3D-PHOENIX-PNP": 536,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 85,
     "EH3D-SERVER": 347,
     "EH3D-STENCILCAM": 160,
-    "EH3D-STUDIO": 311,
+    "EH3D-STUDIO": 314,
     "EH3D-SUITE-LAUNCHER": 113,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 139,
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 143,
-    "HYDRA-UMC": 423,
+    "HYDRA-UMC": 472,
     "HYDRA-UMC-ANDROID-CONTROL": 531,
     "HYDRA-UMC-ANOMALY-DETECTOR": 275,
     "HYDRA-UMC-BRIDGE-AMR": 209,
@@ -4003,10 +4003,10 @@
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": 180,
     "HYDRA-UMC-TELEMETRY-COLLECTOR": 138,
     "HYDRA-UMC-TOOL-CLI": 271,
-    "HYDRA-UMC-TWIN": 223,
+    "HYDRA-UMC-TWIN": 235,
     "HYDRA-UMC-UPDATER": 485,
     "HYDRA-UMC-VISION-NODE": 399,
-    "HYDRA-UMC-VISION-STREAMER": 284,
+    "HYDRA-UMC-VISION-STREAMER": 298,
     "HYDRA-UMC-VISUAL-SERVOING-API": 348,
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 434,

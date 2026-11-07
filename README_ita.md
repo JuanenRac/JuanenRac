@@ -86,7 +86,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 56 repository su 59 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `█████████▊ 98%` | 58 repository su 59 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▊ 98%` | 58 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 59 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 59 repository su 59 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 59 repository su 59 hanno il README nelle otto lingue. |
 | Simulazione | 🔴 | `██▊░░░░░░░ 27%` | 16 repository su 59 sono stati verificati almeno in un simulatore. |
@@ -402,7 +402,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 19 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 19 repository su 19 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 19 repository su 19 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono stati verificati almeno in un simulatore. |
@@ -521,7 +521,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.6|Reimplementazione in Rust del flusso di foratura del software DOS classico per le macchine Bungard CCD: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.5|Reimplementazione in Rust del flusso di fresatura del software DOS classico per le macchine Bungard CCD, da file di tracciato HP-GL: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
-|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.4|Interfaccia moderna per le macchine Bungard CCD: un launcher dei programmi classici di foratura e fresatura e un visualizzatore del lavoro sul tavolo.|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.5|Interfaccia moderna per le macchine Bungard CCD: un launcher dei programmi classici di foratura e fresatura e un visualizzatore del lavoro sul tavolo.|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.0|Base comune dei programmi di controllo macchina di EH3D: una finestra che comanda una macchina simulata con jog, azzeramento, esecuzione di G-code e vista del percorso, in otto lingue.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.7|Database di magazzino utensili condiviso per il monitoraggio delle ore d'usura, preset di taglio e avanzamenti su tutti i tool CAM EH3D.|
 

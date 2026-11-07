@@ -86,7 +86,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 56 de 59 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `█████████▊ 98%` | 58 de 59 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `█████████▊ 98%` | 58 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `██▊░░░░░░░ 27%` | 16 de 59 repositorios se han comprobado al menos en un simulador. |
@@ -402,7 +402,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 19 de 19 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios se han comprobado al menos en un simulador. |
@@ -521,7 +521,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.6|Reimplementación en Rust del flujo de taladrado del software clásico de DOS para máquinas Bungard CCD: interfaz en modo texto en ocho idiomas, simulador o máquina real.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.5|Reimplementación en Rust del flujo de fresado del software clásico de DOS para máquinas Bungard CCD, a partir de ficheros de trazado HP-GL: interfaz en modo texto en ocho idiomas, simulador o máquina real.|
-|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.4|Interfaz moderna para las máquinas Bungard CCD: un lanzador de los programas clásicos de taladrado y fresado y un visor del trabajo sobre la mesa.|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.5|Interfaz moderna para las máquinas Bungard CCD: un lanzador de los programas clásicos de taladrado y fresado y un visor del trabajo sobre la mesa.|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.0|Base común de los programas de control de máquina de EH3D: una ventana que maneja una máquina simulada con jog, puesta a cero, ejecución de código G y vista de la trayectoria, en ocho idiomas.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.7|Base de datos compartida de bancos de herramientas que rastrea horas de desgaste, ajustes de corte y avances en todas las herramientas EH3D CAM.|
 

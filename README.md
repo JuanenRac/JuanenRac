@@ -86,7 +86,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 56 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `██▊░░░░░░░ 27%` | 16 of 59 repositories have been checked at least in a simulator. |
@@ -396,7 +396,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 19 of 19 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have been checked at least in a simulator. |
@@ -515,7 +515,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | :--- | :--- | :--- |
 | [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.1.6 | Rust re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.1.5 | Rust re-implementation of the routing workflow of the classic DOS software for Bungard CCD machines, from HP-GL plot files: text-mode interface in eight languages, simulator or real machine. |
-| [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.2.4 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
+| [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.2.5 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
 | [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.1.0 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
 | [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.7 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
