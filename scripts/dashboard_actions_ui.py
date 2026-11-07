@@ -213,7 +213,7 @@ JS = r"""
     items.forEach(function (it) {
       const li = make("li", "ac-kpi" + (it[3] ? " ac-bad" : ""));
       li.setAttribute("data-testid", "ac-k-" + it[0]);
-      li.appendChild(make("b", "", it[1])); li.appendChild(make("span", "", it[2]));
+      li.appendChild(cdLiveFigure(it[1])); li.appendChild(make("span", "", it[2]));
       list.appendChild(li);
     });
   }

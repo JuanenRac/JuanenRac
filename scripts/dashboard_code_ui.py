@@ -130,6 +130,16 @@ CSS = dashboard_changes_ui.CSS + dashboard_scripts_ui.CSS + r"""
   .cd-head { fill: var(--dim); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
   .cd-seg { outline-offset: 2px; cursor: default; }
   .cd-seg rect { stroke: var(--panel); stroke-width: 1.5; }
+  .cd-seg { transition: opacity .15s ease; }
+  .cd-chart:has(.cd-seg:hover) .cd-seg:not(:hover) { opacity: .62; }
+  .ac-bar:hover .ac-fill { filter: brightness(1.2); }
+  /* what is red or running is alive, discreetly: a soft ring around the red figure, a slow breath on the running swatch */
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes cd-pulse-bad { 0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, .45); } 50% { box-shadow: 0 0 0 5px rgba(239, 68, 68, 0); } }
+    @keyframes cd-breath { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+    .ac-kpi.ac-bad { animation: cd-pulse-bad 2.4s ease-out infinite; }
+    .ac-sw.ac-c-p { animation: cd-breath 1.8s ease-in-out infinite; }
+  }
   .cd-seg rect.seg-bevel, .cd-seg rect.seg-edge { stroke: none; }
   .cd-seg:hover .seg-bevel, .cd-seg:focus-visible .seg-bevel { filter: none; }
   .cd-seg:hover rect, .cd-seg:focus-visible rect { filter: brightness(1.18); }
@@ -285,6 +295,24 @@ JS = r"""
     });
     table.appendChild(body);
   }
+  /* A key figure that counts up to its value when it is drawn (a short ease-out, nothing at all when the user asks for less motion); the text it ends with is always the exact one. */
+  function cdLiveFigure(text) {
+    const b = make("b", "", text);
+    const m = /^(\d[\d.,   ]*)(.*)$/.exec(text);
+    if (!m || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) { return b; }
+    const digits = m[1].replace(/\D/g, "");
+    const to = digits && digits.length <= 9 ? parseInt(digits, 10) : 0;
+    if (to < 2) { return b; }
+    const t0 = performance.now(), dur = Math.min(900, 300 + Math.log10(to + 1) * 150);
+    const step = function (now) {
+      if (!b.isConnected && now - t0 > 50) { b.textContent = text; return; }
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      b.textContent = k < 1 ? cdNum(Math.round(to * e)) + m[2] : text;
+      if (k < 1) { window.requestAnimationFrame(step); }
+    };
+    window.requestAnimationFrame(step);
+    return b;
+  }
   function cdLegendItem(cls, text) {
     const li = make("li"); const sw = make("span", "cd-swatch " + cls); sw.setAttribute("aria-hidden", "true");
     li.appendChild(sw); li.appendChild(make("span", "", text));
@@ -302,7 +330,7 @@ JS = r"""
       ["l10n", cdNum(all.l10n), dict.cd_k_l10n], ["size", cdSize(all.size), dict.cd_k_size]];
     items.forEach(function (it) {
       const li = make("li", "ac-kpi"); li.setAttribute("data-testid", "cd-k-" + it[0]); li.setAttribute("data-value", it[1]);
-      li.appendChild(make("b", "", it[1])); li.appendChild(make("span", "", it[2])); list.appendChild(li);
+      li.appendChild(cdLiveFigure(it[1])); li.appendChild(make("span", "", it[2])); list.appendChild(li);
     });
   }
   /* ---- 2. stacked bars: code / tests / docs for the whole, each ecosystem and each type ---- */

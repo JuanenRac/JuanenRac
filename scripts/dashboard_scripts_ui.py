@@ -156,7 +156,7 @@ JS = r"""
       ["files", cdNum(all.files), dict.sc_k_files], ["lines", cdNum(all.lines), dict.sc_k_lines]];
     items.forEach(function (it) {
       const li = make("li", "ac-kpi"); li.setAttribute("data-testid", "sc-k-" + it[0]); li.setAttribute("data-value", it[1]);
-      li.appendChild(make("b", "", it[1])); li.appendChild(make("span", "", it[2])); list.appendChild(li);
+      li.appendChild(cdLiveFigure(it[1])); li.appendChild(make("span", "", it[2])); list.appendChild(li);
     });
   }
   /* One chart of stacked bars (the whole, each ecosystem, each type), drawn like the others: shadow, dark lower half, light edge, entrance. */

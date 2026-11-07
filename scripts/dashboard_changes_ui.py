@@ -210,7 +210,7 @@ JS = r"""
       ["d30", cdNum(t.d30), dict.ch_k_d30], ["d90", cdNum(t.d90), dict.ch_k_d90]];
     items.forEach(function (it) {
       const li = make("li", "ac-kpi"); li.setAttribute("data-testid", "ch-k-" + it[0]); li.setAttribute("data-value", it[1]);
-      li.appendChild(make("b", "", it[1])); li.appendChild(make("span", "", it[2])); list.appendChild(li);
+      li.appendChild(cdLiveFigure(it[1])); li.appendChild(make("span", "", it[2])); list.appendChild(li);
     });
   }
   /* ---- donut ---- */
