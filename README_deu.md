@@ -61,10 +61,10 @@ Jede Zeile ist ein Teil dieses Repositorys, und die Ampel sagt, wie weit er heut
 
 Neben den vier Ökosystemen gibt es eine fünfte Gruppe: eigenständige Werkzeuge, die für sich stehen und mit der Zeit wachsen.
 
-| Werkzeug | Was es ist |
-|---|---|
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | Das eine Fenster und die eine Kommandozeile, die an den Updater jedes Ökosystems übergeben. |
+| Werkzeug | Version | Was es ist |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.5.0 | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | Das eine Fenster und die eine Kommandozeile, die an den Updater jedes Ökosystems übergeben. |
 
 \---
 

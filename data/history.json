@@ -3332,11 +3332,11 @@
   },
   {
    "actions": {
-    "fail": 215,
-    "min": 3783,
-    "ok": 2676,
-    "other": 18,
-    "runs": 2909
+    "fail": 208,
+    "min": 3579,
+    "ok": 2611,
+    "other": 20,
+    "runs": 2839
    },
    "areas": {
     "armor": {
@@ -3856,6 +3856,10 @@
      1,
      "0.3.2"
     ],
+    "TOOLS-GITHUB-ACTIONS-MONITOR": [
+     1,
+     "1.5.0"
+    ],
     "URTC": [
      1,
      "0.4.6"
@@ -3902,10 +3906,10 @@
     ]
    },
    "sentinel": {
-    "cand": 10,
-    "gaps": 0,
-    "min": 3783,
-    "red": 0
+    "cand": 16,
+    "gaps": 1,
+    "min": 3579,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,
@@ -4011,7 +4015,7 @@
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 434,
     "HYDRA-UMC-WATCH": 153,
-    "URTC-COMMON": 2686,
+    "URTC-COMMON": 2693,
     "URTC-DEVTOOLS": 95,
     "URTC-DOCS": 222,
     "URTC-FLASHER": 830,

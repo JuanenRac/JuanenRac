@@ -61,10 +61,10 @@ Ogni riga è una parte di questo repository e il semaforo dice a che punto è og
 
 Oltre ai quattro ecosistemi c'è un quinto gruppo: strumenti indipendenti che stanno in piedi da soli e crescono nel tempo.
 
-| Strumento | Cos'è |
-|---|---|
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |
+| Strumento | Versione | Cos'è |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.5.0 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |
 
 \---
 

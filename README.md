@@ -61,10 +61,10 @@ Each line is one part of this repository and the light says how far it is today.
 
 Outside the four ecosystems there is a fifth group: independent tools that stand on their own and grow over time.
 
-| Tool | What it is |
-|---|---|
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | The one window and command line that hand over to the updater of each ecosystem. |
+| Tool | Version | What it is |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.5.0 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | The one window and command line that hand over to the updater of each ecosystem. |
 
 ---
 

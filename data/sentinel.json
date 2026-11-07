@@ -1,21 +1,23 @@
 {
- "asof": "2026-11-07T20:34:07Z",
+ "asof": "2026-11-07T22:27:40Z",
  "ci": {
-  "checked": 529,
-  "red": [],
-  "red_total": 0
+  "checked": 528,
+  "red": [
+   {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "since": "2026-11-07T21:55:03Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   }
+  ],
+  "red_total": 1
  },
  "compute": {
   "top": [
    {
-    "min24": 327,
+    "min24": 268,
     "min7": 561,
     "repo": "EH3D-PHOENIX-PCB"
-   },
-   {
-    "min24": 224,
-    "min7": 305,
-    "repo": "URTC"
    },
    {
     "min24": 203,
@@ -28,18 +30,23 @@
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 162,
-    "min7": 162,
+    "min24": 157,
+    "min7": 187,
+    "repo": "URTC-FLASHER"
+   },
+   {
+    "min24": 146,
+    "min7": 160,
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 152,
-    "min7": 188,
-    "repo": "URTC-FLASHER"
+    "min24": 137,
+    "min7": 306,
+    "repo": "URTC"
    }
   ],
-  "total24": 3783,
-  "total7": 15947,
+  "total24": 3579,
+  "total7": 15870,
   "warn": false
  },
  "ecosystems": {
@@ -59,20 +66,20 @@
   },
   "electro-hobby-3d": {
    "cand": 0,
-   "read": 1,
-   "red": 0,
-   "repos": 1,
+   "read": 2,
+   "red": 1,
+   "repos": 2,
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 6,
+   "cand": 11,
    "read": 59,
    "red": 0,
    "repos": 59,
    "unpub": 0
   },
   "urtc": {
-   "cand": 2,
+   "cand": 3,
    "read": 11,
    "red": 0,
    "repos": 11,
@@ -80,6 +87,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T22:27:40Z",
+   "kind": "red_new",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-07T22:27:40Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.5.0"
+  },
   {
    "at": "2026-11-07T20:34:07Z",
    "kind": "released",
@@ -247,25 +266,15 @@
    "kind": "released",
    "repo": "EH3D-PHOENIX-PCB",
    "tag": "v0.0.6"
-  },
-  {
-   "at": "2026-11-07T09:18:01Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-PNP",
-   "tag": "v0.0.6"
-  },
-  {
-   "at": "2026-11-07T09:18:01Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-SDK",
-   "tag": "v0.5.9"
   }
  ],
  "hygiene": {
   "allowed_missing": [],
-  "gaps": 0,
-  "ruleset_checked": 128,
-  "ruleset_missing": [],
+  "gaps": 1,
+  "ruleset_checked": 129,
+  "ruleset_missing": [
+   "TOOLS-GITHUB-ACTIONS-MONITOR"
+  ],
   "settings_checked": 0,
   "sha_missing": []
  },
@@ -275,9 +284,19 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 10,
-    "hyg": 0,
-    "red": 0
+    "cand": 16,
+    "hyg": 1,
+    "red": 1
+   }
+  },
+  {
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
+    ],
+    "n": 1
    }
   },
   {
@@ -289,14 +308,20 @@
      "ARMOR-VOICE-AI",
      "HYDRA-UMC-BRIDGE-AMR",
      "HYDRA-UMC-BRIDGE-DROIDS",
+     "HYDRA-UMC-BRIDGE-OPENPNP",
      "HYDRA-UMC-CONNECTOR-HUB",
+     "HYDRA-UMC-GATEWAY-INDUSTRIAL",
+     "HYDRA-UMC-JOB-DISPATCHER",
+     "HYDRA-UMC-OS-REBUILDER",
+     "HYDRA-UMC-PHYSICS-REPLICA",
      "HYDRA-UMC-VISION-NODE",
      "HYDRA-UMC-VISION-STREAMER",
      "HYDRA-UMC-VISUAL-SERVOING-API",
+     "URTC-DEVTOOLS",
      "URTC-DOCS",
      "URTC-VISION-TOOL"
     ],
-    "n": 10
+    "n": 16
    }
   },
   {
@@ -312,28 +337,50 @@
    }
   },
   {
+   "key": "hyg",
+   "level": "warn",
+   "p": {
+    "list": [
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
+    ],
+    "n": 1
+   }
+  },
+  {
    "key": "settings",
    "level": "info",
    "p": {
-    "m": 128,
+    "m": 129,
     "n": 0
    }
   }
  ],
- "read": 128,
+ "read": 129,
  "releases": {
   "candidates": [
    {
-    "entries": 6,
+    "entries": 8,
     "published": "2026-11-05T18:44:08Z",
     "repo": "URTC-VISION-TOOL",
     "tag": "v0.1.9"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-05T21:08:29Z",
+    "repo": "URTC-DEVTOOLS",
+    "tag": "v0.0.3"
    },
    {
     "entries": 4,
     "published": "2026-11-05T13:14:04Z",
     "repo": "HYDRA-UMC-VISION-STREAMER",
     "tag": "v0.2.5"
+   },
+   {
+    "entries": 4,
+    "published": "2026-11-05T18:48:25Z",
+    "repo": "URTC-DOCS",
+    "tag": "v0.1.5"
    },
    {
     "entries": 3,
@@ -360,12 +407,6 @@
     "tag": "v0.2.2"
    },
    {
-    "entries": 3,
-    "published": "2026-11-05T18:48:25Z",
-    "repo": "URTC-DOCS",
-    "tag": "v0.1.5"
-   },
-   {
     "entries": 2,
     "published": "2026-11-03T14:26:28Z",
     "repo": "ARMOR-HARDWARE",
@@ -373,9 +414,39 @@
    },
    {
     "entries": 2,
+    "published": "2026-11-05T20:34:47Z",
+    "repo": "HYDRA-UMC-BRIDGE-OPENPNP",
+    "tag": "v0.2.5"
+   },
+   {
+    "entries": 2,
     "published": "2026-11-05T20:33:20Z",
     "repo": "HYDRA-UMC-CONNECTOR-HUB",
     "tag": "v0.1.9"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-05T20:34:23Z",
+    "repo": "HYDRA-UMC-GATEWAY-INDUSTRIAL",
+    "tag": "v0.2.0"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-05T21:32:39Z",
+    "repo": "HYDRA-UMC-JOB-DISPATCHER",
+    "tag": "v0.3.0"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-05T21:23:36Z",
+    "repo": "HYDRA-UMC-OS-REBUILDER",
+    "tag": "v0.3.6"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-05T21:37:34Z",
+    "repo": "HYDRA-UMC-PHYSICS-REPLICA",
+    "tag": "v0.1.4"
    },
    {
     "entries": 2,
@@ -386,14 +457,14 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 10
+  "total": 16
  },
- "repos": 128,
+ "repos": 129,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 78,
+  "none": 79,
   "norelease": 0,
   "unverifiable": 21,
   "unverified": 0,
@@ -517,6 +588,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.3",
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.2",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.5.0",
   "URTC": "v0.4.6",
   "URTC-COMMON": "v0.2.3",
   "URTC-DEVTOOLS": "v0.0.3",
@@ -535,7 +607,7 @@
    35,
    23,
    0,
-   10
+   16
   ],
   "dates": [
    "2026-11-03",
@@ -549,21 +621,21 @@
    0,
    0,
    0,
-   0
+   1
   ],
   "min": [
    8105,
    2782,
    4421,
    5648,
-   3783
+   3579
   ],
   "red": [
    3,
    5,
    3,
    0,
-   0
+   1
   ]
  },
  "unpublished": {

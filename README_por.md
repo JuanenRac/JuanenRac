@@ -61,10 +61,10 @@ Cada linha é uma parte deste repositório e a luz diz até onde chega hoje. É 
 
 Fora dos quatro ecossistemas há um quinto grupo: ferramentas independentes que se sustentam sozinhas e crescem com o tempo.
 
-| Ferramenta | O que é |
-|---|---|
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
+| Ferramenta | Versão | O que é |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.5.0 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
 
 \---
 

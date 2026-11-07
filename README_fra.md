@@ -61,10 +61,10 @@ Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'
 
 En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils indépendants qui se suffisent à eux-mêmes et s'enrichissent avec le temps.
 
-| Outil | Ce que c'est |
-|---|---|
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
+| Outil | Version | Ce que c'est |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.5.0 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
 
 \---
 

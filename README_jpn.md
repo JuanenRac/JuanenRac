@@ -61,10 +61,10 @@
 
 4つのエコシステムとは別に、第5のグループがあります。単独で成り立ち、時間とともに増えていく独立したツールです。
 
-| ツール | 概要 |
-|---|---|
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
+| ツール | バージョン | 概要 |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.5.0 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
 
 \---
 
