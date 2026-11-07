@@ -3332,11 +3332,11 @@
   },
   {
    "actions": {
-    "fail": 187,
-    "min": 3352,
-    "ok": 2356,
-    "other": 20,
-    "runs": 2563
+    "fail": 190,
+    "min": 3275,
+    "ok": 2367,
+    "other": 16,
+    "runs": 2573
    },
    "areas": {
     "armor": {
@@ -3904,7 +3904,7 @@
    "sentinel": {
     "cand": 5,
     "gaps": 0,
-    "min": 3352,
+    "min": 3275,
     "red": 0
    },
    "tests": {
@@ -3937,7 +3937,7 @@
     "EH3D-ISOCAM": 330,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-PHOENIX-CAD": 613,
+    "EH3D-PHOENIX-CAD": 651,
     "EH3D-PHOENIX-CNC": 126,
     "EH3D-PHOENIX-LASER": 309,
     "EH3D-PHOENIX-PCB": 4102,
