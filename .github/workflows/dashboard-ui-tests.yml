@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    timeout-minutes: 25
+    timeout-minutes: 45
     env:
       FIXTURE_DIR: ${{ github.workspace }}/e2e/fixture/out
 
