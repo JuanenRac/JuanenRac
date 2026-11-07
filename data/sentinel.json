@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-07T19:39:42Z",
+ "asof": "2026-11-07T19:50:34Z",
  "ci": {
   "checked": 529,
   "red": [],
@@ -8,7 +8,7 @@
  "compute": {
   "top": [
    {
-    "min24": 392,
+    "min24": 371,
     "min7": 561,
     "repo": "EH3D-PHOENIX-PCB"
    },
@@ -18,8 +18,8 @@
     "repo": "URTC"
    },
    {
-    "min24": 172,
-    "min7": 293,
+    "min24": 187,
+    "min7": 300,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
@@ -28,18 +28,18 @@
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 151,
-    "min7": 151,
+    "min24": 156,
+    "min7": 156,
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 141,
-    "min7": 190,
+    "min24": 143,
+    "min7": 187,
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 3699,
-  "total7": 15975,
+  "total24": 3724,
+  "total7": 15982,
   "warn": false
  },
  "ecosystems": {
@@ -535,7 +535,7 @@
    2782,
    4421,
    5648,
-   3699
+   3724
   ],
   "red": [
    3,
