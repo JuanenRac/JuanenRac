@@ -3333,14 +3333,14 @@
   {
    "actions": {
     "fail": 215,
-    "min": 3658,
-    "ok": 2558,
-    "other": 26,
-    "runs": 2799
+    "min": 3699,
+    "ok": 2574,
+    "other": 24,
+    "runs": 2813
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -3904,8 +3904,8 @@
    "sentinel": {
     "cand": 7,
     "gaps": 0,
-    "min": 3658,
-    "red": 1
+    "min": 3699,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,
@@ -3937,7 +3937,7 @@
     "EH3D-ISOCAM": 352,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-PHOENIX-CAD": 651,
+    "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 126,
     "EH3D-PHOENIX-LASER": 309,
     "EH3D-PHOENIX-PCB": 4134,

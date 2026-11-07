@@ -1,21 +1,14 @@
 {
- "asof": "2026-11-07T19:25:44Z",
+ "asof": "2026-11-07T19:39:42Z",
  "ci": {
   "checked": 529,
-  "red": [
-   {
-    "repo": "ARMOR-DOCS",
-    "since": "2026-11-07T19:09:15Z",
-    "streak": 1,
-    "wf": "nightly.yml"
-   }
-  ],
-  "red_total": 1
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 400,
+    "min24": 392,
     "min7": 561,
     "repo": "EH3D-PHOENIX-PCB"
    },
@@ -26,7 +19,7 @@
    },
    {
     "min24": 172,
-    "min7": 294,
+    "min7": 293,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
@@ -35,8 +28,8 @@
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 152,
-    "min7": 152,
+    "min24": 151,
+    "min7": 151,
     "repo": "ARMOR-STUDIO"
    },
    {
@@ -45,15 +38,15 @@
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 3658,
-  "total7": 15952,
+  "total24": 3699,
+  "total7": 15975,
   "warn": false
  },
  "ecosystems": {
   "armor": {
    "cand": 2,
    "read": 19,
-   "red": 1,
+   "red": 0,
    "repos": 19,
    "unpub": 0
   },
@@ -87,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T19:39:42Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-07T19:25:44Z",
    "kind": "red_new",
@@ -260,12 +259,6 @@
    "kind": "released",
    "repo": "HYDRA-UMC-SERVER",
    "tag": "v0.8.2.7"
-  },
-  {
-   "at": "2026-11-07T09:18:01Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-STUDIO",
-   "tag": "v0.8.1.8"
   }
  ],
  "hygiene": {
@@ -284,17 +277,7 @@
     "bad": 0,
     "cand": 7,
     "hyg": 0,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "warn",
-   "p": {
-    "list": [
-     "ARMOR-DOCS"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -552,14 +535,14 @@
    2782,
    4421,
    5648,
-   3658
+   3699
   ],
   "red": [
    3,
    5,
    3,
    0,
-   1
+   0
   ]
  },
  "unpublished": {
