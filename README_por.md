@@ -490,10 +490,10 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | Área | Estado | Progresso | Nota |
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▋░░░░ 56%` | 22 de 39 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
-| Testes | 🟢 | `█████████▎ 93%` | 28 de 30 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 30 de 30 repositórios têm a última execução do CI no ramo principal em verde. |
-| Versões publicadas | 🟢 | `██████████ 100%` | 30 de 30 repositórios publicaram pelo menos uma versão. |
-| Documentação | 🟢 | `██████████ 100%` | 30 de 30 repositórios têm o README nas oito línguas. |
+| Testes | 🟡 | `█████████░ 90%` | 35 de 39 repositórios têm testes automáticos. |
+| Integração contínua | 🟢 | `██████████ 100%` | 39 de 39 repositórios têm a última execução do CI no ramo principal em verde. |
+| Versões publicadas | 🟢 | `██████████ 100%` | 39 de 39 repositórios publicaram pelo menos uma versão. |
+| Documentação | 🟢 | `██████████ 100%` | 39 de 39 repositórios têm o README nas oito línguas. |
 | Simulação | 🔴 | `██▎░░░░░░░ 23%` | 9 de 39 repositórios foram verificados pelo menos num simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 dos 13 repositórios que dependem de hardware foram verificados em bancada ou no terreno; os restantes nunca funcionaram com o equipamento real. |
 | Produção | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositórios estão consolidados ou em produção. |

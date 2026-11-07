@@ -3332,11 +3332,11 @@
   },
   {
    "actions": {
-    "fail": 208,
-    "min": 3565,
-    "ok": 2609,
-    "other": 22,
-    "runs": 2839
+    "fail": 203,
+    "min": 3487,
+    "ok": 2579,
+    "other": 27,
+    "runs": 2809
    },
    "areas": {
     "armor": {
@@ -3357,7 +3357,7 @@
      "releases": 100,
      "simulation": 23,
      "software": 56,
-     "tests": 90
+     "tests": 93
     },
     "hydra-umc": {
      "ci": 100,
@@ -3906,9 +3906,9 @@
     ]
    },
    "sentinel": {
-    "cand": 16,
+    "cand": 17,
     "gaps": 1,
-    "min": 3565,
+    "min": 3487,
     "red": 1
    },
    "tests": {

@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-07T22:39:09Z",
+ "asof": "2026-11-07T23:04:42Z",
  "ci": {
   "checked": 528,
   "red": [
@@ -15,7 +15,7 @@
  "compute": {
   "top": [
    {
-    "min24": 258,
+    "min24": 238,
     "min7": 561,
     "repo": "EH3D-PHOENIX-PCB"
    },
@@ -30,8 +30,8 @@
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 157,
-    "min7": 183,
+    "min24": 158,
+    "min7": 180,
     "repo": "URTC-FLASHER"
    },
    {
@@ -40,13 +40,13 @@
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 137,
+    "min24": 138,
     "min7": 306,
     "repo": "URTC"
    }
   ],
-  "total24": 3565,
-  "total7": 15861,
+  "total24": 3487,
+  "total7": 15784,
   "warn": false
  },
  "ecosystems": {
@@ -72,7 +72,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 11,
+   "cand": 12,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -284,7 +284,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 16,
+    "cand": 17,
     "hyg": 1,
     "red": 1
    }
@@ -312,6 +312,7 @@
      "HYDRA-UMC-CONNECTOR-HUB",
      "HYDRA-UMC-GATEWAY-INDUSTRIAL",
      "HYDRA-UMC-JOB-DISPATCHER",
+     "HYDRA-UMC-OS",
      "HYDRA-UMC-OS-REBUILDER",
      "HYDRA-UMC-PHYSICS-REPLICA",
      "HYDRA-UMC-VISION-NODE",
@@ -321,7 +322,7 @@
      "URTC-DOCS",
      "URTC-VISION-TOOL"
     ],
-    "n": 16
+    "n": 17
    }
   },
   {
@@ -358,6 +359,12 @@
  "read": 129,
  "releases": {
   "candidates": [
+   {
+    "entries": 8,
+    "published": "2026-11-05T22:51:19Z",
+    "repo": "HYDRA-UMC-OS",
+    "tag": "v0.6.0"
+   },
    {
     "entries": 8,
     "published": "2026-11-05T18:44:08Z",
@@ -457,7 +464,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 16
+  "total": 17
  },
  "repos": 129,
  "schema": 1,
@@ -607,7 +614,7 @@
    35,
    23,
    0,
-   16
+   17
   ],
   "dates": [
    "2026-11-03",
@@ -628,7 +635,7 @@
    2782,
    4421,
    5648,
-   3565
+   3487
   ],
   "red": [
    3,
