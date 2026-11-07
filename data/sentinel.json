@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-07T17:05:26Z",
+ "asof": "2026-11-07T17:53:51Z",
  "ci": {
   "checked": 528,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 370,
-    "min7": 539,
+    "min24": 384,
+    "min7": 550,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
@@ -18,28 +18,28 @@
     "repo": "URTC"
    },
    {
+    "min24": 136,
+    "min7": 145,
+    "repo": "ARMOR-STUDIO"
+   },
+   {
     "min24": 135,
     "min7": 135,
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 125,
-    "min7": 286,
+    "min24": 134,
+    "min7": 281,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 116,
-    "min7": 140,
-    "repo": "ARMOR-STUDIO"
-   },
-   {
-    "min24": 113,
+    "min24": 129,
     "min7": 192,
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 3275,
-  "total7": 15908,
+  "total24": 3445,
+  "total7": 15896,
   "warn": false
  },
  "ecosystems": {
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T17:53:51Z",
+   "kind": "released",
+   "repo": "EH3D-BUNGARD-GUI",
+   "tag": "v0.2.5"
+  },
   {
    "at": "2026-11-07T16:45:25Z",
    "kind": "red_ok",
@@ -253,12 +259,6 @@
    "kind": "red_new",
    "repo": "HYDRA-UMC-SDK",
    "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-07T02:24:46Z",
-   "kind": "released",
-   "repo": "ARMOR-STUDIO",
-   "tag": "v0.8.2.3"
   }
  ],
  "hygiene": {
@@ -386,7 +386,7 @@
   "ARMOR-VOICE-AI": "v0.3.4",
   "EH3D-ANDROID-CONTROL": "v0.0.9",
   "EH3D-AUTOLEVEL": "v0.0.7",
-  "EH3D-BUNGARD-GUI": "v0.2.4",
+  "EH3D-BUNGARD-GUI": "v0.2.5",
   "EH3D-CAM-DEBUGGER": "v0.0.5",
   "EH3D-COMMON": "v0.1.9",
   "EH3D-COMPONENT-INTELLIGENCE": "v0.0.3",
@@ -521,7 +521,7 @@
    2782,
    4421,
    5648,
-   3275
+   3445
   ],
   "red": [
    3,

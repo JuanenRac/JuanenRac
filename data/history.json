@@ -3332,11 +3332,11 @@
   },
   {
    "actions": {
-    "fail": 190,
-    "min": 3275,
-    "ok": 2367,
-    "other": 16,
-    "runs": 2573
+    "fail": 206,
+    "min": 3445,
+    "ok": 2464,
+    "other": 27,
+    "runs": 2697
    },
    "areas": {
     "armor": {
@@ -3370,7 +3370,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -3482,7 +3482,7 @@
     ],
     "EH3D-COMMON": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
@@ -3904,7 +3904,7 @@
    "sentinel": {
     "cand": 5,
     "gaps": 0,
-    "min": 3275,
+    "min": 3445,
     "red": 0
    },
    "tests": {
@@ -3985,9 +3985,9 @@
     "HYDRA-UMC-MTCONNECT-ADAPTER": 189,
     "HYDRA-UMC-NODE-HEALING": 174,
     "HYDRA-UMC-OPCUA-SERVER": 256,
-    "HYDRA-UMC-OPS-AGENT": 478,
+    "HYDRA-UMC-OPS-AGENT": 500,
     "HYDRA-UMC-ORCHESTRATOR": 278,
-    "HYDRA-UMC-OS": 45,
+    "HYDRA-UMC-OS": 72,
     "HYDRA-UMC-OS-REBUILDER": 225,
     "HYDRA-UMC-PATH-PLANNER-3D": 83,
     "HYDRA-UMC-PHYSICS-REPLICA": 187,
