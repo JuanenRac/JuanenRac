@@ -1,45 +1,52 @@
 {
- "asof": "2026-11-06T23:16:43Z",
+ "asof": "2026-11-07T02:24:46Z",
  "ci": {
   "checked": 518,
-  "red": [],
-  "red_total": 0
+  "red": [
+   {
+    "repo": "HYDRA-UMC-SDK",
+    "since": "2026-11-07T00:44:07Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   }
+  ],
+  "red_total": 1
  },
  "compute": {
   "top": [
    {
-    "min24": 334,
-    "min7": 430,
+    "min24": 340,
+    "min7": 472,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 316,
+    "min24": 308,
     "min7": 487,
     "repo": "HYDRA-UMC"
    },
    {
-    "min24": 308,
+    "min24": 298,
+    "min7": 456,
+    "repo": "EH3D-DRILLPRO"
+   },
+   {
+    "min24": 293,
     "min7": 623,
     "repo": "EH3D-BUNGARD-GUI"
    },
    {
-    "min24": 304,
+    "min24": 288,
     "min7": 437,
     "repo": "EH3D-ROUTEPRO"
    },
    {
-    "min24": 299,
-    "min7": 450,
-    "repo": "EH3D-DRILLPRO"
-   },
-   {
-    "min24": 228,
-    "min7": 252,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
+    "min24": 235,
+    "min7": 379,
+    "repo": "URTC"
    }
   ],
-  "total24": 5648,
-  "total7": 16630,
+  "total24": 5337,
+  "total7": 16608,
   "warn": false
  },
  "ecosystems": {
@@ -67,7 +74,7 @@
   "hydra-umc": {
    "cand": 0,
    "read": 59,
-   "red": 0,
+   "red": 1,
    "repos": 59,
    "unpub": 0
   },
@@ -80,6 +87,24 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T02:24:46Z",
+   "kind": "red_new",
+   "repo": "HYDRA-UMC-SDK",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-07T02:24:46Z",
+   "kind": "released",
+   "repo": "ARMOR-STUDIO",
+   "tag": "v0.8.2.3"
+  },
+  {
+   "at": "2026-11-07T02:24:46Z",
+   "kind": "released",
+   "repo": "EH3D-SERVER",
+   "tag": "v0.1.4"
+  },
   {
    "at": "2026-11-06T22:25:39Z",
    "kind": "red_ok",
@@ -241,24 +266,6 @@
    "kind": "red_new",
    "repo": "EH3D-STUDIO",
    "wf": "release-dist.yml"
-  },
-  {
-   "at": "2026-11-06T17:31:51Z",
-   "kind": "red_new",
-   "repo": "EH3D-TOOL-MANAGER",
-   "wf": "release-binaries.yml"
-  },
-  {
-   "at": "2026-11-06T17:31:51Z",
-   "kind": "red_new",
-   "repo": "URTC-DEVTOOLS",
-   "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-06T17:31:51Z",
-   "kind": "red_ok",
-   "repo": "URTC",
-   "wf": "windows-build-compare.yml"
   }
  ],
  "hygiene": {
@@ -272,18 +279,23 @@
  "parte": [
   {
    "key": "head",
-   "level": "ok",
+   "level": "warn",
    "p": {
     "bad": 0,
     "cand": 0,
     "hyg": 0,
-    "red": 0
+    "red": 1
    }
   },
   {
-   "key": "all_ok",
-   "level": "ok",
-   "p": {}
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "HYDRA-UMC-SDK"
+    ],
+    "n": 1
+   }
   },
   {
    "key": "settings",
@@ -328,7 +340,7 @@
   "ARMOR-SERVER": "v0.8.2.0",
   "ARMOR-SERVER-AI": "v0.3.2",
   "ARMOR-SIMULATOR": "v0.3.6",
-  "ARMOR-STUDIO": "v0.8.2.2",
+  "ARMOR-STUDIO": "v0.8.2.3",
   "ARMOR-UPDATER": "v0.2.1",
   "ARMOR-VISION": "v0.1.4",
   "ARMOR-VOICE-AI": "v0.3.4",
@@ -361,7 +373,7 @@
   "EH3D-PHOENIX-PNP": "v0.0.5",
   "EH3D-PROJECT-PASSPORT": "v0.0.2",
   "EH3D-ROUTEPRO": "v0.1.5",
-  "EH3D-SERVER": "v0.1.3",
+  "EH3D-SERVER": "v0.1.4",
   "EH3D-STENCILCAM": "v0.0.6",
   "EH3D-STUDIO": "v0.1.1",
   "EH3D-SUITE-LAUNCHER": "v0.0.5",
@@ -447,15 +459,18 @@
    11,
    35,
    23,
+   0,
    0
   ],
   "dates": [
    "2026-11-03",
    "2026-11-04",
    "2026-11-05",
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-07"
   ],
   "gaps": [
+   0,
    0,
    0,
    0,
@@ -465,13 +480,15 @@
    8105,
    2782,
    4421,
-   5648
+   5648,
+   5337
   ],
   "red": [
    3,
    5,
    3,
-   0
+   0,
+   1
   ]
  },
  "unpublished": {

@@ -65,9 +65,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-06T20:38:17Z",
-   "exp": "2026-11-13T20:37:38Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/42289885845",
+   "at": "2026-11-07T00:49:17Z",
+   "checked": true,
+   "exp": "2026-11-14T00:48:35Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/42320434364",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -378,8 +379,8 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "a3d31a43989f7510",
-   "on": "2026-11-06",
+   "fp": "8888c52087dbad6d",
+   "on": "2026-11-07",
    "r": {
     "ak": 1,
     "an": 1,
@@ -540,8 +541,8 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "c5e2c28763dae316",
-   "on": "2026-11-06",
+   "fp": "7fdba1ba5f3d692d",
+   "on": "2026-11-07",
    "r": {
     "ak": 3,
     "an": 3,
@@ -864,7 +865,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "a3d31a43989f7510",
+   "fp": "8888c52087dbad6d",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1106,7 +1107,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "c5e2c28763dae316",
+   "fp": "7fdba1ba5f3d692d",
    "r": {
     "bad": 0,
     "ho": 0,
