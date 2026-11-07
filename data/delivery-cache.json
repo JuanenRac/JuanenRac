@@ -66,7 +66,6 @@
   "ARMOR-STUDIO": {
    "art": true,
    "at": "2026-11-07T00:49:17Z",
-   "checked": true,
    "exp": "2026-11-14T00:48:35Z",
    "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/42320434364",
    "wf": "package-build.yml"
@@ -185,16 +184,18 @@
   },
   "HYDRA-UMC-SERVER": {
    "art": true,
-   "at": "2026-11-06T09:15:55Z",
-   "exp": "2026-11-13T09:15:16Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/42193585858",
+   "at": "2026-11-07T05:26:03Z",
+   "checked": true,
+   "exp": "2026-11-14T05:25:26Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/42342641922",
    "wf": "dist-build.yml"
   },
   "HYDRA-UMC-STUDIO": {
    "art": true,
-   "at": "2026-11-06T12:51:47Z",
-   "exp": "2026-11-13T12:50:44Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42220684361",
+   "at": "2026-11-07T05:27:16Z",
+   "checked": true,
+   "exp": "2026-11-14T05:26:26Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42342680265",
    "wf": "dist-build.yml"
   },
   "HYDRA-UMC-STUDIO-KIT": {
@@ -514,8 +515,8 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "62ace16c5e4095d6",
-   "on": "2026-11-06",
+   "fp": "12cc901cfd8119b2",
+   "on": "2026-11-07",
    "r": {
     "ak": 3,
     "an": 3,
@@ -523,8 +524,8 @@
    }
   },
   "EH3D-PHOENIX-PNP": {
-   "fp": "618b13b1f0f53232",
-   "on": "2026-11-06",
+   "fp": "4e25d1d9dbca924b",
+   "on": "2026-11-07",
    "r": {
     "ak": 3,
     "an": 3,
@@ -631,8 +632,8 @@
    }
   },
   "HYDRA-UMC-SERVER": {
-   "fp": "35f52c79006adb69",
-   "on": "2026-11-06",
+   "fp": "13e5a5afb2a22681",
+   "on": "2026-11-07",
    "r": {
     "ak": 2,
     "an": 2,
@@ -640,8 +641,8 @@
    }
   },
   "HYDRA-UMC-STUDIO": {
-   "fp": "a9a7f088486ee424",
-   "on": "2026-11-06",
+   "fp": "f3e79c94586560b1",
+   "on": "2026-11-07",
    "r": {
     "ak": 2,
     "an": 2,
@@ -1065,7 +1066,7 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "62ace16c5e4095d6",
+   "fp": "12cc901cfd8119b2",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1079,7 +1080,7 @@
    }
   },
   "EH3D-PHOENIX-PNP": {
-   "fp": "618b13b1f0f53232",
+   "fp": "4e25d1d9dbca924b",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1291,7 +1292,7 @@
    }
   },
   "HYDRA-UMC-SERVER": {
-   "fp": "35f52c79006adb69",
+   "fp": "13e5a5afb2a22681",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1306,7 +1307,7 @@
    }
   },
   "HYDRA-UMC-STUDIO": {
-   "fp": "a9a7f088486ee424",
+   "fp": "f3e79c94586560b1",
    "r": {
     "bad": 0,
     "ho": 0,
