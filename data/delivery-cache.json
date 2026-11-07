@@ -205,9 +205,10 @@
   },
   "HYDRA-UMC-SUITE": {
    "art": true,
-   "at": "2026-11-06T11:29:15Z",
-   "exp": "2026-11-13T11:22:36Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42209219613",
+   "at": "2026-11-07T20:15:45Z",
+   "checked": true,
+   "exp": "2026-11-14T20:10:59Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42409419173",
    "wf": "exe-build.yml"
   },
   "HYDRA-UMC-SWARM-SYNC": {
@@ -558,8 +559,8 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "2d44a38c7fa29bf0",
-   "on": "2026-11-06",
+   "fp": "33aa58a4ecf2c5d0",
+   "on": "2026-11-07",
    "r": {
     "ak": 1,
     "an": 1,
@@ -1134,7 +1135,7 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "2d44a38c7fa29bf0",
+   "fp": "33aa58a4ecf2c5d0",
    "r": {
     "bad": 0,
     "ho": 0,

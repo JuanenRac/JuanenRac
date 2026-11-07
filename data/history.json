@@ -3333,10 +3333,10 @@
   {
    "actions": {
     "fail": 215,
-    "min": 3724,
-    "ok": 2595,
-    "other": 23,
-    "runs": 2833
+    "min": 3783,
+    "ok": 2676,
+    "other": 18,
+    "runs": 2909
    },
    "areas": {
     "armor": {
@@ -3902,9 +3902,9 @@
     ]
    },
    "sentinel": {
-    "cand": 7,
+    "cand": 10,
     "gaps": 0,
-    "min": 3724,
+    "min": 3783,
     "red": 0
    },
    "tests": {
@@ -3954,7 +3954,7 @@
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 146,
     "HYDRA-UMC": 491,
-    "HYDRA-UMC-ANDROID-CONTROL": 548,
+    "HYDRA-UMC-ANDROID-CONTROL": 562,
     "HYDRA-UMC-ANOMALY-DETECTOR": 275,
     "HYDRA-UMC-BRIDGE-AMR": 209,
     "HYDRA-UMC-BRIDGE-CNC": 311,
@@ -3992,7 +3992,7 @@
     "HYDRA-UMC-PATH-PLANNER-3D": 83,
     "HYDRA-UMC-PHYSICS-REPLICA": 187,
     "HYDRA-UMC-PRODUCTION-REPORTS": 214,
-    "HYDRA-UMC-SAFETY-ZONES": 1006,
+    "HYDRA-UMC-SAFETY-ZONES": 1081,
     "HYDRA-UMC-SDK": 891,
     "HYDRA-UMC-SEMANTIC-PLANNER": 315,
     "HYDRA-UMC-SERVER": 816,
