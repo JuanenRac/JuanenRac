@@ -40,7 +40,7 @@
       "manifest_file": "electro-hobby-3d.project.json",
       "updater": null,
       "updater_module": null,
-      "note": "Cross-ecosystem repositories (this profile, ELECTRO-HOBBY-3D-UPDATER): no updater of their own; ELECTRO-HOBBY-3D-UPDATER dispatches to the four ecosystem updaters."
+      "note": "The Tools group and the cross-ecosystem repositories (this profile, ELECTRO-HOBBY-3D-UPDATER, TOOLS-GITHUB-ACTIONS-MONITOR): no updater of their own; ELECTRO-HOBBY-3D-UPDATER dispatches to the four ecosystem updaters."
     }
   ],
   "_about": "ecosystem/manifest_file/dashboard_exclude are the HYDRA-UMC discovery settings read by hydra_umc_updater.parse_catalog; 'ecosystems' lists every ecosystem the dashboard reports and is checked against scripts/generate_dashboard.py by scripts/catalog_check.py."
