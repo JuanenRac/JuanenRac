@@ -249,13 +249,15 @@ JS = r"""
     return el;
   }
   (function () {
-    const root = document.getElementById("cd-root");
-    if (!root) { return; }
-    ["pointerover", "pointermove", "focusin"].forEach(function (type) {
-      root.addEventListener(type, function (event) { const el = event.target.closest ? event.target.closest(".cd-tipped") : null; if (el) { cdTipShow(el, event); } });
-    });
-    ["pointerout", "focusout"].forEach(function (type) {
-      root.addEventListener(type, function (event) { const el = event.target.closest ? event.target.closest(".cd-tipped") : null; if (el) { cdTipHide(); } });
+    ["cd-root", "ch-root"].forEach(function (id) {
+      const root = document.getElementById(id);
+      if (!root) { return; }
+      ["pointerover", "pointermove", "focusin"].forEach(function (type) {
+        root.addEventListener(type, function (event) { const el = event.target.closest ? event.target.closest(".cd-tipped") : null; if (el) { cdTipShow(el, event); } });
+      });
+      ["pointerout", "focusout"].forEach(function (type) {
+        root.addEventListener(type, function (event) { const el = event.target.closest ? event.target.closest(".cd-tipped") : null; if (el) { cdTipHide(); } });
+      });
     });
     document.addEventListener("keydown", function (event) { if (event.key === "Escape") { cdTipHide(); } });
   })();
