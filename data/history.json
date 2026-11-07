@@ -3332,20 +3332,20 @@
   },
   {
    "actions": {
-    "fail": 225,
-    "min": 4238,
-    "ok": 2599,
-    "other": 29,
-    "runs": 2853
+    "fail": 207,
+    "min": 3975,
+    "ok": 2595,
+    "other": 23,
+    "runs": 2825
    },
    "areas": {
     "armor": {
      "ci": 100,
      "docs": 100,
-     "hardware": 53,
+     "hardware": 60,
      "production": 63,
      "releases": 100,
-     "simulation": 79,
+     "simulation": 95,
      "software": 95,
      "tests": 95
     },
@@ -3370,7 +3370,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 82,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -3382,10 +3382,10 @@
    },
    "date": "2026-11-07",
    "progress": {
-    "armor": 68,
+    "armor": 69,
     "eh3d": 45,
     "hydra-umc": 55,
-    "urtc": 54
+    "urtc": 55
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -3486,7 +3486,7 @@
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-CORE-LIBS": [
      1,
@@ -3542,7 +3542,7 @@
     ],
     "EH3D-NODE-BUNGARD-AUX": [
      0,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-NODE-BUNGARD-HMI": [
      0,
@@ -3554,7 +3554,7 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
@@ -3770,7 +3770,7 @@
     ],
     "HYDRA-UMC-PATH-PLANNER-3D": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "HYDRA-UMC-PHYSICS-REPLICA": [
      1,
@@ -3778,7 +3778,7 @@
     ],
     "HYDRA-UMC-PRODUCTION-REPORTS": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-SAFETY-ZONES": [
      1,
@@ -3810,7 +3810,7 @@
     ],
     "HYDRA-UMC-SWARM-SYNC": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": [
      2,
@@ -3902,10 +3902,10 @@
     ]
    },
    "sentinel": {
-    "cand": 1,
+    "cand": 4,
     "gaps": 0,
-    "min": 4238,
-    "red": 2
+    "min": 3975,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,
@@ -3916,11 +3916,11 @@
     "ARMOR-NETWORK": 187,
     "ARMOR-SERVER": 1013,
     "ARMOR-SERVER-AI": 145,
-    "ARMOR-SIMULATOR": 271,
+    "ARMOR-SIMULATOR": 296,
     "ARMOR-STUDIO": 1495,
     "ARMOR-UPDATER": 386,
-    "ARMOR-VISION": 170,
-    "ARMOR-VOICE-AI": 140,
+    "ARMOR-VISION": 184,
+    "ARMOR-VOICE-AI": 145,
     "EH3D-AUTOLEVEL": 172,
     "EH3D-BUNGARD-GUI": 385,
     "EH3D-CAM-DEBUGGER": 123,
@@ -3937,11 +3937,11 @@
     "EH3D-ISOCAM": 330,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-PHOENIX-CAD": 515,
+    "EH3D-PHOENIX-CAD": 613,
     "EH3D-PHOENIX-CNC": 126,
     "EH3D-PHOENIX-LASER": 309,
-    "EH3D-PHOENIX-PCB": 4041,
-    "EH3D-PHOENIX-PNP": 452,
+    "EH3D-PHOENIX-PCB": 4073,
+    "EH3D-PHOENIX-PNP": 536,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 85,
     "EH3D-SERVER": 347,
@@ -3953,23 +3953,23 @@
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 143,
-    "HYDRA-UMC": 326,
+    "HYDRA-UMC": 423,
     "HYDRA-UMC-ANDROID-CONTROL": 531,
     "HYDRA-UMC-ANOMALY-DETECTOR": 275,
-    "HYDRA-UMC-BRIDGE-AMR": 195,
-    "HYDRA-UMC-BRIDGE-CNC": 302,
-    "HYDRA-UMC-BRIDGE-DROIDS": 160,
-    "HYDRA-UMC-BRIDGE-LASER": 222,
-    "HYDRA-UMC-BRIDGE-OPENPNP": 272,
+    "HYDRA-UMC-BRIDGE-AMR": 209,
+    "HYDRA-UMC-BRIDGE-CNC": 311,
+    "HYDRA-UMC-BRIDGE-DROIDS": 184,
+    "HYDRA-UMC-BRIDGE-LASER": 236,
+    "HYDRA-UMC-BRIDGE-OPENPNP": 280,
     "HYDRA-UMC-BRIDGE-PRINTER3D": 164,
     "HYDRA-UMC-BRIDGE-ROS2": 119,
     "HYDRA-UMC-BRIDGE-UAV": 256,
     "HYDRA-UMC-COGNITIVE-NODE": 206,
-    "HYDRA-UMC-CONNECTOR-HUB": 264,
+    "HYDRA-UMC-CONNECTOR-HUB": 304,
     "HYDRA-UMC-DASHBOARD-AI": 261,
     "HYDRA-UMC-DATALAKE": 306,
-    "HYDRA-UMC-DETECTION-HEF": 209,
-    "HYDRA-UMC-DEV-SERVER": 520,
+    "HYDRA-UMC-DETECTION-HEF": 225,
+    "HYDRA-UMC-DEV-SERVER": 536,
     "HYDRA-UMC-DEVELOPER-NODE": 95,
     "HYDRA-UMC-DOCS": 217,
     "HYDRA-UMC-DOCS-QA": 137,
@@ -3982,11 +3982,11 @@
     "HYDRA-UMC-JOB-DISPATCHER": 303,
     "HYDRA-UMC-LOCAL-TECHNICIAN": 370,
     "HYDRA-UMC-MQTT-BROKER": 187,
-    "HYDRA-UMC-MTCONNECT-ADAPTER": 184,
+    "HYDRA-UMC-MTCONNECT-ADAPTER": 189,
     "HYDRA-UMC-NODE-HEALING": 174,
-    "HYDRA-UMC-OPCUA-SERVER": 222,
+    "HYDRA-UMC-OPCUA-SERVER": 256,
     "HYDRA-UMC-OPS-AGENT": 478,
-    "HYDRA-UMC-ORCHESTRATOR": 269,
+    "HYDRA-UMC-ORCHESTRATOR": 278,
     "HYDRA-UMC-OS": 23,
     "HYDRA-UMC-OS-REBUILDER": 225,
     "HYDRA-UMC-PATH-PLANNER-3D": 83,
@@ -4005,22 +4005,22 @@
     "HYDRA-UMC-TOOL-CLI": 271,
     "HYDRA-UMC-TWIN": 223,
     "HYDRA-UMC-UPDATER": 485,
-    "HYDRA-UMC-VISION-NODE": 393,
-    "HYDRA-UMC-VISION-STREAMER": 274,
-    "HYDRA-UMC-VISUAL-SERVOING-API": 339,
-    "HYDRA-UMC-VLA-ENGINE": 292,
-    "HYDRA-UMC-VOICE-UI": 427,
+    "HYDRA-UMC-VISION-NODE": 399,
+    "HYDRA-UMC-VISION-STREAMER": 284,
+    "HYDRA-UMC-VISUAL-SERVOING-API": 348,
+    "HYDRA-UMC-VLA-ENGINE": 299,
+    "HYDRA-UMC-VOICE-UI": 434,
     "HYDRA-UMC-WATCH": 153,
-    "URTC-COMMON": 2164,
-    "URTC-DEVTOOLS": 58,
-    "URTC-DOCS": 191,
-    "URTC-FLASHER": 668,
-    "URTC-GATEWAY": 93,
-    "URTC-SMART-RACK": 691,
-    "URTC-TESTER": 730,
-    "URTC-UPDATER": 582,
+    "URTC-COMMON": 2686,
+    "URTC-DEVTOOLS": 95,
+    "URTC-DOCS": 222,
+    "URTC-FLASHER": 830,
+    "URTC-GATEWAY": 127,
+    "URTC-SMART-RACK": 715,
+    "URTC-TESTER": 896,
+    "URTC-UPDATER": 609,
     "URTC-VISION-TOOL": 183,
-    "URTC-WEB-STUDIO": 1343
+    "URTC-WEB-STUDIO": 1357
    }
   }
  ],
