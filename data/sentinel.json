@@ -1,21 +1,14 @@
 {
- "asof": "2026-11-07T16:29:16Z",
+ "asof": "2026-11-07T16:45:25Z",
  "ci": {
   "checked": 528,
-  "red": [
-   {
-    "repo": "URTC-WEB-STUDIO",
-    "since": "2026-11-07T16:29:12Z",
-    "streak": 1,
-    "wf": "pages.yml"
-   }
-  ],
-  "red_total": 1
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 384,
+    "min24": 375,
     "min7": 539,
     "repo": "EH3D-PHOENIX-PCB"
    },
@@ -35,18 +28,18 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 123,
-    "min7": 401,
-    "repo": "EH3D-SERVER"
-   },
-   {
     "min24": 114,
     "min7": 140,
     "repo": "ARMOR-STUDIO"
+   },
+   {
+    "min24": 113,
+    "min7": 192,
+    "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 3475,
-  "total7": 15943,
+  "total24": 3352,
+  "total7": 15902,
   "warn": false
  },
  "ecosystems": {
@@ -81,12 +74,18 @@
   "urtc": {
    "cand": 0,
    "read": 11,
-   "red": 1,
+   "red": 0,
    "repos": 11,
    "unpub": 3
   }
  },
  "events": [
+  {
+   "at": "2026-11-07T16:45:25Z",
+   "kind": "red_ok",
+   "repo": "URTC-WEB-STUDIO",
+   "wf": "pages.yml"
+  },
   {
    "at": "2026-11-07T16:29:16Z",
    "kind": "red_new",
@@ -260,12 +259,6 @@
    "kind": "released",
    "repo": "ARMOR-STUDIO",
    "tag": "v0.8.2.3"
-  },
-  {
-   "at": "2026-11-07T02:24:46Z",
-   "kind": "released",
-   "repo": "EH3D-SERVER",
-   "tag": "v0.1.4"
   }
  ],
  "hygiene": {
@@ -284,17 +277,7 @@
     "bad": 0,
     "cand": 5,
     "hyg": 0,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "warn",
-   "p": {
-    "list": [
-     "URTC-WEB-STUDIO"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -538,14 +521,14 @@
    2782,
    4421,
    5648,
-   3475
+   3352
   ],
   "red": [
    3,
    5,
    3,
    0,
-   1
+   0
   ]
  },
  "unpublished": {
