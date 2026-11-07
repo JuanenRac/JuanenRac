@@ -13,7 +13,7 @@ never shows a healthy state it does not have.
 
 | File | What it checks |
 | --- | --- |
-| `tests/load-and-tabs.spec.ts` | load without console or page errors, the 15 tabs (click, arrows, Home/End, `#hash`, `localStorage` with and without storage) |
+| `tests/load-and-tabs.spec.ts` | load without console or page errors, the 17 tabs (click, arrows, Home/End, `#hash`, `localStorage` with and without storage) |
 | `tests/language-theme.spec.ts` | the 8 languages (no visible key, `undefined` or placeholder in any tab), browser language, light/dark theme |
 | `tests/filters.spec.ts` | search by name, description, stack and target; each filter alone and combined; the N of M counter; reset; no matches |
 | `tests/scope-pager.spec.ts` | the scope bar of the projects tab (All, the four ecosystems, cross-cutting), the families under it, the pager (only one page is painted), the counter N of M with scope plus filters, the scope in the `#hash` and remembered in `localStorage` (with and without storage) |

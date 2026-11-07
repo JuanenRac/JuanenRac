@@ -40,11 +40,6 @@ def panel_html() -> str:
               + "".join(f'<li><span class="cd-swatch cd-c-{k}" aria-hidden="true"></span><span {_t("cd_series_" + k)}</span></li>' for k in ("code", "tests", "docs")) + '</ul>')
     return (
         '<section class="ins cd" id="cd-root" aria-labelledby="cd-title" data-testid="code-root">'
-        '<div class="cd-views" role="group" aria-labelledby="cd-views-t" data-testid="cd-views">'
-        f'<span class="scope-title" id="cd-views-t" {_t("ch_view_label")}</span>'
-        f'<button type="button" class="chip" data-view="code" aria-pressed="true" data-testid="cd-view-code" {_t("ch_view_code")}</button>'
-        f'<button type="button" class="chip" data-view="changes" aria-pressed="false" data-testid="cd-view-changes" {_t("ch_view_changes")}</button></div>'
-        '<div id="cd-code-view" data-testid="cd-code-view" class="ins">'
         f'<header class="ins-head"><h2 class="card-title" id="cd-title" {_t("cd_title")}</h2>'
         f'<span class="ts-badge" data-testid="cd-badge" {_t("cd_badge")}</span></header>'
         f'<p class="muted" {_t("cd_hint")}</p>'
@@ -93,11 +88,14 @@ def panel_html() -> str:
         '<div class="cd-table-wrap" id="cd-table-wrap" tabindex="0" role="region" aria-labelledby="cd-table-title" data-testid="cd-table-wrap">'
         '<table class="cd-table" id="cd-table" data-testid="cd-table"><thead><tr><th scope="col" data-i18n="cd_col_name">Repository</th></tr></thead></table></div>'
         f'<p class="no-data" id="cd-none" data-testid="cd-none" hidden {_t("cd_none")}</p></section>'
-        '</div></div>'
-        + dashboard_changes_ui.panel_html() +
-        '<div class="cd-tip" id="cd-tip" role="tooltip" data-testid="cd-tip" hidden></div>'
+        '</div>'
         '</section>'
     )
+
+
+def tip_html() -> str:
+    """The tooltip shared by the charts of the Code and the Changelog tabs; it lives outside both panels so that either one can show it."""
+    return '<div class="cd-tip" id="cd-tip" role="tooltip" data-testid="cd-tip" hidden></div>'
 
 
 CSS = dashboard_changes_ui.CSS + r"""
@@ -117,15 +115,15 @@ CSS = dashboard_changes_ui.CSS + r"""
   #cd-body[hidden] { display: none; }
   .cd-kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .cd-chart { margin: 6px 0 8px; min-width: 0; }
-  .cd-svg { width: 100%; height: auto; display: block; }
+  .cd-svg { width: 100%; max-width: 1100px; height: auto; display: block; margin: 0 auto; }
   .cd-lang-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 22px; align-items: start; }
   .cd-sub { margin: 10px 0 2px; font-size: 13px; font-weight: 700; }
   .cd-sub-row { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; justify-content: space-between; }
   .cd-text { fill: var(--text); font-size: 12px; }
-  .cd-name { fill: var(--text); font-size: 12px; font-weight: 600; }
-  .cd-dim { fill: var(--dim); font-size: 11px; }
-  .cd-val { fill: var(--text); font-size: 12px; font-variant-numeric: tabular-nums; }
-  .cd-ink { fill: var(--ink-on-fill); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; pointer-events: none; }
+  .cd-name { fill: var(--text); font-size: 12px; font-family: "IBM Plex Sans", system-ui, sans-serif; }
+  .cd-dim { fill: var(--dim); font-size: 11px; font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .cd-val { fill: var(--text); font-size: 12px; font-weight: 700; font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  .cd-ink { fill: var(--ink-on-fill); font-size: 11.5px; font-weight: 700; font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; pointer-events: none; }
   :root[data-theme="light"] .cd-ink { fill: #fff; }
   .cd-grid { stroke: var(--border); stroke-width: 1; }
   .cd-head { fill: var(--dim); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
@@ -150,7 +148,8 @@ CSS = dashboard_changes_ui.CSS + r"""
   .cd-line.cd-s-code, .cd-line.cd-s-tests, .cd-line.cd-s-docs, .cd-line.cd-s-hydra-umc, .cd-line.cd-s-urtc, .cd-line.cd-s-armor, .cd-line.cd-s-eh3d { fill: none; }
   .cd-mark { stroke: var(--panel); stroke-width: 1.2; cursor: default; }
   .cd-mark:hover, .cd-mark:focus-visible { stroke: var(--text); stroke-width: 2; outline: none; }
-  .cd-end { font-size: 11.5px; font-weight: 700; stroke: none; }
+  .cd-end { font-size: 11.5px; font-weight: 700; font-family: "IBM Plex Sans", system-ui, sans-serif; stroke: none; }
+  .cd-kpis .ac-kpi b { font-size: 20px; white-space: nowrap; }
   .cd-table-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--border); border-radius: 10px; margin-top: 8px; }
   .cd-table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 12.5px; font-variant-numeric: tabular-nums; }
   .cd-table th, .cd-table td { padding: 5px 10px; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
@@ -188,7 +187,7 @@ JS = r"""
   const CD_KINDS = ["code", "tests", "docs"];
   const CD_SERIES_KEY = { code: "cd_series_code", tests: "cd_series_tests", docs: "cd_series_docs" };
   const CD_TOP_LANGS = 10;
-  const cdState = { view: "code", eco: "all", type: "all", q: "", group: "repo", sort: "code", dir: -1, metric: "code", top: 20 };
+  const cdState = { eco: "all", type: "all", q: "", group: "repo", sort: "code", dir: -1, metric: "code", top: 20 };
   const CD_COLUMNS = [
     ["name", "cd_col_name", false], ["eco", "cd_col_eco", false], ["type", "cd_col_type", false], ["repos", "cd_col_repos", true], ["code", "cd_col_code", true],
     ["comment", "cd_col_comment", true], ["blank", "cd_col_blank", true], ["tests", "cd_col_tests", true], ["testFiles", "cd_col_testfiles", true], ["cases", "cd_col_cases", true],
@@ -692,15 +691,9 @@ JS = r"""
     [["repo", dict.cd_by_repo], ["eco", dict.cd_by_eco], ["type", dict.cd_by_type]].forEach(function (o) { const el = make("option", "", o[1]); el.value = o[0]; sel.appendChild(el); });
     sel.value = cdState.group;
   }
-  function cdApplyView() {
-    document.getElementById("cd-code-view").hidden = cdState.view !== "code";
-    document.getElementById("ch-body").hidden = cdState.view !== "changes";
-    document.querySelectorAll("#cd-root [data-view]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-view") === cdState.view ? "true" : "false"); });
-  }
   function cdRender(dict) {
     const root = document.getElementById("cd-root");
     if (!root) { return; }
-    cdApplyView();
     chRender(dict);
     const names = cdRepoNames();
     const unread = names.filter(function (n) { return CD.repos[n].state === "unread"; });
@@ -723,9 +716,6 @@ JS = r"""
     cdKpis(dict); cdRenderProp(dict); cdRenderLanguages(dict); cdRenderEvolution(dict); cdRenderTop(dict); cdRenderControls(dict); cdRenderTable(dict);
   }
   (function () {
-    document.querySelectorAll("#cd-root [data-view]").forEach(function (b) {
-      b.addEventListener("click", function () { cdState.view = b.getAttribute("data-view"); cdApplyView(); });
-    });
     const sel = document.getElementById("cd-group");
     const search = document.getElementById("cd-search");
     const top = document.getElementById("cd-top-n");

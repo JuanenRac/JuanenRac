@@ -18,8 +18,8 @@ A level-2 heading with a bracketed name starts a section; `Unreleased` is the wo
 top-level list item ("- " or "* " at the start of the line, with its continuation lines). Dates are not read: the changelogs hold none, and the pace of
 publishing comes from the releases and tags of GitHub (see code_stats.py).
 
-Each entry is classified by words. The rules are in the `changelog` block of `code-stats-config.json` (kinds, their order, their keywords and the
-sub-headings that decide by themselves) and the first rule that matches wins, looking at the title of the entry first and at the whole text next. An entry that
+Each entry is classified by words. The rules are in the `changelog` block of `code-stats-config.json` (kinds, their order, their keywords, their optional
+`patterns` - regular expressions for the way an entry begins, tried only when no keyword matched - and the sub-headings that decide by themselves) and the first rule that matches wins, looking at the title of the entry first and at the whole text next. An entry that
 no rule recognises is counted as `unclassified`, on purpose: the figures say how many entries the words could not place, they never guess.
 """
 from __future__ import annotations
@@ -43,6 +43,12 @@ def check_rules(config: object) -> list[str]:
     kinds = config.get("kinds")
     if not isinstance(kinds, list) or not kinds or not all(isinstance(k, Mapping) and isinstance(k.get("key"), str) and isinstance(k.get("keywords"), list) for k in kinds):
         return ["changelog.kinds needs a list of {key, keywords}"]
+    for k in kinds:
+        for pattern in k.get("patterns", []):
+            try:
+                re.compile(pattern)
+            except (re.error, TypeError):
+                return ["changelog.kinds: %s has a pattern that is not a regular expression" % k["key"]]
     keys = [k["key"] for k in kinds]
     if len(set(keys)) != len(keys) or UNCLASSIFIED in keys:
         problems.append("changelog.kinds: keys must be distinct and not 'unclassified'")
@@ -58,26 +64,32 @@ def kind_keys(config: Mapping) -> list[str]:
     return [k["key"] for k in config["kinds"]] + [UNCLASSIFIED]
 
 
-def _compile(config: Mapping) -> list[tuple[str, "re.Pattern[str]"]]:
-    rules = []
+def _compile(config: Mapping) -> list[tuple[str, "re.Pattern[str]", bool]]:
+    """[(kind, pattern, weak)]: the keyword rules in the order of the kinds, then the `patterns` rules (weak ones, tried only when no keyword matched)."""
+    strong, weak = [], []
     for kind in config["kinds"]:
         words = [w.strip().lower() for w in kind["keywords"] if isinstance(w, str) and w.strip()]
         if words:
-            rules.append((kind["key"], re.compile(r"(?<![a-z0-9])(?:" + "|".join(re.escape(w) for w in words) + r")")))
-    return rules
+            strong.append((kind["key"], re.compile(r"(?<![a-z0-9])(?:" + "|".join(re.escape(w) for w in words) + r")"), False))
+        patterns = [p for p in kind.get("patterns", []) if isinstance(p, str) and p]        # regular expressions for the way a title or a text begins
+        if patterns:
+            weak.append((kind["key"], re.compile("|".join("(?:" + p + ")" for p in patterns)), True))
+    return strong + weak
 
 
-def classify(title: str, text: str, rules: Sequence[tuple[str, "re.Pattern[str]"]], heading_kind: str | None = None, text_chars: int = 200) -> str:
-    """The kind of an entry: the sub-heading it sits under, else the first rule matching its title, else the first matching the start of its text."""
+def classify(title: str, text: str, rules: Sequence[tuple], heading_kind: str | None = None, text_chars: int = 200) -> str:
+    """The kind of an entry: the sub-heading it sits under, else the first keyword rule matching its title, else the first matching the start of its text,
+    else (the same two looks) the first of the beginning-of-sentence patterns."""
     if heading_kind:
         return heading_kind
-    for part in (title, text[:text_chars]):
-        lowered = part.lower()
-        if not lowered.strip():
-            continue
-        for key, pattern in rules:
-            if pattern.search(lowered):
-                return key
+    for weak in (False, True):
+        for part in (title, text[:text_chars]):
+            lowered = part.lower()
+            if not lowered.strip():
+                continue
+            for key, pattern, is_weak in rules:
+                if is_weak == weak and pattern.search(lowered):
+                    return key
     return UNCLASSIFIED
 
 

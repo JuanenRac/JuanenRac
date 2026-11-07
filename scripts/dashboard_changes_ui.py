@@ -4,7 +4,7 @@
 # Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
 # GPL-3.0-or-later - see LICENSE.md
 # =============================================================================
-"""The "Changes" view of the Code tab: statistics of the CHANGELOG of every repository, drawn in the browser from the embedded `code` data.
+"""The "Changelog" tab: statistics of the CHANGELOG of every repository, drawn in the browser from the embedded `code` data.
 
 Figures (published versions and entries, entries waiting, the kind of each entry decided by words, the pace of the tags of GitHub), a donut and stacked
 bars of the kinds, evolution from the daily history, a ranking, the detail of a repository (its versions and, for the newest ones, its entries, searchable
@@ -36,8 +36,10 @@ def _card(ident: str, title: str, hint: str | None, body: str) -> str:
 
 def panel_html() -> str:
     return (
-        '<div id="ch-body" data-testid="ch-body" hidden>'
-        f'<h2 class="card-title" id="ch-title" {_t("ch_title")}</h2>'
+        '<section class="ins cd" id="ch-root" aria-labelledby="ch-title" data-testid="changelog-root">'
+        '<div id="ch-body" data-testid="ch-body">'
+        f'<header class="ins-head"><h2 class="card-title" id="ch-title" {_t("ch_title")}</h2>'
+        f'<span class="ts-badge" data-testid="ch-badge" {_t("ch_badge")}</span></header>'
         f'<p class="muted" {_t("ch_hint")}</p>'
         '<details class="ts-help" data-testid="ch-help">'
         f'<summary {_t("cd_help_summary")}</summary><p id="ch-help-body" data-testid="ch-help-body"></p></details>'
@@ -97,15 +99,14 @@ def panel_html() -> str:
         '<div class="cd-table-wrap" id="ch-table-wrap" tabindex="0" role="region" aria-labelledby="ch-table-title" data-testid="ch-table-wrap">'
         '<table class="cd-table" id="ch-table" data-testid="ch-table"><thead><tr><th scope="col" data-i18n="cd_col_name">Repository</th></tr></thead></table></div>'
         f'<p class="no-data" id="ch-none" data-testid="ch-none" hidden {_t("cd_none")}</p></section>'
-        '</div></div>'
+        '</div></div></section>'
     )
 
 
 CSS = r"""
   /* ======================= Changes: statistics of the changelogs ======================= */
-  .cd-views { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; }
   #ch-body { display: grid; gap: 14px; min-width: 0; }
-  #ch-body[hidden], #ch-main[hidden], #cd-code-view[hidden] { display: none !important; }
+  #ch-main[hidden] { display: none !important; }
   #ch-main { display: grid; gap: 14px; min-width: 0; }
   #ch-main > * { min-width: 0; max-width: 100%; }
   .ch-donut-grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 8px 28px; align-items: center; }
@@ -134,7 +135,7 @@ JS = r"""
   const CH_MIN = 10;
   const chState = { eco: "all", type: "all", q: "", group: "repo", sort: "entries", dir: -1, repo: "", range: 10, top: 15, version: null, vq: "", vkind: "all" };
   function chKinds() { return CD.kinds || []; }
-  function chKindClass(i) { return chKinds()[i] === "unclassified" ? "cd-l-o" : "cd-l-" + Math.min(i, 7); }
+  function chKindClass(i) { return chKinds()[i] === "unclassified" ? "cd-l-o" : "cd-l-" + Math.min(i, 9); }
   function chKindLabel(key, dict) { return dict["ch_kind_" + key] || key; }
   function chHas(name) { const r = CD.repos[name]; return !!(r && cdOk(r) && r.changes); }
   function chAll() { return cdRepoNames().filter(chHas); }

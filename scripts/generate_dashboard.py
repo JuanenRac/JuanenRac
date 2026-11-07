@@ -75,6 +75,7 @@ import dashboard_tests_texts
 import dashboard_tests_ui
 import dashboard_code
 import dashboard_code_texts
+import dashboard_changes_ui
 import dashboard_code_ui
 import dashboard_delivery
 import dashboard_pipeline
@@ -3519,6 +3520,8 @@ def render_html(
     app_data.page_data["sentinel"] = dashboard_sentinel.build(sentinel_doc, sentinel_saved, sentinel_config or dashboard_sentinel.check_config(None)[0], today)
     tests_panel_html = dashboard_app.panel("tests", dashboard_tests_ui.panel_html())
     code_panel_html = dashboard_app.panel("code", dashboard_code_ui.panel_html())
+    code_tip_html = dashboard_code_ui.tip_html()
+    changelog_panel_html = dashboard_app.panel("changelog", dashboard_changes_ui.panel_html())
     actions_panel_html = dashboard_app.panel("actions", dashboard_actions_ui.panel_html())
     sentinel_panel_html = dashboard_app.panel("sentinel", dashboard_sentinel_ui.panel_html())
     insight_panel_html = dashboard_app.panel("insight", dashboard_insight_ui.panel_html())
@@ -5241,6 +5244,8 @@ def render_html(
     </section>
     {tests_panel_html}
     {code_panel_html}
+    {changelog_panel_html}
+    {code_tip_html}
     {actions_panel_html}
     {sentinel_panel_html}
     {insight_panel_html}

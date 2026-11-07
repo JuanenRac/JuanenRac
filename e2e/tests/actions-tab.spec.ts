@@ -25,7 +25,7 @@ test.describe("builds tab: figures", () => {
   test("the tab sits after Tests and shows the figures of the fixture", async ({ page }) => {
     await open(page);
     const ids = await page.locator("[role=tab]").evaluateAll((tabs) => tabs.map((t) => t.getAttribute("data-testid")));
-    expect(ids.indexOf("tab-actions")).toBe(ids.indexOf("tab-code") + 1);
+    expect(ids.indexOf("tab-actions")).toBe(ids.indexOf("tab-changelog") + 1);
     await expect(page.locator("#ac-title")).toHaveText("Actions / Builds");
     await expect(kpi(page, "runs")).toHaveText("248");
     await expect(kpi(page, "rate")).toHaveText("88 %");

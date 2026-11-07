@@ -3,34 +3,31 @@ import AxeBuilder from "@axe-core/playwright";
 import type { Page } from "@playwright/test";
 import { test, expect, openDashboard, gotoTab, LANGS, LEFTOVER, visibleText, Variant } from "./helpers";
 
-// The "Changes" view of the Code tab: statistics of the CHANGELOG of every repository (versions, entries, the kind of each entry decided by words) and the pace of
+// The "Changelog" tab: statistics of the CHANGELOG of every repository (versions, entries, the kind of each entry decided by words) and the pace of
 // the tags. Fixture (full): 40 repositories, 36 of them with a changelog that was measured (one has no changelog in each twelve, one was not measured), a history
 // of 46 days, the text of the entries kept for the newest five versions, and tags for nine in ten repositories.
 
 async function open(page: Page, variant: Variant = "full") {
   await openDashboard(page, variant);
-  await gotoTab(page, "code");
-  await page.getByTestId("cd-view-changes").click();
+  await gotoTab(page, "changelog");
 }
 
 const number = (text: string | null) => Number((text || "").replace(/[^\d]/g, ""));
 const kpi = (page: Page, name: string) => page.getByTestId(`ch-k-${name}`).locator("b");
 
 test.describe("changes view: switching and figures", () => {
-  test("the view is chosen with two buttons and the code view stays the default", async ({ page }) => {
+  test("the changelog statistics are a tab of their own, next to the code one", async ({ page }) => {
     await openDashboard(page);
+    const ids = await page.locator('[role="tab"]').evaluateAll((els) => els.map((e) => e.id));
+    expect(ids.indexOf("tab-changelog")).toBe(ids.indexOf("tab-code") + 1);
     await gotoTab(page, "code");
-    await expect(page.getByTestId("cd-view-code")).toHaveAttribute("aria-pressed", "true");
-    await expect(page.getByTestId("cd-code-view")).toBeVisible();
+    await expect(page.getByTestId("cd-body")).toBeVisible();
     await expect(page.getByTestId("ch-body")).toBeHidden();
-    await page.getByTestId("cd-view-changes").click();
-    await expect(page.getByTestId("cd-view-changes")).toHaveAttribute("aria-pressed", "true");
-    await expect(page.getByTestId("cd-view-code")).toHaveAttribute("aria-pressed", "false");
+    await expect(page.getByTestId("cd-views")).toHaveCount(0);
+    await gotoTab(page, "changelog");
     await expect(page.getByTestId("ch-body")).toBeVisible();
-    await expect(page.getByTestId("cd-code-view")).toBeHidden();
+    await expect(page.getByTestId("cd-body")).toBeHidden();
     await expect(page.locator("#ch-title")).toHaveText("Changelog statistics");
-    await page.getByTestId("cd-view-code").click();
-    await expect(page.getByTestId("cd-code-view")).toBeVisible();
   });
 
   test("nine figures, with the repositories that have a changelog and the share of what could not be classified", async ({ page }) => {
@@ -62,7 +59,7 @@ test.describe("changes view: charts", () => {
   test("the donut has one slice and one legend line per kind, and its figures are the entries of the kpis", async ({ page }) => {
     await open(page);
     const legend = page.getByTestId("ch-donut-legend").locator("li");
-    await expect(legend).toHaveCount(9);
+    await expect(legend).toHaveCount(11);
     const values = await legend.evaluateAll((els) => els.map((e) => Number(e.getAttribute("data-value"))));
     const published = number(await kpi(page, "entries").textContent());
     const waiting = number(await kpi(page, "unreleased").textContent());
@@ -70,7 +67,7 @@ test.describe("changes view: charts", () => {
     const slices = await page.getByTestId("ch-donut-svg").locator(".cd-seg").evaluateAll((els) => els.map((e) => Number(e.getAttribute("data-value"))));
     expect(slices).toEqual(values.filter((v) => v > 0));
     await expect(page.getByTestId("ch-donut-svg").locator("text.ch-donut-total")).toHaveText(String(published + waiting).replace(/\B(?=(\d{3})+$)/g, ","));
-    await expect(page.getByTestId("ch-donut-table").locator("tbody tr")).toHaveCount(9);
+    await expect(page.getByTestId("ch-donut-table").locator("tbody tr")).toHaveCount(11);
     await expect(legend.last()).toContainText("Unclassified");
   });
 
@@ -93,7 +90,7 @@ test.describe("changes view: charts", () => {
     await expect(page.getByTestId("ch-stack-table").locator("tbody tr")).toHaveCount(10);
     const first = await rows.first().locator(".cd-seg").evaluateAll((els) => els.reduce((a, e) => a + Number(e.getAttribute("data-value")), 0));
     expect(first).toBe(number(await kpi(page, "entries").textContent()) + number(await kpi(page, "unreleased").textContent()));
-    expect(await page.getByTestId("ch-stack-legend").locator("li").count()).toBe(9);
+    expect(await page.getByTestId("ch-stack-legend").locator("li").count()).toBe(11);
     const seg = rows.nth(1).locator(".cd-seg").first();
     expect(await seg.getAttribute("aria-label")).toMatch(/entries \(.*%\)/);
   });
@@ -325,7 +322,7 @@ test.describe("changes view: languages and states", () => {
       if (lang !== "en") expect(title).not.toBe("Changelog statistics");
       if (lang === "es") expect(title).toBe("Estadísticas de los changelog");
       if (lang === "pt") expect(title).toBe("Estatísticas dos changelogs");
-      if (lang === "en") expect(await page.getByTestId("cd-view-changes").innerText()).toBe("Changes");
+      if (lang === "en") expect(await page.locator("#tab-changelog").innerText()).toBe("Changelog");
       await page.locator("#ch-det-table tbody tr:not([data-version=unreleased]) .ch-open").first().click();
       for (const id of ["ch-donut-svg", "ch-stack-svg", "ch-evo-total-svg", "ch-rank-vol-svg", "ch-rank-fix-svg", "ch-det-svg"]) {
         const label = (await page.getByTestId(id).getAttribute("aria-label")) || "";

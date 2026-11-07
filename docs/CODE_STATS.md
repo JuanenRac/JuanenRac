@@ -1,6 +1,6 @@
 # Code tab
 
-The tab has two views, chosen with the buttons at its top: **Code** (lines of code, tests and documentation) and **Changes** (statistics of the changelogs, at the end of this page).
+The changelog statistics have a tab of their own, **Changelog**, described at the end of this page; this tab is about lines of code, tests and documentation.
 
 The Code tab of the status dashboard shows how much code, how many tests and how much documentation every repository of the four ecosystems has, and how
 that changes day by day. The figures are counted, not declared: a script reads the files of a fresh shallow copy of each repository.
@@ -68,9 +68,9 @@ needs `git` and, to read more than the public limit of the API, a `GITHUB_TOKEN`
 command). `--local-root DIR` counts directories that are already cloned (`DIR/<repository>`) instead of cloning. The tests of the counter are in
 `tests/test_code_stats.py` and run without network.
 
-## The Changes view
+## The Changelog tab
 
-The Changes view reads the `CHANGELOG.md` of every repository in the same daily run and answers how much is published, how often, and what kind of work it is.
+The Changelog tab reads the `CHANGELOG.md` of every repository in the same daily run and answers how much is published, how often, and what kind of work it is.
 
 | Figure | Where it comes from |
 |---|---|
@@ -80,8 +80,10 @@ The Changes view reads the `CHANGELOG.md` of every repository in the same daily 
 | The kind of each entry | the sub-heading it sits under (Added, Changed, Fixed, Security...) or, when there is none, the first rule of `changelog.kinds` in `code-stats-config.json` that matches its title and then the start of its text |
 | Tags, tags in 30 and 90 days, days between tags, last tag | the tags of GitHub (the newest 20 of each repository, read with the token of the workflow); the changelogs themselves hold no dates |
 
-The kinds are bug fix, added, security, documentation, tests, performance, refactor and changed. The rules are words, tried in the order of the file, and the
-configuration is the place to edit them. An entry that no rule recognises is counted as **unclassified**, and the tab shows how many there are: the figures
+The kinds are security, bug fix, performance, documentation, tests, refactor, versions / maintenance (version bumps, pins, refreshed copies of shared files, licence
+and banner notes, project metadata), build / CI / tooling, added and changed. The rules are words, tried in the order of the file (a kind that comes first wins),
+and the configuration is the place to edit them. Each kind can also carry `patterns`: regular expressions for the way an entry begins ("A ...", "The X is ...",
+"... can be ...", "... gains ..."). A pattern is only tried when no word of any kind matched, so a way of beginning never beats a word such as "crash" or "test". An entry that no rule recognises is counted as **unclassified**, and the tab shows how many there are: the figures
 never guess. A repository with no changelog, or whose tags could not be read, is shown as not available, never as zero.
 
 The view shows:
@@ -97,3 +99,11 @@ The view shows:
 
 Every chart has a table with the same figures, a name for assistive technology and a tooltip on hover and on keyboard focus. The texts are in the eight languages.
 
+### How well the kinds are placed
+
+The words were tuned against the real changelogs of the repositories (about 13,100 entries, published and waiting). Before the patterns and the two kinds of
+maintenance and tooling, 23.6 % of the entries matched no rule; now 8.4 % do not. What stays unclassified is what says nothing about the kind of change ("Blinking
+tab: the title of the browser tab blinks with the number of alarms..."), and the figures keep saying so instead of guessing. The entries that the new rules place
+were reviewed by hand on random samples of 150: the first sample found 87 % placed correctly, the mistakes were traced to over-wide words and fixed, and a
+sample taken afterwards found 93 % placed correctly. The remaining mistakes are mostly entries that fit two kinds (a new command that is also a tool, a
+"build" entry that is also a fix). `tests/test_changelog_stats.py` keeps real wordings of every kind, including the ambiguous ones that must stay unclassified.

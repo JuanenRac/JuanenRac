@@ -11,9 +11,7 @@ Each entry is (en, es, de, fr, it, ja, zh, pt); portuguese is the one of Portuga
 from __future__ import annotations
 
 ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
-    "ch_view_label": ("View", "Vista", "Ansicht", "Vue", "Vista", "表示", "视图", "Vista"),
-    "ch_view_code": ("Code", "Código", "Code", "Code", "Codice", "コード", "代码", "Código"),
-    "ch_view_changes": ("Changes", "Cambios", "Änderungen", "Changements", "Modifiche", "変更", "变更", "Alterações"),
+    "tab_changelog": ("Changelog", "Changelog", "Changelog", "Changelog", "Changelog", "チェンジログ", "变更日志", "Changelog"),
     "ch_title": (
         "Changelog statistics", "Estadísticas de los changelog", "Changelog-Statistik", "Statistiques des changelogs",
         "Statistiche dei changelog", "チェンジログ統計", "变更日志统计", "Estatísticas dos changelogs"),
@@ -58,6 +56,8 @@ ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
     "ch_kind_docs": ("Documentation", "Documentación", "Dokumentation", "Documentation", "Documentazione", "ドキュメント", "文档", "Documentação"),
     "ch_kind_tests": ("Tests", "Pruebas", "Tests", "Tests", "Test", "テスト", "测试", "Testes"),
     "ch_kind_refactor": ("Refactor / cleanup", "Refactorización / limpieza", "Refactoring / Aufräumen", "Refactorisation / nettoyage", "Refactoring / pulizia", "リファクタリング/整理", "重构/清理", "Refatoração / limpeza"),
+    "ch_kind_maintenance": ("Versions / maintenance", "Versiones / mantenimiento", "Versionen / Wartung", "Versions / maintenance", "Versioni / manutenzione", "バージョン/保守", "版本/维护", "Versões / manutenção"),
+    "ch_kind_tooling": ("Build / CI / tooling", "Compilación / CI / herramientas", "Build / CI / Werkzeuge", "Compilation / CI / outils", "Build / CI / strumenti", "ビルド/CI/ツール", "构建/CI/工具", "Compilação / CI / ferramentas"),
     "ch_kind_added": ("Added / new", "Añadido / nuevo", "Hinzugefügt / neu", "Ajouté / nouveau", "Aggiunto / nuovo", "追加/新規", "新增", "Adicionado / novo"),
     "ch_kind_changed": ("Changed", "Cambiado", "Geändert", "Modifié", "Modificato", "変更", "变更", "Alterado"),
     "ch_kind_unclassified": ("Unclassified", "Sin clasificar", "Nicht eingeordnet", "Non classé", "Non classificato", "未分類", "未分类", "Não classificado"),

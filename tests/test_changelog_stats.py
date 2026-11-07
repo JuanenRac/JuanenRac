@@ -26,7 +26,7 @@ Intro text that is not an entry.
 
 - **Fix:** the parser no longer crashes
   on an empty file.
-- **Panel:** shows the figures of the day.
+- **Panel:** the figures of the day.
 
 ## [1.2.0] - Second version
 
@@ -120,11 +120,11 @@ class ClassifyTests(unittest.TestCase):
         self.assertEqual(self.kind("Fix", "security", heading="added"), "added")
 
     def test_what_nothing_recognises_is_unclassified(self):
-        self.assertEqual(self.kind("Panel", "shows the figures of the day"), cl.UNCLASSIFIED)
+        self.assertEqual(self.kind("Panel", "the figures of the day"), cl.UNCLASSIFIED)
         self.assertEqual(self.kind("", ""), cl.UNCLASSIFIED)
 
     def test_words_match_from_the_start_of_a_word_only(self):
-        self.assertEqual(self.kind("Prefix", "the prefix is shown"), cl.UNCLASSIFIED)        # "fix" inside "prefix" is not a fix
+        self.assertEqual(self.kind("Prefix", "prefixes of the lines"), cl.UNCLASSIFIED)        # "fix" inside "prefix" is not a fix
         self.assertEqual(self.kind("Fixed"), "fix")
 
     def test_the_rules_come_from_the_configuration(self):
@@ -209,6 +209,77 @@ class ConfigTests(unittest.TestCase):
             self.assertIn("ch_kind_" + kind, texts.TEXTS["en"], kind)
         for kind in CONFIG["kinds"]:
             self.assertTrue(kind["keywords"], kind["key"])
+
+
+class RealWordingTests(unittest.TestCase):
+    """Entries written the way the changelogs of the repositories write them: (title, start of the text, kind)."""
+
+    CASES = [
+        # versions, copies, pins, licence and project metadata
+        ("", "Build version synchronized with `project.json` and the repository-native version source.", "maintenance"),
+        ("", "Successful incremental build: synchronized package metadata and `project.json`.", "maintenance"),
+        ("", "The licence is written as GPL-3.0-or-later in every header and in the package metadata.", "maintenance"),
+        ("", "Maturity is functional: nothing here has been verified on real hardware yet.", "maintenance"),
+        ("", "The banner follows the animated style of the ecosystem banners, with the name, the kind and the technologies.", "maintenance"),
+        ("The copies of the shared repository are refreshed", "the generated protocol module, the vectors and the file name table.", "maintenance"),
+        ("The four updaters are pinned to their current commits", "(one release each).", "maintenance"),
+        ("The manifest declares the health path of the service", "(`service.health_path: /health`).", "maintenance"),
+        ("Not done", "the radio side has never talked to a node of any kind.", "maintenance"),
+        # build, continuous integration and tools
+        ("`build.sh` / `build.bat`", ", **`run.sh` / `run.bat`** - venv creation, editable install and compile-check.", "tooling"),
+        ("The full CI runs every night", "a scheduled workflow runs the complete baseline again.", "tooling"),
+        ("`pyproject.toml`", "- packaging metadata, no runtime dependencies yet.", "tooling"),
+        ("`.github/workflows/ci.yml`", "- new step that installs the requirements and runs the suite.", "tooling"),
+        # an entry that describes what the program has or can do
+        ("Two-step sign-in", "when the account has the second factor on, the sign-in asks for the six-digit code.", "added"),
+        ("A trust store of public keys with aliases", "(`trust_store.py`): a JSON document.", "added"),
+        ("`GET /jobs/{id}`", "one job without downloading the whole list.", "added"),
+        ("The History has tabs", "All, Alarms, Connections, Devices, System and Settings.", "added"),
+        ("The registry can be signed", "`registry keygen`, `registry sign` and `registry verify` make and check a signature.", "added"),
+        ("The command line", "`eh3d-gerberview` with `render`, `info`, `measure` and `check`.", "added"),
+        ("", "Every node publishes a health report about once a minute.", "added"),
+        # an entry that says how something that existed now behaves
+        ("The settings of the server are signed", "the retained settings message carries a counter.", "changed"),
+        ("The steps of the system jobs are named in the interface language.", "", "changed"),
+        # the old keywords keep their meaning
+        ("Bounded request bodies", "a `POST` body over 1 MiB is refused; it used to be read whole.", "fix"),
+        ("The content is checked before the rate limiter is used", "a frame with a wrong reading used to use up the window.", "fix"),
+        ("Security", "a path is checked before it is opened.", "security"),
+        ("Dependencies are installed without their install scripts", "the build hooks pass `--ignore-scripts` to `npm ci`.", "security"),
+        ("Faster start", "the index is cached.", "performance"),
+        # a keyword always beats a way of beginning: "New ..." is not enough when the entry is about tests, a fix or the workflow
+        ("A new test of the parser", "", "tests"),
+        ("A workflow that builds the images", "", "tooling"),
+        ("A crash on start", "", "fix"),
+        # the pieces of a word are not words
+        ("A circle is drawn", "with CI (a command of the plotter language) in the middle.", "added"),
+        ("A critical circuit is an administrator's", "", "added"),
+        # what really says nothing about the kind stays unclassified
+        ("Simulator", "the whole job runs to the end without hardware.", cl.UNCLASSIFIED),
+        ("Blinking tab", "the title of the browser tab blinks with the number of alarms that wait for a person.", cl.UNCLASSIFIED),
+        ("Alarm sounds", "Configuration > Preferences chooses a sound for each severity.", cl.UNCLASSIFIED),
+        ("Enter walks the form", "accepting a field goes on to the next one, as in the original.", cl.UNCLASSIFIED),
+        ("Class ids are stable", "the class index came from the labels present in that package.", cl.UNCLASSIFIED),
+        ("", "", cl.UNCLASSIFIED),
+    ]
+
+    def test_the_cases(self):
+        for title, text, kind in self.CASES:
+            with self.subTest(title=title, text=text[:40]):
+                self.assertEqual(cl.classify(title, text, RULES), kind)
+
+    def test_a_beginning_never_beats_a_keyword_of_the_text(self):
+        # "a ..." is a way of beginning (added); "crash" in the text is a word (fix) and wins
+        self.assertEqual(cl.classify("", "a crash when the file is empty", RULES), "fix")
+
+    def test_the_beginning_patterns_are_tried_after_all_the_keywords(self):
+        rules = cl._compile({"kinds": [{"key": "a", "keywords": [], "patterns": ["^the "]}, {"key": "b", "keywords": ["panel"]}]})
+        self.assertEqual(cl.classify("The panel", "", rules), "b")
+        self.assertEqual(cl.classify("The thing", "", rules), "a")
+
+    def test_a_pattern_that_is_not_a_regular_expression_is_a_problem(self):
+        bad = dict(CONFIG, kinds=[{"key": "a", "keywords": ["x"], "patterns": ["("]}])
+        self.assertTrue(any("regular expression" in p for p in cl.check_rules(bad)))
 
 
 class TotalsAndTagsTests(unittest.TestCase):
