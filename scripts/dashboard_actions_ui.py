@@ -122,6 +122,7 @@ CSS = r"""
   .ac-wide { grid-column: span 2; }
   .ac-foot .ac-perf[open] { flex: 1 1 100%; }
   .ac-foot .ac-perf summary { font-weight: 600; }
+  .ac-foot summary { box-sizing: border-box; min-height: 24px; padding: 4px 2px; }
   .ac-perf-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 8px; }
   .ac-perf-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .ac-perf-cols .card-title { margin: 4px 0; font-size: 13px; }

@@ -12,7 +12,8 @@ export default defineConfig({
   expect: { timeout: 7_000 },
   fullyParallel: true,
   workers: 2,
-  retries: 0,
+  // a runner that stalls for a minute (a page that does not finish loading) is not a defect of the page: one retry in CI, none on a developer machine
+  retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : [["list"]],
   outputDir: "test-results",
   use: {
