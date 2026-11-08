@@ -4029,11 +4029,11 @@
   },
   {
    "actions": {
-    "fail": 125,
-    "min": 2365,
-    "ok": 1766,
+    "fail": 113,
+    "min": 2254,
+    "ok": 1667,
     "other": 17,
-    "runs": 1908
+    "runs": 1797
    },
    "areas": {
     "armor": {
@@ -4605,7 +4605,7 @@
    "sentinel": {
     "cand": 26,
     "gaps": 1,
-    "min": 2365,
+    "min": 2254,
     "red": 2
    },
    "tests": {
