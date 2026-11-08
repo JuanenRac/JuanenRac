@@ -4029,11 +4029,11 @@
   },
   {
    "actions": {
-    "fail": 95,
-    "min": 1955,
-    "ok": 1426,
-    "other": 19,
-    "runs": 1540
+    "fail": 73,
+    "min": 1573,
+    "ok": 1191,
+    "other": 17,
+    "runs": 1281
    },
    "areas": {
     "armor": {
@@ -4555,7 +4555,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.6.4"
+     "1.6.5"
     ],
     "URTC": [
      1,
@@ -4603,10 +4603,10 @@
     ]
    },
    "sentinel": {
-    "cand": 27,
+    "cand": 32,
     "gaps": 1,
-    "min": 1955,
-    "red": 1
+    "min": 1573,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,

@@ -1,59 +1,52 @@
 {
- "asof": "2026-11-08T13:58:59Z",
+ "asof": "2026-11-08T16:00:44Z",
  "ci": {
   "checked": 530,
-  "red": [
-   {
-    "repo": "ARMOR-DOCS",
-    "since": "2026-11-08T10:21:28Z",
-    "streak": 1,
-    "wf": "nightly.yml"
-   }
-  ],
-  "red_total": 1
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 179,
+    "min24": 157,
     "min7": 201,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 107,
-    "min7": 109,
+    "min24": 97,
+    "min7": 107,
     "repo": "URTC-WEB-STUDIO"
    },
    {
-    "min24": 104,
+    "min24": 91,
     "min7": 160,
     "repo": "URTC-UPDATER"
    },
    {
-    "min24": 102,
+    "min24": 80,
+    "min7": 95,
+    "repo": "URTC-COMMON"
+   },
+   {
+    "min24": 78,
     "min7": 289,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 96,
-    "min7": 161,
-    "repo": "HYDRA-UMC"
-   },
-   {
-    "min24": 92,
-    "min7": 95,
-    "repo": "URTC-COMMON"
+    "min24": 78,
+    "min7": 102,
+    "repo": "URTC-TESTER"
    }
   ],
-  "total24": 1955,
-  "total7": 15286,
+  "total24": 1573,
+  "total7": 15275,
   "warn": false
  },
  "ecosystems": {
   "armor": {
-   "cand": 5,
+   "cand": 10,
    "read": 19,
-   "red": 1,
+   "red": 0,
    "repos": 19,
    "unpub": 0
   },
@@ -69,7 +62,7 @@
    "read": 2,
    "red": 0,
    "repos": 2,
-   "unpub": 0
+   "unpub": 1
   },
   "hydra-umc": {
    "cand": 22,
@@ -87,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-08T16:00:44Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-08T13:58:59Z",
    "kind": "red_ok",
@@ -260,12 +259,6 @@
    "kind": "released",
    "repo": "URTC-SMART-RACK",
    "tag": "v0.2.7"
-  },
-  {
-   "at": "2026-11-08T02:30:59Z",
-   "kind": "released",
-   "repo": "URTC-TESTER",
-   "tag": "v0.5.4"
   }
  ],
  "hygiene": {
@@ -284,19 +277,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 27,
+    "cand": 32,
     "hyg": 1,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "warn",
-   "p": {
-    "list": [
-     "ARMOR-DOCS"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -308,6 +291,11 @@
      "ARMOR-DOCS",
      "ARMOR-HARDWARE",
      "ARMOR-IOS-CONTROL",
+     "ARMOR-NODE-ALARM",
+     "ARMOR-NODE-ELECTRICAL",
+     "ARMOR-NODE-HMI",
+     "ARMOR-NODE-RADAR",
+     "ARMOR-NODE-SOLAR",
      "ARMOR-VOICE-AI",
      "HYDRA-UMC",
      "HYDRA-UMC-ANDROID-CONTROL",
@@ -332,7 +320,17 @@
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 27
+    "n": 32
+   }
+  },
+  {
+   "key": "unpub",
+   "level": "warn",
+   "p": {
+    "list": [
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
+    ],
+    "n": 1
    }
   },
   {
@@ -364,10 +362,40 @@
     "tag": "v0.2.8"
    },
    {
+    "entries": 10,
+    "published": "2026-11-06T14:08:26Z",
+    "repo": "ARMOR-NODE-HMI",
+    "tag": "v0.4.6"
+   },
+   {
     "entries": 8,
     "published": "2026-11-05T22:51:19Z",
     "repo": "HYDRA-UMC-OS",
     "tag": "v0.6.0"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-06T14:05:43Z",
+    "repo": "ARMOR-NODE-ALARM",
+    "tag": "v0.5.4"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-06T14:09:45Z",
+    "repo": "ARMOR-NODE-RADAR",
+    "tag": "v0.8.1.0"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-06T14:06:52Z",
+    "repo": "ARMOR-NODE-ELECTRICAL",
+    "tag": "v0.5.6"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-06T14:10:43Z",
+    "repo": "ARMOR-NODE-SOLAR",
+    "tag": "v0.6.4"
    },
    {
     "entries": 4,
@@ -522,7 +550,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 27
+  "total": 32
  },
  "repos": 129,
  "schema": 1,
@@ -673,7 +701,7 @@
    23,
    0,
    17,
-   27
+   32
   ],
   "dates": [
    "2026-11-03",
@@ -697,7 +725,7 @@
    4421,
    5648,
    3487,
-   1955
+   1573
   ],
   "red": [
    3,
@@ -705,11 +733,17 @@
    3,
    0,
    1,
-   1
+   0
   ]
  },
  "unpublished": {
-  "rows": [],
-  "total": 0
+  "rows": [
+   {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "tag": "v1.6.4",
+    "version": "1.6.5"
+   }
+  ],
+  "total": 1
  }
 }
