@@ -4029,11 +4029,11 @@
   },
   {
    "actions": {
-    "fail": 127,
-    "min": 2428,
-    "ok": 1831,
+    "fail": 125,
+    "min": 2365,
+    "ok": 1766,
     "other": 17,
-    "runs": 1975
+    "runs": 1908
    },
    "areas": {
     "armor": {
@@ -4067,7 +4067,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -4082,7 +4082,7 @@
     "armor": 69,
     "eh3d": 45,
     "hydra-umc": 55,
-    "urtc": 55
+    "urtc": 56
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -4605,7 +4605,7 @@
    "sentinel": {
     "cand": 26,
     "gaps": 1,
-    "min": 2428,
+    "min": 2365,
     "red": 2
    },
    "tests": {
