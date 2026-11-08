@@ -379,9 +379,9 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.7|Stockage d'outils intelligent avec préchauffage automatique et audit du cycle de vie.|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.0|Tête d'outil avec caméras thermique et RVB intégrées pour l'AQ active.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.9|Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes.|
-|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.5|Architecture, interfaces, socle de sécurité, matrice de capacités, notes sur le protocole CAN et catalogue de projets généré d'URTC.|
+|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.6|Architecture, interfaces, socle de sécurité, matrice de capacités, notes sur le protocole CAN et catalogue de projets généré d'URTC.|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.5|Le protocole CAN de la tête d'outil sous forme de données : spécification, code C, TypeScript et Python généré, vecteurs de conformité et transports.|
-|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.6|Passerelle devant le bus CAN d'URTC : liste d'identifiants autorisés, limite de débit et clé de session.|
+|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.7|Passerelle devant le bus CAN d'URTC : liste d'identifiants autorisés, limite de débit et clé de session.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.4|Les outils de dépôt partagés de la famille URTC en un seul jeu versionné, avec un fichier de verrouillage dans chaque dépôt.|
 
 \---

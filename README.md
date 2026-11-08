@@ -373,9 +373,9 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.2.7 | Intelligent tool storage with automatic pre-heating and lifecycle audit. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.2.0 | Toolhead with integrated thermal and RGB cameras for active QA. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.2.9 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.5 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.6 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.2.5 | The CAN protocol of the tool head as data: specification, generated C, TypeScript and Python code, conformance vectors and transports. |
-| [URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY) | 0.0.6 | Gateway in front of the URTC CAN bus: allowed identifier list, rate limit and session key. |
+| [URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY) | 0.0.7 | Gateway in front of the URTC CAN bus: allowed identifier list, rate limit and session key. |
 | [URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS) | 0.0.4 | The shared repository tools of the URTC family as one versioned set, with a lock file in each repository. |
 
 ---
