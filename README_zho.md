@@ -607,7 +607,7 @@ Issue 标签在所有 HYDRA-UMC 仓库中都是统一标准化的，其来源是
 
 仪表板的 **代码** 标签页显示每个仓库的代码、注释、测试和文档行数,包括代码、测试与文档的堆叠条形图、编程语言构成、每日历史,以及可按仓库、生态系统和类型排序与筛选的表格。其 **变更** 视图读取每个仓库的 CHANGELOG:版本、条目、按可编辑关键词判定的每个条目的类型(修复、新增、安全、文档等)、GitHub 标签的发布节奏、排名、各版本的条目,以及将表格导出为 CSV 或 JSON。[`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) 每天使用 [`scripts/code_stats.py`](scripts/code_stats.py) 和 [`code-stats-config.json`](code-stats-config.json) 中的规则在浅克隆上统计一次;详见 [`docs/CODE_STATS.md`](docs/CODE_STATS.md)。
 
-仪表板会说明它覆盖了什么,并且在 GitHub 拒绝读取时不会停止。在生态系统计数器旁,一张卡片给出所有者的公开仓库数、页面列出的数量以及没有清单的数量(**未分类**卡片会列出它们的名称),通知则列出自上一页以来新增、已归档或已消失的仓库。它对 GitHub API 的读取是条件读取(ETag):未变化的响应不消耗配额;配额用尽或 GitHub 无响应时,页面会保留最后一次正常的响应并标明其时效,而不是让构建失败([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md))。什么是红色构建只有一个定义,即 [`scripts/ci_rules.py`](scripts/ci_rules.py),并与本地 Actions 监视器用同样的用例进行测试([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md))。
+仪表板会说明它覆盖了什么,并且在 GitHub 拒绝读取时不会停止。在生态系统计数器旁,一张卡片给出所有者的公开仓库数、页面列出的数量以及没有清单的数量(**未分类**卡片会列出它们的名称),通知则列出自上一页以来新增、已归档或已消失的仓库。它对 GitHub API 的读取会被保存:自上次读取以来没有变化的仓库不会重新读取,未变化的响应(ETag)不消耗配额;配额用尽或 GitHub 无响应时,页面会保留最后一次正常的响应并标明其时效,而不是让构建失败([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md))。什么是红色构建只有一个定义,即 [`scripts/ci_rules.py`](scripts/ci_rules.py),并与本地 Actions 监视器用同样的用例进行测试([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md))。
 
 **构建**标签页新增了工作流的速度(成功运行的 p50 和 p95)、运行在队列中的等待时间,以及在同一提交上先失败后通过的工作流,定义与本地 Actions 监视器相同。**脚本**标签页新增了工作流检查器的结果,采用监视器的三个级别(信息、警告、错误),按生态系统、类型和规则统计;其五条规则可以在 `code-stats-config.json` 中关闭或调整级别。概览显示 **Tools** 组(Actions 监视器和套件的更新器),包含每个工具的版本、进度条和筛选器,个人资料徽章统计四个生态系统加上 Tools。
 

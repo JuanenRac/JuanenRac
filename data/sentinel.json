@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-08T10:46:14Z",
+ "asof": "2026-11-08T10:54:36Z",
  "ci": {
   "checked": 529,
   "red": [
@@ -69,8 +69,8 @@
     "repo": "URTC-UPDATER"
    }
   ],
-  "total24": 2473,
-  "total7": 15341,
+  "total24": 2475,
+  "total7": 15342,
   "warn": false
  },
  "ecosystems": {
@@ -112,7 +112,7 @@
  },
  "events": [
   {
-   "at": "2026-11-08T10:46:14Z",
+   "at": "2026-11-08T10:54:36Z",
    "kind": "red_new",
    "repo": "URTC-DOCS",
    "wf": "nightly.yml"
@@ -552,8 +552,8 @@
   "none": 79,
   "norelease": 0,
   "unverifiable": 21,
-  "unverified": 1,
-  "verified": 28
+  "unverified": 0,
+  "verified": 29
  },
  "tags": {
   "ARMOR-ANDROID-CONTROL": "v0.8.0.5",
@@ -717,7 +717,7 @@
    4421,
    5648,
    3487,
-   2473
+   2475
   ],
   "red": [
    3,

@@ -1415,6 +1415,20 @@
     "why": []
    }
   },
+  "URTC": {
+   "fp": "515e6e35032b9b45",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 19,
+    "s": "verified",
+    "sch": [
+     "urtc-rel/1"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
   "URTC-COMMON": {
    "fp": "3d6605fa2c7ae06c",
    "r": {
