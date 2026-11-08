@@ -31,6 +31,8 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from typing import Callable, Iterable
 
+import gh_http
+
 MATURITIES = ("scaffolding", "functional", "established", "production")
 EVIDENCES = ("none", "host-test", "simulator", "bench", "field")
 
@@ -223,27 +225,32 @@ def gather(
     return raw, (None if error else [name for name, _ in repos]), failures
 
 
-def github_listing(owner: str, token: str, timeout: float = 15) -> Callable[[], "tuple[list[tuple[str, str]], str]"]:
-    """A `list_repos` for `gather`: every public non-fork repository of the owner, following all pages, with the first failure reported."""
+def github_listing(owner: str, token: str, timeout: float = 15, reader: "Callable | None" = None, details: "dict | None" = None) -> Callable[[], "tuple[list[tuple[str, str]], str]"]:
+    """A `list_repos` for `gather`: every public non-fork repository of the owner, following all pages, with the first failure reported.
+    The pages are read with the conditional reader of gh_http (a 304 costs no quota; a refused read uses the saved page). When `details` is given it receives
+    `archived` (the names of the archived repositories, which stay in the list) and `stale` (True when any page came from the saved copy)."""
     def run() -> "tuple[list[tuple[str, str]], str]":
         found: list[tuple[str, str]] = []
         page = 1
+        get = reader or gh_http.shared().get
+        if details is not None:
+            details["archived"], details["stale"] = [], False
         while True:
             headers = {"User-Agent": "JuanenRac-dashboard-integrity", "Accept": "application/vnd.github+json"}
             if token:
                 headers["Authorization"] = f"Bearer {token}"
-            request = urllib.request.Request(f"https://api.github.com/users/{owner}/repos?type=owner&per_page=100&page={page}", headers=headers)
-            try:
-                with urllib.request.urlopen(request, timeout=timeout) as response:
-                    payload = json.load(response)
-            except urllib.error.HTTPError as exc:
-                return found, f"HTTP {exc.code} listing page {page}"
-            except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
-                return found, f"listing page {page} failed: {exc}"
+            reply = get(f"https://api.github.com/users/{owner}/repos?type=owner&per_page=100&page={page}", headers, timeout=timeout)
+            if reply.how == "failed":
+                return found, f"{reply.reason or 'unreadable'} listing page {page}"
+            payload = reply.data
             if not isinstance(payload, list):
                 return found, f"unexpected answer listing page {page}"
+            if details is not None and reply.how == "stale":
+                details["stale"] = True
             for item in payload:
                 if isinstance(item, dict) and isinstance(item.get("name"), str) and item.get("fork") is not True:
+                    if details is not None and item.get("archived") is True:
+                        details["archived"].append(item["name"])
                     branch = item.get("default_branch")
                     found.append((item["name"], branch if isinstance(branch, str) and branch else "main"))
             if len(payload) < 100:

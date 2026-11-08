@@ -2,6 +2,7 @@
   "activity_days": { "green_max": 14, "amber_max": 30 },
   "release_days": { "green_max": 90, "amber_max": 180 },
   "alert_after_days": 30,
+  "http_cache": { "enabled": true, "max_entries": 600, "max_body_bytes": 60000, "stale_max_hours": 72, "path": "data/etag-cache.json" },
   "scaffolding_months": 6,
   "history_min_days": 7,
   "signature_alert": { "enabled": false, "after_days": 14 },

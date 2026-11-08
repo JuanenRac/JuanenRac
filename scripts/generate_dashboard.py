@@ -58,6 +58,9 @@ from catalog_check import catalog_ecosystems, mismatches as catalog_mismatches
 import dashboard_app
 import dashboard_app_texts
 import dashboard_charts
+import dashboard_cover
+import dashboard_cover_texts
+import gh_http
 import dashboard_contrib
 import dashboard_evo
 import dashboard_evo_texts
@@ -335,7 +338,8 @@ def _api_get(url: str) -> dict | list | None:
     GET one api.github.com JSON endpoint. Returns None on any failure
     (network error, rate limit, 404, malformed JSON, ...) - metadata is
     optional decoration, never something that should abort the dashboard
-    build.
+    build. The read is conditional (ETag) and, when GitHub refuses it for
+    quota or cannot be reached, the saved copy of the last good answer is used.
     """
 
     headers = {
@@ -347,26 +351,8 @@ def _api_get(url: str) -> dict | list | None:
     if GITHUB_TOKEN:
         headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
-    request = urllib.request.Request(url, headers=headers, method="GET")
-
-    try:
-        with urllib.request.urlopen(
-            request,
-            timeout=API_REQUEST_TIMEOUT_S,
-        ) as response:
-            raw = response.read()
-
-        return json.loads(raw.decode("utf-8", errors="replace"))
-
-    except (
-        urllib.error.HTTPError,
-        urllib.error.URLError,
-        TimeoutError,
-        socket.timeout,
-        OSError,
-        json.JSONDecodeError,
-    ):
-        return None
+    # Conditional read with a saved copy (scripts/gh_http.py): a 304 costs no quota, and a refused or unreachable read uses the saved body, marked with its age.
+    return gh_http.shared().get(url, headers, timeout=API_REQUEST_TIMEOUT_S).data
 
 
 # DOC-51 (P2):
@@ -1972,6 +1958,10 @@ for language, values in dashboard_evo_texts.TEXTS.items():
 for language, values in dashboard_insight_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the coverage card, the notice of new / archived / disappeared repositories and the additions of the Tools group, the performance and the lint levels.
+for language, values in dashboard_cover_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the keyboard help, the breadcrumb, the generation figures, the last known data and the URTC rack page.
 for language, values in dashboard_robust_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -2971,6 +2961,7 @@ def check_integrity(
     ecosystem_by_name: dict[str, str],
     discovery_errors: list[str],
     api_failures: list[tuple[str, str]],
+    details: "dict | None" = None,
 ) -> "tuple[list[dashboard_integrity.Issue], dashboard_integrity.Coverage, dict]":
     """Compare the dashboard with the README catalogue, the repositories of the owner and the raw manifests; see scripts/dashboard_integrity.py."""
     catalog: dict[str, list[str]] = {}
@@ -2982,11 +2973,13 @@ def check_integrity(
     raw, owner_repos, failures = dashboard_integrity.gather(
         owner=owner,
         listed=ecosystem_by_name,
-        list_repos=dashboard_integrity.github_listing(owner, GITHUB_TOKEN),
+        list_repos=dashboard_integrity.github_listing(owner, GITHUB_TOKEN, details=details),
         fetch=dashboard_integrity.raw_fetcher(owner),
         max_workers=API_MAX_CONCURRENT_REQUESTS,
     )
     cover = dashboard_integrity.coverage(ecosystem_by_name, owner_repos, raw)
+    if details is not None:
+        details["owner_repos"] = owner_repos
     return dashboard_integrity.evaluate(
         catalog=catalog,
         listed=ecosystem_by_name,
@@ -3063,6 +3056,8 @@ ECOSYSTEM_ORDER: tuple[tuple[str, str], ...] = (
 def render_ecosystem_cards(
     entries: list[ProjectEntry],
     ecosystem_by_name: dict[str, str],
+    cover: "dashboard_integrity.Coverage | None" = None,
+    show_unclassified: bool = True,
 ) -> str:
     counts = {key: 0 for key, _ in ECOSYSTEM_ORDER}
     for entry in entries:
@@ -3080,6 +3075,9 @@ def render_ecosystem_cards(
             </div>
             """
         )
+    # The public repositories of the owner that no ecosystem lists: the page never hides them (the counters above would otherwise add up to less than the account has).
+    if show_unclassified and cover is not None:
+        cards.append(dashboard_cover.unclassified_card(cover))
     return "".join(cards)
 
 
@@ -3407,6 +3405,7 @@ def render_html(
     code_doc: "dict | None" = None,
     code_history: "list | None" = None,
     scripts_doc: "dict | None" = None,
+    changes: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3431,7 +3430,7 @@ def render_html(
 
     rows = render_project_rows(entries, results, meta, ecosystem_by_name, activity)
 
-    ecosystem_cards = render_ecosystem_cards(entries, ecosystem_by_name)
+    ecosystem_cards = render_ecosystem_cards(entries, ecosystem_by_name, cover)
 
     freshness_html = render_freshness_indicator()
 
@@ -3498,9 +3497,10 @@ def render_html(
     app_data.stale_date = stale_date
     if stale_date:
         app_data.incomplete = [*app_data.incomplete, "activity_stale"]
-    app_data.generation_html = dashboard_robust.generation_html(generation, stale=bool(stale_date))
+    app_data.generation_html = dashboard_robust.generation_html(generation, stale=bool(stale_date), http=gh_http.shared().summary())
     rack_snap, rack_problem = rack if rack is not None else (None, "")
     app_data.rack_html = dashboard_rack.panel_html(rack_snap, rack_problem)
+    app_data.changes_html = dashboard_cover.changes_html(changes or {})
     today = dashboard_evo.today_utc()
     snap = dashboard_evo.snapshot(today, app_data.progress, app_data.status, app_keys, repos=dashboard_evo.repo_facts(entries, results),
                                   tests=dashboard_tests.fresh_counts(tests_read), actions=dashboard_actions.day_summary(actions_read),
@@ -3519,6 +3519,8 @@ def render_html(
     app_data.page_data["tests"] = dashboard_tests.build(tests_read, ecosystem_by_name, full_history, today, tests_config)
     app_data.page_data["code"] = dashboard_code.build(code_doc, code_history, today)
     app_data.page_data["scripts"] = dashboard_scripts.build(scripts_doc, today)
+    if (changes or {}).get("snapshot"):
+        app_data.page_data["cover"] = changes["snapshot"]
     app_data.page_data["actions"] = dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, full_history, today)
     app_data.page_data["pins"] = dashboard_pins.build(pins_doc)
     app_data.page_data["sentinel"] = dashboard_sentinel.build(sentinel_doc, sentinel_saved, sentinel_config or dashboard_sentinel.check_config(None)[0], today)
@@ -5695,6 +5697,13 @@ def render_html(
       }}
     }});
 
+    document.querySelectorAll("[data-i18n-title-template]").forEach(function (el) {{
+      const key = el.getAttribute("data-i18n-title-template");
+      if (Object.prototype.hasOwnProperty.call(dict, key)) {{
+        el.setAttribute("title", fillTemplate(dict[key], el));
+      }}
+    }});
+
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {{
       const key = el.getAttribute("data-i18n-placeholder");
       if (Object.prototype.hasOwnProperty.call(dict, key)) {{
@@ -5917,6 +5926,20 @@ def read_published_page(path: Path) -> "str | None":
         return None
 
 
+def keep_published(published: "str | None", index_path: Path, reason: str, today: str) -> int:
+    """GitHub could not be read for something the page cannot do without (quota spent, no answer): the page that is published stays, marked as the last good one
+    with its date, and the build does not fail. 1 when there is no published page to keep (nothing to fall back on)."""
+    if not published:
+        print(f"ERROR: {reason}; there is no published page to keep.", file=sys.stderr)
+        return 1
+    date = dashboard_robust.previous_asof(published) or today
+    print(f"WARNING: {reason}; the published page from {date} is kept, marked as the last good one.", file=sys.stderr)
+    marked = dashboard_robust.mark_kept(published, date)
+    if marked != published:
+        index_path.write_text(marked, encoding="utf-8")
+    return 0
+
+
 def main() -> int:
     started = time.monotonic()
     published = read_published_page(OUT_DIR / "index.html")
@@ -5935,7 +5958,14 @@ def main() -> int:
         file=sys.stderr,
     )
 
-    discovery = discover_remote_projects(catalog.github_owner, token=GITHUB_TOKEN)
+    index_path = OUT_DIR / "index.html"
+    today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    try:
+        discovery = discover_remote_projects(catalog.github_owner, token=GITHUB_TOKEN)
+    except Exception as exc:  # noqa: BLE001 - the pinned updater raises its own errors; only a refusal or a missing answer from GitHub is excused
+        if not dashboard_robust.is_transient([exc]):
+            raise
+        return keep_published(published, index_path, f"HYDRA-UMC discovery failed ({exc})", today_utc)
     rescued, kept_errors = rescue_rejected(catalog.github_owner, "hydra-umc", discovery.errors)
     discovery = _hydra_client.RemoteDiscovery(
         projects=tuple(sorted([*discovery.projects, *rescued], key=lambda status: status.entry.name.casefold())),
@@ -5958,6 +5988,10 @@ def main() -> int:
     # API token, GitHub listing or manifests are temporarily unavailable.
     # An intentionally empty ecosystem is not a valid production state.
     if hydra_umc_total == 0:
+        # GitHub refusing the reads (quota, 403, no answer) is not a reason to fail the build: the last good page stays, marked. Anything else (every manifest
+        # invalid, a parser that changed) is a real problem and keeps failing.
+        if dashboard_robust.is_transient(all_discovery_errors):
+            return keep_published(published, index_path, "no HYDRA-UMC manifests could be read (GitHub refused or did not answer)", today_utc)
         print(
             "ERROR: no valid HYDRA-UMC manifests were discovered; preserving the current dashboard.",
             file=sys.stderr,
@@ -6000,6 +6034,8 @@ def main() -> int:
             failed_ecosystems.append(ecosystem_key)
         # URTC and A.R.M.O.R. always have real projects: finding none means a parser or a manifest broke (an unknown field made every URTC project vanish from the page
         # once), not that they are gone. Keep the page that is published instead of replacing it with one that has lost a whole ecosystem.
+        if ecosystem_key in ("urtc", "armor") and not sub_discovery.projects and dashboard_robust.is_transient(sub_discovery.errors):
+            return keep_published(published, index_path, f"no {ecosystem_label} manifests could be read (GitHub refused or did not answer)", today_utc)
         if ecosystem_key in ("urtc", "armor") and not sub_discovery.projects:
             print(f"ERROR: no valid {ecosystem_label} manifests were discovered ({len(sub_discovery.errors)} error(s)); preserving the current dashboard.", file=sys.stderr)
             for problem in sub_discovery.errors[:10]:
@@ -6013,8 +6049,7 @@ def main() -> int:
         now_counts[eco_key] = now_counts.get(eco_key, 0) + 1
     lost = dashboard_robust.lost_ecosystems(dashboard_robust.previous_ecosystem_counts(published), now_counts, failed_ecosystems)
     if lost:
-        print(f"WARNING: could not read {', '.join(lost)} on GitHub; the published page, which lists them, is kept as the last known version.", file=sys.stderr)
-        return 0
+        return keep_published(published, index_path, f"could not read {', '.join(lost)} on GitHub", today_utc)
 
     total = len(entries)
 
@@ -6049,8 +6084,17 @@ def main() -> int:
         file=sys.stderr,
     )
 
-    integrity, cover, raw_manifests = check_integrity(catalog.github_owner, ecosystem_by_name, all_discovery_errors, api_failures)
+    listing_details: dict = {}
+    integrity, cover, raw_manifests = check_integrity(catalog.github_owner, ecosystem_by_name, all_discovery_errors, api_failures, listing_details)
     print(dashboard_integrity.report(integrity), file=sys.stderr)
+    # New, archived and disappeared repositories since the published page (compared only against a listing that was really read in this run).
+    reliable_listing = listing_details.get("owner_repos") is not None and not listing_details.get("stale")
+    before = dashboard_robust.previous_cover(published)
+    owner_changes = dashboard_cover.changes(before["repos"] if before else None, listing_details.get("owner_repos"), listing_details.get("archived", ()), reliable_listing)
+    owner_changes["snapshot"] = dashboard_cover.snapshot(listing_details.get("owner_repos"), listing_details.get("archived", ()), reliable_listing, before)
+    for kind in ("new", "archived", "gone"):
+        if owner_changes[kind]:
+            print(f"CHANGES {kind}: {', '.join(owner_changes[kind])}", file=sys.stderr)
 
     ci_config, ci_problems = dashboard_ci_evidence.load_config()
     for problem in ci_problems:
@@ -6186,7 +6230,7 @@ def main() -> int:
                            actions_read=actions_read, actions_cache=actions_cache, builds=builds,
                            sentinel_doc=sentinel_doc, sentinel_saved=sentinel_saved, sentinel_config=sentinel_config, pins_doc=pins_doc,
                            code_doc=dashboard_code.load(), code_history=dashboard_code.load_history(),
-                           scripts_doc=dashboard_scripts.load())
+                           scripts_doc=dashboard_scripts.load(), changes=owner_changes)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 
@@ -6213,6 +6257,11 @@ def main() -> int:
 
     # Tell GitHub Pages that this is plain static HTML.
     (OUT_DIR / ".nojekyll").touch()
+
+    # The saved copy of the conditional reads (restored by the build with the Actions cache) and the figures of this run.
+    http_figures = gh_http.shared().summary()
+    gh_http.shared().save()
+    print(f"GitHub reads: {http_figures['requests']} made, {http_figures['not_modified']} free by ETag, {http_figures['stale']} answered from the saved copy, {http_figures['failed']} failed.", file=sys.stderr)
 
     print(
         f"Wrote {index_path}",

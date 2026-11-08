@@ -1,0 +1,699 @@
+{
+ "about": "Shared cases of the rule of red on the default branch: the last completed run of each workflow on the default branch decides; cancelled, skipped, neutral and stale runs and the dynamic runs of dependency updates say nothing. Each case lists its runs oldest first (the rule sorts them by `started`) and the red workflows it expects.",
+ "cases": [
+  {
+   "name": "last_failure_is_red",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:01:00Z",
+     "url": "https://example.invalid/run/1",
+     "sha": "0000001"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:02:00Z",
+     "url": "https://example.invalid/run/2",
+     "sha": "0000002"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "recovered_is_green",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:03:00Z",
+     "url": "https://example.invalid/run/3",
+     "sha": "0000003"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:04:00Z",
+     "url": "https://example.invalid/run/4",
+     "sha": "0000004"
+    }
+   ],
+   "red": [],
+   "skip_monitor": ""
+  },
+  {
+   "name": "cancelled_does_not_hide_a_failure",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:05:00Z",
+     "url": "https://example.invalid/run/5",
+     "sha": "0000005"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "cancelled",
+     "event": "push",
+     "started": "2001-12-21T11:06:00Z",
+     "url": "https://example.invalid/run/6",
+     "sha": "0000006"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "skipped_does_not_hide_a_failure",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:07:00Z",
+     "url": "https://example.invalid/run/7",
+     "sha": "0000007"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:08:00Z",
+     "url": "https://example.invalid/run/8",
+     "sha": "0000008"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "skipped",
+     "event": "push",
+     "started": "2001-12-21T11:09:00Z",
+     "url": "https://example.invalid/run/9",
+     "sha": "0000009"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "neutral_does_not_hide_a_failure",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:10:00Z",
+     "url": "https://example.invalid/run/10",
+     "sha": "000000a"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:11:00Z",
+     "url": "https://example.invalid/run/11",
+     "sha": "000000b"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "neutral",
+     "event": "push",
+     "started": "2001-12-21T11:12:00Z",
+     "url": "https://example.invalid/run/12",
+     "sha": "000000c"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "stale_does_not_hide_a_failure",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:13:00Z",
+     "url": "https://example.invalid/run/13",
+     "sha": "000000d"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:14:00Z",
+     "url": "https://example.invalid/run/14",
+     "sha": "000000e"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "stale",
+     "event": "push",
+     "started": "2001-12-21T11:15:00Z",
+     "url": "https://example.invalid/run/15",
+     "sha": "000000f"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "streak_counts_failures_in_a_row_and_passes_over_cancelled",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:16:00Z",
+     "url": "https://example.invalid/run/16",
+     "sha": "0000010"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:17:00Z",
+     "url": "https://example.invalid/run/17",
+     "sha": "0000011"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:18:00Z",
+     "url": "https://example.invalid/run/18",
+     "sha": "0000012"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "cancelled",
+     "event": "push",
+     "started": "2001-12-21T11:19:00Z",
+     "url": "https://example.invalid/run/19",
+     "sha": "0000013"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "timed_out",
+     "event": "push",
+     "started": "2001-12-21T11:20:00Z",
+     "url": "https://example.invalid/run/20",
+     "sha": "0000014"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "timed_out",
+     "streak": 3
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "timed_out_is_red",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:21:00Z",
+     "url": "https://example.invalid/run/21",
+     "sha": "0000015"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "timed_out",
+     "event": "push",
+     "started": "2001-12-21T11:22:00Z",
+     "url": "https://example.invalid/run/22",
+     "sha": "0000016"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "timed_out",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "startup_failure_is_red",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:23:00Z",
+     "url": "https://example.invalid/run/23",
+     "sha": "0000017"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "startup_failure",
+     "event": "push",
+     "started": "2001-12-21T11:24:00Z",
+     "url": "https://example.invalid/run/24",
+     "sha": "0000018"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "startup_failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "action_required_is_red",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:25:00Z",
+     "url": "https://example.invalid/run/25",
+     "sha": "0000019"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "action_required",
+     "event": "push",
+     "started": "2001-12-21T11:26:00Z",
+     "url": "https://example.invalid/run/26",
+     "sha": "000001a"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "action_required",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "other_branches_do_not_count",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:27:00Z",
+     "url": "https://example.invalid/run/27",
+     "sha": "000001b"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "feature",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:28:00Z",
+     "url": "https://example.invalid/run/28",
+     "sha": "000001c"
+    }
+   ],
+   "red": [],
+   "skip_monitor": ""
+  },
+  {
+   "name": "a_failure_on_main_counts_when_a_branch_is_green",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:29:00Z",
+     "url": "https://example.invalid/run/29",
+     "sha": "000001d"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "feature",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:30:00Z",
+     "url": "https://example.invalid/run/30",
+     "sha": "000001e"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "a_run_that_has_not_finished_says_nothing",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:31:00Z",
+     "url": "https://example.invalid/run/31",
+     "sha": "000001f"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "in_progress",
+     "branch": "main",
+     "conclusion": null,
+     "event": "push",
+     "started": "2001-12-21T11:32:00Z",
+     "url": "https://example.invalid/run/32",
+     "sha": "0000020"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "each_workflow_is_judged_alone",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:33:00Z",
+     "url": "https://example.invalid/run/33",
+     "sha": "0000021"
+    },
+    {
+     "name": "lint.yml",
+     "path": ".github/workflows/lint.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:34:00Z",
+     "url": "https://example.invalid/run/34",
+     "sha": "0000022"
+    },
+    {
+     "name": "release.yml",
+     "path": ".github/workflows/release.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:35:00Z",
+     "url": "https://example.invalid/run/35",
+     "sha": "0000023"
+    },
+    {
+     "name": "release.yml",
+     "path": ".github/workflows/release.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:36:00Z",
+     "url": "https://example.invalid/run/36",
+     "sha": "0000024"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "two_red_workflows_are_sorted",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "zeta.yml",
+     "path": ".github/workflows/zeta.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:37:00Z",
+     "url": "https://example.invalid/run/37",
+     "sha": "0000025"
+    },
+    {
+     "name": "alpha.yml",
+     "path": ".github/workflows/alpha.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:38:00Z",
+     "url": "https://example.invalid/run/38",
+     "sha": "0000026"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "alpha.yml",
+     "conclusion": "failure",
+     "streak": 1
+    },
+    {
+     "workflow": "zeta.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "master_as_default_branch",
+   "default_branch": "master",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "master",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:39:00Z",
+     "url": "https://example.invalid/run/39",
+     "sha": "0000027"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:40:00Z",
+     "url": "https://example.invalid/run/40",
+     "sha": "0000028"
+    }
+   ],
+   "red": [
+    {
+     "workflow": "ci.yml",
+     "conclusion": "failure",
+     "streak": 1
+    }
+   ],
+   "skip_monitor": ""
+  },
+  {
+   "name": "no_runs_no_red",
+   "default_branch": "main",
+   "runs": [],
+   "red": [],
+   "skip_monitor": ""
+  },
+  {
+   "name": "dynamic_runs_are_not_builds",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "success",
+     "event": "push",
+     "started": "2001-12-21T11:41:00Z",
+     "url": "https://example.invalid/run/41",
+     "sha": "0000029"
+    },
+    {
+     "name": "dependabot-updates",
+     "path": "dynamic/dependabot/dependabot-updates",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "dynamic",
+     "started": "2001-12-21T11:42:00Z",
+     "url": "https://example.invalid/run/42",
+     "sha": "000002a"
+    }
+   ],
+   "red": [],
+   "skip_monitor": "the monitor drops dynamic runs when it reads them, not in redrule"
+  }
+ ]
+}

@@ -72,7 +72,7 @@ class Generation:
 STEP_KEYS = ("versions", "manifests", "commits", "activity")
 
 
-def generation_html(gen: "Generation | None", stale: bool = False) -> str:
+def generation_html(gen: "Generation | None", stale: bool = False, http: "Mapping[str, int] | None" = None) -> str:
     """The card of the figures of the generation. Everything between the two comments moves on every run and is ignored when the page is compared."""
     en = _en()
     if gen is None:
@@ -85,7 +85,7 @@ def generation_html(gen: "Generation | None", stale: bool = False) -> str:
             f'<li data-testid="gen-step-{esc(key)}" data-ok="{ok}" data-total="{total}" data-i18n-template="gen_step_{esc(key)}">'
             f'{esc(en["gen_step_" + key].replace("{ok}", str(ok)).replace("{total}", str(total)))}</li>'
             for key, ok, total in gen.steps if key in STEP_KEYS)
-        inner = f'{built}<ul class="gen-steps">{rows}</ul>'
+        inner = f'{built}<ul class="gen-steps">{rows}</ul>{http_line(http)}'
     asof = gen.asof if gen is not None else ""
     return (
         '<section class="card card-gen" aria-labelledby="gen-t" data-testid="gen-info">'
@@ -95,6 +95,17 @@ def generation_html(gen: "Generation | None", stale: bool = False) -> str:
     )
 
 
+def http_line(http: "Mapping[str, int] | None") -> str:
+    """The line with the reads of GitHub of this run (made, free thanks to the ETag, answered from the saved copy). '' when nothing was counted."""
+    if not http or not http.get("requests"):
+        return ""
+    en = _en()
+    made, saved, stale = int(http.get("requests", 0)), int(http.get("not_modified", 0)), int(http.get("stale", 0))
+    hours = int(http.get("oldest_stale", 0)) // 3600
+    text = en["gen_http"].replace("{made}", str(made)).replace("{saved}", str(saved)).replace("{stale}", str(stale)).replace("{hours}", str(hours))
+    return (f'<p class="muted" data-testid="gen-http" data-i18n-template="gen_http" data-made="{made}" data-saved="{saved}" data-served="{stale}" data-hours="{hours}">{esc(text)}</p>')
+
+
 def stale_banner_html(date: str | None) -> str:
     """The notice shown above everything else in the summary when the CI, release and commit data are the last known version."""
     if not date:
@@ -102,6 +113,31 @@ def stale_banner_html(date: str | None) -> str:
     en = _en()
     return (f'<p class="stale-banner" role="status" data-testid="stale-banner" data-i18n-template="stale_banner" data-date="{esc(date)}">'
             f'<span class="stale-glyph" aria-hidden="true">▲</span> {esc(en["stale_banner"].replace("{date}", date))}</p>')
+
+
+TRANSIENT_RE = re.compile(r"HTTP (?:403|429|5\d\d)|rate limit|quota|timed out|time out|temporar|unable to list|lookup failed|unreachable|connection|URLError|Name or service", re.I)
+
+
+def is_transient(texts: Iterable[object]) -> bool:
+    """True when some failure text says GitHub refused (quota, 403, 429), did not answer or could not be reached: a reason to keep the published page for now.
+    A failure that says anything else (an invalid manifest, a parser error) is a real problem and is not hidden by it."""
+    return any(TRANSIENT_RE.search(str(text)) for text in texts)
+
+
+def kept_banner_html(date: str | None) -> str:
+    """The notice of a page kept as the last good one because GitHub could not be read in this run."""
+    en = _en()
+    when = date or "?"
+    return (f'<p class="stale-banner" role="status" data-testid="kept-banner" data-i18n-template="kept_banner" data-date="{esc(when)}">'
+            f'<span class="stale-glyph" aria-hidden="true">▲</span> {esc(en["kept_banner"].replace("{date}", when))}</p>')
+
+
+def mark_kept(html: str, date: str | None) -> str:
+    """The published page with the notice of the kept page placed first in the summary (once; a page that carries it already is returned as it is)."""
+    marker = '<div class="summary-grid">'
+    if 'data-testid="kept-banner"' in html or marker not in html:
+        return html
+    return html.replace(marker, marker + "\n      " + kept_banner_html(date), 1)
 
 
 def _en() -> dict:
@@ -155,6 +191,15 @@ def previous_asof(html: str | None) -> str | None:
     return date if isinstance(date, str) and re.match(r"^\d{4}-\d{2}-\d{2}$", date) else None
 
 
+def previous_cover(html: str | None) -> dict | None:
+    """The block {"repos", "archived"} that the published page embeds (the repositories of the owner as of its generation), None when it has none."""
+    block = (_page_data(html) or {}).get("cover")
+    if isinstance(block, dict) and isinstance(block.get("repos"), list) and all(isinstance(n, str) for n in block["repos"]):
+        archived = block.get("archived") if isinstance(block.get("archived"), list) else []
+        return {"repos": list(block["repos"]), "archived": [n for n in archived if isinstance(n, str)]}
+    return None
+
+
 def previous_ecosystem_counts(html: str | None) -> dict[str, int]:
     """How many repositories each ecosystem had on the published page."""
     data = _page_data(html)
@@ -173,4 +218,4 @@ def lost_ecosystems(previous: Mapping[str, int], current: Mapping[str, int], fai
 
 
 __all__ = ["manifest_health", "percent_text", "Generation", "generation_html", "stale_banner_html", "activity_from_page", "previous_asof",
-           "previous_ecosystem_counts", "lost_ecosystems"]
+           "previous_cover", "previous_ecosystem_counts", "lost_ecosystems", "is_transient", "kept_banner_html", "mark_kept"]

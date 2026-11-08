@@ -13,7 +13,7 @@ file of the repository) are not builds of the repository and never count. Stdlib
 """
 from __future__ import annotations
 
-from typing import Mapping
+from typing import Iterable, Mapping
 
 RED_CONCLUSIONS = ("failure", "timed_out", "startup_failure", "action_required")
 IGNORED_CONCLUSIONS = ("cancelled", "skipped", "neutral", "stale")
@@ -37,3 +37,64 @@ def is_dynamic(run: Mapping) -> bool:
 def decides(run: Mapping) -> bool:
     """True when this finished run may decide the state of its workflow."""
     return not is_dynamic(run) and not says_nothing(run.get("conclusion"))
+
+
+def workflow_key(run: Mapping) -> str:
+    """The workflow a run belongs to: the file name of its path (`.github/workflows/ci.yml` -> `ci.yml`), else its name."""
+    path = str(run.get("path") or "")
+    return path.rsplit("/", 1)[-1] if path else str(run.get("name") or "")
+
+
+def red_workflows(runs: Iterable[Mapping], default_branch: str = "main") -> list[dict]:
+    """THE rule of "red on the default branch", written once: the LAST COMPLETED run of each workflow on the default branch decides; cancelled, skipped, neutral and
+    stale runs, runs that never finished and the dynamic runs of dependency updates say nothing and are passed over, so an older failure is not hidden by them.
+    `runs` carry `status`, `branch`, `conclusion`, `started` (an ISO time), `path` or `name`, and optionally `event`, `url` and `sha`.
+    Returns [{"workflow", "conclusion", "streak", "since", "url", "sha"}] sorted by workflow; `streak` counts the failures in a row up to the last run."""
+    series: dict[str, list[Mapping]] = {}
+    for run in sorted((r for r in runs if isinstance(r, Mapping)), key=lambda r: str(r.get("started") or "")):
+        if run.get("status") != "completed" or run.get("branch") != default_branch or not decides(run):
+            continue
+        series.setdefault(workflow_key(run), []).append(run)
+    out = []
+    for key, items in series.items():
+        last = items[-1]
+        if not is_red(last.get("conclusion")):
+            continue
+        streak = 0
+        for run in reversed(items):
+            if not is_red(run.get("conclusion")):
+                break
+            streak += 1
+        out.append({"workflow": key, "conclusion": last["conclusion"], "streak": streak, "since": last.get("started"), "url": last.get("url"), "sha": last.get("sha", "")})
+    return sorted(out, key=lambda row: row["workflow"])
+
+
+CI_RED_SCHEMA = 2
+CI_RED_REQUIRED = ("schema", "generated", "tool_version", "complete", "red_repos", "repos")
+CI_RED_RED_ROW = ("workflow", "conclusion", "since", "streak", "url")
+
+
+def ci_red_problems(doc: object) -> list[str]:
+    """What is wrong with a `ci_red.json` document of the contract (schema 2), as a list of short texts; empty when it conforms. The dashboard does not read that file
+    (the snapshot is local to whoever runs the monitor); this is the contract both sides test their samples against. Fields are only ever added, so unknown ones are fine."""
+    if not isinstance(doc, Mapping):
+        return ["the document is not an object"]
+    problems = [f"missing field: {key}" for key in CI_RED_REQUIRED if key not in doc]
+    if doc.get("schema") != CI_RED_SCHEMA:
+        problems.append(f"schema is {doc.get('schema')!r}, expected {CI_RED_SCHEMA}")
+    repos = doc.get("repos")
+    if not isinstance(repos, Mapping):
+        return problems + ["repos is not an object"]
+    reds = 0
+    for name, row in repos.items():
+        if not isinstance(row, Mapping) or not isinstance(row.get("red"), list):
+            problems.append(f"{name}: no list of red workflows")
+            continue
+        reds += 1 if row["red"] else 0
+        for item in row["red"]:
+            absent = [key for key in CI_RED_RED_ROW if not isinstance(item, Mapping) or key not in item]
+            if absent:
+                problems.append(f"{name}: red workflow without {', '.join(absent)}")
+    if isinstance(doc.get("red_repos"), int) and doc["red_repos"] != reds:
+        problems.append(f"red_repos is {doc['red_repos']} but {reds} repositories have a red workflow")
+    return problems

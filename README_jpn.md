@@ -607,6 +607,8 @@ Issueのラベルは、このリポジトリ内にある [`.github/labels.yml`](
 
 ダッシュボードの **コード** タブには、各リポジトリのコード、コメント、テスト、ドキュメントの行数を、コード・テスト・ドキュメントの積み上げ棒グラフ、プログラミング言語の内訳、日次の履歴、リポジトリ・エコシステム・種類で並べ替えと絞り込みができる表とともに表示します。**変更** ビューは各リポジトリの CHANGELOG を読み取り、バージョン、エントリ、編集可能な語句で判定した各エントリの種類(修正、追加、セキュリティ、ドキュメントなど)、GitHub タグの公開ペース、ランキング、各バージョンのエントリ、表の CSV / JSON 書き出しを示します。[`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) が、[`scripts/code_stats.py`](scripts/code_stats.py) と [`code-stats-config.json`](code-stats-config.json) の規則で 1 日 1 回、浅いクローンからすべてを集計します。詳しくは [`docs/CODE_STATS.md`](docs/CODE_STATS.md) を参照してください。
 
+ダッシュボードは何を対象にしているかを示し、GitHub が読み取りを拒否しても止まりません。エコシステムのカウンターの隣のカードに、所有者の公開リポジトリ数、ページに掲載している数、マニフェストのない数(**未分類**カードがその名前を示します)が表示され、前回のページ以降に新しく作られた、アーカイブされた、なくなったリポジトリは通知で一覧されます。GitHub API の読み取りは条件付き(ETag)で、変更のない応答はクォータを消費せず、クォータ切れや GitHub が応答しない場合は、ビルドを失敗させる代わりに、最後の正常な応答をその経過時間付きで保持します([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md))。赤いビルドの定義は [`scripts/ci_rules.py`](scripts/ci_rules.py) の一つだけで、ローカルの Actions モニターと同じケースで検証されています([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md))。
+
 ## 🧭 GitHub でのコラボレーション
 
 [GitHubコラボレーションモデル](docs/GITHUB_COLLABORATION.md) では、中央のWiki1つ、エコシステムプロジェクト1つ、Discussionのスコープ、リリース基準、および共有自動化の境界を定義しています。中央管理されている [issueフォーム](.github/ISSUE_TEMPLATE/) および [プルリクエストテンプレート](.github/PULL_REQUEST_TEMPLATE.md) により、プロジェクトのマニュアルを複製することなく、ソフトウェア、ハードウェア検証、ドキュメント作成の作業を追跡可能にしています。

@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 scripts/normalize_ecosystem_readmes.py
+
+# Saved copy of the conditional GitHub reads (restored with the Actions cache in the build).
+data/etag-cache.json

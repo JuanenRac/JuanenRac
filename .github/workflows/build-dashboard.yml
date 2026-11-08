@@ -86,6 +86,8 @@ on:
     paths:
       - "scripts/generate_dashboard.py"
       - "scripts/dashboard_*.py"
+      - "scripts/gh_http.py"
+      - "scripts/ci_rules.py"
       - "scripts/sync_readme_versions.py"
       - "scripts/ecosystem_progress.py"
       - "scripts/ecosystem_integrity_test.py"
@@ -259,6 +261,16 @@ jobs:
       - name: Check the ecosystem catalog against the dashboard
         run: |
           python -m unittest discover -s tests -v
+
+      # The saved copy of the conditional reads of the GitHub API (scripts/gh_http.py): an unchanged answer (304) costs no quota and, when GitHub refuses a read or
+      # does not answer, the last good answer is used and the page says how old it is. Kept with the Actions cache, never committed.
+      - name: Restore the saved copy of the GitHub reads
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: data/etag-cache.json
+          key: etag-cache-${{ github.run_id }}
+          restore-keys: |
+            etag-cache-
 
       - name: Generate dashboard
         env:

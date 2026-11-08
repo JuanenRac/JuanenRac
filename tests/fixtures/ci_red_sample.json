@@ -1,0 +1,18 @@
+{
+ "schema": 2,
+ "generated": "2001-12-21T11:00:00Z",
+ "tool_version": "1.6.2",
+ "complete": true,
+ "red_repos": 1,
+ "pending_sign_repos": 0,
+ "pending_sign_hours_threshold": 24,
+ "repos": {
+  "EXAMPLE-REPO": {
+   "ecosystem": "armor",
+   "red": [{"workflow": "ci.yml", "conclusion": "failure", "since": "2001-12-21T10:00:00Z", "streak": 2, "url": "https://example.invalid/run/1"}],
+   "pending_sign_hours": null,
+   "pending_sign": []
+  },
+  "OTHER-REPO": {"ecosystem": "other", "red": [], "pending_sign_hours": null, "pending_sign": []}
+ }
+}

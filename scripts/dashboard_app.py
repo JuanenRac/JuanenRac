@@ -97,6 +97,7 @@ class AppData:
     generation_html: str = ""                                      # dashboard_robust.generation_html: the figures of the generation
     stale_date: str | None = None                                  # the CI, release and commit data are the last known version of this date
     rack_html: str = ""                                            # dashboard_rack.panel_html
+    changes_html: str = ""                                         # dashboard_cover.changes_html: new / archived / disappeared repositories since the last run
 
 
 # ---------------------------------------------------------------------------
@@ -445,6 +446,7 @@ def summary_panel(data: AppData, ecosystem_cards_html: str) -> str:
     return f"""
     <div class="summary-grid">
       {banner}
+      {data.changes_html}
       {dashboard_evo_ui.visit_card()}
       {alerts_card(data)}
       <section class="kpi-strip" aria-label="Key figures" data-i18n-aria-label="aria_key_figures">{kpis}</section>
@@ -703,6 +705,13 @@ CSS = r"""
   .eco-counts .health-card { flex: 1 1 90px; padding: 6px 10px; text-align: left; box-shadow: none; }
   .eco-counts .health-card .number { font-size: 22px; }
   .eco-counts .health-card .label { font-size: 11px; }
+  .eco-counts .health-card .sub { font-size: 10px; color: var(--dim); margin-top: 2px; line-height: 1.25; }
+  .health-card-unclassified[data-state="gap"] { border-color: var(--k-pending); }
+  .health-card-unclassified[data-state="ok"] .number { color: var(--k-ok, inherit); }
+  .card-changes { grid-column: 1 / -1; border-left: 6px solid var(--k-pending); padding: 10px 14px; }
+  .card-changes .card-title { margin-bottom: 4px; }
+  .changes-list { margin: 0; padding-left: 18px; font-size: 13px; }
+  .changes-list li { margin: 2px 0; }
   .card-progress { grid-column: span 8; }
   .card-ci { grid-column: span 4; display: flex; flex-direction: column; gap: 6px; }
   .card-maturity, .card-evidence { grid-column: span 3; }
