@@ -229,13 +229,14 @@ class NothingSensitiveIsPublishedTests(unittest.TestCase):
             self.assertIn(f"sp_{key}", texts.TEXTS["en"])
 
     def test_the_published_file_is_clean(self):
+        # A workflow FILE called codeql.yml may be red like any other and is named as such; what must never appear is a code-scanning alert (its rule, its text).
         path = ROOT / "data" / "sentinel.json"
         if not path.exists():
             self.skipTest("no data/sentinel.json yet")
         text = path.read_text(encoding="utf-8")
         data = json.loads(text)
         self.assertEqual(data["schema"], sn.SCHEMA)
-        for pattern in (r"\bBump\b", r"\bfrom \d+\.\d+", r"\b(py|js|cpp|java|go|rb|cs)/[a-z][a-z0-9-]+", r"(?i)codeql", r"(?i)dependabot", r"(?i)secret.scanning", r"(?i)\"(title|actor|author|login|branch|rule|message)\""):
+        for pattern in (r"\bBump\b", r"\bfrom \d+\.\d+", r"\b(py|js|cpp|java|go|rb|cs)/[a-z][a-z0-9-]+", r"(?i)codeql(?!\.ya?ml\")", r"(?i)dependabot", r"(?i)secret.scanning", r"(?i)\"(title|actor|author|login|branch|rule|message)\""):
             self.assertIsNone(re.search(pattern, text), pattern)
         names = set(re.findall(r"\"repo\": \"([^\"]+)\"", text))
         self.assertTrue(all(sn.REPO_RE.match(n) for n in names))
