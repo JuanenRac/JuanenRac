@@ -33,8 +33,11 @@ import re
 import sys
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
+
+import gh_http
 
 ROOT = Path(__file__).resolve().parent.parent
 SIBLINGS = ROOT.parent
@@ -159,19 +162,30 @@ def project_points(manifest: dict, signals: dict | None = None) -> int:
     return min(100, points)
 
 
-def _api(path: str) -> object | None:
-    """A GitHub API answer as JSON: with the token of the CI when there is one, otherwise through the gh command."""
+QUOTA = {"hit": False}      # True once GitHub refused a read because the quota was spent and no saved answer could stand in
+
+
+class FactsUnavailable(SystemExit):
+    """The delivery and quality facts could not be read for too many repositories. `quota` says whether GitHub refused for the quota (a reason to keep the last bars)."""
+
+    def __init__(self, message: str, quota: bool = False):
+        super().__init__(message)
+        self.quota = quota
+
+
+def _api(path: str, unchanged_since: "int | None" = None) -> object | None:
+    """A GitHub API answer as JSON: with the token of the CI when there is one, otherwise through the gh command.
+    With a token the read goes through the saved reads of scripts/gh_http.py: `unchanged_since` (the last push of the repository) skips a read whose saved answer is newer,
+    an unchanged answer costs no quota, and a refused read falls back to the last good answer."""
     import os
     import subprocess
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if token:
-        request = urllib.request.Request(f"https://api.github.com/{path}", headers={
-            "User-Agent": USER_AGENT, "Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"})
-        try:
-            with urllib.request.urlopen(request, timeout=RAW_TIMEOUT_S * 3) as response:
-                return json.loads(response.read().decode("utf-8", errors="replace"))
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError):
-            return None
+        reply = gh_http.shared().get(f"https://api.github.com/{path}", {
+            "User-Agent": USER_AGENT, "Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}, timeout=RAW_TIMEOUT_S * 3, unchanged_since=unchanged_since)
+        if reply.how == "failed" and "quota" in reply.reason:
+            QUOTA["hit"] = True
+        return reply.data
     try:
         out = subprocess.run(["gh", "api", path], capture_output=True, text=True, encoding="utf-8", timeout=60)
         return json.loads(out.stdout) if out.returncode == 0 and out.stdout.strip() else None
@@ -179,10 +193,29 @@ def _api(path: str) -> object | None:
         return None
 
 
-def read_signals(name: str) -> dict | None:
-    """Facts about the delivery and the quality of one repository, from the GitHub API; None when they cannot be read."""
-    tags = _api(f"repos/JuanenRac/{name}/tags?per_page=100")
-    contents = _api(f"repos/JuanenRac/{name}/contents")
+def pushed_map(owner: str = "JuanenRac") -> dict[str, int]:
+    """{repository: epoch seconds of its last push} from the list of the repositories of the owner (empty when it cannot be read: then nothing is skipped)."""
+    out: dict[str, int] = {}
+    for page in range(1, 11):
+        items = _api(f"users/{owner}/repos?type=owner&per_page=100&page={page}")
+        if not isinstance(items, list):
+            return {} if page == 1 else out
+        for item in items:
+            if isinstance(item, dict) and isinstance(item.get("name"), str) and isinstance(item.get("pushed_at"), str):
+                try:
+                    out[item["name"]] = int(datetime.strptime(item["pushed_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp())
+                except ValueError:
+                    continue
+        if len(items) < 100:
+            break
+    return out
+
+
+def read_signals(name: str, pushed: "int | None" = None) -> dict | None:
+    """Facts about the delivery and the quality of one repository, from the GitHub API; None when they cannot be read.
+    The tags and the files only change with a push, so they are not read again when `pushed` (the last push) is older than the saved answer; the last builds are always read."""
+    tags = _api(f"repos/JuanenRac/{name}/tags?per_page=100", pushed)
+    contents = _api(f"repos/JuanenRac/{name}/contents", pushed)
     runs = _api(f"repos/JuanenRac/{name}/actions/runs?branch=main&status=completed&per_page=5")
     if not isinstance(tags, list) or not isinstance(contents, list):
         return None
@@ -268,13 +301,14 @@ def compute(reader: ManifestReader = read_manifest, signals: SignalReader | None
         cache: dict[str, dict | None] = {}
         missing = 0
         total = 0
+        pushed = pushed_map()
         for names in repos.values():
             for name in names:
                 total += 1
-                cache[name] = read_signals(name)
+                cache[name] = read_signals(name, pushed.get(name))
                 missing += cache[name] is None
         if total and missing / total > 1 - ONLINE_MINIMUM:
-            raise SystemExit(f"ERROR: the delivery and quality facts could not be read for {missing} of {total} repositories; nothing written")
+            raise FactsUnavailable(f"ERROR: the delivery and quality facts could not be read for {missing} of {total} repositories; nothing written", QUOTA["hit"])
         signals = lambda name: cache.get(name)  # noqa: E731 - the facts are read once per repository
     return {eco: ecosystem_percent(repos.get(eco, []), reader, signals) for eco in ECOSYSTEMS}
 
@@ -282,7 +316,16 @@ def compute(reader: ManifestReader = read_manifest, signals: SignalReader | None
 def main(argv: list[str]) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    numbers = compute()
+    try:
+        numbers = compute()
+    except FactsUnavailable as exc:
+        if not exc.quota:
+            raise
+        # GitHub refused for the quota: the bars keep their last values (nothing is written), the build goes on, and the next run reads again.
+        print(f"WARNING: {exc} (the quota of the GitHub API is spent; the progress bars keep their last values).", file=sys.stderr)
+        return 0
+    finally:
+        gh_http.shared().save()
     if "--show" in argv:
         for eco, (percent, count) in numbers.items():
             print(f"{eco}: {percent}% ({count} repositories) {bar(percent)}")

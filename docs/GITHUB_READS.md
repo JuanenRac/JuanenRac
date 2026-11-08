@@ -18,6 +18,13 @@ it with the Actions cache. The generation card of the page shows the reads made,
 The limits live in the `http_cache` block of [`dashboard-config.json`](../dashboard-config.json): `enabled` (switch it off and every read goes to GitHub as before),
 `max_entries`, `max_body_bytes`, `stale_max_hours`, `unchanged_margin_seconds` (how much newer than the push the saved answer must be) and `path`.
 
+## The progress bars and the status rows
+
+`scripts/ecosystem_progress.py` and `scripts/ecosystem_status.py` read the tags, the files and the last builds of every repository. They use the same saved reads: the tags and
+the files are not read again for a repository that was not pushed, and the second script gets most of its answers from the first one (same token, so the ETag works inside a
+run). When GitHub refuses the reads because the quota is spent and no saved answer can stand in, the bars and the rows keep their last values, the step says so and the build
+goes on; any other failure to read still stops it.
+
 ## When the discovery of the repositories cannot be read
 
 If the discovery of an ecosystem fails because GitHub refused or did not answer, the build does **not** fail: the page that is published stays, with a notice at the top
