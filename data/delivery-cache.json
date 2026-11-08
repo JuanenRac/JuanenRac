@@ -254,44 +254,50 @@
   },
   "URTC-COMMON": {
    "art": true,
-   "at": "2026-11-06T15:36:32Z",
-   "exp": "2026-11-13T15:35:43Z",
-   "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42244462081",
+   "at": "2026-11-08T00:24:30Z",
+   "checked": true,
+   "exp": "2026-11-15T00:23:41Z",
+   "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42429523647",
    "wf": "release-files-build.yml"
   },
   "URTC-FLASHER": {
    "art": true,
-   "at": "2026-11-06T15:39:52Z",
-   "exp": "2026-11-13T15:38:51Z",
-   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/42244496065",
+   "at": "2026-11-08T00:30:28Z",
+   "checked": true,
+   "exp": "2026-11-15T00:29:34Z",
+   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/42429570506",
    "wf": "exe-build.yml"
   },
   "URTC-SMART-RACK": {
    "art": true,
-   "at": "2026-11-06T15:37:29Z",
-   "exp": "2026-11-13T15:36:44Z",
-   "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/42244535134",
+   "at": "2026-11-08T00:28:42Z",
+   "checked": true,
+   "exp": "2026-11-15T00:28:03Z",
+   "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/42429653407",
    "wf": "firmware-build.yml"
   },
   "URTC-TESTER": {
    "art": true,
-   "at": "2026-11-06T03:12:22Z",
-   "exp": "2026-11-13T03:11:23Z",
-   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/42154648371",
+   "at": "2026-11-08T00:29:09Z",
+   "checked": true,
+   "exp": "2026-11-15T00:28:20Z",
+   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/42429616515",
    "wf": "exe-build.yml"
   },
   "URTC-VISION-TOOL": {
    "art": true,
-   "at": "2026-11-05T18:24:42Z",
-   "exp": "2026-11-12T18:23:58Z",
-   "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/42083650566",
+   "at": "2026-11-08T00:28:32Z",
+   "checked": true,
+   "exp": "2026-11-15T00:27:50Z",
+   "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/42429690470",
    "wf": "firmware-build.yml"
   },
   "URTC-WEB-STUDIO": {
    "art": true,
-   "at": "2026-11-06T03:08:56Z",
-   "exp": "2026-11-13T03:08:16Z",
-   "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/42154633093",
+   "at": "2026-11-08T00:27:31Z",
+   "checked": true,
+   "exp": "2026-11-15T00:26:55Z",
+   "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/42429746229",
    "wf": "site-build.yml"
   }
  },
@@ -684,8 +690,8 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "ea5aa2f4ce42454a",
-   "on": "2026-11-07",
+   "fp": "c14bfca1c2d10505",
+   "on": "2026-11-08",
    "r": {
     "ak": 0,
     "an": 1,
@@ -702,8 +708,8 @@
    }
   },
   "URTC-COMMON": {
-   "fp": "e1fdde9312ab6cbf",
-   "on": "2026-11-06",
+   "fp": "3d6605fa2c7ae06c",
+   "on": "2026-11-08",
    "r": {
     "ak": 2,
     "an": 2,
@@ -711,8 +717,8 @@
    }
   },
   "URTC-FLASHER": {
-   "fp": "53198760e7b3e829",
-   "on": "2026-11-06",
+   "fp": "b021dce507aeaeed",
+   "on": "2026-11-08",
    "r": {
     "ak": 1,
     "an": 1,
@@ -720,8 +726,8 @@
    }
   },
   "URTC-SMART-RACK": {
-   "fp": "5428a4d512419f2a",
-   "on": "2026-11-06",
+   "fp": "6fef1ea18d9b1055",
+   "on": "2026-11-08",
    "r": {
     "ak": 1,
     "an": 1,
@@ -729,8 +735,8 @@
    }
   },
   "URTC-TESTER": {
-   "fp": "cda6bf468ccf3d23",
-   "on": "2026-11-06",
+   "fp": "42392ea3a5abba45",
+   "on": "2026-11-08",
    "r": {
     "ak": 1,
     "an": 1,
@@ -738,8 +744,8 @@
    }
   },
   "URTC-VISION-TOOL": {
-   "fp": "422fec13b169d9e1",
-   "on": "2026-11-06",
+   "fp": "d334a6aab7665280",
+   "on": "2026-11-08",
    "r": {
     "ak": 1,
     "an": 1,
@@ -1430,7 +1436,7 @@
    }
   },
   "URTC-COMMON": {
-   "fp": "e1fdde9312ab6cbf",
+   "fp": "3d6605fa2c7ae06c",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1444,7 +1450,7 @@
    }
   },
   "URTC-FLASHER": {
-   "fp": "53198760e7b3e829",
+   "fp": "b021dce507aeaeed",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1458,7 +1464,7 @@
    }
   },
   "URTC-TESTER": {
-   "fp": "cda6bf468ccf3d23",
+   "fp": "42392ea3a5abba45",
    "r": {
     "bad": 0,
     "ho": 0,
