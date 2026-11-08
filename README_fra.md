@@ -328,7 +328,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 **Outil de mise à jour :** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:urtc -->
-`\[███████████▎░░░░░░░░] 56%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 11 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[███████████░░░░░░░░░] 55%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 11 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -340,7 +340,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟡 | `████████▎░ 82%` | 9 dépôts sur 11 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `█████████▏ 91%` | 10 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont le README dans les huit langues. |
 | Simulation | 🟡 | `████████▎░ 82%` | 9 dépôts sur 11 ont été vérifiés au moins dans un simulateur. |
@@ -415,7 +415,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont le README dans les huit langues. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont été vérifiés au moins dans un simulateur. |
@@ -607,7 +607,7 @@ Un tableau de bord d'état en direct couvrant chaque dépôt public des quatre �
 
 L'onglet **Code** du tableau de bord montre les lignes de code, de commentaires, de tests et de documentation de chaque dépôt, avec des barres empilées de code, tests et documentation, la répartition des langages de programmation, un historique quotidien et un tableau triable et filtrable par dépôt, écosystème et type. Sa vue **Changements** lit le CHANGELOG de chaque dépôt : versions, entrées, le type de chaque entrée (correction, ajout, sécurité, documentation...) décidé par des mots modifiables, le rythme des tags de GitHub, un classement, les entrées de chaque version et l'export du tableau en CSV ou JSON. [`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) compte tout une fois par jour sur des clones superficiels avec [`scripts/code_stats.py`](scripts/code_stats.py) et les règles de [`code-stats-config.json`](code-stats-config.json) ; voir [`docs/CODE_STATS.md`](docs/CODE_STATS.md).
 
-Le tableau de bord dit ce qu'il couvre et ne s'arrête pas quand GitHub refuse une lecture. À côté des compteurs d'écosystèmes, une carte donne les dépôts publics du propriétaire, combien la page en liste et combien n'ont pas de manifeste (la carte **Non classés** les nomme), et un avis liste les dépôts nouveaux, archivés ou disparus depuis la dernière page. Ses lectures de l'API GitHub sont mémorisées : un dépôt non modifié depuis sa dernière lecture n'est pas relu, une réponse inchangée (ETag) ne consomme pas de quota et, si le quota est épuisé ou si GitHub ne répond pas, la page garde la dernière bonne réponse, marquée de son ancienneté, au lieu de faire échouer la compilation ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Ce qu'est une compilation en rouge a une seule définition, [`scripts/ci_rules.py`](scripts/ci_rules.py), testée sur les mêmes cas que le moniteur local d'Actions ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
+Le tableau de bord dit ce qu'il couvre et ne s'arrête pas quand GitHub refuse une lecture. À côté des compteurs d'écosystèmes, une carte donne les dépôts publics du propriétaire, combien la page en liste et combien n'ont pas de manifeste (la carte **Non classés** les nomme), et un avis liste les dépôts nouveaux, archivés ou disparus depuis la dernière page. Ses lectures de l'API GitHub sont conditionnelles (ETag) : une réponse inchangée ne consomme pas de quota et, si le quota est épuisé ou si GitHub ne répond pas, la page garde la dernière bonne réponse, marquée de son ancienneté, au lieu de faire échouer la compilation ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Ce qu'est une compilation en rouge a une seule définition, [`scripts/ci_rules.py`](scripts/ci_rules.py), testée sur les mêmes cas que le moniteur local d'Actions ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
 
 L'onglet **Builds** ajoute la vitesse des workflows (p50 et p95 des exécutions réussies), le temps qu'une exécution attend dans la file et les workflows qui échouent puis réussissent sur le même commit, avec les mêmes définitions que le moniteur local d'Actions. L'onglet **Scripts** ajoute les constats d'un linter de workflows avec les trois niveaux du moniteur (information, avertissement, erreur), comptés par écosystème, type et règle ; ses cinq règles peuvent être désactivées ou changer de niveau dans `code-stats-config.json` ; le résumé montre le groupe **Tools** (le moniteur d'Actions et l'outil de mise à jour de la suite) avec la version de chaque outil, une barre de progression et un filtre, et le badge du profil compte les quatre écosystèmes plus Tools.
 

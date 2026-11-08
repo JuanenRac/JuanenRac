@@ -328,7 +328,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 **Actualizador:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:urtc -->
-`\[███████████▎░░░░░░░░] 56%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 11 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[███████████░░░░░░░░░] 55%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 11 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -340,7 +340,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 de 11 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `█████████▏ 91%` | 10 de 11 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 11 de 11 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 11 de 11 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟡 | `████████▎░ 82%` | 9 de 11 repositorios se han comprobado al menos en un simulador. |
@@ -415,7 +415,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 19 de 19 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios se han comprobado al menos en un simulador. |
@@ -607,7 +607,7 @@ Un panel de control de estado en vivo que cubre todos los repositorios públicos
 
 La pestaña **Código** del dashboard muestra las líneas de código, comentarios, pruebas y documentación de cada repositorio, con barras apiladas de código, pruebas y documentación, la mezcla de lenguajes de programación, un historial diario y una tabla que se puede ordenar y filtrar por repositorio, ecosistema y tipo. Su vista **Cambios** lee el CHANGELOG de cada repositorio: versiones, entradas, el tipo de cada entrada (corrección, añadido, seguridad, documentación...) decidido por palabras editables, el ritmo de las etiquetas de GitHub, una clasificación, las entradas de cada versión y la exportación de la tabla en CSV o JSON. [`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) lo cuenta todo una vez al día sobre clones superficiales con [`scripts/code_stats.py`](scripts/code_stats.py) y las reglas de [`code-stats-config.json`](code-stats-config.json); véase [`docs/CODE_STATS.md`](docs/CODE_STATS.md).
 
-El dashboard dice qué cubre y no se detiene cuando GitHub rechaza una lectura. Junto a los contadores de ecosistemas, una tarjeta da los repositorios públicos del propietario, cuántos lista la página y cuántos no tienen manifiesto (la tarjeta **Sin clasificar** los nombra), y un aviso lista los repositorios nuevos, archivados o desaparecidos desde la última página. Sus lecturas de la API de GitHub se guardan: un repositorio que no ha recibido cambios desde su última lectura no se vuelve a leer, una respuesta que no ha cambiado (ETag) no gasta cuota y, si la cuota se agota o GitHub no responde, la página conserva la última respuesta buena, marcada con su antigüedad, en lugar de hacer fallar la compilación ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Qué es una compilación en rojo tiene una sola definición, [`scripts/ci_rules.py`](scripts/ci_rules.py), probada con los mismos casos que el monitor local de Actions ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
+El dashboard dice qué cubre y no se detiene cuando GitHub rechaza una lectura. Junto a los contadores de ecosistemas, una tarjeta da los repositorios públicos del propietario, cuántos lista la página y cuántos no tienen manifiesto (la tarjeta **Sin clasificar** los nombra), y un aviso lista los repositorios nuevos, archivados o desaparecidos desde la última página. Sus lecturas de la API de GitHub son condicionales (ETag): una respuesta que no ha cambiado no gasta cuota y, si la cuota se agota o GitHub no responde, la página conserva la última respuesta buena, marcada con su antigüedad, en lugar de hacer fallar la compilación ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Qué es una compilación en rojo tiene una sola definición, [`scripts/ci_rules.py`](scripts/ci_rules.py), probada con los mismos casos que el monitor local de Actions ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
 
 La pestaña **Compilaciones** añade la velocidad de los workflows (p50 y p95 de las ejecuciones correctas), el tiempo que una ejecución espera en la cola y los workflows que fallan y luego pasan en el mismo commit, con las mismas definiciones que el monitor local de Actions. La pestaña **Scripts** añade los hallazgos de un linter de workflows con los tres niveles del monitor (información, aviso, error), contados por ecosistema, tipo y regla; sus cinco reglas se pueden desactivar o cambiar de nivel en `code-stats-config.json`; el resumen muestra el grupo **Tools** (el monitor de Actions y el actualizador de la suite) con la versión de cada herramienta, una barra de progreso y un filtro, y la insignia del perfil cuenta los cuatro ecosistemas más Tools.
 

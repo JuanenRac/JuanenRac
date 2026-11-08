@@ -328,7 +328,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 **Aggiornatore:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:urtc -->
-`\[███████████▎░░░░░░░░] 56%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 11 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[███████████░░░░░░░░░] 55%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 11 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -340,7 +340,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 repository su 11 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 11 repository su 11 hanno test automatici. |
-| Integrazione continua | 🟢 | `██████████ 100%` | 11 repository su 11 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `█████████▏ 91%` | 10 repository su 11 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 11 repository su 11 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 11 repository su 11 hanno il README nelle otto lingue. |
 | Simulazione | 🟡 | `████████▎░ 82%` | 9 repository su 11 sono stati verificati almeno in un simulatore. |
@@ -415,7 +415,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 19 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 19 repository su 19 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 19 repository su 19 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono stati verificati almeno in un simulatore. |
@@ -607,7 +607,7 @@ Una dashboard di stato in tempo reale che copre ogni repository pubblica dei qua
 
 La scheda **Codice** della dashboard mostra le righe di codice, commenti, test e documentazione di ogni repository, con barre impilate di codice, test e documentazione, la distribuzione dei linguaggi di programmazione, una cronologia giornaliera e una tabella ordinabile e filtrabile per repository, ecosistema e tipo. La sua vista **Modifiche** legge il CHANGELOG di ogni repository: versioni, voci, il tipo di ogni voce (correzione, aggiunta, sicurezza, documentazione...) deciso da parole modificabili, il ritmo dei tag di GitHub, una classifica, le voci di ogni versione e l'esportazione della tabella in CSV o JSON. [`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) conta tutto una volta al giorno su cloni superficiali con [`scripts/code_stats.py`](scripts/code_stats.py) e le regole di [`code-stats-config.json`](code-stats-config.json); vedi [`docs/CODE_STATS.md`](docs/CODE_STATS.md).
 
-La dashboard dice cosa copre e non si ferma quando GitHub rifiuta una lettura. Accanto ai contatori degli ecosistemi una scheda indica i repository pubblici del proprietario, quanti ne elenca la pagina e quanti non hanno un manifesto (la scheda **Non classificati** li nomina), e un avviso elenca i repository nuovi, archiviati o scomparsi dall'ultima pagina. Le sue letture dell'API di GitHub vengono salvate: un repository non modificato dall'ultima lettura non viene riletto, una risposta invariata (ETag) non consuma quota e, se la quota è esaurita o GitHub non risponde, la pagina conserva l'ultima risposta buona, contrassegnata con la sua età, invece di far fallire la compilazione ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Cosa sia una compilazione in rosso ha una sola definizione, [`scripts/ci_rules.py`](scripts/ci_rules.py), verificata sugli stessi casi del monitor locale di Actions ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
+La dashboard dice cosa copre e non si ferma quando GitHub rifiuta una lettura. Accanto ai contatori degli ecosistemi una scheda indica i repository pubblici del proprietario, quanti ne elenca la pagina e quanti non hanno un manifesto (la scheda **Non classificati** li nomina), e un avviso elenca i repository nuovi, archiviati o scomparsi dall'ultima pagina. Le sue letture dell'API di GitHub sono condizionali (ETag): una risposta invariata non consuma quota e, se la quota è esaurita o GitHub non risponde, la pagina conserva l'ultima risposta buona, contrassegnata con la sua età, invece di far fallire la compilazione ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Cosa sia una compilazione in rosso ha una sola definizione, [`scripts/ci_rules.py`](scripts/ci_rules.py), verificata sugli stessi casi del monitor locale di Actions ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
 
 La scheda **Build** aggiunge la velocità dei workflow (p50 e p95 delle esecuzioni riuscite), il tempo che un'esecuzione attende in coda e i workflow che falliscono e poi passano sullo stesso commit, con le stesse definizioni del monitor locale di Actions. La scheda **Script** aggiunge i rilievi di un linter di workflow con i tre livelli del monitor (informazione, avviso, errore), contati per ecosistema, tipo e regola; le sue cinque regole si possono disattivare o cambiare di livello in `code-stats-config.json`; il riepilogo mostra il gruppo **Tools** (il monitor di Actions e l'aggiornatore della suite) con la versione di ogni strumento, una barra di avanzamento e un filtro, e il badge del profilo conta i quattro ecosistemi più Tools.
 

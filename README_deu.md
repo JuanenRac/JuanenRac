@@ -328,7 +328,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:urtc -->
-`\[███████████▎░░░░░░░░] 56%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 11 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[███████████░░░░░░░░░] 55%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 11 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -340,7 +340,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 von 11 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `█████████▏ 91%` | 10 von 11 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟡 | `████████▎░ 82%` | 9 von 11 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -415,7 +415,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 19 von 19 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 19 von 19 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 19 von 19 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -607,7 +607,7 @@ Ein Live-Status-Dashboard, das jedes öffentliche Repository der vier Ökosystem
 
 Der Tab **Code** des Dashboards zeigt die Zeilen an Code, Kommentaren, Tests und Dokumentation jedes Repositorys, mit gestapelten Balken für Code, Tests und Dokumentation, der Mischung der Programmiersprachen, einem täglichen Verlauf und einer Tabelle, die sich nach Repository, Ökosystem und Typ sortieren und filtern lässt. Die Ansicht **Änderungen** liest das CHANGELOG jedes Repositorys: Versionen, Einträge, die Art jedes Eintrags (Korrektur, neu, Sicherheit, Dokumentation...) anhand editierbarer Wörter, das Tempo der GitHub-Tags, eine Rangliste, die Einträge jeder Version und einen Export der Tabelle als CSV oder JSON. [`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) zählt alles einmal täglich auf flachen Klonen mit [`scripts/code_stats.py`](scripts/code_stats.py) und den Regeln aus [`code-stats-config.json`](code-stats-config.json); siehe [`docs/CODE_STATS.md`](docs/CODE_STATS.md).
 
-Das Dashboard sagt, was es abdeckt, und bleibt nicht stehen, wenn GitHub einen Lesezugriff verweigert. Neben den Ökosystem-Zählern nennt eine Karte die öffentlichen Repositories des Inhabers, wie viele die Seite listet und wie viele kein Manifest haben (die Karte **Nicht zugeordnet** nennt sie), und ein Hinweis führt die seit der letzten Seite neuen, archivierten oder verschwundenen Repositories auf. Seine Lesezugriffe auf die GitHub-API werden gespeichert: ein Repository ohne Änderung seit dem letzten Lesen wird nicht erneut gelesen, eine unveränderte Antwort (ETag) kostet kein Kontingent, und ist das Kontingent aufgebraucht oder antwortet GitHub nicht, behält die Seite die letzte gute Antwort, mit ihrem Alter gekennzeichnet, statt den Build scheitern zu lassen ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Was ein roter Build ist, hat eine einzige Definition, [`scripts/ci_rules.py`](scripts/ci_rules.py), geprüft an denselben Fällen wie der lokale Actions-Monitor ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
+Das Dashboard sagt, was es abdeckt, und bleibt nicht stehen, wenn GitHub einen Lesezugriff verweigert. Neben den Ökosystem-Zählern nennt eine Karte die öffentlichen Repositories des Inhabers, wie viele die Seite listet und wie viele kein Manifest haben (die Karte **Nicht zugeordnet** nennt sie), und ein Hinweis führt die seit der letzten Seite neuen, archivierten oder verschwundenen Repositories auf. Seine Lesezugriffe auf die GitHub-API sind bedingt (ETag): eine unveränderte Antwort kostet kein Kontingent, und ist das Kontingent aufgebraucht oder antwortet GitHub nicht, behält die Seite die letzte gute Antwort, mit ihrem Alter gekennzeichnet, statt den Build scheitern zu lassen ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). Was ein roter Build ist, hat eine einzige Definition, [`scripts/ci_rules.py`](scripts/ci_rules.py), geprüft an denselben Fällen wie der lokale Actions-Monitor ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
 
 Der Tab **Builds** ergänzt die Geschwindigkeit der Workflows (p50 und p95 der erfolgreichen Läufe), die Wartezeit eines Laufs in der Warteschlange und die Workflows, die auf demselben Commit erst fehlschlagen und dann durchlaufen, mit denselben Definitionen wie der lokale Actions-Monitor. Der Tab **Skripte** ergänzt die Funde eines Workflow-Linters mit den drei Stufen des Monitors (Information, Warnung, Fehler), gezählt nach Ökosystem, Typ und Regel; seine fünf Regeln lassen sich in `code-stats-config.json` abschalten oder anders einstufen; die Übersicht zeigt die Gruppe **Tools** (der Actions-Monitor und der Updater der Suite) mit der Version jedes Werkzeugs, einem Fortschrittsbalken und einem Filter, und das Abzeichen des Profils zählt die vier Ökosysteme plus Tools.
 

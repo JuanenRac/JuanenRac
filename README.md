@@ -322,7 +322,7 @@ for all four - can check versions and build/update any other project.
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:urtc -->
-`[███████████▎░░░░░░░░] 56%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[███████████░░░░░░░░░] 55%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -334,7 +334,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟡 | `████████▎░ 82%` | 9 of 11 repositories have been checked at least in a simulator. |
@@ -409,7 +409,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 19 of 19 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have been checked at least in a simulator. |
@@ -608,7 +608,7 @@ A live status dashboard covering every public repo of the four ecosystems - each
 
 The **Code** tab of the dashboard shows the lines of code, comments, tests and documentation of every repository, with stacked bars of code, tests and documentation, the mix of programming languages, a daily history and a table that can be sorted and filtered by repository, ecosystem and type. Its **Changes** view reads the CHANGELOG of every repository: versions, entries, the kind of each entry (fix, added, security, documentation...) decided by words that can be edited, the pace of the tags of GitHub, a ranking, the entries of each version and an export of the table as CSV or JSON. [`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) counts everything once a day on shallow clones with [`scripts/code_stats.py`](scripts/code_stats.py) and the rules of [`code-stats-config.json`](code-stats-config.json); see [`docs/CODE_STATS.md`](docs/CODE_STATS.md).
 
-The dashboard says what it covers and does not stop when GitHub refuses a read. Next to the ecosystem counters a card gives the public repositories of the owner, how many the page lists and how many have no manifest (the **Unclassified** card names them), and a notice lists the repositories that are new, archived or gone since the last page. Its reads of the GitHub API are saved: a repository that was not pushed since its last read is not read again, an unchanged answer (ETag) costs no quota, and when the quota is spent or GitHub does not answer, the page keeps the last good answer, marked with its age, instead of failing the build ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). What a red build is has one definition, [`scripts/ci_rules.py`](scripts/ci_rules.py), tested on the same cases as the local Actions monitor ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
+The dashboard says what it covers and does not stop when GitHub refuses a read. Next to the ecosystem counters a card gives the public repositories of the owner, how many the page lists and how many have no manifest (the **Unclassified** card names them), and a notice lists the repositories that are new, archived or gone since the last page. Its reads of the GitHub API are conditional (ETag): an unchanged answer costs no quota, and when the quota is spent or GitHub does not answer, the page keeps the last good answer, marked with its age, instead of failing the build ([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md)). What a red build is has one definition, [`scripts/ci_rules.py`](scripts/ci_rules.py), tested on the same cases as the local Actions monitor ([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md)).
 
 The **Builds** tab adds the speed of the workflows (p50 and p95 of the successful runs), the time a run waits in the queue and the workflows that fail and then pass on the very same commit, with the same definitions as the local Actions monitor. The **Scripts** tab adds the findings of a workflow linter with the three levels of the monitor (information, warning, error), counted per ecosystem, type and rule; its five rules can be switched off or given another level in `code-stats-config.json`; the summary shows the **Tools** group (the Actions monitor and the updater of the suite) with the version of each tool, a progress bar and a filter, and the badge of the profile counts the four ecosystems plus Tools.
 

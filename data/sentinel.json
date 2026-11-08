@@ -1,11 +1,17 @@
 {
- "asof": "2026-11-08T10:31:20Z",
+ "asof": "2026-11-08T10:46:14Z",
  "ci": {
   "checked": 529,
   "red": [
    {
     "repo": "ARMOR-DOCS",
     "since": "2026-11-08T10:21:28Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   },
+   {
+    "repo": "URTC-DOCS",
+    "since": "2026-11-08T10:46:10Z",
     "streak": 1,
     "wf": "nightly.yml"
    },
@@ -28,7 +34,7 @@
     "wf": "codeql.yml"
    }
   ],
-  "red_total": 4
+  "red_total": 5
  },
  "compute": {
   "top": [
@@ -63,8 +69,8 @@
     "repo": "URTC-UPDATER"
    }
   ],
-  "total24": 2481,
-  "total7": 15343,
+  "total24": 2473,
+  "total7": 15341,
   "warn": false
  },
  "ecosystems": {
@@ -90,7 +96,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 21,
+   "cand": 22,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -99,12 +105,18 @@
   "urtc": {
    "cand": 0,
    "read": 11,
-   "red": 2,
+   "red": 3,
    "repos": 11,
    "unpub": 0
   }
  },
  "events": [
+  {
+   "at": "2026-11-08T10:46:14Z",
+   "kind": "red_new",
+   "repo": "URTC-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-08T10:31:20Z",
    "kind": "red_new",
@@ -278,12 +290,6 @@
    "kind": "released",
    "repo": "EH3D-STUDIO",
    "tag": "v0.1.3"
-  },
-  {
-   "at": "2026-11-07T19:39:42Z",
-   "kind": "red_ok",
-   "repo": "ARMOR-DOCS",
-   "wf": "nightly.yml"
   }
  ],
  "hygiene": {
@@ -302,9 +308,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 25,
+    "cand": 26,
     "hyg": 1,
-    "red": 4
+    "red": 5
    }
   },
   {
@@ -313,10 +319,11 @@
    "p": {
     "list": [
      "ARMOR-DOCS",
+     "URTC-DOCS",
      "URTC-FLASHER",
      "URTC-TESTER"
     ],
-    "n": 4
+    "n": 5
    }
   },
   {
@@ -329,6 +336,7 @@
      "ARMOR-HARDWARE",
      "ARMOR-VOICE-AI",
      "HYDRA-UMC",
+     "HYDRA-UMC-ANDROID-CONTROL",
      "HYDRA-UMC-BRIDGE-AMR",
      "HYDRA-UMC-BRIDGE-DROIDS",
      "HYDRA-UMC-BRIDGE-OPENPNP",
@@ -350,7 +358,7 @@
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 25
+    "n": 26
    }
   },
   {
@@ -422,6 +430,12 @@
     "published": "2026-11-03T23:56:53Z",
     "repo": "ARMOR-VOICE-AI",
     "tag": "v0.3.4"
+   },
+   {
+    "entries": 3,
+    "published": "2026-11-06T10:39:13Z",
+    "repo": "HYDRA-UMC-ANDROID-CONTROL",
+    "tag": "v0.8.0.2"
    },
    {
     "entries": 3,
@@ -528,7 +542,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 25
+  "total": 26
  },
  "repos": 129,
  "schema": 1,
@@ -679,7 +693,7 @@
    23,
    0,
    17,
-   25
+   26
   ],
   "dates": [
    "2026-11-03",
@@ -703,7 +717,7 @@
    4421,
    5648,
    3487,
-   2481
+   2473
   ],
   "red": [
    3,
@@ -711,7 +725,7 @@
    3,
    0,
    1,
-   4
+   5
   ]
  },
  "unpublished": {
