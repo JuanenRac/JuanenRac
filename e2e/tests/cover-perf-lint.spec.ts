@@ -9,7 +9,7 @@ test.describe("coverage card", () => {
     const card = page.getByTestId("eco-unclassified");
     await expect(card).toBeVisible();
     await expect(card).toHaveAttribute("data-state", "gap");
-    await expect(card).toHaveAttribute("data-without", "3");
+    await expect(card.locator(".sub")).toHaveAttribute("data-without", "3");
     await expect(card.locator(".number")).toHaveText("3");
     await expect(card).toHaveAttribute("title", /fixture-plain-a/);
     const owner = Number(await card.locator(".sub").getAttribute("data-owner"));
@@ -44,13 +44,27 @@ test.describe("coverage card", () => {
 });
 
 test.describe("new cards without figures", () => {
-  test("the speed card of the Builds tab says it is not measured when the reading does not carry the figures", async ({ page }) => {
+  test("the speed figures of the Builds tab are in a closed section that opens on a click", async ({ page }) => {
     await openDashboard(page, "full");
     await gotoTab(page, "actions");
-    await expect(page.getByTestId("ac-perf")).toBeVisible();
+    const section = page.getByTestId("ac-perf");
+    await expect(section).toBeVisible();
+    await expect(section).not.toHaveAttribute("open", "");
+    await expect(page.locator("#ac-perf-title")).toHaveText("Speed, queue and flaky runs");
+    await page.locator("#ac-perf-title").click();
+    await expect(section).toHaveAttribute("open", "");
+    await expect(page.getByTestId("ac-perf-body")).toBeVisible();
+    await expect(page.getByTestId("ac-perf-none")).toBeHidden();
+    await expect(page.getByTestId("ac-perf-kpis").locator("li")).toHaveCount(4);
+    await expect(page.getByTestId("ac-perf-k-dur").locator("b")).toHaveText(/\S+ · \S+/);
+  });
+
+  test("when no reading carries the speed figures the section says not measured, never zero", async ({ page }) => {
+    await openDashboard(page, "partial");
+    await gotoTab(page, "actions");
+    await page.locator("#ac-perf-title").click();
     await expect(page.getByTestId("ac-perf-none")).toBeVisible();
     await expect(page.getByTestId("ac-perf-body")).toBeHidden();
-    await expect(page.locator("#ac-perf-title")).toHaveText("Speed, queue and flaky runs");
   });
 
   test("the lint card of the Scripts tab says it is not verified when the count does not carry the findings", async ({ page }) => {

@@ -168,6 +168,17 @@ class TextsTests(unittest.TestCase):
             for key in texts.TEXTS["en"]:
                 self.assertEqual(gen.TRANSLATIONS[code][key], texts.TEXTS[code][key], f"{code} {key}")
 
+    def test_no_visible_text_looks_like_an_untranslated_key(self):
+        """The same pattern the browser tests use to find a key, an `undefined` or a placeholder that leaked into the page."""
+        import re
+        import dashboard_scripts_texts
+        leftover = re.compile(r"[a-z][a-z0-9]*(?:_[a-z0-9]+)+|[a-z]+\.[a-z]+_[a-z_0-9]+|undefined|NaN|\[object Object\]")
+        rows = dict(texts._ROWS)
+        rows.update({key: row for key, row in dashboard_scripts_texts.ROWS.items() if key.startswith(("sc_lint", "sc_lvl", "sc_rule", "sc_aria_lint", "sc_tip_lint"))})
+        for key, row in rows.items():
+            for code, text in zip(texts.LANGUAGES, row):
+                self.assertIsNone(leftover.search(text), f"{code} {key}: {text[:60]}")
+
     def test_the_other_languages_are_not_copies_of_english(self):
         for key, english in texts.TEXTS["en"].items():
             for code in ("es", "de", "fr", "ja", "zh"):

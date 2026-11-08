@@ -165,10 +165,22 @@ test.describe("builds tab: the table", () => {
 test.describe("builds tab: privacy, nothing invented", () => {
   test("the data embedded in the page keeps no author, branch, title, message or workflow name", async ({ page }) => {
     await open(page);
-    const json = await page.evaluate(() => JSON.stringify((JSON.parse(document.getElementById("dashboard-data")!.textContent!) as any).actions));
+    // The speed figures (perf, and pw in each repository) name the workflow FILES that are slow or flaky, which are public in the repositories; everything else stays free of names.
+    const json = await page.evaluate(() => {
+      const actions = JSON.parse(document.getElementById("dashboard-data")!.textContent!).actions as any;
+      const copy = JSON.parse(JSON.stringify(actions));
+      delete copy.perf;
+      for (const name of Object.keys(copy.repos)) delete copy.repos[name].pw;
+      return JSON.stringify(copy);
+    });
     for (const word of ["actor", "login", "branch", "title", "message", "commit", "ci.yml", "head_"]) expect(json.toLowerCase()).not.toContain(word);
+    const speed = await page.evaluate(() => {
+      const actions = JSON.parse(document.getElementById("dashboard-data")!.textContent!).actions as any;
+      return JSON.stringify([actions.perf, Object.values(actions.repos).map((r: any) => r.pw)]);
+    });
+    for (const word of ["actor", "login", "branch", "title", "message", "head_"]) expect(speed.toLowerCase()).not.toContain(word);
     const keys = await page.evaluate(() => Object.keys((JSON.parse(document.getElementById("dashboard-data")!.textContent!) as any).actions.repos["HYDRA-UMC-FIXTURE-01"]).sort());
-    expect(keys).toEqual(["bf", "bs", "dur", "last", "lastOk", "min", "min7", "n", "n7", "running", "state", "tl", "truncated"]);
+    expect(keys).toEqual(["bf", "bs", "dur", "last", "lastOk", "min", "min7", "n", "n7", "pd", "pq", "pw", "running", "state", "tl", "truncated"]);
   });
 
   test("when GitHub could not be read the last known read is shown, dated, and never as current", async ({ page }) => {

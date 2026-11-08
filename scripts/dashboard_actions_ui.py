@@ -25,6 +25,23 @@ def _t(key: str) -> str:
     return f'data-i18n="{key}">{esc(EN[key])}'
 
 
+def perf_details() -> str:
+    """Speed, queue and flaky runs: a closed details in the foot of the table, so the tab keeps fitting one screen and the figures are one click away."""
+    return (
+        '<details class="ts-help ac-perf" data-testid="ac-perf">'
+        f'<summary id="ac-perf-title" {_t("ac_perf_title")}</summary>'
+        f'<p class="muted ac-hint" {_t("ac_perf_hint")}</p>'
+        f'<p class="no-data" id="ac-perf-none" data-testid="ac-perf-none" hidden {_t("ac_perf_none")}</p>'
+        '<div id="ac-perf-body" data-testid="ac-perf-body"><ul class="ac-kpis ac-perf-kpis" id="ac-perf-kpis" data-testid="ac-perf-kpis"></ul>'
+        '<div class="ac-perf-cols"><div><h4 class="card-title" id="ac-perf-slow-t" ' + _t("ac_perf_slow_title") + '</h4>'
+        '<ul class="ac-bars" id="ac-perf-slow" data-testid="ac-perf-slow"></ul>'
+        f'<p class="no-data" id="ac-perf-slow-none" hidden {_t("ac_perf_empty")}</p></div>'
+        '<div><h4 class="card-title" id="ac-perf-flaky-t" ' + _t("ac_perf_flaky_title") + '</h4>'
+        '<ul class="ac-bars" id="ac-perf-flaky" data-testid="ac-perf-flaky"></ul>'
+        f'<p class="no-data" id="ac-perf-flaky-none" hidden {_t("ac_perf_empty")}</p></div></div></div></details>'
+    )
+
+
 def panel_html() -> str:
     return (
         '<section class="ins ac" id="ac-root" aria-labelledby="ac-title" data-testid="actions-root">'
@@ -62,18 +79,6 @@ def panel_html() -> str:
         f'<p class="no-data" id="ac-trend-none" data-testid="ac-trend-none" hidden {_t("ac_trend_none")}</p>'
         f'<svg id="ac-trend" class="ac-trend" viewBox="0 0 320 170" role="group" aria-label="{esc(EN["ac_trend_title"])}" data-testid="ac-trend" hidden style="display:none"></svg></section>'
         '</div>'
-        # 5b. speed, queue and flaky runs
-        '<section class="card ac-perf" aria-labelledby="ac-perf-title" data-testid="ac-perf"><header class="card-head">'
-        f'<h3 class="card-title" id="ac-perf-title" {_t("ac_perf_title")}</h3></header>'
-        f'<p class="muted ac-hint" {_t("ac_perf_hint")}</p>'
-        f'<p class="no-data" id="ac-perf-none" data-testid="ac-perf-none" hidden {_t("ac_perf_none")}</p>'
-        '<div id="ac-perf-body" data-testid="ac-perf-body"><ul class="ac-kpis ac-perf-kpis" id="ac-perf-kpis" data-testid="ac-perf-kpis"></ul>'
-        '<div class="ac-perf-cols"><div><h4 class="card-title" id="ac-perf-slow-t" ' + _t("ac_perf_slow_title") + '</h4>'
-        '<ul class="ac-bars" id="ac-perf-slow" data-testid="ac-perf-slow"></ul>'
-        f'<p class="no-data" id="ac-perf-slow-none" hidden {_t("ac_perf_empty")}</p></div>'
-        '<div><h4 class="card-title" id="ac-perf-flaky-t" ' + _t("ac_perf_flaky_title") + '</h4>'
-        '<ul class="ac-bars" id="ac-perf-flaky" data-testid="ac-perf-flaky"></ul>'
-        f'<p class="no-data" id="ac-perf-flaky-none" hidden {_t("ac_perf_empty")}</p></div></div></div></section>'
         # 6. table
         '<section class="card ac-table-card" aria-labelledby="ac-table-title"><header class="card-head">'
         f'<h3 class="card-title" id="ac-table-title" {_t("ac_table_title")}</h3>'
@@ -85,7 +90,7 @@ def panel_html() -> str:
         '<div class="ins-table-wrap ac-table-wrap" tabindex="0" role="region" aria-labelledby="ac-table-title" id="ac-table-wrap" data-testid="ac-table-wrap">'
         '<table class="ins-table ac-table" id="ac-table" data-testid="ac-table"><thead><tr><th scope="col" data-i18n="ac_col_repo">Repository</th></tr></thead></table></div>'
         f'<p class="no-data" id="ac-none" data-testid="ac-none" hidden {_t("ac_none_match")}</p>'
-        '<div class="ac-foot"><details class="ts-help" data-testid="ac-help">'
+        '<div class="ac-foot">' + perf_details() + '<details class="ts-help" data-testid="ac-help">'
         f'<summary {_t("ac_help_summary")}</summary><p id="ac-help-body" data-testid="ac-help-body"></p></details>'
         f'<p class="muted ac-note" data-testid="ac-note" {_t("ac_compute_note")}</p></div></section>'
         '</section>'
@@ -115,7 +120,8 @@ CSS = r"""
   .ac-grid .card { padding: 9px 12px; }
   .ac-grid .card-head { margin-bottom: 4px; }
   .ac-wide { grid-column: span 2; }
-  .ac-perf { padding: 9px 12px; }
+  .ac-foot .ac-perf[open] { flex: 1 1 100%; }
+  .ac-foot .ac-perf summary { font-weight: 600; }
   .ac-perf-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 8px; }
   .ac-perf-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .ac-perf-cols .card-title { margin: 4px 0; font-size: 13px; }
