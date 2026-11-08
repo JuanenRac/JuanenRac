@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-08T16:22:51Z",
+ "asof": "2026-11-08T17:03:42Z",
  "ci": {
   "checked": 530,
   "red": [],
@@ -8,12 +8,12 @@
  "compute": {
   "top": [
    {
-    "min24": 157,
+    "min24": 152,
     "min7": 201,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 97,
+    "min24": 93,
     "min7": 107,
     "repo": "URTC-WEB-STUDIO"
    },
@@ -28,23 +28,23 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 77,
-    "min7": 95,
-    "repo": "URTC-COMMON"
-   },
-   {
     "min24": 75,
     "min7": 102,
     "repo": "URTC-TESTER"
+   },
+   {
+    "min24": 75,
+    "min7": 95,
+    "repo": "URTC-COMMON"
    }
   ],
-  "total24": 1524,
-  "total7": 15274,
+  "total24": 1444,
+  "total7": 15261,
   "warn": false
  },
  "ecosystems": {
   "armor": {
-   "cand": 10,
+   "cand": 15,
    "read": 19,
    "red": 0,
    "repos": 19,
@@ -65,7 +65,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 24,
+   "cand": 25,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-08T17:03:42Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.6.6"
+  },
   {
    "at": "2026-11-08T16:22:51Z",
    "kind": "released",
@@ -253,12 +259,6 @@
    "kind": "released",
    "repo": "URTC-DEVTOOLS",
    "tag": "v0.0.4"
-  },
-  {
-   "at": "2026-11-08T02:30:59Z",
-   "kind": "released",
-   "repo": "URTC-FLASHER",
-   "tag": "v0.5.5"
   }
  ],
  "hygiene": {
@@ -277,7 +277,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 34,
+    "cand": 40,
     "hyg": 1,
     "red": 0
    }
@@ -288,6 +288,7 @@
    "p": {
     "list": [
      "ARMOR-ANDROID-CONTROL",
+     "ARMOR-COMMON",
      "ARMOR-DOCS",
      "ARMOR-HARDWARE",
      "ARMOR-IOS-CONTROL",
@@ -296,6 +297,10 @@
      "ARMOR-NODE-HMI",
      "ARMOR-NODE-RADAR",
      "ARMOR-NODE-SOLAR",
+     "ARMOR-SERVER",
+     "ARMOR-SIMULATOR",
+     "ARMOR-UPDATER",
+     "ARMOR-VISION",
      "ARMOR-VOICE-AI",
      "HYDRA-UMC",
      "HYDRA-UMC-ANDROID-CONTROL",
@@ -317,12 +322,13 @@
      "HYDRA-UMC-PHYSICS-REPLICA",
      "HYDRA-UMC-SAFETY-ZONES",
      "HYDRA-UMC-TWIN",
+     "HYDRA-UMC-UPDATER",
      "HYDRA-UMC-VISION-NODE",
      "HYDRA-UMC-VISION-STREAMER",
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 34
+    "n": 40
    }
   },
   {
@@ -361,9 +367,27 @@
    },
    {
     "entries": 8,
+    "published": "2026-11-06T16:28:49Z",
+    "repo": "ARMOR-COMMON",
+    "tag": "v0.8.1.1"
+   },
+   {
+    "entries": 8,
     "published": "2026-11-05T22:51:19Z",
     "repo": "HYDRA-UMC-OS",
     "tag": "v0.6.0"
+   },
+   {
+    "entries": 7,
+    "published": "2026-11-06T16:42:50Z",
+    "repo": "ARMOR-SERVER",
+    "tag": "v0.8.2.0"
+   },
+   {
+    "entries": 7,
+    "published": "2026-11-06T16:29:41Z",
+    "repo": "ARMOR-SIMULATOR",
+    "tag": "v0.3.6"
    },
    {
     "entries": 6,
@@ -433,6 +457,12 @@
    },
    {
     "entries": 3,
+    "published": "2026-11-06T16:29:55Z",
+    "repo": "ARMOR-VISION",
+    "tag": "v0.1.4"
+   },
+   {
+    "entries": 3,
     "published": "2026-11-03T23:56:53Z",
     "repo": "ARMOR-VOICE-AI",
     "tag": "v0.3.4"
@@ -469,6 +499,12 @@
    },
    {
     "entries": 3,
+    "published": "2026-11-06T16:50:55Z",
+    "repo": "HYDRA-UMC-UPDATER",
+    "tag": "v0.5.7"
+   },
+   {
+    "entries": 3,
     "published": "2026-11-05T13:09:54Z",
     "repo": "HYDRA-UMC-VISION-NODE",
     "tag": "v0.2.2"
@@ -478,6 +514,12 @@
     "published": "2026-11-03T14:26:28Z",
     "repo": "ARMOR-HARDWARE",
     "tag": "v0.2.8"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-06T16:34:19Z",
+    "repo": "ARMOR-UPDATER",
+    "tag": "v0.2.1"
    },
    {
     "entries": 2,
@@ -554,7 +596,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 34
+  "total": 40
  },
  "repos": 129,
  "schema": 1,
@@ -685,7 +727,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.3",
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.2",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.6.5",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.6.6",
   "URTC": "v0.4.7",
   "URTC-COMMON": "v0.2.5",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -705,7 +747,7 @@
    23,
    0,
    17,
-   34
+   40
   ],
   "dates": [
    "2026-11-03",
@@ -729,7 +771,7 @@
    4421,
    5648,
    3487,
-   1524
+   1444
   ],
   "red": [
    3,
