@@ -158,7 +158,8 @@ CSS = dashboard_changes_ui.CSS + dashboard_scripts_ui.CSS + r"""
   .cd-s-code { stroke: var(--cd-code); fill: var(--cd-code); } .cd-s-tests { stroke: var(--cd-tests); fill: var(--cd-tests); } .cd-s-docs { stroke: var(--cd-docs); fill: var(--cd-docs); }
   .cd-s-hydra-umc { stroke: var(--c-hydra-umc); fill: var(--c-hydra-umc); } .cd-s-urtc { stroke: var(--c-urtc); fill: var(--c-urtc); }
   .cd-s-armor { stroke: var(--c-armor); fill: var(--c-armor); } .cd-s-eh3d { stroke: var(--c-eh3d); fill: var(--c-eh3d); }
-  .cd-line.cd-s-code, .cd-line.cd-s-tests, .cd-line.cd-s-docs, .cd-line.cd-s-hydra-umc, .cd-line.cd-s-urtc, .cd-line.cd-s-armor, .cd-line.cd-s-eh3d { fill: none; }
+  .cd-s-electro-hobby-3d { stroke: var(--c-electro-hobby-3d); fill: var(--c-electro-hobby-3d); }
+  .cd-line.cd-s-code, .cd-line.cd-s-tests, .cd-line.cd-s-docs, .cd-line.cd-s-hydra-umc, .cd-line.cd-s-urtc, .cd-line.cd-s-armor, .cd-line.cd-s-eh3d, .cd-line.cd-s-electro-hobby-3d { fill: none; }
   .cd-mark { stroke: var(--panel); stroke-width: 1.2; cursor: default; }
   .cd-mark:hover, .cd-mark:focus-visible { stroke: var(--text); stroke-width: 2; outline: none; }
   .cd-end { font-size: 11.5px; font-weight: 700; font-family: "IBM Plex Sans", system-ui, sans-serif; stroke: none; }

@@ -1,6 +1,6 @@
 # Scripts tab
 
-The Scripts tab of the status dashboard shows what every repository of the four ecosystems runs: its GitHub workflows (when they run, which actions they use and how the
+The Scripts tab of the status dashboard shows what every repository of the four ecosystems and of the Tools group runs: its GitHub workflows (when they run, which actions they use and how the
 version of each action is fixed) and the scripts of its `tools/` and `scripts/` folders by language. Nothing is run and nothing is asked of GitHub for it: a script
 reads the files of the same fresh shallow copy that the Code tab counts.
 

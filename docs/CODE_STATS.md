@@ -2,7 +2,7 @@
 
 The changelog statistics have a tab of their own, **Changelog**, described at the end of this page; this tab is about lines of code, tests and documentation.
 
-The Code tab of the status dashboard shows how much code, how many tests and how much documentation every repository of the four ecosystems has, and how
+The Code tab of the status dashboard shows how much code, how many tests and how much documentation every repository of the four ecosystems and of the Tools group has, and how
 that changes day by day. The figures are counted, not declared: a script reads the files of a fresh shallow copy of each repository.
 
 ## Where the figures come from

@@ -77,6 +77,15 @@ class Chain(unittest.TestCase):
     def test_a_failed_counter_does_not_rebuild(self):
         self.assertIn("github.event.workflow_run.conclusion == 'success'", self.build)
 
+    def test_the_figures_of_all_groups_travel_together(self):
+        # one counter writes the three documents (code, history, scripts) in one run and the publishing job commits them in one commit, so the
+        # dashboard that follows it never finds the Scripts tab without its figures, whatever the number of groups counted
+        for name in ("code-stats.json", "code-history.json", "scripts-stats.json"):
+            self.assertIn(f'cp "$workdir/{name}" data/{name}', self.count)
+        self.assertIn("git add data/code-stats.json data/code-history.json data/scripts-stats.json", self.count)
+        self.assertIn("needs: count", self.count)
+        self.assertIn("python scripts/code_stats.py --out", self.count)
+
     def test_the_build_checks_that_the_figures_were_read(self):
         self.assertIn("python scripts/check_data_read.py docs/index.html", self.build)
 

@@ -211,6 +211,18 @@ class ScanTreeTests(unittest.TestCase):
 
 
 class ClassificationOfRepositoriesTests(unittest.TestCase):
+    def test_tools_is_the_fifth_group(self):
+        keys = [e["key"] for e in CONFIG["ecosystems"]]
+        self.assertEqual(keys, ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"])
+        self.assertEqual(CONFIG["ecosystems"][-1]["label"], "Tools")
+        self.assertEqual(cs.check_config(CONFIG), [])
+        # the updater of the suite is counted once, in Tools and not in EH3D
+        owners = [e["key"] for e in CONFIG["ecosystems"] if any("ELECTRO-HOBBY-3D-UPDATER".startswith(p) for p in e["prefixes"])]
+        self.assertEqual(owners, ["electro-hobby-3d"])
+        repos = [{"name": n, "pushed": None, "archived": False, "fork": False} for n in ("TOOLS-GITHUB-ACTIONS-MONITOR", "ELECTRO-HOBBY-3D-UPDATER", "EH3D-SERVER")]
+        chosen = {r["name"]: r["eco"] for r in cs.select(repos, CONFIG)}
+        self.assertEqual(chosen, {"TOOLS-GITHUB-ACTIONS-MONITOR": "electro-hobby-3d", "ELECTRO-HOBBY-3D-UPDATER": "electro-hobby-3d", "EH3D-SERVER": "eh3d"})
+
     def test_ecosystems_by_prefix(self):
         eco = lambda n: cs.ecosystem_of(n, CONFIG)       # noqa: E731
         self.assertEqual(eco("ARMOR-SERVER"), "armor")
@@ -219,7 +231,8 @@ class ClassificationOfRepositoriesTests(unittest.TestCase):
         self.assertEqual(eco("HYDRA-UMC"), "hydra-umc")
         self.assertEqual(eco("HYDRA-UMC-SDK"), "hydra-umc")
         self.assertEqual(eco("EH3D-PHOENIX-PCB"), "eh3d")
-        self.assertEqual(eco("ELECTRO-HOBBY-3D-UPDATER"), "eh3d")
+        self.assertEqual(eco("ELECTRO-HOBBY-3D-UPDATER"), "electro-hobby-3d")
+        self.assertEqual(eco("TOOLS-GITHUB-ACTIONS-MONITOR"), "electro-hobby-3d")
         self.assertIsNone(eco("JuanenRac"))
         self.assertIsNone(eco("random-project"))
 

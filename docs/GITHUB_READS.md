@@ -36,3 +36,9 @@ the build.
 The card **Unclassified** next to the ecosystem counters gives the public repositories of the owner, how many the page lists and how many have no manifest, with their
 names. A list that could not be read says "not verified", never zero. A notice lists the repositories that are new, archived or gone since the page that was published
 before; it is only made when the list of this run was really read (not from the saved copy).
+
+## The queue time of the builds
+
+The queue time shown in the Builds tab is the one of the **run** (from its creation to the start of the run), which comes in the list of runs that is read anyway. The local Actions monitor
+measures the queue of each **job**, which needs one more read per run; the dashboard does not make those reads, so its figure can be higher than the monitor's when a run has jobs
+that start one after the other.

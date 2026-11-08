@@ -4,7 +4,8 @@
     {"key": "hydra-umc", "label": "HYDRA-UMC", "prefixes": ["HYDRA-UMC"]},
     {"key": "urtc", "label": "URTC", "prefixes": ["URTC"]},
     {"key": "armor", "label": "A.R.M.O.R.", "prefixes": ["ARMOR-"]},
-    {"key": "eh3d", "label": "EH3D", "prefixes": ["EH3D-", "ELECTRO-HOBBY-3D-UPDATER"]}
+    {"key": "eh3d", "label": "EH3D", "prefixes": ["EH3D-"]},
+    {"key": "electro-hobby-3d", "label": "Tools", "prefixes": ["TOOLS-", "ELECTRO-HOBBY-3D-UPDATER"]}
   ],
   "exclude_repos": [".github", "JuanenRac"],
   "skip_forks": true,
