@@ -4029,11 +4029,11 @@
   },
   {
    "actions": {
-    "fail": 196,
-    "min": 3257,
-    "ok": 2444,
-    "other": 19,
-    "runs": 2659
+    "fail": 144,
+    "min": 2541,
+    "ok": 1929,
+    "other": 20,
+    "runs": 2093
    },
    "areas": {
     "armor": {
@@ -4082,7 +4082,7 @@
     "armor": 69,
     "eh3d": 45,
     "hydra-umc": 55,
-    "urtc": 55
+    "urtc": 56
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -4555,7 +4555,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.6.0"
+     "1.6.2"
     ],
     "URTC": [
      1,
@@ -4603,10 +4603,10 @@
     ]
    },
    "sentinel": {
-    "cand": 19,
+    "cand": 23,
     "gaps": 1,
-    "min": 3257,
-    "red": 0
+    "min": 2541,
+    "red": 5
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,

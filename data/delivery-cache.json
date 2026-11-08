@@ -255,7 +255,6 @@
   "URTC-COMMON": {
    "art": true,
    "at": "2026-11-08T00:24:30Z",
-   "checked": true,
    "exp": "2026-11-15T00:23:41Z",
    "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42429523647",
    "wf": "release-files-build.yml"
@@ -263,7 +262,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-08T00:30:28Z",
-   "checked": true,
    "exp": "2026-11-15T00:29:34Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/42429570506",
    "wf": "exe-build.yml"
@@ -271,7 +269,6 @@
   "URTC-SMART-RACK": {
    "art": true,
    "at": "2026-11-08T00:28:42Z",
-   "checked": true,
    "exp": "2026-11-15T00:28:03Z",
    "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/42429653407",
    "wf": "firmware-build.yml"
@@ -279,7 +276,6 @@
   "URTC-TESTER": {
    "art": true,
    "at": "2026-11-08T00:29:09Z",
-   "checked": true,
    "exp": "2026-11-15T00:28:20Z",
    "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/42429616515",
    "wf": "exe-build.yml"
@@ -287,7 +283,6 @@
   "URTC-VISION-TOOL": {
    "art": true,
    "at": "2026-11-08T00:28:32Z",
-   "checked": true,
    "exp": "2026-11-15T00:27:50Z",
    "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/42429690470",
    "wf": "firmware-build.yml"
@@ -295,7 +290,6 @@
   "URTC-WEB-STUDIO": {
    "art": true,
    "at": "2026-11-08T00:27:31Z",
-   "checked": true,
    "exp": "2026-11-15T00:26:55Z",
    "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/42429746229",
    "wf": "site-build.yml"
@@ -690,7 +684,7 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "c14bfca1c2d10505",
+   "fp": "86fedd26c248d9c1",
    "on": "2026-11-08",
    "r": {
     "ak": 0,
@@ -699,8 +693,8 @@
    }
   },
   "URTC": {
-   "fp": "b3665f074d76a3ca",
-   "on": "2026-11-06",
+   "fp": "515e6e35032b9b45",
+   "on": "2026-11-08",
    "r": {
     "ak": 0,
     "an": 3,
@@ -1416,20 +1410,6 @@
     "s": "verified",
     "sch": [
      "hydra-pc-pkg/1"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "URTC": {
-   "fp": "b3665f074d76a3ca",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 19,
-    "s": "verified",
-    "sch": [
-     "urtc-rel/1"
     ],
     "unk": 0,
     "why": []
