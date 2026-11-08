@@ -1,58 +1,46 @@
 {
- "asof": "2026-11-08T09:58:59Z",
+ "asof": "2026-11-08T10:31:20Z",
  "ci": {
   "checked": 529,
   "red": [
    {
-    "repo": "URTC-DOCS",
-    "since": "2026-11-08T09:54:52Z",
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-08T10:21:28Z",
     "streak": 1,
-    "wf": "codeql.yml"
+    "wf": "nightly.yml"
    },
    {
     "repo": "URTC-FLASHER",
-    "since": "2026-11-08T09:29:54Z",
+    "since": "2026-11-08T10:05:52Z",
     "streak": 1,
     "wf": "ci.yml"
    },
    {
     "repo": "URTC-FLASHER",
-    "since": "2026-11-08T09:30:44Z",
-    "streak": 1,
-    "wf": "codeql.yml"
-   },
-   {
-    "repo": "URTC-FLASHER",
-    "since": "2026-11-08T09:27:25Z",
+    "since": "2026-11-08T10:06:24Z",
     "streak": 1,
     "wf": "nightly.yml"
    },
    {
     "repo": "URTC-TESTER",
-    "since": "2026-11-08T09:35:20Z",
-    "streak": 1,
-    "wf": "codeql.yml"
-   },
-   {
-    "repo": "URTC-UPDATER",
-    "since": "2026-11-08T09:36:35Z",
+    "since": "2026-11-08T10:07:28Z",
     "streak": 1,
     "wf": "codeql.yml"
    }
   ],
-  "red_total": 6
+  "red_total": 4
  },
  "compute": {
   "top": [
    {
     "min24": 161,
-    "min7": 192,
-    "repo": "URTC-FLASHER"
-   },
-   {
-    "min24": 161,
     "min7": 161,
     "repo": "HYDRA-UMC"
+   },
+   {
+    "min24": 160,
+    "min7": 183,
+    "repo": "URTC-FLASHER"
    },
    {
     "min24": 136,
@@ -60,30 +48,30 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 125,
+    "min24": 115,
     "min7": 561,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 107,
+    "min24": 103,
     "min7": 107,
     "repo": "URTC-WEB-STUDIO"
    },
    {
-    "min24": 104,
-    "min7": 165,
+    "min24": 99,
+    "min7": 164,
     "repo": "URTC-UPDATER"
    }
   ],
-  "total24": 2518,
-  "total7": 15369,
+  "total24": 2481,
+  "total7": 15343,
   "warn": false
  },
  "ecosystems": {
   "armor": {
    "cand": 4,
    "read": 19,
-   "red": 0,
+   "red": 1,
    "repos": 19,
    "unpub": 0
   },
@@ -102,7 +90,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 19,
+   "cand": 21,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -111,12 +99,48 @@
   "urtc": {
    "cand": 0,
    "read": 11,
-   "red": 4,
+   "red": 2,
    "repos": 11,
-   "unpub": 2
+   "unpub": 0
   }
  },
  "events": [
+  {
+   "at": "2026-11-08T10:31:20Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-08T10:31:20Z",
+   "kind": "red_ok",
+   "repo": "URTC-DOCS",
+   "wf": "codeql.yml"
+  },
+  {
+   "at": "2026-11-08T10:31:20Z",
+   "kind": "red_ok",
+   "repo": "URTC-FLASHER",
+   "wf": "codeql.yml"
+  },
+  {
+   "at": "2026-11-08T10:31:20Z",
+   "kind": "red_ok",
+   "repo": "URTC-UPDATER",
+   "wf": "codeql.yml"
+  },
+  {
+   "at": "2026-11-08T10:31:20Z",
+   "kind": "released",
+   "repo": "URTC-DOCS",
+   "tag": "v0.1.6"
+  },
+  {
+   "at": "2026-11-08T10:31:20Z",
+   "kind": "released",
+   "repo": "URTC-GATEWAY",
+   "tag": "v0.0.7"
+  },
   {
    "at": "2026-11-08T09:58:59Z",
    "kind": "red_new",
@@ -260,42 +284,6 @@
    "kind": "red_ok",
    "repo": "ARMOR-DOCS",
    "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-07T19:25:44Z",
-   "kind": "red_new",
-   "repo": "ARMOR-DOCS",
-   "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-07T19:25:44Z",
-   "kind": "released",
-   "repo": "EH3D-COMMON",
-   "tag": "v0.2.0"
-  },
-  {
-   "at": "2026-11-07T19:25:44Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-PNP",
-   "tag": "v0.0.7"
-  },
-  {
-   "at": "2026-11-07T17:53:51Z",
-   "kind": "released",
-   "repo": "EH3D-BUNGARD-GUI",
-   "tag": "v0.2.5"
-  },
-  {
-   "at": "2026-11-07T16:45:25Z",
-   "kind": "red_ok",
-   "repo": "URTC-WEB-STUDIO",
-   "wf": "pages.yml"
-  },
-  {
-   "at": "2026-11-07T16:29:16Z",
-   "kind": "red_new",
-   "repo": "URTC-WEB-STUDIO",
-   "wf": "pages.yml"
   }
  ],
  "hygiene": {
@@ -314,9 +302,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 23,
+    "cand": 25,
     "hyg": 1,
-    "red": 6
+    "red": 4
    }
   },
   {
@@ -324,12 +312,11 @@
    "level": "warn",
    "p": {
     "list": [
-     "URTC-DOCS",
+     "ARMOR-DOCS",
      "URTC-FLASHER",
-     "URTC-TESTER",
-     "URTC-UPDATER"
+     "URTC-TESTER"
     ],
-    "n": 6
+    "n": 4
    }
   },
   {
@@ -347,7 +334,9 @@
      "HYDRA-UMC-BRIDGE-OPENPNP",
      "HYDRA-UMC-CONNECTOR-HUB",
      "HYDRA-UMC-DEV-SERVER",
+     "HYDRA-UMC-DSI",
      "HYDRA-UMC-GATEWAY-INDUSTRIAL",
+     "HYDRA-UMC-IOS-CONTROL",
      "HYDRA-UMC-JOB-DISPATCHER",
      "HYDRA-UMC-MTCONNECT-ADAPTER",
      "HYDRA-UMC-OPCUA-SERVER",
@@ -361,18 +350,7 @@
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 23
-   }
-  },
-  {
-   "key": "unpub",
-   "level": "warn",
-   "p": {
-    "list": [
-     "URTC-DOCS",
-     "URTC-GATEWAY"
-    ],
-    "n": 2
+    "n": 25
    }
   },
   {
@@ -459,6 +437,12 @@
    },
    {
     "entries": 3,
+    "published": "2026-11-06T10:30:35Z",
+    "repo": "HYDRA-UMC-IOS-CONTROL",
+    "tag": "v0.3.5"
+   },
+   {
+    "entries": 3,
     "published": "2026-11-05T23:40:11Z",
     "repo": "HYDRA-UMC-OPCUA-SERVER",
     "tag": "v0.2.7"
@@ -486,6 +470,12 @@
     "published": "2026-11-05T20:33:20Z",
     "repo": "HYDRA-UMC-CONNECTOR-HUB",
     "tag": "v0.1.9"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-06T10:30:57Z",
+    "repo": "HYDRA-UMC-DSI",
+    "tag": "v0.3.5"
    },
    {
     "entries": 2,
@@ -538,7 +528,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 23
+  "total": 25
  },
  "repos": 129,
  "schema": 1,
@@ -673,9 +663,9 @@
   "URTC": "v0.4.7",
   "URTC-COMMON": "v0.2.5",
   "URTC-DEVTOOLS": "v0.0.4",
-  "URTC-DOCS": "v0.1.5",
+  "URTC-DOCS": "v0.1.6",
   "URTC-FLASHER": "v0.5.5",
-  "URTC-GATEWAY": "v0.0.6",
+  "URTC-GATEWAY": "v0.0.7",
   "URTC-SMART-RACK": "v0.2.7",
   "URTC-TESTER": "v0.5.4",
   "URTC-UPDATER": "v0.2.9",
@@ -689,7 +679,7 @@
    23,
    0,
    17,
-   23
+   25
   ],
   "dates": [
    "2026-11-03",
@@ -713,7 +703,7 @@
    4421,
    5648,
    3487,
-   2518
+   2481
   ],
   "red": [
    3,
@@ -721,22 +711,11 @@
    3,
    0,
    1,
-   6
+   4
   ]
  },
  "unpublished": {
-  "rows": [
-   {
-    "repo": "URTC-DOCS",
-    "tag": "v0.1.5",
-    "version": "0.1.6"
-   },
-   {
-    "repo": "URTC-GATEWAY",
-    "tag": "v0.0.6",
-    "version": "0.0.7"
-   }
-  ],
-  "total": 2
+  "rows": [],
+  "total": 0
  }
 }
