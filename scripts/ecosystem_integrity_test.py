@@ -59,7 +59,7 @@ STATES = (FAILED, UNVERIFIED, PENDING, OK)
 
 # The ecosystem section of the README a manifest key belongs to: the updater of the suite lives in the EH3D section.
 SECTION_OF = {"hydra-umc": "hydra-umc", "urtc": "urtc", "armor": "armor", "eh3d": "eh3d", "electro-hobby-3d": "eh3d"}
-LABEL_OF = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D", "electro-hobby-3d": "Electro Hobby 3D"}
+LABEL_OF = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D", "electro-hobby-3d": "Tools"}
 VERSION_RE = re.compile(r"^\d+(\.\d+){1,3}$")
 TAG_RE = re.compile(r"^v?(\d+(?:\.\d+){1,3})")
 _DATA_RE = re.compile(r'<script type="application/json" id="dashboard-data">(.*?)</script>', re.S)

@@ -52,7 +52,7 @@ jobs:
           python-version: "3.12"
 
       - name: Unit tests of the counter
-        run: python -m unittest tests.test_code_stats tests.test_scripts_stats -v
+        run: python -m unittest tests.test_code_stats tests.test_scripts_stats tests.test_workflow_lint -v
 
       # The history is read from this checkout, today's figures are added and both files are written to a directory of the runner.
       - name: Count

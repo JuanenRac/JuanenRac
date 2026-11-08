@@ -36,7 +36,7 @@
     },
     {
       "key": "electro-hobby-3d",
-      "label": "Electro Hobby 3D",
+      "label": "Tools",
       "manifest_file": "electro-hobby-3d.project.json",
       "updater": null,
       "updater_module": null,

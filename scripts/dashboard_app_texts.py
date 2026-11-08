@@ -90,7 +90,7 @@ _ROWS: dict[str, tuple[str, str, str, str, str, str, str, str]] = {
     "tip_count": ("{name}: {n} of {total} ({pct}%)", "{name}: {n} de {total} ({pct}%)", "{name}: {n} von {total} ({pct} %)", "{name} : {n} sur {total} ({pct} %)", "{name}: {n} su {total} ({pct}%)", "{name}：{total} 件中 {n} 件（{pct}%）", "{name}：{total} 个中的 {n} 个（{pct}%）", "{name}: {n} de {total} ({pct}%)"),
     "scope_label": ("Scope", "Alcance", "Bereich", "Périmètre", "Ambito", "対象範囲", "范围", "Âmbito"),
     "scope_all": ("All", "Todos", "Alle", "Tous", "Tutti", "すべて", "全部", "Todos"),
-    "scope_cross": ("Cross-cutting", "Transversal", "Übergreifend", "Transversal", "Trasversale", "横断", "通用", "Transversal"),
+    "scope_cross": ("Tools", "Herramientas", "Werkzeuge", "Outils", "Strumenti", "ツール", "工具", "Ferramentas"),
     "scope_sub_label": ("Families", "Familias", "Familien", "Familles", "Famiglie", "ファミリー", "系列", "Famílias"),
     "scope_all_hint": ("Pick an ecosystem to browse its families.", "Elige un ecosistema para ver sus familias.", "Wählen Sie ein Ökosystem, um seine Familien zu sehen.", "Choisissez un écosystème pour parcourir ses familles.", "Scegli un ecosistema per vedere le sue famiglie.", "エコシステムを選ぶとそのファミリーを表示します。", "选择一个生态系统以浏览其系列。", "Escolha um ecossistema para ver as suas famílias."),
     "pager_label": ("Project list pages", "Páginas de la lista de proyectos", "Seiten der Projektliste", "Pages de la liste des projets", "Pagine dell'elenco dei progetti", "プロジェクト一覧のページ", "项目列表分页", "Páginas da lista de projetos"),

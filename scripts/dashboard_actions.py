@@ -38,7 +38,9 @@ CONFIG_PATH = Path(__file__).resolve().parent.parent / "dashboard-config.json"
 DAY_MINUTES = 24 * 60
 WEEK_MINUTES = 7 * DAY_MINUTES
 DEFAULT_CONFIG: dict = {"labels": {"failed": "build-failed", "stuck": "build-stuck"}, "timeline_max": 40, "durations_max": 12,
-                        "ignore_paths": {"JuanenRac": [".github/workflows/build-dashboard.yml"]}}
+                        "ignore_paths": {"JuanenRac": [".github/workflows/build-dashboard.yml"]},
+                        "perf": {"min_samples": 3, "samples_max": 60, "workflows_max": 6, "top": 8, "flaky_min_runs": 3}}
+PERF_LIMITS = {"min_samples": (1, 50), "samples_max": (10, 200), "workflows_max": (1, 20), "top": (3, 30), "flaky_min_runs": (2, 50)}
 CODES = ("s", "f", "c", "k", "p")     # success, failure, cancelled, other (skipped, neutral, stale...), running or queued
 SCHEMA = 1
 
@@ -86,6 +88,18 @@ def check_config(raw: object) -> tuple[dict, list[str]]:
                 config[key] = value
             else:
                 problems.append(f"actions.{key}: needs an integer from {low} to {high}")
+    perf = raw.get("perf")
+    if perf is not None:
+        if isinstance(perf, Mapping):
+            for key, (low, high) in PERF_LIMITS.items():
+                if key in perf:
+                    value = perf[key]
+                    if isinstance(value, int) and not isinstance(value, bool) and low <= value <= high:
+                        config["perf"][key] = value
+                    else:
+                        problems.append(f"actions.perf.{key}: needs an integer from {low} to {high}")
+        else:
+            problems.append("actions.perf: not an object")
     ignore = raw.get("ignore_paths")
     if ignore is not None:
         if isinstance(ignore, Mapping) and all(isinstance(k, str) and isinstance(v, list) and all(isinstance(p, str) for p in v) for k, v in ignore.items()):
@@ -131,6 +145,52 @@ def code_of(run: Mapping) -> str:
     return "k"
 
 
+def percentile(values: Iterable[object], q: float) -> "int | None":
+    """Nearest-rank percentile (q from 0 to 100) of the numbers in `values`; None when there are none. The same definition as the analytics of the local monitor."""
+    data = sorted(v for v in values if isinstance(v, (int, float)) and not isinstance(v, bool))
+    if not data:
+        return None
+    rank = max(1, -(-len(data) * q // 100))
+    return int(data[int(rank) - 1])
+
+
+def _workflow_name(run: Mapping) -> str:
+    path = str(run.get("path") or "")
+    return (path.rsplit("/", 1)[-1] if path else str(run.get("name") or ""))[:60]
+
+
+def perf_of(items: Sequence[Mapping], config: Mapping) -> dict:
+    """The performance block of one repository from its finished runs of the last 7 days: the durations of the successful runs and the waits in the queue (capped), and per
+    workflow [file, successful runs, p50, p95, queue p50, queue p95, flaky commits, runs]. A run is FLAKY when it failed and a later run of the same workflow passed on the very
+    same commit, or when a re-run of it passed; it is a label only and never changes what counts as red. The wait is the time between the creation of a run and its start
+    (a re-run is left out: its start is the one of the re-run). Same definitions as the analytics of the local monitor, taken at run level instead of job level."""
+    perf = config["perf"]
+    done = [it for it in items if it["code"] != "p"]
+    ok = [it for it in done if it["code"] == "s" and it["sec"]]
+    waits = [it["q"] for it in done if it.get("q") is not None]
+    by_wf: dict[str, list] = {}
+    for it in done:
+        by_wf.setdefault(it["wf"], []).append(it)
+    rows = []
+    for name, group in by_wf.items():
+        good = [it["sec"] for it in group if it["code"] == "s" and it["sec"]]
+        queue = [it["q"] for it in group if it.get("q") is not None]
+        commits: dict[str, list] = {}
+        for it in group:
+            if it.get("sha"):
+                commits.setdefault(it["sha"], []).append(it)
+        flaky = 0
+        for series in commits.values():
+            ordered = sorted(series, key=lambda r: -r["age"])          # oldest first
+            failed_then_passed = any(r["code"] == "f" for r in ordered) and ordered[-1]["code"] == "s"
+            retried = any((r.get("attempt") or 1) > 1 and r["code"] == "s" for r in ordered)
+            flaky += 1 if (failed_then_passed or retried) else 0
+        if len(good) >= perf["min_samples"] or (flaky and len(group) >= perf["flaky_min_runs"]):
+            rows.append([name, len(good), percentile(good, 50), percentile(good, 95), percentile(queue, 50), percentile(queue, 95), flaky, len(group)])
+    rows.sort(key=lambda r: (-(r[3] or 0), -r[6], r[0]))
+    return {"pd": sorted(it["sec"] for it in ok)[-perf["samples_max"]:], "pq": sorted(waits)[-perf["samples_max"]:], "pw": rows[: perf["workflows_max"]]}
+
+
 def summarize(runs: Iterable[object], asof: datetime, config: Mapping, ignore: Sequence[str] = ()) -> dict:
     """The record of one repository from its runs of the last 7 days (the `workflow_runs` of the API). Only the fields below are read from a run."""
     items = []
@@ -146,7 +206,10 @@ def summarize(runs: Iterable[object], asof: datetime, config: Mapping, ignore: S
         ended = updated if code != "p" else None
         seconds = max(0, int((updated - started).total_seconds())) if code != "p" else None
         age_end = max(0, int((asof - (ended or created)).total_seconds() // 60))
-        items.append({"code": code, "age": age_end, "sec": seconds})
+        attempt = run.get("run_attempt") if isinstance(run.get("run_attempt"), int) and not isinstance(run.get("run_attempt"), bool) else 1
+        queue = max(0, int((started - created).total_seconds())) if code != "p" and attempt <= 1 and _parse(run.get("run_started_at")) is not None else None
+        sha = run.get("head_sha") if isinstance(run.get("head_sha"), str) else ""
+        items.append({"code": code, "age": age_end, "sec": seconds, "wf": _workflow_name(run), "sha": sha[:12], "attempt": attempt, "q": queue})
     items.sort(key=lambda it: it["age"])
     inside = [it for it in items if it["age"] < WEEK_MINUTES]
     day = [it for it in inside if it["age"] < DAY_MINUTES]
@@ -165,6 +228,7 @@ def summarize(runs: Iterable[object], asof: datetime, config: Mapping, ignore: S
         "tl": [[it["age"], it["code"]] for it in day][: config["timeline_max"]],
         "dur": [it["sec"] for it in reversed(finished[: config["durations_max"]]) if it["sec"] is not None],
         "truncated": len(items) >= 100,
+        **perf_of(inside, config),
     }
 
 
@@ -328,7 +392,34 @@ def day_summary(read: Mapping | None) -> dict | None:
     return {"runs": sum(total), "ok": total[0], "fail": total[1], "other": total[2] + total[3] + total[4], "min": sum(r["min"] for r in repos)}
 
 
-def build(read: Mapping | None, cache: Mapping | None, names: Iterable[str], history: Sequence[Mapping], today: str) -> dict:
+def perf_block(repos: Mapping[str, Mapping], config: Mapping | None = None) -> dict:
+    """The performance figures of the whole account for the Builds tab: p50 / p95 of the duration of the successful runs and of the wait in the queue over every repository
+    that was read, the workflows with the longest p95 and the flaky ones. `read` is False when no repository carries the figures (a reading made before they existed)."""
+    perf = (config or check_config(None)[0])["perf"]
+    carrying = {n: r for n, r in repos.items() if r.get("state") == "ok" and isinstance(r.get("pd"), list)}
+    if not carrying:
+        return {"read": False}
+    durations = [v for r in carrying.values() for v in r["pd"] if isinstance(v, int)]
+    waits = [v for r in carrying.values() for v in (r.get("pq") or []) if isinstance(v, int)]
+    slow, flaky = [], []
+    for name, record in carrying.items():
+        for row in record.get("pw") or []:
+            if not (isinstance(row, list) and len(row) == 8):
+                continue
+            wf, n, p50, p95, q50, q95, fl, runs = row
+            item = {"repo": name, "wf": wf, "n": n, "p50": p50, "p95": p95, "q50": q50, "q95": q95, "fl": fl, "runs": runs}
+            if n >= perf["min_samples"] and p95:
+                slow.append(item)
+            if fl and runs >= perf["flaky_min_runs"]:
+                flaky.append(item)
+    slow.sort(key=lambda r: (-r["p95"], r["repo"], r["wf"]))
+    flaky.sort(key=lambda r: (-(r["fl"] / max(1, r["runs"])), -r["fl"], r["repo"], r["wf"]))
+    return {"read": True, "runs": len(durations), "d50": percentile(durations, 50), "d95": percentile(durations, 95), "qn": len(waits), "q50": percentile(waits, 50),
+            "q95": percentile(waits, 95), "flaky_workflows": len(flaky), "flaky_commits": sum(r["fl"] for r in flaky),
+            "slow": slow[: perf["top"]], "flaky": flaky[: perf["top"]]}
+
+
+def build(read: Mapping | None, cache: Mapping | None, names: Iterable[str], history: Sequence[Mapping], today: str, config: Mapping | None = None) -> dict:
     """The "actions" block of the page data. `read` is this run's reading (None when GitHub did not answer); `cache` the last good one."""
     names = sorted(set(names))
     source, stale = (read, None) if read else (cache, (cache or {}).get("asof"))
@@ -351,4 +442,5 @@ def build(read: Mapping | None, cache: Mapping | None, names: Iterable[str], his
         "repos": repos,
         "daily": daily,
         "problems": sum(1 for r in repos.values() if r["state"] == "unread"),
+        "perf": perf_block(repos, config),
     }

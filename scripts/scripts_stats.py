@@ -26,6 +26,8 @@ import re
 from pathlib import Path
 from typing import Mapping
 
+import workflow_lint
+
 TRIGGERS = ("push", "pull_request", "schedule", "workflow_dispatch", "release", "workflow_run", "workflow_call", "other")
 PINS = ("sha", "tag", "branch", "local", "docker")
 LANGS = ("py", "sh", "ps1", "bat", "js")
@@ -172,10 +174,12 @@ def count_scripts(root: Path) -> dict:
     return out
 
 
-def summarize(root: Path) -> dict:
-    """The workflows, the actions and the scripts of the repository at `root`."""
+def summarize(root: Path, lint_config: "Mapping | None" = None, repo: str = "") -> dict:
+    """The workflows, the actions, the scripts and (unless switched off in `lint_config`) the lint findings of the repository at `root`."""
     workflows: list = []
     actions: dict[str, list] = {}
+    lint_on = (lint_config or workflow_lint.DEFAULT_CONFIG).get("enabled", True)
+    findings: list[dict] = []
     folder = root / ".github" / "workflows"
     if folder.is_dir():
         for path in sorted(folder.iterdir()):
@@ -189,10 +193,16 @@ def summarize(root: Path) -> dict:
                 continue
             record, uses = workflow_record(path.name, text)
             workflows.append(record)
+            if lint_on:
+                patterns = (lint_config or {}).get("ignore") or ()
+                findings.extend(f for f in workflow_lint.lint_text(text, lint_config) if not workflow_lint.exempt(repo, path.name, f["rule"], patterns))
             for item in uses:
                 key = item[:140]
                 actions.setdefault(key, [0, pin_of(item)])[0] += 1
-    return {"wf": workflows[:MAX_WORKFLOWS], "acts": dict(sorted(actions.items())[:200]), "sc": count_scripts(root)}
+    out = {"wf": workflows[:MAX_WORKFLOWS], "acts": dict(sorted(actions.items())[:200]), "sc": count_scripts(root)}
+    if lint_on and workflows:
+        out["lint"] = workflow_lint.tally(findings)
+    return out
 
 
 def is_third_party(uses: str, owner: str) -> bool:

@@ -9,6 +9,17 @@
   "exclude_repos": [".github", "JuanenRac"],
   "skip_forks": true,
   "skip_archived": true,
+  "lint": {
+    "enabled": true,
+    "ignore": [],
+    "rules": {
+      "unpinned_uses": { "enabled": true, "level": "warn" },
+      "permissions": { "enabled": true, "level": "warn" },
+      "secrets_in_clear": { "enabled": true, "level": "error" },
+      "injection": { "enabled": true, "level": "warn" },
+      "pr_target": { "enabled": true, "level": "error" }
+    }
+  },
   "types": {
     "default": "tools",
     "order": ["firmware", "apps", "services", "tools", "docs"],

@@ -18,7 +18,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/License-GPL%203.0-blue.svg" alt="License GPL 3.0">
   <img src="https://img.shields.io/badge/Hardware-CERN%20OHL--S-orange.svg" alt="Hardware CERN OHL">
-  <img src="https://img.shields.io/badge/Ecosystems-4-00E5FF.svg" alt="Four ecosystems">
+  <img src="https://img.shields.io/badge/Ecosystems-4%20%2B%20Tools-00E5FF.svg" alt="4 つのエコシステムとツールのグループ">
 </p>
 
 4つの独立したエンジニアリングエコシステム、1人の作者。**HYDRA-UMC**は、リアルタイムファームウェアから認知AIまで網羅する多層構造の産業用ロボティクスプラットフォームです。**URTC**は、ロボットののエンドエフェクター専用のユニバーサル・ロボットツール・サブシステムであり、リアルタイムファームウェアとデスクトップ/Webツールを提供し、独立したバージョン管理と保守ツールを持つ独自製品として開発されています。\*\*A.R.M.O.R.\*\*は、レーダーによるプレゼンス検知、ソーラーおよび電気モニタリング、Web/モバイルクライアントを備えた中央コーディネーターを含む、独立した公開型の境界セキュリティおよびホームオートメーションエコシステムです。**EH3D Fabrication Suite**は、基板（PCB）試作、CAM処理、コンピュータビジョン検査、ピック＆プレース管理、およびHYDRA-UMCハードウェアや専門の工房機械と連携するCNC/レーザー制御のための統合ソフトウェアエコシステムです。
@@ -608,6 +608,8 @@ Issueのラベルは、このリポジトリ内にある [`.github/labels.yml`](
 ダッシュボードの **コード** タブには、各リポジトリのコード、コメント、テスト、ドキュメントの行数を、コード・テスト・ドキュメントの積み上げ棒グラフ、プログラミング言語の内訳、日次の履歴、リポジトリ・エコシステム・種類で並べ替えと絞り込みができる表とともに表示します。**変更** ビューは各リポジトリの CHANGELOG を読み取り、バージョン、エントリ、編集可能な語句で判定した各エントリの種類(修正、追加、セキュリティ、ドキュメントなど)、GitHub タグの公開ペース、ランキング、各バージョンのエントリ、表の CSV / JSON 書き出しを示します。[`.github/workflows/code-stats.yml`](.github/workflows/code-stats.yml) が、[`scripts/code_stats.py`](scripts/code_stats.py) と [`code-stats-config.json`](code-stats-config.json) の規則で 1 日 1 回、浅いクローンからすべてを集計します。詳しくは [`docs/CODE_STATS.md`](docs/CODE_STATS.md) を参照してください。
 
 ダッシュボードは何を対象にしているかを示し、GitHub が読み取りを拒否しても止まりません。エコシステムのカウンターの隣のカードに、所有者の公開リポジトリ数、ページに掲載している数、マニフェストのない数(**未分類**カードがその名前を示します)が表示され、前回のページ以降に新しく作られた、アーカイブされた、なくなったリポジトリは通知で一覧されます。GitHub API の読み取りは条件付き(ETag)で、変更のない応答はクォータを消費せず、クォータ切れや GitHub が応答しない場合は、ビルドを失敗させる代わりに、最後の正常な応答をその経過時間付きで保持します([`docs/GITHUB_READS.md`](docs/GITHUB_READS.md))。赤いビルドの定義は [`scripts/ci_rules.py`](scripts/ci_rules.py) の一つだけで、ローカルの Actions モニターと同じケースで検証されています([`docs/CI_RED_CONTRACT.md`](docs/CI_RED_CONTRACT.md))。
+
+**ビルド**タブには、ワークフローの速度(成功した実行の p50 と p95)、実行がキューで待つ時間、同じコミットで失敗してから成功したワークフローが加わり、ローカルの Actions モニターと同じ定義を使います。**スクリプト**タブには、モニターと同じ 3 段階(情報・警告・エラー)のワークフロー lint の結果が、エコシステム・種類・ルール別に集計されて加わります。5 つのルールは `code-stats-config.json` で無効化やレベル変更ができます。概要には **Tools** グループ(Actions モニターとスイートのアップデーター)が各ツールのバージョン、進捗バー、フィルター付きで表示され、プロフィールのバッジは 4 つのエコシステムに Tools を加えた数を示します。
 
 ## 🧭 GitHub でのコラボレーション
 

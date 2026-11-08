@@ -118,7 +118,7 @@ JS = r"""
   const TS = (DATA.tests && typeof DATA.tests === "object" && DATA.tests.repos) ? DATA.tests : { read: false, repos: {}, series: [], sources: {}, staleDate: null };
   const TS_ECOS = ["hydra-umc", "urtc", "armor", "eh3d"];
   const TS_ALL = TS_ECOS.concat(["electro-hobby-3d"]);
-  const TS_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D", "electro-hobby-3d": "Electro Hobby 3D" };
+  const TS_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D", "electro-hobby-3d": "Tools" };
   const tsState = { eco: "all", family: "all", q: "" };
   function tsCounts(rec) { return rec && (rec.state === "declared" || rec.state === "lastknown") && rec.unit === "tests" && typeof rec.n === "number"; }
   function tsEcoOf(name) { return (DATA.repos[name] && DATA.repos[name].eco) || ""; }

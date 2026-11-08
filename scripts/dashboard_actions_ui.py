@@ -15,9 +15,10 @@ prefers-reduced-motion. The script is placed into the shell's own scope (it uses
 from __future__ import annotations
 
 import dashboard_actions_texts
+import dashboard_cover_texts
 from dashboard_charts import esc
 
-EN = dashboard_actions_texts.TEXTS["en"]
+EN = {**dashboard_cover_texts.TEXTS["en"], **dashboard_actions_texts.TEXTS["en"]}
 
 
 def _t(key: str) -> str:
@@ -61,6 +62,18 @@ def panel_html() -> str:
         f'<p class="no-data" id="ac-trend-none" data-testid="ac-trend-none" hidden {_t("ac_trend_none")}</p>'
         f'<svg id="ac-trend" class="ac-trend" viewBox="0 0 320 170" role="group" aria-label="{esc(EN["ac_trend_title"])}" data-testid="ac-trend" hidden style="display:none"></svg></section>'
         '</div>'
+        # 5b. speed, queue and flaky runs
+        '<section class="card ac-perf" aria-labelledby="ac-perf-title" data-testid="ac-perf"><header class="card-head">'
+        f'<h3 class="card-title" id="ac-perf-title" {_t("ac_perf_title")}</h3></header>'
+        f'<p class="muted ac-hint" {_t("ac_perf_hint")}</p>'
+        f'<p class="no-data" id="ac-perf-none" data-testid="ac-perf-none" hidden {_t("ac_perf_none")}</p>'
+        '<div id="ac-perf-body" data-testid="ac-perf-body"><ul class="ac-kpis ac-perf-kpis" id="ac-perf-kpis" data-testid="ac-perf-kpis"></ul>'
+        '<div class="ac-perf-cols"><div><h4 class="card-title" id="ac-perf-slow-t" ' + _t("ac_perf_slow_title") + '</h4>'
+        '<ul class="ac-bars" id="ac-perf-slow" data-testid="ac-perf-slow"></ul>'
+        f'<p class="no-data" id="ac-perf-slow-none" hidden {_t("ac_perf_empty")}</p></div>'
+        '<div><h4 class="card-title" id="ac-perf-flaky-t" ' + _t("ac_perf_flaky_title") + '</h4>'
+        '<ul class="ac-bars" id="ac-perf-flaky" data-testid="ac-perf-flaky"></ul>'
+        f'<p class="no-data" id="ac-perf-flaky-none" hidden {_t("ac_perf_empty")}</p></div></div></div></section>'
         # 6. table
         '<section class="card ac-table-card" aria-labelledby="ac-table-title"><header class="card-head">'
         f'<h3 class="card-title" id="ac-table-title" {_t("ac_table_title")}</h3>'
@@ -102,6 +115,11 @@ CSS = r"""
   .ac-grid .card { padding: 9px 12px; }
   .ac-grid .card-head { margin-bottom: 4px; }
   .ac-wide { grid-column: span 2; }
+  .ac-perf { padding: 9px 12px; }
+  .ac-perf-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 8px; }
+  .ac-perf-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .ac-perf-cols .card-title { margin: 4px 0; font-size: 13px; }
+  .ac-perf-flaky-mark { fill: var(--k-pending); }
   .ac-ring-box { display: flex; align-items: center; gap: 14px; }
   .ac-ring-box svg { width: 128px; height: 128px; flex: 0 0 auto; }
   .ac-ring-seg { fill: none !important; stroke-width: 15; filter: drop-shadow(0 2px 2px rgba(0,0,0,.45)); }
@@ -150,7 +168,7 @@ CSS = r"""
     .ac-col rect, .ac-col polygon { transform-box: fill-box; transform-origin: bottom center; animation: t25-grow-y .6s cubic-bezier(.2,.7,.2,1) both; }
   }
   @media (max-width: 1250px) { .ac-kpi b { font-size: 19px; } }
-  @media (max-width: 1100px) { .ac-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } #panel-actions .panel-inner, .ac { height: auto; } .ac-grid { grid-template-columns: minmax(0, 1fr); } .ac-wide { grid-column: auto; } .ac-table-wrap { max-height: 60vh; } }
+  @media (max-width: 1100px) { .ac-perf-cols { grid-template-columns: minmax(0, 1fr); } .ac-perf-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ac-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } #panel-actions .panel-inner, .ac { height: auto; } .ac-grid { grid-template-columns: minmax(0, 1fr); } .ac-wide { grid-column: auto; } .ac-table-wrap { max-height: 60vh; } }
   @media (max-width: 760px) { .ac-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ac-asof { margin-left: 0; } .ac-ring-box { flex-wrap: wrap; } }
   @media print { #panel-actions .panel-inner, .ac { height: auto !important; } .ac-table-wrap { max-height: none !important; overflow: visible !important; } .ac-fill, .ac-ring-seg, .ac-col rect { animation: none !important; } }
 """
@@ -162,7 +180,7 @@ JS = r"""
   const AC_CODES = ["s", "f", "c", "k", "p"];
   const AC_GLYPH = { s: "✓", f: "✕", c: "⊘", k: "–", p: "●" };
   const AC_ECOS = ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"];
-  const AC_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D", "electro-hobby-3d": "Electro Hobby 3D" };
+  const AC_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D", "electro-hobby-3d": "Tools" };
   const acState = { eco: "all", q: "" };
   const acAsofMs = AC.asof ? Date.parse(AC.asof) : NaN;
   function acEco(name) { return (DATA.repos[name] && DATA.repos[name].eco) || ""; }
@@ -246,10 +264,10 @@ JS = r"""
       legend.appendChild(li);
     });
   }
-  function acBarRow(name, fraction, valueText, aria, code, delay) {
+  function acBarRow(name, fraction, valueText, aria, code, delay, label) {
     const li = make("li");
     const b = make("button", "ac-bar"); b.type = "button"; b.setAttribute("data-repo", name); b.setAttribute("aria-label", aria); b.title = aria;
-    b.appendChild(make("span", "ac-bar-name", name));
+    b.appendChild(make("span", "ac-bar-name", label || name));
     const track = make("span", "ac-track"); track.setAttribute("aria-hidden", "true");
     const fill = make("span", "ac-fill ac-c-" + code); fill.style.setProperty("--w", Math.max(2, fraction * 100).toFixed(1) + "%"); fill.style.animationDelay = (delay * 40) + "ms";
     track.appendChild(fill); b.appendChild(track);
@@ -347,6 +365,35 @@ JS = r"""
       svg.appendChild(g);
     });
   }
+  /* Speed, queue and flaky runs: the figures were worked out by the generator (p50 / p95 by the nearest rank); here they are only drawn. */
+  function acPerf(dict) {
+    const P = AC.perf || { read: false };
+    const none = document.getElementById("ac-perf-none"), body = document.getElementById("ac-perf-body");
+    none.hidden = !!P.read; body.hidden = !P.read;
+    if (!P.read) { return; }
+    const kpis = document.getElementById("ac-perf-kpis");
+    kpis.textContent = "";
+    const pair = function (a, b) { return (typeof a === "number" ? acDuration(a, dict) : "–") + " · " + (typeof b === "number" ? acDuration(b, dict) : "–"); };
+    [["dur", pair(P.d50, P.d95), dict.ac_perf_k_dur, false], ["queue", pair(P.q50, P.q95), dict.ac_perf_k_queue, false],
+     ["runs", acNum(P.runs || 0), dict.ac_perf_k_runs, false], ["flaky", String(P.flaky_workflows || 0), dict.ac_perf_k_flaky, (P.flaky_workflows || 0) > 0]].forEach(function (it) {
+      const li = make("li", "ac-kpi" + (it[3] ? " ac-bad" : "")); li.setAttribute("data-testid", "ac-perf-k-" + it[0]);
+      li.appendChild(cdLiveFigure(it[1])); li.appendChild(make("span", "", it[2])); kpis.appendChild(li);
+    });
+    const slow = document.getElementById("ac-perf-slow"), flaky = document.getElementById("ac-perf-flaky");
+    slow.textContent = ""; flaky.textContent = "";
+    const rows = P.slow || [], fl = P.flaky || [];
+    const maxSlow = rows.reduce(function (a, r) { return Math.max(a, r.p95 || 0); }, 1);
+    rows.forEach(function (r, i) {
+      const name = r.repo + " / " + r.wf, d = acDuration(r.p95, dict);
+      slow.appendChild(acBarRow(r.repo, (r.p95 || 0) / maxSlow, d, tpl(dict.ac_perf_slow_row, { name: name, p50: acDuration(r.p50, dict), p95: d, n: r.n }), "k", i, name));
+    });
+    fl.forEach(function (r, i) {
+      const name = r.repo + " / " + r.wf, pc = Math.round((r.fl || 0) / Math.max(1, r.runs) * 100);
+      flaky.appendChild(acBarRow(r.repo, pc / 100, r.fl + " / " + r.runs, tpl(dict.ac_perf_flaky_row, { name: name, fl: r.fl, runs: r.runs }), "p", i, name));
+    });
+    document.getElementById("ac-perf-slow-none").hidden = rows.length > 0;
+    document.getElementById("ac-perf-flaky-none").hidden = fl.length > 0;
+  }
   function acSigText(name, dict) {
     const r = DATA.repos[name] || {};
     const sig = r.sig === "verified" ? dict.ac_sig_verified : r.sig === "invalid" ? dict.ac_sig_invalid : r.sig === "unverifiable" ? dict.ac_sig_unverifiable : r.sig === "present" ? dict.ac_sig_present : r.sig === "none" ? dict.ac_sig_none : r.sig === "norelease" ? dict.ac_sig_norelease : dict.ac_sig_unverified;
@@ -434,7 +481,7 @@ JS = r"""
     const asof = document.getElementById("ac-asof");
     asof.textContent = AC.asof ? tpl(dict.ac_asof, { time: String(AC.asof).slice(11, 16) }) : "";
     document.getElementById("ac-help-body").textContent = dict.ac_help_body;
-    acKpis(t, dict); acRing(t, dict); acRates(dict); acDurations(dict); acTimeline(dict); acTrend(dict); acTable(dict);
+    acKpis(t, dict); acRing(t, dict); acRates(dict); acDurations(dict); acTimeline(dict); acTrend(dict); acPerf(dict); acTable(dict);
   }
   (function () {
     const search = document.getElementById("ac-search");

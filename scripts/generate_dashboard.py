@@ -60,6 +60,7 @@ import dashboard_app_texts
 import dashboard_charts
 import dashboard_cover
 import dashboard_cover_texts
+import dashboard_tools
 import gh_http
 import dashboard_contrib
 import dashboard_evo
@@ -1384,7 +1385,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Signed releases and updates",
         "architecture_a_card6_body": "Node firmware is published with a SHA-256 and an Ed25519 signature, and both a node and ARMOR-SERVER refuse a release without a valid one. The maintenance helper of ARMOR-DEVOPS checks an Ed25519 signature on each service package before unpacking it, which is how ARMOR-STUDIO updates the central machine; the private key never goes to GitHub. A firmware file uploaded by hand is not checked.",
         "table_eh3d_banner": "EH3D Fabrication Suite - the newest ecosystem, for PCB milling, CNC, laser and pick-and-place work, same author.",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D - the tools that sit above the four ecosystems and update any of them.",
+        "table_electro_hobby_3d_banner": "Tools - the programs that sit above the four ecosystems and update or watch any of them.",
         "architecture_section_e": "EH3D: System architecture",
         "architecture_e_card1_title": "One project file",
         "architecture_e_card1_body": "EH3D-COMMON defines the .eh3dproj container: a ZIP archive with the project, its layers, toolpaths and vision data, a SHA-256 for every entry and limits that refuse unsafe or oversized names.",
@@ -1442,7 +1443,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Releases y actualizaciones firmadas",
         "architecture_a_card6_body": "El firmware de los nodos se publica con un SHA-256 y una firma Ed25519, y tanto un nodo como ARMOR-SERVER rechazan una release sin una firma válida. El ayudante de mantenimiento de ARMOR-DEVOPS comprueba una firma Ed25519 en cada paquete de servicio antes de desempaquetarlo, que es como ARMOR-STUDIO actualiza la máquina central; la clave privada nunca va a GitHub. Un archivo de firmware subido a mano no se comprueba.",
         "table_eh3d_banner": "EH3D Fabrication Suite - el ecosistema más nuevo, para fresado de PCB, CNC, láser y pick and place, del mismo autor.",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D - las herramientas que están por encima de los cuatro ecosistemas y actualizan cualquiera de ellos.",
+        "table_electro_hobby_3d_banner": "Herramientas - los programas que están por encima de los cuatro ecosistemas y actualizan o vigilan cualquiera de ellos.",
         "architecture_section_e": "EH3D: Arquitectura del sistema",
         "architecture_e_card1_title": "Un solo fichero de proyecto",
         "architecture_e_card1_body": "EH3D-COMMON define el contenedor .eh3dproj: un archivo ZIP con el proyecto, sus capas, trayectorias y datos de visión, un SHA-256 por cada entrada y límites que rechazan nombres inseguros o entradas demasiado grandes.",
@@ -1500,7 +1501,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Releases et mises à jour signées",
         "architecture_a_card6_body": "Le firmware des nœuds est publié avec un SHA-256 et une signature Ed25519, et un nœud comme ARMOR-SERVER refusent une release sans signature valide. L'assistant de maintenance d'ARMOR-DEVOPS vérifie une signature Ed25519 sur chaque paquet de service avant de le décompresser, ce qui permet à ARMOR-STUDIO de mettre à jour la machine centrale ; la clé privée ne va jamais sur GitHub. Un fichier de firmware envoyé à la main n'est pas vérifié.",
         "table_eh3d_banner": "EH3D Fabrication Suite - l'écosystème le plus récent, pour le fraisage de circuits imprimés, la CNC, le laser et le pick and place, du même auteur.",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D - les outils placés au-dessus des quatre écosystèmes, qui mettent à jour n'importe lequel d'entre eux.",
+        "table_electro_hobby_3d_banner": "Outils - les programmes placés au-dessus des quatre écosystèmes, qui mettent à jour ou surveillent n'importe lequel d'entre eux.",
         "architecture_section_e": "EH3D : Architecture du système",
         "architecture_e_card1_title": "Un seul fichier de projet",
         "architecture_e_card1_body": "EH3D-COMMON définit le conteneur .eh3dproj : une archive ZIP avec le projet, ses couches, ses trajectoires et ses données de vision, un SHA-256 pour chaque entrée et des limites qui refusent les noms dangereux ou les entrées trop grosses.",
@@ -1558,7 +1559,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Release e aggiornamenti firmati",
         "architecture_a_card6_body": "Il firmware dei nodi è pubblicato con uno SHA-256 e una firma Ed25519, e sia un nodo sia ARMOR-SERVER rifiutano una release senza firma valida. L'assistente di manutenzione di ARMOR-DEVOPS controlla una firma Ed25519 su ogni pacchetto di servizio prima di scompattarlo, ed è così che ARMOR-STUDIO aggiorna la macchina centrale; la chiave privata non va mai su GitHub. Un file firmware caricato a mano non viene controllato.",
         "table_eh3d_banner": "EH3D Fabrication Suite - l'ecosistema più recente, per fresatura di PCB, CNC, laser e pick and place, dello stesso autore.",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D - gli strumenti che stanno sopra i quattro ecosistemi e aggiornano ciascuno di essi.",
+        "table_electro_hobby_3d_banner": "Strumenti - i programmi che stanno sopra i quattro ecosistemi e aggiornano o sorvegliano ciascuno di essi.",
         "architecture_section_e": "EH3D: Architettura del sistema",
         "architecture_e_card1_title": "Un solo file di progetto",
         "architecture_e_card1_body": "EH3D-COMMON definisce il contenitore .eh3dproj: un archivio ZIP con il progetto, i suoi livelli, i percorsi utensile e i dati di visione, un SHA-256 per ogni voce e limiti che rifiutano nomi non sicuri o voci troppo grandi.",
@@ -1616,7 +1617,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Signierte Releases und Updates",
         "architecture_a_card6_body": "Knoten-Firmware wird mit einem SHA-256 und einer Ed25519-Signatur veröffentlicht, und sowohl ein Knoten als auch ARMOR-SERVER lehnen ein Release ohne gültige Signatur ab. Der Wartungshelfer von ARMOR-DEVOPS prüft eine Ed25519-Signatur an jedem Dienstpaket, bevor er es entpackt; so aktualisiert ARMOR-STUDIO die zentrale Maschine, und der private Schlüssel gelangt nie zu GitHub. Eine von Hand hochgeladene Firmware-Datei wird nicht geprüft.",
         "table_eh3d_banner": "EH3D Fabrication Suite - das neueste Ökosystem, für Leiterplattenfräsen, CNC, Laser und Bestücken, desselben Autors.",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D - die Werkzeuge oberhalb der vier Ökosysteme, mit denen sich jedes von ihnen aktualisieren lässt.",
+        "table_electro_hobby_3d_banner": "Werkzeuge - die Programme oberhalb der vier Ökosysteme, mit denen sich jedes von ihnen aktualisieren oder überwachen lässt.",
         "architecture_section_e": "EH3D: Systemarchitektur",
         "architecture_e_card1_title": "Eine Projektdatei",
         "architecture_e_card1_body": "EH3D-COMMON definiert den .eh3dproj-Container: ein ZIP-Archiv mit dem Projekt, seinen Ebenen, Werkzeugwegen und Bilddaten, einem SHA-256 für jeden Eintrag und Grenzen, die unsichere Namen oder zu große Einträge ablehnen.",
@@ -1674,7 +1675,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "签名发布与更新",
         "architecture_a_card6_body": "节点固件附带 SHA-256 和 Ed25519 签名发布，节点和 ARMOR-SERVER 都会拒绝没有有效签名的发布。ARMOR-DEVOPS 的维护助手在解包每个服务包之前会校验其 Ed25519 签名，ARMOR-STUDIO 正是以此更新中央机器；私钥从不上传到 GitHub。手动上传的固件文件不做检查。",
         "table_eh3d_banner": "EH3D Fabrication Suite —— 最新的生态系统，用于 PCB 铣削、CNC、激光和贴片作业，同一作者。",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D —— 位于四个生态系统之上、可更新其中任何一个的工具。",
+        "table_electro_hobby_3d_banner": "工具 —— 位于四个生态系统之上、可更新或监视其中任何一个的程序。",
         "architecture_section_e": "EH3D：系统架构",
         "architecture_e_card1_title": "一个项目文件",
         "architecture_e_card1_body": "EH3D-COMMON 定义 .eh3dproj 容器：一个 ZIP 归档，包含项目、图层、刀路和视觉数据，每个条目都有 SHA-256，并设有限制以拒绝不安全或过大的条目名。",
@@ -1732,7 +1733,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "署名付きリリースとアップデート",
         "architecture_a_card6_body": "ノードのファームウェアは SHA-256 と Ed25519 署名付きで公開され、ノードも ARMOR-SERVER も有効な署名のないリリースを拒否します。ARMOR-DEVOPS のメンテナンスヘルパーは各サービスパッケージを展開する前に Ed25519 署名を検証し、ARMOR-STUDIO はこの方法で中央マシンを更新します。秘密鍵は GitHub には置かれません。手動でアップロードしたファームウェアファイルは検査されません。",
         "table_eh3d_banner": "EH3D Fabrication Suite — 基板切削、CNC、レーザー、ピックアンドプレース向けの最新のエコシステムです。同じ作者によるものです。",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D — 4つのエコシステムの上位に位置し、そのいずれも更新できるツールです。",
+        "table_electro_hobby_3d_banner": "ツール — 4つのエコシステムの上位に位置し、そのいずれも更新または監視できるプログラムです。",
         "architecture_section_e": "EH3D：システムアーキテクチャ",
         "architecture_e_card1_title": "ひとつのプロジェクトファイル",
         "architecture_e_card1_body": "EH3D-COMMON は .eh3dproj コンテナを定義します。プロジェクト、レイヤー、ツールパス、ビジョンデータを収めた ZIP アーカイブで、各エントリに SHA-256 があり、安全でない名前や大きすぎるエントリは制限で拒否されます。",
@@ -1790,7 +1791,7 @@ ARCHITECTURE_TRANSLATIONS: dict[str, dict[str, str]] = {
         "architecture_a_card6_title": "Releases e atualizações assinadas",
         "architecture_a_card6_body": "O firmware dos nós é publicado com um SHA-256 e uma assinatura Ed25519, e tanto um nó como o ARMOR-SERVER recusam uma release sem assinatura válida. O auxiliar de manutenção do ARMOR-DEVOPS verifica uma assinatura Ed25519 em cada pacote de serviço antes de o desempacotar, e é assim que o ARMOR-STUDIO atualiza a máquina central; a chave privada nunca vai para o GitHub. Um ficheiro de firmware carregado à mão não é verificado.",
         "table_eh3d_banner": "EH3D Fabrication Suite - o ecossistema mais recente, para fresagem de PCB, CNC, laser e pick and place, do mesmo autor.",
-        "table_electro_hobby_3d_banner": "Electro Hobby 3D - as ferramentas que ficam acima dos quatro ecossistemas e atualizam qualquer um deles.",
+        "table_electro_hobby_3d_banner": "Ferramentas - os programas que ficam acima dos quatro ecossistemas e atualizam ou vigiam qualquer um deles.",
         "architecture_section_e": "EH3D: Arquitetura do sistema",
         "architecture_e_card1_title": "Um só ficheiro de projeto",
         "architecture_e_card1_body": "O EH3D-COMMON define o contentor .eh3dproj: um arquivo ZIP com o projeto, as suas camadas, trajetórias e dados de visão, um SHA-256 por cada entrada e limites que recusam nomes inseguros ou entradas demasiado grandes.",
@@ -2654,7 +2655,7 @@ ECOSYSTEM_BANNER_FALLBACK_TEXT: dict[str, str] = {
     "urtc": "URTC - an independent product with its own firmware and maintenance tools, coordinated with HYDRA-UMC over FDCAN.",
     "armor": "A.R.M.O.R. - a separate, public perimeter-security and home-automation ecosystem, same author.",
     "eh3d": "EH3D Fabrication Suite - the newest ecosystem, for PCB milling, CNC, laser and pick-and-place work, same author.",
-    "electro-hobby-3d": "Electro Hobby 3D - the tools that sit above the four ecosystems and update any of them.",
+    "electro-hobby-3d": "Tools - the programs that sit above the four ecosystems and update or watch any of them.",
 }
 
 
@@ -3049,7 +3050,7 @@ ECOSYSTEM_ORDER: tuple[tuple[str, str], ...] = (
     ("urtc", "URTC"),
     ("armor", "A.R.M.O.R."),
     ("eh3d", "EH3D"),
-    ("electro-hobby-3d", "Electro Hobby 3D"),
+    ("electro-hobby-3d", "Tools"),
 )
 
 
@@ -3058,6 +3059,7 @@ def render_ecosystem_cards(
     ecosystem_by_name: dict[str, str],
     cover: "dashboard_integrity.Coverage | None" = None,
     show_unclassified: bool = True,
+    tools: "dict | None" = None,
 ) -> str:
     counts = {key: 0 for key, _ in ECOSYSTEM_ORDER}
     for entry in entries:
@@ -3067,6 +3069,9 @@ def render_ecosystem_cards(
 
     cards: list[str] = []
     for key, label in ECOSYSTEM_ORDER:
+        if key == dashboard_tools.KEY and tools is not None:
+            cards.append(dashboard_tools.card_html(tools, label))
+            continue
         cards.append(
             f"""
             <div class="health-card">
@@ -3406,6 +3411,8 @@ def render_html(
     code_history: "list | None" = None,
     scripts_doc: "dict | None" = None,
     changes: "dict | None" = None,
+    actions_config: "dict | None" = None,
+    tools_group: "dict | None" = None,
 ) -> str:
     stats = calculate_statistics(entries, results, ecosystem_by_name)
     integrity = list(integrity or [])
@@ -3430,7 +3437,7 @@ def render_html(
 
     rows = render_project_rows(entries, results, meta, ecosystem_by_name, activity)
 
-    ecosystem_cards = render_ecosystem_cards(entries, ecosystem_by_name, cover)
+    ecosystem_cards = render_ecosystem_cards(entries, ecosystem_by_name, cover, tools=tools_group)
 
     freshness_html = render_freshness_indicator()
 
@@ -3521,7 +3528,7 @@ def render_html(
     app_data.page_data["scripts"] = dashboard_scripts.build(scripts_doc, today)
     if (changes or {}).get("snapshot"):
         app_data.page_data["cover"] = changes["snapshot"]
-    app_data.page_data["actions"] = dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, full_history, today)
+    app_data.page_data["actions"] = dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, full_history, today, actions_config)
     app_data.page_data["pins"] = dashboard_pins.build(pins_doc)
     app_data.page_data["sentinel"] = dashboard_sentinel.build(sentinel_doc, sentinel_saved, sentinel_config or dashboard_sentinel.check_config(None)[0], today)
     tests_panel_html = dashboard_app.panel("tests", dashboard_tests_ui.panel_html())
@@ -5914,7 +5921,7 @@ DASHBOARD_ECOSYSTEMS: list[tuple[str, str, str]] = [
     ("urtc", "URTC", "urtc.project.json"),
     ("armor", "A.R.M.O.R.", "armor.project.json"),
     ("eh3d", "EH3D", EH3D_MANIFEST_FILE),
-    ("electro-hobby-3d", "Electro Hobby 3D", ELECTRO_HOBBY_MANIFEST_FILE),
+    ("electro-hobby-3d", "Tools", ELECTRO_HOBBY_MANIFEST_FILE),
 ]
 
 
@@ -5924,6 +5931,20 @@ def read_published_page(path: Path) -> "str | None":
         return path.read_text(encoding="utf-8")
     except OSError:
         return None
+
+
+def tools_progress(ecosystem_by_name: dict[str, str], raw_manifests: dict) -> "tuple[int, int] | None":
+    """The progress of the Tools group, worked out like the bars of the four ecosystems (maturity, evidence and, from the GitHub API, releases, tests, CI and READMEs).
+    None when it cannot be worked out; the card then says so instead of showing a number."""
+    names = sorted(n for n, eco in ecosystem_by_name.items() if eco == dashboard_tools.KEY)
+    if not names:
+        return None
+    try:
+        percent, counted = ecosystem_progress.ecosystem_percent(names, lambda n: _manifest_data((raw_manifests or {}).get(n)), ecosystem_progress.read_signals)
+    except Exception as exc:  # noqa: BLE001 - a number that cannot be worked out is left out, it never stops the page
+        print(f"WARNING: the progress of the Tools group could not be worked out ({exc}).", file=sys.stderr)
+        return None
+    return (percent, counted) if counted else None
 
 
 def keep_published(published: "str | None", index_path: Path, reason: str, today: str) -> int:
@@ -6012,7 +6033,7 @@ def main() -> int:
         ("urtc", "URTC", discover_urtc_projects),
         ("armor", "A.R.M.O.R.", discover_armor_projects),
         ("eh3d", "EH3D", discover_eh3d_projects),
-        ("electro-hobby-3d", "Electro Hobby 3D", discover_electro_hobby_projects),
+        ("electro-hobby-3d", "Tools", discover_electro_hobby_projects),
     ):
         print(f"Discovering {ecosystem_label} repositories for {catalog.github_owner} from GitHub...", file=sys.stderr)
         try:
@@ -6215,13 +6236,14 @@ def main() -> int:
         asof=stale_date or today)
     sentinel_doc = dashboard_sentinel.assemble(
         sentinel_read, ecosystem_by_name, sentinel_config, {n: a.signature for n, a in activity.items()},
-        dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, history, today), history, today,
+        dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, history, today, actions_config), history, today,
         ecosystem_of=ecosystem_by_name, versions={n: getattr(r, "version", None) for n, r in results.items()}, saved=sentinel_saved)
     sentinel_doc = dashboard_sentinel.stabilize(sentinel_doc, sentinel_saved, sentinel_config["stale_hours"])
     if sentinel_doc:
         print(f"Sentinel: {sentinel_doc['ci']['red_total']} red workflows, {sentinel_doc['releases']['total']} releases ready, {sentinel_doc['hygiene']['gaps']} hygiene gaps, {sentinel_doc['read']}/{sentinel_doc['repos']} repositories read.", file=sys.stderr)
     pins_doc = dashboard_pins.read_all(catalog.github_owner, ecosystem_by_name, dashboard_signatures.LiveFetch(catalog.github_owner, GITHUB_TOKEN).rest)
     print("Contract pins: " + str({k: (len(v['rows']) if v['read'] else 'not read') for k, v in pins_doc.items()}), file=sys.stderr)
+    tools_group = dashboard_tools.block(ecosystem_by_name, results, tools_progress(ecosystem_by_name, raw_manifests))
     rendered = render_html(entries, results, meta, ecosystem_by_name, integrity, cover, raw_manifests=raw_manifests, activity=activity,
                            signals=signals, build=build, config=config, history=history, facts=facts, weekly=weekly,
                            live_milestones=live_milestones, planned_milestones=planned_milestones,
@@ -6230,7 +6252,7 @@ def main() -> int:
                            actions_read=actions_read, actions_cache=actions_cache, builds=builds,
                            sentinel_doc=sentinel_doc, sentinel_saved=sentinel_saved, sentinel_config=sentinel_config, pins_doc=pins_doc,
                            code_doc=dashboard_code.load(), code_history=dashboard_code.load_history(),
-                           scripts_doc=dashboard_scripts.load(), changes=owner_changes)
+                           scripts_doc=dashboard_scripts.load(), changes=owner_changes, actions_config=actions_config, tools_group=tools_group)
     clean_rendered = "\n".join(line.rstrip() for line in rendered.splitlines()) + "\n"
     index_path.write_text(dashboard_health.merge_build_info(clean_rendered, published), encoding="utf-8")
 

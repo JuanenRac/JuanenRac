@@ -19,7 +19,7 @@ from dashboard_charts import esc
 
 EN = dashboard_evo_texts.TEXTS["en"]
 ECOSYSTEM_CHIPS: tuple[tuple[str, str, str], ...] = (
-    ("hydra-umc", "", "HYDRA-UMC"), ("urtc", "", "URTC"), ("armor", "", "A.R.M.O.R."), ("eh3d", "", "EH3D"), ("electro-hobby-3d", "scope_cross", "Cross-cutting"),
+    ("hydra-umc", "", "HYDRA-UMC"), ("urtc", "", "URTC"), ("armor", "", "A.R.M.O.R."), ("eh3d", "", "EH3D"), ("electro-hobby-3d", "scope_cross", "Tools"),
 )
 
 

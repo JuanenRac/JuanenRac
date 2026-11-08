@@ -52,6 +52,7 @@ from typing import Callable, Iterable, Mapping, Sequence
 
 import changelog_stats
 import scripts_stats
+import workflow_lint
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "code-stats-config.json"
@@ -212,6 +213,7 @@ def check_config(config: object) -> list[str]:
             if not isinstance(config[section].get(name), list):
                 problems.append(f"{section}.{name} must be a list")
     problems.extend(changelog_stats.check_rules(config.get("changelog")))
+    problems.extend(workflow_lint.check_config(config.get("lint"))[1])
     for name in ("max_file_bytes", "max_line_chars"):
         if not isinstance(config["exclude"].get(name), int) or config["exclude"][name] <= 0:
             problems.append(f"exclude.{name} must be a positive number")
@@ -600,7 +602,7 @@ def measure(repo: Mapping, config: Mapping, workdir: Path, token: str | None, lo
                 changes = None
         commit = last_commit_day(target, run) if (target / ".git").exists() else None
         try:
-            scripts = scripts_stats.summarize(target)
+            scripts = scripts_stats.summarize(target, config.get("lint"), name)
         except OSError:
             scripts = None
         side: dict = {}

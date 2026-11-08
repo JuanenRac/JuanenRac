@@ -259,7 +259,7 @@ JS = dashboard_presence_ui.JS + dashboard_pins_ui.JS + r"""
         return [r.repo, r.entries, r.published ? ((r.tag ? r.tag + " · " : "") + snAgoIso(r.published, dict)) : dict.sn_rel_never]; }), dict);
     }
   }
-  const SN_ECO_NAMES = { "hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D", "electro-hobby-3d": "Electro Hobby 3D" };
+  const SN_ECO_NAMES = { "hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D", "electro-hobby-3d": "Tools" };
   function snEco(doc, dict) {
     const table = document.getElementById("sn-eco-table"), none = document.getElementById("sn-eco-none"), wrap = document.getElementById("sn-eco-wrap");
     table.textContent = "";

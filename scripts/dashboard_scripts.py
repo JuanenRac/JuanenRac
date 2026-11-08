@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Mapping
 
 import scripts_stats
+import workflow_lint
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 STATS_PATH = DATA_DIR / "scripts-stats.json"
@@ -61,7 +62,22 @@ def _scripts(raw: object) -> dict | None:
     for lang, value in (raw.get("sc") if isinstance(raw.get("sc"), Mapping) else {}).items():
         if lang in scripts_stats.LANGS and isinstance(value, list) and len(value) == 2:
             sc[lang] = [_num(value[0]), _num(value[1])]
-    return {"wf": workflows, "acts": acts, "sc": sc}
+    out = {"wf": workflows, "acts": acts, "sc": sc}
+    lint = _lint(raw.get("lint"))
+    if lint is not None:
+        out["lint"] = lint
+    return out
+
+
+def _lint(raw: object) -> "dict | None":
+    """The findings of the workflow linter of one repository: counts per level and per rule, nothing else (no line, no value). None when the repository was not linted."""
+    if not isinstance(raw, Mapping):
+        return None
+    rules = {}
+    for rule, value in (raw.get("rules") if isinstance(raw.get("rules"), Mapping) else {}).items():
+        if rule in workflow_lint.RULES and isinstance(value, list) and len(value) == 3:
+            rules[rule] = [_num(n) for n in value]
+    return {**{level: _num(raw.get(level)) for level in workflow_lint.LEVELS}, "rules": rules}
 
 
 def load(path: Path = STATS_PATH) -> dict | None:

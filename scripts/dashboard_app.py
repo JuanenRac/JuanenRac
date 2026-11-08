@@ -30,6 +30,7 @@ import dashboard_nav_ui
 import dashboard_delivery_ui
 import dashboard_delivery_texts
 import dashboard_robust
+import dashboard_tools
 import dashboard_robust_texts
 from dashboard_charts import Activity, Area, esc
 
@@ -39,7 +40,7 @@ ECOSYSTEMS: tuple[tuple[str, str], ...] = (
     ("armor", "A.R.M.O.R."),
     ("eh3d", "EH3D"),
 )
-ECOSYSTEM_FILTERS: tuple[tuple[str, str], ...] = ECOSYSTEMS + (("electro-hobby-3d", "Electro Hobby 3D"),)
+ECOSYSTEM_FILTERS: tuple[tuple[str, str], ...] = ECOSYSTEMS + (("electro-hobby-3d", "Tools"),)
 
 # (id, i18n key of the label, literal label when it is a name and not a word)
 TABS: tuple[tuple[str, str, str], ...] = (
@@ -548,7 +549,7 @@ SCOPES: tuple[tuple[str, str, str], ...] = (
     ("urtc", "", "URTC"),
     ("armor", "", "A.R.M.O.R."),
     ("eh3d", "", "EH3D"),
-    ("electro-hobby-3d", "scope_cross", "Cross-cutting"),
+    ("electro-hobby-3d", "scope_cross", "Tools"),
 )
 
 
@@ -1832,7 +1833,7 @@ JS_HEALTH = r"""
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
-CSS = CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_code_ui.CSS + dashboard_actions_ui.CSS + dashboard_sentinel_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + dashboard_delivery_ui.CSS + r"""
+CSS = CSS + dashboard_tools.CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_code_ui.CSS + dashboard_actions_ui.CSS + dashboard_sentinel_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + dashboard_delivery_ui.CSS + r"""
   /* ======================= Last known data, generation figures, manifest health and rack ======================= */
   .stale-banner { grid-column: 1 / -1; margin: 0; padding: 10px 14px; border: 1px solid var(--k-pending); border-left-width: 6px; border-radius: var(--radius); background: var(--panel-2); color: var(--text); font-weight: 600; }
   .stale-glyph { color: var(--k-pending); margin-right: 6px; }

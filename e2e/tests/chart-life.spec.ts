@@ -28,7 +28,7 @@ test.describe("charts with life", () => {
     await gotoTab(page, "code");
     const segs = page.getByTestId("cd-prop-svg").locator(".cd-seg");
     await segs.first().hover();
-    const dimmed = await segs.nth(1).evaluate((e) => Number(getComputedStyle(e).opacity));
-    expect(dimmed).toBeLessThan(1);
+    // the entrance animation of the segments can still be running on a loaded runner, so the dimmed opacity is waited for instead of read once
+    await expect.poll(() => segs.nth(1).evaluate((e) => Number(getComputedStyle(e).opacity)), { timeout: 5000 }).toBeLessThan(1);
   });
 });

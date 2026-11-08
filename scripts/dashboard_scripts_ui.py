@@ -59,6 +59,10 @@ def panel_html() -> str:
                 + _chart("sc-top-chart"))
         + _card("sc-lang", "sc_lang_title", "sc_lang_hint", _chart("sc-lang-chart"))
         + _card("sc-rank", "sc_rank_title", "sc_rank_hint", _chart("sc-rank-chart"))
+        + _card("sc-lint", "sc_lint_title", "sc_lint_hint",
+                f'<p class="no-data" id="sc-lint-none" data-testid="sc-lint-none" hidden {_t("sc_lint_none")}</p>'
+                '<div id="sc-lint-body" data-testid="sc-lint-body">' + _chart("sc-lint-chart")
+                + f'<h4 class="card-title" id="sc-lintrule-title" {_t("sc_lint_by_rule")}</h4>' + _chart("sc-lintrule-chart") + '</div>')
         + _card("sc-unp", "sc_unp_title", "sc_unp_hint",
                 f'<p class="no-data" id="sc-unp-none" data-testid="sc-unp-none" hidden {_t("sc_unp_none")}</p>'
                 '<ul class="sc-unp" id="sc-unp-list" data-testid="sc-unp-list"></ul>')
@@ -105,8 +109,11 @@ JS = r"""
   const SC_COLUMNS = [
     ["name", "cd_col_name", false], ["eco", "cd_col_eco", false], ["type", "cd_col_type", false], ["repos", "cd_col_repos", true], ["wf", "sc_col_wf", true], ["jobs", "sc_col_jobs", true],
     ["acts", "sc_col_acts", true], ["unp", "sc_col_unp", true], ["sched", "sc_col_sched", true], ["manual", "sc_col_manual", true], ["files", "sc_col_files", true],
-    ["lines", "sc_col_lines", true], ["mix", "sc_col_mix", false]
+    ["lines", "sc_col_lines", true], ["lerr", "sc_col_lerr", true], ["lwarn", "sc_col_lwarn", true], ["mix", "sc_col_mix", false]
   ];
+  const SC_LEVELS = ["info", "warn", "error"];
+  const SC_RULES = ["unpinned_uses", "permissions", "secrets_in_clear", "injection", "pr_target"];
+  const SC_LEVEL_CLASS = { info: "cd-l-o", warn: "cd-l-5", error: "cd-l-1" };
   function scEcoLabel(key) { const e = SC.ecos.filter(function (x) { return x.key === key; })[0]; return e ? e.label : key; }
   function scNames() { return Object.keys(SC.repos).sort(); }
   function scHas(r) { return (r.state === "ok" || r.state === "lastknown") && r.scripts; }
@@ -114,8 +121,11 @@ JS = r"""
   function scThird(key) { const o = (SC.owner || "").toLowerCase(); return !o || key.toLowerCase().indexOf(o + "/") !== 0; }
   function scFig(r) {
     const s = r.scripts;
-    const f = { repos: 1, wf: s.wf.length, jobs: 0, acts: 0, unp: 0, sched: 0, manual: 0, files: 0, lines: 0, trig: {}, pin: {}, lang: {} };
+    const f = { repos: 1, wf: s.wf.length, jobs: 0, acts: 0, unp: 0, sched: 0, manual: 0, files: 0, lines: 0, lerr: 0, lwarn: 0, linted: s.lint ? 1 : 0, trig: {}, pin: {}, lang: {}, lint: {}, rules: {} };
     SC_TRIGGERS.forEach(function (t) { f.trig[t] = 0; }); SC_PINS.forEach(function (p) { f.pin[p] = 0; }); SC_LANGS.forEach(function (l) { f.lang[l] = 0; });
+    SC_LEVELS.forEach(function (l) { f.lint[l] = s.lint ? s.lint[l] : 0; });
+    SC_RULES.forEach(function (r) { f.rules[r] = s.lint && s.lint.rules[r] ? s.lint.rules[r] : [0, 0, 0]; });
+    f.lerr = f.lint.error; f.lwarn = f.lint.warn;
     s.wf.forEach(function (w) {
       f.jobs += w[3];
       w[2].forEach(function (t) { f.trig[t] += 1; });
@@ -131,11 +141,14 @@ JS = r"""
     return f;
   }
   function scSum(list) {
-    const out = { repos: 0, wf: 0, jobs: 0, acts: 0, unp: 0, sched: 0, manual: 0, files: 0, lines: 0, trig: {}, pin: {}, lang: {} };
+    const out = { repos: 0, wf: 0, jobs: 0, acts: 0, unp: 0, sched: 0, manual: 0, files: 0, lines: 0, lerr: 0, lwarn: 0, linted: 0, trig: {}, pin: {}, lang: {}, lint: {}, rules: {} };
     SC_TRIGGERS.forEach(function (t) { out.trig[t] = 0; }); SC_PINS.forEach(function (p) { out.pin[p] = 0; }); SC_LANGS.forEach(function (l) { out.lang[l] = 0; });
+    SC_LEVELS.forEach(function (l) { out.lint[l] = 0; }); SC_RULES.forEach(function (r) { out.rules[r] = [0, 0, 0]; });
     list.forEach(function (f) {
-      ["repos", "wf", "jobs", "acts", "unp", "sched", "manual", "files", "lines"].forEach(function (k) { out[k] += f[k]; });
+      ["repos", "wf", "jobs", "acts", "unp", "sched", "manual", "files", "lines", "lerr", "lwarn", "linted"].forEach(function (k) { out[k] += f[k]; });
       SC_TRIGGERS.forEach(function (t) { out.trig[t] += f.trig[t]; }); SC_PINS.forEach(function (p) { out.pin[p] += f.pin[p]; }); SC_LANGS.forEach(function (l) { out.lang[l] += f.lang[l]; });
+      SC_LEVELS.forEach(function (l) { out.lint[l] += f.lint[l]; });
+      SC_RULES.forEach(function (r) { for (let i = 0; i < 3; i++) { out.rules[r][i] += f.rules[r][i]; } });
     });
     return out;
   }
@@ -154,6 +167,9 @@ JS = r"""
     const items = [["repos", withWf + " / " + scNames().length, dict.sc_k_repos], ["workflows", cdNum(all.wf), dict.sc_k_workflows], ["jobs", cdNum(all.jobs), dict.sc_k_jobs],
       ["uses", cdNum(all.acts), dict.sc_k_uses], ["unpinned", cdNum(all.unp) + " (" + cdNum(cdPct(all.unp, all.acts)) + " %)", dict.sc_k_unpinned],
       ["files", cdNum(all.files), dict.sc_k_files], ["lines", cdNum(all.lines), dict.sc_k_lines]];
+    if (all.linted > 0) {
+      items.push(["lint-error", cdNum(all.lerr), dict.sc_k_lint_err]); items.push(["lint-warn", cdNum(all.lwarn), dict.sc_k_lint_warn]);
+    }
     items.forEach(function (it) {
       const li = make("li", "ac-kpi"); li.setAttribute("data-testid", "sc-k-" + it[0]); li.setAttribute("data-value", it[1]);
       li.appendChild(cdLiveFigure(it[1])); li.appendChild(make("span", "", it[2])); list.appendChild(li);
@@ -257,6 +273,17 @@ JS = r"""
       .sort(function (a, b) { return b.wf - a.wf || (a.name < b.name ? -1 : 1); }).slice(0, scState.top);
     scBars("sc-rank-chart", "sc_aria_rank", ranked, SC_TRIGGERS, scTrigLabel, function (k) { return SC_TRIG_CLASS[SC_TRIGGERS.indexOf(k)]; }, function (it, k) { return it.trig[k]; }, "sc_tip_trig", dict);
   }
+  /* The lint findings: by level for the whole, each ecosystem and each type, and by rule. "Not verified" until the daily count carries them. */
+  function scRenderLint(dict) {
+    const none = document.getElementById("sc-lint-none"), body = document.getElementById("sc-lint-body");
+    const all = scSum(scMeasured().map(function (n) { return scFig(SC.repos[n]); }));
+    none.hidden = all.linted > 0; body.hidden = all.linted === 0;
+    if (all.linted === 0) { return; }
+    const levelLabel = function (k, d) { return d["sc_lvl_" + k]; };
+    scStack("sc-lint-chart", "sc_aria_lint", SC_LEVELS, levelLabel, function (k) { return SC_LEVEL_CLASS[k]; }, function (f, k) { return f.lint[k]; }, "sc_tip_lint", dict);
+    const items = SC_RULES.map(function (r) { return { name: dict["sc_rule_" + r], lvl: { info: all.rules[r][0], warn: all.rules[r][1], error: all.rules[r][2] } }; });
+    scBars("sc-lintrule-chart", "sc_aria_lintrule", items, SC_LEVELS, levelLabel, function (k) { return SC_LEVEL_CLASS[k]; }, function (it, k) { return it.lvl[k]; }, "sc_tip_lint", dict);
+  }
   function scRenderUnpinned(dict) {
     const map = {};
     scMeasured().forEach(function (n) {
@@ -322,6 +349,7 @@ JS = r"""
     if (key === "eco") { return row.eco ? scEcoLabel(row.eco) : ""; }
     if (key === "type") { return row.type ? cdTypeLabel(row.type, dict) : ""; }
     if (key === "repos") { return row.group ? cdNum(row.repos) : ""; }
+    if ((key === "lerr" || key === "lwarn") && !row.linted) { return "–"; }
     return cdNum(row[key]);
   }
   function scRenderTable(dict) {
@@ -388,7 +416,7 @@ JS = r"""
       if (c[0] === "repos") { td.textContent = cdNum(total.repos); }
       else if (c[0] === "mix") { td.appendChild(scMix(total, dict)); }
       else if (c[0] === "eco" || c[0] === "type") { td.textContent = ""; }
-      else { td.textContent = cdNum(total[c[0]]); }
+      else { td.textContent = scCell(total, c[0], dict); }
       ft.appendChild(td);
     });
     foot.appendChild(ft); table.appendChild(foot);
@@ -430,7 +458,7 @@ JS = r"""
     stale.textContent = old ? tpl(dict.sc_stale, { days: SC.age, date: SC.day || "" }) : "";
     document.getElementById("sc-help-body").textContent = tpl(dict.sc_help_body, { day: SC.day || "–", n: scMeasured().length });
     if (nothing) { return; }
-    scKpis(dict); scRenderCharts(dict); scRenderUnpinned(dict); scRenderControls(dict); scRenderTable(dict);
+    scKpis(dict); scRenderCharts(dict); scRenderLint(dict); scRenderUnpinned(dict); scRenderControls(dict); scRenderTable(dict);
   }
   (function () {
     const sel = document.getElementById("sc-group"), search = document.getElementById("sc-search"), top = document.getElementById("sc-top-n");
