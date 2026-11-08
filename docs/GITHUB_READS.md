@@ -2,18 +2,21 @@
 
 The dashboard is built in GitHub Actions with the read-only token of the workflow, whose quota is small. Two things keep a refused read from stopping the build.
 
-## Conditional reads (ETag)
+## Saved reads: nothing pushed, ETag, and the saved copy
 
-[`scripts/gh_http.py`](../scripts/gh_http.py) reads the REST API with `If-None-Match`. An answer that has not changed is a `304`, which costs no quota, and the saved body
-is used. The saved copy is `data/etag-cache.json`; it is **not committed**: the build restores and stores it with the Actions cache. The generation card of the page
-shows the reads made, the ones that were free thanks to the ETag and the ones answered from the saved copy.
+[`scripts/gh_http.py`](../scripts/gh_http.py) reads the REST API and keeps every answer in `data/etag-cache.json`. That file is **not committed**: the build restores and stores
+it with the Actions cache. The generation card of the page shows the reads made, the ones that were saved and the ones answered from the saved copy.
 
-When GitHub refuses a read because the quota is spent (`429`, or `403` with no requests left, a `Retry-After` or a message about the rate limit) or does not answer, the
-last good answer is used instead of failing, as long as it is not older than `stale_max_hours`. A real refusal (`403` for lack of permission, `404`) is never hidden by
-the copy.
+* **Nothing pushed, nothing read.** The list of repositories gives the moment of the last push of each one. A repository that was not pushed since its saved commit was read is
+  not read again: no request at all. This is the saving that works with the token of a workflow.
+* **ETag.** A read that does go out sends `If-None-Match`; an unchanged answer is a `304`, which costs no quota. GitHub ties an ETag to the token that read it, so a new token
+  in every run (the case of a workflow) does not get a `304` for what another token read; the ETag helps the reads repeated with the same token.
+* **The saved copy.** When GitHub refuses a read because the quota is spent (`429`, or `403` with no requests left, a `Retry-After` or a message about the rate limit) or does
+  not answer, the last good answer is used instead of failing, as long as it is not older than `stale_max_hours`. A real refusal (`403` for lack of permission, `404`) is
+  never hidden by the copy.
 
 The limits live in the `http_cache` block of [`dashboard-config.json`](../dashboard-config.json): `enabled` (switch it off and every read goes to GitHub as before),
-`max_entries`, `max_body_bytes`, `stale_max_hours` and `path`.
+`max_entries`, `max_body_bytes`, `stale_max_hours`, `unchanged_margin_seconds` (how much newer than the push the saved answer must be) and `path`.
 
 ## When the discovery of the repositories cannot be read
 

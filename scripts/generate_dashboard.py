@@ -334,13 +334,13 @@ class RepoMeta:
     commit_url: str | None = None
 
 
-def _api_get(url: str) -> dict | list | None:
+def _api_get(url: str, unchanged_since: "int | None" = None) -> dict | list | None:
     """
     GET one api.github.com JSON endpoint. Returns None on any failure
     (network error, rate limit, 404, malformed JSON, ...) - metadata is
     optional decoration, never something that should abort the dashboard
     build. The read is conditional (ETag) and, when GitHub refuses it for
-    quota or cannot be reached, the saved copy of the last good answer is used.
+    quota or cannot be reached, the saved copy of the last good answer is used; with `unchanged_since` a saved answer newer than that moment is used with no request.
     """
 
     headers = {
@@ -353,7 +353,7 @@ def _api_get(url: str) -> dict | list | None:
         headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
     # Conditional read with a saved copy (scripts/gh_http.py): a 304 costs no quota, and a refused or unreachable read uses the saved body, marked with its age.
-    return gh_http.shared().get(url, headers, timeout=API_REQUEST_TIMEOUT_S).data
+    return gh_http.shared().get(url, headers, timeout=API_REQUEST_TIMEOUT_S, unchanged_since=unchanged_since).data
 
 
 # DOC-51 (P2):
@@ -425,13 +425,14 @@ def render_freshness_indicator() -> str:
     )
 
 
-def _fetch_one_meta(repo_name: str) -> RepoMeta:
+def _fetch_one_meta(repo_name: str, pushed: "int | None" = None) -> RepoMeta:
     meta = RepoMeta()
 
     # --- Latest commit on the default branch --------------------------
     commits = _api_get(
         f"https://api.github.com/repos/JuanenRac/{repo_name}/commits"
-        f"?per_page=1"
+        f"?per_page=1",
+        unchanged_since=pushed,
     )
 
     if isinstance(commits, list) and commits:
@@ -454,6 +455,7 @@ def _fetch_one_meta(repo_name: str) -> RepoMeta:
 def fetch_all_meta(
     entries: list,
     progress=None,
+    pushed: "dict[str, int] | None" = None,
 ) -> dict[str, RepoMeta]:
     """
     Fetch commit metadata for every given registry entry, concurrently.
@@ -476,7 +478,7 @@ def fetch_all_meta(
     ) as pool:
 
         futures = {
-            pool.submit(_fetch_one_meta, entry.name): entry
+            pool.submit(_fetch_one_meta, entry.name, (pushed or {}).get(entry.name)): entry
             for entry in entries
         }
 
@@ -6148,7 +6150,8 @@ def main() -> int:
     if sentinel_config["enabled"] and sentinel_read is None:
         print("WARNING: the sentinel could not read GitHub; " + (f"the last reading from {sentinel_saved['asof']} is shown, marked as such." if sentinel_saved else "the tab says not verified."), file=sys.stderr)
 
-    meta = fetch_all_meta(entries)
+    # A repository that was not pushed since its saved commit was read needs no request at all (only with a listing that was really read in this run).
+    meta = fetch_all_meta(entries, pushed=listing_details.get("pushed") if reliable_listing else None)
     activity = dashboard_charts.fetch_activity(catalog.github_owner, GITHUB_TOKEN, redact=_redact_private_document_names)
     print(f"{len(activity)} release/CI records read.", file=sys.stderr)
     today = dashboard_evo.today_utc()
@@ -6283,7 +6286,7 @@ def main() -> int:
     # The saved copy of the conditional reads (restored by the build with the Actions cache) and the figures of this run.
     http_figures = gh_http.shared().summary()
     gh_http.shared().save()
-    print(f"GitHub reads: {http_figures['requests']} made, {http_figures['not_modified']} free by ETag, {http_figures['stale']} answered from the saved copy, {http_figures['failed']} failed.", file=sys.stderr)
+    print(f"GitHub reads: {http_figures['requests']} made, {http_figures['not_modified']} free by ETag, {http_figures['skipped']} not needed (nothing pushed), {http_figures['stale']} answered from the saved copy, {http_figures['failed']} failed.", file=sys.stderr)
 
     print(
         f"Wrote {index_path}",

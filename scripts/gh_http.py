@@ -12,6 +12,9 @@
     cannot be reached, the saved body is used instead of failing, as long as it is not older than `stale_max_hours`. The reply says it is a saved copy and how old
     it is, so the page can mark it; it is never presented as current.
   * With no saved body the failure is reported exactly as before (the caller decides).
+  * A caller that knows when the thing it reads last changed (the `pushed_at` of a repository) says so with `unchanged_since`: when the saved body is newer than that moment
+    it is used without any request at all, which is the saving that works with the token of a workflow (GitHub keys an ETag to the token that read it, so a new token
+    in every run never gets a 304 for what another token read).
 
 The saved copy is a small JSON file (`data/etag-cache.json`, not committed: the build restores and stores it with the Actions cache). Its limits (entries, size of a
 body, age) are read from `http_cache` in dashboard-config.json. Stdlib only; the network is only touched through the `opener` argument, so the tests use none.
@@ -32,7 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "dashboard-config.json"
 CACHE_PATH = ROOT / "data" / "etag-cache.json"
 SCHEMA = 1
-DEFAULT_CONFIG: dict = {"enabled": True, "max_entries": 600, "max_body_bytes": 60000, "stale_max_hours": 72, "path": "data/etag-cache.json"}
+DEFAULT_CONFIG: dict = {"enabled": True, "max_entries": 600, "max_body_bytes": 400000, "stale_max_hours": 72, "path": "data/etag-cache.json", "unchanged_margin_seconds": 120}
 QUOTA_WORDS = ("rate limit", "abuse", "secondary", "quota")
 
 
@@ -48,7 +51,7 @@ def check_config(raw: object) -> tuple[dict, list[str]]:
             config["enabled"] = raw["enabled"]
         else:
             problems.append("http_cache.enabled: needs true or false")
-    for key, low, high in (("max_entries", 10, 5000), ("max_body_bytes", 1000, 1_000_000), ("stale_max_hours", 1, 24 * 30)):
+    for key, low, high in (("max_entries", 10, 5000), ("max_body_bytes", 1000, 1_000_000), ("stale_max_hours", 1, 24 * 30), ("unchanged_margin_seconds", 0, 86400)):
         if key in raw:
             value = raw[key]
             if isinstance(value, int) and not isinstance(value, bool) and low <= value <= high:
@@ -89,7 +92,7 @@ def is_quota_refusal(code: int, headers: Mapping | None, body: str = "") -> bool
 
 @dataclass(frozen=True)
 class Reply:
-    """`how`: "fresh" (200), "not_modified" (304, the saved body is current), "stale" (refused or unreachable: the saved body, `age_seconds` old) or "failed"."""
+    """`how`: "fresh" (200), "not_modified" (304, the saved body is current), "unchanged" (no request: the saved body is newer than the last change), "stale" (refused or unreachable: the saved body, `age_seconds` old) or "failed"."""
     data: object
     how: str
     age_seconds: int = 0
@@ -103,7 +106,7 @@ class ConditionalGet:
         self.clock = clock
         self.lock = threading.Lock()
         self.entries: dict[str, dict] = {}
-        self.stats = {"requests": 0, "fresh": 0, "not_modified": 0, "stale": 0, "failed": 0, "oldest_stale": 0, "refused": 0}
+        self.stats = {"requests": 0, "fresh": 0, "not_modified": 0, "skipped": 0, "stale": 0, "failed": 0, "oldest_stale": 0, "refused": 0}
         self.dirty = False
         self._load()
 
@@ -160,9 +163,20 @@ class ConditionalGet:
             self.stats["failed"] += 1
         return Reply(None, "failed", 0, reason)
 
-    def get(self, url: str, headers: Mapping[str, str], timeout: float = 20, opener: Callable = urllib.request.urlopen) -> Reply:
+    def get(self, url: str, headers: Mapping[str, str], timeout: float = 20, opener: Callable = urllib.request.urlopen, unchanged_since: "int | None" = None) -> Reply:
+        """`unchanged_since` (epoch seconds) is the moment the thing last changed, when the caller knows it: a saved body received after it (plus the margin of the
+        configuration) is still current and is returned with no request."""
         sent = dict(headers)
         item = self._saved(url)
+        if item is not None and unchanged_since is not None and item["at"] >= int(unchanged_since) + self.config["unchanged_margin_seconds"]:
+            try:
+                data = json.loads(item["body"])
+            except ValueError:
+                data = None
+            if data is not None:
+                with self.lock:
+                    self.stats["skipped"] += 1
+                return Reply(data, "unchanged", 0)
         if item is not None:
             sent["If-None-Match"] = item["etag"]
         with self.lock:

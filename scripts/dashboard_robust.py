@@ -97,10 +97,10 @@ def generation_html(gen: "Generation | None", stale: bool = False, http: "Mappin
 
 def http_line(http: "Mapping[str, int] | None") -> str:
     """The line with the reads of GitHub of this run (made, free thanks to the ETag, answered from the saved copy). '' when nothing was counted."""
-    if not http or not http.get("requests"):
+    if not http or not (http.get("requests") or http.get("skipped")):
         return ""
     en = _en()
-    made, saved, stale = int(http.get("requests", 0)), int(http.get("not_modified", 0)), int(http.get("stale", 0))
+    made, saved, stale = int(http.get("requests", 0)) + int(http.get("skipped", 0)), int(http.get("not_modified", 0)) + int(http.get("skipped", 0)), int(http.get("stale", 0))
     hours = int(http.get("oldest_stale", 0)) // 3600
     text = en["gen_http"].replace("{made}", str(made)).replace("{saved}", str(saved)).replace("{stale}", str(stale)).replace("{hours}", str(hours))
     return (f'<p class="muted" data-testid="gen-http" data-i18n-template="gen_http" data-made="{made}" data-saved="{saved}" data-served="{stale}" data-hours="{hours}">{esc(text)}</p>')

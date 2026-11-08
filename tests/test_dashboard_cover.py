@@ -143,6 +143,18 @@ class KeptPageTests(unittest.TestCase):
             self.assertIn(part, line)
 
 
+class CommitLookupTests(unittest.TestCase):
+    def test_the_lookup_of_the_commit_carries_the_moment_of_the_last_push(self):
+        seen = {}
+        original = gen._api_get
+        gen._api_get = lambda url, unchanged_since=None: seen.update({url: unchanged_since}) or []
+        try:
+            gen.fetch_all_meta([type("E", (), {"name": "A"})(), type("E", (), {"name": "B"})()], pushed={"A": 1234})
+        finally:
+            gen._api_get = original
+        self.assertEqual({url.split("/repos/JuanenRac/")[1].split("/")[0]: moment for url, moment in seen.items()}, {"A": 1234, "B": None})
+
+
 class TextsTests(unittest.TestCase):
     def test_every_text_has_the_eight_languages_and_the_same_placeholders(self):
         self.assertEqual(texts.problems(), [])

@@ -176,6 +176,49 @@ class ConditionalReadTests(unittest.TestCase):
                 self.assertEqual(gh_http.ConditionalGet(path, {}, Clock()).entries, {})
 
 
+class NothingPushedTests(unittest.TestCase):
+    def make(self, **config):
+        self.clock = Clock(1_000_000)
+        return gh_http.ConditionalGet(None, config, self.clock)
+
+    def test_a_saved_answer_newer_than_the_last_push_needs_no_request(self):
+        cache = self.make()
+        cache.get(URL, HEADERS, opener=Script(Answer(b'["a"]', '"t1"')))
+        opener = Script()          # any request would fail: the script has no answer
+        reply = cache.get(URL, HEADERS, opener=opener, unchanged_since=1_000_000 - 3600)
+        self.assertEqual((reply.how, reply.data, opener.sent), ("unchanged", ["a"], []))
+        self.assertEqual(cache.summary()["skipped"], 1)
+        self.assertEqual(cache.summary()["requests"], 1)
+
+    def test_a_push_after_the_saved_answer_means_a_new_read(self):
+        cache = self.make()
+        cache.get(URL, HEADERS, opener=Script(Answer(b'["old"]', '"t1"')))
+        self.clock.now += 600
+        reply = cache.get(URL, HEADERS, opener=Script(Answer(b'["new"]', '"t2"')), unchanged_since=1_000_000 + 300)
+        self.assertEqual((reply.how, reply.data), ("fresh", ["new"]))
+
+    def test_a_push_within_the_margin_of_the_read_is_not_trusted(self):
+        cache = self.make(unchanged_margin_seconds=120)
+        cache.get(URL, HEADERS, opener=Script(Answer(b"[1]", '"t1"')))
+        self.assertEqual(cache.get(URL, HEADERS, opener=Script(Answer(b"[2]", '"t2"')), unchanged_since=1_000_000 - 60).how, "fresh")
+
+    def test_without_a_saved_answer_or_a_known_push_the_read_goes_out(self):
+        cache = self.make()
+        self.assertEqual(cache.get(URL, HEADERS, opener=Script(Answer(b"[1]", '"t1"')), unchanged_since=1).how, "fresh")
+        self.assertEqual(cache.get(URL, HEADERS, opener=Script(http_error(304))).how, "not_modified")
+
+    def test_switched_off_it_never_skips(self):
+        cache = self.make(enabled=False)
+        cache.get(URL, HEADERS, opener=Script(Answer(b"[1]", '"t1"')))
+        self.assertEqual(cache.get(URL, HEADERS, opener=Script(Answer(b"[1]", '"t1"')), unchanged_since=1).how, "fresh")
+
+    def test_the_listing_reports_the_moment_of_the_last_push(self):
+        pages = [{"name": "a", "pushed_at": "2001-12-21T11:00:00Z"}, {"name": "b", "pushed_at": "nonsense"}, {"name": "c"}]
+        details = {}
+        integrity.github_listing("o", "", reader=lambda url, headers, timeout=0: gh_http.Reply(pages, "fresh"), details=details)()
+        self.assertEqual(details["pushed"], {"a": 1008932400})
+
+
 class ConfigurationTests(unittest.TestCase):
     def test_defaults_and_valid_values(self):
         self.assertEqual(gh_http.check_config(None), (gh_http.DEFAULT_CONFIG, []))
@@ -211,7 +254,7 @@ class ListingTests(unittest.TestCase):
         details = {}
         found, error = integrity.github_listing("o", "", reader=reader, details=details)()
         self.assertEqual((len(found), error, len(calls)), (101, "", 2))
-        self.assertEqual(details, {"archived": ["last"], "stale": False})
+        self.assertEqual(details, {"archived": ["last"], "stale": False, "pushed": {}})
         self.assertIn(("last", "main"), found)
 
     def test_a_page_from_the_saved_copy_is_marked(self):

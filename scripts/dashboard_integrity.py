@@ -29,6 +29,7 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from typing import Callable, Iterable
 
 import gh_http
@@ -225,16 +226,26 @@ def gather(
     return raw, (None if error else [name for name, _ in repos]), failures
 
 
+def _epoch(text: object) -> "int | None":
+    """Epoch seconds of an ISO 8601 UTC time of the API (2001-12-21T11:00:00Z), None when it is not one."""
+    if not isinstance(text, str):
+        return None
+    try:
+        return int(datetime.strptime(text, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp())
+    except ValueError:
+        return None
+
+
 def github_listing(owner: str, token: str, timeout: float = 15, reader: "Callable | None" = None, details: "dict | None" = None) -> Callable[[], "tuple[list[tuple[str, str]], str]"]:
     """A `list_repos` for `gather`: every public non-fork repository of the owner, following all pages, with the first failure reported.
     The pages are read with the conditional reader of gh_http (a 304 costs no quota; a refused read uses the saved page). When `details` is given it receives
-    `archived` (the names of the archived repositories, which stay in the list) and `stale` (True when any page came from the saved copy)."""
+    `archived` (the names of the archived repositories, which stay in the list), `pushed` ({name: epoch seconds of the last push}) and `stale` (True when any page came from the saved copy)."""
     def run() -> "tuple[list[tuple[str, str]], str]":
         found: list[tuple[str, str]] = []
         page = 1
         get = reader or gh_http.shared().get
         if details is not None:
-            details["archived"], details["stale"] = [], False
+            details["archived"], details["stale"], details["pushed"] = [], False, {}
         while True:
             headers = {"User-Agent": "JuanenRac-dashboard-integrity", "Accept": "application/vnd.github+json"}
             if token:
@@ -251,6 +262,10 @@ def github_listing(owner: str, token: str, timeout: float = 15, reader: "Callabl
                 if isinstance(item, dict) and isinstance(item.get("name"), str) and item.get("fork") is not True:
                     if details is not None and item.get("archived") is True:
                         details["archived"].append(item["name"])
+                    if details is not None:
+                        moment = _epoch(item.get("pushed_at"))
+                        if moment is not None:
+                            details["pushed"][item["name"]] = moment
                     branch = item.get("default_branch")
                     found.append((item["name"], branch if isinstance(branch, str) and branch else "main"))
             if len(payload) < 100:
