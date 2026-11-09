@@ -1,45 +1,45 @@
 {
- "asof": "2026-11-09T06:30:04Z",
+ "asof": "2026-11-09T12:05:04Z",
  "ci": {
-  "checked": 530,
+  "checked": 529,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 45,
-    "min7": 195,
+    "min24": 27,
+    "min7": 199,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 37,
-    "min7": 104,
-    "repo": "URTC-WEB-STUDIO"
-   },
-   {
-    "min24": 31,
-    "min7": 133,
-    "repo": "URTC"
-   },
-   {
-    "min24": 31,
+    "min24": 16,
     "min7": 55,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 22,
-    "min7": 89,
-    "repo": "URTC-DOCS"
+    "min24": 15,
+    "min7": 161,
+    "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 21,
-    "min7": 160,
-    "repo": "URTC-UPDATER"
+    "min24": 8,
+    "min7": 184,
+    "repo": "HYDRA-UMC-WATCH"
+   },
+   {
+    "min24": 8,
+    "min7": 141,
+    "repo": "ARMOR-SERVER"
+   },
+   {
+    "min24": 5,
+    "min7": 145,
+    "repo": "HYDRA-UMC-SWARM-SYNC"
    }
   ],
-  "total24": 345,
-  "total7": 14869,
+  "total24": 154,
+  "total7": 14747,
   "warn": false
  },
  "ecosystems": {
@@ -775,7 +775,7 @@
    5648,
    3487,
    629,
-   345
+   154
   ],
   "red": [
    3,
