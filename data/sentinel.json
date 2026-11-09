@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-09T00:08:56Z",
+ "asof": "2026-11-09T06:30:04Z",
  "ci": {
   "checked": 530,
   "red": [],
@@ -8,43 +8,43 @@
  "compute": {
   "top": [
    {
-    "min24": 69,
-    "min7": 197,
+    "min24": 45,
+    "min7": 195,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 47,
-    "min7": 105,
+    "min24": 37,
+    "min7": 104,
     "repo": "URTC-WEB-STUDIO"
    },
    {
-    "min24": 44,
+    "min24": 31,
+    "min7": 133,
+    "repo": "URTC"
+   },
+   {
+    "min24": 31,
     "min7": 55,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 36,
-    "min7": 98,
-    "repo": "URTC-TESTER"
+    "min24": 22,
+    "min7": 89,
+    "repo": "URTC-DOCS"
    },
    {
-    "min24": 31,
-    "min7": 165,
-    "repo": "URTC"
-   },
-   {
-    "min24": 30,
-    "min7": 243,
-    "repo": "URTC-VISION-TOOL"
+    "min24": 21,
+    "min7": 160,
+    "repo": "URTC-UPDATER"
    }
   ],
-  "total24": 427,
-  "total7": 15065,
+  "total24": 345,
+  "total7": 14869,
   "warn": false
  },
  "ecosystems": {
   "armor": {
-   "cand": 16,
+   "cand": 17,
    "read": 19,
    "red": 0,
    "repos": 19,
@@ -65,7 +65,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 25,
+   "cand": 26,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -277,7 +277,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 41,
+    "cand": 43,
     "hyg": 1,
     "red": 0
    }
@@ -300,6 +300,7 @@
      "ARMOR-NODE-SOLAR",
      "ARMOR-SERVER",
      "ARMOR-SIMULATOR",
+     "ARMOR-STUDIO",
      "ARMOR-UPDATER",
      "ARMOR-VISION",
      "ARMOR-VOICE-AI",
@@ -322,13 +323,12 @@
      "HYDRA-UMC-OS-REBUILDER",
      "HYDRA-UMC-PHYSICS-REPLICA",
      "HYDRA-UMC-SAFETY-ZONES",
+     "HYDRA-UMC-SDK",
      "HYDRA-UMC-TWIN",
      "HYDRA-UMC-UPDATER",
-     "HYDRA-UMC-VISION-NODE",
-     "HYDRA-UMC-VISION-STREAMER",
-     "HYDRA-UMC-VISUAL-SERVOING-API"
+     "HYDRA-UMC-VISION-NODE"
     ],
-    "n": 41
+    "n": 43
    }
   },
   {
@@ -406,6 +406,12 @@
     "published": "2026-11-06T14:09:45Z",
     "repo": "ARMOR-NODE-RADAR",
     "tag": "v0.8.1.0"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-07T00:51:41Z",
+    "repo": "ARMOR-STUDIO",
+    "tag": "v0.8.2.3"
    },
    {
     "entries": 5,
@@ -505,6 +511,12 @@
    },
    {
     "entries": 3,
+    "published": "2026-11-07T04:03:33Z",
+    "repo": "HYDRA-UMC-SDK",
+    "tag": "v0.5.9"
+   },
+   {
+    "entries": 3,
     "published": "2026-11-06T16:50:55Z",
     "repo": "HYDRA-UMC-UPDATER",
     "tag": "v0.5.7"
@@ -580,23 +592,11 @@
     "published": "2026-11-05T21:37:34Z",
     "repo": "HYDRA-UMC-PHYSICS-REPLICA",
     "tag": "v0.1.4"
-   },
-   {
-    "entries": 2,
-    "published": "2026-11-06T09:54:58Z",
-    "repo": "HYDRA-UMC-TWIN",
-    "tag": "v0.1.7"
-   },
-   {
-    "entries": 2,
-    "published": "2026-11-05T13:10:50Z",
-    "repo": "HYDRA-UMC-VISUAL-SERVOING-API",
-    "tag": "v0.2.4"
    }
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 41
+  "total": 43
  },
  "repos": 129,
  "schema": 1,
@@ -748,7 +748,7 @@
    0,
    17,
    41,
-   41
+   43
   ],
   "dates": [
    "2026-11-03",
@@ -775,7 +775,7 @@
    5648,
    3487,
    629,
-   427
+   345
   ],
   "red": [
    3,
