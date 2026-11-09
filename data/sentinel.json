@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-09T12:05:04Z",
+ "asof": "2026-11-09T16:55:38Z",
  "ci": {
   "checked": 529,
   "red": [],
@@ -8,38 +8,38 @@
  "compute": {
   "top": [
    {
-    "min24": 27,
+    "min24": 9,
     "min7": 199,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 16,
-    "min7": 55,
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
-   },
-   {
-    "min24": 15,
-    "min7": 161,
-    "repo": "ARMOR-DOCS"
-   },
-   {
-    "min24": 8,
-    "min7": 184,
+    "min24": 9,
+    "min7": 181,
     "repo": "HYDRA-UMC-WATCH"
    },
    {
-    "min24": 8,
-    "min7": 141,
-    "repo": "ARMOR-SERVER"
+    "min24": 9,
+    "min7": 160,
+    "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 5,
-    "min7": 145,
+    "min24": 7,
+    "min7": 109,
+    "repo": "ARMOR-NODE-SOLAR"
+   },
+   {
+    "min24": 7,
+    "min7": 93,
+    "repo": "URTC-COMMON"
+   },
+   {
+    "min24": 6,
+    "min7": 146,
     "repo": "HYDRA-UMC-SWARM-SYNC"
    }
   ],
-  "total24": 154,
-  "total7": 14747,
+  "total24": 124,
+  "total7": 14676,
   "warn": false
  },
  "ecosystems": {
@@ -775,7 +775,7 @@
    5648,
    3487,
    629,
-   154
+   124
   ],
   "red": [
    3,
