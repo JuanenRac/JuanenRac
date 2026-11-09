@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-09T16:55:38Z",
+ "asof": "2026-11-09T17:13:46Z",
  "ci": {
   "checked": 529,
   "red": [],
@@ -39,7 +39,7 @@
    }
   ],
   "total24": 124,
-  "total7": 14676,
+  "total7": 14659,
   "warn": false
  },
  "ecosystems": {
@@ -62,7 +62,7 @@
    "read": 2,
    "red": 0,
    "repos": 2,
-   "unpub": 0
+   "unpub": 1
   },
   "hydra-umc": {
    "cand": 26,
@@ -329,6 +329,16 @@
      "HYDRA-UMC-VISION-NODE"
     ],
     "n": 43
+   }
+  },
+  {
+   "key": "unpub",
+   "level": "warn",
+   "p": {
+    "list": [
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
+    ],
+    "n": 1
    }
   },
   {
@@ -788,7 +798,13 @@
   ]
  },
  "unpublished": {
-  "rows": [],
-  "total": 0
+  "rows": [
+   {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "tag": "v1.6.6",
+    "version": "1.6.7"
+   }
+  ],
+  "total": 1
  }
 }
