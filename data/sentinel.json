@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-10T00:09:26Z",
+ "asof": "2026-11-10T00:43:23Z",
  "ci": {
   "checked": 529,
   "red": [],
@@ -11,6 +11,11 @@
     "min24": 113,
     "min7": 169,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
+   },
+   {
+    "min24": 29,
+    "min7": 287,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
     "min24": 20,
@@ -31,15 +36,10 @@
     "min24": 9,
     "min7": 160,
     "repo": "ARMOR-DOCS"
-   },
-   {
-    "min24": 7,
-    "min7": 107,
-    "repo": "ARMOR-NODE-SOLAR"
    }
   ],
-  "total24": 257,
-  "total7": 14566,
+  "total24": 279,
+  "total7": 14563,
   "warn": false
  },
  "ecosystems": {
@@ -789,7 +789,7 @@
    3487,
    629,
    171,
-   257
+   279
   ],
   "red": [
    3,

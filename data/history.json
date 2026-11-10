@@ -5424,7 +5424,7 @@
   {
    "actions": {
     "fail": 14,
-    "min": 257,
+    "min": 279,
     "ok": 233,
     "other": 3,
     "runs": 250
@@ -5999,7 +5999,7 @@
    "sentinel": {
     "cand": 43,
     "gaps": 1,
-    "min": 257,
+    "min": 279,
     "red": 0
    },
    "tests": {
