@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-10T02:53:05Z",
+ "asof": "2026-11-10T07:47:07Z",
  "ci": {
   "checked": 529,
   "red": [],
@@ -19,7 +19,7 @@
    },
    {
     "min24": 20,
-    "min7": 165,
+    "min7": 161,
     "repo": "HYDRA-UMC-ORCHESTRATOR"
    },
    {
@@ -29,17 +29,17 @@
    },
    {
     "min24": 9,
-    "min7": 178,
-    "repo": "HYDRA-UMC-WATCH"
-   },
-   {
-    "min24": 9,
     "min7": 160,
     "repo": "ARMOR-DOCS"
+   },
+   {
+    "min24": 6,
+    "min7": 159,
+    "repo": "URTC-UPDATER"
    }
   ],
-  "total24": 299,
-  "total7": 14466,
+  "total24": 288,
+  "total7": 14036,
   "warn": false
  },
  "ecosystems": {
@@ -62,7 +62,7 @@
    "read": 2,
    "red": 0,
    "repos": 2,
-   "unpub": 1
+   "unpub": 0
   },
   "hydra-umc": {
    "cand": 26,
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-10T07:47:07Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.7.2"
+  },
   {
    "at": "2026-11-10T02:53:05Z",
    "kind": "released",
@@ -253,12 +259,6 @@
    "kind": "released",
    "repo": "URTC",
    "tag": "v0.4.7"
-  },
-  {
-   "at": "2026-11-08T02:30:59Z",
-   "kind": "red_ok",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "wf": "ci.yml"
   }
  ],
  "hygiene": {
@@ -329,16 +329,6 @@
      "HYDRA-UMC-VISION-NODE"
     ],
     "n": 43
-   }
-  },
-  {
-   "key": "unpub",
-   "level": "warn",
-   "p": {
-    "list": [
-     "TOOLS-GITHUB-ACTIONS-MONITOR"
-    ],
-    "n": 1
    }
   },
   {
@@ -737,7 +727,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.3",
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.2",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.1",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.2",
   "URTC": "v0.4.7",
   "URTC-COMMON": "v0.2.5",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -789,7 +779,7 @@
    3487,
    629,
    171,
-   299
+   288
   ],
   "red": [
    3,
@@ -803,13 +793,7 @@
   ]
  },
  "unpublished": {
-  "rows": [
-   {
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v1.7.1",
-    "version": "1.7.2"
-   }
-  ],
-  "total": 1
+  "rows": [],
+  "total": 0
  }
 }
