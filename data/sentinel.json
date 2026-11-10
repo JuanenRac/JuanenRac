@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-09T20:36:41Z",
+ "asof": "2026-11-10T00:09:26Z",
  "ci": {
   "checked": 529,
   "red": [],
@@ -8,9 +8,14 @@
  "compute": {
   "top": [
    {
-    "min24": 50,
-    "min7": 105,
+    "min24": 113,
+    "min7": 169,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
+   },
+   {
+    "min24": 20,
+    "min7": 165,
+    "repo": "HYDRA-UMC-ORCHESTRATOR"
    },
    {
     "min24": 9,
@@ -31,15 +36,10 @@
     "min24": 7,
     "min7": 107,
     "repo": "ARMOR-NODE-SOLAR"
-   },
-   {
-    "min24": 7,
-    "min7": 93,
-    "repo": "URTC-COMMON"
    }
   ],
-  "total24": 171,
-  "total7": 14610,
+  "total24": 257,
+  "total7": 14566,
   "warn": false
  },
  "ecosystems": {
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-10T00:09:26Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.7.0"
+  },
   {
    "at": "2026-11-09T20:36:41Z",
    "kind": "released",
@@ -253,12 +259,6 @@
    "kind": "released",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "tag": "v1.6.0"
-  },
-  {
-   "at": "2026-11-08T02:30:59Z",
-   "kind": "released",
-   "repo": "URTC-COMMON",
-   "tag": "v0.2.5"
   }
  ],
  "hygiene": {
@@ -737,7 +737,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.3",
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.2",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.6.8",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.0",
   "URTC": "v0.4.7",
   "URTC-COMMON": "v0.2.5",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -758,6 +758,7 @@
    0,
    17,
    41,
+   43,
    43
   ],
   "dates": [
@@ -767,13 +768,15 @@
    "2026-11-06",
    "2026-11-07",
    "2026-11-08",
-   "2026-11-09"
+   "2026-11-09",
+   "2026-11-10"
   ],
   "gaps": [
    0,
    0,
    0,
    0,
+   1,
    1,
    1,
    1
@@ -785,7 +788,8 @@
    5648,
    3487,
    629,
-   171
+   171,
+   257
   ],
   "red": [
    3,
@@ -794,6 +798,7 @@
    0,
    1,
    0,
+   0,
    0
   ]
  },
@@ -801,8 +806,8 @@
   "rows": [
    {
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v1.6.8",
-    "version": "1.7.0"
+    "tag": "v1.7.0",
+    "version": "1.7.1"
    }
   ],
   "total": 1
