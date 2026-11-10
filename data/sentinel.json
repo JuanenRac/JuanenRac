@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-10T00:43:23Z",
+ "asof": "2026-11-10T02:53:05Z",
  "ci": {
   "checked": 529,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 113,
-    "min7": 169,
+    "min24": 134,
+    "min7": 190,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -24,12 +24,12 @@
    },
    {
     "min24": 9,
-    "min7": 198,
+    "min7": 194,
     "repo": "URTC-FLASHER"
    },
    {
     "min24": 9,
-    "min7": 179,
+    "min7": 178,
     "repo": "HYDRA-UMC-WATCH"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-DOCS"
    }
   ],
-  "total24": 279,
-  "total7": 14563,
+  "total24": 299,
+  "total7": 14466,
   "warn": false
  },
  "ecosystems": {
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-10T02:53:05Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.7.1"
+  },
   {
    "at": "2026-11-10T00:09:26Z",
    "kind": "released",
@@ -253,12 +259,6 @@
    "kind": "red_ok",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-08T02:30:59Z",
-   "kind": "released",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "tag": "v1.6.0"
   }
  ],
  "hygiene": {
@@ -737,7 +737,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.3",
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.2",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.0",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.1",
   "URTC": "v0.4.7",
   "URTC-COMMON": "v0.2.5",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -789,7 +789,7 @@
    3487,
    629,
    171,
-   279
+   299
   ],
   "red": [
    3,
@@ -806,8 +806,8 @@
   "rows": [
    {
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v1.7.0",
-    "version": "1.7.1"
+    "tag": "v1.7.1",
+    "version": "1.7.2"
    }
   ],
   "total": 1
