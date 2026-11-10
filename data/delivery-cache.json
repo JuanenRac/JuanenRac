@@ -220,7 +220,6 @@
   "HYDRA-UMC-TOOL-CLI": {
    "art": true,
    "at": "2026-11-03T10:43:19Z",
-   "checked": true,
    "exp": "2026-12-03T10:42:16Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI/actions/runs/41620808690",
    "wf": "binaries-build.yml"
