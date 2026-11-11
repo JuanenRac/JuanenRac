@@ -73,7 +73,6 @@
   "ARMOR-VOICE-AI": {
    "art": true,
    "at": "2026-11-03T16:42:34Z",
-   "checked": true,
    "exp": "2026-12-03T16:41:17Z",
    "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/41676017989",
    "wf": "package-build.yml"
@@ -695,7 +694,7 @@
   },
   "URTC": {
    "fp": "515e6e35032b9b45",
-   "on": "2026-11-08",
+   "on": "2026-11-11",
    "r": {
     "ak": 0,
     "an": 3,

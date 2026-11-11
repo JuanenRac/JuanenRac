@@ -1,34 +1,29 @@
 {
- "asof": "2026-11-10T21:50:08Z",
+ "asof": "2026-11-11T01:57:50Z",
  "ci": {
-  "checked": 529,
+  "checked": 528,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 85,
+    "min24": 22,
+    "min7": 138,
+    "repo": "URTC"
+   },
+   {
+    "min24": 21,
     "min7": 190,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 30,
-    "min7": 275,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
-   },
-   {
-    "min24": 21,
-    "min7": 140,
-    "repo": "URTC"
-   },
-   {
     "min24": 19,
-    "min7": 153,
+    "min7": 152,
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 16,
+    "min24": 17,
     "min7": 172,
     "repo": "ARMOR-ANDROID-CONTROL"
    },
@@ -36,10 +31,15 @@
     "min24": 10,
     "min7": 168,
     "repo": "ARMOR-DOCS"
+   },
+   {
+    "min24": 10,
+    "min7": 91,
+    "repo": "HYDRA-UMC-TWIN"
    }
   ],
-  "total24": 269,
-  "total7": 11443,
+  "total24": 194,
+  "total7": 11194,
   "warn": false
  },
  "ecosystems": {
@@ -749,6 +749,7 @@
    17,
    41,
    43,
+   43,
    43
   ],
   "dates": [
@@ -759,13 +760,15 @@
    "2026-11-07",
    "2026-11-08",
    "2026-11-09",
-   "2026-11-10"
+   "2026-11-10",
+   "2026-11-11"
   ],
   "gaps": [
    0,
    0,
    0,
    0,
+   1,
    1,
    1,
    1,
@@ -779,7 +782,8 @@
    3487,
    629,
    171,
-   269
+   269,
+   194
   ],
   "red": [
    3,
@@ -787,6 +791,7 @@
    3,
    0,
    1,
+   0,
    0,
    0,
    0
