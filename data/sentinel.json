@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-11T17:29:57Z",
+ "asof": "2026-11-11T23:44:57Z",
  "ci": {
   "checked": 528,
   "red": [],
@@ -8,19 +8,14 @@
  "compute": {
   "top": [
    {
-    "min24": 16,
-    "min7": 167,
-    "repo": "ARMOR-ANDROID-CONTROL"
-   },
-   {
     "min24": 11,
-    "min7": 76,
+    "min7": 77,
     "repo": "HYDRA-UMC-JOB-DISPATCHER"
    },
    {
     "min24": 10,
-    "min7": 134,
-    "repo": "URTC"
+    "min7": 67,
+    "repo": "HYDRA-UMC-OS-REBUILDER"
    },
    {
     "min24": 10,
@@ -36,10 +31,15 @@
     "min24": 9,
     "min7": 176,
     "repo": "ARMOR-DOCS"
+   },
+   {
+    "min24": 7,
+    "min7": 69,
+    "repo": "HYDRA-UMC-PRODUCTION-REPORTS"
    }
   ],
-  "total24": 166,
-  "total7": 10652,
+  "total24": 159,
+  "total7": 10609,
   "warn": false
  },
  "ecosystems": {
@@ -783,7 +783,7 @@
    629,
    171,
    269,
-   166
+   159
   ],
   "red": [
    3,
