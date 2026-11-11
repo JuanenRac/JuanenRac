@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-11T09:27:18Z",
+ "asof": "2026-11-11T11:27:02Z",
  "ci": {
   "checked": 528,
   "red": [],
@@ -8,23 +8,23 @@
  "compute": {
   "top": [
    {
-    "min24": 25,
-    "min7": 137,
-    "repo": "URTC"
-   },
-   {
     "min24": 19,
     "min7": 148,
     "repo": "ARMOR-STUDIO"
    },
    {
     "min24": 17,
-    "min7": 168,
+    "min7": 167,
     "repo": "ARMOR-ANDROID-CONTROL"
    },
    {
+    "min24": 12,
+    "min7": 137,
+    "repo": "URTC"
+   },
+   {
     "min24": 10,
-    "min7": 168,
+    "min7": 177,
     "repo": "ARMOR-DOCS"
    },
    {
@@ -34,12 +34,12 @@
    },
    {
     "min24": 9,
-    "min7": 197,
+    "min7": 200,
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 183,
-  "total7": 10712,
+  "total24": 189,
+  "total7": 10693,
   "warn": false
  },
  "ecosystems": {
@@ -783,7 +783,7 @@
    629,
    171,
    269,
-   183
+   189
   ],
   "red": [
    3,
