@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-11T01:57:50Z",
+ "asof": "2026-11-11T09:27:18Z",
  "ci": {
   "checked": 528,
   "red": [],
@@ -8,23 +8,18 @@
  "compute": {
   "top": [
    {
-    "min24": 22,
-    "min7": 138,
+    "min24": 25,
+    "min7": 137,
     "repo": "URTC"
    },
    {
-    "min24": 21,
-    "min7": 190,
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
-   },
-   {
     "min24": 19,
-    "min7": 152,
+    "min7": 148,
     "repo": "ARMOR-STUDIO"
    },
    {
     "min24": 17,
-    "min7": 172,
+    "min7": 168,
     "repo": "ARMOR-ANDROID-CONTROL"
    },
    {
@@ -34,12 +29,17 @@
    },
    {
     "min24": 10,
-    "min7": 91,
+    "min7": 74,
     "repo": "HYDRA-UMC-TWIN"
+   },
+   {
+    "min24": 9,
+    "min7": 197,
+    "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 194,
-  "total7": 11194,
+  "total24": 183,
+  "total7": 10712,
   "warn": false
  },
  "ecosystems": {
@@ -783,7 +783,7 @@
    629,
    171,
    269,
-   194
+   183
   ],
   "red": [
    3,
