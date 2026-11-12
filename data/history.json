@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 259,
-    "min": 9276,
-    "ok": 4093,
-    "other": 145,
-    "runs": 4497
+    "fail": 261,
+    "min": 10715,
+    "ok": 4230,
+    "other": 59,
+    "runs": 4550
    },
    "areas": {
     "armor": {
@@ -7391,10 +7391,10 @@
     ]
    },
    "sentinel": {
-    "cand": 49,
+    "cand": 51,
     "gaps": 0,
-    "min": 9276,
-    "red": 0
+    "min": 10715,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 495,
@@ -7406,7 +7406,7 @@
     "ARMOR-SERVER": 1152,
     "ARMOR-SERVER-AI": 149,
     "ARMOR-SIMULATOR": 333,
-    "ARMOR-STUDIO": 1652,
+    "ARMOR-STUDIO": 1665,
     "ARMOR-UPDATER": 454,
     "ARMOR-VISION": 317,
     "ARMOR-VOICE-AI": 218,
@@ -7439,7 +7439,7 @@
     "EH3D-SUITE-LAUNCHER": 119,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 147,
-    "EH3D-UPDATER": 458,
+    "EH3D-UPDATER": 455,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 146,
     "HYDRA-UMC": 788,
