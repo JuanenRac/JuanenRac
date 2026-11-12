@@ -10,7 +10,6 @@
   "ARMOR-DEVOPS": {
    "art": true,
    "at": "2026-11-12T10:55:14Z",
-   "checked": true,
    "exp": "2026-11-19T10:54:32Z",
    "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/43204444756",
    "wf": "package-build.yml"
@@ -165,7 +164,6 @@
   "HYDRA-UMC-OS": {
    "art": true,
    "at": "2026-11-05T11:04:22Z",
-   "checked": true,
    "exp": "2026-12-05T11:04:15Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-OS/actions/runs/42015723936",
    "wf": "package-build.yml"

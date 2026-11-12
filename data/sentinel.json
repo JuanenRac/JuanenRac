@@ -1,28 +1,70 @@
 {
- "asof": "2026-11-12T11:31:50Z",
+ "asof": "2026-11-12T11:48:58Z",
  "ci": {
-  "checked": 541,
+  "checked": 540,
   "red": [
    {
-    "repo": "ARMOR-DOCS",
-    "since": "2026-11-12T11:31:37Z",
+    "repo": "ARMOR-ANDROID-CONTROL",
+    "since": "2026-11-12T11:36:41Z",
     "streak": 1,
     "wf": "ci.yml"
    },
    {
-    "repo": "ARMOR-DOCS",
-    "since": "2026-11-12T11:31:31Z",
-    "streak": 1,
+    "repo": "ARMOR-COMMON",
+    "since": "2026-11-12T11:37:45Z",
+    "streak": 3,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "ARMOR-COMMON",
+    "since": "2026-11-12T11:38:27Z",
+    "streak": 3,
     "wf": "coverage-floor.yml"
    },
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-12T11:07:03Z",
-    "streak": 1,
+    "since": "2026-11-12T11:43:45Z",
+    "streak": 5,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-12T11:43:45Z",
+    "streak": 3,
+    "wf": "coverage-floor.yml"
+   },
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-12T11:38:20Z",
+    "streak": 2,
     "wf": "nightly.yml"
+   },
+   {
+    "repo": "ARMOR-SERVER",
+    "since": "2026-11-12T11:35:27Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "ARMOR-STUDIO",
+    "since": "2026-11-12T11:35:27Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "ARMOR-VISION",
+    "since": "2026-11-12T11:32:48Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "URTC-SMART-RACK",
+    "since": "2026-11-12T11:47:20Z",
+    "streak": 1,
+    "wf": "ci.yml"
    }
   ],
-  "red_total": 3
+  "red_total": 10
  },
  "compute": {
   "top": [
@@ -37,8 +79,8 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 254,
-    "min7": 316,
+    "min24": 258,
+    "min7": 321,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
@@ -47,25 +89,25 @@
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 148,
-    "min7": 192,
+    "min24": 157,
+    "min7": 190,
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 125,
-    "min7": 133,
+    "min24": 130,
+    "min7": 137,
     "repo": "ARMOR-NODE-RADAR"
    }
   ],
-  "total24": 4237,
-  "total7": 12088,
+  "total24": 4453,
+  "total7": 12033,
   "warn": false
  },
  "ecosystems": {
   "armor": {
    "cand": 3,
    "read": 19,
-   "red": 1,
+   "red": 6,
    "repos": 19,
    "unpub": 0
   },
@@ -91,14 +133,56 @@
    "unpub": 0
   },
   "urtc": {
-   "cand": 2,
+   "cand": 5,
    "read": 11,
-   "red": 0,
+   "red": 1,
    "repos": 11,
    "unpub": 0
   }
  },
  "events": [
+  {
+   "at": "2026-11-12T11:48:58Z",
+   "kind": "red_new",
+   "repo": "ARMOR-ANDROID-CONTROL",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-12T11:48:58Z",
+   "kind": "red_new",
+   "repo": "ARMOR-COMMON",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-12T11:48:58Z",
+   "kind": "red_new",
+   "repo": "ARMOR-COMMON",
+   "wf": "coverage-floor.yml"
+  },
+  {
+   "at": "2026-11-12T11:48:58Z",
+   "kind": "red_new",
+   "repo": "ARMOR-SERVER",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-12T11:48:58Z",
+   "kind": "red_new",
+   "repo": "ARMOR-STUDIO",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-12T11:48:58Z",
+   "kind": "red_new",
+   "repo": "ARMOR-VISION",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-12T11:48:58Z",
+   "kind": "red_new",
+   "repo": "URTC-SMART-RACK",
+   "wf": "ci.yml"
+  },
   {
    "at": "2026-11-12T11:31:50Z",
    "kind": "red_new",
@@ -236,48 +320,6 @@
    "kind": "released",
    "repo": "EH3D-PHOENIX-CAD",
    "tag": "v0.0.6"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-PCB",
-   "tag": "v0.0.7"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-ANDROID-CONTROL",
-   "tag": "v0.8.0.3"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-DEV-SERVER",
-   "tag": "v0.2.5"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-DSI",
-   "tag": "v0.3.6"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-OS-REBUILDER",
-   "tag": "v0.3.7"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-SAFETY-ZONES",
-   "tag": "v0.2.4"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-SERVER",
-   "tag": "v0.8.2.9"
   }
  ],
  "hygiene": {
@@ -291,22 +333,28 @@
  "parte": [
   {
    "key": "head",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 25,
+    "cand": 28,
     "hyg": 0,
-    "red": 3
+    "red": 10
    }
   },
   {
    "key": "red",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "list": [
-     "ARMOR-DOCS"
+     "ARMOR-ANDROID-CONTROL",
+     "ARMOR-COMMON",
+     "ARMOR-DOCS",
+     "ARMOR-SERVER",
+     "ARMOR-STUDIO",
+     "ARMOR-VISION",
+     "URTC-SMART-RACK"
     ],
-    "n": 3
+    "n": 10
    }
   },
   {
@@ -337,10 +385,13 @@
      "HYDRA-UMC-PHYSICS-REPLICA",
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-WATCH",
+     "URTC",
      "URTC-COMMON",
-     "URTC-FLASHER"
+     "URTC-FLASHER",
+     "URTC-GATEWAY",
+     "URTC-WEB-STUDIO"
     ],
-    "n": 25
+    "n": 28
    }
   },
   {
@@ -374,7 +425,7 @@
     "tag": "v0.8.2.3"
    },
    {
-    "entries": 8,
+    "entries": 9,
     "published": "2026-11-06T13:38:52Z",
     "repo": "ARMOR-IOS-CONTROL",
     "tag": "v0.0.4"
@@ -396,6 +447,12 @@
     "published": "2026-11-06T03:39:55Z",
     "repo": "HYDRA-UMC-WATCH",
     "tag": "v0.3.2"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-08T00:52:15Z",
+    "repo": "URTC-FLASHER",
+    "tag": "v0.5.5"
    },
    {
     "entries": 4,
@@ -426,6 +483,12 @@
     "published": "2026-11-05T13:10:50Z",
     "repo": "HYDRA-UMC-VISUAL-SERVOING-API",
     "tag": "v0.2.4"
+   },
+   {
+    "entries": 4,
+    "published": "2026-11-08T06:26:39Z",
+    "repo": "URTC",
+    "tag": "v0.4.7"
    },
    {
     "entries": 4,
@@ -501,14 +564,20 @@
    },
    {
     "entries": 2,
-    "published": "2026-11-08T00:52:15Z",
-    "repo": "URTC-FLASHER",
-    "tag": "v0.5.5"
+    "published": "2026-11-08T10:28:12Z",
+    "repo": "URTC-GATEWAY",
+    "tag": "v0.0.7"
+   },
+   {
+    "entries": 2,
+    "published": "2026-11-08T00:55:04Z",
+    "repo": "URTC-WEB-STUDIO",
+    "tag": "v0.5.0"
    }
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 25
+  "total": 28
  },
  "repos": 129,
  "schema": 1,
@@ -663,7 +732,7 @@
    43,
    43,
    43,
-   25
+   28
   ],
   "dates": [
    "2026-11-03",
@@ -699,7 +768,7 @@
    171,
    269,
    159,
-   4237
+   4453
   ],
   "red": [
    3,
@@ -711,7 +780,7 @@
    0,
    0,
    0,
-   3
+   10
   ]
  },
  "unpublished": {

@@ -6817,15 +6817,15 @@
   },
   {
    "actions": {
-    "fail": 175,
-    "min": 4237,
-    "ok": 2286,
-    "other": 27,
-    "runs": 2488
+    "fail": 200,
+    "min": 4453,
+    "ok": 2434,
+    "other": 26,
+    "runs": 2660
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -6867,7 +6867,7 @@
    },
    "date": "2026-11-12",
    "progress": {
-    "armor": 70,
+    "armor": 69,
     "eh3d": 45,
     "hydra-umc": 55,
     "urtc": 56
@@ -7391,24 +7391,24 @@
     ]
    },
    "sentinel": {
-    "cand": 25,
+    "cand": 28,
     "gaps": 0,
-    "min": 4237,
-    "red": 3
+    "min": 4453,
+    "red": 10
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 455,
     "ARMOR-COMMON": 476,
-    "ARMOR-DOCS": 423,
+    "ARMOR-DOCS": 424,
     "ARMOR-HARDWARE": 63,
-    "ARMOR-IOS-CONTROL": 373,
+    "ARMOR-IOS-CONTROL": 381,
     "ARMOR-NETWORK": 226,
     "ARMOR-SERVER": 1115,
     "ARMOR-SERVER-AI": 145,
     "ARMOR-SIMULATOR": 311,
     "ARMOR-STUDIO": 1522,
     "ARMOR-UPDATER": 454,
-    "ARMOR-VISION": 210,
+    "ARMOR-VISION": 261,
     "ARMOR-VOICE-AI": 200,
     "EH3D-AUTOLEVEL": 174,
     "EH3D-BUNGARD-GUI": 408,
@@ -7432,7 +7432,7 @@
     "EH3D-PHOENIX-PCB": 4134,
     "EH3D-PHOENIX-PNP": 572,
     "EH3D-PROJECT-PASSPORT": 3,
-    "EH3D-ROUTEPRO": 85,
+    "EH3D-ROUTEPRO": 86,
     "EH3D-SERVER": 358,
     "EH3D-STENCILCAM": 164,
     "EH3D-STUDIO": 323,
@@ -7500,16 +7500,16 @@
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 434,
     "HYDRA-UMC-WATCH": 169,
-    "URTC-COMMON": 2693,
+    "URTC-COMMON": 2721,
     "URTC-DEVTOOLS": 95,
     "URTC-DOCS": 222,
-    "URTC-FLASHER": 830,
-    "URTC-GATEWAY": 127,
+    "URTC-FLASHER": 842,
+    "URTC-GATEWAY": 139,
     "URTC-SMART-RACK": 715,
-    "URTC-TESTER": 896,
+    "URTC-TESTER": 904,
     "URTC-UPDATER": 609,
     "URTC-VISION-TOOL": 183,
-    "URTC-WEB-STUDIO": 1357
+    "URTC-WEB-STUDIO": 1405
    }
   }
  ],
