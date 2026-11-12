@@ -58,7 +58,7 @@ OK, FAILED, PENDING, UNVERIFIED = "ok", "failed", "pending", "unverified"
 STATES = (FAILED, UNVERIFIED, PENDING, OK)
 
 # The ecosystem section of the README a manifest key belongs to: the updater of the suite lives in the EH3D section.
-SECTION_OF = {"hydra-umc": "hydra-umc", "urtc": "urtc", "armor": "armor", "eh3d": "eh3d", "electro-hobby-3d": "eh3d"}
+SECTION_OF = {"hydra-umc": "hydra-umc", "urtc": "urtc", "armor": "armor", "eh3d": "eh3d", "electro-hobby-3d": "electro-hobby-3d"}
 LABEL_OF = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D", "electro-hobby-3d": "Tools"}
 VERSION_RE = re.compile(r"^\d+(\.\d+){1,3}$")
 TAG_RE = re.compile(r"^v?(\d+(?:\.\d+){1,3})")
@@ -366,17 +366,18 @@ def reconcile(src: Sources) -> Report:
             sections[file] = catalogue_rows(text)
         base = sections.get("README.md")
         if base is not None:
+            present = [eco for eco in progress.ECOSYSTEMS if eco in base]       # a profile README without the Tools section is still checked for the others
             for file, rows in sorted(sections.items()):
                 if file == "README.md":
                     continue
-                diff = [f"{eco}: {sorted(set(base[eco]) ^ set(rows.get(eco, {})))}" for eco in progress.ECOSYSTEMS if set(base[eco]) != set(rows.get(eco, {}))]
+                diff = [f"{eco}: {sorted(set(base[eco]) ^ set(rows.get(eco, {})))}" for eco in present if set(base[eco]) != set(rows.get(eco, {}))]
                 add("readme-parity", FAILED if diff else OK, file, ("the catalogue differs from README.md in " + "; ".join(diff)) if diff else "lists the same repositories as README.md in the four ecosystems")
             for file in sorted(src.readmes):
                 counts = progress_counts(file, src.readmes[file]) if file in progress.TEXT else {}
-                wrong = [f"{eco}: {counts.get(eco)} instead of {len(base[eco])}" for eco in progress.ECOSYSTEMS if counts.get(eco) != len(base[eco])]
+                wrong = [f"{eco}: {counts.get(eco)} instead of {len(base[eco])}" for eco in present if counts.get(eco) != len(base[eco])]
                 add("progress-count", FAILED if wrong else OK, file, ("the number of repositories of the progress sentence differs from the catalogue: " + "; ".join(wrong)) if wrong else "the progress sentences count the repositories of the catalogue")
             if src.repos is not None:
-                for eco in progress.ECOSYSTEMS:
+                for eco in present:
                     listed = set(base[eco])
                     carried = {n for n, e in ecosystem_repos.items() if SECTION_OF.get(e) == eco}
                     carried |= {n for n in manifest_repos if n not in ecosystem_repos and reads[n].ecosystem and SECTION_OF.get(reads[n].ecosystem) == eco}
@@ -502,7 +503,7 @@ def explain(src: Sources, names: dict, ecosystem_repos: dict, manifest_repos: se
             bits.append(f"{in_dash} on the dashboard")
         if readme_rows is not None and key in readme_rows:
             bits.append(f"{len(readme_rows[key])} in the README catalogue")
-        out.append(Figure(LABEL_OF[key], str(len(members)), ", ".join(bits) + (" (the updater of the suite is counted in the EH3D section of the README)" if key == "electro-hobby-3d" else "")))
+        out.append(Figure(LABEL_OF[key], str(len(members)), ", ".join(bits)))
     return out
 
 

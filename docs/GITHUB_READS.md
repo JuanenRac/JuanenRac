@@ -42,3 +42,19 @@ before; it is only made when the list of this run was really read (not from the 
 The queue time shown in the Builds tab is the one of the **run** (from its creation to the start of the run), which comes in the list of runs that is read anyway. The local Actions monitor
 measures the queue of each **job**, which needs one more read per run; the dashboard does not make those reads, so its figure can be higher than the monitor's when a run has jobs
 that start one after the other.
+
+## Quota: how the dashboard and the local monitor spend it
+
+The two share the same ideas, so that neither starves the other:
+
+* **Conditional reads.** An unchanged answer is a `304` and costs nothing (ETag, see above); a repository that was not pushed is not read at all.
+* **Batched GraphQL.** The Sentinel and the activity read twenty repositories per query (release, changelog, workflow list, last commit and state of the checks) instead of
+  several REST calls each.
+* **Low mode of the monitor** (next version, not published yet). Besides Normal, Fast and Turbo, a Low mode reads only the hot repositories often and the rest rarely, and says in
+  its bar how old its figures can be. It starts by itself when the allowance is low and ends when it renews.
+* **A read-only GitHub App** has its own allowance, separate from the one of the user and larger with more repositories; writes keep the token of the user.
+* **The central panel as a base line.** The monitor can read `data/sentinel.json` of this repository (a plain fetch or the raw file) and only ask the API live about what the panel
+  marks as red or running. For that to be useful the file is refreshed at least every half hour (see [DASHBOARD_UPDATES.md](DASHBOARD_UPDATES.md)) and ignored when it is more than two
+  hours old.
+* **A used-up allowance is one notice.** The reads stop until the renewal and the list says "allowance used up until the renewal" once, grouped, instead of one error per
+  repository; nothing turns red for it.

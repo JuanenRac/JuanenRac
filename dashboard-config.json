@@ -39,7 +39,7 @@
   "sentinel": {
     "enabled": true,
     "candidate_days": 2,
-    "candidate_min_entries": 2,
+    "candidate_min_entries": 5,
     "skip_candidate_prefixes": ["EH3D-", "ELECTRO-HOBBY-3D"],
     "red_streak_warn": 2,
     "compute_warn_minutes_24h": 12000,

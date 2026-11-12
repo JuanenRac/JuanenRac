@@ -18,6 +18,7 @@ FILES = sorted(WORKFLOWS.glob("*.yml"))
 WRITERS = {
     ("build-dashboard.yml", "publish"): {"contents": "write"},
     ("code-stats.yml", "publish"): {"contents": "write"},
+    ("dashboard-keeper.yml", "look"): {"actions": "write", "contents": "read"},
     ("ecosystem-ci-watch.yml", "watch"): {"contents": "read", "issues": "write"},
     ("ecosystem-health-matrix.yml", "matrix"): {"contents": "read", "issues": "write"},
     ("ecosystem-link-check.yml", "links"): {"contents": "read", "issues": "write"},
@@ -132,3 +133,42 @@ class BuildDashboardTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CadenceTests(unittest.TestCase):
+    """The central panel is refreshed at least every half hour: the build has time limits and a keeper starts it when GitHub dropped the schedule."""
+
+    def setUp(self):
+        self.build = (WORKFLOWS / "build-dashboard.yml").read_text(encoding="utf-8")
+        self.keeper = (WORKFLOWS / "dashboard-keeper.yml").read_text(encoding="utf-8")
+
+    def test_every_job_of_the_build_has_a_time_limit(self):
+        for job, body in jobs_of(self.build).items():
+            self.assertRegex(body, r"(?m)^    timeout-minutes: \d+$", f"build-dashboard.yml/{job} has no timeout-minutes")
+
+    def test_the_build_measures_the_wait_and_hands_it_to_the_sentinel(self):
+        self.assertIn("queue: ${{ steps.decide.outputs.queue }}", self.build)
+        self.assertIn("DASHBOARD_BUILD_QUEUE_SECONDS: ${{ needs.gate.outputs.queue }}", self.build)
+
+    def test_the_keeper_looks_at_least_every_fifteen_minutes_off_the_busy_minutes(self):
+        match = re.search(r'cron: "([\d,]+) \* \* \* \*"', self.keeper)
+        self.assertIsNotNone(match)
+        minutes = [int(m) for m in match.group(1).split(",")]
+        self.assertTrue(all(b - a <= 15 for a, b in zip(minutes, minutes[1:] + [minutes[0] + 60])), minutes)
+        self.assertFalse(set(minutes) & {0, 15, 30, 45})
+
+    def test_the_keeper_only_dispatches_the_build_and_writes_nothing_else(self):
+        self.assertEqual(self.keeper.count("gh workflow run"), 2)
+        self.assertTrue(all("build-dashboard.yml --ref main" in line for line in self.keeper.splitlines() if "gh workflow run" in line))
+        self.assertNotIn("git push", self.keeper)
+        self.assertNotIn("secrets.", self.keeper)
+
+    def test_the_keeper_does_not_pile_up_builds(self):
+        self.assertIn("in_progress|queued|waiting|pending|requested", self.keeper)
+        self.assertRegex(self.keeper, r"(?m)^  group: dashboard-keeper$")
+
+    def test_the_gate_still_rate_limits_the_notices_below_the_keeper_limit(self):
+        notice = int(re.search(r'MIN_MINUTES: "(\d+)"', self.build).group(1))
+        keeper = int(re.search(r'MAX_AGE_MINUTES: "(\d+)"', self.keeper).group(1))
+        self.assertLessEqual(notice, keeper)
+        self.assertLessEqual(keeper, 30)

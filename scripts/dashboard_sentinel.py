@@ -57,7 +57,8 @@ DEFAULT_CONFIG: dict = {
     "read_actions_settings": True,
     "list_max": 40,
     "events_max": 30,
-    "stale_hours": 6,
+    "stale_hours": 1,
+    "behind_minutes": 120,
     "sections": {name: True for name in SECTIONS},
 }
 REPO_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$")
@@ -111,7 +112,7 @@ def check_config(raw: object) -> tuple[dict, list[str]]:
                 config[key] = value
             else:
                 problems.append(f"sentinel.{key}: needs a number from {low} to {high}")
-    for key, low, high in (("candidate_min_entries", 1, 100), ("red_streak_warn", 1, 100), ("compute_top", 1, 30), ("list_max", 5, 200), ("stale_hours", 1, 168), ("events_max", 5, 200)):
+    for key, low, high in (("candidate_min_entries", 1, 100), ("red_streak_warn", 1, 100), ("compute_top", 1, 30), ("list_max", 5, 200), ("stale_hours", 1, 168), ("behind_minutes", 30, 1440), ("events_max", 5, 200)):
         if key in raw:
             value = raw[key]
             if isinstance(value, int) and not isinstance(value, bool) and low <= value <= high:
@@ -468,7 +469,42 @@ def clean(doc: Mapping, names: Iterable[str], limit: int = 40) -> dict:
         values = trend.get(key) if isinstance(trend.get(key), list) else []
         out["trend"][key] = [_count(v) for v in values][: len(dates)] if len(values) >= len(dates) else [_count(v) for v in values] + [0] * (len(dates) - len(values))
     out["parte"] = _clean_parte(doc.get("parte"), known, limit)
+    out["health"] = _clean_health(doc.get("health"))
     return out
+
+
+HEALTH_KEYS = ("age_minutes", "gap_minutes", "build_queue_seconds")
+HEALTH_STEPS = {"age_minutes": 5, "gap_minutes": 5, "build_queue_seconds": 30}
+
+
+def _clean_health(value: object) -> dict:
+    """The health of the refresh: numbers only (minutes and seconds, in steps), never a moment, so the file stays as stable as the rest of the document."""
+    source = value if isinstance(value, Mapping) else {}
+    return {key: _count(source.get(key), 100_000) for key in HEALTH_KEYS}
+
+
+def health_of(read_asof: object, saved: Mapping | None, now: datetime | None = None, queue_seconds: object = None) -> dict:
+    """How current the refresh is. `age_minutes`: how long after the reading of GitHub the document was written (the generation itself); `gap_minutes`: time from the
+    previous saved reading to this one (the real cadence, which should stay under half an hour); `build_queue_seconds`: how long the run waited before it started
+    (queued behind another run or by the runners). All are rounded up to a step (5 minutes, 30 seconds), so a normal run does not change the file."""
+    now = now or datetime.now(timezone.utc)
+    read, before = _parse(read_asof), _parse((saved or {}).get("asof"))
+
+    def step(value: float, size: int) -> int:
+        return int(-(-max(0.0, value) // size) * size)
+    queue = float(queue_seconds) if isinstance(queue_seconds, (int, float)) and not isinstance(queue_seconds, bool) else 0.0
+    return {"age_minutes": step((now - read).total_seconds() / 60, 5) if read else 0,
+            "gap_minutes": step((read - before).total_seconds() / 60, 5) if read and before and read >= before else 0,
+            "build_queue_seconds": step(min(queue, 100_000.0), 30)}
+
+
+def with_health(doc: dict | None, saved: Mapping | None, now: datetime | None = None, queue_seconds: object = None) -> dict | None:
+    """The document with its health block. When the situation is unchanged and the saved document is kept (see `stabilize`), the saved moment and health stay too."""
+    if not doc:
+        return doc
+    if saved and doc.get("asof") == saved.get("asof"):
+        return {**doc, "health": _clean_health(saved.get("health"))}
+    return {**doc, "health": health_of(doc.get("asof"), saved, now, queue_seconds)}
 
 
 PARTE_KEYS = ("head", "all_ok", "red", "cand", "unpub", "sig", "hyg", "settings", "compute", "unread")
@@ -615,7 +651,7 @@ def load_saved(path: Path = DATA_PATH, names: Iterable[str] = ()) -> dict | None
 
 
 def _without_asof(doc: Mapping) -> str:
-    return json.dumps({k: v for k, v in doc.items() if k != "asof"}, sort_keys=True)
+    return json.dumps({k: v for k, v in doc.items() if k not in ("asof", "health")}, sort_keys=True)
 
 
 def stabilize(fresh: dict | None, saved: Mapping | None, max_hours: int = 6) -> dict | None:
@@ -652,4 +688,5 @@ def build(doc: Mapping | None, saved: Mapping | None, config: Mapping, today: st
         return {"enabled": False, "read": False, "stale": None, "sections": sections, "doc": None}
     source = doc or saved
     stale = None if doc else (saved or {}).get("asof")
-    return {"enabled": True, "read": bool(source), "stale": stale, "sections": sections, "doc": dict(source) if source else None}
+    return {"enabled": True, "read": bool(source), "stale": stale, "sections": sections, "doc": dict(source) if source else None,
+            "behind_minutes": int(config.get("behind_minutes", 120))}

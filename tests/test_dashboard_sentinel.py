@@ -221,7 +221,7 @@ class NothingSensitiveIsPublishedTests(unittest.TestCase):
         self.assertEqual(out["ci"]["red"], [{"repo": "ARMOR-A", "wf": "ci.yml", "streak": 1, "since": "2001-12-21T00:00:00Z"}])
         self.assertEqual(out["releases"]["candidates"][0]["tag"], "")
         self.assertEqual(out["parte"], [{"key": "red", "level": "bad", "p": {"list": ["ARMOR-A"]}}])
-        self.assertEqual(set(out), {"schema", "asof", "repos", "read", "ci", "releases", "signatures", "hygiene", "compute", "trend", "parte", "ecosystems", "unpublished", "tags", "events"})
+        self.assertEqual(set(out), {"schema", "asof", "repos", "read", "ci", "releases", "signatures", "hygiene", "compute", "trend", "parte", "ecosystems", "unpublished", "tags", "events", "health"})
 
     def test_every_text_of_the_report_is_a_fixed_text_of_the_page(self):
         """The report holds the kind of line and its numbers; the words come from the translation table, never from the reading."""
@@ -378,6 +378,50 @@ class FileAndStabilityTests(unittest.TestCase):
         off = json.loads(json.dumps(CONFIG))
         off["enabled"] = False
         self.assertFalse(sn.build(doc, doc, off, "2001-12-21")["enabled"])
+
+
+class HealthOfTheRefreshTests(unittest.TestCase):
+    """The health block says how current the central panel is, in numbers and steps, never as a moment of its own."""
+
+    def at(self, hhmmss: str) -> sn.datetime:
+        return sn._parse(f"2001-12-21T{hhmmss}Z")
+
+    def test_the_gap_is_the_time_between_the_two_last_readings_rounded_up_to_five_minutes(self):
+        health = sn.health_of("2001-12-21T12:31:00Z", {"asof": "2001-12-21T12:00:00Z"}, self.at("12:34:00"), 0)
+        self.assertEqual(health["gap_minutes"], 35)
+        self.assertEqual(health["age_minutes"], 5)
+
+    def test_the_wait_of_the_run_is_rounded_up_to_thirty_seconds_and_a_bad_value_is_zero(self):
+        self.assertEqual(sn.health_of("2001-12-21T12:00:00Z", None, self.at("12:00:00"), 61)["build_queue_seconds"], 90)
+        for bad in (None, "x", -5, True):
+            self.assertEqual(sn.health_of("2001-12-21T12:00:00Z", None, self.at("12:00:00"), bad)["build_queue_seconds"], 0)
+
+    def test_no_earlier_reading_means_no_gap(self):
+        self.assertEqual(sn.health_of("2001-12-21T12:00:00Z", None, self.at("12:00:00"))["gap_minutes"], 0)
+
+    def test_the_health_is_numbers_only_and_survives_the_whitelist(self):
+        doc = {"asof": "2001-12-21T12:00:00Z", "health": {"age_minutes": 5, "gap_minutes": 30, "build_queue_seconds": 60, "extra": "who", "x": {"y": 1}}}
+        self.assertEqual(sn.clean(doc, NAMES)["health"], {"age_minutes": 5, "gap_minutes": 30, "build_queue_seconds": 60})
+        self.assertEqual(sn.clean({"asof": "2001-12-21T12:00:00Z", "health": "text"}, NAMES)["health"], {"age_minutes": 0, "gap_minutes": 0, "build_queue_seconds": 0})
+
+    def test_an_unchanged_situation_keeps_the_saved_file_even_if_the_health_moves(self):
+        saved = sn.with_health({"asof": "2001-12-21T12:00:00Z", "repos": 1}, None, self.at("12:03:00"), 0)
+        fresh = dict(saved, asof="2001-12-21T12:30:00Z", health={"age_minutes": 15, "gap_minutes": 30, "build_queue_seconds": 600})
+        self.assertEqual(sn.stabilize(fresh, saved, 1), saved)
+        # after the limit the new moment is written (at most one bot commit an hour for a quiet situation)
+        late = dict(fresh, asof="2001-12-21T13:05:00Z")
+        self.assertEqual(sn.stabilize(late, saved, 1), late)
+
+    def test_the_saved_health_is_kept_when_the_saved_document_is_kept(self):
+        saved = {"asof": "2001-12-21T12:00:00Z", "health": {"age_minutes": 5, "gap_minutes": 30, "build_queue_seconds": 0}}
+        self.assertEqual(sn.with_health(dict(saved), saved, self.at("12:50:00"), 900)["health"], saved["health"])
+
+    def test_the_limit_of_a_late_panel_is_a_setting_and_reaches_the_page(self):
+        self.assertEqual(sn.build(None, None, CONFIG, "2001-12-21")["behind_minutes"], 120)
+        config, problems = sn.check_config({"behind_minutes": 90})
+        self.assertEqual((config["behind_minutes"], problems), (90, []))
+        self.assertTrue(sn.check_config({"behind_minutes": 5})[1])
+        self.assertEqual(sn.DEFAULT_CONFIG["stale_hours"], 1)
 
 
 class TextsTests(unittest.TestCase):

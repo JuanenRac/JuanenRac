@@ -17,8 +17,9 @@ sys.path.insert(0, str(HERE.parent / "scripts"))
 import ecosystem_integrity_test as it  # noqa: E402
 import ecosystem_progress as progress  # noqa: E402
 
-PREFIX = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "ARMOR", "eh3d": "EH3D"}
-LABEL = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D"}
+ECOS4 = ("hydra-umc", "urtc", "armor", "eh3d")
+PREFIX = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "ARMOR", "eh3d": "EH3D", "electro-hobby-3d": "TOOLS"}
+LABEL = {"hydra-umc": "HYDRA-UMC", "urtc": "URTC", "armor": "A.R.M.O.R.", "eh3d": "EH3D", "electro-hobby-3d": "ELECTRO-HOBBY-3D"}
 CATALOG = {"ecosystems": [
     {"key": "hydra-umc", "label": "HYDRA-UMC", "manifest_file": "hydra-umc.project.json"},
     {"key": "urtc", "label": "URTC", "manifest_file": "urtc.project.json"},
@@ -40,7 +41,7 @@ def manifest(eco, name, **extra):
 
 def readme(file, rows):
     out = ["# Title", ""]
-    for eco in progress.ECOSYSTEMS:
+    for eco in rows:
         out += [f"# Section {eco}", f"<!-- progress:{eco} -->", "`[███░░] 10%` — " + progress.TEXT[file].format(n=len(rows[eco])), f"<!-- /progress:{eco} -->",
                 "| Repository | Version | Description |", "| --- | --- | --- |"]
         out += [f"| [{n}](https://github.com/JuanenRac/{n}) | {v} | text |" for n, v in rows[eco].items()]
@@ -54,7 +55,7 @@ def repo_page(name, eco, version="0.1.0", release="v0.1.0"):
 
 def good_sources():
     repos, manifests, rows, page = [it.RepoInfo("JuanenRac")], {"JuanenRac": it.ManifestRead("absent")}, {}, {}
-    for eco in progress.ECOSYSTEMS:
+    for eco in ECOS4:
         rows[eco] = {}
         for n in names_of(eco):
             repos.append(it.RepoInfo(n))
@@ -260,7 +261,7 @@ class ReadmeAndCatalogueTests(unittest.TestCase):
         src.dashboard["repos"]["URTC-NEW"] = repo_page("URTC-NEW", "urtc")
         self.assertEqual(states(it.reconcile(src), "readme-catalogue", "URTC-NEW")[0][1], it.FAILED)
 
-    def test_the_updater_of_the_suite_counts_in_the_eh3d_section(self):
+    def test_the_updater_of_the_suite_counts_in_the_tools_section(self):
         src = good_sources()
         name = "ELECTRO-HOBBY-3D-UPDATER"
         src.repos.append(it.RepoInfo(name))
@@ -268,8 +269,8 @@ class ReadmeAndCatalogueTests(unittest.TestCase):
         src.dashboard["repos"][name] = repo_page(name, "electro-hobby-3d")
         src.dashboard_cover = (9, 10)
         for file in progress.README_FILES:
-            rows = {eco: {n: "0.1.0" for n in names_of(eco)} for eco in progress.ECOSYSTEMS}
-            rows["eh3d"][name] = "0.1.0"
+            rows = {eco: {n: "0.1.0" for n in names_of(eco)} for eco in ECOS4}
+            rows["electro-hobby-3d"] = {name: "0.1.0"}
             src.readmes[file] = readme(file, rows)
         report = it.reconcile(src)
         self.assertEqual(report.by_state(it.FAILED), [], report.by_state(it.FAILED))
@@ -279,7 +280,7 @@ class ReadmeAndCatalogueTests(unittest.TestCase):
         src.repos.append(it.RepoInfo("EH3D-SOON", empty=True))
         src.manifests["EH3D-SOON"] = it.ManifestRead("absent")
         for file in progress.README_FILES:
-            rows = {eco: {n: "0.1.0" for n in names_of(eco)} for eco in progress.ECOSYSTEMS}
+            rows = {eco: {n: "0.1.0" for n in names_of(eco)} for eco in ECOS4}
             rows["eh3d"]["EH3D-SOON"] = "-"
             rows["eh3d"]["EH3D-GHOST"] = "-"
             src.readmes[file] = readme(file, rows)
@@ -389,13 +390,13 @@ class TheRealRepositoryTests(unittest.TestCase):
         root = HERE.parent
         readmes = {f: (root / f).read_text(encoding="utf-8") for f in progress.README_FILES}
         base = it.catalogue_rows(readmes["README.md"])
-        self.assertTrue(all(base[eco] for eco in progress.ECOSYSTEMS))
+        self.assertTrue(all(base[eco] for eco in ECOS4))
         for file, text in readmes.items():
             rows = it.catalogue_rows(text)
-            for eco in progress.ECOSYSTEMS:
+            for eco in ECOS4:
                 self.assertEqual(set(rows[eco]), set(base[eco]), f"{file} {eco}")
             counts = it.progress_counts(file, text)
-            for eco in progress.ECOSYSTEMS:
+            for eco in ECOS4:
                 self.assertEqual(counts[eco], len(base[eco]), f"{file} {eco}")
 
 

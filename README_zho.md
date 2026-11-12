@@ -53,18 +53,7 @@
 | **A.R.M.O.R.** | 周界安防与家庭自动化 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
 | **EH3D Fabrication Suite** | PCB 原型制作、CAM、CNC 与激光、贴片 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
 
-### 🧰 工具
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="TOOLS 生态系统横幅" width="100%">
-</p>
-
-在四个生态系统之外，还有第五组：可独立运作、并会随时间增长的独立工具。
-
-| 工具 | 版本 | 简介 |
-| :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.6 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
+第五组 **工具(Tools)** 在下方有独立的章节。
 
 \---
 
@@ -479,7 +468,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[█████████░░░░░░░░░░░] 45%` — 根据真实数据计算：其 39 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[█████████░░░░░░░░░░░] 45%` — 根据真实数据计算：其 38 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -525,7 +514,6 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.8|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
-|[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|四个生态系统的更新器:一个窗口和一条命令行,交由各生态系统自己的更新器处理。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.4|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.3|EH3D-SERVER 的 Rust Web 客户端。|
 
@@ -594,6 +582,51 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |-|-|-|
 |[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.3|在图像中找到圆形基准点，把像素转换为毫米，校正镜头畸变并计算电路板的旋转和平移；实时摄像头、神经网络和窗口在计划中。|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.7|地形高度网格处理器（Z 探测）和用于表面补偿的 G代码插值。|
+
+
+---
+
+# 🧰 TOOLS
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="TOOLS 生态系统横幅" width="100%">
+</p>
+
+在四个生态系统之外，还有第五组：可独立运作、并会随时间增长的独立工具。
+
+**更新器:**没有自己的更新器;[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 是其中一个工具,它把工作交给四个生态系统各自的更新器。
+
+<!-- progress:electro-hobby-3d -->
+`\[███████░░░░░░░░░░░░░] 35%` — 根据真实数据计算：其 2 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+<!-- /progress:electro-hobby-3d -->
+
+<!-- status:electro-hobby-3d -->
+### 🚦 生态系统状态
+
+针对整个生态系统，根据真实数据计算，绝不手写；90 % 以上的仓库达标为绿灯，60 % 以上为黄灯，30 % 以上为橙灯。
+
+| 领域 | 状态 | 进度 | 说明 |
+| --- | :---: | --- | --- |
+| 软件 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
+| 测试 | 🔴 | `░░░░░░░░░░ 0%` | 0 个仓库中有 0 个有自动化测试。 |
+| 持续集成 | 🔴 | `░░░░░░░░░░ 0%` | 0 个仓库中有 0 个在主分支上最近一次 CI 运行为绿色。 |
+| 已发布版本 | 🔴 | `░░░░░░░░░░ 0%` | 0 个仓库中有 0 个至少发布过一个版本。 |
+| 文档 | 🔴 | `░░░░░░░░░░ 0%` | 0 个仓库中有 0 个提供八种语言的 README。 |
+| 仿真 | 🔴 | `░░░░░░░░░░ 0%` | 2 个仓库中有 0 个至少在仿真器中验证过。 |
+| 真实硬件 | 🔴 | `░░░░░░░░░░ 0%` | 依赖硬件的 0 个仓库中有 0 个在台架或现场验证过；其余从未在真实设备上运行。 |
+| 生产 | 🔴 | `░░░░░░░░░░ 0%` | 2 个仓库中有 0 个已成熟或已投入生产。 |
+<!-- /status:electro-hobby-3d -->
+
+## 🧭 Tools 组涵盖的内容
+
+该组收录位于四个生态系统之上、且不依赖其中任何一个的程序。**Actions 监视器**在一个本地页面上监视所有仓库的工作流,有完整版(含哨兵)和精简版,两者都可连接 AI 工具;其下一个版本将提供作为数据的哨兵面板、低配额模式、只读 GitHub App,以及把本档案的中央面板作为基线。**套件更新器**把工作交给各生态系统的更新器。仪表盘为该组提供独立标签页,显示每个工具的版本、发布、CI 和测试,其进度和状态的计算方式与四个生态系统相同。
+
+## 📁 TOOLS 项目目录
+
+| 工具 | 版本 | 简介 |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.6 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 
 \---
 
