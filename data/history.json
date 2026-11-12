@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 170,
-    "min": 4076,
-    "ok": 2209,
-    "other": 14,
-    "runs": 2393
+    "fail": 175,
+    "min": 4237,
+    "ok": 2286,
+    "other": 27,
+    "runs": 2488
    },
    "areas": {
     "armor": {
@@ -7391,10 +7391,10 @@
     ]
    },
    "sentinel": {
-    "cand": 24,
+    "cand": 25,
     "gaps": 0,
-    "min": 4076,
-    "red": 0
+    "min": 4237,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 455,
@@ -7443,7 +7443,7 @@
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 146,
     "HYDRA-UMC": 709,
-    "HYDRA-UMC-ANDROID-CONTROL": 590,
+    "HYDRA-UMC-ANDROID-CONTROL": 603,
     "HYDRA-UMC-ANOMALY-DETECTOR": 388,
     "HYDRA-UMC-BRIDGE-AMR": 223,
     "HYDRA-UMC-BRIDGE-CNC": 321,
@@ -7458,11 +7458,11 @@
     "HYDRA-UMC-DASHBOARD-AI": 261,
     "HYDRA-UMC-DATALAKE": 306,
     "HYDRA-UMC-DETECTION-HEF": 379,
-    "HYDRA-UMC-DEV-SERVER": 596,
+    "HYDRA-UMC-DEV-SERVER": 620,
     "HYDRA-UMC-DEVELOPER-NODE": 95,
     "HYDRA-UMC-DOCS": 217,
     "HYDRA-UMC-DOCS-QA": 137,
-    "HYDRA-UMC-DSI": 373,
+    "HYDRA-UMC-DSI": 374,
     "HYDRA-UMC-EDITOR-STL": 302,
     "HYDRA-UMC-EDITOR-URDF": 607,
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 294,

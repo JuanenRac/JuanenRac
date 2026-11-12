@@ -1,35 +1,54 @@
 {
- "asof": "2026-11-12T08:40:39Z",
+ "asof": "2026-11-12T11:31:50Z",
  "ci": {
   "checked": 541,
-  "red": [],
-  "red_total": 0
+  "red": [
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-12T11:31:37Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-12T11:31:31Z",
+    "streak": 1,
+    "wf": "coverage-floor.yml"
+   },
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-12T11:07:03Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   }
+  ],
+  "red_total": 3
  },
  "compute": {
   "top": [
    {
-    "min24": 276,
-    "min7": 466,
+    "min24": 298,
+    "min7": 488,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 244,
-    "min7": 284,
+    "min24": 268,
+    "min7": 299,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 228,
-    "min7": 306,
+    "min24": 254,
+    "min7": 316,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 174,
-    "min7": 270,
+    "min24": 195,
+    "min7": 266,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 128,
-    "min7": 197,
+    "min24": 148,
+    "min7": 192,
     "repo": "ARMOR-STUDIO"
    },
    {
@@ -38,15 +57,15 @@
     "repo": "ARMOR-NODE-RADAR"
    }
   ],
-  "total24": 4076,
-  "total7": 12272,
+  "total24": 4237,
+  "total7": 12088,
   "warn": false
  },
  "ecosystems": {
   "armor": {
    "cand": 3,
    "read": 19,
-   "red": 0,
+   "red": 1,
    "repos": 19,
    "unpub": 0
   },
@@ -72,7 +91,7 @@
    "unpub": 0
   },
   "urtc": {
-   "cand": 1,
+   "cand": 2,
    "read": 11,
    "red": 0,
    "repos": 11,
@@ -80,6 +99,24 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-12T11:31:50Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-12T11:31:50Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "coverage-floor.yml"
+  },
+  {
+   "at": "2026-11-12T11:31:50Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-12T08:27:57Z",
    "kind": "red_ok",
@@ -241,24 +278,6 @@
    "kind": "released",
    "repo": "HYDRA-UMC-SERVER",
    "tag": "v0.8.2.9"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-STUDIO",
-   "tag": "v0.8.1.9"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-SUITE",
-   "tag": "v0.8.0.5"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-TWIN",
-   "tag": "v0.1.8"
   }
  ],
  "hygiene": {
@@ -275,9 +294,19 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 24,
+    "cand": 25,
     "hyg": 0,
-    "red": 0
+    "red": 3
+   }
+  },
+  {
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "ARMOR-DOCS"
+    ],
+    "n": 3
    }
   },
   {
@@ -308,9 +337,10 @@
      "HYDRA-UMC-PHYSICS-REPLICA",
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-WATCH",
+     "URTC-COMMON",
      "URTC-FLASHER"
     ],
-    "n": 24
+    "n": 25
    }
   },
   {
@@ -326,19 +356,19 @@
  "releases": {
   "candidates": [
    {
-    "entries": 33,
+    "entries": 34,
     "published": "2026-11-06T07:09:43Z",
     "repo": "HYDRA-UMC",
     "tag": "v0.2.8"
    },
    {
-    "entries": 13,
+    "entries": 14,
     "published": "2026-11-06T10:30:35Z",
     "repo": "HYDRA-UMC-IOS-CONTROL",
     "tag": "v0.3.5"
    },
    {
-    "entries": 9,
+    "entries": 10,
     "published": "2026-11-07T00:51:41Z",
     "repo": "ARMOR-STUDIO",
     "tag": "v0.8.2.3"
@@ -369,6 +399,12 @@
    },
    {
     "entries": 4,
+    "published": "2026-11-05T23:40:26Z",
+    "repo": "ARMOR-NETWORK",
+    "tag": "v0.1.7"
+   },
+   {
+    "entries": 4,
     "published": "2026-11-06T16:13:49Z",
     "repo": "HYDRA-UMC-BRIDGE-LASER",
     "tag": "v0.2.3"
@@ -392,10 +428,10 @@
     "tag": "v0.2.4"
    },
    {
-    "entries": 3,
-    "published": "2026-11-05T23:40:26Z",
-    "repo": "ARMOR-NETWORK",
-    "tag": "v0.1.7"
+    "entries": 4,
+    "published": "2026-11-08T01:00:34Z",
+    "repo": "URTC-COMMON",
+    "tag": "v0.2.5"
    },
    {
     "entries": 3,
@@ -472,7 +508,7 @@
   ],
   "days": 2.0,
   "min_entries": 2,
-  "total": 24
+  "total": 25
  },
  "repos": 129,
  "schema": 1,
@@ -627,7 +663,7 @@
    43,
    43,
    43,
-   24
+   25
   ],
   "dates": [
    "2026-11-03",
@@ -663,7 +699,7 @@
    171,
    269,
    159,
-   4076
+   4237
   ],
   "red": [
    3,
@@ -675,7 +711,7 @@
    0,
    0,
    0,
-   0
+   3
   ]
  },
  "unpublished": {
