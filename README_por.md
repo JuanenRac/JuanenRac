@@ -63,7 +63,7 @@ Fora dos quatro ecossistemas há um quinto grupo: ferramentas independentes que 
 
 | Ferramenta | Versão | O que é |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.4 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.5 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
 
 \---
@@ -99,7 +99,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 56 de 59 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟢 | `█████████▊ 98%` | 58 de 59 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `█████████▊ 98%` | 58 de 59 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm o README nas oito línguas. |
 | Simulação | 🔴 | `██▊░░░░░░░ 27%` | 16 de 59 repositórios foram verificados pelo menos num simulador. |
@@ -328,7 +328,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 **Atualizador:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:urtc -->
-`\[███████████░░░░░░░░░] 55%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 11 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[███████████▎░░░░░░░░] 56%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 11 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -340,7 +340,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 de 11 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm testes automáticos. |
-| Integração contínua | 🟡 | `████████▎░ 82%` | 9 de 11 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 11 de 11 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm o README nas oito línguas. |
 | Simulação | 🟡 | `████████▎░ 82%` | 9 de 11 repositórios foram verificados pelo menos num simulador. |
@@ -403,7 +403,7 @@ Cada perfil de ferramenta carrega seu próprio watchdog e comportamento de falha
 **Atualizador:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:armor -->
-`\[█████████████▊░░░░░░] 69%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 19 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[██████████████░░░░░░] 70%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 19 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -415,7 +415,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 de 19 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟢 | `█████████▌ 95%` | 18 de 19 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `█████████▌ 95%` | 18 de 19 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 19 de 19 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 19 de 19 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 19 de 19 repositórios têm o README nas oito línguas. |
 | Simulação | 🟢 | `█████████▌ 95%` | 18 de 19 repositórios foram verificados pelo menos num simulador. |

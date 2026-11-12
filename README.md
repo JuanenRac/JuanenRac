@@ -63,7 +63,7 @@ Outside the four ecosystems there is a fifth group: independent tools that stand
 
 | Tool | Version | What it is |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.4 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.5 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | The one window and command line that hand over to the updater of each ecosystem. |
 
 ---
@@ -99,7 +99,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 56 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `██▊░░░░░░░ 27%` | 16 of 59 repositories have been checked at least in a simulator. |
@@ -322,7 +322,7 @@ for all four - can check versions and build/update any other project.
 **Updater:** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:urtc -->
-`[███████████░░░░░░░░░] 55%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[███████████▎░░░░░░░░] 56%` — Calculated from real data: the maturity and the evidence that each of its 11 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -334,7 +334,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟡 | `████████▎░ 82%` | 9 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟡 | `████████▎░ 82%` | 9 of 11 repositories have been checked at least in a simulator. |
@@ -397,7 +397,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:armor -->
-`[█████████████▊░░░░░░] 69%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[██████████████░░░░░░] 70%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -409,7 +409,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 19 of 19 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have been checked at least in a simulator. |
