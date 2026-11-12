@@ -6817,15 +6817,15 @@
   },
   {
    "actions": {
-    "fail": 166,
-    "min": 3104,
-    "ok": 2002,
-    "other": 15,
-    "runs": 2183
+    "fail": 173,
+    "min": 4009,
+    "ok": 2192,
+    "other": 16,
+    "runs": 2381
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -6867,7 +6867,7 @@
    },
    "date": "2026-11-12",
    "progress": {
-    "armor": 69,
+    "armor": 70,
     "eh3d": 45,
     "hydra-umc": 55,
     "urtc": 56
@@ -6875,7 +6875,7 @@
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
      2,
-     "0.8.0.5"
+     "0.8.0.6"
     ],
     "ARMOR-COMMON": [
      2,
@@ -6903,23 +6903,23 @@
     ],
     "ARMOR-NODE-ALARM": [
      1,
-     "0.5.4"
+     "0.5.5"
     ],
     "ARMOR-NODE-ELECTRICAL": [
      1,
-     "0.5.6"
+     "0.5.7"
     ],
     "ARMOR-NODE-HMI": [
      1,
-     "0.4.6"
+     "0.4.7"
     ],
     "ARMOR-NODE-RADAR": [
      2,
-     "0.8.1.0"
+     "0.8.1.1"
     ],
     "ARMOR-NODE-SOLAR": [
      1,
-     "0.6.4"
+     "0.6.5"
     ],
     "ARMOR-SERVER": [
      2,
@@ -7271,7 +7271,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.6.0"
+     "0.6.1"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -7391,10 +7391,10 @@
     ]
    },
    "sentinel": {
-    "cand": 30,
+    "cand": 24,
     "gaps": 0,
-    "min": 3104,
-    "red": 2
+    "min": 4009,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 455,
@@ -7442,7 +7442,7 @@
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 146,
-    "HYDRA-UMC": 679,
+    "HYDRA-UMC": 709,
     "HYDRA-UMC-ANDROID-CONTROL": 590,
     "HYDRA-UMC-ANOMALY-DETECTOR": 388,
     "HYDRA-UMC-BRIDGE-AMR": 223,
@@ -7458,16 +7458,16 @@
     "HYDRA-UMC-DASHBOARD-AI": 261,
     "HYDRA-UMC-DATALAKE": 306,
     "HYDRA-UMC-DETECTION-HEF": 379,
-    "HYDRA-UMC-DEV-SERVER": 572,
+    "HYDRA-UMC-DEV-SERVER": 596,
     "HYDRA-UMC-DEVELOPER-NODE": 95,
     "HYDRA-UMC-DOCS": 217,
     "HYDRA-UMC-DOCS-QA": 137,
-    "HYDRA-UMC-DSI": 372,
+    "HYDRA-UMC-DSI": 373,
     "HYDRA-UMC-EDITOR-STL": 302,
     "HYDRA-UMC-EDITOR-URDF": 607,
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 294,
     "HYDRA-UMC-HIL-BRIDGE": 241,
-    "HYDRA-UMC-IOS-CONTROL": 546,
+    "HYDRA-UMC-IOS-CONTROL": 554,
     "HYDRA-UMC-JOB-DISPATCHER": 356,
     "HYDRA-UMC-LOCAL-TECHNICIAN": 377,
     "HYDRA-UMC-MQTT-BROKER": 187,
@@ -7484,7 +7484,7 @@
     "HYDRA-UMC-SAFETY-ZONES": 1141,
     "HYDRA-UMC-SDK": 964,
     "HYDRA-UMC-SEMANTIC-PLANNER": 315,
-    "HYDRA-UMC-SERVER": 996,
+    "HYDRA-UMC-SERVER": 1026,
     "HYDRA-UMC-STUDIO": 1480,
     "HYDRA-UMC-STUDIO-KIT": 87,
     "HYDRA-UMC-SUITE": 72,

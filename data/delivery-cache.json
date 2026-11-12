@@ -2,9 +2,10 @@
  "builds": {
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-06T02:54:31Z",
-   "exp": "2026-11-13T02:53:47Z",
-   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/42152696101",
+   "at": "2026-11-12T08:13:39Z",
+   "checked": true,
+   "exp": "2026-11-19T08:12:22Z",
+   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/43180369817",
    "wf": "apk-build.yml"
   },
   "ARMOR-NETWORK": {
@@ -16,37 +17,42 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-07T12:24:45Z",
-   "exp": "2026-11-14T12:23:51Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/42372004336",
+   "at": "2026-11-12T08:11:38Z",
+   "checked": true,
+   "exp": "2026-11-19T08:10:46Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43180116829",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-06T13:59:55Z",
-   "exp": "2026-11-13T13:58:39Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/42229421271",
+   "at": "2026-11-12T08:11:44Z",
+   "checked": true,
+   "exp": "2026-11-19T08:10:46Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43180193691",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-12T02:37:00Z",
-   "exp": "2026-11-19T02:36:13Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43141974985",
+   "at": "2026-11-12T08:15:58Z",
+   "checked": true,
+   "exp": "2026-11-19T08:15:16Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43180633384",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
-   "at": "2026-11-07T12:36:16Z",
-   "exp": "2026-11-14T12:35:17Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/42372873005",
+   "at": "2026-11-12T08:08:17Z",
+   "checked": true,
+   "exp": "2026-11-19T08:05:47Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/43178974613",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-07T12:41:57Z",
-   "exp": "2026-11-14T12:40:40Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/42373304819",
+   "at": "2026-11-12T08:11:55Z",
+   "checked": true,
+   "exp": "2026-11-19T08:10:50Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/43180277729",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
@@ -65,9 +71,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-07T00:49:17Z",
-   "exp": "2026-11-14T00:48:35Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/42320434364",
+   "at": "2026-11-12T08:14:29Z",
+   "checked": true,
+   "exp": "2026-11-19T08:13:48Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/43181178931",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
