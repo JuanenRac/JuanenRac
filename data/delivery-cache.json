@@ -2,15 +2,15 @@
  "builds": {
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-12T08:13:39Z",
-   "exp": "2026-11-19T08:12:22Z",
-   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/43180369817",
+   "at": "2026-11-12T22:52:53Z",
+   "checked": true,
+   "exp": "2026-11-19T22:52:05Z",
+   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/43323023085",
    "wf": "apk-build.yml"
   },
   "ARMOR-DEVOPS": {
    "art": true,
    "at": "2026-11-12T22:15:44Z",
-   "checked": true,
    "exp": "2026-11-19T22:13:15Z",
    "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/43317555550",
    "wf": "package-build.yml"
@@ -74,7 +74,6 @@
   "ARMOR-STUDIO": {
    "art": true,
    "at": "2026-11-12T22:24:56Z",
-   "checked": true,
    "exp": "2026-11-19T22:24:20Z",
    "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/43319512827",
    "wf": "package-build.yml"
@@ -271,7 +270,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-12T22:30:31Z",
-   "checked": true,
    "exp": "2026-11-19T22:29:42Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/43320049823",
    "wf": "exe-build.yml"
@@ -286,7 +284,6 @@
   "URTC-TESTER": {
    "art": true,
    "at": "2026-11-12T22:23:30Z",
-   "checked": true,
    "exp": "2026-11-19T22:22:39Z",
    "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/43318579913",
    "wf": "exe-build.yml"
@@ -308,7 +305,7 @@
  },
  "presence": {
   "ARMOR-ANDROID-CONTROL": {
-   "fp": "a509a84f835e40a3",
+   "fp": "349bdf2664f4ffff",
    "on": "2026-11-12",
    "r": {
     "ak": 0,
@@ -398,8 +395,8 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "8888c52087dbad6d",
-   "on": "2026-11-07",
+   "fp": "4b7a9d832c99613c",
+   "on": "2026-11-12",
    "r": {
     "ak": 1,
     "an": 1,
@@ -846,7 +843,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "8888c52087dbad6d",
+   "fp": "4b7a9d832c99613c",
    "r": {
     "bad": 0,
     "ho": 0,

@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 259,
-    "min": 12938,
-    "ok": 4753,
-    "other": 52,
-    "runs": 5064
+    "fail": 251,
+    "min": 12959,
+    "ok": 4781,
+    "other": 60,
+    "runs": 5092
    },
    "areas": {
     "armor": {
@@ -6886,7 +6886,7 @@
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
      2,
-     "0.8.0.6"
+     "0.8.0.7"
     ],
     "ARMOR-COMMON": [
      2,
@@ -6906,7 +6906,7 @@
     ],
     "ARMOR-IOS-CONTROL": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "ARMOR-NETWORK": [
      2,
@@ -7402,9 +7402,9 @@
     ]
    },
    "sentinel": {
-    "cand": 21,
+    "cand": 20,
     "gaps": 0,
-    "min": 12938,
+    "min": 12959,
     "red": 0
    },
    "tests": {
@@ -7453,8 +7453,8 @@
     "EH3D-UPDATER": 455,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 146,
-    "HYDRA-UMC": 913,
-    "HYDRA-UMC-ANDROID-CONTROL": 658,
+    "HYDRA-UMC": 971,
+    "HYDRA-UMC-ANDROID-CONTROL": 665,
     "HYDRA-UMC-ANOMALY-DETECTOR": 407,
     "HYDRA-UMC-BRIDGE-AMR": 223,
     "HYDRA-UMC-BRIDGE-CNC": 321,
