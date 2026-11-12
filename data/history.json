@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 19,
-    "min": 536,
-    "ok": 457,
-    "other": 8,
-    "runs": 484
+    "fail": 47,
+    "min": 976,
+    "ok": 692,
+    "other": 10,
+    "runs": 749
    },
    "areas": {
     "armor": {
@@ -7391,10 +7391,10 @@
     ]
    },
    "sentinel": {
-    "cand": 42,
+    "cand": 43,
     "gaps": 0,
-    "min": 536,
-    "red": 0
+    "min": 976,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,
@@ -7477,17 +7477,17 @@
     "HYDRA-UMC-OPS-AGENT": 500,
     "HYDRA-UMC-ORCHESTRATOR": 278,
     "HYDRA-UMC-OS": 72,
-    "HYDRA-UMC-OS-REBUILDER": 225,
+    "HYDRA-UMC-OS-REBUILDER": 253,
     "HYDRA-UMC-PATH-PLANNER-3D": 83,
     "HYDRA-UMC-PHYSICS-REPLICA": 187,
     "HYDRA-UMC-PRODUCTION-REPORTS": 214,
     "HYDRA-UMC-SAFETY-ZONES": 1081,
     "HYDRA-UMC-SDK": 891,
     "HYDRA-UMC-SEMANTIC-PLANNER": 315,
-    "HYDRA-UMC-SERVER": 816,
-    "HYDRA-UMC-STUDIO": 1247,
+    "HYDRA-UMC-SERVER": 938,
+    "HYDRA-UMC-STUDIO": 1386,
     "HYDRA-UMC-STUDIO-KIT": 87,
-    "HYDRA-UMC-SUITE": 69,
+    "HYDRA-UMC-SUITE": 70,
     "HYDRA-UMC-SWARM-SYNC": 151,
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": 180,
     "HYDRA-UMC-TELEMETRY-COLLECTOR": 138,

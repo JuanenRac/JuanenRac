@@ -31,7 +31,6 @@
   "ARMOR-NODE-HMI": {
    "art": true,
    "at": "2026-11-12T02:37:00Z",
-   "checked": true,
    "exp": "2026-11-19T02:36:13Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43141974985",
    "wf": "firmware-build.yml"
