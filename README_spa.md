@@ -63,7 +63,7 @@ Fuera de los cuatro ecosistemas hay un quinto grupo: herramientas independientes
 
 | Herramienta | Versión | Qué es |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.2 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.3 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La ventana y la línea de órdenes únicas que ceden el trabajo al actualizador de cada ecosistema. |
 
 \---
@@ -204,8 +204,8 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.0|Capa de plataforma sobre Raspberry Pi OS para la CM5: perfiles, configuración, diagnóstico, servicios y actualizaciones; no es una distribución nueva.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.5.9|Contratos versionados compartidos, clientes ligeros y accesorios de conformidad para servicios, interfaces de usuario y adaptadores CM5; no reemplaza las API de los fabricantes.|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|Capa de plataforma sobre Raspberry Pi OS para la CM5: perfiles, configuración, diagnóstico, servicios y actualizaciones; no es una distribución nueva.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.0|Contratos versionados compartidos, clientes ligeros y accesorios de conformidad para servicios, interfaces de usuario y adaptadores CM5; no reemplaza las API de los fabricantes.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.9|Registro declarativo y validador de manifiestos de adaptadores para conectores de máquinas externas.|
 
 ### 💠 Control Central y Clientes de Operador
@@ -213,10 +213,10 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.8|Firmware central de control de movimiento para STM32H745/G474 con cinemática de curva S.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.7|API sin cabeza (headless) en Node.js y backend WebSocket para la orquestación robótica.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.8|API sin cabeza (headless) en Node.js y backend WebSocket para la orquestación robótica.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.8|Panel de control web avanzado basado en React para monitorización y control de robots 3D.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|Kit TypeScript compartido de los clientes web de HYDRA-UMC: sesión, cliente HTTP, historial de conexiones, preferencias y recorridos.|
-|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.3|Aplicación de escritorio de alto rendimiento en Python/Qt para automatización industrial.|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.4|Aplicación de escritorio de alto rendimiento en Python/Qt para automatización industrial.|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.5|Interfaz táctil dedicada basada en Flutter para pantallas industriales de 7" (CM5).|
 |[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.2|Aplicación móvil nativa en Kotlin con inicio de sesión biométrico para la gestión remota de robots.|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.5|Aplicación móvil en Flutter para iOS/iPadOS con sincronización por WebSocket en tiempo real.|
@@ -293,7 +293,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.3|Coordinador auxiliar de celdas láser que no puede armar, disparar ni anular los enclavamientos del láser.|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.6|Frontera de coordinación para droides con patas y humanoides: acciones con nombre de caminar, recoger y colocar sujetas al contrato de seguridad compartido.|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.9|Frontera de coordinación para flotas AGV/AMR: transformación de sistemas de referencia y vocabulario de órdenes; la planificación de rutas sigue en la navegación del propio AMR.|
-|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.0|Límite de coordinación para UAVs equipados con cámaras: vocabulario de solicitudes de vuelo con nombre más un sistema de vigilancia de seguridad (watchdog) determinista de latido/pérdida de enlace.|
+|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.1|Límite de coordinación para UAVs equipados con cámaras: vocabulario de solicitudes de vuelo con nombre más un sistema de vigilancia de seguridad (watchdog) determinista de latido/pérdida de enlace.|
 
 ### 🛠️ Herramientas Complementarias
 

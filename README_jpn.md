@@ -63,7 +63,7 @@
 
 | ツール | バージョン | 概要 |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.2 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.3 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
 
 \---
@@ -204,8 +204,8 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.0|CM5 向けの Raspberry Pi OS 上のプラットフォーム層。プロファイル、設定、診断、サービス、アップデートを提供します。新しいディストリビューションではありません。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.5.9|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|CM5 向けの Raspberry Pi OS 上のプラットフォーム層。プロファイル、設定、診断、サービス、アップデートを提供します。新しいディストリビューションではありません。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.0|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.9|外部マシン向けコネクタのアダプターマニフェストを管理する、宣言型のレジストリと検証ツール。|
 
 ### 💠 コア制御とオペレータークライアント
@@ -213,10 +213,10 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.8|S字運動学を備えたSTM32H745/G474用コアモーション制御ファームウェア。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.7|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.8|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.8|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC の Web クライアント共通の TypeScript キット：セッション、HTTP クライアント、接続履歴、設定、ツアー。|
-|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.3|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.4|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.5|7インチ産業用ディスプレイ（CM5）向けの専用Flutterベースのタッチインターフェース。|
 |[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.2|リモートロボット管理用の生体認証を備えたネイティブKotlinモバイルアプリ。|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.5|リアルタイムWebSocket同期を備えたiOS/iPadOS用Flutterモバイルアプリ。|
@@ -293,7 +293,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.3|レーザーインターロックのアーム、発火、バイパスができないレーザーセル補助コーディネーター。|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.6|脚式ロボットやヒューマノイド向けの連携境界。歩行・ピック・プレースの名前付きアクションを、共通の安全契約で制御します。|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.9|AGV/AMR 群向けの連携境界。座標系の変換と指示用語を提供し、経路計画は AMR 自身のナビゲーションに任せます。|
-|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.0|カメラ搭載UAV用の協調境界：飛行リクエスト語彙と決定論的ハートビート/リンク喪失フェイルセーフウォッチドッグ。|
+|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.1|カメラ搭載UAV用の協調境界：飛行リクエスト語彙と決定論的ハートビート/リンク喪失フェイルセーフウォッチドッグ。|
 
 ### 🛠️ 補完ツール
 

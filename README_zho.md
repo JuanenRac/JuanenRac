@@ -63,7 +63,7 @@
 
 | 工具 | 版本 | 简介 |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.2 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.3 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 
 \---
@@ -204,8 +204,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.0|面向 CM5 的 Raspberry Pi OS 平台层：配置档案、配置、诊断、服务和更新；不是新的发行版。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.5.9|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|面向 CM5 的 Raspberry Pi OS 平台层：配置档案、配置、诊断、服务和更新；不是新的发行版。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.0|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.9|面向外部机器连接器的适配器清单的声明式注册表与校验器。|
 
 ### 💠 核心控制与操作员客户端
@@ -213,10 +213,10 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.8|适用于 STM32H745/G474 且带 S 曲线运动学的核心运动控制固件。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.7|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.8|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.8|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
-|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.3|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.4|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.5|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
 |[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.2|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.5|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
@@ -293,7 +293,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.3|激光单元辅助协调器，无法对激光联锁进行布防、发射或越权。|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.6|面向足式和人形机器人的协调边界：具名的行走、拾取和放置动作，受共享安全契约约束。|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.9|面向 AGV/AMR 车队的协调边界：坐标系转换和指令词汇；路径规划仍由 AMR 自身的导航负责。|
-|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.0|配备相机的无人机（UAV）协调边界：命名的飞行请求词汇加上确定性的心跳/链路丢失故障保护看门狗。|
+|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.1|配备相机的无人机（UAV）协调边界：命名的飞行请求词汇加上确定性的心跳/链路丢失故障保护看门狗。|
 
 ### 🛠️ 辅助工具
 

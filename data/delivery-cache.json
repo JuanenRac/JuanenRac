@@ -30,9 +30,10 @@
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-07T12:30:48Z",
-   "exp": "2026-11-14T12:30:09Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/42372446376",
+   "at": "2026-11-12T02:37:00Z",
+   "checked": true,
+   "exp": "2026-11-19T02:36:13Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43141974985",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
@@ -298,7 +299,7 @@
  "presence": {
   "ARMOR-ANDROID-CONTROL": {
    "fp": "d43aa419fa427835",
-   "on": "2026-11-09",
+   "on": "2026-11-12",
    "r": {
     "ak": 0,
     "an": 1,
@@ -388,7 +389,7 @@
   },
   "ARMOR-VOICE-AI": {
    "fp": "94f9a343f3c9b6c3",
-   "on": "2026-11-09",
+   "on": "2026-11-12",
    "r": {
     "ak": 0,
     "an": 1,
@@ -397,7 +398,7 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "fp": "4915954468e60437",
-   "on": "2026-11-09",
+   "on": "2026-11-12",
    "r": {
     "ak": 0,
     "an": 1,
@@ -604,7 +605,7 @@
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
    "fp": "cf07836016f4f69c",
-   "on": "2026-11-09",
+   "on": "2026-11-12",
    "r": {
     "ak": 0,
     "an": 1,
@@ -613,7 +614,7 @@
   },
   "HYDRA-UMC-MESHES": {
    "fp": "bed485331987538b",
-   "on": "2026-11-09",
+   "on": "2026-11-12",
    "r": {
     "ak": 0,
     "an": 1,
@@ -626,15 +627,6 @@
    "r": {
     "ak": 1,
     "an": 1,
-    "at": "present"
-   }
-  },
-  "HYDRA-UMC-SERVER": {
-   "fp": "13e5a5afb2a22681",
-   "on": "2026-11-07",
-   "r": {
-    "ak": 2,
-    "an": 2,
     "at": "present"
    }
   },
@@ -656,15 +648,6 @@
     "at": "present"
    }
   },
-  "HYDRA-UMC-SUITE": {
-   "fp": "dea50936fc41b7c1",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "HYDRA-UMC-UPDATER": {
    "fp": "de8a59de2fd95162",
    "on": "2026-11-06",
@@ -676,7 +659,7 @@
   },
   "HYDRA-UMC-WATCH": {
    "fp": "2ffb262f35f694a3",
-   "on": "2026-11-09",
+   "on": "2026-11-12",
    "r": {
     "ak": 0,
     "an": 1,
@@ -1312,21 +1295,6 @@
     "why": []
    }
   },
-  "HYDRA-UMC-SERVER": {
-   "fp": "13e5a5afb2a22681",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
-    "s": "verified",
-    "sch": [
-     "hydra-pc-pkg/1",
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
   "HYDRA-UMC-STUDIO": {
    "fp": "f3e79c94586560b1",
    "r": {
@@ -1355,22 +1323,6 @@
     ],
     "unk": 0,
     "why": []
-   }
-  },
-  "HYDRA-UMC-SUITE": {
-   "fp": "dea50936fc41b7c1",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 1,
-    "s": "verified",
-    "sch": [
-     "hydra-pc-pkg/1"
-    ],
-    "unk": 3,
-    "why": [
-     "toobig"
-    ]
    }
   },
   "HYDRA-UMC-SWARM-SYNC": {

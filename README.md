@@ -63,7 +63,7 @@ Outside the four ecosystems there is a fifth group: independent tools that stand
 
 | Tool | Version | What it is |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.2 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.3 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | The one window and command line that hand over to the updater of each ecosystem. |
 
 ---
@@ -207,18 +207,18 @@ for all four - can check versions and build/update any other project.
 ### 🧱 Platform Foundation & Contracts
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.6.0 | Raspberry Pi OS platform layer for the CM5: profiles, configuration, diagnostics, services and updates; not a new distribution. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.5.9 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.6.1 | Raspberry Pi OS platform layer for the CM5: profiles, configuration, diagnostics, services and updates; not a new distribution. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.6.0 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.1.9 | Declarative registry and validator of adapter manifests for external-machine connectors. |
 
 ### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.8 | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.2.7 | Headless Node.js API and WebSocket backend for robotic orchestration. |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.2.8 | Headless Node.js API and WebSocket backend for robotic orchestration. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.1.8 | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT) | 0.0.4 | Shared TypeScript kit of the HYDRA-UMC web clients: session, HTTP client, connection history, preferences and tours. |
-| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.8.0.3 | High-performance Python/Qt desktop application for industrial automation. |
+| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.8.0.4 | High-performance Python/Qt desktop application for industrial automation. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.3.5 | Dedicated Flutter-based touch interface for 7" industrial displays (CM5). |
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.8.0.2 | Native Kotlin mobile app with biometric login for remote robot management. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.3.5 | Flutter mobile app for iOS/iPadOS with real-time WebSocket sync. |
@@ -288,7 +288,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.2.3 | Laser-cell auxiliary coordinator that cannot arm, fire or override laser interlocks. |
 | [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.1.6 | Coordination boundary for legged and humanoid droids: named walk, pick and place actions gated by the shared safety contract. |
 | [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.1.9 | Coordination boundary for AGV/AMR fleets: frame transform and an order vocabulary; path planning stays with the AMR's own navigation. |
-| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.2.0 | Coordination boundary for camera-equipped UAVs: named flight-request vocabulary plus a deterministic heartbeat/link-loss failsafe watchdog. |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.2.1 | Coordination boundary for camera-equipped UAVs: named flight-request vocabulary plus a deterministic heartbeat/link-loss failsafe watchdog. |
 
 ### 🛠️ Complementary Tools
 | Repository | Version | Description |

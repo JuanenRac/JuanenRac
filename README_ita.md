@@ -63,7 +63,7 @@ Oltre ai quattro ecosistemi c'è un quinto gruppo: strumenti indipendenti che st
 
 | Strumento | Versione | Cos'è |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.2 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.3 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |
 
 \---
@@ -204,8 +204,8 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.0|Livello di piattaforma su Raspberry Pi OS per la CM5: profili, configurazione, diagnostica, servizi e aggiornamenti; non è una nuova distribuzione.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.5.9|Contratti condivisi con versione, client leggeri e banchi di conformità per servizi, UI e adattatori CM5; non sostituisce le API dei produttori.|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|Livello di piattaforma su Raspberry Pi OS per la CM5: profili, configurazione, diagnostica, servizi e aggiornamenti; non è una nuova distribuzione.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.0|Contratti condivisi con versione, client leggeri e banchi di conformità per servizi, UI e adattatori CM5; non sostituisce le API dei produttori.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.1.9|Registro dichiarativo e validatore dei manifesti degli adattatori per i connettori di macchine esterne.|
 
 ### 💠 Controllo Principale e Client Operatore
@@ -213,10 +213,10 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.8|Firmware di controllo del movimento principale per STM32H745/G474 con cinematica ad S.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.7|API Node.js headless e backend WebSocket per l'orchestrazione robotica.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.2.8|API Node.js headless e backend WebSocket per l'orchestrazione robotica.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.1.8|Dashboard web avanzata basata su React per il monitoraggio e il controllo 3D del robot.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|Kit TypeScript condiviso dei client web di HYDRA-UMC: sessione, client HTTP, cronologia delle connessioni, preferenze e percorsi guidati.|
-|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.3|Applicazione desktop Python/Qt ad alte prestazioni per l'automazione industriale.|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.4|Applicazione desktop Python/Qt ad alte prestazioni per l'automazione industriale.|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.5|Interfaccia tattile dedicata basata su Flutter per display industriali da 7" (CM5).|
 |[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.2|App mobile nativa in Kotlin con accesso biometrico per la gestione remota del robot.|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.5|App mobile Flutter per iOS/iPadOS con sincronizzazione WebSocket in tempo reale.|
@@ -293,7 +293,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.3|Coordinatore ausiliario per cella laser che non può armare, attivare o bypassare gli interblocchi laser.|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.6|Confine di coordinamento per droidi con zampe e umanoidi: azioni con nome di camminata, prelievo e posa soggette al contratto di sicurezza condiviso.|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.1.9|Confine di coordinamento per flotte AGV/AMR: trasformazione dei riferimenti e vocabolario di ordini; la pianificazione del percorso resta alla navigazione dell'AMR.|
-|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.0|Confine di coordinamento per UAV dotati di telecamera: vocabolario di richieste di volo denominate più un watchdog deterministico di rilevamento perdita di battito cardiaco/connessione.|
+|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.1|Confine di coordinamento per UAV dotati di telecamera: vocabolario di richieste di volo denominate più un watchdog deterministico di rilevamento perdita di battito cardiaco/connessione.|
 
 ### 🛠️ Strumenti Complementari
 
