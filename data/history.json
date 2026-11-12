@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 246,
-    "min": 5485,
-    "ok": 3170,
-    "other": 23,
-    "runs": 3439
+    "fail": 258,
+    "min": 5732,
+    "ok": 3324,
+    "other": 30,
+    "runs": 3612
    },
    "areas": {
     "armor": {
@@ -7343,7 +7343,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.7.5"
+     "1.7.6"
     ],
     "URTC": [
      1,
@@ -7391,24 +7391,24 @@
     ]
    },
    "sentinel": {
-    "cand": 36,
+    "cand": 37,
     "gaps": 0,
-    "min": 5485,
-    "red": 0
+    "min": 5732,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 455,
     "ARMOR-COMMON": 478,
     "ARMOR-DOCS": 424,
     "ARMOR-HARDWARE": 63,
-    "ARMOR-IOS-CONTROL": 381,
+    "ARMOR-IOS-CONTROL": 384,
     "ARMOR-NETWORK": 226,
-    "ARMOR-SERVER": 1136,
+    "ARMOR-SERVER": 1143,
     "ARMOR-SERVER-AI": 145,
     "ARMOR-SIMULATOR": 333,
-    "ARMOR-STUDIO": 1522,
+    "ARMOR-STUDIO": 1636,
     "ARMOR-UPDATER": 454,
-    "ARMOR-VISION": 275,
+    "ARMOR-VISION": 295,
     "ARMOR-VOICE-AI": 200,
     "EH3D-AUTOLEVEL": 174,
     "EH3D-BUNGARD-GUI": 408,
@@ -7479,11 +7479,11 @@
     "HYDRA-UMC-OS": 73,
     "HYDRA-UMC-OS-REBUILDER": 253,
     "HYDRA-UMC-PATH-PLANNER-3D": 99,
-    "HYDRA-UMC-PHYSICS-REPLICA": 228,
+    "HYDRA-UMC-PHYSICS-REPLICA": 229,
     "HYDRA-UMC-PRODUCTION-REPORTS": 219,
     "HYDRA-UMC-SAFETY-ZONES": 1166,
-    "HYDRA-UMC-SDK": 964,
-    "HYDRA-UMC-SEMANTIC-PLANNER": 315,
+    "HYDRA-UMC-SDK": 972,
+    "HYDRA-UMC-SEMANTIC-PLANNER": 353,
     "HYDRA-UMC-SERVER": 1026,
     "HYDRA-UMC-STUDIO": 1546,
     "HYDRA-UMC-STUDIO-KIT": 87,
@@ -7506,10 +7506,10 @@
     "URTC-FLASHER": 843,
     "URTC-GATEWAY": 139,
     "URTC-SMART-RACK": 715,
-    "URTC-TESTER": 905,
+    "URTC-TESTER": 929,
     "URTC-UPDATER": 609,
     "URTC-VISION-TOOL": 183,
-    "URTC-WEB-STUDIO": 1441
+    "URTC-WEB-STUDIO": 1458
    }
   }
  ],
