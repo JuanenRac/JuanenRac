@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 265,
-    "min": 12372,
-    "ok": 4564,
-    "other": 53,
-    "runs": 4882
+    "fail": 266,
+    "min": 12421,
+    "ok": 4584,
+    "other": 55,
+    "runs": 4905
    },
    "areas": {
     "armor": {
@@ -7404,7 +7404,7 @@
    "sentinel": {
     "cand": 21,
     "gaps": 0,
-    "min": 12372,
+    "min": 12421,
     "red": 0
    },
    "tests": {
@@ -7419,9 +7419,9 @@
     "ARMOR-SIMULATOR": 333,
     "ARMOR-STUDIO": 1672,
     "ARMOR-UPDATER": 454,
-    "ARMOR-VISION": 317,
+    "ARMOR-VISION": 327,
     "ARMOR-VOICE-AI": 218,
-    "EH3D-AUTOLEVEL": 181,
+    "EH3D-AUTOLEVEL": 184,
     "EH3D-BUNGARD-GUI": 416,
     "EH3D-CAM-DEBUGGER": 123,
     "EH3D-COMMON": 421,
@@ -7511,7 +7511,7 @@
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 434,
     "HYDRA-UMC-WATCH": 192,
-    "URTC-COMMON": 2779,
+    "URTC-COMMON": 2814,
     "URTC-DEVTOOLS": 109,
     "URTC-DOCS": 222,
     "URTC-FLASHER": 857,
