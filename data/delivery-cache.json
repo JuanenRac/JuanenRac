@@ -304,7 +304,16 @@
  },
  "presence": {
   "ARMOR-ANDROID-CONTROL": {
-   "fp": "d43aa419fa427835",
+   "fp": "a509a84f835e40a3",
+   "on": "2026-11-12",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "ARMOR-DEVOPS": {
+   "fp": "ad4256bb2517c65a",
    "on": "2026-11-12",
    "r": {
     "ak": 0,
@@ -322,8 +331,8 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "1f2d1a21cc448bd7",
-   "on": "2026-11-06",
+   "fp": "5c946ca5b848be27",
+   "on": "2026-11-12",
    "r": {
     "ak": 3,
     "an": 3,
@@ -331,8 +340,8 @@
    }
   },
   "ARMOR-NODE-ELECTRICAL": {
-   "fp": "cc8f31d274a0cc3e",
-   "on": "2026-11-06",
+   "fp": "7768d48ec70dc289",
+   "on": "2026-11-12",
    "r": {
     "ak": 3,
     "an": 3,
@@ -340,8 +349,8 @@
    }
   },
   "ARMOR-NODE-HMI": {
-   "fp": "2f656c22929944a8",
-   "on": "2026-11-06",
+   "fp": "8079b8e25fe1c0d9",
+   "on": "2026-11-12",
    "r": {
     "ak": 2,
     "an": 2,
@@ -349,8 +358,8 @@
    }
   },
   "ARMOR-NODE-RADAR": {
-   "fp": "7e74089540e38b60",
-   "on": "2026-11-06",
+   "fp": "6dc3814c35e4a11b",
+   "on": "2026-11-12",
    "r": {
     "ak": 3,
     "an": 3,
@@ -358,8 +367,8 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "52fc0e1cd030a7ca",
-   "on": "2026-11-06",
+   "fp": "5858f6b51e8e1a61",
+   "on": "2026-11-12",
    "r": {
     "ak": 3,
     "an": 3,
@@ -693,6 +702,22 @@
  },
  "schema": 1,
  "signatures": {
+  "ARMOR-DEVOPS": {
+   "fp": "ad4256bb2517c65a",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 1,
+    "s": "verified",
+    "sch": [
+     "armor-pkg/1"
+    ],
+    "unk": 1,
+    "why": [
+     "scheme"
+    ]
+   }
+  },
   "ARMOR-NETWORK": {
    "fp": "432dcae002bdf291",
    "r": {
@@ -710,7 +735,7 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "1f2d1a21cc448bd7",
+   "fp": "5c946ca5b848be27",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -725,7 +750,7 @@
    }
   },
   "ARMOR-NODE-ELECTRICAL": {
-   "fp": "cc8f31d274a0cc3e",
+   "fp": "7768d48ec70dc289",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -740,7 +765,7 @@
    }
   },
   "ARMOR-NODE-HMI": {
-   "fp": "2f656c22929944a8",
+   "fp": "8079b8e25fe1c0d9",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -755,7 +780,7 @@
    }
   },
   "ARMOR-NODE-RADAR": {
-   "fp": "7e74089540e38b60",
+   "fp": "6dc3814c35e4a11b",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -770,7 +795,7 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "52fc0e1cd030a7ca",
+   "fp": "5858f6b51e8e1a61",
    "r": {
     "bad": 0,
     "ho": 0,

@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-12T08:18:40Z",
+ "asof": "2026-11-12T08:27:57Z",
  "ci": {
   "checked": 541,
   "red": [],
@@ -8,19 +8,19 @@
  "compute": {
   "top": [
    {
-    "min24": 243,
+    "min24": 244,
     "min7": 284,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
+   },
+   {
+    "min24": 242,
+    "min7": 432,
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
     "min24": 228,
     "min7": 306,
     "repo": "HYDRA-UMC-IOS-CONTROL"
-   },
-   {
-    "min24": 218,
-    "min7": 408,
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
     "min24": 174,
@@ -33,13 +33,13 @@
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 122,
+    "min24": 125,
     "min7": 133,
     "repo": "ARMOR-NODE-RADAR"
    }
   ],
-  "total24": 4009,
-  "total7": 12218,
+  "total24": 4045,
+  "total7": 12238,
   "warn": false
  },
  "ecosystems": {
@@ -48,7 +48,7 @@
    "read": 19,
    "red": 0,
    "repos": 19,
-   "unpub": 6
+   "unpub": 0
   },
   "eh3d": {
    "cand": 0,
@@ -81,19 +81,55 @@
  },
  "events": [
   {
-   "at": "2026-11-12T08:18:40Z",
+   "at": "2026-11-12T08:27:57Z",
    "kind": "red_ok",
    "repo": "ARMOR-COMMON",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-12T08:18:40Z",
+   "at": "2026-11-12T08:27:57Z",
    "kind": "red_ok",
    "repo": "ARMOR-COMMON",
    "wf": "coverage-floor.yml"
   },
   {
-   "at": "2026-11-12T08:18:40Z",
+   "at": "2026-11-12T08:27:57Z",
+   "kind": "released",
+   "repo": "ARMOR-ANDROID-CONTROL",
+   "tag": "v0.8.0.6"
+  },
+  {
+   "at": "2026-11-12T08:27:57Z",
+   "kind": "released",
+   "repo": "ARMOR-NODE-ALARM",
+   "tag": "v0.5.5"
+  },
+  {
+   "at": "2026-11-12T08:27:57Z",
+   "kind": "released",
+   "repo": "ARMOR-NODE-ELECTRICAL",
+   "tag": "v0.5.7"
+  },
+  {
+   "at": "2026-11-12T08:27:57Z",
+   "kind": "released",
+   "repo": "ARMOR-NODE-HMI",
+   "tag": "v0.4.7"
+  },
+  {
+   "at": "2026-11-12T08:27:57Z",
+   "kind": "released",
+   "repo": "ARMOR-NODE-RADAR",
+   "tag": "v0.8.1.1"
+  },
+  {
+   "at": "2026-11-12T08:27:57Z",
+   "kind": "released",
+   "repo": "ARMOR-NODE-SOLAR",
+   "tag": "v0.6.5"
+  },
+  {
+   "at": "2026-11-12T08:27:57Z",
    "kind": "released",
    "repo": "HYDRA-UMC-SDK",
    "tag": "v0.6.1"
@@ -223,42 +259,6 @@
    "kind": "released",
    "repo": "HYDRA-UMC-TWIN",
    "tag": "v0.1.8"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-UPDATER",
-   "tag": "v0.5.8"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-VISION-NODE",
-   "tag": "v0.2.3"
-  },
-  {
-   "at": "2026-11-12T07:43:30Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-VISION-STREAMER",
-   "tag": "v0.2.6"
-  },
-  {
-   "at": "2026-11-12T04:21:16Z",
-   "kind": "red_new",
-   "repo": "ARMOR-COMMON",
-   "wf": "wire-host.yml"
-  },
-  {
-   "at": "2026-11-12T04:21:16Z",
-   "kind": "red_new",
-   "repo": "HYDRA-UMC-ANDROID-CONTROL",
-   "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-12T04:21:16Z",
-   "kind": "red_new",
-   "repo": "HYDRA-UMC-BRIDGE-UAV",
-   "wf": "sitl.yml"
   }
  ],
  "hygiene": {
@@ -311,21 +311,6 @@
      "URTC-FLASHER"
     ],
     "n": 24
-   }
-  },
-  {
-   "key": "unpub",
-   "level": "warn",
-   "p": {
-    "list": [
-     "ARMOR-ANDROID-CONTROL",
-     "ARMOR-NODE-ALARM",
-     "ARMOR-NODE-ELECTRICAL",
-     "ARMOR-NODE-HMI",
-     "ARMOR-NODE-RADAR",
-     "ARMOR-NODE-SOLAR"
-    ],
-    "n": 6
    }
   },
   {
@@ -494,25 +479,25 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 86,
+  "none": 85,
   "norelease": 0,
   "unverifiable": 20,
   "unverified": 0,
-  "verified": 23
+  "verified": 24
  },
  "tags": {
-  "ARMOR-ANDROID-CONTROL": "v0.8.0.5",
+  "ARMOR-ANDROID-CONTROL": "v0.8.0.6",
   "ARMOR-COMMON": "v0.8.1.2",
   "ARMOR-DEVOPS": "v0.7.4",
   "ARMOR-DOCS": "v0.8.1.9",
   "ARMOR-HARDWARE": "v0.2.9",
   "ARMOR-IOS-CONTROL": "v0.0.4",
   "ARMOR-NETWORK": "v0.1.7",
-  "ARMOR-NODE-ALARM": "v0.5.4",
-  "ARMOR-NODE-ELECTRICAL": "v0.5.6",
-  "ARMOR-NODE-HMI": "v0.4.6",
-  "ARMOR-NODE-RADAR": "v0.8.1.0",
-  "ARMOR-NODE-SOLAR": "v0.6.4",
+  "ARMOR-NODE-ALARM": "v0.5.5",
+  "ARMOR-NODE-ELECTRICAL": "v0.5.7",
+  "ARMOR-NODE-HMI": "v0.4.7",
+  "ARMOR-NODE-RADAR": "v0.8.1.1",
+  "ARMOR-NODE-SOLAR": "v0.6.5",
   "ARMOR-SERVER": "v0.8.2.1",
   "ARMOR-SERVER-AI": "v0.3.2",
   "ARMOR-SIMULATOR": "v0.3.7",
@@ -678,7 +663,7 @@
    171,
    269,
    159,
-   4009
+   4045
   ],
   "red": [
    3,
@@ -694,38 +679,7 @@
   ]
  },
  "unpublished": {
-  "rows": [
-   {
-    "repo": "ARMOR-ANDROID-CONTROL",
-    "tag": "v0.8.0.5",
-    "version": "0.8.0.6"
-   },
-   {
-    "repo": "ARMOR-NODE-ALARM",
-    "tag": "v0.5.4",
-    "version": "0.5.5"
-   },
-   {
-    "repo": "ARMOR-NODE-ELECTRICAL",
-    "tag": "v0.5.6",
-    "version": "0.5.7"
-   },
-   {
-    "repo": "ARMOR-NODE-HMI",
-    "tag": "v0.4.6",
-    "version": "0.4.7"
-   },
-   {
-    "repo": "ARMOR-NODE-RADAR",
-    "tag": "v0.8.1.0",
-    "version": "0.8.1.1"
-   },
-   {
-    "repo": "ARMOR-NODE-SOLAR",
-    "tag": "v0.6.4",
-    "version": "0.6.5"
-   }
-  ],
-  "total": 6
+  "rows": [],
+  "total": 0
  }
 }
