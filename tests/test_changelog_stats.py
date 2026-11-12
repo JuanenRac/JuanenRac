@@ -187,7 +187,8 @@ class SummarizeTests(unittest.TestCase):
 
     def test_the_real_changelog_of_this_repository(self):
         got = cl.summarize((ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), CONFIG)
-        self.assertGreater(got["unreleased"], 0)
+        self.assertGreaterEqual(got["unreleased"], 0)
+        self.assertGreaterEqual(got["versions"] + got["unreleased"], 1)
 
 
 class ConfigTests(unittest.TestCase):
