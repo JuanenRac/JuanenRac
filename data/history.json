@@ -6817,15 +6817,15 @@
   },
   {
    "actions": {
-    "fail": 222,
-    "min": 4917,
-    "ok": 2762,
-    "other": 26,
-    "runs": 3010
+    "fail": 231,
+    "min": 5223,
+    "ok": 3021,
+    "other": 27,
+    "runs": 3279
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -6845,7 +6845,7 @@
      "tests": 90
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -6855,7 +6855,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 82,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -6867,10 +6867,10 @@
    },
    "date": "2026-11-12",
    "progress": {
-    "armor": 69,
+    "armor": 70,
     "eh3d": 45,
     "hydra-umc": 55,
-    "urtc": 55
+    "urtc": 56
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -7391,10 +7391,10 @@
     ]
    },
    "sentinel": {
-    "cand": 28,
+    "cand": 29,
     "gaps": 0,
-    "min": 4917,
-    "red": 1
+    "min": 5223,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 455,
@@ -7464,7 +7464,7 @@
     "HYDRA-UMC-DOCS-QA": 137,
     "HYDRA-UMC-DSI": 374,
     "HYDRA-UMC-EDITOR-STL": 302,
-    "HYDRA-UMC-EDITOR-URDF": 607,
+    "HYDRA-UMC-EDITOR-URDF": 628,
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 294,
     "HYDRA-UMC-HIL-BRIDGE": 241,
     "HYDRA-UMC-IOS-CONTROL": 554,
@@ -7481,7 +7481,7 @@
     "HYDRA-UMC-PATH-PLANNER-3D": 83,
     "HYDRA-UMC-PHYSICS-REPLICA": 228,
     "HYDRA-UMC-PRODUCTION-REPORTS": 214,
-    "HYDRA-UMC-SAFETY-ZONES": 1141,
+    "HYDRA-UMC-SAFETY-ZONES": 1166,
     "HYDRA-UMC-SDK": 964,
     "HYDRA-UMC-SEMANTIC-PLANNER": 315,
     "HYDRA-UMC-SERVER": 1026,
