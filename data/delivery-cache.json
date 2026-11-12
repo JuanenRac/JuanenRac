@@ -9,9 +9,10 @@
   },
   "ARMOR-DEVOPS": {
    "art": true,
-   "at": "2026-11-12T10:55:14Z",
-   "exp": "2026-11-19T10:54:32Z",
-   "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/43204444756",
+   "at": "2026-11-12T22:15:44Z",
+   "checked": true,
+   "exp": "2026-11-19T22:13:15Z",
+   "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/43317555550",
    "wf": "package-build.yml"
   },
   "ARMOR-NETWORK": {
@@ -59,7 +60,6 @@
   "ARMOR-SERVER": {
    "art": true,
    "at": "2026-11-12T21:51:43Z",
-   "checked": true,
    "exp": "2026-11-19T21:50:08Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/43314015516",
    "wf": "package-build.yml"
@@ -73,9 +73,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-12T08:14:29Z",
-   "exp": "2026-11-19T08:13:48Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/43181178931",
+   "at": "2026-11-12T22:24:56Z",
+   "checked": true,
+   "exp": "2026-11-19T22:24:20Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/43319512827",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -269,9 +270,10 @@
   },
   "URTC-FLASHER": {
    "art": true,
-   "at": "2026-11-08T00:30:28Z",
-   "exp": "2026-11-15T00:29:34Z",
-   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/42429570506",
+   "at": "2026-11-12T22:30:31Z",
+   "checked": true,
+   "exp": "2026-11-19T22:29:42Z",
+   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/43320049823",
    "wf": "exe-build.yml"
   },
   "URTC-SMART-RACK": {
@@ -283,9 +285,10 @@
   },
   "URTC-TESTER": {
    "art": true,
-   "at": "2026-11-08T00:29:09Z",
-   "exp": "2026-11-15T00:28:20Z",
-   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/42429616515",
+   "at": "2026-11-12T22:23:30Z",
+   "checked": true,
+   "exp": "2026-11-19T22:22:39Z",
+   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/43318579913",
    "wf": "exe-build.yml"
   },
   "URTC-VISION-TOOL": {
@@ -314,12 +317,12 @@
    }
   },
   "ARMOR-DEVOPS": {
-   "fp": "ad4256bb2517c65a",
+   "fp": "19992757160236ab",
    "on": "2026-11-12",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-NETWORK": {
@@ -377,7 +380,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "fac65bef46fd8a34",
+   "fp": "3f9be38eb1a02634",
    "on": "2026-11-12",
    "r": {
     "ak": 1,
@@ -704,7 +707,7 @@
  "schema": 1,
  "signatures": {
   "ARMOR-DEVOPS": {
-   "fp": "ad4256bb2517c65a",
+   "fp": "19992757160236ab",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -811,7 +814,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "fac65bef46fd8a34",
+   "fp": "3f9be38eb1a02634",
    "r": {
     "bad": 0,
     "ho": 0,
