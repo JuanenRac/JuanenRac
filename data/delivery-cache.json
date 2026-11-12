@@ -3,7 +3,6 @@
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-12T22:52:53Z",
-   "checked": true,
    "exp": "2026-11-19T22:52:05Z",
    "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/43323023085",
    "wf": "apk-build.yml"

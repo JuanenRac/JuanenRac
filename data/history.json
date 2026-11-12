@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 251,
+    "fail": 248,
     "min": 12959,
-    "ok": 4781,
-    "other": 60,
-    "runs": 5092
+    "ok": 4838,
+    "other": 54,
+    "runs": 5140
    },
    "areas": {
     "armor": {
@@ -6914,23 +6914,23 @@
     ],
     "ARMOR-NODE-ALARM": [
      1,
-     "0.5.5"
+     "0.5.6"
     ],
     "ARMOR-NODE-ELECTRICAL": [
      1,
-     "0.5.7"
+     "0.5.8"
     ],
     "ARMOR-NODE-HMI": [
      1,
-     "0.4.7"
+     "0.4.8"
     ],
     "ARMOR-NODE-RADAR": [
      2,
-     "0.8.1.1"
+     "0.8.1.2"
     ],
     "ARMOR-NODE-SOLAR": [
      1,
-     "0.6.5"
+     "0.6.6"
     ],
     "ARMOR-SERVER": [
      2,
@@ -7481,7 +7481,7 @@
     "HYDRA-UMC-IOS-CONTROL": 554,
     "HYDRA-UMC-JOB-DISPATCHER": 356,
     "HYDRA-UMC-LOCAL-TECHNICIAN": 420,
-    "HYDRA-UMC-MQTT-BROKER": 192,
+    "HYDRA-UMC-MQTT-BROKER": 260,
     "HYDRA-UMC-MTCONNECT-ADAPTER": 189,
     "HYDRA-UMC-NODE-HEALING": 184,
     "HYDRA-UMC-OPCUA-SERVER": 256,
