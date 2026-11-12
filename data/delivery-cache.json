@@ -66,7 +66,6 @@
   "ARMOR-SERVER-AI": {
    "art": true,
    "at": "2026-11-05T13:53:12Z",
-   "checked": true,
    "exp": "2026-12-05T13:52:49Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER-AI/actions/runs/42039630556",
    "wf": "package-build.yml"
