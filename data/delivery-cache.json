@@ -23,23 +23,26 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-12T08:11:38Z",
-   "exp": "2026-11-19T08:10:46Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43180116829",
+   "at": "2026-11-12T17:41:39Z",
+   "checked": true,
+   "exp": "2026-11-19T17:38:44Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43270182145",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-12T08:11:44Z",
-   "exp": "2026-11-19T08:10:46Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43180193691",
+   "at": "2026-11-12T17:40:43Z",
+   "checked": true,
+   "exp": "2026-11-19T17:39:32Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43270188851",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-12T08:15:58Z",
-   "exp": "2026-11-19T08:15:16Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43180633384",
+   "at": "2026-11-12T17:40:21Z",
+   "checked": true,
+   "exp": "2026-11-19T17:39:31Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43270173596",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
@@ -93,30 +96,34 @@
   },
   "EH3D-NODE-BUNGARD": {
    "art": true,
-   "at": "2026-11-06T16:27:12Z",
-   "exp": "2026-11-13T16:22:40Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/42251099966",
+   "at": "2026-11-12T17:52:06Z",
+   "checked": true,
+   "exp": "2026-11-19T17:50:49Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/43272937797",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-BUNGARD-AUX": {
    "art": true,
-   "at": "2026-11-07T10:04:52Z",
-   "exp": "2026-11-14T10:03:47Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/42362097560",
+   "at": "2026-11-12T17:14:56Z",
+   "checked": true,
+   "exp": "2026-11-19T17:13:50Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/43266631618",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
-   "at": "2026-11-06T16:26:12Z",
-   "exp": "2026-11-13T16:25:09Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/42251146761",
+   "at": "2026-11-12T17:24:43Z",
+   "checked": true,
+   "exp": "2026-11-19T17:23:32Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/43268248473",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-HMI-GUI": {
    "art": true,
-   "at": "2026-11-07T10:05:10Z",
-   "exp": "2026-11-14T10:04:24Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/42362065340",
+   "at": "2026-11-12T17:39:02Z",
+   "checked": true,
+   "exp": "2026-11-19T17:38:10Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/43269230848",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC": {
@@ -637,7 +644,7 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "3d133dff3f1ef28f",
+   "fp": "970dc1383eef59fe",
    "on": "2026-11-12",
    "r": {
     "ak": 0,
