@@ -415,7 +415,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno test automatici. |
-| Integrazione continua | 🟢 | `██████████ 100%` | 19 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 19 repository su 19 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 19 repository su 19 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono stati verificati almeno in un simulatore. |
@@ -449,8 +449,8 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.7|Monitor della rete locale: dispositivi della rete, stato di internet e cosa cambia; si limita a osservare.|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.1|Server centrale: stato persistente, utenti, eventi, allarmi, dispositivi, automazioni, telecamere, aggiornamenti dei nodi firmati, notifiche e accesso remoto.|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.2|Servizio di monitoraggio del movimento, selezione del profilo visivo, policy di fusione spiegabile, registro dei motori.|
-|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.4|Zone di telecamere, maschere e regole di rilevamento (loitering, un evento per visita); nessun modello di rilevamento integrato al momento.|
-|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.4|Servizio vocale offline: quindici comandi in otto lingue, interazioni vocali del pannello a muro, inserimento e disinserimento confermati tramite token firmato.|
+|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.5|Zone di telecamere, maschere e regole di rilevamento (loitering, un evento per visita); nessun modello di rilevamento integrato al momento.|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.5|Servizio vocale offline: quindici comandi in otto lingue, interazioni vocali del pannello a muro, inserimento e disinserimento confermati tramite token firmato.|
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.3|Console operativa: allarmi, dispositivi, automazioni, cronologia, PTZ, mappa radar, menu solare ed elettrico, aggiornamenti dei nodi e progettista 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.5|Client Android per l'operatore: inserire e disinserire, allarmi, dispositivi, radar in tempo reale, solare, cronologia, notifiche, assistente vocale e configuratore dei nodi.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.4|Client operatore per iPhone: stato, inserimento, allarmi, centrali di allarme, telecamere e l'assistente, in otto lingue.|

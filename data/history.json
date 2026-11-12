@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 69,
-    "min": 1437,
-    "ok": 987,
-    "other": 17,
-    "runs": 1073
+    "fail": 76,
+    "min": 1544,
+    "ok": 1062,
+    "other": 18,
+    "runs": 1156
    },
    "areas": {
     "armor": {
@@ -6845,7 +6845,7 @@
      "tests": 90
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -6943,11 +6943,11 @@
     ],
     "ARMOR-VISION": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "ARMOR-VOICE-AI": [
      2,
-     "0.3.4"
+     "0.3.5"
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
@@ -7391,10 +7391,10 @@
     ]
    },
    "sentinel": {
-    "cand": 42,
+    "cand": 40,
     "gaps": 0,
-    "min": 1437,
-    "red": 2
+    "min": 1544,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 430,
@@ -7485,7 +7485,7 @@
     "HYDRA-UMC-SDK": 956,
     "HYDRA-UMC-SEMANTIC-PLANNER": 315,
     "HYDRA-UMC-SERVER": 996,
-    "HYDRA-UMC-STUDIO": 1420,
+    "HYDRA-UMC-STUDIO": 1448,
     "HYDRA-UMC-STUDIO-KIT": 87,
     "HYDRA-UMC-SUITE": 71,
     "HYDRA-UMC-SWARM-SYNC": 151,

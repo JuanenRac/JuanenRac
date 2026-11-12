@@ -415,7 +415,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont le README dans les huit langues. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont été vérifiés au moins dans un simulateur. |
@@ -449,8 +449,8 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.7|Moniteur du réseau local : appareils du réseau, état d'internet et ce qui change ; il ne fait qu'observer.|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.1|Serveur central : état persistant, utilisateurs, événements, alarmes, appareils, automatisations, caméras, mises à jour de nœuds signées, notifications et accès à distance.|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.2|Service de surveillance de mouvement, sélection de profil visuel, politique de fusion explicable, registre de moteurs.|
-|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.4|Zones de caméras, masques et règles de détection (rôdage, un événement par visite) ; aucun modèle de détecteur pour l'instant.|
-|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.4|Service vocal hors ligne : quinze commandes en huit langues, tours de parole du panneau mural, armement et désarmement confirmés par jeton signé.|
+|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.5|Zones de caméras, masques et règles de détection (rôdage, un événement par visite) ; aucun modèle de détecteur pour l'instant.|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.5|Service vocal hors ligne : quinze commandes en huit langues, tours de parole du panneau mural, armement et désarmement confirmés par jeton signé.|
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.3|Console d'exploitation : alarmes, appareils, automatisations, historique, PTZ, carte radar, menus solaire et électrique, mises à jour des nœuds et concepteur 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.5|Client Android pour l'opérateur : armer et désarmer, alarmes, appareils, radar en direct, solaire, historique, notifications, assistant vocal et configurateur de nœuds.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.4|Client opérateur pour iPhone : état, armement, alarmes, centrales d'alarme, caméras et l'assistant, en huit langues.|

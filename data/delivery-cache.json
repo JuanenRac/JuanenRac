@@ -51,9 +51,10 @@
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-06T16:30:20Z",
-   "exp": "2026-11-13T16:29:36Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/42252702198",
+   "at": "2026-11-12T04:14:12Z",
+   "checked": true,
+   "exp": "2026-11-19T04:13:32Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/43153349118",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -72,9 +73,10 @@
   },
   "ARMOR-VOICE-AI": {
    "art": true,
-   "at": "2026-11-03T16:42:34Z",
-   "exp": "2026-12-03T16:41:17Z",
-   "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/41676017989",
+   "at": "2026-11-12T04:21:05Z",
+   "checked": true,
+   "exp": "2026-11-19T04:20:23Z",
+   "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/43154112193",
    "wf": "package-build.yml"
   },
   "EH3D-ANDROID-CONTROL": {
@@ -360,8 +362,8 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "61bcb337bdc151d4",
-   "on": "2026-11-06",
+   "fp": "fac65bef46fd8a34",
+   "on": "2026-11-12",
    "r": {
     "ak": 1,
     "an": 1,
@@ -387,12 +389,12 @@
    }
   },
   "ARMOR-VOICE-AI": {
-   "fp": "94f9a343f3c9b6c3",
+   "fp": "efb490ac2c2658c5",
    "on": "2026-11-12",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "EH3D-ANDROID-CONTROL": {
@@ -823,7 +825,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "61bcb337bdc151d4",
+   "fp": "fac65bef46fd8a34",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -871,7 +873,7 @@
    }
   },
   "ARMOR-VOICE-AI": {
-   "fp": "94f9a343f3c9b6c3",
+   "fp": "efb490ac2c2658c5",
    "r": {
     "bad": 0,
     "ho": 0,
