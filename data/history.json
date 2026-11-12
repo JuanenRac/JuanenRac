@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 266,
-    "min": 12421,
-    "ok": 4584,
-    "other": 55,
-    "runs": 4905
+    "fail": 259,
+    "min": 12623,
+    "ok": 4657,
+    "other": 49,
+    "runs": 4965
    },
    "areas": {
     "armor": {
@@ -6840,19 +6840,19 @@
      "hardware": 0,
      "production": 0,
      "releases": 100,
-     "simulation": 23,
-     "software": 56,
-     "tests": 90
+     "simulation": 24,
+     "software": 55,
+     "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 0,
-     "docs": 0,
+     "ci": 100,
+     "docs": 100,
      "hardware": 0,
      "production": 0,
-     "releases": 0,
+     "releases": 100,
      "simulation": 0,
      "software": 100,
-     "tests": 0
+     "tests": 50
     },
     "hydra-umc": {
      "ci": 100,
@@ -6879,7 +6879,7 @@
    "progress": {
     "armor": 70,
     "eh3d": 45,
-    "electro-hobby-3d": 35,
+    "electro-hobby-3d": 60,
     "hydra-umc": 55,
     "urtc": 56
    },
@@ -6890,7 +6890,7 @@
     ],
     "ARMOR-COMMON": [
      2,
-     "0.8.1.2"
+     "0.8.1.3"
     ],
     "ARMOR-DEVOPS": [
      2,
@@ -6934,7 +6934,7 @@
     ],
     "ARMOR-SERVER": [
      2,
-     "0.8.2.1"
+     "0.8.2.2"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -7404,7 +7404,7 @@
    "sentinel": {
     "cand": 21,
     "gaps": 0,
-    "min": 12421,
+    "min": 12623,
     "red": 0
    },
    "tests": {
@@ -7422,16 +7422,16 @@
     "ARMOR-VISION": 327,
     "ARMOR-VOICE-AI": 218,
     "EH3D-AUTOLEVEL": 184,
-    "EH3D-BUNGARD-GUI": 416,
+    "EH3D-BUNGARD-GUI": 418,
     "EH3D-CAM-DEBUGGER": 123,
-    "EH3D-COMMON": 421,
+    "EH3D-COMMON": 423,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
-    "EH3D-CORE-LIBS": 303,
+    "EH3D-CORE-LIBS": 306,
     "EH3D-DESIGN-EXPLORER": 3,
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 196,
-    "EH3D-DRILLPRO": 394,
+    "EH3D-DRILLPRO": 396,
     "EH3D-GERBERVIEWER": 131,
     "EH3D-HYDRA-BRIDGE": 3,
     "EH3D-ISOCAM": 356,
@@ -7439,12 +7439,12 @@
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 130,
-    "EH3D-PHOENIX-LASER": 308,
+    "EH3D-PHOENIX-LASER": 311,
     "EH3D-PHOENIX-PCB": 4134,
     "EH3D-PHOENIX-PNP": 572,
     "EH3D-PROJECT-PASSPORT": 3,
-    "EH3D-ROUTEPRO": 107,
-    "EH3D-SERVER": 357,
+    "EH3D-ROUTEPRO": 109,
+    "EH3D-SERVER": 358,
     "EH3D-STENCILCAM": 177,
     "EH3D-STUDIO": 323,
     "EH3D-SUITE-LAUNCHER": 119,
@@ -7453,7 +7453,7 @@
     "EH3D-UPDATER": 455,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 146,
-    "HYDRA-UMC": 873,
+    "HYDRA-UMC": 900,
     "HYDRA-UMC-ANDROID-CONTROL": 658,
     "HYDRA-UMC-ANOMALY-DETECTOR": 407,
     "HYDRA-UMC-BRIDGE-AMR": 223,
