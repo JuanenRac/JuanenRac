@@ -478,14 +478,14 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
-| Logiciel | 🟠 | `█████▋░░░░ 56%` | 22 dépôts sur 39 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟡 | `█████████░ 90%` | 35 dépôts sur 39 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont le README dans les huit langues. |
-| Simulation | 🔴 | `██▎░░░░░░░ 23%` | 9 dépôts sur 39 ont été vérifiés au moins dans un simulateur. |
+| Logiciel | 🟠 | `█████▌░░░░ 55%` | 21 dépôts sur 38 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟡 | `████████▉░ 89%` | 34 dépôts sur 38 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 38 dépôts sur 38 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 38 dépôts sur 38 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 38 dépôts sur 38 ont le README dans les huit langues. |
+| Simulation | 🔴 | `██▍░░░░░░░ 24%` | 9 dépôts sur 38 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 13 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
-| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 39 sont établis ou en production. |
+| Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 38 sont établis ou en production. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Comment fonctionne EH3D Fabrication Suite
@@ -597,7 +597,7 @@ En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils 
 **Outil de mise à jour :** aucun en propre ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) est l'un de ses outils et passe la main à l'outil de mise à jour de chacun des quatre écosystèmes.
 
 <!-- progress:electro-hobby-3d -->
-`\[███████░░░░░░░░░░░░░] 35%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[████████████░░░░░░░░] 60%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -608,10 +608,10 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `██████████ 100%` | 2 dépôts sur 2 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 0 ont des tests automatiques. |
-| Intégration continue | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 0 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 0 ont publié au moins une version. |
-| Documentation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 0 ont le README dans les huit langues. |
+| Tests | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont le README dans les huit langues. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 2 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 0 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
 | Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 2 sont établis ou en production. |

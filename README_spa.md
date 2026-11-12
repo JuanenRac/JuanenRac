@@ -478,14 +478,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
-| Software | 🟠 | `█████▋░░░░ 56%` | 22 de 39 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟡 | `█████████░ 90%` | 35 de 39 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟢 | `██████████ 100%` | 39 de 39 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🔴 | `██▎░░░░░░░ 23%` | 9 de 39 repositorios se han comprobado al menos en un simulador. |
+| Software | 🟠 | `█████▌░░░░ 55%` | 21 de 38 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟡 | `████████▉░ 89%` | 34 de 38 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 38 de 38 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `██████████ 100%` | 38 de 38 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 38 de 38 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🔴 | `██▍░░░░░░░ 24%` | 9 de 38 repositorios se han comprobado al menos en un simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 13 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
-| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositorios están consolidados o en producción. |
+| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 38 repositorios están consolidados o en producción. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Cómo Funciona EH3D Fabrication Suite
@@ -597,7 +597,7 @@ Fuera de los cuatro ecosistemas hay un quinto grupo: herramientas independientes
 **Actualizador:** ninguno propio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) es una de sus herramientas y cede el trabajo al actualizador de cada uno de los cuatro ecosistemas.
 
 <!-- progress:electro-hobby-3d -->
-`\[███████░░░░░░░░░░░░░] 35%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[████████████░░░░░░░░] 60%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -608,10 +608,10 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 de 2 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositorios tienen pruebas automáticas. |
-| Integración continua | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositorios han publicado al menos una versión. |
-| Documentación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositorios tienen el README en los ocho idiomas. |
+| Pruebas | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `██████████ 100%` | 2 de 2 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositorios se han comprobado al menos en un simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 0 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
 | Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositorios están consolidados o en producción. |

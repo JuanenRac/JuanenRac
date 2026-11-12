@@ -478,14 +478,14 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 
 | Area | Stato | Avanzamento | Nota |
 | --- | :---: | --- | --- |
-| Software | 🟠 | `█████▋░░░░ 56%` | 22 repository su 39 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
-| Test | 🟡 | `█████████░ 90%` | 35 repository su 39 hanno test automatici. |
-| Integrazione continua | 🟢 | `██████████ 100%` | 39 repository su 39 hanno l'ultima esecuzione della CI sul ramo principale verde. |
-| Versioni pubblicate | 🟢 | `██████████ 100%` | 39 repository su 39 hanno pubblicato almeno una versione. |
-| Documentazione | 🟢 | `██████████ 100%` | 39 repository su 39 hanno il README nelle otto lingue. |
-| Simulazione | 🔴 | `██▎░░░░░░░ 23%` | 9 repository su 39 sono stati verificati almeno in un simulatore. |
+| Software | 🟠 | `█████▌░░░░ 55%` | 21 repository su 38 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
+| Test | 🟡 | `████████▉░ 89%` | 34 repository su 38 hanno test automatici. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 38 repository su 38 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Versioni pubblicate | 🟢 | `██████████ 100%` | 38 repository su 38 hanno pubblicato almeno una versione. |
+| Documentazione | 🟢 | `██████████ 100%` | 38 repository su 38 hanno il README nelle otto lingue. |
+| Simulazione | 🔴 | `██▍░░░░░░░ 24%` | 9 repository su 38 sono stati verificati almeno in un simulatore. |
 | Hardware reale | 🔴 | `░░░░░░░░░░ 0%` | 0 dei 13 repository che dipendono dall'hardware sono stati verificati al banco o sul campo; gli altri non hanno mai funzionato con l'apparecchiatura reale. |
-| Produzione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 39 sono consolidati o in produzione. |
+| Produzione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 38 sono consolidati o in produzione. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Come funziona EH3D Fabrication Suite
@@ -597,7 +597,7 @@ Oltre ai quattro ecosistemi c'è un quinto gruppo: strumenti indipendenti che st
 **Aggiornatore:** nessuno proprio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) è uno dei suoi strumenti e passa il lavoro all'aggiornatore di ciascuno dei quattro ecosistemi.
 
 <!-- progress:electro-hobby-3d -->
-`\[███████░░░░░░░░░░░░░] 35%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 2 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[████████████░░░░░░░░] 60%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 2 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -608,10 +608,10 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | Area | Stato | Avanzamento | Nota |
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 repository su 2 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
-| Test | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 0 hanno test automatici. |
-| Integrazione continua | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 0 hanno l'ultima esecuzione della CI sul ramo principale verde. |
-| Versioni pubblicate | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 0 hanno pubblicato almeno una versione. |
-| Documentazione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 0 hanno il README nelle otto lingue. |
+| Test | 🟠 | `█████░░░░░ 50%` | 1 repository su 2 hanno test automatici. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 2 repository su 2 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Versioni pubblicate | 🟢 | `██████████ 100%` | 2 repository su 2 hanno pubblicato almeno una versione. |
+| Documentazione | 🟢 | `██████████ 100%` | 2 repository su 2 hanno il README nelle otto lingue. |
 | Simulazione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 2 sono stati verificati almeno in un simulatore. |
 | Hardware reale | 🔴 | `░░░░░░░░░░ 0%` | 0 dei 0 repository che dipendono dall'hardware sono stati verificati al banco o sul campo; gli altri non hanno mai funzionato con l'apparecchiatura reale. |
 | Produzione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 2 sono consolidati o in produzione. |
