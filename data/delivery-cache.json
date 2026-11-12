@@ -52,7 +52,6 @@
   "ARMOR-SERVER": {
    "art": true,
    "at": "2026-11-12T04:14:12Z",
-   "checked": true,
    "exp": "2026-11-19T04:13:32Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/43153349118",
    "wf": "package-build.yml"
@@ -74,7 +73,6 @@
   "ARMOR-VOICE-AI": {
    "art": true,
    "at": "2026-11-12T04:21:05Z",
-   "checked": true,
    "exp": "2026-11-19T04:20:23Z",
    "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/43154112193",
    "wf": "package-build.yml"
@@ -604,15 +602,6 @@
     "at": "present"
    }
   },
-  "HYDRA-UMC-ANDROID-CONTROL": {
-   "fp": "cf07836016f4f69c",
-   "on": "2026-11-12",
-   "r": {
-    "ak": 0,
-    "an": 1,
-    "at": "absent"
-   }
-  },
   "HYDRA-UMC-MESHES": {
    "fp": "bed485331987538b",
    "on": "2026-11-12",
@@ -622,35 +611,8 @@
     "at": "absent"
    }
   },
-  "HYDRA-UMC-OS-REBUILDER": {
-   "fp": "481834c4941d0cd5",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 1,
-    "an": 1,
-    "at": "present"
-   }
-  },
-  "HYDRA-UMC-STUDIO": {
-   "fp": "f3e79c94586560b1",
-   "on": "2026-11-07",
-   "r": {
-    "ak": 2,
-    "an": 2,
-    "at": "present"
-   }
-  },
   "HYDRA-UMC-STUDIO-KIT": {
    "fp": "c313a8b81e118fba",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 1,
-    "an": 1,
-    "at": "present"
-   }
-  },
-  "HYDRA-UMC-UPDATER": {
-   "fp": "de8a59de2fd95162",
    "on": "2026-11-06",
    "r": {
     "ak": 1,
@@ -1254,20 +1216,6 @@
     "why": []
    }
   },
-  "HYDRA-UMC-OS-REBUILDER": {
-   "fp": "481834c4941d0cd5",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 1,
-    "s": "verified",
-    "sch": [
-     "hydra-pc-pkg/1"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
   "HYDRA-UMC-PATH-PLANNER-3D": {
    "fp": "d5ea6988b166df0f",
    "r": {
@@ -1296,22 +1244,6 @@
     "why": []
    }
   },
-  "HYDRA-UMC-STUDIO": {
-   "fp": "f3e79c94586560b1",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 1,
-    "s": "verified",
-    "sch": [
-     "hydra-pc-pkg/1"
-    ],
-    "unk": 1,
-    "why": [
-     "toobig"
-    ]
-   }
-  },
   "HYDRA-UMC-STUDIO-KIT": {
    "fp": "c313a8b81e118fba",
    "r": {
@@ -1335,34 +1267,6 @@
     "s": "verified",
     "sch": [
      "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "HYDRA-UMC-TWIN": {
-   "fp": "2f80c655a80c0493",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
-    "s": "verified",
-    "sch": [
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "HYDRA-UMC-UPDATER": {
-   "fp": "de8a59de2fd95162",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 1,
-    "s": "verified",
-    "sch": [
-     "hydra-pc-pkg/1"
     ],
     "unk": 0,
     "why": []
