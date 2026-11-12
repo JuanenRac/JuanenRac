@@ -50,7 +50,7 @@ README_FILES = [
 ]
 
 # The order of the ecosystem sections (one H1 each) after the title of the profile.
-ECOSYSTEMS = ("hydra-umc", "urtc", "armor", "eh3d")
+ECOSYSTEMS = ("hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d")
 MANIFEST_CANDIDATES = (
     "hydra-umc.project.json", "urtc.project.json", "armor.project.json",
     "eh3d.project.json", "electro-hobby-3d.project.json",

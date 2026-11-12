@@ -31,6 +31,8 @@ import dashboard_delivery_ui
 import dashboard_delivery_texts
 import dashboard_robust
 import dashboard_tools
+import dashboard_toolspanel
+import dashboard_toolspanel_texts
 import dashboard_robust_texts
 from dashboard_charts import Activity, Area, esc
 
@@ -39,8 +41,9 @@ ECOSYSTEMS: tuple[tuple[str, str], ...] = (
     ("urtc", "URTC"),
     ("armor", "A.R.M.O.R."),
     ("eh3d", "EH3D"),
+    ("electro-hobby-3d", "Tools"),
 )
-ECOSYSTEM_FILTERS: tuple[tuple[str, str], ...] = ECOSYSTEMS + (("electro-hobby-3d", "Tools"),)
+ECOSYSTEM_FILTERS: tuple[tuple[str, str], ...] = ECOSYSTEMS
 
 # (id, i18n key of the label, literal label when it is a name and not a word)
 TABS: tuple[tuple[str, str, str], ...] = (
@@ -49,6 +52,7 @@ TABS: tuple[tuple[str, str, str], ...] = (
     ("urtc", "", "URTC"),
     ("armor", "", "A.R.M.O.R."),
     ("eh3d", "", "EH3D"),
+    ("electro-hobby-3d", "", "Tools"),
     ("projects", "tab_projects", ""),
     ("evidence", "tab_evidence", ""),
     ("tests", "tab_tests", ""),
@@ -481,7 +485,7 @@ def ecosystem_panel(data: AppData, eco: str, label: str, extra_html: str = "") -
     return f"""
     <div class="eco-panel eco-{esc(eco)}">
       <section class="card card-eco-main">
-        <header class="card-head"><div><h2 class="card-title">{esc(label)}</h2><p class="muted" data-i18n="eco_intro_{esc(eco)}">{esc(dashboard_app_texts.TEXTS["en"].get("eco_intro_" + eco, ""))}</p></div>
+        <header class="card-head"><div><h2 class="card-title">{esc(label)}</h2><p class="muted" data-i18n="eco_intro_{esc(eco)}">{esc(dashboard_app_texts.TEXTS["en"].get("eco_intro_" + eco) or dashboard_toolspanel_texts.TEXTS["en"].get("eco_intro_" + eco, ""))}</p></div>
           <button type="button" class="btn" data-show-eco="{esc(eco)}" data-testid="show-projects-{esc(eco)}" data-i18n="eco_view_projects">View the projects of this ecosystem</button></header>
         {progress_card(data, eco, label, big=True, link_tab=False, ctx="e")}
       </section>
@@ -732,7 +736,7 @@ CSS = r"""
   tr.ecosystem-banner-row.hidden { display: none; }
   .eco-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
   .eco-card { border: 1px solid var(--border); border-top: 3px solid var(--eco-color, var(--accent)); border-radius: 10px; padding: 10px 12px; background: var(--bg); min-width: 0; }
-  .eco-hydra-umc { --eco-color: var(--c-hydra-umc); } .eco-urtc { --eco-color: var(--c-urtc); } .eco-armor { --eco-color: var(--c-armor); } .eco-eh3d { --eco-color: var(--c-eh3d); }
+  .eco-hydra-umc { --eco-color: var(--c-hydra-umc); } .eco-urtc { --eco-color: var(--c-urtc); } .eco-armor { --eco-color: var(--c-armor); } .eco-eh3d { --eco-color: var(--c-eh3d); } .eco-electro-hobby-3d { --eco-color: var(--c-electro-hobby-3d); }
   .eco-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
   .eco-title { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
   .eco-title h3 { margin: 0; font-size: 15px; }
@@ -1833,7 +1837,7 @@ JS_HEALTH = r"""
   applyLanguage(langSelect ? langSelect.value : resolveInitialLang());
 """
 
-CSS = CSS + dashboard_tools.CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_code_ui.CSS + dashboard_actions_ui.CSS + dashboard_sentinel_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + dashboard_delivery_ui.CSS + r"""
+CSS = CSS + dashboard_tools.CSS + dashboard_toolspanel.CSS + dashboard_ci_ui.CSS + dashboard_tests_ui.CSS + dashboard_code_ui.CSS + dashboard_actions_ui.CSS + dashboard_sentinel_ui.CSS + dashboard_evo_ui.CSS + dashboard_insight_ui.CSS + dashboard_nav_ui.CSS + dashboard_delivery_ui.CSS + r"""
   /* ======================= Last known data, generation figures, manifest health and rack ======================= */
   .stale-banner { grid-column: 1 / -1; margin: 0; padding: 10px 14px; border: 1px solid var(--k-pending); border-left-width: 6px; border-radius: var(--radius); background: var(--panel-2); color: var(--text); font-weight: 600; }
   .stale-glyph { color: var(--k-pending); margin-right: 6px; }

@@ -1,0 +1,69 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/dashboard-keeper.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Keeps the central panel (data/sentinel.json and the dashboard) refreshed at least every half hour.
+#
+# Why it exists: build-dashboard.yml is started by a schedule, by the build-finished notices of the repositories and by hand. GitHub drops scheduled runs when it is
+# busy, the notices are rate-limited by that workflow's own gate, and every run waits behind the one before it (one concurrency group), so the panel could go an hour or
+# two without a new reading. This workflow does nothing but look, every fifteen minutes, and start one build when none is running or waiting and the last one is old.
+#
+# It writes nothing and holds no secret: it only asks the build to start (a workflow_dispatch of build-dashboard.yml on main, allowed for the token of the workflow).
+# The build keeps its own gate, its own group and its own rule of publishing; nothing is published from here. No third-party action.
+# =============================================================================
+
+name: Keep the dashboard current
+
+on:
+  schedule:
+    # Off the busy minutes (:00, :15, :30, :45), four looks an hour: if GitHub drops one, the next is fifteen minutes later.
+    - cron: "6,21,36,51 * * * *"
+  workflow_dispatch:
+
+# One look at a time; a look that finds another one running just ends.
+concurrency:
+  group: dashboard-keeper
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  look:
+    name: Start a build when the last one is old
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Look at the builds and start one if needed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          THIS_REPO: ${{ github.repository }}
+          MAX_AGE_MINUTES: "25"
+        shell: bash
+        run: |
+          set -u
+          # The most recent runs of the build that are not a pull request (a pull request never publishes and does not count as a refresh).
+          rows=$(gh api "repos/${THIS_REPO}/actions/workflows/build-dashboard.yml/runs?per_page=15" \
+            --jq '.workflow_runs[] | select(.event != "pull_request") | [.status, (.conclusion // "none"), .created_at, .updated_at] | @tsv')
+          if [ -z "$rows" ]; then
+            echo "No earlier build found: starting one."
+            gh workflow run build-dashboard.yml --ref main
+            exit 0
+          fi
+          # A build that is running, queued or waiting for its turn is already on its way: nothing to start.
+          if printf '%s\n' "$rows" | cut -f1 | grep -Eq '^(in_progress|queued|waiting|pending|requested)$'; then
+            echo "A build is running or waiting: nothing to start."
+            exit 0
+          fi
+          last=$(printf '%s\n' "$rows" | head -n1 | cut -f4)
+          age=$(( ( $(date -u +%s) - $(date -u -d "$last" +%s) ) / 60 ))
+          echo "The last build ended ${age} minutes ago (limit ${MAX_AGE_MINUTES})."
+          if [ "$age" -ge "$MAX_AGE_MINUTES" ]; then
+            echo "Starting a build."
+            gh workflow run build-dashboard.yml --ref main
+          else
+            echo "Recent enough: nothing to start."
+          fi

@@ -202,7 +202,7 @@ class TextTests(unittest.TestCase):
 
 class ShellTests(unittest.TestCase):
     def test_tabs(self):
-        self.assertEqual(app.TAB_IDS, ("summary", "hydra-umc", "urtc", "armor", "eh3d", "projects", "evidence", "tests", "code", "changelog", "scripts", "actions", "sentinel", "insight", "inventory", "rack", "architecture", "errors"))
+        self.assertEqual(app.TAB_IDS, ("summary", "hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d", "projects", "evidence", "tests", "code", "changelog", "scripts", "actions", "sentinel", "insight", "inventory", "rack", "architecture", "errors"))
         html = app.tab_list()
         self.assertEqual(html.count('role="tab"'), len(app.TAB_IDS))
         self.assertIn('role="tablist"', html)
@@ -495,7 +495,7 @@ class HealthPageTests(unittest.TestCase):
         ids = re.findall(r'\bid="([^"]+)"', self.html)
         self.assertEqual(len(ids), len(set(ids)))
         controls = re.findall(r'aria-controls="(contrib-[^"]+)"', self.html)
-        self.assertEqual(len(controls), 2 * (9 + 3))   # the summary and the tabs: one ecosystem with its eight areas and the four rings
+        self.assertEqual(len(controls), 2 * (9 + 4))   # the summary and the tabs: one ecosystem with its eight areas and the four rings
         for ident in controls:
             self.assertIn(f'id="{ident}"', self.html)
 

@@ -46,7 +46,7 @@ class ReadmeTest(unittest.TestCase):
     NUMBERS = {eco: (50, 3) for eco in progress.ECOSYSTEMS}
 
     def sample(self):
-        return "# Title\n\n## Status\n\n# H\n\ntext\n\n## 📈 Progress\n\n`[██████████▊░░░░░░░░░] 54%` — old\n\n# U\n\n**Updater:** x\n\n## How\n\n# A\n\n**Updater:** y\n\n## How\n\n# E\n\n**Updater:** z\n\n## How\n"
+        return "# Title\n\n## Status\n\n# H\n\ntext\n\n## 📈 Progress\n\n`[██████████▊░░░░░░░░░] 54%` — old\n\n# U\n\n**Updater:** x\n\n## How\n\n# A\n\n**Updater:** y\n\n## How\n\n# E\n\n**Updater:** z\n\n## How\n\n# T\n\n**Updater:** w\n\n## How\n"
 
     def test_the_blocks_are_created_once_and_then_only_refreshed(self):
         first = progress.update_readme(self.sample(), "README.md", self.NUMBERS)

@@ -123,6 +123,10 @@ on:
     # some scheduled runs when busy (a single hourly slot once went hours
     # without running), but three regenerations an hour mostly produced
     # back-to-back bot commits for the same change.
+    #
+    # GitHub drops scheduled runs when it is busy, and one run is serialized behind the one before it, so the schedule alone left the central panel
+    # (its sentinel file) an hour or two behind more than once. dashboard-keeper.yml now looks every fifteen minutes and starts a build by dispatch
+    # when none is running or waiting and the last one is more than twenty-five minutes old.
     - cron: "17,47 * * * *"
 
 # Prevent two dashboard builds from modifying main at the same time. A pull request
@@ -146,10 +150,13 @@ jobs:
     # a counter run that failed wrote no new figures: nothing to rebuild for it
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    # A gate that does not finish in minutes is stuck; the next trigger or the refresh keeper (dashboard-keeper.yml) starts a new run.
+    timeout-minutes: 5
     permissions:
       contents: read
     outputs:
       go: ${{ steps.decide.outputs.go }}
+      queue: ${{ steps.decide.outputs.queue }}
     steps:
       - name: Filter and rate-limit
         id: decide
@@ -164,6 +171,17 @@ jobs:
         run: |
           set -u
           go=true
+          # Seconds this run waited before it started (queued behind another run of the group, or for a runner). It goes to the health block of the sentinel file,
+          # in steps of 30 seconds, so a normal run does not change the file. A re-run keeps the creation moment of the first attempt: it counts as 0.
+          queue=0
+          if [ "${GITHUB_RUN_ATTEMPT:-1}" = "1" ]; then
+            created=$(gh api "repos/${THIS_REPO}/actions/runs/${GITHUB_RUN_ID}" --jq '.created_at // empty' 2>/dev/null || true)
+            if [ -n "$created" ]; then
+              queue=$(( $(date -u +%s) - $(date -u -d "$created" +%s) ))
+              if [ "$queue" -lt 0 ]; then queue=0; fi
+            fi
+          fi
+          echo "queue=$queue" >> "$GITHUB_OUTPUT"
           if [ "$EVENT_NAME" = "repository_dispatch" ] && [ "$EVENT_ACTION" = "ecosystem_build_finished" ]; then
             owner="${THIS_REPO%%/*}"
             if ! printf '%s' "$SOURCE_REPO" | grep -Eq "^${owner}/[A-Za-z0-9._-]+$" || [ "$SOURCE_REPO" = "$THIS_REPO" ]; then
@@ -188,6 +206,9 @@ jobs:
     needs: gate
     if: needs.gate.outputs.go == 'true'
     runs-on: ubuntu-latest
+    # A normal build takes about ten minutes. A longer one holds the whole group back (the next runs wait behind it and the central panel goes late),
+    # so it is stopped and the next trigger starts a fresh one.
+    timeout-minutes: 30
     permissions:
       contents: read
 
@@ -274,6 +295,8 @@ jobs:
 
       - name: Generate dashboard
         env:
+          # How long this run waited before it started (see the gate job); the sentinel writes it, in steps, into the sentinel file.
+          DASHBOARD_BUILD_QUEUE_SECONDS: ${{ needs.gate.outputs.queue }}
           # Used only to read PUBLIC commit/Actions-run metadata on the
           # other repos in this same GitHub account via api.github.com
           # (raw.githubusercontent.com, used for version lookups, does not
@@ -423,6 +446,7 @@ jobs:
     needs: build
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
 

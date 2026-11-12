@@ -53,18 +53,7 @@
 | **A.R.M.O.R.** | 境界防犯とホームオートメーション | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
 | **EH3D Fabrication Suite** | 基板プロトタイピング、CAM、CNC とレーザー、ピックアンドプレース | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
 
-### 🧰 ツール
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="TOOLS エコシステムのバナー" width="100%">
-</p>
-
-4つのエコシステムとは別に、第5のグループがあります。単独で成り立ち、時間とともに増えていく独立したツールです。
-
-| ツール | バージョン | 概要 |
-| :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.6 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
+第5のグループ **ツール(Tools)** には、下に専用のセクションがあります。
 
 \---
 
@@ -479,7 +468,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 **アップデーター：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:eh3d -->
-`\[█████████░░░░░░░░░░░] 45%` — 実際のデータから算出しています。39 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[█████████░░░░░░░░░░░] 45%` — 実際のデータから算出しています。38 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -525,7 +514,6 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.8|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D と HYDRA-UMC の両エコシステムをつなぐアダプター(計画中・コードはまだありません)。|
-|[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|4つのエコシステムのアップデーター。1つのウィンドウとコマンドラインから、各エコシステム専用のアップデーターへ引き継ぎます。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.4|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.3|EH3D-SERVER 向けの Rust 製 Web クライアント。|
 
@@ -594,6 +582,51 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |-|-|-|
 |[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.3|画像から丸い基準マークを見つけ、画素をミリメートルに変換し、レンズの歪みを補正し、基板の回転と移動量を計算します。ライブカメラ、ニューラル ネットワーク、ウィンドウは計画中です。|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.7|表面補正のための地形高さメッシュプロセッサー（Zプロービング）およびGコード補間。|
+
+
+---
+
+# 🧰 TOOLS
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="TOOLS エコシステムのバナー" width="100%">
+</p>
+
+4つのエコシステムとは別に、第5のグループがあります。単独で成り立ち、時間とともに増えていく独立したツールです。
+
+**アップデーター:** 専用のものはありません。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) はこのグループのツールの 1 つで、4 つのエコシステムそれぞれのアップデーターに処理を引き渡します。
+
+<!-- progress:electro-hobby-3d -->
+`\[███████░░░░░░░░░░░░░] 35%` — 実際のデータから算出しています。2 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+<!-- /progress:electro-hobby-3d -->
+
+<!-- status:electro-hobby-3d -->
+### 🚦 エコシステムの状態
+
+エコシステム全体について実際のデータから算出しており、手作業では書いていません。リポジトリの 90 % 以上で緑、60 % 以上で黄、30 % 以上でオレンジになります。
+
+| 分野 | 状態 | 進捗 | 備考 |
+| --- | :---: | --- | --- |
+| ソフトウェア | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
+| テスト | 🔴 | `░░░░░░░░░░ 0%` | 0 件中 0 件のリポジトリに自動テストがあります。 |
+| 継続的インテグレーション | 🔴 | `░░░░░░░░░░ 0%` | 0 件中 0 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 公開リリース | 🔴 | `░░░░░░░░░░ 0%` | 0 件中 0 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
+| ドキュメント | 🔴 | `░░░░░░░░░░ 0%` | 0 件中 0 件のリポジトリに、8 言語すべての README があります。 |
+| シミュレーション | 🔴 | `░░░░░░░░░░ 0%` | 2 件中 0 件のリポジトリが、少なくともシミュレーターで検証されています。 |
+| 実機 | 🔴 | `░░░░░░░░░░ 0%` | ハードウェアに依存する 0 件のうち 0 件が、ベンチまたは現場で検証されています。残りは実機で動かしたことがありません。 |
+| 本番運用 | 🔴 | `░░░░░░░░░░ 0%` | 2 件中 0 件のリポジトリが、確立済みまたは本番運用の段階です。 |
+<!-- /status:electro-hobby-3d -->
+
+## 🧭 Tools グループの内容
+
+このグループには、4つのエコシステムの上位にあり、どれにも依存しないプログラムが入っています。**Actions モニター**は、すべてのリポジトリのワークフローをローカルの1ページで監視します。完全版(センチネル付き)と軽量版があり、どちらにも AI ツールを接続できます。次のバージョンでは、データとしてのセンチネルのパネル、低クォータモード、読み取り専用の GitHub App、このプロフィールの中央パネルをベースラインとして使う機能が加わります。**スイートのアップデーター**は各エコシステムのアップデーターに処理を引き渡します。ダッシュボードにはこのグループ専用のタブがあり、各ツールのバージョン、リリース、CI、テストを表示します。進捗と状態は4つのエコシステムと同じ方法で計算されます。
+
+## 📁 TOOLS プロジェクト一覧
+
+| ツール | バージョン | 概要 |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.6 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
 
 \---
 

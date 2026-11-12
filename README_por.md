@@ -53,18 +53,7 @@ Cada linha é uma parte deste repositório e a luz diz até onde chega hoje. É 
 | **A.R.M.O.R.** | Segurança perimetral e domótica | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) |
 | **EH3D Fabrication Suite** | Prototipagem de PCB, CAM, CNC e laser, pick and place | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) |
 
-### 🧰 Ferramentas
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="Banner do ecossistema TOOLS" width="100%">
-</p>
-
-Fora dos quatro ecossistemas há um quinto grupo: ferramentas independentes que se sustentam sozinhas e crescem com o tempo.
-
-| Ferramenta | Versão | O que é |
-| :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.6 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
+Um quinto grupo, **Ferramentas (Tools)**, tem uma secção própria mais abaixo.
 
 \---
 
@@ -479,7 +468,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 **Atualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:eh3d -->
-`\[█████████░░░░░░░░░░░] 45%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 39 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[█████████░░░░░░░░░░░] 45%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 38 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -525,7 +514,6 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.8|Leitores em Rust para Gerber RS-274X, ficheiros de furação Excellon e G-code (dialetos GRBL, Marlin e PlanetCNC), tolerantes a ficheiros danificados.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.8|Detecta, instala e atualiza os próprios repositórios do ecossistema (atômico por verificação, sem necessidade de GITHUB\_TOKEN).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adaptador entre os ecossistemas EH3D e HYDRA-UMC (previsto; ainda sem código).|
-|[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER)|0.1.5|O atualizador dos quatro ecossistemas: uma janela e uma linha de comandos que passam o testemunho ao atualizador de cada ecossistema.|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.4|Servidor em Rust com interface REST e websocket: utilizadores, máquinas e trabalhos, planeamento de trabalhos de furação e fresagem com as bibliotecas do DRILLPRO e do ROUTEPRO, um trabalho de cada vez por máquina.|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.3|Cliente web em Rust do EH3D-SERVER.|
 
@@ -594,6 +582,51 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |-|-|-|
 |[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.3|Encontra marcas fiduciais redondas numa imagem, converte píxeis em milímetros, corrige a distorção da lente e calcula a rotação e o deslocamento de uma placa; a câmara em direto, a rede neuronal e a janela estão previstas.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.7|Processador de malha de altura topográfica (Z-Probing) e interpolação de G-code para compensação de superfície.|
+
+
+---
+
+# 🧰 TOOLS
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JuanenRac/JuanenRac/main/TOOLS_BANNER.svg" alt="Banner do ecossistema TOOLS" width="100%">
+</p>
+
+Fora dos quatro ecossistemas há um quinto grupo: ferramentas independentes que se sustentam sozinhas e crescem com o tempo.
+
+**Atualizador:** nenhum próprio; o [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) é uma das suas ferramentas e passa o trabalho ao atualizador de cada um dos quatro ecossistemas.
+
+<!-- progress:electro-hobby-3d -->
+`\[███████░░░░░░░░░░░░░] 35%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 2 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+<!-- /progress:electro-hobby-3d -->
+
+<!-- status:electro-hobby-3d -->
+### 🚦 Estado do ecossistema
+
+Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa a verde a partir de 90 % dos repositórios, a amarelo a partir de 60 % e a laranja a partir de 30 %.
+
+| Área | Estado | Progresso | Nota |
+| --- | :---: | --- | --- |
+| Software | 🟢 | `██████████ 100%` | 2 de 2 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
+| Testes | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositórios têm testes automáticos. |
+| Integração contínua | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositórios têm a última execução do CI no ramo principal em verde. |
+| Versões publicadas | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositórios publicaram pelo menos uma versão. |
+| Documentação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 0 repositórios têm o README nas oito línguas. |
+| Simulação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositórios foram verificados pelo menos num simulador. |
+| Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 dos 0 repositórios que dependem de hardware foram verificados em bancada ou no terreno; os restantes nunca funcionaram com o equipamento real. |
+| Produção | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositórios estão consolidados ou em produção. |
+<!-- /status:electro-hobby-3d -->
+
+## 🧭 O que o grupo Tools abrange
+
+O grupo reúne os programas que estão acima dos quatro ecossistemas e não precisam de nenhum. O **monitor do Actions** vigia os workflows de todos os repositórios numa página local, numa edição completa (com sentinela) e noutra lite, e a qualquer uma delas se pode ligar uma ferramenta de IA; a próxima versão traz os painéis da sentinela como dados, um modo de pouca quota, uma GitHub App só de leitura e o painel central deste perfil como base. O **atualizador da suite** passa o trabalho ao atualizador de cada ecossistema. O painel dá ao grupo um separador próprio com a versão, a publicação, a CI e os testes de cada ferramenta, e o seu progresso e estado são calculados como os dos quatro ecossistemas.
+
+## 📁 Catálogo de projetos TOOLS
+
+| Ferramenta | Versão | O que é |
+| :--- | :--- | :--- |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.7.6 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
 
 \---
 

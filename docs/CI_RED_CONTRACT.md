@@ -29,7 +29,7 @@ share is the rule above and the shape of the document, so that either can be che
 | Field | Meaning |
 |---|---|
 | `schema` | `2`. Fields are only ever added, so read with `.get()` and ignore what you do not know |
-| `generated`, `tool_version` | when and by which version of the monitor |
+| `generated`, `generated_local`, `tool_version` | when (UTC, and the same moment in the time zone of the machine, for people) and by which version of the monitor |
 | `complete` | `false` while the monitor is still loading its first reading |
 | `red_repos` | repositories with at least one red workflow |
 | `repos.<name>.red[]` | `workflow`, `conclusion`, `since`, `streak`, `url` of each red workflow |

@@ -20,7 +20,7 @@ repository publishes.
    `ecosystem_build_finished` when one of its workflows ends, so the Builds tab
    (state, results, durations and open `build-failed` / `build-stuck` issues of every
    repository) is almost live. The event is optional: without it the tab is refreshed
-   by the schedule every 30 minutes. A small gate job in `build-dashboard.yml`
+   by the schedule and the keeper described below, at least every half hour. A small gate job in `build-dashboard.yml`
    lets the event through only when the repository named in the payload belongs to
    this owner and is not this repository, and not when the dashboard was built less
    than 15 minutes earlier (the schedule catches up); the run then uses the same
@@ -97,3 +97,25 @@ The generator never replaces what is published with a gap:
 - The URTC rack tab shows the snapshot published in `data/rack-snapshot.json`
   (the format written by URTC-COMMON). Without that file, or with an unusable
   one, it says there is no data and shows no state.
+
+## How current the central panel stays
+
+The central panel (the Sentinel reading, which other tools can use as a base line) should never be more than half an hour old. Three things keep it so:
+
+* **The schedule** of `build-dashboard.yml` (two slots an hour) and the notices of the repositories are the usual triggers. GitHub drops scheduled runs when it is busy, and
+  every run waits behind the one before it (one concurrency group), so these two alone left the panel an hour or two behind more than once.
+* **The keeper**, `dashboard-keeper.yml`, looks every fifteen minutes (off the busy minutes). It writes nothing and holds no secret: when no build is running or waiting
+  and the last one ended more than twenty-five minutes ago, it starts one by dispatch. If a build is already on its way it does nothing, so builds never pile up.
+* **Time limits**: the gate has five minutes, the build thirty and the publishing job ten. A build that hangs no longer holds the group back; the next trigger starts a new one.
+
+The page keeps the rule of no timestamp per run: an unchanged situation keeps the file as it is for up to an hour (`sentinel.stale_hours`), so a quiet panel is rewritten at
+most once an hour. The `health` block of the Sentinel file holds numbers only, rounded in steps, never a moment:
+
+| Field | Meaning |
+|---|---|
+| `gap_minutes` | minutes between the previous reading and this one (the real cadence), in steps of 5 |
+| `age_minutes` | minutes from the reading of GitHub to the writing of the file (the generation itself), in steps of 5 |
+| `build_queue_seconds` | seconds the run waited before it started (behind another run or for a runner), in steps of 30 |
+
+The Sentinel tab compares the moment of the reading with the clock of the visitor and, when it is older than `sentinel.behind_minutes` (two hours by default), shows a notice
+that the panel is behind and the figures are old. The notice is not a reading of GitHub: it is made in the browser, with nothing requested.

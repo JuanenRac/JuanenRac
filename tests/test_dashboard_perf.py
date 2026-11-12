@@ -158,7 +158,14 @@ def monitor_analytics():
         if candidate and Path(candidate).is_file():
             spec = importlib.util.spec_from_file_location("monitor_analytics", candidate)
             module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
+            folder = str(Path(candidate).resolve().parent)
+            sys.path.insert(0, folder)          # the monitor imports its own sibling modules
+            try:
+                spec.loader.exec_module(module)
+            except ImportError:                 # a copy that cannot be loaded here is the same as no copy: the parity tests skip
+                return None
+            finally:
+                sys.path.remove(folder)
             return module
     return None
 

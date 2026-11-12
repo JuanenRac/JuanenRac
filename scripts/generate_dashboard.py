@@ -73,6 +73,8 @@ import dashboard_actions_texts
 import dashboard_actions_ui
 import dashboard_sentinel
 import dashboard_sentinel_texts
+import dashboard_toolspanel
+import dashboard_toolspanel_texts
 import dashboard_sentinel_ui
 import dashboard_tests
 import dashboard_tests_texts
@@ -1989,6 +1991,10 @@ for language, values in dashboard_actions_texts.TEXTS.items():
 for language, values in dashboard_sentinel_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
 
+# Texts of the own tab of the Tools group.
+for language, values in dashboard_toolspanel_texts.TEXTS.items():
+    TRANSLATIONS[language].update(values)
+
 # Texts of the shared contract pins card.
 for language, values in dashboard_pins_texts.TEXTS.items():
     TRANSLATIONS[language].update(values)
@@ -3562,8 +3568,13 @@ def render_html(
     )
     tab_list_html = dashboard_app.tab_list()
     summary_html = dashboard_app.summary_panel(app_data, ecosystem_cards)
+    tools_block = dashboard_toolspanel.build(
+        ecosystem_by_name, {n: getattr(r, "version", None) for n, r in results.items()}, activity or {}, tests_read, sentinel_doc,
+        lambda n: _manifest_data((raw_manifests or {}).get(n)))
     eco_panels_html = "".join(
-        dashboard_app.panel(key, dashboard_app.ecosystem_panel(app_data, key, label)) for key, label in dashboard_app.ECOSYSTEMS
+        dashboard_app.panel(key, dashboard_app.ecosystem_panel(
+            app_data, key, label, dashboard_toolspanel.panel_html(tools_block, dashboard_toolspanel_texts.TEXTS["en"]) if key == dashboard_toolspanel.KEY else ""))
+        for key, label in dashboard_app.ECOSYSTEMS
     )
     errors_html = dashboard_app.errors_panel(app_data, integrity_html)
     maturity_chart_html = dashboard_app.stacked_figure("maturity", app_data, dashboard_app.ECOSYSTEMS, wide=True)
@@ -6242,6 +6253,8 @@ def main() -> int:
         dashboard_actions.build(actions_read, actions_cache, ecosystem_by_name, history, today, actions_config), history, today,
         ecosystem_of=ecosystem_by_name, versions={n: getattr(r, "version", None) for n, r in results.items()}, saved=sentinel_saved)
     sentinel_doc = dashboard_sentinel.stabilize(sentinel_doc, sentinel_saved, sentinel_config["stale_hours"])
+    # The health of the refresh (cadence of the readings and the wait of the run before it started): numbers in steps, never a moment, so it does not make the file change by itself.
+    sentinel_doc = dashboard_sentinel.with_health(sentinel_doc, sentinel_saved, queue_seconds=os.environ.get("DASHBOARD_BUILD_QUEUE_SECONDS"))
     if sentinel_doc:
         print(f"Sentinel: {sentinel_doc['ci']['red_total']} red workflows, {sentinel_doc['releases']['total']} releases ready, {sentinel_doc['hygiene']['gaps']} hygiene gaps, {sentinel_doc['read']}/{sentinel_doc['repos']} repositories read.", file=sys.stderr)
     pins_doc = dashboard_pins.read_all(catalog.github_owner, ecosystem_by_name, dashboard_signatures.LiveFetch(catalog.github_owner, GITHUB_TOKEN).rest)

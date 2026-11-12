@@ -39,6 +39,8 @@ def panel_html() -> str:
         '<span class="muted sn-asof" id="sn-asof" data-testid="sn-asof"></span></header>'
         f'<p class="muted sn-hint" {_t("sn_hint")}</p>'
         '<p class="stale-banner" id="sn-stale" role="status" data-testid="sn-stale" hidden></p>'
+        '<p class="stale-banner" id="sn-behind" role="status" data-testid="sn-behind" hidden></p>'
+        '<p class="muted sn-health" id="sn-health" data-testid="sn-health" hidden></p>'
         f'<p class="no-data" id="sn-not-read" data-testid="sn-not-read" hidden {_t("sn_not_read")}</p>'
         f'<p class="no-data" id="sn-off" data-testid="sn-off" hidden {_t("sn_off")}</p>'
         '<ul class="ac-kpis sn-kpis" id="sn-kpis" data-testid="sn-kpis"></ul>'
@@ -88,6 +90,7 @@ CSS = dashboard_presence_ui.CSS + dashboard_pins_ui.CSS + r"""
   .sn { display: flex; flex-direction: column; gap: 8px; }
   .sn > * { flex-shrink: 0; }
   .sn .ins-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .sn-health { font-size: 12px; margin: 0 0 6px; font-variant-numeric: tabular-nums; }
   .sn-asof { font-size: 12px; margin-left: auto; font-variant-numeric: tabular-nums; }
   .sn-hint { margin: 0; font-size: 12.5px; }
   .sn-kpis { grid-template-columns: repeat(6, minmax(0, 1fr)); }
@@ -358,6 +361,15 @@ JS = dashboard_presence_ui.JS + dashboard_pins_ui.JS + r"""
     const banner = document.getElementById("sn-stale");
     banner.hidden = !SN.stale; banner.textContent = SN.stale ? tpl(dict.sn_stale, { date: String(SN.stale).slice(0, 10) }) : "";
     document.getElementById("sn-asof").textContent = doc && doc.asof ? tpl(dict.sn_asof, { time: String(doc.asof).slice(11, 16) }) : "";
+    // The reading is "behind" when it is older than the limit of the settings (two hours): the refresh runs every half hour, so a late one means something stopped it.
+    const behind = document.getElementById("sn-behind"), health = document.getElementById("sn-health");
+    const ageMin = !isNaN(snAsofMs) && doc ? Math.max(0, Math.round((Date.now() - snAsofMs) / 60000)) : null;
+    const limit = typeof SN.behind_minutes === "number" ? SN.behind_minutes : 120;
+    behind.hidden = !(ageMin !== null && !SN.stale && ageMin > limit);
+    behind.textContent = behind.hidden ? "" : tpl(dict.sn_behind, { age: snAgoIso(doc.asof, dict) });
+    const h = doc && doc.health && typeof doc.health === "object" ? doc.health : null;
+    health.hidden = !h;
+    health.textContent = h ? tpl(dict.sn_health, { gap: h.gap_minutes, age: h.age_minutes, queue: h.build_queue_seconds }) : "";
     document.getElementById("sn-help-body").textContent = dict.sn_help_body;
     snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict); prRender(dict); pnRender(dict);
   }
