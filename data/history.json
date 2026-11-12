@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 231,
-    "min": 5223,
-    "ok": 3021,
-    "other": 27,
-    "runs": 3279
+    "fail": 241,
+    "min": 5416,
+    "ok": 3119,
+    "other": 23,
+    "runs": 3383
    },
    "areas": {
     "armor": {
@@ -7391,9 +7391,9 @@
     ]
    },
    "sentinel": {
-    "cand": 29,
+    "cand": 33,
     "gaps": 0,
-    "min": 5223,
+    "min": 5416,
     "red": 0
    },
    "tests": {
@@ -7403,7 +7403,7 @@
     "ARMOR-HARDWARE": 63,
     "ARMOR-IOS-CONTROL": 381,
     "ARMOR-NETWORK": 226,
-    "ARMOR-SERVER": 1115,
+    "ARMOR-SERVER": 1136,
     "ARMOR-SERVER-AI": 145,
     "ARMOR-SIMULATOR": 311,
     "ARMOR-STUDIO": 1522,
@@ -7461,10 +7461,10 @@
     "HYDRA-UMC-DEV-SERVER": 636,
     "HYDRA-UMC-DEVELOPER-NODE": 95,
     "HYDRA-UMC-DOCS": 217,
-    "HYDRA-UMC-DOCS-QA": 137,
-    "HYDRA-UMC-DSI": 374,
+    "HYDRA-UMC-DOCS-QA": 175,
+    "HYDRA-UMC-DSI": 379,
     "HYDRA-UMC-EDITOR-STL": 302,
-    "HYDRA-UMC-EDITOR-URDF": 628,
+    "HYDRA-UMC-EDITOR-URDF": 652,
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 294,
     "HYDRA-UMC-HIL-BRIDGE": 241,
     "HYDRA-UMC-IOS-CONTROL": 554,
@@ -7480,17 +7480,17 @@
     "HYDRA-UMC-OS-REBUILDER": 253,
     "HYDRA-UMC-PATH-PLANNER-3D": 83,
     "HYDRA-UMC-PHYSICS-REPLICA": 228,
-    "HYDRA-UMC-PRODUCTION-REPORTS": 214,
+    "HYDRA-UMC-PRODUCTION-REPORTS": 219,
     "HYDRA-UMC-SAFETY-ZONES": 1166,
     "HYDRA-UMC-SDK": 964,
     "HYDRA-UMC-SEMANTIC-PLANNER": 315,
     "HYDRA-UMC-SERVER": 1026,
-    "HYDRA-UMC-STUDIO": 1480,
+    "HYDRA-UMC-STUDIO": 1546,
     "HYDRA-UMC-STUDIO-KIT": 87,
     "HYDRA-UMC-SUITE": 72,
     "HYDRA-UMC-SWARM-SYNC": 151,
-    "HYDRA-UMC-SYNTHETIC-DATA-GEN": 180,
-    "HYDRA-UMC-TELEMETRY-COLLECTOR": 138,
+    "HYDRA-UMC-SYNTHETIC-DATA-GEN": 192,
+    "HYDRA-UMC-TELEMETRY-COLLECTOR": 167,
     "HYDRA-UMC-TOOL-CLI": 271,
     "HYDRA-UMC-TWIN": 288,
     "HYDRA-UMC-UPDATER": 742,
@@ -7500,16 +7500,16 @@
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 434,
     "HYDRA-UMC-WATCH": 192,
-    "URTC-COMMON": 2721,
+    "URTC-COMMON": 2727,
     "URTC-DEVTOOLS": 95,
     "URTC-DOCS": 222,
-    "URTC-FLASHER": 842,
+    "URTC-FLASHER": 843,
     "URTC-GATEWAY": 139,
     "URTC-SMART-RACK": 715,
-    "URTC-TESTER": 904,
+    "URTC-TESTER": 905,
     "URTC-UPDATER": 609,
     "URTC-VISION-TOOL": 183,
-    "URTC-WEB-STUDIO": 1405
+    "URTC-WEB-STUDIO": 1441
    }
   }
  ],
