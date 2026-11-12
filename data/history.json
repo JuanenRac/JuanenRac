@@ -6817,11 +6817,11 @@
   },
   {
    "actions": {
-    "fail": 165,
-    "min": 3000,
-    "ok": 1951,
-    "other": 18,
-    "runs": 2134
+    "fail": 166,
+    "min": 3104,
+    "ok": 2002,
+    "other": 15,
+    "runs": 2183
    },
    "areas": {
     "armor": {
@@ -7039,7 +7039,7 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
@@ -7393,12 +7393,12 @@
    "sentinel": {
     "cand": 30,
     "gaps": 0,
-    "min": 3000,
-    "red": 0
+    "min": 3104,
+    "red": 2
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 455,
-    "ARMOR-COMMON": 472,
+    "ARMOR-COMMON": 476,
     "ARMOR-DOCS": 423,
     "ARMOR-HARDWARE": 63,
     "ARMOR-IOS-CONTROL": 373,
@@ -7467,7 +7467,7 @@
     "HYDRA-UMC-EDITOR-URDF": 607,
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 294,
     "HYDRA-UMC-HIL-BRIDGE": 241,
-    "HYDRA-UMC-IOS-CONTROL": 544,
+    "HYDRA-UMC-IOS-CONTROL": 546,
     "HYDRA-UMC-JOB-DISPATCHER": 356,
     "HYDRA-UMC-LOCAL-TECHNICIAN": 377,
     "HYDRA-UMC-MQTT-BROKER": 187,
