@@ -64,8 +64,8 @@ A fifth group, **Tools**, has its own section below.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-STM32%20%7C%20CM5-red.svg" alt="Platform">
-  <img src="https://img.shields.io/badge/AI-Hailo--8%20%7C%20Hailo--10-green.svg" alt="AI Power">
+  <img src="https://img.shields.io/badge/Platform-STM32H757%20%7C%20Jetson%20Orin%20NX-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/AI-Jetson%20Orin%20NX%20%7C%20Hailo--8-green.svg" alt="AI Power">
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
@@ -97,14 +97,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 <!-- /status:hydra-umc -->
 
 > [!IMPORTANT]
-> 🛠️ **Project on hold — building the real hardware.** Active development is paused while the physical robotics cell (frames, wiring, the real CM5 and STM32 boards) gets built for real, so the next phase of work has actual hardware to run and validate against, not just a bar going up. Work picks back up once that build is in place.
+> 🛠️ **Project on hold — building the real hardware.** Active development is paused while the physical robotics cell (frames, wiring, the real Jetson Orin NX and STM32H757 boards) gets built for real, so the next phase of work has actual hardware to run and validate against, not just a bar going up. Work picks back up once that build is in place.
 
 ---
 
 ## 🚀 Key Features & Scalability
 
 - **Multi-Robot Scalability**: Supports up to 8 distributed robotic units (3, 4, 5, and 6-DOF today; scaling up to 7, 8, 9-DOF and Dual-Robot architectures in future releases).
-- **Integrated Local Stage**: The main HYDRA-UMC board features an onboard **6-axis Local Stage** for auxiliary tasks, including secondary robots, ATC (Automatic Tool Changer) revolvers, conveyor belt synchronization, or XYZ table gantries.
+- **Expandable Local Stage**: The main HYDRA-UMC board takes plug-in axis cards (TMC5160 drivers over SPI) in its three PCIe ports, giving a **6-axis Local Stage** for auxiliary tasks, including secondary robots, ATC (Automatic Tool Changer) revolvers, conveyor belt synchronization, or XYZ table gantries.
 
 ---
 
@@ -112,9 +112,9 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 The v1.1 ecosystem is a layered product platform: it builds on established Linux and Raspberry Pi technology instead of creating a new operating system or replacing vendor APIs.
 
-1.  **Platform base**: Raspberry Pi OS ARM64 and standard Linux services provide the supported CM5 foundation.
+1.  **Platform base**: An NVIDIA Jetson Orin NX 16 GB host runs Linux and the standard services; the Raspberry Pi CM5 with Raspberry Pi OS ARM64 is the bench pilot that HYDRA-UMC-OS packages today.
 2.  **Platform and contracts**: **HYDRA-UMC-OS** packages reproducible profiles, services, diagnostics and updates on Raspberry Pi OS; **HYDRA-UMC-SDK** publishes versioned contracts, thin clients and conformance fixtures.
-3.  **Real-time execution**: **HYDRA-UMC** firmware owns motion limits, watchdogs and safe stop on STM32/MCU; the tool itself, and its own real-time authority over the end-effector, belongs to the separate **URTC** ecosystem below.
+3.  **Real-time execution**: **HYDRA-UMC** firmware owns motion limits, watchdogs and safe stop on STM32H757/MCU; the tool itself, and its own real-time authority over the end-effector, belongs to the separate **URTC** ecosystem below.
 4.  **Coordination and operations**: Server services, job dispatching, telemetry and configuration coordinate devices without bypassing the MCU safety boundary.
 5.  **Operator interfaces**: Studio, Suite, DSI, web, desktop, mobile and CLI clients use the SDK contracts.
 6.  **Perception and intelligence**: Vision, Hailo and cognitive services propose observations or plans; they have no physical safety authority.
@@ -129,13 +129,13 @@ For implementation guidance, start with the public architecture and service docu
 The ecosystem leverages a modern, high-performance stack for mission-critical reliability:
 
 ### 💠 Embedded & Real-Time (Execution)
-- **Microcontrollers**: STM32H745 (Dual-Core 480MHz), STM32G474 (170MHz), STM32F303.
+- **Microcontrollers**: STM32H757 (Cortex-M7 480 MHz + Cortex-M4 240 MHz), STM32G474 (170MHz), STM32F303.
 - **Frameworks**: FreeRTOS (AMP mode), CMSIS-DSP, STM32 HAL/LL.
-- **Protocols**: FDCAN (1Mbps/5Mbps), CAN-OTA, SPI (50MHz Slave IPC), I2C, UART.
+- **Protocols**: FDCAN (1Mbps/5Mbps), CAN-OTA, SPI (H757 ↔ Jetson), I2C, UART.
 - **Kinematics**: S-Curve Profile Generation, Real-time Inverse Kinematics (IK).
 
 ### 🧠 Edge AI & Perception (Intelligence)
-- **Accelerators**: Hailo-8 (26 TOPS) for 8x Camera Vision, Hailo-10 (40 TOPS) for GenAI.
+- **Accelerators**: NVIDIA Jetson Orin NX 16 GB (100 TOPS), Hailo-8 (26 TOPS) for 8x Camera Vision.
 - **Models**: YOLOv10 (Detection), OpenVLA (Action), Whisper (Voice), Llama-3 (Reasoning).
 - **Inter-node**: gRPC over Protobuf and high-speed SPI-DMA metadata exchange.
 
@@ -152,8 +152,8 @@ The ecosystem leverages a modern, high-performance stack for mission-critical re
 
 ## 📋 System Requirements
 
-- **Compute Node**: Raspberry Pi CM5 (4GB+ RAM) with NVMe/eMMC storage.
-- **AI Hardware**: Hailo-8/Hailo-10 M.2 modules (Key M).
+- **Compute Node**: NVIDIA Jetson Orin NX 16 GB with NVMe/eMMC storage.
+- **AI Hardware**: Hailo-8 M.2 modules (Key M).
 - **Fieldbus**: Gigabit Ethernet for LAN and FDCAN (ISO 11898-1:2015) for actuators.
 - **Client OS**: Android 10+, iOS 15+, Windows 10/11 (High-DPI), Ubuntu 22.04 LTS.
 
@@ -170,11 +170,11 @@ The ecosystem leverages a modern, high-performance stack for mission-critical re
 
 ## 🔧 Hardware Hacking: Building Your Own Carrier
 
-The Robot Controller Board is built around a **Raspberry Pi CM5**, and CM5's own dual Hirose DF40 connector is a fixed, official, public pinout (Table 5 of Raspberry Pi's own CM5 datasheet) - not something this project defines. That means a compatible third-party carrier is a real, achievable project, not a reverse-engineering exercise:
+The Robot Controller Board hosts an **NVIDIA Jetson Orin NX 16 GB** module on its own connector, linked over SPI to the STM32H757, which is the master of that link; the **Raspberry Pi CM5**, whose dual Hirose DF40 connector is a fixed, official, public pinout (Table 5 of Raspberry Pi's own CM5 datasheet), remains the bench-pilot path. A compatible third-party carrier is a real, achievable project, not a reverse-engineering exercise:
 
 - **Start here**: [`HYDRA-UMC/docs/PINOUT_CM5_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) - which of CM5's fixed pins this board actually uses (Ethernet, the 2 native USB3 SuperSpeed PHYs, the CM5-side cooling fan header) and why, reorganized by function from the official pinout table.
 - **The easy on-ramp**: the standard **Raspberry Pi 40-pin GPIO header** (the same "B+" layout unchanged since 2014) is broken out on this board exactly like any Raspberry Pi - existing RPi HATs and GPIO tooling work unmodified. A handful of positions that this board's own STM32 link already uses are silkscreened/noted so you know which ones to skip.
-- **Going further**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) covers how the CM5, the STM32H745 "Kinematic Brain", and the STM32G474 "Robot Controller" actually talk to each other (SPI1 + FDCAN1 + the CM7↔CM4 IPC mailbox) - the layer a carrier redesign would need to preserve if it's meant to stay compatible with this project's own firmware.
+- **Going further**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) covers how the Jetson Orin NX, the STM32H757 "Kinematic Brain" and the STM32G474 "Robot Controller" talk to each other (the SPI link with the H757 as master, FDCAN1 and the CM7↔CM4 IPC mailbox) - the layer a carrier redesign would need to preserve if it's meant to stay compatible with this project's own firmware.
 - Every pinout doc states plainly whether it's **CONFIRMED** (taken directly from an official datasheet table) or **PROPOSED** (this project's own routing choice, open to a different one on a derivative carrier) - read that status line before treating a signal assignment as fixed.
 
 This isn't a guided tutorial (there's no single "right" carrier for every use case) - it's the real reference material an experienced hardware designer needs to start from a known-good pin map instead of a datasheet alone.
@@ -203,7 +203,7 @@ for all four - can check versions and build/update any other project.
 ### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.9 | Core motion control firmware for STM32H745/G474 with S-Curve kinematics. |
+| [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.2.9 | Core motion control firmware for STM32H757/G474 with S-Curve kinematics. |
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.3.0 | Headless Node.js API and WebSocket backend for robotic orchestration. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.2.0 | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT) | 0.0.4 | Shared TypeScript kit of the HYDRA-UMC web clients: session, HTTP client, connection history, preferences and tours. |
@@ -224,7 +224,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.2.4 | Real-time AI intrusion detection for robotic work volume protection. |
 | [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.2.5 | Image-based kinematic feedback for sub-millimetric pose correction. |
 
-### 🧠 Cognitive AI Node (Hailo-10 Optimized)
+### 🧠 Cognitive AI Node (Jetson Orin NX Optimized)
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | 0.2.1 | Semantic reasoning node for logical mission planning and voice control. |

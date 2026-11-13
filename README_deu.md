@@ -64,8 +64,8 @@ Eine fünfte Gruppe, **Werkzeuge (Tools)**, hat unten einen eigenen Abschnitt.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-STM32%20%7C%20CM5-red.svg" alt="Platform">
-  <img src="https://img.shields.io/badge/AI-Hailo--8%20%7C%20Hailo--10-green.svg" alt="AI Power">
+  <img src="https://img.shields.io/badge/Platform-STM32H757%20%7C%20Jetson%20Orin%20NX-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/AI-Jetson%20Orin%20NX%20%7C%20Hailo--8-green.svg" alt="AI Power">
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
@@ -97,14 +97,14 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 <!-- /status:hydra-umc -->
 
 > \[!IMPORTANT]
-> 🛠️ \*\*Projekt pausiert — physische Hardware wird gebaut.\*\* Die aktive Entwicklung ruht, während die physische Robotikzelle (Rahmen, Verkabelung, die echten CM5- und STM32-Platinen) real aufgebaut wird. So hat die nächste Arbeitsphase echte Hardware zum Ausführen und Validieren, anstatt nur eines Balkens, der nach oben geht. Die Arbeit wird fortgesetzt, sobald dieser Aufbau steht.
+> 🛠️ \*\*Projekt pausiert — physische Hardware wird gebaut.\*\* Die aktive Entwicklung ruht, während die physische Robotikzelle (Rahmen, Verkabelung, die echten Jetson Orin NX- und STM32H757-Platinen) real aufgebaut wird. So hat die nächste Arbeitsphase echte Hardware zum Ausführen und Validieren, anstatt nur eines Balkens, der nach oben geht. Die Arbeit wird fortgesetzt, sobald dieser Aufbau steht.
 
 \---
 
 ## 🚀 Hauptmerkmale und Skalierbarkeit
 
 * **Multi-Roboter-Skalierbarkeit**: Unterstützt bis zu 8 verteilte Robotereinheiten (derzeit 3, 4, 5 und 6 DOF; Skalierung auf 7, 8, 9 DOF und Dual-Robot-Architekturen in zukünftigen Versionen).
-* **Integrierte lokale Stufe**: Die Hauptplatine von HYDRA-UMC verfügt über eine integrierte **6-Achsen-Lokale-Stufe** für Hilfsaufgaben, einschließlich sekundärer Roboter, ATC-Revolvern (Automatic Tool Changer), Förderbandsynchronisation oder XYZ-Tischportalen.
+* **Erweiterbare lokale Achsstufe**: Die HYDRA-UMC-Hauptplatine nimmt in ihren drei PCIe-Steckplätzen steckbare Achskarten (TMC5160-Treiber über SPI) auf und bildet so eine **lokale 6-Achsen-Stufe** für Hilfsaufgaben, etwa Zweitroboter, ATC-Revolver (automatischer Werkzeugwechsler), Förderband-Synchronisation oder XYZ-Tischportale.
 
 \---
 
@@ -112,9 +112,9 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 
 Das v1.1-Ökosystem ist eine geschichtete Produktplattform: Es baut auf etablierter Linux- und Raspberry Pi-Technologie auf, anstatt ein neues Betriebssystem zu entwickeln oder Hersteller-APIs zu ersetzen.
 
-1. **Plattformbasis**: Raspberry Pi OS ARM64 und Standard-Linux-Dienste bilden die unterstützte CM5-Grundlage.
+1. **Plattformbasis**: Ein NVIDIA-Jetson-Orin-NX-16-GB-Host führt Linux und die Standarddienste aus; das Raspberry Pi CM5 mit Raspberry Pi OS ARM64 ist die Pilotplattform auf dem Prüfstand, die HYDRA-UMC-OS heute paketiert.
 2. **Plattform und Verträge**: **HYDRA-UMC-OS** verpackt reproduzierbare Profile, Dienste, Diagnosen und Updates auf Raspberry Pi OS; **HYDRA-UMC-SDK** veröffentlicht versionierte Verträge, Thin Clients und Konformitätstests.
-3. **Echtzeitausführung**: Die **HYDRA-UMC**-Firmware verwaltet Bewegungslimits, Watchdogs und sicheren Stopp auf STM32/MCU; das Werkzeug selbst und seine eigene Echtzeit-Autorität über den Endeffektor gehören zum separaten **URTC**-Ökosystem unten.
+3. **Echtzeitausführung**: Die **HYDRA-UMC**-Firmware verwaltet Bewegungslimits, Watchdogs und sicheren Stopp auf STM32H757/MCU; das Werkzeug selbst und seine eigene Echtzeit-Autorität über den Endeffektor gehören zum separaten **URTC**-Ökosystem unten.
 4. **Koordination und Betrieb**: Serverdienste, Auftragsdisposition, Telemetrie und Konfiguration koordinieren Geräte, ohne die MCU-Sicherheitsgrenze zu umgehen.
 5. **Bedienerschnittstellen**: Studio-, Suite-, DSI-, Web-, Desktop-, Mobil- und CLI-Clients verwenden die SDK-Verträge.
 6. **Wahrnehmung und Intelligenz**: Vision-, Hailo- und kognitive Dienste schlagen Beobachtungen oder Pläne vor; sie haben keine physische Sicherheitsautorität.
@@ -130,14 +130,14 @@ Das Ökosystem nutzt einen modernen, leistungsstarken Stack für mission-critica
 
 ### 💠 Eingebettet und Echtzeit (Ausführung)
 
-* **Mikrocontroller**: STM32H745 (Dual-Core 480MHz), STM32G474 (170MHz), STM32F303.
+* **Mikrocontroller**: STM32H757 (Cortex-M7 480 MHz + Cortex-M4 240 MHz), STM32G474 (170MHz), STM32F303.
 * **Frameworks**: FreeRTOS (AMP-Modus), CMSIS-DSP, STM32 HAL/LL.
-* **Protokolle**: FDCAN (1Mbps/5Mbps), CAN-OTA, SPI (50MHz Slave IPC), I2C, UART.
+* **Protokolle**: FDCAN (1Mbps/5Mbps), CAN-OTA, SPI (H757 ↔ Jetson), I2C, UART.
 * **Kinematik**: S-Kurven-Profilgenerierung, Echtzeit-Inverskinematik (IK).
 
 ### 🧠 Edge KI und Wahrnehmung (Intelligenz)
 
-* **Beschleuniger**: Hailo-8 (26 TOPS) für 8x Kameravision, Hailo-10 (40 TOPS) für GenAI.
+* **Beschleuniger**: NVIDIA Jetson Orin NX 16 GB (100 TOPS), Hailo-8 (26 TOPS) für 8x Kameravision.
 * **Modelle**: YOLOv10 (Erkennung), OpenVLA (Aktion), Whisper (Sprache), Llama-3 (Schlussfolgerung).
 * **Zwischenknoten**: gRPC über Protobuf und High-Speed-SPI-DMA-Metadatenaustausch.
 
@@ -156,8 +156,8 @@ Das Ökosystem nutzt einen modernen, leistungsstarken Stack für mission-critica
 
 ## 📋 Systemanforderungen
 
-* **Rechenknoten**: Raspberry Pi CM5 (4 GB+ RAM) mit NVMe-/eMMC-Speicher.
-* **KI-Hardware**: Hailo-8 / Hailo-10 M.2-Module (Key M).
+* **Rechenknoten**: NVIDIA Jetson Orin NX 16 GB mit NVMe-/eMMC-Speicher.
+* **KI-Hardware**: Hailo-8 M.2-Module (Key M).
 * **Feldbus**: Gigabit-Ethernet für LAN und FDCAN (ISO 11898-1:2015) für Aktoren.
 * **Client-Betriebssystem**: Android 10+, iOS 15+, Windows 10/11 (High-DPI), Ubuntu 22.04 LTS.
 
@@ -174,11 +174,11 @@ Das Ökosystem nutzt einen modernen, leistungsstarken Stack für mission-critica
 
 ## 🔧 Hardware-Hacking: Bauen Sie Ihren eigenen Carrier
 
-Die Roboter-Controller-Platine basiert auf einem **Raspberry Pi CM5**, und der duale Hirose DF40-Anschluss des CM5 ist eine feste, offizielle, öffentliche Pinbelegung (Tabelle 5 des offiziellen CM5-Datenblatts von Raspberry Pi) – nichts, was dieses Projekt definiert. Das bedeutet, dass ein kompatibler Träger von Drittanbietern ein reales, machbares Projekt ist und keine Reverse-Engineering-Übung:
+Die Robot-Controller-Platine trägt ein Modul **NVIDIA Jetson Orin NX 16 GB** auf einem eigenen Steckverbinder, per SPI mit dem STM32H757 verbunden, der der Master dieser Verbindung ist; das **Raspberry Pi CM5**, dessen doppelter Hirose-DF40-Steckverbinder eine feste, offizielle, öffentliche Pinbelegung hat (Tabelle 5 des CM5-Datenblatts von Raspberry Pi), bleibt der Pilotweg auf dem Prüfstand. Ein kompatibles Trägerboard von Dritten ist ein realistisches, erreichbares Projekt und keine Reverse-Engineering-Übung:
 
 * **Hier beginnen**: [`HYDRA-UMC/docs/PINOUT\_CM5\_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) – welche der festen Pins des CM5 diese Platine tatsächlich verwendet (Ethernet, die 2 nativen USB3 SuperSpeed PHYs, die CM5-seitige Lüfter-Stiftleiste) und warum, nach Funktion aus der offiziellen Pinbelegungstabelle neu geordnet.
 * **Der einfache Einstieg**: Die standardmäßige **Raspberry Pi 40-Pin-GPIO-Stiftleiste** (dasselbe „B+“-Layout, unverändert seit 2014) ist auf dieser Platine genau wie bei jedem Raspberry Pi herausgeführt – bestehende RPi-HATs und GPIO-Tools funktionieren unverändert. Einige Positionen, die die STM32-Verbindung dieser Platine bereits verwendet, sind aufgedruckt/vermerkt, damit Sie wissen, welche übersprungen werden müssen.
-* **Weitergehen**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) beschreibt, wie der CM5, das STM32H745 „Kinematic Brain“ und der STM32G474 „Robot Controller“ tatsächlich miteinander kommunizieren (SPI1 + FDCAN1 + das CM7↔CM4 IPC-Postfach) – die Schicht, die ein Carrier-Redesign beibehalten muss, wenn es kompatibel bleiben soll mit der Firmware dieses Projekts.
+* **Weitergehen**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) beschreibt, wie der Jetson Orin NX, das „Kinematic Brain“ STM32H757 und der „Robot Controller“ STM32G474 miteinander sprechen (die SPI-Verbindung mit der H757 als Master, FDCAN1 und die CM7↔CM4-IPC-Mailbox) – die Schicht, die ein Carrier-Redesign erhalten muss, wenn es mit der Firmware dieses Projekts kompatibel bleiben soll.
 * Jedes Pinbelegungsdokument gibt klar an, ob es **BESTÄTIGT** (direkt aus einer offiziellen Datenblatttabelle übernommen) oder **VGESCHLAGEN** ist (die eigene Routing-Wahl dieses Projekts, offen für eine andere auf einem abgeleiteten Carrier) – lesen Sie diese Statuszeile, bevor Sie eine Signalzuordnung als fest betrachten.
 
 Dies ist kein geführtes Tutorial (es gibt keinen einzigen „richtigen“ Carrier für jeden Anwendungsfall) – es ist das reale Referenzmaterial, das ein erfahrener Hardwaredesigner benötigt, um von einer bekannten, guten Pin-Map anstelle eines reinen Datenblatts aus zu starten.
@@ -201,7 +201,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|Kern-Bewegungssteuerungs-Firmware für STM32H745/G474 mit S-Kurven-Kinematik.|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|Kern-Bewegungssteuerungs-Firmware für STM32H757/G474 mit S-Kurven-Kinematik.|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.0|Headless Node.js-API und WebSocket-Backend für die robotergestützte Orchestrierung.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.0|Fortgeschrittenes React-basiertes Web-Dashboard zur 3D-Roboterüberwachung und -steuerung.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|Gemeinsames TypeScript-Kit der HYDRA-UMC-Webclients: Sitzung, HTTP-Client, Verbindungsverlauf, Einstellungen und Rundgänge.|
@@ -223,7 +223,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 |[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.4|Echtzeit-KI-Einbrucherkennung für den Schutz des Roboter-Arbeitsvolumens.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|Bildbasiertes kinematisches Feedback für eine Posenkorrektur im Submillimeterbereich.|
 
-### 🧠 Kognitiver KI-Knoten (Optimiert für Hailo-10)
+### 🧠 Kognitiver KI-Knoten (Optimiert für Jetson Orin NX)
 
 |Repository|Version|Beschreibung|
 |-|-|-|

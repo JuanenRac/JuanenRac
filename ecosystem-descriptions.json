@@ -37,14 +37,14 @@
       "pt": "Registo declarativo e validador de manifestos de adaptadores para conectores de máquinas externas."
     },
     "HYDRA-UMC": {
-      "en": "Core motion control firmware for STM32H745/G474 with S-Curve kinematics.",
-      "es": "Firmware central de control de movimiento para STM32H745/G474 con cinemática de curva S.",
-      "de": "Kern-Bewegungssteuerungs-Firmware für STM32H745/G474 mit S-Kurven-Kinematik.",
-      "fr": "Micrologiciel principal de contrôle de mouvement pour STM32H745/G474 avec cinématique en S.",
-      "it": "Firmware di controllo del movimento principale per STM32H745/G474 con cinematica ad S.",
-      "ja": "S字運動学を備えたSTM32H745/G474用コアモーション制御ファームウェア。",
-      "zh": "适用于 STM32H745/G474 且带 S 曲线运动学的核心运动控制固件。",
-      "pt": "Firmware principal de controlo de movimento para STM32H745/G474 com cinemática de Curva S."
+      "en": "Core motion control firmware for STM32H757/G474 with S-Curve kinematics.",
+      "es": "Firmware central de control de movimiento para STM32H757/G474 con cinemática de curva S.",
+      "de": "Kern-Bewegungssteuerungs-Firmware für STM32H757/G474 mit S-Kurven-Kinematik.",
+      "fr": "Micrologiciel principal de contrôle de mouvement pour STM32H757/G474 avec cinématique en S.",
+      "it": "Firmware di controllo del movimento principale per STM32H757/G474 con cinematica ad S.",
+      "ja": "S字運動学を備えたSTM32H757/G474用コアモーション制御ファームウェア。",
+      "zh": "适用于 STM32H757/G474 且带 S 曲线运动学的核心运动控制固件。",
+      "pt": "Firmware principal de controlo de movimento para STM32H757/G474 com cinemática de Curva S."
     },
     "HYDRA-UMC-SERVER": {
       "en": "Headless Node.js API and WebSocket backend for robotic orchestration.",

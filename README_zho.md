@@ -64,8 +64,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-STM32%20%7C%20CM5-red.svg" alt="Platform">
-  <img src="https://img.shields.io/badge/AI-Hailo--8%20%7C%20Hailo--10-green.svg" alt="AI Power">
+  <img src="https://img.shields.io/badge/Platform-STM32H757%20%7C%20Jetson%20Orin%20NX-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/AI-Jetson%20Orin%20NX%20%7C%20Hailo--8-green.svg" alt="AI Power">
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
@@ -97,14 +97,14 @@
 <!-- /status:hydra-umc -->
 
 > \[!IMPORTANT]
-> 🛠️ \*\*项目暂缓 — 正在构建真实硬件。\*\* 活跃开发已暂时搁置，同时正在切实构建物理机器人单元（框架、接线、真实的 CM5 和 STM32 板），以便下一阶段的工作有实际的硬件可供运行和验证，而不仅仅是一个上升的进度条。一旦该构建到位，工作将重新恢复。
+> 🛠️ \*\*项目暂缓 — 正在构建真实硬件。\*\* 活跃开发已暂时搁置，同时正在切实构建物理机器人单元（框架、接线、真实的 Jetson Orin NX 和 STM32H757 板），以便下一阶段的工作有实际的硬件可供运行和验证，而不仅仅是一个上升的进度条。一旦该构建到位，工作将重新恢复。
 
 \---
 
 ## 🚀 核心特性与可扩展性
 
 * **多机器人可扩展性**：支持最多 8 个分布式机器人单元（目前支持 3、4、5 和 6 自由度；未来版本将扩展到 7、8、9 自由度以及双机器人架构）。
-* **集成局部工作台**：主 HYDRA-UMC 板集成了板载 **6 轴局部工作台**，用于辅助任务，包括辅助机器人、ATC（自动换刀）转盘、传送带同步或 XYZ 表格龙门架。
+* **可扩展本地轴级**：HYDRA-UMC 主板在三个 PCIe 端口中接受插入式轴卡（通过 SPI 控制的 TMC5160 驱动器），构成用于辅助任务的 **6 轴本地轴级**，例如副机器人、ATC（自动换刀）转盘、传送带同步或 XYZ 工作台龙门。
 
 \---
 
@@ -112,9 +112,9 @@
 
 v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux 和 Raspberry Pi 技术之上，而不是创建一个新的操作系统或替代供应商的 API。
 
-1. **平台基础**：Raspberry Pi OS ARM64 和标准的 Linux 服务提供了受支持的 CM5 基础。
+1. **平台基础**： NVIDIA Jetson Orin NX 16 GB 主机运行 Linux 和标准服务；搭载 Raspberry Pi OS ARM64 的 Raspberry Pi CM5 是 HYDRA-UMC-OS 目前打包的台架试点平台。
 2. **平台与契约**：**HYDRA-UMC-OS** 在 Raspberry Pi OS 上打包了可重现的配置文件、服务、诊断和更新；**HYDRA-UMC-SDK** 发布了版本化的契约、瘦客户端和一致性夹具（conformance fixtures）。
-3. **实时执行**：**HYDRA-UMC** 固件在 STM32/MCU 上管理运动限制、看门狗和安全停止；工具本身及其对末端执行器的实时控制权属于下方独立的 **URTC** 生态系统。
+3. **实时执行**：**HYDRA-UMC** 固件在 STM32H757/MCU 上管理运动限制、看门狗和安全停止；工具本身及其对末端执行器的实时控制权属于下方独立的 **URTC** 生态系统。
 4. **协调与运维**：服务器服务、任务调度、遥测和配置在不绕过 MCU 安全边界的情况下协调设备。
 5. **操作员界面**：Studio、Suite、DSI、Web、桌面、移动和 CLI 客户端均使用 SDK 契约。
 6. **感知与智能**：视觉、Hailo 和认知服务提出观察结果或计划；它们不具有物理安全权限。
@@ -130,14 +130,14 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 ### 💠 嵌入式与实时（执行层）
 
-* **微控制器**：STM32H745（双核 480MHz）、STM32G474（170MHz）、STM32F303。
+* **微控制器**：STM32H757（Cortex-M7 480 MHz + Cortex-M4 240 MHz）、STM32G474（170MHz）、STM32F303。
 * **框架**：FreeRTOS（AMP 模式）、CMSIS-DSP、STM32 HAL/LL。
-* **协议**：FDCAN (1Mbps/5Mbps)、CAN-OTA、SPI（50MHz 从机 IPC）、I2C、UART。
+* **协议**：FDCAN (1Mbps/5Mbps)、CAN-OTA、SPI（H757 ↔ Jetson）、I2C、UART。
 * **运动学**：S曲线配置文件生成、实时逆运动学（IK）。
 
 ### 🧠 边缘 AI 与感知（智能层）
 
-* **加速器**：Hailo-8（26 TOPS，用于 8 路摄像头视觉）、Hailo-10（40 TOPS，用于生成式 AI）。
+* **加速器**：NVIDIA Jetson Orin NX 16 GB（100 TOPS）、Hailo-8（26 TOPS，用于 8 路摄像头视觉）。
 * **模型**：YOLOv10（检测）、OpenVLA（动作）、Whisper（语音）、Llama-3（推理）。
 * **节点间通信**：基于 Protobuf 的 gRPC 和高速 SPI-DMA 元数据交换。
 
@@ -156,8 +156,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 ## 📋 系统要求
 
-* **计算节点**：配有 NVMe/eMMC 存储的 Raspberry Pi CM5（4GB+ RAM）。
-* **AI 硬件**：Hailo-8/Hailo-10 M.2 模块（Key M）。
+* **计算节点**：配有 NVMe/eMMC 存储的 NVIDIA Jetson Orin NX 16 GB。
+* **AI 硬件**：Hailo-8 M.2 模块（Key M）。
 * **现场总线**：用于局域网的千兆以太网以及用于执行器的 FDCAN (ISO 11898-1:2015)。
 * **客户端操作系统**：Android 10+、iOS 15+、Windows 10/11（高DPI）、Ubuntu 22.04 LTS。
 
@@ -174,11 +174,11 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 ## 🔧 硬件极客：构建您自己的载板（Carrier Board）
 
-机器人控制器板围绕 **Raspberry Pi CM5** 构建，CM5 自身的双 Hirose DF40 连接器是一个固定的、官方的、公开的引脚排列（Raspberry Pi 官方 CM5 数据手册表 5），并非由本项目定义。这意味着兼容的第三方载板是一个切实可行、能够完成的项目，而不是逆向工程练习：
+机器人控制板在自己的连接器上承载 **NVIDIA Jetson Orin NX 16 GB** 模块，并通过 SPI 与 STM32H757 相连，STM32H757 是该链路的主机；**Raspberry Pi CM5** 的双 Hirose DF40 连接器采用固定、官方、公开的引脚定义（Raspberry Pi 官方 CM5 数据手册表 5），仍是台架试点路径。兼容的第三方载板是一个现实可行的项目，而不是逆向工程练习：
 
 * **从这里开始**：[`HYDRA-UMC/docs/PINOUT\_CM5\_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) —— 该板实际使用了哪些 CM5 的固定引脚（以太网、2 个原生的 USB3 SuperSpeed PHY、CM5 侧的冷却风扇接头）以及原因，已根据官方引脚表按功能重新整理。
 * **轻松上手的途径**：标准的 **Raspberry Pi 40 引脚 GPIO 接头**（自 2014 年以来保持不变的“B+”布局）在该板上的引出方式与任何 Raspberry Pi 完全相同——现有的 RPi HAT 和 GPIO 工具无需修改即可工作。该板自身的 STM32 链路已经使用的少数几个位置已进行了丝网印刷/注释，以便您知道跳过哪些位置。
-* **深入了解**：[`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) 涵盖了 CM5、STM32H745“运动大脑”以及 STM32G474“机器人控制器”之间实际的通信方式（SPI1 + FDCAN1 + CM7↔CM4 IPC 邮箱）——如果要保持与本项目自身固件的兼容性，重新设计载板时必须保留这一层。
+* **深入了解**：[`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) 介绍 Jetson Orin NX、STM32H757“运动学大脑”和 STM32G474“机器人控制器”如何相互通信（以 H757 为主机的 SPI 链路、FDCAN1 和 CM7↔CM4 IPC 邮箱）——如果要与本项目自己的固件保持兼容，载板重新设计时需要保留的那一层。
 * 每个引脚排列文档都清楚地说明它是 **CONFIRMED（已确认）**（直接取自官方数据手册表）还是 **PROPOSED（建议）**（本项目自身的布线选择，在衍生载板上可以采用不同的选择）——在将信号分配视为固定之前，请先阅读该状态行。
 
 这不是一个引导式教程（没有适合每个用例的单一“正确”载板）——它是经验丰富的硬件设计人员需要的基础参考材料，使他们能够从已知良好的引脚图开始，而不是仅依靠数据手册。
@@ -201,7 +201,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|适用于 STM32H745/G474 且带 S 曲线运动学的核心运动控制固件。|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|适用于 STM32H757/G474 且带 S 曲线运动学的核心运动控制固件。|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.0|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.0|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
@@ -223,7 +223,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.4|用于机器人工作空间保护的实时 AI 入侵检测。|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|用于亚毫米级位姿校正的基于图像的运动学反馈。|
 
-### 🧠 认知 AI 节点（Hailo-10 优化）
+### 🧠 认知 AI 节点（Jetson Orin NX 优化）
 
 |仓库|版本|描述|
 |-|-|-|
