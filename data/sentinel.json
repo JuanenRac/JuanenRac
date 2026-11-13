@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-13T16:48:56Z",
+ "asof": "2026-11-13T17:24:58Z",
  "ci": {
   "checked": 621,
   "red": [
@@ -61,13 +61,13 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 1332,
+    "min24": 1311,
     "min7": 1365,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 1267,
-    "min7": 1267,
+    "min24": 1286,
+    "min7": 1286,
     "repo": "URTC"
    },
    {
@@ -81,8 +81,8 @@
     "repo": "ARMOR-SERVER"
    }
   ],
-  "total24": 46402,
-  "total7": 50379,
+  "total24": 46344,
+  "total7": 50421,
   "warn": true
  },
  "ecosystems": {
@@ -307,7 +307,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 245
+  "gap_minutes": 40
  },
  "hygiene": {
   "allowed_missing": [],
@@ -396,7 +396,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 46402
+    "min": 46344
    }
   }
  ],
@@ -733,7 +733,7 @@
    269,
    159,
    12959,
-   46402
+   46344
   ],
   "red": [
    3,

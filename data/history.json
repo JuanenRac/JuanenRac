@@ -7525,11 +7525,11 @@
   },
   {
    "actions": {
-    "fail": 377,
-    "min": 46402,
-    "ok": 5666,
-    "other": 91,
-    "runs": 6134
+    "fail": 374,
+    "min": 46344,
+    "ok": 5611,
+    "other": 84,
+    "runs": 6069
    },
    "areas": {
     "armor": {
@@ -7563,7 +7563,7 @@
      "tests": 50
     },
     "hydra-umc": {
-     "ci": 97,
+     "ci": 98,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -8112,7 +8112,7 @@
    "sentinel": {
     "cand": 22,
     "gaps": 0,
-    "min": 46402,
+    "min": 46344,
     "red": 7
    },
    "tests": {
