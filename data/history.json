@@ -7525,11 +7525,11 @@
   },
   {
    "actions": {
-    "fail": 374,
-    "min": 46344,
-    "ok": 5611,
-    "other": 84,
-    "runs": 6069
+    "fail": 493,
+    "min": 64404,
+    "ok": 5536,
+    "other": 346,
+    "runs": 6375
    },
    "areas": {
     "armor": {
@@ -8112,8 +8112,8 @@
    "sentinel": {
     "cand": 22,
     "gaps": 0,
-    "min": 46344,
-    "red": 7
+    "min": 64404,
+    "red": 12
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 495,
@@ -8206,7 +8206,7 @@
     "HYDRA-UMC-SERVER": 1026,
     "HYDRA-UMC-STUDIO": 1565,
     "HYDRA-UMC-STUDIO-KIT": 87,
-    "HYDRA-UMC-SUITE": 72,
+    "HYDRA-UMC-SUITE": 74,
     "HYDRA-UMC-SWARM-SYNC": 174,
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": 192,
     "HYDRA-UMC-TELEMETRY-COLLECTOR": 202,

@@ -87,7 +87,8 @@
   "EH3D-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-06T19:05:56Z",
-   "exp": "2026-11-13T19:05:12Z",
+   "checked": true,
+   "exp": "2026-12-06T19:05:32Z",
    "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/42276065042",
    "wf": "apk-build.yml"
   },
