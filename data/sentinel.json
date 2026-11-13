@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-13T03:09:17Z",
+ "asof": "2026-11-13T03:49:12Z",
  "ci": {
   "checked": 557,
   "red": [],
@@ -8,14 +8,19 @@
  "compute": {
   "top": [
    {
-    "min24": 840,
-    "min7": 1068,
+    "min24": 867,
+    "min7": 1114,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
     "min24": 358,
     "min7": 358,
     "repo": "HYDRA-UMC-IOS-CONTROL"
+   },
+   {
+    "min24": 340,
+    "min7": 590,
+    "repo": "EH3D-SERVER"
    },
    {
     "min24": 319,
@@ -31,15 +36,10 @@
     "min24": 311,
     "min7": 311,
     "repo": "ARMOR-NODE-ELECTRICAL"
-   },
-   {
-    "min24": 310,
-    "min7": 564,
-    "repo": "EH3D-SERVER"
    }
   ],
-  "total24": 14071,
-  "total7": 18517,
+  "total24": 13843,
+  "total7": 18133,
   "warn": true
  },
  "ecosystems": {
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-13T03:49:12Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.7.8"
+  },
   {
    "at": "2026-11-13T03:09:17Z",
    "kind": "released",
@@ -253,18 +259,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-BRIDGE-DROIDS",
    "tag": "v0.1.7"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-BRIDGE-UAV",
-   "tag": "v0.2.2"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 80
+  "gap_minutes": 40
  },
  "hygiene": {
   "allowed_missing": [],
@@ -320,7 +320,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14071
+    "min": 13843
    }
   }
  ],
@@ -473,7 +473,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.3",
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.3",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.7",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.8",
   "URTC": "v0.4.7",
   "URTC-COMMON": "v0.2.6",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -537,7 +537,7 @@
    269,
    159,
    12959,
-   14071
+   13843
   ],
   "red": [
    3,

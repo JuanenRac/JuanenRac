@@ -276,7 +276,6 @@
   "URTC-SMART-RACK": {
    "art": true,
    "at": "2026-11-13T02:18:25Z",
-   "checked": true,
    "exp": "2026-11-20T02:17:36Z",
    "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/43350591567",
    "wf": "firmware-build.yml"
@@ -638,7 +637,7 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "4166755a4ec41a9e",
+   "fp": "31aec5c59c5a34f2",
    "on": "2026-11-13",
    "r": {
     "ak": 0,
