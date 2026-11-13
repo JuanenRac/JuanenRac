@@ -242,7 +242,8 @@
   "HYDRA-UMC-UPDATER": {
    "art": true,
    "at": "2026-11-06T16:49:45Z",
-   "exp": "2026-11-13T16:49:05Z",
+   "checked": true,
+   "exp": "2026-12-06T16:49:19Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-UPDATER/actions/runs/42255841450",
    "wf": "package-build.yml"
   },
