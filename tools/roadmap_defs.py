@@ -664,6 +664,13 @@ EH3D_STATUS_UPDATES: dict[str, dict[str, str]] = {
     "Pick-and-place assembly management": _status("In progress"),
     "A layer-by-layer simulator and analyser of toolpaths": _status("In progress"),
     "Camera calibration and fiducial alignment": _status("In progress"),
+    "Try the readers on a collection of real production files": _status("Blocked", "Needs real production files from a board maker"),
+    "2D geometry: offsets, boolean operations and toolpaths": _status("In progress"),
+    "Spindle on a frequency drive and the lamps in the node": _status("In progress"),
+    "Link the touch screen to the server and the machine node": _status("In progress"),
+    "TLS for the server": _status("In progress"),
+    "Install a project from the real GitHub with the updater": _status("Blocked", "Needs a clean computer of each operating system"),
+    "Hand the projects of the four ecosystems over to their updaters": _status("In progress"),
 }
 EH3D_RENAMES: dict[str, str] = {}
 
