@@ -1,15 +1,15 @@
 {
- "asof": "2026-11-12T23:25:47Z",
+ "asof": "2026-11-13T00:47:01Z",
  "ci": {
-  "checked": 543,
+  "checked": 544,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 767,
-    "min7": 934,
+    "min24": 816,
+    "min7": 978,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -18,8 +18,8 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 322,
-    "min7": 322,
+    "min24": 310,
+    "min7": 310,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-HMI"
    }
   ],
-  "total24": 12959,
-  "total7": 17624,
+  "total24": 13412,
+  "total7": 17817,
   "warn": true
  },
  "ecosystems": {
@@ -62,7 +62,7 @@
    "read": 2,
    "red": 0,
    "repos": 2,
-   "unpub": 0
+   "unpub": 1
   },
   "hydra-umc": {
    "cand": 13,
@@ -72,11 +72,11 @@
    "unpub": 0
   },
   "urtc": {
-   "cand": 7,
+   "cand": 3,
    "read": 11,
    "red": 0,
    "repos": 11,
-   "unpub": 1
+   "unpub": 5
   }
  },
  "events": [
@@ -264,7 +264,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 30
+  "gap_minutes": 85
  },
  "hygiene": {
   "allowed_missing": [],
@@ -280,7 +280,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 20,
+    "cand": 16,
     "hyg": 0,
     "red": 0
    }
@@ -304,14 +304,10 @@
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-WATCH",
      "URTC",
-     "URTC-COMMON",
      "URTC-FLASHER",
-     "URTC-GATEWAY",
-     "URTC-SMART-RACK",
-     "URTC-TESTER",
      "URTC-WEB-STUDIO"
     ],
-    "n": 20
+    "n": 16
    }
   },
   {
@@ -324,9 +320,14 @@
      "ARMOR-NODE-HMI",
      "ARMOR-NODE-RADAR",
      "ARMOR-NODE-SOLAR",
-     "URTC-DEVTOOLS"
+     "TOOLS-GITHUB-ACTIONS-MONITOR",
+     "URTC-COMMON",
+     "URTC-DEVTOOLS",
+     "URTC-GATEWAY",
+     "URTC-SMART-RACK",
+     "URTC-TESTER"
     ],
-    "n": 6
+    "n": 11
    }
   },
   {
@@ -341,7 +342,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 12959
+    "min": 13412
    }
   }
  ],
@@ -349,7 +350,7 @@
  "releases": {
   "candidates": [
    {
-    "entries": 64,
+    "entries": 69,
     "published": "2026-11-06T07:09:43Z",
     "repo": "HYDRA-UMC",
     "tag": "v0.2.8"
@@ -374,12 +375,6 @@
    },
    {
     "entries": 10,
-    "published": "2026-11-08T01:00:34Z",
-    "repo": "URTC-COMMON",
-    "tag": "v0.2.5"
-   },
-   {
-    "entries": 10,
     "published": "2026-11-08T00:52:15Z",
     "repo": "URTC-FLASHER",
     "tag": "v0.5.5"
@@ -391,22 +386,10 @@
     "tag": "v0.3.2"
    },
    {
-    "entries": 8,
-    "published": "2026-11-08T00:47:49Z",
-    "repo": "URTC-TESTER",
-    "tag": "v0.5.4"
-   },
-   {
     "entries": 7,
     "published": "2026-11-05T21:37:34Z",
     "repo": "HYDRA-UMC-PHYSICS-REPLICA",
     "tag": "v0.1.4"
-   },
-   {
-    "entries": 7,
-    "published": "2026-11-08T10:28:12Z",
-    "repo": "URTC-GATEWAY",
-    "tag": "v0.0.7"
    },
    {
     "entries": 6,
@@ -461,17 +444,11 @@
     "published": "2026-11-05T13:10:50Z",
     "repo": "HYDRA-UMC-VISUAL-SERVOING-API",
     "tag": "v0.2.4"
-   },
-   {
-    "entries": 5,
-    "published": "2026-11-08T00:55:36Z",
-    "repo": "URTC-SMART-RACK",
-    "tag": "v0.2.7"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 20
+  "total": 16
  },
  "repos": 129,
  "schema": 1,
@@ -626,7 +603,8 @@
    43,
    43,
    43,
-   20
+   20,
+   16
   ],
   "dates": [
    "2026-11-03",
@@ -638,7 +616,8 @@
    "2026-11-09",
    "2026-11-10",
    "2026-11-11",
-   "2026-11-12"
+   "2026-11-12",
+   "2026-11-13"
   ],
   "gaps": [
    0,
@@ -650,6 +629,7 @@
    1,
    1,
    1,
+   0,
    0
   ],
   "min": [
@@ -662,7 +642,8 @@
    171,
    269,
    159,
-   12959
+   12959,
+   13412
   ],
   "red": [
    3,
@@ -670,6 +651,7 @@
    3,
    0,
    1,
+   0,
    0,
    0,
    0,
@@ -705,11 +687,36 @@
     "version": "0.6.6"
    },
    {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "tag": "v1.7.6",
+    "version": "1.7.7"
+   },
+   {
+    "repo": "URTC-COMMON",
+    "tag": "v0.2.5",
+    "version": "0.2.6"
+   },
+   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.5"
+   },
+   {
+    "repo": "URTC-GATEWAY",
+    "tag": "v0.0.7",
+    "version": "0.0.8"
+   },
+   {
+    "repo": "URTC-SMART-RACK",
+    "tag": "v0.2.7",
+    "version": "0.2.8"
+   },
+   {
+    "repo": "URTC-TESTER",
+    "tag": "v0.5.4",
+    "version": "0.5.5"
    }
   ],
-  "total": 6
+  "total": 11
  }
 }

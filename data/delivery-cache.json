@@ -17,7 +17,8 @@
   "ARMOR-NETWORK": {
    "art": true,
    "at": "2026-11-05T23:38:50Z",
-   "exp": "2026-11-12T23:37:58Z",
+   "checked": true,
+   "exp": "2026-12-05T23:38:25Z",
    "url": "https://github.com/JuanenRac/ARMOR-NETWORK/actions/runs/42130819167",
    "wf": "package-build.yml"
   },
