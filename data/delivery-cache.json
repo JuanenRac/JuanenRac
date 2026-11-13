@@ -206,7 +206,6 @@
   "HYDRA-UMC-STUDIO-KIT": {
    "art": true,
    "at": "2026-11-06T03:54:12Z",
-   "checked": true,
    "exp": "2026-12-06T03:53:43Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT/actions/runs/42159157459",
    "wf": "dist-build.yml"
@@ -638,7 +637,7 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "31aec5c59c5a34f2",
+   "fp": "eeb7a414b8c0a339",
    "on": "2026-11-13",
    "r": {
     "ak": 0,
