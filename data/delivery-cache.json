@@ -185,7 +185,6 @@
   "HYDRA-UMC-PHYSICS-REPLICA": {
    "art": true,
    "at": "2026-11-13T01:45:48Z",
-   "checked": true,
    "exp": "2026-11-20T01:44:59Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/actions/runs/43347141528",
    "wf": "binaries-build.yml"
@@ -249,7 +248,6 @@
   "HYDRA-UMC-WATCH": {
    "art": true,
    "at": "2026-11-13T01:49:11Z",
-   "checked": true,
    "exp": "2026-11-20T01:48:34Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-WATCH/actions/runs/43347164261",
    "wf": "binaries-build.yml"
@@ -277,9 +275,10 @@
   },
   "URTC-SMART-RACK": {
    "art": true,
-   "at": "2026-11-08T00:28:42Z",
-   "exp": "2026-11-15T00:28:03Z",
-   "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/42429653407",
+   "at": "2026-11-13T02:18:25Z",
+   "checked": true,
+   "exp": "2026-11-20T02:17:36Z",
+   "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/43350591567",
    "wf": "firmware-build.yml"
   },
   "URTC-TESTER": {
@@ -432,8 +431,8 @@
    }
   },
   "EH3D-BUNGARD-GUI": {
-   "fp": "7723dea9a5e05d9f",
-   "on": "2026-11-07",
+   "fp": "f7bdbb0693cde981",
+   "on": "2026-11-13",
    "r": {
     "ak": 3,
     "an": 3,
@@ -450,8 +449,8 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "bc66e731d88f2463",
-   "on": "2026-11-06",
+   "fp": "f58fac6b445647f0",
+   "on": "2026-11-13",
    "r": {
     "ak": 3,
     "an": 3,
@@ -540,8 +539,8 @@
    }
   },
   "EH3D-ROUTEPRO": {
-   "fp": "90b9c5311de5f7c3",
-   "on": "2026-11-06",
+   "fp": "79cffb30f75eea6d",
+   "on": "2026-11-13",
    "r": {
     "ak": 3,
     "an": 3,
@@ -549,8 +548,8 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "7fdba1ba5f3d692d",
-   "on": "2026-11-07",
+   "fp": "faef9a147ab2f16e",
+   "on": "2026-11-13",
    "r": {
     "ak": 3,
     "an": 3,
@@ -630,8 +629,8 @@
    }
   },
   "HYDRA-UMC-WATCH": {
-   "fp": "2ffb262f35f694a3",
-   "on": "2026-11-12",
+   "fp": "c3dd077ff2218280",
+   "on": "2026-11-13",
    "r": {
     "ak": 0,
     "an": 1,
@@ -666,8 +665,8 @@
    }
   },
   "URTC-SMART-RACK": {
-   "fp": "6fef1ea18d9b1055",
-   "on": "2026-11-08",
+   "fp": "204784124ee6ac2d",
+   "on": "2026-11-13",
    "r": {
     "ak": 1,
     "an": 1,
@@ -881,7 +880,7 @@
    }
   },
   "EH3D-BUNGARD-GUI": {
-   "fp": "7723dea9a5e05d9f",
+   "fp": "f7bdbb0693cde981",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -909,7 +908,7 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "bc66e731d88f2463",
+   "fp": "f58fac6b445647f0",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1049,7 +1048,7 @@
    }
   },
   "EH3D-ROUTEPRO": {
-   "fp": "90b9c5311de5f7c3",
+   "fp": "79cffb30f75eea6d",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1063,7 +1062,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "7fdba1ba5f3d692d",
+   "fp": "faef9a147ab2f16e",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1233,7 +1232,7 @@
    }
   },
   "HYDRA-UMC-PHYSICS-REPLICA": {
-   "fp": "7768b94d340e30fd",
+   "fp": "f4d99bc6a09c4456",
    "r": {
     "bad": 0,
     "ho": 0,
