@@ -40,6 +40,7 @@ jobs:
       - name: Look at the builds and start one if needed
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
           THIS_REPO: ${{ github.repository }}
           MAX_AGE_MINUTES: "25"
         shell: bash
