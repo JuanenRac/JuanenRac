@@ -7525,11 +7525,11 @@
   },
   {
    "actions": {
-    "fail": 284,
-    "min": 13412,
-    "ok": 5011,
-    "other": 60,
-    "runs": 5355
+    "fail": 280,
+    "min": 14028,
+    "ok": 5290,
+    "other": 53,
+    "runs": 5623
    },
    "areas": {
     "armor": {
@@ -7573,7 +7573,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -7589,7 +7589,7 @@
     "eh3d": 45,
     "electro-hobby-3d": 60,
     "hydra-umc": 55,
-    "urtc": 56
+    "urtc": 55
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -7674,7 +7674,7 @@
     ],
     "EH3D-AUTOLEVEL": [
      1,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-BUNGARD-GUI": [
      1,
@@ -7686,7 +7686,7 @@
     ],
     "EH3D-COMMON": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
@@ -7694,7 +7694,7 @@
     ],
     "EH3D-CORE-LIBS": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
@@ -7730,7 +7730,7 @@
     ],
     "EH3D-ISOCAM": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-LAB-BRIDGE": [
      0,
@@ -7766,7 +7766,7 @@
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
@@ -7790,7 +7790,7 @@
     ],
     "EH3D-STENCILCAM": [
      1,
-     "0.0.6"
+     "0.0.7"
     ],
     "EH3D-STUDIO": [
      1,
@@ -7830,7 +7830,7 @@
     ],
     "HYDRA-UMC-ANDROID-CONTROL": [
      1,
-     "0.8.0.3"
+     "0.8.0.4"
     ],
     "HYDRA-UMC-ANOMALY-DETECTOR": [
      1,
@@ -7838,7 +7838,7 @@
     ],
     "HYDRA-UMC-BRIDGE-AMR": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "HYDRA-UMC-BRIDGE-CNC": [
      1,
@@ -7846,7 +7846,7 @@
     ],
     "HYDRA-UMC-BRIDGE-DROIDS": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "HYDRA-UMC-BRIDGE-LASER": [
      1,
@@ -7866,7 +7866,7 @@
     ],
     "HYDRA-UMC-BRIDGE-UAV": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-COGNITIVE-NODE": [
      1,
@@ -7890,7 +7890,7 @@
     ],
     "HYDRA-UMC-DEV-SERVER": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-DEVELOPER-NODE": [
      0,
@@ -7902,11 +7902,11 @@
     ],
     "HYDRA-UMC-DOCS-QA": [
      1,
-     "0.1.8"
+     "0.1.9"
     ],
     "HYDRA-UMC-DSI": [
      1,
-     "0.3.6"
+     "0.3.7"
     ],
     "HYDRA-UMC-EDITOR-STL": [
      1,
@@ -7954,7 +7954,7 @@
     ],
     "HYDRA-UMC-OPCUA-SERVER": [
      1,
-     "0.2.7"
+     "0.2.8"
     ],
     "HYDRA-UMC-OPS-AGENT": [
      1,
@@ -7978,7 +7978,7 @@
     ],
     "HYDRA-UMC-PHYSICS-REPLICA": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "HYDRA-UMC-PRODUCTION-REPORTS": [
      1,
@@ -7990,7 +7990,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.6.1"
+     "0.6.2"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -8002,7 +8002,7 @@
     ],
     "HYDRA-UMC-STUDIO": [
      1,
-     "0.8.1.9"
+     "0.8.2.0"
     ],
     "HYDRA-UMC-STUDIO-KIT": [
      0,
@@ -8010,7 +8010,7 @@
     ],
     "HYDRA-UMC-SUITE": [
      1,
-     "0.8.0.5"
+     "0.8.0.6"
     ],
     "HYDRA-UMC-SWARM-SYNC": [
      1,
@@ -8022,7 +8022,7 @@
     ],
     "HYDRA-UMC-TELEMETRY-COLLECTOR": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-TOOL-CLI": [
      1,
@@ -8046,7 +8046,7 @@
     ],
     "HYDRA-UMC-VISUAL-SERVOING-API": [
      1,
-     "0.2.4"
+     "0.2.5"
     ],
     "HYDRA-UMC-VLA-ENGINE": [
      1,
@@ -8058,7 +8058,7 @@
     ],
     "HYDRA-UMC-WATCH": [
      1,
-     "0.3.2"
+     "0.3.3"
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
@@ -8066,7 +8066,7 @@
     ],
     "URTC": [
      1,
-     "0.4.7"
+     "0.4.8"
     ],
     "URTC-COMMON": [
      1,
@@ -8082,7 +8082,7 @@
     ],
     "URTC-FLASHER": [
      1,
-     "0.5.5"
+     "0.5.6"
     ],
     "URTC-GATEWAY": [
      0,
@@ -8106,13 +8106,13 @@
     ],
     "URTC-WEB-STUDIO": [
      1,
-     "0.5.0"
+     "0.5.1"
     ]
    },
    "sentinel": {
-    "cand": 16,
+    "cand": 5,
     "gaps": 0,
-    "min": 13412,
+    "min": 14028,
     "red": 0
    },
    "tests": {
