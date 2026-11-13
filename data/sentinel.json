@@ -1,58 +1,82 @@
 {
- "asof": "2026-11-13T09:47:56Z",
+ "asof": "2026-11-13T11:31:34Z",
  "ci": {
-  "checked": 572,
+  "checked": 598,
   "red": [
    {
-    "repo": "ARMOR-STUDIO",
-    "since": "2026-11-13T08:22:13Z",
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-13T11:13:30Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   },
+   {
+    "repo": "HYDRA-UMC-ANDROID-CONTROL",
+    "since": "2026-11-13T10:42:25Z",
     "streak": 1,
     "wf": "ci.yml"
    },
    {
-    "repo": "HYDRA-UMC-ANDROID-CONTROL",
-    "since": "2026-11-13T09:05:18Z",
+    "repo": "HYDRA-UMC-DOCS",
+    "since": "2026-11-13T11:32:12Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   },
+   {
+    "repo": "HYDRA-UMC-MQTT-BROKER",
+    "since": "2026-11-13T10:59:17Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "since": "2026-11-13T11:06:52Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "URTC-WEB-STUDIO",
+    "since": "2026-11-13T10:38:04Z",
     "streak": 1,
     "wf": "ci.yml"
    }
   ],
-  "red_total": 2
+  "red_total": 6
  },
  "compute": {
   "top": [
    {
-    "min24": 835,
-    "min7": 1217,
+    "min24": 1328,
+    "min7": 1486,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 359,
-    "min7": 536,
-    "repo": "EH3D-SERVER"
+    "min24": 753,
+    "min7": 753,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 331,
-    "min7": 365,
+    "min24": 738,
+    "min7": 739,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 328,
-    "min7": 328,
-    "repo": "HYDRA-UMC-DSI"
+    "min24": 707,
+    "min7": 707,
+    "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 325,
-    "min7": 325,
-    "repo": "ARMOR-NODE-ELECTRICAL"
+    "min24": 669,
+    "min7": 690,
+    "repo": "HYDRA-UMC-PATH-PLANNER-3D"
    },
    {
-    "min24": 321,
-    "min7": 321,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
+    "min24": 663,
+    "min7": 692,
+    "repo": "HYDRA-UMC-PHYSICS-REPLICA"
    }
   ],
-  "total24": 14196,
-  "total7": 19254,
+  "total24": 29282,
+  "total7": 33848,
   "warn": true
  },
  "ecosystems": {
@@ -73,26 +97,62 @@
   "electro-hobby-3d": {
    "cand": 0,
    "read": 2,
-   "red": 0,
+   "red": 1,
    "repos": 2,
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 9,
+   "cand": 15,
    "read": 59,
-   "red": 1,
+   "red": 3,
    "repos": 59,
    "unpub": 0
   },
   "urtc": {
-   "cand": 0,
+   "cand": 1,
    "read": 11,
-   "red": 0,
+   "red": 1,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-13T11:31:34Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-13T11:31:34Z",
+   "kind": "red_new",
+   "repo": "HYDRA-UMC-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-13T11:31:34Z",
+   "kind": "red_new",
+   "repo": "HYDRA-UMC-MQTT-BROKER",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-13T11:31:34Z",
+   "kind": "red_new",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-13T11:31:34Z",
+   "kind": "red_new",
+   "repo": "URTC-WEB-STUDIO",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-13T11:31:34Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-STUDIO",
+   "wf": "ci.yml"
+  },
   {
    "at": "2026-11-13T09:47:56Z",
    "kind": "red_new",
@@ -236,48 +296,12 @@
    "kind": "released",
    "repo": "ARMOR-NODE-RADAR",
    "tag": "v0.8.1.2"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "ARMOR-NODE-SOLAR",
-   "tag": "v0.6.6"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "EH3D-COMMON",
-   "tag": "v0.2.1"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-BUNGARD",
-   "tag": "v0.0.7"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-BUNGARD-AUX",
-   "tag": "v0.0.9"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-BUNGARD-HMI",
-   "tag": "v0.1.0"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-HMI-GUI",
-   "tag": "v0.0.9"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 125
+  "gap_minutes": 105
  },
  "hygiene": {
   "allowed_missing": [],
@@ -293,9 +317,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 10,
+    "cand": 17,
     "hyg": 0,
-    "red": 2
+    "red": 6
    }
   },
   {
@@ -303,10 +327,14 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-STUDIO",
-     "HYDRA-UMC-ANDROID-CONTROL"
+     "ARMOR-DOCS",
+     "HYDRA-UMC-ANDROID-CONTROL",
+     "HYDRA-UMC-DOCS",
+     "HYDRA-UMC-MQTT-BROKER",
+     "TOOLS-GITHUB-ACTIONS-MONITOR",
+     "URTC-WEB-STUDIO"
     ],
-    "n": 2
+    "n": 6
    }
   },
   {
@@ -316,16 +344,23 @@
     "list": [
      "ARMOR-NETWORK",
      "HYDRA-UMC-BRIDGE-CNC",
+     "HYDRA-UMC-BRIDGE-OPENPNP",
      "HYDRA-UMC-BRIDGE-PRINTER3D",
      "HYDRA-UMC-BRIDGE-ROS2",
      "HYDRA-UMC-COGNITIVE-NODE",
+     "HYDRA-UMC-DETECTION-HEF",
+     "HYDRA-UMC-DOCS",
      "HYDRA-UMC-HIL-BRIDGE",
      "HYDRA-UMC-IOS-CONTROL",
      "HYDRA-UMC-JOB-DISPATCHER",
      "HYDRA-UMC-ORCHESTRATOR",
-     "HYDRA-UMC-PRODUCTION-REPORTS"
+     "HYDRA-UMC-PRODUCTION-REPORTS",
+     "HYDRA-UMC-SEMANTIC-PLANNER",
+     "HYDRA-UMC-SYNTHETIC-DATA-GEN",
+     "HYDRA-UMC-VOICE-UI",
+     "URTC-UPDATER"
     ],
-    "n": 10
+    "n": 17
    }
   },
   {
@@ -350,7 +385,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14196
+    "min": 29282
    }
   }
  ],
@@ -358,13 +393,13 @@
  "releases": {
   "candidates": [
    {
-    "entries": 23,
+    "entries": 24,
     "published": "2026-11-06T10:30:35Z",
     "repo": "HYDRA-UMC-IOS-CONTROL",
     "tag": "v0.3.5"
    },
    {
-    "entries": 10,
+    "entries": 11,
     "published": "2026-11-06T16:14:43Z",
     "repo": "HYDRA-UMC-BRIDGE-ROS2",
     "tag": "v0.1.7"
@@ -382,6 +417,30 @@
     "tag": "v0.2.1"
    },
    {
+    "entries": 7,
+    "published": "2026-11-05T22:36:44Z",
+    "repo": "HYDRA-UMC-SEMANTIC-PLANNER",
+    "tag": "v0.2.0"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-06T16:14:06Z",
+    "repo": "HYDRA-UMC-BRIDGE-CNC",
+    "tag": "v0.2.6"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-06T01:36:27Z",
+    "repo": "HYDRA-UMC-DETECTION-HEF",
+    "tag": "v0.2.0"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-05T23:40:34Z",
+    "repo": "HYDRA-UMC-SYNTHETIC-DATA-GEN",
+    "tag": "v0.1.5"
+   },
+   {
     "entries": 5,
     "published": "2026-11-05T23:40:26Z",
     "repo": "ARMOR-NETWORK",
@@ -389,9 +448,15 @@
    },
    {
     "entries": 5,
-    "published": "2026-11-06T16:14:06Z",
-    "repo": "HYDRA-UMC-BRIDGE-CNC",
-    "tag": "v0.2.6"
+    "published": "2026-11-05T20:34:47Z",
+    "repo": "HYDRA-UMC-BRIDGE-OPENPNP",
+    "tag": "v0.2.5"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-06T18:48:49Z",
+    "repo": "HYDRA-UMC-DOCS",
+    "tag": "v0.1.3"
    },
    {
     "entries": 5,
@@ -416,11 +481,23 @@
     "published": "2026-11-07T12:06:13Z",
     "repo": "HYDRA-UMC-PRODUCTION-REPORTS",
     "tag": "v0.2.1"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-05T20:34:36Z",
+    "repo": "HYDRA-UMC-VOICE-UI",
+    "tag": "v0.2.4"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-08T00:15:52Z",
+    "repo": "URTC-UPDATER",
+    "tag": "v0.2.9"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 10
+  "total": 17
  },
  "repos": 129,
  "schema": 1,
@@ -576,7 +653,7 @@
    43,
    43,
    20,
-   10
+   17
   ],
   "dates": [
    "2026-11-03",
@@ -615,7 +692,7 @@
    269,
    159,
    12959,
-   14196
+   29282
   ],
   "red": [
    3,
@@ -628,7 +705,7 @@
    0,
    0,
    0,
-   2
+   6
   ]
  },
  "unpublished": {

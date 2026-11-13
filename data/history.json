@@ -7525,11 +7525,11 @@
   },
   {
    "actions": {
-    "fail": 245,
-    "min": 14196,
-    "ok": 5108,
-    "other": 101,
-    "runs": 5454
+    "fail": 316,
+    "min": 29282,
+    "ok": 5698,
+    "other": 77,
+    "runs": 6091
    },
    "areas": {
     "armor": {
@@ -7568,7 +7568,7 @@
      "hardware": 11,
      "production": 8,
      "releases": 100,
-     "simulation": 27,
+     "simulation": 37,
      "software": 95,
      "tests": 98
     },
@@ -8005,7 +8005,7 @@
      "0.8.2.0"
     ],
     "HYDRA-UMC-STUDIO-KIT": [
-     0,
+     1,
      "0.0.4"
     ],
     "HYDRA-UMC-SUITE": [
@@ -8110,10 +8110,10 @@
     ]
    },
    "sentinel": {
-    "cand": 10,
+    "cand": 17,
     "gaps": 0,
-    "min": 14196,
-    "red": 2
+    "min": 29282,
+    "red": 6
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 495,

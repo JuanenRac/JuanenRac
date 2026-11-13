@@ -129,7 +129,8 @@
   "HYDRA-UMC-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-06T10:37:08Z",
-   "exp": "2026-11-13T10:36:28Z",
+   "checked": true,
+   "exp": "2026-12-06T10:36:43Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/42203298784",
    "wf": "binaries-build.yml"
   },
@@ -234,7 +235,8 @@
   "HYDRA-UMC-TWIN": {
    "art": true,
    "at": "2026-11-06T09:51:50Z",
-   "exp": "2026-11-13T09:51:00Z",
+   "checked": true,
+   "exp": "2026-12-06T09:51:25Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-TWIN/actions/runs/42197986698",
    "wf": "binaries-build.yml"
   },
