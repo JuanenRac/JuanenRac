@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-13T21:15:32Z",
+ "asof": "2026-11-13T21:41:20Z",
  "ci": {
   "checked": 616,
   "red": [
@@ -14,12 +14,6 @@
     "since": "2026-11-13T20:30:21Z",
     "streak": 1,
     "wf": "coverage-floor.yml"
-   },
-   {
-    "repo": "ARMOR-SERVER",
-    "since": "2026-11-13T21:01:19Z",
-    "streak": 1,
-    "wf": "ci.yml"
    },
    {
     "repo": "HYDRA-UMC-DOCS",
@@ -46,13 +40,13 @@
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 7
+  "red_total": 6
  },
  "compute": {
   "top": [
    {
-    "min24": 4827,
-    "min7": 4827,
+    "min24": 4806,
+    "min7": 4807,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -61,8 +55,8 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 1701,
-    "min7": 1701,
+    "min24": 1711,
+    "min7": 1711,
     "repo": "ARMOR-SERVER"
    },
    {
@@ -71,25 +65,25 @@
     "repo": "HYDRA-UMC-PATH-PLANNER-3D"
    },
    {
-    "min24": 1597,
+    "min24": 1611,
     "min7": 1619,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 1410,
+    "min24": 1395,
     "min7": 1539,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 68138,
-  "total7": 75547,
+  "total24": 67993,
+  "total7": 75394,
   "warn": true
  },
  "ecosystems": {
   "armor": {
    "cand": 1,
    "read": 19,
-   "red": 3,
+   "red": 2,
    "repos": 19,
    "unpub": 0
   },
@@ -123,6 +117,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-13T21:41:20Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-SERVER",
+   "wf": "ci.yml"
+  },
   {
    "at": "2026-11-13T21:15:32Z",
    "kind": "red_new",
@@ -296,18 +296,12 @@
    "kind": "released",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "tag": "v1.7.8"
-  },
-  {
-   "at": "2026-11-13T03:09:17Z",
-   "kind": "released",
-   "repo": "EH3D-BUNGARD-GUI",
-   "tag": "v0.2.6"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 235
+  "gap_minutes": 30
  },
  "hygiene": {
   "allowed_missing": [],
@@ -325,7 +319,7 @@
     "bad": 0,
     "cand": 22,
     "hyg": 0,
-    "red": 7
+    "red": 6
    }
   },
   {
@@ -335,13 +329,12 @@
     "list": [
      "ARMOR-NODE-HMI",
      "ARMOR-NODE-SOLAR",
-     "ARMOR-SERVER",
      "HYDRA-UMC-DOCS",
      "HYDRA-UMC-SERVER",
      "URTC-COMMON",
      "URTC-DOCS"
     ],
-    "n": 7
+    "n": 6
    }
   },
   {
@@ -397,7 +390,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 68138
+    "min": 67993
    }
   }
  ],
@@ -734,7 +727,7 @@
    269,
    159,
    12959,
-   68138
+   67993
   ],
   "red": [
    3,
@@ -747,7 +740,7 @@
    0,
    0,
    0,
-   7
+   6
   ]
  },
  "unpublished": {
@@ -755,7 +748,7 @@
    {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
-    "version": "0.0.5"
+    "version": "0.0.6"
    }
   ],
   "total": 1

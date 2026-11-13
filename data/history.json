@@ -7525,15 +7525,15 @@
   },
   {
    "actions": {
-    "fail": 519,
-    "min": 68138,
-    "ok": 5651,
-    "other": 190,
-    "runs": 6360
+    "fail": 513,
+    "min": 67993,
+    "ok": 5674,
+    "other": 183,
+    "runs": 6370
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -7563,7 +7563,7 @@
      "tests": 50
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -7573,7 +7573,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 82,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -7585,7 +7585,7 @@
    },
    "date": "2026-11-13",
    "progress": {
-    "armor": 69,
+    "armor": 70,
     "eh3d": 45,
     "electro-hobby-3d": 61,
     "hydra-umc": 58,
@@ -8074,7 +8074,7 @@
     ],
     "URTC-DEVTOOLS": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "URTC-DOCS": [
      1,
@@ -8112,8 +8112,8 @@
    "sentinel": {
     "cand": 22,
     "gaps": 0,
-    "min": 68138,
-    "red": 7
+    "min": 67993,
+    "red": 6
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 495,
