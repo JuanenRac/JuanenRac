@@ -91,7 +91,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
-| Simulation | 🔴 | `██▊░░░░░░░ 27%` | 16 of 59 repositories have been checked at least in a simulator. |
+| Simulation | 🟠 | `███▊░░░░░░ 37%` | 22 of 59 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `█▏░░░░░░░░ 11%` | 4 of the 38 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
 | Production | 🔴 | `▊░░░░░░░░░ 8%` | 5 of 59 repositories are established or in production. |
 <!-- /status:hydra-umc -->

@@ -91,7 +91,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | Integrazione continua | 🟢 | `██████████ 100%` | 59 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 59 repository su 59 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 59 repository su 59 hanno il README nelle otto lingue. |
-| Simulazione | 🔴 | `██▊░░░░░░░ 27%` | 16 repository su 59 sono stati verificati almeno in un simulatore. |
+| Simulazione | 🟠 | `███▊░░░░░░ 37%` | 22 repository su 59 sono stati verificati almeno in un simulatore. |
 | Hardware reale | 🔴 | `█▏░░░░░░░░ 11%` | 4 dei 38 repository che dipendono dall'hardware sono stati verificati al banco o sul campo; gli altri non hanno mai funzionato con l'apparecchiatura reale. |
 | Produzione | 🔴 | `▊░░░░░░░░░ 8%` | 5 repository su 59 sono consolidati o in produzione. |
 <!-- /status:hydra-umc -->
