@@ -7525,11 +7525,11 @@
   },
   {
    "actions": {
-    "fail": 513,
-    "min": 67993,
-    "ok": 5674,
-    "other": 183,
-    "runs": 6370
+    "fail": 489,
+    "min": 69036,
+    "ok": 5706,
+    "other": 357,
+    "runs": 6552
    },
    "areas": {
     "armor": {
@@ -7573,7 +7573,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 82,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -7589,7 +7589,7 @@
     "eh3d": 45,
     "electro-hobby-3d": 61,
     "hydra-umc": 58,
-    "urtc": 55
+    "urtc": 56
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -8112,8 +8112,8 @@
    "sentinel": {
     "cand": 22,
     "gaps": 0,
-    "min": 67993,
-    "red": 6
+    "min": 69036,
+    "red": 7
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 495,
@@ -8219,13 +8219,13 @@
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 434,
     "HYDRA-UMC-WATCH": 192,
-    "URTC-COMMON": 2905,
-    "URTC-DEVTOOLS": 131,
+    "URTC-COMMON": 3008,
+    "URTC-DEVTOOLS": 134,
     "URTC-DOCS": 222,
-    "URTC-FLASHER": 905,
-    "URTC-GATEWAY": 204,
+    "URTC-FLASHER": 913,
+    "URTC-GATEWAY": 222,
     "URTC-SMART-RACK": 772,
-    "URTC-TESTER": 1007,
+    "URTC-TESTER": 1100,
     "URTC-UPDATER": 721,
     "URTC-VISION-TOOL": 244,
     "URTC-WEB-STUDIO": 1712

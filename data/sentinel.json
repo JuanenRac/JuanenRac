@@ -1,19 +1,25 @@
 {
- "asof": "2026-11-13T21:41:20Z",
+ "asof": "2026-11-13T22:41:14Z",
  "ci": {
-  "checked": 616,
+  "checked": 614,
   "red": [
    {
-    "repo": "ARMOR-NODE-HMI",
-    "since": "2026-11-13T20:46:54Z",
-    "streak": 3,
-    "wf": "ci.yml"
+    "repo": "ARMOR-SIMULATOR",
+    "since": "2026-11-13T22:14:59Z",
+    "streak": 1,
+    "wf": "panel-sync.yml"
    },
    {
-    "repo": "ARMOR-NODE-SOLAR",
-    "since": "2026-11-13T20:30:21Z",
+    "repo": "ARMOR-SIMULATOR",
+    "since": "2026-11-13T22:20:33Z",
     "streak": 1,
-    "wf": "coverage-floor.yml"
+    "wf": "simulation.yml"
+   },
+   {
+    "repo": "HYDRA-UMC-ANDROID-CONTROL",
+    "since": "2026-11-13T22:08:14Z",
+    "streak": 1,
+    "wf": "ci.yml"
    },
    {
     "repo": "HYDRA-UMC-DOCS",
@@ -35,55 +41,55 @@
    },
    {
     "repo": "URTC-DOCS",
-    "since": "2026-11-13T21:13:17Z",
-    "streak": 7,
+    "since": "2026-11-13T21:55:48Z",
+    "streak": 8,
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 6
+  "red_total": 7
  },
  "compute": {
   "top": [
    {
-    "min24": 4806,
-    "min7": 4807,
+    "min24": 4814,
+    "min7": 4839,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 1806,
-    "min7": 1806,
+    "min24": 1797,
+    "min7": 1797,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 1711,
-    "min7": 1711,
+    "min24": 1712,
+    "min7": 1712,
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 1625,
-    "min7": 1625,
-    "repo": "HYDRA-UMC-PATH-PLANNER-3D"
-   },
-   {
-    "min24": 1611,
-    "min7": 1619,
+    "min24": 1667,
+    "min7": 1667,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 1395,
-    "min7": 1539,
+    "min24": 1514,
+    "min7": 1514,
+    "repo": "HYDRA-UMC-PATH-PLANNER-3D"
+   },
+   {
+    "min24": 1428,
+    "min7": 1532,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 67993,
-  "total7": 75394,
+  "total24": 69036,
+  "total7": 76309,
   "warn": true
  },
  "ecosystems": {
   "armor": {
    "cand": 1,
    "read": 19,
-   "red": 2,
+   "red": 1,
    "repos": 19,
    "unpub": 0
   },
@@ -104,7 +110,7 @@
   "hydra-umc": {
    "cand": 19,
    "read": 59,
-   "red": 2,
+   "red": 3,
    "repos": 59,
    "unpub": 0
   },
@@ -117,6 +123,36 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-13T22:41:14Z",
+   "kind": "red_new",
+   "repo": "ARMOR-SIMULATOR",
+   "wf": "panel-sync.yml"
+  },
+  {
+   "at": "2026-11-13T22:41:14Z",
+   "kind": "red_new",
+   "repo": "ARMOR-SIMULATOR",
+   "wf": "simulation.yml"
+  },
+  {
+   "at": "2026-11-13T22:41:14Z",
+   "kind": "red_new",
+   "repo": "HYDRA-UMC-ANDROID-CONTROL",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-13T22:41:14Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-NODE-HMI",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-13T22:41:14Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-NODE-SOLAR",
+   "wf": "coverage-floor.yml"
+  },
   {
    "at": "2026-11-13T21:41:20Z",
    "kind": "red_ok",
@@ -266,42 +302,12 @@
    "kind": "red_new",
    "repo": "ARMOR-STUDIO",
    "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-13T09:47:56Z",
-   "kind": "red_new",
-   "repo": "HYDRA-UMC-ANDROID-CONTROL",
-   "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-13T07:44:14Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC",
-   "tag": "v0.2.9"
-  },
-  {
-   "at": "2026-11-13T07:44:14Z",
-   "kind": "released",
-   "repo": "URTC",
-   "tag": "v0.4.8"
-  },
-  {
-   "at": "2026-11-13T05:15:54Z",
-   "kind": "released",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "tag": "v1.7.9"
-  },
-  {
-   "at": "2026-11-13T03:49:12Z",
-   "kind": "released",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "tag": "v1.7.8"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 30
+  "gap_minutes": 60
  },
  "hygiene": {
   "allowed_missing": [],
@@ -319,7 +325,7 @@
     "bad": 0,
     "cand": 22,
     "hyg": 0,
-    "red": 6
+    "red": 7
    }
   },
   {
@@ -327,14 +333,14 @@
    "level": "bad",
    "p": {
     "list": [
-     "ARMOR-NODE-HMI",
-     "ARMOR-NODE-SOLAR",
+     "ARMOR-SIMULATOR",
+     "HYDRA-UMC-ANDROID-CONTROL",
      "HYDRA-UMC-DOCS",
      "HYDRA-UMC-SERVER",
      "URTC-COMMON",
      "URTC-DOCS"
     ],
-    "n": 6
+    "n": 7
    }
   },
   {
@@ -390,7 +396,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 67993
+    "min": 69036
    }
   }
  ],
@@ -416,13 +422,13 @@
     "tag": "v0.2.3"
    },
    {
-    "entries": 10,
+    "entries": 11,
     "published": "2026-11-07T12:41:25Z",
     "repo": "HYDRA-UMC-PATH-PLANNER-3D",
     "tag": "v0.1.4"
    },
    {
-    "entries": 9,
+    "entries": 10,
     "published": "2026-11-06T18:48:49Z",
     "repo": "HYDRA-UMC-DOCS",
     "tag": "v0.1.3"
@@ -727,7 +733,7 @@
    269,
    159,
    12959,
-   67993
+   69036
   ],
   "red": [
    3,
@@ -740,7 +746,7 @@
    0,
    0,
    0,
-   6
+   7
   ]
  },
  "unpublished": {
