@@ -7525,11 +7525,11 @@
   },
   {
    "actions": {
-    "fail": 280,
-    "min": 14028,
-    "ok": 5290,
-    "other": 53,
-    "runs": 5623
+    "fail": 282,
+    "min": 14099,
+    "ok": 5322,
+    "other": 52,
+    "runs": 5656
    },
    "areas": {
     "armor": {
@@ -7573,7 +7573,7 @@
      "tests": 98
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -7587,9 +7587,9 @@
    "progress": {
     "armor": 70,
     "eh3d": 45,
-    "electro-hobby-3d": 60,
+    "electro-hobby-3d": 61,
     "hydra-umc": 55,
-    "urtc": 55
+    "urtc": 56
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -7786,7 +7786,7 @@
     ],
     "EH3D-SERVER": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "EH3D-STENCILCAM": [
      1,
@@ -7834,7 +7834,7 @@
     ],
     "HYDRA-UMC-ANOMALY-DETECTOR": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-BRIDGE-AMR": [
      1,
@@ -7850,7 +7850,7 @@
     ],
     "HYDRA-UMC-BRIDGE-LASER": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-BRIDGE-OPENPNP": [
      1,
@@ -7874,7 +7874,7 @@
     ],
     "HYDRA-UMC-CONNECTOR-HUB": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "HYDRA-UMC-DASHBOARD-AI": [
      1,
@@ -7998,7 +7998,7 @@
     ],
     "HYDRA-UMC-SERVER": [
      1,
-     "0.8.2.9"
+     "0.8.3.0"
     ],
     "HYDRA-UMC-STUDIO": [
      1,
@@ -8110,9 +8110,9 @@
     ]
    },
    "sentinel": {
-    "cand": 5,
+    "cand": 2,
     "gaps": 0,
-    "min": 14028,
+    "min": 14099,
     "red": 0
    },
    "tests": {
