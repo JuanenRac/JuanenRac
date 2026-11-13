@@ -122,7 +122,6 @@
   "HYDRA-UMC": {
    "art": true,
    "at": "2026-11-13T07:00:21Z",
-   "checked": true,
    "exp": "2026-11-20T06:58:48Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43382071427",
    "wf": "firmware-build.yml"
@@ -256,7 +255,6 @@
   "URTC": {
    "art": true,
    "at": "2026-11-13T06:59:36Z",
-   "checked": true,
    "exp": "2026-11-20T06:58:11Z",
    "url": "https://github.com/JuanenRac/URTC/actions/runs/43382065628",
    "wf": "firmware-build.yml"

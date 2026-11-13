@@ -1,52 +1,65 @@
 {
- "asof": "2026-11-13T07:44:14Z",
+ "asof": "2026-11-13T09:29:19Z",
  "ci": {
-  "checked": 567,
-  "red": [],
-  "red_total": 0
+  "checked": 566,
+  "red": [
+   {
+    "repo": "ARMOR-STUDIO",
+    "since": "2026-11-13T08:22:13Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "HYDRA-UMC-ANDROID-CONTROL",
+    "since": "2026-11-13T09:05:18Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   }
+  ],
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 867,
-    "min7": 1198,
+    "min24": 835,
+    "min7": 1242,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 343,
-    "min7": 541,
+    "min24": 359,
+    "min7": 536,
     "repo": "EH3D-SERVER"
    },
    {
-    "min24": 319,
-    "min7": 319,
-    "repo": "HYDRA-UMC-DSI"
-   },
-   {
-    "min24": 312,
-    "min7": 312,
+    "min24": 339,
+    "min7": 339,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 311,
-    "min7": 311,
+    "min24": 322,
+    "min7": 322,
+    "repo": "HYDRA-UMC-DSI"
+   },
+   {
+    "min24": 321,
+    "min7": 321,
     "repo": "ARMOR-NODE-ELECTRICAL"
    },
    {
-    "min24": 308,
-    "min7": 358,
+    "min24": 313,
+    "min7": 366,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 13058,
-  "total7": 17938,
+  "total24": 13909,
+  "total7": 19069,
   "warn": true
  },
  "ecosystems": {
   "armor": {
    "cand": 1,
    "read": 19,
-   "red": 0,
+   "red": 1,
    "repos": 19,
    "unpub": 0
   },
@@ -65,9 +78,9 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 1,
+   "cand": 7,
    "read": 59,
-   "red": 0,
+   "red": 1,
    "repos": 59,
    "unpub": 0
   },
@@ -80,6 +93,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-13T09:29:19Z",
+   "kind": "red_new",
+   "repo": "ARMOR-STUDIO",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-13T09:29:19Z",
+   "kind": "red_new",
+   "repo": "HYDRA-UMC-ANDROID-CONTROL",
+   "wf": "ci.yml"
+  },
   {
    "at": "2026-11-13T07:44:14Z",
    "kind": "released",
@@ -247,24 +272,12 @@
    "kind": "released",
    "repo": "EH3D-NODE-HMI-GUI",
    "tag": "v0.0.9"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-LASER",
-   "tag": "v0.0.5"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "EH3D-STENCILCAM",
-   "tag": "v0.0.7"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 150
+  "gap_minutes": 110
  },
  "hygiene": {
   "allowed_missing": [],
@@ -280,9 +293,20 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 2,
+    "cand": 8,
     "hyg": 0,
-    "red": 0
+    "red": 2
+   }
+  },
+  {
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "ARMOR-STUDIO",
+     "HYDRA-UMC-ANDROID-CONTROL"
+    ],
+    "n": 2
    }
   },
   {
@@ -291,9 +315,15 @@
    "p": {
     "list": [
      "ARMOR-NETWORK",
-     "HYDRA-UMC-IOS-CONTROL"
+     "HYDRA-UMC-BRIDGE-CNC",
+     "HYDRA-UMC-BRIDGE-PRINTER3D",
+     "HYDRA-UMC-BRIDGE-ROS2",
+     "HYDRA-UMC-COGNITIVE-NODE",
+     "HYDRA-UMC-HIL-BRIDGE",
+     "HYDRA-UMC-IOS-CONTROL",
+     "HYDRA-UMC-ORCHESTRATOR"
     ],
-    "n": 2
+    "n": 8
    }
   },
   {
@@ -318,7 +348,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13058
+    "min": 13909
    }
   }
  ],
@@ -326,21 +356,57 @@
  "releases": {
   "candidates": [
    {
-    "entries": 20,
+    "entries": 22,
     "published": "2026-11-06T10:30:35Z",
     "repo": "HYDRA-UMC-IOS-CONTROL",
     "tag": "v0.3.5"
+   },
+   {
+    "entries": 10,
+    "published": "2026-11-06T16:14:43Z",
+    "repo": "HYDRA-UMC-BRIDGE-ROS2",
+    "tag": "v0.1.7"
+   },
+   {
+    "entries": 8,
+    "published": "2026-11-06T16:14:26Z",
+    "repo": "HYDRA-UMC-BRIDGE-PRINTER3D",
+    "tag": "v0.2.3"
    },
    {
     "entries": 5,
     "published": "2026-11-05T23:40:26Z",
     "repo": "ARMOR-NETWORK",
     "tag": "v0.1.7"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-06T16:14:06Z",
+    "repo": "HYDRA-UMC-BRIDGE-CNC",
+    "tag": "v0.2.6"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-06T16:13:29Z",
+    "repo": "HYDRA-UMC-COGNITIVE-NODE",
+    "tag": "v0.2.1"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-06T16:23:03Z",
+    "repo": "HYDRA-UMC-HIL-BRIDGE",
+    "tag": "v0.1.6"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-05T21:34:34Z",
+    "repo": "HYDRA-UMC-ORCHESTRATOR",
+    "tag": "v0.2.6"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 2
+  "total": 8
  },
  "repos": 129,
  "schema": 1,
@@ -496,7 +562,7 @@
    43,
    43,
    20,
-   2
+   8
   ],
   "dates": [
    "2026-11-03",
@@ -535,7 +601,7 @@
    269,
    159,
    12959,
-   13058
+   13909
   ],
   "red": [
    3,
@@ -548,7 +614,7 @@
    0,
    0,
    0,
-   0
+   2
   ]
  },
  "unpublished": {
