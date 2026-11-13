@@ -1,26 +1,21 @@
 {
- "asof": "2026-11-13T05:15:54Z",
+ "asof": "2026-11-13T07:44:14Z",
  "ci": {
-  "checked": 564,
+  "checked": 567,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 942,
+    "min24": 867,
     "min7": 1198,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 361,
+    "min24": 343,
     "min7": 541,
     "repo": "EH3D-SERVER"
-   },
-   {
-    "min24": 358,
-    "min7": 358,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
     "min24": 319,
@@ -28,18 +23,23 @@
     "repo": "HYDRA-UMC-DSI"
    },
    {
-    "min24": 316,
-    "min7": 316,
+    "min24": 312,
+    "min7": 312,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
     "min24": 311,
     "min7": 311,
     "repo": "ARMOR-NODE-ELECTRICAL"
+   },
+   {
+    "min24": 308,
+    "min7": 358,
+    "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 13655,
-  "total7": 17950,
+  "total24": 13058,
+  "total7": 17938,
   "warn": true
  },
  "ecosystems": {
@@ -69,17 +69,29 @@
    "read": 59,
    "red": 0,
    "repos": 59,
-   "unpub": 1
+   "unpub": 0
   },
   "urtc": {
    "cand": 0,
    "read": 11,
    "red": 0,
    "repos": 11,
-   "unpub": 2
+   "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-13T07:44:14Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC",
+   "tag": "v0.2.9"
+  },
+  {
+   "at": "2026-11-13T07:44:14Z",
+   "kind": "released",
+   "repo": "URTC",
+   "tag": "v0.4.8"
+  },
   {
    "at": "2026-11-13T05:15:54Z",
    "kind": "released",
@@ -247,24 +259,12 @@
    "kind": "released",
    "repo": "EH3D-STENCILCAM",
    "tag": "v0.0.7"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-ANDROID-CONTROL",
-   "tag": "v0.8.0.4"
-  },
-  {
-   "at": "2026-11-13T01:33:00Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-BRIDGE-AMR",
-   "tag": "v0.2.0"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 35
+  "gap_minutes": 150
  },
  "hygiene": {
   "allowed_missing": [],
@@ -301,11 +301,9 @@
    "level": "warn",
    "p": {
     "list": [
-     "HYDRA-UMC",
-     "URTC",
      "URTC-DEVTOOLS"
     ],
-    "n": 3
+    "n": 1
    }
   },
   {
@@ -320,7 +318,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13655
+    "min": 13058
    }
   }
  ],
@@ -349,11 +347,11 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 86,
+  "none": 84,
   "norelease": 0,
   "unverifiable": 20,
   "unverified": 0,
-  "verified": 23
+  "verified": 25
  },
  "tags": {
   "ARMOR-ANDROID-CONTROL": "v0.8.0.7",
@@ -414,7 +412,7 @@
   "EH3D-VALIDATION-LAB": "v0.0.2",
   "EH3D-VISION-STUDIO": "v0.0.3",
   "ELECTRO-HOBBY-3D-UPDATER": "v0.1.5",
-  "HYDRA-UMC": "v0.2.8",
+  "HYDRA-UMC": "v0.2.9",
   "HYDRA-UMC-ANDROID-CONTROL": "v0.8.0.4",
   "HYDRA-UMC-ANOMALY-DETECTOR": "v0.2.4",
   "HYDRA-UMC-BRIDGE-AMR": "v0.2.0",
@@ -474,7 +472,7 @@
   "HYDRA-UMC-VOICE-UI": "v0.2.4",
   "HYDRA-UMC-WATCH": "v0.3.3",
   "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.7.9",
-  "URTC": "v0.4.7",
+  "URTC": "v0.4.8",
   "URTC-COMMON": "v0.2.6",
   "URTC-DEVTOOLS": "v0.0.4",
   "URTC-DOCS": "v0.1.6",
@@ -537,7 +535,7 @@
    269,
    159,
    12959,
-   13655
+   13058
   ],
   "red": [
    3,
@@ -556,21 +554,11 @@
  "unpublished": {
   "rows": [
    {
-    "repo": "HYDRA-UMC",
-    "tag": "v0.2.8",
-    "version": "0.2.9"
-   },
-   {
-    "repo": "URTC",
-    "tag": "v0.4.7",
-    "version": "0.4.8"
-   },
-   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.5"
    }
   ],
-  "total": 3
+  "total": 1
  }
 }

@@ -121,9 +121,10 @@
   },
   "HYDRA-UMC": {
    "art": true,
-   "at": "2026-11-12T20:34:14Z",
-   "exp": "2026-11-19T20:31:43Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43300853390",
+   "at": "2026-11-13T07:00:21Z",
+   "checked": true,
+   "exp": "2026-11-20T06:58:48Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43382071427",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
@@ -254,9 +255,10 @@
   },
   "URTC": {
    "art": true,
-   "at": "2026-11-13T01:08:49Z",
-   "exp": "2026-11-20T01:05:18Z",
-   "url": "https://github.com/JuanenRac/URTC/actions/runs/43341806644",
+   "at": "2026-11-13T06:59:36Z",
+   "checked": true,
+   "exp": "2026-11-20T06:58:11Z",
+   "url": "https://github.com/JuanenRac/URTC/actions/runs/43382065628",
    "wf": "firmware-build.yml"
   },
   "URTC-COMMON": {
@@ -601,8 +603,8 @@
    }
   },
   "HYDRA-UMC": {
-   "fp": "48cd2c135187f09e",
-   "on": "2026-11-06",
+   "fp": "e0b63f37ef944215",
+   "on": "2026-11-13",
    "r": {
     "ak": 3,
     "an": 3,
@@ -628,7 +630,7 @@
    }
   },
   "HYDRA-UMC-WATCH": {
-   "fp": "c3dd077ff2218280",
+   "fp": "57d010f112c5f90f",
    "on": "2026-11-13",
    "r": {
     "ak": 0,
@@ -646,12 +648,12 @@
    }
   },
   "URTC": {
-   "fp": "515e6e35032b9b45",
-   "on": "2026-11-11",
+   "fp": "422f17d0fec034c3",
+   "on": "2026-11-13",
    "r": {
-    "ak": 0,
+    "ak": 3,
     "an": 3,
-    "at": "absent"
+    "at": "present"
    }
   },
   "URTC-FLASHER": {
@@ -664,7 +666,7 @@
    }
   },
   "URTC-SMART-RACK": {
-   "fp": "204784124ee6ac2d",
+   "fp": "9daf9a31e7b999c5",
    "on": "2026-11-13",
    "r": {
     "ak": 1,
@@ -1145,7 +1147,7 @@
    }
   },
   "HYDRA-UMC": {
-   "fp": "48cd2c135187f09e",
+   "fp": "e0b63f37ef944215",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1272,8 +1274,22 @@
     "why": []
    }
   },
+  "HYDRA-UMC-WATCH": {
+   "fp": "57d010f112c5f90f",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 1,
+    "s": "verified",
+    "sch": [
+     "hydra-sign"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
   "URTC": {
-   "fp": "515e6e35032b9b45",
+   "fp": "422f17d0fec034c3",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1295,6 +1311,20 @@
     "s": "verified",
     "sch": [
      "urtc-pkg/1"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
+  "URTC-SMART-RACK": {
+   "fp": "9daf9a31e7b999c5",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 3,
+    "s": "verified",
+    "sch": [
+     "urtc-rel/1"
     ],
     "unk": 0,
     "why": []
