@@ -1,26 +1,26 @@
 {
- "asof": "2026-11-13T03:49:12Z",
+ "asof": "2026-11-13T04:44:45Z",
  "ci": {
-  "checked": 557,
+  "checked": 563,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 867,
-    "min7": 1114,
+    "min24": 894,
+    "min7": 1152,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
+   },
+   {
+    "min24": 361,
+    "min7": 541,
+    "repo": "EH3D-SERVER"
    },
    {
     "min24": 358,
     "min7": 358,
     "repo": "HYDRA-UMC-IOS-CONTROL"
-   },
-   {
-    "min24": 340,
-    "min7": 590,
-    "repo": "EH3D-SERVER"
    },
    {
     "min24": 319,
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-ELECTRICAL"
    }
   ],
-  "total24": 13843,
-  "total7": 18133,
+  "total24": 13690,
+  "total7": 17938,
   "warn": true
  },
  "ecosystems": {
@@ -264,7 +264,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 40
+  "gap_minutes": 60
  },
  "hygiene": {
   "allowed_missing": [],
@@ -320,7 +320,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13843
+    "min": 13690
    }
   }
  ],
@@ -537,7 +537,7 @@
    269,
    159,
    12959,
-   13843
+   13690
   ],
   "red": [
    3,
