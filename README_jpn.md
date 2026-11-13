@@ -64,8 +64,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-STM32%20%7C%20CM5-red.svg" alt="Platform">
-  <img src="https://img.shields.io/badge/AI-Hailo--8%20%7C%20Hailo--10-green.svg" alt="AI Power">
+  <img src="https://img.shields.io/badge/Platform-STM32H757%20%7C%20Jetson%20Orin%20NX-red.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/AI-Jetson%20Orin%20NX%20%7C%20Hailo--8-green.svg" alt="AI Power">
   <img src="https://img.shields.io/badge/Stack-React%20%7C%20Flutter%20%7C%20Python-blueviolet.svg" alt="Stack">
 </p>
 
@@ -104,7 +104,7 @@
 ## 🚀 主な機能とスケーラビリティ
 
 * **マルチロボットのスケーラビリティ**: 最大8台の分散型ロボットユニットをサポート（現在は3、4、5、6自由度; 将来のリリースでは7、8、9自由度およびデュアルロボットアーキテクチャに拡張予定）。
-* **統合ローカルステージ**: メインのHYDRA-UMCボードには、補助タスク（サブロボット、ATC（自動工具交換装置）リボルバー、コンベアベルトの同期、XYZテーブルガントリーなど）用のオンボード**6軸ローカルステージ**が搭載されています。
+* **拡張可能なローカルステージ**: HYDRA-UMC メインボードは、3 つの PCIe ポートに差し込み式の軸カード（SPI 経由の TMC5160 ドライバー）を受け入れ、補助タスク（サブロボット、ATC（自動工具交換）リボルバー、コンベアの同期、XYZ テーブルガントリー）向けの **6 軸ローカルステージ** を構成します。
 
 \---
 
@@ -112,9 +112,9 @@
 
 v1.1エコシステムは、新しいオペレーティングシステムの作成やベンダーAPIの置き換えではなく、確立されたLinuxおよびRaspberry Piテクノロジーを基盤とした階層型製品プラットフォームです。
 
-1. **プラットフォームベース**: Raspberry Pi OS ARM64および標準的なLinuxサービスが、サポート対象のCM5基盤を提供します。
+1. **プラットフォームベース**: NVIDIA Jetson Orin NX 16 GB ホストが Linux と標準サービスを実行します。Raspberry Pi OS ARM64 を搭載した Raspberry Pi CM5 は、現在 HYDRA-UMC-OS がパッケージ化しているベンチ用パイロットプラットフォームです。
 2. **プラットフォームと契約**: **HYDRA-UMC-OS**は、Raspberry Pi OS上の再現可能なプロファイル、サービス、診断、アップデートをパッケージ化します。**HYDRA-UMC-SDK**は、バージョン管理された契約、シンクライアント、および適合性フィクスチャを公開します。
-3. **リアルタイム実行**: **HYDRA-UMC**ファームウェアは、STM32/MCU上の動作制限、ウォッチドッグ、安全停止を管理します。ツール自体およびエンドエフェクターに対する独自のリアルタイム権限は、下位の独立した**URTC**エコシステムに属します。
+3. **リアルタイム実行**: **HYDRA-UMC**ファームウェアは、STM32H757/MCU上の動作制限、ウォッチドッグ、安全停止を管理します。ツール自体およびエンドエフェクターに対する独自のリアルタイム権限は、下位の独立した**URTC**エコシステムに属します。
 4. **調整と運用**: サーバーサービス、ジョブディスパッチ、テレメトリ、および構成は、MCUの安全境界をバイパスせずにデバイスを調整します。
 5. **オペレーターインターフェース**: Studio、Suite、DSI、Web、デスクトップ、モバイル、およびCLIクライアントは、SDK契約を使用します。
 6. **知覚と知能**: ビジョン、Hailo、および認知サービスは、観測やプランを提案しますが、物理的な安全権限は持ちません。
@@ -130,14 +130,14 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 ### 💠 組み込みとリアルタイム（実行）
 
-* **マイクロコントローラ**: STM32H745（デュアルコア 480MHz）、STM32G474（170MHz）、STM32F303。
+* **マイクロコントローラ**: STM32H757（Cortex-M7 480 MHz + Cortex-M4 240 MHz）、STM32G474（170MHz）、STM32F303。
 * **フレームワーク**: FreeRTOS（AMPモード）、CMSIS-DSP、STM32 HAL/LL。
-* **プロトコル**: FDCAN（1Mbps/5Mbps）、CAN-OTA、SPI（50MHzスレーブIPC）、I2C、UART。
+* **プロトコル**: FDCAN（1Mbps/5Mbps）、CAN-OTA、SPI（H757 ↔ Jetson）、I2C、UART。
 * **運動学**: S字プロファイル生成、リアルタイム逆運動学（IK）。
 
 ### 🧠 エッジAIと知覚（知能）
 
-* **アクセラレータ**: Hailo-8（26 TOPS、8カメラビジョン用）、Hailo-10（40 TOPS、GenAI用）。
+* **アクセラレータ**: NVIDIA Jetson Orin NX 16 GB（100 TOPS）、Hailo-8（26 TOPS、8カメラビジョン用）。
 * **モデル**: YOLOv10（検出）、OpenVLA（アクション）、Whisper（音声）、Llama-3（推論）。
 * **ノード間**: Protobuf上のgRPCおよび高速SPI-DMAメタデータ交換。
 
@@ -156,8 +156,8 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 ## 📋 システム要件
 
-* **計算ノード**: Raspberry Pi CM5（4GB以上のRAM）、NVMe/eMMCストレージ。
-* **AIハードウェア**: Hailo-8/Hailo-10 M.2モジュール（Key M）。
+* **計算ノード**: NVIDIA Jetson Orin NX 16 GB、NVMe/eMMCストレージ。
+* **AIハードウェア**: Hailo-8 M.2モジュール（Key M）。
 * **フィールドバス**: LAN用ギガビットイーサネット、アクチュエータ用FDCAN（ISO 11898-1:2015）。
 * **クライアントOS**: Android 10+、iOS 15+、Windows 10/11（高DPI）、Ubuntu 22.04 LTS。
 
@@ -174,11 +174,11 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 ## 🔧 ハードウェアハッキング：独自のキャリアボードの構築
 
-ロボットコントローラーボードは**Raspberry Pi CM5**を中心に構築されており、CM5独自のデュアルHirose DF40コネクタは、このプロジェクトが独自定義したものではなく、Raspberry Piの公式CM5データシートの表5にある固定された公式の公開ピン配置です。つまり、互換性のあるサードパーティ製キャリアは、リバースエンジニアリングの演習ではなく、現実的で実現可能なプロジェクトとなります。
+ロボットコントローラーボードは、専用コネクターに **NVIDIA Jetson Orin NX 16 GB** モジュールを搭載し、そのリンクのマスターである STM32H757 と SPI で接続します。**Raspberry Pi CM5** のデュアル Hirose DF40 コネクターは固定の公式公開ピン配置（Raspberry Pi の CM5 データシート表 5）であり、ベンチ用パイロットの経路として残ります。互換性のあるサードパーティ製キャリアボードは、リバースエンジニアリングではなく、現実的に実現可能なプロジェクトです。
 
 * **ここから始める**: [`HYDRA-UMC/docs/PINOUT\_CM5\_CARRIER.TXT`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/PINOUT_CM5_CARRIER.TXT) - このボードが実際に使用しているCM5の固定ピン（イーサネット、2つのネイティブUSB3 SuperSpeed PHY、CM5側の冷却ファンヘッダー）とその理由が、公式ピン配置テーブルから機能別に再編成されています。
 * **簡単な導入経路**: 標準の**Raspberry Pi 40ピンGPIOヘッダー**（2014年以降変更のない「B+」レイアウトと同じ）が、他のRaspberry Piと同様にこのボードに引き出されているため、既存のRPi HATやGPIOツールを変更なしで使用できます。このボード自体のSTM32リンクですでに使用されている少数の位置については、スキップすべき場所がわかるようにシルク印刷/注記されています。
-* **さらに進める**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md)では、CM5、STM32H745「キネマティックブレイン」、STM32G474「ロボットコントローラー」が実際にどのように通信しているか（SPI1 + FDCAN1 + CM7↔CM4 IPCメールボックス）について説明しています。これは、キャリアの再設計において、本プロジェクトのファームウェアとの互換性を維持するために保持する必要があるレイヤーです。
+* **さらに進める**: [`docs/architecture.md`](https://github.com/JuanenRac/HYDRA-UMC/blob/main/docs/architecture.md) は、Jetson Orin NX、STM32H757「キネマティックブレイン」、STM32G474「ロボットコントローラー」がどのように通信するか（H757 をマスターとする SPI リンク、FDCAN1、CM7↔CM4 IPC メールボックス）を説明します。キャリアボードを再設計する際、このプロジェクトのファームウェアとの互換性を保つために維持すべき層です。
 * 各ピン配置ドキュメントには、それが**CONFIRMED（確認済み）**（公式データシートの表から直接取得）であるか、**PROPOSED（提案）**（派生キャリアで別の選択肢が可能な、本プロジェクト独自のルーティング選択）であるかが明記されています。信号割り当てを固定として扱う前に、そのステータス行を確認してください。
 
 これはガイド付きチュートリアルではありません（すべてのユースケースに適した唯一の「正しい」キャリアというものはありません）。データシート単体ではなく、既知の正常なピンマップから作業を開始するために経験豊富なハードウェア設計者が必要とする実際の参考資料です。
@@ -201,7 +201,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|S字運動学を備えたSTM32H745/G474用コアモーション制御ファームウェア。|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|S字運動学を備えたSTM32H757/G474用コアモーション制御ファームウェア。|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.0|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.0|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC の Web クライアント共通の TypeScript キット：セッション、HTTP クライアント、接続履歴、設定、ツアー。|
@@ -223,7 +223,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.4|ロボット作業領域保護のためのリアルタイムAI侵入検知。|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|サブミリ精度のポーズ補正のための画像ベースの運動学フィードバック。|
 
-### 🧠 認知AIノード（Hailo-10最適化）
+### 🧠 認知AIノード（Jetson Orin NX最適化）
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
