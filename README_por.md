@@ -609,7 +609,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 de 2 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositórios têm testes automáticos. |
-| Integração contínua | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 2 de 2 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 2 de 2 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 2 de 2 repositórios têm o README nas oito línguas. |
 | Simulação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositórios foram verificados pelo menos num simulador. |

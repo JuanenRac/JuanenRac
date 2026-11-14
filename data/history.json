@@ -8233,11 +8233,11 @@
   },
   {
    "actions": {
-    "fail": 227,
-    "min": 17617,
-    "ok": 4625,
-    "other": 143,
-    "runs": 4995
+    "fail": 212,
+    "min": 13599,
+    "ok": 4572,
+    "other": 84,
+    "runs": 4868
    },
    "areas": {
     "armor": {
@@ -8261,7 +8261,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 50,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -8295,7 +8295,7 @@
    "progress": {
     "armor": 70,
     "eh3d": 45,
-    "electro-hobby-3d": 61,
+    "electro-hobby-3d": 58,
     "hydra-umc": 58,
     "urtc": 56
    },
@@ -8824,7 +8824,7 @@
    "sentinel": {
     "cand": 24,
     "gaps": 0,
-    "min": 17617,
+    "min": 13599,
     "red": 1
    },
    "tests": {

@@ -611,7 +611,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 of 2 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟠 | `█████░░░░░ 50%` | 1 of 2 repositories have automated tests. |
-| Continuous integration | 🟠 | `█████░░░░░ 50%` | 1 of 2 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 2 of 2 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 2 of 2 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 2 of 2 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 2 repositories have been checked at least in a simulator. |

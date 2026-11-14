@@ -609,7 +609,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `██████████ 100%` | 2 dépôts sur 2 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont des tests automatiques. |
-| Intégration continue | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont le README dans les huit langues. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 2 ont été vérifiés au moins dans un simulateur. |

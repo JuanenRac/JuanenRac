@@ -213,7 +213,6 @@
   "HYDRA-UMC-SUITE": {
    "art": true,
    "at": "2026-11-07T20:15:45Z",
-   "checked": true,
    "exp": "2026-12-07T20:14:16Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42409419173",
    "wf": "exe-build.yml"
