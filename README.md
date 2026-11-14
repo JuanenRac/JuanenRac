@@ -386,7 +386,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:armor -->
-`[██████████████░░░░░░] 70%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████████▊░░░░░░] 69%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -398,7 +398,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 19 of 19 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have been checked at least in a simulator. |
@@ -432,14 +432,14 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.7 | Local network monitor: devices on the network, state of the internet and what changes; it only observes. |
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.8.2.2 | Central server: persisted state, users, events, alarms, devices, automations, cameras, signed node updates, notifications and remote access. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.3.2 | Motion-watching service, visual profile selection, explainable fusion policy, engine registry. |
-| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.1.6 | Camera zones, masks and detection rules (loitering, one event per visit); no detector model yet. |
+| [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.1.7 | Camera zones, masks and detection rules (loitering, one event per visit); no detector model yet. |
 | [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.5 | Offline voice service: fifteen commands in eight languages, the wall panel's spoken turns, arm and disarm confirmed with a signed token. |
 | [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.2.4 | Operations console: alarms, devices, automations, history, PTZ, radar map, solar and electrical menus, node updates and a 2D/3D designer. |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.8.0.7 | Android operator client: arm and disarm, alarms, devices, live radar, solar, history, notifications, voice assistant and node configurator. |
 | [ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL) | 0.0.5 | iPhone operator client: status, arming, alarms, alarm panels, cameras and the assistant, in eight languages. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.9 | Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix. |
-| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.7.5 | Compose topology, test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, admin agent. |
-| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.3.7 | Scenarios and repeatable faults. |
+| [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.7.6 | Compose topology, test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, admin agent. |
+| [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.3.8 | Scenarios and repeatable faults. |
 | [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.2.2 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.1.9 | Canonical documentation and the capability matrix. |
 

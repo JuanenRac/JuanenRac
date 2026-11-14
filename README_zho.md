@@ -392,7 +392,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 **更新器：** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:armor -->
-`\[██████████████░░░░░░] 70%` — 根据真实数据计算：其 19 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[█████████████▊░░░░░░] 69%` — 根据真实数据计算：其 19 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -404,7 +404,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 | --- | :---: | --- | --- |
 | 软件 | 🟢 | `█████████▌ 95%` | 19 个仓库中有 18 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `█████████▌ 95%` | 19 个仓库中有 18 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 19 个仓库中有 19 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `█████████▌ 95%` | 19 个仓库中有 18 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 19 个仓库中有 19 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 19 个仓库中有 19 个提供八种语言的 README。 |
 | 仿真 | 🟢 | `█████████▌ 95%` | 19 个仓库中有 18 个至少在仿真器中验证过。 |
@@ -438,14 +438,14 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.7|本地网络监控：网络中的设备、互联网状态以及发生的变化；只观察，不干预。|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.2|中央服务器：持久化状态、用户、事件、报警、设备、自动化、摄像头、已签名的节点更新、通知和远程访问。|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.2|运动监视服务、视觉配置文件选择、可解释的融合策略、引擎注册表。|
-|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.6|相机区域、遮罩和检测规则（徘徊、每次访问一个事件）；暂无检测器模型。|
+|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.7|相机区域、遮罩和检测规则（徘徊、每次访问一个事件）；暂无检测器模型。|
 |[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.5|离线语音服务：八种语言的十五条命令、壁挂面板的语音交互、通过签名令牌确认的布防和撤防。|
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.4|运维控制台：报警、设备、自动化、历史记录、PTZ、雷达地图、太阳能和电气菜单、节点更新以及 2D/3D 设计器。|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.7|Android 操作端：布防与撤防、报警、设备、实时雷达、太阳能、历史记录、通知、语音助手以及节点配置器。|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.5|iPhone 操作员客户端：状态、布防、告警、报警面板、摄像头和助理，提供八种语言。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.9|外壳设计（雷达角落外壳；太阳能、电气和报警节点的勾选框）以及台架验收矩阵。|
-|[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.5|Compose 拓扑、测试台安装程序、备份与恢复、TLS 配置、自有 MQTT 代理、观测和语音服务以及管理代理。|
-|[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.7|场景和可重复故障。|
+|[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Compose 拓扑、测试台安装程序、备份与恢复、TLS 配置、自有 MQTT 代理、观测和语音服务以及管理代理。|
+|[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|场景和可重复故障。|
 |[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.2.2|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.1.9|规范文档和能力矩阵。|
 

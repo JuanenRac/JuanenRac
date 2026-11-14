@@ -1,12 +1,12 @@
 {
- "asof": "2026-11-14T13:48:36Z",
+ "asof": "2026-11-14T14:36:13Z",
  "ci": {
   "checked": 607,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-14T12:22:05Z",
-    "streak": 3,
+    "since": "2026-11-14T14:22:01Z",
+    "streak": 6,
     "wf": "nightly.yml"
    }
   ],
@@ -15,24 +15,19 @@
  "compute": {
   "top": [
    {
-    "min24": 3300,
-    "min7": 3300,
+    "min24": 2589,
+    "min7": 2589,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 1550,
+    "min24": 1452,
     "min7": 1568,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 1126,
+    "min24": 1051,
     "min7": 1647,
     "repo": "HYDRA-UMC-IOS-CONTROL"
-   },
-   {
-    "min24": 941,
-    "min7": 941,
-    "repo": "URTC-WEB-STUDIO"
    },
    {
     "min24": 937,
@@ -40,22 +35,27 @@
     "repo": "HYDRA-UMC-SDK"
    },
    {
-    "min24": 838,
-    "min7": 1345,
+    "min24": 933,
+    "min7": 933,
+    "repo": "URTC-WEB-STUDIO"
+   },
+   {
+    "min24": 839,
+    "min7": 1327,
     "repo": "HYDRA-UMC-DEV-SERVER"
    }
   ],
-  "total24": 43664,
-  "total7": 63048,
+  "total24": 41275,
+  "total7": 61365,
   "warn": true
  },
  "ecosystems": {
   "armor": {
-   "cand": 5,
+   "cand": 4,
    "read": 20,
    "red": 1,
    "repos": 20,
-   "unpub": 0
+   "unpub": 3
   },
   "eh3d": {
    "cand": 0,
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 45
+  "gap_minutes": 50
  },
  "hygiene": {
   "allowed_missing": [],
@@ -287,7 +287,7 @@
    "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 26,
+    "cand": 25,
     "hyg": 0,
     "red": 1
    }
@@ -310,7 +310,6 @@
      "ARMOR-DOCS",
      "ARMOR-NETWORK",
      "ARMOR-SERVER-AI",
-     "ARMOR-SIMULATOR",
      "ARMOR-VOICE-AI",
      "HYDRA-UMC-BRIDGE-CNC",
      "HYDRA-UMC-BRIDGE-OPENPNP",
@@ -334,7 +333,7 @@
      "HYDRA-UMC-SYNTHETIC-DATA-GEN",
      "HYDRA-UMC-VOICE-UI"
     ],
-    "n": 26
+    "n": 25
    }
   },
   {
@@ -342,6 +341,9 @@
    "level": "warn",
    "p": {
     "list": [
+     "ARMOR-DEVOPS",
+     "ARMOR-SIMULATOR",
+     "ARMOR-VISION",
      "URTC",
      "URTC-COMMON",
      "URTC-DEVTOOLS",
@@ -352,7 +354,7 @@
      "URTC-VISION-TOOL",
      "URTC-WEB-STUDIO"
     ],
-    "n": 9
+    "n": 12
    }
   },
   {
@@ -367,7 +369,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 43664
+    "min": 41275
    }
   }
  ],
@@ -393,7 +395,7 @@
     "tag": "v0.1.7"
    },
    {
-    "entries": 12,
+    "entries": 13,
     "published": "2026-11-07T12:41:25Z",
     "repo": "HYDRA-UMC-PATH-PLANNER-3D",
     "tag": "v0.1.4"
@@ -427,12 +429,6 @@
     "published": "2026-11-12T05:09:37Z",
     "repo": "ARMOR-DOCS",
     "tag": "v0.8.1.9"
-   },
-   {
-    "entries": 8,
-    "published": "2026-11-12T04:03:47Z",
-    "repo": "ARMOR-SIMULATOR",
-    "tag": "v0.3.7"
    },
    {
     "entries": 8,
@@ -533,7 +529,7 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 26
+  "total": 25
  },
  "repos": 130,
  "schema": 1,
@@ -690,7 +686,7 @@
    43,
    20,
    22,
-   26
+   25
   ],
   "dates": [
    "2026-11-03",
@@ -732,7 +728,7 @@
    159,
    12959,
    70311,
-   43664
+   41275
   ],
   "red": [
    3,
@@ -751,6 +747,21 @@
  },
  "unpublished": {
   "rows": [
+   {
+    "repo": "ARMOR-DEVOPS",
+    "tag": "v0.7.5",
+    "version": "0.7.6"
+   },
+   {
+    "repo": "ARMOR-SIMULATOR",
+    "tag": "v0.3.7",
+    "version": "0.3.8"
+   },
+   {
+    "repo": "ARMOR-VISION",
+    "tag": "v0.1.6",
+    "version": "0.1.7"
+   },
    {
     "repo": "URTC",
     "tag": "v0.4.8",
@@ -797,6 +808,6 @@
     "version": "0.5.2"
    }
   ],
-  "total": 9
+  "total": 12
  }
 }

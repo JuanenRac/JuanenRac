@@ -8233,15 +8233,15 @@
   },
   {
    "actions": {
-    "fail": 353,
-    "min": 43664,
-    "ok": 5319,
-    "other": 154,
-    "runs": 5826
+    "fail": 340,
+    "min": 41275,
+    "ok": 5310,
+    "other": 171,
+    "runs": 5821
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -8293,7 +8293,7 @@
    },
    "date": "2026-11-14",
    "progress": {
-    "armor": 69,
+    "armor": 70,
     "eh3d": 45,
     "electro-hobby-3d": 61,
     "hydra-umc": 58,
@@ -8310,7 +8310,7 @@
     ],
     "ARMOR-DEVOPS": [
      2,
-     "0.7.5"
+     "0.7.6"
     ],
     "ARMOR-DOCS": [
      2,
@@ -8358,7 +8358,7 @@
     ],
     "ARMOR-SIMULATOR": [
      2,
-     "0.3.7"
+     "0.3.8"
     ],
     "ARMOR-STUDIO": [
      2,
@@ -8370,7 +8370,7 @@
     ],
     "ARMOR-VISION": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "ARMOR-VOICE-AI": [
      2,
@@ -8822,18 +8822,18 @@
     ]
    },
    "sentinel": {
-    "cand": 26,
+    "cand": 25,
     "gaps": 0,
-    "min": 43664,
+    "min": 41275,
     "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
     "ARMOR-COMMON": 606,
-    "ARMOR-DOCS": 465,
+    "ARMOR-DOCS": 470,
     "ARMOR-HARDWARE": 85,
     "ARMOR-IOS-CONTROL": 483,
-    "ARMOR-NETWORK": 331,
+    "ARMOR-NETWORK": 332,
     "ARMOR-SERVER": 1152,
     "ARMOR-SERVER-AI": 191,
     "ARMOR-SIMULATOR": 407,
