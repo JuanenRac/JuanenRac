@@ -8233,11 +8233,11 @@
   },
   {
    "actions": {
-    "fail": 452,
-    "min": 66104,
-    "ok": 5977,
-    "other": 205,
-    "runs": 6634
+    "fail": 442,
+    "min": 65566,
+    "ok": 5986,
+    "other": 212,
+    "runs": 6640
    },
    "areas": {
     "armor": {
@@ -8281,7 +8281,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -8297,7 +8297,7 @@
     "eh3d": 45,
     "electro-hobby-3d": 61,
     "hydra-umc": 58,
-    "urtc": 55
+    "urtc": 56
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -8698,7 +8698,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.6.2"
+     "0.6.3"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -8770,7 +8770,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.7.9"
+     "1.8.0"
     ],
     "URTC": [
      1,
@@ -8818,9 +8818,9 @@
     ]
    },
    "sentinel": {
-    "cand": 22,
+    "cand": 23,
     "gaps": 0,
-    "min": 66104,
+    "min": 65566,
     "red": 1
    },
    "tests": {
@@ -8897,6 +8897,7 @@
     "HYDRA-UMC-IOS-CONTROL": 554,
     "HYDRA-UMC-JOB-DISPATCHER": 367,
     "HYDRA-UMC-LOCAL-TECHNICIAN": 420,
+    "HYDRA-UMC-MESHES": 11,
     "HYDRA-UMC-MQTT-BROKER": 260,
     "HYDRA-UMC-MTCONNECT-ADAPTER": 189,
     "HYDRA-UMC-NODE-HEALING": 224,
