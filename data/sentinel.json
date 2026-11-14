@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-14T13:04:40Z",
+ "asof": "2026-11-14T13:48:36Z",
  "ci": {
   "checked": 607,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 3511,
-    "min7": 3511,
+    "min24": 3300,
+    "min7": 3300,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -30,14 +30,14 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 951,
-    "min7": 951,
-    "repo": "HYDRA-UMC-SDK"
-   },
-   {
     "min24": 941,
     "min7": 941,
     "repo": "URTC-WEB-STUDIO"
+   },
+   {
+    "min24": 937,
+    "min7": 937,
+    "repo": "HYDRA-UMC-SDK"
    },
    {
     "min24": 838,
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-DEV-SERVER"
    }
   ],
-  "total24": 44556,
-  "total7": 63811,
+  "total24": 43664,
+  "total7": 63048,
   "warn": true
  },
  "ecosystems": {
@@ -79,11 +79,11 @@
    "unpub": 0
   },
   "urtc": {
-   "cand": 2,
+   "cand": 0,
    "read": 11,
    "red": 0,
    "repos": 11,
-   "unpub": 5
+   "unpub": 9
   }
  },
  "events": [
@@ -275,11 +275,9 @@
  },
  "hygiene": {
   "allowed_missing": [],
-  "gaps": 1,
+  "gaps": 0,
   "ruleset_checked": 130,
-  "ruleset_missing": [
-   "ARMOR-WATCH"
-  ],
+  "ruleset_missing": [],
   "settings_checked": 0,
   "sha_missing": []
  },
@@ -289,8 +287,8 @@
    "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 28,
-    "hyg": 1,
+    "cand": 26,
+    "hyg": 0,
     "red": 1
    }
   },
@@ -334,11 +332,9 @@
      "HYDRA-UMC-SEMANTIC-PLANNER",
      "HYDRA-UMC-SWARM-SYNC",
      "HYDRA-UMC-SYNTHETIC-DATA-GEN",
-     "HYDRA-UMC-VOICE-UI",
-     "URTC-UPDATER",
-     "URTC-VISION-TOOL"
+     "HYDRA-UMC-VOICE-UI"
     ],
-    "n": 28
+    "n": 26
    }
   },
   {
@@ -346,23 +342,17 @@
    "level": "warn",
    "p": {
     "list": [
+     "URTC",
      "URTC-COMMON",
      "URTC-DEVTOOLS",
      "URTC-FLASHER",
+     "URTC-GATEWAY",
      "URTC-TESTER",
+     "URTC-UPDATER",
+     "URTC-VISION-TOOL",
      "URTC-WEB-STUDIO"
     ],
-    "n": 5
-   }
-  },
-  {
-   "key": "hyg",
-   "level": "warn",
-   "p": {
-    "list": [
-     "ARMOR-WATCH"
-    ],
-    "n": 1
+    "n": 9
    }
   },
   {
@@ -377,7 +367,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 44556
+    "min": 43664
    }
   }
  ],
@@ -433,10 +423,10 @@
     "tag": "v0.2.4"
    },
    {
-    "entries": 9,
-    "published": "2026-11-08T00:57:32Z",
-    "repo": "URTC-VISION-TOOL",
-    "tag": "v0.2.0"
+    "entries": 8,
+    "published": "2026-11-12T05:09:37Z",
+    "repo": "ARMOR-DOCS",
+    "tag": "v0.8.1.9"
    },
    {
     "entries": 8,
@@ -473,18 +463,6 @@
     "published": "2026-11-05T22:36:44Z",
     "repo": "HYDRA-UMC-SEMANTIC-PLANNER",
     "tag": "v0.2.0"
-   },
-   {
-    "entries": 8,
-    "published": "2026-11-08T00:15:52Z",
-    "repo": "URTC-UPDATER",
-    "tag": "v0.2.9"
-   },
-   {
-    "entries": 7,
-    "published": "2026-11-12T05:09:37Z",
-    "repo": "ARMOR-DOCS",
-    "tag": "v0.8.1.9"
    },
    {
     "entries": 7,
@@ -555,7 +533,7 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 28
+  "total": 26
  },
  "repos": 130,
  "schema": 1,
@@ -712,7 +690,7 @@
    43,
    20,
    22,
-   28
+   26
   ],
   "dates": [
    "2026-11-03",
@@ -740,7 +718,7 @@
    1,
    0,
    0,
-   1
+   0
   ],
   "min": [
    8105,
@@ -754,7 +732,7 @@
    159,
    12959,
    70311,
-   44556
+   43664
   ],
   "red": [
    3,
@@ -774,6 +752,11 @@
  "unpublished": {
   "rows": [
    {
+    "repo": "URTC",
+    "tag": "v0.4.8",
+    "version": "0.4.9"
+   },
+   {
     "repo": "URTC-COMMON",
     "tag": "v0.2.6",
     "version": "0.2.7"
@@ -789,9 +772,24 @@
     "version": "0.5.7"
    },
    {
+    "repo": "URTC-GATEWAY",
+    "tag": "v0.0.8",
+    "version": "0.0.9"
+   },
+   {
     "repo": "URTC-TESTER",
     "tag": "v0.5.5",
     "version": "0.5.6"
+   },
+   {
+    "repo": "URTC-UPDATER",
+    "tag": "v0.2.9",
+    "version": "0.3.0"
+   },
+   {
+    "repo": "URTC-VISION-TOOL",
+    "tag": "v0.2.0",
+    "version": "0.2.1"
    },
    {
     "repo": "URTC-WEB-STUDIO",
@@ -799,6 +797,6 @@
     "version": "0.5.2"
    }
   ],
-  "total": 5
+  "total": 9
  }
 }

@@ -361,16 +361,16 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.8|専用ツールヘッド向けの Universal Robot Tool Controller ファームウェア。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|専用ツールヘッド向けの Universal Robot Tool Controller ファームウェア。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|CAN-OTAおよびフルチップSWD/JTAGファームウェアアップデート用GUIツール。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|CAN経由でのURTCツールプロファイルのリアルタイム検証用診断ツール。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|即時のハードウェアテストと分析のためのブラウザベースのWeb Serialツール。|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|自動予熱とライフサイクル監査を備えたインテリジェントなツールストレージ。|
-|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.0|アクティブQA用にサーマルカメラとRGBカメラが統合されたツールヘッド。|
-|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.9|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|
+|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|アクティブQA用にサーマルカメラとRGBカメラが統合されたツールヘッド。|
+|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.0|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.6|URTC のアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、CAN プロトコルのメモ、自動生成されるプロジェクトカタログ。|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.7|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
-|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.8|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
+|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.9|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.6|URTC ファミリーが共有するリポジトリツールを 1 つのバージョン管理されたセットにまとめたもの。各リポジトリにロックファイルを置きます。|
 
 \---
@@ -392,7 +392,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 **アップデーター：** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:armor -->
-`\[█████████████▊░░░░░░] 69%` — 実際のデータから算出しています。19 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[██████████████░░░░░░] 70%` — 実際のデータから算出しています。19 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -404,7 +404,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 | --- | :---: | --- | --- |
 | ソフトウェア | 🟢 | `█████████▌ 95%` | 19 件中 18 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
 | テスト | 🟢 | `█████████▌ 95%` | 19 件中 18 件のリポジトリに自動テストがあります。 |
-| 継続的インテグレーション | 🟢 | `█████████▌ 95%` | 19 件中 18 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 継続的インテグレーション | 🟢 | `██████████ 100%` | 19 件中 19 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟢 | `██████████ 100%` | 19 件中 19 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 19 件中 19 件のリポジトリに、8 言語すべての README があります。 |
 | シミュレーション | 🟢 | `█████████▌ 95%` | 19 件中 18 件のリポジトリが、少なくともシミュレーターで検証されています。 |

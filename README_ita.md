@@ -361,16 +361,16 @@ Ogni profilo di utensile gestisce il proprio watchdog e comportamento in caso di
 
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.8|Firmware dell'Universal Robot Tool Controller per teste utensile specializzate.|
+|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|Firmware dell'Universal Robot Tool Controller per teste utensile specializzate.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|Strumento GUI per aggiornamenti firmware CAN-OTA e SWD/JTAG full-chip.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Strumento diagnostico per la validazione in tempo reale dei profili utensile URTC su CAN.|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Strumento Web Serial basato su browser per test e analisi hardware istantanei.|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|Stoccaggio intelligente di utensili con preriscaldamento automatico e audit del ciclo di vita.|
-|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.0|Testa utensile con telecamere termiche e RGB integrate per QA attiva.|
-|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.9|Rileva, installa e aggiorna le repository URTC su una macchina a partire dai relativi manifest.|
+|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|Testa utensile con telecamere termiche e RGB integrate per QA attiva.|
+|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.0|Rileva, installa e aggiorna le repository URTC su una macchina a partire dai relativi manifest.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.6|Architettura, interfacce, base di sicurezza, matrice delle capacità, note sul protocollo CAN e catalogo dei progetti generato di URTC.|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.7|Il protocollo CAN della testa utensile come dati: specifica, codice C, TypeScript e Python generato, vettori di conformità e trasporti.|
-|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.8|Gateway davanti al bus CAN di URTC: elenco di identificatori consentiti, limite di frequenza e chiave di sessione.|
+|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.9|Gateway davanti al bus CAN di URTC: elenco di identificatori consentiti, limite di frequenza e chiave di sessione.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.6|Gli strumenti di repository condivisi della famiglia URTC come un unico insieme versionato, con un file di lock in ogni repository.|
 
 \---
@@ -392,7 +392,7 @@ Ogni profilo di utensile gestisce il proprio watchdog e comportamento in caso di
 **Aggiornatore:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:armor -->
-`\[█████████████▊░░░░░░] 69%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 19 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[██████████████░░░░░░] 70%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 19 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -404,7 +404,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▌ 95%` | 18 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 19 repository su 19 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 19 repository su 19 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 19 repository su 19 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `█████████▌ 95%` | 18 repository su 19 sono stati verificati almeno in un simulatore. |

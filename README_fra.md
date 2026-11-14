@@ -361,16 +361,16 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 
 |Dépôt|Version|Description|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.8|Firmware du Universal Robot Tool Controller pour têtes d'outil spécialisées.|
+|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|Firmware du Universal Robot Tool Controller pour têtes d'outil spécialisées.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|Outil graphique pour les mises à jour de micrologiciel CAN-OTA et SWD/JTAG pleine puce.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Outil de diagnostic pour la validation en temps réel des profils d'outils URTC sur CAN.|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Outil Web Serial basé sur le navigateur pour les tests et analyses matériels instantanés.|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|Stockage d'outils intelligent avec préchauffage automatique et audit du cycle de vie.|
-|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.0|Tête d'outil avec caméras thermique et RVB intégrées pour l'AQ active.|
-|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.2.9|Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes.|
+|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|Tête d'outil avec caméras thermique et RVB intégrées pour l'AQ active.|
+|[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.0|Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes.|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.6|Architecture, interfaces, socle de sécurité, matrice de capacités, notes sur le protocole CAN et catalogue de projets généré d'URTC.|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.7|Le protocole CAN de la tête d'outil sous forme de données : spécification, code C, TypeScript et Python généré, vecteurs de conformité et transports.|
-|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.8|Passerelle devant le bus CAN d'URTC : liste d'identifiants autorisés, limite de débit et clé de session.|
+|[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.9|Passerelle devant le bus CAN d'URTC : liste d'identifiants autorisés, limite de débit et clé de session.|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.6|Les outils de dépôt partagés de la famille URTC en un seul jeu versionné, avec un fichier de verrouillage dans chaque dépôt.|
 
 \---
@@ -392,7 +392,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 **Outil de mise à jour :** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:armor -->
-`\[█████████████▊░░░░░░] 69%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 19 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[██████████████░░░░░░] 70%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 19 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -404,7 +404,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont le README dans les huit langues. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont été vérifiés au moins dans un simulateur. |

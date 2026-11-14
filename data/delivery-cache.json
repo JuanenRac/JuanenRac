@@ -178,7 +178,6 @@
   "HYDRA-UMC-PATH-PLANNER-3D": {
    "art": true,
    "at": "2026-11-07T12:30:19Z",
-   "checked": true,
    "exp": "2026-12-07T12:29:51Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/actions/runs/42372687937",
    "wf": "binaries-build.yml"
@@ -221,7 +220,6 @@
   "HYDRA-UMC-SWARM-SYNC": {
    "art": true,
    "at": "2026-11-07T12:33:32Z",
-   "checked": true,
    "exp": "2026-12-07T12:33:04Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC/actions/runs/42372849295",
    "wf": "binaries-build.yml"
