@@ -269,7 +269,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-14T15:42:58Z",
-   "checked": true,
    "exp": "2026-11-21T15:41:22Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/43611268609",
    "wf": "exe-build.yml"
@@ -284,7 +283,6 @@
   "URTC-TESTER": {
    "art": true,
    "at": "2026-11-14T15:42:47Z",
-   "checked": true,
    "exp": "2026-11-21T15:41:01Z",
    "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/43611264840",
    "wf": "exe-build.yml"
@@ -292,7 +290,6 @@
   "URTC-VISION-TOOL": {
    "art": true,
    "at": "2026-11-14T15:40:56Z",
-   "checked": true,
    "exp": "2026-11-21T15:40:03Z",
    "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/43611286632",
    "wf": "firmware-build.yml"
@@ -658,8 +655,8 @@
    }
   },
   "URTC-FLASHER": {
-   "fp": "1994b67cec193711",
-   "on": "2026-11-13",
+   "fp": "40ff835a5836f68c",
+   "on": "2026-11-14",
    "r": {
     "ak": 1,
     "an": 1,
@@ -676,8 +673,8 @@
    }
   },
   "URTC-TESTER": {
-   "fp": "967bb9b13e9f4bf8",
-   "on": "2026-11-13",
+   "fp": "8f6ecb0cc0059688",
+   "on": "2026-11-14",
    "r": {
     "ak": 1,
     "an": 1,
@@ -685,8 +682,8 @@
    }
   },
   "URTC-VISION-TOOL": {
-   "fp": "d334a6aab7665280",
-   "on": "2026-11-08",
+   "fp": "e621541b6e2dd729",
+   "on": "2026-11-14",
    "r": {
     "ak": 1,
     "an": 1,
@@ -1304,7 +1301,7 @@
    }
   },
   "URTC-FLASHER": {
-   "fp": "1994b67cec193711",
+   "fp": "40ff835a5836f68c",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1332,7 +1329,7 @@
    }
   },
   "URTC-TESTER": {
-   "fp": "967bb9b13e9f4bf8",
+   "fp": "8f6ecb0cc0059688",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1340,6 +1337,20 @@
     "s": "verified",
     "sch": [
      "urtc-pkg/1"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
+  "URTC-VISION-TOOL": {
+   "fp": "e621541b6e2dd729",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 3,
+    "s": "verified",
+    "sch": [
+     "urtc-rel/1"
     ],
     "unk": 0,
     "why": []
