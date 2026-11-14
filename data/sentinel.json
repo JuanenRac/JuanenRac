@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-14T03:08:28Z",
+ "asof": "2026-11-14T03:17:15Z",
  "ci": {
-  "checked": 609,
+  "checked": 607,
   "red": [
    {
     "repo": "HYDRA-UMC-DOCS",
@@ -25,14 +25,9 @@
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 1488,
-    "min7": 1588,
+    "min24": 1510,
+    "min7": 1560,
     "repo": "HYDRA-UMC-IOS-CONTROL"
-   },
-   {
-    "min24": 1388,
-    "min7": 1388,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
     "min24": 1334,
@@ -40,13 +35,18 @@
     "repo": "URTC-WEB-STUDIO"
    },
    {
+    "min24": 1316,
+    "min7": 1316,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
+   },
+   {
     "min24": 1314,
     "min7": 1345,
     "repo": "HYDRA-UMC-DEV-SERVER"
    }
   ],
-  "total24": 65566,
-  "total7": 73368,
+  "total24": 65383,
+  "total7": 73059,
   "warn": true
  },
  "ecosystems": {
@@ -76,7 +76,7 @@
    "read": 59,
    "red": 1,
    "repos": 59,
-   "unpub": 1
+   "unpub": 0
   },
   "urtc": {
    "cand": 2,
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-14T03:17:15Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-SDK",
+   "tag": "v0.6.3"
+  },
   {
    "at": "2026-11-14T03:08:28Z",
    "kind": "released",
@@ -260,18 +266,12 @@
    "kind": "red_new",
    "repo": "URTC-DOCS",
    "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-13T12:48:10Z",
-   "kind": "red_ok",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "wf": "ci.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 40
+  "gap_minutes": 10
  },
  "hygiene": {
   "allowed_missing": [],
@@ -339,10 +339,9 @@
    "level": "warn",
    "p": {
     "list": [
-     "HYDRA-UMC-SDK",
      "URTC-DEVTOOLS"
     ],
-    "n": 2
+    "n": 1
    }
   },
   {
@@ -357,7 +356,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 65566
+    "min": 65383
    }
   }
  ],
@@ -618,7 +617,7 @@
   "HYDRA-UMC-PHYSICS-REPLICA": "v0.1.5",
   "HYDRA-UMC-PRODUCTION-REPORTS": "v0.2.1",
   "HYDRA-UMC-SAFETY-ZONES": "v0.2.4",
-  "HYDRA-UMC-SDK": "v0.6.2",
+  "HYDRA-UMC-SDK": "v0.6.3",
   "HYDRA-UMC-SEMANTIC-PLANNER": "v0.2.0",
   "HYDRA-UMC-SERVER": "v0.8.3.0",
   "HYDRA-UMC-STUDIO": "v0.8.2.0",
@@ -704,7 +703,7 @@
    159,
    12959,
    70311,
-   65566
+   65383
   ],
   "red": [
    3,
@@ -724,16 +723,11 @@
  "unpublished": {
   "rows": [
    {
-    "repo": "HYDRA-UMC-SDK",
-    "tag": "v0.6.2",
-    "version": "0.6.3"
-   },
-   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.6"
    }
   ],
-  "total": 2
+  "total": 1
  }
 }
