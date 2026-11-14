@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-14T15:55:18Z",
+ "asof": "2026-11-14T16:05:00Z",
  "ci": {
   "checked": 607,
   "red": [],
@@ -8,12 +8,12 @@
  "compute": {
   "top": [
    {
-    "min24": 2500,
-    "min7": 2500,
+    "min24": 2494,
+    "min7": 2494,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 1169,
+    "min24": 1150,
     "min7": 1554,
     "repo": "URTC-FLASHER"
    },
@@ -23,23 +23,23 @@
     "repo": "HYDRA-UMC-SDK"
    },
    {
-    "min24": 856,
-    "min7": 856,
-    "repo": "HYDRA-UMC-DEV-SERVER"
-   },
-   {
     "min24": 855,
     "min7": 855,
     "repo": "URTC-WEB-STUDIO"
    },
    {
-    "min24": 727,
-    "min7": 1647,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
+    "min24": 784,
+    "min7": 856,
+    "repo": "HYDRA-UMC-DEV-SERVER"
+   },
+   {
+    "min24": 646,
+    "min7": 776,
+    "repo": "URTC-TESTER"
    }
   ],
-  "total24": 35923,
-  "total7": 59514,
+  "total24": 35080,
+  "total7": 59330,
   "warn": true
  },
  "ecosystems": {
@@ -81,43 +81,43 @@
  },
  "events": [
   {
-   "at": "2026-11-14T15:55:18Z",
+   "at": "2026-11-14T16:05:00Z",
    "kind": "red_ok",
    "repo": "ARMOR-DOCS",
    "wf": "nightly.yml"
   },
   {
-   "at": "2026-11-14T15:55:18Z",
+   "at": "2026-11-14T16:05:00Z",
    "kind": "released",
    "repo": "ARMOR-DEVOPS",
    "tag": "v0.7.6"
   },
   {
-   "at": "2026-11-14T15:55:18Z",
+   "at": "2026-11-14T16:05:00Z",
    "kind": "released",
    "repo": "URTC",
    "tag": "v0.4.9"
   },
   {
-   "at": "2026-11-14T15:55:18Z",
+   "at": "2026-11-14T16:05:00Z",
    "kind": "released",
    "repo": "URTC-COMMON",
    "tag": "v0.2.7"
   },
   {
-   "at": "2026-11-14T15:55:18Z",
+   "at": "2026-11-14T16:05:00Z",
    "kind": "released",
    "repo": "URTC-GATEWAY",
    "tag": "v0.0.9"
   },
   {
-   "at": "2026-11-14T15:55:18Z",
+   "at": "2026-11-14T16:05:00Z",
    "kind": "released",
    "repo": "URTC-UPDATER",
    "tag": "v0.3.0"
   },
   {
-   "at": "2026-11-14T15:55:18Z",
+   "at": "2026-11-14T16:05:00Z",
    "kind": "released",
    "repo": "URTC-WEB-STUDIO",
    "tag": "v0.5.2"
@@ -264,7 +264,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 40
+  "gap_minutes": 50
  },
  "hygiene": {
   "allowed_missing": [],
@@ -345,7 +345,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 35923
+    "min": 35080
    }
   }
  ],
@@ -680,7 +680,7 @@
    159,
    12959,
    70311,
-   35923
+   35080
   ],
   "red": [
    3,
