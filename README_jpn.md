@@ -480,7 +480,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 | --- | :---: | --- | --- |
 | ソフトウェア | 🟠 | `█████▌░░░░ 55%` | 38 件中 21 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
 | テスト | 🟡 | `████████▉░ 89%` | 38 件中 34 件のリポジトリに自動テストがあります。 |
-| 継続的インテグレーション | 🟢 | `██████████ 100%` | 38 件中 38 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 継続的インテグレーション | 🟢 | `█████████▊ 97%` | 38 件中 37 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟢 | `██████████ 100%` | 38 件中 38 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 38 件中 38 件のリポジトリに、8 言語すべての README があります。 |
 | シミュレーション | 🔴 | `██▍░░░░░░░ 24%` | 38 件中 9 件のリポジトリが、少なくともシミュレーターで検証されています。 |
@@ -510,12 +510,12 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.5|マニフェストからスイートのプログラムを見つけて起動し、最近のプロジェクトと、ファイルの SHA-256 付きプロジェクト ファイル（.eh3dproj）を保持します。ウィンドウとネットワーク上の機械の検出は計画中です。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.2.1|共有データモデル：整合性チェック付きの .eh3dproj プロジェクトコンテナ、マシンテレメトリの型、そして各 ESP32 ノードがコピーして使うファームウェアベース。|
-|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.9|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.0|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.9|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.9|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D と HYDRA-UMC の両エコシステムをつなぐアダプター(計画中・コードはまだありません)。|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.5|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.3|EH3D-SERVER 向けの Rust 製 Web クライアント。|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.6|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.4|EH3D-SERVER 向けの Rust 製 Web クライアント。|
 
 ### 💠 ドリル／ルーター／ミリングのプロジェクト：
 |リポジトリ|バージョン|説明|

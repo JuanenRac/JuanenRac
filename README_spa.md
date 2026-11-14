@@ -480,7 +480,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▌░░░░ 55%` | 21 de 38 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟡 | `████████▉░ 89%` | 34 de 38 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 38 de 38 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `█████████▊ 97%` | 37 de 38 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 38 de 38 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 38 de 38 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `██▍░░░░░░░ 24%` | 9 de 38 repositorios se han comprobado al menos en un simulador. |
@@ -510,12 +510,12 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.5|Encuentra los programas de la suite por sus manifiestos, los arranca y guarda los proyectos recientes y el fichero de proyecto (.eh3dproj) con el SHA-256 de sus ficheros; la ventana y el descubrimiento de máquinas en la red están previstos.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.2.1|Modelo de datos compartido: el contenedor de proyecto .eh3dproj con comprobaciones de integridad, los tipos de telemetría de máquina y la base de firmware que copia cada nodo ESP32.|
-|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.9|Documentación del ecosistema, guías de ensamblaje, especificaciones técnicas de pasarelas y manuales de integración.|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.0|Documentación del ecosistema, guías de ensamblaje, especificaciones técnicas de pasarelas y manuales de integración.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.9|Lectores en Rust para Gerber RS-274X, ficheros de taladrado Excellon y código G (dialectos GRBL, Marlin y PlanetCNC), tolerantes a ficheros dañados.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.9|Detecta, instala y actualiza los repositorios propios del ecosistema (atómico por verificación, sin necesidad de GITHUB\_TOKEN).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adaptador entre los ecosistemas EH3D y HYDRA-UMC (previsto; aún sin código).|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.5|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.3|Cliente web en Rust de EH3D-SERVER.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.6|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.4|Cliente web en Rust de EH3D-SERVER.|
 
 ### 💠 Proyectos de taladrado, fresado y contorneado:
 |Repositorio|Versión|Descripción|

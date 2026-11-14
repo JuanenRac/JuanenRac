@@ -8233,11 +8233,11 @@
   },
   {
    "actions": {
-    "fail": 283,
-    "min": 32944,
-    "ok": 5125,
-    "other": 138,
-    "runs": 5546
+    "fail": 279,
+    "min": 32787,
+    "ok": 5160,
+    "other": 132,
+    "runs": 5571
    },
    "areas": {
     "armor": {
@@ -8422,7 +8422,7 @@
     ],
     "EH3D-DOCS": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-DRILLPRO": [
      1,
@@ -8498,7 +8498,7 @@
     ],
     "EH3D-SERVER": [
      1,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-STENCILCAM": [
      1,
@@ -8506,7 +8506,7 @@
     ],
     "EH3D-STUDIO": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "EH3D-SUITE-LAUNCHER": [
      1,
@@ -8822,10 +8822,10 @@
     ]
    },
    "sentinel": {
-    "cand": 21,
+    "cand": 22,
     "gaps": 0,
-    "min": 32944,
-    "red": 0
+    "min": 32787,
+    "red": 2
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -8935,7 +8935,7 @@
     "HYDRA-UMC-WATCH": 192,
     "URTC-COMMON": 3008,
     "URTC-DEVTOOLS": 134,
-    "URTC-DOCS": 224,
+    "URTC-DOCS": 229,
     "URTC-FLASHER": 913,
     "URTC-GATEWAY": 225,
     "URTC-SMART-RACK": 772,

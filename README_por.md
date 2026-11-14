@@ -480,7 +480,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▌░░░░ 55%` | 21 de 38 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟡 | `████████▉░ 89%` | 34 de 38 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 38 de 38 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `█████████▊ 97%` | 37 de 38 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 38 de 38 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 38 de 38 repositórios têm o README nas oito línguas. |
 | Simulação | 🔴 | `██▍░░░░░░░ 24%` | 9 de 38 repositórios foram verificados pelo menos num simulador. |
@@ -510,12 +510,12 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.5|Encontra os programas da suíte pelos seus manifestos, arranca-os e guarda os projetos recentes e o ficheiro de projeto (.eh3dproj) com o SHA-256 dos seus ficheiros; a janela e a descoberta de máquinas na rede estão previstas.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.2.1|Modelo de dados partilhado: o contentor de projeto .eh3dproj com verificações de integridade, os tipos de telemetria da máquina e a base de firmware copiada por cada nó ESP32.|
-|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.0.9|Documentação do ecossistema, guias de montagem, especificações técnicas de gateway e manuais de integração.|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.0|Documentação do ecossistema, guias de montagem, especificações técnicas de gateway e manuais de integração.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.0.9|Leitores em Rust para Gerber RS-274X, ficheiros de furação Excellon e G-code (dialetos GRBL, Marlin e PlanetCNC), tolerantes a ficheiros danificados.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.9|Detecta, instala e atualiza os próprios repositórios do ecossistema (atômico por verificação, sem necessidade de GITHUB\_TOKEN).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adaptador entre os ecossistemas EH3D e HYDRA-UMC (previsto; ainda sem código).|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.5|Servidor em Rust com interface REST e websocket: utilizadores, máquinas e trabalhos, planeamento de trabalhos de furação e fresagem com as bibliotecas do DRILLPRO e do ROUTEPRO, um trabalho de cada vez por máquina.|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.3|Cliente web em Rust do EH3D-SERVER.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.6|Servidor em Rust com interface REST e websocket: utilizadores, máquinas e trabalhos, planeamento de trabalhos de furação e fresagem com as bibliotecas do DRILLPRO e do ROUTEPRO, um trabalho de cada vez por máquina.|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.4|Cliente web em Rust do EH3D-SERVER.|
 
 ### 💠 Projetos de furação, contorno e fresagem:
 |Repositório|Versão|Descrição|
