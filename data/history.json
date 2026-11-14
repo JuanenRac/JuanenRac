@@ -8233,11 +8233,11 @@
   },
   {
    "actions": {
-    "fail": 279,
-    "min": 32787,
-    "ok": 5160,
-    "other": 132,
-    "runs": 5571
+    "fail": 264,
+    "min": 31066,
+    "ok": 5007,
+    "other": 138,
+    "runs": 5409
    },
    "areas": {
     "armor": {
@@ -8251,7 +8251,7 @@
      "tests": 95
     },
     "eh3d": {
-     "ci": 100,
+     "ci": 97,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -8402,7 +8402,7 @@
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
-     "0.0.3"
+     "0.0.4"
     ],
     "EH3D-CORE-LIBS": [
      1,
@@ -8410,15 +8410,15 @@
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-DESIGN-HISTORY": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-DESIGN-VERIFIER": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-DOCS": [
      1,
@@ -8426,11 +8426,11 @@
     ],
     "EH3D-DRILLPRO": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "EH3D-GERBERVIEWER": [
      1,
-     "0.0.6"
+     "0.0.7"
     ],
     "EH3D-HYDRA-BRIDGE": [
      0,
@@ -8474,15 +8474,15 @@
     ],
     "EH3D-PHOENIX-CNC": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-PHOENIX-PNP": [
      1,
@@ -8494,7 +8494,7 @@
     ],
     "EH3D-ROUTEPRO": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "EH3D-SERVER": [
      1,
@@ -8510,7 +8510,7 @@
     ],
     "EH3D-SUITE-LAUNCHER": [
      1,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-THERMAL-LAB": [
      0,
@@ -8530,7 +8530,7 @@
     ],
     "EH3D-VISION-STUDIO": [
      1,
-     "0.0.3"
+     "0.0.4"
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
@@ -8824,12 +8824,12 @@
    "sentinel": {
     "cand": 22,
     "gaps": 0,
-    "min": 32787,
-    "red": 2
+    "min": 31066,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
-    "ARMOR-COMMON": 617,
+    "ARMOR-COMMON": 620,
     "ARMOR-DOCS": 470,
     "ARMOR-HARDWARE": 85,
     "ARMOR-IOS-CONTROL": 483,

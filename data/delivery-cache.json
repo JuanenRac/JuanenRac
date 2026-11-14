@@ -122,7 +122,6 @@
   "HYDRA-UMC": {
    "art": true,
    "at": "2026-11-14T16:58:38Z",
-   "checked": true,
    "exp": "2026-11-21T16:57:26Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43618143557",
    "wf": "firmware-build.yml"
@@ -448,24 +447,6 @@
     "at": "present"
    }
   },
-  "EH3D-DRILLPRO": {
-   "fp": "f58fac6b445647f0",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-GERBERVIEWER": {
-   "fp": "e96043d8ee884f3c",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-ISOCAM": {
    "fp": "d5f4d216d70e9c9e",
    "on": "2026-11-06",
@@ -511,24 +492,6 @@
     "at": "present"
    }
   },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "d7927354e934057d",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "dc2a742d378efd54",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-PHOENIX-PNP": {
    "fp": "4c12eb23f5c07083",
    "on": "2026-11-07",
@@ -547,15 +510,6 @@
     "at": "present"
    }
   },
-  "EH3D-SERVER": {
-   "fp": "faef9a147ab2f16e",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-STENCILCAM": {
    "fp": "8bb4bf50cc2e1bc9",
    "on": "2026-11-13",
@@ -565,35 +519,8 @@
     "at": "present"
    }
   },
-  "EH3D-STUDIO": {
-   "fp": "33aa58a4ecf2c5d0",
-   "on": "2026-11-07",
-   "r": {
-    "ak": 1,
-    "an": 1,
-    "at": "present"
-   }
-  },
-  "EH3D-SUITE-LAUNCHER": {
-   "fp": "8f818ae2230b87cd",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-TOOL-MANAGER": {
    "fp": "11a08b0608faa71b",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-VISION-STUDIO": {
-   "fp": "89a0801b71120ce4",
    "on": "2026-11-06",
    "r": {
     "ak": 3,
@@ -907,34 +834,6 @@
     ]
    }
   },
-  "EH3D-DRILLPRO": {
-   "fp": "f58fac6b445647f0",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 10,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-GERBERVIEWER": {
-   "fp": "e96043d8ee884f3c",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-ISOCAM": {
    "fp": "d5f4d216d70e9c9e",
    "r": {
@@ -1005,34 +904,6 @@
     ]
    }
   },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "d7927354e934057d",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "dc2a742d378efd54",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-PHOENIX-PNP": {
    "fp": "4c12eb23f5c07083",
    "r": {
@@ -1061,20 +932,6 @@
     ]
    }
   },
-  "EH3D-SERVER": {
-   "fp": "faef9a147ab2f16e",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 4,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-STENCILCAM": {
    "fp": "8bb4bf50cc2e1bc9",
    "r": {
@@ -1089,50 +946,8 @@
     ]
    }
   },
-  "EH3D-STUDIO": {
-   "fp": "33aa58a4ecf2c5d0",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 1,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-SUITE-LAUNCHER": {
-   "fp": "8f818ae2230b87cd",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-TOOL-MANAGER": {
    "fp": "11a08b0608faa71b",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-VISION-STUDIO": {
-   "fp": "89a0801b71120ce4",
    "r": {
     "bad": 0,
     "ho": 0,
