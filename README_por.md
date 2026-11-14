@@ -361,7 +361,7 @@ Cada perfil de ferramenta carrega seu próprio watchdog e comportamento de falha
 
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|Firmware do Universal Robot Tool Controller para cabeças de ferramenta especializadas.|
+|[URTC](https://github.com/JuanenRac/URTC)|0.5.0|Firmware do Universal Robot Tool Controller para cabeças de ferramenta especializadas.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|Ferramenta GUI para atualizações de firmware CAN-OTA e SWD/JTAG de chip completo.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Ferramenta de diagnóstico para validação em tempo real de perfis de ferramentas URTC via CAN.|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Ferramenta Web Serial baseada em navegador para testes e análises de hardware instantâneos.|
@@ -574,8 +574,8 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 ### 💠 Projetos ANDROID/IOS:
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|Aplicação Android cliente do EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|Aplicação iOS cliente do EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.0|Aplicação Android cliente do EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.0|Aplicação iOS cliente do EH3D-SERVER.|
 
 ### 🛠️ Ferramentas complementares
 |Repositório|Versão|Descrição|
@@ -597,7 +597,7 @@ Fora dos quatro ecossistemas há um quinto grupo: ferramentas independentes que 
 **Atualizador:** nenhum próprio; o [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) é uma das suas ferramentas e passa o trabalho ao atualizador de cada um dos quatro ecossistemas.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 2 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[███████████▋░░░░░░░░] 58%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 2 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +609,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 de 2 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 2 de 2 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 2 de 2 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 2 de 2 repositórios têm o README nas oito línguas. |
 | Simulação | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositórios foram verificados pelo menos num simulador. |

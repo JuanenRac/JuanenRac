@@ -361,7 +361,7 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|Universal-Robot-Tool-Controller-Firmware für spezialisierte Werkzeugköpfe.|
+|[URTC](https://github.com/JuanenRac/URTC)|0.5.0|Universal-Robot-Tool-Controller-Firmware für spezialisierte Werkzeugköpfe.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|GUI-Tool für CAN-OTA und Vollchip-SWD/JTAG-Firmware-Updates.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Diagnose-Tool zur Echtzeit-Validierung von URTC-Werkzeugprofilen über CAN.|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Browserbasiertes Web-Serial-Tool für sofortige Hardware-Tests und Analysen.|
@@ -574,8 +574,8 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 ### 💠 ANDROID/IOS-Projekte:
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|Android-App als Client von EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|iOS-App als Client von EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.0|Android-App als Client von EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.0|iOS-App als Client von EH3D-SERVER.|
 
 ### 🛠️ Ergänzende Werkzeuge
 |Repository|Version|Beschreibung|
@@ -597,7 +597,7 @@ Neben den vier Ökosystemen gibt es eine fünfte Gruppe: eigenständige Werkzeug
 **Updater:** keinen eigenen; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) ist eines seiner Werkzeuge und übergibt an den Updater jedes der vier Ökosysteme.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 2 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[███████████▋░░░░░░░░] 58%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 2 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +609,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 von 2 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟠 | `█████░░░░░ 50%` | 1 von 2 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟠 | `█████░░░░░ 50%` | 1 von 2 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 von 2 Repositories wurden mindestens in einem Simulator geprüft. |

@@ -361,7 +361,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|専用ツールヘッド向けの Universal Robot Tool Controller ファームウェア。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.5.0|専用ツールヘッド向けの Universal Robot Tool Controller ファームウェア。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|CAN-OTAおよびフルチップSWD/JTAGファームウェアアップデート用GUIツール。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|CAN経由でのURTCツールプロファイルのリアルタイム検証用診断ツール。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|即時のハードウェアテストと分析のためのブラウザベースのWeb Serialツール。|
@@ -574,8 +574,8 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 ANDROID/IOS のプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|EH3D-SERVER 向けの Android アプリ（クライアント）。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.0|EH3D-SERVER 向けの Android アプリ（クライアント）。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.0|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
 
 ### 🛠️ 補完ツール
 |リポジトリ|バージョン|説明|
@@ -597,7 +597,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 **アップデーター:** 専用のものはありません。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) はこのグループのツールの 1 つで、4 つのエコシステムそれぞれのアップデーターに処理を引き渡します。
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — 実際のデータから算出しています。2 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[███████████▋░░░░░░░░] 58%` — 実際のデータから算出しています。2 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +609,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 | --- | :---: | --- | --- |
 | ソフトウェア | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
 | テスト | 🟠 | `█████░░░░░ 50%` | 2 件中 1 件のリポジトリに自動テストがあります。 |
-| 継続的インテグレーション | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 継続的インテグレーション | 🟠 | `█████░░░░░ 50%` | 2 件中 1 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリに、8 言語すべての README があります。 |
 | シミュレーション | 🔴 | `░░░░░░░░░░ 0%` | 2 件中 0 件のリポジトリが、少なくともシミュレーターで検証されています。 |

@@ -361,7 +361,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 
 |Dépôt|Version|Description|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|Firmware du Universal Robot Tool Controller pour têtes d'outil spécialisées.|
+|[URTC](https://github.com/JuanenRac/URTC)|0.5.0|Firmware du Universal Robot Tool Controller pour têtes d'outil spécialisées.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|Outil graphique pour les mises à jour de micrologiciel CAN-OTA et SWD/JTAG pleine puce.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Outil de diagnostic pour la validation en temps réel des profils d'outils URTC sur CAN.|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Outil Web Serial basé sur le navigateur pour les tests et analyses matériels instantanés.|
@@ -574,8 +574,8 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 ### 💠 Projets ANDROID/IOS :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|Application Android cliente d'EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|Application iOS cliente d'EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.0|Application Android cliente d'EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.0|Application iOS cliente d'EH3D-SERVER.|
 
 ### 🛠️ Outils complémentaires
 |Dépôt|Version|Description|
@@ -597,7 +597,7 @@ En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils 
 **Outil de mise à jour :** aucun en propre ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) est l'un de ses outils et passe la main à l'outil de mise à jour de chacun des quatre écosystèmes.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[███████████▋░░░░░░░░] 58%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +609,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `██████████ 100%` | 2 dépôts sur 2 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont le README dans les huit langues. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 2 ont été vérifiés au moins dans un simulateur. |

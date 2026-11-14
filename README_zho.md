@@ -361,7 +361,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.4.9|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.5.0|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
@@ -574,8 +574,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 ANDROID/IOS 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.0.9|EH3D-SERVER 的 Android 应用客户端。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.0.9|EH3D-SERVER 的 iOS 应用客户端。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.0|EH3D-SERVER 的 Android 应用客户端。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.0|EH3D-SERVER 的 iOS 应用客户端。|
 
 ### 🛠️ 辅助工具
 |仓库|版本|描述|
@@ -597,7 +597,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器:**没有自己的更新器;[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 是其中一个工具,它把工作交给四个生态系统各自的更新器。
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — 根据真实数据计算：其 2 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[███████████▋░░░░░░░░] 58%` — 根据真实数据计算：其 2 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +609,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 | --- | :---: | --- | --- |
 | 软件 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟠 | `█████░░░░░ 50%` | 2 个仓库中有 1 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟠 | `█████░░░░░ 50%` | 2 个仓库中有 1 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个提供八种语言的 README。 |
 | 仿真 | 🔴 | `░░░░░░░░░░ 0%` | 2 个仓库中有 0 个至少在仿真器中验证过。 |

@@ -355,7 +355,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [URTC](https://github.com/JuanenRac/URTC) | 0.4.9 | Universal Robot Tool Controller firmware for specialized tool heads. |
+| [URTC](https://github.com/JuanenRac/URTC) | 0.5.0 | Universal Robot Tool Controller firmware for specialized tool heads. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.5.7 | GUI tool for CAN-OTA and full-chip SWD/JTAG firmware updates. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.5.6 | Diagnostic tool for real-time validation of URTC tool profiles over CAN. |
 | [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.5.2 | Browser-based Web Serial tool for instant hardware testing and analysis. |
@@ -575,8 +575,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 ANDROID/IOS projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.0.9 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
-| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.0.9 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
+| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.1.0 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
+| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.1.0 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
 
 
 ### 🛠️ Complementary Tools
@@ -599,7 +599,7 @@ Outside the four ecosystems there is a fifth group: independent tools that stand
 **Updater:** none of its own; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) is one of its tools and hands over to the updater of each of the four ecosystems.
 
 <!-- progress:electro-hobby-3d -->
-`[████████████▎░░░░░░░] 61%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[███████████▋░░░░░░░░] 58%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -611,7 +611,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 of 2 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟠 | `█████░░░░░ 50%` | 1 of 2 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 2 of 2 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟠 | `█████░░░░░ 50%` | 1 of 2 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 2 of 2 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 2 of 2 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 2 repositories have been checked at least in a simulator. |

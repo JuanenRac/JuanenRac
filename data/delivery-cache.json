@@ -213,7 +213,8 @@
   "HYDRA-UMC-SUITE": {
    "art": true,
    "at": "2026-11-07T20:15:45Z",
-   "exp": "2026-11-14T20:10:59Z",
+   "checked": true,
+   "exp": "2026-12-07T20:14:16Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42409419173",
    "wf": "exe-build.yml"
   },
@@ -411,15 +412,6 @@
     "at": "absent"
    }
   },
-  "EH3D-ANDROID-CONTROL": {
-   "fp": "4915954468e60437",
-   "on": "2026-11-12",
-   "r": {
-    "ak": 0,
-    "an": 1,
-    "at": "absent"
-   }
-  },
   "EH3D-AUTOLEVEL": {
    "fp": "e75b7312dda0a47b",
    "on": "2026-11-06",
@@ -501,15 +493,6 @@
     "at": "present"
    }
   },
-  "EH3D-ROUTEPRO": {
-   "fp": "79cffb30f75eea6d",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-STENCILCAM": {
    "fp": "8bb4bf50cc2e1bc9",
    "on": "2026-11-13",
@@ -574,7 +557,7 @@
    }
   },
   "URTC": {
-   "fp": "39da1992d40dd4c4",
+   "fp": "1b3f3df3cfb45d5c",
    "on": "2026-11-14",
    "r": {
     "ak": 3,
@@ -918,20 +901,6 @@
     ]
    }
   },
-  "EH3D-ROUTEPRO": {
-   "fp": "79cffb30f75eea6d",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 10,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-STENCILCAM": {
    "fp": "8bb4bf50cc2e1bc9",
    "r": {
@@ -1103,7 +1072,7 @@
    }
   },
   "URTC": {
-   "fp": "39da1992d40dd4c4",
+   "fp": "1b3f3df3cfb45d5c",
    "r": {
     "bad": 0,
     "ho": 0,
