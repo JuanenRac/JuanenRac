@@ -417,7 +417,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 1. **共有契約**: **ARMOR-COMMON**は、JSON Schema、Pythonバリデーター、および他のすべてのリポジトリが再定義することなく消費する生成済みのTypeScript/Kotlin型など、メッセージの意味を所有します。
 2. **フィールドノード**: レーダー/プレゼンス検知用ESP32-S3ファームウェア（**ARMOR-NODE-RADAR**）、ソーラーインバーターおよびバッテリー監視（**ARMOR-NODE-SOLAR**）、スイッチング付き電力計測（**ARMOR-NODE-ELECTRICAL**）、および家の警報パネル（**ARMOR-NODE-ALARM**）。Pythonエージェント（**ARMOR-NETWORK**）は、すでに接続されているマシンから家のローカルネットワークとインターネットの到達性を監視します。
 3. **中央コーディネーター**: **ARMOR-SERVER**は、状態、ユーザー、アラーム、自動化、カメラのエビデンスを保持します。**ARMOR-SERVER-AI**および**ARMOR-VOICE-AI**は、説明可能な視覚ポリシーと、自律的に動作を行わないオフラインの音声インテントを追加します。
-4. **オペレータークライアント**: **ARMOR-STUDIO**（Web）および **ARMOR-ANDROID-CONTROL**（モバイル）、**ARMOR-IOS-CONTROL**（iPhone）は中央サーバーのクライアントであり、フィールドネットワークと直接通信することはありません。**ARMOR-NODE-HMI**は壁面のタッチパネル（Waveshare ESP32-S3-Touch-LCD-7C-BOX）であり、状態の表示、武装、武装解除、確認を行い、音声アシスタントが常駐する場所となります。
+4. **オペレータークライアント**: **ARMOR-STUDIO**（Web）および **ARMOR-ANDROID-CONTROL**（モバイル）、**ARMOR-IOS-CONTROL**（iPhone）、最小構成のウォッチ **ARMOR-WATCH** は中央サーバーのクライアントであり、フィールドネットワークと直接通信することはありません。**ARMOR-NODE-HMI**は壁面のタッチパネル（Waveshare ESP32-S3-Touch-LCD-7C-BOX）であり、状態の表示、武装、武装解除、確認を行い、音声アシスタントが常駐する場所となります。
 5. **デプロイとテスト**: **ARMOR-DEVOPS**はサービスグラフ全体をデプロイします。**ARMOR-SIMULATOR**は実際のハードウェアなしでシナリオや再現可能な障害をリプレイします。**ARMOR-HARDWARE**は筐体設計とベンチ受け入れマトリックスを担います。
 6. **エコシステム運用**: **ARMOR-UPDATER**は、HYDRA-UMC-UPDATERと同じ検証によるアトミック設計により、マシン上のすべてのA.R.M.O.R.リポジトリを検出し、インストールし、更新します。**ARMOR-DOCS**は正規のアーキテクチャドキュメントおよび能力マトリックスです。**ARMOR-STUDIO**は、エコシステムのリリースキーで署名されたパッケージから中央マシンのサービスを更新することもでき、インストール前に各署名を検証します。
 
@@ -443,6 +443,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.4|運用コンソール。警報、機器、自動化、履歴、PTZ、レーダーマップ、太陽光・電気メニュー、ノード更新、2D/3D デザイナー。|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.7|Android 用のオペレータークライアント。警戒の設定・解除、警報、機器、ライブレーダー、太陽光、履歴、通知、音声アシスタント、ノード設定。|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.5|iPhone 用オペレータークライアント：状態、武装、アラーム、アラームパネル、カメラ、アシスタント。8 言語対応。|
+|[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.1|最小構成のウォッチクライアント：スマートフォンが送るアラーム通知を表示し、1タップでアラームを確認。ウォッチにセッションや鍵は置きません。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.9|筐体設計（レーダーコーナーエンクロージャー。ソーラー、電気、アラームノード用のチェックボックス付き）およびベンチ受け入れマトリックス。|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Compose 構成、テストベンチ用インストーラー、バックアップと復元、TLS プロファイル、専用 MQTT ブローカー、監視・音声サービス、管理エージェント。|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|シナリオと再現可能な障害。|

@@ -417,7 +417,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 1. **共享契约**：**ARMOR-COMMON** 拥有消息含义——JSON Schema、Python 验证器以及所有其他仓库消费且从不重新定义的生成的 TypeScript/Kotlin 类型。
 2. **现场节点**：用于雷达/存在感测的 ESP32-S3 固件（**ARMOR-NODE-RADAR**）、太阳能逆变器和电池监控（**ARMOR-NODE-SOLAR**）、带开关控制的电量计量（**ARMOR-NODE-ELECTRICAL**）以及房屋的报警面板（**ARMOR-NODE-ALARM**）；Python 代理（**ARMOR-NETWORK**）从已连接的机器上监视房屋自身的局域网和互联网连通性。
 3. **中央协调器**：**ARMOR-SERVER** 保存状态、用户、警报、自动化和相机证据；**ARMOR-SERVER-AI** 和 **ARMOR-VOICE-AI** 添加了可解释的视觉策略和离线语音意图，这些意图绝不会自行触发任何动作。
-4. **操作员客户端**：**ARMOR-STUDIO**（Web 端）和 **ARMOR-ANDROID-CONTROL**（移动端）、**ARMOR-IOS-CONTROL**（iPhone）是中央服务器的客户端，绝不直接连接现场网络。**ARMOR-NODE-HMI** 是墙上的触摸屏面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示系统状态、布防、撤防和确认，并将成为语音助理的驻留地。
+4. **操作员客户端**：**ARMOR-STUDIO**（Web 端）和 **ARMOR-ANDROID-CONTROL**（移动端）、**ARMOR-IOS-CONTROL**（iPhone）和极简手表 **ARMOR-WATCH** 是中央服务器的客户端，绝不直接连接现场网络。**ARMOR-NODE-HMI** 是墙上的触摸屏面板（Waveshare ESP32-S3-Touch-LCD-7C-BOX），显示系统状态、布防、撤防和确认，并将成为语音助理的驻留地。
 5. **部署与测试**：**ARMOR-DEVOPS** 部署整个服务图；**ARMOR-SIMULATOR** 在没有真实硬件的情况下重放场景和可重复的故障；**ARMOR-HARDWARE** 承载外壳设计及其台架验收矩阵。
 6. **生态系统运维**：**ARMOR-UPDATER** 在机器上发现、安装和更新每个 A.R.M.O.R. 仓库，采用与 HYDRA-UMC-UPDATER 相同的通过验证实现原子化的设计；**ARMOR-DOCS** 是规范的架构文档和能力矩阵。**ARMOR-STUDIO** 还可以使用生态系统发布密钥签名的软件包更新中央机器上的服务，在安装前检查每个签名。
 
@@ -443,6 +443,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.4|运维控制台：报警、设备、自动化、历史记录、PTZ、雷达地图、太阳能和电气菜单、节点更新以及 2D/3D 设计器。|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.7|Android 操作端：布防与撤防、报警、设备、实时雷达、太阳能、历史记录、通知、语音助手以及节点配置器。|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.5|iPhone 操作员客户端：状态、布防、告警、报警面板、摄像头和助理，提供八种语言。|
+|[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.1|极简手表客户端：显示手机发来的告警通知，一次点按即可确认告警；手表上不保存会话，也不保存密钥。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.9|外壳设计（雷达角落外壳；太阳能、电气和报警节点的勾选框）以及台架验收矩阵。|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Compose 拓扑、测试台安装程序、备份与恢复、TLS 配置、自有 MQTT 代理、观测和语音服务以及管理代理。|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|场景和可重复故障。|

@@ -826,6 +826,16 @@
       "zh": "iPhone 操作员客户端：状态、布防、告警、报警面板、摄像头和助理，提供八种语言。",
       "pt": "Cliente de operador para iPhone: estado, armar, alarmes, painéis de alarme, câmaras e o assistente, em oito idiomas."
     },
+    "ARMOR-WATCH": {
+      "en": "Minimal watch client: shows the alarm notices the phone sends and confirms an alarm with one tap; no session or keys on the watch.",
+      "es": "Cliente de reloj mínimo: muestra los avisos de alarma que envía el móvil y confirma una alarma con un toque; sin sesión ni claves en el reloj.",
+      "de": "Minimaler Uhr-Client: zeigt die vom Handy gesendeten Alarmmeldungen und bestätigt einen Alarm mit einem Tipp; keine Sitzung und keine Schlüssel auf der Uhr.",
+      "fr": "Client de montre minimal : affiche les avis d'alarme envoyés par le téléphone et confirme une alarme d'un seul appui ; ni session ni clés sur la montre.",
+      "it": "Client per orologio minimo: mostra gli avvisi di allarme inviati dal telefono e conferma un allarme con un tocco; nessuna sessione né chiavi sull'orologio.",
+      "ja": "最小構成のウォッチクライアント：スマートフォンが送るアラーム通知を表示し、1タップでアラームを確認。ウォッチにセッションや鍵は置きません。",
+      "zh": "极简手表客户端：显示手机发来的告警通知，一次点按即可确认告警；手表上不保存会话，也不保存密钥。",
+      "pt": "Cliente de relógio mínimo: mostra os avisos de alarme enviados pelo telemóvel e confirma um alarme com um toque; sem sessão nem chaves no relógio."
+    },
     "ARMOR-HARDWARE": {
       "en": "Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix.",
       "es": "Diseños de carcasas (la carcasa de esquina para radar; una caja marcada para los nodos solar, eléctrico y de alarma) y matriz de aceptación en banco.",
