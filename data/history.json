@@ -8233,11 +8233,11 @@
   },
   {
    "actions": {
-    "fail": 208,
-    "min": 12590,
-    "ok": 4530,
-    "other": 80,
-    "runs": 4818
+    "fail": 213,
+    "min": 12143,
+    "ok": 4637,
+    "other": 131,
+    "runs": 4981
    },
    "areas": {
     "armor": {
@@ -8261,7 +8261,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 50,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -8295,7 +8295,7 @@
    "progress": {
     "armor": 70,
     "eh3d": 45,
-    "electro-hobby-3d": 58,
+    "electro-hobby-3d": 61,
     "hydra-umc": 58,
     "urtc": 56
    },
@@ -8702,7 +8702,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.6.3"
+     "0.6.4"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -8822,9 +8822,9 @@
     ]
    },
    "sentinel": {
-    "cand": 24,
+    "cand": 25,
     "gaps": 0,
-    "min": 12590,
+    "min": 12143,
     "red": 0
    },
    "tests": {
@@ -8851,8 +8851,8 @@
     "EH3D-DESIGN-EXPLORER": 3,
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
-    "EH3D-DOCS": 196,
-    "EH3D-DRILLPRO": 399,
+    "EH3D-DOCS": 306,
+    "EH3D-DRILLPRO": 410,
     "EH3D-GERBERVIEWER": 131,
     "EH3D-HYDRA-BRIDGE": 3,
     "EH3D-ISOCAM": 361,
@@ -8865,9 +8865,9 @@
     "EH3D-PHOENIX-PNP": 572,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
-    "EH3D-SERVER": 360,
+    "EH3D-SERVER": 371,
     "EH3D-STENCILCAM": 177,
-    "EH3D-STUDIO": 323,
+    "EH3D-STUDIO": 330,
     "EH3D-SUITE-LAUNCHER": 119,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 147,
