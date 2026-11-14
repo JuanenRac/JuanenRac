@@ -1,15 +1,22 @@
 {
- "asof": "2026-11-14T09:20:45Z",
+ "asof": "2026-11-14T09:41:26Z",
  "ci": {
-  "checked": 604,
-  "red": [],
-  "red_total": 0
+  "checked": 605,
+  "red": [
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-14T09:30:24Z",
+    "streak": 2,
+    "wf": "site.yml"
+   }
+  ],
+  "red_total": 1
  },
  "compute": {
   "top": [
    {
-    "min24": 5615,
-    "min7": 5615,
+    "min24": 5507,
+    "min7": 5507,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -18,8 +25,8 @@
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 1452,
-    "min7": 1560,
+    "min24": 1487,
+    "min7": 1566,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
@@ -28,8 +35,8 @@
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
    {
-    "min24": 1213,
-    "min7": 1213,
+    "min24": 1174,
+    "min7": 1174,
     "repo": "URTC-WEB-STUDIO"
    },
    {
@@ -38,15 +45,15 @@
     "repo": "HYDRA-UMC-PHYSICS-REPLICA"
    }
   ],
-  "total24": 60183,
-  "total7": 68469,
+  "total24": 59831,
+  "total7": 68220,
   "warn": true
  },
  "ecosystems": {
   "armor": {
    "cand": 5,
    "read": 19,
-   "red": 0,
+   "red": 1,
    "repos": 19,
    "unpub": 0
   },
@@ -80,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-14T09:41:26Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "site.yml"
+  },
   {
    "at": "2026-11-14T09:20:45Z",
    "kind": "red_ok",
@@ -253,18 +266,12 @@
    "kind": "red_ok",
    "repo": "HYDRA-UMC-MQTT-BROKER",
    "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-13T16:48:56Z",
-   "kind": "red_ok",
-   "repo": "HYDRA-UMC-NODE-HEALING",
-   "wf": "coverage.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 75
+  "gap_minutes": 25
  },
  "hygiene": {
   "allowed_missing": [],
@@ -277,12 +284,22 @@
  "parte": [
   {
    "key": "head",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "bad": 0,
     "cand": 28,
     "hyg": 0,
-    "red": 0
+    "red": 1
+   }
+  },
+  {
+   "key": "red",
+   "level": "bad",
+   "p": {
+    "list": [
+     "ARMOR-DOCS"
+    ],
+    "n": 1
    }
   },
   {
@@ -344,7 +361,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 60183
+    "min": 59831
    }
   }
  ],
@@ -449,6 +466,12 @@
    },
    {
     "entries": 7,
+    "published": "2026-11-12T05:09:37Z",
+    "repo": "ARMOR-DOCS",
+    "tag": "v0.8.1.9"
+   },
+   {
+    "entries": 7,
     "published": "2026-11-06T16:14:06Z",
     "repo": "HYDRA-UMC-BRIDGE-CNC",
     "tag": "v0.2.6"
@@ -464,12 +487,6 @@
     "published": "2026-11-07T12:57:46Z",
     "repo": "HYDRA-UMC-SWARM-SYNC",
     "tag": "v0.2.0"
-   },
-   {
-    "entries": 6,
-    "published": "2026-11-12T05:09:37Z",
-    "repo": "ARMOR-DOCS",
-    "tag": "v0.8.1.9"
    },
    {
     "entries": 6,
@@ -721,7 +738,7 @@
    159,
    12959,
    70311,
-   60183
+   59831
   ],
   "red": [
    3,
@@ -735,7 +752,7 @@
    0,
    0,
    6,
-   0
+   1
   ]
  },
  "unpublished": {
