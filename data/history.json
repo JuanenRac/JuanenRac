@@ -8233,15 +8233,15 @@
   },
   {
    "actions": {
-    "fail": 376,
-    "min": 45532,
+    "fail": 368,
+    "min": 44556,
     "ok": 5272,
-    "other": 174,
-    "runs": 5822
+    "other": 159,
+    "runs": 5799
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -8261,7 +8261,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 50,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -8281,7 +8281,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -8293,11 +8293,11 @@
    },
    "date": "2026-11-14",
    "progress": {
-    "armor": 70,
+    "armor": 69,
     "eh3d": 45,
-    "electro-hobby-3d": 58,
+    "electro-hobby-3d": 61,
     "hydra-umc": 58,
-    "urtc": 55
+    "urtc": 56
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -8782,7 +8782,7 @@
     ],
     "URTC-COMMON": [
      1,
-     "0.2.6"
+     "0.2.7"
     ],
     "URTC-DEVTOOLS": [
      0,
@@ -8794,7 +8794,7 @@
     ],
     "URTC-FLASHER": [
      1,
-     "0.5.6"
+     "0.5.7"
     ],
     "URTC-GATEWAY": [
      0,
@@ -8806,7 +8806,7 @@
     ],
     "URTC-TESTER": [
      1,
-     "0.5.5"
+     "0.5.6"
     ],
     "URTC-UPDATER": [
      2,
@@ -8818,13 +8818,13 @@
     ],
     "URTC-WEB-STUDIO": [
      1,
-     "0.5.1"
+     "0.5.2"
     ]
    },
    "sentinel": {
     "cand": 28,
     "gaps": 1,
-    "min": 45532,
+    "min": 44556,
     "red": 1
    },
    "tests": {

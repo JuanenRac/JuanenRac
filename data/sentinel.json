@@ -1,12 +1,12 @@
 {
- "asof": "2026-11-14T12:21:34Z",
+ "asof": "2026-11-14T13:04:40Z",
  "ci": {
   "checked": 607,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-14T11:53:24Z",
-    "streak": 2,
+    "since": "2026-11-14T12:22:05Z",
+    "streak": 3,
     "wf": "nightly.yml"
    }
   ],
@@ -15,13 +15,13 @@
  "compute": {
   "top": [
    {
-    "min24": 3894,
-    "min7": 3894,
+    "min24": 3511,
+    "min7": 3511,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 1526,
-    "min7": 1669,
+    "min24": 1550,
+    "min7": 1568,
     "repo": "URTC-FLASHER"
    },
    {
@@ -30,23 +30,23 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 1104,
-    "min7": 1104,
-    "repo": "URTC-WEB-STUDIO"
-   },
-   {
     "min24": 951,
     "min7": 951,
     "repo": "HYDRA-UMC-SDK"
    },
    {
-    "min24": 853,
-    "min7": 853,
-    "repo": "URTC-TESTER"
+    "min24": 941,
+    "min7": 941,
+    "repo": "URTC-WEB-STUDIO"
+   },
+   {
+    "min24": 838,
+    "min7": 1345,
+    "repo": "HYDRA-UMC-DEV-SERVER"
    }
   ],
-  "total24": 45532,
-  "total7": 64499,
+  "total24": 44556,
+  "total7": 63811,
   "warn": true
  },
  "ecosystems": {
@@ -83,7 +83,7 @@
    "read": 11,
    "red": 0,
    "repos": 11,
-   "unpub": 1
+   "unpub": 5
   }
  },
  "events": [
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 90
+  "gap_minutes": 45
  },
  "hygiene": {
   "allowed_missing": [],
@@ -346,9 +346,13 @@
    "level": "warn",
    "p": {
     "list": [
-     "URTC-DEVTOOLS"
+     "URTC-COMMON",
+     "URTC-DEVTOOLS",
+     "URTC-FLASHER",
+     "URTC-TESTER",
+     "URTC-WEB-STUDIO"
     ],
-    "n": 1
+    "n": 5
    }
   },
   {
@@ -373,7 +377,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 45532
+    "min": 44556
    }
   }
  ],
@@ -393,7 +397,7 @@
     "tag": "v0.1.7"
    },
    {
-    "entries": 12,
+    "entries": 13,
     "published": "2026-11-05T23:40:26Z",
     "repo": "ARMOR-NETWORK",
     "tag": "v0.1.7"
@@ -750,7 +754,7 @@
    159,
    12959,
    70311,
-   45532
+   44556
   ],
   "red": [
    3,
@@ -770,11 +774,31 @@
  "unpublished": {
   "rows": [
    {
+    "repo": "URTC-COMMON",
+    "tag": "v0.2.6",
+    "version": "0.2.7"
+   },
+   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.6"
+   },
+   {
+    "repo": "URTC-FLASHER",
+    "tag": "v0.5.6",
+    "version": "0.5.7"
+   },
+   {
+    "repo": "URTC-TESTER",
+    "tag": "v0.5.5",
+    "version": "0.5.6"
+   },
+   {
+    "repo": "URTC-WEB-STUDIO",
+    "tag": "v0.5.1",
+    "version": "0.5.2"
    }
   ],
-  "total": 1
+  "total": 5
  }
 }
