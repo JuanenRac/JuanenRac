@@ -392,7 +392,7 @@ Jedes Werkzeugprofil trägt seinen eigenen Watchdog und sein eigenes Fehlerverha
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:armor -->
-`\[██████████████░░░░░░] 70%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 19 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[█████████████▊░░░░░░] 69%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 19 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -404,7 +404,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 19 von 19 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 19 von 19 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 19 von 19 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `█████████▌ 95%` | 18 von 19 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -597,7 +597,7 @@ Neben den vier Ökosystemen gibt es eine fünfte Gruppe: eigenständige Werkzeug
 **Updater:** keinen eigenen; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) ist eines seiner Werkzeuge und übergibt an den Updater jedes der vier Ökosysteme.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 2 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[███████████▋░░░░░░░░] 58%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 2 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +609,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 von 2 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟠 | `█████░░░░░ 50%` | 1 von 2 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟠 | `█████░░░░░ 50%` | 1 von 2 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 von 2 Repositories wurden mindestens in einem Simulator geprüft. |
