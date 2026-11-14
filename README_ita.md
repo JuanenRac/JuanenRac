@@ -429,17 +429,17 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.8.1.3|Contratti di messaggio, validatori, vettori di conformità, tipi generati, OpenAPI, launcher condiviso.|
+|[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.8.1.4|Contratti di messaggio, validatori, vettori di conformità, tipi generati, OpenAPI, launcher condiviso.|
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.2|Firmware del nodo di campo ESP32-S3 con decodificatori per i sensori LD2450, LD2461 e di presenza, aggiornamenti da GitHub e mappa in tempo reale.|
 |[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.6|Nodo gateway solare: firmware ESP32-S3, pannello e protocolli degli inverter Voltronic / MPP Solar e delle batterie Pylontech e ANT-BMS.|
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.8|Nodo elettrico: firmware con contatori PZEM su una linea seriale, pannello web e MQTT, i frame dei contatori e le regole di manovra.|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.6|Nodo e pannello di allarme: zone cablate, sirena, dispositivi Zigbee e regole di inserimento, ritardi, allarme e PIN; continua a sorvegliare senza il server.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.8|Pannello touch per la Waveshare ESP32-S3-Touch-LCD-7C-BOX: stato del sistema su uno schermo a parete, inserire, disinserire, confermare e voce push-to-talk.|
-|[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.7|Monitor della rete locale: dispositivi della rete, stato di internet e cosa cambia; si limita a osservare.|
+|[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.8|Monitor della rete locale: dispositivi della rete, stato di internet e cosa cambia; si limita a osservare.|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.2|Server centrale: stato persistente, utenti, eventi, allarmi, dispositivi, automazioni, telecamere, aggiornamenti dei nodi firmati, notifiche e accesso remoto.|
-|[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.2|Servizio di monitoraggio del movimento, selezione del profilo visivo, policy di fusione spiegabile, registro dei motori.|
+|[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.3|Servizio di monitoraggio del movimento, selezione del profilo visivo, policy di fusione spiegabile, registro dei motori.|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.7|Zone di telecamere, maschere e regole di rilevamento (loitering, un evento per visita); nessun modello di rilevamento integrato al momento.|
-|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.5|Servizio vocale offline: quindici comandi in otto lingue, interazioni vocali del pannello a muro, inserimento e disinserimento confermati tramite token firmato.|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.6|Servizio vocale offline: quindici comandi in otto lingue, interazioni vocali del pannello a muro, inserimento e disinserimento confermati tramite token firmato.|
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.4|Console operativa: allarmi, dispositivi, automazioni, cronologia, PTZ, mappa radar, menu solare ed elettrico, aggiornamenti dei nodi e progettista 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.7|Client Android per l'operatore: inserire e disinserire, allarmi, dispositivi, radar in tempo reale, solare, cronologia, notifiche, assistente vocale e configuratore dei nodi.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.5|Client operatore per iPhone: stato, inserimento, allarmi, centrali di allarme, telecamere e l'assistente, in otto lingue.|
@@ -447,7 +447,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Topologia Compose, installatore del banco di prova, backup e ripristino, profilo TLS, broker MQTT proprio, servizi di osservazione e voce, agente di amministrazione.|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|Scenari e guasti ripetibili.|
 |[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.2.2|Rileva, installa e aggiorna le repository dell'ecosistema (atomico tramite verifica, nessun GITHUB\_TOKEN richiesto).|
-|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.1.9|Documentazione canonica e matrice delle capacità.|
+|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.2.0|Documentazione canonica e matrice delle capacità.|
 
 \---
 

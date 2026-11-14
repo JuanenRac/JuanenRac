@@ -429,17 +429,17 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.8.1.3|Contratos de mensagem, validadores, vetores de conformidade, tipos gerados, OpenAPI, lançador partilhado.|
+|[ARMOR-COMMON](https://github.com/JuanenRac/ARMOR-COMMON)|0.8.1.4|Contratos de mensagem, validadores, vetores de conformidade, tipos gerados, OpenAPI, lançador partilhado.|
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.2|Firmware do nó de campo ESP32-S3 com descodificadores para os sensores LD2450, LD2461 e de presença, atualizações a partir do GitHub e mapa em tempo real.|
 |[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.6|Nó de gateway solar: firmware ESP32-S3, painel e protocolos dos inversores Voltronic / MPP Solar e das baterias Pylontech e ANT-BMS.|
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.8|Nó elétrico: firmware com contadores PZEM numa linha série, painel web e MQTT, as tramas dos contadores e as regras de manobra.|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.6|Nó e painel de alarme: zonas com fios, sirene, dispositivos Zigbee e regras de armar, atrasos, alarme e PIN; continua a vigiar sem o servidor.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.8|Painel tátil para a Waveshare ESP32-S3-Touch-LCD-7C-BOX: estado do sistema num ecrã de parede, armar, desarmar, confirmar e voz com botão de pressão.|
-|[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.7|Monitor da rede local: dispositivos da rede, estado da internet e o que muda; apenas observa.|
+|[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.8|Monitor da rede local: dispositivos da rede, estado da internet e o que muda; apenas observa.|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.2|Servidor central: estado persistente, utilizadores, eventos, alarmes, dispositivos, automatizações, câmaras, atualizações de nós assinadas, notificações e acesso remoto.|
-|[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.2|Serviço de monitorização de movimento, seleção de perfil visual, política de fusão explicável, registo de motor.|
+|[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.3|Serviço de monitorização de movimento, seleção de perfil visual, política de fusão explicável, registo de motor.|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.7|Zonas de câmara, máscaras e regras de deteção (vadiagem, um evento por visita); nenhum modelo detector ainda.|
-|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.5|Serviço de voz offline: quinze comandos em oito idiomas, turnos falados do painel de parede, armar e desarmar confirmados com um token assinado.|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.6|Serviço de voz offline: quinze comandos em oito idiomas, turnos falados do painel de parede, armar e desarmar confirmados com um token assinado.|
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.4|Consola de operações: alarmes, dispositivos, automatizações, histórico, PTZ, mapa de radar, menus solar e elétrico, atualização de nós e desenhador 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.7|Cliente Android para o operador: armar e desarmar, alarmes, dispositivos, radar em tempo real, solar, histórico, notificações, assistente de voz e configurador de nós.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.5|Cliente de operador para iPhone: estado, armar, alarmes, painéis de alarme, câmaras e o assistente, em oito idiomas.|
@@ -447,7 +447,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Topologia Compose, instalador da bancada de testes, cópia e restauro, perfil TLS, broker MQTT próprio, serviços de observação e de voz, agente de administração.|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|Cenários e falhas repetíveis.|
 |[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.2.2|Detecta, instala e atualiza os repositórios próprios do ecossistema (atômico por verificação, sem necessidade de GITHUB\_TOKEN).|
-|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.1.9|Documentação canônica e matriz de capacidades.|
+|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.2.0|Documentação canônica e matriz de capacidades.|
 
 \---
 

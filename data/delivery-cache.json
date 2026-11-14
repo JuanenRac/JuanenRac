@@ -268,9 +268,10 @@
   },
   "URTC-FLASHER": {
    "art": true,
-   "at": "2026-11-13T01:08:23Z",
-   "exp": "2026-11-20T01:05:18Z",
-   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/43341235707",
+   "at": "2026-11-14T15:42:58Z",
+   "checked": true,
+   "exp": "2026-11-21T15:41:22Z",
+   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/43611268609",
    "wf": "exe-build.yml"
   },
   "URTC-SMART-RACK": {
@@ -282,16 +283,18 @@
   },
   "URTC-TESTER": {
    "art": true,
-   "at": "2026-11-13T01:09:28Z",
-   "exp": "2026-11-20T01:05:50Z",
-   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/43341211210",
+   "at": "2026-11-14T15:42:47Z",
+   "checked": true,
+   "exp": "2026-11-21T15:41:01Z",
+   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/43611264840",
    "wf": "exe-build.yml"
   },
   "URTC-VISION-TOOL": {
    "art": true,
-   "at": "2026-11-08T00:28:32Z",
-   "exp": "2026-11-15T00:27:50Z",
-   "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/42429690470",
+   "at": "2026-11-14T15:40:56Z",
+   "checked": true,
+   "exp": "2026-11-21T15:40:03Z",
+   "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/43611286632",
    "wf": "firmware-build.yml"
   },
   "URTC-WEB-STUDIO": {
@@ -313,12 +316,12 @@
    }
   },
   "ARMOR-DEVOPS": {
-   "fp": "19992757160236ab",
-   "on": "2026-11-12",
+   "fp": "bb20eb8cede7d52e",
+   "on": "2026-11-14",
    "r": {
-    "ak": 1,
+    "ak": 0,
     "an": 1,
-    "at": "present"
+    "at": "absent"
    }
   },
   "ARMOR-NETWORK": {
@@ -646,8 +649,8 @@
    }
   },
   "URTC": {
-   "fp": "422f17d0fec034c3",
-   "on": "2026-11-13",
+   "fp": "39da1992d40dd4c4",
+   "on": "2026-11-14",
    "r": {
     "ak": 3,
     "an": 3,
@@ -694,7 +697,7 @@
  "schema": 1,
  "signatures": {
   "ARMOR-DEVOPS": {
-   "fp": "19992757160236ab",
+   "fp": "bb20eb8cede7d52e",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1287,7 +1290,7 @@
    }
   },
   "URTC": {
-   "fp": "422f17d0fec034c3",
+   "fp": "39da1992d40dd4c4",
    "r": {
     "bad": 0,
     "ho": 0,
