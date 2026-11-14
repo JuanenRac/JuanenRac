@@ -1,22 +1,15 @@
 {
- "asof": "2026-11-14T03:17:15Z",
+ "asof": "2026-11-14T04:20:39Z",
  "ci": {
-  "checked": 607,
-  "red": [
-   {
-    "repo": "HYDRA-UMC-DOCS",
-    "since": "2026-11-14T02:57:29Z",
-    "streak": 9,
-    "wf": "nightly.yml"
-   }
-  ],
-  "red_total": 1
+  "checked": 606,
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 4709,
-    "min7": 4883,
+    "min24": 4737,
+    "min7": 4909,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -35,23 +28,23 @@
     "repo": "URTC-WEB-STUDIO"
    },
    {
-    "min24": 1316,
-    "min7": 1316,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
-   },
-   {
     "min24": 1314,
     "min7": 1345,
     "repo": "HYDRA-UMC-DEV-SERVER"
+   },
+   {
+    "min24": 1183,
+    "min7": 1183,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    }
   ],
-  "total24": 65383,
-  "total7": 73059,
+  "total24": 63644,
+  "total7": 71303,
   "warn": true
  },
  "ecosystems": {
   "armor": {
-   "cand": 1,
+   "cand": 2,
    "read": 19,
    "red": 0,
    "repos": 19,
@@ -74,7 +67,7 @@
   "hydra-umc": {
    "cand": 20,
    "read": 59,
-   "red": 1,
+   "red": 0,
    "repos": 59,
    "unpub": 0
   },
@@ -87,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-14T04:20:39Z",
+   "kind": "red_ok",
+   "repo": "HYDRA-UMC-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-14T03:17:15Z",
    "kind": "released",
@@ -260,18 +259,12 @@
    "kind": "red_new",
    "repo": "URTC-COMMON",
    "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-13T12:48:10Z",
-   "kind": "red_new",
-   "repo": "URTC-DOCS",
-   "wf": "nightly.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 10
+  "gap_minutes": 65
  },
  "hygiene": {
   "allowed_missing": [],
@@ -284,22 +277,12 @@
  "parte": [
   {
    "key": "head",
-   "level": "bad",
+   "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 23,
+    "cand": 24,
     "hyg": 0,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "bad",
-   "p": {
-    "list": [
-     "HYDRA-UMC-DOCS"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -308,6 +291,7 @@
    "p": {
     "list": [
      "ARMOR-NETWORK",
+     "ARMOR-SIMULATOR",
      "HYDRA-UMC-BRIDGE-CNC",
      "HYDRA-UMC-BRIDGE-OPENPNP",
      "HYDRA-UMC-BRIDGE-PRINTER3D",
@@ -331,7 +315,7 @@
      "URTC-UPDATER",
      "URTC-VISION-TOOL"
     ],
-    "n": 23
+    "n": 24
    }
   },
   {
@@ -356,7 +340,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 65383
+    "min": 63644
    }
   }
  ],
@@ -383,6 +367,12 @@
    },
    {
     "entries": 11,
+    "published": "2026-11-06T18:48:49Z",
+    "repo": "HYDRA-UMC-DOCS",
+    "tag": "v0.1.3"
+   },
+   {
+    "entries": 11,
     "published": "2026-11-12T02:55:46Z",
     "repo": "HYDRA-UMC-OS",
     "tag": "v0.6.1"
@@ -394,16 +384,16 @@
     "tag": "v0.1.4"
    },
    {
-    "entries": 10,
-    "published": "2026-11-06T18:48:49Z",
-    "repo": "HYDRA-UMC-DOCS",
-    "tag": "v0.1.3"
-   },
-   {
     "entries": 9,
     "published": "2026-11-08T00:57:32Z",
     "repo": "URTC-VISION-TOOL",
     "tag": "v0.2.0"
+   },
+   {
+    "entries": 8,
+    "published": "2026-11-12T04:03:47Z",
+    "repo": "ARMOR-SIMULATOR",
+    "tag": "v0.3.7"
    },
    {
     "entries": 8,
@@ -437,15 +427,15 @@
    },
    {
     "entries": 7,
-    "published": "2026-11-06T16:14:06Z",
-    "repo": "HYDRA-UMC-BRIDGE-CNC",
-    "tag": "v0.2.6"
-   },
-   {
-    "entries": 6,
     "published": "2026-11-05T23:40:26Z",
     "repo": "ARMOR-NETWORK",
     "tag": "v0.1.7"
+   },
+   {
+    "entries": 7,
+    "published": "2026-11-06T16:14:06Z",
+    "repo": "HYDRA-UMC-BRIDGE-CNC",
+    "tag": "v0.2.6"
    },
    {
     "entries": 6,
@@ -504,7 +494,7 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 23
+  "total": 24
  },
  "repos": 129,
  "schema": 1,
@@ -661,7 +651,7 @@
    43,
    20,
    22,
-   23
+   24
   ],
   "dates": [
    "2026-11-03",
@@ -703,7 +693,7 @@
    159,
    12959,
    70311,
-   65383
+   63644
   ],
   "red": [
    3,
@@ -717,7 +707,7 @@
    0,
    0,
    6,
-   1
+   0
   ]
  },
  "unpublished": {
