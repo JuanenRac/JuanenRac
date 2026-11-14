@@ -1,22 +1,15 @@
 {
- "asof": "2026-11-14T20:58:23Z",
+ "asof": "2026-11-14T21:04:47Z",
  "ci": {
   "checked": 600,
-  "red": [
-   {
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "since": "2026-11-14T20:14:32Z",
-    "streak": 2,
-    "wf": "ci.yml"
-   }
-  ],
-  "red_total": 1
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 1109,
-    "min7": 1109,
+    "min24": 1179,
+    "min7": 1179,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -25,14 +18,14 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 423,
-    "min7": 496,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
-   },
-   {
     "min24": 385,
     "min7": 385,
     "repo": "HYDRA-UMC-SERVER"
+   },
+   {
+    "min24": 382,
+    "min7": 496,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
     "min24": 362,
@@ -40,13 +33,13 @@
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
    {
-    "min24": 358,
-    "min7": 412,
-    "repo": "HYDRA-UMC-SDK"
+    "min24": 337,
+    "min7": 337,
+    "repo": "ARMOR-IOS-CONTROL"
    }
   ],
-  "total24": 13599,
-  "total7": 53635,
+  "total24": 12590,
+  "total7": 53658,
   "warn": true
  },
  "ecosystems": {
@@ -67,7 +60,7 @@
   "electro-hobby-3d": {
    "cand": 0,
    "read": 2,
-   "red": 1,
+   "red": 0,
    "repos": 2,
    "unpub": 0
   },
@@ -87,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-14T21:04:47Z",
+   "kind": "red_ok",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "wf": "ci.yml"
+  },
   {
    "at": "2026-11-14T20:38:27Z",
    "kind": "red_new",
@@ -260,18 +259,12 @@
    "kind": "released",
    "repo": "URTC-FLASHER",
    "tag": "v0.5.7"
-  },
-  {
-   "at": "2026-11-14T16:45:27Z",
-   "kind": "released",
-   "repo": "URTC-TESTER",
-   "tag": "v0.5.6"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 20
+  "gap_minutes": 30
  },
  "hygiene": {
   "allowed_missing": [],
@@ -284,22 +277,12 @@
  "parte": [
   {
    "key": "head",
-   "level": "bad",
+   "level": "warn",
    "p": {
     "bad": 0,
     "cand": 24,
     "hyg": 0,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "bad",
-   "p": {
-    "list": [
-     "TOOLS-GITHUB-ACTIONS-MONITOR"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -357,7 +340,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13599
+    "min": 12590
    }
   }
  ],
@@ -710,7 +693,7 @@
    159,
    12959,
    70311,
-   13599
+   12590
   ],
   "red": [
    3,
@@ -724,7 +707,7 @@
    0,
    0,
    6,
-   1
+   0
   ]
  },
  "unpublished": {
