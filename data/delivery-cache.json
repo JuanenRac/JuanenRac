@@ -23,37 +23,42 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-12T20:19:11Z",
-   "exp": "2026-11-19T20:14:14Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43295685412",
+   "at": "2026-11-14T11:19:42Z",
+   "checked": true,
+   "exp": "2026-11-21T11:18:20Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43589141080",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-12T20:22:04Z",
-   "exp": "2026-11-19T20:14:40Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43295716592",
+   "at": "2026-11-14T11:19:42Z",
+   "checked": true,
+   "exp": "2026-11-21T11:18:26Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43589122129",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-12T20:18:12Z",
-   "exp": "2026-11-19T20:08:18Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43295770440",
+   "at": "2026-11-14T11:20:54Z",
+   "checked": true,
+   "exp": "2026-11-21T11:20:09Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43589149284",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
-   "at": "2026-11-12T20:19:03Z",
-   "exp": "2026-11-19T20:07:07Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/43295653010",
+   "at": "2026-11-14T11:19:00Z",
+   "checked": true,
+   "exp": "2026-11-21T11:18:09Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/43589087781",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-12T20:20:25Z",
-   "exp": "2026-11-19T20:17:03Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/43295743851",
+   "at": "2026-11-14T11:19:32Z",
+   "checked": true,
+   "exp": "2026-11-21T11:18:21Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/43589113510",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {

@@ -8233,15 +8233,15 @@
   },
   {
    "actions": {
-    "fail": 395,
-    "min": 51258,
-    "ok": 5430,
-    "other": 177,
-    "runs": 6002
+    "fail": 376,
+    "min": 45532,
+    "ok": 5272,
+    "other": 174,
+    "runs": 5822
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 60,
      "production": 63,
@@ -8281,7 +8281,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -8293,11 +8293,11 @@
    },
    "date": "2026-11-14",
    "progress": {
-    "armor": 69,
+    "armor": 70,
     "eh3d": 45,
     "electro-hobby-3d": 58,
     "hydra-umc": 58,
-    "urtc": 56
+    "urtc": 55
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -8375,6 +8375,10 @@
     "ARMOR-VOICE-AI": [
      2,
      "0.3.5"
+    ],
+    "ARMOR-WATCH": [
+     0,
+     "0.0.1"
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
@@ -8819,24 +8823,25 @@
    },
    "sentinel": {
     "cand": 28,
-    "gaps": 0,
-    "min": 51258,
-    "red": 4
+    "gaps": 1,
+    "min": 45532,
+    "red": 1
    },
    "tests": {
-    "ARMOR-ANDROID-CONTROL": 495,
-    "ARMOR-COMMON": 506,
-    "ARMOR-DOCS": 448,
-    "ARMOR-HARDWARE": 81,
-    "ARMOR-IOS-CONTROL": 384,
-    "ARMOR-NETWORK": 304,
+    "ARMOR-ANDROID-CONTROL": 565,
+    "ARMOR-COMMON": 606,
+    "ARMOR-DOCS": 465,
+    "ARMOR-HARDWARE": 85,
+    "ARMOR-IOS-CONTROL": 483,
+    "ARMOR-NETWORK": 331,
     "ARMOR-SERVER": 1152,
-    "ARMOR-SERVER-AI": 160,
-    "ARMOR-SIMULATOR": 398,
+    "ARMOR-SERVER-AI": 191,
+    "ARMOR-SIMULATOR": 407,
     "ARMOR-STUDIO": 1672,
     "ARMOR-UPDATER": 454,
-    "ARMOR-VISION": 348,
-    "ARMOR-VOICE-AI": 224,
+    "ARMOR-VISION": 363,
+    "ARMOR-VOICE-AI": 241,
+    "ARMOR-WATCH": 10,
     "EH3D-AUTOLEVEL": 185,
     "EH3D-BUNGARD-GUI": 418,
     "EH3D-CAM-DEBUGGER": 123,
@@ -8930,9 +8935,9 @@
     "HYDRA-UMC-WATCH": 192,
     "URTC-COMMON": 3008,
     "URTC-DEVTOOLS": 134,
-    "URTC-DOCS": 222,
+    "URTC-DOCS": 224,
     "URTC-FLASHER": 913,
-    "URTC-GATEWAY": 222,
+    "URTC-GATEWAY": 225,
     "URTC-SMART-RACK": 772,
     "URTC-TESTER": 1100,
     "URTC-UPDATER": 721,
