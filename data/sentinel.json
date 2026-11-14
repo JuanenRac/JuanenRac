@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-14T07:25:47Z",
+ "asof": "2026-11-14T08:08:47Z",
  "ci": {
-  "checked": 605,
+  "checked": 604,
   "red": [
    {
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 5331,
-    "min7": 5331,
+    "min24": 5593,
+    "min7": 5593,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    }
   ],
-  "total24": 62255,
-  "total7": 69533,
+  "total24": 61855,
+  "total7": 69126,
   "warn": true
  },
  "ecosystems": {
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 190
+  "gap_minutes": 45
  },
  "hygiene": {
   "allowed_missing": [],
@@ -361,7 +361,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 62255
+    "min": 61855
    }
   }
  ],
@@ -484,6 +484,12 @@
    },
    {
     "entries": 6,
+    "published": "2026-11-05T13:53:54Z",
+    "repo": "ARMOR-SERVER-AI",
+    "tag": "v0.3.2"
+   },
+   {
+    "entries": 6,
     "published": "2026-11-05T20:34:47Z",
     "repo": "HYDRA-UMC-BRIDGE-OPENPNP",
     "tag": "v0.2.5"
@@ -511,12 +517,6 @@
     "published": "2026-11-05T23:40:34Z",
     "repo": "HYDRA-UMC-SYNTHETIC-DATA-GEN",
     "tag": "v0.1.5"
-   },
-   {
-    "entries": 5,
-    "published": "2026-11-05T13:53:54Z",
-    "repo": "ARMOR-SERVER-AI",
-    "tag": "v0.3.2"
    },
    {
     "entries": 5,
@@ -738,7 +738,7 @@
    159,
    12959,
    70311,
-   62255
+   61855
   ],
   "red": [
    3,

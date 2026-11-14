@@ -192,7 +192,6 @@
   "HYDRA-UMC-SERVER": {
    "art": true,
    "at": "2026-11-07T05:26:03Z",
-   "checked": true,
    "exp": "2026-12-07T05:25:39Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/42342641922",
    "wf": "dist-build.yml"
@@ -200,7 +199,6 @@
   "HYDRA-UMC-STUDIO": {
    "art": true,
    "at": "2026-11-07T05:27:16Z",
-   "checked": true,
    "exp": "2026-12-07T05:26:50Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42342680265",
    "wf": "dist-build.yml"
