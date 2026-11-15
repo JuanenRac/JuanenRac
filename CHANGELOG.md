@@ -4,6 +4,8 @@ All notable changes to this profile repository are documented here.
 
 ## [Unreleased]
 
+- **ARMOR-WATCH in the catalogue:** the minimal A.R.M.O.R. watch client is listed in the project table of the eight READMEs, with its description in the eight languages from the single descriptions file, and named among the operator clients of the architecture text.
+
 ## [0.0.1] - First release of the profile: README generator, status dashboard, sentinel and code statistics
 
 - **The build no longer fails when the quota of the GitHub API is spent:** the progress bars and the status rows of the READMEs read the tags, the files and the last builds of every repository twice per run, which was most of the quota; they now use the saved reads (a repository that was not pushed is not read again for its tags and files, and the second script gets its answers from the first), and when GitHub still refuses for the quota they keep their last values and the build goes on. Any other failure to read still stops it.

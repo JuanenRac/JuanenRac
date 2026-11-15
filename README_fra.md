@@ -392,7 +392,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 **Outil de mise à jour :** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:armor -->
-`\[██████████████░░░░░░] 70%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 19 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[█████████████▍░░░░░░] 67%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 20 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -402,14 +402,14 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
-| Logiciel | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 19 dépôts sur 19 ont le README dans les huit langues. |
-| Simulation | 🟢 | `█████████▌ 95%` | 18 dépôts sur 19 ont été vérifiés au moins dans un simulateur. |
-| Matériel réel | 🟡 | `██████░░░░ 60%` | 9 des 15 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
-| Production | 🟡 | `██████▎░░░ 63%` | 12 dépôts sur 19 sont établis ou en production. |
+| Logiciel | 🟢 | `█████████░ 90%` | 18 dépôts sur 20 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟢 | `█████████▌ 95%` | 19 dépôts sur 20 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `█████████▌ 95%` | 19 dépôts sur 20 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont le README dans les huit langues. |
+| Simulation | 🟢 | `█████████░ 90%` | 18 dépôts sur 20 ont été vérifiés au moins dans un simulateur. |
+| Matériel réel | 🟠 | `█████▋░░░░ 56%` | 9 des 16 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Production | 🟡 | `██████░░░░ 60%` | 12 dépôts sur 20 sont établis ou en production. |
 <!-- /status:armor -->
 
 ## 🏗️ Comment est construit A.R.M.O.R.
@@ -417,7 +417,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 1. **Contrat partagé** : **ARMOR-COMMON** détient la signification des messages — schéma JSON, validateur Python et types TypeScript/Kotlin générés que tous les autres dépôts consomment sans jamais les redéfinir.
 2. **Nœuds de terrain** : Micrologiciel ESP32-S3 pour la détection radar/présence (**ARMOR-NODE-RADAR**), la surveillance d'onduleur solaire et de batterie (**ARMOR-NODE-SOLAR**), la mesure électrique avec commutation (**ARMOR-NODE-ELECTRICAL**), et le panneau d'alarme de la maison (**ARMOR-NODE-ALARM**) ; un agent Python (**ARMOR-NETWORK**) surveille le réseau local de la maison et l'accessibilité à Internet à partir d'une machine qui y est connectée.
 3. **Coordinateur central** : **ARMOR-SERVER** stocke l'état, les utilisateurs, les alarmes, les automatisations et les preuves vidéo des caméras ; **ARMOR-SERVER-AI** et **ARMOR-VOICE-AI** ajoutent une politique visuelle explicable et des intentions vocales hors ligne qui n'actionnent jamais rien par elles-mêmes.
-4. **Clients opérateurs** : **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (mobile) et **ARMOR-IOS-CONTROL** (iPhone) sont des clients du serveur central, jamais du réseau de terrain directement. **ARMOR-NODE-HMI** est un panneau tactile mural (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) qui affiche l'état, permet d'armer et d'acquitter, et hébergera l'assistant vocal.
+4. **Clients opérateurs** : **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (mobile), **ARMOR-IOS-CONTROL** (iPhone) et la montre minimale **ARMOR-WATCH** sont des clients du serveur central, jamais du réseau de terrain directement. **ARMOR-NODE-HMI** est un panneau tactile mural (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) qui affiche l'état, permet d'armer et d'acquitter, et hébergera l'assistant vocal.
 5. **Déploiement et test** : **ARMOR-DEVOPS** déploie l'ensemble du graphe de services ; **ARMOR-SIMULATOR** rejoue des scénarios et des pannes reproductibles sans matériel réel ; **ARMOR-HARDWARE** regroupe la conception du boîtier et sa matrice de recette en atelier.
 6. **Opérations de l'écosystème** : **ARMOR-UPDATER** découvre, installe et met à jour chaque dépôt A.R.M.O.R. sur une machine, selon la même conception atomique par vérification que HYDRA-UMC-UPDATER ; **ARMOR-DOCS** est la documentation d'architecture canonique et la matrice de capacités. **ARMOR-STUDIO** peut également mettre à jour les services sur la machine centrale à partir de paquets signés avec la clé de version de l'écosystème, en vérifiant chaque signature avant l'installation.
 
@@ -443,6 +443,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.4|Console d'exploitation : alarmes, appareils, automatisations, historique, PTZ, carte radar, menus solaire et électrique, mises à jour des nœuds et concepteur 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.7|Client Android pour l'opérateur : armer et désarmer, alarmes, appareils, radar en direct, solaire, historique, notifications, assistant vocal et configurateur de nœuds.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.5|Client opérateur pour iPhone : état, armement, alarmes, centrales d'alarme, caméras et l'assistant, en huit langues.|
+|[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.1|Client de montre minimal : affiche les avis d'alarme envoyés par le téléphone et confirme une alarme d'un seul appui ; ni session ni clés sur la montre.|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.9|Conceptions de boîtiers (boîtier d'angle radar ; boîte cochée pour les nœuds solaires, électriques et d'alarme) et matrice de recette en atelier.|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Topologie Compose, installateur du banc d'essai, sauvegarde et restauration, profil TLS, broker MQTT propre, services d'observation et de voix, agent d'administration.|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|Scénarios et pannes reproductibles.|
@@ -597,7 +598,7 @@ En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils 
 **Outil de mise à jour :** aucun en propre ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) est l'un de ses outils et passe la main à l'outil de mise à jour de chacun des quatre écosystèmes.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[███████████▋░░░░░░░░] 58%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +610,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `██████████ 100%` | 2 dépôts sur 2 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont le README dans les huit langues. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 2 ont été vérifiés au moins dans un simulateur. |

@@ -392,7 +392,7 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 **Actualizador:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:armor -->
-`\[██████████████░░░░░░] 70%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 19 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████████▍░░░░░░] 67%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 20 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -402,14 +402,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
-| Software | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟢 | `██████████ 100%` | 19 de 19 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios se han comprobado al menos en un simulador. |
-| Hardware real | 🟡 | `██████░░░░ 60%` | 9 de los 15 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
-| Producción | 🟡 | `██████▎░░░ 63%` | 12 de 19 repositorios están consolidados o en producción. |
+| Software | 🟢 | `█████████░ 90%` | 18 de 20 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟢 | `█████████▌ 95%` | 19 de 20 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `█████████▌ 95%` | 19 de 20 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🟢 | `█████████░ 90%` | 18 de 20 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🟠 | `█████▋░░░░ 56%` | 9 de los 16 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🟡 | `██████░░░░ 60%` | 12 de 20 repositorios están consolidados o en producción. |
 <!-- /status:armor -->
 
 ## 🏗️ Cómo Está Construido A.R.M.O.R.
@@ -417,7 +417,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 1. **Contrato compartido**: **ARMOR-COMMON** contiene el significado de los mensajes (JSON Schema, un validador en Python y tipos generados en TypeScript/Kotlin) que todos los demás repositorios consumen y nunca redefinen.
 2. **Nodos de campo**: Firmware ESP32-S3 para detección de radar/presencia (**ARMOR-NODE-RADAR**), monitorización de inversores solares y baterías (**ARMOR-NODE-SOLAR**), medición eléctrica con conmutación (**ARMOR-NODE-ELECTRICAL**), y el panel de alarma de la casa (**ARMOR-NODE-ALARM**); un agente en Python (**ARMOR-NETWORK**) supervisa la red local y la accesibilidad a internet de la casa desde una máquina ya conectada a ella.
 3. **Coordinador central**: **ARMOR-SERVER** mantiene el estado, usuarios, alarmas, automatizaciones y evidencias de cámara; **ARMOR-SERVER-AI** y **ARMOR-VOICE-AI** añaden una política visual explicable y comandos de voz offline que nunca accionan nada por sí mismos.
-4. **Clientes de operador**: **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (móvil) y **ARMOR-IOS-CONTROL** (iPhone) son clientes del servidor central, nunca de la red de campo directamente. **ARMOR-NODE-HMI** es un panel táctil en la pared (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) que muestra el estado, arma y reconoce alertas, y será donde resida el asistente de voz.
+4. **Clientes de operador**: **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (móvil), **ARMOR-IOS-CONTROL** (iPhone) y el reloj mínimo **ARMOR-WATCH** son clientes del servidor central, nunca de la red de campo directamente. **ARMOR-NODE-HMI** es un panel táctil en la pared (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) que muestra el estado, arma y reconoce alertas, y será donde resida el asistente de voz.
 5. **Despliegue y pruebas**: **ARMOR-DEVOPS** despliega el grafo completo de servicios; **ARMOR-SIMULATOR** reproduce escenarios y fallos repetibles sin hardware real; **ARMOR-HARDWARE** contiene el diseño de la carcasa y su matriz de aceptación en banco.
 6. **Operaciones del ecosistema**: **ARMOR-UPDATER** descubre, instala y actualiza cada repositorio de A.R.M.O.R. en una máquina, con el mismo diseño atómico por verificación que HYDRA-UMC-UPDATER; **ARMOR-DOCS** es la documentación de arquitectura canónica y la matriz de capacidades. **ARMOR-STUDIO** también puede actualizar los servicios de la máquina central a partir de paquetes firmados con la clave de lanzamiento del ecosistema, verificando cada firma antes de la instalación.
 
@@ -443,6 +443,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 |[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.4|Consola de operaciones: alarmas, dispositivos, automatizaciones, historial, PTZ, mapa de radar, menús solar y eléctrico, actualización de nodos y diseñador 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.7|Cliente Android para el operador: armar y desarmar, alarmas, dispositivos, radar en vivo, solar, historial, notificaciones, asistente de voz y configurador de nodos.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.5|Cliente de operador para iPhone: estado, armado, alarmas, paneles de alarma, cámaras y el asistente, en ocho idiomas.|
+|[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.1|Cliente de reloj mínimo: muestra los avisos de alarma que envía el móvil y confirma una alarma con un toque; sin sesión ni claves en el reloj.|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.9|Diseños de carcasas (la carcasa de esquina para radar; una caja marcada para los nodos solar, eléctrico y de alarma) y matriz de aceptación en banco.|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Topología Compose, instalador del banco de pruebas, copia y restauración, perfil TLS, broker MQTT propio, servicios de observación y de voz, agente de administración.|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|Escenarios y fallos repetibles.|
@@ -597,7 +598,7 @@ Fuera de los cuatro ecosistemas hay un quinto grupo: herramientas independientes
 **Actualizador:** ninguno propio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) es una de sus herramientas y cede el trabajo al actualizador de cada uno de los cuatro ecosistemas.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[███████████▋░░░░░░░░] 58%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -609,7 +610,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 de 2 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 2 de 2 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositorios se han comprobado al menos en un simulador. |
