@@ -121,10 +121,10 @@
   },
   "HYDRA-UMC": {
    "art": true,
-   "at": "2026-11-15T01:41:27Z",
+   "at": "2026-11-15T02:47:34Z",
    "checked": true,
-   "exp": "2026-11-22T01:32:56Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43662970564",
+   "exp": "2026-11-22T02:46:17Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43669111581",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
