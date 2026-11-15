@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 151,
-    "min": 13061,
-    "ok": 4342,
-    "other": 43,
-    "runs": 4536
+    "fail": 150,
+    "min": 12581,
+    "ok": 4102,
+    "other": 44,
+    "runs": 4296
    },
    "areas": {
     "armor": {
@@ -9488,7 +9488,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.9.2"
+     "1.9.3"
     ],
     "URTC": [
      1,
@@ -9496,7 +9496,7 @@
     ],
     "URTC-COMMON": [
      1,
-     "0.2.7"
+     "0.2.8"
     ],
     "URTC-DEVTOOLS": [
      0,
@@ -9524,7 +9524,7 @@
     ],
     "URTC-UPDATER": [
      2,
-     "0.3.0"
+     "0.3.1"
     ],
     "URTC-VISION-TOOL": [
      1,
@@ -9538,7 +9538,7 @@
    "sentinel": {
     "cand": 1,
     "gaps": 0,
-    "min": 13061,
+    "min": 12581,
     "red": 1
    },
    "tests": {
