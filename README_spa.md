@@ -76,7 +76,7 @@ Bienvenido al **Ecosistema HYDRA-UMC**, una plataforma de robótica industrial m
 ## 📈 Progreso del Ecosistema
 
 <!-- progress:hydra-umc -->
-`\[███████████▋░░░░░░░░] 58%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 59 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[███████████▊░░░░░░░░] 59%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 59 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -91,7 +91,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | Integración continua | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🟡 | `███████▊░░ 78%` | 46 de 59 repositorios se han comprobado al menos en un simulador. |
+| Simulación | 🟡 | `████████░░ 80%` | 47 de 59 repositorios se han comprobado al menos en un simulador. |
 | Hardware real | 🔴 | `█▏░░░░░░░░ 11%` | 4 de los 38 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
 | Producción | 🔴 | `▊░░░░░░░░░ 8%` | 5 de 59 repositorios están consolidados o en producción. |
 <!-- /status:hydra-umc -->
@@ -392,7 +392,7 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 **Actualizador:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:armor -->
-`\[██████████████░░░░░░] 70%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 19 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████████▍░░░░░░] 67%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 20 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -402,14 +402,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
-| Software | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟢 | `██████████ 100%` | 19 de 19 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 19 de 19 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🟢 | `█████████▌ 95%` | 18 de 19 repositorios se han comprobado al menos en un simulador. |
-| Hardware real | 🟡 | `██████░░░░ 60%` | 9 de los 15 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
-| Producción | 🟡 | `██████▎░░░ 63%` | 12 de 19 repositorios están consolidados o en producción. |
+| Software | 🟢 | `█████████░ 90%` | 18 de 20 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟢 | `█████████▌ 95%` | 19 de 20 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `█████████▌ 95%` | 19 de 20 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🟢 | `█████████░ 90%` | 18 de 20 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🟠 | `█████▋░░░░ 56%` | 9 de los 16 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🟡 | `██████░░░░ 60%` | 12 de 20 repositorios están consolidados o en producción. |
 <!-- /status:armor -->
 
 ## 🏗️ Cómo Está Construido A.R.M.O.R.
@@ -598,7 +598,7 @@ Fuera de los cuatro ecosistemas hay un quinto grupo: herramientas independientes
 **Actualizador:** ninguno propio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) es una de sus herramientas y cede el trabajo al actualizador de cada uno de los cuatro ecosistemas.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[███████████▋░░░░░░░░] 58%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -610,7 +610,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 de 2 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 2 de 2 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositorios se han comprobado al menos en un simulador. |
