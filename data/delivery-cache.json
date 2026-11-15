@@ -24,7 +24,6 @@
   "ARMOR-NODE-ALARM": {
    "art": true,
    "at": "2026-11-15T10:52:36Z",
-   "checked": true,
    "exp": "2026-11-22T10:51:30Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43705811000",
    "wf": "firmware-build.yml"
@@ -46,7 +45,6 @@
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-15T10:36:46Z",
-   "checked": true,
    "exp": "2026-11-22T10:35:34Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/43704540974",
    "wf": "firmware-build.yml"
@@ -54,7 +52,6 @@
   "ARMOR-NODE-SOLAR": {
    "art": true,
    "at": "2026-11-15T10:52:40Z",
-   "checked": true,
    "exp": "2026-11-22T10:51:49Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/43705806127",
    "wf": "firmware-build.yml"
