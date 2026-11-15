@@ -121,10 +121,10 @@
   },
   "HYDRA-UMC": {
    "art": true,
-   "at": "2026-11-15T02:47:34Z",
+   "at": "2026-11-15T07:13:03Z",
    "checked": true,
-   "exp": "2026-11-22T02:46:17Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43669111581",
+   "exp": "2026-11-22T07:11:41Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43688619885",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
@@ -945,64 +945,8 @@
     ]
    }
   },
-  "HYDRA-UMC-HIL-BRIDGE": {
-   "fp": "8e5197298313d9f0",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
-    "s": "verified",
-    "sch": [
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "HYDRA-UMC-JOB-DISPATCHER": {
-   "fp": "2aa4347ef6cd1bb4",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
-    "s": "verified",
-    "sch": [
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
   "HYDRA-UMC-NODE-HEALING": {
    "fp": "4af032834c0ddb5e",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
-    "s": "verified",
-    "sch": [
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "HYDRA-UMC-ORCHESTRATOR": {
-   "fp": "46c8f3c60a50d5a2",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
-    "s": "verified",
-    "sch": [
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "HYDRA-UMC-PATH-PLANNER-3D": {
-   "fp": "d5ea6988b166df0f",
    "r": {
     "bad": 0,
     "ho": 0,

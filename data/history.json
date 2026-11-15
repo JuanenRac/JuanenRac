@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 134,
-    "min": 15338,
-    "ok": 4919,
+    "fail": 148,
+    "min": 15659,
+    "ok": 5218,
     "other": 48,
-    "runs": 5101
+    "runs": 5414
    },
    "areas": {
     "armor": {
@@ -9264,39 +9264,39 @@
     ],
     "HYDRA-UMC-BRIDGE-AMR": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-BRIDGE-CNC": [
      1,
-     "0.2.6"
+     "0.2.7"
     ],
     "HYDRA-UMC-BRIDGE-DROIDS": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "HYDRA-UMC-BRIDGE-LASER": [
      1,
-     "0.2.4"
+     "0.2.5"
     ],
     "HYDRA-UMC-BRIDGE-OPENPNP": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-BRIDGE-PRINTER3D": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-BRIDGE-ROS2": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "HYDRA-UMC-BRIDGE-UAV": [
      1,
-     "0.2.2"
+     "0.2.3"
     ],
     "HYDRA-UMC-COGNITIVE-NODE": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-CONNECTOR-HUB": [
      1,
@@ -9312,11 +9312,11 @@
     ],
     "HYDRA-UMC-DETECTION-HEF": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-DEV-SERVER": [
      1,
-     "0.2.6"
+     "0.2.7"
     ],
     "HYDRA-UMC-DEVELOPER-NODE": [
      0,
@@ -9340,7 +9340,7 @@
     ],
     "HYDRA-UMC-EDITOR-URDF": [
      2,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": [
      1,
@@ -9348,7 +9348,7 @@
     ],
     "HYDRA-UMC-HIL-BRIDGE": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "HYDRA-UMC-IOS-CONTROL": [
      1,
@@ -9356,11 +9356,11 @@
     ],
     "HYDRA-UMC-JOB-DISPATCHER": [
      1,
-     "0.3.0"
+     "0.3.1"
     ],
     "HYDRA-UMC-LOCAL-TECHNICIAN": [
      1,
-     "0.2.2"
+     "0.2.3"
     ],
     "HYDRA-UMC-MESHES": [
      1,
@@ -9372,7 +9372,7 @@
     ],
     "HYDRA-UMC-MTCONNECT-ADAPTER": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-NODE-HEALING": [
      1,
@@ -9388,7 +9388,7 @@
     ],
     "HYDRA-UMC-ORCHESTRATOR": [
      1,
-     "0.2.6"
+     "0.2.7"
     ],
     "HYDRA-UMC-OS": [
      1,
@@ -9400,7 +9400,7 @@
     ],
     "HYDRA-UMC-PATH-PLANNER-3D": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "HYDRA-UMC-PHYSICS-REPLICA": [
      1,
@@ -9408,7 +9408,7 @@
     ],
     "HYDRA-UMC-PRODUCTION-REPORTS": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-SAFETY-ZONES": [
      1,
@@ -9416,11 +9416,11 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.6.8"
+     "0.6.9"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-SERVER": [
      1,
@@ -9440,7 +9440,7 @@
     ],
     "HYDRA-UMC-SWARM-SYNC": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": [
      2,
@@ -9448,7 +9448,7 @@
     ],
     "HYDRA-UMC-TELEMETRY-COLLECTOR": [
      1,
-     "0.2.2"
+     "0.2.3"
     ],
     "HYDRA-UMC-TOOL-CLI": [
      1,
@@ -9476,7 +9476,7 @@
     ],
     "HYDRA-UMC-VLA-ENGINE": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-VOICE-UI": [
      1,
@@ -9536,9 +9536,9 @@
     ]
    },
    "sentinel": {
-    "cand": 56,
+    "cand": 34,
     "gaps": 0,
-    "min": 15338,
+    "min": 15659,
     "red": 1
    },
    "tests": {
@@ -9588,8 +9588,8 @@
     "EH3D-UPDATER": 455,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 146,
-    "HYDRA-UMC": 1457,
-    "HYDRA-UMC-ANDROID-CONTROL": 725,
+    "HYDRA-UMC": 1483,
+    "HYDRA-UMC-ANDROID-CONTROL": 731,
     "HYDRA-UMC-ANOMALY-DETECTOR": 459,
     "HYDRA-UMC-BRIDGE-AMR": 271,
     "HYDRA-UMC-BRIDGE-CNC": 352,
@@ -9608,7 +9608,7 @@
     "HYDRA-UMC-DEVELOPER-NODE": 140,
     "HYDRA-UMC-DOCS": 281,
     "HYDRA-UMC-DOCS-QA": 283,
-    "HYDRA-UMC-DSI": 489,
+    "HYDRA-UMC-DSI": 495,
     "HYDRA-UMC-EDITOR-STL": 329,
     "HYDRA-UMC-EDITOR-URDF": 652,
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 295,
@@ -9629,10 +9629,10 @@
     "HYDRA-UMC-PHYSICS-REPLICA": 240,
     "HYDRA-UMC-PRODUCTION-REPORTS": 327,
     "HYDRA-UMC-SAFETY-ZONES": 1233,
-    "HYDRA-UMC-SDK": 1230,
+    "HYDRA-UMC-SDK": 1238,
     "HYDRA-UMC-SEMANTIC-PLANNER": 475,
     "HYDRA-UMC-SERVER": 1144,
-    "HYDRA-UMC-STUDIO": 1771,
+    "HYDRA-UMC-STUDIO": 1776,
     "HYDRA-UMC-STUDIO-KIT": 146,
     "HYDRA-UMC-SUITE": 77,
     "HYDRA-UMC-SWARM-SYNC": 224,
