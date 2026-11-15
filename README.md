@@ -521,8 +521,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.1.0 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.0.9 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE) | 0.0.2 | Adapter between the EH3D and HYDRA-UMC ecosystems (planned; no code yet). |
-| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.1.6 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
-| [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.1.4 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
+| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.1.7 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
+| [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.1.5 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
 
 ### 💠 Drill/Router/Milling projects:

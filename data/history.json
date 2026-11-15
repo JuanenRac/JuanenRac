@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 155,
-    "min": 14406,
-    "ok": 4712,
-    "other": 41,
-    "runs": 4908
+    "fail": 151,
+    "min": 13061,
+    "ok": 4342,
+    "other": 43,
+    "runs": 4536
    },
    "areas": {
     "armor": {
@@ -9212,7 +9212,7 @@
     ],
     "EH3D-SERVER": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "EH3D-STENCILCAM": [
      1,
@@ -9220,7 +9220,7 @@
     ],
     "EH3D-STUDIO": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "EH3D-SUITE-LAUNCHER": [
      1,
@@ -9538,7 +9538,7 @@
    "sentinel": {
     "cand": 1,
     "gaps": 0,
-    "min": 14406,
+    "min": 13061,
     "red": 1
    },
    "tests": {

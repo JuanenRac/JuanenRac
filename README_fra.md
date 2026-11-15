@@ -528,8 +528,8 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.0|Lecteurs en Rust pour Gerber RS-274X, fichiers de perçage Excellon et G-code (dialectes GRBL, Marlin et PlanetCNC), tolérants aux fichiers endommagés.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.9|Détecte, installe et met à jour les propres dépôts de l'écosystème (atomique par vérification, aucun GITHUB\_TOKEN requis).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adaptateur entre les écosystèmes EH3D et HYDRA-UMC (prévu ; pas encore de code).|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.6|Serveur en Rust avec interface REST et websocket : utilisateurs, machines et travaux, planification des travaux de perçage et de fraisage avec les bibliothèques de DRILLPRO et ROUTEPRO, un travail à la fois par machine.|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.4|Client web en Rust pour EH3D-SERVER.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.7|Serveur en Rust avec interface REST et websocket : utilisateurs, machines et travaux, planification des travaux de perçage et de fraisage avec les bibliothèques de DRILLPRO et ROUTEPRO, un travail à la fois par machine.|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.5|Client web en Rust pour EH3D-SERVER.|
 
 ### 💠 Projets de perçage, détourage et fraisage :
 |Dépôt|Version|Description|

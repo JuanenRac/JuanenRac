@@ -528,8 +528,8 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.0|Lectores en Rust para Gerber RS-274X, ficheros de taladrado Excellon y código G (dialectos GRBL, Marlin y PlanetCNC), tolerantes a ficheros dañados.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.0.9|Detecta, instala y actualiza los repositorios propios del ecosistema (atómico por verificación, sin necesidad de GITHUB\_TOKEN).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adaptador entre los ecosistemas EH3D y HYDRA-UMC (previsto; aún sin código).|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.6|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.4|Cliente web en Rust de EH3D-SERVER.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.7|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.5|Cliente web en Rust de EH3D-SERVER.|
 
 ### 💠 Proyectos de taladrado, fresado y contorneado:
 |Repositorio|Versión|Descripción|

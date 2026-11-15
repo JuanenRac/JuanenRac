@@ -517,12 +517,30 @@
     "at": "present"
    }
   },
+  "EH3D-SERVER": {
+   "fp": "433734fd978b0dc6",
+   "on": "2026-11-15",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "EH3D-STENCILCAM": {
    "fp": "8bb4bf50cc2e1bc9",
    "on": "2026-11-13",
    "r": {
     "ak": 3,
     "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-STUDIO": {
+   "fp": "9f1a888e2849a8b2",
+   "on": "2026-11-15",
+   "r": {
+    "ak": 1,
+    "an": 1,
     "at": "present"
    }
   },
@@ -608,7 +626,7 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "6168f8e9db11f88f",
+   "fp": "9cd525fe6f817465",
    "on": "2026-11-15",
    "r": {
     "ak": 0,
@@ -961,6 +979,20 @@
     ]
    }
   },
+  "EH3D-SERVER": {
+   "fp": "433734fd978b0dc6",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 4,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "EH3D-STENCILCAM": {
    "fp": "8bb4bf50cc2e1bc9",
    "r": {
@@ -970,6 +1002,20 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-STUDIO": {
+   "fp": "9f1a888e2849a8b2",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 1,
     "why": [
      "family"
     ]
