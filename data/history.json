@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 159,
-    "min": 15553,
-    "ok": 5338,
-    "other": 47,
-    "runs": 5544
+    "fail": 184,
+    "min": 15661,
+    "ok": 5499,
+    "other": 48,
+    "runs": 5731
    },
    "areas": {
     "armor": {
@@ -9064,7 +9064,7 @@
     ],
     "ARMOR-SERVER": [
      2,
-     "0.8.2.2"
+     "0.8.2.3"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -9076,7 +9076,7 @@
     ],
     "ARMOR-STUDIO": [
      2,
-     "0.8.2.4"
+     "0.8.2.5"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -9092,7 +9092,7 @@
     ],
     "ARMOR-WATCH": [
      0,
-     "0.0.1"
+     "0.0.2"
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
@@ -9120,7 +9120,7 @@
     ],
     "EH3D-CORE-LIBS": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
@@ -9160,11 +9160,11 @@
     ],
     "EH3D-LAB-BRIDGE": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-MANUFACTURING-PROFILE": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-NODE-BUNGARD": [
      1,
@@ -9204,7 +9204,7 @@
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-ROUTEPRO": [
      1,
@@ -9228,11 +9228,11 @@
     ],
     "EH3D-THERMAL-LAB": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-TOOL-MANAGER": [
      1,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-UPDATER": [
      1,
@@ -9240,7 +9240,7 @@
     ],
     "EH3D-VALIDATION-LAB": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-VISION-STUDIO": [
      1,
@@ -9488,7 +9488,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.8.3"
+     "1.8.4"
     ],
     "URTC": [
      1,
@@ -9536,10 +9536,10 @@
     ]
    },
    "sentinel": {
-    "cand": 16,
+    "cand": 13,
     "gaps": 0,
-    "min": 15553,
-    "red": 1
+    "min": 15661,
+    "red": 5
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -9561,7 +9561,7 @@
     "EH3D-CAM-DEBUGGER": 123,
     "EH3D-COMMON": 423,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
-    "EH3D-CORE-LIBS": 342,
+    "EH3D-CORE-LIBS": 358,
     "EH3D-DESIGN-EXPLORER": 3,
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
@@ -9647,16 +9647,16 @@
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 464,
     "HYDRA-UMC-WATCH": 212,
-    "URTC-COMMON": 3008,
+    "URTC-COMMON": 3027,
     "URTC-DEVTOOLS": 134,
     "URTC-DOCS": 229,
-    "URTC-FLASHER": 913,
+    "URTC-FLASHER": 916,
     "URTC-GATEWAY": 225,
     "URTC-SMART-RACK": 772,
-    "URTC-TESTER": 1100,
+    "URTC-TESTER": 1104,
     "URTC-UPDATER": 721,
     "URTC-VISION-TOOL": 244,
-    "URTC-WEB-STUDIO": 1774
+    "URTC-WEB-STUDIO": 1778
    }
   }
  ],

@@ -58,9 +58,10 @@
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-12T21:51:43Z",
-   "exp": "2026-11-19T21:50:08Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/43314015516",
+   "at": "2026-11-15T09:47:35Z",
+   "checked": true,
+   "exp": "2026-11-22T09:45:58Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/43700757441",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -72,9 +73,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-12T22:24:56Z",
-   "exp": "2026-11-19T22:24:20Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/43319512827",
+   "at": "2026-11-15T09:41:57Z",
+   "checked": true,
+   "exp": "2026-11-22T09:41:20Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/43700405392",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -83,6 +85,14 @@
    "exp": "2026-11-19T04:20:23Z",
    "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/43154112193",
    "wf": "package-build.yml"
+  },
+  "ARMOR-WATCH": {
+   "art": true,
+   "at": "2026-11-15T10:12:48Z",
+   "checked": true,
+   "exp": "2026-11-22T10:12:00Z",
+   "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/43702712974",
+   "wf": "apk-build.yml"
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
@@ -376,8 +386,8 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "3f9be38eb1a02634",
-   "on": "2026-11-12",
+   "fp": "1923cee2aaa36548",
+   "on": "2026-11-15",
    "r": {
     "ak": 1,
     "an": 1,
@@ -394,8 +404,8 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "4b7a9d832c99613c",
-   "on": "2026-11-12",
+   "fp": "ed044cf9501714b5",
+   "on": "2026-11-15",
    "r": {
     "ak": 1,
     "an": 1,
@@ -711,7 +721,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "3f9be38eb1a02634",
+   "fp": "1923cee2aaa36548",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -743,7 +753,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "4b7a9d832c99613c",
+   "fp": "ed044cf9501714b5",
    "r": {
     "bad": 0,
     "ho": 0,
