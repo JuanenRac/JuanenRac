@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-15T18:52:38Z",
+ "asof": "2026-11-15T19:44:56Z",
  "ci": {
   "checked": 615,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1262,
-    "min7": 1262,
+    "min24": 1410,
+    "min7": 1410,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-TELEMETRY-COLLECTOR"
    }
   ],
-  "total24": 14518,
-  "total7": 46376,
+  "total24": 14468,
+  "total7": 46523,
   "warn": true
  },
  "ecosystems": {
@@ -335,7 +335,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14518
+    "min": 14468
    }
   }
  ],
@@ -555,7 +555,7 @@
    12959,
    70311,
    12143,
-   14518
+   14468
   ],
   "red": [
    3,
