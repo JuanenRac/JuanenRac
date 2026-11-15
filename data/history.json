@@ -8948,10 +8948,10 @@
   {
    "actions": {
     "fail": 155,
-    "min": 14468,
-    "ok": 4741,
+    "min": 14406,
+    "ok": 4712,
     "other": 41,
-    "runs": 4937
+    "runs": 4908
    },
    "areas": {
     "armor": {
@@ -9538,7 +9538,7 @@
    "sentinel": {
     "cand": 1,
     "gaps": 0,
-    "min": 14468,
+    "min": 14406,
     "red": 1
    },
    "tests": {

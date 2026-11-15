@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-15T19:44:56Z",
+ "asof": "2026-11-15T20:36:50Z",
  "ci": {
   "checked": 615,
   "red": [
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-TELEMETRY-COLLECTOR"
    }
   ],
-  "total24": 14468,
-  "total7": 46523,
+  "total24": 14406,
+  "total7": 46500,
   "warn": true
  },
  "ecosystems": {
@@ -335,7 +335,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14468
+    "min": 14406
    }
   }
  ],
@@ -555,7 +555,7 @@
    12959,
    70311,
    12143,
-   14468
+   14406
   ],
   "red": [
    3,
