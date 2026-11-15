@@ -76,7 +76,7 @@
 ## 📈 生态系统进展
 
 <!-- progress:hydra-umc -->
-`\[███████████▋░░░░░░░░] 58%` — 根据真实数据计算：其 59 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[███████████▊░░░░░░░░] 59%` — 根据真实数据计算：其 59 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -91,7 +91,7 @@
 | 持续集成 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个提供八种语言的 README。 |
-| 仿真 | 🟡 | `███████▊░░ 78%` | 59 个仓库中有 46 个至少在仿真器中验证过。 |
+| 仿真 | 🟡 | `████████░░ 80%` | 59 个仓库中有 47 个至少在仿真器中验证过。 |
 | 真实硬件 | 🔴 | `█▏░░░░░░░░ 11%` | 依赖硬件的 38 个仓库中有 4 个在台架或现场验证过；其余从未在真实设备上运行。 |
 | 生产 | 🔴 | `▊░░░░░░░░░ 8%` | 59 个仓库中有 5 个已成熟或已投入生产。 |
 <!-- /status:hydra-umc -->
@@ -193,8 +193,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|面向 CM5 的 Raspberry Pi OS 平台层：配置档案、配置、诊断、服务和更新；不是新的发行版。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.4|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.2|面向 CM5 的 Raspberry Pi OS 平台层：配置档案、配置、诊断、服务和更新；不是新的发行版。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.5|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.0|面向外部机器连接器的适配器清单的声明式注册表与校验器。|
 
 ### 💠 核心控制与操作员客户端
@@ -202,8 +202,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|适用于 STM32H757/G474 且带 S 曲线运动学的核心运动控制固件。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.0|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.0|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.1|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.1|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.6|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.7|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
@@ -625,7 +625,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 
 | 工具 | 版本 | 简介 |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.1 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.3 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 
 \---

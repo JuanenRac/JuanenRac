@@ -76,7 +76,7 @@
 ## 📈 エコシステムの進捗状況
 
 <!-- progress:hydra-umc -->
-`\[███████████▋░░░░░░░░] 58%` — 実際のデータから算出しています。59 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[███████████▊░░░░░░░░] 59%` — 実際のデータから算出しています。59 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -91,7 +91,7 @@
 | 継続的インテグレーション | 🟢 | `██████████ 100%` | 59 件中 59 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
 | 公開リリース | 🟢 | `██████████ 100%` | 59 件中 59 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
 | ドキュメント | 🟢 | `██████████ 100%` | 59 件中 59 件のリポジトリに、8 言語すべての README があります。 |
-| シミュレーション | 🟡 | `███████▊░░ 78%` | 59 件中 46 件のリポジトリが、少なくともシミュレーターで検証されています。 |
+| シミュレーション | 🟡 | `████████░░ 80%` | 59 件中 47 件のリポジトリが、少なくともシミュレーターで検証されています。 |
 | 実機 | 🔴 | `█▏░░░░░░░░ 11%` | ハードウェアに依存する 38 件のうち 4 件が、ベンチまたは現場で検証されています。残りは実機で動かしたことがありません。 |
 | 本番運用 | 🔴 | `▊░░░░░░░░░ 8%` | 59 件中 5 件のリポジトリが、確立済みまたは本番運用の段階です。 |
 <!-- /status:hydra-umc -->
@@ -193,8 +193,8 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|CM5 向けの Raspberry Pi OS 上のプラットフォーム層。プロファイル、設定、診断、サービス、アップデートを提供します。新しいディストリビューションではありません。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.4|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.2|CM5 向けの Raspberry Pi OS 上のプラットフォーム層。プロファイル、設定、診断、サービス、アップデートを提供します。新しいディストリビューションではありません。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.5|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.0|外部マシン向けコネクタのアダプターマニフェストを管理する、宣言型のレジストリと検証ツール。|
 
 ### 💠 コア制御とオペレータークライアント
@@ -202,8 +202,8 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|S字運動学を備えたSTM32H757/G474用コアモーション制御ファームウェア。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.0|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.0|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.1|ロボットオーケストレーション用のヘッドレスNode.js APIおよびWebSocketバックエンド。|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.1|3Dロボット監視および制御用の高度なReactベースのWebダッシュボード。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC の Web クライアント共通の TypeScript キット：セッション、HTTP クライアント、接続履歴、設定、ツアー。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.6|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.7|7インチ産業用ディスプレイ（CM5）向けの専用Flutterベースのタッチインターフェース。|
@@ -625,7 +625,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 
 | ツール | バージョン | 概要 |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.1 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.3 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
 
 \---

@@ -76,7 +76,7 @@ Bienvenue dans l'**écosystème HYDRA-UMC**, une plateforme de robotique industr
 ## 📈 Progression de l'écosystème
 
 <!-- progress:hydra-umc -->
-`\[███████████▋░░░░░░░░] 58%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 59 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[███████████▊░░░░░░░░] 59%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 59 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -91,7 +91,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | Intégration continue | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont le README dans les huit langues. |
-| Simulation | 🟡 | `███████▊░░ 78%` | 46 dépôts sur 59 ont été vérifiés au moins dans un simulateur. |
+| Simulation | 🟡 | `████████░░ 80%` | 47 dépôts sur 59 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `█▏░░░░░░░░ 11%` | 4 des 38 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
 | Production | 🔴 | `▊░░░░░░░░░ 8%` | 5 dépôts sur 59 sont établis ou en production. |
 <!-- /status:hydra-umc -->
@@ -193,8 +193,8 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 
 |Dépôt|Version|Description|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|Couche de plateforme sur Raspberry Pi OS pour le CM5 : profils, configuration, diagnostic, services et mises à jour ; pas une nouvelle distribution.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.4|Contrats versionnés partagés, clients légers et bancs de conformité pour les services, IUs et adaptateurs CM5 ; ne remplace pas les API des fournisseurs.|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.2|Couche de plateforme sur Raspberry Pi OS pour le CM5 : profils, configuration, diagnostic, services et mises à jour ; pas une nouvelle distribution.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.5|Contrats versionnés partagés, clients légers et bancs de conformité pour les services, IUs et adaptateurs CM5 ; ne remplace pas les API des fournisseurs.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.0|Registre déclaratif et validateur des manifestes d'adaptateurs pour les connecteurs de machines externes.|
 
 ### 💠 Contrôle Principal et Clients Opérateurs
@@ -202,8 +202,8 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 |Dépôt|Version|Description|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|Micrologiciel principal de contrôle de mouvement pour STM32H757/G474 avec cinématique en S.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.0|API Node.js sans tête (headless) et backend WebSocket pour l'orchestration robotique.|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.0|Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D du robot.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.1|API Node.js sans tête (headless) et backend WebSocket pour l'orchestration robotique.|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.1|Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D du robot.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|Kit TypeScript partagé des clients web de HYDRA-UMC : session, client HTTP, historique des connexions, préférences et visites guidées.|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.6|Application de bureau haute performance Python/Qt pour l'automatisation industrielle.|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.7|Interface tactile dédiée basée sur Flutter pour écrans industriels de 7 pouces (CM5).|
@@ -625,7 +625,7 @@ Le groupe réunit les programmes qui se trouvent au-dessus des quatre écosystè
 
 | Outil | Version | Ce que c'est |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.1 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.3 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
 
 \---

@@ -76,7 +76,7 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 ## 📈 Ökosystem-Fortschritt
 
 <!-- progress:hydra-umc -->
-`\[███████████▋░░░░░░░░] 58%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 59 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[███████████▊░░░░░░░░] 59%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 59 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -91,7 +91,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | Kontinuierliche Integration | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben die README in den acht Sprachen. |
-| Simulation | 🟡 | `███████▊░░ 78%` | 46 von 59 Repositories wurden mindestens in einem Simulator geprüft. |
+| Simulation | 🟡 | `████████░░ 80%` | 47 von 59 Repositories wurden mindestens in einem Simulator geprüft. |
 | Echte Hardware | 🔴 | `█▏░░░░░░░░ 11%` | 4 der 38 Repositories, die von Hardware abhängen, wurden auf dem Prüfstand oder im Feld geprüft; der Rest lief nie mit der echten Ausrüstung. |
 | Produktion | 🔴 | `▊░░░░░░░░░ 8%` | 5 von 59 Repositories sind etabliert oder im Produktivbetrieb. |
 <!-- /status:hydra-umc -->
@@ -193,8 +193,8 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.1|Plattformschicht auf Raspberry Pi OS für das CM5: Profile, Konfiguration, Diagnose, Dienste und Updates; keine neue Distribution.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.4|Geteilte versionierte Verträge, Thin Clients und Konformitätstests für Dienste, Benutzeroberflächen und CM5-Adapter; ersetzt keine Hersteller-APIs.|
+|[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.2|Plattformschicht auf Raspberry Pi OS für das CM5: Profile, Konfiguration, Diagnose, Dienste und Updates; keine neue Distribution.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.5|Geteilte versionierte Verträge, Thin Clients und Konformitätstests für Dienste, Benutzeroberflächen und CM5-Adapter; ersetzt keine Hersteller-APIs.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.0|Deklaratives Register und Validator für Adapter-Manifeste von Konnektoren externer Maschinen.|
 
 ### 💠 Kernsteuerung und Bediener-Clients
@@ -202,8 +202,8 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|Kern-Bewegungssteuerungs-Firmware für STM32H757/G474 mit S-Kurven-Kinematik.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.0|Headless Node.js-API und WebSocket-Backend für die robotergestützte Orchestrierung.|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.0|Fortgeschrittenes React-basiertes Web-Dashboard zur 3D-Roboterüberwachung und -steuerung.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.1|Headless Node.js-API und WebSocket-Backend für die robotergestützte Orchestrierung.|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.1|Fortgeschrittenes React-basiertes Web-Dashboard zur 3D-Roboterüberwachung und -steuerung.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|Gemeinsames TypeScript-Kit der HYDRA-UMC-Webclients: Sitzung, HTTP-Client, Verbindungsverlauf, Einstellungen und Rundgänge.|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.6|Leistungsstarke Python/Qt-Desktop-Anwendung für die Industrieautomation.|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.7|Dedizierte Flutter-basierte Touch-Schnittstelle für 7"-Industrieprodukte (CM5).|
@@ -625,7 +625,7 @@ Die Gruppe enthält die Programme oberhalb der vier Ökosysteme, die keines davo
 
 | Werkzeug | Version | Was es ist |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.1 | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.3 | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | Das eine Fenster und die eine Kommandozeile, die an den Updater jedes Ökosystems übergeben. |
 
 \---
