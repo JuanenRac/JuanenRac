@@ -262,7 +262,8 @@
   "URTC-COMMON": {
    "art": true,
    "at": "2026-11-08T00:24:30Z",
-   "exp": "2026-11-15T00:23:41Z",
+   "checked": true,
+   "exp": "2026-12-08T00:23:54Z",
    "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42429523647",
    "wf": "release-files-build.yml"
   },
@@ -297,7 +298,8 @@
   "URTC-WEB-STUDIO": {
    "art": true,
    "at": "2026-11-08T00:27:31Z",
-   "exp": "2026-11-15T00:26:55Z",
+   "checked": true,
+   "exp": "2026-12-08T00:27:08Z",
    "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/42429746229",
    "wf": "site-build.yml"
   }
