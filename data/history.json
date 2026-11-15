@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 181,
-    "min": 14945,
-    "ok": 5207,
-    "other": 46,
-    "runs": 5434
+    "fail": 185,
+    "min": 14975,
+    "ok": 5226,
+    "other": 47,
+    "runs": 5458
    },
    "areas": {
     "armor": {
@@ -8970,12 +8970,12 @@
      "hardware": 0,
      "production": 0,
      "releases": 100,
-     "simulation": 24,
+     "simulation": 74,
      "software": 55,
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 50,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -8990,7 +8990,7 @@
      "hardware": 11,
      "production": 8,
      "releases": 100,
-     "simulation": 80,
+     "simulation": 100,
      "software": 97,
      "tests": 100
     },
@@ -9008,8 +9008,8 @@
    "date": "2026-11-15",
    "progress": {
     "armor": 68,
-    "eh3d": 45,
-    "electro-hobby-3d": 63,
+    "eh3d": 47,
+    "electro-hobby-3d": 61,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -9538,7 +9538,7 @@
    "sentinel": {
     "cand": 10,
     "gaps": 0,
-    "min": 14945,
+    "min": 14975,
     "red": 1
    },
    "tests": {

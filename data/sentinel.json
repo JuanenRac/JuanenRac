@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-15T14:22:39Z",
+ "asof": "2026-11-15T14:34:25Z",
  "ci": {
   "checked": 611,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1313,
-    "min7": 1313,
+    "min24": 1355,
+    "min7": 1355,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-SAFETY-ZONES"
    }
   ],
-  "total24": 14945,
-  "total7": 46992,
+  "total24": 14975,
+  "total7": 46903,
   "warn": true
  },
  "ecosystems": {
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 90
+  "gap_minutes": 15
  },
  "hygiene": {
   "allowed_missing": [],
@@ -343,7 +343,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14945
+    "min": 14975
    }
   }
  ],
@@ -617,7 +617,7 @@
    12959,
    70311,
    12143,
-   14945
+   14975
   ],
   "red": [
    3,
