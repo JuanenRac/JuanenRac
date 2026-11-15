@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 189,
-    "min": 15729,
-    "ok": 4794,
-    "other": 77,
-    "runs": 5060
+    "fail": 187,
+    "min": 16095,
+    "ok": 4871,
+    "other": 78,
+    "runs": 5136
    },
    "areas": {
     "armor": {
@@ -8962,7 +8962,7 @@
      "releases": 95,
      "simulation": 90,
      "software": 90,
-     "tests": 95
+     "tests": 90
     },
     "eh3d": {
      "ci": 100,
@@ -8985,7 +8985,7 @@
      "tests": 50
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -9536,9 +9536,9 @@
     ]
    },
    "sentinel": {
-    "cand": 52,
+    "cand": 55,
     "gaps": 0,
-    "min": 15729,
+    "min": 16095,
     "red": 3
    },
    "tests": {

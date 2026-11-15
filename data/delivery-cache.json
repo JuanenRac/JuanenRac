@@ -121,9 +121,10 @@
   },
   "HYDRA-UMC": {
    "art": true,
-   "at": "2026-11-14T16:58:38Z",
-   "exp": "2026-11-21T16:57:26Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43618143557",
+   "at": "2026-11-15T01:41:27Z",
+   "checked": true,
+   "exp": "2026-11-22T01:32:56Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43662970564",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
@@ -262,7 +263,6 @@
   "URTC-COMMON": {
    "art": true,
    "at": "2026-11-08T00:24:30Z",
-   "checked": true,
    "exp": "2026-12-08T00:23:54Z",
    "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/42429523647",
    "wf": "release-files-build.yml"
@@ -298,7 +298,6 @@
   "URTC-WEB-STUDIO": {
    "art": true,
    "at": "2026-11-08T00:27:31Z",
-   "checked": true,
    "exp": "2026-12-08T00:27:08Z",
    "url": "https://github.com/JuanenRac/URTC-WEB-STUDIO/actions/runs/42429746229",
    "wf": "site-build.yml"
