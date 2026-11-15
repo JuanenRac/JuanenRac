@@ -23,9 +23,10 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-14T11:19:42Z",
-   "exp": "2026-11-21T11:18:20Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43589141080",
+   "at": "2026-11-15T10:52:36Z",
+   "checked": true,
+   "exp": "2026-11-22T10:51:30Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43705811000",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
@@ -44,22 +45,23 @@
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
-   "at": "2026-11-14T11:19:00Z",
-   "exp": "2026-11-21T11:18:09Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/43589087781",
+   "at": "2026-11-15T10:36:46Z",
+   "checked": true,
+   "exp": "2026-11-22T10:35:34Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/43704540974",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-14T11:19:32Z",
-   "exp": "2026-11-21T11:18:21Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/43589113510",
+   "at": "2026-11-15T10:52:40Z",
+   "checked": true,
+   "exp": "2026-11-22T10:51:49Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/43705806127",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
    "art": true,
    "at": "2026-11-15T09:47:35Z",
-   "checked": true,
    "exp": "2026-11-22T09:45:58Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/43700757441",
    "wf": "package-build.yml"
@@ -74,7 +76,6 @@
   "ARMOR-STUDIO": {
    "art": true,
    "at": "2026-11-15T09:41:57Z",
-   "checked": true,
    "exp": "2026-11-22T09:41:20Z",
    "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/43700405392",
    "wf": "package-build.yml"
@@ -89,7 +90,6 @@
   "ARMOR-WATCH": {
    "art": true,
    "at": "2026-11-15T10:12:48Z",
-   "checked": true,
    "exp": "2026-11-22T10:12:00Z",
    "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/43702712974",
    "wf": "apk-build.yml"
@@ -341,12 +341,12 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "7b94906779810f4c",
-   "on": "2026-11-13",
+   "fp": "59f57a4cdbeb5ae0",
+   "on": "2026-11-15",
    "r": {
-    "ak": 0,
+    "ak": 3,
     "an": 3,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-NODE-ELECTRICAL": {
@@ -368,21 +368,21 @@
    }
   },
   "ARMOR-NODE-RADAR": {
-   "fp": "e329c091893c6840",
-   "on": "2026-11-13",
+   "fp": "a91592727a956802",
+   "on": "2026-11-15",
    "r": {
-    "ak": 0,
+    "ak": 3,
     "an": 3,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "1a735f428245cc1d",
-   "on": "2026-11-13",
+   "fp": "b8c21a3533b5d409",
+   "on": "2026-11-15",
    "r": {
-    "ak": 0,
+    "ak": 3,
     "an": 3,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-SERVER": {
@@ -415,6 +415,15 @@
   "ARMOR-VOICE-AI": {
    "fp": "993939b98e635907",
    "on": "2026-11-14",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "ARMOR-WATCH": {
+   "fp": "01f5b23b442ac117",
+   "on": "2026-11-15",
    "r": {
     "ak": 0,
     "an": 1,
@@ -646,7 +655,7 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "7b94906779810f4c",
+   "fp": "59f57a4cdbeb5ae0",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -691,7 +700,7 @@
    }
   },
   "ARMOR-NODE-RADAR": {
-   "fp": "e329c091893c6840",
+   "fp": "a91592727a956802",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -706,7 +715,7 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "1a735f428245cc1d",
+   "fp": "b8c21a3533b5d409",
    "r": {
     "bad": 0,
     "ho": 0,
