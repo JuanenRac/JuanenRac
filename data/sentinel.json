@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-15T12:56:27Z",
+ "asof": "2026-11-15T14:22:39Z",
  "ci": {
-  "checked": 612,
+  "checked": 611,
   "red": [
    {
     "repo": "HYDRA-UMC",
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1438,
-    "min7": 1438,
+    "min24": 1313,
+    "min7": 1313,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -40,13 +40,13 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 412,
-    "min7": 412,
+    "min24": 414,
+    "min7": 414,
     "repo": "HYDRA-UMC-SAFETY-ZONES"
    }
   ],
-  "total24": 15289,
-  "total7": 47883,
+  "total24": 14945,
+  "total7": 46992,
   "warn": true
  },
  "ecosystems": {
@@ -343,7 +343,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 15289
+    "min": 14945
    }
   }
  ],
@@ -363,7 +363,7 @@
     "tag": "v0.3.5"
    },
    {
-    "entries": 35,
+    "entries": 36,
     "published": "2026-11-13T01:23:55Z",
     "repo": "HYDRA-UMC-SUITE",
     "tag": "v0.8.0.6"
@@ -381,16 +381,16 @@
     "tag": "v0.0.5"
    },
    {
+    "entries": 18,
+    "published": "2026-11-13T00:57:34Z",
+    "repo": "HYDRA-UMC-DSI",
+    "tag": "v0.3.7"
+   },
+   {
     "entries": 17,
     "published": "2026-11-12T22:56:07Z",
     "repo": "ARMOR-ANDROID-CONTROL",
     "tag": "v0.8.0.7"
-   },
-   {
-    "entries": 17,
-    "published": "2026-11-13T00:57:34Z",
-    "repo": "HYDRA-UMC-DSI",
-    "tag": "v0.3.7"
    },
    {
     "entries": 12,
@@ -617,7 +617,7 @@
    12959,
    70311,
    12143,
-   15289
+   14945
   ],
   "red": [
    3,
