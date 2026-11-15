@@ -194,8 +194,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.2|面向 CM5 的 Raspberry Pi OS 平台层：配置档案、配置、诊断、服务和更新；不是新的发行版。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.9|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
-|[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.0|面向外部机器连接器的适配器清单的声明式注册表与校验器。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.1|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
+|[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|面向外部机器连接器的适配器清单的声明式注册表与校验器。|
 
 ### 💠 核心控制与操作员客户端
 
@@ -217,10 +217,10 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.3|用于 8 路同时接入的 USB 3.0 相机流的高速感知节点。|
+|[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|用于 8 路同时接入的 USB 3.0 相机流的高速感知节点。|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|针对工业视频中继优化的 GStreamer/MediaMTX 管道。|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|用于 SMD 和元件质量保证（QA）的硬件加速 YOLO 模型库。|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.4|用于机器人工作空间保护的实时 AI 入侵检测。|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|用于机器人工作空间保护的实时 AI 入侵检测。|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|用于亚毫米级位姿校正的基于图像的运动学反馈。|
 
 ### 🧠 认知 AI 节点（Jetson Orin NX 优化）
@@ -229,9 +229,9 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |-|-|-|
 |[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.2.2|用于逻辑任务规划和语音控制的语义推理节点。|
 |[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.2.4|用于复杂任务执行的视觉-语言-动作（Vision-Language-Action）模型实现。|
-|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.4|用于自然语言操作员交互的本地私有 STT/TTS 管道。|
+|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.5|用于自然语言操作员交互的本地私有 STT/TTS 管道。|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.2.1|具有上下文感知错误恢复功能的基于 LLM 的任务编排器。|
-|[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.9|经技术手册和源代码训练的基于 RAG 的 AI 助手。|
+|[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.2.0|经技术手册和源代码训练的基于 RAG 的 AI 助手。|
 |[HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN)|0.2.3|在本地运行、由策略管控的 AI 维护技术员：风险等级和工具白名单；检索到的文档永远无法触发工具调用。|
 
 ### 🐝 编排与群控
@@ -248,16 +248,16 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.8|用于无风险机器人测试的高保真物理仿真引擎。|
+|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.9|用于无风险机器人测试的高保真物理仿真引擎。|
 |[HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA)|0.1.5|URDF 链的真实世界物理仿真（MuJoCo/PhysX）。|
 |[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.1.7|用于真实与虚拟命令同步的硬件在环（Hardware-in-the-loop）接口。|
-|[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.5|视觉节点训练数据集的过程生成器。|
+|[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.6|视觉节点训练数据集的过程生成器。|
 
 ### 📊 数据与分析
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE)|0.2.6|用于海量工业机器人数据的大数据存储。|
+|[HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE)|0.2.7|用于海量工业机器人数据的大数据存储。|
 |[HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR)|0.2.3|用于 CAN、WebSocket 和系统日志的高吞吐量摄取器。|
 |[HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR)|0.2.4|基于电机振动特征的预测性维护引擎。|
 |[HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS)|0.2.2|用于工业工厂管理的自动化 OEE 和 KPI 生成。|
@@ -266,9 +266,9 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.2.0|适配工厂标准（OPC-UA/MQTT）的工业 4.0 互操作性桥梁。|
-|[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.8|将 HydraState 机器人对象映射到标准 OPC-UA 节点。|
-|[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.2.1|用于 IoT 集成和外部仪表板的遥测桥接器。|
+|[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.2.1|适配工厂标准（OPC-UA/MQTT）的工业 4.0 互操作性桥梁。|
+|[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.9|将 HydraState 机器人对象映射到标准 OPC-UA 节点。|
+|[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.2.2|用于 IoT 集成和外部仪表板的遥测桥接器。|
 |[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.2.4|用于机床和机器人健康监测的标准化接口。|
 
 ### 🌉 外部自动化桥接
@@ -289,14 +289,14 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.3|具备触觉安全警报的可穿戴紧急仪表板。|
-|[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.1|用于车队自动化、刷机（flashing）和运维的命令行界面。|
-|[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.4|为 Web 仪表板提供自然语言见解的 AI 扩展。|
+|[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.2|用于车队自动化、刷机（flashing）和运维的命令行界面。|
+|[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.5|为 Web 仪表板提供自然语言见解的 AI 扩展。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.8|用于检测、安装和手动更新每个生态系统项目的跨平台 GUI/CLI 工具。|
-|[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.7|适用于 Windows 和 Linux 的桌面工具：构建可直接烧录的 CM5 镜像，包含生态系统的当前版本和首次启动配置。|
+|[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.8|适用于 Windows 和 Linux 的桌面工具：构建可直接烧录的 CM5 镜像，包含生态系统的当前版本和首次启动配置。|
 |[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.2.3|维护事件协调器：收集经过脱敏的状态快照并向 AI 服务商请求诊断；绝不自行应用补丁。|
-|[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.3|开发节点：核查事件证据，运行已批准的复现用例，并按修订版本缓存检出。|
+|[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.4|开发节点：核查事件证据，运行已批准的复现用例，并按修订版本缓存检出。|
 |[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.7|可复现的开发主机：由策略管控的配置与清单目录，将发展为隔离的任务运行器；默认没有部署权限。|
-|[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.3|生态系统的架构、接口、安全基线、能力矩阵和自动生成的项目目录，以及对比工具。|
+|[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.4|生态系统的架构、接口、安全基线、能力矩阵和自动生成的项目目录，以及对比工具。|
 
 \---
 
@@ -368,7 +368,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|具备自动预热和生命周期审计功能的智能工具存储。|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|集成热成像和 RGB 相机以实现主动 QA 的工具头。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.0|根据自身的清单检测、安装和更新机器上的 URTC 仓库。|
-|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.6|URTC 的架构、接口、安全基线、能力矩阵、CAN 协议说明和自动生成的项目目录。|
+|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.7|URTC 的架构、接口、安全基线、能力矩阵、CAN 协议说明和自动生成的项目目录。|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.7|以数据形式描述的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量和传输层。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.9|URTC CAN 总线前的网关：允许的标识符列表、速率限制和会话密钥。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.6|URTC 家族共享的仓库工具，作为一个带版本的集合，每个仓库中有一个锁定文件。|
@@ -447,8 +447,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.9|外壳设计（雷达角落外壳；太阳能、电气和报警节点的勾选框）以及台架验收矩阵。|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Compose 拓扑、测试台安装程序、备份与恢复、TLS 配置、自有 MQTT 代理、观测和语音服务以及管理代理。|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|场景和可重复故障。|
-|[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.2.2|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
-|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.2.0|规范文档和能力矩阵。|
+|[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.2.3|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
+|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.2.1|规范文档和能力矩阵。|
 
 \---
 

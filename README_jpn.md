@@ -194,8 +194,8 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.2|CM5 向けの Raspberry Pi OS 上のプラットフォーム層。プロファイル、設定、診断、サービス、アップデートを提供します。新しいディストリビューションではありません。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.6.9|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
-|[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.0|外部マシン向けコネクタのアダプターマニフェストを管理する、宣言型のレジストリと検証ツール。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.1|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
+|[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|外部マシン向けコネクタのアダプターマニフェストを管理する、宣言型のレジストリと検証ツール。|
 
 ### 💠 コア制御とオペレータークライアント
 
@@ -217,10 +217,10 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.3|8つの同時USB 3.0カメラストリーム用高速知覚ノード。|
+|[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|8つの同時USB 3.0カメラストリーム用高速知覚ノード。|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|産業用ビデオ中継用に最適化されたGStreamer/MediaMTXパイプライン。|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|SMDおよび部品QA用のハードウェアアクセラレーションYOLOモデルライブラリ。|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.4|ロボット作業領域保護のためのリアルタイムAI侵入検知。|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|ロボット作業領域保護のためのリアルタイムAI侵入検知。|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|サブミリ精度のポーズ補正のための画像ベースの運動学フィードバック。|
 
 ### 🧠 認知AIノード（Jetson Orin NX最適化）
@@ -229,9 +229,9 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |-|-|-|
 |[HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE)|0.2.2|論理的ミッションプランニングおよび音声制御用の意味的推論ノード。|
 |[HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE)|0.2.4|複雑なタスク実行のためのVision-Language-Actionモデルの実装。|
-|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.4|オペレーターの自然言語インタラクションのためのローカルかつプライベートなSTT/TTSパイプライン。|
+|[HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI)|0.2.5|オペレーターの自然言語インタラクションのためのローカルかつプライベートなSTT/TTSパイプライン。|
 |[HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER)|0.2.1|コンテキスト認識エラー回復機能を備えたLLMベースのミッションオーケストレーター。|
-|[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.1.9|技術マニュアルとソースコードでトレーニングされたRAGベースのAIアシスタント。|
+|[HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA)|0.2.0|技術マニュアルとソースコードでトレーニングされたRAGベースのAIアシスタント。|
 |[HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN)|0.2.3|ローカルで動作しポリシーで制御される AI 保守技術者。リスクレベルとツールの許可リストを備え、取得した文書がツール呼び出しを起動することはありません。|
 
 ### 🐝 オーケストレーションと群制御
@@ -248,16 +248,16 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.8|リスクのないロボットテストのための高忠実度物理シミュレーションエンジン。|
+|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.9|リスクのないロボットテストのための高忠実度物理シミュレーションエンジン。|
 |[HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA)|0.1.5|URDFチェーンの実世界物理シミュレーション（MuJoCo/PhysX）。|
 |[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.1.7|実コマンドと仮想コマンドの同期のためのHardware-in-the-Loopインターフェース。|
-|[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.5|ビジョンノード向けトレーニングデータセットの手続き型ジェネレーター。|
+|[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.6|ビジョンノード向けトレーニングデータセットの手続き型ジェネレーター。|
 
 ### 📊 データとアナリティクス
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE)|0.2.6|大規模な産業用ロボットデータのためのビッグデータストレージ。|
+|[HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE)|0.2.7|大規模な産業用ロボットデータのためのビッグデータストレージ。|
 |[HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR)|0.2.3|CAN、WebSocket、システムログ用の高スループットインジェスター。|
 |[HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR)|0.2.4|モーター振動シグネチャに基づく予知保全エンジン。|
 |[HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS)|0.2.2|産業プラント管理向けの自動OEEおよびKPI生成。|
@@ -266,9 +266,9 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.2.0|ファクトリー標準（OPC-UA/MQTT）のためのインダストリー4.0相互運用性ブリッジ。|
-|[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.8|HydraStateロボットオブジェクトの標準OPC-UAノードへのマッピング。|
-|[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.2.1|IoT統合および外部ダッシュボード向けのテレメトリブリッジ。|
+|[HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL)|0.2.1|ファクトリー標準（OPC-UA/MQTT）のためのインダストリー4.0相互運用性ブリッジ。|
+|[HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER)|0.2.9|HydraStateロボットオブジェクトの標準OPC-UAノードへのマッピング。|
+|[HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER)|0.2.2|IoT統合および外部ダッシュボード向けのテレメトリブリッジ。|
 |[HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER)|0.2.4|工作機械およびロボットの健康状態監視用の標準化されたインターフェース。|
 
 ### 🌉 外部自動化ブリッジ
@@ -289,14 +289,14 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.3|触覚による安全性アラートを備えたウェアラブル緊急ダッシュボード。|
-|[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.1|フリートの自動化、フラッシング、DevOpsのためのコマンドラインインターフェース。|
-|[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.4|自然言語による洞察を提供するWebダッシュボード用AI拡張。|
+|[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.2|フリートの自動化、フラッシング、DevOpsのためのコマンドラインインターフェース。|
+|[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.5|自然言語による洞察を提供するWebダッシュボード用AI拡張。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.8|すべてのエコシステムプロジェクトを検出し、インストールし、手動で更新するためのクロスプラットフォームGUI/CLIツール。|
-|[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.7|Windows と Linux 用のデスクトップツール。エコシステムの最新バージョンと初回起動の設定を含む、書き込み可能な CM5 イメージを作成します。|
+|[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.8|Windows と Linux 用のデスクトップツール。エコシステムの最新バージョンと初回起動の設定を含む、書き込み可能な CM5 イメージを作成します。|
 |[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.2.3|保守インシデントのコーディネーター。無害化した状態スナップショットを収集して AI プロバイダーに診断を依頼し、パッチは決して適用しません。|
-|[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.3|開発ノード：インシデントの証拠を検証し、承認された再現ケースを実行し、リビジョンごとのチェックアウトをキャッシュします。|
+|[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.4|開発ノード：インシデントの証拠を検証し、承認された再現ケースを実行し、リビジョンごとのチェックアウトをキャッシュします。|
 |[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.7|再現可能な開発ホスト。ポリシーで制御される設定とマニフェストの目録を備え、隔離されたタスク実行環境へ発展します。既定ではデプロイ権限はありません。|
-|[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.3|エコシステムのアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、自動生成されるプロジェクトカタログと、比較ツール。|
+|[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.4|エコシステムのアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、自動生成されるプロジェクトカタログと、比較ツール。|
 
 \---
 
@@ -368,7 +368,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|自動予熱とライフサイクル監査を備えたインテリジェントなツールストレージ。|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|アクティブQA用にサーマルカメラとRGBカメラが統合されたツールヘッド。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.0|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|
-|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.6|URTC のアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、CAN プロトコルのメモ、自動生成されるプロジェクトカタログ。|
+|[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.7|URTC のアーキテクチャ、インターフェース、セキュリティ基準、機能マトリクス、CAN プロトコルのメモ、自動生成されるプロジェクトカタログ。|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.2.7|ツールヘッドの CAN プロトコルをデータとして提供。仕様、生成された C・TypeScript・Python コード、適合ベクター、トランスポートを含みます。|
 |[URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY)|0.0.9|URTC の CAN バスの前に置くゲートウェイ：許可する識別子のリスト、レート制限、セッション鍵。|
 |[URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS)|0.0.6|URTC ファミリーが共有するリポジトリツールを 1 つのバージョン管理されたセットにまとめたもの。各リポジトリにロックファイルを置きます。|
@@ -447,8 +447,8 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.2.9|筐体設計（レーダーコーナーエンクロージャー。ソーラー、電気、アラームノード用のチェックボックス付き）およびベンチ受け入れマトリックス。|
 |[ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS)|0.7.6|Compose 構成、テストベンチ用インストーラー、バックアップと復元、TLS プロファイル、専用 MQTT ブローカー、監視・音声サービス、管理エージェント。|
 |[ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR)|0.3.8|シナリオと再現可能な障害。|
-|[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.2.2|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
-|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.2.0|正規のドキュメントおよび能力マトリックス。|
+|[ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER)|0.2.3|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
+|[ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS)|0.8.2.1|正規のドキュメントおよび能力マトリックス。|
 
 \---
 

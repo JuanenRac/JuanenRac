@@ -122,7 +122,6 @@
   "HYDRA-UMC": {
    "art": true,
    "at": "2026-11-15T07:13:03Z",
-   "checked": true,
    "exp": "2026-11-22T07:11:41Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/43688619885",
    "wf": "firmware-build.yml"
@@ -979,20 +978,6 @@
     "bad": 0,
     "ho": 0,
     "ok": 1,
-    "s": "verified",
-    "sch": [
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "HYDRA-UMC-SWARM-SYNC": {
-   "fp": "ac404f16c147f169",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
     "s": "verified",
     "sch": [
      "hydra-sign"

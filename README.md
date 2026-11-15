@@ -197,8 +197,8 @@ for all four - can check versions and build/update any other project.
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.6.2 | Raspberry Pi OS platform layer for the CM5: profiles, configuration, diagnostics, services and updates; not a new distribution. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.6.9 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
-| [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.2.0 | Declarative registry and validator of adapter manifests for external-machine connectors. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.7.1 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
+| [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.2.1 | Declarative registry and validator of adapter manifests for external-machine connectors. |
 
 ### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
@@ -218,10 +218,10 @@ for all four - can check versions and build/update any other project.
 ### 👁️ Vision AI Node (Hailo-8 Optimized)
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.2.3 | High-speed perception node for 8x simultaneous USB 3.0 camera streams. |
+| [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.2.4 | High-speed perception node for 8x simultaneous USB 3.0 camera streams. |
 | [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | 0.2.6 | Optimized GStreamer/MediaMTX pipeline for industrial video relay. |
 | [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.2.1 | Library of hardware-accelerated YOLO models for SMD and component QA. |
-| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.2.4 | Real-time AI intrusion detection for robotic work volume protection. |
+| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.2.5 | Real-time AI intrusion detection for robotic work volume protection. |
 | [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.2.5 | Image-based kinematic feedback for sub-millimetric pose correction. |
 
 ### 🧠 Cognitive AI Node (Jetson Orin NX Optimized)
@@ -229,9 +229,9 @@ for all four - can check versions and build/update any other project.
 | :--- | :--- | :--- |
 | [HYDRA-UMC-COGNITIVE-NODE](https://github.com/JuanenRac/HYDRA-UMC-COGNITIVE-NODE) | 0.2.2 | Semantic reasoning node for logical mission planning and voice control. |
 | [HYDRA-UMC-VLA-ENGINE](https://github.com/JuanenRac/HYDRA-UMC-VLA-ENGINE) | 0.2.4 | Vision-Language-Action model implementation for complex task execution. |
-| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.2.4 | Local, private STT/TTS pipeline for natural language operator interaction. |
+| [HYDRA-UMC-VOICE-UI](https://github.com/JuanenRac/HYDRA-UMC-VOICE-UI) | 0.2.5 | Local, private STT/TTS pipeline for natural language operator interaction. |
 | [HYDRA-UMC-SEMANTIC-PLANNER](https://github.com/JuanenRac/HYDRA-UMC-SEMANTIC-PLANNER) | 0.2.1 | LLM-based mission orchestrator with context-aware error recovery. |
-| [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.1.9 | RAG-based AI assistant trained on technical manuals and source code. |
+| [HYDRA-UMC-DOCS-QA](https://github.com/JuanenRac/HYDRA-UMC-DOCS-QA) | 0.2.0 | RAG-based AI assistant trained on technical manuals and source code. |
 | [HYDRA-UMC-LOCAL-TECHNICIAN](https://github.com/JuanenRac/HYDRA-UMC-LOCAL-TECHNICIAN) | 0.2.3 | Local, policy-gated AI maintenance technician: risk levels and a tool allowlist; a retrieved document can never trigger a tool call. |
 
 ### 🐝 Orchestration & Swarm
@@ -246,15 +246,15 @@ for all four - can check versions and build/update any other project.
 ### 🎮 Digital Twin & Simulation
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | 0.1.8 | High-fidelity physics simulation engine for risk-free robot testing. |
+| [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | 0.1.9 | High-fidelity physics simulation engine for risk-free robot testing. |
 | [HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA) | 0.1.5 | Real-world physics simulation (MuJoCo/PhysX) of URDF chains. |
 | [HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE) | 0.1.7 | Hardware-in-the-loop interface for real-vs-virtual command syncing. |
-| [HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN) | 0.1.5 | Procedural generator of training datasets for Vision nodes. |
+| [HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN) | 0.1.6 | Procedural generator of training datasets for Vision nodes. |
 
 ### 📊 Data & Analytics
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 0.2.6 | Big Data storage for massive industrial robotic data. |
+| [HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE) | 0.2.7 | Big Data storage for massive industrial robotic data. |
 | [HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR) | 0.2.3 | High-throughput ingester for CAN, WebSocket, and system logs. |
 | [HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR) | 0.2.4 | Predictive maintenance engine based on motor vibration signatures. |
 | [HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS) | 0.2.2 | Automated OEE and KPI generation for industrial plant management. |
@@ -262,9 +262,9 @@ for all four - can check versions and build/update any other project.
 ### 🏭 Industrial Gateway
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.2.0 | Industry 4.0 interoperability bridge for factory standards (OPC-UA/MQTT). |
-| [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.2.8 | Mapping of HydraState robotic objects to standard OPC-UA nodes. |
-| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.2.1 | Telemetry bridge for IoT integrations and external dashboards. |
+| [HYDRA-UMC-GATEWAY-INDUSTRIAL](https://github.com/JuanenRac/HYDRA-UMC-GATEWAY-INDUSTRIAL) | 0.2.1 | Industry 4.0 interoperability bridge for factory standards (OPC-UA/MQTT). |
+| [HYDRA-UMC-OPCUA-SERVER](https://github.com/JuanenRac/HYDRA-UMC-OPCUA-SERVER) | 0.2.9 | Mapping of HydraState robotic objects to standard OPC-UA nodes. |
+| [HYDRA-UMC-MQTT-BROKER](https://github.com/JuanenRac/HYDRA-UMC-MQTT-BROKER) | 0.2.2 | Telemetry bridge for IoT integrations and external dashboards. |
 | [HYDRA-UMC-MTCONNECT-ADAPTER](https://github.com/JuanenRac/HYDRA-UMC-MTCONNECT-ADAPTER) | 0.2.4 | Standardized interface for machine tool and robot health monitoring. |
 
 ### 🌉 External Automation Bridges
@@ -283,14 +283,14 @@ for all four - can check versions and build/update any other project.
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.3.3 | Wearable emergency dashboard with haptic safety alerts. |
-| [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.2.1 | Command-line interface for fleet automation, flashing, and devops. |
-| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.2.4 | AI extension for web dashboards providing natural language insights. |
+| [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.2.2 | Command-line interface for fleet automation, flashing, and devops. |
+| [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.2.5 | AI extension for web dashboards providing natural language insights. |
 | [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.5.8 | Cross-platform GUI/CLI tool to detect, install, and manually update every ecosystem project. |
-| [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.7 | Desktop tool for Windows and Linux that builds a ready-to-flash CM5 image with the ecosystem's current versions and first-boot setup. |
+| [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.8 | Desktop tool for Windows and Linux that builds a ready-to-flash CM5 image with the ecosystem's current versions and first-boot setup. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.2.3 | Maintenance-incident coordinator: collects a sanitized health snapshot and asks an AI provider for a diagnosis; it never applies a patch. |
-| [HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE) | 0.0.3 | Developer node: checks incident evidence, runs approved repro cases and keeps a cache of checkouts by revision. |
+| [HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE) | 0.0.4 | Developer node: checks incident evidence, runs approved repro cases and keeps a cache of checkouts by revision. |
 | [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.2.7 | Reproducible development host: policy-gated configuration and manifest inventory, growing into an isolated task runner; no deploy rights. |
-| [HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS) | 0.1.3 | Architecture, interfaces, security baseline, capability matrix and generated project catalogue of the ecosystem, plus comparison tools. |
+| [HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS) | 0.1.4 | Architecture, interfaces, security baseline, capability matrix and generated project catalogue of the ecosystem, plus comparison tools. |
 
 ---
 
@@ -362,7 +362,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.2.8 | Intelligent tool storage with automatic pre-heating and lifecycle audit. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.2.1 | Toolhead with integrated thermal and RGB cameras for active QA. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.3.0 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.6 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.7 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.2.7 | The CAN protocol of the tool head as data: specification, generated C, TypeScript and Python code, conformance vectors and transports. |
 | [URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY) | 0.0.9 | Gateway in front of the URTC CAN bus: allowed identifier list, rate limit and session key. |
 | [URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS) | 0.0.6 | The shared repository tools of the URTC family as one versioned set, with a lock file in each repository. |
@@ -441,8 +441,8 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.2.9 | Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix. |
 | [ARMOR-DEVOPS](https://github.com/JuanenRac/ARMOR-DEVOPS) | 0.7.6 | Compose topology, test-bench installer, backup and restore, TLS profile, own MQTT broker, observation and voice services, admin agent. |
 | [ARMOR-SIMULATOR](https://github.com/JuanenRac/ARMOR-SIMULATOR) | 0.3.8 | Scenarios and repeatable faults. |
-| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.2.2 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
-| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.2.0 | Canonical documentation and the capability matrix. |
+| [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) | 0.2.3 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
+| [ARMOR-DOCS](https://github.com/JuanenRac/ARMOR-DOCS) | 0.8.2.1 | Canonical documentation and the capability matrix. |
 
 ---
 

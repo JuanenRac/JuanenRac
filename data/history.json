@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 148,
-    "min": 15659,
-    "ok": 5218,
-    "other": 48,
-    "runs": 5414
+    "fail": 159,
+    "min": 15553,
+    "ok": 5338,
+    "other": 47,
+    "runs": 5544
    },
    "areas": {
     "armor": {
@@ -9028,7 +9028,7 @@
     ],
     "ARMOR-DOCS": [
      2,
-     "0.8.2.0"
+     "0.8.2.1"
     ],
     "ARMOR-HARDWARE": [
      1,
@@ -9080,7 +9080,7 @@
     ],
     "ARMOR-UPDATER": [
      2,
-     "0.2.2"
+     "0.2.3"
     ],
     "ARMOR-VISION": [
      1,
@@ -9300,15 +9300,15 @@
     ],
     "HYDRA-UMC-CONNECTOR-HUB": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-DASHBOARD-AI": [
      1,
-     "0.2.4"
+     "0.2.5"
     ],
     "HYDRA-UMC-DATALAKE": [
      1,
-     "0.2.6"
+     "0.2.7"
     ],
     "HYDRA-UMC-DETECTION-HEF": [
      1,
@@ -9320,15 +9320,15 @@
     ],
     "HYDRA-UMC-DEVELOPER-NODE": [
      0,
-     "0.0.3"
+     "0.0.4"
     ],
     "HYDRA-UMC-DOCS": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "HYDRA-UMC-DOCS-QA": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "HYDRA-UMC-DSI": [
      1,
@@ -9344,7 +9344,7 @@
     ],
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-HIL-BRIDGE": [
      1,
@@ -9368,7 +9368,7 @@
     ],
     "HYDRA-UMC-MQTT-BROKER": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-MTCONNECT-ADAPTER": [
      1,
@@ -9380,7 +9380,7 @@
     ],
     "HYDRA-UMC-OPCUA-SERVER": [
      1,
-     "0.2.8"
+     "0.2.9"
     ],
     "HYDRA-UMC-OPS-AGENT": [
      1,
@@ -9396,7 +9396,7 @@
     ],
     "HYDRA-UMC-OS-REBUILDER": [
      1,
-     "0.3.7"
+     "0.3.8"
     ],
     "HYDRA-UMC-PATH-PLANNER-3D": [
      1,
@@ -9412,11 +9412,11 @@
     ],
     "HYDRA-UMC-SAFETY-ZONES": [
      1,
-     "0.2.4"
+     "0.2.5"
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.6.9"
+     "0.7.1"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -9444,7 +9444,7 @@
     ],
     "HYDRA-UMC-SYNTHETIC-DATA-GEN": [
      2,
-     "0.1.5"
+     "0.1.6"
     ],
     "HYDRA-UMC-TELEMETRY-COLLECTOR": [
      1,
@@ -9452,11 +9452,11 @@
     ],
     "HYDRA-UMC-TOOL-CLI": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-TWIN": [
      1,
-     "0.1.8"
+     "0.1.9"
     ],
     "HYDRA-UMC-UPDATER": [
      2,
@@ -9464,7 +9464,7 @@
     ],
     "HYDRA-UMC-VISION-NODE": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-VISION-STREAMER": [
      2,
@@ -9480,7 +9480,7 @@
     ],
     "HYDRA-UMC-VOICE-UI": [
      1,
-     "0.2.4"
+     "0.2.5"
     ],
     "HYDRA-UMC-WATCH": [
      1,
@@ -9504,7 +9504,7 @@
     ],
     "URTC-DOCS": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "URTC-FLASHER": [
      1,
@@ -9536,9 +9536,9 @@
     ]
    },
    "sentinel": {
-    "cand": 34,
+    "cand": 16,
     "gaps": 0,
-    "min": 15659,
+    "min": 15553,
     "red": 1
    },
    "tests": {
