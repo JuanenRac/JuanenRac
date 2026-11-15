@@ -88,7 +88,7 @@
 | --- | :---: | --- | --- |
 | 软件 | 🟢 | `█████████▊ 97%` | 59 个仓库中有 57 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `█████████▊ 97%` | 59 个仓库中有 57 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个提供八种语言的 README。 |
 | 仿真 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个至少在仿真器中验证过。 |
@@ -202,13 +202,13 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|适用于 STM32H757/G474 且带 S 曲线运动学的核心运动控制固件。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.1|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.1|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.2|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.2|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
-|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.6|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.7|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.8|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.4|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
-|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.5|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.5|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
+|[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.6|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.2.1|用于验证机器人模型并将其推送到目录中的图形化 URDF 编辑器。|
 |[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.2.1|桌面 STL 模型编辑器——在共享模型目录中转换、替换、移除和添加真实部件。|
 | [HYDRA-UMC-MESHES](https://github.com/JuanenRac/HYDRA-UMC-MESHES) | 0.1.0 | 桌面和网页应用共用的 3D 网格（STL 和 GLB），以带校验和的发布包形式只发布一次。 |
@@ -288,7 +288,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.3|具备触觉安全警报的可穿戴紧急仪表板。|
+|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.4|具备触觉安全警报的可穿戴紧急仪表板。|
 |[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.2|用于车队自动化、刷机（flashing）和运维的命令行界面。|
 |[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.5|为 Web 仪表板提供自然语言见解的 AI 扩展。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.8|用于检测、安装和手动更新每个生态系统项目的跨平台 GUI/CLI 工具。|
@@ -588,7 +588,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 ANDROID/IOS 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.0|EH3D-SERVER 的 Android 应用客户端。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.1|EH3D-SERVER 的 Android 应用客户端。|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.0|EH3D-SERVER 的 iOS 应用客户端。|
 
 ### 🛠️ 辅助工具

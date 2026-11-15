@@ -2,9 +2,10 @@
  "builds": {
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-12T22:52:53Z",
-   "exp": "2026-11-19T22:52:05Z",
-   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/43323023085",
+   "at": "2026-11-15T15:53:12Z",
+   "checked": true,
+   "exp": "2026-11-22T15:52:06Z",
+   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/43731676597",
    "wf": "apk-build.yml"
   },
   "ARMOR-DEVOPS": {
@@ -30,16 +31,18 @@
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-14T11:19:42Z",
-   "exp": "2026-11-21T11:18:26Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43589122129",
+   "at": "2026-11-15T15:51:15Z",
+   "checked": true,
+   "exp": "2026-11-22T15:50:25Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43731745804",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-14T11:20:54Z",
-   "exp": "2026-11-21T11:20:09Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43589149284",
+   "at": "2026-11-15T15:53:03Z",
+   "checked": true,
+   "exp": "2026-11-22T15:52:30Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43731742752",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
@@ -93,9 +96,10 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-06T19:05:56Z",
-   "exp": "2026-12-06T19:05:32Z",
-   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/42276065042",
+   "at": "2026-11-15T16:03:45Z",
+   "checked": true,
+   "exp": "2026-11-22T16:02:53Z",
+   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/43732867028",
    "wf": "apk-build.yml"
   },
   "EH3D-NODE-BUNGARD": {
@@ -135,9 +139,10 @@
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-06T10:37:08Z",
-   "exp": "2026-12-06T10:36:43Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/42203298784",
+   "at": "2026-11-15T16:06:01Z",
+   "checked": true,
+   "exp": "2026-11-22T16:05:25Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/43733072208",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-HIL-BRIDGE": {
@@ -198,17 +203,19 @@
   },
   "HYDRA-UMC-SERVER": {
    "art": true,
-   "at": "2026-11-07T05:26:03Z",
-   "exp": "2026-12-07T05:25:39Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/42342641922",
-   "wf": "dist-build.yml"
+   "at": "2026-11-15T16:05:44Z",
+   "checked": true,
+   "exp": "2026-11-22T16:05:07Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/43733434465",
+   "wf": "package-build.yml"
   },
   "HYDRA-UMC-STUDIO": {
    "art": true,
-   "at": "2026-11-07T05:27:16Z",
-   "exp": "2026-12-07T05:26:50Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/42342680265",
-   "wf": "dist-build.yml"
+   "at": "2026-11-15T16:05:53Z",
+   "checked": true,
+   "exp": "2026-11-22T16:05:11Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/43733430542",
+   "wf": "package-build.yml"
   },
   "HYDRA-UMC-STUDIO-KIT": {
    "art": true,
@@ -219,10 +226,11 @@
   },
   "HYDRA-UMC-SUITE": {
    "art": true,
-   "at": "2026-11-07T20:15:45Z",
-   "exp": "2026-12-07T20:14:16Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/42409419173",
-   "wf": "exe-build.yml"
+   "at": "2026-11-15T16:05:57Z",
+   "checked": true,
+   "exp": "2026-11-22T16:05:16Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SUITE/actions/runs/43733437671",
+   "wf": "package-build.yml"
   },
   "HYDRA-UMC-SWARM-SYNC": {
    "art": true,
@@ -254,9 +262,10 @@
   },
   "HYDRA-UMC-WATCH": {
    "art": true,
-   "at": "2026-11-13T01:49:11Z",
-   "exp": "2026-11-20T01:48:34Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-WATCH/actions/runs/43347164261",
+   "at": "2026-11-15T16:09:08Z",
+   "checked": true,
+   "exp": "2026-11-22T16:08:21Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-WATCH/actions/runs/43733409665",
    "wf": "binaries-build.yml"
   },
   "URTC": {
@@ -311,7 +320,7 @@
  },
  "presence": {
   "ARMOR-ANDROID-CONTROL": {
-   "fp": "349bdf2664f4ffff",
+   "fp": "9d38022fecb8b2e5",
    "on": "2026-11-15",
    "r": {
     "ak": 0,
@@ -347,21 +356,21 @@
    }
   },
   "ARMOR-NODE-ELECTRICAL": {
-   "fp": "42802c352e38637f",
-   "on": "2026-11-13",
+   "fp": "46b08cf843e1d4ea",
+   "on": "2026-11-15",
    "r": {
-    "ak": 0,
+    "ak": 3,
     "an": 3,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-NODE-HMI": {
-   "fp": "90cd368d65eb6ed9",
-   "on": "2026-11-13",
+   "fp": "1c3a282d5ad29e1d",
+   "on": "2026-11-15",
    "r": {
-    "ak": 0,
+    "ak": 2,
     "an": 2,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-NODE-RADAR": {
@@ -420,6 +429,15 @@
   },
   "ARMOR-WATCH": {
    "fp": "01f5b23b442ac117",
+   "on": "2026-11-15",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
+  "EH3D-ANDROID-CONTROL": {
+   "fp": "1b74eb92d80ac9b8",
    "on": "2026-11-15",
    "r": {
     "ak": 0,
@@ -535,6 +553,15 @@
     "at": "present"
    }
   },
+  "HYDRA-UMC-ANDROID-CONTROL": {
+   "fp": "b1afe6b7dd04b35c",
+   "on": "2026-11-15",
+   "r": {
+    "ak": 0,
+    "an": 1,
+    "at": "absent"
+   }
+  },
   "HYDRA-UMC-MESHES": {
    "fp": "bed485331987538b",
    "on": "2026-11-15",
@@ -542,6 +569,24 @@
     "ak": 0,
     "an": 1,
     "at": "absent"
+   }
+  },
+  "HYDRA-UMC-SERVER": {
+   "fp": "03eb103872a39f91",
+   "on": "2026-11-15",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
+  "HYDRA-UMC-STUDIO": {
+   "fp": "d23d328ca1ce86ad",
+   "on": "2026-11-15",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
    }
   },
   "HYDRA-UMC-STUDIO-KIT": {
@@ -553,9 +598,18 @@
     "at": "present"
    }
   },
+  "HYDRA-UMC-SUITE": {
+   "fp": "d01509352cc5b323",
+   "on": "2026-11-15",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
   "HYDRA-UMC-WATCH": {
-   "fp": "57d010f112c5f90f",
-   "on": "2026-11-13",
+   "fp": "c0e9645febe6cc29",
+   "on": "2026-11-15",
    "r": {
     "ak": 0,
     "an": 1,
@@ -667,7 +721,7 @@
    }
   },
   "ARMOR-NODE-ELECTRICAL": {
-   "fp": "42802c352e38637f",
+   "fp": "46b08cf843e1d4ea",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -682,7 +736,7 @@
    }
   },
   "ARMOR-NODE-HMI": {
-   "fp": "90cd368d65eb6ed9",
+   "fp": "1c3a282d5ad29e1d",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -988,6 +1042,34 @@
     "why": []
    }
   },
+  "HYDRA-UMC-SERVER": {
+   "fp": "03eb103872a39f91",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 1,
+    "s": "verified",
+    "sch": [
+     "hydra-pc-pkg/1"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
+  "HYDRA-UMC-STUDIO": {
+   "fp": "d23d328ca1ce86ad",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 1,
+    "s": "verified",
+    "sch": [
+     "hydra-pc-pkg/1"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
   "HYDRA-UMC-STUDIO-KIT": {
    "fp": "c313a8b81e118fba",
    "r": {
@@ -1002,15 +1084,15 @@
     "why": []
    }
   },
-  "HYDRA-UMC-WATCH": {
-   "fp": "57d010f112c5f90f",
+  "HYDRA-UMC-SUITE": {
+   "fp": "d01509352cc5b323",
    "r": {
     "bad": 0,
     "ho": 0,
     "ok": 1,
     "s": "verified",
     "sch": [
-     "hydra-sign"
+     "hydra-pc-pkg/1"
     ],
     "unk": 0,
     "why": []

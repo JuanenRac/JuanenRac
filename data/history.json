@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 182,
-    "min": 15029,
-    "ok": 5029,
-    "other": 81,
-    "runs": 5292
+    "fail": 180,
+    "min": 15005,
+    "ok": 5041,
+    "other": 46,
+    "runs": 5267
    },
    "areas": {
     "armor": {
@@ -9096,7 +9096,7 @@
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-AUTOLEVEL": [
      1,
@@ -9256,7 +9256,7 @@
     ],
     "HYDRA-UMC-ANDROID-CONTROL": [
      1,
-     "0.8.0.4"
+     "0.8.0.5"
     ],
     "HYDRA-UMC-ANOMALY-DETECTOR": [
      1,
@@ -9352,7 +9352,7 @@
     ],
     "HYDRA-UMC-IOS-CONTROL": [
      1,
-     "0.3.5"
+     "0.3.6"
     ],
     "HYDRA-UMC-JOB-DISPATCHER": [
      1,
@@ -9424,11 +9424,11 @@
     ],
     "HYDRA-UMC-SERVER": [
      1,
-     "0.8.3.1"
+     "0.8.3.2"
     ],
     "HYDRA-UMC-STUDIO": [
      1,
-     "0.8.2.1"
+     "0.8.2.2"
     ],
     "HYDRA-UMC-STUDIO-KIT": [
      1,
@@ -9436,7 +9436,7 @@
     ],
     "HYDRA-UMC-SUITE": [
      1,
-     "0.8.0.6"
+     "0.8.0.7"
     ],
     "HYDRA-UMC-SWARM-SYNC": [
      1,
@@ -9484,7 +9484,7 @@
     ],
     "HYDRA-UMC-WATCH": [
      1,
-     "0.3.3"
+     "0.3.4"
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
@@ -9536,10 +9536,10 @@
     ]
    },
    "sentinel": {
-    "cand": 5,
+    "cand": 1,
     "gaps": 0,
-    "min": 15029,
-    "red": 1
+    "min": 15005,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
