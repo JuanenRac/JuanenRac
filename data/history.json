@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 185,
-    "min": 14975,
-    "ok": 5226,
-    "other": 47,
-    "runs": 5458
+    "fail": 183,
+    "min": 15346,
+    "ok": 5094,
+    "other": 52,
+    "runs": 5329
    },
    "areas": {
     "armor": {
@@ -8970,12 +8970,12 @@
      "hardware": 0,
      "production": 0,
      "releases": 100,
-     "simulation": 74,
+     "simulation": 79,
      "software": 55,
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 50,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -9009,7 +9009,7 @@
    "progress": {
     "armor": 68,
     "eh3d": 47,
-    "electro-hobby-3d": 61,
+    "electro-hobby-3d": 63,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -9412,7 +9412,7 @@
     ],
     "HYDRA-UMC-SAFETY-ZONES": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-SDK": [
      2,
@@ -9488,7 +9488,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.8.4"
+     "1.9.0"
     ],
     "URTC": [
      1,
@@ -9538,7 +9538,7 @@
    "sentinel": {
     "cand": 10,
     "gaps": 0,
-    "min": 14975,
+    "min": 15346,
     "red": 1
    },
    "tests": {

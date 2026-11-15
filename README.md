@@ -221,7 +221,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE) | 0.2.4 | High-speed perception node for 8x simultaneous USB 3.0 camera streams. |
 | [HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER) | 0.2.6 | Optimized GStreamer/MediaMTX pipeline for industrial video relay. |
 | [HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF) | 0.2.1 | Library of hardware-accelerated YOLO models for SMD and component QA. |
-| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.2.5 | Real-time AI intrusion detection for robotic work volume protection. |
+| [HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES) | 0.2.6 | Real-time AI intrusion detection for robotic work volume protection. |
 | [HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API) | 0.2.5 | Image-based kinematic feedback for sub-millimetric pose correction. |
 
 ### 🧠 Cognitive AI Node (Jetson Orin NX Optimized)
@@ -641,7 +641,7 @@ The group holds the programs that stand above the four ecosystems and need none 
 
 | Tool | Version | What it is |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | The one window and command line that hand over to the updater of each ecosystem. |
 
 ---

@@ -220,7 +220,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|Hochgeschwindigkeits-Wahrnehmungsknoten für 8 gleichzeitige USB 3.0-Kameraströme.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|Optimierte GStreamer/MediaMTX-Pipeline für die industrielle Videoübertragung.|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|Bibliothek hardwarebeschleunigter YOLO-Modelle für SMD- und Bauteil-QS.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|Echtzeit-KI-Einbrucherkennung für den Schutz des Roboter-Arbeitsvolumens.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.6|Echtzeit-KI-Einbrucherkennung für den Schutz des Roboter-Arbeitsvolumens.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|Bildbasiertes kinematisches Feedback für eine Posenkorrektur im Submillimeterbereich.|
 
 ### 🧠 Kognitiver KI-Knoten (Optimiert für Jetson Orin NX)
@@ -639,7 +639,7 @@ Die Gruppe enthält die Programme oberhalb der vier Ökosysteme, die keines davo
 
 | Werkzeug | Version | Was es ist |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | Das eine Fenster und die eine Kommandozeile, die an den Updater jedes Ökosystems übergeben. |
 
 \---

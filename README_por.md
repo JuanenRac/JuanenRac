@@ -220,7 +220,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|Nó de percepção de alta velocidade para 8 fluxos de câmara USB 3.0 simultâneos.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|Pipeline GStreamer/MediaMTX otimizado para retransmissão de vídeo industrial.|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|Biblioteca de modelos YOLO acelerados por hardware para controlo de qualidade de componentes e SMD.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|Deteção de intrusão por IA em tempo real para proteção do volume de trabalho robótico.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.6|Deteção de intrusão por IA em tempo real para proteção do volume de trabalho robótico.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|Feedback cinemático baseado em imagem para correção de pose submétrica.|
 
 ### 🧠 Nó de IA Cognitiva (Otimizado para Jetson Orin NX)
@@ -639,7 +639,7 @@ O grupo reúne os programas que estão acima dos quatro ecossistemas e não prec
 
 | Ferramenta | Versão | O que é |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
 
 \---

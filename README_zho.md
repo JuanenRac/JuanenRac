@@ -220,7 +220,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|用于 8 路同时接入的 USB 3.0 相机流的高速感知节点。|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|针对工业视频中继优化的 GStreamer/MediaMTX 管道。|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|用于 SMD 和元件质量保证（QA）的硬件加速 YOLO 模型库。|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|用于机器人工作空间保护的实时 AI 入侵检测。|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.6|用于机器人工作空间保护的实时 AI 入侵检测。|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|用于亚毫米级位姿校正的基于图像的运动学反馈。|
 
 ### 🧠 认知 AI 节点（Jetson Orin NX 优化）
@@ -639,7 +639,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 
 | 工具 | 版本 | 简介 |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 
 \---

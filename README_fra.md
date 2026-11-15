@@ -220,7 +220,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|Nœud de perception haute vitesse pour 8 flux de caméras USB 3.0 simultanés.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|Pipeline GStreamer/MediaMTX optimisé pour le relais vidéo industriel.|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|Bibliothèque de modèles YOLO accélérés par matériel pour le contrôle qualité des composants CMS et cartes.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|Détection d'intrusion par IA en temps réel pour la protection du volume de travail robotique.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.6|Détection d'intrusion par IA en temps réel pour la protection du volume de travail robotique.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|Rétroaction cinématique basée sur l'image pour la correction de pose submillimétrique.|
 
 ### 🧠 Nœud d'IA Cognitive (Optimisé pour Jetson Orin NX)
@@ -639,7 +639,7 @@ Le groupe réunit les programmes qui se trouvent au-dessus des quatre écosystè
 
 | Outil | Version | Ce que c'est |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
 
 \---

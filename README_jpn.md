@@ -220,7 +220,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|8つの同時USB 3.0カメラストリーム用高速知覚ノード。|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|産業用ビデオ中継用に最適化されたGStreamer/MediaMTXパイプライン。|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|SMDおよび部品QA用のハードウェアアクセラレーションYOLOモデルライブラリ。|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|ロボット作業領域保護のためのリアルタイムAI侵入検知。|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.6|ロボット作業領域保護のためのリアルタイムAI侵入検知。|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|サブミリ精度のポーズ補正のための画像ベースの運動学フィードバック。|
 
 ### 🧠 認知AIノード（Jetson Orin NX最適化）
@@ -639,7 +639,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 
 | ツール | バージョン | 概要 |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
 
 \---

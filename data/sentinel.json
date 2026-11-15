@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-15T14:34:25Z",
+ "asof": "2026-11-15T15:24:39Z",
  "ci": {
-  "checked": 611,
+  "checked": 610,
   "red": [
    {
     "repo": "HYDRA-UMC",
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1355,
-    "min7": 1355,
+    "min24": 1306,
+    "min7": 1306,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -30,6 +30,11 @@
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
    {
+    "min24": 525,
+    "min7": 525,
+    "repo": "HYDRA-UMC-DOCS"
+   },
+   {
     "min24": 512,
     "min7": 512,
     "repo": "HYDRA-UMC-IOS-CONTROL"
@@ -38,15 +43,10 @@
     "min24": 504,
     "min7": 504,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
-   },
-   {
-    "min24": 414,
-    "min7": 414,
-    "repo": "HYDRA-UMC-SAFETY-ZONES"
    }
   ],
-  "total24": 14975,
-  "total7": 46903,
+  "total24": 15346,
+  "total7": 47249,
   "warn": true
  },
  "ecosystems": {
@@ -69,7 +69,7 @@
    "read": 2,
    "red": 0,
    "repos": 2,
-   "unpub": 0
+   "unpub": 1
   },
   "hydra-umc": {
    "cand": 6,
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-15T15:24:39Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-SAFETY-ZONES",
+   "tag": "v0.2.6"
+  },
   {
    "at": "2026-11-15T12:56:27Z",
    "kind": "released",
@@ -260,18 +266,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-DETECTION-HEF",
    "tag": "v0.2.1"
-  },
-  {
-   "at": "2026-11-15T09:28:47Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-DEVELOPER-NODE",
-   "tag": "v0.0.4"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 15
+  "gap_minutes": 55
  },
  "hygiene": {
   "allowed_missing": [],
@@ -326,9 +326,10 @@
    "level": "warn",
    "p": {
     "list": [
+     "TOOLS-GITHUB-ACTIONS-MONITOR",
      "URTC-DEVTOOLS"
     ],
-    "n": 1
+    "n": 2
    }
   },
   {
@@ -343,7 +344,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14975
+    "min": 15346
    }
   }
  ],
@@ -381,7 +382,7 @@
     "tag": "v0.0.5"
    },
    {
-    "entries": 18,
+    "entries": 19,
     "published": "2026-11-13T00:57:34Z",
     "repo": "HYDRA-UMC-DSI",
     "tag": "v0.3.7"
@@ -526,7 +527,7 @@
   "HYDRA-UMC-PATH-PLANNER-3D": "v0.1.5",
   "HYDRA-UMC-PHYSICS-REPLICA": "v0.1.5",
   "HYDRA-UMC-PRODUCTION-REPORTS": "v0.2.2",
-  "HYDRA-UMC-SAFETY-ZONES": "v0.2.5",
+  "HYDRA-UMC-SAFETY-ZONES": "v0.2.6",
   "HYDRA-UMC-SDK": "v0.7.1",
   "HYDRA-UMC-SEMANTIC-PLANNER": "v0.2.1",
   "HYDRA-UMC-SERVER": "v0.8.3.1",
@@ -617,7 +618,7 @@
    12959,
    70311,
    12143,
-   14975
+   15346
   ],
   "red": [
    3,
@@ -638,11 +639,16 @@
  "unpublished": {
   "rows": [
    {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "tag": "v1.8.4",
+    "version": "1.9.0"
+   },
+   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.6"
    }
   ],
-  "total": 1
+  "total": 2
  }
 }

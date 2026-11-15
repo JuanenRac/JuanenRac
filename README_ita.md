@@ -220,7 +220,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|Nodo di percezione ad alta velocità per 8 flussi di telecamere USB 3.0 simultanei.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|Pipeline GStreamer/MediaMTX ottimizzata per il relay video industriale.|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|Libreria di modelli YOLO accelerati via hardware per il controllo qualità di componenti e SMD.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|Rilevamento di intrusioni IA in tempo reale per la protezione del volume di lavoro robotico.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.6|Rilevamento di intrusioni IA in tempo reale per la protezione del volume di lavoro robotico.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|Feedback cinematico basato su immagini per la correzione della posa sub-millimetrica.|
 
 ### 🧠 Nodo di IA Cognitiva (Ottimizzato per Jetson Orin NX)
@@ -639,7 +639,7 @@ Il gruppo raccoglie i programmi che stanno sopra i quattro ecosistemi e non ne r
 
 | Strumento | Versione | Cos'è |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |
 
 \---

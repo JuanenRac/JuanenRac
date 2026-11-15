@@ -220,7 +220,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 |[HYDRA-UMC-VISION-NODE](https://github.com/JuanenRac/HYDRA-UMC-VISION-NODE)|0.2.4|Nodo de percepción de alta velocidad para 8 flujos simultáneos de cámaras USB 3.0.|
 |[HYDRA-UMC-VISION-STREAMER](https://github.com/JuanenRac/HYDRA-UMC-VISION-STREAMER)|0.2.6|Canalización optimizada GStreamer/MediaMTX para retransmisión de vídeo industrial.|
 |[HYDRA-UMC-DETECTION-HEF](https://github.com/JuanenRac/HYDRA-UMC-DETECTION-HEF)|0.2.1|Librería de modelos YOLO acelerados por hardware para control de calidad (QA) de componentes y SMD.|
-|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.5|Detección de intrusiones por IA en tiempo real para la protección del volumen de trabajo robótico.|
+|[HYDRA-UMC-SAFETY-ZONES](https://github.com/JuanenRac/HYDRA-UMC-SAFETY-ZONES)|0.2.6|Detección de intrusiones por IA en tiempo real para la protección del volumen de trabajo robótico.|
 |[HYDRA-UMC-VISUAL-SERVOING-API](https://github.com/JuanenRac/HYDRA-UMC-VISUAL-SERVOING-API)|0.2.5|Retroalimentación cinemática basada en imágenes para la corrección de poses submilimétricas.|
 
 ### 🧠 Nodo de IA Cognitiva (Optimizado para Jetson Orin NX)
@@ -639,7 +639,7 @@ El grupo reúne los programas que están por encima de los cuatro ecosistemas y 
 
 | Herramienta | Versión | Qué es |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.8.4 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.0 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La ventana y la línea de órdenes únicas que ceden el trabajo al actualizador de cada ecosistema. |
 
 \---
