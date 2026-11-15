@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-15T11:28:53Z",
+ "asof": "2026-11-15T12:56:27Z",
  "ci": {
-  "checked": 611,
+  "checked": 612,
   "red": [
    {
     "repo": "HYDRA-UMC",
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1342,
-    "min7": 1342,
+    "min24": 1438,
+    "min7": 1438,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-SAFETY-ZONES"
    }
   ],
-  "total24": 15569,
-  "total7": 47909,
+  "total24": 15289,
+  "total7": 47883,
   "warn": true
  },
  "ecosystems": {
@@ -69,7 +69,7 @@
    "read": 2,
    "red": 0,
    "repos": 2,
-   "unpub": 1
+   "unpub": 0
   },
   "hydra-umc": {
    "cand": 6,
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-15T12:56:27Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.8.4"
+  },
   {
    "at": "2026-11-15T11:09:18Z",
    "kind": "red_ok",
@@ -260,18 +266,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-DEVELOPER-NODE",
    "tag": "v0.0.4"
-  },
-  {
-   "at": "2026-11-15T09:28:47Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-DOCS",
-   "tag": "v0.1.4"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 20
+  "gap_minutes": 90
  },
  "hygiene": {
   "allowed_missing": [],
@@ -326,10 +326,9 @@
    "level": "warn",
    "p": {
     "list": [
-     "TOOLS-GITHUB-ACTIONS-MONITOR",
      "URTC-DEVTOOLS"
     ],
-    "n": 2
+    "n": 1
    }
   },
   {
@@ -344,7 +343,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 15569
+    "min": 15289
    }
   }
  ],
@@ -546,7 +545,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.3",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.8.3",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.8.4",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.7",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -618,7 +617,7 @@
    12959,
    70311,
    12143,
-   15569
+   15289
   ],
   "red": [
    3,
@@ -639,16 +638,11 @@
  "unpublished": {
   "rows": [
    {
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v1.8.3",
-    "version": "1.8.4"
-   },
-   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.6"
    }
   ],
-  "total": 2
+  "total": 1
  }
 }

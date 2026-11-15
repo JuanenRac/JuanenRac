@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 170,
-    "min": 15569,
-    "ok": 5550,
-    "other": 51,
-    "runs": 5771
+    "fail": 169,
+    "min": 15289,
+    "ok": 5205,
+    "other": 43,
+    "runs": 5417
    },
    "areas": {
     "armor": {
@@ -9538,7 +9538,7 @@
    "sentinel": {
     "cand": 10,
     "gaps": 0,
-    "min": 15569,
+    "min": 15289,
     "red": 1
    },
    "tests": {
@@ -9546,7 +9546,7 @@
     "ARMOR-COMMON": 620,
     "ARMOR-DOCS": 470,
     "ARMOR-HARDWARE": 85,
-    "ARMOR-IOS-CONTROL": 483,
+    "ARMOR-IOS-CONTROL": 516,
     "ARMOR-NETWORK": 332,
     "ARMOR-SERVER": 1152,
     "ARMOR-SERVER-AI": 191,
