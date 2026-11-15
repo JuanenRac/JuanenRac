@@ -8947,11 +8947,11 @@
   },
   {
    "actions": {
-    "fail": 171,
-    "min": 14878,
-    "ok": 4998,
-    "other": 41,
-    "runs": 5210
+    "fail": 169,
+    "min": 14643,
+    "ok": 4986,
+    "other": 45,
+    "runs": 5200
    },
    "areas": {
     "armor": {
@@ -8985,7 +8985,7 @@
      "tests": 100
     },
     "hydra-umc": {
-     "ci": 97,
+     "ci": 100,
      "docs": 100,
      "hardware": 11,
      "production": 8,
@@ -9488,7 +9488,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.9.0"
+     "1.9.1"
     ],
     "URTC": [
      1,
@@ -9538,7 +9538,7 @@
    "sentinel": {
     "cand": 1,
     "gaps": 0,
-    "min": 14878,
+    "min": 14643,
     "red": 1
    },
    "tests": {
