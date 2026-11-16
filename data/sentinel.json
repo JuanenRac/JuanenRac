@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-16T00:04:54Z",
+ "asof": "2026-11-16T00:24:50Z",
  "ci": {
-  "checked": 617,
+  "checked": 616,
   "red": [
    {
     "repo": "HYDRA-UMC",
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1337,
-    "min7": 1337,
+    "min24": 1286,
+    "min7": 1286,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -25,29 +25,29 @@
     "repo": "HYDRA-UMC-DOCS"
    },
    {
-    "min24": 467,
+    "min24": 464,
     "min7": 548,
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
    {
     "min24": 408,
-    "min7": 524,
+    "min7": 528,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 370,
-    "min7": 373,
-    "repo": "HYDRA-UMC-SAFETY-ZONES"
-   },
-   {
-    "min24": 358,
+    "min24": 349,
     "min7": 459,
     "repo": "HYDRA-UMC-IOS-CONTROL"
+   },
+   {
+    "min24": 349,
+    "min7": 349,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    }
   ],
-  "total24": 12026,
-  "total7": 46012,
-  "warn": true
+  "total24": 11864,
+  "total7": 45752,
+  "warn": false
  },
  "ecosystems": {
   "armor": {
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-16T00:24:50Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.9.3"
+  },
   {
    "at": "2026-11-16T00:04:54Z",
    "kind": "released",
@@ -260,18 +266,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-SAFETY-ZONES",
    "tag": "v0.2.6"
-  },
-  {
-   "at": "2026-11-15T12:56:27Z",
-   "kind": "released",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "tag": "v1.8.4"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 65
+  "gap_minutes": 20
  },
  "hygiene": {
   "allowed_missing": [],
@@ -329,13 +329,6 @@
    "p": {
     "m": 130,
     "n": 0
-   }
-  },
-  {
-   "key": "compute",
-   "level": "warn",
-   "p": {
-    "min": 12026
    }
   }
  ],
@@ -483,7 +476,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.9.2",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.9.3",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.8",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -559,7 +552,7 @@
    70311,
    12143,
    12581,
-   12026
+   11864
   ],
   "red": [
    3,
@@ -582,8 +575,8 @@
   "rows": [
    {
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v1.9.2",
-    "version": "1.9.3"
+    "tag": "v1.9.3",
+    "version": "1.9.4"
    },
    {
     "repo": "URTC-DEVTOOLS",
