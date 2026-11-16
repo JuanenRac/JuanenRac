@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-16T05:41:55Z",
+ "asof": "2026-11-16T07:20:58Z",
  "ci": {
   "checked": 615,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1794,
-    "min7": 1794,
+    "min24": 1783,
+    "min7": 1783,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -40,13 +40,13 @@
     "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 312,
-    "min7": 312,
-    "repo": "HYDRA-UMC-DSI"
+    "min24": 298,
+    "min7": 302,
+    "repo": "HYDRA-UMC-TWIN"
    }
   ],
-  "total24": 15360,
-  "total7": 45636,
+  "total24": 15095,
+  "total7": 45630,
   "warn": true
  },
  "ecosystems": {
@@ -69,7 +69,7 @@
    "read": 2,
    "red": 0,
    "repos": 2,
-   "unpub": 1
+   "unpub": 0
   },
   "hydra-umc": {
    "cand": 7,
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-16T07:20:58Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v2.0.1"
+  },
   {
    "at": "2026-11-16T03:40:25Z",
    "kind": "red_ok",
@@ -260,18 +266,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-STUDIO",
    "tag": "v0.8.2.2"
-  },
-  {
-   "at": "2026-11-15T16:16:23Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-SUITE",
-   "tag": "v0.8.0.7"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 125
+  "gap_minutes": 100
  },
  "hygiene": {
   "allowed_missing": [],
@@ -324,10 +324,9 @@
    "level": "warn",
    "p": {
     "list": [
-     "TOOLS-GITHUB-ACTIONS-MONITOR",
      "URTC-DEVTOOLS"
     ],
-    "n": 2
+    "n": 1
    }
   },
   {
@@ -342,7 +341,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 15360
+    "min": 15095
    }
   }
  ],
@@ -532,7 +531,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.0",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.1",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.8",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -608,7 +607,7 @@
    70311,
    12143,
    12581,
-   15360
+   15095
   ],
   "red": [
    3,
@@ -630,16 +629,11 @@
  "unpublished": {
   "rows": [
    {
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v2.0.0",
-    "version": "2.0.1"
-   },
-   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.6"
    }
   ],
-  "total": 2
+  "total": 1
  }
 }
