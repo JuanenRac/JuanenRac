@@ -9663,11 +9663,11 @@
   },
   {
    "actions": {
-    "fail": 155,
-    "min": 15095,
-    "ok": 4182,
-    "other": 42,
-    "runs": 4379
+    "fail": 127,
+    "min": 13754,
+    "ok": 3194,
+    "other": 38,
+    "runs": 3359
    },
    "areas": {
     "armor": {
@@ -9701,7 +9701,7 @@
      "tests": 100
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 8,
      "production": 8,
@@ -10254,8 +10254,8 @@
    "sentinel": {
     "cand": 8,
     "gaps": 0,
-    "min": 15095,
-    "red": 1
+    "min": 13754,
+    "red": 4
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -10297,7 +10297,7 @@
     "EH3D-PHOENIX-PNP": 572,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
-    "EH3D-SERVER": 374,
+    "EH3D-SERVER": 386,
     "EH3D-STENCILCAM": 185,
     "EH3D-STUDIO": 441,
     "EH3D-SUITE-LAUNCHER": 128,
