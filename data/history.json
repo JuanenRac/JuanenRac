@@ -9663,11 +9663,11 @@
   },
   {
    "actions": {
-    "fail": 127,
-    "min": 13754,
-    "ok": 3194,
-    "other": 38,
-    "runs": 3359
+    "fail": 139,
+    "min": 14023,
+    "ok": 3283,
+    "other": 35,
+    "runs": 3457
    },
    "areas": {
     "armor": {
@@ -9691,7 +9691,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 50,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -9711,7 +9711,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -9725,7 +9725,7 @@
    "progress": {
     "armor": 68,
     "eh3d": 47,
-    "electro-hobby-3d": 63,
+    "electro-hobby-3d": 61,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -10254,23 +10254,23 @@
    "sentinel": {
     "cand": 8,
     "gaps": 0,
-    "min": 13754,
-    "red": 4
+    "min": 14023,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
     "ARMOR-COMMON": 620,
-    "ARMOR-DOCS": 470,
+    "ARMOR-DOCS": 473,
     "ARMOR-HARDWARE": 87,
     "ARMOR-IOS-CONTROL": 516,
     "ARMOR-NETWORK": 332,
     "ARMOR-SERVER": 1152,
     "ARMOR-SERVER-AI": 191,
-    "ARMOR-SIMULATOR": 407,
+    "ARMOR-SIMULATOR": 409,
     "ARMOR-STUDIO": 1672,
     "ARMOR-UPDATER": 454,
     "ARMOR-VISION": 363,
-    "ARMOR-VOICE-AI": 241,
+    "ARMOR-VOICE-AI": 244,
     "ARMOR-WATCH": 29,
     "EH3D-ANDROID-CONTROL": 251,
     "EH3D-AUTOLEVEL": 192,
@@ -10366,14 +10366,14 @@
     "HYDRA-UMC-VOICE-UI": 464,
     "HYDRA-UMC-WATCH": 212,
     "URTC-COMMON": 3027,
-    "URTC-DEVTOOLS": 153,
+    "URTC-DEVTOOLS": 158,
     "URTC-DOCS": 244,
     "URTC-FLASHER": 916,
     "URTC-GATEWAY": 225,
-    "URTC-SMART-RACK": 772,
+    "URTC-SMART-RACK": 775,
     "URTC-TESTER": 1104,
-    "URTC-UPDATER": 721,
-    "URTC-VISION-TOOL": 244,
+    "URTC-UPDATER": 734,
+    "URTC-VISION-TOOL": 249,
     "URTC-WEB-STUDIO": 1778
    }
   }

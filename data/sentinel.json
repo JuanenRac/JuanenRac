@@ -1,14 +1,8 @@
 {
- "asof": "2026-11-16T12:02:16Z",
+ "asof": "2026-11-16T12:39:44Z",
  "ci": {
-  "checked": 619,
+  "checked": 622,
   "red": [
-   {
-    "repo": "ARMOR-DOCS",
-    "since": "2026-11-16T12:01:17Z",
-    "streak": 3,
-    "wf": "nightly.yml"
-   },
    {
     "repo": "HYDRA-UMC",
     "since": "2026-11-15T01:18:53Z",
@@ -17,34 +11,34 @@
    },
    {
     "repo": "HYDRA-UMC-DOCS",
-    "since": "2026-11-16T12:02:38Z",
-    "streak": 1,
+    "since": "2026-11-16T12:32:25Z",
+    "streak": 2,
     "wf": "nightly.yml"
    },
    {
     "repo": "URTC-DOCS",
-    "since": "2026-11-16T12:03:05Z",
-    "streak": 1,
+    "since": "2026-11-16T12:39:04Z",
+    "streak": 3,
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 4
+  "red_total": 3
  },
  "compute": {
   "top": [
    {
-    "min24": 1753,
-    "min7": 1753,
+    "min24": 1630,
+    "min7": 1630,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 616,
-    "min7": 616,
+    "min24": 644,
+    "min7": 644,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 541,
-    "min7": 554,
+    "min24": 545,
+    "min7": 558,
     "repo": "HYDRA-UMC-DOCS"
    },
    {
@@ -53,25 +47,25 @@
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 274,
-    "min7": 331,
+    "min24": 314,
+    "min7": 337,
     "repo": "HYDRA-UMC-SUITE"
    },
    {
-    "min24": 254,
-    "min7": 364,
-    "repo": "HYDRA-UMC-PATH-PLANNER-3D"
+    "min24": 303,
+    "min7": 370,
+    "repo": "ARMOR-DOCS"
    }
   ],
-  "total24": 13754,
-  "total7": 45246,
+  "total24": 14023,
+  "total7": 45242,
   "warn": true
  },
  "ecosystems": {
   "armor": {
    "cand": 0,
    "read": 20,
-   "red": 1,
+   "red": 0,
    "repos": 20,
    "unpub": 0
   },
@@ -105,6 +99,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-16T12:39:44Z",
+   "kind": "red_ok",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-16T12:02:16Z",
    "kind": "red_new",
@@ -278,18 +278,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-BRIDGE-ROS2",
    "tag": "v0.1.9"
-  },
-  {
-   "at": "2026-11-15T16:16:23Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-DSI",
-   "tag": "v0.3.8"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 285
+  "gap_minutes": 40
  },
  "hygiene": {
   "allowed_missing": [],
@@ -307,7 +301,7 @@
     "bad": 0,
     "cand": 8,
     "hyg": 0,
-    "red": 4
+    "red": 3
    }
   },
   {
@@ -315,12 +309,11 @@
    "level": "bad",
    "p": {
     "list": [
-     "ARMOR-DOCS",
      "HYDRA-UMC",
      "HYDRA-UMC-DOCS",
      "URTC-DOCS"
     ],
-    "n": 4
+    "n": 3
    }
   },
   {
@@ -362,7 +355,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13754
+    "min": 14023
    }
   }
  ],
@@ -628,7 +621,7 @@
    70311,
    12143,
    12581,
-   13754
+   14023
   ],
   "red": [
    3,
@@ -644,7 +637,7 @@
    6,
    0,
    1,
-   4
+   3
   ]
  },
  "unpublished": {
