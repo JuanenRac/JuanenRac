@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-15T23:56:21Z",
+ "asof": "2026-11-16T00:04:54Z",
  "ci": {
   "checked": 617,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1198,
-    "min7": 1198,
+    "min24": 1337,
+    "min7": 1337,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -30,8 +30,8 @@
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
    {
-    "min24": 407,
-    "min7": 543,
+    "min24": 408,
+    "min7": 524,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
@@ -45,9 +45,9 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 11878,
-  "total7": 45948,
-  "warn": false
+  "total24": 12026,
+  "total7": 46012,
+  "warn": true
  },
  "ecosystems": {
   "armor": {
@@ -88,7 +88,7 @@
  },
  "events": [
   {
-   "at": "2026-11-15T23:56:21Z",
+   "at": "2026-11-16T00:04:54Z",
    "kind": "released",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "tag": "v1.9.2"
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 60
+  "gap_minutes": 65
  },
  "hygiene": {
   "allowed_missing": [],
@@ -329,6 +329,13 @@
    "p": {
     "m": 130,
     "n": 0
+   }
+  },
+  {
+   "key": "compute",
+   "level": "warn",
+   "p": {
+    "min": 12026
    }
   }
  ],
@@ -503,6 +510,7 @@
    20,
    22,
    25,
+   1,
    1
   ],
   "dates": [
@@ -518,7 +526,8 @@
    "2026-11-12",
    "2026-11-13",
    "2026-11-14",
-   "2026-11-15"
+   "2026-11-15",
+   "2026-11-16"
   ],
   "gaps": [
    0,
@@ -530,6 +539,7 @@
    1,
    1,
    1,
+   0,
    0,
    0,
    0,
@@ -548,7 +558,8 @@
    12959,
    70311,
    12143,
-   11878
+   12581,
+   12026
   ],
   "red": [
    3,
@@ -563,6 +574,7 @@
    0,
    6,
    0,
+   1,
    1
   ]
  },
