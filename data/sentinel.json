@@ -1,22 +1,28 @@
 {
- "asof": "2026-11-16T16:04:29Z",
+ "asof": "2026-11-16T17:29:44Z",
  "ci": {
-  "checked": 628,
+  "checked": 629,
   "red": [
    {
     "repo": "HYDRA-UMC",
     "since": "2026-11-15T01:18:53Z",
     "streak": 1,
     "wf": "firmware-build.yml"
+   },
+   {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "since": "2026-11-16T17:16:21Z",
+    "streak": 1,
+    "wf": "ci.yml"
    }
   ],
-  "red_total": 1
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 1168,
-    "min7": 1168,
+    "min24": 1227,
+    "min7": 1227,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -41,17 +47,17 @@
    },
    {
     "min24": 323,
-    "min7": 689,
+    "min7": 694,
     "repo": "HYDRA-UMC-DEV-SERVER"
    }
   ],
-  "total24": 16568,
-  "total7": 43865,
+  "total24": 16578,
+  "total7": 43839,
   "warn": true
  },
  "ecosystems": {
   "armor": {
-   "cand": 1,
+   "cand": 2,
    "read": 20,
    "red": 0,
    "repos": 20,
@@ -67,9 +73,9 @@
   "electro-hobby-3d": {
    "cand": 0,
    "read": 2,
-   "red": 0,
+   "red": 1,
    "repos": 2,
-   "unpub": 1
+   "unpub": 0
   },
   "hydra-umc": {
    "cand": 7,
@@ -79,7 +85,7 @@
    "unpub": 0
   },
   "urtc": {
-   "cand": 2,
+   "cand": 3,
    "read": 11,
    "red": 0,
    "repos": 11,
@@ -87,6 +93,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-16T17:29:44Z",
+   "kind": "red_new",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-16T17:29:44Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v2.0.2"
+  },
   {
    "at": "2026-11-16T16:04:29Z",
    "kind": "red_ok",
@@ -254,24 +272,12 @@
    "kind": "released",
    "repo": "ARMOR-IOS-CONTROL",
    "tag": "v0.0.6"
-  },
-  {
-   "at": "2026-11-15T16:16:23Z",
-   "kind": "released",
-   "repo": "ARMOR-NODE-ELECTRICAL",
-   "tag": "v0.5.9"
-  },
-  {
-   "at": "2026-11-15T16:16:23Z",
-   "kind": "released",
-   "repo": "ARMOR-NODE-HMI",
-   "tag": "v0.4.9"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 150
+  "gap_minutes": 90
  },
  "hygiene": {
   "allowed_missing": [],
@@ -287,9 +293,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 10,
+    "cand": 12,
     "hyg": 0,
-    "red": 1
+    "red": 2
    }
   },
   {
@@ -297,9 +303,10 @@
    "level": "warn",
    "p": {
     "list": [
-     "HYDRA-UMC"
+     "HYDRA-UMC",
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
     ],
-    "n": 1
+    "n": 2
    }
   },
   {
@@ -307,6 +314,7 @@
    "level": "warn",
    "p": {
     "list": [
+     "ARMOR-COMMON",
      "ARMOR-DEVOPS",
      "HYDRA-UMC",
      "HYDRA-UMC-ANOMALY-DETECTOR",
@@ -315,10 +323,11 @@
      "HYDRA-UMC-OPS-AGENT",
      "HYDRA-UMC-STUDIO-KIT",
      "HYDRA-UMC-UPDATER",
+     "URTC-FLASHER",
      "URTC-SMART-RACK",
      "URTC-WEB-STUDIO"
     ],
-    "n": 10
+    "n": 12
    }
   },
   {
@@ -326,10 +335,9 @@
    "level": "warn",
    "p": {
     "list": [
-     "TOOLS-GITHUB-ACTIONS-MONITOR",
      "URTC-DEVTOOLS"
     ],
-    "n": 2
+    "n": 1
    }
   },
   {
@@ -344,7 +352,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 16568
+    "min": 16578
    }
   }
  ],
@@ -362,6 +370,12 @@
     "published": "2026-11-14T15:18:55Z",
     "repo": "ARMOR-DEVOPS",
     "tag": "v0.7.6"
+   },
+   {
+    "entries": 7,
+    "published": "2026-11-14T16:55:49Z",
+    "repo": "ARMOR-COMMON",
+    "tag": "v0.8.1.4"
    },
    {
     "entries": 7,
@@ -407,6 +421,12 @@
    },
    {
     "entries": 5,
+    "published": "2026-11-14T16:30:24Z",
+    "repo": "URTC-FLASHER",
+    "tag": "v0.5.7"
+   },
+   {
+    "entries": 5,
     "published": "2026-11-14T15:21:04Z",
     "repo": "URTC-WEB-STUDIO",
     "tag": "v0.5.2"
@@ -414,7 +434,7 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 10
+  "total": 12
  },
  "repos": 130,
  "schema": 1,
@@ -546,7 +566,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.1",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.2",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.8",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -574,7 +594,7 @@
    22,
    25,
    1,
-   10
+   12
   ],
   "dates": [
    "2026-11-03",
@@ -622,7 +642,7 @@
    70311,
    12143,
    12581,
-   16568
+   16578
   ],
   "red": [
    3,
@@ -638,22 +658,17 @@
    6,
    0,
    1,
-   1
+   2
   ]
  },
  "unpublished": {
   "rows": [
-   {
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v2.0.1",
-    "version": "2.0.2"
-   },
    {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.7"
    }
   ],
-  "total": 2
+  "total": 1
  }
 }

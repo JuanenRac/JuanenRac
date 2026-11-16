@@ -9663,15 +9663,15 @@
   },
   {
    "actions": {
-    "fail": 165,
-    "min": 16568,
-    "ok": 3553,
-    "other": 58,
-    "runs": 3776
+    "fail": 172,
+    "min": 16578,
+    "ok": 3495,
+    "other": 55,
+    "runs": 3722
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 50,
      "production": 60,
@@ -9691,7 +9691,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 50,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -9701,7 +9701,7 @@
      "tests": 100
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 8,
      "production": 8,
@@ -9725,7 +9725,7 @@
    "progress": {
     "armor": 68,
     "eh3d": 47,
-    "electro-hobby-3d": 63,
+    "electro-hobby-3d": 61,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -10252,10 +10252,10 @@
     ]
    },
    "sentinel": {
-    "cand": 10,
+    "cand": 12,
     "gaps": 0,
-    "min": 16568,
-    "red": 1
+    "min": 16578,
+    "red": 2
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
