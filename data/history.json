@@ -9663,15 +9663,15 @@
   },
   {
    "actions": {
-    "fail": 150,
-    "min": 14229,
-    "ok": 3435,
-    "other": 43,
-    "runs": 3628
+    "fail": 165,
+    "min": 16568,
+    "ok": 3553,
+    "other": 58,
+    "runs": 3776
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 50,
      "production": 60,
@@ -9701,7 +9701,7 @@
      "tests": 100
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 8,
      "production": 8,
@@ -9711,7 +9711,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -10216,7 +10216,7 @@
     ],
     "URTC-DEVTOOLS": [
      0,
-     "0.0.6"
+     "0.0.7"
     ],
     "URTC-DOCS": [
      1,
@@ -10252,10 +10252,10 @@
     ]
    },
    "sentinel": {
-    "cand": 8,
+    "cand": 10,
     "gaps": 0,
-    "min": 14229,
-    "red": 3
+    "min": 16568,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -10282,7 +10282,7 @@
     "EH3D-DESIGN-EXPLORER": 3,
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
-    "EH3D-DOCS": 568,
+    "EH3D-DOCS": 574,
     "EH3D-DRILLPRO": 417,
     "EH3D-GERBERVIEWER": 131,
     "EH3D-HYDRA-BRIDGE": 3,
@@ -10365,11 +10365,11 @@
     "HYDRA-UMC-VLA-ENGINE": 299,
     "HYDRA-UMC-VOICE-UI": 464,
     "HYDRA-UMC-WATCH": 212,
-    "URTC-COMMON": 3030,
+    "URTC-COMMON": 3036,
     "URTC-DEVTOOLS": 158,
     "URTC-DOCS": 244,
     "URTC-FLASHER": 916,
-    "URTC-GATEWAY": 225,
+    "URTC-GATEWAY": 239,
     "URTC-SMART-RACK": 775,
     "URTC-TESTER": 1104,
     "URTC-UPDATER": 734,
