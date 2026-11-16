@@ -9663,17 +9663,17 @@
   },
   {
    "actions": {
-    "fail": 147,
-    "min": 11864,
-    "ok": 3815,
-    "other": 45,
-    "runs": 4007
+    "fail": 160,
+    "min": 10315,
+    "ok": 3635,
+    "other": 82,
+    "runs": 3877
    },
    "areas": {
     "armor": {
      "ci": 100,
      "docs": 100,
-     "hardware": 56,
+     "hardware": 50,
      "production": 60,
      "releases": 100,
      "simulation": 100,
@@ -9691,7 +9691,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 50,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -9725,7 +9725,7 @@
    "progress": {
     "armor": 68,
     "eh3d": 47,
-    "electro-hobby-3d": 63,
+    "electro-hobby-3d": 61,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -10204,7 +10204,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "1.9.4"
+     "1.9.5"
     ],
     "URTC": [
      1,
@@ -10254,7 +10254,7 @@
    "sentinel": {
     "cand": 1,
     "gaps": 0,
-    "min": 11864,
+    "min": 10315,
     "red": 1
    },
    "tests": {

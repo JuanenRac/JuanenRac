@@ -92,7 +92,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | Versiones publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟢 | `██████████ 100%` | 59 de 59 repositorios se han comprobado al menos en un simulador. |
-| Hardware real | 🔴 | `█▏░░░░░░░░ 11%` | 4 de los 38 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Hardware real | 🔴 | `▊░░░░░░░░░ 8%` | 3 de los 38 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
 | Producción | 🔴 | `▊░░░░░░░░░ 8%` | 5 de 59 repositorios están consolidados o en producción. |
 <!-- /status:hydra-umc -->
 
@@ -611,7 +611,7 @@ Fuera de los cuatro ecosistemas hay un quinto grupo: herramientas independientes
 **Actualizador:** ninguno propio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) es una de sus herramientas y cede el trabajo al actualizador de cada uno de los cuatro ecosistemas.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[████████████▋░░░░░░░] 63%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,7 +623,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 de 2 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 2 de 2 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositorios se han comprobado al menos en un simulador. |
@@ -639,7 +639,7 @@ El grupo reúne los programas que están por encima de los cuatro ecosistemas y 
 
 | Herramienta | Versión | Qué es |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.4 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.5 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La ventana y la línea de órdenes únicas que ceden el trabajo al actualizador de cada ecosistema. |
 
 \---

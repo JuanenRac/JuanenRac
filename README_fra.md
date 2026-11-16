@@ -92,7 +92,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | Versions publiées | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont été vérifiés au moins dans un simulateur. |
-| Matériel réel | 🔴 | `█▏░░░░░░░░ 11%` | 4 des 38 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Matériel réel | 🔴 | `▊░░░░░░░░░ 8%` | 3 des 38 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
 | Production | 🔴 | `▊░░░░░░░░░ 8%` | 5 dépôts sur 59 sont établis ou en production. |
 <!-- /status:hydra-umc -->
 
@@ -611,7 +611,7 @@ En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils 
 **Outil de mise à jour :** aucun en propre ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) est l'un de ses outils et passe la main à l'outil de mise à jour de chacun des quatre écosystèmes.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[████████████▋░░░░░░░] 63%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,7 +623,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `██████████ 100%` | 2 dépôts sur 2 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont des tests automatiques. |
-| Intégration continue | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont le README dans les huit langues. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 2 ont été vérifiés au moins dans un simulateur. |
@@ -639,7 +639,7 @@ Le groupe réunit les programmes qui se trouvent au-dessus des quatre écosystè
 
 | Outil | Version | Ce que c'est |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.4 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 1.9.5 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
 
 \---
