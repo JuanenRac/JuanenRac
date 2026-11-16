@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-15T23:00:04Z",
+ "asof": "2026-11-15T23:56:21Z",
  "ci": {
   "checked": 617,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1263,
-    "min7": 1263,
+    "min24": 1198,
+    "min7": 1198,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -25,17 +25,12 @@
     "repo": "HYDRA-UMC-DOCS"
    },
    {
-    "min24": 502,
+    "min24": 467,
     "min7": 548,
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
    {
-    "min24": 459,
-    "min7": 459,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
-   },
-   {
-    "min24": 434,
+    "min24": 407,
     "min7": 543,
     "repo": "HYDRA-UMC-SERVER"
    },
@@ -43,11 +38,16 @@
     "min24": 370,
     "min7": 373,
     "repo": "HYDRA-UMC-SAFETY-ZONES"
+   },
+   {
+    "min24": 358,
+    "min7": 459,
+    "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 12581,
-  "total7": 46014,
-  "warn": true
+  "total24": 11878,
+  "total7": 45948,
+  "warn": false
  },
  "ecosystems": {
   "armor": {
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-15T23:56:21Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v1.9.2"
+  },
   {
    "at": "2026-11-15T23:00:04Z",
    "kind": "released",
@@ -260,12 +266,6 @@
    "kind": "released",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "tag": "v1.8.4"
-  },
-  {
-   "at": "2026-11-15T11:09:18Z",
-   "kind": "red_ok",
-   "repo": "ARMOR-DOCS",
-   "wf": "nightly.yml"
   }
  ],
  "health": {
@@ -329,13 +329,6 @@
    "p": {
     "m": 130,
     "n": 0
-   }
-  },
-  {
-   "key": "compute",
-   "level": "warn",
-   "p": {
-    "min": 12581
    }
   }
  ],
@@ -483,7 +476,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.9.1",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v1.9.2",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.8",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -555,7 +548,7 @@
    12959,
    70311,
    12143,
-   12581
+   11878
   ],
   "red": [
    3,
@@ -577,7 +570,7 @@
   "rows": [
    {
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v1.9.1",
+    "tag": "v1.9.2",
     "version": "1.9.3"
    },
    {
