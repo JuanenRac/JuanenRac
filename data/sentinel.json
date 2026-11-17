@@ -1,16 +1,9 @@
 {
- "asof": "2026-11-17T07:54:11Z",
+ "asof": "2026-11-17T09:14:30Z",
  "ci": {
-  "checked": 629,
-  "red": [
-   {
-    "repo": "HYDRA-UMC",
-    "since": "2026-11-15T01:18:53Z",
-    "streak": 1,
-    "wf": "firmware-build.yml"
-   }
-  ],
-  "red_total": 1
+  "checked": 628,
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
@@ -20,8 +13,8 @@
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 433,
-    "min7": 548,
+    "min24": 509,
+    "min7": 595,
     "repo": "ARMOR-SERVER"
    },
    {
@@ -45,8 +38,8 @@
     "repo": "URTC-COMMON"
    }
   ],
-  "total24": 6701,
-  "total7": 42500,
+  "total24": 6909,
+  "total7": 41425,
   "warn": false
  },
  "ecosystems": {
@@ -72,9 +65,9 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 7,
+   "cand": 10,
    "read": 59,
-   "red": 1,
+   "red": 0,
    "repos": 59,
    "unpub": 0
   },
@@ -87,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-17T09:14:30Z",
+   "kind": "red_ok",
+   "repo": "HYDRA-UMC",
+   "wf": "firmware-build.yml"
+  },
   {
    "at": "2026-11-17T07:20:21Z",
    "kind": "released",
@@ -260,18 +259,12 @@
    "kind": "released",
    "repo": "EH3D-STUDIO",
    "tag": "v0.1.5"
-  },
-  {
-   "at": "2026-11-15T22:01:33Z",
-   "kind": "released",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "tag": "v1.9.1"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 35
+  "gap_minutes": 85
  },
  "hygiene": {
   "allowed_missing": [],
@@ -287,19 +280,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 13,
+    "cand": 16,
     "hyg": 0,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "warn",
-   "p": {
-    "list": [
-     "HYDRA-UMC"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -311,17 +294,20 @@
      "ARMOR-DEVOPS",
      "HYDRA-UMC",
      "HYDRA-UMC-ANOMALY-DETECTOR",
+     "HYDRA-UMC-DOCS",
      "HYDRA-UMC-MESHES",
      "HYDRA-UMC-NODE-HEALING",
      "HYDRA-UMC-OPS-AGENT",
+     "HYDRA-UMC-OS-REBUILDER",
      "HYDRA-UMC-STUDIO-KIT",
      "HYDRA-UMC-UPDATER",
+     "HYDRA-UMC-VISION-STREAMER",
      "URTC",
      "URTC-FLASHER",
      "URTC-SMART-RACK",
      "URTC-WEB-STUDIO"
     ],
-    "n": 13
+    "n": 16
    }
   },
   {
@@ -347,7 +333,7 @@
  "releases": {
   "candidates": [
    {
-    "entries": 60,
+    "entries": 61,
     "published": "2026-11-13T07:13:34Z",
     "repo": "HYDRA-UMC",
     "tag": "v0.2.9"
@@ -365,6 +351,12 @@
     "tag": "v0.5.0"
    },
    {
+    "entries": 8,
+    "published": "2026-11-14T15:21:04Z",
+    "repo": "URTC-WEB-STUDIO",
+    "tag": "v0.5.2"
+   },
+   {
     "entries": 7,
     "published": "2026-11-14T16:55:49Z",
     "repo": "ARMOR-COMMON",
@@ -372,9 +364,21 @@
    },
    {
     "entries": 7,
+    "published": "2026-11-15T08:14:36Z",
+    "repo": "HYDRA-UMC-DOCS",
+    "tag": "v0.1.4"
+   },
+   {
+    "entries": 7,
     "published": "2026-11-12T05:12:18Z",
     "repo": "HYDRA-UMC-UPDATER",
     "tag": "v0.5.8"
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-12T06:25:25Z",
+    "repo": "HYDRA-UMC-VISION-STREAMER",
+    "tag": "v0.2.6"
    },
    {
     "entries": 6,
@@ -408,6 +412,12 @@
    },
    {
     "entries": 5,
+    "published": "2026-11-15T08:02:50Z",
+    "repo": "HYDRA-UMC-OS-REBUILDER",
+    "tag": "v0.3.8"
+   },
+   {
+    "entries": 5,
     "published": "2026-11-06T03:59:03Z",
     "repo": "HYDRA-UMC-STUDIO-KIT",
     "tag": "v0.0.4"
@@ -417,17 +427,11 @@
     "published": "2026-11-14T16:30:24Z",
     "repo": "URTC-FLASHER",
     "tag": "v0.5.7"
-   },
-   {
-    "entries": 5,
-    "published": "2026-11-14T15:21:04Z",
-    "repo": "URTC-WEB-STUDIO",
-    "tag": "v0.5.2"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 13
+  "total": 16
  },
  "repos": 130,
  "schema": 1,
@@ -588,7 +592,7 @@
    25,
    1,
    13,
-   13
+   16
   ],
   "dates": [
    "2026-11-03",
@@ -639,7 +643,7 @@
    12143,
    12581,
    16336,
-   6701
+   6909
   ],
   "red": [
    3,
@@ -656,7 +660,7 @@
    0,
    1,
    1,
-   1
+   0
   ]
  },
  "unpublished": {

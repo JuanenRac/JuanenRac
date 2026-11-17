@@ -10379,11 +10379,11 @@
   },
   {
    "actions": {
-    "fail": 78,
-    "min": 6701,
-    "ok": 1588,
-    "other": 30,
-    "runs": 1696
+    "fail": 80,
+    "min": 6909,
+    "ok": 1742,
+    "other": 32,
+    "runs": 1854
    },
    "areas": {
     "armor": {
@@ -10968,10 +10968,10 @@
     ]
    },
    "sentinel": {
-    "cand": 13,
+    "cand": 16,
     "gaps": 0,
-    "min": 6701,
-    "red": 1
+    "min": 6909,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
