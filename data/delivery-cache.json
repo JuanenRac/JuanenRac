@@ -23,30 +23,30 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-15T10:52:36Z",
-   "exp": "2026-11-22T10:51:30Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/43705811000",
+   "at": "2026-11-17T15:34:17Z",
+   "checked": true,
+   "exp": "2026-11-24T15:32:59Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/44114968312",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
    "at": "2026-11-17T13:00:22Z",
-   "checked": true,
    "exp": "2026-11-24T12:59:04Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/44087744734",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-15T15:53:03Z",
-   "exp": "2026-11-22T15:52:30Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/43731742752",
+   "at": "2026-11-17T15:35:34Z",
+   "checked": true,
+   "exp": "2026-11-24T15:34:51Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/44114991958",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-17T13:11:34Z",
-   "checked": true,
    "exp": "2026-11-24T13:10:05Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/44089498794",
    "wf": "firmware-build.yml"
