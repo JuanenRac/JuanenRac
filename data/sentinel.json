@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-17T11:58:43Z",
+ "asof": "2026-11-17T12:27:52Z",
  "ci": {
   "checked": 630,
   "red": [
@@ -14,25 +14,31 @@
     "since": "2026-11-17T11:10:40Z",
     "streak": 1,
     "wf": "docker-audit.yml"
+   },
+   {
+    "repo": "URTC-DOCS",
+    "since": "2026-11-17T12:27:30Z",
+    "streak": 1,
+    "wf": "nightly.yml"
    }
   ],
-  "red_total": 2
+  "red_total": 3
  },
  "compute": {
   "top": [
    {
-    "min24": 719,
-    "min7": 719,
+    "min24": 658,
+    "min7": 658,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 547,
-    "min7": 597,
+    "min24": 583,
+    "min7": 583,
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 282,
-    "min7": 726,
+    "min24": 286,
+    "min7": 536,
     "repo": "HYDRA-UMC-DEVELOPER-NODE"
    },
    {
@@ -41,7 +47,7 @@
     "repo": "HYDRA-UMC-VISION-NODE"
    },
    {
-    "min24": 228,
+    "min24": 225,
     "min7": 720,
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
@@ -51,13 +57,13 @@
     "repo": "HYDRA-UMC-LOCAL-TECHNICIAN"
    }
   ],
-  "total24": 11501,
-  "total7": 43115,
+  "total24": 11337,
+  "total7": 42828,
   "warn": false
  },
  "ecosystems": {
   "armor": {
-   "cand": 6,
+   "cand": 8,
    "read": 20,
    "red": 1,
    "repos": 20,
@@ -87,12 +93,18 @@
   "urtc": {
    "cand": 5,
    "read": 11,
-   "red": 0,
+   "red": 1,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-17T12:27:52Z",
+   "kind": "red_new",
+   "repo": "URTC-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-17T11:58:43Z",
    "kind": "red_new",
@@ -266,18 +278,12 @@
    "kind": "released",
    "repo": "URTC-COMMON",
    "tag": "v0.2.8"
-  },
-  {
-   "at": "2026-11-15T23:00:04Z",
-   "kind": "released",
-   "repo": "URTC-UPDATER",
-   "tag": "v0.3.1"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 50
+  "gap_minutes": 30
  },
  "hygiene": {
   "allowed_missing": [],
@@ -293,9 +299,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 21,
+    "cand": 23,
     "hyg": 0,
-    "red": 2
+    "red": 3
    }
   },
   {
@@ -304,9 +310,10 @@
    "p": {
     "list": [
      "ARMOR-DOCS",
-     "TOOLS-GITHUB-ACTIONS-MONITOR"
+     "TOOLS-GITHUB-ACTIONS-MONITOR",
+     "URTC-DOCS"
     ],
-    "n": 2
+    "n": 3
    }
   },
   {
@@ -319,7 +326,9 @@
      "ARMOR-NODE-ALARM",
      "ARMOR-NODE-SOLAR",
      "ARMOR-SERVER",
+     "ARMOR-SIMULATOR",
      "ARMOR-STUDIO",
+     "ARMOR-VISION",
      "HYDRA-UMC",
      "HYDRA-UMC-ANOMALY-DETECTOR",
      "HYDRA-UMC-DOCS",
@@ -336,7 +345,7 @@
      "URTC-TESTER",
      "URTC-WEB-STUDIO"
     ],
-    "n": 21
+    "n": 23
    }
   },
   {
@@ -362,13 +371,13 @@
  "releases": {
   "candidates": [
    {
-    "entries": 62,
+    "entries": 63,
     "published": "2026-11-13T07:13:34Z",
     "repo": "HYDRA-UMC",
     "tag": "v0.2.9"
    },
    {
-    "entries": 15,
+    "entries": 18,
     "published": "2026-11-15T09:50:56Z",
     "repo": "ARMOR-SERVER",
     "tag": "v0.8.2.3"
@@ -380,7 +389,7 @@
     "tag": "v0.7.6"
    },
    {
-    "entries": 10,
+    "entries": 11,
     "published": "2026-11-15T08:14:36Z",
     "repo": "HYDRA-UMC-DOCS",
     "tag": "v0.1.4"
@@ -393,21 +402,21 @@
    },
    {
     "entries": 8,
-    "published": "2026-11-14T15:21:04Z",
-    "repo": "URTC-WEB-STUDIO",
-    "tag": "v0.5.2"
-   },
-   {
-    "entries": 7,
     "published": "2026-11-14T16:55:49Z",
     "repo": "ARMOR-COMMON",
     "tag": "v0.8.1.4"
    },
    {
-    "entries": 7,
+    "entries": 8,
     "published": "2026-11-15T10:03:01Z",
     "repo": "ARMOR-STUDIO",
     "tag": "v0.8.2.5"
+   },
+   {
+    "entries": 8,
+    "published": "2026-11-14T15:21:04Z",
+    "repo": "URTC-WEB-STUDIO",
+    "tag": "v0.5.2"
    },
    {
     "entries": 7,
@@ -435,6 +444,12 @@
    },
    {
     "entries": 6,
+    "published": "2026-11-14T15:17:42Z",
+    "repo": "ARMOR-VISION",
+    "tag": "v0.1.7"
+   },
+   {
+    "entries": 6,
     "published": "2026-11-12T06:25:25Z",
     "repo": "HYDRA-UMC-VISION-STREAMER",
     "tag": "v0.2.6"
@@ -444,6 +459,12 @@
     "published": "2026-11-14T16:30:24Z",
     "repo": "URTC-FLASHER",
     "tag": "v0.5.7"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-14T15:17:09Z",
+    "repo": "ARMOR-SIMULATOR",
+    "tag": "v0.3.8"
    },
    {
     "entries": 5,
@@ -490,7 +511,7 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 21
+  "total": 23
  },
  "repos": 130,
  "schema": 1,
@@ -651,7 +672,7 @@
    25,
    1,
    13,
-   21
+   23
   ],
   "dates": [
    "2026-11-03",
@@ -702,7 +723,7 @@
    12143,
    12581,
    16336,
-   11501
+   11337
   ],
   "red": [
    3,
@@ -719,7 +740,7 @@
    0,
    1,
    1,
-   2
+   3
   ]
  },
  "unpublished": {
