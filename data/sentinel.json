@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-17T04:26:18Z",
+ "asof": "2026-11-17T05:11:19Z",
  "ci": {
   "checked": 629,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 894,
-    "min7": 894,
+    "min24": 857,
+    "min7": 857,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -30,13 +30,13 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 245,
-    "min7": 407,
+    "min24": 246,
+    "min7": 405,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
     "min24": 209,
-    "min7": 355,
+    "min7": 353,
     "repo": "ARMOR-DEVOPS"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "URTC-COMMON"
    }
   ],
-  "total24": 6898,
-  "total7": 42711,
+  "total24": 6823,
+  "total7": 42628,
   "warn": false
  },
  "ecosystems": {
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 75
+  "gap_minutes": 50
  },
  "hygiene": {
   "allowed_missing": [],
@@ -639,7 +639,7 @@
    12143,
    12581,
    16336,
-   6898
+   6823
   ],
   "red": [
    3,
