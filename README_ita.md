@@ -404,7 +404,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████░ 90%` | 18 repository su 20 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 20 repository su 20 hanno test automatici. |
-| Integrazione continua | 🟢 | `██████████ 100%` | 20 repository su 20 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `█████████▌ 95%` | 19 repository su 20 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 20 repository su 20 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 20 repository su 20 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `██████████ 100%` | 20 repository su 20 sono stati verificati almeno in un simulatore. |
