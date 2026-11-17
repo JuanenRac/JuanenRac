@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-17T02:01:27Z",
+ "asof": "2026-11-17T03:11:47Z",
  "ci": {
   "checked": 629,
   "red": [
@@ -15,39 +15,39 @@
  "compute": {
   "top": [
    {
-    "min24": 953,
-    "min7": 953,
+    "min24": 898,
+    "min7": 898,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 524,
-    "min7": 612,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
-   },
-   {
-    "min24": 450,
+    "min24": 433,
     "min7": 548,
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 403,
+    "min24": 339,
     "min7": 407,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 323,
-    "min7": 694,
-    "repo": "HYDRA-UMC-DEV-SERVER"
+    "min24": 320,
+    "min7": 612,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 317,
-    "min7": 421,
-    "repo": "HYDRA-UMC-PATH-PLANNER-3D"
+    "min24": 213,
+    "min7": 396,
+    "repo": "URTC"
+   },
+   {
+    "min24": 209,
+    "min7": 355,
+    "repo": "ARMOR-DEVOPS"
    }
   ],
-  "total24": 14297,
-  "total7": 42890,
-  "warn": true
+  "total24": 8645,
+  "total7": 42815,
+  "warn": false
  },
  "ecosystems": {
   "armor": {
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-17T03:11:47Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v2.0.5"
+  },
   {
    "at": "2026-11-17T01:41:46Z",
    "kind": "released",
@@ -260,18 +266,12 @@
    "kind": "red_ok",
    "repo": "HYDRA-UMC-STUDIO",
    "wf": "dist-build.yml"
-  },
-  {
-   "at": "2026-11-15T16:16:23Z",
-   "kind": "red_new",
-   "repo": "HYDRA-UMC-SERVER",
-   "wf": "dist-build.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 20
+  "gap_minutes": 75
  },
  "hygiene": {
   "allowed_missing": [],
@@ -340,13 +340,6 @@
    "p": {
     "m": 130,
     "n": 0
-   }
-  },
-  {
-   "key": "compute",
-   "level": "warn",
-   "p": {
-    "min": 14297
    }
   }
  ],
@@ -566,7 +559,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.4",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.5",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.8",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -646,7 +639,7 @@
    12143,
    12581,
    16336,
-   14297
+   8645
   ],
   "red": [
    3,
