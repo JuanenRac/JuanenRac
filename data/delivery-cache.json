@@ -30,9 +30,10 @@
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-15T15:51:15Z",
-   "exp": "2026-11-22T15:50:25Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/43731745804",
+   "at": "2026-11-17T13:00:22Z",
+   "checked": true,
+   "exp": "2026-11-24T12:59:04Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/44087744734",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
@@ -44,9 +45,10 @@
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
-   "at": "2026-11-15T10:36:46Z",
-   "exp": "2026-11-22T10:35:34Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/43704540974",
+   "at": "2026-11-17T13:11:34Z",
+   "checked": true,
+   "exp": "2026-11-24T13:10:05Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/44089498794",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
