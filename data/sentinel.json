@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-17T17:36:06Z",
+ "asof": "2026-11-17T18:37:21Z",
  "ci": {
   "checked": 629,
   "red": [
@@ -31,7 +31,7 @@
    },
    {
     "min24": 229,
-    "min7": 520,
+    "min7": 451,
     "repo": "ARMOR-SERVER"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "HYDRA-UMC-SEMANTIC-PLANNER"
    }
   ],
-  "total24": 8456,
-  "total7": 41260,
+  "total24": 8607,
+  "total7": 41039,
   "warn": false
  },
  "ecosystems": {
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 255
+  "gap_minutes": 65
  },
  "hygiene": {
   "allowed_missing": [],
@@ -407,16 +407,16 @@
     "tag": "v0.8.0.5"
    },
    {
+    "entries": 12,
+    "published": "2026-11-14T20:35:30Z",
+    "repo": "URTC",
+    "tag": "v0.5.0"
+   },
+   {
     "entries": 11,
     "published": "2026-11-15T08:14:36Z",
     "repo": "HYDRA-UMC-DOCS",
     "tag": "v0.1.4"
-   },
-   {
-    "entries": 11,
-    "published": "2026-11-14T20:35:30Z",
-    "repo": "URTC",
-    "tag": "v0.5.0"
    },
    {
     "entries": 10,
@@ -807,7 +807,7 @@
    12143,
    12581,
    16336,
-   8456
+   8607
   ],
   "red": [
    3,
