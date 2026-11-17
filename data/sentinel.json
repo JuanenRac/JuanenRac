@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-17T07:20:21Z",
+ "asof": "2026-11-17T07:54:11Z",
  "ci": {
   "checked": 629,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 806,
-    "min7": 806,
+    "min24": 751,
+    "min7": 751,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "URTC-COMMON"
    }
   ],
-  "total24": 6753,
-  "total7": 42577,
+  "total24": 6701,
+  "total7": 42500,
   "warn": false
  },
  "ecosystems": {
@@ -271,7 +271,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 60
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -639,7 +639,7 @@
    12143,
    12581,
    16336,
-   6753
+   6701
   ],
   "red": [
    3,
