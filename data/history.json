@@ -10379,11 +10379,11 @@
   },
   {
    "actions": {
-    "fail": 80,
-    "min": 6823,
-    "ok": 1591,
-    "other": 33,
-    "runs": 1704
+    "fail": 79,
+    "min": 6787,
+    "ok": 1589,
+    "other": 35,
+    "runs": 1703
    },
    "areas": {
     "armor": {
@@ -10920,7 +10920,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "2.0.6"
+     "2.0.7"
     ],
     "URTC": [
      1,
@@ -10970,7 +10970,7 @@
    "sentinel": {
     "cand": 13,
     "gaps": 0,
-    "min": 6823,
+    "min": 6787,
     "red": 1
    },
    "tests": {

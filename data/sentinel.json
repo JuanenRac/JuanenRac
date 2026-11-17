@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-17T05:11:19Z",
+ "asof": "2026-11-17T06:02:02Z",
  "ci": {
   "checked": 629,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 857,
-    "min7": 857,
+    "min24": 822,
+    "min7": 822,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -45,8 +45,8 @@
     "repo": "URTC-COMMON"
    }
   ],
-  "total24": 6823,
-  "total7": 42628,
+  "total24": 6787,
+  "total7": 42593,
   "warn": false
  },
  "ecosystems": {
@@ -87,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-17T06:02:02Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v2.0.7"
+  },
   {
    "at": "2026-11-17T04:26:18Z",
    "kind": "released",
@@ -260,18 +266,12 @@
    "kind": "released",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "tag": "v1.9.0"
-  },
-  {
-   "at": "2026-11-15T17:08:49Z",
-   "kind": "red_ok",
-   "repo": "HYDRA-UMC-SERVER",
-   "wf": "dist-build.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 50
+  "gap_minutes": 55
  },
  "hygiene": {
   "allowed_missing": [],
@@ -559,7 +559,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.6",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.7",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.8",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -639,7 +639,7 @@
    12143,
    12581,
    16336,
-   6823
+   6787
   ],
   "red": [
    3,
