@@ -33,7 +33,7 @@ Each line is one part of this repository and the light says how far it is today.
 | Area | State | What it means here |
 |---|---|---|
 | Dashboard and monitors | 🟢 | The status dashboard, the CI watch, the health matrix, the link check and the release digest run on a schedule in GitHub Actions, and their latest runs pass. |
-| Tests | 🟢 | 59 tests pass (`python -m unittest discover -s tests`): the catalogue, the monitors, the banners, the roadmap seed of the four boards (HYDRA-UMC, URTC, A.R.M.O.R. and EH3D) and the README parity. |
+| Tests | 🟢 | 923 tests pass (`python -m unittest discover -s tests`): the catalogue, the monitors, the banners, the roadmap seed of the four boards (HYDRA-UMC, URTC, A.R.M.O.R. and EH3D), the README parity and the dashboard (its tabs, charts, sentinel and the five groups at the same level). |
 | Catalogue and versions | 🟢 | The Version and the Description of every project table are filled by scripts from each repository's own manifest and from one checked descriptions file, and the CI fails if either drifts. |
 | Progress bars | 🟢 | The percentage of every ecosystem is calculated by `scripts/ecosystem_progress.py` from the maturity and the evidence that each repository declares in its own manifest, plus its published releases, tests, green CI and documentation in eight languages, and refreshed with the dashboard; the 100% milestone is still a fully integrated ecosystem working on real hardware. |
 | Eight-language parity | 🟢 | The eight README files keep the same sections, the same GitHub links and the same number of table rows, and a test fails when one of them drifts. |

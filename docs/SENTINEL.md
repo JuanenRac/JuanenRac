@@ -43,32 +43,59 @@ release is older than `candidate_days`. The prefixes of `skip_candidate_prefixes
 The file carries a `health` block of numbers (`gap_minutes`, `age_minutes`, `build_queue_seconds`, in steps) and the tab warns when the reading is older than
 `behind_minutes`; see [DASHBOARD_UPDATES.md](DASHBOARD_UPDATES.md) for how the panel is kept current.
 
+## Supply chain and delivery
+
+Two cards of the tab take the ideas of the supply chain and delivery sentinels of the local monitor (see below) and keep to what is safe to publish: counts by ecosystem
+for the five groups (HYDRA-UMC, URTC, A.R.M.O.R., EH3D and Tools), never a line, a value or a person. A group with nothing read is shown as not verified, never as in order.
+
+### Supply chain
+
+Read from the same daily copy of the repositories as the Scripts tab (no extra request). One row per group, with the repositories read and, summed over their workflows:
+
+| Column | What it counts |
+|---|---|
+| Not fixed to a commit | the `uses:` of an action whose version is a tag or a branch instead of a full commit |
+| Follow a branch | the `uses:` that follow a branch such as `main` |
+| Permissions | the findings of the linter rule that looks for a workflow without a `permissions:` block or with `write-all` |
+| `pull_request_target` | the findings of the linter rule that looks for `pull_request_target` with a checkout of the pull request |
+
+The state is **In order** only when all four are zero and **To review** otherwise. `sections.supply` switches the card off.
+
+### Delivery
+
+Read in the same GraphQL call as the rest of the tab (the latest release, its description, the newest version tag and the CHANGELOG), so it costs no extra request. The description and
+the CHANGELOG are reduced to a yes or no and a version number on the spot; their text is never kept.
+
+| Column | What it counts |
+|---|---|
+| Tag without release | a version tag newer than the latest release |
+| Release without notes | the latest release has an empty description |
+| CHANGELOG differs | the newest released section of the CHANGELOG is not the version of the latest release |
+| Version raised, not published | the manifest declares a version newer than the latest release (the card above) |
+
+A repository without a published release, or whose fact could not be read, never raises a signal. A reading saved before these checks existed has no delivery block, and the card
+then says so instead of showing zeros. `sections.delivery` switches the card off.
+
 ## The local Actions monitor and this panel
 
 The local monitor (`TOOLS-GITHUB-ACTIONS-MONITOR`, of the Tools group) and this tab answer the same question with the same rule of red (see
-[CI_RED_CONTRACT.md](CI_RED_CONTRACT.md)); they differ in where they run. The monitor reads from the machine of its owner, in a complete edition with the sentinel and its
-thirteen checks A1 to A13 and in a lite edition without it; the dashboard reads in GitHub Actions with the read-only token of the workflow and publishes only what is safe.
+[CI_RED_CONTRACT.md](CI_RED_CONTRACT.md)); they differ in where they run. The monitor reads from the machine of its owner; its complete edition has five sentinels that never write to
+GitHub (CI with its checks A1 to A13, Collab, Security, Supply chain and Delivery) and its lite edition has none. The dashboard reads in GitHub Actions with the read-only token of the
+workflow and publishes only what is safe.
 
-| Panel of the monitor | What it checks | In this tab |
+| Sentinel of the monitor | What it checks | In this tab |
 |---|---|---|
-| A1 | builds stuck or queued for too long, `build-failed` and `build-stuck` issues | Builds tab |
-| A2 | red CI by the single rule | red workflows |
-| A3 | security alerts (CodeQL, Dependabot, secret scanning) | never shown here: nothing about security alerts is published |
-| A4 | Dependabot pull requests | not shown |
-| A5 | releases: candidate (5 or more entries under `[Unreleased]`), green release build, waiting for a signature | releases ready, signatures |
-| A6 | hygiene: ruleset, labels, required files, pinned actions | hygiene |
-| A7 | usage: Actions minutes, budgets, allowance left | computing |
-| A8 | state of the work-round files of the owner | not applicable |
-| A9 | roadmap boards alive | not shown |
-| A10 | surface of Actions and releases (twenty-five checks) | partly, in the Scripts tab |
-| A11 | readiness and health score per ecosystem, dependency pins | table by ecosystem |
-| A12 | analytics: p50 and p95, slower and flaky workflows | Builds tab |
-| A13 | workflow linter | Scripts tab |
+| CI (A1, A2, A12, A13) | builds stuck or queued, red CI by the single rule, durations and flaky workflows, the workflow linter | red workflows, Builds tab, Scripts tab |
+| CI (A5) | releases: candidate (5 or more entries under `[Unreleased]`), green release build, waiting for a signature | releases ready, signatures |
+| CI (A6, A10) | hygiene (ruleset, labels, required files, pinned actions) and the surface of Actions | hygiene, partly the Scripts tab |
+| CI (A7) | usage: Actions minutes, budgets, allowance left | computing |
+| Collab | issues and pull requests that need a person | never shown: it would publish titles and people |
+| Security | Dependabot, code scanning and secret scanning alerts, branch protection | never shown: nothing about security alerts is published, not even a count |
+| Supply chain | actions not pinned to a commit or following a branch, wide or missing permissions, `pull_request_target` | Supply chain card |
+| Delivery | unreleased entries, tags without a release, releases without notes, versions that disagree, pins behind a shared contract | Delivery card, version raised and not published, shared contract pins |
 
-The next version of the monitor (not published yet) gives the panels A1 to A13 as data, with one inventory of signals that say whether to act, watch or just know, so an AI
-tool does not have to read the page. It also adds a Low mode that saves the allowance, a read-only GitHub App with an allowance of its own, and reads this panel
-(`data/sentinel.json` of the profile repository) as a base line that spends no allowance: it ignores the file when it is more than two hours old and says so. That is why
-the file is refreshed every half hour and why this tab warns when it is behind. A used-up allowance is reported as one notice, not one error per repository.
+The monitor also reads this panel (`data/sentinel.json` of the profile repository) as a base line that spends no allowance: it ignores the file when it is more than two hours old and
+says so. That is why the file is refreshed every half hour and why this tab warns when it is behind. A used-up allowance is reported as one notice, not one error per repository.
 
 ### Connecting an AI tool to the monitor
 
@@ -88,6 +115,8 @@ whitelist on every write, so none of them can get through whatever the input hol
 | `events_max` | 30 | length of the feed of changes |
 | `sections.ecosystems` | true | table by ecosystem |
 | `sections.events` | true | feed of changes |
+| `sections.supply` | true | supply chain card |
+| `sections.delivery` | true | delivery card |
 | `sections.releases` | true | releases ready and versions raised without a release |
 | `candidate_min_entries` | 5 | entries under `[Unreleased]` that make a repository a release candidate |
 | `stale_hours` | 1 | how long an unchanged reading keeps its moment (so a quiet panel is written at most once an hour) |

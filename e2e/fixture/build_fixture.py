@@ -437,6 +437,11 @@ def sentinel_for(entries, eco, activity, history, actions, healthy: bool = False
                   "ci": red, "checked": 1 + index % 2, "rs": True if healthy or index % 6 != 5 else False, "perm": None}
         if index % 7 == 0:
             record["perm"] = {"sha": healthy or index % 14 == 0, "allowed": healthy or index % 14 == 0}
+        if published is not None:
+            # what the delivery card reads: the notes of the release, the newest tag and the version the CHANGELOG names (all consistent with `healthy`)
+            record["notes"] = healthy or index % 7 != 1
+            record["ntag"] = f"v0.1.{index % 7 + (1 if (not healthy and index % 11 == 3) else 0)}"
+            record["clv"] = f"0.1.{index % 7 + (1 if (not healthy and index % 9 == 4) else 0)}"
         repos[entry.name] = record
     read = {"asof": ACTIONS_NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "repos": repos}
     return sentinel_mod.assemble(read, eco, config, {n: a.signature for n, a in activity.items()}, actions, history, "2001-12-21", ecosystem_of=eco)

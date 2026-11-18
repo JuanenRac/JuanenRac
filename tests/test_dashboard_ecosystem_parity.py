@@ -67,7 +67,7 @@ class CatalogTests(unittest.TestCase):
 class ScriptListTests(unittest.TestCase):
     def test_each_chart_script_lists_the_catalogue_in_order(self):
         for name, const in (("dashboard_evo_ui.py", "EVO_ECOS"), ("dashboard_evo_ui.py", "EV_ECOS"), ("dashboard_insight_ui.py", "INS_ECOS"),
-                            ("dashboard_tests_ui.py", "TS_ECOS"), ("dashboard_actions_ui.py", "AC_ECOS")):
+                            ("dashboard_tests_ui.py", "TS_ECOS"), ("dashboard_actions_ui.py", "AC_ECOS"), ("dashboard_sentinel_ui.py", "SN_ECO_ORDER")):
             self.assertEqual(js_list(source(name), const), KEYS, f"{name} {const}")
 
     def test_each_label_map_names_every_group(self):

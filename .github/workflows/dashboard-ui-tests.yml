@@ -80,7 +80,7 @@ jobs:
           python -m pip install "git+https://github.com/JuanenRac/ARMOR-UPDATER.git@39b19e1e58db9c2d521f035b6a0ebe5f71ba4f1d"
 
       - name: Unit tests of the dashboard
-        run: python -m unittest tests.test_dashboard_app tests.test_dashboard_integrity tests.test_dashboard_ci_evidence tests.test_dashboard_snapshot tests.test_dashboard_ecosystem_parity tests.test_dashboard_code tests.test_code_stats tests.test_scripts_stats -v
+        run: python -m unittest tests.test_dashboard_app tests.test_dashboard_integrity tests.test_dashboard_ci_evidence tests.test_dashboard_snapshot tests.test_dashboard_ecosystem_parity tests.test_dashboard_delivery_signals tests.test_dashboard_code tests.test_code_stats tests.test_scripts_stats -v
 
       - name: Generate the dashboard from fixture data (no token, no network)
         env:
