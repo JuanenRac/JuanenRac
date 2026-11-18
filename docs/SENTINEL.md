@@ -103,6 +103,27 @@ Both editions share the same five channels: a brief of what to do now, a feed of
 tools, plus a gate script (`ai-hook`) that adds the brief to the session of the AI. Everything is read only unless an action is allowed. The guide
 [AI_CONNECTION](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR/blob/main/monitor/docs/AI_CONNECTION.md) explains each step.
 
+## Reading it from a terminal
+
+`scripts/sentinel_cli.py` prints the same figures from the data files the page is built from (`data/sentinel.json` and `data/scripts-stats.json`), with no request to GitHub:
+
+```
+python scripts/sentinel_cli.py ecosystems --format table
+python scripts/sentinel_cli.py supply --format csv
+python scripts/sentinel_cli.py delivery --format json --strict
+```
+
+| Command | What it prints |
+|---|---|
+| `ecosystems` | repositories, red workflows, releases ready and versions raised without a release for each of the five groups |
+| `supply` | the Supply chain card |
+| `delivery` | the Delivery card |
+| `red` | the red workflows (repository, workflow file, failures in a row, since when) |
+| `ready` | the repositories ready for a version |
+
+`--format` is `text` (a sentence per row, the default), `table`, `plain` (tab separated, no header, for scripts), `json`, `ndjson` or `csv`. A group with nothing read says `not verified`, never zero.
+Exit codes: `0` all read, `3` with `--strict` when something is to review, `4` when a data file is missing or the reading has no delivery data yet, `2` for a wrong command line.
+
 ## What is still never shown
 
 Security alerts (not even a count), titles of pull requests and issues, people, branches and texts written by outsiders. The document is rebuilt from a
