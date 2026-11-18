@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T03:49:07Z",
+ "asof": "2026-11-18T04:13:47Z",
  "ci": {
   "checked": 628,
   "red": [
@@ -21,8 +21,8 @@
  "compute": {
   "top": [
    {
-    "min24": 724,
-    "min7": 767,
+    "min24": 756,
+    "min7": 764,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -51,8 +51,8 @@
     "repo": "HYDRA-UMC-SWARM-SYNC"
    }
   ],
-  "total24": 10269,
-  "total7": 40223,
+  "total24": 10351,
+  "total7": 40270,
   "warn": false
  },
  "ecosystems": {
@@ -277,7 +277,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 20
+  "gap_minutes": 25
  },
  "hygiene": {
   "allowed_missing": [],
@@ -839,7 +839,7 @@
    12581,
    16336,
    10185,
-   10269
+   10351
   ],
   "red": [
    3,
