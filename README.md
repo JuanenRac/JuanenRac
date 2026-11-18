@@ -196,7 +196,7 @@ for all four - can check versions and build/update any other project.
 ### 🧱 Platform Foundation & Contracts
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.6.3 | Raspberry Pi OS platform layer for the CM5: profiles, configuration, diagnostics, services and updates; not a new distribution. |
+| [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.6.4 | Raspberry Pi OS platform layer for the CM5: profiles, configuration, diagnostics, services and updates; not a new distribution. |
 | [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.7.2 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.2.1 | Declarative registry and validator of adapter manifests for external-machine connectors. |
 
@@ -207,8 +207,8 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.3.2 | Headless Node.js API and WebSocket backend for robotic orchestration. |
 | [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.2.2 | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT) | 0.0.4 | Shared TypeScript kit of the HYDRA-UMC web clients: session, HTTP client, connection history, preferences and tours. |
-| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.8.0.7 | High-performance Python/Qt desktop application for industrial automation. |
-| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.3.8 | Dedicated Flutter-based touch interface for 7" industrial displays (CM5). |
+| [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.8.0.8 | High-performance Python/Qt desktop application for industrial automation. |
+| [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.3.9 | Dedicated Flutter-based touch interface for 7" industrial displays (CM5). |
 | [HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL) | 0.8.0.5 | Native Kotlin mobile app with biometric login for remote robot management. |
 | [HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL) | 0.3.6 | Flutter mobile app for iOS/iPadOS with real-time WebSocket sync. |
 | [HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF) | 0.2.1 | Graphical URDF editor to validate and push robot models to the catalog. |
@@ -285,7 +285,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH) | 0.3.4 | Wearable emergency dashboard with haptic safety alerts. |
 | [HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI) | 0.2.2 | Command-line interface for fleet automation, flashing, and devops. |
 | [HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI) | 0.2.5 | AI extension for web dashboards providing natural language insights. |
-| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.5.8 | Cross-platform GUI/CLI tool to detect, install, and manually update every ecosystem project. |
+| [HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER) | 0.5.9 | Cross-platform GUI/CLI tool to detect, install, and manually update every ecosystem project. |
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.8 | Desktop tool for Windows and Linux that builds a ready-to-flash CM5 image with the ecosystem's current versions and first-boot setup. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.2.3 | Maintenance-incident coordinator: collects a sanitized health snapshot and asks an AI provider for a diagnosis; it never applies a patch. |
 | [HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE) | 0.0.4 | Developer node: checks incident evidence, runs approved repro cases and keeps a cache of checkouts by revision. |
@@ -362,8 +362,8 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.2.8 | Intelligent tool storage with automatic pre-heating and lifecycle audit. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.2.1 | Toolhead with integrated thermal and RGB cameras for active QA. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.3.1 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |
-| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.7 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
-| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.2.8 | The CAN protocol of the tool head as data: specification, generated C, TypeScript and Python code, conformance vectors and transports. |
+| [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.8 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
+| [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.2.9 | The CAN protocol of the tool head as data: specification, generated C, TypeScript and Python code, conformance vectors and transports. |
 | [URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY) | 0.0.9 | Gateway in front of the URTC CAN bus: allowed identifier list, rate limit and session key. |
 | [URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS) | 0.0.7 | The shared repository tools of the URTC family as one versioned set, with a lock file in each repository. |
 
@@ -386,7 +386,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:armor -->
-`[█████████████▎░░░░░░] 66%` — Calculated from real data: the maturity and the evidence that each of its 20 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████████░░░░░░░] 65%` — Calculated from real data: the maturity and the evidence that each of its 20 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -402,7 +402,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Releases | 🟢 | `██████████ 100%` | 20 of 20 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 20 of 20 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 20 of 20 repositories have been checked at least in a simulator. |
-| Real hardware | 🔴 | `▋░░░░░░░░░ 6%` | 1 of the 16 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
+| Real hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 of the 16 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
 | Production | 🟡 | `██████░░░░ 60%` | 12 of 20 repositories are established or in production. |
 <!-- /status:armor -->
 
@@ -476,7 +476,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[█████████▍░░░░░░░░░░] 47%` — Calculated from real data: the maturity and the evidence that each of its 38 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████▋░░░░░░░░░░] 48%` — Calculated from real data: the maturity and the evidence that each of its 38 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -488,7 +488,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▌░░░░ 55%` | 21 of 38 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟡 | `████████▉░ 89%` | 34 of 38 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 97%` | 37 of 38 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 38 of 38 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 38 of 38 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 38 of 38 repositories have the README in the eight languages. |
 | Simulation | 🟡 | `███████▉░░ 79%` | 30 of 38 repositories have been checked at least in a simulator. |
@@ -531,7 +531,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.1.9 | Rust re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.1.7 | Rust re-implementation of the routing workflow of the classic DOS software for Bungard CCD machines, from HP-GL plot files: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.2.7 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
-| [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.1.4 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
+| [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.1.5 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
 | [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.9 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
 
@@ -613,7 +613,7 @@ Outside the four ecosystems there is a fifth group: independent tools that stand
 **Updater:** none of its own; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) is one of its tools and hands over to the updater of each of the four ecosystems.
 
 <!-- progress:electro-hobby-3d -->
-`[████████████▋░░░░░░░] 63%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[████████████▎░░░░░░░] 61%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -625,7 +625,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 of 2 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 2 of 2 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 2 of 2 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟠 | `█████░░░░░ 50%` | 1 of 2 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 2 of 2 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 2 of 2 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 2 repositories have been checked at least in a simulator. |
