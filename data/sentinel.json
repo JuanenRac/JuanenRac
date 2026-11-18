@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T09:17:18Z",
+ "asof": "2026-11-18T09:40:10Z",
  "ci": {
   "checked": 628,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 821,
-    "min7": 821,
+    "min24": 856,
+    "min7": 856,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -18,7 +18,7 @@
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 306,
+    "min24": 286,
     "min7": 354,
     "repo": "ARMOR-SERVER"
    },
@@ -38,13 +38,13 @@
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 10835,
-  "total7": 40164,
+  "total24": 10861,
+  "total7": 40181,
   "warn": false
  },
  "ecosystems": {
   "armor": {
-   "cand": 15,
+   "cand": 14,
    "read": 20,
    "red": 0,
    "repos": 20,
@@ -280,7 +280,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 46,
+    "cand": 45,
     "hyg": 0,
     "red": 0
    }
@@ -292,7 +292,6 @@
     "list": [
      "ARMOR-ANDROID-CONTROL",
      "ARMOR-COMMON",
-     "ARMOR-DEVOPS",
      "ARMOR-DOCS",
      "ARMOR-NODE-ALARM",
      "ARMOR-NODE-ELECTRICAL",
@@ -329,9 +328,10 @@
      "HYDRA-UMC-VOICE-UI",
      "HYDRA-UMC-WATCH",
      "URTC",
-     "URTC-COMMON"
+     "URTC-COMMON",
+     "URTC-DOCS"
     ],
-    "n": 46
+    "n": 45
    }
   },
   {
@@ -409,12 +409,6 @@
     "published": "2026-11-15T22:54:18Z",
     "repo": "URTC-COMMON",
     "tag": "v0.2.8"
-   },
-   {
-    "entries": 12,
-    "published": "2026-11-14T15:18:55Z",
-    "repo": "ARMOR-DEVOPS",
-    "tag": "v0.7.6"
    },
    {
     "entries": 12,
@@ -595,11 +589,17 @@
     "published": "2026-11-15T08:02:50Z",
     "repo": "HYDRA-UMC-OS-REBUILDER",
     "tag": "v0.3.8"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-06T03:59:03Z",
+    "repo": "HYDRA-UMC-STUDIO-KIT",
+    "tag": "v0.0.4"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 46
+  "total": 45
  },
  "repos": 130,
  "schema": 1,
@@ -761,7 +761,7 @@
    1,
    13,
    41,
-   46
+   45
   ],
   "dates": [
    "2026-11-03",
@@ -815,7 +815,7 @@
    12581,
    16336,
    10185,
-   10835
+   10861
   ],
   "red": [
    3,
