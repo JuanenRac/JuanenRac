@@ -76,6 +76,11 @@ def panel_html() -> str:
         # presence of a signature and of a build attestation, after the cards seen at a glance
         + dashboard_presence_ui.card()
         + dashboard_pins_ui.card()
+        # supply chain and delivery by group: tables like the two cards above, so they may scroll and are not part of the glance
+        + _card("sup", "sn_sup_title", "sn-wide", body=f'<p class="muted sn-small" {_t("sn_sup_hint")}</p><p class="no-data" id="sn-sup-none" data-testid="sn-sup-none" hidden></p>'
+                '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-sup-title" id="sn-sup-wrap" style="max-height: none"><table class="ins-table sn-table" id="sn-sup-table" data-testid="sn-sup-table"><thead><tr><th scope="col" data-i18n="sn_col_eco">Ecosystem</th></tr></thead></table></div>')
+        + _card("del", "sn_del_title", "sn-wide", body=f'<p class="muted sn-small" {_t("sn_del_hint")}</p><p class="no-data" id="sn-del-none" data-testid="sn-del-none" hidden></p>'
+                '<div class="sn-scroll" tabindex="0" role="region" aria-labelledby="sn-del-title" id="sn-del-wrap" style="max-height: none"><table class="ins-table sn-table" id="sn-del-table" data-testid="sn-del-table"><thead><tr><th scope="col" data-i18n="sn_col_eco">Ecosystem</th></tr></thead></table></div>')
         + '</div>'
         '<div class="ac-foot sn-foot"><details class="ts-help" data-testid="sn-help">'
         f'<summary {_t("sn_help_summary")}</summary><p id="sn-help-body" data-testid="sn-help-body"></p></details>'
@@ -138,7 +143,10 @@ CSS = dashboard_presence_ui.CSS + dashboard_pins_ui.CSS + r"""
   .sn-stack .sn-card { overflow: hidden; }
   .sn-stack .sn-scroll { max-height: 46px; }
   .sn-stack .sn-events { max-height: 52px; }
-  #sn-eco-table th { white-space: normal; letter-spacing: 0; }
+  #sn-eco-table th, #sn-sup-table th, #sn-del-table th { white-space: normal; letter-spacing: 0; }
+  #sn-sup-table th, #sn-sup-table td, #sn-del-table th, #sn-del-table td { padding: 4px 6px; white-space: normal; font-size: 12px; }
+  #sn-sup-table td[data-state], #sn-del-table td[data-state] { min-width: 84px; }
+  #sn-sup-table td[data-state="review"], #sn-del-table td[data-state="review"] { font-weight: 700; }
   /* a wide screen: twelve columns, so that the figures fit in three rows without scrolling the page */
   @media (min-width: 1600px) {
     .sn-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
@@ -282,6 +290,65 @@ JS = dashboard_presence_ui.JS + dashboard_pins_ui.JS + r"""
     });
     table.appendChild(body);
   }
+  const SN_ECO_ORDER = ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"];
+  function snEcoTable(table, none, wrap, heads, rows, dict) {
+    none.hidden = true; wrap.hidden = false;
+    const hr = make("tr"); heads.forEach(function (h) { hr.appendChild(make("th", "", h)).setAttribute("scope", "col"); });
+    const thead = make("thead"); thead.appendChild(hr); table.textContent = ""; table.appendChild(thead);
+    const body = make("tbody");
+    rows.forEach(function (r) {
+      const tr = make("tr"); tr.setAttribute("data-eco", r.eco); tr.title = r.title;
+      const th = make("th", "", SN_ECO_NAMES[r.eco] || r.eco); th.setAttribute("scope", "row"); tr.appendChild(th);
+      r.cells.forEach(function (c) { tr.appendChild(make("td", typeof c === "number" ? "num" : "", String(c))); });
+      const st = make("td", "", r.state === null ? dict.not_verified : (r.state ? "\u25cf " + dict.sn_state_ok : "\u25b2 " + dict.sn_state_review));
+      st.setAttribute("data-state", r.state === null ? "unverified" : (r.state ? "ok" : "review")); tr.appendChild(st);
+      body.appendChild(tr);
+    });
+    table.appendChild(body);
+  }
+  function snSupply(dict) {
+    const table = document.getElementById("sn-sup-table"), none = document.getElementById("sn-sup-none"), wrap = document.getElementById("sn-sup-wrap");
+    table.textContent = "";
+    if (!snOn("supply")) { none.hidden = false; none.textContent = dict.sn_off_section; wrap.hidden = true; return; }
+    const S = DATA.scripts && DATA.scripts.read ? DATA.scripts : null;
+    if (!S) { none.hidden = false; none.textContent = dict.sn_sup_none; wrap.hidden = true; return; }
+    const sum3 = function (v) { return Array.isArray(v) ? v.reduce(function (a, b) { return a + (typeof b === "number" ? b : 0); }, 0) : 0; };
+    const rows = SN_ECO_ORDER.map(function (eco) {
+      let read = 0, unp = 0, br = 0, perm = 0, prt = 0;
+      Object.keys(S.repos).forEach(function (name) {
+        const rec = S.repos[name];
+        if (rec.eco !== eco || rec.state === "unread" || !rec.scripts) { return; }
+        read += 1;
+        Object.keys(rec.scripts.acts || {}).forEach(function (key) {
+          const a = rec.scripts.acts[key];
+          if (a[1] === "branch" || a[1] === "tag") { unp += a[0]; }
+          if (a[1] === "branch") { br += a[0]; }
+        });
+        const rules = rec.scripts.lint && rec.scripts.lint.rules ? rec.scripts.lint.rules : {};
+        perm += sum3(rules.permissions); prt += sum3(rules.pr_target);
+      });
+      const known = read > 0;
+      const cells = known ? [read, unp, br, perm, prt] : [dict.not_verified, dict.not_verified, dict.not_verified, dict.not_verified, dict.not_verified];
+      return { eco: eco, cells: cells, state: known ? (unp + br + perm + prt === 0) : null,
+               title: known ? tpl(dict.sn_sup_row, { eco: SN_ECO_NAMES[eco], read: read, unp: unp, br: br, perm: perm, prt: prt }) : SN_ECO_NAMES[eco] + ": " + dict.not_verified };
+    });
+    snEcoTable(table, none, wrap, [dict.sn_col_eco, dict.sn_col_repos, dict.sn_sup_col_unpinned, dict.sn_sup_col_branch, dict.sn_sup_col_perm, dict.sn_sup_col_prt, dict.sn_col_state], rows, dict);
+  }
+  function snDelivery(doc, dict) {
+    const table = document.getElementById("sn-del-table"), none = document.getElementById("sn-del-none"), wrap = document.getElementById("sn-del-wrap");
+    table.textContent = "";
+    if (!snOn("delivery")) { none.hidden = false; none.textContent = dict.sn_off_section; wrap.hidden = true; return; }
+    if (!doc) { none.hidden = false; none.textContent = dict.not_verified; wrap.hidden = true; return; }
+    if (!doc.delivery || !doc.delivery.eco) { none.hidden = false; none.textContent = dict.sn_del_none; wrap.hidden = true; return; }
+    const rows = SN_ECO_ORDER.map(function (eco) {
+      const d = doc.delivery.eco[eco], e = (doc.ecosystems || {})[eco] || {};
+      if (!d || !d.read) { return { eco: eco, cells: [dict.not_verified, dict.not_verified, dict.not_verified, dict.not_verified, dict.not_verified], state: null, title: SN_ECO_NAMES[eco] + ": " + dict.not_verified }; }
+      const unpub = e.unpub || 0, cand = e.cand || 0;
+      return { eco: eco, cells: [d.read, d.tagahead, d.nonotes, d.clmis, unpub], state: d.tagahead + d.nonotes + d.clmis + unpub === 0,
+               title: tpl(dict.sn_del_row, { eco: SN_ECO_NAMES[eco], read: d.read, tag: d.tagahead, notes: d.nonotes, cl: d.clmis, unpub: unpub, cand: cand }) };
+    });
+    snEcoTable(table, none, wrap, [dict.sn_col_eco, dict.sn_col_repos, dict.sn_del_col_tag, dict.sn_del_col_notes, dict.sn_del_col_cl, dict.sn_col_unpub, dict.sn_col_state], rows, dict);
+  }
   function snUnpub(doc, dict) {
     const table = document.getElementById("sn-unpub-table"), none = document.getElementById("sn-unpub-none"), wrap = document.getElementById("sn-unpub-wrap");
     table.textContent = "";
@@ -371,6 +438,6 @@ JS = dashboard_presence_ui.JS + dashboard_pins_ui.JS + r"""
     health.hidden = !h;
     health.textContent = h ? tpl(dict.sn_health, { gap: h.gap_minutes, age: h.age_minutes, queue: h.build_queue_seconds }) : "";
     document.getElementById("sn-help-body").textContent = dict.sn_help_body;
-    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict); prRender(dict); pnRender(dict);
+    snKpis(doc, dict); snParte(doc, dict); snSigs(doc, dict); snCi(doc, dict); snRel(doc, dict); snEco(doc, dict); snSupply(dict); snDelivery(doc, dict); snUnpub(doc, dict); snEvents(doc, dict); snHyg(doc, dict); snCompute(doc, dict); snTrend(doc, dict); prRender(dict); pnRender(dict);
   }
 """

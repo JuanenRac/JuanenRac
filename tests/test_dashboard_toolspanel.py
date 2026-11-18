@@ -71,6 +71,8 @@ class PageTests(unittest.TestCase):
 
     def test_the_next_version_is_not_written_as_published_and_has_no_date_or_number(self):
         self.assertIn("Not published yet", texts.TEXTS["en"]["tl_mon_next_body"])
+        self.assertIn("five sentinels", texts.TEXTS["en"]["tl_mon_ed_complete"])
+        self.assertIn("Supply chain and Delivery", texts.TEXTS["en"]["tl_mon_ed_complete"])
         self.assertNotRegex(texts.TEXTS["en"]["tl_mon_next_body"], r"\d+\.\d+|\b20\d\d\b")
 
     def test_every_link_goes_to_the_owner(self):

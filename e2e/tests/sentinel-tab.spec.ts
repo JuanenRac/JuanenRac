@@ -252,7 +252,9 @@ test.describe("sentinel tab: sizes", () => {
       const panel = document.getElementById("panel-sentinel")!;
       const card = document.getElementById("pr-card");      // the card of signature and attestation presence is a list, not part of the glance: only it may scroll
       const pins = document.getElementById("pn-card");      // the card of the shared contract pins is a list too
-      const extra = (card ? card.getBoundingClientRect().height + 16 : 0) + (pins ? pins.getBoundingClientRect().height + 16 : 0);
+      const tables = ["sn-card-sup", "sn-card-del"].map((id) => document.querySelector(`[data-testid="${id}"]`));      // the supply chain and delivery tables are lists too
+      const extra = (card ? card.getBoundingClientRect().height + 16 : 0) + (pins ? pins.getBoundingClientRect().height + 16 : 0)
+        + tables.reduce((sum, el) => sum + (el ? el.getBoundingClientRect().height + 8 : 0), 0);
       return { panel: panel.scrollHeight - panel.clientHeight - extra, page: document.documentElement.scrollHeight - document.documentElement.clientHeight };
     });
     expect(m.panel).toBeLessThanOrEqual(1);
@@ -282,5 +284,82 @@ test.describe("sentinel tab: sizes", () => {
     expect(m.x).toBeLessThanOrEqual(0);
     expect(m.cols).toBe(2);
     if (process.env.SHOTS) await page.screenshot({ path: `${process.env.SHOTS}/sentinel-390.png`, fullPage: true });
+  });
+});
+
+// Fixture (full): no repository of the Tools group, so its row is the proof that a group with nothing read is shown as not verified and not as in order.
+// Scripts: HYDRA-UMC 10 repositories read / 33 uses not fixed to a commit / 8 following a branch, URTC 9 / 34 / 9, A.R.M.O.R. 10 / 25 / 5, EH3D 10 / 36 / 9.
+// Delivery: read, tag without release, release without notes, CHANGELOG differs, version raised: HYDRA-UMC 10/1/2/0/0, URTC 9/1/1/1/0, A.R.M.O.R. 9/1/2/1/0, EH3D 9/0/0/1/0.
+const GROUPS = ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"] as const;
+
+async function rowCells(page: Page, table: string, eco: string) {
+  return page.locator(`#${table} tbody tr[data-eco="${eco}"] > *`).allTextContents();
+}
+
+test.describe("sentinel tab: supply chain and delivery", () => {
+  test("a row for each of the five groups, in the order of the tabs, in both cards", async ({ page }) => {
+    await open(page);
+    for (const table of ["sn-sup-table", "sn-del-table"]) {
+      const ecos = await page.locator(`#${table} tbody tr`).evaluateAll((rows) => rows.map((r) => r.getAttribute("data-eco")));
+      expect(ecos).toEqual([...GROUPS]);
+      await expect(page.locator(`#${table} thead th`)).toHaveCount(7);
+    }
+  });
+
+  test("supply chain: the counts of the workflow files by group, with the state in glyph and words", async ({ page }) => {
+    await open(page);
+    expect(await rowCells(page, "sn-sup-table", "hydra-umc")).toEqual(["HYDRA-UMC", "10", "33", "8", "0", "0", "▲ To review"]);
+    expect(await rowCells(page, "sn-sup-table", "urtc")).toEqual(["URTC", "9", "34", "9", "0", "0", "▲ To review"]);
+    expect(await rowCells(page, "sn-sup-table", "armor")).toEqual(["A.R.M.O.R.", "10", "25", "5", "0", "0", "▲ To review"]);
+    expect(await rowCells(page, "sn-sup-table", "eh3d")).toEqual(["EH3D", "10", "36", "9", "0", "0", "▲ To review"]);
+    await expect(page.locator('#sn-sup-table tr[data-eco="armor"]')).toHaveAttribute("title", "A.R.M.O.R.: 10 repositories read, 25 uses not fixed to a commit, 5 follow a branch, 0 permission findings, 0 with pull_request_target");
+  });
+
+  test("delivery: the three signals of the release by group, and the version raised and not published", async ({ page }) => {
+    await open(page);
+    expect(await rowCells(page, "sn-del-table", "hydra-umc")).toEqual(["HYDRA-UMC", "10", "1", "2", "0", "0", "▲ To review"]);
+    expect(await rowCells(page, "sn-del-table", "urtc")).toEqual(["URTC", "9", "1", "1", "1", "0", "▲ To review"]);
+    expect(await rowCells(page, "sn-del-table", "armor")).toEqual(["A.R.M.O.R.", "9", "1", "2", "1", "0", "▲ To review"]);
+    expect(await rowCells(page, "sn-del-table", "eh3d")).toEqual(["EH3D", "9", "0", "0", "1", "0", "▲ To review"]);
+    await expect(page.locator('#sn-del-table tr[data-eco="eh3d"]')).toHaveAttribute("title", /EH3D: 9 repositories read, 0 with a tag newer than the latest release, 0 with a release without notes, 1 whose CHANGELOG differs/);
+  });
+
+  test("a group with nothing read is not verified in both cards, never in order", async ({ page }) => {
+    await open(page);
+    for (const table of ["sn-sup-table", "sn-del-table"]) {
+      const cells = await rowCells(page, table, "electro-hobby-3d");
+      expect(cells[0]).toBe("Tools");
+      expect(cells.slice(1).every((c) => /not verified/i.test(c))).toBe(true);
+      await expect(page.locator(`#${table} tr[data-eco="electro-hobby-3d"] td[data-state]`)).toHaveAttribute("data-state", "unverified");
+      await expect(page.locator(`#${table} tr[data-eco="electro-hobby-3d"]`)).not.toContainText("In order");
+    }
+  });
+
+  test("with nothing wrong the delivery card is in order, and with nothing read both cards say so", async ({ page }) => {
+    await open(page, "healthy");
+    for (const eco of ["hydra-umc", "urtc", "armor", "eh3d"]) {
+      await expect(page.locator(`#sn-del-table tr[data-eco="${eco}"] td[data-state]`)).toHaveText("● In order");
+    }
+    await open(page, "empty" as Variant);
+    await expect(page.getByTestId("sn-sup-none")).toBeVisible();
+    await expect(page.getByTestId("sn-sup-none")).toContainText("not verified");
+    await expect(page.getByTestId("sn-del-none")).toContainText(/not verified/i);
+  });
+
+  test("the cards follow the language and show no key", async ({ page }) => {
+    await open(page);
+    await page.locator("#lang-select").selectOption("pt");
+    await expect(page.locator("#sn-sup-title")).toHaveText("Cadeia de abastecimento");
+    await expect(page.locator("#sn-del-title")).toHaveText("Entrega");
+    expect(await rowCells(page, "sn-del-table", "armor")).toContain("▲ A rever");
+    const text = await visibleText(page);
+    expect(text.match(LEFTOVER)).toBeNull();
+  });
+
+  test("a phone: both cards fit without sideways scroll of the page", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await open(page);
+    const x = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(x).toBeLessThanOrEqual(0);
   });
 });
