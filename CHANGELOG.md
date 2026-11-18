@@ -4,6 +4,10 @@ All notable changes to this profile repository are documented here.
 
 ## [Unreleased]
 
+- **All five groups at the same level in every tab:** the lines of the evolution of the progress, the radars of the eight areas, the maturity funnel, the dependency diagram, the tests per group and its evolution, the share of the builds and the number keys now cover HYDRA-UMC, URTC, A.R.M.O.R., EH3D and Tools alike (key `5` opens Tools); a group with nothing read shows "not verified" instead of disappearing. The charts tell a fifth series apart without colour (a fifth marker and dash pattern).
+- **Architecture of the Tools group:** the architecture tab has a Tools panel with the same parts as the others (cards, flow and an honest note), in the eight languages.
+- **Shared contract pins for every group:** the card lists EH3D and Tools next to the other three, as "no pins published in a machine readable file" until they publish any.
+- **A test that keeps the groups level:** `tests/test_dashboard_ecosystem_parity.py` compares every list of groups, label map, colour and shortcut of the generator and of the scripts of each tab with `ecosystem-catalog.json`, so a group can no longer be left out of one tab.
 - **ARMOR-WATCH in the catalogue:** the minimal A.R.M.O.R. watch client is listed in the project table of the eight READMEs, with its description in the eight languages from the single descriptions file, and named among the operator clients of the architecture text.
 
 ## [0.0.1] - First release of the profile: README generator, status dashboard, sentinel and code statistics

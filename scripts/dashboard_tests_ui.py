@@ -116,8 +116,8 @@ JS = r"""
   // ---------------- Tests: the automated tests each repository DECLARES (README or glance file); the dashboard does not run them ----------------
   // Drawn from the JSON embedded in the page. Nothing read = "not verified", never a zero.
   const TS = (DATA.tests && typeof DATA.tests === "object" && DATA.tests.repos) ? DATA.tests : { read: false, repos: {}, series: [], sources: {}, staleDate: null };
-  const TS_ECOS = ["hydra-umc", "urtc", "armor", "eh3d"];
-  const TS_ALL = TS_ECOS.concat(["electro-hobby-3d"]);
+  const TS_ECOS = ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"];
+  const TS_ALL = TS_ECOS;
   const TS_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D", "electro-hobby-3d": "Tools" };
   const tsState = { eco: "all", family: "all", q: "" };
   function tsCounts(rec) { return rec && (rec.state === "declared" || rec.state === "lastknown") && rec.unit === "tests" && typeof rec.n === "number"; }

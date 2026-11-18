@@ -52,7 +52,7 @@ test.describe("disclosures", () => {
   test("the architecture switcher shows one ecosystem at a time", async ({ page }) => {
     await openDashboard(page);
     await gotoTab(page, "architecture");
-    for (const view of ["hydra-umc", "urtc", "armor", "eh3d"]) {
+    for (const view of ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"]) {
       await page.locator(`[data-arch-view="${view}"]`).click();
       await expect(page.locator(`[data-arch-view="${view}"]`)).toHaveAttribute("aria-pressed", "true");
       await expect(page.locator(".arch-panel:not([hidden])")).toHaveCount(1);

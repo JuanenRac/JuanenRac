@@ -43,7 +43,7 @@ test.describe("tests tab: total per ecosystem", () => {
   test("a bar per ecosystem with the total, and a table with the same figures", async ({ page }) => {
     await open(page);
     const bars = page.locator("#ts-eco-chart .ts-bar-g");
-    await expect(bars).toHaveCount(4);
+    await expect(bars).toHaveCount(5);                     // the Tools group has no repository in the fixture: its bar says not verified
     for (const eco of ECOS) {
       const bar = page.locator(`#ts-eco-chart .ts-bar-g[data-eco="${eco}"]`);
       await expect(bar).toHaveAttribute("data-n", String(TOTALS[eco]));
@@ -53,7 +53,7 @@ test.describe("tests tab: total per ecosystem", () => {
     const table = page.locator("#ts-eco-table");
     await expect(table.locator("caption")).toHaveText("Tests declared per ecosystem");
     await expect(table.locator("thead th")).toHaveCount(6);
-    await expect(table.locator("tbody tr")).toHaveCount(4);
+    await expect(table.locator("tbody tr")).toHaveCount(5);
     const first = (await table.locator("tbody tr").first().locator("td").allTextContents()).map((t) => t.replace(/[\s ]/g, ""));
     expect(first[0]).toBe(String(TOTALS["hydra-umc"]));
     expect(first[2]).toBe("9/10");
@@ -108,10 +108,10 @@ test.describe("tests tab: evolution", () => {
     await open(page);
     await expect(page.getByTestId("ts-evo-wrap")).toBeVisible();
     await expect(page.locator("#ts-evo-svg path.evo-line")).toHaveCount(8);          // 4 ecosystems x 2 stretches (two days are missing)
-    await expect(page.locator("#ts-evo-legend li")).toHaveCount(4);
+    await expect(page.locator("#ts-evo-legend li")).toHaveCount(5);
     const table = page.locator("#ts-evo-table");
     await expect(table.locator("tbody tr")).toHaveCount(29);
-    await expect(table.locator("thead th")).toHaveCount(5);
+    await expect(table.locator("thead th")).toHaveCount(6);
     await expect(table.locator("tbody tr").last().locator("th")).toHaveText("2001-12-21");
     const label = await page.locator("#ts-evo-svg").getAttribute("aria-label");
     expect(label).toContain("2001-11-21");
@@ -377,7 +377,7 @@ test.describe("tests tab: sizes", () => {
         const box = await page.locator(id).boundingBox();
         expect(box!.width).toBeLessThanOrEqual(width);
       }
-      await expect(page.locator("#ts-eco-chart .ts-bar-g")).toHaveCount(4);
+      await expect(page.locator("#ts-eco-chart .ts-bar-g")).toHaveCount(5);
       await expect(page.getByTestId("ts-eco-all")).toBeVisible();
       if (width >= 1366) {
         const chart = await page.locator("#ts-eco-chart").boundingBox();

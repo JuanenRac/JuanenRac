@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Callable, Iterable, Mapping, Sequence
 
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "dashboard-config.json"
-ECOSYSTEMS: tuple[str, ...] = ("hydra-umc", "urtc", "armor", "eh3d")
+ECOSYSTEMS: tuple[str, ...] = ("hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d")
 DEFAULT_CONFIG: dict = {
     "sources": {
         "hydra-umc": {"glance": "HYDRA-UMC-DOCS/data/glance.json", "readme": True},

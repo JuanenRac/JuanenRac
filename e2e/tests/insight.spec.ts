@@ -40,7 +40,7 @@ test.describe("analysis tab: maturity funnel", () => {
   test("every ecosystem has four levels whose counts add up, and the changes since a month ago", async ({ page }) => {
     await openInsight(page);
     const cards = page.locator("#fu-grid .fu-card");
-    await expect(cards).toHaveCount(4);
+    await expect(cards).toHaveCount(5);                  // the four ecosystems and the Tools group (none in the fixture: four empty levels)
     for (const eco of ECOSYSTEMS) {
       const bars = page.locator(`#fu-grid .fu-card[data-eco="${eco}"] .fu-bar`);
       await expect(bars).toHaveCount(4);
@@ -54,7 +54,9 @@ test.describe("analysis tab: maturity funnel", () => {
     await expect(page.getByTestId("fu-since")).toContainText("Compared with the snapshot of 2001-11-21 (30 days ago)");
     await expect(page.locator('#fu-grid .fu-card[data-eco="hydra-umc"] .fu-notes')).toContainText("1 moved up");
     await expect(page.locator('#fu-grid .fu-card[data-eco="urtc"] .fu-notes')).toContainText("2 moved up");
-    await expect(page.locator("#fu-table tbody tr")).toHaveCount(4);
+    await expect(page.locator("#fu-table tbody tr")).toHaveCount(5);
+    const tools = await page.locator('#fu-grid .fu-card[data-eco="electro-hobby-3d"] .fu-bar').evaluateAll((els) => els.map((e) => Number(e.getAttribute("data-n"))));
+    expect(tools).toEqual([0, 0, 0, 0]);               // a group with no repository is drawn at the same level, with nothing counted
   });
 
   test("a bar shows its numbers in a tooltip title and its figure is written next to it", async ({ page }) => {
@@ -68,7 +70,7 @@ test.describe("analysis tab: maturity funnel", () => {
     await openInsight(page, "single");
     await expect(page.getByTestId("fu-since")).toContainText("Not enough history");
     await expect(page.locator("#fu-grid")).not.toContainText("moved up");
-    await expect(page.locator("#fu-grid .fu-card")).toHaveCount(4);
+    await expect(page.locator("#fu-grid .fu-card")).toHaveCount(5);
   });
 
   test("a history shorter than a month is announced as such", async ({ page }) => {
@@ -80,9 +82,10 @@ test.describe("analysis tab: maturity funnel", () => {
 });
 
 test.describe("analysis tab: the areas side by side", () => {
-  test("four radars and the same numbers in a table", async ({ page }) => {
+  test("five radars and the same numbers in a table", async ({ page }) => {
     await openInsight(page);
-    await expect(page.locator("#ra-grid .ra-card")).toHaveCount(4);
+    await expect(page.locator("#ra-grid .ra-card")).toHaveCount(5);
+    await expect(page.locator('#ra-grid .ra-card[data-eco="electro-hobby-3d"] svg')).toHaveAttribute("aria-label", /Tools.*not verified/i);
     for (const eco of ECOSYSTEMS) {
       const svg = page.locator(`#ra-grid .ra-card[data-eco="${eco}"] svg`);
       await expect(svg).toHaveAttribute("role", "img");
@@ -91,7 +94,7 @@ test.describe("analysis tab: the areas side by side", () => {
       await expect(svg.locator(".ra-mark")).toHaveCount(8);
     }
     await expect(page.locator("#ra-table tbody tr")).toHaveCount(8);
-    await expect(page.locator("#ra-table thead th")).toHaveCount(5);
+    await expect(page.locator("#ra-table thead th")).toHaveCount(6);
     await expect(page.locator("#ra-table tbody tr").first()).toContainText("95%");
   });
 
@@ -99,7 +102,7 @@ test.describe("analysis tab: the areas side by side", () => {
     await openInsight(page);
     const dashes = await page.locator("#ra-grid polygon.ra-shape").evaluateAll((els) => els.map((e) => e.getAttribute("style") || ""));
     expect(new Set(dashes.map((d) => (d.match(/stroke-dasharray:[^;]*/) || [""])[0])).size).toBe(4);
-    const tags = await page.locator("#ra-grid .ra-card").evaluateAll((cards) => cards.map((c) => c.querySelector(".ra-mark")!.tagName));
+    const tags = await page.locator("#ra-grid .ra-card:has(.ra-mark)").evaluateAll((cards) => cards.map((c) => c.querySelector(".ra-mark")!.tagName));
     expect(new Set(tags).size).toBeGreaterThanOrEqual(3);
   });
 
@@ -115,9 +118,9 @@ test.describe("analysis tab: weekly activity", () => {
   test("a table of twelve weeks with the number written in every cell", async ({ page }) => {
     await openInsight(page, "full", "activity");
     await expect(page.locator("#he-table thead th")).toHaveCount(13);
-    await expect(page.locator("#he-table tbody tr")).toHaveCount(8);
+    await expect(page.locator("#he-table tbody tr")).toHaveCount(10);        // commits and releases of each of the five groups
     const cells = page.locator("#he-table tbody td");
-    await expect(cells).toHaveCount(96);
+    await expect(cells).toHaveCount(120);
     const texts = await cells.evaluateAll((els) => els.map((e) => (e.textContent || "").trim()));
     expect(texts.every((t) => /^\d+$/.test(t) || t.startsWith("?"))).toBe(true);
     const first = cells.first();
@@ -203,7 +206,8 @@ test.describe("analysis tab: next milestones", () => {
     await openInsight(page, "full", "miles");
     await expect(page.getByTestId("mi-source")).toContainText("plans kept in this profile repository");
     await expect(page.getByTestId("mi-source")).toHaveAttribute("data-source", "plans");
-    await expect(page.locator("#mi-grid .mi-card")).toHaveCount(4);
+    await expect(page.locator("#mi-grid .mi-card")).toHaveCount(5);
+    await expect(page.locator('#mi-grid .mi-card[data-eco="electro-hobby-3d"]')).toContainText("Not verified");
     const hydra = page.locator('#mi-grid .mi-card[data-eco="hydra-umc"]');
     await expect(hydra).toContainText("2 open, 1 done");
     await expect(hydra.locator("li").first()).toContainText("In progress");

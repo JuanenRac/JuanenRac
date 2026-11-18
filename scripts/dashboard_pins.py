@@ -10,7 +10,7 @@ Only files the repositories already publish are read, nothing is inferred:
 
   * A.R.M.O.R.   ARMOR-COMMON/registry/contract_pins.json (consumer -> version) against the version of ARMOR-COMMON/armor.project.json.
   * URTC         tools/urtc_common.lock.json of every URTC repository that has one (its ``urtc_common_version``) against urtc.project.json of URTC-COMMON.
-  * HYDRA-UMC    has no machine readable source of pins, so it is listed as "no source" and never guessed.
+  * HYDRA-UMC, EH3D and Tools    have no machine readable source of pins, so each is listed as "no source" and never guessed.
 
 A pin that cannot be read is "unknown", never "current". Stdlib only; the page makes no request (the result is embedded in it).
 """
@@ -101,6 +101,8 @@ def read_all(owner: str, ecosystem_of: Mapping[str, str], fetch: Fetch) -> dict:
         "armor": read_armor(fetch, owner),
         "urtc": read_urtc(fetch, owner, urtc_repos),
         "hydra-umc": {"source": "none", "read": True, "current": None, "rows": []},
+        "eh3d": {"source": "none", "read": True, "current": None, "rows": []},
+        "electro-hobby-3d": {"source": "none", "read": True, "current": None, "rows": []},
     }
 
 

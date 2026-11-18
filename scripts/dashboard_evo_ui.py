@@ -171,8 +171,9 @@ CSS = r"""
   .evo-mark { stroke: var(--panel); stroke-width: 1.2; }
   .evo-s-hydra-umc { stroke: var(--c-hydra-umc); fill: var(--c-hydra-umc); } .evo-s-urtc { stroke: var(--c-urtc); fill: var(--c-urtc); }
   .evo-s-armor { stroke: var(--c-armor); fill: var(--c-armor); } .evo-s-eh3d { stroke: var(--c-eh3d); fill: var(--c-eh3d); }
-  .evo-line.evo-s-hydra-umc, .evo-line.evo-s-urtc, .evo-line.evo-s-armor, .evo-line.evo-s-eh3d { fill: none; }
-  text.evo-end-label.evo-s-hydra-umc, text.evo-end-label.evo-s-urtc, text.evo-end-label.evo-s-armor, text.evo-end-label.evo-s-eh3d { stroke: none; }
+  .evo-s-electro-hobby-3d { stroke: var(--c-electro-hobby-3d); fill: var(--c-electro-hobby-3d); }
+  .evo-line.evo-s-hydra-umc, .evo-line.evo-s-urtc, .evo-line.evo-s-armor, .evo-line.evo-s-eh3d, .evo-line.evo-s-electro-hobby-3d { fill: none; }
+  text.evo-end-label.evo-s-hydra-umc, text.evo-end-label.evo-s-urtc, text.evo-end-label.evo-s-armor, text.evo-end-label.evo-s-eh3d, text.evo-end-label.evo-s-electro-hobby-3d { stroke: none; }
   .evo-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 6px 0 0; padding: 0; font-size: 12px; }
   .evo-legend svg { width: 16px; height: 12px; vertical-align: -1px; margin-right: 5px; }
   .visit-list { margin: 6px 0; padding-left: 18px; font-size: 13px; columns: 2 380px; }
@@ -391,8 +392,8 @@ JS = r"""
 
   // ---------------- Progress history ----------------
   const HIST = Array.isArray(DATA.history) ? DATA.history : [];
-  const EVO_ECOS = ["hydra-umc", "urtc", "armor", "eh3d"];
-  const EVO_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D" };
+  const EVO_ECOS = ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"];
+  const EVO_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D", "electro-hobby-3d": "Tools" };
   const evoState = { days: 90, metric: "overall" };
   const SVGNS = "http://www.w3.org/2000/svg";
   function svgEl(name, attrs, text) {
@@ -412,7 +413,8 @@ JS = r"""
     if (kind === 0) { el = svgEl("circle", { cx: x, cy: y, r: 3.4 }); }
     else if (kind === 1) { el = svgEl("rect", { x: x - 3.2, y: y - 3.2, width: 6.4, height: 6.4 }); }
     else if (kind === 2) { el = svgEl("polygon", { points: (x - 4) + "," + (y + 3.4) + " " + (x + 4) + "," + (y + 3.4) + " " + x + "," + (y - 4) }); }
-    else { el = svgEl("polygon", { points: x + "," + (y - 4.4) + " " + (x + 4.2) + "," + y + " " + x + "," + (y + 4.4) + " " + (x - 4.2) + "," + y }); }
+    else if (kind === 3) { el = svgEl("polygon", { points: x + "," + (y - 4.4) + " " + (x + 4.2) + "," + y + " " + x + "," + (y + 4.4) + " " + (x - 4.2) + "," + y }); }
+    else { el = svgEl("polygon", { points: x + "," + (y - 4.4) + " " + (x + 4.2) + "," + (y - 1.4) + " " + (x + 2.6) + "," + (y + 3.6) + " " + (x - 2.6) + "," + (y + 3.6) + " " + (x - 4.2) + "," + (y - 1.4) }); }
     el.setAttribute("class", "evo-mark " + cls);
     el.appendChild(svgEl("title", {}, title));
     return el;

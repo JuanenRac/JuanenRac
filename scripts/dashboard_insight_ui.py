@@ -28,7 +28,7 @@ def panel_html() -> str:
         for view in VIEWS)
     deps_eco = "".join(
         f'<button type="button" class="chip" data-ins-deps-eco="{key}" aria-pressed="{"true" if key == "hydra-umc" else "false"}" data-testid="ins-deps-eco-{key}"><span>{esc(label)}</span></button>'
-        for key, label in (("hydra-umc", "HYDRA-UMC"), ("urtc", "URTC"), ("armor", "A.R.M.O.R."), ("eh3d", "EH3D")))
+        for key, label in (("hydra-umc", "HYDRA-UMC"), ("urtc", "URTC"), ("armor", "A.R.M.O.R."), ("eh3d", "EH3D"), ("electro-hobby-3d", "Tools")))
     return (
         '<section class="ins" id="ins-root" aria-labelledby="ins-title" data-testid="insight-root">'
         f'<header class="ins-head"><h2 class="card-title" id="ins-title" {_t("in_title")}</h2>'
@@ -108,7 +108,7 @@ CSS = r"""
   .ins .link-btn { display: inline-flex; align-items: center; min-height: 24px; }
   .de-split > div { min-width: 0; }
   .ins .card-head { margin-bottom: 4px; }
-  .ins-table-wrap { overflow: auto; max-width: 100%; border: 1px solid var(--border); border-radius: 10px; margin-top: 8px; }
+  .ins-table-wrap { position: relative; overflow: auto; max-width: 100%; border: 1px solid var(--border); border-radius: 10px; margin-top: 8px; }
   .ins input[type="search"], .ins select { background: var(--bg); color: var(--text); border: 1px solid var(--border-strong); border-radius: 8px; padding: 6px 8px; font: inherit; font-size: 13px; min-width: 150px; }
   .ins-table { width: auto !important; min-width: min(100%, 760px); }
   .ins-table, .he-table { border-collapse: collapse; width: 100%; font-size: 12.5px; font-variant-numeric: tabular-nums; }
@@ -119,7 +119,7 @@ CSS = r"""
   .ins-key { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; border: 1px solid currentColor; border-radius: 50%; font-size: 11px; margin-right: 6px; font-weight: 700; }
 
   /* Funnel */
-  .fu-grid, .ra-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+  .fu-grid, .ra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 8px; }
   .fu-card, .ra-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; min-width: 0; }
   .fu-card h4, .ra-card h4 { margin: 0 0 6px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
   .eco-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; background: var(--eco, var(--dim)); border: 1px solid var(--text); }
@@ -176,7 +176,7 @@ CSS = r"""
   .de-bad { color: var(--err); }
 
   /* Milestones */
-  .mi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+  .mi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 8px; }
   .mi-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; min-width: 0; }
   .mi-card h4 { margin: 0; font-size: 13px; display: flex; gap: 8px; align-items: center; }
   .mi-scroll { max-height: 52vh; overflow: auto; margin-top: 6px; }
@@ -219,8 +219,8 @@ JS = r"""
   // ---------------- Analysis tab: funnel, areas compared, weekly activity, dependencies, milestones, comparing dates, debt ----------------
   // Everything is drawn from DATA.insight and DATA.history, which the page already holds; nothing is requested from the network.
   const INS = (DATA.insight && typeof DATA.insight === "object") ? DATA.insight : null;
-  const INS_ECOS = ["hydra-umc", "urtc", "armor", "eh3d"];
-  const INS_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D" };
+  const INS_ECOS = ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"];
+  const INS_LABEL = { "hydra-umc": "HYDRA-UMC", urtc: "URTC", armor: "A.R.M.O.R.", eh3d: "EH3D", "electro-hobby-3d": "Tools" };
   const INS_LEVELS = ["scaffolding", "functional", "established", "production"];
   const INS_AREAS = ["software", "tests", "ci", "releases", "docs", "simulation", "hardware", "production"];
   const insState = { view: "maturity", depsEco: "hydra-umc", query: "", from: "", to: "" };
@@ -312,7 +312,8 @@ JS = r"""
     if (kind === 0) { el = svgEl("circle", { cx: x, cy: y, r: 3.6 }); }
     else if (kind === 1) { el = svgEl("rect", { x: x - 3.4, y: y - 3.4, width: 6.8, height: 6.8 }); }
     else if (kind === 2) { el = svgEl("polygon", { points: (x - 4.2) + "," + (y + 3.6) + " " + (x + 4.2) + "," + (y + 3.6) + " " + x + "," + (y - 4.2) }); }
-    else { el = svgEl("polygon", { points: x + "," + (y - 4.6) + " " + (x + 4.4) + "," + y + " " + x + "," + (y + 4.6) + " " + (x - 4.4) + "," + y }); }
+    else if (kind === 3) { el = svgEl("polygon", { points: x + "," + (y - 4.6) + " " + (x + 4.4) + "," + y + " " + x + "," + (y + 4.6) + " " + (x - 4.4) + "," + y }); }
+    else { el = svgEl("polygon", { points: x + "," + (y - 4.6) + " " + (x + 4.4) + "," + (y - 1.4) + " " + (x + 2.7) + "," + (y + 3.8) + " " + (x - 2.7) + "," + (y + 3.8) + " " + (x - 4.4) + "," + (y - 1.4) }); }
     el.setAttribute("class", cls); el.appendChild(svgEl("title", {}, title));
     return el;
   }
@@ -323,7 +324,7 @@ JS = r"""
     if (!R) { grid.appendChild(make("p", "no-data", dict.not_verified)); return; }
     const cx = 130, cy = 122, rad = 84;
     const point = function (i, v) { const a = -Math.PI / 2 + i * 2 * Math.PI / 8; return [cx + Math.cos(a) * rad * v / 100, cy + Math.sin(a) * rad * v / 100]; };
-    const DASH = ["", "7 3", "2 3", "10 3 2 3"];
+    const DASH = ["", "7 3", "2 3", "10 3 2 3", "3 3 9 3"];
     INS_ECOS.forEach(function (eco, kind) {
       const values = R[eco] || {};
       const card = insEcoStyle(make("div", "ra-card"), eco); card.setAttribute("data-eco", eco);
