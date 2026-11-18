@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T04:24:55Z",
+ "asof": "2026-11-18T04:49:27Z",
  "ci": {
   "checked": 628,
   "red": [
@@ -8,31 +8,25 @@
     "since": "2026-11-18T02:18:51Z",
     "streak": 3,
     "wf": "nightly.yml"
-   },
-   {
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "since": "2026-11-18T03:38:03Z",
-    "streak": 2,
-    "wf": "docker-audit.yml"
    }
   ],
-  "red_total": 2
+  "red_total": 1
  },
  "compute": {
   "top": [
    {
-    "min24": 788,
-    "min7": 788,
+    "min24": 781,
+    "min7": 781,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
     "min24": 464,
-    "min7": 522,
+    "min7": 516,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
     "min24": 325,
-    "min7": 339,
+    "min7": 334,
     "repo": "ARMOR-SERVER"
    },
    {
@@ -51,8 +45,8 @@
     "repo": "HYDRA-UMC-SWARM-SYNC"
    }
   ],
-  "total24": 10383,
-  "total7": 40262,
+  "total24": 10378,
+  "total7": 40197,
   "warn": false
  },
  "ecosystems": {
@@ -73,7 +67,7 @@
   "electro-hobby-3d": {
    "cand": 0,
    "read": 2,
-   "red": 1,
+   "red": 0,
    "repos": 2,
    "unpub": 0
   },
@@ -93,6 +87,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-18T04:49:27Z",
+   "kind": "red_ok",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "wf": "docker-audit.yml"
+  },
   {
    "at": "2026-11-18T02:27:15Z",
    "kind": "released",
@@ -266,18 +266,12 @@
    "kind": "red_new",
    "repo": "URTC-DOCS",
    "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-16T07:20:58Z",
-   "kind": "released",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "tag": "v2.0.1"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 15
+  "gap_minutes": 25
  },
  "hygiene": {
   "allowed_missing": [],
@@ -295,7 +289,7 @@
     "bad": 0,
     "cand": 44,
     "hyg": 0,
-    "red": 2
+    "red": 1
    }
   },
   {
@@ -303,10 +297,9 @@
    "level": "bad",
    "p": {
     "list": [
-     "HYDRA-UMC-DOCS",
-     "TOOLS-GITHUB-ACTIONS-MONITOR"
+     "HYDRA-UMC-DOCS"
     ],
-    "n": 2
+    "n": 1
    }
   },
   {
@@ -839,7 +832,7 @@
    12581,
    16336,
    10185,
-   10383
+   10378
   ],
   "red": [
    3,
@@ -857,7 +850,7 @@
    1,
    1,
    2,
-   2
+   1
   ]
  },
  "unpublished": {

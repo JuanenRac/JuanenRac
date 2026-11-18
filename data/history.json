@@ -11096,10 +11096,10 @@
   {
    "actions": {
     "fail": 129,
-    "min": 10383,
-    "ok": 3211,
-    "other": 47,
-    "runs": 3387
+    "min": 10378,
+    "ok": 3205,
+    "other": 48,
+    "runs": 3382
    },
    "areas": {
     "armor": {
@@ -11686,8 +11686,8 @@
    "sentinel": {
     "cand": 44,
     "gaps": 0,
-    "min": 10383,
-    "red": 2
+    "min": 10378,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
