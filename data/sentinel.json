@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T03:32:04Z",
+ "asof": "2026-11-18T03:49:07Z",
  "ci": {
   "checked": 628,
   "red": [
@@ -11,8 +11,8 @@
    },
    {
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "since": "2026-11-17T11:10:40Z",
-    "streak": 1,
+    "since": "2026-11-18T03:38:03Z",
+    "streak": 2,
     "wf": "docker-audit.yml"
    }
   ],
@@ -21,8 +21,8 @@
  "compute": {
   "top": [
    {
-    "min24": 687,
-    "min7": 764,
+    "min24": 724,
+    "min7": 767,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -42,7 +42,7 @@
    },
    {
     "min24": 241,
-    "min7": 568,
+    "min7": 560,
     "repo": "URTC-FLASHER"
    },
    {
@@ -51,8 +51,8 @@
     "repo": "HYDRA-UMC-SWARM-SYNC"
    }
   ],
-  "total24": 10186,
-  "total7": 40184,
+  "total24": 10269,
+  "total7": 40223,
   "warn": false
  },
  "ecosystems": {
@@ -277,7 +277,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 15
+  "gap_minutes": 20
  },
  "hygiene": {
   "allowed_missing": [],
@@ -839,7 +839,7 @@
    12581,
    16336,
    10185,
-   10186
+   10269
   ],
   "red": [
    3,
