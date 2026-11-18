@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T20:23:21Z",
+ "asof": "2026-11-18T21:15:25Z",
  "ci": {
   "checked": 629,
   "red": [],
@@ -8,19 +8,14 @@
  "compute": {
   "top": [
    {
-    "min24": 882,
-    "min7": 882,
+    "min24": 902,
+    "min7": 902,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 234,
+    "min24": 192,
     "min7": 376,
     "repo": "ARMOR-SERVER"
-   },
-   {
-    "min24": 200,
-    "min7": 226,
-    "repo": "ARMOR-COMMON"
    },
    {
     "min24": 190,
@@ -33,13 +28,18 @@
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
+    "min24": 171,
+    "min7": 226,
+    "repo": "ARMOR-COMMON"
+   },
+   {
     "min24": 160,
     "min7": 227,
     "repo": "ARMOR-VISION"
    }
   ],
-  "total24": 5733,
-  "total7": 40301,
+  "total24": 5177,
+  "total7": 40322,
   "warn": false
  },
  "delivery": {
@@ -311,7 +311,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 40
+  "gap_minutes": 55
  },
  "hygiene": {
   "allowed_missing": [],
@@ -865,7 +865,7 @@
    12581,
    16336,
    10185,
-   5733
+   5177
   ],
   "red": [
    3,
