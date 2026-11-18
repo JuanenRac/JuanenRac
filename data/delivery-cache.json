@@ -9,9 +9,10 @@
   },
   "ARMOR-DEVOPS": {
    "art": true,
-   "at": "2026-11-12T22:15:44Z",
-   "exp": "2026-11-19T22:13:15Z",
-   "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/43317555550",
+   "at": "2026-11-18T09:46:35Z",
+   "checked": true,
+   "exp": "2026-11-25T09:44:14Z",
+   "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/44278491421",
    "wf": "package-build.yml"
   },
   "ARMOR-NETWORK": {
@@ -327,12 +328,12 @@
    }
   },
   "ARMOR-DEVOPS": {
-   "fp": "bb20eb8cede7d52e",
-   "on": "2026-11-17",
+   "fp": "e64e6fcb5894104c",
+   "on": "2026-11-18",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-NETWORK": {
@@ -645,7 +646,7 @@
  "schema": 1,
  "signatures": {
   "ARMOR-DEVOPS": {
-   "fp": "bb20eb8cede7d52e",
+   "fp": "e64e6fcb5894104c",
    "r": {
     "bad": 0,
     "ho": 0,

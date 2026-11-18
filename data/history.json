@@ -11095,11 +11095,11 @@
   },
   {
    "actions": {
-    "fail": 138,
-    "min": 10861,
-    "ok": 3350,
-    "other": 46,
-    "runs": 3534
+    "fail": 139,
+    "min": 11007,
+    "ok": 3432,
+    "other": 53,
+    "runs": 3624
    },
    "areas": {
     "armor": {
@@ -11168,11 +11168,11 @@
     ],
     "ARMOR-COMMON": [
      2,
-     "0.8.1.4"
+     "0.8.1.5"
     ],
     "ARMOR-DEVOPS": [
      2,
-     "0.7.6"
+     "0.7.7"
     ],
     "ARMOR-DOCS": [
      2,
@@ -11336,7 +11336,7 @@
     ],
     "EH3D-PHOENIX-CNC": [
      1,
-     "0.1.2"
+     "0.1.3"
     ],
     "EH3D-PHOENIX-LASER": [
      1,
@@ -11472,7 +11472,7 @@
     ],
     "HYDRA-UMC-DOCS": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "HYDRA-UMC-DOCS-QA": [
      1,
@@ -11684,9 +11684,9 @@
     ]
    },
    "sentinel": {
-    "cand": 45,
+    "cand": 43,
     "gaps": 0,
-    "min": 10861,
+    "min": 11007,
     "red": 0
    },
    "tests": {
@@ -11723,9 +11723,9 @@
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 283,
+    "EH3D-PHOENIX-CNC": 344,
     "EH3D-PHOENIX-LASER": 311,
-    "EH3D-PHOENIX-PCB": 4160,
+    "EH3D-PHOENIX-PCB": 4290,
     "EH3D-PHOENIX-PNP": 744,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
@@ -11738,7 +11738,7 @@
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 153,
-    "HYDRA-UMC": 1495,
+    "HYDRA-UMC": 1500,
     "HYDRA-UMC-ANDROID-CONTROL": 767,
     "HYDRA-UMC-ANOMALY-DETECTOR": 472,
     "HYDRA-UMC-BRIDGE-AMR": 277,
