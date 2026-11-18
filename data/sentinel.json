@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T13:20:25Z",
+ "asof": "2026-11-18T13:49:54Z",
  "ci": {
   "checked": 630,
   "red": [],
@@ -13,33 +13,33 @@
     "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 878,
-    "min7": 878,
+    "min24": 865,
+    "min7": 865,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 276,
-    "min7": 345,
+    "min24": 287,
+    "min7": 352,
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 217,
-    "min7": 217,
+    "min24": 218,
+    "min7": 218,
     "repo": "ARMOR-COMMON"
    },
    {
-    "min24": 210,
-    "min7": 550,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
+    "min24": 192,
+    "min7": 201,
+    "repo": "ARMOR-NODE-RADAR"
    },
    {
-    "min24": 204,
-    "min7": 564,
-    "repo": "URTC-FLASHER"
+    "min24": 190,
+    "min7": 550,
+    "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 8837,
-  "total7": 41735,
+  "total24": 8334,
+  "total7": 41721,
   "warn": false
  },
  "ecosystems": {
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-18T13:49:54Z",
+   "kind": "released",
+   "repo": "EH3D-ISOCAM",
+   "tag": "v0.1.2"
+  },
   {
    "at": "2026-11-18T13:02:02Z",
    "kind": "released",
@@ -253,18 +259,12 @@
    "kind": "released",
    "repo": "EH3D-BUNGARD-GUI",
    "tag": "v0.2.7"
-  },
-  {
-   "at": "2026-11-18T08:06:54Z",
-   "kind": "released",
-   "repo": "EH3D-CAM-DEBUGGER",
-   "tag": "v0.0.6"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 20
+  "gap_minutes": 30
  },
  "hygiene": {
   "allowed_missing": [],
@@ -366,7 +366,7 @@
     "tag": "v0.8.3.2"
    },
    {
-    "entries": 28,
+    "entries": 29,
     "published": "2026-11-15T09:50:56Z",
     "repo": "ARMOR-SERVER",
     "tag": "v0.8.2.3"
@@ -469,6 +469,12 @@
    },
    {
     "entries": 8,
+    "published": "2026-11-14T15:17:42Z",
+    "repo": "ARMOR-VISION",
+    "tag": "v0.1.7"
+   },
+   {
+    "entries": 8,
     "published": "2026-11-15T16:03:42Z",
     "repo": "HYDRA-UMC-BRIDGE-CNC",
     "tag": "v0.2.8"
@@ -490,12 +496,6 @@
     "published": "2026-11-14T15:17:09Z",
     "repo": "ARMOR-SIMULATOR",
     "tag": "v0.3.8"
-   },
-   {
-    "entries": 7,
-    "published": "2026-11-14T15:17:42Z",
-    "repo": "ARMOR-VISION",
-    "tag": "v0.1.7"
    },
    {
     "entries": 7,
@@ -651,7 +651,7 @@
   "EH3D-GERBERVIEWER": "v0.0.7",
   "EH3D-HYDRA-BRIDGE": "v0.0.2",
   "EH3D-IOS-CONTROL": "v0.1.0",
-  "EH3D-ISOCAM": "v0.1.1",
+  "EH3D-ISOCAM": "v0.1.2",
   "EH3D-LAB-BRIDGE": "v0.0.3",
   "EH3D-MANUFACTURING-PROFILE": "v0.0.3",
   "EH3D-NODE-BUNGARD": "v0.0.7",
@@ -818,7 +818,7 @@
    12581,
    16336,
    10185,
-   8837
+   8334
   ],
   "red": [
    3,
