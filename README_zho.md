@@ -201,7 +201,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|适用于 STM32H757/G474 且带 S 曲线运动学的核心运动控制固件。|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.3.0|适用于 STM32H757/G474 且带 S 曲线运动学的核心运动控制固件。|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.2|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.2|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
@@ -392,7 +392,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 **更新器：** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:armor -->
-`\[█████████████▋░░░░░░] 68%` — 根据真实数据计算：其 20 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[█████████████▎░░░░░░] 66%` — 根据真实数据计算：其 20 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -408,7 +408,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 | 已发布版本 | 🟢 | `██████████ 100%` | 20 个仓库中有 20 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 20 个仓库中有 20 个提供八种语言的 README。 |
 | 仿真 | 🟢 | `██████████ 100%` | 20 个仓库中有 20 个至少在仿真器中验证过。 |
-| 真实硬件 | 🟠 | `█████░░░░░ 50%` | 依赖硬件的 16 个仓库中有 8 个在台架或现场验证过；其余从未在真实设备上运行。 |
+| 真实硬件 | 🔴 | `▋░░░░░░░░░ 6%` | 依赖硬件的 16 个仓库中有 1 个在台架或现场验证过；其余从未在真实设备上运行。 |
 | 生产 | 🟡 | `██████░░░░ 60%` | 20 个仓库中有 12 个已成熟或已投入生产。 |
 <!-- /status:armor -->
 
@@ -482,7 +482,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — 根据真实数据计算：其 38 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[█████████▍░░░░░░░░░░] 47%` — 根据真实数据计算：其 38 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -494,7 +494,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 | --- | :---: | --- | --- |
 | 软件 | 🟠 | `█████▌░░░░ 55%` | 38 个仓库中有 21 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟡 | `████████▉░ 89%` | 38 个仓库中有 34 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 38 个仓库中有 38 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `█████████▊ 97%` | 38 个仓库中有 37 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 38 个仓库中有 38 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 38 个仓库中有 38 个提供八种语言的 README。 |
 | 仿真 | 🟡 | `███████▉░░ 79%` | 38 个仓库中有 30 个至少在仿真器中验证过。 |
@@ -537,13 +537,13 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的钻孔流程：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.7|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.3|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.4|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.9|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
 
 ### 💠 激光项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.6|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.7|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
 
 ### 💠 CAM 项目：
 |仓库|版本|描述|
@@ -560,7 +560,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.8|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.7|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.8|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
 
 ### 💠 节点项目：
 |仓库|版本|描述|
@@ -594,7 +594,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 🛠️ 辅助工具
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.4|在图像中找到圆形基准点，把像素转换为毫米，校正镜头畸变并计算电路板的旋转和平移；实时摄像头、神经网络和窗口在计划中。|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.5|在图像中找到圆形基准点，把像素转换为毫米，校正镜头畸变并计算电路板的旋转和平移；实时摄像头、神经网络和窗口在计划中。|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.9|地形高度网格处理器（Z 探测）和用于表面补偿的 G代码插值。|
 
 
@@ -639,7 +639,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 
 | 工具 | 版本 | 简介 |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.0 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.1 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 
 \---

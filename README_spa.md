@@ -201,7 +201,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|Firmware central de control de movimiento para STM32H757/G474 con cinemática de curva S.|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.3.0|Firmware central de control de movimiento para STM32H757/G474 con cinemática de curva S.|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.2|API sin cabeza (headless) en Node.js y backend WebSocket para la orquestación robótica.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.2|Panel de control web avanzado basado en React para monitorización y control de robots 3D.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|Kit TypeScript compartido de los clientes web de HYDRA-UMC: sesión, cliente HTTP, historial de conexiones, preferencias y recorridos.|
@@ -392,7 +392,7 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 **Actualizador:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:armor -->
-`\[█████████████▋░░░░░░] 68%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 20 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████████▎░░░░░░] 66%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 20 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -408,7 +408,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | Versiones publicadas | 🟢 | `██████████ 100%` | 20 de 20 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟢 | `██████████ 100%` | 20 de 20 repositorios se han comprobado al menos en un simulador. |
-| Hardware real | 🟠 | `█████░░░░░ 50%` | 8 de los 16 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Hardware real | 🔴 | `▋░░░░░░░░░ 6%` | 1 de los 16 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
 | Producción | 🟡 | `██████░░░░ 60%` | 12 de 20 repositorios están consolidados o en producción. |
 <!-- /status:armor -->
 
@@ -482,7 +482,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 **Actualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 38 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████▍░░░░░░░░░░] 47%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 38 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -494,7 +494,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▌░░░░ 55%` | 21 de 38 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟡 | `████████▉░ 89%` | 34 de 38 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 38 de 38 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `█████████▊ 97%` | 37 de 38 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 38 de 38 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 38 de 38 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟡 | `███████▉░░ 79%` | 30 de 38 repositorios se han comprobado al menos en un simulador. |
@@ -537,13 +537,13 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|Reimplementación en Rust del flujo de taladrado del software clásico de DOS para máquinas Bungard CCD: interfaz en modo texto en ocho idiomas, simulador o máquina real.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Reimplementación en Rust del flujo de fresado del software clásico de DOS para máquinas Bungard CCD, a partir de ficheros de trazado HP-GL: interfaz en modo texto en ocho idiomas, simulador o máquina real.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.7|Interfaz moderna para las máquinas Bungard CCD: un lanzador de los programas clásicos de taladrado y fresado y un visor del trabajo sobre la mesa.|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.3|Base común de los programas de control de máquina de EH3D: una ventana que maneja una máquina simulada con jog, puesta a cero, ejecución de código G y vista de la trayectoria, en ocho idiomas.|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.4|Base común de los programas de control de máquina de EH3D: una ventana que maneja una máquina simulada con jog, puesta a cero, ejecución de código G y vista de la trayectoria, en ocho idiomas.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.9|Base de datos compartida de bancos de herramientas que rastrea horas de desgaste, ajustes de corte y avances en todas las herramientas EH3D CAM.|
 
 ### 💠 Proyectos láser:
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.6|Aplicación CAM láser para tramado de imágenes, conversión ráster/vector y control dinámico de potencia PWM.|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.7|Aplicación CAM láser para tramado de imágenes, conversión ráster/vector y control dinámico de potencia PWM.|
 
 ### 💠 Proyectos CAM:
 |Repositorio|Versión|Descripción|
@@ -560,7 +560,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.8|Utilidad de conversión de máscaras de pasta que genera trayectorias de corte para la fabricación de plantillas SMD con láser y plotter.|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.7|Montaje pick and place: ficheros de posiciones de KiCad y CSV, alimentadores y el orden de colocación para un cabezal de una a seis boquillas; la cámara y el control de la máquina están previstos.|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.8|Montaje pick and place: ficheros de posiciones de KiCad y CSV, alimentadores y el orden de colocación para un cabezal de una a seis boquillas; la cámara y el control de la máquina están previstos.|
 
 ### 💠 Proyectos de nodos:
 |Repositorio|Versión|Descripción|
@@ -594,7 +594,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 ### 🛠️ Herramientas complementarias
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.4|Encuentra marcas fiduciales redondas en una imagen, convierte píxeles en milímetros, corrige la distorsión de la lente y calcula el giro y el desplazamiento de una placa; la cámara en vivo, la red neuronal y la ventana están previstas.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.5|Encuentra marcas fiduciales redondas en una imagen, convierte píxeles en milímetros, corrige la distorsión de la lente y calcula el giro y el desplazamiento de una placa; la cámara en vivo, la red neuronal y la ventana están previstas.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.9|Procesador de malla de altura topográfica (sondeo Z) e interpolación de código G para compensación de superficies.|
 
 
@@ -639,7 +639,7 @@ El grupo reúne los programas que están por encima de los cuatro ecosistemas y 
 
 | Herramienta | Versión | Qué es |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.0 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.1 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La ventana y la línea de órdenes únicas que ceden el trabajo al actualizador de cada ecosistema. |
 
 \---

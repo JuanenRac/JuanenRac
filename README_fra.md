@@ -201,7 +201,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 
 |Dépôt|Version|Description|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.2.9|Micrologiciel principal de contrôle de mouvement pour STM32H757/G474 avec cinématique en S.|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.3.0|Micrologiciel principal de contrôle de mouvement pour STM32H757/G474 avec cinématique en S.|
 |[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.2|API Node.js sans tête (headless) et backend WebSocket pour l'orchestration robotique.|
 |[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.2|Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D du robot.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.4|Kit TypeScript partagé des clients web de HYDRA-UMC : session, client HTTP, historique des connexions, préférences et visites guidées.|
@@ -392,7 +392,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 **Outil de mise à jour :** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:armor -->
-`\[█████████████▋░░░░░░] 68%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 20 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[█████████████▎░░░░░░] 66%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 20 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -408,7 +408,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | Versions publiées | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont été vérifiés au moins dans un simulateur. |
-| Matériel réel | 🟠 | `█████░░░░░ 50%` | 8 des 16 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Matériel réel | 🔴 | `▋░░░░░░░░░ 6%` | 1 des 16 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
 | Production | 🟡 | `██████░░░░ 60%` | 12 dépôts sur 20 sont établis ou en production. |
 <!-- /status:armor -->
 
@@ -482,7 +482,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 **Outil de mise à jour :** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 38 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[█████████▍░░░░░░░░░░] 47%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 38 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -494,7 +494,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟠 | `█████▌░░░░ 55%` | 21 dépôts sur 38 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟡 | `████████▉░ 89%` | 34 dépôts sur 38 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 38 dépôts sur 38 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `█████████▊ 97%` | 37 dépôts sur 38 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 38 dépôts sur 38 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 38 dépôts sur 38 ont le README dans les huit langues. |
 | Simulation | 🟡 | `███████▉░░ 79%` | 30 dépôts sur 38 ont été vérifiés au moins dans un simulateur. |
@@ -537,13 +537,13 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|Réimplémentation en Rust du flux de perçage du logiciel DOS classique pour les machines Bungard CCD : interface en mode texte en huit langues, simulateur ou machine réelle.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Réimplémentation en Rust du flux de fraisage du logiciel DOS classique pour les machines Bungard CCD, à partir de fichiers de traçage HP-GL : interface en mode texte en huit langues, simulateur ou machine réelle.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.7|Interface moderne pour les machines Bungard CCD : un lanceur des programmes classiques de perçage et de fraisage et un visualiseur du travail sur la table.|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.3|Base commune des programmes de pilotage de machine d'EH3D : une fenêtre qui pilote une machine simulée avec jog, mise à zéro, exécution de G-code et vue du parcours, en huit langues.|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.4|Base commune des programmes de pilotage de machine d'EH3D : une fenêtre qui pilote une machine simulée avec jog, mise à zéro, exécution de G-code et vue du parcours, en huit langues.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.9|Base de données de cribles d'outils partagée suivant les heures d'usure, les préréglages de coupe et les avances sur tous les outils FAO EH3D.|
 
 ### 💠 Projets laser :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.6|Application FAO laser pour le tramage d'images, la conversion raster/vecteur et le contrôle de puissance PWM dynamique.|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.7|Application FAO laser pour le tramage d'images, la conversion raster/vecteur et le contrôle de puissance PWM dynamique.|
 
 ### 💠 Projets FAO :
 |Dépôt|Version|Description|
@@ -560,7 +560,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |Dépôt|Version|Description|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.8|Utilitaire de conversion de masque de pâte générant des trajectoires de découpe pour la fabrication de pochoirs CMS par laser et traceur.|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.7|Assemblage pick and place : fichiers de positions de KiCad et CSV, chargeurs et ordre de pose pour une tête d'une à six buses ; la caméra et la commande de la machine sont prévues.|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.8|Assemblage pick and place : fichiers de positions de KiCad et CSV, chargeurs et ordre de pose pour une tête d'une à six buses ; la caméra et la commande de la machine sont prévues.|
 
 ### 💠 Projets de nœuds :
 |Dépôt|Version|Description|
@@ -594,7 +594,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 ### 🛠️ Outils complémentaires
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.4|Trouve des marques fiduciaires rondes dans une image, convertit les pixels en millimètres, corrige la distorsion de l'objectif et calcule la rotation et le décalage d'une carte ; la caméra en direct, le réseau de neurones et la fenêtre sont prévus.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.5|Trouve des marques fiduciaires rondes dans une image, convertit les pixels en millimètres, corrige la distorsion de l'objectif et calcule la rotation et le décalage d'une carte ; la caméra en direct, le réseau de neurones et la fenêtre sont prévus.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.0.9|Processeur de maillage de hauteur topographique (palpage Z) et interpolation de G-code pour la compensation de surface.|
 
 
@@ -639,7 +639,7 @@ Le groupe réunit les programmes qui se trouvent au-dessus des quatre écosystè
 
 | Outil | Version | Ce que c'est |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.0 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.1 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
 
 \---
