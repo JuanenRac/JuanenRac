@@ -11095,11 +11095,11 @@
   },
   {
    "actions": {
-    "fail": 126,
-    "min": 10472,
-    "ok": 3214,
-    "other": 48,
-    "runs": 3388
+    "fail": 128,
+    "min": 10462,
+    "ok": 3260,
+    "other": 52,
+    "runs": 3440
    },
    "areas": {
     "armor": {
@@ -11248,19 +11248,19 @@
     ],
     "EH3D-AUTOLEVEL": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-BUNGARD-GUI": [
      1,
-     "0.2.6"
+     "0.2.7"
     ],
     "EH3D-CAM-DEBUGGER": [
      1,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-COMMON": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
@@ -11268,7 +11268,7 @@
     ],
     "EH3D-CORE-LIBS": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
@@ -11280,15 +11280,15 @@
     ],
     "EH3D-DESIGN-VERIFIER": [
      0,
-     "0.0.3"
+     "0.0.4"
     ],
     "EH3D-DOCS": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-DRILLPRO": [
      1,
-     "0.1.8"
+     "0.1.9"
     ],
     "EH3D-GERBERVIEWER": [
      1,
@@ -11304,7 +11304,7 @@
     ],
     "EH3D-ISOCAM": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-LAB-BRIDGE": [
      0,
@@ -11336,7 +11336,7 @@
     ],
     "EH3D-PHOENIX-CNC": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-PHOENIX-LASER": [
      1,
@@ -11352,7 +11352,7 @@
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
-     "0.0.3"
+     "0.0.4"
     ],
     "EH3D-ROUTEPRO": [
      1,
@@ -11360,11 +11360,11 @@
     ],
     "EH3D-SERVER": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "EH3D-STENCILCAM": [
      1,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-STUDIO": [
      1,
@@ -11380,11 +11380,11 @@
     ],
     "EH3D-TOOL-MANAGER": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-UPDATER": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-VALIDATION-LAB": [
      0,
@@ -11564,7 +11564,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.7.1"
+     "0.7.2"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -11636,7 +11636,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "2.0.9"
+     "2.1.0"
     ],
     "URTC": [
      1,
@@ -11686,8 +11686,8 @@
    "sentinel": {
     "cand": 44,
     "gaps": 0,
-    "min": 10472,
-    "red": 1
+    "min": 10462,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -11725,8 +11725,8 @@
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 130,
     "EH3D-PHOENIX-LASER": 311,
-    "EH3D-PHOENIX-PCB": 4130,
-    "EH3D-PHOENIX-PNP": 572,
+    "EH3D-PHOENIX-PCB": 4148,
+    "EH3D-PHOENIX-PNP": 659,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
     "EH3D-SERVER": 386,
