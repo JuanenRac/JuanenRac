@@ -51,7 +51,8 @@ permissions: {}
 jobs:
   ui:
     name: Playwright and axe-core
-    runs-on: ubuntu-latest
+    # Pinned: the pinned Playwright does not install its browser on the newest image that `ubuntu-latest` points to.
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     timeout-minutes: 45
