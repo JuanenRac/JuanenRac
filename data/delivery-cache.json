@@ -24,7 +24,6 @@
   "ARMOR-NODE-ALARM": {
    "art": true,
    "at": "2026-11-17T20:34:57Z",
-   "checked": true,
    "exp": "2026-11-24T20:33:36Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/44170013773",
    "wf": "firmware-build.yml"
@@ -32,7 +31,6 @@
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
    "at": "2026-11-17T20:35:54Z",
-   "checked": true,
    "exp": "2026-11-24T20:34:10Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/44170090925",
    "wf": "firmware-build.yml"
@@ -40,7 +38,6 @@
   "ARMOR-NODE-HMI": {
    "art": true,
    "at": "2026-11-17T20:37:00Z",
-   "checked": true,
    "exp": "2026-11-24T20:36:18Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/44170316599",
    "wf": "firmware-build.yml"
@@ -48,7 +45,6 @@
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-17T20:36:11Z",
-   "checked": true,
    "exp": "2026-11-24T20:34:50Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/44170248941",
    "wf": "firmware-build.yml"
@@ -56,7 +52,6 @@
   "ARMOR-NODE-SOLAR": {
    "art": true,
    "at": "2026-11-17T20:35:54Z",
-   "checked": true,
    "exp": "2026-11-24T20:34:47Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/44170175764",
    "wf": "firmware-build.yml"
@@ -324,7 +319,7 @@
  "presence": {
   "ARMOR-ANDROID-CONTROL": {
    "fp": "9d38022fecb8b2e5",
-   "on": "2026-11-15",
+   "on": "2026-11-18",
    "r": {
     "ak": 0,
     "an": 1,
@@ -432,7 +427,7 @@
   },
   "ARMOR-WATCH": {
    "fp": "01f5b23b442ac117",
-   "on": "2026-11-15",
+   "on": "2026-11-18",
    "r": {
     "ak": 0,
     "an": 1,
@@ -441,7 +436,7 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "fp": "1b74eb92d80ac9b8",
-   "on": "2026-11-15",
+   "on": "2026-11-18",
    "r": {
     "ak": 0,
     "an": 1,
@@ -576,7 +571,7 @@
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
    "fp": "e0b65d4c11f826a6",
-   "on": "2026-11-15",
+   "on": "2026-11-18",
    "r": {
     "ak": 0,
     "an": 1,
@@ -585,7 +580,7 @@
   },
   "HYDRA-UMC-MESHES": {
    "fp": "bed485331987538b",
-   "on": "2026-11-15",
+   "on": "2026-11-18",
    "r": {
     "ak": 0,
     "an": 1,
@@ -630,7 +625,7 @@
   },
   "HYDRA-UMC-WATCH": {
    "fp": "8081611c4d70f524",
-   "on": "2026-11-15",
+   "on": "2026-11-18",
    "r": {
     "ak": 0,
     "an": 1,
