@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T12:38:47Z",
+ "asof": "2026-11-18T13:02:02Z",
  "ci": {
   "checked": 630,
   "red": [],
@@ -8,29 +8,29 @@
  "compute": {
   "top": [
    {
-    "min24": 1538,
-    "min7": 1556,
+    "min24": 1544,
+    "min7": 1560,
     "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 831,
-    "min7": 831,
+    "min24": 850,
+    "min7": 850,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 301,
-    "min7": 516,
-    "repo": "HYDRA-UMC-SERVER"
-   },
-   {
     "min24": 250,
-    "min7": 335,
+    "min7": 327,
     "repo": "ARMOR-SERVER"
    },
    {
     "min24": 221,
-    "min7": 573,
+    "min7": 565,
     "repo": "URTC-FLASHER"
+   },
+   {
+    "min24": 217,
+    "min7": 217,
+    "repo": "ARMOR-COMMON"
    },
    {
     "min24": 210,
@@ -38,8 +38,8 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 8716,
-  "total7": 41962,
+  "total24": 8684,
+  "total7": 41722,
   "warn": false
  },
  "ecosystems": {
@@ -80,6 +80,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-18T13:02:02Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-LASER",
+   "tag": "v0.0.8"
+  },
   {
    "at": "2026-11-18T12:38:47Z",
    "kind": "released",
@@ -253,18 +259,12 @@
    "kind": "released",
    "repo": "EH3D-CAM-DEBUGGER",
    "tag": "v0.0.6"
-  },
-  {
-   "at": "2026-11-18T08:06:54Z",
-   "kind": "released",
-   "repo": "EH3D-COMMON",
-   "tag": "v0.2.2"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 30
+  "gap_minutes": 25
  },
  "hygiene": {
   "allowed_missing": [],
@@ -492,6 +492,12 @@
     "tag": "v0.2.6"
    },
    {
+    "entries": 7,
+    "published": "2026-11-14T16:30:38Z",
+    "repo": "URTC-VISION-TOOL",
+    "tag": "v0.2.1"
+   },
+   {
     "entries": 6,
     "published": "2026-11-12T05:08:12Z",
     "repo": "ARMOR-HARDWARE",
@@ -514,12 +520,6 @@
     "published": "2026-11-15T16:03:52Z",
     "repo": "HYDRA-UMC-BRIDGE-PRINTER3D",
     "tag": "v0.2.5"
-   },
-   {
-    "entries": 6,
-    "published": "2026-11-14T16:30:38Z",
-    "repo": "URTC-VISION-TOOL",
-    "tag": "v0.2.1"
    },
    {
     "entries": 5,
@@ -609,9 +609,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 94,
+  "none": 95,
   "norelease": 0,
-  "unverifiable": 8,
+  "unverifiable": 7,
   "unverified": 0,
   "verified": 28
  },
@@ -660,7 +660,7 @@
   "EH3D-NODE-HMI-GUI": "v0.0.9",
   "EH3D-PHOENIX-CAD": "v0.0.7",
   "EH3D-PHOENIX-CNC": "v0.1.5",
-  "EH3D-PHOENIX-LASER": "v0.0.7",
+  "EH3D-PHOENIX-LASER": "v0.0.8",
   "EH3D-PHOENIX-PCB": "v0.0.8",
   "EH3D-PHOENIX-PNP": "v0.0.9",
   "EH3D-PROJECT-PASSPORT": "v0.0.4",
@@ -818,7 +818,7 @@
    12581,
    16336,
    10185,
-   8716
+   8684
   ],
   "red": [
    3,

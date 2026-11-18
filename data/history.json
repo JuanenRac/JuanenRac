@@ -11095,11 +11095,11 @@
   },
   {
    "actions": {
-    "fail": 141,
-    "min": 8716,
-    "ok": 3082,
-    "other": 52,
-    "runs": 3275
+    "fail": 140,
+    "min": 8684,
+    "ok": 3112,
+    "other": 64,
+    "runs": 3316
    },
    "areas": {
     "armor": {
@@ -11123,7 +11123,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 50,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -11157,7 +11157,7 @@
    "progress": {
     "armor": 65,
     "eh3d": 48,
-    "electro-hobby-3d": 61,
+    "electro-hobby-3d": 63,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -11340,7 +11340,7 @@
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
@@ -11686,7 +11686,7 @@
    "sentinel": {
     "cand": 43,
     "gaps": 0,
-    "min": 8716,
+    "min": 8684,
     "red": 0
    },
    "tests": {
@@ -11724,7 +11724,7 @@
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 448,
-    "EH3D-PHOENIX-LASER": 405,
+    "EH3D-PHOENIX-LASER": 473,
     "EH3D-PHOENIX-PCB": 4310,
     "EH3D-PHOENIX-PNP": 843,
     "EH3D-PROJECT-PASSPORT": 3,
@@ -11805,7 +11805,7 @@
     "URTC-SMART-RACK": 786,
     "URTC-TESTER": 1133,
     "URTC-UPDATER": 734,
-    "URTC-VISION-TOOL": 249,
+    "URTC-VISION-TOOL": 251,
     "URTC-WEB-STUDIO": 1811
    }
   }
