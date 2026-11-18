@@ -10,6 +10,8 @@ version of those contracts. It only reports what the repositories write in their
 | A.R.M.O.R. | `registry/contract_pins.json` of `ARMOR-COMMON` (consumer -> version) | `version` of `armor.project.json` of `ARMOR-COMMON` |
 | URTC | `urtc_common_version` of `tools/urtc_common.lock.json` of every URTC repository that has one | `version` of `urtc.project.json` of `URTC-COMMON` |
 | HYDRA-UMC | no machine readable source, so it is listed as such and never guessed | - |
+| EH3D | no machine readable source yet, so it is listed as such and never guessed | - |
+| Tools | no machine readable source, so it is listed as such and never guessed | - |
 
 The files are read once per page generation through the contents API with the read-only token of the workflow, and the result is embedded in the page.
 

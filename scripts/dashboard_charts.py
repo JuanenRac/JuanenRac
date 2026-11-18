@@ -28,7 +28,7 @@ from typing import Callable, Iterable, Mapping, Sequence
 import dashboard_delivery
 
 AREAS = ("software", "tests", "ci", "releases", "docs", "simulation", "hardware", "production")
-ECOSYSTEM_KEYS = ("hydra-umc", "urtc", "armor", "eh3d")
+ECOSYSTEM_KEYS = ("hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d")
 MATURITY_KEYS = ("scaffolding", "functional", "established", "production")
 EVIDENCE_KEYS = ("none", "host-test", "simulator", "bench", "field")
 CI_KEYS = ("success", "failure", "pending", "none")

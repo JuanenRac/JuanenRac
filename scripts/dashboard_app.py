@@ -1902,3 +1902,31 @@ def eh3d_architecture_section() -> str:
         f'<div class="relationship-note"><strong data-i18n="architecture_e_rel_title">{esc(en["architecture_e_rel_title"])}</strong> '
         f'<span data-i18n="architecture_e_rel_body">{esc(en["architecture_e_rel_body"])}</span></div></section>'
     )
+
+
+TOOLS_CARD_LISTS: tuple[tuple[str, ...], ...] = (
+    ("TOOLS-GITHUB-ACTIONS-MONITOR", "Complete and Lite editions", "Sentinels"),
+    ("ELECTRO-HOBBY-3D-UPDATER", "HYDRA-UMC-UPDATER", "URTC-UPDATER", "ARMOR-UPDATER", "EH3D-UPDATER"),
+    ("JuanenRac", "Manifests", "Static page"),
+)
+
+
+def tools_architecture_section() -> str:
+    """The architecture of the Tools group in the same shape as the other ecosystems (cards, flow and an honest note); every text is looked up by key."""
+    import dashboard_app_texts
+    en = dashboard_app_texts.TEXTS["en"]
+    cards = []
+    for index, items in enumerate(TOOLS_CARD_LISTS, start=1):
+        lis = "".join(f"<li>{esc(item)}</li>" for item in items)
+        cards.append(
+            f'<article class="architecture-card"><h3 data-i18n="architecture_t_card{index}_title">{esc(en[f"architecture_t_card{index}_title"])}</h3>'
+            f'<p data-i18n="architecture_t_card{index}_body">{esc(en[f"architecture_t_card{index}_body"])}</p><ul>{lis}</ul></article>'
+        )
+    flow = '<b>→</b>'.join(f'<span data-i18n="architecture_t_flow_{n}">{esc(en[f"architecture_t_flow_{n}"])}</span>' for n in range(1, 5))
+    return (
+        f'<section class="section"><div role="heading" aria-level="2" class="section-title" data-i18n="architecture_section_t">{esc(en["architecture_section_t"])}</div>'
+        f'<div class="architecture-grid">{"".join(cards)}</div>'
+        f'<div class="architecture-flow" aria-label="{esc(en["aria_tools_flow"])}" data-i18n-aria-label="aria_tools_flow">{flow}</div>'
+        f'<div class="relationship-note"><strong data-i18n="architecture_t_rel_title">{esc(en["architecture_t_rel_title"])}</strong> '
+        f'<span data-i18n="architecture_t_rel_body">{esc(en["architecture_t_rel_body"])}</span></div></section>'
+    )

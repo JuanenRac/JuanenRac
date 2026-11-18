@@ -15,7 +15,7 @@ test.describe("languages", () => {
       for (const id of TABS) {
         await gotoTab(page, id);
         if (id === "architecture") {
-          for (const view of ["hydra-umc", "urtc", "armor", "eh3d"]) {
+          for (const view of ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"]) {
             await page.locator(`[data-arch-view="${view}"]`).click();
             const text = await visibleText(page);
             expect(text.match(LEFTOVER), `${lang} ${id}/${view}`).toBeNull();

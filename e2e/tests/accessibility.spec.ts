@@ -22,7 +22,7 @@ for (const theme of ["dark", "light"]) {
           await gotoTab(page, id);
           if (id === "architecture") {
             const found: string[] = [];
-            for (const view of ["hydra-umc", "urtc", "armor", "eh3d"]) {
+            for (const view of ["hydra-umc", "urtc", "armor", "eh3d", "electro-hobby-3d"]) {
               await page.locator(`[data-arch-view="${view}"]`).click();
               found.push(...(await serious(page)).map((x) => `${view}: ${x}`));
             }

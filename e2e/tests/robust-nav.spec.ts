@@ -29,7 +29,7 @@ test.describe("keyboard shortcuts and their help", () => {
     const dialog = page.getByTestId("help-dialog");
     await expect(dialog).toBeVisible();
     await expect(dialog).toHaveAttribute("aria-labelledby", "help-title");
-    for (const key of ["/", "1", "4", "0", "?", "C", "P", "Esc"]) await expect(dialog.locator("kbd", { hasText: new RegExp(`^${key.replace("?", "\\?")}$`) }).first()).toBeVisible();
+    for (const key of ["/", "1", "5", "0", "?", "C", "P", "Esc"]) await expect(dialog.locator("kbd", { hasText: new RegExp(`^${key.replace("?", "\\?")}$`) }).first()).toBeVisible();
     await expect(page.getByTestId("help-close")).toBeFocused();
     await page.keyboard.press("Escape");
     await expect(dialog).toBeHidden();
@@ -58,9 +58,9 @@ test.describe("keyboard shortcuts and their help", () => {
     await expect(page.locator("html")).not.toHaveAttribute("data-mode", "present");
   });
 
-  test("1 to 4 open the ecosystems and 0 the summary", async ({ page }) => {
+  test("1 to 5 open the ecosystems and 0 the summary", async ({ page }) => {
     await openDashboard(page);
-    for (const [key, id] of [["1", "hydra-umc"], ["2", "urtc"], ["3", "armor"], ["4", "eh3d"], ["0", "summary"]]) {
+    for (const [key, id] of [["1", "hydra-umc"], ["2", "urtc"], ["3", "armor"], ["4", "eh3d"], ["5", "electro-hobby-3d"], ["0", "summary"]]) {
       await page.keyboard.press(key);
       await expect(page.getByTestId(`tab-${id}`)).toHaveAttribute("aria-selected", "true");
       await expect(page).toHaveURL(new RegExp(`#${id}$`));

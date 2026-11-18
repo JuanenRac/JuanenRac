@@ -22,7 +22,7 @@ EN = dashboard_robust_texts.TEXTS["en"]
 # (keys as shown, i18n key of the action)
 SHORTCUTS: tuple[tuple[tuple[str, ...], str], ...] = (
     (("/",), "help_k_search"),
-    (("1", "2", "3", "4"), "help_k_eco"),
+    (("1", "2", "3", "4", "5"), "help_k_eco"),
     (("0",), "help_k_summary"),
     (("?",), "help_k_help"),
     (("C",), "help_k_compact"),
@@ -88,7 +88,7 @@ JS = r"""
   const helpOpen = document.getElementById("help-open");
   const helpKeysOn = document.getElementById("help-keys-on");
   const crumbList = document.getElementById("crumb-list");
-  const ECO_KEYS = { "1": "hydra-umc", "2": "urtc", "3": "armor", "4": "eh3d" };
+  const ECO_KEYS = { "1": "hydra-umc", "2": "urtc", "3": "armor", "4": "eh3d", "5": "electro-hobby-3d" };
   var helpOpener = null;
 
   shortcutsOn = safeGet(KEYS_KEY) !== "off";

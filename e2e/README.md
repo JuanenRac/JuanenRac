@@ -34,6 +34,7 @@ never shows a healthy state it does not have.
 | `tests/data-states.spec.ts` | partial, minimal and empty data; build freshness unknown vs known |
 | `tests/responsive.spec.ts` | 1920x1080 (no page scroll), 1366x768, 768x1024 and 390x844 (no horizontal scroll, scrolling tab bar, collapsible filters) |
 | `tests/accessibility.spec.ts` | axe-core on every tab, light and dark, English and Japanese (no serious or critical violation); heading order, tab/panel relations, chart alternatives; full keyboard walk with visible focus |
+| `../tests/test_dashboard_ecosystem_parity.py` | not a browser test: every list of groups, label map, colour, shortcut and architecture button of the generator and of the scripts of each tab holds exactly the keys of `ecosystem-catalog.json`, in order, so a group cannot be left out of one tab (the fixture has no repository of the Tools group, so its rows prove the "not verified" state in the browser) |
 | `../tests/test_dashboard_snapshot.py` | not a browser test: the counts per ecosystem and the indicators of the page built from the fixture are compared with `tests/snapshots/dashboard_fixture.json`, so an accidental change of a figure fails (regenerate it with `UPDATE_SNAPSHOT=1` when the change is intended) |
 | `check_html.py` | structure of the generated page: balanced tags, duplicate ids, dangling references, names of controls, required attributes, translation keys in the 8 languages, `data-*` coherence |
 

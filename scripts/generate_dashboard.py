@@ -1841,7 +1841,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Advances only once real, physical hardware exists for it to run against - the exact board or machine this ecosystem's own hardware documentation describes.",
         "roadmap_advance_production": "The top of the ladder. Nothing advances past here - it just keeps shipping real fixes.",
         "compat_section": "Compatibility matrix",
-        "compat_intro": "Real project counts by role and deployment target, with row, column and grand totals, for the four ecosystems together (HYDRA-UMC, URTC, A.R.M.O.R. and EH3D) or for one at a time, drawn straight from every repository's own manifest - A.R.M.O.R.'s free-text role/deployment_target fields are classified into these same categories rather than a second table, and STM32 firmware and documentation hubs are counted under their own column and row. A count, not a claim that any two specific projects interoperate.",
+        "compat_intro": "Real project counts by role and deployment target, with row, column and grand totals, for the five groups together (HYDRA-UMC, URTC, A.R.M.O.R., EH3D and Tools) or for one at a time, drawn straight from every repository's own manifest - A.R.M.O.R.'s free-text role/deployment_target fields are classified into these same categories rather than a second table, and STM32 firmware and documentation hubs are counted under their own column and row. A count, not a claim that any two specific projects interoperate.",
         "compat_corner": "Role \\ Target",
         "compat_total": "Total",
         "compat_view_all": "All ecosystems",
@@ -1855,7 +1855,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo cuando existe hardware físico real contra el que funcionar - la placa o máquina exacta que la propia documentación de hardware de este ecosistema describe.",
         "roadmap_advance_production": "La cima de la escalera. Nada avanza más allá de aquí - solo sigue entregando arreglos reales.",
         "compat_section": "Matriz de compatibilidad",
-        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, con totales por fila, por columna y total general, para los cuatro ecosistemas juntos (HYDRA-UMC, URTC, A.R.M.O.R. y EH3D) o para uno solo, tomados directamente del manifiesto de cada repositorio - los campos de texto libre rol/deployment_target de A.R.M.O.R. se clasifican en estas mismas categorías en lugar de una segunda tabla, y el firmware STM32 y los repositorios de documentación se cuentan en su propia columna y fila. Es un recuento, no una afirmación de que dos proyectos concretos sean interoperables.",
+        "compat_intro": "Recuentos reales de proyectos por rol y destino de despliegue, con totales por fila, por columna y total general, para los cinco grupos juntos (HYDRA-UMC, URTC, A.R.M.O.R., EH3D y Tools) o para uno solo, tomados directamente del manifiesto de cada repositorio - los campos de texto libre rol/deployment_target de A.R.M.O.R. se clasifican en estas mismas categorías en lugar de una segunda tabla, y el firmware STM32 y los repositorios de documentación se cuentan en su propia columna y fila. Es un recuento, no una afirmación de que dos proyectos concretos sean interoperables.",
         "compat_corner": "Rol \\ Destino",
         "compat_total": "Total",
         "compat_view_all": "Todos los ecosistemas",
@@ -1869,7 +1869,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "N'avance que lorsqu'un matériel physique réel existe pour qu'il puisse fonctionner face à lui - la carte ou la machine exacte que la documentation matérielle de cet écosystème décrit elle-même.",
         "roadmap_advance_production": "Le sommet de l'échelle. Rien n'avance au-delà d'ici - il continue simplement à livrer de vrais correctifs.",
         "compat_section": "Matrice de compatibilité",
-        "compat_intro": "Nombres réels de projets par rôle et par cible de déploiement, avec totaux par ligne, par colonne et total général, pour les quatre écosystèmes réunis (HYDRA-UMC, URTC, A.R.M.O.R. et EH3D) ou pour un seul, tirés directement du manifeste de chaque dépôt - les champs libres rôle/deployment_target d'A.R.M.O.R. sont classés dans ces mêmes catégories plutôt que dans un second tableau, et les firmwares STM32 et les dépôts de documentation sont comptés dans leur propre colonne et ligne. Un décompte, pas l'affirmation que deux projets précis sont interopérables.",
+        "compat_intro": "Nombres réels de projets par rôle et par cible de déploiement, avec totaux par ligne, par colonne et total général, pour les cinq groupes réunis (HYDRA-UMC, URTC, A.R.M.O.R., EH3D et Tools) ou pour un seul, tirés directement du manifeste de chaque dépôt - les champs libres rôle/deployment_target d'A.R.M.O.R. sont classés dans ces mêmes catégories plutôt que dans un second tableau, et les firmwares STM32 et les dépôts de documentation sont comptés dans leur propre colonne et ligne. Un décompte, pas l'affirmation que deux projets précis sont interopérables.",
         "compat_corner": "Rôle \\ Cible",
         "compat_total": "Total",
         "compat_view_all": "Tous les écosystèmes",
@@ -1883,7 +1883,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Avanza solo quando esiste hardware fisico reale contro cui funzionare - la scheda o la macchina esatta che la documentazione hardware di questo ecosistema descrive.",
         "roadmap_advance_production": "La cima della scala. Nulla avanza oltre questo punto - continua solo a distribuire correzioni reali.",
         "compat_section": "Matrice di compatibilità",
-        "compat_intro": "Conteggi reali dei progetti per ruolo e destinazione di rilascio, con totali di riga, di colonna e totale generale, per i quattro ecosistemi insieme (HYDRA-UMC, URTC, A.R.M.O.R. ed EH3D) o per uno solo, ricavati direttamente dal manifesto di ciascun repository - i campi a testo libero ruolo/deployment_target di A.R.M.O.R. sono classificati in queste stesse categorie invece che in una seconda tabella, e il firmware STM32 e i repository di documentazione sono contati nella propria colonna e riga. Un conteggio, non l'affermazione che due progetti specifici siano interoperabili.",
+        "compat_intro": "Conteggi reali dei progetti per ruolo e destinazione di rilascio, con totali di riga, di colonna e totale generale, per i cinque gruppi insieme (HYDRA-UMC, URTC, A.R.M.O.R., EH3D e Tools) o per uno solo, ricavati direttamente dal manifesto di ciascun repository - i campi a testo libero ruolo/deployment_target di A.R.M.O.R. sono classificati in queste stesse categorie invece che in una seconda tabella, e il firmware STM32 e i repository di documentazione sono contati nella propria colonna e riga. Un conteggio, non l'affermazione che due progetti specifici siano interoperabili.",
         "compat_corner": "Ruolo \\ Destinazione",
         "compat_total": "Totale",
         "compat_view_all": "Tutti gli ecosistemi",
@@ -1897,7 +1897,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "Steigt nur auf, sobald echte physische Hardware existiert, gegen die es laufen kann - genau die Platine oder Maschine, die die eigene Hardware-Dokumentation dieses Ökosystems beschreibt.",
         "roadmap_advance_production": "Die Spitze der Leiter. Nichts steigt hier weiter auf - es liefert einfach weiter echte Fixes.",
         "compat_section": "Kompatibilitätsmatrix",
-        "compat_intro": "Echte Projektzahlen nach Rolle und Einsatzziel, mit Zeilen-, Spalten- und Gesamtsummen, für alle vier Ökosysteme zusammen (HYDRA-UMC, URTC, A.R.M.O.R. und EH3D) oder für jeweils eines, direkt aus dem Manifest jedes Repositorys gelesen - die Freitextfelder Rolle/deployment_target von A.R.M.O.R. werden in dieselben Kategorien eingeordnet statt in eine zweite Tabelle, und STM32-Firmware sowie Dokumentations-Repositorys erscheinen in eigener Spalte und Zeile. Eine Zählung, keine Aussage, dass zwei bestimmte Projekte zusammenarbeiten.",
+        "compat_intro": "Echte Projektzahlen nach Rolle und Einsatzziel, mit Zeilen-, Spalten- und Gesamtsummen, für alle fünf Gruppen zusammen (HYDRA-UMC, URTC, A.R.M.O.R., EH3D und Tools) oder für jeweils eines, direkt aus dem Manifest jedes Repositorys gelesen - die Freitextfelder Rolle/deployment_target von A.R.M.O.R. werden in dieselben Kategorien eingeordnet statt in eine zweite Tabelle, und STM32-Firmware sowie Dokumentations-Repositorys erscheinen in eigener Spalte und Zeile. Eine Zählung, keine Aussage, dass zwei bestimmte Projekte zusammenarbeiten.",
         "compat_corner": "Rolle \\ Ziel",
         "compat_total": "Gesamt",
         "compat_view_all": "Alle Ökosysteme",
@@ -1911,7 +1911,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "只有当真实的物理硬件存在、可供其运行时才会晋级——正是本生态系统自身硬件文档所描述的那块板卡或那台机器。",
         "roadmap_advance_production": "阶梯的顶端。到这里就不再晋级——只会持续交付真实的修复。",
         "compat_section": "兼容性矩阵",
-        "compat_intro": "按角色和部署目标统计的真实项目数量，带有行合计、列合计和总计，可查看全部四个生态系统合计（HYDRA-UMC、URTC、A.R.M.O.R. 和 EH3D）或单个生态系统，直接取自每个仓库自身的清单文件——A.R.M.O.R. 以自由文本填写的角色/部署目标字段被归入这些相同的类别，而不是另设一张表；STM32 固件和文档仓库分别计入各自的列和行。这只是计数，并不表示任何两个具体项目可以互操作。",
+        "compat_intro": "按角色和部署目标统计的真实项目数量，带有行合计、列合计和总计，可查看全部五个分组合计（HYDRA-UMC、URTC、A.R.M.O.R.、EH3D 和 Tools）或单个生态系统，直接取自每个仓库自身的清单文件——A.R.M.O.R. 以自由文本填写的角色/部署目标字段被归入这些相同的类别，而不是另设一张表；STM32 固件和文档仓库分别计入各自的列和行。这只是计数，并不表示任何两个具体项目可以互操作。",
         "compat_corner": "角色 \\ 目标",
         "compat_total": "合计",
         "compat_view_all": "全部生态系统",
@@ -1925,7 +1925,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_established": "本物の物理ハードウェアが存在し、それに対して実際に動作できるようになった時点でのみ昇格します——このエコシステム自身のハードウェアドキュメントが説明する、まさにそのボードやマシンです。",
         "roadmap_advance_production": "はしごの頂点です。ここから先に昇格することはありません——ただ本物の修正を届け続けるだけです。",
         "compat_section": "互換性マトリクス",
-        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、行・列・総合計を備え、4つのエコシステム（HYDRA-UMC、URTC、A.R.M.O.R.、EH3D）をまとめて、または1つずつ表示できます。各リポジトリ自身のマニフェストから直接取得しており、A.R.M.O.R. の自由記述の役割/デプロイ対象フィールドは別の表ではなく同じカテゴリに分類され、STM32 ファームウェアとドキュメントのリポジトリはそれぞれ専用の列と行で数えられます。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
+        "compat_intro": "役割とデプロイ対象ごとの本物のプロジェクト件数で、行・列・総合計を備え、5つのグループ（HYDRA-UMC、URTC、A.R.M.O.R.、EH3D、Tools）をまとめて、または1つずつ表示できます。各リポジトリ自身のマニフェストから直接取得しており、A.R.M.O.R. の自由記述の役割/デプロイ対象フィールドは別の表ではなく同じカテゴリに分類され、STM32 ファームウェアとドキュメントのリポジトリはそれぞれ専用の列と行で数えられます。件数であり、特定の2つのプロジェクトが相互運用できるという主張ではありません。",
         "compat_corner": "役割 \\ 対象",
         "compat_total": "合計",
         "compat_view_all": "すべてのエコシステム",
@@ -1940,7 +1940,7 @@ ROADMAP_COMPAT_TRANSLATIONS: dict[str, dict[str, str]] = {
         "roadmap_advance_production": "O topo da escada. Nada avança para além daqui - continua apenas a entregar correções reais.",
         "compat_section": "Matriz de compatibilidade",
         "compat_corner": "Função \\ Destino",
-        "compat_intro": "Contagens reais de projetos por função e destino de implementação, com totais por linha, por coluna e total geral, para os quatro ecossistemas em conjunto (HYDRA-UMC, URTC, A.R.M.O.R. e EH3D) ou para um de cada vez, retiradas diretamente do manifesto de cada repositório - os campos de texto livre função/deployment_target do A.R.M.O.R. são classificados nestas mesmas categorias em vez de numa segunda tabela, e o firmware STM32 e os repositórios de documentação são contados na sua própria coluna e linha. Uma contagem, não uma afirmação de que dois projetos concretos sejam interoperáveis.",
+        "compat_intro": "Contagens reais de projetos por função e destino de implementação, com totais por linha, por coluna e total geral, para os cinco grupos em conjunto (HYDRA-UMC, URTC, A.R.M.O.R., EH3D e Tools) ou para um de cada vez, retiradas diretamente do manifesto de cada repositório - os campos de texto livre função/deployment_target do A.R.M.O.R. são classificados nestas mesmas categorias em vez de numa segunda tabela, e o firmware STM32 e os repositórios de documentação são contados na sua própria coluna e linha. Uma contagem, não uma afirmação de que dois projetos concretos sejam interoperáveis.",
         "compat_total": "Total",
         "compat_view_all": "Todos os ecossistemas",
         "compat_view_label": "Vista por ecossistema",
@@ -3580,6 +3580,7 @@ def render_html(
     maturity_chart_html = dashboard_app.stacked_figure("maturity", app_data, dashboard_app.ECOSYSTEMS, wide=True)
     evidence_chart_html = dashboard_app.stacked_figure("evidence", app_data, dashboard_app.ECOSYSTEMS, wide=True)
     eh3d_architecture_html = dashboard_app.eh3d_architecture_section()
+    tools_architecture_html = dashboard_app.tools_architecture_section()
     scope_bar_html = dashboard_app.scope_bar(eco_counts, total)
     pager_html = dashboard_app.pager()
     app_css = dashboard_app.CSS
@@ -5391,7 +5392,7 @@ def render_html(
       ecosystem's own family groups are labeled below, and HYDRA-UMC's own
       deeper architecture is detailed in the section right after this one.
     </p>
-        <div class="arch-switch" role="group" aria-label="Ecosystem architecture" data-i18n-aria-label="arch_switch_label"><button type="button" class="chip" data-arch-view="hydra-umc" aria-pressed="true" data-testid="arch-hydra-umc">HYDRA-UMC</button><button type="button" class="chip" data-arch-view="urtc" aria-pressed="false" data-testid="arch-urtc">URTC</button><button type="button" class="chip" data-arch-view="armor" aria-pressed="false" data-testid="arch-armor">A.R.M.O.R.</button><button type="button" class="chip" data-arch-view="eh3d" aria-pressed="false" data-testid="arch-eh3d">EH3D</button></div>
+        <div class="arch-switch" role="group" aria-label="Ecosystem architecture" data-i18n-aria-label="arch_switch_label"><button type="button" class="chip" data-arch-view="hydra-umc" aria-pressed="true" data-testid="arch-hydra-umc">HYDRA-UMC</button><button type="button" class="chip" data-arch-view="urtc" aria-pressed="false" data-testid="arch-urtc">URTC</button><button type="button" class="chip" data-arch-view="armor" aria-pressed="false" data-testid="arch-armor">A.R.M.O.R.</button><button type="button" class="chip" data-arch-view="eh3d" aria-pressed="false" data-testid="arch-eh3d">EH3D</button><button type="button" class="chip" data-arch-view="electro-hobby-3d" aria-pressed="false" data-testid="arch-electro-hobby-3d">Tools</button></div>
       <div class="arch-panel" data-arch-panel="hydra-umc">
 <section class="section">
 
@@ -5577,6 +5578,10 @@ def render_html(
       </div>
       <div class="arch-panel" data-arch-panel="eh3d" hidden>
 {eh3d_architecture_html}
+      </div>
+
+      <div class="arch-panel" data-arch-panel="electro-hobby-3d" hidden>
+{tools_architecture_html}
       </div>
 
       </div>
