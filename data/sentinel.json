@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T15:17:08Z",
+ "asof": "2026-11-18T16:14:29Z",
  "ci": {
   "checked": 629,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 876,
-    "min7": 876,
+    "min24": 909,
+    "min7": 909,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -28,18 +28,18 @@
     "repo": "ARMOR-NODE-RADAR"
    },
    {
-    "min24": 208,
+    "min24": 194,
     "min7": 325,
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 202,
-    "min7": 227,
-    "repo": "ARMOR-VISION"
+    "min24": 190,
+    "min7": 550,
+    "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 7041,
-  "total7": 40336,
+  "total24": 6798,
+  "total7": 40369,
   "warn": false
  },
  "delivery": {
@@ -311,7 +311,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 55
+  "gap_minutes": 60
  },
  "hygiene": {
   "allowed_missing": [],
@@ -865,7 +865,7 @@
    12581,
    16336,
    10185,
-   7041
+   6798
   ],
   "red": [
    3,
