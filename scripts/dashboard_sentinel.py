@@ -44,7 +44,8 @@ SCHEMA = 1
 BAD = ci_rules.RED_CONCLUSIONS             # one criterion for the whole dashboard (see ci_rules.py)
 IGNORED = ci_rules.IGNORED_CONCLUSIONS
 SIGNATURE_STATES = ("verified", "invalid", "unverifiable", "none", "norelease", "unverified")
-SECTIONS = ("ci", "releases", "signatures", "hygiene", "compute", "trend", "ecosystems", "events")
+SECTIONS = ("ci", "releases", "signatures", "hygiene", "compute", "trend", "ecosystems", "events", "supply", "delivery")
+DELIVERY_SIGNALS = ("tagahead", "nonotes", "clmis")      # a newer tag without release, a release without notes, a CHANGELOG that does not say the version released
 DEFAULT_CONFIG: dict = {
     "enabled": True,
     "candidate_days": 2.0,
@@ -78,7 +79,8 @@ query($owner: String!, $cursor: String) {
         name
         isArchived
         defaultBranchRef { name }
-        latestRelease { tagName publishedAt isDraft }
+        latestRelease { tagName publishedAt isDraft description }
+        latestTag: refs(refPrefix: "refs/tags/", first: 1, orderBy: {field: TAG_COMMIT_DATE, direction: DESC}) { nodes { name } }
         changelog: object(expression: "HEAD:CHANGELOG.md") { ... on Blob { text } }
         workflows: object(expression: "HEAD:.github/workflows") { ... on Tree { entries { name } } }
       }
@@ -176,6 +178,49 @@ def unreleased_count(text: object) -> int | None:
     text = text.replace("\r\n", "\n")
     found = re.search(r"^## \[Unreleased\]\s*\n(.*?)(?=^## \[|\Z)", text, re.S | re.M)
     return len(re.findall(r"^\s*[-*] ", found.group(1) if found else "", re.M))
+
+
+def changelog_version(text: object) -> str | None:
+    """The version of the newest released section of a CHANGELOG (`## [1.2.3]`, `## 1.2.3` or `## v1.2.3`), skipping `[Unreleased]`; None when there is none."""
+    if not isinstance(text, str):
+        return None
+    for found in re.finditer(r"^##\s+(?:\[v?(\d+(?:\.\d+){1,5})\]|v?(\d+(?:\.\d+){1,5})(?=\s|$))", text.replace("\r\n", "\n"), re.M):
+        return found.group(1) or found.group(2)
+    return None
+
+
+def delivery_signals(ok: Mapping[str, Mapping]) -> dict[str, list[str]]:
+    """{signal: [repositories]} from what the reading holds of the latest release, the newest tag and the CHANGELOG. A fact that was not read (None) never raises a signal.
+    `tagahead`: a version tag newer than the latest release, `nonotes`: the latest release has an empty description, `clmis`: the newest released section of the
+    CHANGELOG is not the version of the latest release."""
+    out: dict[str, list[str]] = {signal: [] for signal in DELIVERY_SIGNALS}
+    for name, rec in sorted(ok.items()):
+        released = version_key(rec.get("tag"))
+        if released is None:
+            continue
+        newest = version_key(rec.get("ntag"))
+        if newest is not None and newest > released:
+            out["tagahead"].append(name)
+        if rec.get("notes") is False:
+            out["nonotes"].append(name)
+        logged = version_key(rec.get("clv"))
+        if logged is not None and logged != released:
+            out["clmis"].append(name)
+    return out
+
+
+def delivery_table(names: Iterable[str], ecosystem_of: Mapping[str, str], ok: Iterable[str], signals: Mapping[str, Iterable[str]]) -> dict[str, dict]:
+    """{ecosystem: {repos, read, tagahead, nonotes, clmis}} for the delivery card."""
+    ok = set(ok)
+    by_signal = {signal: set(signals.get(signal, ())) for signal in DELIVERY_SIGNALS}
+    table: dict[str, dict] = {}
+    for name in sorted(set(names)):
+        row = table.setdefault(str(ecosystem_of.get(name) or "other"), {"repos": 0, "read": 0, **{signal: 0 for signal in DELIVERY_SIGNALS}})
+        row["repos"] += 1
+        row["read"] += name in ok
+        for signal in DELIVERY_SIGNALS:
+            row[signal] += name in by_signal[signal]
+    return table
 
 
 def red_workflows(runs: Iterable[object], current: Sequence[str] | None = None) -> tuple[list[dict], int]:
@@ -326,6 +371,9 @@ def list_repos(owner: str, token: str, post=dashboard_actions.graphql_post, max_
                 found[str(node["name"])] = {
                     "branch": ((node.get("defaultBranchRef") or {}).get("name")) or "main",
                     "tag": None if draft else release.get("tagName"), "published": None if draft else release.get("publishedAt"),
+                    "notes": None if (draft or not release.get("tagName")) else bool(str(release.get("description") or "").strip()),
+                    "ntag": next((str(n.get("name")) for n in ((node.get("latestTag") or {}).get("nodes") or []) if isinstance(n, Mapping) and n.get("name")), None),
+                    "clv": changelog_version((node.get("changelog") or {}).get("text")),
                     "entries": unreleased_count((node.get("changelog") or {}).get("text")),
                     "workflows": [str(e.get("name")) for e in entries if isinstance(e, Mapping) and str(e.get("name", "")).lower().endswith((".yml", ".yaml"))]}
             if not page["pageInfo"]["hasNextPage"]:
@@ -360,7 +408,8 @@ def read_all(owner: str, names: Iterable[str], token: str, config: Mapping | Non
         if info is None:
             return name, {"state": "unread"}
         base = f"https://api.github.com/repos/{owner}/{name}"
-        record: dict = {"state": "ok", "tag": info["tag"], "published": info["published"], "entries": info["entries"], "ci": None, "checked": 0, "rs": None, "perm": None}
+        record: dict = {"state": "ok", "tag": info["tag"], "published": info["published"], "entries": info["entries"], "ci": None, "checked": 0, "rs": None, "perm": None,
+                        "notes": info.get("notes"), "ntag": info.get("ntag"), "clv": info.get("clv")}
         if info["workflows"]:
             status, payload = get(f"{base}/actions/runs?" + urllib.parse.urlencode({"branch": info["branch"], "status": "completed", "per_page": 100, "exclude_pull_requests": "true"}))
             runs = _slim_runs(payload) if status == "ok" else None
@@ -468,6 +517,12 @@ def clean(doc: Mapping, names: Iterable[str], limit: int = 40) -> dict:
     for key in ("red", "cand", "gaps", "min"):
         values = trend.get(key) if isinstance(trend.get(key), list) else []
         out["trend"][key] = [_count(v) for v in values][: len(dates)] if len(values) >= len(dates) else [_count(v) for v in values] + [0] * (len(dates) - len(values))
+    delivery = doc.get("delivery") if isinstance(doc.get("delivery"), Mapping) else None
+    if delivery is not None:
+        eco_rows = delivery.get("eco") if isinstance(delivery.get("eco"), Mapping) else {}
+        out["delivery"] = {"eco": {eco: {k: _count(row.get(k)) for k in ("repos", "read", *DELIVERY_SIGNALS)}
+                                   for eco, row in sorted(eco_rows.items()) if isinstance(eco, str) and ECO_RE.match(eco) and isinstance(row, Mapping)},
+                           **{signal: _repo_list(delivery.get(signal), known, limit) for signal in DELIVERY_SIGNALS}}
     out["parte"] = _clean_parte(doc.get("parte"), known, limit)
     out["health"] = _clean_health(doc.get("health"))
     return out
@@ -625,11 +680,13 @@ def assemble(read: Mapping | None, names: Iterable[str], config: Mapping, signat
     tags = {n: r["tag"] for n, r in ok.items() if r.get("tag")}
     unpublished = unpublished_versions({n: v for n, v in (versions or {}).items() if n in ok}, tags, config["skip_candidate_prefixes"])
     ecosystems = ecosystem_table(names, ecosystem_of or {}, ok, red, candidates, unpublished)
+    signals = delivery_signals(ok)
+    delivery = {"eco": delivery_table(names, ecosystem_of or {}, ok, signals), **signals}
     events = new_events(saved, red, ok, tags, _stamp(read["asof"]), config["events_max"])
     doc = {"asof": read["asof"], "repos": len(names), "read": len(ok), "ecosystems": ecosystems, "unpublished": {"rows": unpublished}, "tags": tags, "events": events,
            "ci": {"checked": checked, "red": red},
            "releases": {"days": config["candidate_days"], "min_entries": config["candidate_min_entries"], "candidates": candidates},
-           "signatures": sig, "hygiene": hygiene, "compute": compute, "trend": {}, "parte": []}
+           "signatures": sig, "hygiene": hygiene, "compute": compute, "delivery": delivery, "trend": {}, "parte": []}
     first = clean(doc, names, 10_000)           # whitelist first, so that the counters and the report are computed from what can be published
     first["trend"] = trend_of(history, today, day_summary(first))
     first["parte"] = build_parte(first, config)

@@ -20,6 +20,8 @@ test.describe("tools tab", () => {
     await expect(page.getByTestId("tools-empty")).toBeVisible();          // the fixture lists no tool: said, never invented
     await expect(page.getByTestId("tools-monitor")).toContainText("TOOLS-GITHUB-ACTIONS-MONITOR");
     await expect(page.getByTestId("tools-editions")).toContainText("A1 to A13");
+    await expect(page.getByTestId("tools-editions")).toContainText("five sentinels");
+    await expect(page.getByTestId("tools-editions")).toContainText("Supply chain and Delivery");
     await expect(page.getByTestId("tools-next")).toContainText("Not published yet");
     await expect(page.getByTestId("tools-updater")).toContainText("ELECTRO-HOBBY-3D-UPDATER");
   });
