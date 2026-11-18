@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T16:14:29Z",
+ "asof": "2026-11-18T18:05:37Z",
  "ci": {
   "checked": 629,
   "red": [],
@@ -311,7 +311,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 60
+  "gap_minutes": 115
  },
  "hygiene": {
   "allowed_missing": [],
