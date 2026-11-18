@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18T14:27:02Z",
+ "asof": "2026-11-18T15:17:08Z",
  "ci": {
   "checked": 629,
   "red": [],
@@ -8,13 +8,13 @@
  "compute": {
   "top": [
    {
-    "min24": 893,
-    "min7": 893,
+    "min24": 876,
+    "min7": 876,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 286,
-    "min7": 354,
+    "min24": 287,
+    "min7": 376,
     "repo": "ARMOR-SERVER"
    },
    {
@@ -28,18 +28,18 @@
     "repo": "ARMOR-NODE-RADAR"
    },
    {
+    "min24": 208,
+    "min7": 325,
+    "repo": "ARMOR-STUDIO"
+   },
+   {
     "min24": 202,
     "min7": 227,
     "repo": "ARMOR-VISION"
-   },
-   {
-    "min24": 201,
-    "min7": 203,
-    "repo": "ARMOR-NODE-ALARM"
    }
   ],
-  "total24": 7170,
-  "total7": 40236,
+  "total24": 7041,
+  "total7": 40336,
   "warn": false
  },
  "delivery": {
@@ -127,6 +127,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-18T15:17:08Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v2.1.2"
+  },
   {
    "at": "2026-11-18T14:27:02Z",
    "kind": "released",
@@ -300,18 +306,12 @@
    "kind": "red_new",
    "repo": "EH3D-SERVER",
    "wf": "rust.yml"
-  },
-  {
-   "at": "2026-11-18T08:06:54Z",
-   "kind": "released",
-   "repo": "EH3D-AUTOLEVEL",
-   "tag": "v0.0.9"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 70
+  "gap_minutes": 55
  },
  "hygiene": {
   "allowed_missing": [],
@@ -468,6 +468,12 @@
    },
    {
     "entries": 14,
+    "published": "2026-11-15T09:11:17Z",
+    "repo": "ARMOR-DOCS",
+    "tag": "v0.8.2.1"
+   },
+   {
+    "entries": 14,
     "published": "2026-11-15T15:58:41Z",
     "repo": "ARMOR-NODE-HMI",
     "tag": "v0.4.9"
@@ -483,12 +489,6 @@
     "published": "2026-11-14T16:28:21Z",
     "repo": "URTC-TESTER",
     "tag": "v0.5.6"
-   },
-   {
-    "entries": 13,
-    "published": "2026-11-15T09:11:17Z",
-    "repo": "ARMOR-DOCS",
-    "tag": "v0.8.2.1"
    },
    {
     "entries": 12,
@@ -552,6 +552,12 @@
    },
    {
     "entries": 7,
+    "published": "2026-11-15T15:44:13Z",
+    "repo": "ARMOR-IOS-CONTROL",
+    "tag": "v0.0.6"
+   },
+   {
+    "entries": 7,
     "published": "2026-11-12T06:25:25Z",
     "repo": "HYDRA-UMC-VISION-STREAMER",
     "tag": "v0.2.6"
@@ -561,12 +567,6 @@
     "published": "2026-11-14T16:30:38Z",
     "repo": "URTC-VISION-TOOL",
     "tag": "v0.2.1"
-   },
-   {
-    "entries": 6,
-    "published": "2026-11-15T15:44:13Z",
-    "repo": "ARMOR-IOS-CONTROL",
-    "tag": "v0.0.6"
    },
    {
     "entries": 6,
@@ -656,9 +656,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 93,
+  "none": 92,
   "norelease": 0,
-  "unverifiable": 9,
+  "unverifiable": 10,
   "unverified": 0,
   "verified": 28
  },
@@ -781,7 +781,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.1.1",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.1.2",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.9",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -865,7 +865,7 @@
    12581,
    16336,
    10185,
-   7170
+   7041
   ],
   "red": [
    3,
