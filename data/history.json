@@ -11095,17 +11095,17 @@
   },
   {
    "actions": {
-    "fail": 140,
-    "min": 8818,
-    "ok": 3100,
-    "other": 57,
-    "runs": 3297
+    "fail": 141,
+    "min": 8716,
+    "ok": 3082,
+    "other": 52,
+    "runs": 3275
    },
    "areas": {
     "armor": {
      "ci": 100,
      "docs": 100,
-     "hardware": 6,
+     "hardware": 0,
      "production": 60,
      "releases": 100,
      "simulation": 100,
@@ -11113,7 +11113,7 @@
      "tests": 100
     },
     "eh3d": {
-     "ci": 97,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -11123,7 +11123,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 50,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -11155,9 +11155,9 @@
    },
    "date": "2026-11-18",
    "progress": {
-    "armor": 66,
-    "eh3d": 47,
-    "electro-hobby-3d": 63,
+    "armor": 65,
+    "eh3d": 48,
+    "electro-hobby-3d": 61,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -11332,7 +11332,7 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.0.6"
+     "0.0.7"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
@@ -11348,7 +11348,7 @@
     ],
     "EH3D-PHOENIX-PNP": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -11686,7 +11686,7 @@
    "sentinel": {
     "cand": 43,
     "gaps": 0,
-    "min": 8818,
+    "min": 8716,
     "red": 0
    },
    "tests": {
