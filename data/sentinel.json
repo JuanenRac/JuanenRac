@@ -1,12 +1,12 @@
 {
- "asof": "2026-11-18T01:21:32Z",
+ "asof": "2026-11-18T02:27:15Z",
  "ci": {
   "checked": 628,
   "red": [
    {
     "repo": "HYDRA-UMC-DOCS",
-    "since": "2026-11-17T21:37:20Z",
-    "streak": 2,
+    "since": "2026-11-18T02:18:51Z",
+    "streak": 3,
     "wf": "nightly.yml"
    },
    {
@@ -21,8 +21,8 @@
  "compute": {
   "top": [
    {
-    "min24": 754,
-    "min7": 754,
+    "min24": 649,
+    "min7": 743,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -36,7 +36,7 @@
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 252,
+    "min24": 248,
     "min7": 473,
     "repo": "HYDRA-UMC-DEVELOPER-NODE"
    },
@@ -51,8 +51,8 @@
     "repo": "HYDRA-UMC-SWARM-SYNC"
    }
   ],
-  "total24": 10185,
-  "total7": 40366,
+  "total24": 10072,
+  "total7": 40237,
   "warn": false
  },
  "ecosystems": {
@@ -78,7 +78,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 19,
+   "cand": 20,
    "read": 59,
    "red": 1,
    "repos": 59,
@@ -93,6 +93,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-18T02:27:15Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v2.0.9"
+  },
   {
    "at": "2026-11-17T23:58:22Z",
    "kind": "red_new",
@@ -266,18 +272,12 @@
    "kind": "released",
    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
    "tag": "v2.0.1"
-  },
-  {
-   "at": "2026-11-16T03:40:25Z",
-   "kind": "red_ok",
-   "repo": "HYDRA-UMC-ANDROID-CONTROL",
-   "wf": "android-unit-tests.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 85
+  "gap_minutes": 70
  },
  "hygiene": {
   "allowed_missing": [],
@@ -293,7 +293,7 @@
    "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 41,
+    "cand": 42,
     "hyg": 0,
     "red": 2
    }
@@ -334,6 +334,7 @@
      "HYDRA-UMC-ANOMALY-DETECTOR",
      "HYDRA-UMC-DOCS",
      "HYDRA-UMC-DOCS-QA",
+     "HYDRA-UMC-DSI",
      "HYDRA-UMC-MESHES",
      "HYDRA-UMC-NODE-HEALING",
      "HYDRA-UMC-OPS-AGENT",
@@ -352,10 +353,9 @@
      "URTC-COMMON",
      "URTC-FLASHER",
      "URTC-SMART-RACK",
-     "URTC-TESTER",
-     "URTC-VISION-TOOL"
+     "URTC-TESTER"
     ],
-    "n": 41
+    "n": 42
    }
   },
   {
@@ -399,7 +399,7 @@
     "tag": "v0.8.2.3"
    },
    {
-    "entries": 15,
+    "entries": 16,
     "published": "2026-11-15T16:09:07Z",
     "repo": "HYDRA-UMC-STUDIO",
     "tag": "v0.8.2.2"
@@ -409,6 +409,12 @@
     "published": "2026-11-15T11:00:46Z",
     "repo": "ARMOR-NODE-ALARM",
     "tag": "v0.5.7"
+   },
+   {
+    "entries": 13,
+    "published": "2026-11-15T16:07:16Z",
+    "repo": "HYDRA-UMC-ANDROID-CONTROL",
+    "tag": "v0.8.0.5"
    },
    {
     "entries": 13,
@@ -433,12 +439,6 @@
     "published": "2026-11-15T15:56:58Z",
     "repo": "ARMOR-NODE-ELECTRICAL",
     "tag": "v0.5.9"
-   },
-   {
-    "entries": 12,
-    "published": "2026-11-15T16:07:16Z",
-    "repo": "HYDRA-UMC-ANDROID-CONTROL",
-    "tag": "v0.8.0.5"
    },
    {
     "entries": 12,
@@ -574,6 +574,12 @@
    },
    {
     "entries": 5,
+    "published": "2026-11-15T16:03:37Z",
+    "repo": "HYDRA-UMC-DSI",
+    "tag": "v0.3.8"
+   },
+   {
+    "entries": 5,
     "published": "2026-10-31T07:31:01Z",
     "repo": "HYDRA-UMC-MESHES",
     "tag": "meshes-1"
@@ -613,17 +619,11 @@
     "published": "2026-11-15T08:03:54Z",
     "repo": "HYDRA-UMC-VOICE-UI",
     "tag": "v0.2.5"
-   },
-   {
-    "entries": 5,
-    "published": "2026-11-15T16:12:11Z",
-    "repo": "HYDRA-UMC-WATCH",
-    "tag": "v0.3.4"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 41
+  "total": 42
  },
  "repos": 130,
  "schema": 1,
@@ -755,7 +755,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.8",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.0.9",
   "URTC": "v0.5.0",
   "URTC-COMMON": "v0.2.8",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -785,7 +785,7 @@
    1,
    13,
    41,
-   41
+   42
   ],
   "dates": [
    "2026-11-03",
@@ -839,7 +839,7 @@
    12581,
    16336,
    10185,
-   10185
+   10072
   ],
   "red": [
    3,
