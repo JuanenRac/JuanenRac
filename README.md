@@ -88,7 +88,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 59 of 59 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 59 of 59 repositories have been checked at least in a simulator. |
@@ -476,7 +476,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[█████████▍░░░░░░░░░░] 47%` — Calculated from real data: the maturity and the evidence that each of its 38 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████▋░░░░░░░░░░] 48%` — Calculated from real data: the maturity and the evidence that each of its 38 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -488,7 +488,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▌░░░░ 55%` | 21 of 38 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟡 | `████████▉░ 89%` | 34 of 38 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 97%` | 37 of 38 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 38 of 38 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 38 of 38 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 38 of 38 repositories have the README in the eight languages. |
 | Simulation | 🟡 | `███████▉░░ 79%` | 30 of 38 repositories have been checked at least in a simulator. |

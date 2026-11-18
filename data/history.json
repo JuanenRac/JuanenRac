@@ -11095,11 +11095,11 @@
   },
   {
    "actions": {
-    "fail": 128,
-    "min": 10462,
-    "ok": 3260,
-    "other": 52,
-    "runs": 3440
+    "fail": 138,
+    "min": 10761,
+    "ok": 3311,
+    "other": 58,
+    "runs": 3507
    },
    "areas": {
     "armor": {
@@ -11113,7 +11113,7 @@
      "tests": 100
     },
     "eh3d": {
-     "ci": 100,
+     "ci": 97,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -11684,10 +11684,10 @@
     ]
    },
    "sentinel": {
-    "cand": 44,
+    "cand": 46,
     "gaps": 0,
-    "min": 10462,
-    "red": 3
+    "min": 10761,
+    "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -11723,9 +11723,9 @@
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 130,
+    "EH3D-PHOENIX-CNC": 191,
     "EH3D-PHOENIX-LASER": 311,
-    "EH3D-PHOENIX-PCB": 4148,
+    "EH3D-PHOENIX-PCB": 4156,
     "EH3D-PHOENIX-PNP": 659,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
@@ -11779,7 +11779,7 @@
     "HYDRA-UMC-PHYSICS-REPLICA": 242,
     "HYDRA-UMC-PRODUCTION-REPORTS": 330,
     "HYDRA-UMC-SAFETY-ZONES": 1329,
-    "HYDRA-UMC-SDK": 1259,
+    "HYDRA-UMC-SDK": 1270,
     "HYDRA-UMC-SEMANTIC-PLANNER": 476,
     "HYDRA-UMC-SERVER": 1220,
     "HYDRA-UMC-STUDIO": 1799,

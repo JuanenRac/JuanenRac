@@ -88,7 +88,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 de 59 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `█████████▊ 98%` | 58 de 59 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm o README nas oito línguas. |
 | Simulação | 🟢 | `██████████ 100%` | 59 de 59 repositórios foram verificados pelo menos num simulador. |
@@ -482,7 +482,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 **Atualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:eh3d -->
-`\[█████████▍░░░░░░░░░░] 47%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 38 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[█████████▋░░░░░░░░░░] 48%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 38 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -494,7 +494,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▌░░░░ 55%` | 21 de 38 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟡 | `████████▉░ 89%` | 34 de 38 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `█████████▊ 97%` | 37 de 38 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🟢 | `██████████ 100%` | 38 de 38 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 38 de 38 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 38 de 38 repositórios têm o README nas oito línguas. |
 | Simulação | 🟡 | `███████▉░░ 79%` | 30 de 38 repositórios foram verificados pelo menos num simulador. |

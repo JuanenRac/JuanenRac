@@ -88,7 +88,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 repository su 59 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 59 repository su 59 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▊ 98%` | 58 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 59 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 59 repository su 59 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 59 repository su 59 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `██████████ 100%` | 59 repository su 59 sono stati verificati almeno in un simulatore. |
@@ -482,7 +482,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 **Aggiornatore:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) rileva, installa e aggiorna i repository di questo ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo fa per tutti e quattro.
 
 <!-- progress:eh3d -->
-`\[█████████▍░░░░░░░░░░] 47%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 38 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[█████████▋░░░░░░░░░░] 48%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 38 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -494,7 +494,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▌░░░░ 55%` | 21 repository su 38 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟡 | `████████▉░ 89%` | 34 repository su 38 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▊ 97%` | 37 repository su 38 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 38 repository su 38 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 38 repository su 38 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 38 repository su 38 hanno il README nelle otto lingue. |
 | Simulazione | 🟡 | `███████▉░░ 79%` | 30 repository su 38 sono stati verificati almeno in un simulatore. |
