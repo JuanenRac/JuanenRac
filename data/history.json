@@ -11095,11 +11095,11 @@
   },
   {
    "actions": {
-    "fail": 133,
-    "min": 8334,
-    "ok": 2860,
-    "other": 50,
-    "runs": 3043
+    "fail": 136,
+    "min": 8837,
+    "ok": 3140,
+    "other": 53,
+    "runs": 3329
    },
    "areas": {
     "armor": {
@@ -11304,7 +11304,7 @@
     ],
     "EH3D-ISOCAM": [
      1,
-     "0.1.2"
+     "0.1.1"
     ],
     "EH3D-LAB-BRIDGE": [
      0,
@@ -11686,12 +11686,12 @@
    "sentinel": {
     "cand": 47,
     "gaps": 0,
-    "min": 8334,
+    "min": 8837,
     "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
-    "ARMOR-COMMON": 654,
+    "ARMOR-COMMON": 653,
     "ARMOR-DOCS": 482,
     "ARMOR-HARDWARE": 87,
     "ARMOR-IOS-CONTROL": 516,
@@ -11719,7 +11719,7 @@
     "EH3D-GERBERVIEWER": 131,
     "EH3D-HYDRA-BRIDGE": 3,
     "EH3D-IOS-CONTROL": 240,
-    "EH3D-ISOCAM": 431,
+    "EH3D-ISOCAM": 367,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
@@ -11797,7 +11797,7 @@
     "HYDRA-UMC-VLA-ENGINE": 460,
     "HYDRA-UMC-VOICE-UI": 471,
     "HYDRA-UMC-WATCH": 215,
-    "URTC-COMMON": 3049,
+    "URTC-COMMON": 3044,
     "URTC-DEVTOOLS": 158,
     "URTC-DOCS": 244,
     "URTC-FLASHER": 916,
