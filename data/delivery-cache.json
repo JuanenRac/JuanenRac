@@ -443,8 +443,26 @@
     "at": "absent"
    }
   },
+  "EH3D-AUTOLEVEL": {
+   "fp": "e431cb76d5fbe3c6",
+   "on": "2026-11-19",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "EH3D-BUNGARD-GUI": {
    "fp": "42897dcfcac9826b",
+   "on": "2026-11-19",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-CAM-DEBUGGER": {
+   "fp": "b9fc2efea385e816",
    "on": "2026-11-19",
    "r": {
     "ak": 3,
@@ -896,8 +914,36 @@
     ]
    }
   },
+  "EH3D-AUTOLEVEL": {
+   "fp": "e431cb76d5fbe3c6",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "EH3D-BUNGARD-GUI": {
    "fp": "42897dcfcac9826b",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-CAM-DEBUGGER": {
+   "fp": "b9fc2efea385e816",
    "r": {
     "bad": 0,
     "ho": 0,

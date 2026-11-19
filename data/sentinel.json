@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T13:17:09Z",
+ "asof": "2026-11-19T13:44:06Z",
  "ci": {
   "checked": 629,
   "red": [
@@ -15,38 +15,38 @@
  "compute": {
   "top": [
    {
-    "min24": 925,
-    "min7": 925,
+    "min24": 893,
+    "min7": 893,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 263,
+    "min24": 239,
     "min7": 372,
     "repo": "ARMOR-VISION"
    },
    {
-    "min24": 197,
-    "min7": 569,
+    "min24": 198,
+    "min7": 575,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 158,
-    "min7": 333,
-    "repo": "ARMOR-STUDIO"
+    "min24": 140,
+    "min7": 402,
+    "repo": "URTC"
    },
    {
-    "min24": 147,
-    "min7": 392,
-    "repo": "ARMOR-SERVER"
-   },
-   {
-    "min24": 142,
+    "min24": 136,
     "min7": 445,
     "repo": "ARMOR-IOS-CONTROL"
+   },
+   {
+    "min24": 128,
+    "min7": 379,
+    "repo": "ARMOR-HARDWARE"
    }
   ],
-  "total24": 4592,
-  "total7": 40582,
+  "total24": 4438,
+  "total7": 40513,
   "warn": false
  },
  "delivery": {
@@ -318,7 +318,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 40
+  "gap_minutes": 30
  },
  "hygiene": {
   "allowed_missing": [],
@@ -574,6 +574,12 @@
     "tag": "v0.2.5"
    },
    {
+    "entries": 6,
+    "published": "2026-11-14T15:21:41Z",
+    "repo": "URTC-GATEWAY",
+    "tag": "v0.0.9"
+   },
+   {
     "entries": 5,
     "published": "2026-11-13T01:50:35Z",
     "repo": "HYDRA-UMC-ANOMALY-DETECTOR",
@@ -656,12 +662,6 @@
     "published": "2026-11-15T08:03:54Z",
     "repo": "HYDRA-UMC-VOICE-UI",
     "tag": "v0.2.5"
-   },
-   {
-    "entries": 5,
-    "published": "2026-11-15T16:12:11Z",
-    "repo": "HYDRA-UMC-WATCH",
-    "tag": "v0.3.4"
    }
   ],
   "days": 2.0,
@@ -673,9 +673,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 88,
+  "none": 86,
   "norelease": 0,
-  "unverifiable": 14,
+  "unverifiable": 16,
   "unverified": 0,
   "verified": 28
  },
@@ -886,7 +886,7 @@
    16336,
    10185,
    5009,
-   4592
+   4438
   ],
   "red": [
    3,

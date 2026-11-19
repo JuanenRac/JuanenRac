@@ -11811,15 +11811,15 @@
   },
   {
    "actions": {
-    "fail": 77,
-    "min": 4592,
-    "ok": 1337,
-    "other": 29,
-    "runs": 1443
+    "fail": 78,
+    "min": 4438,
+    "ok": 1313,
+    "other": 33,
+    "runs": 1424
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 60,
@@ -11859,7 +11859,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 42,
     "gaps": 0,
-    "min": 4592,
+    "min": 4438,
     "red": 1
    },
    "tests": {
@@ -12441,7 +12441,7 @@
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 488,
     "EH3D-PHOENIX-LASER": 508,
-    "EH3D-PHOENIX-PCB": 4385,
+    "EH3D-PHOENIX-PCB": 4411,
     "EH3D-PHOENIX-PNP": 889,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
