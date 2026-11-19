@@ -24,16 +24,16 @@
   "ARMOR-NODE-ALARM": {
    "art": true,
    "at": "2026-11-19T17:39:43Z",
-   "checked": true,
    "exp": "2026-11-26T17:38:05Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/44578655395",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-17T20:35:54Z",
-   "exp": "2026-11-24T20:34:10Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/44170090925",
+   "at": "2026-11-19T17:53:16Z",
+   "checked": true,
+   "exp": "2026-11-26T17:50:44Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/44580888424",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
@@ -45,9 +45,10 @@
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
-   "at": "2026-11-18T02:34:32Z",
-   "exp": "2026-11-25T02:33:38Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/44223712399",
+   "at": "2026-11-19T18:08:35Z",
+   "checked": true,
+   "exp": "2026-11-26T18:07:23Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/44583834394",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
@@ -355,8 +356,8 @@
    }
   },
   "ARMOR-NODE-ELECTRICAL": {
-   "fp": "46b08cf843e1d4ea",
-   "on": "2026-11-15",
+   "fp": "3ab048b4e1e361aa",
+   "on": "2026-11-19",
    "r": {
     "ak": 3,
     "an": 3,
@@ -435,15 +436,6 @@
     "at": "absent"
    }
   },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "bd0d8121b457d143",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-PHOENIX-PCB": {
    "fp": "d67e4a6a695809c3",
    "on": "2026-11-18",
@@ -468,15 +460,6 @@
    "r": {
     "ak": 1,
     "an": 1,
-    "at": "present"
-   }
-  },
-  "EH3D-VISION-STUDIO": {
-   "fp": "f3bd17566cd84d62",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
     "at": "present"
    }
   },
@@ -684,7 +667,7 @@
    }
   },
   "ARMOR-NODE-ELECTRICAL": {
-   "fp": "46b08cf843e1d4ea",
+   "fp": "3ab048b4e1e361aa",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -807,20 +790,6 @@
     ]
    }
   },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "bd0d8121b457d143",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-PHOENIX-PCB": {
    "fp": "d67e4a6a695809c3",
    "r": {
@@ -858,20 +827,6 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 1,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-VISION-STUDIO": {
-   "fp": "f3bd17566cd84d62",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
     "why": [
      "family"
     ]

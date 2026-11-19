@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T17:47:18Z",
+ "asof": "2026-11-19T18:08:01Z",
  "ci": {
   "checked": 634,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 981,
-    "min7": 981,
+    "min24": 989,
+    "min7": 989,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,14 +38,13 @@
     "repo": "ARMOR-SIMULATOR"
    }
   ],
-  "total24": 5565,
-  "total7": 40260,
+  "total24": 5602,
+  "total7": 40183,
   "warn": false
  },
  "delivery": {
   "clmis": [
-   "ARMOR-NODE-ELECTRICAL",
-   "EH3D-VISION-STUDIO",
+   "ARMOR-NODE-RADAR",
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "URTC-DEVTOOLS"
@@ -59,7 +58,7 @@
     "tagahead": 0
    },
    "eh3d": {
-    "clmis": 1,
+    "clmis": 0,
     "nonotes": 0,
     "read": 38,
     "repos": 38,
@@ -92,7 +91,7 @@
  },
  "ecosystems": {
   "armor": {
-   "cand": 7,
+   "cand": 6,
    "read": 20,
    "red": 0,
    "repos": 20,
@@ -128,6 +127,30 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T18:08:01Z",
+   "kind": "released",
+   "repo": "ARMOR-NODE-ELECTRICAL",
+   "tag": "v0.6.0"
+  },
+  {
+   "at": "2026-11-19T18:08:01Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-CNC",
+   "tag": "v0.1.9"
+  },
+  {
+   "at": "2026-11-19T18:08:01Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-LASER",
+   "tag": "v0.1.1"
+  },
+  {
+   "at": "2026-11-19T18:08:01Z",
+   "kind": "released",
+   "repo": "EH3D-VISION-STUDIO",
+   "tag": "v0.0.8"
+  },
   {
    "at": "2026-11-19T17:47:18Z",
    "kind": "released",
@@ -283,36 +306,12 @@
    "kind": "released",
    "repo": "EH3D-ANDROID-CONTROL",
    "tag": "v0.1.2"
-  },
-  {
-   "at": "2026-11-19T16:23:53Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-BUNGARD-HMI",
-   "tag": "v0.1.1"
-  },
-  {
-   "at": "2026-11-19T16:23:53Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-HMI-GUI",
-   "tag": "v0.1.0"
-  },
-  {
-   "at": "2026-11-19T16:23:53Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-PNP",
-   "tag": "v0.1.0"
-  },
-  {
-   "at": "2026-11-19T15:53:32Z",
-   "kind": "red_ok",
-   "repo": "EH3D-VISION-STUDIO",
-   "wf": "ci.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 15
+  "gap_minutes": 25
  },
  "hygiene": {
   "allowed_missing": [],
@@ -328,7 +327,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 29,
+    "cand": 28,
     "hyg": 0,
     "red": 0
    }
@@ -342,7 +341,6 @@
      "ARMOR-DOCS",
      "ARMOR-IOS-CONTROL",
      "ARMOR-NODE-HMI",
-     "ARMOR-NODE-RADAR",
      "ARMOR-NODE-SOLAR",
      "ARMOR-WATCH",
      "HYDRA-UMC-ANDROID-CONTROL",
@@ -368,7 +366,7 @@
      "HYDRA-UMC-VOICE-UI",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 29
+    "n": 28
    }
   },
   {
@@ -376,7 +374,7 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-NODE-ELECTRICAL",
+     "ARMOR-NODE-RADAR",
      "HYDRA-UMC",
      "HYDRA-UMC-OS",
      "URTC-DEVTOOLS"
@@ -401,12 +399,6 @@
     "published": "2026-11-15T16:09:45Z",
     "repo": "HYDRA-UMC-SERVER",
     "tag": "v0.8.3.2"
-   },
-   {
-    "entries": 19,
-    "published": "2026-11-15T10:47:25Z",
-    "repo": "ARMOR-NODE-RADAR",
-    "tag": "v0.8.1.3"
    },
    {
     "entries": 18,
@@ -573,16 +565,16 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 29
+  "total": 28
  },
  "repos": 130,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 97,
+  "none": 99,
   "norelease": 0,
-  "unverifiable": 5,
+  "unverifiable": 3,
   "unverified": 0,
   "verified": 28
  },
@@ -595,7 +587,7 @@
   "ARMOR-IOS-CONTROL": "v0.0.6",
   "ARMOR-NETWORK": "v0.1.9",
   "ARMOR-NODE-ALARM": "v0.5.8",
-  "ARMOR-NODE-ELECTRICAL": "v0.5.9",
+  "ARMOR-NODE-ELECTRICAL": "v0.6.0",
   "ARMOR-NODE-HMI": "v0.4.9",
   "ARMOR-NODE-RADAR": "v0.8.1.3",
   "ARMOR-NODE-SOLAR": "v0.6.7",
@@ -630,8 +622,8 @@
   "EH3D-NODE-BUNGARD-HMI": "v0.1.1",
   "EH3D-NODE-HMI-GUI": "v0.1.0",
   "EH3D-PHOENIX-CAD": "v0.0.8",
-  "EH3D-PHOENIX-CNC": "v0.1.8",
-  "EH3D-PHOENIX-LASER": "v0.1.0",
+  "EH3D-PHOENIX-CNC": "v0.1.9",
+  "EH3D-PHOENIX-LASER": "v0.1.1",
   "EH3D-PHOENIX-PCB": "v0.0.9",
   "EH3D-PHOENIX-PNP": "v0.1.0",
   "EH3D-PROJECT-PASSPORT": "v0.0.4",
@@ -644,7 +636,7 @@
   "EH3D-TOOL-MANAGER": "v0.1.0",
   "EH3D-UPDATER": "v0.1.0",
   "EH3D-VALIDATION-LAB": "v0.0.3",
-  "EH3D-VISION-STUDIO": "v0.0.7",
+  "EH3D-VISION-STUDIO": "v0.0.8",
   "ELECTRO-HOBBY-3D-UPDATER": "v0.1.5",
   "HYDRA-UMC": "v0.2.9",
   "HYDRA-UMC-ANDROID-CONTROL": "v0.8.0.5",
@@ -736,7 +728,7 @@
    13,
    41,
    47,
-   29
+   28
   ],
   "dates": [
    "2026-11-03",
@@ -793,7 +785,7 @@
    16336,
    10185,
    5009,
-   5565
+   5602
   ],
   "red": [
    3,
@@ -818,9 +810,9 @@
  "unpublished": {
   "rows": [
    {
-    "repo": "ARMOR-NODE-ELECTRICAL",
-    "tag": "v0.5.9",
-    "version": "0.6.0"
+    "repo": "ARMOR-NODE-RADAR",
+    "tag": "v0.8.1.3",
+    "version": "0.8.1.4"
    },
    {
     "repo": "HYDRA-UMC",
