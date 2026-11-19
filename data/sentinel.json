@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T04:13:56Z",
+ "asof": "2026-11-19T04:59:23Z",
  "ci": {
   "checked": 627,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 869,
-    "min7": 869,
+    "min24": 887,
+    "min7": 887,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-VISION"
    }
   ],
-  "total24": 4858,
-  "total7": 40053,
+  "total24": 4866,
+  "total7": 40071,
   "warn": false
  },
  "delivery": {
@@ -311,7 +311,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 15
+  "gap_minutes": 50
  },
  "hygiene": {
   "allowed_missing": [],
@@ -869,7 +869,7 @@
    16336,
    10185,
    5009,
-   4858
+   4866
   ],
   "red": [
    3,
