@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 85,
-    "min": 4862,
-    "ok": 1438,
-    "other": 56,
-    "runs": 1579
+    "fail": 86,
+    "min": 5235,
+    "ok": 1547,
+    "other": 42,
+    "runs": 1675
    },
    "areas": {
     "armor": {
@@ -11888,7 +11888,7 @@
     ],
     "ARMOR-DEVOPS": [
      2,
-     "0.7.7"
+     "0.7.8"
     ],
     "ARMOR-DOCS": [
      2,
@@ -11904,7 +11904,7 @@
     ],
     "ARMOR-NETWORK": [
      2,
-     "0.1.8"
+     "0.1.9"
     ],
     "ARMOR-NODE-ALARM": [
      1,
@@ -11932,7 +11932,7 @@
     ],
     "ARMOR-SERVER-AI": [
      2,
-     "0.3.3"
+     "0.3.4"
     ],
     "ARMOR-SIMULATOR": [
      2,
@@ -12032,11 +12032,11 @@
     ],
     "EH3D-NODE-BUNGARD": [
      1,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-NODE-BUNGARD-AUX": [
      0,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-NODE-BUNGARD-HMI": [
      0,
@@ -12052,11 +12052,11 @@
     ],
     "EH3D-PHOENIX-CNC": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
@@ -12096,7 +12096,7 @@
     ],
     "EH3D-TOOL-MANAGER": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-UPDATER": [
      1,
@@ -12108,7 +12108,7 @@
     ],
     "EH3D-VISION-STUDIO": [
      1,
-     "0.0.6"
+     "0.0.7"
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 39,
+    "cand": 36,
     "gaps": 0,
-    "min": 4862,
+    "min": 5235,
     "red": 0
    },
    "tests": {
@@ -12421,8 +12421,8 @@
     "ARMOR-VOICE-AI": 255,
     "ARMOR-WATCH": 31,
     "EH3D-ANDROID-CONTROL": 251,
-    "EH3D-AUTOLEVEL": 192,
-    "EH3D-BUNGARD-GUI": 423,
+    "EH3D-AUTOLEVEL": 220,
+    "EH3D-BUNGARD-GUI": 428,
     "EH3D-CAM-DEBUGGER": 126,
     "EH3D-COMMON": 440,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
@@ -12440,17 +12440,17 @@
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 540,
-    "EH3D-PHOENIX-LASER": 527,
-    "EH3D-PHOENIX-PCB": 4418,
+    "EH3D-PHOENIX-LASER": 548,
+    "EH3D-PHOENIX-PCB": 4502,
     "EH3D-PHOENIX-PNP": 994,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
     "EH3D-SERVER": 386,
-    "EH3D-STENCILCAM": 185,
+    "EH3D-STENCILCAM": 211,
     "EH3D-STUDIO": 441,
     "EH3D-SUITE-LAUNCHER": 128,
     "EH3D-THERMAL-LAB": 3,
-    "EH3D-TOOL-MANAGER": 154,
+    "EH3D-TOOL-MANAGER": 175,
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 284,

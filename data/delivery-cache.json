@@ -9,16 +9,18 @@
   },
   "ARMOR-DEVOPS": {
    "art": true,
-   "at": "2026-11-18T09:46:35Z",
-   "exp": "2026-11-25T09:44:14Z",
-   "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/44278491421",
+   "at": "2026-11-19T16:47:54Z",
+   "checked": true,
+   "exp": "2026-11-26T16:44:10Z",
+   "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/44568991337",
    "wf": "package-build.yml"
   },
   "ARMOR-NETWORK": {
    "art": true,
-   "at": "2026-11-05T23:38:50Z",
-   "exp": "2026-12-05T23:38:25Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NETWORK/actions/runs/42130819167",
+   "at": "2026-11-19T16:36:43Z",
+   "checked": true,
+   "exp": "2026-11-26T16:35:23Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NETWORK/actions/runs/44567750663",
    "wf": "package-build.yml"
   },
   "ARMOR-NODE-ALARM": {
@@ -65,9 +67,10 @@
   },
   "ARMOR-SERVER-AI": {
    "art": true,
-   "at": "2026-11-05T13:53:12Z",
-   "exp": "2026-12-05T13:52:49Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER-AI/actions/runs/42039630556",
+   "at": "2026-11-19T16:32:27Z",
+   "checked": true,
+   "exp": "2026-11-26T16:31:39Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER-AI/actions/runs/44567039931",
    "wf": "package-build.yml"
   },
   "ARMOR-STUDIO": {
@@ -80,7 +83,6 @@
   "ARMOR-VOICE-AI": {
    "art": true,
    "at": "2026-11-19T16:22:09Z",
-   "checked": true,
    "exp": "2026-11-26T16:19:47Z",
    "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/44564414663",
    "wf": "package-build.yml"
@@ -328,8 +330,8 @@
    }
   },
   "ARMOR-DEVOPS": {
-   "fp": "e64e6fcb5894104c",
-   "on": "2026-11-18",
+   "fp": "05ef0c4e600ddf28",
+   "on": "2026-11-19",
    "r": {
     "ak": 1,
     "an": 1,
@@ -337,12 +339,12 @@
    }
   },
   "ARMOR-NETWORK": {
-   "fp": "0938979902f70f7b",
-   "on": "2026-11-17",
+   "fp": "c759381d055f07f0",
+   "on": "2026-11-19",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-NODE-ALARM": {
@@ -400,12 +402,12 @@
    }
   },
   "ARMOR-SERVER-AI": {
-   "fp": "e839e1ebe50e813e",
-   "on": "2026-11-17",
+   "fp": "ef4af0b05458a54c",
+   "on": "2026-11-19",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-STUDIO": {
@@ -418,12 +420,12 @@
    }
   },
   "ARMOR-VOICE-AI": {
-   "fp": "993939b98e635907",
-   "on": "2026-11-17",
+   "fp": "1ba770e89610d542",
+   "on": "2026-11-19",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "ARMOR-WATCH": {
@@ -480,42 +482,6 @@
     "at": "present"
    }
   },
-  "EH3D-NODE-BUNGARD": {
-   "fp": "0e05e9c3108678d6",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-NODE-BUNGARD-AUX": {
-   "fp": "5640958d4193d9e1",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "827e698863889d64",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "c4128bb843bf793c",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-PHOENIX-PCB": {
    "fp": "d67e4a6a695809c3",
    "on": "2026-11-18",
@@ -549,15 +515,6 @@
    "r": {
     "ak": 1,
     "an": 1,
-    "at": "present"
-   }
-  },
-  "EH3D-TOOL-MANAGER": {
-   "fp": "bf3e484429e39b7f",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
     "at": "present"
    }
   },
@@ -718,7 +675,7 @@
  "schema": 1,
  "signatures": {
   "ARMOR-DEVOPS": {
-   "fp": "e64e6fcb5894104c",
+   "fp": "05ef0c4e600ddf28",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -734,7 +691,7 @@
    }
   },
   "ARMOR-NETWORK": {
-   "fp": "0938979902f70f7b",
+   "fp": "c759381d055f07f0",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -841,7 +798,7 @@
    }
   },
   "ARMOR-SERVER-AI": {
-   "fp": "e839e1ebe50e813e",
+   "fp": "ef4af0b05458a54c",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -873,7 +830,7 @@
    }
   },
   "ARMOR-VOICE-AI": {
-   "fp": "993939b98e635907",
+   "fp": "1ba770e89610d542",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -958,62 +915,6 @@
     ]
    }
   },
-  "EH3D-NODE-BUNGARD": {
-   "fp": "0e05e9c3108678d6",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 4,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-NODE-BUNGARD-AUX": {
-   "fp": "5640958d4193d9e1",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 4,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "827e698863889d64",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "c4128bb843bf793c",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-PHOENIX-PCB": {
    "fp": "d67e4a6a695809c3",
    "r": {
@@ -1065,20 +966,6 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 1,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-TOOL-MANAGER": {
-   "fp": "bf3e484429e39b7f",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
     "why": [
      "family"
     ]
