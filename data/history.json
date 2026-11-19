@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 87,
-    "min": 4455,
-    "ok": 1303,
-    "other": 37,
-    "runs": 1427
+    "fail": 85,
+    "min": 4862,
+    "ok": 1438,
+    "other": 56,
+    "runs": 1579
    },
    "areas": {
     "armor": {
@@ -11952,7 +11952,7 @@
     ],
     "ARMOR-VOICE-AI": [
      2,
-     "0.3.6"
+     "0.3.7"
     ],
     "ARMOR-WATCH": [
      0,
@@ -11960,7 +11960,7 @@
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-AUTOLEVEL": [
      1,
@@ -12040,11 +12040,11 @@
     ],
     "EH3D-NODE-BUNGARD-HMI": [
      0,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-NODE-HMI-GUI": [
      0,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-PHOENIX-CAD": [
      0,
@@ -12064,7 +12064,7 @@
     ],
     "EH3D-PHOENIX-PNP": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 40,
+    "cand": 39,
     "gaps": 0,
-    "min": 4455,
+    "min": 4862,
     "red": 0
    },
    "tests": {
@@ -12442,7 +12442,7 @@
     "EH3D-PHOENIX-CNC": 540,
     "EH3D-PHOENIX-LASER": 527,
     "EH3D-PHOENIX-PCB": 4418,
-    "EH3D-PHOENIX-PNP": 948,
+    "EH3D-PHOENIX-PNP": 994,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
     "EH3D-SERVER": 386,

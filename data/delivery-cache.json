@@ -79,9 +79,10 @@
   },
   "ARMOR-VOICE-AI": {
    "art": true,
-   "at": "2026-11-12T04:21:05Z",
-   "exp": "2026-12-12T04:20:41Z",
-   "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/43154112193",
+   "at": "2026-11-19T16:22:09Z",
+   "checked": true,
+   "exp": "2026-11-26T16:19:47Z",
+   "url": "https://github.com/JuanenRac/ARMOR-VOICE-AI/actions/runs/44564414663",
    "wf": "package-build.yml"
   },
   "ARMOR-WATCH": {
@@ -434,15 +435,6 @@
     "at": "absent"
    }
   },
-  "EH3D-ANDROID-CONTROL": {
-   "fp": "1b74eb92d80ac9b8",
-   "on": "2026-11-18",
-   "r": {
-    "ak": 0,
-    "an": 1,
-    "at": "absent"
-   }
-  },
   "EH3D-AUTOLEVEL": {
    "fp": "e431cb76d5fbe3c6",
    "on": "2026-11-19",
@@ -506,30 +498,12 @@
     "at": "present"
    }
   },
-  "EH3D-NODE-BUNGARD-HMI": {
-   "fp": "8754e727351f2367",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 2,
-    "an": 2,
-    "at": "present"
-   }
-  },
-  "EH3D-NODE-HMI-GUI": {
-   "fp": "da049bf713b785d6",
-   "on": "2026-11-13",
-   "r": {
-    "ak": 2,
-    "an": 2,
-    "at": "present"
-   }
-  },
   "EH3D-PHOENIX-CNC": {
-   "fp": "13895775d2aad740",
+   "fp": "827e698863889d64",
    "on": "2026-11-19",
    "r": {
-    "ak": 2,
-    "an": 2,
+    "ak": 3,
+    "an": 3,
     "at": "present"
    }
   },
@@ -544,15 +518,6 @@
   },
   "EH3D-PHOENIX-PCB": {
    "fp": "d67e4a6a695809c3",
-   "on": "2026-11-18",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-PHOENIX-PNP": {
-   "fp": "a0687a62eaa111c7",
    "on": "2026-11-18",
    "r": {
     "ak": 3,
@@ -1021,43 +986,15 @@
     ]
    }
   },
-  "EH3D-NODE-BUNGARD-HMI": {
-   "fp": "8754e727351f2367",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 2,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-NODE-HMI-GUI": {
-   "fp": "da049bf713b785d6",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 2,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-PHOENIX-CNC": {
-   "fp": "13895775d2aad740",
+   "fp": "827e698863889d64",
    "r": {
     "bad": 0,
     "ho": 0,
     "ok": 0,
     "s": "unverifiable",
     "sch": [],
-    "unk": 4,
+    "unk": 5,
     "why": [
      "family"
     ]
@@ -1079,20 +1016,6 @@
   },
   "EH3D-PHOENIX-PCB": {
    "fp": "d67e4a6a695809c3",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-PHOENIX-PNP": {
-   "fp": "a0687a62eaa111c7",
    "r": {
     "bad": 0,
     "ho": 0,

@@ -452,7 +452,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.3|Zentraler Server: persistenter Zustand, Benutzer, Ereignisse, Alarme, Geräte, Automatisierungen, Kameras, signierte Knoten-Updates, Benachrichtigungen und Fernzugriff.|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.3|Bewegungserfassungsdienst, Auswahl visueller Profile, erklärbare Fusionsrichtlinie, Engine-Register.|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.7|Kamerazonen, Masken und Erkennungsregeln (Herumlungern, ein Ereignis pro Besuch); noch kein Detektormodell.|
-|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.6|Offline-Sprachdienst: Fünfzehn Befehle in acht Sprachen, gesprochene Runden des Wandpanels, Scharf- und Unscharfschaltung bestätigt mit einem signierten Token.|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.7|Offline-Sprachdienst: Fünfzehn Befehle in acht Sprachen, gesprochene Runden des Wandpanels, Scharf- und Unscharfschaltung bestätigt mit einem signierten Token.|
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.8|Monitor für das lokale Netzwerk: Geräte im Netz, Zustand des Internets und was sich ändert; er beobachtet nur.|
 
 ### 💠 Bediener-Clients
@@ -560,15 +560,15 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.8|Pastemasken-Konvertierungsprogramm, das Schneidwerkzeugwege für die Laser- und Plotter-SMD-Schablonenfertigung generiert.|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.9|Pick-and-Place-Bestückung: Positionsdateien von KiCad und CSV, Zuführer und die Bestückungsreihenfolge für einen Kopf mit ein bis sechs Düsen; die Kamera und die Maschinensteuerung sind geplant.|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.0|Pick-and-Place-Bestückung: Positionsdateien von KiCad und CSV, Zuführer und die Bestückungsreihenfolge für einen Kopf mit ein bis sechs Düsen; die Kamera und die Maschinensteuerung sind geplant.|
 
 ### 💠 Knotenprojekte:
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.7|ESP32-S3-Knoten für das Gehäuse einer Bungard-CCD-Maschine: der RS-232-Anschluss ihrer Steuereinheit über Ethernet oder WLAN, mit den Lampen der Maschine und dem Spindelantrieb auf derselben Platine.|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.0|10,1-Zoll-Touchscreen mit ESP32-P4, der eine Bungard-CCD-Maschine steuert: die Bildschirme des Desktop-Programms, gesprochene Warnungen und Befehle in acht Sprachen und ein Hardware-Stopp, der nicht über den Bildschirm läuft.|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.1|10,1-Zoll-Touchscreen mit ESP32-P4, der eine Bungard-CCD-Maschine steuert: die Bildschirme des Desktop-Programms, gesprochene Warnungen und Befehle in acht Sprachen und ein Hardware-Stopp, der nicht über den Bildschirm läuft.|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.9|ESP32-S3-Knoten für den Bohrkopf einer Bungard-CCD-Maschine: das Video seiner Kamera (OV2640 oder OV5640) als IP-Kamera (RTSP und ONVIF), die mit einem Laser gemessene Höhe des Tisches, Drehzahl und Temperatur der Spindel und ein Schutzausgang.|
-|[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.9|Universelle manuelle Touch-Steuerung (10 Zoll) / mobil mit ESP32-P4/ESP32-C6 für Jogging in Echtzeit, Nullpunktsetzung (G54/G55) und NOT-AUS.|
+|[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.0|Universelle manuelle Touch-Steuerung (10 Zoll) / mobil mit ESP32-P4/ESP32-C6 für Jogging in Echtzeit, Nullpunktsetzung (G54/G55) und NOT-AUS.|
 
 ### 💠 PHOENIX-Projekte:
 |Repository|Version|Beschreibung|
@@ -588,7 +588,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 ### 💠 ANDROID/IOS-Projekte:
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.1|Android-App als Client von EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.2|Android-App als Client von EH3D-SERVER.|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.1|iOS-App als Client von EH3D-SERVER.|
 
 ### 🛠️ Ergänzende Werkzeuge

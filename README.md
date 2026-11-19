@@ -446,7 +446,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER) | 0.8.2.3 | Central server: persisted state, users, events, alarms, devices, automations, cameras, signed node updates, notifications and remote access. |
 | [ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI) | 0.3.3 | Motion-watching service, visual profile selection, explainable fusion policy, engine registry. |
 | [ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION) | 0.1.7 | Camera zones, masks and detection rules (loitering, one event per visit); no detector model yet. |
-| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.6 | Offline voice service: fifteen commands in eight languages, the wall panel's spoken turns, arm and disarm confirmed with a signed token. |
+| [ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI) | 0.3.7 | Offline voice service: fifteen commands in eight languages, the wall panel's spoken turns, arm and disarm confirmed with a signed token. |
 | [ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK) | 0.1.8 | Local network monitor: devices on the network, state of the internet and what changes; it only observes. |
 
 ### 💠 Operator Clients
@@ -558,16 +558,16 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.0.8 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
-| [EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP) | 0.0.9 | Pick and place assembly: KiCad and CSV position files, feeders, and the order of the placements for a head with one to six nozzles; the camera and the control of the machine are planned. |
+| [EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP) | 0.1.0 | Pick and place assembly: KiCad and CSV position files, feeders, and the order of the placements for a head with one to six nozzles; the camera and the control of the machine are planned. |
 
 
 ### 💠 Node projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD) | 0.0.7 | ESP32-S3 node for the box of a Bungard CCD machine: RS-232 of its control unit over Ethernet or Wi-Fi, with the machine's lamps and the spindle drive on the same board. |
-| [EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI) | 0.1.0 | 10.1-inch touch screen on an ESP32-P4 that controls a Bungard CCD machine: the screens of the desktop program, texts in 37 languages, spoken alerts and orders, resuming a stopped job through the server, and a hardware stop that does not go through the screen. |
+| [EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI) | 0.1.1 | 10.1-inch touch screen on an ESP32-P4 that controls a Bungard CCD machine: the screens of the desktop program, texts in 37 languages, spoken alerts and orders, resuming a stopped job through the server, and a hardware stop that does not go through the screen. |
 | [EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX) | 0.0.9 | ESP32-S3 node for the drill head of a Bungard CCD machine: the video of its camera (OV2640 or OV5640) as an IP camera (RTSP and ONVIF), the height of the table measured with a laser, the speed and the temperature of the spindle, and a protect output. |
-| [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.0.9 | General purpose ESP32-P4/ESP32-C6 Touchscreen 10 inch/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP, in 37 languages. |
+| [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.1.0 | General purpose ESP32-P4/ESP32-C6 Touchscreen 10 inch/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP, in 37 languages. |
 
 
 ### 💠 PHOENIX projects:
@@ -589,7 +589,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 ANDROID/IOS projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.1.1 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
+| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.1.2 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
 | [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.1.1 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
 
 

@@ -452,7 +452,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.3|中央サーバー。永続化された状態、ユーザー、イベント、警報、機器、自動化、カメラ、署名付きノード更新、通知、リモートアクセス。|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.3|モーション監視サービス、ビジュアルプロファイル選択、説明可能な融合ポリシー、エンジンレジストリ。|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.7|カメラゾーン、マスク、検出ルール（うろつき、1訪問につき1イベント）。検出器モデルはまだありません。|
-|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.6|オフライン音声サービス：8言語の15コマンド、壁面パネルの音声ターン、署名付きトークンで確認された武装および武装解除。|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.7|オフライン音声サービス：8言語の15コマンド、壁面パネルの音声ターン、署名付きトークンで確認された武装および武装解除。|
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.8|ローカルネットワークの監視。ネットワーク上の機器、インターネットの状態、変化を把握しますが、観測のみを行います。|
 
 ### 💠 オペレータークライアント
@@ -560,15 +560,15 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.8|レーザーおよびプロッターSMDステンシル製造用の切削ツールパスを生成するペーストマスク変換ユーティリティ。|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.9|ピック＆プレース実装：KiCad と CSV の位置ファイル、フィーダー、1〜6 ノズルのヘッドの実装順序。カメラと機械制御は計画中です。|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.0|ピック＆プレース実装：KiCad と CSV の位置ファイル、フィーダー、1〜6 ノズルのヘッドの実装順序。カメラと機械制御は計画中です。|
 
 ### 💠 ノードのプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.7|Bungard CCD 機械の筐体に取り付ける ESP32-S3 ノード。制御ユニットの RS-232 を Ethernet または Wi-Fi で扱い、機械のランプとスピンドルのドライブを同じ基板に載せます。|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.0|ESP32-P4 搭載の 10.1 インチタッチスクリーンで Bungard CCD マシンを制御：デスクトップ版の画面、8 言語の音声警告と音声命令、画面を経由しないハードウェア停止。|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.1|ESP32-P4 搭載の 10.1 インチタッチスクリーンで Bungard CCD マシンを制御：デスクトップ版の画面、8 言語の音声警告と音声命令、画面を経由しないハードウェア停止。|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.9|Bungard CCD マシンのドリルヘッド用 ESP32-S3 ノード：カメラ（OV2640 または OV5640）の映像を IP カメラ（RTSP と ONVIF）として配信し、レーザーでテーブルの高さを測り、スピンドルの回転数と温度を監視し、保護出力を備えます。|
-|[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.9|汎用の ESP32-P4/ESP32-C6 搭載 10 インチタッチスクリーン／モバイル手動コントローラー。リアルタイムのジョグ、ゼロ設定（G54/G55）、非常停止に対応。|
+|[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.0|汎用の ESP32-P4/ESP32-C6 搭載 10 インチタッチスクリーン／モバイル手動コントローラー。リアルタイムのジョグ、ゼロ設定（G54/G55）、非常停止に対応。|
 
 ### 💠 PHOENIX のプロジェクト：
 |リポジトリ|バージョン|説明|
@@ -588,7 +588,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 ANDROID/IOS のプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.1|EH3D-SERVER 向けの Android アプリ（クライアント）。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.2|EH3D-SERVER 向けの Android アプリ（クライアント）。|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.1|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
 
 ### 🛠️ 補完ツール

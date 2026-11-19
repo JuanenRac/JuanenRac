@@ -452,7 +452,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.3|Servidor central: estado persistente, utilizadores, eventos, alarmes, dispositivos, automatizações, câmaras, atualizações de nós assinadas, notificações e acesso remoto.|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.3|Serviço de monitorização de movimento, seleção de perfil visual, política de fusão explicável, registo de motor.|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.7|Zonas de câmara, máscaras e regras de deteção (vadiagem, um evento por visita); nenhum modelo detector ainda.|
-|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.6|Serviço de voz offline: quinze comandos em oito idiomas, turnos falados do painel de parede, armar e desarmar confirmados com um token assinado.|
+|[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.7|Serviço de voz offline: quinze comandos em oito idiomas, turnos falados do painel de parede, armar e desarmar confirmados com um token assinado.|
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.8|Monitor da rede local: dispositivos da rede, estado da internet e o que muda; apenas observa.|
 
 ### 💠 Clientes Operadores
@@ -560,15 +560,15 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |Repositório|Versão|Descrição|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.8|Utilitário de conversão de máscara de pasta gerando caminhos de corte para fabricação de stencils SMD a laser e plotter.|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.0.9|Montagem pick and place: ficheiros de posições do KiCad e CSV, alimentadores e a ordem de colocação para um cabeçote de um a seis bicos; a câmara e o controlo da máquina estão previstos.|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.0|Montagem pick and place: ficheiros de posições do KiCad e CSV, alimentadores e a ordem de colocação para um cabeçote de um a seis bicos; a câmara e o controlo da máquina estão previstos.|
 
 ### 💠 Projetos de nós:
 |Repositório|Versão|Descrição|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.7|Nó ESP32-S3 para a caixa de uma máquina Bungard CCD: o RS-232 da sua unidade de controlo por Ethernet ou Wi-Fi, com as lâmpadas da máquina e o variador do fuso na mesma placa.|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.0|Ecrã tátil de 10,1 polegadas com um ESP32-P4 que controla uma máquina Bungard CCD: os ecrãs do programa de secretária, alertas e ordens faladas em oito idiomas e uma paragem por hardware que não passa pelo ecrã.|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.1|Ecrã tátil de 10,1 polegadas com um ESP32-P4 que controla uma máquina Bungard CCD: os ecrãs do programa de secretária, alertas e ordens faladas em oito idiomas e uma paragem por hardware que não passa pelo ecrã.|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.0.9|Nó ESP32-S3 para a cabeça de furação de uma máquina Bungard CCD: o vídeo da sua câmara (OV2640 ou OV5640) como câmara IP (RTSP e ONVIF), a altura da mesa medida com um laser, a velocidade e a temperatura do fuso e uma saída de proteção.|
-|[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.0.9|Controlador manual tátil de 10 polegadas / móvel de uso geral com ESP32-P4/ESP32-C6 para o movimento em tempo real (jog), a colocação a zero (G54/G55) e a paragem de emergência.|
+|[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.0|Controlador manual tátil de 10 polegadas / móvel de uso geral com ESP32-P4/ESP32-C6 para o movimento em tempo real (jog), a colocação a zero (G54/G55) e a paragem de emergência.|
 
 ### 💠 Projetos PHOENIX:
 |Repositório|Versão|Descrição|
@@ -588,7 +588,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 ### 💠 Projetos ANDROID/IOS:
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.1|Aplicação Android cliente do EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.2|Aplicação Android cliente do EH3D-SERVER.|
 |[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.1|Aplicação iOS cliente do EH3D-SERVER.|
 
 ### 🛠️ Ferramentas complementares
