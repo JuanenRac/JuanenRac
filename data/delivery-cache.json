@@ -434,15 +434,6 @@
     "at": "absent"
    }
   },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "54c248221b461e23",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-PHOENIX-PCB": {
    "fp": "618493c06a387f5a",
    "on": "2026-11-19",
@@ -479,6 +470,15 @@
     "at": "present"
    }
   },
+  "EH3D-VISION-STUDIO": {
+   "fp": "7e2ea21ee580e00a",
+   "on": "2026-11-19",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "HYDRA-UMC": {
    "fp": "e0b63f37ef944215",
    "on": "2026-11-13",
@@ -512,15 +512,6 @@
    "r": {
     "ak": 2,
     "an": 2,
-    "at": "present"
-   }
-  },
-  "HYDRA-UMC-STUDIO-KIT": {
-   "fp": "c313a8b81e118fba",
-   "on": "2026-11-06",
-   "r": {
-    "ak": 1,
-    "an": 1,
     "at": "present"
    }
   },
@@ -797,20 +788,6 @@
     ]
    }
   },
-  "EH3D-PHOENIX-LASER": {
-   "fp": "54c248221b461e23",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-PHOENIX-PCB": {
    "fp": "618493c06a387f5a",
    "r": {
@@ -862,6 +839,20 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 1,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-VISION-STUDIO": {
+   "fp": "7e2ea21ee580e00a",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
     "why": [
      "family"
     ]
@@ -954,20 +945,6 @@
     "why": [
      "toobig"
     ]
-   }
-  },
-  "HYDRA-UMC-STUDIO-KIT": {
-   "fp": "c313a8b81e118fba",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 1,
-    "s": "verified",
-    "sch": [
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
    }
   },
   "HYDRA-UMC-SUITE": {

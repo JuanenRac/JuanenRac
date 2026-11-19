@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 88,
-    "min": 6437,
-    "ok": 2008,
-    "other": 47,
-    "runs": 2143
+    "fail": 87,
+    "min": 6458,
+    "ok": 2038,
+    "other": 48,
+    "runs": 2173
    },
    "areas": {
     "armor": {
@@ -11976,7 +11976,7 @@
     ],
     "EH3D-COMMON": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
@@ -12056,7 +12056,7 @@
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 8,
     "gaps": 0,
-    "min": 6437,
+    "min": 6458,
     "red": 0
    },
    "tests": {
@@ -12424,7 +12424,7 @@
     "EH3D-AUTOLEVEL": 220,
     "EH3D-BUNGARD-GUI": 428,
     "EH3D-CAM-DEBUGGER": 142,
-    "EH3D-COMMON": 440,
+    "EH3D-COMMON": 493,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 366,
     "EH3D-DESIGN-EXPLORER": 3,
