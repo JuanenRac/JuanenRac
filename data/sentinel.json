@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T23:44:36Z",
+ "asof": "2026-11-19T23:53:25Z",
  "ci": {
   "checked": 634,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 938,
-    "min7": 938,
+    "min24": 940,
+    "min7": 940,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-HMI"
    }
   ],
-  "total24": 6707,
-  "total7": 38347,
+  "total24": 6712,
+  "total7": 38351,
   "warn": false
  },
  "delivery": {
@@ -127,13 +127,13 @@
  },
  "events": [
   {
-   "at": "2026-11-19T23:44:36Z",
+   "at": "2026-11-19T23:53:25Z",
    "kind": "released",
    "repo": "EH3D-PHOENIX-CNC",
    "tag": "v0.2.1"
   },
   {
-   "at": "2026-11-19T23:44:36Z",
+   "at": "2026-11-19T23:53:25Z",
    "kind": "released",
    "repo": "HYDRA-UMC-SDK",
    "tag": "v0.7.4"
@@ -310,7 +310,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 35
+  "gap_minutes": 40
  },
  "hygiene": {
   "allowed_missing": [],
@@ -654,7 +654,7 @@
    16336,
    10185,
    5009,
-   6707
+   6712
   ],
   "red": [
    3,
