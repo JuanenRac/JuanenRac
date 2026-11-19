@@ -434,15 +434,6 @@
     "at": "absent"
    }
   },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "5c834f0515714c0b",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-PHOENIX-LASER": {
    "fp": "65287a4a6ce418e2",
    "on": "2026-11-19",
@@ -794,20 +785,6 @@
     "unk": 1,
     "why": [
      "scheme"
-    ]
-   }
-  },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "5c834f0515714c0b",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
     ]
    }
   },

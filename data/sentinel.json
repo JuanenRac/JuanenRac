@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T23:14:25Z",
+ "asof": "2026-11-19T23:44:36Z",
  "ci": {
   "checked": 634,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 969,
-    "min7": 969,
+    "min24": 938,
+    "min7": 938,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-HMI"
    }
   ],
-  "total24": 6689,
-  "total7": 38469,
+  "total24": 6707,
+  "total7": 38347,
   "warn": false
  },
  "delivery": {
@@ -59,8 +59,8 @@
    "eh3d": {
     "clmis": 0,
     "nonotes": 0,
-    "read": 38,
-    "repos": 38,
+    "read": 39,
+    "repos": 39,
     "tagahead": 0
    },
    "electro-hobby-3d": {
@@ -98,9 +98,9 @@
   },
   "eh3d": {
    "cand": 0,
-   "read": 38,
+   "read": 39,
    "red": 0,
-   "repos": 38,
+   "repos": 39,
    "unpub": 0
   },
   "electro-hobby-3d": {
@@ -126,6 +126,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T23:44:36Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-CNC",
+   "tag": "v0.2.1"
+  },
+  {
+   "at": "2026-11-19T23:44:36Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-SDK",
+   "tag": "v0.7.4"
+  },
   {
    "at": "2026-11-19T23:14:25Z",
    "kind": "released",
@@ -293,30 +305,20 @@
    "kind": "released",
    "repo": "EH3D-COMMON",
    "tag": "v0.2.3"
-  },
-  {
-   "at": "2026-11-19T18:25:25Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-ANOMALY-DETECTOR",
-   "tag": "v0.2.5"
-  },
-  {
-   "at": "2026-11-19T18:25:25Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-BRIDGE-CNC",
-   "tag": "v0.2.9"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 50
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
-  "gaps": 0,
-  "ruleset_checked": 130,
-  "ruleset_missing": [],
+  "gaps": 1,
+  "ruleset_checked": 131,
+  "ruleset_missing": [
+   "EH3D-PHOENIX-3DP"
+  ],
   "settings_checked": 0,
   "sha_missing": []
  },
@@ -327,7 +329,7 @@
    "p": {
     "bad": 0,
     "cand": 8,
-    "hyg": 0,
+    "hyg": 1,
     "red": 0
    }
   },
@@ -361,15 +363,25 @@
    }
   },
   {
+   "key": "hyg",
+   "level": "warn",
+   "p": {
+    "list": [
+     "EH3D-PHOENIX-3DP"
+    ],
+    "n": 1
+   }
+  },
+  {
    "key": "settings",
    "level": "info",
    "p": {
-    "m": 130,
+    "m": 131,
     "n": 0
    }
   }
  ],
- "read": 130,
+ "read": 131,
  "releases": {
   "candidates": [
    {
@@ -425,14 +437,14 @@
   "min_entries": 5,
   "total": 8
  },
- "repos": 130,
+ "repos": 131,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 96,
-  "norelease": 1,
-  "unverifiable": 5,
+  "none": 97,
+  "norelease": 2,
+  "unverifiable": 4,
   "unverified": 0,
   "verified": 28
  },
@@ -479,7 +491,7 @@
   "EH3D-NODE-BUNGARD-HMI": "v0.1.1",
   "EH3D-NODE-HMI-GUI": "v0.1.0",
   "EH3D-PHOENIX-CAD": "v0.0.9",
-  "EH3D-PHOENIX-CNC": "v0.2.0",
+  "EH3D-PHOENIX-CNC": "v0.2.1",
   "EH3D-PHOENIX-LASER": "v0.1.2",
   "EH3D-PHOENIX-PCB": "v0.1.0",
   "EH3D-PHOENIX-PNP": "v0.1.1",
@@ -536,7 +548,7 @@
   "HYDRA-UMC-PHYSICS-REPLICA": "v0.1.5",
   "HYDRA-UMC-PRODUCTION-REPORTS": "v0.2.2",
   "HYDRA-UMC-SAFETY-ZONES": "v0.2.6",
-  "HYDRA-UMC-SDK": "v0.7.3",
+  "HYDRA-UMC-SDK": "v0.7.4",
   "HYDRA-UMC-SEMANTIC-PLANNER": "v0.2.1",
   "HYDRA-UMC-SERVER": "v0.8.3.2",
   "HYDRA-UMC-STUDIO": "v0.8.2.2",
@@ -623,7 +635,7 @@
    0,
    0,
    0,
-   0
+   1
   ],
   "min": [
    8105,
@@ -642,7 +654,7 @@
    16336,
    10185,
    5009,
-   6689
+   6707
   ],
   "red": [
    3,
