@@ -194,7 +194,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.4|面向 CM5 的 Raspberry Pi OS 平台层：配置档案、配置、诊断、服务和更新；不是新的发行版。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.2|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.3|针对服务、UI 和 CM5 适配器的共享版本化契约、瘦客户端和一致性测试夹具；它不会替代供应商的 API。|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|面向外部机器连接器的适配器清单的声明式注册表与校验器。|
 
 ### 💠 核心控制与操作员客户端
@@ -574,7 +574,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.0|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|用于交叉验证和设计质量控制的综合工程验证器。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|负责管理参考用例和系统回归测试的测试环境。|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|保存设计语义历史和逻辑演进的版本控制系统。|

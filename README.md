@@ -197,7 +197,7 @@ for all four - can check versions and build/update any other project.
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS) | 0.6.4 | Raspberry Pi OS platform layer for the CM5: profiles, configuration, diagnostics, services and updates; not a new distribution. |
-| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.7.2 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
+| [HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK) | 0.7.3 | Shared versioned contracts, thin clients and conformance fixtures for services, UIs and CM5 adapters; it does not replace vendor APIs. |
 | [HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB) | 0.2.1 | Declarative registry and validator of adapter manifests for external-machine connectors. |
 
 ### 💠 Core Control & Operator Clients
@@ -574,7 +574,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.1.0 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
-| [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.0.8 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
+| [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.0.9 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
 | [EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER) | 0.0.4 | Comprehensive engineering verifier for cross-validations and design quality control. |
 | [EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB) | 0.0.3 | Testing environment responsible for managing reference use cases and system regression tests. |
 | [EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY) | 0.0.3 | Version control system that stores the semantic history and logical evolution of the design. |

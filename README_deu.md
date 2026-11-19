@@ -194,7 +194,7 @@ Neu im Ökosystem? `./starter-kit.sh` (oder `starter-kit.bat` unter Windows) klo
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.4|Plattformschicht auf Raspberry Pi OS für das CM5: Profile, Konfiguration, Diagnose, Dienste und Updates; keine neue Distribution.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.2|Geteilte versionierte Verträge, Thin Clients und Konformitätstests für Dienste, Benutzeroberflächen und CM5-Adapter; ersetzt keine Hersteller-APIs.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.3|Geteilte versionierte Verträge, Thin Clients und Konformitätstests für Dienste, Benutzeroberflächen und CM5-Adapter; ersetzt keine Hersteller-APIs.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|Deklaratives Register und Validator für Adapter-Manifeste von Konnektoren externer Maschinen.|
 
 ### 💠 Kernsteuerung und Bediener-Clients
@@ -574,7 +574,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 |Repository|Version|Beschreibung|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.0|EDA-Umgebung: Schaltplaneingabe, Platinenlayout, Verifikationswerkzeuge, Schaltungssimulation und Spezialmodule für Schaltnetzteile (SMPS) und HF.|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|Parametrisches mechanisches CAD für den Entwurf von Gehäusen, Chassis und Kühlkörpern.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|Parametrisches mechanisches CAD für den Entwurf von Gehäusen, Chassis und Kühlkörpern.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Umfassender Engineering-Verifizierer für Kreuzvalidierungen und die Qualitätskontrolle des Entwurfs.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Testumgebung für die Verwaltung der Referenz-Anwendungsfälle und der Regressionstests des Systems.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|Versionskontrollsystem, das den semantischen Verlauf und die logische Entwicklung des Entwurfs speichert.|

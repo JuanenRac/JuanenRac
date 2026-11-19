@@ -194,7 +194,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.4|Capa de plataforma sobre Raspberry Pi OS para la CM5: perfiles, configuración, diagnóstico, servicios y actualizaciones; no es una distribución nueva.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.2|Contratos versionados compartidos, clientes ligeros y accesorios de conformidad para servicios, interfaces de usuario y adaptadores CM5; no reemplaza las API de los fabricantes.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.3|Contratos versionados compartidos, clientes ligeros y accesorios de conformidad para servicios, interfaces de usuario y adaptadores CM5; no reemplaza las API de los fabricantes.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|Registro declarativo y validador de manifiestos de adaptadores para conectores de máquinas externas.|
 
 ### 💠 Control Central y Clientes de Operador
@@ -574,7 +574,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.0|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificador de ingeniería integral para validaciones cruzadas y control de calidad del diseño.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Entorno de pruebas encargado de gestionar los casos de uso de referencia y las pruebas de regresión del sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|Sistema de control de versiones que guarda el historial semántico y la evolución lógica del diseño.|

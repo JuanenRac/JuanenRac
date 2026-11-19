@@ -194,7 +194,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.4|CM5 向けの Raspberry Pi OS 上のプラットフォーム層。プロファイル、設定、診断、サービス、アップデートを提供します。新しいディストリビューションではありません。|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.2|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.3|サービス、UI、CM5アダプター用の共有バージョン付き契約、シンクライアント、適合性フィクスチャ。ベンダーAPIを置き換えるものではありません。|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|外部マシン向けコネクタのアダプターマニフェストを管理する、宣言型のレジストリと検証ツール。|
 
 ### 💠 コア制御とオペレータークライアント
@@ -574,7 +574,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.0|EDA 環境：回路図入力、PCB レイアウト、検証ツール、回路シミュレーション、SMPS と RF 向けの専用モジュール。|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|筐体、シャーシ、ヒートシンクの設計に特化したパラメトリック機械 CAD。|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|筐体、シャーシ、ヒートシンクの設計に特化したパラメトリック機械 CAD。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|相互検証と設計品質管理のための総合エンジニアリング検証ツール。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|基準となるユースケースとシステムのリグレッションテストを管理するテスト環境。|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|設計の意味的な履歴と論理的な変遷を保存するバージョン管理システム。|

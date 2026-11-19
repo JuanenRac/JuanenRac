@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T20:48:42Z",
+ "asof": "2026-11-19T21:09:11Z",
  "ci": {
   "checked": 635,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 989,
-    "min7": 989,
+    "min24": 946,
+    "min7": 946,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -23,6 +23,11 @@
     "repo": "URTC-FLASHER"
    },
    {
+    "min24": 193,
+    "min7": 568,
+    "repo": "EH3D-PHOENIX-PCB"
+   },
+   {
     "min24": 191,
     "min7": 295,
     "repo": "ARMOR-NODE-RADAR"
@@ -31,15 +36,10 @@
     "min24": 189,
     "min7": 287,
     "repo": "ARMOR-NODE-HMI"
-   },
-   {
-    "min24": 183,
-    "min7": 376,
-    "repo": "URTC"
    }
   ],
-  "total24": 6488,
-  "total7": 38868,
+  "total24": 6502,
+  "total7": 38827,
   "warn": false
  },
  "delivery": {
@@ -126,6 +126,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T21:09:11Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-CAD",
+   "tag": "v0.0.9"
+  },
+  {
+   "at": "2026-11-19T21:09:11Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-SDK",
+   "tag": "v0.7.3"
+  },
   {
    "at": "2026-11-19T20:24:48Z",
    "kind": "released",
@@ -293,18 +305,6 @@
    "kind": "released",
    "repo": "EH3D-PHOENIX-CNC",
    "tag": "v0.1.9"
-  },
-  {
-   "at": "2026-11-19T18:08:01Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-LASER",
-   "tag": "v0.1.1"
-  },
-  {
-   "at": "2026-11-19T18:08:01Z",
-   "kind": "released",
-   "repo": "EH3D-VISION-STUDIO",
-   "tag": "v0.0.8"
   }
  ],
  "health": {
@@ -430,11 +430,11 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 97,
+  "none": 94,
   "norelease": 1,
-  "unverifiable": 5,
+  "unverifiable": 7,
   "unverified": 0,
-  "verified": 27
+  "verified": 28
  },
  "tags": {
   "ARMOR-ANDROID-CONTROL": "v0.8.0.9",
@@ -478,7 +478,7 @@
   "EH3D-NODE-BUNGARD-AUX": "v0.1.0",
   "EH3D-NODE-BUNGARD-HMI": "v0.1.1",
   "EH3D-NODE-HMI-GUI": "v0.1.0",
-  "EH3D-PHOENIX-CAD": "v0.0.8",
+  "EH3D-PHOENIX-CAD": "v0.0.9",
   "EH3D-PHOENIX-CNC": "v0.2.0",
   "EH3D-PHOENIX-LASER": "v0.1.2",
   "EH3D-PHOENIX-PCB": "v0.1.0",
@@ -536,7 +536,7 @@
   "HYDRA-UMC-PHYSICS-REPLICA": "v0.1.5",
   "HYDRA-UMC-PRODUCTION-REPORTS": "v0.2.2",
   "HYDRA-UMC-SAFETY-ZONES": "v0.2.6",
-  "HYDRA-UMC-SDK": "v0.7.2",
+  "HYDRA-UMC-SDK": "v0.7.3",
   "HYDRA-UMC-SEMANTIC-PLANNER": "v0.2.1",
   "HYDRA-UMC-SERVER": "v0.8.3.2",
   "HYDRA-UMC-STUDIO": "v0.8.2.2",
@@ -642,7 +642,7 @@
    16336,
    10185,
    5009,
-   6488
+   6502
   ],
   "red": [
    3,

@@ -11812,10 +11812,10 @@
   {
    "actions": {
     "fail": 90,
-    "min": 6488,
-    "ok": 2044,
-    "other": 47,
-    "runs": 2181
+    "min": 6502,
+    "ok": 2056,
+    "other": 54,
+    "runs": 2200
    },
    "areas": {
     "armor": {
@@ -12048,7 +12048,7 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
@@ -12280,7 +12280,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.7.2"
+     "0.7.3"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 8,
     "gaps": 0,
-    "min": 6488,
+    "min": 6502,
     "red": 0
    },
    "tests": {
@@ -12441,11 +12441,11 @@
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 649,
     "EH3D-PHOENIX-LASER": 602,
-    "EH3D-PHOENIX-PCB": 4536,
+    "EH3D-PHOENIX-PCB": 4601,
     "EH3D-PHOENIX-PNP": 1114,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
-    "EH3D-SERVER": 386,
+    "EH3D-SERVER": 446,
     "EH3D-STENCILCAM": 211,
     "EH3D-STUDIO": 441,
     "EH3D-SUITE-LAUNCHER": 128,

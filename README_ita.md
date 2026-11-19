@@ -194,7 +194,7 @@ Nuovo nell'ecosistema? `./starter-kit.sh` (o `starter-kit.bat` su Windows) clona
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.4|Livello di piattaforma su Raspberry Pi OS per la CM5: profili, configurazione, diagnostica, servizi e aggiornamenti; non è una nuova distribuzione.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.2|Contratti condivisi con versione, client leggeri e banchi di conformità per servizi, UI e adattatori CM5; non sostituisce le API dei produttori.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.3|Contratti condivisi con versione, client leggeri e banchi di conformità per servizi, UI e adattatori CM5; non sostituisce le API dei produttori.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|Registro dichiarativo e validatore dei manifesti degli adattatori per i connettori di macchine esterne.|
 
 ### 💠 Controllo Principale e Client Operatore
@@ -574,7 +574,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.0|Ambiente EDA: acquisizione di schemi, layout di PCB, strumenti di verifica, simulazione di circuiti e moduli specializzati per alimentatori switching (SMPS) e RF.|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificatore ingegneristico completo per le validazioni incrociate e il controllo di qualità del progetto.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Ambiente di test incaricato di gestire i casi d'uso di riferimento e i test di regressione del sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|Sistema di controllo di versione che conserva la storia semantica e l'evoluzione logica del progetto.|

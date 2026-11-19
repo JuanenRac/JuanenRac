@@ -194,7 +194,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 |Dépôt|Version|Description|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.4|Couche de plateforme sur Raspberry Pi OS pour le CM5 : profils, configuration, diagnostic, services et mises à jour ; pas une nouvelle distribution.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.2|Contrats versionnés partagés, clients légers et bancs de conformité pour les services, IUs et adaptateurs CM5 ; ne remplace pas les API des fournisseurs.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.3|Contrats versionnés partagés, clients légers et bancs de conformité pour les services, IUs et adaptateurs CM5 ; ne remplace pas les API des fournisseurs.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|Registre déclaratif et validateur des manifestes d'adaptateurs pour les connecteurs de machines externes.|
 
 ### 💠 Contrôle Principal et Clients Opérateurs
@@ -574,7 +574,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |Dépôt|Version|Description|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.0|Environnement EDA : saisie de schémas, routage de circuits imprimés, outils de vérification, simulation de circuits et modules spécialisés pour les alimentations à découpage (SMPS) et la RF.|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|CAO mécanique paramétrique dédiée à la conception de boîtiers, de châssis et de dissipateurs thermiques.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|CAO mécanique paramétrique dédiée à la conception de boîtiers, de châssis et de dissipateurs thermiques.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Vérificateur d'ingénierie complet pour les validations croisées et le contrôle qualité de la conception.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Environnement de test chargé de gérer les cas d'usage de référence et les tests de régression du système.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|Système de contrôle de version qui conserve l'historique sémantique et l'évolution logique de la conception.|
