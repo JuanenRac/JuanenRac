@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T07:30:24Z",
+ "asof": "2026-11-19T07:45:18Z",
  "ci": {
   "checked": 627,
   "red": [
@@ -21,8 +21,8 @@
  "compute": {
   "top": [
    {
-    "min24": 864,
-    "min7": 864,
+    "min24": 919,
+    "min7": 919,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -36,7 +36,7 @@
     "repo": "ARMOR-COMMON"
    },
    {
-    "min24": 176,
+    "min24": 175,
     "min7": 395,
     "repo": "EH3D-PHOENIX-PCB"
    },
@@ -51,8 +51,8 @@
     "repo": "ARMOR-STUDIO"
    }
   ],
-  "total24": 4965,
-  "total7": 39934,
+  "total24": 5014,
+  "total7": 39963,
   "warn": false
  },
  "delivery": {
@@ -132,7 +132,7 @@
    "unpub": 3
   },
   "urtc": {
-   "cand": 8,
+   "cand": 7,
    "read": 11,
    "red": 2,
    "repos": 11,
@@ -140,6 +140,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T07:45:18Z",
+   "kind": "released",
+   "repo": "URTC-WEB-STUDIO",
+   "tag": "v0.5.3"
+  },
   {
    "at": "2026-11-19T07:30:24Z",
    "kind": "released",
@@ -313,18 +319,12 @@
    "kind": "red_ok",
    "repo": "EH3D-SERVER",
    "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-18T08:55:12Z",
-   "kind": "red_ok",
-   "repo": "EH3D-SERVER",
-   "wf": "rust.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 20
+  "gap_minutes": 15
  },
  "hygiene": {
   "allowed_missing": [],
@@ -340,7 +340,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 47,
+    "cand": 46,
     "hyg": 0,
     "red": 2
    }
@@ -402,7 +402,7 @@
      "HYDRA-UMC-WATCH",
      "URTC"
     ],
-    "n": 47
+    "n": 46
    }
   },
   {
@@ -489,12 +489,6 @@
     "published": "2026-11-15T10:58:25Z",
     "repo": "ARMOR-NODE-SOLAR",
     "tag": "v0.6.7"
-   },
-   {
-    "entries": 15,
-    "published": "2026-11-14T15:21:04Z",
-    "repo": "URTC-WEB-STUDIO",
-    "tag": "v0.5.2"
    },
    {
     "entries": 14,
@@ -669,11 +663,17 @@
     "published": "2026-11-06T16:13:07Z",
     "repo": "HYDRA-UMC-OPS-AGENT",
     "tag": "v0.2.3"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-15T08:02:50Z",
+    "repo": "HYDRA-UMC-OS-REBUILDER",
+    "tag": "v0.3.8"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 47
+  "total": 46
  },
  "repos": 130,
  "schema": 1,
@@ -816,7 +816,7 @@
   "URTC-TESTER": "v0.5.6",
   "URTC-UPDATER": "v0.3.1",
   "URTC-VISION-TOOL": "v0.2.1",
-  "URTC-WEB-STUDIO": "v0.5.2"
+  "URTC-WEB-STUDIO": "v0.5.3"
  },
  "trend": {
   "cand": [
@@ -836,7 +836,7 @@
    13,
    41,
    47,
-   47
+   46
   ],
   "dates": [
    "2026-11-03",
@@ -893,7 +893,7 @@
    16336,
    10185,
    5009,
-   4965
+   5014
   ],
   "red": [
    3,

@@ -358,7 +358,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC](https://github.com/JuanenRac/URTC) | 0.5.0 | Universal Robot Tool Controller firmware for specialized tool heads. |
 | [URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER) | 0.5.7 | GUI tool for CAN-OTA and full-chip SWD/JTAG firmware updates. |
 | [URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER) | 0.5.6 | Diagnostic tool for real-time validation of URTC tool profiles over CAN. |
-| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.5.2 | Browser-based Web Serial tool for instant hardware testing and analysis. |
+| [URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO) | 0.5.3 | Browser-based Web Serial tool for instant hardware testing and analysis. |
 | [URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK) | 0.2.8 | Intelligent tool storage with automatic pre-heating and lifecycle audit. |
 | [URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL) | 0.2.1 | Toolhead with integrated thermal and RGB cameras for active QA. |
 | [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) | 0.3.1 | Detects, installs and updates the URTC repositories on a machine from their own manifests. |

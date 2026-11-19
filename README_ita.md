@@ -364,7 +364,7 @@ Ogni profilo di utensile gestisce il proprio watchdog e comportamento in caso di
 |[URTC](https://github.com/JuanenRac/URTC)|0.5.0|Firmware dell'Universal Robot Tool Controller per teste utensile specializzate.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|Strumento GUI per aggiornamenti firmware CAN-OTA e SWD/JTAG full-chip.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Strumento diagnostico per la validazione in tempo reale dei profili utensile URTC su CAN.|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Strumento Web Serial basato su browser per test e analisi hardware istantanei.|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.3|Strumento Web Serial basato su browser per test e analisi hardware istantanei.|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|Stoccaggio intelligente di utensili con preriscaldamento automatico e audit del ciclo di vita.|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|Testa utensile con telecamere termiche e RGB integrate per QA attiva.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.1|Rileva, installa e aggiorna le repository URTC su una macchina a partire dai relativi manifest.|

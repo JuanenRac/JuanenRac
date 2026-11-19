@@ -364,7 +364,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 |[URTC](https://github.com/JuanenRac/URTC)|0.5.0|Firmware du Universal Robot Tool Controller pour têtes d'outil spécialisées.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|Outil graphique pour les mises à jour de micrologiciel CAN-OTA et SWD/JTAG pleine puce.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Outil de diagnostic pour la validation en temps réel des profils d'outils URTC sur CAN.|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Outil Web Serial basé sur le navigateur pour les tests et analyses matériels instantanés.|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.3|Outil Web Serial basé sur le navigateur pour les tests et analyses matériels instantanés.|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|Stockage d'outils intelligent avec préchauffage automatique et audit du cycle de vie.|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|Tête d'outil avec caméras thermique et RVB intégrées pour l'AQ active.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.1|Détecte, installe et met à jour les dépôts URTC sur une machine à partir de leurs propres manifestes.|

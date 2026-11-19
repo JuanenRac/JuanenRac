@@ -364,7 +364,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[URTC](https://github.com/JuanenRac/URTC)|0.5.0|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.3|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|具备自动预热和生命周期审计功能的智能工具存储。|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|集成热成像和 RGB 相机以实现主动 QA 的工具头。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.1|根据自身的清单检测、安装和更新机器上的 URTC 仓库。|

@@ -364,7 +364,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[URTC](https://github.com/JuanenRac/URTC)|0.5.0|専用ツールヘッド向けの Universal Robot Tool Controller ファームウェア。|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|CAN-OTAおよびフルチップSWD/JTAGファームウェアアップデート用GUIツール。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|CAN経由でのURTCツールプロファイルのリアルタイム検証用診断ツール。|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|即時のハードウェアテストと分析のためのブラウザベースのWeb Serialツール。|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.3|即時のハードウェアテストと分析のためのブラウザベースのWeb Serialツール。|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|自動予熱とライフサイクル監査を備えたインテリジェントなツールストレージ。|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|アクティブQA用にサーマルカメラとRGBカメラが統合されたツールヘッド。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.1|マニフェストからマシン上のURTCリポジトリを検出し、インストールし、更新します。|

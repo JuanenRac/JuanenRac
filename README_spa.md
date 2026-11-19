@@ -364,7 +364,7 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 |[URTC](https://github.com/JuanenRac/URTC)|0.5.0|Firmware del Universal Robot Tool Controller para cabezales de herramienta especializados.|
 |[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|Herramienta GUI para actualizaciones de firmware CAN-OTA y SWD/JTAG de chip completo.|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|Herramienta de diagnóstico para la validación en tiempo real de perfiles de herramientas URTC a través de CAN.|
-|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.2|Herramienta Web Serial basada en navegador para pruebas y análisis instantáneos de hardware.|
+|[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.3|Herramienta Web Serial basada en navegador para pruebas y análisis instantáneos de hardware.|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|Almacenamiento inteligente de herramientas con precalentamiento automático y auditoría del ciclo de vida.|
 |[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|Cabezal de herramienta con cámaras térmicas y RGB integradas para control de calidad activo.|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.1|Detecta, instala y actualiza los repositorios URTC en una máquina a partir de sus propios manifiestos.|
