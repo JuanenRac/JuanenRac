@@ -435,7 +435,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | :--- | :--- | :--- |
 | [ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR) | 0.8.1.3 | ESP32-S3 field-node firmware with decoders for the LD2450, LD2461 and presence sensors, GitHub updates and a live map. |
 | [ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR) | 0.6.7 | Solar gateway node: ESP32-S3 firmware, panel and protocols of Voltronic / MPP Solar inverters and Pylontech and ANT-BMS batteries. |
-| [ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL) | 0.5.9 | Electrical node: firmware with PZEM meters on one serial line, web panel and MQTT, the meters' frames and the switching rules. |
+| [ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL) | 0.6.0 | Electrical node: firmware with PZEM meters on one serial line, web panel and MQTT, the meters' frames and the switching rules. |
 | [ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM) | 0.5.8 | Alarm node and panel: wired zones, siren, Zigbee devices and the rules of arming, delays, alarm and PIN; it guards without the server. |
 | [ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI) | 0.4.9 | Touch panel for the Waveshare ESP32-S3-Touch-LCD-7C-BOX: system state on a wall screen, arm/disarm/acknowledge and push-to-talk voice. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.3.0 | Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix. |
@@ -544,7 +544,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 CAM projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM) | 0.1.3 | Isolation milling of the copper of a Gerber layer: exact offsets of the copper, several tools and passes, copper rubout, direction and order of the cuts, drills and outline, alignment holes, design rules, solder mask, G-code and HP-GL; the window is planned. |
+| [EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM) | 0.1.4 | Isolation milling of the copper of a Gerber layer: exact offsets of the copper, several tools and passes, copper rubout, direction and order of the cuts, drills and outline, alignment holes, design rules, solder mask, G-code and HP-GL; the window is planned. |
 | [EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER) | 0.0.7 | Checks a G-code program before it reaches a machine: its time with the acceleration of the machine and alerts for rapid moves into the material, moves outside the table, cuts with the spindle off and heads over clamps; the 3D simulation is planned. |
 
 
@@ -596,7 +596,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 🛠️ Complementary Tools
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.7 | Finds round fiducial marks in an image, turns pixels into millimetres, corrects the distortion of the lens and works out the turn and the shift of a board; the live camera, the neural network and the window are planned. |
+| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.8 | Finds round fiducial marks in an image, turns pixels into millimetres, corrects the distortion of the lens and works out the turn and the shift of a board; the live camera, the neural network and the window are planned. |
 | [EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL) | 0.1.0 | Topographic height mesh processor (Z-Probing) and G-code interpolation for surface compensation. |
 
 

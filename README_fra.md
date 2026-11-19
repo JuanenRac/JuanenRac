@@ -441,7 +441,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 |-|-|-|
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.3|Firmware de nœud de terrain ESP32-S3 avec décodeurs pour les capteurs LD2450, LD2461 et de présence, mises à jour depuis GitHub et carte en direct.|
 |[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.7|Nœud passerelle solaire : firmware ESP32-S3, panneau et protocoles des onduleurs Voltronic / MPP Solar et des batteries Pylontech et ANT-BMS.|
-|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.9|Nœud électrique : firmware avec compteurs PZEM sur une ligne série, panneau web et MQTT, les trames des compteurs et les règles de manœuvre.|
+|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.6.0|Nœud électrique : firmware avec compteurs PZEM sur une ligne série, panneau web et MQTT, les trames des compteurs et les règles de manœuvre.|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.8|Nœud et panneau d'alarme : zones filaires, sirène, appareils Zigbee et règles d'armement, de temporisation, d'alarme et de code PIN ; continue de surveiller sans le serveur.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.9|Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : état du système sur un écran mural, armer, désarmer, acquitter et voix push-to-talk.|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.3.0|Conceptions de boîtiers (boîtier d'angle radar ; boîte cochée pour les nœuds solaires, électriques et d'alarme) et matrice de recette en atelier.|
@@ -548,7 +548,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 ### 💠 Projets FAO :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.3|Fraisage d'isolation du cuivre d'une couche Gerber : décalages exacts du cuivre, plusieurs passes, contrôle des espaces que l'outil ne peut pas couper et G-code ; la fenêtre, l'enlèvement du cuivre et la stratégie Voronoi sont prévus.|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.4|Fraisage d'isolation du cuivre d'une couche Gerber : décalages exacts du cuivre, plusieurs passes, contrôle des espaces que l'outil ne peut pas couper et G-code ; la fenêtre, l'enlèvement du cuivre et la stratégie Voronoi sont prévus.|
 |[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.7|Vérifie un programme G-code avant qu'il n'atteigne une machine : son temps avec l'accélération de la machine et des alertes pour les mouvements rapides dans la matière, les mouvements hors de la table, les coupes broche arrêtée et les têtes au-dessus de pinces ; la simulation 3D est prévue.|
 
 ### 💠 Projets Gerber :
@@ -594,7 +594,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 ### 🛠️ Outils complémentaires
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.7|Trouve des marques fiduciaires rondes dans une image, convertit les pixels en millimètres, corrige la distorsion de l'objectif et calcule la rotation et le décalage d'une carte ; la caméra en direct, le réseau de neurones et la fenêtre sont prévus.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|Trouve des marques fiduciaires rondes dans une image, convertit les pixels en millimètres, corrige la distorsion de l'objectif et calcule la rotation et le décalage d'une carte ; la caméra en direct, le réseau de neurones et la fenêtre sont prévus.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|Processeur de maillage de hauteur topographique (palpage Z) et interpolation de G-code pour la compensation de surface.|
 
 

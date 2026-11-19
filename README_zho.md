@@ -441,7 +441,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |-|-|-|
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.3|ESP32-S3 现场节点固件：支持 LD2450、LD2461 和人体存在传感器的解码，可从 GitHub 更新，并提供实时地图。|
 |[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.7|太阳能网关节点：ESP32-S3 固件、面板，以及 Voltronic / MPP Solar 逆变器和 Pylontech、ANT-BMS 电池的协议。|
-|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.9|电气节点：通过一条串行线路读取 PZEM 电表的固件、网页面板和 MQTT、电表数据帧以及开合操作规则。|
+|[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.6.0|电气节点：通过一条串行线路读取 PZEM 电表的固件、网页面板和 MQTT、电表数据帧以及开合操作规则。|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.8|报警节点与面板：有线防区、警笛、Zigbee 设备，以及布防、延时、报警和 PIN 规则；服务器离线时仍继续守护。|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.9|适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：在壁挂屏幕上显示系统状态，布防、撤防、确认，以及按键通话语音。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.3.0|外壳设计（雷达角落外壳；太阳能、电气和报警节点的勾选框）以及台架验收矩阵。|
@@ -548,7 +548,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 CAM 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.3|Gerber 层铜箔的隔离铣削：铜箔的精确偏移、多道走刀、检查刀具切不到的窄缝并输出 G 代码；窗口、铜区去除和 Voronoi 策略在计划中。|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.4|Gerber 层铜箔的隔离铣削：铜箔的精确偏移、多道走刀、检查刀具切不到的窄缝并输出 G 代码；窗口、铜区去除和 Voronoi 策略在计划中。|
 |[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.7|在 G 代码程序到达机器之前进行检查：按机器加速度计算时间，并对快速进入材料、超出工作台、主轴停转时切削和刀头经过夹具给出警报；3D 模拟在计划中。|
 
 ### 💠 Gerber 项目：
@@ -594,7 +594,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 🛠️ 辅助工具
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.7|在图像中找到圆形基准点，把像素转换为毫米，校正镜头畸变并计算电路板的旋转和平移；实时摄像头、神经网络和窗口在计划中。|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|在图像中找到圆形基准点，把像素转换为毫米，校正镜头畸变并计算电路板的旋转和平移；实时摄像头、神经网络和窗口在计划中。|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|地形高度网格处理器（Z 探测）和用于表面补偿的 G代码插值。|
 
 

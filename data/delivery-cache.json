@@ -23,9 +23,10 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-17T20:34:57Z",
-   "exp": "2026-11-24T20:33:36Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/44170013773",
+   "at": "2026-11-19T17:39:43Z",
+   "checked": true,
+   "exp": "2026-11-26T17:38:05Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/44578655395",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
@@ -59,7 +60,6 @@
   "ARMOR-SERVER": {
    "art": true,
    "at": "2026-11-19T17:17:02Z",
-   "checked": true,
    "exp": "2026-11-26T17:11:47Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/44574333450",
    "wf": "package-build.yml"
@@ -74,7 +74,6 @@
   "ARMOR-STUDIO": {
    "art": true,
    "at": "2026-11-19T17:25:01Z",
-   "checked": true,
    "exp": "2026-11-26T17:24:23Z",
    "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/44576738352",
    "wf": "package-build.yml"
@@ -347,8 +346,8 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "59f57a4cdbeb5ae0",
-   "on": "2026-11-15",
+   "fp": "58230ac1fda2a2f1",
+   "on": "2026-11-19",
    "r": {
     "ak": 3,
     "an": 3,
@@ -434,24 +433,6 @@
     "ak": 0,
     "an": 1,
     "at": "absent"
-   }
-  },
-  "EH3D-DRILLPRO": {
-   "fp": "008b82b14abc641a",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-ISOCAM": {
-   "fp": "f007360aba7ebb32",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
    }
   },
   "EH3D-PHOENIX-LASER": {
@@ -688,7 +669,7 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "59f57a4cdbeb5ae0",
+   "fp": "58230ac1fda2a2f1",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -823,34 +804,6 @@
     "unk": 1,
     "why": [
      "scheme"
-    ]
-   }
-  },
-  "EH3D-DRILLPRO": {
-   "fp": "008b82b14abc641a",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 10,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-ISOCAM": {
-   "fp": "f007360aba7ebb32",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
     ]
    }
   },
