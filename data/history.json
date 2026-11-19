@@ -11811,15 +11811,15 @@
   },
   {
    "actions": {
-    "fail": 73,
-    "min": 4817,
-    "ok": 1442,
+    "fail": 77,
+    "min": 4592,
+    "ok": 1337,
     "other": 29,
-    "runs": 1544
+    "runs": 1443
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 0,
      "production": 60,
@@ -11839,7 +11839,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 50,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -11849,7 +11849,7 @@
      "tests": 100
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 8,
      "production": 8,
@@ -11859,7 +11859,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -11873,7 +11873,7 @@
    "progress": {
     "armor": 65,
     "eh3d": 48,
-    "electro-hobby-3d": 61,
+    "electro-hobby-3d": 63,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -12056,7 +12056,7 @@
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
@@ -12108,7 +12108,7 @@
     ],
     "EH3D-VISION-STUDIO": [
      1,
-     "0.0.5"
+     "0.0.6"
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
@@ -12402,13 +12402,13 @@
    "sentinel": {
     "cand": 42,
     "gaps": 0,
-    "min": 4817,
-    "red": 2
+    "min": 4592,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
     "ARMOR-COMMON": 659,
-    "ARMOR-DOCS": 508,
+    "ARMOR-DOCS": 511,
     "ARMOR-HARDWARE": 87,
     "ARMOR-IOS-CONTROL": 516,
     "ARMOR-NETWORK": 334,
@@ -12453,7 +12453,7 @@
     "EH3D-TOOL-MANAGER": 154,
     "EH3D-UPDATER": 458,
     "EH3D-VALIDATION-LAB": 63,
-    "EH3D-VISION-STUDIO": 191,
+    "EH3D-VISION-STUDIO": 246,
     "HYDRA-UMC": 1500,
     "HYDRA-UMC-ANDROID-CONTROL": 767,
     "HYDRA-UMC-ANOMALY-DETECTOR": 472,
