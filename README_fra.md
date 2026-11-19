@@ -88,7 +88,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████▊ 97%` | 57 dépôts sur 59 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▊ 98%` | 58 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont été vérifiés au moins dans un simulateur. |
@@ -329,7 +329,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟡 | `████████▎░ 82%` | 9 dépôts sur 11 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▏ 91%` | 10 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont été vérifiés au moins dans un simulateur. |
@@ -404,7 +404,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████░ 90%` | 18 dépôts sur 20 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `█████████▌ 95%` | 19 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont été vérifiés au moins dans un simulateur. |
@@ -537,13 +537,13 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|Réimplémentation en Rust du flux de perçage du logiciel DOS classique pour les machines Bungard CCD : interface en mode texte en huit langues, simulateur ou machine réelle.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Réimplémentation en Rust du flux de fraisage du logiciel DOS classique pour les machines Bungard CCD, à partir de fichiers de traçage HP-GL : interface en mode texte en huit langues, simulateur ou machine réelle.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.7|Interface moderne pour les machines Bungard CCD : un lanceur des programmes classiques de perçage et de fraisage et un visualiseur du travail sur la table.|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.5|Base commune des programmes de pilotage de machine d'EH3D : une fenêtre qui pilote une machine simulée avec jog, mise à zéro, exécution de G-code et vue du parcours, en huit langues.|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.6|Base commune des programmes de pilotage de machine d'EH3D : une fenêtre qui pilote une machine simulée avec jog, mise à zéro, exécution de G-code et vue du parcours, en huit langues.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.9|Base de données de cribles d'outils partagée suivant les heures d'usure, les préréglages de coupe et les avances sur tous les outils FAO EH3D.|
 
 ### 💠 Projets laser :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.8|Application FAO laser pour le tramage d'images, la conversion raster/vecteur et le contrôle de puissance PWM dynamique.|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.9|Application FAO laser pour le tramage d'images, la conversion raster/vecteur et le contrôle de puissance PWM dynamique.|
 
 ### 💠 Projets FAO :
 |Dépôt|Version|Description|
@@ -611,7 +611,7 @@ En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils 
 **Outil de mise à jour :** aucun en propre ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) est l'un de ses outils et passe la main à l'outil de mise à jour de chacun des quatre écosystèmes.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[████████████▋░░░░░░░] 63%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 2 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,7 +623,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `██████████ 100%` | 2 dépôts sur 2 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont des tests automatiques. |
-| Intégration continue | 🟠 | `█████░░░░░ 50%` | 1 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 2 dépôts sur 2 ont le README dans les huit langues. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 2 ont été vérifiés au moins dans un simulateur. |

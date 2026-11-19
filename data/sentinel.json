@@ -1,22 +1,28 @@
 {
- "asof": "2026-11-19T12:07:13Z",
+ "asof": "2026-11-19T12:38:27Z",
  "ci": {
   "checked": 629,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-19T11:39:17Z",
-    "streak": 1,
+    "since": "2026-11-19T12:24:18Z",
+    "streak": 3,
+    "wf": "nightly.yml"
+   },
+   {
+    "repo": "URTC-DOCS",
+    "since": "2026-11-19T12:36:22Z",
+    "streak": 3,
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 1
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 910,
-    "min7": 910,
+    "min24": 916,
+    "min7": 916,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -25,8 +31,8 @@
     "repo": "ARMOR-VISION"
    },
    {
-    "min24": 179,
-    "min7": 587,
+    "min24": 198,
+    "min7": 592,
     "repo": "URTC-FLASHER"
    },
    {
@@ -45,12 +51,13 @@
     "repo": "ARMOR-IOS-CONTROL"
    }
   ],
-  "total24": 4842,
-  "total7": 40718,
+  "total24": 4817,
+  "total7": 40623,
   "warn": false
  },
  "delivery": {
   "clmis": [
+   "EH3D-PHOENIX-CNC",
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "HYDRA-UMC-SUITE",
@@ -65,7 +72,7 @@
     "tagahead": 0
    },
    "eh3d": {
-    "clmis": 0,
+    "clmis": 1,
     "nonotes": 0,
     "read": 38,
     "repos": 38,
@@ -119,7 +126,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 21,
+   "cand": 22,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -128,12 +135,18 @@
   "urtc": {
    "cand": 2,
    "read": 11,
-   "red": 0,
+   "red": 1,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T12:38:27Z",
+   "kind": "red_new",
+   "repo": "URTC-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-19T12:07:13Z",
    "kind": "red_new",
@@ -307,18 +320,12 @@
    "kind": "red_new",
    "repo": "HYDRA-UMC-DOCS",
    "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-18T11:07:30Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-CNC",
-   "tag": "v0.1.4"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 70
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -331,22 +338,23 @@
  "parte": [
   {
    "key": "head",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 41,
+    "cand": 42,
     "hyg": 0,
-    "red": 1
+    "red": 2
    }
   },
   {
    "key": "red",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "list": [
-     "ARMOR-DOCS"
+     "ARMOR-DOCS",
+     "URTC-DOCS"
     ],
-    "n": 1
+    "n": 2
    }
   },
   {
@@ -381,6 +389,7 @@
      "HYDRA-UMC-BRIDGE-ROS2",
      "HYDRA-UMC-DASHBOARD-AI",
      "HYDRA-UMC-DOCS-QA",
+     "HYDRA-UMC-HIL-BRIDGE",
      "HYDRA-UMC-IOS-CONTROL",
      "HYDRA-UMC-MESHES",
      "HYDRA-UMC-NODE-HEALING",
@@ -392,10 +401,9 @@
      "HYDRA-UMC-VISION-STREAMER",
      "HYDRA-UMC-VISUAL-SERVOING-API",
      "HYDRA-UMC-VOICE-UI",
-     "HYDRA-UMC-WATCH",
-     "URTC-GATEWAY"
+     "HYDRA-UMC-WATCH"
     ],
-    "n": 41
+    "n": 42
    }
   },
   {
@@ -461,6 +469,12 @@
    },
    {
     "entries": 18,
+    "published": "2026-11-15T09:11:17Z",
+    "repo": "ARMOR-DOCS",
+    "tag": "v0.8.2.1"
+   },
+   {
+    "entries": 18,
     "published": "2026-11-15T10:58:25Z",
     "repo": "ARMOR-NODE-SOLAR",
     "tag": "v0.6.7"
@@ -476,12 +490,6 @@
     "published": "2026-11-15T16:09:07Z",
     "repo": "HYDRA-UMC-STUDIO",
     "tag": "v0.8.2.2"
-   },
-   {
-    "entries": 17,
-    "published": "2026-11-15T09:11:17Z",
-    "repo": "ARMOR-DOCS",
-    "tag": "v0.8.2.1"
    },
    {
     "entries": 17,
@@ -611,6 +619,12 @@
    },
    {
     "entries": 5,
+    "published": "2026-11-15T07:47:28Z",
+    "repo": "HYDRA-UMC-HIL-BRIDGE",
+    "tag": "v0.1.7"
+   },
+   {
+    "entries": 5,
     "published": "2026-10-31T07:31:01Z",
     "repo": "HYDRA-UMC-MESHES",
     "tag": "meshes-1"
@@ -656,17 +670,11 @@
     "published": "2026-11-15T16:12:11Z",
     "repo": "HYDRA-UMC-WATCH",
     "tag": "v0.3.4"
-   },
-   {
-    "entries": 5,
-    "published": "2026-11-14T15:21:41Z",
-    "repo": "URTC-GATEWAY",
-    "tag": "v0.0.9"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 41
+  "total": 42
  },
  "repos": 130,
  "schema": 1,
@@ -829,7 +837,7 @@
    13,
    41,
    47,
-   41
+   42
   ],
   "dates": [
    "2026-11-03",
@@ -886,7 +894,7 @@
    16336,
    10185,
    5009,
-   4842
+   4817
   ],
   "red": [
    3,
@@ -905,7 +913,7 @@
    1,
    2,
    0,
-   1
+   2
   ]
  },
  "unpublished": {

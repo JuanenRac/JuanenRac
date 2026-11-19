@@ -88,7 +88,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 repository su 59 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 59 repository su 59 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▊ 98%` | 58 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 59 repository su 59 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 59 repository su 59 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 59 repository su 59 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `██████████ 100%` | 59 repository su 59 sono stati verificati almeno in un simulatore. |
@@ -329,7 +329,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 repository su 11 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 11 repository su 11 hanno test automatici. |
-| Integrazione continua | 🟢 | `█████████▏ 91%` | 10 repository su 11 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 11 repository su 11 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 11 repository su 11 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 11 repository su 11 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `██████████ 100%` | 11 repository su 11 sono stati verificati almeno in un simulatore. |
@@ -404,7 +404,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████░ 90%` | 18 repository su 20 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 20 repository su 20 hanno test automatici. |
-| Integrazione continua | 🟢 | `██████████ 100%` | 20 repository su 20 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `█████████▌ 95%` | 19 repository su 20 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 20 repository su 20 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 20 repository su 20 hanno il README nelle otto lingue. |
 | Simulazione | 🟢 | `██████████ 100%` | 20 repository su 20 sono stati verificati almeno in un simulatore. |
@@ -537,13 +537,13 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|Reimplementazione in Rust del flusso di foratura del software DOS classico per le macchine Bungard CCD: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Reimplementazione in Rust del flusso di fresatura del software DOS classico per le macchine Bungard CCD, da file di tracciato HP-GL: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.7|Interfaccia moderna per le macchine Bungard CCD: un launcher dei programmi classici di foratura e fresatura e un visualizzatore del lavoro sul tavolo.|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.5|Base comune dei programmi di controllo macchina di EH3D: una finestra che comanda una macchina simulata con jog, azzeramento, esecuzione di G-code e vista del percorso, in otto lingue.|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.6|Base comune dei programmi di controllo macchina di EH3D: una finestra che comanda una macchina simulata con jog, azzeramento, esecuzione di G-code e vista del percorso, in otto lingue.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.9|Database di magazzino utensili condiviso per il monitoraggio delle ore d'usura, preset di taglio e avanzamenti su tutti i tool CAM EH3D.|
 
 ### 💠 Progetti laser:
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.8|App CAM laser per dithering d'immagine, conversione raster/vettore e controllo dinamico della potenza PWM.|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.9|App CAM laser per dithering d'immagine, conversione raster/vettore e controllo dinamico della potenza PWM.|
 
 ### 💠 Progetti CAM:
 |Repository|Versione|Descrizione|
@@ -611,7 +611,7 @@ Oltre ai quattro ecosistemi c'è un quinto gruppo: strumenti indipendenti che st
 **Aggiornatore:** nessuno proprio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) è uno dei suoi strumenti e passa il lavoro all'aggiornatore di ciascuno dei quattro ecosistemi.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 2 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[████████████▋░░░░░░░] 63%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 2 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,7 +623,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 repository su 2 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟢 | `██████████ 100%` | 2 repository su 2 hanno test automatici. |
-| Integrazione continua | 🟠 | `█████░░░░░ 50%` | 1 repository su 2 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 2 repository su 2 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟢 | `██████████ 100%` | 2 repository su 2 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 2 repository su 2 hanno il README nelle otto lingue. |
 | Simulazione | 🔴 | `░░░░░░░░░░ 0%` | 0 repository su 2 sono stati verificati almeno in un simulatore. |

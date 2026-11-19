@@ -88,7 +88,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 59 of 59 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 59 of 59 repositories have been checked at least in a simulator. |
@@ -323,7 +323,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 11 of 11 repositories have been checked at least in a simulator. |
@@ -398,7 +398,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████░ 90%` | 18 of 20 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 20 of 20 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 20 of 20 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▌ 95%` | 19 of 20 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 20 of 20 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 20 of 20 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 20 of 20 repositories have been checked at least in a simulator. |
@@ -531,14 +531,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.1.9 | Rust re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.1.7 | Rust re-implementation of the routing workflow of the classic DOS software for Bungard CCD machines, from HP-GL plot files: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.2.7 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
-| [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.1.5 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
+| [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.1.6 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
 | [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.0.9 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
 
 ### 💠 Laser projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.0.8 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
+| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.0.9 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
 
 
 ### 💠 CAM projects:
@@ -613,7 +613,7 @@ Outside the four ecosystems there is a fifth group: independent tools that stand
 **Updater:** none of its own; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) is one of its tools and hands over to the updater of each of the four ecosystems.
 
 <!-- progress:electro-hobby-3d -->
-`[████████████▎░░░░░░░] 61%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[████████████▋░░░░░░░] 63%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -625,7 +625,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 of 2 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 2 of 2 repositories have automated tests. |
-| Continuous integration | 🟠 | `█████░░░░░ 50%` | 1 of 2 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 2 of 2 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 2 of 2 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 2 of 2 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 2 repositories have been checked at least in a simulator. |

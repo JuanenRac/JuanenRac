@@ -88,7 +88,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 von 59 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `█████████▊ 98%` | 58 von 59 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `██████████ 100%` | 59 von 59 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -329,7 +329,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 von 11 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `█████████▏ 91%` | 10 von 11 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `██████████ 100%` | 11 von 11 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -404,7 +404,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████░ 90%` | 18 von 20 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `█████████▌ 95%` | 19 von 20 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `██████████ 100%` | 20 von 20 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -537,13 +537,13 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|Rust-Neuimplementierung des Bohr-Ablaufs der klassischen DOS-Software für Bungard-CCD-Maschinen: Textmodus-Oberfläche in acht Sprachen, Simulator oder echte Maschine.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Rust-Neuimplementierung des Fräs-Ablaufs der klassischen DOS-Software für Bungard-CCD-Maschinen aus HP-GL-Plotdateien: Textmodus-Oberfläche in acht Sprachen, Simulator oder echte Maschine.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.7|Moderne Oberfläche für Bungard-CCD-Maschinen: ein Starter für die klassischen Bohr- und Fräsprogramme und ein Viewer des Auftrags auf dem Tisch.|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.5|Gemeinsame Basis der EH3D-Maschinensteuerprogramme: ein Fenster, das eine simulierte Maschine mit Jog-Pad, Nullsetzen, G-Code-Ausführung und Bahnansicht steuert, in acht Sprachen.|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.6|Gemeinsame Basis der EH3D-Maschinensteuerprogramme: ein Fenster, das eine simulierte Maschine mit Jog-Pad, Nullsetzen, G-Code-Ausführung und Bahnansicht steuert, in acht Sprachen.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.0.9|Geteilte Werkzeugkasten-Datenbank zur Nachverfolgung von Verschleißstunden, Schnittvoreinstellungen und Vorschüben über alle EH3D-CAM-Tools hinweg.|
 
 ### 💠 Laserprojekte:
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.8|Laser-CAM-App für Bild-Dithering, Raster-/Vektorkonvertierung und dynamische PWM-Leistungsregelung.|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.0.9|Laser-CAM-App für Bild-Dithering, Raster-/Vektorkonvertierung und dynamische PWM-Leistungsregelung.|
 
 ### 💠 CAM-Projekte:
 |Repository|Version|Beschreibung|
@@ -611,7 +611,7 @@ Neben den vier Ökosystemen gibt es eine fünfte Gruppe: eigenständige Werkzeug
 **Updater:** keinen eigenen; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) ist eines seiner Werkzeuge und übergibt an den Updater jedes der vier Ökosysteme.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 2 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[████████████▋░░░░░░░] 63%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 2 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,7 +623,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 von 2 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟠 | `█████░░░░░ 50%` | 1 von 2 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 2 von 2 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 von 2 Repositories wurden mindestens in einem Simulator geprüft. |

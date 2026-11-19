@@ -11812,10 +11812,10 @@
   {
    "actions": {
     "fail": 73,
-    "min": 4842,
-    "ok": 1489,
-    "other": 32,
-    "runs": 1594
+    "min": 4817,
+    "ok": 1442,
+    "other": 29,
+    "runs": 1544
    },
    "areas": {
     "armor": {
@@ -11839,7 +11839,7 @@
      "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 50,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -11849,7 +11849,7 @@
      "tests": 100
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 8,
      "production": 8,
@@ -11859,7 +11859,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -11873,7 +11873,7 @@
    "progress": {
     "armor": 65,
     "eh3d": 48,
-    "electro-hobby-3d": 63,
+    "electro-hobby-3d": 61,
     "hydra-umc": 59,
     "urtc": 56
    },
@@ -12052,7 +12052,7 @@
     ],
     "EH3D-PHOENIX-CNC": [
      1,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-PHOENIX-LASER": [
      1,
@@ -12400,10 +12400,10 @@
     ]
    },
    "sentinel": {
-    "cand": 41,
+    "cand": 42,
     "gaps": 0,
-    "min": 4842,
-    "red": 1
+    "min": 4817,
+    "red": 2
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -12439,8 +12439,8 @@
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 448,
-    "EH3D-PHOENIX-LASER": 473,
+    "EH3D-PHOENIX-CNC": 488,
+    "EH3D-PHOENIX-LASER": 508,
     "EH3D-PHOENIX-PCB": 4385,
     "EH3D-PHOENIX-PNP": 889,
     "EH3D-PROJECT-PASSPORT": 3,
