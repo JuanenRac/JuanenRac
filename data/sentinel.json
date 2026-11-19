@@ -1,22 +1,15 @@
 {
- "asof": "2026-11-19T15:34:23Z",
+ "asof": "2026-11-19T15:53:32Z",
  "ci": {
   "checked": 629,
-  "red": [
-   {
-    "repo": "EH3D-VISION-STUDIO",
-    "since": "2026-11-19T15:10:56Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   }
-  ],
-  "red_total": 1
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 965,
-    "min7": 965,
+    "min24": 926,
+    "min7": 926,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -40,21 +33,21 @@
     "repo": "ARMOR-HARDWARE"
    },
    {
-    "min24": 109,
+    "min24": 113,
     "min7": 243,
     "repo": "ARMOR-VOICE-AI"
    }
   ],
-  "total24": 4435,
-  "total7": 40470,
+  "total24": 4455,
+  "total7": 40213,
   "warn": false
  },
  "delivery": {
   "clmis": [
+   "EH3D-IOS-CONTROL",
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
-   "URTC-DEVTOOLS",
-   "URTC-UPDATER"
+   "URTC-DEVTOOLS"
   ],
   "eco": {
    "armor": {
@@ -65,7 +58,7 @@
     "tagahead": 0
    },
    "eh3d": {
-    "clmis": 0,
+    "clmis": 1,
     "nonotes": 0,
     "read": 38,
     "repos": 38,
@@ -86,7 +79,7 @@
     "tagahead": 0
    },
    "urtc": {
-    "clmis": 2,
+    "clmis": 1,
     "nonotes": 0,
     "read": 11,
     "repos": 11,
@@ -107,7 +100,7 @@
   "eh3d": {
    "cand": 0,
    "read": 38,
-   "red": 1,
+   "red": 0,
    "repos": 38,
    "unpub": 0
   },
@@ -130,10 +123,22 @@
    "read": 11,
    "red": 0,
    "repos": 11,
-   "unpub": 2
+   "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T15:53:32Z",
+   "kind": "red_ok",
+   "repo": "EH3D-VISION-STUDIO",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-19T15:53:32Z",
+   "kind": "released",
+   "repo": "URTC-UPDATER",
+   "tag": "v0.3.2"
+  },
   {
    "at": "2026-11-19T15:34:23Z",
    "kind": "red_new",
@@ -301,24 +306,12 @@
    "kind": "released",
    "repo": "EH3D-PHOENIX-PCB",
    "tag": "v0.0.9"
-  },
-  {
-   "at": "2026-11-18T13:02:02Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-LASER",
-   "tag": "v0.0.8"
-  },
-  {
-   "at": "2026-11-18T12:38:47Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-CAD",
-   "tag": "v0.0.7"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 90
+  "gap_minutes": 20
  },
  "hygiene": {
   "allowed_missing": [],
@@ -336,17 +329,7 @@
     "bad": 0,
     "cand": 40,
     "hyg": 0,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "warn",
-   "p": {
-    "list": [
-     "EH3D-VISION-STUDIO"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -405,10 +388,9 @@
     "list": [
      "HYDRA-UMC",
      "HYDRA-UMC-OS",
-     "URTC-DEVTOOLS",
-     "URTC-UPDATER"
+     "URTC-DEVTOOLS"
     ],
-    "n": 4
+    "n": 3
    }
   },
   {
@@ -673,9 +655,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 86,
+  "none": 85,
   "norelease": 0,
-  "unverifiable": 16,
+  "unverifiable": 17,
   "unverified": 0,
   "verified": 28
  },
@@ -807,7 +789,7 @@
   "URTC-GATEWAY": "v0.1.0",
   "URTC-SMART-RACK": "v0.2.9",
   "URTC-TESTER": "v0.5.7",
-  "URTC-UPDATER": "v0.3.1",
+  "URTC-UPDATER": "v0.3.2",
   "URTC-VISION-TOOL": "v0.2.2",
   "URTC-WEB-STUDIO": "v0.5.3"
  },
@@ -886,7 +868,7 @@
    16336,
    10185,
    5009,
-   4435
+   4455
   ],
   "red": [
    3,
@@ -905,7 +887,7 @@
    1,
    2,
    0,
-   1
+   0
   ]
  },
  "unpublished": {
@@ -924,13 +906,8 @@
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.7"
-   },
-   {
-    "repo": "URTC-UPDATER",
-    "tag": "v0.3.1",
-    "version": "0.3.2"
    }
   ],
-  "total": 4
+  "total": 3
  }
 }
