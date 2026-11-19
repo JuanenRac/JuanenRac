@@ -11812,10 +11812,10 @@
   {
    "actions": {
     "fail": 86,
-    "min": 6257,
-    "ok": 1928,
-    "other": 52,
-    "runs": 2066
+    "min": 6297,
+    "ok": 1944,
+    "other": 53,
+    "runs": 2083
    },
    "areas": {
     "armor": {
@@ -12168,7 +12168,7 @@
     ],
     "HYDRA-UMC-DASHBOARD-AI": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-DATALAKE": [
      1,
@@ -12296,7 +12296,7 @@
     ],
     "HYDRA-UMC-STUDIO-KIT": [
      1,
-     "0.0.4"
+     "0.0.5"
     ],
     "HYDRA-UMC-SUITE": [
      1,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 12,
+    "cand": 10,
     "gaps": 0,
-    "min": 6257,
+    "min": 6297,
     "red": 0
    },
    "tests": {

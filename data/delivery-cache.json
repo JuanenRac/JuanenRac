@@ -2,9 +2,10 @@
  "builds": {
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-15T15:53:12Z",
-   "exp": "2026-11-22T15:52:06Z",
-   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/43731676597",
+   "at": "2026-11-19T19:26:14Z",
+   "checked": true,
+   "exp": "2026-11-26T19:24:16Z",
+   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/44597204080",
    "wf": "apk-build.yml"
   },
   "ARMOR-DEVOPS": {
@@ -38,7 +39,6 @@
   "ARMOR-NODE-HMI": {
    "art": true,
    "at": "2026-11-19T18:42:48Z",
-   "checked": true,
    "exp": "2026-11-26T18:37:29Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/44588949182",
    "wf": "firmware-build.yml"
@@ -95,7 +95,6 @@
   "EH3D-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-19T19:02:26Z",
-   "checked": true,
    "exp": "2026-11-26T19:01:22Z",
    "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/44593236424",
    "wf": "apk-build.yml"
@@ -425,15 +424,6 @@
     "ak": 1,
     "an": 1,
     "at": "present"
-   }
-  },
-  "ARMOR-WATCH": {
-   "fp": "01f5b23b442ac117",
-   "on": "2026-11-18",
-   "r": {
-    "ak": 0,
-    "an": 1,
-    "at": "absent"
    }
   },
   "EH3D-ANDROID-CONTROL": {
