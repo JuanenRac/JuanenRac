@@ -3,7 +3,6 @@
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-19T19:26:14Z",
-   "checked": true,
    "exp": "2026-11-26T19:24:16Z",
    "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/44597204080",
    "wf": "apk-build.yml"
@@ -319,8 +318,8 @@
  },
  "presence": {
   "ARMOR-ANDROID-CONTROL": {
-   "fp": "9d38022fecb8b2e5",
-   "on": "2026-11-18",
+   "fp": "6df274ede9762f25",
+   "on": "2026-11-19",
    "r": {
     "ak": 0,
     "an": 1,
@@ -435,8 +434,17 @@
     "at": "absent"
    }
   },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "1cb5ffabc38e62be",
+  "EH3D-PHOENIX-LASER": {
+   "fp": "54c248221b461e23",
+   "on": "2026-11-19",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-PHOENIX-PCB": {
+   "fp": "618493c06a387f5a",
    "on": "2026-11-19",
    "r": {
     "ak": 3,
@@ -482,15 +490,6 @@
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
    "fp": "e0b65d4c11f826a6",
-   "on": "2026-11-18",
-   "r": {
-    "ak": 0,
-    "an": 1,
-    "at": "absent"
-   }
-  },
-  "HYDRA-UMC-MESHES": {
-   "fp": "bed485331987538b",
    "on": "2026-11-18",
    "r": {
     "ak": 0,
@@ -798,8 +797,22 @@
     ]
    }
   },
-  "EH3D-PHOENIX-CNC": {
-   "fp": "1cb5ffabc38e62be",
+  "EH3D-PHOENIX-LASER": {
+   "fp": "54c248221b461e23",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-PHOENIX-PCB": {
+   "fp": "618493c06a387f5a",
    "r": {
     "bad": 0,
     "ho": 0,

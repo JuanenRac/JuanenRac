@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T19:34:09Z",
+ "asof": "2026-11-19T20:08:52Z",
  "ci": {
   "checked": 634,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1017,
-    "min7": 1017,
+    "min24": 1024,
+    "min7": 1024,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,13 +38,12 @@
     "repo": "URTC"
    }
   ],
-  "total24": 6297,
-  "total7": 39375,
+  "total24": 6437,
+  "total7": 38911,
   "warn": false
  },
  "delivery": {
   "clmis": [
-   "ARMOR-ANDROID-CONTROL",
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "HYDRA-UMC-STUDIO-KIT",
@@ -52,7 +51,7 @@
   ],
   "eco": {
    "armor": {
-    "clmis": 1,
+    "clmis": 0,
     "nonotes": 0,
     "read": 20,
     "repos": 20,
@@ -96,7 +95,7 @@
    "read": 20,
    "red": 0,
    "repos": 20,
-   "unpub": 1
+   "unpub": 0
   },
   "eh3d": {
    "cand": 0,
@@ -113,7 +112,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 9,
+   "cand": 7,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -128,6 +127,30 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T20:08:52Z",
+   "kind": "released",
+   "repo": "ARMOR-ANDROID-CONTROL",
+   "tag": "v0.8.0.9"
+  },
+  {
+   "at": "2026-11-19T20:08:52Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-CNC",
+   "tag": "v0.2.0"
+  },
+  {
+   "at": "2026-11-19T20:08:52Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-IOS-CONTROL",
+   "tag": "v0.3.7"
+  },
+  {
+   "at": "2026-11-19T20:08:52Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-MESHES",
+   "tag": "v0.1.1"
+  },
   {
    "at": "2026-11-19T19:34:09Z",
    "kind": "released",
@@ -283,36 +306,12 @@
    "kind": "released",
    "repo": "ARMOR-SERVER",
    "tag": "v0.8.2.4"
-  },
-  {
-   "at": "2026-11-19T17:37:14Z",
-   "kind": "released",
-   "repo": "ARMOR-STUDIO",
-   "tag": "v0.8.2.6"
-  },
-  {
-   "at": "2026-11-19T17:37:14Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-CAD",
-   "tag": "v0.0.8"
-  },
-  {
-   "at": "2026-11-19T17:08:50Z",
-   "kind": "released",
-   "repo": "ARMOR-HARDWARE",
-   "tag": "v0.3.0"
-  },
-  {
-   "at": "2026-11-19T17:08:50Z",
-   "kind": "released",
-   "repo": "ARMOR-SIMULATOR",
-   "tag": "v0.3.9"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 20
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -328,7 +327,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 10,
+    "cand": 8,
     "hyg": 0,
     "red": 0
    }
@@ -341,15 +340,13 @@
      "ARMOR-DOCS",
      "HYDRA-UMC-ANDROID-CONTROL",
      "HYDRA-UMC-HIL-BRIDGE",
-     "HYDRA-UMC-IOS-CONTROL",
-     "HYDRA-UMC-MESHES",
      "HYDRA-UMC-NODE-HEALING",
      "HYDRA-UMC-OS-REBUILDER",
      "HYDRA-UMC-SERVER",
      "HYDRA-UMC-STUDIO",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 10
+    "n": 8
    }
   },
   {
@@ -357,13 +354,12 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-ANDROID-CONTROL",
      "HYDRA-UMC",
      "HYDRA-UMC-OS",
      "HYDRA-UMC-STUDIO-KIT",
      "URTC-DEVTOOLS"
     ],
-    "n": 5
+    "n": 4
    }
   },
   {
@@ -403,22 +399,10 @@
     "tag": "v0.8.2.2"
    },
    {
-    "entries": 10,
-    "published": "2026-11-15T16:04:13Z",
-    "repo": "HYDRA-UMC-IOS-CONTROL",
-    "tag": "v0.3.6"
-   },
-   {
     "entries": 5,
     "published": "2026-11-15T07:47:28Z",
     "repo": "HYDRA-UMC-HIL-BRIDGE",
     "tag": "v0.1.7"
-   },
-   {
-    "entries": 5,
-    "published": "2026-10-31T07:31:01Z",
-    "repo": "HYDRA-UMC-MESHES",
-    "tag": "meshes-1"
    },
    {
     "entries": 5,
@@ -441,21 +425,21 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 10
+  "total": 8
  },
  "repos": 130,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 96,
+  "none": 95,
   "norelease": 2,
-  "unverifiable": 4,
+  "unverifiable": 5,
   "unverified": 0,
   "verified": 28
  },
  "tags": {
-  "ARMOR-ANDROID-CONTROL": "v0.8.0.8",
+  "ARMOR-ANDROID-CONTROL": "v0.8.0.9",
   "ARMOR-COMMON": "v0.8.1.5",
   "ARMOR-DEVOPS": "v0.7.8",
   "ARMOR-DOCS": "v0.8.2.1",
@@ -497,7 +481,7 @@
   "EH3D-NODE-BUNGARD-HMI": "v0.1.1",
   "EH3D-NODE-HMI-GUI": "v0.1.0",
   "EH3D-PHOENIX-CAD": "v0.0.8",
-  "EH3D-PHOENIX-CNC": "v0.1.9",
+  "EH3D-PHOENIX-CNC": "v0.2.0",
   "EH3D-PHOENIX-LASER": "v0.1.1",
   "EH3D-PHOENIX-PCB": "v0.1.0",
   "EH3D-PHOENIX-PNP": "v0.1.0",
@@ -538,10 +522,10 @@
   "HYDRA-UMC-EDITOR-URDF": "v0.2.1",
   "HYDRA-UMC-GATEWAY-INDUSTRIAL": "v0.2.1",
   "HYDRA-UMC-HIL-BRIDGE": "v0.1.7",
-  "HYDRA-UMC-IOS-CONTROL": "v0.3.6",
+  "HYDRA-UMC-IOS-CONTROL": "v0.3.7",
   "HYDRA-UMC-JOB-DISPATCHER": "v0.3.1",
   "HYDRA-UMC-LOCAL-TECHNICIAN": "v0.2.3",
-  "HYDRA-UMC-MESHES": "meshes-1",
+  "HYDRA-UMC-MESHES": "v0.1.1",
   "HYDRA-UMC-MQTT-BROKER": "v0.2.2",
   "HYDRA-UMC-MTCONNECT-ADAPTER": "v0.2.4",
   "HYDRA-UMC-NODE-HEALING": "v0.2.5",
@@ -602,7 +586,7 @@
    13,
    41,
    47,
-   10
+   8
   ],
   "dates": [
    "2026-11-03",
@@ -659,7 +643,7 @@
    16336,
    10185,
    5009,
-   6297
+   6437
   ],
   "red": [
    3,
@@ -684,11 +668,6 @@
  "unpublished": {
   "rows": [
    {
-    "repo": "ARMOR-ANDROID-CONTROL",
-    "tag": "v0.8.0.8",
-    "version": "0.8.0.9"
-   },
-   {
     "repo": "HYDRA-UMC",
     "tag": "v0.2.9",
     "version": "0.3.0"
@@ -709,6 +688,6 @@
     "version": "0.0.7"
    }
   ],
-  "total": 5
+  "total": 4
  }
 }

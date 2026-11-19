@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 86,
-    "min": 6297,
-    "ok": 1944,
-    "other": 53,
-    "runs": 2083
+    "fail": 88,
+    "min": 6437,
+    "ok": 2008,
+    "other": 47,
+    "runs": 2143
    },
    "areas": {
     "armor": {
@@ -12052,7 +12052,7 @@
     ],
     "EH3D-PHOENIX-CNC": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "EH3D-PHOENIX-LASER": [
      1,
@@ -12216,7 +12216,7 @@
     ],
     "HYDRA-UMC-IOS-CONTROL": [
      1,
-     "0.3.6"
+     "0.3.7"
     ],
     "HYDRA-UMC-JOB-DISPATCHER": [
      1,
@@ -12228,7 +12228,7 @@
     ],
     "HYDRA-UMC-MESHES": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "HYDRA-UMC-MQTT-BROKER": [
      1,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 10,
+    "cand": 8,
     "gaps": 0,
-    "min": 6297,
+    "min": 6437,
     "red": 0
    },
    "tests": {
@@ -12439,10 +12439,10 @@
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 580,
-    "EH3D-PHOENIX-LASER": 568,
+    "EH3D-PHOENIX-CNC": 649,
+    "EH3D-PHOENIX-LASER": 602,
     "EH3D-PHOENIX-PCB": 4536,
-    "EH3D-PHOENIX-PNP": 994,
+    "EH3D-PHOENIX-PNP": 1114,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
     "EH3D-SERVER": 386,
