@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 57,
-    "min": 4932,
-    "ok": 1754,
-    "other": 36,
-    "runs": 1847
+    "fail": 56,
+    "min": 4878,
+    "ok": 1782,
+    "other": 35,
+    "runs": 1873
    },
    "areas": {
     "armor": {
@@ -11859,7 +11859,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 47,
     "gaps": 0,
-    "min": 4932,
+    "min": 4878,
     "red": 0
    },
    "tests": {

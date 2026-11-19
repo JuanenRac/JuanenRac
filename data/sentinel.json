@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T03:27:07Z",
+ "asof": "2026-11-19T03:47:15Z",
  "ci": {
   "checked": 627,
   "red": [],
@@ -8,17 +8,17 @@
  "compute": {
   "top": [
    {
-    "min24": 860,
-    "min7": 860,
+    "min24": 839,
+    "min7": 839,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 215,
-    "min7": 379,
+    "min24": 216,
+    "min7": 376,
     "repo": "ARMOR-SERVER"
    },
    {
-    "min24": 178,
+    "min24": 180,
     "min7": 224,
     "repo": "ARMOR-COMMON"
    },
@@ -29,7 +29,7 @@
    },
    {
     "min24": 170,
-    "min7": 310,
+    "min7": 307,
     "repo": "ARMOR-STUDIO"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-VISION"
    }
   ],
-  "total24": 4932,
-  "total7": 40083,
+  "total24": 4878,
+  "total7": 40024,
   "warn": false
  },
  "delivery": {
@@ -869,7 +869,7 @@
    16336,
    10185,
    5009,
-   4932
+   4878
   ],
   "red": [
    3,
