@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 82,
-    "min": 5676,
-    "ok": 1726,
-    "other": 47,
-    "runs": 1855
+    "fail": 86,
+    "min": 6257,
+    "ok": 1928,
+    "other": 52,
+    "runs": 2066
    },
    "areas": {
     "armor": {
@@ -11880,7 +11880,7 @@
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
      2,
-     "0.8.0.8"
+     "0.8.0.9"
     ],
     "ARMOR-COMMON": [
      2,
@@ -11900,7 +11900,7 @@
     ],
     "ARMOR-IOS-CONTROL": [
      0,
-     "0.0.6"
+     "0.0.7"
     ],
     "ARMOR-NETWORK": [
      2,
@@ -11956,7 +11956,7 @@
     ],
     "ARMOR-WATCH": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
@@ -12060,7 +12060,7 @@
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-PHOENIX-PNP": [
      1,
@@ -12100,7 +12100,7 @@
     ],
     "EH3D-UPDATER": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-VALIDATION-LAB": [
      0,
@@ -12128,7 +12128,7 @@
     ],
     "HYDRA-UMC-BRIDGE-AMR": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "HYDRA-UMC-BRIDGE-CNC": [
      1,
@@ -12136,7 +12136,7 @@
     ],
     "HYDRA-UMC-BRIDGE-DROIDS": [
      1,
-     "0.1.8"
+     "0.1.9"
     ],
     "HYDRA-UMC-BRIDGE-LASER": [
      1,
@@ -12148,11 +12148,11 @@
     ],
     "HYDRA-UMC-BRIDGE-PRINTER3D": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-BRIDGE-ROS2": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "HYDRA-UMC-BRIDGE-UAV": [
      1,
@@ -12192,7 +12192,7 @@
     ],
     "HYDRA-UMC-DOCS-QA": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "HYDRA-UMC-DSI": [
      1,
@@ -12248,7 +12248,7 @@
     ],
     "HYDRA-UMC-OPS-AGENT": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-ORCHESTRATOR": [
      1,
@@ -12332,11 +12332,11 @@
     ],
     "HYDRA-UMC-VISION-STREAMER": [
      2,
-     "0.2.6"
+     "0.2.7"
     ],
     "HYDRA-UMC-VISUAL-SERVOING-API": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-VLA-ENGINE": [
      1,
@@ -12344,7 +12344,7 @@
     ],
     "HYDRA-UMC-VOICE-UI": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-WATCH": [
      1,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 24,
+    "cand": 12,
     "gaps": 0,
-    "min": 5676,
+    "min": 6257,
     "red": 0
    },
    "tests": {
@@ -12441,7 +12441,7 @@
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 580,
     "EH3D-PHOENIX-LASER": 568,
-    "EH3D-PHOENIX-PCB": 4502,
+    "EH3D-PHOENIX-PCB": 4536,
     "EH3D-PHOENIX-PNP": 994,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
@@ -12451,7 +12451,7 @@
     "EH3D-SUITE-LAUNCHER": 128,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 175,
-    "EH3D-UPDATER": 458,
+    "EH3D-UPDATER": 491,
     "EH3D-VALIDATION-LAB": 63,
     "EH3D-VISION-STUDIO": 300,
     "HYDRA-UMC": 1500,
