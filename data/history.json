@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 86,
-    "min": 5235,
-    "ok": 1547,
-    "other": 42,
-    "runs": 1675
+    "fail": 87,
+    "min": 5403,
+    "ok": 1609,
+    "other": 34,
+    "runs": 1730
    },
    "areas": {
     "armor": {
@@ -11896,7 +11896,7 @@
     ],
     "ARMOR-HARDWARE": [
      1,
-     "0.2.9"
+     "0.3.0"
     ],
     "ARMOR-IOS-CONTROL": [
      0,
@@ -11928,7 +11928,7 @@
     ],
     "ARMOR-SERVER": [
      2,
-     "0.8.2.3"
+     "0.8.2.4"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -11936,7 +11936,7 @@
     ],
     "ARMOR-SIMULATOR": [
      2,
-     "0.3.8"
+     "0.3.9"
     ],
     "ARMOR-STUDIO": [
      2,
@@ -11944,11 +11944,11 @@
     ],
     "ARMOR-UPDATER": [
      2,
-     "0.2.3"
+     "0.2.4"
     ],
     "ARMOR-VISION": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "ARMOR-VOICE-AI": [
      2,
@@ -11964,15 +11964,15 @@
     ],
     "EH3D-AUTOLEVEL": [
      1,
-     "0.0.9"
+     "0.1.0"
     ],
     "EH3D-BUNGARD-GUI": [
      1,
-     "0.2.7"
+     "0.2.8"
     ],
     "EH3D-CAM-DEBUGGER": [
      1,
-     "0.0.6"
+     "0.0.7"
     ],
     "EH3D-COMMON": [
      1,
@@ -12080,7 +12080,7 @@
     ],
     "EH3D-STENCILCAM": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-STUDIO": [
      1,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 36,
+    "cand": 32,
     "gaps": 0,
-    "min": 5235,
+    "min": 5403,
     "red": 0
    },
    "tests": {
@@ -12423,7 +12423,7 @@
     "EH3D-ANDROID-CONTROL": 251,
     "EH3D-AUTOLEVEL": 220,
     "EH3D-BUNGARD-GUI": 428,
-    "EH3D-CAM-DEBUGGER": 126,
+    "EH3D-CAM-DEBUGGER": 142,
     "EH3D-COMMON": 440,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 366,

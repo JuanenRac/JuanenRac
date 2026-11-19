@@ -10,7 +10,6 @@
   "ARMOR-DEVOPS": {
    "art": true,
    "at": "2026-11-19T16:47:54Z",
-   "checked": true,
    "exp": "2026-11-26T16:44:10Z",
    "url": "https://github.com/JuanenRac/ARMOR-DEVOPS/actions/runs/44568991337",
    "wf": "package-build.yml"
@@ -18,7 +17,6 @@
   "ARMOR-NETWORK": {
    "art": true,
    "at": "2026-11-19T16:36:43Z",
-   "checked": true,
    "exp": "2026-11-26T16:35:23Z",
    "url": "https://github.com/JuanenRac/ARMOR-NETWORK/actions/runs/44567750663",
    "wf": "package-build.yml"
@@ -68,7 +66,6 @@
   "ARMOR-SERVER-AI": {
    "art": true,
    "at": "2026-11-19T16:32:27Z",
-   "checked": true,
    "exp": "2026-11-26T16:31:39Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER-AI/actions/runs/44567039931",
    "wf": "package-build.yml"
@@ -437,33 +434,6 @@
     "at": "absent"
    }
   },
-  "EH3D-AUTOLEVEL": {
-   "fp": "e431cb76d5fbe3c6",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-BUNGARD-GUI": {
-   "fp": "42897dcfcac9826b",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-CAM-DEBUGGER": {
-   "fp": "b9fc2efea385e816",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-DRILLPRO": {
    "fp": "008b82b14abc641a",
    "on": "2026-11-19",
@@ -493,15 +463,6 @@
   },
   "EH3D-SERVER": {
    "fp": "42b6ce807c53c25c",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-STENCILCAM": {
-   "fp": "a3a7422beca6033c",
    "on": "2026-11-19",
    "r": {
     "ak": 3,
@@ -845,48 +806,6 @@
     ]
    }
   },
-  "EH3D-AUTOLEVEL": {
-   "fp": "e431cb76d5fbe3c6",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-BUNGARD-GUI": {
-   "fp": "42897dcfcac9826b",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-CAM-DEBUGGER": {
-   "fp": "b9fc2efea385e816",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-DRILLPRO": {
    "fp": "008b82b14abc641a",
    "r": {
@@ -938,20 +857,6 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 4,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-STENCILCAM": {
-   "fp": "a3a7422beca6033c",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
     "why": [
      "family"
     ]
