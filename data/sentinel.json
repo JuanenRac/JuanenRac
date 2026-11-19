@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T13:44:06Z",
+ "asof": "2026-11-19T14:04:26Z",
  "ci": {
   "checked": 629,
   "red": [
@@ -15,8 +15,8 @@
  "compute": {
   "top": [
    {
-    "min24": 893,
-    "min7": 893,
+    "min24": 918,
+    "min7": 918,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -26,12 +26,12 @@
    },
    {
     "min24": 198,
-    "min7": 575,
+    "min7": 555,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 140,
-    "min7": 402,
+    "min24": 144,
+    "min7": 399,
     "repo": "URTC"
    },
    {
@@ -40,13 +40,13 @@
     "repo": "ARMOR-IOS-CONTROL"
    },
    {
-    "min24": 128,
-    "min7": 379,
-    "repo": "ARMOR-HARDWARE"
+    "min24": 132,
+    "min7": 243,
+    "repo": "ARMOR-VOICE-AI"
    }
   ],
-  "total24": 4438,
-  "total7": 40513,
+  "total24": 4500,
+  "total7": 40493,
   "warn": false
  },
  "delivery": {
@@ -318,7 +318,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 30
+  "gap_minutes": 25
  },
  "hygiene": {
   "allowed_missing": [],
@@ -673,9 +673,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 86,
+  "none": 85,
   "norelease": 0,
-  "unverifiable": 16,
+  "unverifiable": 17,
   "unverified": 0,
   "verified": 28
  },
@@ -886,7 +886,7 @@
    16336,
    10185,
    5009,
-   4438
+   4500
   ],
   "red": [
    3,

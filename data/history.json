@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 78,
-    "min": 4438,
-    "ok": 1313,
-    "other": 33,
-    "runs": 1424
+    "fail": 81,
+    "min": 4500,
+    "ok": 1307,
+    "other": 32,
+    "runs": 1420
    },
    "areas": {
     "armor": {
@@ -11859,7 +11859,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 42,
     "gaps": 0,
-    "min": 4438,
+    "min": 4500,
     "red": 1
    },
    "tests": {
@@ -12424,7 +12424,7 @@
     "EH3D-AUTOLEVEL": 192,
     "EH3D-BUNGARD-GUI": 423,
     "EH3D-CAM-DEBUGGER": 126,
-    "EH3D-COMMON": 430,
+    "EH3D-COMMON": 440,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 366,
     "EH3D-DESIGN-EXPLORER": 3,
@@ -12435,14 +12435,14 @@
     "EH3D-GERBERVIEWER": 131,
     "EH3D-HYDRA-BRIDGE": 3,
     "EH3D-IOS-CONTROL": 240,
-    "EH3D-ISOCAM": 431,
+    "EH3D-ISOCAM": 465,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 488,
     "EH3D-PHOENIX-LASER": 508,
     "EH3D-PHOENIX-PCB": 4411,
-    "EH3D-PHOENIX-PNP": 889,
+    "EH3D-PHOENIX-PNP": 948,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
     "EH3D-SERVER": 386,
