@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T21:43:50Z",
+ "asof": "2026-11-19T22:24:33Z",
  "ci": {
   "checked": 634,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 953,
-    "min7": 953,
+    "min24": 961,
+    "min7": 961,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-HMI"
    }
   ],
-  "total24": 6537,
-  "total7": 38726,
+  "total24": 6553,
+  "total7": 38597,
   "warn": false
  },
  "delivery": {
@@ -310,7 +310,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 35
+  "gap_minutes": 45
  },
  "hygiene": {
   "allowed_missing": [],
@@ -642,7 +642,7 @@
    16336,
    10185,
    5009,
-   6537
+   6553
   ],
   "red": [
    3,
