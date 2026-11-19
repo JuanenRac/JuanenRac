@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 60,
+    "fail": 58,
     "min": 4994,
-    "ok": 1755,
-    "other": 36,
-    "runs": 1851
+    "ok": 1749,
+    "other": 33,
+    "runs": 1840
    },
    "areas": {
     "armor": {

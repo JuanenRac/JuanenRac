@@ -76,7 +76,7 @@ Welcome to the **HYDRA-UMC Ecosystem**, a multi-layered industrial robotics plat
 ## 📈 Ecosystem Progress
 
 <!-- progress:hydra-umc -->
-`[███████████▊░░░░░░░░] 59%` — Calculated from real data: the maturity and the evidence that each of its 59 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[███████████░░░░░░░░░] 55%` — Calculated from real data: the maturity and the evidence that each of its 59 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->

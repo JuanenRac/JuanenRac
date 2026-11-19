@@ -76,7 +76,7 @@ Bem-vindo ao **Ecossistema HYDRA-UMC**, uma plataforma de robótica industrial m
 ## 📈 Progresso do Ecossistema
 
 <!-- progress:hydra-umc -->
-`\[███████████▊░░░░░░░░] 59%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 59 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[███████████░░░░░░░░░] 55%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 59 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->

@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T07:59:05Z",
+ "asof": "2026-11-19T08:09:40Z",
  "ci": {
   "checked": 627,
   "red": [
@@ -21,8 +21,8 @@
  "compute": {
   "top": [
    {
-    "min24": 922,
-    "min7": 922,
+    "min24": 942,
+    "min7": 942,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -46,13 +46,13 @@
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 164,
+    "min24": 154,
     "min7": 395,
     "repo": "EH3D-PHOENIX-PCB"
    }
   ],
   "total24": 4994,
-  "total7": 39967,
+  "total7": 39987,
   "warn": false
  },
  "delivery": {
@@ -324,7 +324,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 15
+  "gap_minutes": 25
  },
  "hygiene": {
   "allowed_missing": [],

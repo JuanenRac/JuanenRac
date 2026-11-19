@@ -76,7 +76,7 @@ Willkommen im **HYDRA-UMC-Ökosystem**, einer mehrschichtigen industriellen Robo
 ## 📈 Ökosystem-Fortschritt
 
 <!-- progress:hydra-umc -->
-`\[███████████▊░░░░░░░░] 59%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 59 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[███████████░░░░░░░░░] 55%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 59 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->

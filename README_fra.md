@@ -76,7 +76,7 @@ Bienvenue dans l'**écosystème HYDRA-UMC**, une plateforme de robotique industr
 ## 📈 Progression de l'écosystème
 
 <!-- progress:hydra-umc -->
-`\[███████████▊░░░░░░░░] 59%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 59 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[███████████░░░░░░░░░] 55%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 59 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
