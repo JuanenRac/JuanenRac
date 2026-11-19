@@ -1,15 +1,28 @@
 {
- "asof": "2026-11-19T04:59:23Z",
+ "asof": "2026-11-19T07:14:06Z",
  "ci": {
   "checked": 627,
-  "red": [],
-  "red_total": 0
+  "red": [
+   {
+    "repo": "URTC-SMART-RACK",
+    "since": "2026-11-19T07:01:53Z",
+    "streak": 1,
+    "wf": "firmware-build.yml"
+   },
+   {
+    "repo": "URTC-VISION-TOOL",
+    "since": "2026-11-19T07:01:55Z",
+    "streak": 1,
+    "wf": "firmware-build.yml"
+   }
+  ],
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 887,
-    "min7": 887,
+    "min24": 868,
+    "min7": 868,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -24,22 +37,22 @@
    },
    {
     "min24": 176,
-    "min7": 428,
+    "min7": 395,
     "repo": "EH3D-PHOENIX-PCB"
+   },
+   {
+    "min24": 171,
+    "min7": 231,
+    "repo": "ARMOR-VISION"
    },
    {
     "min24": 170,
     "min7": 307,
     "repo": "ARMOR-STUDIO"
-   },
-   {
-    "min24": 161,
-    "min7": 228,
-    "repo": "ARMOR-VISION"
    }
   ],
-  "total24": 4866,
-  "total7": 40071,
+  "total24": 4940,
+  "total7": 39910,
   "warn": false
  },
  "delivery": {
@@ -47,6 +60,7 @@
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "HYDRA-UMC-SUITE",
+   "URTC-COMMON",
    "URTC-DEVTOOLS"
   ],
   "eco": {
@@ -79,7 +93,7 @@
     "tagahead": 0
    },
    "urtc": {
-    "clmis": 1,
+    "clmis": 2,
     "nonotes": 0,
     "read": 11,
     "repos": 11,
@@ -121,12 +135,24 @@
   "urtc": {
    "cand": 8,
    "read": 11,
-   "red": 0,
+   "red": 2,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T07:14:06Z",
+   "kind": "red_new",
+   "repo": "URTC-SMART-RACK",
+   "wf": "firmware-build.yml"
+  },
+  {
+   "at": "2026-11-19T07:14:06Z",
+   "kind": "red_new",
+   "repo": "URTC-VISION-TOOL",
+   "wf": "firmware-build.yml"
+  },
   {
    "at": "2026-11-18T19:43:23Z",
    "kind": "released",
@@ -294,24 +320,12 @@
    "kind": "red_ok",
    "repo": "HYDRA-UMC-DOCS",
    "wf": "nightly.yml"
-  },
-  {
-   "at": "2026-11-18T08:55:12Z",
-   "kind": "released",
-   "repo": "EH3D-SERVER",
-   "tag": "v0.1.8"
-  },
-  {
-   "at": "2026-11-18T08:06:54Z",
-   "kind": "red_new",
-   "repo": "EH3D-SERVER",
-   "wf": "ci.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 50
+  "gap_minutes": 135
  },
  "hygiene": {
   "allowed_missing": [],
@@ -329,7 +343,18 @@
     "bad": 0,
     "cand": 47,
     "hyg": 0,
-    "red": 0
+    "red": 2
+   }
+  },
+  {
+   "key": "red",
+   "level": "warn",
+   "p": {
+    "list": [
+     "URTC-SMART-RACK",
+     "URTC-VISION-TOOL"
+    ],
+    "n": 2
    }
   },
   {
@@ -869,7 +894,7 @@
    16336,
    10185,
    5009,
-   4866
+   4940
   ],
   "red": [
    3,
@@ -888,7 +913,7 @@
    1,
    2,
    0,
-   0
+   2
   ]
  },
  "unpublished": {
