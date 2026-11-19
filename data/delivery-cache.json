@@ -149,9 +149,10 @@
   },
   "HYDRA-UMC-JOB-DISPATCHER": {
    "art": true,
-   "at": "2026-11-05T21:02:50Z",
-   "exp": "2026-12-05T21:02:18Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/actions/runs/42108721420",
+   "at": "2026-11-19T12:01:34Z",
+   "checked": true,
+   "exp": "2026-11-26T12:00:34Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/actions/runs/44519773502",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-NODE-HEALING": {
@@ -163,9 +164,10 @@
   },
   "HYDRA-UMC-ORCHESTRATOR": {
    "art": true,
-   "at": "2026-11-05T21:03:27Z",
-   "exp": "2026-12-05T21:02:58Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/actions/runs/42108765282",
+   "at": "2026-11-19T12:02:04Z",
+   "checked": true,
+   "exp": "2026-11-26T12:01:10Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/actions/runs/44519769204",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-OS": {
@@ -441,6 +443,15 @@
     "ak": 0,
     "an": 1,
     "at": "absent"
+   }
+  },
+  "EH3D-DRILLPRO": {
+   "fp": "008b82b14abc641a",
+   "on": "2026-11-19",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
    }
   },
   "EH3D-ISOCAM": {
@@ -857,6 +868,20 @@
     "unk": 1,
     "why": [
      "scheme"
+    ]
+   }
+  },
+  "EH3D-DRILLPRO": {
+   "fp": "008b82b14abc641a",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 10,
+    "why": [
+     "family"
     ]
    }
   },
