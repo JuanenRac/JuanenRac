@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T07:45:18Z",
+ "asof": "2026-11-19T07:59:05Z",
  "ci": {
   "checked": 627,
   "red": [
@@ -21,8 +21,8 @@
  "compute": {
   "top": [
    {
-    "min24": 919,
-    "min7": 919,
+    "min24": 922,
+    "min7": 922,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -36,11 +36,6 @@
     "repo": "ARMOR-COMMON"
    },
    {
-    "min24": 175,
-    "min7": 395,
-    "repo": "EH3D-PHOENIX-PCB"
-   },
-   {
     "min24": 171,
     "min7": 231,
     "repo": "ARMOR-VISION"
@@ -49,10 +44,15 @@
     "min24": 170,
     "min7": 307,
     "repo": "ARMOR-STUDIO"
+   },
+   {
+    "min24": 164,
+    "min7": 395,
+    "repo": "EH3D-PHOENIX-PCB"
    }
   ],
-  "total24": 5014,
-  "total7": 39963,
+  "total24": 4994,
+  "total7": 39967,
   "warn": false
  },
  "delivery": {
@@ -893,7 +893,7 @@
    16336,
    10185,
    5009,
-   5014
+   4994
   ],
   "red": [
    3,
