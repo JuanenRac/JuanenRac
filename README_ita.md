@@ -442,7 +442,7 @@ A.R.M.O.R. segue la stessa regola già applicata dalla dashboard di HYDRA-UMC: u
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.3|Firmware del nodo di campo ESP32-S3 con decodificatori per i sensori LD2450, LD2461 e di presenza, aggiornamenti da GitHub e mappa in tempo reale.|
 |[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.7|Nodo gateway solare: firmware ESP32-S3, pannello e protocolli degli inverter Voltronic / MPP Solar e delle batterie Pylontech e ANT-BMS.|
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.9|Nodo elettrico: firmware con contatori PZEM su una linea seriale, pannello web e MQTT, i frame dei contatori e le regole di manovra.|
-|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.7|Nodo e pannello di allarme: zone cablate, sirena, dispositivi Zigbee e regole di inserimento, ritardi, allarme e PIN; continua a sorvegliare senza il server.|
+|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.8|Nodo e pannello di allarme: zone cablate, sirena, dispositivi Zigbee e regole di inserimento, ritardi, allarme e PIN; continua a sorvegliare senza il server.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.9|Pannello touch per la Waveshare ESP32-S3-Touch-LCD-7C-BOX: stato del sistema su uno schermo a parete, inserire, disinserire, confermare e voce push-to-talk.|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.3.0|Design dei cabinet (custodia d'angolo per radar; checklist per i nodi solari, elettrici e d'allarme) e matrice di accettazione al banco.|
 
@@ -534,7 +534,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 ### 💠 Progetti di foratura, contornatura e fresatura:
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|Reimplementazione in Rust del flusso di foratura del software DOS classico per le macchine Bungard CCD: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.0|Reimplementazione in Rust del flusso di foratura del software DOS classico per le macchine Bungard CCD: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Reimplementazione in Rust del flusso di fresatura del software DOS classico per le macchine Bungard CCD, da file di tracciato HP-GL: interfaccia in modalità testo in otto lingue, simulatore o macchina reale.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.8|Interfaccia moderna per le macchine Bungard CCD: un launcher dei programmi classici di foratura e fresatura e un visualizzatore del lavoro sul tavolo.|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.8|Base comune dei programmi di controllo macchina di EH3D: una finestra che comanda una macchina simulata con jog, azzeramento, esecuzione di G-code e vista del percorso, in otto lingue.|
@@ -574,7 +574,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.0.9|Ambiente EDA: acquisizione di schemi, layout di PCB, strumenti di verifica, simulazione di circuiti e moduli specializzati per alimentatori switching (SMPS) e RF.|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.7|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificatore ingegneristico completo per le validazioni incrociate e il controllo di qualità del progetto.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Ambiente di test incaricato di gestire i casi d'uso di riferimento e i test di regressione del sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|Sistema di controllo di versione che conserva la storia semantica e l'evoluzione logica del progetto.|

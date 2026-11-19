@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 87,
-    "min": 5459,
-    "ok": 1617,
-    "other": 35,
-    "runs": 1739
+    "fail": 85,
+    "min": 5531,
+    "ok": 1633,
+    "other": 40,
+    "runs": 1758
    },
    "areas": {
     "armor": {
@@ -11908,7 +11908,7 @@
     ],
     "ARMOR-NODE-ALARM": [
      1,
-     "0.5.7"
+     "0.5.8"
     ],
     "ARMOR-NODE-ELECTRICAL": [
      1,
@@ -12004,7 +12004,7 @@
     ],
     "EH3D-DRILLPRO": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "EH3D-GERBERVIEWER": [
      1,
@@ -12048,7 +12048,7 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 31,
+    "cand": 30,
     "gaps": 0,
-    "min": 5459,
+    "min": 5531,
     "red": 0
    },
    "tests": {
@@ -12431,7 +12431,7 @@
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 574,
-    "EH3D-DRILLPRO": 417,
+    "EH3D-DRILLPRO": 440,
     "EH3D-GERBERVIEWER": 131,
     "EH3D-HYDRA-BRIDGE": 3,
     "EH3D-IOS-CONTROL": 240,

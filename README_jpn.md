@@ -442,7 +442,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.3|ESP32-S3 フィールドノードのファームウェア。LD2450、LD2461 および人感センサーのデコーダー、GitHub からの更新、ライブマップを備えます。|
 |[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.7|ソーラーゲートウェイノード。ESP32-S3 ファームウェア、パネル、Voltronic / MPP Solar インバーターと Pylontech・ANT-BMS バッテリーのプロトコル。|
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.5.9|電気ノード。シリアル回線上の PZEM メーターを扱うファームウェア、Web パネル、MQTT、メーターのフレーム、開閉操作のルール。|
-|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.7|警報ノードとパネル。有線ゾーン、サイレン、Zigbee デバイス、セット・遅延・警報・PIN のルールを備え、サーバーがなくても監視を続けます。|
+|[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.8|警報ノードとパネル。有線ゾーン、サイレン、Zigbee デバイス、セット・遅延・警報・PIN のルールを備え、サーバーがなくても監視を続けます。|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.4.9|Waveshare ESP32-S3-Touch-LCD-7C-BOX 用のタッチパネル。壁面画面でのシステム状態表示、警戒の設定・解除・確認応答、プッシュトゥトークの音声。|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.3.0|筐体設計（レーダーコーナーエンクロージャー。ソーラー、電気、アラームノード用のチェックボックス付き）およびベンチ受け入れマトリックス。|
 
@@ -534,7 +534,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 ドリル／ルーター／ミリングのプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.1.9|Bungard CCD マシン向けの従来の DOS ソフトの穴あけ作業フローを Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.0|Bungard CCD マシン向けの従来の DOS ソフトの穴あけ作業フローを Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Bungard CCD マシン向けの従来の DOS ソフトのルーティング（切削）作業フローを HP-GL プロットファイルから Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.8|Bungard CCD マシン向けのモダンなインターフェース：従来の穴あけ・ルーティングプログラムのランチャーと、テーブル上の作業ビューア。|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.1.8|EH3D のマシン制御プログラムの共通基盤：ジョグ、ゼロ設定、G コード実行、経路表示で模擬マシンを動かすウィンドウ。8 言語対応。|
@@ -574,7 +574,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.0.9|EDA 環境：回路図入力、PCB レイアウト、検証ツール、回路シミュレーション、SMPS と RF 向けの専用モジュール。|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.7|筐体、シャーシ、ヒートシンクの設計に特化したパラメトリック機械 CAD。|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.8|筐体、シャーシ、ヒートシンクの設計に特化したパラメトリック機械 CAD。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|相互検証と設計品質管理のための総合エンジニアリング検証ツール。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|基準となるユースケースとシステムのリグレッションテストを管理するテスト環境。|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|設計の意味的な履歴と論理的な変遷を保存するバージョン管理システム。|
