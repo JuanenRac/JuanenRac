@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 39,
-    "min": 4410,
-    "ok": 1446,
-    "other": 28,
-    "runs": 1513
+    "fail": 64,
+    "min": 4505,
+    "ok": 1466,
+    "other": 44,
+    "runs": 1574
    },
    "areas": {
     "armor": {
@@ -12402,12 +12402,12 @@
    "sentinel": {
     "cand": 41,
     "gaps": 0,
-    "min": 4410,
+    "min": 4505,
     "red": 0
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
-    "ARMOR-COMMON": 654,
+    "ARMOR-COMMON": 659,
     "ARMOR-DOCS": 503,
     "ARMOR-HARDWARE": 87,
     "ARMOR-IOS-CONTROL": 516,
@@ -12442,7 +12442,7 @@
     "EH3D-PHOENIX-CNC": 448,
     "EH3D-PHOENIX-LASER": 473,
     "EH3D-PHOENIX-PCB": 4357,
-    "EH3D-PHOENIX-PNP": 843,
+    "EH3D-PHOENIX-PNP": 889,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
     "EH3D-SERVER": 386,

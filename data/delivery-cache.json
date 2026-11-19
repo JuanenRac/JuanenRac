@@ -283,7 +283,6 @@
   "URTC-SMART-RACK": {
    "art": true,
    "at": "2026-11-19T10:06:24Z",
-   "checked": true,
    "exp": "2026-11-26T10:05:44Z",
    "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/44500403961",
    "wf": "firmware-build.yml"
@@ -652,7 +651,7 @@
    }
   },
   "URTC-SMART-RACK": {
-   "fp": "3599affdeb7b94d9",
+   "fp": "bddb3860efffd9dd",
    "on": "2026-11-19",
    "r": {
     "ak": 1,
@@ -679,7 +678,7 @@
    }
   },
   "URTC-VISION-TOOL": {
-   "fp": "c3388726e6450a27",
+   "fp": "870179e787114dda",
    "on": "2026-11-19",
    "r": {
     "ak": 1,
@@ -1190,6 +1189,20 @@
     "why": []
    }
   },
+  "URTC-SMART-RACK": {
+   "fp": "bddb3860efffd9dd",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 3,
+    "s": "verified",
+    "sch": [
+     "urtc-rel/1"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
   "URTC-TESTER": {
    "fp": "3128303c8f3071c8",
    "r": {
@@ -1213,6 +1226,20 @@
     "s": "verified",
     "sch": [
      "urtc-pkg/1"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
+  "URTC-VISION-TOOL": {
+   "fp": "870179e787114dda",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 3,
+    "s": "verified",
+    "sch": [
+     "urtc-rel/1"
     ],
     "unk": 0,
     "why": []
