@@ -76,7 +76,7 @@
 ## 📈 生态系统进展
 
 <!-- progress:hydra-umc -->
-`\[███████████░░░░░░░░░] 55%` — 根据真实数据计算：其 59 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[███████████▊░░░░░░░░] 59%` — 根据真实数据计算：其 59 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:hydra-umc -->
 
 <!-- status:hydra-umc -->
@@ -317,7 +317,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 **更新器：** [URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:urtc -->
-`\[███████████░░░░░░░░░] 55%` — 根据真实数据计算：其 11 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[███████████▎░░░░░░░░] 56%` — 根据真实数据计算：其 11 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:urtc -->
 
 <!-- status:urtc -->
@@ -329,7 +329,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 | --- | :---: | --- | --- |
 | 软件 | 🟡 | `████████▎░ 82%` | 11 个仓库中有 9 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个有自动化测试。 |
-| 持续集成 | 🟡 | `████████▎░ 82%` | 11 个仓库中有 9 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个提供八种语言的 README。 |
 | 仿真 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少在仿真器中验证过。 |
@@ -361,12 +361,12 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.5.0|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
-|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.7|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
-|[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.6|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.5.1|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
+|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.8|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
+|[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.7|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.3|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
-|[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.8|具备自动预热和生命周期审计功能的智能工具存储。|
-|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.1|集成热成像和 RGB 相机以实现主动 QA 的工具头。|
+|[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.9|具备自动预热和生命周期审计功能的智能工具存储。|
+|[URTC-VISION-TOOL](https://github.com/JuanenRac/URTC-VISION-TOOL)|0.2.2|集成热成像和 RGB 相机以实现主动 QA 的工具头。|
 |[URTC-UPDATER](https://github.com/JuanenRac/URTC-UPDATER)|0.3.1|根据自身的清单检测、安装和更新机器上的 URTC 仓库。|
 |[URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS)|0.1.8|URTC 的架构、接口、安全基线、能力矩阵、CAN 协议说明和自动生成的项目目录。|
 |[URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON)|0.3.0|以数据形式描述的工具头 CAN 协议：规范、生成的 C、TypeScript 和 Python 代码、一致性向量和传输层。|

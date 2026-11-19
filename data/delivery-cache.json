@@ -275,9 +275,10 @@
   },
   "URTC-FLASHER": {
    "art": true,
-   "at": "2026-11-14T15:42:58Z",
-   "exp": "2026-11-21T15:41:22Z",
-   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/43611268609",
+   "at": "2026-11-19T09:59:03Z",
+   "checked": true,
+   "exp": "2026-11-26T09:58:00Z",
+   "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/44500421019",
    "wf": "exe-build.yml"
   },
   "URTC-SMART-RACK": {
@@ -289,9 +290,10 @@
   },
   "URTC-TESTER": {
    "art": true,
-   "at": "2026-11-14T15:42:47Z",
-   "exp": "2026-11-21T15:41:01Z",
-   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/43611264840",
+   "at": "2026-11-19T09:57:34Z",
+   "checked": true,
+   "exp": "2026-11-26T09:56:25Z",
+   "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/44500414061",
    "wf": "exe-build.yml"
   },
   "URTC-UPDATER": {
@@ -303,9 +305,10 @@
   },
   "URTC-VISION-TOOL": {
    "art": true,
-   "at": "2026-11-14T15:40:56Z",
-   "exp": "2026-11-21T15:40:03Z",
-   "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/43611286632",
+   "at": "2026-11-19T10:01:50Z",
+   "checked": true,
+   "exp": "2026-11-26T10:01:03Z",
+   "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/44500409073",
    "wf": "firmware-build.yml"
   },
   "URTC-WEB-STUDIO": {
@@ -660,8 +663,8 @@
    }
   },
   "URTC-TESTER": {
-   "fp": "8f6ecb0cc0059688",
-   "on": "2026-11-14",
+   "fp": "3128303c8f3071c8",
+   "on": "2026-11-19",
    "r": {
     "ak": 1,
     "an": 1,
@@ -1204,7 +1207,7 @@
    }
   },
   "URTC-TESTER": {
-   "fp": "8f6ecb0cc0059688",
+   "fp": "3128303c8f3071c8",
    "r": {
     "bad": 0,
     "ho": 0,

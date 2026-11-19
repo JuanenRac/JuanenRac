@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 58,
-    "min": 4994,
-    "ok": 1749,
-    "other": 33,
-    "runs": 1840
+    "fail": 38,
+    "min": 4252,
+    "ok": 1419,
+    "other": 29,
+    "runs": 1486
    },
    "areas": {
     "armor": {
@@ -11874,7 +11874,7 @@
     "armor": 65,
     "eh3d": 48,
     "electro-hobby-3d": 63,
-    "hydra-umc": 59,
+    "hydra-umc": 55,
     "urtc": 55
    },
    "repos": {
@@ -12356,7 +12356,7 @@
     ],
     "URTC": [
      1,
-     "0.5.0"
+     "0.5.1"
     ],
     "URTC-COMMON": [
      1,
@@ -12372,7 +12372,7 @@
     ],
     "URTC-FLASHER": [
      1,
-     "0.5.7"
+     "0.5.8"
     ],
     "URTC-GATEWAY": [
      0,
@@ -12380,11 +12380,11 @@
     ],
     "URTC-SMART-RACK": [
      1,
-     "0.2.8"
+     "0.2.9"
     ],
     "URTC-TESTER": [
      1,
-     "0.5.6"
+     "0.5.7"
     ],
     "URTC-UPDATER": [
      2,
@@ -12392,7 +12392,7 @@
     ],
     "URTC-VISION-TOOL": [
      1,
-     "0.2.1"
+     "0.2.2"
     ],
     "URTC-WEB-STUDIO": [
      1,
@@ -12400,10 +12400,10 @@
     ]
    },
    "sentinel": {
-    "cand": 46,
+    "cand": 41,
     "gaps": 0,
-    "min": 4994,
-    "red": 2
+    "min": 4252,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -12516,7 +12516,7 @@
     "URTC-COMMON": 3049,
     "URTC-DEVTOOLS": 158,
     "URTC-DOCS": 244,
-    "URTC-FLASHER": 916,
+    "URTC-FLASHER": 933,
     "URTC-GATEWAY": 245,
     "URTC-SMART-RACK": 786,
     "URTC-TESTER": 1133,
