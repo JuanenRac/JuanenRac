@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 60,
-    "min": 4940,
-    "ok": 1788,
-    "other": 40,
-    "runs": 1888
+    "fail": 58,
+    "min": 4965,
+    "ok": 1782,
+    "other": 39,
+    "runs": 1879
    },
    "areas": {
     "armor": {
@@ -11859,7 +11859,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 82,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -11875,7 +11875,7 @@
     "eh3d": 48,
     "electro-hobby-3d": 63,
     "hydra-umc": 59,
-    "urtc": 56
+    "urtc": 55
    },
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
@@ -12360,7 +12360,7 @@
     ],
     "URTC-COMMON": [
      1,
-     "0.2.9"
+     "0.3.0"
     ],
     "URTC-DEVTOOLS": [
      0,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 47,
     "gaps": 0,
-    "min": 4940,
+    "min": 4965,
     "red": 2
    },
    "tests": {
