@@ -594,7 +594,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 ### 🛠️ Outils complémentaires
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|Trouve des marques fiduciaires rondes dans une image, convertit les pixels en millimètres, corrige la distorsion de l'objectif et calcule la rotation et le décalage d'une carte ; la caméra en direct, le réseau de neurones et la fenêtre sont prévus.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.9|Trouve des marques fiduciaires rondes dans une image, convertit les pixels en millimètres, corrige la distorsion de l'objectif et calcule la rotation et le décalage d'une carte ; la caméra en direct, le réseau de neurones et la fenêtre sont prévus.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|Processeur de maillage de hauteur topographique (palpage Z) et interpolation de G-code pour la compensation de surface.|
 
 

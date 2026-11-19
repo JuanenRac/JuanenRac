@@ -594,7 +594,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 🛠️ 補完ツール
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|画像から丸い基準マークを見つけ、画素をミリメートルに変換し、レンズの歪みを補正し、基板の回転と移動量を計算します。ライブカメラ、ニューラル ネットワーク、ウィンドウは計画中です。|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.9|画像から丸い基準マークを見つけ、画素をミリメートルに変換し、レンズの歪みを補正し、基板の回転と移動量を計算します。ライブカメラ、ニューラル ネットワーク、ウィンドウは計画中です。|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|表面補正のための地形高さメッシュプロセッサー（Zプロービング）およびGコード補間。|
 
 

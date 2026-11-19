@@ -594,7 +594,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 ### 🛠️ Strumenti complementari
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|Trova segni fiduciali rotondi in un'immagine, converte i pixel in millimetri, corregge la distorsione dell'obiettivo e calcola la rotazione e lo spostamento di una scheda; la telecamera dal vivo, la rete neurale e la finestra sono previste.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.9|Trova segni fiduciali rotondi in un'immagine, converte i pixel in millimetri, corregge la distorsione dell'obiettivo e calcola la rotazione e lo spostamento di una scheda; la telecamera dal vivo, la rete neurale e la finestra sono previste.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|Processore di mesh per altezze topografiche (Z-Probing) e interpolazione G-code per la compensazione superficiale.|
 
 

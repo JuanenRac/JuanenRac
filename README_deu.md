@@ -594,7 +594,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 ### 🛠️ Ergänzende Werkzeuge
 |Repository|Version|Beschreibung|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|Findet runde Passmarken in einem Bild, wandelt Pixel in Millimeter um, korrigiert die Verzeichnung des Objektivs und berechnet Drehung und Verschiebung einer Platine; die Live-Kamera, das neuronale Netz und das Fenster sind geplant.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.9|Findet runde Passmarken in einem Bild, wandelt Pixel in Millimeter um, korrigiert die Verzeichnung des Objektivs und berechnet Drehung und Verschiebung einer Platine; die Live-Kamera, das neuronale Netz und das Fenster sind geplant.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|Topografischer Höhennetz-Prozessor (Z-Probing) und G-Code-Interpolation für den Oberflächenausgleich.|
 
 

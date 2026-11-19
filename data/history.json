@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 90,
-    "min": 6502,
-    "ok": 2056,
-    "other": 54,
-    "runs": 2200
+    "fail": 92,
+    "min": 6537,
+    "ok": 2096,
+    "other": 48,
+    "runs": 2236
    },
    "areas": {
     "armor": {
@@ -12108,7 +12108,7 @@
     ],
     "EH3D-VISION-STUDIO": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 8,
     "gaps": 0,
-    "min": 6502,
+    "min": 6537,
     "red": 0
    },
    "tests": {
@@ -12453,7 +12453,7 @@
     "EH3D-TOOL-MANAGER": 175,
     "EH3D-UPDATER": 491,
     "EH3D-VALIDATION-LAB": 63,
-    "EH3D-VISION-STUDIO": 300,
+    "EH3D-VISION-STUDIO": 390,
     "HYDRA-UMC": 1500,
     "HYDRA-UMC-ANDROID-CONTROL": 767,
     "HYDRA-UMC-ANOMALY-DETECTOR": 472,

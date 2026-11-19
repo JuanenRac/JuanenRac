@@ -594,7 +594,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 ### 🛠️ Ferramentas complementares
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|Encontra marcas fiduciais redondas numa imagem, converte píxeis em milímetros, corrige a distorção da lente e calcula a rotação e o deslocamento de uma placa; a câmara em direto, a rede neuronal e a janela estão previstas.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.9|Encontra marcas fiduciais redondas numa imagem, converte píxeis em milímetros, corrige a distorção da lente e calcula a rotação e o deslocamento de uma placa; a câmara em direto, a rede neuronal e a janela estão previstas.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|Processador de malha de altura topográfica (Z-Probing) e interpolação de G-code para compensação de superfície.|
 
 

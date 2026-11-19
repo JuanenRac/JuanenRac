@@ -596,7 +596,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 🛠️ Complementary Tools
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.8 | Finds round fiducial marks in an image, turns pixels into millimetres, corrects the distortion of the lens and works out the turn and the shift of a board; the live camera, the neural network and the window are planned. |
+| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.0.9 | Finds round fiducial marks in an image, turns pixels into millimetres, corrects the distortion of the lens and works out the turn and the shift of a board; the live camera, the neural network and the window are planned. |
 | [EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL) | 0.1.0 | Topographic height mesh processor (Z-Probing) and G-code interpolation for surface compensation. |
 
 

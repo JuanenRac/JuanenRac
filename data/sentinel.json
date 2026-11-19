@@ -1,15 +1,15 @@
 {
- "asof": "2026-11-19T21:09:11Z",
+ "asof": "2026-11-19T21:43:50Z",
  "ci": {
-  "checked": 635,
+  "checked": 634,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 946,
-    "min7": 946,
+    "min24": 953,
+    "min7": 953,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -19,7 +19,7 @@
    },
    {
     "min24": 224,
-    "min7": 567,
+    "min7": 556,
     "repo": "URTC-FLASHER"
    },
    {
@@ -34,12 +34,12 @@
    },
    {
     "min24": 189,
-    "min7": 287,
+    "min7": 286,
     "repo": "ARMOR-NODE-HMI"
    }
   ],
-  "total24": 6502,
-  "total7": 38827,
+  "total24": 6537,
+  "total7": 38726,
   "warn": false
  },
  "delivery": {
@@ -126,6 +126,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T21:43:50Z",
+   "kind": "released",
+   "repo": "EH3D-VISION-STUDIO",
+   "tag": "v0.0.9"
+  },
   {
    "at": "2026-11-19T21:09:11Z",
    "kind": "released",
@@ -299,18 +305,12 @@
    "kind": "released",
    "repo": "ARMOR-NODE-ELECTRICAL",
    "tag": "v0.6.0"
-  },
-  {
-   "at": "2026-11-19T18:08:01Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-CNC",
-   "tag": "v0.1.9"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 25
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -430,9 +430,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 94,
+  "none": 95,
   "norelease": 1,
-  "unverifiable": 7,
+  "unverifiable": 6,
   "unverified": 0,
   "verified": 28
  },
@@ -493,7 +493,7 @@
   "EH3D-TOOL-MANAGER": "v0.1.0",
   "EH3D-UPDATER": "v0.1.1",
   "EH3D-VALIDATION-LAB": "v0.0.3",
-  "EH3D-VISION-STUDIO": "v0.0.8",
+  "EH3D-VISION-STUDIO": "v0.0.9",
   "ELECTRO-HOBBY-3D-UPDATER": "v0.1.5",
   "HYDRA-UMC": "v0.2.9",
   "HYDRA-UMC-ANDROID-CONTROL": "v0.8.0.5",
@@ -642,7 +642,7 @@
    16336,
    10185,
    5009,
-   6502
+   6537
   ],
   "red": [
    3,

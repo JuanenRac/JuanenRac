@@ -594,7 +594,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 ### 🛠️ Herramientas complementarias
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.8|Encuentra marcas fiduciales redondas en una imagen, convierte píxeles en milímetros, corrige la distorsión de la lente y calcula el giro y el desplazamiento de una placa; la cámara en vivo, la red neuronal y la ventana están previstas.|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.0.9|Encuentra marcas fiduciales redondas en una imagen, convierte píxeles en milímetros, corrige la distorsión de la lente y calcula el giro y el desplazamiento de una placa; la cámara en vivo, la red neuronal y la ventana están previstas.|
 |[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.0|Procesador de malla de altura topográfica (sondeo Z) e interpolación de código G para compensación de superficies.|
 
 
