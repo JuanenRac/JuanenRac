@@ -560,7 +560,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.0.9|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.0|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.1|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
 
 ### 💠 节点项目：
 |仓库|版本|描述|

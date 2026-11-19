@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-19T22:24:33Z",
+ "asof": "2026-11-19T23:14:25Z",
  "ci": {
   "checked": 634,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 961,
-    "min7": 961,
+    "min24": 969,
+    "min7": 969,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-HMI"
    }
   ],
-  "total24": 6553,
-  "total7": 38597,
+  "total24": 6689,
+  "total7": 38469,
   "warn": false
  },
  "delivery": {
@@ -126,6 +126,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T23:14:25Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-PNP",
+   "tag": "v0.1.1"
+  },
   {
    "at": "2026-11-19T21:43:50Z",
    "kind": "released",
@@ -299,18 +305,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-BRIDGE-CNC",
    "tag": "v0.2.9"
-  },
-  {
-   "at": "2026-11-19T18:08:01Z",
-   "kind": "released",
-   "repo": "ARMOR-NODE-ELECTRICAL",
-   "tag": "v0.6.0"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 45
+  "gap_minutes": 50
  },
  "hygiene": {
   "allowed_missing": [],
@@ -430,9 +430,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 95,
+  "none": 96,
   "norelease": 1,
-  "unverifiable": 6,
+  "unverifiable": 5,
   "unverified": 0,
   "verified": 28
  },
@@ -482,7 +482,7 @@
   "EH3D-PHOENIX-CNC": "v0.2.0",
   "EH3D-PHOENIX-LASER": "v0.1.2",
   "EH3D-PHOENIX-PCB": "v0.1.0",
-  "EH3D-PHOENIX-PNP": "v0.1.0",
+  "EH3D-PHOENIX-PNP": "v0.1.1",
   "EH3D-PROJECT-PASSPORT": "v0.0.4",
   "EH3D-ROUTEPRO": "v0.1.7",
   "EH3D-SERVER": "v0.1.8",
@@ -642,7 +642,7 @@
    16336,
    10185,
    5009,
-   6553
+   6689
   ],
   "red": [
    3,

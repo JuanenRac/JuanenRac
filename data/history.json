@@ -11811,11 +11811,11 @@
   },
   {
    "actions": {
-    "fail": 92,
-    "min": 6553,
-    "ok": 2076,
-    "other": 50,
-    "runs": 2218
+    "fail": 97,
+    "min": 6689,
+    "ok": 2173,
+    "other": 47,
+    "runs": 2317
    },
    "areas": {
     "armor": {
@@ -12064,7 +12064,7 @@
     ],
     "EH3D-PHOENIX-PNP": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -12402,7 +12402,7 @@
    "sentinel": {
     "cand": 8,
     "gaps": 0,
-    "min": 6553,
+    "min": 6689,
     "red": 0
    },
    "tests": {
@@ -12442,7 +12442,7 @@
     "EH3D-PHOENIX-CNC": 649,
     "EH3D-PHOENIX-LASER": 602,
     "EH3D-PHOENIX-PCB": 4601,
-    "EH3D-PHOENIX-PNP": 1114,
+    "EH3D-PHOENIX-PNP": 1240,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 109,
     "EH3D-SERVER": 446,
