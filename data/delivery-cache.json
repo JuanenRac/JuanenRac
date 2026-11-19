@@ -31,7 +31,6 @@
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
    "at": "2026-11-19T17:53:16Z",
-   "checked": true,
    "exp": "2026-11-26T17:50:44Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/44580888424",
    "wf": "firmware-build.yml"
@@ -46,16 +45,16 @@
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-19T18:08:35Z",
-   "checked": true,
    "exp": "2026-11-26T18:07:23Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/44583834394",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-17T20:35:54Z",
-   "exp": "2026-11-24T20:34:47Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/44170175764",
+   "at": "2026-11-19T18:23:59Z",
+   "checked": true,
+   "exp": "2026-11-26T18:23:03Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/44586585973",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
@@ -374,8 +373,8 @@
    }
   },
   "ARMOR-NODE-RADAR": {
-   "fp": "a91592727a956802",
-   "on": "2026-11-15",
+   "fp": "fd09ec3d96e1e8d8",
+   "on": "2026-11-19",
    "r": {
     "ak": 3,
     "an": 3,
@@ -697,7 +696,7 @@
    }
   },
   "ARMOR-NODE-RADAR": {
-   "fp": "a91592727a956802",
+   "fp": "fd09ec3d96e1e8d8",
    "r": {
     "bad": 0,
     "ho": 0,
