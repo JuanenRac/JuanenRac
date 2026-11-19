@@ -1,22 +1,15 @@
 {
- "asof": "2026-11-19T10:01:31Z",
+ "asof": "2026-11-19T10:35:46Z",
  "ci": {
-  "checked": 627,
-  "red": [
-   {
-    "repo": "URTC-SMART-RACK",
-    "since": "2026-11-19T07:01:53Z",
-    "streak": 1,
-    "wf": "firmware-build.yml"
-   }
-  ],
-  "red_total": 1
+  "checked": 628,
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 932,
-    "min7": 932,
+    "min24": 923,
+    "min7": 923,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -26,27 +19,27 @@
    },
    {
     "min24": 159,
-    "min7": 376,
+    "min7": 596,
+    "repo": "URTC-FLASHER"
+   },
+   {
+    "min24": 158,
+    "min7": 377,
     "repo": "ARMOR-SERVER"
    },
    {
     "min24": 146,
-    "min7": 307,
+    "min7": 306,
     "repo": "ARMOR-STUDIO"
    },
    {
-    "min24": 141,
-    "min7": 579,
-    "repo": "URTC-FLASHER"
-   },
-   {
-    "min24": 128,
-    "min7": 283,
-    "repo": "URTC-WEB-STUDIO"
+    "min24": 142,
+    "min7": 234,
+    "repo": "ARMOR-DEVOPS"
    }
   ],
-  "total24": 4252,
-  "total7": 39898,
+  "total24": 4410,
+  "total7": 40030,
   "warn": false
  },
  "delivery": {
@@ -54,11 +47,7 @@
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "HYDRA-UMC-SUITE",
-   "URTC",
-   "URTC-DEVTOOLS",
-   "URTC-FLASHER",
-   "URTC-SMART-RACK",
-   "URTC-VISION-TOOL"
+   "URTC-DEVTOOLS"
   ],
   "eco": {
    "armor": {
@@ -90,7 +79,7 @@
     "tagahead": 0
    },
    "urtc": {
-    "clmis": 5,
+    "clmis": 1,
     "nonotes": 0,
     "read": 11,
     "repos": 11,
@@ -132,12 +121,42 @@
   "urtc": {
    "cand": 2,
    "read": 11,
-   "red": 1,
+   "red": 0,
    "repos": 11,
-   "unpub": 5
+   "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T10:35:46Z",
+   "kind": "red_ok",
+   "repo": "URTC-SMART-RACK",
+   "wf": "firmware-build.yml"
+  },
+  {
+   "at": "2026-11-19T10:35:46Z",
+   "kind": "released",
+   "repo": "URTC",
+   "tag": "v0.5.1"
+  },
+  {
+   "at": "2026-11-19T10:35:46Z",
+   "kind": "released",
+   "repo": "URTC-FLASHER",
+   "tag": "v0.5.8"
+  },
+  {
+   "at": "2026-11-19T10:35:46Z",
+   "kind": "released",
+   "repo": "URTC-SMART-RACK",
+   "tag": "v0.2.9"
+  },
+  {
+   "at": "2026-11-19T10:35:46Z",
+   "kind": "released",
+   "repo": "URTC-VISION-TOOL",
+   "tag": "v0.2.2"
+  },
   {
    "at": "2026-11-19T10:01:31Z",
    "kind": "red_ok",
@@ -287,42 +306,12 @@
    "kind": "released",
    "repo": "EH3D-PHOENIX-LASER",
    "tag": "v0.0.7"
-  },
-  {
-   "at": "2026-11-18T11:07:30Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-PNP",
-   "tag": "v0.0.8"
-  },
-  {
-   "at": "2026-11-18T11:07:30Z",
-   "kind": "released",
-   "repo": "EH3D-VISION-STUDIO",
-   "tag": "v0.0.5"
-  },
-  {
-   "at": "2026-11-18T11:07:30Z",
-   "kind": "released",
-   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "tag": "v2.1.1"
-  },
-  {
-   "at": "2026-11-18T09:56:57Z",
-   "kind": "released",
-   "repo": "ARMOR-COMMON",
-   "tag": "v0.8.1.5"
-  },
-  {
-   "at": "2026-11-18T09:56:57Z",
-   "kind": "released",
-   "repo": "ARMOR-DEVOPS",
-   "tag": "v0.7.7"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 115
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -340,17 +329,7 @@
     "bad": 0,
     "cand": 41,
     "hyg": 0,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "warn",
-   "p": {
-    "list": [
-     "URTC-SMART-RACK"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -410,13 +389,9 @@
      "HYDRA-UMC",
      "HYDRA-UMC-OS",
      "HYDRA-UMC-SUITE",
-     "URTC",
-     "URTC-DEVTOOLS",
-     "URTC-FLASHER",
-     "URTC-SMART-RACK",
-     "URTC-VISION-TOOL"
+     "URTC-DEVTOOLS"
     ],
-    "n": 8
+    "n": 4
    }
   },
   {
@@ -681,11 +656,11 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 92,
+  "none": 94,
   "norelease": 0,
   "unverifiable": 10,
   "unverified": 0,
-  "verified": 28
+  "verified": 26
  },
  "tags": {
   "ARMOR-ANDROID-CONTROL": "v0.8.0.8",
@@ -807,16 +782,16 @@
   "HYDRA-UMC-VOICE-UI": "v0.2.5",
   "HYDRA-UMC-WATCH": "v0.3.4",
   "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.1.3",
-  "URTC": "v0.5.0",
+  "URTC": "v0.5.1",
   "URTC-COMMON": "v0.3.0",
   "URTC-DEVTOOLS": "v0.0.4",
   "URTC-DOCS": "v0.1.8",
-  "URTC-FLASHER": "v0.5.7",
+  "URTC-FLASHER": "v0.5.8",
   "URTC-GATEWAY": "v0.0.9",
-  "URTC-SMART-RACK": "v0.2.8",
+  "URTC-SMART-RACK": "v0.2.9",
   "URTC-TESTER": "v0.5.7",
   "URTC-UPDATER": "v0.3.1",
-  "URTC-VISION-TOOL": "v0.2.1",
+  "URTC-VISION-TOOL": "v0.2.2",
   "URTC-WEB-STUDIO": "v0.5.3"
  },
  "trend": {
@@ -894,7 +869,7 @@
    16336,
    10185,
    5009,
-   4252
+   4410
   ],
   "red": [
    3,
@@ -913,7 +888,7 @@
    1,
    2,
    0,
-   1
+   0
   ]
  },
  "unpublished": {
@@ -934,31 +909,11 @@
     "version": "0.8.0.8"
    },
    {
-    "repo": "URTC",
-    "tag": "v0.5.0",
-    "version": "0.5.1"
-   },
-   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.7"
-   },
-   {
-    "repo": "URTC-FLASHER",
-    "tag": "v0.5.7",
-    "version": "0.5.8"
-   },
-   {
-    "repo": "URTC-SMART-RACK",
-    "tag": "v0.2.8",
-    "version": "0.2.9"
-   },
-   {
-    "repo": "URTC-VISION-TOOL",
-    "tag": "v0.2.1",
-    "version": "0.2.2"
    }
   ],
-  "total": 8
+  "total": 4
  }
 }

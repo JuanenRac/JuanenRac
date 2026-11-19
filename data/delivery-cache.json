@@ -276,22 +276,21 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-19T09:59:03Z",
-   "checked": true,
    "exp": "2026-11-26T09:58:00Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/44500421019",
    "wf": "exe-build.yml"
   },
   "URTC-SMART-RACK": {
    "art": true,
-   "at": "2026-11-13T02:18:25Z",
-   "exp": "2026-11-20T02:17:36Z",
-   "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/43350591567",
+   "at": "2026-11-19T10:06:24Z",
+   "checked": true,
+   "exp": "2026-11-26T10:05:44Z",
+   "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/44500403961",
    "wf": "firmware-build.yml"
   },
   "URTC-TESTER": {
    "art": true,
    "at": "2026-11-19T09:57:34Z",
-   "checked": true,
    "exp": "2026-11-26T09:56:25Z",
    "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/44500414061",
    "wf": "exe-build.yml"
@@ -306,7 +305,6 @@
   "URTC-VISION-TOOL": {
    "art": true,
    "at": "2026-11-19T10:01:50Z",
-   "checked": true,
    "exp": "2026-11-26T10:01:03Z",
    "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/44500409073",
    "wf": "firmware-build.yml"
@@ -627,8 +625,8 @@
    }
   },
   "URTC": {
-   "fp": "1b3f3df3cfb45d5c",
-   "on": "2026-11-14",
+   "fp": "cd95e3bca554dd64",
+   "on": "2026-11-19",
    "r": {
     "ak": 3,
     "an": 3,
@@ -645,8 +643,8 @@
    }
   },
   "URTC-FLASHER": {
-   "fp": "40ff835a5836f68c",
-   "on": "2026-11-14",
+   "fp": "c8e9a4bc9f3b7001",
+   "on": "2026-11-19",
    "r": {
     "ak": 1,
     "an": 1,
@@ -654,8 +652,8 @@
    }
   },
   "URTC-SMART-RACK": {
-   "fp": "9daf9a31e7b999c5",
-   "on": "2026-11-13",
+   "fp": "3599affdeb7b94d9",
+   "on": "2026-11-19",
    "r": {
     "ak": 1,
     "an": 1,
@@ -681,8 +679,8 @@
    }
   },
   "URTC-VISION-TOOL": {
-   "fp": "e621541b6e2dd729",
-   "on": "2026-11-14",
+   "fp": "c3388726e6450a27",
+   "on": "2026-11-19",
    "r": {
     "ak": 1,
     "an": 1,
@@ -1151,7 +1149,7 @@
    }
   },
   "URTC": {
-   "fp": "1b3f3df3cfb45d5c",
+   "fp": "cd95e3bca554dd64",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1179,7 +1177,7 @@
    }
   },
   "URTC-FLASHER": {
-   "fp": "40ff835a5836f68c",
+   "fp": "c8e9a4bc9f3b7001",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1187,20 +1185,6 @@
     "s": "verified",
     "sch": [
      "urtc-pkg/1"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "URTC-SMART-RACK": {
-   "fp": "9daf9a31e7b999c5",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 3,
-    "s": "verified",
-    "sch": [
-     "urtc-rel/1"
     ],
     "unk": 0,
     "why": []
@@ -1229,20 +1213,6 @@
     "s": "verified",
     "sch": [
      "urtc-pkg/1"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "URTC-VISION-TOOL": {
-   "fp": "e621541b6e2dd729",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 3,
-    "s": "verified",
-    "sch": [
-     "urtc-rel/1"
     ],
     "unk": 0,
     "why": []
