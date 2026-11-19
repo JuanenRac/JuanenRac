@@ -11812,10 +11812,10 @@
   {
    "actions": {
     "fail": 87,
-    "min": 5403,
-    "ok": 1609,
-    "other": 34,
-    "runs": 1730
+    "min": 5459,
+    "ok": 1617,
+    "other": 35,
+    "runs": 1739
    },
    "areas": {
     "armor": {
@@ -11940,7 +11940,7 @@
     ],
     "ARMOR-STUDIO": [
      2,
-     "0.8.2.5"
+     "0.8.2.6"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -12400,9 +12400,9 @@
     ]
    },
    "sentinel": {
-    "cand": 32,
+    "cand": 31,
     "gaps": 0,
-    "min": 5403,
+    "min": 5459,
     "red": 0
    },
    "tests": {

@@ -458,7 +458,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 操作员客户端
 |仓库|版本|描述|
 |-|-|-|
-|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.5|运维控制台：报警、设备、自动化、历史记录、PTZ、雷达地图、太阳能和电气菜单、节点更新以及 2D/3D 设计器。|
+|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.6|运维控制台：报警、设备、自动化、历史记录、PTZ、雷达地图、太阳能和电气菜单、节点更新以及 2D/3D 设计器。|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.8|Android 操作端：布防与撤防、报警、设备、实时雷达、太阳能、历史记录、通知、语音助手以及节点配置器。|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.6|iPhone 操作员客户端：状态、布防、告警、报警面板、摄像头和助理，提供八种语言。|
 |[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.2|极简手表客户端：显示手机发来的告警通知，一次点按即可确认告警；手表上不保存会话，也不保存密钥。|

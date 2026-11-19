@@ -458,7 +458,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 ### 💠 Clientes Operadores
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.5|Consola de operações: alarmes, dispositivos, automatizações, histórico, PTZ, mapa de radar, menus solar e elétrico, atualização de nós e desenhador 2D/3D.|
+|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.6|Consola de operações: alarmes, dispositivos, automatizações, histórico, PTZ, mapa de radar, menus solar e elétrico, atualização de nós e desenhador 2D/3D.|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.8|Cliente Android para o operador: armar e desarmar, alarmes, dispositivos, radar em tempo real, solar, histórico, notificações, assistente de voz e configurador de nós.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.6|Cliente de operador para iPhone: estado, armar, alarmes, painéis de alarme, câmaras e o assistente, em oito idiomas.|
 |[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.2|Cliente de relógio mínimo: mostra os avisos de alarme enviados pelo telemóvel e confirma um alarme com um toque; sem sessão nem chaves no relógio.|

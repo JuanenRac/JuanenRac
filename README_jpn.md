@@ -458,7 +458,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 オペレータークライアント
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.5|運用コンソール。警報、機器、自動化、履歴、PTZ、レーダーマップ、太陽光・電気メニュー、ノード更新、2D/3D デザイナー。|
+|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.6|運用コンソール。警報、機器、自動化、履歴、PTZ、レーダーマップ、太陽光・電気メニュー、ノード更新、2D/3D デザイナー。|
 |[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.0.8|Android 用のオペレータークライアント。警戒の設定・解除、警報、機器、ライブレーダー、太陽光、履歴、通知、音声アシスタント、ノード設定。|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.6|iPhone 用オペレータークライアント：状態、武装、アラーム、アラームパネル、カメラ、アシスタント。8 言語対応。|
 |[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.2|最小構成のウォッチクライアント：スマートフォンが送るアラーム通知を表示し、1タップでアラームを確認。ウォッチにセッションや鍵は置きません。|

@@ -452,7 +452,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 ### 💠 Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.2.5 | Operations console: alarms, devices, automations, history, PTZ, radar map, solar and electrical menus, node updates and a 2D/3D designer. |
+| [ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO) | 0.8.2.6 | Operations console: alarms, devices, automations, history, PTZ, radar map, solar and electrical menus, node updates and a 2D/3D designer. |
 | [ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL) | 0.8.0.8 | Android operator client: arm and disarm, alarms, devices, live radar, solar, history, notifications, voice assistant and node configurator. |
 | [ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL) | 0.0.6 | iPhone operator client: status, arming, alarms, alarm panels, cameras and the assistant, in eight languages. |
 | [ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH) | 0.0.2 | Minimal watch client: shows the alarm notices the phone sends and confirms an alarm with one tap; no session or keys on the watch. |

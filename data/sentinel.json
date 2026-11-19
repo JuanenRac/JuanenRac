@@ -1,15 +1,15 @@
 {
- "asof": "2026-11-19T17:08:50Z",
+ "asof": "2026-11-19T17:24:50Z",
  "ci": {
-  "checked": 632,
+  "checked": 634,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 940,
-    "min7": 940,
+    "min24": 952,
+    "min7": 952,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,13 +38,13 @@
     "repo": "ARMOR-SIMULATOR"
    }
   ],
-  "total24": 5403,
-  "total7": 40488,
+  "total24": 5459,
+  "total7": 40484,
   "warn": false
  },
  "delivery": {
   "clmis": [
-   "ARMOR-SERVER",
+   "ARMOR-STUDIO",
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "URTC-DEVTOOLS"
@@ -91,7 +91,7 @@
  },
  "ecosystems": {
   "armor": {
-   "cand": 10,
+   "cand": 9,
    "read": 20,
    "red": 0,
    "repos": 20,
@@ -127,6 +127,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-19T17:24:50Z",
+   "kind": "released",
+   "repo": "ARMOR-SERVER",
+   "tag": "v0.8.2.4"
+  },
   {
    "at": "2026-11-19T17:08:50Z",
    "kind": "released",
@@ -300,12 +306,6 @@
    "kind": "released",
    "repo": "EH3D-PHOENIX-CNC",
    "tag": "v0.1.7"
-  },
-  {
-   "at": "2026-11-19T15:34:23Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-SUITE",
-   "tag": "v0.8.0.8"
   }
  ],
  "health": {
@@ -327,7 +327,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 32,
+    "cand": 31,
     "hyg": 0,
     "red": 0
    }
@@ -345,7 +345,6 @@
      "ARMOR-NODE-HMI",
      "ARMOR-NODE-RADAR",
      "ARMOR-NODE-SOLAR",
-     "ARMOR-STUDIO",
      "ARMOR-WATCH",
      "HYDRA-UMC-ANDROID-CONTROL",
      "HYDRA-UMC-ANOMALY-DETECTOR",
@@ -370,7 +369,7 @@
      "HYDRA-UMC-VOICE-UI",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 32
+    "n": 31
    }
   },
   {
@@ -378,7 +377,7 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-SERVER",
+     "ARMOR-STUDIO",
      "HYDRA-UMC",
      "HYDRA-UMC-OS",
      "URTC-DEVTOOLS"
@@ -421,12 +420,6 @@
     "published": "2026-11-15T10:47:25Z",
     "repo": "ARMOR-NODE-RADAR",
     "tag": "v0.8.1.3"
-   },
-   {
-    "entries": 19,
-    "published": "2026-11-15T10:03:01Z",
-    "repo": "ARMOR-STUDIO",
-    "tag": "v0.8.2.5"
    },
    {
     "entries": 18,
@@ -593,16 +586,16 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 32
+  "total": 31
  },
  "repos": 130,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 97,
+  "none": 96,
   "norelease": 0,
-  "unverifiable": 5,
+  "unverifiable": 6,
   "unverified": 0,
   "verified": 28
  },
@@ -619,7 +612,7 @@
   "ARMOR-NODE-HMI": "v0.4.9",
   "ARMOR-NODE-RADAR": "v0.8.1.3",
   "ARMOR-NODE-SOLAR": "v0.6.7",
-  "ARMOR-SERVER": "v0.8.2.3",
+  "ARMOR-SERVER": "v0.8.2.4",
   "ARMOR-SERVER-AI": "v0.3.4",
   "ARMOR-SIMULATOR": "v0.3.9",
   "ARMOR-STUDIO": "v0.8.2.5",
@@ -756,7 +749,7 @@
    13,
    41,
    47,
-   32
+   31
   ],
   "dates": [
    "2026-11-03",
@@ -813,7 +806,7 @@
    16336,
    10185,
    5009,
-   5403
+   5459
   ],
   "red": [
    3,
@@ -838,9 +831,9 @@
  "unpublished": {
   "rows": [
    {
-    "repo": "ARMOR-SERVER",
-    "tag": "v0.8.2.3",
-    "version": "0.8.2.4"
+    "repo": "ARMOR-STUDIO",
+    "tag": "v0.8.2.5",
+    "version": "0.8.2.6"
    },
    {
     "repo": "HYDRA-UMC",
