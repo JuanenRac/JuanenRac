@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-20T02:20:11Z",
+ "asof": "2026-11-20T02:35:36Z",
  "ci": {
   "checked": 635,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 907,
-    "min7": 907,
+    "min24": 906,
+    "min7": 906,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-RADAR"
    }
   ],
-  "total24": 7331,
-  "total7": 37430,
+  "total24": 7292,
+  "total7": 37420,
   "warn": false
  },
  "delivery": {
@@ -310,7 +310,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 55
+  "gap_minutes": 20
  },
  "hygiene": {
   "allowed_missing": [],
@@ -414,9 +414,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 96,
+  "none": 95,
   "norelease": 2,
-  "unverifiable": 4,
+  "unverifiable": 5,
   "unverified": 0,
   "verified": 29
  },
@@ -630,7 +630,7 @@
    10185,
    5009,
    6712,
-   7331
+   7292
   ],
   "red": [
    3,

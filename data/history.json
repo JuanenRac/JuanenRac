@@ -12532,11 +12532,11 @@
   },
   {
    "actions": {
-    "fail": 103,
-    "min": 7331,
-    "ok": 2599,
-    "other": 48,
-    "runs": 2750
+    "fail": 104,
+    "min": 7292,
+    "ok": 2571,
+    "other": 46,
+    "runs": 2721
    },
    "areas": {
     "armor": {
@@ -12593,7 +12593,7 @@
    "date": "2026-11-20",
    "progress": {
     "armor": 65,
-    "eh3d": 48,
+    "eh3d": 49,
     "electro-hobby-3d": 63,
     "hydra-umc": 59,
     "urtc": 56
@@ -13127,7 +13127,7 @@
    "sentinel": {
     "cand": 4,
     "gaps": 1,
-    "min": 7331,
+    "min": 7292,
     "red": 0
    },
    "tests": {
