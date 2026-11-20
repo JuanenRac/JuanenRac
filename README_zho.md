@@ -202,8 +202,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |仓库|版本|描述|
 |-|-|-|
 |[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.3.0|适用于 STM32H757/G474 且带 S 曲线运动学的核心运动控制固件。|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.2|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.2|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.3|用于机器人编排的无头（Headless）Node.js API 和 WebSocket 后端。|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.3|用于 3D 机器人监控和控制的高级基于 React 的 Web 仪表板。|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.5|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.8|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.9|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
@@ -543,7 +543,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 激光项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.1.2|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.1.3|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
 
 ### 💠 CAM 项目：
 |仓库|版本|描述|
@@ -554,7 +554,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 Gerber 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.7|用于 Gerber 图层对齐和快速可视化的轻量级 CAM 检查工具。|
+|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.8|用于 Gerber 图层对齐和快速可视化的轻量级 CAM 检查工具。|
 
 ### 💠 贴片（Pick&Place）项目：
 |仓库|版本|描述|

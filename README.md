@@ -204,8 +204,8 @@ for all four - can check versions and build/update any other project.
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC) | 0.3.0 | Core motion control firmware for STM32H757/G474 with S-Curve kinematics. |
-| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.3.2 | Headless Node.js API and WebSocket backend for robotic orchestration. |
-| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.2.2 | Advanced React-based web dashboard for 3D robot monitoring and control. |
+| [HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER) | 0.8.3.3 | Headless Node.js API and WebSocket backend for robotic orchestration. |
+| [HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO) | 0.8.2.3 | Advanced React-based web dashboard for 3D robot monitoring and control. |
 | [HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT) | 0.0.5 | Shared TypeScript kit of the HYDRA-UMC web clients: session, HTTP client, connection history, preferences and tours. |
 | [HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE) | 0.8.0.8 | High-performance Python/Qt desktop application for industrial automation. |
 | [HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI) | 0.3.9 | Dedicated Flutter-based touch interface for 7" industrial displays (CM5). |
@@ -538,7 +538,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Laser projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.1.2 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
+| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.1.3 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
 
 
 ### 💠 CAM projects:
@@ -551,7 +551,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Gerber projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER) | 0.0.7 | Lightweight CAM inspection tool for Gerber layer alignment and rapid visualization. |
+| [EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER) | 0.0.8 | Lightweight CAM inspection tool for Gerber layer alignment and rapid visualization. |
 
 
 ### 💠 Pick&Place projects:
