@@ -12533,10 +12533,10 @@
   {
    "actions": {
     "fail": 81,
-    "min": 5032,
-    "ok": 2176,
-    "other": 57,
-    "runs": 2314
+    "min": 4947,
+    "ok": 2144,
+    "other": 53,
+    "runs": 2278
    },
    "areas": {
     "armor": {
@@ -12550,7 +12550,7 @@
      "tests": 100
     },
     "eh3d": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -12562,17 +12562,17 @@
     "electro-hobby-3d": {
      "ci": 100,
      "docs": 100,
-     "hardware": 0,
+     "hardware": 100,
      "production": 0,
      "releases": 50,
-     "simulation": 0,
+     "simulation": 50,
      "software": 50,
      "tests": 75
     },
     "hydra-umc": {
      "ci": 100,
      "docs": 100,
-     "hardware": 8,
+     "hardware": 13,
      "production": 8,
      "releases": 100,
      "simulation": 100,
@@ -12592,10 +12592,10 @@
    },
    "date": "2026-11-20",
    "progress": {
-    "armor": 65,
-    "eh3d": 48,
-    "electro-hobby-3d": 41,
-    "hydra-umc": 59,
+    "armor": 69,
+    "eh3d": 49,
+    "electro-hobby-3d": 46,
+    "hydra-umc": 60,
     "urtc": 56
    },
    "repos": {
@@ -13119,7 +13119,7 @@
    "sentinel": {
     "cand": 3,
     "gaps": 2,
-    "min": 5032,
+    "min": 4947,
     "red": 3
    },
    "tests": {
@@ -13138,7 +13138,7 @@
     "EH3D-AUTOLEVEL": 238,
     "EH3D-BUNGARD-GUI": 441,
     "EH3D-CAM-DEBUGGER": 160,
-    "EH3D-COMMON": 765,
+    "EH3D-COMMON": 803,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 510,
     "EH3D-DESIGN-EXPLORER": 3,

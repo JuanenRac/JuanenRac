@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-20T14:57:14Z",
+ "asof": "2026-11-20T15:27:28Z",
  "ci": {
   "checked": 620,
   "red": [
@@ -11,8 +11,8 @@
    },
    {
     "repo": "EH3D-COMMON",
-    "since": "2026-11-20T14:51:58Z",
-    "streak": 3,
+    "since": "2026-11-20T15:01:13Z",
+    "streak": 4,
     "wf": "ci.yml"
    },
    {
@@ -27,13 +27,13 @@
  "compute": {
   "top": [
    {
-    "min24": 878,
-    "min7": 878,
+    "min24": 893,
+    "min7": 893,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 346,
-    "min7": 502,
+    "min24": 329,
+    "min7": 515,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
@@ -47,8 +47,8 @@
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 143,
-    "min7": 413,
+    "min24": 157,
+    "min7": 426,
     "repo": "EH3D-SERVER"
    },
    {
@@ -57,8 +57,8 @@
     "repo": "HYDRA-UMC-SERVER"
    }
   ],
-  "total24": 5032,
-  "total7": 33720,
+  "total24": 4947,
+  "total7": 33665,
   "warn": false
  },
  "delivery": {
@@ -331,7 +331,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 30
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -442,9 +442,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 81,
+  "none": 80,
   "norelease": 3,
-  "unverifiable": 16,
+  "unverifiable": 17,
   "unverified": 0,
   "verified": 29
  },
@@ -655,7 +655,7 @@
    10185,
    5009,
    6712,
-   5032
+   4947
   ],
   "red": [
    3,

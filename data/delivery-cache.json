@@ -578,6 +578,15 @@
     "at": "present"
    }
   },
+  "EH3D-VISION-STUDIO": {
+   "fp": "302350cdda0e47ec",
+   "on": "2026-11-20",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "HYDRA-UMC": {
    "fp": "e0b63f37ef944215",
    "on": "2026-11-13",
@@ -1117,6 +1126,20 @@
   },
   "EH3D-TOOL-MANAGER": {
    "fp": "78f402617fe5b2ae",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-VISION-STUDIO": {
+   "fp": "302350cdda0e47ec",
    "r": {
     "bad": 0,
     "ho": 0,
