@@ -88,7 +88,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 59 of 59 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 59 of 59 repositories have been checked at least in a simulator. |
@@ -323,7 +323,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 11 of 11 repositories have been checked at least in a simulator. |
@@ -476,7 +476,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[█████████▊░░░░░░░░░░] 49%` — Calculated from real data: the maturity and the evidence that each of its 39 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████▋░░░░░░░░░░] 48%` — Calculated from real data: the maturity and the evidence that each of its 39 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -539,7 +539,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Laser projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.1.4 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
+| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.1.5 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
 
 
 ### 💠 CAM projects:
@@ -574,9 +574,9 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 PHOENIX projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.1.2 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
-| [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.1.1 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
-| [EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP) | 0.0.5 | Prepares 3D prints: reads STL, OBJ and 3MF models, holds 120 printer profiles, slices into G-code with safe temperature limits and talks to Moonraker, OctoPrint and EH3D-SERVER (tried only on simulators). |
+| [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.1.3 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
+| [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.1.2 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
+| [EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP) | 0.0.6 | Prepares 3D prints: reads STL, OBJ and 3MF models, holds 120 printer profiles, slices into G-code with safe temperature limits and talks to Moonraker, OctoPrint and EH3D-SERVER (tried only on simulators). |
 | [EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER) | 0.0.4 | Comprehensive engineering verifier for cross-validations and design quality control. |
 | [EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB) | 0.0.3 | Testing environment responsible for managing reference use cases and system regression tests. |
 | [EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY) | 0.0.4 | Version control system that stores the semantic history and logical evolution of the design. |
@@ -615,7 +615,7 @@ Outside the four ecosystems there is a fifth group: independent tools that stand
 **Updater:** none of its own; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) is one of its tools and hands over to the updater of each of the four ecosystems.
 
 <!-- progress:electro-hobby-3d -->
-`[████████████▋░░░░░░░] 63%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[████████████▎░░░░░░░] 61%` — Calculated from real data: the maturity and the evidence that each of its 2 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -627,7 +627,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `██████████ 100%` | 2 of 2 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 2 of 2 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 2 of 2 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟠 | `█████░░░░░ 50%` | 1 of 2 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 2 of 2 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 2 of 2 repositories have the README in the eight languages. |
 | Simulation | 🔴 | `░░░░░░░░░░ 0%` | 0 of 2 repositories have been checked at least in a simulator. |

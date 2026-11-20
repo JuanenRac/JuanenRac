@@ -1,8 +1,14 @@
 {
- "asof": "2026-11-20T11:06:54Z",
+ "asof": "2026-11-20T12:09:09Z",
  "ci": {
-  "checked": 639,
+  "checked": 641,
   "red": [
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-20T11:39:11Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   },
    {
     "repo": "EH3D-PHOENIX-PCB",
     "since": "2026-11-20T09:13:18Z",
@@ -10,43 +16,43 @@
     "wf": "release-binaries.yml"
    }
   ],
-  "red_total": 1
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 896,
-    "min7": 896,
+    "min24": 915,
+    "min7": 915,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 353,
-    "min7": 548,
+    "min24": 333,
+    "min7": 519,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 229,
-    "min7": 319,
-    "repo": "ARMOR-VISION"
+    "min24": 156,
+    "min7": 434,
+    "repo": "EH3D-SERVER"
    },
    {
-    "min24": 195,
-    "min7": 292,
-    "repo": "ARMOR-NODE-RADAR"
+    "min24": 128,
+    "min7": 351,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 188,
+    "min24": 126,
+    "min7": 182,
+    "repo": "EH3D-PHOENIX-CNC"
+   },
+   {
+    "min24": 125,
     "min7": 285,
     "repo": "ARMOR-NODE-HMI"
-   },
-   {
-    "min24": 161,
-    "min7": 544,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 7137,
-  "total7": 36018,
+  "total24": 5504,
+  "total7": 35788,
   "warn": false
  },
  "delivery": {
@@ -99,7 +105,7 @@
   "armor": {
    "cand": 2,
    "read": 20,
-   "red": 0,
+   "red": 1,
    "repos": 20,
    "unpub": 0
   },
@@ -133,6 +139,36 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-20T12:09:09Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-20T12:09:09Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-3DP",
+   "tag": "v0.0.6"
+  },
+  {
+   "at": "2026-11-20T12:09:09Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-CAD",
+   "tag": "v0.1.2"
+  },
+  {
+   "at": "2026-11-20T12:09:09Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-LASER",
+   "tag": "v0.1.5"
+  },
+  {
+   "at": "2026-11-20T12:09:09Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-PCB",
+   "tag": "v0.1.3"
+  },
   {
    "at": "2026-11-20T11:06:54Z",
    "kind": "red_new",
@@ -282,42 +318,12 @@
    "kind": "released",
    "repo": "EH3D-TOOL-MANAGER",
    "tag": "v0.1.1"
-  },
-  {
-   "at": "2026-11-20T07:16:57Z",
-   "kind": "released",
-   "repo": "EH3D-VISION-STUDIO",
-   "tag": "v0.1.0"
-  },
-  {
-   "at": "2026-11-20T02:20:11Z",
-   "kind": "red_ok",
-   "repo": "HYDRA-UMC-STUDIO",
-   "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-20T02:20:11Z",
-   "kind": "red_ok",
-   "repo": "HYDRA-UMC-SUITE",
-   "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-20T02:20:11Z",
-   "kind": "released",
-   "repo": "EH3D-ANDROID-CONTROL",
-   "tag": "v0.1.3"
-  },
-  {
-   "at": "2026-11-20T02:20:11Z",
-   "kind": "released",
-   "repo": "EH3D-DESIGN-EXPLORER",
-   "tag": "v0.0.4"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 170
+  "gap_minutes": 65
  },
  "hygiene": {
   "allowed_missing": [],
@@ -335,7 +341,7 @@
     "bad": 0,
     "cand": 4,
     "hyg": 0,
-    "red": 1
+    "red": 2
    }
   },
   {
@@ -343,9 +349,10 @@
    "level": "warn",
    "p": {
     "list": [
+     "ARMOR-DOCS",
      "EH3D-PHOENIX-PCB"
     ],
-    "n": 1
+    "n": 2
    }
   },
   {
@@ -419,11 +426,11 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 85,
+  "none": 82,
   "norelease": 1,
-  "unverifiable": 15,
+  "unverifiable": 16,
   "unverified": 0,
-  "verified": 30
+  "verified": 32
  },
  "tags": {
   "ARMOR-ANDROID-CONTROL": "v0.8.0.9",
@@ -467,11 +474,11 @@
   "EH3D-NODE-BUNGARD-AUX": "v0.1.0",
   "EH3D-NODE-BUNGARD-HMI": "v0.1.1",
   "EH3D-NODE-HMI-GUI": "v0.1.1",
-  "EH3D-PHOENIX-3DP": "v0.0.5",
-  "EH3D-PHOENIX-CAD": "v0.1.1",
+  "EH3D-PHOENIX-3DP": "v0.0.6",
+  "EH3D-PHOENIX-CAD": "v0.1.2",
   "EH3D-PHOENIX-CNC": "v0.2.2",
-  "EH3D-PHOENIX-LASER": "v0.1.4",
-  "EH3D-PHOENIX-PCB": "v0.1.2",
+  "EH3D-PHOENIX-LASER": "v0.1.5",
+  "EH3D-PHOENIX-PCB": "v0.1.3",
   "EH3D-PHOENIX-PNP": "v0.1.2",
   "EH3D-PROJECT-PASSPORT": "v0.0.4",
   "EH3D-ROUTEPRO": "v0.1.8",
@@ -636,7 +643,7 @@
    10185,
    5009,
    6712,
-   7137
+   5504
   ],
   "red": [
    3,
@@ -656,7 +663,7 @@
    2,
    0,
    0,
-   1
+   2
   ]
  },
  "unpublished": {
