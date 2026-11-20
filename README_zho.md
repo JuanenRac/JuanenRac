@@ -250,7 +250,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |-|-|-|
 |[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.9|用于无风险机器人测试的高保真物理仿真引擎。|
 |[HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA)|0.1.5|URDF 链的真实世界物理仿真（MuJoCo/PhysX）。|
-|[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.1.7|用于真实与虚拟命令同步的硬件在环（Hardware-in-the-loop）接口。|
+|[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.1.8|用于真实与虚拟命令同步的硬件在环（Hardware-in-the-loop）接口。|
 |[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.6|视觉节点训练数据集的过程生成器。|
 
 ### 📊 数据与分析
@@ -523,7 +523,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.6|通过清单找到套件的程序并启动它们，保存最近的项目以及带各文件 SHA-256 的项目文件（.eh3dproj）；窗口和网络上机器的发现在计划中。|
-|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.2.4|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.2.5|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.1|生态系统文档、组装指南、网关技术规范和集成手册。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.1|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.1|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|

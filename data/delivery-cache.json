@@ -142,9 +142,10 @@
   },
   "HYDRA-UMC-HIL-BRIDGE": {
    "art": true,
-   "at": "2026-11-06T16:17:25Z",
-   "exp": "2026-12-06T16:16:50Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/actions/runs/42250775909",
+   "at": "2026-11-20T00:06:23Z",
+   "checked": true,
+   "exp": "2026-11-27T00:05:04Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/actions/runs/44642838800",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-JOB-DISPATCHER": {
