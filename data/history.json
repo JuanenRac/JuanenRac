@@ -12532,11 +12532,11 @@
   },
   {
    "actions": {
-    "fail": 107,
-    "min": 7621,
-    "ok": 2722,
-    "other": 65,
-    "runs": 2894
+    "fail": 106,
+    "min": 7666,
+    "ok": 2802,
+    "other": 63,
+    "runs": 2971
    },
    "areas": {
     "armor": {
@@ -12773,7 +12773,7 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
@@ -12785,7 +12785,7 @@
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-PHOENIX-PNP": [
      1,
@@ -12985,7 +12985,7 @@
     ],
     "HYDRA-UMC-OS-REBUILDER": [
      1,
-     "0.3.8"
+     "0.3.9"
     ],
     "HYDRA-UMC-PATH-PLANNER-3D": [
      1,
@@ -13125,9 +13125,9 @@
     ]
    },
    "sentinel": {
-    "cand": 4,
-    "gaps": 1,
-    "min": 7621,
+    "cand": 3,
+    "gaps": 0,
+    "min": 7666,
     "red": 0
    },
    "tests": {
@@ -13167,7 +13167,7 @@
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 803,
     "EH3D-PHOENIX-LASER": 690,
-    "EH3D-PHOENIX-PCB": 4835,
+    "EH3D-PHOENIX-PCB": 4883,
     "EH3D-PHOENIX-PNP": 1429,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 116,
