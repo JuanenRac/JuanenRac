@@ -12532,11 +12532,11 @@
   },
   {
    "actions": {
-    "fail": 81,
-    "min": 4947,
-    "ok": 2144,
-    "other": 53,
-    "runs": 2278
+    "fail": 87,
+    "min": 4622,
+    "ok": 2044,
+    "other": 58,
+    "runs": 2189
    },
    "areas": {
     "armor": {
@@ -13119,7 +13119,7 @@
    "sentinel": {
     "cand": 3,
     "gaps": 2,
-    "min": 4947,
+    "min": 4622,
     "red": 3
    },
    "tests": {
@@ -13156,7 +13156,7 @@
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 803,
     "EH3D-PHOENIX-LASER": 778,
-    "EH3D-PHOENIX-PCB": 5069,
+    "EH3D-PHOENIX-PCB": 5108,
     "EH3D-PHOENIX-PNP": 1682,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 116,
