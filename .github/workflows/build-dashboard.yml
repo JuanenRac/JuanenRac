@@ -74,7 +74,9 @@ on:
   # The code counter (code-stats.yml) commits data/code-stats.json and data/scripts-stats.json with the token of its own workflow, which does not start a push run.
   # The dashboard is therefore rebuilt when the counter has finished, so the Code, Changelog and Scripts tabs never go out without the figures it just wrote.
   # No loop: the counter runs on a schedule or by hand only, and nothing here starts it.
-  workflow_run:
+  # Reviewed and accepted for the workflow_run rule of the analyzer: the triggering run belongs to this repository and never runs on a pull request, no job checks out or
+  # executes code of that run (the checkout is the default branch), nothing of its payload is used as data, and only the "publish" job writes (contents: write).
+  workflow_run: # zizmor: ignore[dangerous-triggers] trusted same-repository run, no checkout or data taken from it
     workflows:
       - "Count the code of the ecosystems"
     types:
