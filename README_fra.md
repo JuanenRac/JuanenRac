@@ -87,10 +87,10 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████▊ 97%` | 57 dépôts sur 59 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont le README dans les huit langues. |
+| Tests | 🟢 | `██████████ 100%` | 53 dépôts sur 53 ont des tests automatiques. |
+| Intégration continue | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 53 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 53 dépôts sur 53 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 53 dépôts sur 53 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `█▎░░░░░░░░ 13%` | 5 des 38 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
 | Production | 🔴 | `▊░░░░░░░░░ 8%` | 5 dépôts sur 59 sont établis ou en production. |
@@ -329,7 +329,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟡 | `████████▎░ 82%` | 9 dépôts sur 11 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🔴 | `▉░░░░░░░░░ 9%` | 1 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont été vérifiés au moins dans un simulateur. |
@@ -404,7 +404,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████░ 90%` | 18 dépôts sur 20 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont été vérifiés au moins dans un simulateur. |
@@ -482,7 +482,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 **Outil de mise à jour :** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:eh3d -->
-`\[█████████▊░░░░░░░░░░] 49%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 39 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[████████▊░░░░░░░░░░░] 44%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 39 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -493,10 +493,10 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
 | Logiciel | 🟠 | `█████▍░░░░ 54%` | 21 dépôts sur 39 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟡 | `█████████░ 90%` | 35 dépôts sur 39 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 39 dépôts sur 39 ont le README dans les huit langues. |
+| Tests | 🟡 | `████████▉░ 89%` | 31 dépôts sur 35 ont des tests automatiques. |
+| Intégration continue | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 35 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 35 dépôts sur 35 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 35 dépôts sur 35 ont le README dans les huit langues. |
 | Simulation | 🟡 | `███████▉░░ 79%` | 31 dépôts sur 39 ont été vérifiés au moins dans un simulateur. |
 | Matériel réel | 🔴 | `░░░░░░░░░░ 0%` | 0 des 14 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
 | Production | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 39 sont établis ou en production. |
@@ -613,7 +613,7 @@ En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils 
 **Outil de mise à jour :** aucun en propre ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) est l'un de ses outils et passe la main à l'outil de mise à jour de chacun des quatre écosystèmes.
 
 <!-- progress:electro-hobby-3d -->
-`\[█████████▎░░░░░░░░░░] 46%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 4 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[████████▎░░░░░░░░░░░] 41%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 4 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -625,7 +625,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟠 | `█████░░░░░ 50%` | 2 dépôts sur 4 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 dépôts sur 4 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 4 dépôts sur 4 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🔴 | `░░░░░░░░░░ 0%` | 0 dépôts sur 4 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟠 | `█████░░░░░ 50%` | 2 dépôts sur 4 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 4 dépôts sur 4 ont le README dans les huit langues. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 dépôts sur 4 ont été vérifiés au moins dans un simulateur. |

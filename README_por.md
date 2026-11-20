@@ -87,10 +87,10 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | Área | Estado | Progresso | Nota |
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 de 59 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
-| Testes | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm a última execução do CI no ramo principal em verde. |
-| Versões publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositórios publicaram pelo menos uma versão. |
-| Documentação | 🟢 | `██████████ 100%` | 59 de 59 repositórios têm o README nas oito línguas. |
+| Testes | 🟢 | `██████████ 100%` | 53 de 53 repositórios têm testes automáticos. |
+| Integração contínua | 🔴 | `░░░░░░░░░░ 0%` | 0 de 53 repositórios têm a última execução do CI no ramo principal em verde. |
+| Versões publicadas | 🟢 | `██████████ 100%` | 53 de 53 repositórios publicaram pelo menos uma versão. |
+| Documentação | 🟢 | `██████████ 100%` | 53 de 53 repositórios têm o README nas oito línguas. |
 | Simulação | 🟢 | `██████████ 100%` | 59 de 59 repositórios foram verificados pelo menos num simulador. |
 | Hardware real | 🔴 | `█▎░░░░░░░░ 13%` | 5 dos 38 repositórios que dependem de hardware foram verificados em bancada ou no terreno; os restantes nunca funcionaram com o equipamento real. |
 | Produção | 🔴 | `▊░░░░░░░░░ 8%` | 5 de 59 repositórios estão consolidados ou em produção. |
@@ -329,7 +329,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 de 11 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🔴 | `▉░░░░░░░░░ 9%` | 1 de 11 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 11 de 11 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 11 de 11 repositórios têm o README nas oito línguas. |
 | Simulação | 🟢 | `██████████ 100%` | 11 de 11 repositórios foram verificados pelo menos num simulador. |
@@ -404,7 +404,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████░ 90%` | 18 de 20 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟢 | `██████████ 100%` | 20 de 20 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 20 de 20 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🔴 | `░░░░░░░░░░ 0%` | 0 de 20 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟢 | `██████████ 100%` | 20 de 20 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 20 de 20 repositórios têm o README nas oito línguas. |
 | Simulação | 🟢 | `██████████ 100%` | 20 de 20 repositórios foram verificados pelo menos num simulador. |
@@ -482,7 +482,7 @@ O A.R.M.O.R. segue a mesma regra que o próprio dashboard do HYDRA-UMC já aplic
 **Atualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) deteta, instala e atualiza os repositórios deste ecossistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) faz o mesmo para os quatro.
 
 <!-- progress:eh3d -->
-`\[█████████▊░░░░░░░░░░] 49%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 39 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[████████▊░░░░░░░░░░░] 44%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 39 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -493,10 +493,10 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | Área | Estado | Progresso | Nota |
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▍░░░░ 54%` | 21 de 39 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
-| Testes | 🟡 | `█████████░ 90%` | 35 de 39 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 39 de 39 repositórios têm a última execução do CI no ramo principal em verde. |
-| Versões publicadas | 🟢 | `██████████ 100%` | 39 de 39 repositórios publicaram pelo menos uma versão. |
-| Documentação | 🟢 | `██████████ 100%` | 39 de 39 repositórios têm o README nas oito línguas. |
+| Testes | 🟡 | `████████▉░ 89%` | 31 de 35 repositórios têm testes automáticos. |
+| Integração contínua | 🔴 | `░░░░░░░░░░ 0%` | 0 de 35 repositórios têm a última execução do CI no ramo principal em verde. |
+| Versões publicadas | 🟢 | `██████████ 100%` | 35 de 35 repositórios publicaram pelo menos uma versão. |
+| Documentação | 🟢 | `██████████ 100%` | 35 de 35 repositórios têm o README nas oito línguas. |
 | Simulação | 🟡 | `███████▉░░ 79%` | 31 de 39 repositórios foram verificados pelo menos num simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 dos 14 repositórios que dependem de hardware foram verificados em bancada ou no terreno; os restantes nunca funcionaram com o equipamento real. |
 | Produção | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositórios estão consolidados ou em produção. |
@@ -613,7 +613,7 @@ Fora dos quatro ecossistemas há um quinto grupo: ferramentas independentes que 
 **Atualizador:** nenhum próprio; o [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) é uma das suas ferramentas e passa o trabalho ao atualizador de cada um dos quatro ecossistemas.
 
 <!-- progress:electro-hobby-3d -->
-`\[█████████▎░░░░░░░░░░] 46%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 4 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
+`\[████████▎░░░░░░░░░░░] 41%` — Calculado a partir de dados reais: a maturidade e a evidência que cada um dos seus 4 repositórios declara no seu próprio manifesto, mais as suas versões publicadas, os seus testes, o seu CI em verde e a documentação em oito idiomas. O marco de 100% é um ecossistema totalmente integrado a funcionar em hardware real.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -625,7 +625,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████░░░░░ 50%` | 2 de 4 repositórios são pelo menos funcionais, segundo a maturidade que cada um declara no seu próprio manifesto. |
 | Testes | 🟡 | `███████▌░░ 75%` | 3 de 4 repositórios têm testes automáticos. |
-| Integração contínua | 🟢 | `██████████ 100%` | 4 de 4 repositórios têm a última execução do CI no ramo principal em verde. |
+| Integração contínua | 🔴 | `░░░░░░░░░░ 0%` | 0 de 4 repositórios têm a última execução do CI no ramo principal em verde. |
 | Versões publicadas | 🟠 | `█████░░░░░ 50%` | 2 de 4 repositórios publicaram pelo menos uma versão. |
 | Documentação | 🟢 | `██████████ 100%` | 4 de 4 repositórios têm o README nas oito línguas. |
 | Simulação | 🟠 | `█████░░░░░ 50%` | 2 de 4 repositórios foram verificados pelo menos num simulador. |

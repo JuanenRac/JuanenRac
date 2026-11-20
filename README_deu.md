@@ -87,10 +87,10 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | Bereich | Status | Fortschritt | Hinweis |
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 von 59 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
-| Tests | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
-| Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben mindestens eine Version veröffentlicht. |
-| Dokumentation | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben die README in den acht Sprachen. |
+| Tests | 🟢 | `██████████ 100%` | 53 von 53 Repositories haben automatische Tests. |
+| Kontinuierliche Integration | 🔴 | `░░░░░░░░░░ 0%` | 0 von 53 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 53 von 53 Repositories haben mindestens eine Version veröffentlicht. |
+| Dokumentation | 🟢 | `██████████ 100%` | 53 von 53 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `██████████ 100%` | 59 von 59 Repositories wurden mindestens in einem Simulator geprüft. |
 | Echte Hardware | 🔴 | `█▎░░░░░░░░ 13%` | 5 der 38 Repositories, die von Hardware abhängen, wurden auf dem Prüfstand oder im Feld geprüft; der Rest lief nie mit der echten Ausrüstung. |
 | Produktion | 🔴 | `▊░░░░░░░░░ 8%` | 5 von 59 Repositories sind etabliert oder im Produktivbetrieb. |
@@ -329,7 +329,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 von 11 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🔴 | `▉░░░░░░░░░ 9%` | 1 von 11 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 11 von 11 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `██████████ 100%` | 11 von 11 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -404,7 +404,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████░ 90%` | 18 von 20 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🔴 | `░░░░░░░░░░ 0%` | 0 von 20 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 20 von 20 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `██████████ 100%` | 20 von 20 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -482,7 +482,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:eh3d -->
-`\[█████████▊░░░░░░░░░░] 49%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 39 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[████████▊░░░░░░░░░░░] 44%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 39 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -493,10 +493,10 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | Bereich | Status | Fortschritt | Hinweis |
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████▍░░░░ 54%` | 21 von 39 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
-| Tests | 🟡 | `█████████░ 90%` | 35 von 39 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 39 von 39 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
-| Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 39 von 39 Repositories haben mindestens eine Version veröffentlicht. |
-| Dokumentation | 🟢 | `██████████ 100%` | 39 von 39 Repositories haben die README in den acht Sprachen. |
+| Tests | 🟡 | `████████▉░ 89%` | 31 von 35 Repositories haben automatische Tests. |
+| Kontinuierliche Integration | 🔴 | `░░░░░░░░░░ 0%` | 0 von 35 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 35 von 35 Repositories haben mindestens eine Version veröffentlicht. |
+| Dokumentation | 🟢 | `██████████ 100%` | 35 von 35 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟡 | `███████▉░░ 79%` | 31 von 39 Repositories wurden mindestens in einem Simulator geprüft. |
 | Echte Hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 der 14 Repositories, die von Hardware abhängen, wurden auf dem Prüfstand oder im Feld geprüft; der Rest lief nie mit der echten Ausrüstung. |
 | Produktion | 🔴 | `░░░░░░░░░░ 0%` | 0 von 39 Repositories sind etabliert oder im Produktivbetrieb. |
@@ -613,7 +613,7 @@ Neben den vier Ökosystemen gibt es eine fünfte Gruppe: eigenständige Werkzeug
 **Updater:** keinen eigenen; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) ist eines seiner Werkzeuge und übergibt an den Updater jedes der vier Ökosysteme.
 
 <!-- progress:electro-hobby-3d -->
-`\[█████████▎░░░░░░░░░░] 46%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 4 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[████████▎░░░░░░░░░░░] 41%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 4 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -625,7 +625,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████░░░░░ 50%` | 2 von 4 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 von 4 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 4 von 4 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🔴 | `░░░░░░░░░░ 0%` | 0 von 4 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟠 | `█████░░░░░ 50%` | 2 von 4 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 4 von 4 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 von 4 Repositories wurden mindestens in einem Simulator geprüft. |

@@ -12532,15 +12532,15 @@
   },
   {
    "actions": {
-    "fail": 88,
-    "min": 3735,
-    "ok": 1702,
+    "fail": 98,
+    "min": 3733,
+    "ok": 1724,
     "other": 43,
-    "runs": 1833
+    "runs": 1865
    },
    "areas": {
     "armor": {
-     "ci": 95,
+     "ci": 100,
      "docs": 100,
      "hardware": 25,
      "production": 60,
@@ -13119,8 +13119,8 @@
    "sentinel": {
     "cand": 4,
     "gaps": 2,
-    "min": 3735,
-    "red": 1
+    "min": 3733,
+    "red": 2
    },
    "tests": {
     "ARMOR-COMMON": 659,
@@ -13134,11 +13134,11 @@
     "ARMOR-VISION": 382,
     "ARMOR-VOICE-AI": 255,
     "ARMOR-WATCH": 31,
-    "EH3D-ANDROID-CONTROL": 334,
+    "EH3D-ANDROID-CONTROL": 375,
     "EH3D-AUTOLEVEL": 238,
     "EH3D-BUNGARD-GUI": 441,
     "EH3D-CAM-DEBUGGER": 160,
-    "EH3D-COMMON": 803,
+    "EH3D-COMMON": 844,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 510,
     "EH3D-DESIGN-EXPLORER": 3,
@@ -13148,11 +13148,11 @@
     "EH3D-DRILLPRO": 443,
     "EH3D-GERBERVIEWER": 138,
     "EH3D-HYDRA-BRIDGE": 6,
-    "EH3D-IOS-CONTROL": 342,
+    "EH3D-IOS-CONTROL": 388,
     "EH3D-ISOCAM": 499,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-PHOENIX-3DP": 620,
+    "EH3D-PHOENIX-3DP": 650,
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 803,
     "EH3D-PHOENIX-LASER": 778,
