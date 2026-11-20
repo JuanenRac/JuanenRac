@@ -1,38 +1,25 @@
 {
- "asof": "2026-11-20T19:16:32Z",
+ "asof": "2026-11-20T20:43:14Z",
  "ci": {
-  "checked": 622,
-  "red": [
-   {
-    "repo": "EH3D-ANDROID-CONTROL",
-    "since": "2026-11-20T19:15:12Z",
-    "streak": 2,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-IOS-CONTROL",
-    "since": "2026-11-20T19:07:36Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   }
-  ],
-  "red_total": 2
+  "checked": 624,
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 886,
-    "min7": 886,
+    "min24": 874,
+    "min7": 874,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 286,
-    "min7": 506,
+    "min24": 285,
+    "min7": 509,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 157,
-    "min7": 426,
+    "min24": 166,
+    "min7": 397,
     "repo": "EH3D-SERVER"
    },
    {
@@ -41,18 +28,18 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 128,
+    "min24": 112,
     "min7": 377,
     "repo": "HYDRA-UMC-SERVER"
    },
    {
-    "min24": 124,
-    "min7": 524,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
+    "min24": 101,
+    "min7": 262,
+    "repo": "HYDRA-UMC-SDK"
    }
   ],
-  "total24": 3733,
-  "total7": 32826,
+  "total24": 3728,
+  "total7": 30888,
   "warn": false
  },
  "delivery": {
@@ -112,7 +99,7 @@
   "eh3d": {
    "cand": 0,
    "read": 39,
-   "red": 2,
+   "red": 0,
    "repos": 39,
    "unpub": 0
   },
@@ -139,6 +126,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-20T20:43:14Z",
+   "kind": "red_ok",
+   "repo": "EH3D-ANDROID-CONTROL",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-20T20:43:14Z",
+   "kind": "red_ok",
+   "repo": "EH3D-IOS-CONTROL",
+   "wf": "ci.yml"
+  },
   {
    "at": "2026-11-20T19:16:32Z",
    "kind": "red_new",
@@ -306,24 +305,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-ANDROID-CONTROL",
    "tag": "v0.8.0.6"
-  },
-  {
-   "at": "2026-11-20T14:30:49Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-WATCH",
-   "tag": "v0.3.5"
-  },
-  {
-   "at": "2026-11-20T12:09:09Z",
-   "kind": "red_new",
-   "repo": "ARMOR-DOCS",
-   "wf": "nightly.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 15
+  "gap_minutes": 90
  },
  "hygiene": {
   "allowed_missing": [],
@@ -339,23 +326,12 @@
  "parte": [
   {
    "key": "head",
-   "level": "bad",
+   "level": "warn",
    "p": {
     "bad": 0,
     "cand": 4,
     "hyg": 2,
-    "red": 2
-   }
-  },
-  {
-   "key": "red",
-   "level": "bad",
-   "p": {
-    "list": [
-     "EH3D-ANDROID-CONTROL",
-     "EH3D-IOS-CONTROL"
-    ],
-    "n": 2
+    "red": 0
    }
   },
   {
@@ -413,16 +389,16 @@
     "tag": "v0.8.2.1"
    },
    {
+    "entries": 10,
+    "published": null,
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID",
+    "tag": ""
+   },
+   {
     "entries": 9,
     "published": "2026-11-18T09:51:53Z",
     "repo": "ARMOR-COMMON",
     "tag": "v0.8.1.5"
-   },
-   {
-    "entries": 9,
-    "published": null,
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID",
-    "tag": ""
    },
    {
     "entries": 6,
@@ -653,7 +629,7 @@
    10185,
    5009,
    6712,
-   3733
+   3728
   ],
   "red": [
    3,
@@ -673,7 +649,7 @@
    2,
    0,
    0,
-   2
+   0
   ]
  },
  "unpublished": {

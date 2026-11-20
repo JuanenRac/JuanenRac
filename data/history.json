@@ -12532,15 +12532,15 @@
   },
   {
    "actions": {
-    "fail": 98,
-    "min": 3733,
-    "ok": 1724,
-    "other": 43,
-    "runs": 1865
+    "fail": 92,
+    "min": 3728,
+    "ok": 1768,
+    "other": 41,
+    "runs": 1901
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 0,
      "docs": 100,
      "hardware": 25,
      "production": 60,
@@ -12550,17 +12550,17 @@
      "tests": 100
     },
     "eh3d": {
-     "ci": 100,
+     "ci": 0,
      "docs": 100,
      "hardware": 0,
      "production": 0,
      "releases": 100,
      "simulation": 79,
      "software": 54,
-     "tests": 90
+     "tests": 89
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 0,
      "docs": 100,
      "hardware": 100,
      "production": 0,
@@ -12570,7 +12570,7 @@
      "tests": 75
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 0,
      "docs": 100,
      "hardware": 13,
      "production": 8,
@@ -12580,7 +12580,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 9,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -12593,8 +12593,8 @@
    "date": "2026-11-20",
    "progress": {
     "armor": 69,
-    "eh3d": 49,
-    "electro-hobby-3d": 46,
+    "eh3d": 44,
+    "electro-hobby-3d": 41,
     "hydra-umc": 60,
     "urtc": 56
    },
@@ -12752,7 +12752,7 @@
      "0.1.1"
     ],
     "EH3D-PHOENIX-3DP": [
-     0,
+     1,
      "0.0.7"
     ],
     "EH3D-PHOENIX-CAD": [
@@ -13119,8 +13119,8 @@
    "sentinel": {
     "cand": 4,
     "gaps": 2,
-    "min": 3733,
-    "red": 2
+    "min": 3728,
+    "red": 0
    },
    "tests": {
     "ARMOR-COMMON": 659,
@@ -13154,10 +13154,10 @@
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-3DP": 650,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 803,
+    "EH3D-PHOENIX-CNC": 869,
     "EH3D-PHOENIX-LASER": 778,
-    "EH3D-PHOENIX-PCB": 5108,
-    "EH3D-PHOENIX-PNP": 1682,
+    "EH3D-PHOENIX-PCB": 5116,
+    "EH3D-PHOENIX-PNP": 1756,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 116,
     "EH3D-SERVER": 740,
