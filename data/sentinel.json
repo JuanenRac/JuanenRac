@@ -1,50 +1,38 @@
 {
- "asof": "2026-11-20T16:16:37Z",
+ "asof": "2026-11-20T16:49:40Z",
  "ci": {
   "checked": 620,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-20T16:01:29Z",
-    "streak": 3,
-    "wf": "nightly.yml"
-   },
-   {
-    "repo": "EH3D-PHOENIX-PCB",
-    "since": "2026-11-20T15:51:45Z",
-    "streak": 1,
-    "wf": "rust.yml"
-   },
-   {
-    "repo": "URTC-DOCS",
-    "since": "2026-11-20T16:02:14Z",
-    "streak": 2,
+    "since": "2026-11-20T16:32:44Z",
+    "streak": 5,
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 3
+  "red_total": 1
  },
  "compute": {
   "top": [
    {
-    "min24": 863,
-    "min7": 863,
+    "min24": 888,
+    "min7": 888,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 341,
-    "min7": 490,
+    "min24": 334,
+    "min7": 506,
     "repo": "EH3D-PHOENIX-PCB"
-   },
-   {
-    "min24": 191,
-    "min7": 374,
-    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
     "min24": 157,
     "min7": 426,
     "repo": "EH3D-SERVER"
+   },
+   {
+    "min24": 143,
+    "min7": 374,
+    "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
     "min24": 137,
@@ -57,8 +45,8 @@
     "repo": "HYDRA-UMC-SERVER"
    }
   ],
-  "total24": 4571,
-  "total7": 33503,
+  "total24": 4343,
+  "total7": 33540,
   "warn": false
  },
  "delivery": {
@@ -118,7 +106,7 @@
   "eh3d": {
    "cand": 0,
    "read": 39,
-   "red": 1,
+   "red": 0,
    "repos": 39,
    "unpub": 0
   },
@@ -139,12 +127,24 @@
   "urtc": {
    "cand": 0,
    "read": 11,
-   "red": 1,
+   "red": 0,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-20T16:49:40Z",
+   "kind": "red_ok",
+   "repo": "EH3D-PHOENIX-PCB",
+   "wf": "rust.yml"
+  },
+  {
+   "at": "2026-11-20T16:49:40Z",
+   "kind": "red_ok",
+   "repo": "URTC-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-20T16:16:37Z",
    "kind": "red_new",
@@ -312,24 +312,12 @@
    "kind": "released",
    "repo": "EH3D-DRILLPRO",
    "tag": "v0.2.1"
-  },
-  {
-   "at": "2026-11-20T11:06:54Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-3DP",
-   "tag": "v0.0.5"
-  },
-  {
-   "at": "2026-11-20T11:06:54Z",
-   "kind": "released",
-   "repo": "EH3D-SERVER",
-   "tag": "v0.2.0"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 50
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -350,7 +338,7 @@
     "bad": 0,
     "cand": 3,
     "hyg": 2,
-    "red": 3
+    "red": 1
    }
   },
   {
@@ -358,11 +346,9 @@
    "level": "bad",
    "p": {
     "list": [
-     "ARMOR-DOCS",
-     "EH3D-PHOENIX-PCB",
-     "URTC-DOCS"
+     "ARMOR-DOCS"
     ],
-    "n": 3
+    "n": 1
    }
   },
   {
@@ -653,7 +639,7 @@
    10185,
    5009,
    6712,
-   4571
+   4343
   ],
   "red": [
    3,
@@ -673,7 +659,7 @@
    2,
    0,
    0,
-   3
+   1
   ]
  },
  "unpublished": {

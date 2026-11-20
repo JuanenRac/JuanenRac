@@ -12532,15 +12532,15 @@
   },
   {
    "actions": {
-    "fail": 87,
-    "min": 4571,
-    "ok": 2027,
-    "other": 59,
-    "runs": 2173
+    "fail": 88,
+    "min": 4343,
+    "ok": 1931,
+    "other": 51,
+    "runs": 2070
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 25,
      "production": 60,
@@ -12580,7 +12580,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -13119,8 +13119,8 @@
    "sentinel": {
     "cand": 3,
     "gaps": 2,
-    "min": 4571,
-    "red": 3
+    "min": 4343,
+    "red": 1
    },
    "tests": {
     "ARMOR-COMMON": 659,
