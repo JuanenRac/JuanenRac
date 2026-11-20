@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-20T16:08:37Z",
+ "asof": "2026-11-20T16:16:37Z",
  "ci": {
   "checked": 620,
   "red": [
@@ -27,8 +27,8 @@
  "compute": {
   "top": [
    {
-    "min24": 870,
-    "min7": 870,
+    "min24": 863,
+    "min7": 863,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -47,18 +47,18 @@
     "repo": "EH3D-SERVER"
    },
    {
-    "min24": 146,
+    "min24": 137,
     "min7": 524,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 141,
+    "min24": 128,
     "min7": 377,
     "repo": "HYDRA-UMC-SERVER"
    }
   ],
-  "total24": 4622,
-  "total7": 33526,
+  "total24": 4571,
+  "total7": 33503,
   "warn": false
  },
  "delivery": {
@@ -146,25 +146,25 @@
  },
  "events": [
   {
-   "at": "2026-11-20T16:08:37Z",
+   "at": "2026-11-20T16:16:37Z",
    "kind": "red_new",
    "repo": "EH3D-PHOENIX-PCB",
    "wf": "rust.yml"
   },
   {
-   "at": "2026-11-20T16:08:37Z",
+   "at": "2026-11-20T16:16:37Z",
    "kind": "red_ok",
    "repo": "EH3D-COMMON",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-20T16:08:37Z",
+   "at": "2026-11-20T16:16:37Z",
    "kind": "released",
    "repo": "EH3D-COMMON",
    "tag": "v0.2.7"
   },
   {
-   "at": "2026-11-20T16:08:37Z",
+   "at": "2026-11-20T16:16:37Z",
    "kind": "released",
    "repo": "EH3D-CORE-LIBS",
    "tag": "v0.1.2"
@@ -329,7 +329,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 45
+  "gap_minutes": 50
  },
  "hygiene": {
   "allowed_missing": [],
@@ -653,7 +653,7 @@
    10185,
    5009,
    6712,
-   4622
+   4571
   ],
   "red": [
    3,
