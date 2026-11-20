@@ -12532,11 +12532,11 @@
   },
   {
    "actions": {
-    "fail": 94,
-    "min": 3773,
-    "ok": 1756,
-    "other": 38,
-    "runs": 1888
+    "fail": 91,
+    "min": 4279,
+    "ok": 1658,
+    "other": 81,
+    "runs": 1830
    },
    "areas": {
     "armor": {
@@ -13119,7 +13119,7 @@
    "sentinel": {
     "cand": 4,
     "gaps": 2,
-    "min": 3773,
+    "min": 4279,
     "red": 0
    },
    "tests": {
@@ -13138,7 +13138,7 @@
     "EH3D-AUTOLEVEL": 238,
     "EH3D-BUNGARD-GUI": 441,
     "EH3D-CAM-DEBUGGER": 160,
-    "EH3D-COMMON": 844,
+    "EH3D-COMMON": 868,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 510,
     "EH3D-DESIGN-EXPLORER": 3,
@@ -13154,9 +13154,9 @@
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-PHOENIX-3DP": 650,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 869,
-    "EH3D-PHOENIX-LASER": 778,
-    "EH3D-PHOENIX-PCB": 5116,
+    "EH3D-PHOENIX-CNC": 916,
+    "EH3D-PHOENIX-LASER": 840,
+    "EH3D-PHOENIX-PCB": 5207,
     "EH3D-PHOENIX-PNP": 1756,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 116,
