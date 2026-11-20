@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-20T14:30:49Z",
+ "asof": "2026-11-20T14:57:14Z",
  "ci": {
-  "checked": 645,
+  "checked": 620,
   "red": [
    {
     "repo": "ARMOR-DOCS",
@@ -11,26 +11,8 @@
    },
    {
     "repo": "EH3D-COMMON",
-    "since": "2026-11-20T14:15:05Z",
+    "since": "2026-11-20T14:51:58Z",
     "streak": 3,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-COMMON",
-    "since": "2026-11-20T14:16:32Z",
-    "streak": 2,
-    "wf": "rust.yml"
-   },
-   {
-    "repo": "EH3D-CORE-LIBS",
-    "since": "2026-11-20T13:42:43Z",
-    "streak": 2,
-    "wf": "rust.yml"
-   },
-   {
-    "repo": "EH3D-VISION-STUDIO",
-    "since": "2026-11-20T14:30:26Z",
-    "streak": 2,
     "wf": "ci.yml"
    },
    {
@@ -40,50 +22,49 @@
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 6
+  "red_total": 3
  },
  "compute": {
   "top": [
    {
-    "min24": 875,
-    "min7": 875,
+    "min24": 878,
+    "min7": 878,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 345,
-    "min7": 524,
+    "min24": 346,
+    "min7": 502,
     "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 169,
-    "min7": 360,
+    "min24": 191,
+    "min7": 374,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 143,
-    "min7": 434,
-    "repo": "EH3D-SERVER"
-   },
-   {
-    "min24": 133,
-    "min7": 540,
+    "min24": 162,
+    "min7": 524,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
-    "min24": 133,
-    "min7": 262,
-    "repo": "HYDRA-UMC-SDK"
+    "min24": 143,
+    "min7": 413,
+    "repo": "EH3D-SERVER"
+   },
+   {
+    "min24": 141,
+    "min7": 377,
+    "repo": "HYDRA-UMC-SERVER"
    }
   ],
-  "total24": 5325,
-  "total7": 35075,
+  "total24": 5032,
+  "total7": 33720,
   "warn": false
  },
  "delivery": {
   "clmis": [
    "EH3D-COMMON",
    "EH3D-CORE-LIBS",
-   "EH3D-VISION-STUDIO",
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "URTC-DEVTOOLS"
@@ -92,12 +73,12 @@
    "armor": {
     "clmis": 0,
     "nonotes": 0,
-    "read": 20,
-    "repos": 20,
+    "read": 16,
+    "repos": 16,
     "tagahead": 0
    },
    "eh3d": {
-    "clmis": 3,
+    "clmis": 2,
     "nonotes": 0,
     "read": 39,
     "repos": 39,
@@ -131,15 +112,15 @@
  "ecosystems": {
   "armor": {
    "cand": 2,
-   "read": 20,
+   "read": 16,
    "red": 1,
-   "repos": 20,
+   "repos": 16,
    "unpub": 0
   },
   "eh3d": {
    "cand": 0,
    "read": 39,
-   "red": 3,
+   "red": 1,
    "repos": 39,
    "unpub": 0
   },
@@ -166,6 +147,30 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-20T14:57:14Z",
+   "kind": "red_ok",
+   "repo": "EH3D-COMMON",
+   "wf": "rust.yml"
+  },
+  {
+   "at": "2026-11-20T14:57:14Z",
+   "kind": "red_ok",
+   "repo": "EH3D-CORE-LIBS",
+   "wf": "rust.yml"
+  },
+  {
+   "at": "2026-11-20T14:57:14Z",
+   "kind": "red_ok",
+   "repo": "EH3D-VISION-STUDIO",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-20T14:57:14Z",
+   "kind": "released",
+   "repo": "EH3D-VISION-STUDIO",
+   "tag": "v0.1.2"
+  },
   {
    "at": "2026-11-20T14:30:49Z",
    "kind": "red_new",
@@ -321,41 +326,17 @@
    "kind": "released",
    "repo": "EH3D-PHOENIX-PCB",
    "tag": "v0.1.2"
-  },
-  {
-   "at": "2026-11-20T08:17:13Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-OS-REBUILDER",
-   "tag": "v0.3.9"
-  },
-  {
-   "at": "2026-11-20T07:16:57Z",
-   "kind": "released",
-   "repo": "EH3D-AUTOLEVEL",
-   "tag": "v0.1.1"
-  },
-  {
-   "at": "2026-11-20T07:16:57Z",
-   "kind": "released",
-   "repo": "EH3D-BUNGARD-GUI",
-   "tag": "v0.2.9"
-  },
-  {
-   "at": "2026-11-20T07:16:57Z",
-   "kind": "released",
-   "repo": "EH3D-CAM-DEBUGGER",
-   "tag": "v0.0.8"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 145
+  "gap_minutes": 30
  },
  "hygiene": {
   "allowed_missing": [],
   "gaps": 2,
-  "ruleset_checked": 133,
+  "ruleset_checked": 129,
   "ruleset_missing": [
    "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID",
    "TOOLS-GITHUB-ACTIONS-MONITOR-WATCH"
@@ -371,7 +352,7 @@
     "bad": 0,
     "cand": 3,
     "hyg": 2,
-    "red": 6
+    "red": 3
    }
   },
   {
@@ -381,11 +362,9 @@
     "list": [
      "ARMOR-DOCS",
      "EH3D-COMMON",
-     "EH3D-CORE-LIBS",
-     "EH3D-VISION-STUDIO",
      "URTC-DOCS"
     ],
-    "n": 6
+    "n": 3
    }
   },
   {
@@ -427,12 +406,12 @@
    "key": "settings",
    "level": "info",
    "p": {
-    "m": 133,
+    "m": 129,
     "n": 0
    }
   }
  ],
- "read": 133,
+ "read": 129,
  "releases": {
   "candidates": [
    {
@@ -458,19 +437,18 @@
   "min_entries": 5,
   "total": 3
  },
- "repos": 133,
+ "repos": 129,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
   "none": 81,
   "norelease": 3,
-  "unverifiable": 17,
+  "unverifiable": 16,
   "unverified": 0,
-  "verified": 32
+  "verified": 29
  },
  "tags": {
-  "ARMOR-ANDROID-CONTROL": "v0.8.0.9",
   "ARMOR-COMMON": "v0.8.1.5",
   "ARMOR-DEVOPS": "v0.7.8",
   "ARMOR-DOCS": "v0.8.2.1",
@@ -480,12 +458,9 @@
   "ARMOR-NODE-ALARM": "v0.5.8",
   "ARMOR-NODE-ELECTRICAL": "v0.6.0",
   "ARMOR-NODE-HMI": "v0.5.0",
-  "ARMOR-NODE-RADAR": "v0.8.1.4",
   "ARMOR-NODE-SOLAR": "v0.6.8",
-  "ARMOR-SERVER": "v0.8.2.4",
   "ARMOR-SERVER-AI": "v0.3.4",
   "ARMOR-SIMULATOR": "v0.3.9",
-  "ARMOR-STUDIO": "v0.8.2.6",
   "ARMOR-UPDATER": "v0.2.4",
   "ARMOR-VISION": "v0.1.8",
   "ARMOR-VOICE-AI": "v0.3.7",
@@ -527,7 +502,7 @@
   "EH3D-TOOL-MANAGER": "v0.1.1",
   "EH3D-UPDATER": "v0.1.1",
   "EH3D-VALIDATION-LAB": "v0.0.3",
-  "EH3D-VISION-STUDIO": "v0.1.1",
+  "EH3D-VISION-STUDIO": "v0.1.2",
   "ELECTRO-HOBBY-3D-UPDATER": "v0.1.5",
   "HYDRA-UMC": "v0.2.9",
   "HYDRA-UMC-ANDROID-CONTROL": "v0.8.0.6",
@@ -680,7 +655,7 @@
    10185,
    5009,
    6712,
-   5325
+   5032
   ],
   "red": [
    3,
@@ -700,7 +675,7 @@
    2,
    0,
    0,
-   6
+   3
   ]
  },
  "unpublished": {

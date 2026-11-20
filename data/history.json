@@ -12532,17 +12532,17 @@
   },
   {
    "actions": {
-    "fail": 87,
-    "min": 5325,
-    "ok": 2293,
+    "fail": 81,
+    "min": 5032,
+    "ok": 2176,
     "other": 57,
-    "runs": 2437
+    "runs": 2314
    },
    "areas": {
     "armor": {
      "ci": 100,
      "docs": 100,
-     "hardware": 0,
+     "hardware": 25,
      "production": 60,
      "releases": 100,
      "simulation": 100,
@@ -12550,7 +12550,7 @@
      "tests": 100
     },
     "eh3d": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 0,
      "production": 0,
@@ -12560,17 +12560,17 @@
      "tests": 90
     },
     "electro-hobby-3d": {
-     "ci": 75,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
      "releases": 50,
      "simulation": 0,
      "software": 50,
-     "tests": 50
+     "tests": 75
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 8,
      "production": 8,
@@ -12580,7 +12580,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -12593,16 +12593,12 @@
    "date": "2026-11-20",
    "progress": {
     "armor": 65,
-    "eh3d": 49,
-    "electro-hobby-3d": 38,
+    "eh3d": 48,
+    "electro-hobby-3d": 41,
     "hydra-umc": 59,
     "urtc": 56
    },
    "repos": {
-    "ARMOR-ANDROID-CONTROL": [
-     2,
-     "0.8.0.9"
-    ],
     "ARMOR-COMMON": [
      2,
      "0.8.1.5"
@@ -12639,17 +12635,9 @@
      1,
      "0.5.0"
     ],
-    "ARMOR-NODE-RADAR": [
-     2,
-     "0.8.1.4"
-    ],
     "ARMOR-NODE-SOLAR": [
      1,
      "0.6.8"
-    ],
-    "ARMOR-SERVER": [
-     2,
-     "0.8.2.4"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -12658,10 +12646,6 @@
     "ARMOR-SIMULATOR": [
      2,
      "0.3.9"
-    ],
-    "ARMOR-STUDIO": [
-     2,
-     "0.8.2.6"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -12833,7 +12817,7 @@
     ],
     "EH3D-VISION-STUDIO": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
@@ -13135,20 +13119,17 @@
    "sentinel": {
     "cand": 3,
     "gaps": 2,
-    "min": 5325,
-    "red": 6
+    "min": 5032,
+    "red": 3
    },
    "tests": {
-    "ARMOR-ANDROID-CONTROL": 565,
     "ARMOR-COMMON": 659,
     "ARMOR-DOCS": 511,
     "ARMOR-HARDWARE": 87,
     "ARMOR-IOS-CONTROL": 516,
     "ARMOR-NETWORK": 334,
-    "ARMOR-SERVER": 1389,
     "ARMOR-SERVER-AI": 192,
     "ARMOR-SIMULATOR": 415,
-    "ARMOR-STUDIO": 1866,
     "ARMOR-UPDATER": 454,
     "ARMOR-VISION": 382,
     "ARMOR-VOICE-AI": 255,
@@ -13179,7 +13160,7 @@
     "EH3D-PHOENIX-PNP": 1682,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 116,
-    "EH3D-SERVER": 718,
+    "EH3D-SERVER": 740,
     "EH3D-STENCILCAM": 229,
     "EH3D-STUDIO": 558,
     "EH3D-SUITE-LAUNCHER": 128,
