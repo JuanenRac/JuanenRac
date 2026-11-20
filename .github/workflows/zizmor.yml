@@ -74,7 +74,7 @@ jobs:
     env:
       MIN_SEVERITY: ${{ inputs.min-severity }}
       PERSONA: ${{ inputs.persona }}
-      ZIZMOR_CONFIG: ${{ inputs.config }}
+      CONFIG_PATH: ${{ inputs.config }}
       TARGET: ${{ inputs.target }}
 
     steps:
@@ -115,7 +115,7 @@ jobs:
         run: |
           set -u
           args=(--offline --no-exit-codes --color=never "--persona=${PERSONA}" --min-severity=low)
-          if [ -n "${ZIZMOR_CONFIG}" ]; then args+=("--config=${ZIZMOR_CONFIG}"); fi
+          if [ -n "${CONFIG_PATH}" ]; then args+=("--config=${CONFIG_PATH}"); fi
           report="${RUNNER_TEMP}/zizmor-advisory.txt"
           "${RUNNER_TEMP}/zizmor-venv/bin/zizmor" "${args[@]}" -- "${TARGET}" > "${report}" 2>&1 || true
           {
@@ -134,5 +134,5 @@ jobs:
         run: |
           set -u
           args=(--offline --format=github --color=never "--persona=${PERSONA}" "--min-severity=${MIN_SEVERITY}")
-          if [ -n "${ZIZMOR_CONFIG}" ]; then args+=("--config=${ZIZMOR_CONFIG}"); fi
+          if [ -n "${CONFIG_PATH}" ]; then args+=("--config=${CONFIG_PATH}"); fi
           "${RUNNER_TEMP}/zizmor-venv/bin/zizmor" "${args[@]}" -- "${TARGET}"
