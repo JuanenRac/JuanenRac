@@ -207,7 +207,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.5|Kit TypeScript compartido de los clientes web de HYDRA-UMC: sesión, cliente HTTP, historial de conexiones, preferencias y recorridos.|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.8|Aplicación de escritorio de alto rendimiento en Python/Qt para automatización industrial.|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.9|Interfaz táctil dedicada basada en Flutter para pantallas industriales de 7" (CM5).|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.5|Aplicación móvil nativa en Kotlin con inicio de sesión biométrico para la gestión remota de robots.|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.6|Aplicación móvil nativa en Kotlin con inicio de sesión biométrico para la gestión remota de robots.|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.7|Aplicación móvil en Flutter para iOS/iPadOS con sincronización por WebSocket en tiempo real.|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.2.1|Editor gráfico URDF para validar y enviar modelos de robots al catálogo.|
 |[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.2.1|Editor de modelos STL de escritorio: transforma, reemplaza, elimina y añade piezas reales en el catálogo de modelos compartido.|
@@ -288,7 +288,7 @@ Esto no es un tutorial guiado (no existe una única placa portadora "correcta" p
 
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.4|Panel de emergencia portátil (wearable) con alertas de seguridad hápticas.|
+|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.5|Panel de emergencia portátil (wearable) con alertas de seguridad hápticas.|
 |[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.2|Interfaz de línea de comandos para automatización de flotas, flasheo y DevOps.|
 |[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.6|Extensión de IA para paneles web que proporciona información en lenguaje natural.|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.9|Herramienta GUI/CLI multiplataforma para detectar, instalar y actualizar manualmente cada proyecto del ecosistema.|
@@ -482,7 +482,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 **Actualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 39 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████▊░░░░░░░░░░] 49%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 39 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -574,7 +574,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 ### 💠 Proyectos PHOENIX:
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.3|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.4|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
 |[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.6|Prepara impresiones 3D: lee modelos STL, OBJ y 3MF, incluye 120 perfiles de impresora, lamina a G-code con límites de temperatura seguros y se comunica con Moonraker, OctoPrint y EH3D-SERVER (probado solo con simuladores).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificador de ingeniería integral para validaciones cruzadas y control de calidad del diseño.|
@@ -613,7 +613,7 @@ Fuera de los cuatro ecosistemas hay un quinto grupo: herramientas independientes
 **Actualizador:** ninguno propio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) es una de sus herramientas y cede el trabajo al actualizador de cada uno de los cuatro ecosistemas.
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 2 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[███████▋░░░░░░░░░░░░] 38%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 4 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,14 +623,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
-| Software | 🟢 | `██████████ 100%` | 2 de 2 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟠 | `█████░░░░░ 50%` | 1 de 2 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟢 | `██████████ 100%` | 2 de 2 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 2 de 2 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositorios se han comprobado al menos en un simulador. |
+| Software | 🟠 | `█████░░░░░ 50%` | 2 de 4 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟠 | `█████░░░░░ 50%` | 2 de 4 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟡 | `███████▌░░ 75%` | 3 de 4 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟠 | `█████░░░░░ 50%` | 2 de 4 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 4 de 4 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🔴 | `░░░░░░░░░░ 0%` | 0 de 4 repositorios se han comprobado al menos en un simulador. |
 | Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 0 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
-| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 2 repositorios están consolidados o en producción. |
+| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 4 repositorios están consolidados o en producción. |
 <!-- /status:electro-hobby-3d -->
 
 ## 🧭 Qué cubre el grupo Tools
@@ -642,6 +642,8 @@ El grupo reúne los programas que están por encima de los cuatro ecosistemas y 
 | Herramienta | Versión | Qué es |
 | :--- | :--- | :--- |
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | App Android del monitor: lee en el móvil el estado y las alertas de tu propio monitor (solo andamiaje; aún no hay nada construido). |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Acompañante para reloj (Wear OS) de la app Android: un vistazo al estado del CI y a las alertas (solo andamiaje; aún no hay nada construido). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La ventana y la línea de órdenes únicas que ceden el trabajo al actualizador de cada ecosistema. |
 
 \---

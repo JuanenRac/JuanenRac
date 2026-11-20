@@ -207,7 +207,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.5|HYDRA-UMC 网页客户端共用的 TypeScript 工具包：会话、HTTP 客户端、连接历史、偏好设置和导览。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.8|用于工业自动化的高性能 Python/Qt 桌面应用程序。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.9|专为 7 英寸工业显示器（CM5）设计的基于 Flutter 的触摸界面。|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.5|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.6|带生物识别登录的远程机器人管理原生 Kotlin 移动应用。|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.7|带实时 WebSocket 同步的 iOS/iPadOS 专用 Flutter 移动应用。|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.2.1|用于验证机器人模型并将其推送到目录中的图形化 URDF 编辑器。|
 |[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.2.1|桌面 STL 模型编辑器——在共享模型目录中转换、替换、移除和添加真实部件。|
@@ -288,7 +288,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.4|具备触觉安全警报的可穿戴紧急仪表板。|
+|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.5|具备触觉安全警报的可穿戴紧急仪表板。|
 |[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.2|用于车队自动化、刷机（flashing）和运维的命令行界面。|
 |[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.6|为 Web 仪表板提供自然语言见解的 AI 扩展。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.9|用于检测、安装和手动更新每个生态系统项目的跨平台 GUI/CLI 工具。|
@@ -482,7 +482,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — 根据真实数据计算：其 39 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[█████████▊░░░░░░░░░░] 49%` — 根据真实数据计算：其 39 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -574,7 +574,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 PHOENIX 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.3|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.4|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
 |[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.6|准备3D打印：读取STL、OBJ和3MF模型，内置120个打印机配置文件，切片为带安全温度限制的G-code，并与Moonraker、OctoPrint及EH3D-SERVER通信（仅在模拟器上试过）。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|用于交叉验证和设计质量控制的综合工程验证器。|
@@ -613,7 +613,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器:**没有自己的更新器;[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 是其中一个工具,它把工作交给四个生态系统各自的更新器。
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — 根据真实数据计算：其 2 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[███████▋░░░░░░░░░░░░] 38%` — 根据真实数据计算：其 4 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,14 +623,14 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 
 | 领域 | 状态 | 进度 | 说明 |
 | --- | :---: | --- | --- |
-| 软件 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
-| 测试 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个有自动化测试。 |
-| 持续集成 | 🟠 | `█████░░░░░ 50%` | 2 个仓库中有 1 个在主分支上最近一次 CI 运行为绿色。 |
-| 已发布版本 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个至少发布过一个版本。 |
-| 文档 | 🟢 | `██████████ 100%` | 2 个仓库中有 2 个提供八种语言的 README。 |
-| 仿真 | 🔴 | `░░░░░░░░░░ 0%` | 2 个仓库中有 0 个至少在仿真器中验证过。 |
+| 软件 | 🟠 | `█████░░░░░ 50%` | 4 个仓库中有 2 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
+| 测试 | 🟠 | `█████░░░░░ 50%` | 4 个仓库中有 2 个有自动化测试。 |
+| 持续集成 | 🟡 | `███████▌░░ 75%` | 4 个仓库中有 3 个在主分支上最近一次 CI 运行为绿色。 |
+| 已发布版本 | 🟠 | `█████░░░░░ 50%` | 4 个仓库中有 2 个至少发布过一个版本。 |
+| 文档 | 🟢 | `██████████ 100%` | 4 个仓库中有 4 个提供八种语言的 README。 |
+| 仿真 | 🔴 | `░░░░░░░░░░ 0%` | 4 个仓库中有 0 个至少在仿真器中验证过。 |
 | 真实硬件 | 🔴 | `░░░░░░░░░░ 0%` | 依赖硬件的 0 个仓库中有 0 个在台架或现场验证过；其余从未在真实设备上运行。 |
-| 生产 | 🔴 | `░░░░░░░░░░ 0%` | 2 个仓库中有 0 个已成熟或已投入生产。 |
+| 生产 | 🔴 | `░░░░░░░░░░ 0%` | 4 个仓库中有 0 个已成熟或已投入生产。 |
 <!-- /status:electro-hobby-3d -->
 
 ## 🧭 Tools 组涵盖的内容
@@ -642,6 +642,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 | 工具 | 版本 | 简介 |
 | :--- | :--- | :--- |
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | 监控器的 Android 应用：在手机上查看你自己的监控器的状态和警报（仅有框架，尚未构建任何内容）。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Android 应用的智能手表（Wear OS）配套应用：一眼查看 CI 状态和警报（仅有框架，尚未构建任何内容）。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 
 \---

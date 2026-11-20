@@ -207,7 +207,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.5|HYDRA-UMC の Web クライアント共通の TypeScript キット：セッション、HTTP クライアント、接続履歴、設定、ツアー。|
 |[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.8|産業オートメーション向けの高パフォーマンスPython/Qtデスクトップアプリケーション。|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.9|7インチ産業用ディスプレイ（CM5）向けの専用Flutterベースのタッチインターフェース。|
-|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.5|リモートロボット管理用の生体認証を備えたネイティブKotlinモバイルアプリ。|
+|[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.6|リモートロボット管理用の生体認証を備えたネイティブKotlinモバイルアプリ。|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.7|リアルタイムWebSocket同期を備えたiOS/iPadOS用Flutterモバイルアプリ。|
 |[HYDRA-UMC-EDITOR-URDF](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-URDF)|0.2.1|ロボットモデルを検証してカタログにプッシュするためのグラフィカルURDFエディター。|
 |[HYDRA-UMC-EDITOR-STL](https://github.com/JuanenRac/HYDRA-UMC-EDITOR-STL)|0.2.1|デスクトップSTLモデルエディター - 共有モデルカタログ内の実際のパーツの変換、置換、削除、追加を行います。|
@@ -288,7 +288,7 @@ v1.1エコシステムは、新しいオペレーティングシステムの作�
 
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.4|触覚による安全性アラートを備えたウェアラブル緊急ダッシュボード。|
+|[HYDRA-UMC-WATCH](https://github.com/JuanenRac/HYDRA-UMC-WATCH)|0.3.5|触覚による安全性アラートを備えたウェアラブル緊急ダッシュボード。|
 |[HYDRA-UMC-TOOL-CLI](https://github.com/JuanenRac/HYDRA-UMC-TOOL-CLI)|0.2.2|フリートの自動化、フラッシング、DevOpsのためのコマンドラインインターフェース。|
 |[HYDRA-UMC-DASHBOARD-AI](https://github.com/JuanenRac/HYDRA-UMC-DASHBOARD-AI)|0.2.6|自然言語による洞察を提供するWebダッシュボード用AI拡張。|
 |[HYDRA-UMC-UPDATER](https://github.com/JuanenRac/HYDRA-UMC-UPDATER)|0.5.9|すべてのエコシステムプロジェクトを検出し、インストールし、手動で更新するためのクロスプラットフォームGUI/CLIツール。|
@@ -482,7 +482,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 **アップデーター：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — 実際のデータから算出しています。39 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[█████████▊░░░░░░░░░░] 49%` — 実際のデータから算出しています。39 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -574,7 +574,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 ### 💠 PHOENIX のプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.3|EDA 環境：回路図入力、PCB レイアウト、検証ツール、回路シミュレーション、SMPS と RF 向けの専用モジュール。|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.4|EDA 環境：回路図入力、PCB レイアウト、検証ツール、回路シミュレーション、SMPS と RF 向けの専用モジュール。|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|筐体、シャーシ、ヒートシンクの設計に特化したパラメトリック機械 CAD。|
 |[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.6|3Dプリントを準備します。STL・OBJ・3MFモデルを読み込み、120のプリンタープロファイルを備え、安全な温度制限付きのG-codeにスライスし、Moonraker、OctoPrint、EH3D-SERVERと通信します（シミュレーターでのみ試験済み）。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|相互検証と設計品質管理のための総合エンジニアリング検証ツール。|
@@ -613,7 +613,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 **アップデーター:** 専用のものはありません。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) はこのグループのツールの 1 つで、4 つのエコシステムそれぞれのアップデーターに処理を引き渡します。
 
 <!-- progress:electro-hobby-3d -->
-`\[████████████▎░░░░░░░] 61%` — 実際のデータから算出しています。2 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[███████▋░░░░░░░░░░░░] 38%` — 実際のデータから算出しています。4 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -623,14 +623,14 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 
 | 分野 | 状態 | 進捗 | 備考 |
 | --- | :---: | --- | --- |
-| ソフトウェア | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
-| テスト | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリに自動テストがあります。 |
-| 継続的インテグレーション | 🟠 | `█████░░░░░ 50%` | 2 件中 1 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
-| 公開リリース | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
-| ドキュメント | 🟢 | `██████████ 100%` | 2 件中 2 件のリポジトリに、8 言語すべての README があります。 |
-| シミュレーション | 🔴 | `░░░░░░░░░░ 0%` | 2 件中 0 件のリポジトリが、少なくともシミュレーターで検証されています。 |
+| ソフトウェア | 🟠 | `█████░░░░░ 50%` | 4 件中 2 件のリポジトリが、各自のマニフェストで宣言した成熟度で少なくとも「機能する」段階です。 |
+| テスト | 🟠 | `█████░░░░░ 50%` | 4 件中 2 件のリポジトリに自動テストがあります。 |
+| 継続的インテグレーション | 🟡 | `███████▌░░ 75%` | 4 件中 3 件のリポジトリで、メインブランチの直近の CI 実行が成功しています。 |
+| 公開リリース | 🟠 | `█████░░░░░ 50%` | 4 件中 2 件のリポジトリが、少なくとも 1 つのリリースを公開しています。 |
+| ドキュメント | 🟢 | `██████████ 100%` | 4 件中 4 件のリポジトリに、8 言語すべての README があります。 |
+| シミュレーション | 🔴 | `░░░░░░░░░░ 0%` | 4 件中 0 件のリポジトリが、少なくともシミュレーターで検証されています。 |
 | 実機 | 🔴 | `░░░░░░░░░░ 0%` | ハードウェアに依存する 0 件のうち 0 件が、ベンチまたは現場で検証されています。残りは実機で動かしたことがありません。 |
-| 本番運用 | 🔴 | `░░░░░░░░░░ 0%` | 2 件中 0 件のリポジトリが、確立済みまたは本番運用の段階です。 |
+| 本番運用 | 🔴 | `░░░░░░░░░░ 0%` | 4 件中 0 件のリポジトリが、確立済みまたは本番運用の段階です。 |
 <!-- /status:electro-hobby-3d -->
 
 ## 🧭 Tools グループの内容
@@ -642,6 +642,8 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 | ツール | バージョン | 概要 |
 | :--- | :--- | :--- |
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | 所有するすべてのリポジトリの GitHub Actions ワークフローを監視し、赤いもの・止まっているもの・待機中のものをローカルの1ページに8言語で表示します。Grafana 用のメトリクス付き。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | モニターの Android アプリ：自分のモニターの状態とアラートをスマートフォンで確認します（骨組みのみ。まだ何も作られていません）。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Android アプリのスマートウォッチ（Wear OS）版：CI の状態とアラートをひと目で確認します（骨組みのみ。まだ何も作られていません）。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 各エコシステムのアップデーターに処理を引き渡す、共通のウィンドウとコマンドライン。 |
 
 \---
