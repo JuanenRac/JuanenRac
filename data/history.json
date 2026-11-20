@@ -12532,15 +12532,15 @@
   },
   {
    "actions": {
-    "fail": 92,
-    "min": 3728,
-    "ok": 1768,
-    "other": 41,
-    "runs": 1901
+    "fail": 94,
+    "min": 3773,
+    "ok": 1756,
+    "other": 38,
+    "runs": 1888
    },
    "areas": {
     "armor": {
-     "ci": 0,
+     "ci": 100,
      "docs": 100,
      "hardware": 25,
      "production": 60,
@@ -12550,17 +12550,17 @@
      "tests": 100
     },
     "eh3d": {
-     "ci": 0,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 0,
      "releases": 100,
      "simulation": 79,
-     "software": 54,
-     "tests": 89
+     "software": 56,
+     "tests": 90
     },
     "electro-hobby-3d": {
-     "ci": 0,
+     "ci": 100,
      "docs": 100,
      "hardware": 100,
      "production": 0,
@@ -12570,7 +12570,7 @@
      "tests": 75
     },
     "hydra-umc": {
-     "ci": 0,
+     "ci": 100,
      "docs": 100,
      "hardware": 13,
      "production": 8,
@@ -12580,7 +12580,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 9,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -12593,8 +12593,8 @@
    "date": "2026-11-20",
    "progress": {
     "armor": 69,
-    "eh3d": 44,
-    "electro-hobby-3d": 41,
+    "eh3d": 49,
+    "electro-hobby-3d": 46,
     "hydra-umc": 60,
     "urtc": 56
    },
@@ -13119,7 +13119,7 @@
    "sentinel": {
     "cand": 4,
     "gaps": 2,
-    "min": 3728,
+    "min": 3773,
     "red": 0
    },
    "tests": {
