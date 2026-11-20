@@ -143,7 +143,6 @@
   "HYDRA-UMC-HIL-BRIDGE": {
    "art": true,
    "at": "2026-11-20T00:06:23Z",
-   "checked": true,
    "exp": "2026-11-27T00:05:04Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/actions/runs/44642838800",
    "wf": "binaries-build.yml"
@@ -157,9 +156,10 @@
   },
   "HYDRA-UMC-NODE-HEALING": {
    "art": true,
-   "at": "2026-11-05T21:03:07Z",
-   "exp": "2026-12-05T21:02:34Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/actions/runs/42108793018",
+   "at": "2026-11-20T00:38:51Z",
+   "checked": true,
+   "exp": "2026-11-27T00:37:55Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-NODE-HEALING/actions/runs/44647229201",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-ORCHESTRATOR": {
@@ -453,6 +453,15 @@
     "at": "present"
    }
   },
+  "EH3D-PHOENIX-PNP": {
+   "fp": "c2c631f077acbc76",
+   "on": "2026-11-20",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "EH3D-SERVER": {
    "fp": "42b6ce807c53c25c",
    "on": "2026-11-19",
@@ -468,6 +477,15 @@
    "r": {
     "ak": 1,
     "an": 1,
+    "at": "present"
+   }
+  },
+  "EH3D-VISION-STUDIO": {
+   "fp": "ece0ab7122f1cfab",
+   "on": "2026-11-20",
+   "r": {
+    "ak": 3,
+    "an": 3,
     "at": "present"
    }
   },
@@ -817,6 +835,20 @@
     ]
    }
   },
+  "EH3D-PHOENIX-PNP": {
+   "fp": "c2c631f077acbc76",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "EH3D-SERVER": {
    "fp": "42b6ce807c53c25c",
    "r": {
@@ -845,6 +877,20 @@
     ]
    }
   },
+  "EH3D-VISION-STUDIO": {
+   "fp": "ece0ab7122f1cfab",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "HYDRA-UMC": {
    "fp": "e0b63f37ef944215",
    "r": {
@@ -867,6 +913,20 @@
     "bad": 0,
     "ho": 0,
     "ok": 1,
+    "s": "verified",
+    "sch": [
+     "hydra-sign"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
+  "HYDRA-UMC-HIL-BRIDGE": {
+   "fp": "cc688847da98024b",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 2,
     "s": "verified",
     "sch": [
      "hydra-sign"

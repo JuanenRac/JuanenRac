@@ -12533,10 +12533,10 @@
   {
    "actions": {
     "fail": 102,
-    "min": 6774,
-    "ok": 2273,
-    "other": 57,
-    "runs": 2432
+    "min": 7104,
+    "ok": 2417,
+    "other": 47,
+    "runs": 2566
    },
    "areas": {
     "armor": {
@@ -12965,7 +12965,7 @@
     ],
     "HYDRA-UMC-NODE-HEALING": [
      1,
-     "0.2.5"
+     "0.2.6"
     ],
     "HYDRA-UMC-OPCUA-SERVER": [
      1,
@@ -13125,9 +13125,9 @@
     ]
    },
    "sentinel": {
-    "cand": 7,
+    "cand": 6,
     "gaps": 1,
-    "min": 6774,
+    "min": 7104,
     "red": 0
    },
    "tests": {

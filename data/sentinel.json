@@ -1,15 +1,15 @@
 {
- "asof": "2026-11-20T00:18:00Z",
+ "asof": "2026-11-20T00:51:05Z",
  "ci": {
-  "checked": 635,
+  "checked": 636,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 930,
-    "min7": 930,
+    "min24": 932,
+    "min7": 932,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -18,9 +18,14 @@
     "repo": "ARMOR-VISION"
    },
    {
-    "min24": 222,
+    "min24": 205,
     "min7": 556,
     "repo": "URTC-FLASHER"
+   },
+   {
+    "min24": 195,
+    "min7": 561,
+    "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
     "min24": 193,
@@ -31,21 +36,16 @@
     "min24": 191,
     "min7": 295,
     "repo": "ARMOR-NODE-RADAR"
-   },
-   {
-    "min24": 188,
-    "min7": 286,
-    "repo": "ARMOR-NODE-HMI"
    }
   ],
-  "total24": 6774,
-  "total7": 38172,
+  "total24": 7104,
+  "total7": 38044,
   "warn": false
  },
  "delivery": {
   "clmis": [
    "HYDRA-UMC",
-   "HYDRA-UMC-HIL-BRIDGE",
+   "HYDRA-UMC-NODE-HEALING",
    "HYDRA-UMC-OS",
    "URTC-DEVTOOLS"
   ],
@@ -112,7 +112,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 6,
+   "cand": 5,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -127,6 +127,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-20T00:51:05Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-HIL-BRIDGE",
+   "tag": "v0.1.8"
+  },
   {
    "at": "2026-11-20T00:18:00Z",
    "kind": "released",
@@ -300,18 +306,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-VISUAL-SERVOING-API",
    "tag": "v0.2.6"
-  },
-  {
-   "at": "2026-11-19T18:25:25Z",
-   "kind": "released",
-   "repo": "ARMOR-NODE-RADAR",
-   "tag": "v0.8.1.4"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 25
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -329,7 +329,7 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 7,
+    "cand": 6,
     "hyg": 1,
     "red": 0
    }
@@ -341,13 +341,12 @@
     "list": [
      "ARMOR-DOCS",
      "HYDRA-UMC-ANDROID-CONTROL",
-     "HYDRA-UMC-NODE-HEALING",
      "HYDRA-UMC-OS-REBUILDER",
      "HYDRA-UMC-SERVER",
      "HYDRA-UMC-STUDIO",
      "HYDRA-UMC-WATCH"
     ],
-    "n": 7
+    "n": 6
    }
   },
   {
@@ -356,7 +355,7 @@
    "p": {
     "list": [
      "HYDRA-UMC",
-     "HYDRA-UMC-HIL-BRIDGE",
+     "HYDRA-UMC-NODE-HEALING",
      "HYDRA-UMC-OS",
      "URTC-DEVTOOLS"
     ],
@@ -411,12 +410,6 @@
    },
    {
     "entries": 5,
-    "published": "2026-11-05T21:35:16Z",
-    "repo": "HYDRA-UMC-NODE-HEALING",
-    "tag": "v0.2.5"
-   },
-   {
-    "entries": 5,
     "published": "2026-11-15T08:02:50Z",
     "repo": "HYDRA-UMC-OS-REBUILDER",
     "tag": "v0.3.8"
@@ -430,18 +423,18 @@
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 7
+  "total": 6
  },
  "repos": 131,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 97,
+  "none": 94,
   "norelease": 2,
-  "unverifiable": 4,
+  "unverifiable": 6,
   "unverified": 0,
-  "verified": 28
+  "verified": 29
  },
  "tags": {
   "ARMOR-ANDROID-CONTROL": "v0.8.0.9",
@@ -526,7 +519,7 @@
   "HYDRA-UMC-EDITOR-STL": "v0.2.1",
   "HYDRA-UMC-EDITOR-URDF": "v0.2.1",
   "HYDRA-UMC-GATEWAY-INDUSTRIAL": "v0.2.1",
-  "HYDRA-UMC-HIL-BRIDGE": "v0.1.7",
+  "HYDRA-UMC-HIL-BRIDGE": "v0.1.8",
   "HYDRA-UMC-IOS-CONTROL": "v0.3.7",
   "HYDRA-UMC-JOB-DISPATCHER": "v0.3.1",
   "HYDRA-UMC-LOCAL-TECHNICIAN": "v0.2.3",
@@ -593,7 +586,7 @@
    41,
    47,
    8,
-   7
+   6
   ],
   "dates": [
    "2026-11-03",
@@ -653,7 +646,7 @@
    10185,
    5009,
    6712,
-   6774
+   7104
   ],
   "red": [
    3,
@@ -684,9 +677,9 @@
     "version": "0.3.0"
    },
    {
-    "repo": "HYDRA-UMC-HIL-BRIDGE",
-    "tag": "v0.1.7",
-    "version": "0.1.8"
+    "repo": "HYDRA-UMC-NODE-HEALING",
+    "tag": "v0.2.5",
+    "version": "0.2.6"
    },
    {
     "repo": "HYDRA-UMC-OS",
