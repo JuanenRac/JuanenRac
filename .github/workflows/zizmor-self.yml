@@ -1,0 +1,43 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/zizmor-self.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# This repository analyzes its own workflows with the reusable workflow it
+# offers to the others (zizmor.yml), so that the template is proven here first.
+# The other repositories call it by its full commit SHA; here the local copy is
+# used so that a change to the template is tested by the very pull request that
+# makes it.
+# =============================================================================
+
+name: zizmor
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - ".github/zizmor.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - ".github/zizmor.yml"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: zizmor-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  zizmor:
+    name: zizmor
+    permissions:
+      contents: read
+    uses: ./.github/workflows/zizmor.yml
+    with:
+      min-severity: high

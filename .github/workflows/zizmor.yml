@@ -1,0 +1,153 @@
+# =============================================================================
+# Electro Hobby 3D - .github/workflows/zizmor.yml
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0 - see LICENSE.md
+#
+# Reusable workflow: static analysis of the GitHub Actions workflows of the
+# calling repository with zizmor (https://docs.zizmor.sh).
+#
+# How a repository uses it (a few lines in its own .github/workflows/zizmor.yml):
+#
+#   name: zizmor
+#   on:
+#     pull_request:
+#       paths: [".github/workflows/**", ".github/actions/**", ".github/zizmor.yml"]
+#     push:
+#       branches: [main]
+#       paths: [".github/workflows/**", ".github/actions/**", ".github/zizmor.yml"]
+#   permissions: {}
+#   jobs:
+#     zizmor:
+#       permissions:
+#         contents: read
+#       uses: JuanenRac/JuanenRac/.github/workflows/zizmor.yml@<full commit SHA> # <tag or branch it was read from>
+#
+# Behaviour:
+#   - Only findings at or above `min-severity` (default: high) make the job
+#     fail. The findings below it never fail the job: they are listed as a
+#     warning in the Job Summary so that they can be fixed at leisure.
+#   - Offline and deterministic: no online audit, no secret, no cache, no
+#     upload to Code Scanning (so no security-events permission is needed).
+#   - The zizmor version is pinned by `zizmor-version`, so that a new release of
+#     the analyzer cannot turn a repository red by itself; it is raised in this
+#     one file, by pull request, after measuring the findings of every repository.
+#   - A finding that was reviewed and accepted is ignored where it lives, with
+#     the reason next to it: `# zizmor: ignore[rule-id] reason` on the line, or a
+#     `.github/zizmor.yml` (passed in `config`) in the calling repository.
+# =============================================================================
+
+name: zizmor (reusable)
+
+on:
+  workflow_call:
+    inputs:
+      min-severity:
+        description: "Lowest severity that fails the job: informational, low, medium or high."
+        type: string
+        default: "high"
+      persona:
+        description: "zizmor persona: regular, pedantic or auditor."
+        type: string
+        default: "regular"
+      zizmor-version:
+        description: "Exact zizmor version, pinned on purpose (never `latest`)."
+        type: string
+        default: "1.32.0"
+      config:
+        description: "Path of a zizmor configuration file in the calling repository (empty: the default lookup)."
+        type: string
+        default: ""
+      target:
+        description: "What zizmor analyzes, relative to the root of the calling repository."
+        type: string
+        default: "."
+
+# No permission by default: the job asks for exactly what it needs.
+permissions: {}
+
+jobs:
+  zizmor:
+    name: Analyze the workflows
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      # The gate: findings at or above the threshold are written as annotations and fail this step.
+      # The step may not stop the job here: the summary below has to be written first, then the last step fails the job.
+      - name: Run zizmor
+        id: zizmor
+        continue-on-error: true
+        uses: zizmorcore/zizmor-action@45d7276c9ca790aabd705e31ca99c6185c3e76dd # v0.8.1
+        with:
+          inputs: ${{ inputs.target }}
+          advanced-security: false
+          annotations: true
+          online-audits: false
+          persona: ${{ inputs.persona }}
+          min-severity: ${{ inputs.min-severity }}
+          version: ${{ inputs.zizmor-version }}
+          config: ${{ inputs.config }}
+          color: false
+
+      # The advisory report: the same analyzer, with the same version, listing everything from `low` up.
+      - name: Write the summary
+        if: ${{ always() }}
+        shell: bash
+        env:
+          GATE_OUTCOME: ${{ steps.zizmor.outcome }}
+          MIN_SEVERITY: ${{ inputs.min-severity }}
+          PERSONA: ${{ inputs.persona }}
+          ZIZMOR_VERSION: ${{ inputs.zizmor-version }}
+          ZIZMOR_CONFIG: ${{ inputs.config }}
+          TARGET: ${{ inputs.target }}
+        run: |
+          set -u
+          {
+            echo "## zizmor ${ZIZMOR_VERSION}"
+            echo
+            if [ "${GATE_OUTCOME}" = "success" ]; then
+              echo "No finding at or above \`${MIN_SEVERITY}\`."
+            else
+              echo "**Findings at or above \`${MIN_SEVERITY}\` (or a failure of the analyzer): this job fails.**"
+            fi
+            echo
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+          binary=""
+          for candidate in "${RUNNER_TEMP}"/zizmor-wheel/unpacked/zizmor-*.data/scripts/zizmor; do
+            if [ -x "${candidate}" ]; then binary="${candidate}"; fi
+          done
+          if [ -z "${binary}" ]; then
+            echo "The advisory report is not available (the analyzer was not installed)." >> "${GITHUB_STEP_SUMMARY}"
+            exit 0
+          fi
+
+          args=(--offline --no-exit-codes --color=never "--persona=${PERSONA}" --min-severity=low)
+          if [ -n "${ZIZMOR_CONFIG}" ]; then args+=("--config=${ZIZMOR_CONFIG}"); fi
+          report="${RUNNER_TEMP}/zizmor-advisory.txt"
+          "${binary}" "${args[@]}" -- "${TARGET}" > "${report}" 2>&1 || true
+
+          {
+            echo "<details><summary>All findings from low severity up (advisory, only the threshold above fails the job)</summary>"
+            echo
+            echo '```text'
+            tail -c 60000 "${report}"
+            echo '```'
+            echo
+            echo "</details>"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Fail on findings at or above the threshold
+        if: ${{ steps.zizmor.outcome != 'success' }}
+        shell: bash
+        run: |
+          echo "::error::zizmor found issues at or above the threshold (see the annotations and the summary)."
+          exit 1
