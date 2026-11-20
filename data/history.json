@@ -12533,10 +12533,10 @@
   {
    "actions": {
     "fail": 88,
-    "min": 3896,
-    "ok": 1735,
-    "other": 38,
-    "runs": 1861
+    "min": 3735,
+    "ok": 1702,
+    "other": 43,
+    "runs": 1833
    },
    "areas": {
     "armor": {
@@ -12705,7 +12705,7 @@
     ],
     "EH3D-DOCS": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-DRILLPRO": [
      1,
@@ -13119,7 +13119,7 @@
    "sentinel": {
     "cand": 4,
     "gaps": 2,
-    "min": 3896,
+    "min": 3735,
     "red": 1
    },
    "tests": {
@@ -13221,7 +13221,7 @@
     "HYDRA-UMC-TELEMETRY-COLLECTOR": 223,
     "HYDRA-UMC-TOOL-CLI": 293,
     "HYDRA-UMC-TWIN": 307,
-    "HYDRA-UMC-UPDATER": 830,
+    "HYDRA-UMC-UPDATER": 832,
     "HYDRA-UMC-VISION-NODE": 658,
     "HYDRA-UMC-VISION-STREAMER": 339,
     "HYDRA-UMC-VISUAL-SERVOING-API": 446,
