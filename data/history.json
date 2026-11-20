@@ -12532,11 +12532,11 @@
   },
   {
    "actions": {
-    "fail": 106,
-    "min": 7666,
-    "ok": 2802,
-    "other": 63,
-    "runs": 2971
+    "fail": 81,
+    "min": 7294,
+    "ok": 2720,
+    "other": 56,
+    "runs": 2857
    },
    "areas": {
     "armor": {
@@ -12556,8 +12556,8 @@
      "production": 0,
      "releases": 100,
      "simulation": 79,
-     "software": 55,
-     "tests": 89
+     "software": 54,
+     "tests": 90
     },
     "electro-hobby-3d": {
      "ci": 100,
@@ -12593,7 +12593,7 @@
    "date": "2026-11-20",
    "progress": {
     "armor": 65,
-    "eh3d": 49,
+    "eh3d": 48,
     "electro-hobby-3d": 63,
     "hydra-umc": 59,
     "urtc": 56
@@ -12725,7 +12725,7 @@
     ],
     "EH3D-DRILLPRO": [
      1,
-     "0.2.0"
+     "0.2.1"
     ],
     "EH3D-GERBERVIEWER": [
      1,
@@ -12769,7 +12769,7 @@
     ],
     "EH3D-PHOENIX-3DP": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-PHOENIX-CAD": [
      0,
@@ -12801,7 +12801,7 @@
     ],
     "EH3D-SERVER": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "EH3D-STENCILCAM": [
      1,
@@ -12833,7 +12833,7 @@
     ],
     "EH3D-VISION-STUDIO": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
@@ -13077,7 +13077,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "2.1.3"
+     "2.1.5"
     ],
     "URTC": [
      1,
@@ -13125,10 +13125,10 @@
     ]
    },
    "sentinel": {
-    "cand": 3,
+    "cand": 4,
     "gaps": 0,
-    "min": 7666,
-    "red": 0
+    "min": 7294,
+    "red": 1
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 565,
@@ -13145,7 +13145,7 @@
     "ARMOR-VISION": 382,
     "ARMOR-VOICE-AI": 255,
     "ARMOR-WATCH": 31,
-    "EH3D-ANDROID-CONTROL": 300,
+    "EH3D-ANDROID-CONTROL": 334,
     "EH3D-AUTOLEVEL": 238,
     "EH3D-BUNGARD-GUI": 441,
     "EH3D-CAM-DEBUGGER": 160,
@@ -13156,30 +13156,30 @@
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 574,
-    "EH3D-DRILLPRO": 440,
+    "EH3D-DRILLPRO": 443,
     "EH3D-GERBERVIEWER": 138,
     "EH3D-HYDRA-BRIDGE": 6,
-    "EH3D-IOS-CONTROL": 307,
+    "EH3D-IOS-CONTROL": 342,
     "EH3D-ISOCAM": 499,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
-    "EH3D-PHOENIX-3DP": 479,
+    "EH3D-PHOENIX-3DP": 537,
     "EH3D-PHOENIX-CAD": 709,
     "EH3D-PHOENIX-CNC": 803,
     "EH3D-PHOENIX-LASER": 690,
-    "EH3D-PHOENIX-PCB": 4883,
-    "EH3D-PHOENIX-PNP": 1429,
+    "EH3D-PHOENIX-PCB": 4969,
+    "EH3D-PHOENIX-PNP": 1532,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 116,
-    "EH3D-SERVER": 598,
+    "EH3D-SERVER": 718,
     "EH3D-STENCILCAM": 229,
-    "EH3D-STUDIO": 494,
+    "EH3D-STUDIO": 558,
     "EH3D-SUITE-LAUNCHER": 128,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 198,
     "EH3D-UPDATER": 491,
     "EH3D-VALIDATION-LAB": 63,
-    "EH3D-VISION-STUDIO": 445,
+    "EH3D-VISION-STUDIO": 516,
     "HYDRA-UMC": 1500,
     "HYDRA-UMC-ANDROID-CONTROL": 767,
     "HYDRA-UMC-ANOMALY-DETECTOR": 472,

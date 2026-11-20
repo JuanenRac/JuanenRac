@@ -178,7 +178,6 @@
   "HYDRA-UMC-OS-REBUILDER": {
    "art": true,
    "at": "2026-11-20T07:53:59Z",
-   "checked": true,
    "exp": "2026-11-27T07:53:19Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/actions/runs/44698243648",
    "wf": "package-build.yml"
@@ -463,7 +462,7 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "1589842266b8c551",
+   "fp": "81c3cb7fb8aa0e44",
    "on": "2026-11-20",
    "r": {
     "ak": 3,
@@ -473,6 +472,15 @@
   },
   "EH3D-ISOCAM": {
    "fp": "89a14b3adf02eaf4",
+   "on": "2026-11-20",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
+  "EH3D-PHOENIX-3DP": {
+   "fp": "caa00d4866773ffc",
    "on": "2026-11-20",
    "r": {
     "ak": 3,
@@ -517,7 +525,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "68e6c714ba55abc1",
+   "fp": "774dcb0b5b1a2399",
    "on": "2026-11-20",
    "r": {
     "ak": 3,
@@ -534,6 +542,15 @@
     "at": "present"
    }
   },
+  "EH3D-STUDIO": {
+   "fp": "cb9dcdc4330555bb",
+   "on": "2026-11-20",
+   "r": {
+    "ak": 1,
+    "an": 1,
+    "at": "present"
+   }
+  },
   "EH3D-TOOL-MANAGER": {
    "fp": "78f402617fe5b2ae",
    "on": "2026-11-20",
@@ -544,7 +561,7 @@
    }
   },
   "EH3D-VISION-STUDIO": {
-   "fp": "b683551b4299cbc1",
+   "fp": "08d9a381f26c9820",
    "on": "2026-11-20",
    "r": {
     "ak": 3,
@@ -922,7 +939,7 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "1589842266b8c551",
+   "fp": "81c3cb7fb8aa0e44",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -937,6 +954,20 @@
   },
   "EH3D-ISOCAM": {
    "fp": "89a14b3adf02eaf4",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-PHOENIX-3DP": {
+   "fp": "caa00d4866773ffc",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1006,7 +1037,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "68e6c714ba55abc1",
+   "fp": "774dcb0b5b1a2399",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1033,6 +1064,20 @@
     ]
    }
   },
+  "EH3D-STUDIO": {
+   "fp": "cb9dcdc4330555bb",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 1,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "EH3D-TOOL-MANAGER": {
    "fp": "78f402617fe5b2ae",
    "r": {
@@ -1048,7 +1093,7 @@
    }
   },
   "EH3D-VISION-STUDIO": {
-   "fp": "b683551b4299cbc1",
+   "fp": "08d9a381f26c9820",
    "r": {
     "bad": 0,
     "ho": 0,
