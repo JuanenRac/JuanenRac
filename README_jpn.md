@@ -482,7 +482,7 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 **アップデーター：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) がこのエコシステムのリポジトリを検出・インストール・更新します。[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) は4つすべてに対して同じことを行います。
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — 実際のデータから算出しています。38 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
+`\[█████████▊░░░░░░░░░░] 49%` — 実際のデータから算出しています。38 件のリポジトリがそれぞれ自分のマニフェストで宣言している成熟度と検証の根拠に加えて、公開済みのリリース、テスト、成功しているCI、8 言語のドキュメントが元です。100% は、完全に統合され実機で動作するエコシステムを指します。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -527,15 +527,15 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.1|エコシステムのドキュメント、組立ガイド、ゲートウェイの技術仕様、統合マニュアル。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.1|Gerber RS-274X、Excellon ドリルファイル、G コード（GRBL・Marlin・PlanetCNC 方言）を読む Rust 製リーダー。破損したファイルにも耐えます。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.1|エコシステム自身のリポジトリを検出、インストール、更新します（検証によるアトミック、GITHUB\_TOKEN不要）。|
-|[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D と HYDRA-UMC の両エコシステムをつなぐアダプター(計画中・コードはまだありません)。|
+|[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.3|EH3D と HYDRA-UMC の両エコシステムをつなぐアダプター(計画中・コードはまだありません)。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.8|REST と websocket のインターフェースを持つ Rust 製サーバー。ユーザー、機械、ジョブを管理し、DRILLPRO と ROUTEPRO のライブラリで穴あけ・ルーティングのジョブを計画し、機械ごとに一度に 1 つのジョブだけを実行します。|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.5|EH3D-SERVER 向けの Rust 製 Web クライアント。|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.6|EH3D-SERVER 向けの Rust 製 Web クライアント。|
 
 ### 💠 ドリル／ルーター／ミリングのプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.0|Bungard CCD マシン向けの従来の DOS ソフトの穴あけ作業フローを Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Bungard CCD マシン向けの従来の DOS ソフトのルーティング（切削）作業フローを HP-GL プロットファイルから Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.8|Bungard CCD マシン向けの従来の DOS ソフトのルーティング（切削）作業フローを HP-GL プロットファイルから Rust で再実装：8 言語のテキストモード画面、シミュレータまたは実機に対応。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.8|Bungard CCD マシン向けのモダンなインターフェース：従来の穴あけ・ルーティングプログラムのランチャーと、テーブル上の作業ビューア。|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.1|EH3D のマシン制御プログラムの共通基盤：ジョグ、ゼロ設定、G コード実行、経路表示で模擬マシンを動かすウィンドウ。8 言語対応。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.1.0|すべてのEH3D CAMツールにわたって摩耗時間、切削プリセット、送りを追跡する共有ツールcribデータベース。|
@@ -577,19 +577,19 @@ A.R.M.O.R.は、HYDRA-UMCのダッシュボードですでに適用されてい�
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|筐体、シャーシ、ヒートシンクの設計に特化したパラメトリック機械 CAD。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|相互検証と設計品質管理のための総合エンジニアリング検証ツール。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|基準となるユースケースとシステムのリグレッションテストを管理するテスト環境。|
-|[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|設計の意味的な履歴と論理的な変遷を保存するバージョン管理システム。|
+|[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|設計の意味的な履歴と論理的な変遷を保存するバージョン管理システム。|
 |[EH3D-PROJECT-PASSPORT](https://github.com/JuanenRac/EH3D-PROJECT-PASSPORT)|0.0.4|プロジェクトの完全な監査のために、保存・再現可能な技術パスポートを生成するジェネレーター。|
 |[EH3D-COMPONENT-INTELLIGENCE](https://github.com/JuanenRac/EH3D-COMPONENT-INTELLIGENCE)|0.0.4|電子部品に関するメタデータで拡充された高度な技術データベース。|
-|[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.3|各工場の機械の能力とサプライヤーの技術的制約を管理するプロファイルマネージャー。|
+|[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.4|各工場の機械の能力とサプライヤーの技術的制約を管理するプロファイルマネージャー。|
 |[EH3D-THERMAL-LAB](https://github.com/JuanenRac/EH3D-THERMAL-LAB)|0.0.3|物理設計に直接連携する段階的な熱シミュレーションラボ。|
-|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.3|シミュレーションデータと実際のラボ測定値を直接つなぐ相関モジュール。|
-|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.3|設計の代替案やブランチを比較・分析するための探索環境。|
+|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.4|シミュレーションデータと実際のラボ測定値を直接つなぐ相関モジュール。|
+|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.4|設計の代替案やブランチを比較・分析するための探索環境。|
 
 ### 💠 ANDROID/IOS のプロジェクト：
 |リポジトリ|バージョン|説明|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.2|EH3D-SERVER 向けの Android アプリ（クライアント）。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.1|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.3|EH3D-SERVER 向けの Android アプリ（クライアント）。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.2|EH3D-SERVER 向けの iOS アプリ（クライアント）。|
 
 ### 🛠️ 補完ツール
 |リポジトリ|バージョン|説明|

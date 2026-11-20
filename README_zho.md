@@ -482,7 +482,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — 根据真实数据计算：其 38 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[█████████▊░░░░░░░░░░] 49%` — 根据真实数据计算：其 38 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -527,15 +527,15 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.1|生态系统文档、组装指南、网关技术规范和集成手册。|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.1|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.1|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
-|[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
+|[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.3|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.8|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.5|EH3D-SERVER 的 Rust Web 客户端。|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.6|EH3D-SERVER 的 Rust Web 客户端。|
 
 ### 💠 钻孔／铣边／铣削项目：
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.0|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的钻孔流程：八种语言的文本模式界面，可用模拟器或真实机器。|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.8|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.8|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.1|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.1.0|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
@@ -577,19 +577,19 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|用于交叉验证和设计质量控制的综合工程验证器。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|负责管理参考用例和系统回归测试的测试环境。|
-|[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|保存设计语义历史和逻辑演进的版本控制系统。|
+|[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|保存设计语义历史和逻辑演进的版本控制系统。|
 |[EH3D-PROJECT-PASSPORT](https://github.com/JuanenRac/EH3D-PROJECT-PASSPORT)|0.0.4|生成可存档、可复现的技术护照，用于项目的完整审计。|
 |[EH3D-COMPONENT-INTELLIGENCE](https://github.com/JuanenRac/EH3D-COMPONENT-INTELLIGENCE)|0.0.4|富含电子元器件元数据的高级技术数据库。|
-|[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.3|管理各工厂机器能力和供应商技术限制的配置文件管理器。|
+|[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.4|管理各工厂机器能力和供应商技术限制的配置文件管理器。|
 |[EH3D-THERMAL-LAB](https://github.com/JuanenRac/EH3D-THERMAL-LAB)|0.0.3|与实体设计直接耦合的渐进式热仿真实验室。|
-|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.3|在仿真数据与实际实验室测量之间直接建立桥梁的关联模块。|
-|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.3|用于比较和分析设计备选方案或分支的探索环境。|
+|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.4|在仿真数据与实际实验室测量之间直接建立桥梁的关联模块。|
+|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.4|用于比较和分析设计备选方案或分支的探索环境。|
 
 ### 💠 ANDROID/IOS 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.2|EH3D-SERVER 的 Android 应用客户端。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.1|EH3D-SERVER 的 iOS 应用客户端。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.3|EH3D-SERVER 的 Android 应用客户端。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.2|EH3D-SERVER 的 iOS 应用客户端。|
 
 ### 🛠️ 辅助工具
 |仓库|版本|描述|

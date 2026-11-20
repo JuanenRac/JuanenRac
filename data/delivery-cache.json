@@ -93,15 +93,15 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-19T19:02:26Z",
-   "exp": "2026-11-26T19:01:22Z",
-   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/44593236424",
+   "at": "2026-11-20T02:20:32Z",
+   "checked": true,
+   "exp": "2026-11-27T02:19:23Z",
+   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/44659541166",
    "wf": "apk-build.yml"
   },
   "EH3D-NODE-BUNGARD": {
    "art": true,
    "at": "2026-11-13T01:02:21Z",
-   "checked": true,
    "exp": "2026-12-13T00:59:27Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/43340611530",
    "wf": "firmware-build.yml"
@@ -109,7 +109,6 @@
   "EH3D-NODE-BUNGARD-AUX": {
    "art": true,
    "at": "2026-11-13T01:02:37Z",
-   "checked": true,
    "exp": "2026-12-13T00:59:01Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/43340633405",
    "wf": "firmware-build.yml"
@@ -117,7 +116,6 @@
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
    "at": "2026-11-13T00:59:53Z",
-   "checked": true,
    "exp": "2026-12-13T00:58:08Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/43340654808",
    "wf": "firmware-build.yml"
@@ -125,7 +123,6 @@
   "EH3D-NODE-HMI-GUI": {
    "art": true,
    "at": "2026-11-13T01:03:27Z",
-   "checked": true,
    "exp": "2026-12-13T01:00:58Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/43340668472",
    "wf": "firmware-build.yml"
@@ -182,7 +179,6 @@
   "HYDRA-UMC-OS-REBUILDER": {
    "art": true,
    "at": "2026-11-20T01:04:57Z",
-   "checked": true,
    "exp": "2026-11-27T01:03:56Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/actions/runs/44650672094",
    "wf": "package-build.yml"
@@ -197,23 +193,26 @@
   "HYDRA-UMC-PHYSICS-REPLICA": {
    "art": true,
    "at": "2026-11-13T01:45:48Z",
-   "exp": "2026-11-20T01:44:59Z",
+   "checked": true,
+   "exp": "2026-12-13T01:45:18Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/actions/runs/43347141528",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-SERVER": {
    "art": true,
-   "at": "2026-11-15T16:27:08Z",
-   "exp": "2026-11-22T16:26:30Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/43735453741",
-   "wf": "dist-build.yml"
+   "at": "2026-11-20T01:26:49Z",
+   "checked": true,
+   "exp": "2026-11-27T01:26:09Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER/actions/runs/44653571955",
+   "wf": "package-build.yml"
   },
   "HYDRA-UMC-STUDIO": {
    "art": true,
-   "at": "2026-11-15T16:27:47Z",
-   "exp": "2026-11-22T16:26:56Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/43735447287",
-   "wf": "dist-build.yml"
+   "at": "2026-11-20T01:59:14Z",
+   "checked": true,
+   "exp": "2026-11-27T01:58:27Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO/actions/runs/44657363818",
+   "wf": "package-build.yml"
   },
   "HYDRA-UMC-STUDIO-KIT": {
    "art": true,
@@ -430,15 +429,6 @@
     "at": "present"
    }
   },
-  "EH3D-ANDROID-CONTROL": {
-   "fp": "ff30c69c3e0dbe2a",
-   "on": "2026-11-19",
-   "r": {
-    "ak": 0,
-    "an": 1,
-    "at": "absent"
-   }
-  },
   "EH3D-PHOENIX-PCB": {
    "fp": "618493c06a387f5a",
    "on": "2026-11-19",
@@ -463,15 +453,6 @@
    "r": {
     "ak": 3,
     "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-STUDIO": {
-   "fp": "9f1a888e2849a8b2",
-   "on": "2026-11-15",
-   "r": {
-    "ak": 1,
-    "an": 1,
     "at": "present"
    }
   },
@@ -503,20 +484,20 @@
    }
   },
   "HYDRA-UMC-SERVER": {
-   "fp": "ffbeff4bbc50e91d",
-   "on": "2026-11-15",
+   "fp": "ace6f73f77d6e647",
+   "on": "2026-11-20",
    "r": {
-    "ak": 2,
-    "an": 2,
+    "ak": 1,
+    "an": 1,
     "at": "present"
    }
   },
   "HYDRA-UMC-STUDIO": {
-   "fp": "6252e5a283a4b42a",
-   "on": "2026-11-15",
+   "fp": "2e03fef6ae1895bf",
+   "on": "2026-11-20",
    "r": {
-    "ak": 2,
-    "an": 2,
+    "ak": 1,
+    "an": 1,
     "at": "present"
    }
   },
@@ -844,20 +825,6 @@
     ]
    }
   },
-  "EH3D-STUDIO": {
-   "fp": "9f1a888e2849a8b2",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 1,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-VISION-STUDIO": {
    "fp": "ece0ab7122f1cfab",
    "r": {
@@ -945,22 +912,7 @@
    }
   },
   "HYDRA-UMC-SERVER": {
-   "fp": "ffbeff4bbc50e91d",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 2,
-    "s": "verified",
-    "sch": [
-     "hydra-pc-pkg/1",
-     "hydra-sign"
-    ],
-    "unk": 0,
-    "why": []
-   }
-  },
-  "HYDRA-UMC-STUDIO": {
-   "fp": "6252e5a283a4b42a",
+   "fp": "ace6f73f77d6e647",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -969,10 +921,22 @@
     "sch": [
      "hydra-pc-pkg/1"
     ],
-    "unk": 1,
-    "why": [
-     "toobig"
-    ]
+    "unk": 0,
+    "why": []
+   }
+  },
+  "HYDRA-UMC-STUDIO": {
+   "fp": "2e03fef6ae1895bf",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 1,
+    "s": "verified",
+    "sch": [
+     "hydra-pc-pkg/1"
+    ],
+    "unk": 0,
+    "why": []
    }
   },
   "HYDRA-UMC-STUDIO-KIT": {

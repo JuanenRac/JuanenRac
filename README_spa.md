@@ -482,7 +482,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 **Actualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:eh3d -->
-`\[█████████▋░░░░░░░░░░] 48%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 38 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████▊░░░░░░░░░░] 49%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 38 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -527,15 +527,15 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.1|Documentación del ecosistema, guías de ensamblaje, especificaciones técnicas de pasarelas y manuales de integración.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.1|Lectores en Rust para Gerber RS-274X, ficheros de taladrado Excellon y código G (dialectos GRBL, Marlin y PlanetCNC), tolerantes a ficheros dañados.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.1|Detecta, instala y actualiza los repositorios propios del ecosistema (atómico por verificación, sin necesidad de GITHUB\_TOKEN).|
-|[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.2|Adaptador entre los ecosistemas EH3D y HYDRA-UMC (previsto; aún sin código).|
+|[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.3|Adaptador entre los ecosistemas EH3D y HYDRA-UMC (previsto; aún sin código).|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.1.8|Servidor en Rust con interfaz REST y websocket: usuarios, máquinas y trabajos, planificación de taladrado y fresado con las librerías de DRILLPRO y ROUTEPRO, un trabajo a la vez por máquina.|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.5|Cliente web en Rust de EH3D-SERVER.|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.6|Cliente web en Rust de EH3D-SERVER.|
 
 ### 💠 Proyectos de taladrado, fresado y contorneado:
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.0|Reimplementación en Rust del flujo de taladrado del software clásico de DOS para máquinas Bungard CCD: interfaz en modo texto en ocho idiomas, simulador o máquina real.|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.7|Reimplementación en Rust del flujo de fresado del software clásico de DOS para máquinas Bungard CCD, a partir de ficheros de trazado HP-GL: interfaz en modo texto en ocho idiomas, simulador o máquina real.|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.8|Reimplementación en Rust del flujo de fresado del software clásico de DOS para máquinas Bungard CCD, a partir de ficheros de trazado HP-GL: interfaz en modo texto en ocho idiomas, simulador o máquina real.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.8|Interfaz moderna para las máquinas Bungard CCD: un lanzador de los programas clásicos de taladrado y fresado y un visor del trabajo sobre la mesa.|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.1|Base común de los programas de control de máquina de EH3D: una ventana que maneja una máquina simulada con jog, puesta a cero, ejecución de código G y vista de la trayectoria, en ocho idiomas.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.1.0|Base de datos compartida de bancos de herramientas que rastrea horas de desgaste, ajustes de corte y avances en todas las herramientas EH3D CAM.|
@@ -577,19 +577,19 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.0.9|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificador de ingeniería integral para validaciones cruzadas y control de calidad del diseño.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Entorno de pruebas encargado de gestionar los casos de uso de referencia y las pruebas de regresión del sistema.|
-|[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.3|Sistema de control de versiones que guarda el historial semántico y la evolución lógica del diseño.|
+|[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|Sistema de control de versiones que guarda el historial semántico y la evolución lógica del diseño.|
 |[EH3D-PROJECT-PASSPORT](https://github.com/JuanenRac/EH3D-PROJECT-PASSPORT)|0.0.4|Generador del pasaporte técnico almacenable y reproducible para la auditoría completa de un proyecto.|
 |[EH3D-COMPONENT-INTELLIGENCE](https://github.com/JuanenRac/EH3D-COMPONENT-INTELLIGENCE)|0.0.4|Base de datos técnica avanzada enriquecida con metadatos sobre componentes electrónicos.|
-|[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.3|Gestor de perfiles de las capacidades de la maquinaria de cada fábrica y de las restricciones técnicas de los proveedores.|
+|[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.4|Gestor de perfiles de las capacidades de la maquinaria de cada fábrica y de las restricciones técnicas de los proveedores.|
 |[EH3D-THERMAL-LAB](https://github.com/JuanenRac/EH3D-THERMAL-LAB)|0.0.3|Laboratorio de simulación térmica progresiva acoplado directamente al diseño físico.|
-|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.3|Módulo de correlación que sirve de puente directo entre los datos de simulación y las mediciones reales de laboratorio.|
-|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.3|Entorno de exploración para comparar y analizar alternativas o ramas del diseño.|
+|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.4|Módulo de correlación que sirve de puente directo entre los datos de simulación y las mediciones reales de laboratorio.|
+|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.4|Entorno de exploración para comparar y analizar alternativas o ramas del diseño.|
 
 ### 💠 Proyectos ANDROID/IOS:
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.2|Aplicación Android cliente de EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.1|Aplicación iOS cliente de EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.3|Aplicación Android cliente de EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.2|Aplicación iOS cliente de EH3D-SERVER.|
 
 ### 🛠️ Herramientas complementarias
 |Repositorio|Versión|Descripción|
