@@ -509,6 +509,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 3. **Execution & Real-Time Control**: **EH3D-PHOENIX-CNC** drives a machine from one window (jog, zero setting, G-code run, path view; today against a simulated machine) and is the base of the machine-control programs, integrated with **EH3D-SERVER**, which plans and runs drilling and routing jobs through the machine's node, with **EH3D-AUTOLEVEL** for topographic Z-probing and **EH3D-NODE-HMI-GUI** for handheld zero-setting (G54/G55) and jogging.
 4. **Edge AI & Inspection**: **EH3D-VISION-STUDIO** leverages HYDRA-UMC's Hailo NPU to perform real-time camera alignment, automatic fiducial detection, and tool wear inspection.
 5. **Assembly & Auxiliary Data**: **EH3D-PHOENIX-PNP** manages centroid Pick & Place coordinates and feeders, while **EH3D-TOOL-MANAGER** maintains a unified tool crib database across all CAM modules.
+6. **3D Printing**: **EH3D-PHOENIX-3DP** prepares 3D prints: it reads STL, OBJ and 3MF models, slices them into G-code with limits that refuse an unsafe temperature, and sends the jobs to Moonraker and OctoPrint printers or through **EH3D-SERVER**; today it has only been tried against simulators.
 
 ## 📁 EH3D Fabrication Suite Project Catalog
 
@@ -575,6 +576,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | :--- | :--- | :--- |
 | [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.1.2 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
 | [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.1.1 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
+| [EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP) | 0.0.4 | Prepares 3D prints: reads STL, OBJ and 3MF models, holds 120 printer profiles, slices into G-code with safe temperature limits and talks to Moonraker, OctoPrint and EH3D-SERVER (tried only on simulators). |
 | [EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER) | 0.0.4 | Comprehensive engineering verifier for cross-validations and design quality control. |
 | [EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB) | 0.0.3 | Testing environment responsible for managing reference use cases and system regression tests. |
 | [EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY) | 0.0.4 | Version control system that stores the semantic history and logical evolution of the design. |

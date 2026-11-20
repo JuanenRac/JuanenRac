@@ -516,6 +516,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 3. **Esecuzione e Controllo in Tempo Reale**: **EH3D-PHOENIX-CNC** comanda una macchina da una sola finestra (jog, azzeramento, esecuzione di G-code, vista del percorso; oggi su una macchina simulata) ed è la base dei programmi di controllo macchina, integrato con **EH3D-SERVER**, che pianifica ed esegue i lavori di foratura e fresatura tramite il nodo della macchina, con **EH3D-AUTOLEVEL** per la mappatura topografica dell'asse Z e **EH3D-NODE-HMI-GUI** per lo zero manuale (G54/G55) e il jog portatile.
 4. **IA Edge e Ispezione**: **EH3D-VISION-STUDIO** sfrutta la NPU Hailo di HYDRA-UMC per eseguire l'allineamento della telecamera in tempo reale, il rilevamento automatico di riferimenti (fiducial) e l'ispezione dell'usura degli utensili.
 5. **Assemblaggio e Dati Ausiliari**: **EH3D-PHOENIX-PNP** gestisce le coordinate centroidi Pick \& Place e i feeder, mentre **EH3D-TOOL-MANAGER** mantiene un database di magazzino utensili unificato tra tutti i moduli CAM.
+6. **Stampa 3D**: **EH3D-PHOENIX-3DP** prepara le stampe 3D: legge modelli STL, OBJ e 3MF, li converte in G-code con limiti che rifiutano una temperatura non sicura e invia i lavori a stampanti Moonraker e OctoPrint o tramite **EH3D-SERVER**; finora è stato provato solo con simulatori.
 
 ## 📁 Catalogo dei Progetti EH3D Fabrication Suite
 
@@ -575,6 +576,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.2|Ambiente EDA: acquisizione di schemi, layout di PCB, strumenti di verifica, simulazione di circuiti e moduli specializzati per alimentatori switching (SMPS) e RF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.1|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
+|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.4|Prepara le stampe 3D: legge modelli STL, OBJ e 3MF, include 120 profili di stampante, esegue lo slicing in G-code con limiti di temperatura sicuri e dialoga con Moonraker, OctoPrint ed EH3D-SERVER (provato solo su simulatori).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificatore ingegneristico completo per le validazioni incrociate e il controllo di qualità del progetto.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Ambiente di test incaricato di gestire i casi d'uso di riferimento e i test di regressione del sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|Sistema di controllo di versione che conserva la storia semantica e l'evoluzione logica del progetto.|

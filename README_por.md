@@ -516,6 +516,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 3. **Execução e Controlo em Tempo Real**: **EH3D-PHOENIX-CNC** comanda uma máquina a partir de uma só janela (jog, definição de zero, execução de G-code, vista do trajeto; hoje sobre uma máquina simulada) e é a base dos programas de controlo de máquina, integrado com o **EH3D-SERVER**, que planeia e executa trabalhos de furação e fresagem através do nó da máquina, com o **EH3D-AUTOLEVEL** para o apalpamento topográfico em Z e o **EH3D-NODE-HMI-GUI** para a definição manual de zero (G54/G55) e jogging.
 4. **IA de Borda e Inspeção**: **EH3D-VISION-STUDIO** aproveita a NPU Hailo do HYDRA-UMC para realizar alinhamento de câmara em tempo real, deteção automática de fiduciais e inspeção de desgaste de ferramentas.
 5. **Montagem e Dados Auxiliares**: **EH3D-PHOENIX-PNP** gere coordenadas centroides Pick \& Place e alimentadores (feeders), enquanto **EH3D-TOOL-MANAGER** mantém um base de dados de ferramentas unificado em todos os módulos CAM.
+6. **Impressão 3D**: **EH3D-PHOENIX-3DP** prepara as impressões 3D: lê modelos STL, OBJ e 3MF, fatia-os para G-code com limites que recusam uma temperatura insegura e envia os trabalhos para impressoras Moonraker e OctoPrint ou através do **EH3D-SERVER**; até hoje só foi testado em simuladores.
 
 ## 📁 Catálogo de Projetos EH3D Fabrication Suite
 
@@ -575,6 +576,7 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.2|Ambiente EDA: captura de esquemas, desenho de PCB, ferramentas de verificação, simulação de circuitos e módulos especializados para fontes comutadas (SMPS) e RF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.1|CAD mecânico paramétrico centrado no projeto de caixas, chassis e dissipadores térmicos.|
+|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.4|Prepara impressões 3D: lê modelos STL, OBJ e 3MF, inclui 120 perfis de impressora, fatia para G-code com limites de temperatura seguros e comunica com o Moonraker, o OctoPrint e o EH3D-SERVER (testado apenas em simuladores).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificador de engenharia abrangente para validações cruzadas e controlo de qualidade do projeto.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Ambiente de testes responsável por gerir os casos de uso de referência e os testes de regressão do sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|Sistema de controlo de versões que guarda o histórico semântico e a evolução lógica do projeto.|

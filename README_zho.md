@@ -516,6 +516,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 3. **执行与实时控制**：**EH3D-PHOENIX-CNC** 在一个窗口中驱动机器（点动、置零、G 代码运行、路径显示；目前针对模拟机器），是机器控制程序的基础，并与通过机器节点规划和运行钻孔与铣削任务的 **EH3D-SERVER**、用于地形 Z 探测的 **EH3D-AUTOLEVEL** 以及用于手持置零（G54/G55）和慢动微调（jogging）的 **EH3D-NODE-HMI-GUI** 集成。
 4. **边缘 AI 与检测**：**EH3D-VISION-STUDIO** 利用 HYDRA-UMC 的 Hailo NPU 执行实时相机对准、自动基准点（fiducial）检测和工具磨损检测。
 5. **组装与辅助数据**：**EH3D-PHOENIX-PNP** 管理质心贴片（Pick \& Place）坐标和供料器（feeder），而 **EH3D-TOOL-MANAGER** 在所有 CAM 模块中维护统一的刀具库（tool crib）数据库。
+6. **3D打印**：**EH3D-PHOENIX-3DP** 负责准备3D打印：读取STL、OBJ和3MF模型，以拒绝不安全温度的限制将其切片为G-code，并把任务发送到Moonraker和OctoPrint打印机，或通过 **EH3D-SERVER** 发送；目前仅在模拟器上试过。
 
 ## 📁 EH3D Fabrication Suite 项目目录
 
@@ -575,6 +576,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.2|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.1|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
+|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.4|准备3D打印：读取STL、OBJ和3MF模型，内置120个打印机配置文件，切片为带安全温度限制的G-code，并与Moonraker、OctoPrint及EH3D-SERVER通信（仅在模拟器上试过）。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|用于交叉验证和设计质量控制的综合工程验证器。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|负责管理参考用例和系统回归测试的测试环境。|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|保存设计语义历史和逻辑演进的版本控制系统。|

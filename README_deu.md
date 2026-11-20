@@ -516,6 +516,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 3. **Ausführung und Echtzeitsteuerung**: **EH3D-PHOENIX-CNC** steuert eine Maschine aus einem Fenster (Jog, Nullsetzen, G-Code-Ausführung, Bahnansicht; heute an einer simulierten Maschine) und ist die Basis der Maschinensteuerprogramme, integriert mit **EH3D-SERVER**, der Bohr- und Fräsaufträge über den Knoten der Maschine plant und ausführt, mit **EH3D-AUTOLEVEL** für die topografische Z-Abtastung und **EH3D-NODE-HMI-GUI** für das manuelle Nullsetzen (G54/G55) und Verfahren.
 4. **Edge KI \& Inspektion**: **EH3D-VISION-STUDIO** nutzt die Hailo-NPU von HYDRA-UMC, um Echtzeit-Kameraausrichtung, automatische Passmarkenerkennung (Fiducials) und Werkzeugverschleißinspektion durchzuführen.
 5. **Bestückung und Hilfsdaten**: **EH3D-PHOENIX-PNP** verwaltet SMD-Bestückungskoordinaten nach Zentroide und Zubringer (Feeders), während **EH3D-TOOL-MANAGER** eine einheitliche Werkzeugkasten-Datenbank über alle CAM-Module hinweg pflegt.
+6. **3D-Druck**: **EH3D-PHOENIX-3DP** bereitet 3D-Drucke vor: Es liest STL-, OBJ- und 3MF-Modelle, slict sie zu G-Code mit Grenzen, die eine unsichere Temperatur ablehnen, und sendet die Aufträge an Moonraker- und OctoPrint-Drucker oder über **EH3D-SERVER**; bisher nur mit Simulatoren getestet.
 
 ## 📁 EH3D Fabrication Suite Projektkatalog
 
@@ -575,6 +576,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.2|EDA-Umgebung: Schaltplaneingabe, Platinenlayout, Verifikationswerkzeuge, Schaltungssimulation und Spezialmodule für Schaltnetzteile (SMPS) und HF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.1|Parametrisches mechanisches CAD für den Entwurf von Gehäusen, Chassis und Kühlkörpern.|
+|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.4|Bereitet 3D-Drucke vor: liest STL-, OBJ- und 3MF-Modelle, enthält 120 Druckerprofile, slict zu G-Code mit sicheren Temperaturgrenzen und spricht mit Moonraker, OctoPrint und EH3D-SERVER (nur mit Simulatoren getestet).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Umfassender Engineering-Verifizierer für Kreuzvalidierungen und die Qualitätskontrolle des Entwurfs.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Testumgebung für die Verwaltung der Referenz-Anwendungsfälle und der Regressionstests des Systems.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|Versionskontrollsystem, das den semantischen Verlauf und die logische Entwicklung des Entwurfs speichert.|

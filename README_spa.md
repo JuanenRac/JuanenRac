@@ -516,6 +516,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 3. **Ejecución y Control en Tiempo Real**: **EH3D-PHOENIX-CNC** maneja una máquina desde una sola ventana (jog, puesta a cero, ejecución de código G, vista de la trayectoria; hoy sobre una máquina simulada) y es la base de los programas de control de máquina, integrado con **EH3D-SERVER**, que planifica y ejecuta trabajos de taladrado y fresado a través del nodo de la máquina, con **EH3D-AUTOLEVEL** para el sondeo topográfico de altura Z y **EH3D-NODE-HMI-GUI** para el establecimiento de ceros manuales (G54/G55) y desplazamiento (jogging).
 4. **Edge AI e Inspección**: **EH3D-VISION-STUDIO** aprovecha la NPU Hailo de HYDRA-UMC para realizar alineación de cámaras en tiempo real, detección automática de marcas fiduciales e inspección de desgaste de herramientas.
 5. **Ensamblaje y Datos Auxiliares**: **EH3D-PHOENIX-PNP** gestiona las coordenadas de centroides para Pick \& Place y alimentadores, mientras que **EH3D-TOOL-MANAGER** mantiene una base de datos unificada de bancos de herramientas en todos los módulos CAM.
+6. **Impresión 3D**: **EH3D-PHOENIX-3DP** prepara las impresiones 3D: lee modelos STL, OBJ y 3MF, los lamina a G-code con límites que rechazan una temperatura insegura y envía los trabajos a impresoras Moonraker y OctoPrint o a través de **EH3D-SERVER**; hoy solo se ha probado con simuladores.
 
 ## 📁 Catálogo de Proyectos EH3D Fabrication Suite
 
@@ -575,6 +576,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.2|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.1|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
+|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.4|Prepara impresiones 3D: lee modelos STL, OBJ y 3MF, incluye 120 perfiles de impresora, lamina a G-code con límites de temperatura seguros y se comunica con Moonraker, OctoPrint y EH3D-SERVER (probado solo con simuladores).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificador de ingeniería integral para validaciones cruzadas y control de calidad del diseño.|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|Entorno de pruebas encargado de gestionar los casos de uso de referencia y las pruebas de regresión del sistema.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|Sistema de control de versiones que guarda el historial semántico y la evolución lógica del diseño.|
