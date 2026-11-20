@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-20T16:49:40Z",
+ "asof": "2026-11-20T18:47:07Z",
  "ci": {
-  "checked": 620,
+  "checked": 621,
   "red": [
    {
     "repo": "ARMOR-DOCS",
@@ -15,12 +15,12 @@
  "compute": {
   "top": [
    {
-    "min24": 888,
-    "min7": 888,
+    "min24": 873,
+    "min7": 873,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 334,
+    "min24": 304,
     "min7": 506,
     "repo": "EH3D-PHOENIX-PCB"
    },
@@ -35,18 +35,18 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 137,
-    "min7": 524,
-    "repo": "HYDRA-UMC-IOS-CONTROL"
-   },
-   {
     "min24": 128,
     "min7": 377,
     "repo": "HYDRA-UMC-SERVER"
+   },
+   {
+    "min24": 124,
+    "min7": 524,
+    "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 4343,
-  "total7": 33540,
+  "total24": 3896,
+  "total7": 33229,
   "warn": false
  },
  "delivery": {
@@ -118,7 +118,7 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 0,
+   "cand": 1,
    "read": 59,
    "red": 0,
    "repos": 59,
@@ -317,7 +317,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 35
+  "gap_minutes": 120
  },
  "hygiene": {
   "allowed_missing": [],
@@ -336,7 +336,7 @@
    "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 3,
+    "cand": 4,
     "hyg": 2,
     "red": 1
    }
@@ -358,9 +358,10 @@
     "list": [
      "ARMOR-COMMON",
      "ARMOR-DOCS",
+     "HYDRA-UMC-TWIN",
      "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID"
     ],
-    "n": 3
+    "n": 4
    }
   },
   {
@@ -415,11 +416,17 @@
     "published": null,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID",
     "tag": ""
+   },
+   {
+    "entries": 6,
+    "published": "2026-11-15T08:07:48Z",
+    "repo": "HYDRA-UMC-TWIN",
+    "tag": "v0.1.9"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 3
+  "total": 4
  },
  "repos": 129,
  "schema": 1,
@@ -579,7 +586,7 @@
    41,
    47,
    8,
-   3
+   4
   ],
   "dates": [
    "2026-11-03",
@@ -639,7 +646,7 @@
    10185,
    5009,
    6712,
-   4343
+   3896
   ],
   "red": [
    3,

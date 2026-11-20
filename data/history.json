@@ -12533,10 +12533,10 @@
   {
    "actions": {
     "fail": 88,
-    "min": 4343,
-    "ok": 1931,
-    "other": 51,
-    "runs": 2070
+    "min": 3896,
+    "ok": 1735,
+    "other": 38,
+    "runs": 1861
    },
    "areas": {
     "armor": {
@@ -12580,7 +12580,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -13117,9 +13117,9 @@
     ]
    },
    "sentinel": {
-    "cand": 3,
+    "cand": 4,
     "gaps": 2,
-    "min": 4343,
+    "min": 3896,
     "red": 1
    },
    "tests": {
