@@ -88,7 +88,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 von 59 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `█████████▊ 98%` | 58 von 59 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 59 von 59 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟢 | `██████████ 100%` | 59 von 59 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -482,7 +482,7 @@ A.R.M.O.R. folgt derselben Regel, die das eigene Dashboard von HYDRA-UMC bereits
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) erkennt, installiert und aktualisiert die Repositories dieses Ökosystems; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) tut das für alle vier.
 
 <!-- progress:eh3d -->
-`\[█████████▊░░░░░░░░░░] 49%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 39 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[█████████▋░░░░░░░░░░] 48%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 41 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -492,14 +492,14 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 
 | Bereich | Status | Fortschritt | Hinweis |
 | --- | :---: | --- | --- |
-| Software | 🟠 | `█████▋░░░░ 56%` | 22 von 39 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
-| Tests | 🟡 | `█████████░ 90%` | 35 von 39 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 39 von 39 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
-| Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 39 von 39 Repositories haben mindestens eine Version veröffentlicht. |
-| Dokumentation | 🟢 | `██████████ 100%` | 39 von 39 Repositories haben die README in den acht Sprachen. |
-| Simulation | 🟡 | `███████▉░░ 79%` | 31 von 39 Repositories wurden mindestens in einem Simulator geprüft. |
-| Echte Hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 der 14 Repositories, die von Hardware abhängen, wurden auf dem Prüfstand oder im Feld geprüft; der Rest lief nie mit der echten Ausrüstung. |
-| Produktion | 🔴 | `░░░░░░░░░░ 0%` | 0 von 39 Repositories sind etabliert oder im Produktivbetrieb. |
+| Software | 🟠 | `█████▍░░░░ 54%` | 22 von 41 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
+| Tests | 🟢 | `█████████░ 90%` | 37 von 41 Repositories haben automatische Tests. |
+| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 41 von 41 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Veröffentlichte Versionen | 🟢 | `██████████ 100%` | 41 von 41 Repositories haben mindestens eine Version veröffentlicht. |
+| Dokumentation | 🟢 | `██████████ 100%` | 41 von 41 Repositories haben die README in den acht Sprachen. |
+| Simulation | 🟡 | `████████░░ 80%` | 33 von 41 Repositories wurden mindestens in einem Simulator geprüft. |
+| Echte Hardware | 🔴 | `░░░░░░░░░░ 0%` | 0 der 16 Repositories, die von Hardware abhängen, wurden auf dem Prüfstand oder im Feld geprüft; der Rest lief nie mit der echten Ausrüstung. |
+| Produktion | 🔴 | `░░░░░░░░░░ 0%` | 0 von 41 Repositories sind etabliert oder im Produktivbetrieb. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Funktionsweise der EH3D Fabrication Suite
@@ -515,7 +515,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
    * **EH3D-STENCILCAM**: Lötmaskenverarbeitung (Pastemask) zur Erstellung von SMD-Lötpastenschablonen.
 3. **Ausführung und Echtzeitsteuerung**: **EH3D-PHOENIX-CNC** steuert eine Maschine aus einem Fenster (Jog, Nullsetzen, G-Code-Ausführung, Bahnansicht; heute an einer simulierten Maschine) und ist die Basis der Maschinensteuerprogramme, integriert mit **EH3D-SERVER**, der Bohr- und Fräsaufträge über den Knoten der Maschine plant und ausführt, mit **EH3D-AUTOLEVEL** für die topografische Z-Abtastung und **EH3D-NODE-HMI-GUI** für das manuelle Nullsetzen (G54/G55) und Verfahren.
 4. **Edge KI \& Inspektion**: **EH3D-VISION-STUDIO** nutzt die Hailo-NPU von HYDRA-UMC, um Echtzeit-Kameraausrichtung, automatische Passmarkenerkennung (Fiducials) und Werkzeugverschleißinspektion durchzuführen.
-5. **Bestückung und Hilfsdaten**: **EH3D-PHOENIX-PNP** verwaltet SMD-Bestückungskoordinaten nach Zentroide und Zubringer (Feeders), während **EH3D-TOOL-MANAGER** eine einheitliche Werkzeugkasten-Datenbank über alle CAM-Module hinweg pflegt.
+5. **Bestückung und Hilfsdaten**: **EH3D-PHOENIX-PNP** verwaltet SMD-Bestückungskoordinaten nach Zentroide und Zubringer (Feeders), während **EH3D-TOOL-MANAGER** eine einheitliche Werkzeugkasten-Datenbank über alle CAM-Module hinweg pflegt. **EH3D-NODE-PNP-FEEDER** steuert die Gurtzuführer der Maschine und **EH3D-NODE-PNP-HEAD** die Düsen, das Vakuum und die Z-Achse ihres Kopfes (beide im Gerüststadium, nur mit Simulatoren erprobt).
 6. **3D-Druck**: **EH3D-PHOENIX-3DP** bereitet 3D-Drucke vor: Es liest STL-, OBJ- und 3MF-Modelle, slict sie zu G-Code mit Grenzen, die eine unsichere Temperatur ablehnen, und sendet die Aufträge an Moonraker- und OctoPrint-Drucker oder über **EH3D-SERVER**; bisher nur mit Simulatoren getestet.
 
 ## 📁 EH3D Fabrication Suite Projektkatalog
@@ -570,6 +570,8 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 |[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.2|10,1-Zoll-Touchscreen mit ESP32-P4, der eine Bungard-CCD-Maschine steuert: die Bildschirme des Desktop-Programms, gesprochene Warnungen und Befehle in acht Sprachen und ein Hardware-Stopp, der nicht über den Bildschirm läuft.|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.0|ESP32-S3-Knoten für den Bohrkopf einer Bungard-CCD-Maschine: das Video seiner Kamera (OV2640 oder OV5640) als IP-Kamera (RTSP und ONVIF), die mit einem Laser gemessene Höhe des Tisches, Drehzahl und Temperatur der Spindel und ein Schutzausgang.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.2|Universelle manuelle Touch-Steuerung (10 Zoll) / mobil mit ESP32-P4/ESP32-C6 für Jogging in Echtzeit, Nullpunktsetzung (G54/G55) und NOT-AUS.|
+|[EH3D-NODE-PNP-FEEDER](https://github.com/JuanenRac/EH3D-NODE-PNP-FEEDER)|0.0.2|ESP32-S3-Knoten für die Gurtzuführer einer Bestückungsmaschine: steuert eine Kette von bis zu 32 intelligenten Zuführern über einen gerahmten RS-485-Bus mit Erkennung von Tasche, Spannung und Stau und meldet an EH3D-SERVER (am Rechner getesteter Kern und Simulator; Firmware nicht geschrieben, nichts an Hardware angeschlossen).|
+|[EH3D-NODE-PNP-HEAD](https://github.com/JuanenRac/EH3D-NODE-PNP-HEAD)|0.0.2|ESP32-S3-Knoten für den Düsenkopf einer Bestückungsmaschine: Z- und Drehachsen, Vakuumpumpe und Ventile mit Druckmessung, Abblasen, Beleuchtung und Sicherheitsverriegelungen; meldet an EH3D-SERVER (am Rechner getesteter Kern und Simulator; Firmware nicht geschrieben, nichts an Hardware angeschlossen).|
 
 ### 💠 PHOENIX-Projekte:
 |Repository|Version|Beschreibung|
