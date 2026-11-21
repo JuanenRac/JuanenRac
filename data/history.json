@@ -13243,11 +13243,11 @@
   },
   {
    "actions": {
-    "fail": 79,
-    "min": 13093,
-    "ok": 1587,
-    "other": 63,
-    "runs": 1729
+    "fail": 80,
+    "min": 13472,
+    "ok": 1745,
+    "other": 58,
+    "runs": 1883
    },
    "areas": {
     "armor": {
@@ -13266,8 +13266,8 @@
      "hardware": 0,
      "production": 0,
      "releases": 100,
-     "simulation": 79,
-     "software": 56,
+     "simulation": 80,
+     "software": 54,
      "tests": 90
     },
     "electro-hobby-3d": {
@@ -13304,7 +13304,7 @@
    "date": "2026-11-21",
    "progress": {
     "armor": 69,
-    "eh3d": 49,
+    "eh3d": 48,
     "electro-hobby-3d": 46,
     "hydra-umc": 60,
     "urtc": 56
@@ -13376,7 +13376,7 @@
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
-     "0.1.6"
+     "0.1.7"
     ],
     "EH3D-AUTOLEVEL": [
      1,
@@ -13424,7 +13424,7 @@
     ],
     "EH3D-GERBERVIEWER": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-HYDRA-BRIDGE": [
      0,
@@ -13432,7 +13432,7 @@
     ],
     "EH3D-IOS-CONTROL": [
      0,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-ISOCAM": [
      1,
@@ -13472,19 +13472,19 @@
     ],
     "EH3D-PHOENIX-3DP": [
      1,
-     "0.0.7"
+     "0.0.8"
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.1.2"
+     "0.1.3"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
-     "0.2.2"
+     "0.2.3"
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
@@ -13492,7 +13492,7 @@
     ],
     "EH3D-PHOENIX-PNP": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
@@ -13508,11 +13508,11 @@
     ],
     "EH3D-STENCILCAM": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-STUDIO": [
      1,
-     "0.1.8"
+     "0.1.9"
     ],
     "EH3D-SUITE-LAUNCHER": [
      1,
@@ -13748,7 +13748,7 @@
     ],
     "HYDRA-UMC-TWIN": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "HYDRA-UMC-UPDATER": [
      2,
@@ -13784,7 +13784,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": [
      0,
-     "0.0.1"
+     "0.1.0"
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR-WATCH": [
      0,
@@ -13836,10 +13836,10 @@
     ]
    },
    "sentinel": {
-    "cand": 2,
+    "cand": 0,
     "gaps": 4,
-    "min": 13093,
-    "red": 0
+    "min": 13472,
+    "red": 2
    },
    "tests": {
     "ARMOR-COMMON": 659,
@@ -13858,11 +13858,11 @@
     "ARMOR-VISION": 382,
     "ARMOR-VOICE-AI": 255,
     "ARMOR-WATCH": 124,
-    "EH3D-ANDROID-CONTROL": 425,
+    "EH3D-ANDROID-CONTROL": 433,
     "EH3D-AUTOLEVEL": 267,
     "EH3D-BUNGARD-GUI": 450,
     "EH3D-CAM-DEBUGGER": 169,
-    "EH3D-COMMON": 971,
+    "EH3D-COMMON": 967,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 519,
     "EH3D-DESIGN-EXPLORER": 3,
@@ -13870,25 +13870,25 @@
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 583,
     "EH3D-DRILLPRO": 452,
-    "EH3D-GERBERVIEWER": 147,
+    "EH3D-GERBERVIEWER": 185,
     "EH3D-HYDRA-BRIDGE": 15,
-    "EH3D-IOS-CONTROL": 436,
+    "EH3D-IOS-CONTROL": 444,
     "EH3D-ISOCAM": 545,
     "EH3D-LAB-BRIDGE": 3,
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-NODE-PNP-FEEDER": 102,
     "EH3D-NODE-PNP-HEAD": 85,
-    "EH3D-PHOENIX-3DP": 684,
+    "EH3D-PHOENIX-3DP": 714,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 971,
-    "EH3D-PHOENIX-LASER": 950,
-    "EH3D-PHOENIX-PCB": 5350,
-    "EH3D-PHOENIX-PNP": 1877,
+    "EH3D-PHOENIX-CNC": 986,
+    "EH3D-PHOENIX-LASER": 986,
+    "EH3D-PHOENIX-PCB": 5422,
+    "EH3D-PHOENIX-PNP": 1915,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 125,
     "EH3D-SERVER": 782,
-    "EH3D-STENCILCAM": 263,
-    "EH3D-STUDIO": 586,
+    "EH3D-STENCILCAM": 281,
+    "EH3D-STUDIO": 611,
     "EH3D-SUITE-LAUNCHER": 137,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 224,
@@ -13956,7 +13956,7 @@
     "HYDRA-UMC-VOICE-UI": 471,
     "HYDRA-UMC-WATCH": 215,
     "TOOLS-GITHUB-ACTIONS-MONITOR": 5736,
-    "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": 77,
+    "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": 80,
     "URTC": 319,
     "URTC-COMMON": 3049,
     "URTC-DEVTOOLS": 158,

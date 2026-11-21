@@ -248,7 +248,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.1.9|用于无风险机器人测试的高保真物理仿真引擎。|
+|[HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN)|0.2.0|用于无风险机器人测试的高保真物理仿真引擎。|
 |[HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA)|0.1.5|URDF 链的真实世界物理仿真（MuJoCo/PhysX）。|
 |[HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE)|0.1.8|用于真实与虚拟命令同步的硬件在环（Hardware-in-the-loop）接口。|
 |[HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN)|0.1.6|视觉节点训练数据集的过程生成器。|
@@ -329,7 +329,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 | --- | :---: | --- | --- |
 | 软件 | 🟡 | `████████▎░ 82%` | 11 个仓库中有 9 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `█████████▏ 91%` | 11 个仓库中有 10 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个提供八种语言的 README。 |
 | 仿真 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少在仿真器中验证过。 |
@@ -530,7 +530,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.1|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.3|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
 |[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.2.2|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.8|EH3D-SERVER 的 Rust Web 客户端。|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.1.9|EH3D-SERVER 的 Rust Web 客户端。|
 
 ### 💠 钻孔／铣边／铣削项目：
 |仓库|版本|描述|
@@ -538,13 +538,13 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.1|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的钻孔流程：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.8|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.2.9|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.2|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.3|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.1.2|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
 
 ### 💠 激光项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.1.5|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.1.6|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
 
 ### 💠 CAM 项目：
 |仓库|版本|描述|
@@ -555,13 +555,13 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 Gerber 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.8|用于 Gerber 图层对齐和快速可视化的轻量级 CAM 检查工具。|
+|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.9|用于 Gerber 图层对齐和快速可视化的轻量级 CAM 检查工具。|
 
 ### 💠 贴片（Pick&Place）项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.1.1|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.3|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
+|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.1.2|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.4|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
 
 ### 💠 节点项目：
 |仓库|版本|描述|
@@ -577,8 +577,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.5|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
-|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
-|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.7|准备3D打印：读取STL、OBJ和3MF模型，内置120个打印机配置文件，切片为带安全温度限制的G-code，并与Moonraker、OctoPrint及EH3D-SERVER通信（仅在模拟器上试过）。|
+|[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.3|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
+|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.8|准备3D打印：读取STL、OBJ和3MF模型，内置120个打印机配置文件，切片为带安全温度限制的G-code，并与Moonraker、OctoPrint及EH3D-SERVER通信（仅在模拟器上试过）。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|用于交叉验证和设计质量控制的综合工程验证器。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.3|负责管理参考用例和系统回归测试的测试环境。|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.4|保存设计语义历史和逻辑演进的版本控制系统。|
@@ -592,8 +592,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 ANDROID/IOS 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.6|EH3D-SERVER 的 Android 应用客户端。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.5|EH3D-SERVER 的 iOS 应用客户端。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.7|EH3D-SERVER 的 Android 应用客户端。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.6|EH3D-SERVER 的 iOS 应用客户端。|
 
 ### 🛠️ 辅助工具
 |仓库|版本|描述|
@@ -627,8 +627,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 | --- | :---: | --- | --- |
 | 软件 | 🟠 | `█████░░░░░ 50%` | 4 个仓库中有 2 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟡 | `███████▌░░ 75%` | 4 个仓库中有 3 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 4 个仓库中有 4 个在主分支上最近一次 CI 运行为绿色。 |
-| 已发布版本 | 🟠 | `█████░░░░░ 50%` | 4 个仓库中有 2 个至少发布过一个版本。 |
+| 持续集成 | 🟡 | `███████▌░░ 75%` | 4 个仓库中有 3 个在主分支上最近一次 CI 运行为绿色。 |
+| 已发布版本 | 🟡 | `███████▌░░ 75%` | 4 个仓库中有 3 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 4 个仓库中有 4 个提供八种语言的 README。 |
 | 仿真 | 🟠 | `█████░░░░░ 50%` | 4 个仓库中有 2 个至少在仿真器中验证过。 |
 | 真实硬件 | 🟢 | `██████████ 100%` | 依赖硬件的 2 个仓库中有 2 个在台架或现场验证过；其余从未在真实设备上运行。 |
@@ -644,7 +644,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 | 工具 | 版本 | 简介 |
 | :--- | :--- | :--- |
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
-| [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | 监控器的 Android 应用：在手机上查看你自己的监控器的状态和警报（仅有框架，尚未构建任何内容）。 |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.1.0 | 监控器的 Android 应用：在手机上查看你自己的监控器的状态和警报（仅有框架，尚未构建任何内容）。 |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Android 应用的智能手表（Wear OS）配套应用：一眼查看 CI 状态和警报（仅有框架，尚未构建任何内容）。 |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 

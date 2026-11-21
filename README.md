@@ -246,7 +246,7 @@ for all four - can check versions and build/update any other project.
 ### 🎮 Digital Twin & Simulation
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | 0.1.9 | High-fidelity physics simulation engine for risk-free robot testing. |
+| [HYDRA-UMC-TWIN](https://github.com/JuanenRac/HYDRA-UMC-TWIN) | 0.2.0 | High-fidelity physics simulation engine for risk-free robot testing. |
 | [HYDRA-UMC-PHYSICS-REPLICA](https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA) | 0.1.5 | Real-world physics simulation (MuJoCo/PhysX) of URDF chains. |
 | [HYDRA-UMC-HIL-BRIDGE](https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE) | 0.1.8 | Hardware-in-the-loop interface for real-vs-virtual command syncing. |
 | [HYDRA-UMC-SYNTHETIC-DATA-GEN](https://github.com/JuanenRac/HYDRA-UMC-SYNTHETIC-DATA-GEN) | 0.1.6 | Procedural generator of training datasets for Vision nodes. |
@@ -323,7 +323,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 11 of 11 repositories have been checked at least in a simulator. |
@@ -523,7 +523,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.1.1 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE) | 0.0.3 | Adapter between the EH3D and HYDRA-UMC ecosystems (planned; no code yet). |
 | [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.2.2 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
-| [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.1.8 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
+| [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.1.9 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
 
 ### 💠 Drill/Router/Milling projects:
@@ -532,14 +532,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO) | 0.2.1 | Rust re-implementation of the drilling workflow of the classic DOS software for Bungard CCD machines: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO) | 0.1.8 | Rust re-implementation of the routing workflow of the classic DOS software for Bungard CCD machines, from HP-GL plot files: text-mode interface in eight languages, simulator or real machine. |
 | [EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI) | 0.2.9 | Modern interface for Bungard CCD machines in 37 languages: a launcher for the classic drilling and routing programs and a viewer of the job on the table with editing (choose, copy, cut, paste, delete, undo), the tool changer of the ATC models and a library of more than 160 board and sheet materials. |
-| [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.2.2 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
+| [EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC) | 0.2.3 | Shared base of the EH3D machine-control programs: a window that drives a simulated machine with jog pad, zero setting, G-code run and path view, in eight languages. |
 | [EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER) | 0.1.2 | Shared tool crib database tracking wear hours, cutting presets, and feeds across all EH3D CAM tools. |
 
 
 ### 💠 Laser projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.1.5 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
+| [EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER) | 0.1.6 | Laser CAM app for image dithering, raster/vector conversion, and dynamic PWM power control. |
 
 
 ### 💠 CAM projects:
@@ -552,14 +552,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Gerber projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER) | 0.0.8 | Lightweight CAM inspection tool for Gerber layer alignment and rapid visualization. |
+| [EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER) | 0.0.9 | Lightweight CAM inspection tool for Gerber layer alignment and rapid visualization. |
 
 
 ### 💠 Pick&Place projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.1.1 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
-| [EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP) | 0.1.3 | Pick and place assembly: KiCad and CSV position files, feeders, and the order of the placements for a head with one to six nozzles; the camera and the control of the machine are planned. |
+| [EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM) | 0.1.2 | Pastemask conversion utility generating cutting toolpaths for laser and plotter SMD stencil fabrication. |
+| [EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP) | 0.1.4 | Pick and place assembly: KiCad and CSV position files, feeders, and the order of the placements for a head with one to six nozzles; the camera and the control of the machine are planned. |
 
 
 ### 💠 Node projects:
@@ -577,8 +577,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.1.5 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
-| [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.1.2 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
-| [EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP) | 0.0.7 | Prepares 3D prints: reads STL, OBJ and 3MF models, holds 120 printer profiles, slices into G-code with safe temperature limits and talks to Moonraker, OctoPrint and EH3D-SERVER (tried only on simulators). |
+| [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.1.3 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
+| [EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP) | 0.0.8 | Prepares 3D prints: reads STL, OBJ and 3MF models, holds 120 printer profiles, slices into G-code with safe temperature limits and talks to Moonraker, OctoPrint and EH3D-SERVER (tried only on simulators). |
 | [EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER) | 0.0.4 | Comprehensive engineering verifier for cross-validations and design quality control. |
 | [EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB) | 0.0.3 | Testing environment responsible for managing reference use cases and system regression tests. |
 | [EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY) | 0.0.4 | Version control system that stores the semantic history and logical evolution of the design. |
@@ -593,8 +593,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 ANDROID/IOS projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.1.6 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
-| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.1.5 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
+| [EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL) | 0.1.7 | Android APP client of EH3D-SERVER: monitoring, preparing jobs (drilling, routing and G-code), resuming stopped jobs and the sensors of the drill head. |
+| [EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL) | 0.1.6 | IOS APP client of EH3D-SERVER: the same as the Android app, as a port of its code (not compiled here). |
 
 
 ### 🛠️ Complementary Tools
@@ -629,8 +629,8 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████░░░░░ 50%` | 2 of 4 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 4 of 4 repositories have the last CI run on the main branch green. |
-| Releases | 🟠 | `█████░░░░░ 50%` | 2 of 4 repositories have published at least one release. |
+| Continuous integration | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have the last CI run on the main branch green. |
+| Releases | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 4 of 4 repositories have the README in the eight languages. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 of 4 repositories have been checked at least in a simulator. |
 | Real hardware | 🟢 | `██████████ 100%` | 2 of the 2 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
@@ -646,7 +646,7 @@ The group holds the programs that stand above the four ecosystems and need none 
 | Tool | Version | What it is |
 | :--- | :--- | :--- |
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
-| [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | Android app of the monitor: read the state and the alerts of your own monitor on the phone (scaffolding only; nothing built yet). |
+| [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.1.0 | Android app of the monitor: read the state and the alerts of your own monitor on the phone (scaffolding only; nothing built yet). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Smartwatch (Wear OS) companion of the Android app: a glance at the CI state and the alerts (scaffolding only; nothing built yet). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | The one window and command line that hand over to the updater of each ecosystem. |
 
