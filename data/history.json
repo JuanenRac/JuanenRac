@@ -13244,10 +13244,10 @@
   {
    "actions": {
     "fail": 94,
-    "min": 4654,
-    "ok": 1461,
-    "other": 86,
-    "runs": 1641
+    "min": 4666,
+    "ok": 1465,
+    "other": 77,
+    "runs": 1636
    },
    "areas": {
     "armor": {
@@ -13376,7 +13376,7 @@
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
-     "0.1.4"
+     "0.1.5"
     ],
     "EH3D-AUTOLEVEL": [
      1,
@@ -13838,7 +13838,7 @@
    "sentinel": {
     "cand": 3,
     "gaps": 4,
-    "min": 4654,
+    "min": 4666,
     "red": 0
    },
    "tests": {
@@ -13868,7 +13868,7 @@
     "EH3D-DESIGN-HISTORY": 3,
     "EH3D-DESIGN-VERIFIER": 3,
     "EH3D-DOCS": 574,
-    "EH3D-DRILLPRO": 443,
+    "EH3D-DRILLPRO": 452,
     "EH3D-GERBERVIEWER": 147,
     "EH3D-HYDRA-BRIDGE": 6,
     "EH3D-IOS-CONTROL": 388,
@@ -13888,12 +13888,12 @@
     "EH3D-SERVER": 757,
     "EH3D-STENCILCAM": 238,
     "EH3D-STUDIO": 558,
-    "EH3D-SUITE-LAUNCHER": 128,
+    "EH3D-SUITE-LAUNCHER": 137,
     "EH3D-THERMAL-LAB": 3,
     "EH3D-TOOL-MANAGER": 207,
     "EH3D-UPDATER": 491,
     "EH3D-VALIDATION-LAB": 63,
-    "EH3D-VISION-STUDIO": 678,
+    "EH3D-VISION-STUDIO": 687,
     "ELECTRO-HOBBY-3D-UPDATER": 60,
     "HYDRA-UMC": 1500,
     "HYDRA-UMC-ANDROID-CONTROL": 767,
