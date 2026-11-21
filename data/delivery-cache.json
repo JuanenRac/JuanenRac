@@ -86,10 +86,10 @@
   },
   "ARMOR-WATCH": {
    "art": true,
-   "at": "2026-11-21T04:55:12Z",
+   "at": "2026-11-21T05:46:13Z",
    "checked": true,
-   "exp": "2026-11-28T04:54:28Z",
-   "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/44868136464",
+   "exp": "2026-11-28T05:44:19Z",
+   "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/44872115290",
    "wf": "apk-build.yml"
   },
   "EH3D-ANDROID-CONTROL": {
@@ -116,7 +116,6 @@
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
    "at": "2026-11-21T04:29:52Z",
-   "checked": true,
    "exp": "2026-11-28T04:27:52Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/44865985765",
    "wf": "firmware-build.yml"
@@ -124,7 +123,6 @@
   "EH3D-NODE-HMI-GUI": {
    "art": true,
    "at": "2026-11-21T04:15:04Z",
-   "checked": true,
    "exp": "2026-11-28T04:14:25Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/44864652266",
    "wf": "firmware-build.yml"
@@ -437,15 +435,6 @@
     "at": "absent"
    }
   },
-  "EH3D-AUTOLEVEL": {
-   "fp": "509627bd1f9301fc",
-   "on": "2026-11-20",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-BUNGARD-GUI": {
    "fp": "786c022864d7db22",
    "on": "2026-11-20",
@@ -474,8 +463,8 @@
    }
   },
   "EH3D-ISOCAM": {
-   "fp": "89a14b3adf02eaf4",
-   "on": "2026-11-20",
+   "fp": "20a8a9ccf6cc4311",
+   "on": "2026-11-21",
    "r": {
     "ak": 3,
     "an": 3,
@@ -564,7 +553,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "99e50ca132daddb3",
+   "fp": "4e582c77ed1ca5ad",
    "on": "2026-11-21",
    "r": {
     "ak": 3,
@@ -573,8 +562,8 @@
    }
   },
   "EH3D-STENCILCAM": {
-   "fp": "c4531a417ffa1f68",
-   "on": "2026-11-20",
+   "fp": "f8eedb0c3c7ac247",
+   "on": "2026-11-21",
    "r": {
     "ak": 3,
     "an": 3,
@@ -591,17 +580,8 @@
    }
   },
   "EH3D-TOOL-MANAGER": {
-   "fp": "78f402617fe5b2ae",
-   "on": "2026-11-20",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-VISION-STUDIO": {
-   "fp": "302350cdda0e47ec",
-   "on": "2026-11-20",
+   "fp": "40d729eacc89b59e",
+   "on": "2026-11-21",
    "r": {
     "ak": 3,
     "an": 3,
@@ -935,20 +915,6 @@
     ]
    }
   },
-  "EH3D-AUTOLEVEL": {
-   "fp": "509627bd1f9301fc",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-BUNGARD-GUI": {
    "fp": "786c022864d7db22",
    "r": {
@@ -992,7 +958,7 @@
    }
   },
   "EH3D-ISOCAM": {
-   "fp": "89a14b3adf02eaf4",
+   "fp": "20a8a9ccf6cc4311",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1132,7 +1098,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "99e50ca132daddb3",
+   "fp": "4e582c77ed1ca5ad",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1146,7 +1112,7 @@
    }
   },
   "EH3D-STENCILCAM": {
-   "fp": "c4531a417ffa1f68",
+   "fp": "f8eedb0c3c7ac247",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1174,21 +1140,7 @@
    }
   },
   "EH3D-TOOL-MANAGER": {
-   "fp": "78f402617fe5b2ae",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-VISION-STUDIO": {
-   "fp": "302350cdda0e47ec",
+   "fp": "40d729eacc89b59e",
    "r": {
     "bad": 0,
     "ho": 0,
