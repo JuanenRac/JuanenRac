@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T16:36:31Z",
+ "asof": "2026-11-21T18:28:16Z",
  "ci": {
   "checked": 664,
   "red": [],
@@ -8,13 +8,13 @@
  "compute": {
   "top": [
    {
-    "min24": 2804,
-    "min7": 2804,
+    "min24": 2472,
+    "min7": 2472,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 446,
-    "min7": 642,
+    "min24": 447,
+    "min7": 637,
     "repo": "ARMOR-NODE-RADAR"
    },
    {
@@ -23,13 +23,13 @@
     "repo": "ARMOR-NODE-ELECTRICAL"
    },
    {
-    "min24": 392,
-    "min7": 593,
+    "min24": 393,
+    "min7": 587,
     "repo": "ARMOR-NODE-ALARM"
    },
    {
     "min24": 392,
-    "min7": 556,
+    "min7": 552,
     "repo": "ARMOR-NODE-SOLAR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ELECTRO-HOBBY-3D-UPDATER"
    }
   ],
-  "total24": 13904,
-  "total7": 41134,
+  "total24": 13572,
+  "total7": 40684,
   "warn": true
  },
  "delivery": {
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 75
+  "gap_minutes": 115
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13904
+    "min": 13572
    }
   }
  ],
@@ -610,7 +610,7 @@
    5009,
    6712,
    4279,
-   13904
+   13572
   ],
   "red": [
    3,

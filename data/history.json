@@ -13243,11 +13243,11 @@
   },
   {
    "actions": {
-    "fail": 72,
-    "min": 13904,
-    "ok": 1849,
-    "other": 42,
-    "runs": 1963
+    "fail": 66,
+    "min": 13572,
+    "ok": 1877,
+    "other": 48,
+    "runs": 1991
    },
    "areas": {
     "armor": {
@@ -13271,7 +13271,7 @@
      "tests": 90
     },
     "electro-hobby-3d": {
-     "ci": 75,
+     "ci": 100,
      "docs": 100,
      "hardware": 100,
      "production": 0,
@@ -13854,7 +13854,7 @@
    "sentinel": {
     "cand": 0,
     "gaps": 4,
-    "min": 13904,
+    "min": 13572,
     "red": 0
    },
    "tests": {
