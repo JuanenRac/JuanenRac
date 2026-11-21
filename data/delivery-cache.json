@@ -450,6 +450,15 @@
     "at": "present"
    }
   },
+  "EH3D-BUNGARD-GUI": {
+   "fp": "497cd041c0ee4ff1",
+   "on": "2026-11-21",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "EH3D-CAM-DEBUGGER": {
    "fp": "320f61fdd683f376",
    "on": "2026-11-20",
@@ -594,6 +603,15 @@
     "at": "present"
    }
   },
+  "EH3D-SUITE-LAUNCHER": {
+   "fp": "2ff28dd6d8b13683",
+   "on": "2026-11-21",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "EH3D-TOOL-MANAGER": {
    "fp": "40d729eacc89b59e",
    "on": "2026-11-21",
@@ -694,8 +712,8 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "8dbba4c8ba9e1f0b",
-   "on": "2026-11-20",
+   "fp": "274277670ed38e99",
+   "on": "2026-11-21",
    "r": {
     "ak": 0,
     "an": 1,
@@ -953,6 +971,20 @@
     ]
    }
   },
+  "EH3D-BUNGARD-GUI": {
+   "fp": "497cd041c0ee4ff1",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "EH3D-CAM-DEBUGGER": {
    "fp": "320f61fdd683f376",
    "r": {
@@ -1172,6 +1204,20 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 1,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-SUITE-LAUNCHER": {
+   "fp": "2ff28dd6d8b13683",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
     "why": [
      "family"
     ]

@@ -1,22 +1,15 @@
 {
- "asof": "2026-11-21T15:26:15Z",
+ "asof": "2026-11-21T16:36:31Z",
  "ci": {
   "checked": 664,
-  "red": [
-   {
-    "repo": "EH3D-ANDROID-CONTROL",
-    "since": "2026-11-21T15:16:25Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   }
-  ],
-  "red_total": 1
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 2965,
-    "min7": 2965,
+    "min24": 2804,
+    "min7": 2804,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -30,29 +23,28 @@
     "repo": "ARMOR-NODE-ELECTRICAL"
    },
    {
-    "min24": 399,
-    "min7": 482,
-    "repo": "ARMOR-DOCS"
-   },
-   {
-    "min24": 397,
-    "min7": 648,
-    "repo": "URTC"
-   },
-   {
     "min24": 392,
     "min7": 593,
     "repo": "ARMOR-NODE-ALARM"
+   },
+   {
+    "min24": 392,
+    "min7": 556,
+    "repo": "ARMOR-NODE-SOLAR"
+   },
+   {
+    "min24": 383,
+    "min7": 398,
+    "repo": "ELECTRO-HOBBY-3D-UPDATER"
    }
   ],
-  "total24": 14177,
-  "total7": 41293,
+  "total24": 13904,
+  "total7": 41134,
   "warn": true
  },
  "delivery": {
   "clmis": [
    "HYDRA-UMC-OS",
-   "TOOLS-GITHUB-ACTIONS-MONITOR",
    "URTC-DEVTOOLS"
   ],
   "eco": {
@@ -71,7 +63,7 @@
     "tagahead": 0
    },
    "electro-hobby-3d": {
-    "clmis": 1,
+    "clmis": 0,
     "nonotes": 0,
     "read": 4,
     "repos": 4,
@@ -106,7 +98,7 @@
   "eh3d": {
    "cand": 0,
    "read": 41,
-   "red": 1,
+   "red": 0,
    "repos": 41,
    "unpub": 0
   },
@@ -115,7 +107,7 @@
    "read": 4,
    "red": 0,
    "repos": 4,
-   "unpub": 1
+   "unpub": 0
   },
   "hydra-umc": {
    "cand": 0,
@@ -133,6 +125,24 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-21T16:36:31Z",
+   "kind": "red_ok",
+   "repo": "EH3D-ANDROID-CONTROL",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-21T16:36:31Z",
+   "kind": "released",
+   "repo": "EH3D-SUITE-LAUNCHER",
+   "tag": "v0.0.7"
+  },
+  {
+   "at": "2026-11-21T16:36:31Z",
+   "kind": "released",
+   "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+   "tag": "v2.1.7"
+  },
   {
    "at": "2026-11-21T15:26:15Z",
    "kind": "red_new",
@@ -294,30 +304,12 @@
    "kind": "released",
    "repo": "EH3D-AUTOLEVEL",
    "tag": "v0.1.2"
-  },
-  {
-   "at": "2026-11-21T07:28:01Z",
-   "kind": "released",
-   "repo": "EH3D-COMMON",
-   "tag": "v0.3.0"
-  },
-  {
-   "at": "2026-11-21T07:28:01Z",
-   "kind": "released",
-   "repo": "EH3D-ISOCAM",
-   "tag": "v0.1.6"
-  },
-  {
-   "at": "2026-11-21T07:28:01Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-PNP-FEEDER",
-   "tag": "v0.0.2"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 160
+  "gap_minutes": 75
  },
  "hygiene": {
   "allowed_missing": [],
@@ -340,17 +332,7 @@
     "bad": 0,
     "cand": 0,
     "hyg": 4,
-    "red": 1
-   }
-  },
-  {
-   "key": "red",
-   "level": "warn",
-   "p": {
-    "list": [
-     "EH3D-ANDROID-CONTROL"
-    ],
-    "n": 1
+    "red": 0
    }
   },
   {
@@ -359,10 +341,9 @@
    "p": {
     "list": [
      "HYDRA-UMC-OS",
-     "TOOLS-GITHUB-ACTIONS-MONITOR",
      "URTC-DEVTOOLS"
     ],
-    "n": 3
+    "n": 2
    }
   },
   {
@@ -390,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14177
+    "min": 13904
    }
   }
  ],
@@ -406,9 +387,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 80,
+  "none": 78,
   "norelease": 3,
-  "unverifiable": 19,
+  "unverifiable": 21,
   "unverified": 0,
   "verified": 33
  },
@@ -467,7 +448,7 @@
   "EH3D-SERVER": "v0.2.2",
   "EH3D-STENCILCAM": "v0.1.2",
   "EH3D-STUDIO": "v0.1.9",
-  "EH3D-SUITE-LAUNCHER": "v0.0.6",
+  "EH3D-SUITE-LAUNCHER": "v0.0.7",
   "EH3D-THERMAL-LAB": "v0.0.3",
   "EH3D-TOOL-MANAGER": "v0.1.2",
   "EH3D-UPDATER": "v0.1.1",
@@ -533,7 +514,7 @@
   "HYDRA-UMC-VLA-ENGINE": "v0.2.4",
   "HYDRA-UMC-VOICE-UI": "v0.2.6",
   "HYDRA-UMC-WATCH": "v0.3.5",
-  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.1.5",
+  "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.1.7",
   "URTC": "v0.5.1",
   "URTC-COMMON": "v0.3.1",
   "URTC-DEVTOOLS": "v0.0.4",
@@ -629,7 +610,7 @@
    5009,
    6712,
    4279,
-   14177
+   13904
   ],
   "red": [
    3,
@@ -650,7 +631,7 @@
    0,
    0,
    0,
-   1
+   0
   ]
  },
  "unpublished": {
@@ -661,16 +642,11 @@
     "version": "0.6.4"
    },
    {
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
-    "tag": "v2.1.5",
-    "version": "2.1.7"
-   },
-   {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
     "version": "0.0.8"
    }
   ],
-  "total": 3
+  "total": 2
  }
 }

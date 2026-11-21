@@ -523,7 +523,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 ### 💠 Contrôle central et clients opérateur
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.6|Trouve les programmes de la suite par leurs manifestes, les lance et garde les projets récents et le fichier de projet (.eh3dproj) avec le SHA-256 de ses fichiers ; la fenêtre et la découverte des machines sur le réseau sont prévues.|
+|[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.7|Trouve les programmes de la suite par leurs manifestes, les lance et garde les projets récents et le fichier de projet (.eh3dproj) avec le SHA-256 de ses fichiers ; la fenêtre et la découverte des machines sur le réseau sont prévues.|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.3.0|Modèle de données partagé : le conteneur de projet .eh3dproj avec contrôles d'intégrité, les types de télémétrie machine et la base de firmware reprise par chaque nœud ESP32.|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.2|Documentation de l'écosystème, guides d'assemblage, spécifications techniques des passerelles et manuels d'intégration.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.2|Lecteurs en Rust pour Gerber RS-274X, fichiers de perçage Excellon et G-code (dialectes GRBL, Marlin et PlanetCNC), tolérants aux fichiers endommagés.|
@@ -627,7 +627,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟠 | `█████░░░░░ 50%` | 2 dépôts sur 4 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 dépôts sur 4 ont des tests automatiques. |
-| Intégration continue | 🟡 | `███████▌░░ 75%` | 3 dépôts sur 4 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 4 dépôts sur 4 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟡 | `███████▌░░ 75%` | 3 dépôts sur 4 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 4 dépôts sur 4 ont le README dans les huit langues. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 dépôts sur 4 ont été vérifiés au moins dans un simulateur. |

@@ -516,7 +516,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 Core Control & Operator Clients
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.6 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
+| [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.7 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
 | [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.3.0 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.1.2 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.1.2 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
@@ -629,7 +629,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████░░░░░ 50%` | 2 of 4 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have automated tests. |
-| Continuous integration | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 4 of 4 repositories have the last CI run on the main branch green. |
 | Releases | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 4 of 4 repositories have the README in the eight languages. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 of 4 repositories have been checked at least in a simulator. |
