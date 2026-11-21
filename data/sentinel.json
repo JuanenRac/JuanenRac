@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T21:05:42Z",
+ "asof": "2026-11-21T21:40:06Z",
  "ci": {
   "checked": 665,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 2144,
-    "min7": 2144,
+    "min24": 1776,
+    "min7": 1776,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -28,18 +28,18 @@
     "repo": "URTC-DOCS"
    },
    {
-    "min24": 446,
-    "min7": 637,
+    "min24": 476,
+    "min7": 582,
     "repo": "ARMOR-NODE-RADAR"
    },
    {
-    "min24": 418,
+    "min24": 461,
     "min7": 591,
     "repo": "ARMOR-NODE-ELECTRICAL"
    }
   ],
-  "total24": 14808,
-  "total7": 42044,
+  "total24": 14640,
+  "total7": 41443,
   "warn": true
  },
  "delivery": {
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 110
+  "gap_minutes": 35
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14808
+    "min": 14640
    }
   }
  ],
@@ -610,7 +610,7 @@
    5009,
    6712,
    4279,
-   14808
+   14640
   ],
   "red": [
    3,
