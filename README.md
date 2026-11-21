@@ -566,7 +566,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | Repository | Version | Description |
 | :--- | :--- | :--- |
 | [EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD) | 0.0.8 | ESP32-S3 node for the box of a Bungard CCD machine: RS-232 of its control unit over Ethernet or Wi-Fi, with the machine's lamps and the spindle drive on the same board. |
-| [EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI) | 0.1.1 | 10.1-inch touch screen on an ESP32-P4 that controls a Bungard CCD machine: the screens of the desktop program, texts in 37 languages, spoken alerts and orders, resuming a stopped job through the server, and a hardware stop that does not go through the screen. |
+| [EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI) | 0.1.2 | 10.1-inch touch screen on an ESP32-P4 that controls a Bungard CCD machine: the screens of the desktop program, texts in 37 languages, spoken alerts and orders, resuming a stopped job through the server, and a hardware stop that does not go through the screen. |
 | [EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX) | 0.1.0 | ESP32-S3 node for the drill head of a Bungard CCD machine: the video of its camera (OV2640 or OV5640) as an IP camera (RTSP and ONVIF), the height of the table measured with a laser, the speed and the temperature of the spindle, and a protect output. |
 | [EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI) | 0.1.2 | General purpose ESP32-P4/ESP32-C6 Touchscreen 10 inch/mobile manual controller for real-time jogging, zero setting (G54/G55), and E-STOP, in 37 languages. |
 
@@ -574,7 +574,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 💠 PHOENIX projects:
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.1.4 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
+| [EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB) | 0.1.5 | EDA Environment: schematic capture, PCB layout, verification tools, circuit simulation, and specialized modules for SMPS and RF. |
 | [EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD) | 0.1.2 | Parametric mechanical CAD focused on the design of enclosures, chassis, and thermal heat sinks. |
 | [EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP) | 0.0.7 | Prepares 3D prints: reads STL, OBJ and 3MF models, holds 120 printer profiles, slices into G-code with safe temperature limits and talks to Moonraker, OctoPrint and EH3D-SERVER (tried only on simulators). |
 | [EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER) | 0.0.4 | Comprehensive engineering verifier for cross-validations and design quality control. |
@@ -646,7 +646,7 @@ The group holds the programs that stand above the four ecosystems and need none 
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | Watches the GitHub Actions workflows of every repository you own and shows what is red, stuck or waiting on one local page, in eight languages, with metrics for Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | Android app of the monitor: read the state and the alerts of your own monitor on the phone (scaffolding only; nothing built yet). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Smartwatch (Wear OS) companion of the Android app: a glance at the CI state and the alerts (scaffolding only; nothing built yet). |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | The one window and command line that hand over to the updater of each ecosystem. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | The one window and command line that hand over to the updater of each ecosystem. |
 
 ---
 

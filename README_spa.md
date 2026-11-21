@@ -567,14 +567,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |Repositorio|Versión|Descripción|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.8|Nodo ESP32-S3 para la caja de una máquina Bungard CCD: el RS-232 de su unidad de control por Ethernet o Wi-Fi, con las lámparas de la máquina y el variador del husillo en la misma placa.|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.1|Pantalla táctil de 10,1 pulgadas con un ESP32-P4 que controla una máquina Bungard CCD: las pantallas del programa de escritorio, alertas y órdenes habladas en ocho idiomas y una parada por hardware que no pasa por la pantalla.|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.2|Pantalla táctil de 10,1 pulgadas con un ESP32-P4 que controla una máquina Bungard CCD: las pantallas del programa de escritorio, alertas y órdenes habladas en ocho idiomas y una parada por hardware que no pasa por la pantalla.|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.0|Nodo ESP32-S3 para el cabezal de taladro de una máquina Bungard CCD: el vídeo de su cámara (OV2640 u OV5640) como cámara IP (RTSP y ONVIF), la altura de la mesa medida con un láser, la velocidad y la temperatura del husillo y una salida de protección.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.2|Controlador manual táctil de 10 pulgadas / móvil de uso general con ESP32-P4/ESP32-C6 para el movimiento en tiempo real (jog), la puesta a cero (G54/G55) y la parada de emergencia.|
 
 ### 💠 Proyectos PHOENIX:
 |Repositorio|Versión|Descripción|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.4|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.5|Entorno EDA: captura de esquemas, diseño de PCB, herramientas de verificación, simulación de circuitos y módulos especializados para fuentes conmutadas (SMPS) y RF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|CAD mecánico paramétrico centrado en el diseño de carcasas, chasis y disipadores térmicos.|
 |[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.7|Prepara impresiones 3D: lee modelos STL, OBJ y 3MF, incluye 120 perfiles de impresora, lamina a G-code con límites de temperatura seguros y se comunica con Moonraker, OctoPrint y EH3D-SERVER (probado solo con simuladores).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificador de ingeniería integral para validaciones cruzadas y control de calidad del diseño.|
@@ -644,7 +644,7 @@ El grupo reúne los programas que están por encima de los cuatro ecosistemas y 
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | Vigila los workflows de GitHub Actions de todos tus repositorios y muestra qué está en rojo, atascado o esperando en una página local, en ocho idiomas, con métricas para Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | App Android del monitor: lee en el móvil el estado y las alertas de tu propio monitor (solo andamiaje; aún no hay nada construido). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Acompañante para reloj (Wear OS) de la app Android: un vistazo al estado del CI y a las alertas (solo andamiaje; aún no hay nada construido). |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | La ventana y la línea de órdenes únicas que ceden el trabajo al actualizador de cada ecosistema. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | La ventana y la línea de órdenes únicas que ceden el trabajo al actualizador de cada ecosistema. |
 
 \---
 

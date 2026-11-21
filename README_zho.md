@@ -567,14 +567,14 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.8|用于 Bungard CCD 机器机箱的 ESP32-S3 节点：通过以太网或 Wi-Fi 访问其控制单元的 RS-232，机器的指示灯和主轴驱动器在同一块板上。|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.1|基于 ESP32-P4 的 10.1 英寸触摸屏，用于控制 Bungard CCD 机器：桌面程序的各个界面、八种语言的语音提示与语音指令，以及不经过屏幕的硬件急停。|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.2|基于 ESP32-P4 的 10.1 英寸触摸屏，用于控制 Bungard CCD 机器：桌面程序的各个界面、八种语言的语音提示与语音指令，以及不经过屏幕的硬件急停。|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.0|用于 Bungard CCD 机器钻头的 ESP32-S3 节点：其摄像头（OV2640 或 OV5640）的视频以 IP 摄像头形式（RTSP 和 ONVIF）提供，用激光测量工作台高度，测量主轴转速和温度，并带有保护输出。|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.2|通用的 ESP32-P4/ESP32-C6 10 英寸触摸屏／移动手动控制器，支持实时点动、归零设置（G54/G55）和急停。|
 
 ### 💠 PHOENIX 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.4|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.5|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
 |[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.7|准备3D打印：读取STL、OBJ和3MF模型，内置120个打印机配置文件，切片为带安全温度限制的G-code，并与Moonraker、OctoPrint及EH3D-SERVER通信（仅在模拟器上试过）。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|用于交叉验证和设计质量控制的综合工程验证器。|
@@ -644,7 +644,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | 监视你所有仓库的 GitHub Actions 工作流，在本地页面上以八种语言显示哪些是红的、卡住的或在等待的，并提供用于 Grafana 的指标。 |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | 监控器的 Android 应用：在手机上查看你自己的监控器的状态和警报（仅有框架，尚未构建任何内容）。 |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Android 应用的智能手表（Wear OS）配套应用：一眼查看 CI 状态和警报（仅有框架，尚未构建任何内容）。 |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | 统一的窗口和命令行，把工作交给各个生态系统的更新器。 |
 
 \---
 

@@ -13243,11 +13243,11 @@
   },
   {
    "actions": {
-    "fail": 84,
-    "min": 12749,
-    "ok": 1506,
-    "other": 81,
-    "runs": 1671
+    "fail": 81,
+    "min": 13196,
+    "ok": 1559,
+    "other": 72,
+    "runs": 1712
    },
    "areas": {
     "armor": {
@@ -13456,7 +13456,7 @@
     ],
     "EH3D-NODE-BUNGARD-HMI": [
      0,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-NODE-HMI-GUI": [
      0,
@@ -13488,7 +13488,7 @@
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-     "0.1.4"
+     "0.1.5"
     ],
     "EH3D-PHOENIX-PNP": [
      1,
@@ -13540,7 +13540,7 @@
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
-     "0.1.5"
+     "0.1.6"
     ],
     "HYDRA-UMC": [
      0,
@@ -13838,8 +13838,8 @@
    "sentinel": {
     "cand": 3,
     "gaps": 4,
-    "min": 12749,
-    "red": 1
+    "min": 13196,
+    "red": 0
    },
    "tests": {
     "ARMOR-COMMON": 659,
@@ -13878,12 +13878,12 @@
     "EH3D-MANUFACTURING-PROFILE": 3,
     "EH3D-NODE-PNP-FEEDER": 102,
     "EH3D-NODE-PNP-HEAD": 85,
-    "EH3D-PHOENIX-3DP": 659,
+    "EH3D-PHOENIX-3DP": 684,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 995,
+    "EH3D-PHOENIX-CNC": 971,
     "EH3D-PHOENIX-LASER": 895,
-    "EH3D-PHOENIX-PCB": 5314,
-    "EH3D-PHOENIX-PNP": 1806,
+    "EH3D-PHOENIX-PCB": 5350,
+    "EH3D-PHOENIX-PNP": 1844,
     "EH3D-PROJECT-PASSPORT": 3,
     "EH3D-ROUTEPRO": 125,
     "EH3D-SERVER": 757,
@@ -13955,7 +13955,7 @@
     "HYDRA-UMC-VLA-ENGINE": 460,
     "HYDRA-UMC-VOICE-UI": 471,
     "HYDRA-UMC-WATCH": 215,
-    "TOOLS-GITHUB-ACTIONS-MONITOR": 5561,
+    "TOOLS-GITHUB-ACTIONS-MONITOR": 5736,
     "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": 77,
     "URTC": 319,
     "URTC-COMMON": 3049,

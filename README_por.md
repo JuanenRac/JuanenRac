@@ -567,14 +567,14 @@ Calculado para todo o ecossistema com dados reais, nunca à mão; uma luz passa 
 |Repositório|Versão|Descrição|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.8|Nó ESP32-S3 para a caixa de uma máquina Bungard CCD: o RS-232 da sua unidade de controlo por Ethernet ou Wi-Fi, com as lâmpadas da máquina e o variador do fuso na mesma placa.|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.1|Ecrã tátil de 10,1 polegadas com um ESP32-P4 que controla uma máquina Bungard CCD: os ecrãs do programa de secretária, alertas e ordens faladas em oito idiomas e uma paragem por hardware que não passa pelo ecrã.|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.2|Ecrã tátil de 10,1 polegadas com um ESP32-P4 que controla uma máquina Bungard CCD: os ecrãs do programa de secretária, alertas e ordens faladas em oito idiomas e uma paragem por hardware que não passa pelo ecrã.|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.0|Nó ESP32-S3 para a cabeça de furação de uma máquina Bungard CCD: o vídeo da sua câmara (OV2640 ou OV5640) como câmara IP (RTSP e ONVIF), a altura da mesa medida com um laser, a velocidade e a temperatura do fuso e uma saída de proteção.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.2|Controlador manual tátil de 10 polegadas / móvel de uso geral com ESP32-P4/ESP32-C6 para o movimento em tempo real (jog), a colocação a zero (G54/G55) e a paragem de emergência.|
 
 ### 💠 Projetos PHOENIX:
 |Repositório|Versão|Descrição|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.4|Ambiente EDA: captura de esquemas, desenho de PCB, ferramentas de verificação, simulação de circuitos e módulos especializados para fontes comutadas (SMPS) e RF.|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.5|Ambiente EDA: captura de esquemas, desenho de PCB, ferramentas de verificação, simulação de circuitos e módulos especializados para fontes comutadas (SMPS) e RF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|CAD mecânico paramétrico centrado no projeto de caixas, chassis e dissipadores térmicos.|
 |[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.7|Prepara impressões 3D: lê modelos STL, OBJ e 3MF, inclui 120 perfis de impressora, fatia para G-code com limites de temperatura seguros e comunica com o Moonraker, o OctoPrint e o EH3D-SERVER (testado apenas em simuladores).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificador de engenharia abrangente para validações cruzadas e controlo de qualidade do projeto.|
@@ -644,7 +644,7 @@ O grupo reúne os programas que estão acima dos quatro ecossistemas e não prec
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | Vigia os workflows do GitHub Actions de todos os seus repositórios e mostra, numa página local, em oito idiomas, o que está a vermelho, encravado ou à espera, com métricas para o Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | Aplicação Android do monitor: lê no telemóvel o estado e os alertas do teu próprio monitor (apenas estrutura de base; ainda não há nada construído). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Companheiro para relógio (Wear OS) da aplicação Android: uma vista de olhos ao estado do CI e aos alertas (apenas estrutura de base; ainda não há nada construído). |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | A janela e a linha de comandos únicas que passam o trabalho ao atualizador de cada ecossistema. |
 
 \---
 

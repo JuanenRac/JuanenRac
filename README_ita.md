@@ -567,14 +567,14 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 |Repository|Versione|Descrizione|
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.8|Nodo ESP32-S3 per la scatola di una macchina Bungard CCD: l'RS-232 della sua unità di controllo via Ethernet o Wi-Fi, con le lampade della macchina e l'azionamento del mandrino sulla stessa scheda.|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.1|Touchscreen da 10,1 pollici con ESP32-P4 che controlla una macchina Bungard CCD: le schermate del programma desktop, avvisi e comandi vocali in otto lingue e un arresto hardware che non passa dallo schermo.|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.2|Touchscreen da 10,1 pollici con ESP32-P4 che controlla una macchina Bungard CCD: le schermate del programma desktop, avvisi e comandi vocali in otto lingue e un arresto hardware che non passa dallo schermo.|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.0|Nodo ESP32-S3 per la testa di foratura di una macchina Bungard CCD: il video della sua telecamera (OV2640 o OV5640) come telecamera IP (RTSP e ONVIF), l'altezza del tavolo misurata con un laser, la velocità e la temperatura del mandrino e un'uscita di protezione.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.2|Controller manuale touch da 10 pollici / mobile di uso generale con ESP32-P4/ESP32-C6 per il jog in tempo reale, l'azzeramento (G54/G55) e l'arresto di emergenza.|
 
 ### 💠 Progetti PHOENIX:
 |Repository|Versione|Descrizione|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.4|Ambiente EDA: acquisizione di schemi, layout di PCB, strumenti di verifica, simulazione di circuiti e moduli specializzati per alimentatori switching (SMPS) e RF.|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.5|Ambiente EDA: acquisizione di schemi, layout di PCB, strumenti di verifica, simulazione di circuiti e moduli specializzati per alimentatori switching (SMPS) e RF.|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.2|CAD meccanico parametrico dedicato alla progettazione di contenitori, telai e dissipatori termici.|
 |[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.7|Prepara le stampe 3D: legge modelli STL, OBJ e 3MF, include 120 profili di stampante, esegue lo slicing in G-code con limiti di temperatura sicuri e dialoga con Moonraker, OctoPrint ed EH3D-SERVER (provato solo su simulatori).|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.4|Verificatore ingegneristico completo per le validazioni incrociate e il controllo di qualità del progetto.|
@@ -644,7 +644,7 @@ Il gruppo raccoglie i programmi che stanno sopra i quattro ecosistemi e non ne r
 | [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.5 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.0.1 | App Android del monitor: leggi sul telefono lo stato e gli avvisi del tuo monitor (solo struttura di base; non è ancora stato costruito nulla). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Compagno per smartwatch (Wear OS) dell'app Android: uno sguardo allo stato della CI e agli avvisi (solo struttura di base; non è ancora stato costruito nulla). |
-| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.5 | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |
+| [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |
 
 \---
 

@@ -86,15 +86,15 @@
   },
   "ARMOR-WATCH": {
    "art": true,
-   "at": "2026-11-15T10:12:48Z",
-   "exp": "2026-11-22T10:12:00Z",
-   "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/43702712974",
+   "at": "2026-11-21T04:55:12Z",
+   "checked": true,
+   "exp": "2026-11-28T04:54:28Z",
+   "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/44868136464",
    "wf": "apk-build.yml"
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-21T04:07:27Z",
-   "checked": true,
    "exp": "2026-11-28T04:04:31Z",
    "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/44863930851",
    "wf": "apk-build.yml"
@@ -115,16 +115,18 @@
   },
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
-   "at": "2026-11-13T00:59:53Z",
-   "exp": "2026-12-13T00:58:08Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/43340654808",
+   "at": "2026-11-21T04:29:52Z",
+   "checked": true,
+   "exp": "2026-11-28T04:27:52Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/44865985765",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-HMI-GUI": {
    "art": true,
-   "at": "2026-11-13T01:03:27Z",
-   "exp": "2026-12-13T01:00:58Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/43340668472",
+   "at": "2026-11-21T04:15:04Z",
+   "checked": true,
+   "exp": "2026-11-28T04:14:25Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/44864652266",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC": {
@@ -480,6 +482,24 @@
     "at": "present"
    }
   },
+  "EH3D-NODE-BUNGARD-HMI": {
+   "fp": "860df9e133bab958",
+   "on": "2026-11-21",
+   "r": {
+    "ak": 2,
+    "an": 2,
+    "at": "present"
+   }
+  },
+  "EH3D-NODE-HMI-GUI": {
+   "fp": "9770a1b6457d2780",
+   "on": "2026-11-21",
+   "r": {
+    "ak": 2,
+    "an": 2,
+    "at": "present"
+   }
+  },
   "EH3D-PHOENIX-3DP": {
    "fp": "399585d000286d68",
    "on": "2026-11-20",
@@ -509,15 +529,6 @@
   },
   "EH3D-PHOENIX-LASER": {
    "fp": "a8c2276b47aef7a4",
-   "on": "2026-11-20",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
-  "EH3D-PHOENIX-PCB": {
-   "fp": "303e27f092494ff5",
    "on": "2026-11-20",
    "r": {
     "ak": 3,
@@ -985,6 +996,34 @@
     ]
    }
   },
+  "EH3D-NODE-BUNGARD-HMI": {
+   "fp": "860df9e133bab958",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 2,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-NODE-HMI-GUI": {
+   "fp": "9770a1b6457d2780",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 2,
+    "why": [
+     "family"
+    ]
+   }
+  },
   "EH3D-PHOENIX-3DP": {
    "fp": "399585d000286d68",
    "r": {
@@ -1029,20 +1068,6 @@
   },
   "EH3D-PHOENIX-LASER": {
    "fp": "a8c2276b47aef7a4",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
-  "EH3D-PHOENIX-PCB": {
-   "fp": "303e27f092494ff5",
    "r": {
     "bad": 0,
     "ho": 0,
