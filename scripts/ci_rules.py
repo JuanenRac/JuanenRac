@@ -6,8 +6,8 @@
 # =============================================================================
 """ONE definition of "red" for every place that looks at a workflow run: the Sentinel tab, the Builds tab and the CI watch issue.
 
-A finished run is red when its conclusion is `failure`, `timed_out`, `startup_failure` or `action_required` (a run that waits for an approval nobody gave
-is a build that did not happen). `cancelled`, `skipped`, `neutral`, `stale` and a missing conclusion say nothing about the state of the code, so they are
+A finished run is red when its conclusion is `failure`, `timed_out` or `startup_failure`. `action_required` (a run that waits for a person to approve it) is a warning,
+not a failure of the code. `action_required`, `cancelled`, `skipped`, `neutral`, `stale` and a missing conclusion say nothing about the state of the code, so they are
 passed over and the previous finished run of the same workflow decides. The runs that GitHub creates for dependency updates ("dynamic" runs, with no workflow
 file of the repository) are not builds of the repository and never count. Stdlib only.
 """
@@ -15,8 +15,8 @@ from __future__ import annotations
 
 from typing import Iterable, Mapping
 
-RED_CONCLUSIONS = ("failure", "timed_out", "startup_failure", "action_required")
-IGNORED_CONCLUSIONS = ("cancelled", "skipped", "neutral", "stale")
+RED_CONCLUSIONS = ("failure", "timed_out", "startup_failure")
+IGNORED_CONCLUSIONS = ("action_required", "cancelled", "skipped", "neutral", "stale")
 
 
 def is_red(conclusion: object) -> bool:

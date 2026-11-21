@@ -7,9 +7,9 @@ says so, and the Sentinel tab, the Builds tab and the CI watch issue all use it.
 
 | Conclusion of a completed run | Effect |
 |---|---|
-| `failure`, `timed_out`, `startup_failure`, `action_required` | red |
+| `failure`, `timed_out`, `startup_failure` | red |
 | `success` | green |
-| `cancelled`, `skipped`, `neutral`, `stale`, or no conclusion yet | says nothing: the run before it decides, so an older failure is not hidden |
+| `action_required` (waits for an approval), `cancelled`, `skipped`, `neutral`, `stale`, or no conclusion yet | says nothing: the run before it decides, so an older failure is not hidden |
 | a run of another branch | not looked at |
 | a `dynamic` run (the internal jobs of dependency updates, with no workflow file of the repository) | never a build of the repository |
 

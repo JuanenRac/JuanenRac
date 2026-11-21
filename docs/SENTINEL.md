@@ -10,9 +10,9 @@ page, with the read-only token of the workflow, and it is decided by fixed rules
 
 | Conclusion of the last finished run of a workflow on the default branch | Counts as |
 |---|---|
-| `failure`, `timed_out`, `startup_failure`, `action_required` | red |
+| `failure`, `timed_out`, `startup_failure` | red |
 | `success` | green |
-| `cancelled`, `skipped`, `neutral`, `stale`, none | passed over: the run before it decides |
+| `action_required` (waits for an approval), `cancelled`, `skipped`, `neutral`, `stale`, none | passed over: the run before it decides |
 
 Runs that GitHub generates for dependency updates (event `dynamic`, no workflow file of the repository) never decide the state of a workflow.
 

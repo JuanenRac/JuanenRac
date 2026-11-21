@@ -386,7 +386,7 @@
    "skip_monitor": ""
   },
   {
-   "name": "action_required_is_red",
+   "name": "action_required_is_not_red",
    "default_branch": "main",
    "runs": [
     {
@@ -412,10 +412,40 @@
      "sha": "000001a"
     }
    ],
+   "red": [],
+   "skip_monitor": ""
+  },
+  {
+   "name": "action_required_does_not_hide_a_failure",
+   "default_branch": "main",
+   "runs": [
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "failure",
+     "event": "push",
+     "started": "2001-12-21T11:05:00Z",
+     "url": "https://example.invalid/run/5",
+     "sha": "0000005"
+    },
+    {
+     "name": "ci.yml",
+     "path": ".github/workflows/ci.yml",
+     "status": "completed",
+     "branch": "main",
+     "conclusion": "action_required",
+     "event": "push",
+     "started": "2001-12-21T11:06:00Z",
+     "url": "https://example.invalid/run/6",
+     "sha": "0000006"
+    }
+   ],
    "red": [
     {
      "workflow": "ci.yml",
-     "conclusion": "action_required",
+     "conclusion": "failure",
      "streak": 1
     }
    ],

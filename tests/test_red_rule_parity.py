@@ -99,7 +99,7 @@ class SharedRuleTests(unittest.TestCase):
 
     def test_the_cases_cover_the_rule(self):
         names = {case["name"] for case in CASES}
-        for wanted in ("cancelled_does_not_hide_a_failure", "dynamic_runs_are_not_builds", "other_branches_do_not_count", "recovered_is_green", "action_required_is_red"):
+        for wanted in ("cancelled_does_not_hide_a_failure", "dynamic_runs_are_not_builds", "other_branches_do_not_count", "recovered_is_green", "action_required_is_not_red"):
             self.assertIn(wanted, names)
         for conclusion in ci_rules.RED_CONCLUSIONS:
             if conclusion != "failure":
