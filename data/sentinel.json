@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T18:28:16Z",
+ "asof": "2026-11-21T19:17:00Z",
  "ci": {
   "checked": 664,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 2472,
-    "min7": 2472,
+    "min24": 2391,
+    "min7": 2391,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -38,8 +38,8 @@
     "repo": "ELECTRO-HOBBY-3D-UPDATER"
    }
   ],
-  "total24": 13572,
-  "total7": 40684,
+  "total24": 13309,
+  "total7": 40591,
   "warn": true
  },
  "delivery": {
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 115
+  "gap_minutes": 50
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13572
+    "min": 13309
    }
   }
  ],
@@ -610,7 +610,7 @@
    5009,
    6712,
    4279,
-   13572
+   13309
   ],
   "red": [
    3,
