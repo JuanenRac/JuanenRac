@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T11:43:51Z",
+ "asof": "2026-11-21T11:53:59Z",
  "ci": {
   "checked": 639,
   "red": [
@@ -14,9 +14,15 @@
     "since": "2026-11-21T10:34:27Z",
     "streak": 1,
     "wf": "ci.yml"
+   },
+   {
+    "repo": "URTC-DOCS",
+    "since": "2026-11-21T11:46:11Z",
+    "streak": 1,
+    "wf": "nightly.yml"
    }
   ],
-  "red_total": 2
+  "red_total": 3
  },
  "compute": {
   "top": [
@@ -32,11 +38,11 @@
    },
    {
     "min24": 400,
-    "min7": 483,
+    "min7": 482,
     "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 393,
+    "min24": 392,
     "min7": 593,
     "repo": "ARMOR-NODE-ALARM"
    },
@@ -51,8 +57,8 @@
     "repo": "URTC"
    }
   ],
-  "total24": 13472,
-  "total7": 39471,
+  "total24": 13475,
+  "total7": 39485,
   "warn": true
  },
  "delivery": {
@@ -132,92 +138,98 @@
   "urtc": {
    "cand": 0,
    "read": 11,
-   "red": 0,
+   "red": 1,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "red_new",
    "repo": "EH3D-COMMON",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "red_new",
    "repo": "EH3D-NODE-BUNGARD-HMI",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
+   "kind": "red_new",
+   "repo": "URTC-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-ANDROID-CONTROL",
    "tag": "v0.1.7"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-GERBERVIEWER",
    "tag": "v0.0.9"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-IOS-CONTROL",
    "tag": "v0.1.6"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-PHOENIX-3DP",
    "tag": "v0.0.8"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-PHOENIX-CAD",
    "tag": "v0.1.3"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-PHOENIX-CNC",
    "tag": "v0.2.3"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-PHOENIX-LASER",
    "tag": "v0.1.6"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-PHOENIX-PNP",
    "tag": "v0.1.4"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-STENCILCAM",
    "tag": "v0.1.2"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "EH3D-STUDIO",
    "tag": "v0.1.9"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "HYDRA-UMC",
    "tag": "v0.3.0"
   },
   {
-   "at": "2026-11-21T11:43:51Z",
+   "at": "2026-11-21T11:53:59Z",
    "kind": "released",
    "repo": "HYDRA-UMC-TWIN",
    "tag": "v0.2.0"
@@ -311,18 +323,12 @@
    "kind": "released",
    "repo": "ELECTRO-HOBBY-3D-UPDATER",
    "tag": "v0.1.6"
-  },
-  {
-   "at": "2026-11-21T04:13:35Z",
-   "kind": "red_new",
-   "repo": "EH3D-NODE-HMI-GUI",
-   "wf": "firmware-build.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 260
+  "gap_minutes": 270
  },
  "hygiene": {
   "allowed_missing": [],
@@ -345,7 +351,7 @@
     "bad": 0,
     "cand": 0,
     "hyg": 4,
-    "red": 2
+    "red": 3
    }
   },
   {
@@ -354,9 +360,10 @@
    "p": {
     "list": [
      "EH3D-COMMON",
-     "EH3D-NODE-BUNGARD-HMI"
+     "EH3D-NODE-BUNGARD-HMI",
+     "URTC-DOCS"
     ],
-    "n": 2
+    "n": 3
    }
   },
   {
@@ -395,7 +402,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13472
+    "min": 13475
    }
   }
  ],
@@ -630,7 +637,7 @@
    5009,
    6712,
    4279,
-   13472
+   13475
   ],
   "red": [
    3,
@@ -651,7 +658,7 @@
    0,
    0,
    0,
-   2
+   3
   ]
  },
  "unpublished": {
