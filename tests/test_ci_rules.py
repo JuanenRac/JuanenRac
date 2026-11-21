@@ -27,17 +27,16 @@ class Api:
 
 
 class CriterionTests(unittest.TestCase):
-    def test_the_four_red_conclusions(self):
-        for conclusion in ("failure", "timed_out", "startup_failure", "action_required"):
+    def test_the_three_red_conclusions(self):
+        for conclusion in ("failure", "timed_out", "startup_failure"):
             self.assertTrue(ci_rules.is_red(conclusion), conclusion)
-        for conclusion in ("success", "cancelled", "skipped", "neutral", "stale", "", None):
+        for conclusion in ("success", "action_required", "cancelled", "skipped", "neutral", "stale", "", None):
             self.assertFalse(ci_rules.is_red(conclusion), conclusion)
 
     def test_what_says_nothing(self):
-        for conclusion in ("cancelled", "skipped", "neutral", "stale", "", None):
+        for conclusion in ("action_required", "cancelled", "skipped", "neutral", "stale", "", None):
             self.assertTrue(ci_rules.says_nothing(conclusion), conclusion)
         self.assertFalse(ci_rules.says_nothing("success"))
-        self.assertFalse(ci_rules.says_nothing("action_required"))
 
     def test_dynamic_runs_never_decide(self):
         self.assertTrue(ci_rules.is_dynamic({"event": "dynamic", "path": "dynamic/dependabot/dependabot-updates"}))
@@ -59,8 +58,8 @@ class ThreePlacesAgreeTests(unittest.TestCase):
             watch_red = any(r.conclusion in ci_watch.RED for r in ci_watch.latest_runs(Api(payload), "o", inv.Repo("r", "main", "armor")))
             self.assertEqual((sentinel_red, tab_red, watch_red), (ci_rules.is_red(conclusion),) * 3, conclusion)
 
-    def test_an_unapproved_run_is_red_and_a_dynamic_failure_is_not(self):
-        self.assertEqual([r["wf"] for r in sn.red_workflows([{"path": ".github/workflows/ci.yml", "conclusion": "action_required", "at": "2001-12-21T11:00:00Z"}])[0]], ["ci.yml"])
+    def test_an_unapproved_run_is_not_red_and_a_dynamic_failure_is_not(self):
+        self.assertEqual(sn.red_workflows([{"path": ".github/workflows/ci.yml", "conclusion": "action_required", "at": "2001-12-21T11:00:00Z"}]), ([], 0))
         dynamic = {"path": ".github/workflows/ci.yml", "event": "dynamic", "conclusion": "failure", "at": "2001-12-21T11:00:00Z"}
         self.assertEqual(sn.red_workflows([dynamic]), ([], 0))
         payload = {"workflow_runs": [{"name": "Updates", "workflow_id": 9, "event": "dynamic", "conclusion": "failure", "html_url": "u", "head_sha": "abc"}]}
