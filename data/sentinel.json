@@ -1,28 +1,22 @@
 {
- "asof": "2026-11-21T03:54:22Z",
+ "asof": "2026-11-21T04:13:35Z",
  "ci": {
   "checked": 636,
   "red": [
    {
-    "repo": "EH3D-COMMON",
-    "since": "2026-11-21T03:46:07Z",
+    "repo": "EH3D-NODE-HMI-GUI",
+    "since": "2026-11-21T04:05:47Z",
     "streak": 1,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-IOS-CONTROL",
-    "since": "2026-11-21T03:21:58Z",
-    "streak": 1,
-    "wf": "ci.yml"
+    "wf": "firmware-build.yml"
    }
   ],
-  "red_total": 2
+  "red_total": 1
  },
  "compute": {
   "top": [
    {
-    "min24": 2442,
-    "min7": 2442,
+    "min24": 2893,
+    "min7": 2893,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -31,14 +25,14 @@
     "repo": "ARMOR-NODE-ELECTRICAL"
    },
    {
-    "min24": 395,
-    "min7": 633,
-    "repo": "EH3D-PHOENIX-PCB"
-   },
-   {
     "min24": 391,
     "min7": 652,
     "repo": "URTC"
+   },
+   {
+    "min24": 375,
+    "min7": 386,
+    "repo": "ELECTRO-HOBBY-3D-UPDATER"
    },
    {
     "min24": 372,
@@ -51,14 +45,13 @@
     "repo": "ARMOR-NODE-ALARM"
    }
   ],
-  "total24": 12073,
-  "total7": 38655,
+  "total24": 12749,
+  "total7": 39379,
   "warn": true
  },
  "delivery": {
   "clmis": [
    "ARMOR-COMMON",
-   "EH3D-COMMON",
    "HYDRA-UMC",
    "HYDRA-UMC-OS",
    "URTC-DEVTOOLS"
@@ -72,7 +65,7 @@
     "tagahead": 0
    },
    "eh3d": {
-    "clmis": 1,
+    "clmis": 0,
     "nonotes": 0,
     "read": 41,
     "repos": 41,
@@ -114,7 +107,7 @@
   "eh3d": {
    "cand": 0,
    "read": 41,
-   "red": 2,
+   "red": 1,
    "repos": 41,
    "unpub": 0
   },
@@ -141,6 +134,42 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-21T04:13:35Z",
+   "kind": "red_new",
+   "repo": "EH3D-NODE-HMI-GUI",
+   "wf": "firmware-build.yml"
+  },
+  {
+   "at": "2026-11-21T04:13:35Z",
+   "kind": "red_ok",
+   "repo": "EH3D-COMMON",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-21T04:13:35Z",
+   "kind": "red_ok",
+   "repo": "EH3D-IOS-CONTROL",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-21T04:13:35Z",
+   "kind": "released",
+   "repo": "EH3D-ANDROID-CONTROL",
+   "tag": "v0.1.6"
+  },
+  {
+   "at": "2026-11-21T04:13:35Z",
+   "kind": "released",
+   "repo": "EH3D-COMMON",
+   "tag": "v0.2.9"
+  },
+  {
+   "at": "2026-11-21T04:13:35Z",
+   "kind": "released",
+   "repo": "EH3D-IOS-CONTROL",
+   "tag": "v0.1.5"
+  },
   {
    "at": "2026-11-21T03:54:22Z",
    "kind": "red_new",
@@ -284,48 +313,12 @@
    "kind": "red_ok",
    "repo": "EH3D-CORE-LIBS",
    "wf": "rust.yml"
-  },
-  {
-   "at": "2026-11-20T14:57:14Z",
-   "kind": "red_ok",
-   "repo": "EH3D-VISION-STUDIO",
-   "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-20T14:57:14Z",
-   "kind": "released",
-   "repo": "EH3D-VISION-STUDIO",
-   "tag": "v0.1.2"
-  },
-  {
-   "at": "2026-11-20T14:30:49Z",
-   "kind": "red_new",
-   "repo": "EH3D-COMMON",
-   "wf": "ci.yml"
-  },
-  {
-   "at": "2026-11-20T14:30:49Z",
-   "kind": "red_new",
-   "repo": "EH3D-COMMON",
-   "wf": "rust.yml"
-  },
-  {
-   "at": "2026-11-20T14:30:49Z",
-   "kind": "red_new",
-   "repo": "EH3D-CORE-LIBS",
-   "wf": "rust.yml"
-  },
-  {
-   "at": "2026-11-20T14:30:49Z",
-   "kind": "red_new",
-   "repo": "EH3D-VISION-STUDIO",
-   "wf": "ci.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 175
+  "gap_minutes": 20
  },
  "hygiene": {
   "allowed_missing": [],
@@ -348,7 +341,7 @@
     "bad": 0,
     "cand": 3,
     "hyg": 4,
-    "red": 2
+    "red": 1
    }
   },
   {
@@ -356,10 +349,9 @@
    "level": "warn",
    "p": {
     "list": [
-     "EH3D-COMMON",
-     "EH3D-IOS-CONTROL"
+     "EH3D-NODE-HMI-GUI"
     ],
-    "n": 2
+    "n": 1
    }
   },
   {
@@ -412,7 +404,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 12073
+    "min": 12749
    }
   }
  ],
@@ -469,11 +461,11 @@
   "ARMOR-UPDATER": "v0.2.4",
   "ARMOR-VISION": "v0.1.8",
   "ARMOR-VOICE-AI": "v0.3.7",
-  "EH3D-ANDROID-CONTROL": "v0.1.5",
+  "EH3D-ANDROID-CONTROL": "v0.1.6",
   "EH3D-AUTOLEVEL": "v0.1.1",
   "EH3D-BUNGARD-GUI": "v0.2.9",
   "EH3D-CAM-DEBUGGER": "v0.0.8",
-  "EH3D-COMMON": "v0.2.8",
+  "EH3D-COMMON": "v0.2.9",
   "EH3D-COMPONENT-INTELLIGENCE": "v0.0.4",
   "EH3D-CORE-LIBS": "v0.1.2",
   "EH3D-DESIGN-EXPLORER": "v0.0.4",
@@ -483,7 +475,7 @@
   "EH3D-DRILLPRO": "v0.2.1",
   "EH3D-GERBERVIEWER": "v0.0.8",
   "EH3D-HYDRA-BRIDGE": "v0.0.3",
-  "EH3D-IOS-CONTROL": "v0.1.4",
+  "EH3D-IOS-CONTROL": "v0.1.5",
   "EH3D-ISOCAM": "v0.1.5",
   "EH3D-LAB-BRIDGE": "v0.0.4",
   "EH3D-MANUFACTURING-PROFILE": "v0.0.4",
@@ -664,7 +656,7 @@
    5009,
    6712,
    4279,
-   12073
+   12749
   ],
   "red": [
    3,
@@ -685,7 +677,7 @@
    0,
    0,
    0,
-   2
+   1
   ]
  },
  "unpublished": {

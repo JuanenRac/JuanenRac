@@ -93,10 +93,10 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-21T01:02:47Z",
+   "at": "2026-11-21T04:07:27Z",
    "checked": true,
-   "exp": "2026-11-28T01:00:38Z",
-   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/44847233909",
+   "exp": "2026-11-28T04:04:31Z",
+   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/44863930851",
    "wf": "apk-build.yml"
   },
   "EH3D-NODE-BUNGARD": {
@@ -427,7 +427,7 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "e3ebb497f4477a50",
+   "fp": "e36383a1ae521196",
    "on": "2026-11-21",
    "r": {
     "ak": 0,
