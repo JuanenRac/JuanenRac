@@ -536,6 +536,15 @@
     "at": "present"
    }
   },
+  "EH3D-PHOENIX-PCB": {
+   "fp": "cd6535564499158f",
+   "on": "2026-11-21",
+   "r": {
+    "ak": 3,
+    "an": 3,
+    "at": "present"
+   }
+  },
   "EH3D-PHOENIX-PNP": {
    "fp": "9cd8b44ec8284030",
    "on": "2026-11-20",
@@ -1068,6 +1077,20 @@
   },
   "EH3D-PHOENIX-LASER": {
    "fp": "a8c2276b47aef7a4",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-PHOENIX-PCB": {
+   "fp": "cd6535564499158f",
    "r": {
     "bad": 0,
     "ho": 0,

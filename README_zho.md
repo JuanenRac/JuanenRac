@@ -549,7 +549,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 CAM 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.5|Gerber 层铜箔的隔离铣削：铜箔的精确偏移、多道走刀、检查刀具切不到的窄缝并输出 G 代码；窗口、铜区去除和 Voronoi 策略在计划中。|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.6|Gerber 层铜箔的隔离铣削：铜箔的精确偏移、多道走刀、检查刀具切不到的窄缝并输出 G 代码；窗口、铜区去除和 Voronoi 策略在计划中。|
 |[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.8|在 G 代码程序到达机器之前进行检查：按机器加速度计算时间，并对快速进入材料、超出工作台、主轴停转时切削和刀头经过夹具给出警报；3D 模拟在计划中。|
 
 ### 💠 Gerber 项目：

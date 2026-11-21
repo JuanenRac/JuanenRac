@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T05:20:57Z",
+ "asof": "2026-11-21T05:29:21Z",
  "ci": {
   "checked": 637,
   "red": [],
@@ -13,9 +13,19 @@
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 415,
-    "min7": 597,
+    "min24": 418,
+    "min7": 596,
     "repo": "ARMOR-NODE-ELECTRICAL"
+   },
+   {
+    "min24": 392,
+    "min7": 594,
+    "repo": "ARMOR-NODE-ALARM"
+   },
+   {
+    "min24": 392,
+    "min7": 557,
+    "repo": "ARMOR-NODE-SOLAR"
    },
    {
     "min24": 391,
@@ -23,23 +33,13 @@
     "repo": "URTC"
    },
    {
-    "min24": 388,
-    "min7": 592,
-    "repo": "ARMOR-NODE-ALARM"
-   },
-   {
-    "min24": 388,
-    "min7": 561,
-    "repo": "ARMOR-NODE-SOLAR"
-   },
-   {
     "min24": 387,
     "min7": 398,
     "repo": "ELECTRO-HOBBY-3D-UPDATER"
    }
   ],
-  "total24": 13196,
-  "total7": 39708,
+  "total24": 13228,
+  "total7": 39698,
   "warn": true
  },
  "delivery": {
@@ -127,31 +127,31 @@
  },
  "events": [
   {
-   "at": "2026-11-21T05:20:57Z",
+   "at": "2026-11-21T05:29:21Z",
    "kind": "red_ok",
    "repo": "EH3D-NODE-HMI-GUI",
    "wf": "firmware-build.yml"
   },
   {
-   "at": "2026-11-21T05:20:57Z",
+   "at": "2026-11-21T05:29:21Z",
    "kind": "released",
    "repo": "ARMOR-COMMON",
    "tag": "v0.8.1.6"
   },
   {
-   "at": "2026-11-21T05:20:57Z",
+   "at": "2026-11-21T05:29:21Z",
    "kind": "released",
    "repo": "EH3D-NODE-BUNGARD-HMI",
    "tag": "v0.1.2"
   },
   {
-   "at": "2026-11-21T05:20:57Z",
+   "at": "2026-11-21T05:29:21Z",
    "kind": "released",
    "repo": "EH3D-PHOENIX-PCB",
    "tag": "v0.1.5"
   },
   {
-   "at": "2026-11-21T05:20:57Z",
+   "at": "2026-11-21T05:29:21Z",
    "kind": "released",
    "repo": "ELECTRO-HOBBY-3D-UPDATER",
    "tag": "v0.1.6"
@@ -310,7 +310,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 70
+  "gap_minutes": 80
  },
  "hygiene": {
   "allowed_missing": [],
@@ -385,7 +385,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13196
+    "min": 13228
    }
   }
  ],
@@ -420,9 +420,9 @@
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 79,
+  "none": 78,
   "norelease": 5,
-  "unverifiable": 18,
+  "unverifiable": 19,
   "unverified": 0,
   "verified": 29
  },
@@ -637,7 +637,7 @@
    5009,
    6712,
    4279,
-   13196
+   13228
   ],
   "red": [
    3,
