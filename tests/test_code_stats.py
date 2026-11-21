@@ -63,6 +63,21 @@ class CountLinesTests(unittest.TestCase):
         self.assertEqual(cs.count_cases("it('a', () => {});\ntest('b', () => {});\n", lang("ts")), 2)
         self.assertEqual(cs.count_cases("func main() {}\n", lang("go")), 0)
 
+    def test_cases_of_the_other_test_frameworks(self):
+        self.assertEqual(cs.count_cases("TYPED_TEST(A, b) {}\nSCENARIO(\"x\") {}\nBOOST_AUTO_TEST_CASE(c) {}\nstatic void test_d() {\n}\n", lang("cpp")), 4)
+        self.assertEqual(cs.count_cases("#[rstest]\nfn a() {}\n#[test_case(1)]\nfn b() {}\n#[test]\nfn c() {}\n", lang("rs")), 3)
+        self.assertEqual(cs.count_cases("func TestA(t *testing.T) {}\nfunc FuzzB(f *testing.F) {}\nfunc helper() {}\n", lang("go")), 2)
+        self.assertEqual(cs.count_cases("@Test fun a() {}\n@ParameterizedTest fun b() {}\n@RepeatedTest(3) fun c() {}\n", lang("kt")), 3)
+        self.assertEqual(cs.count_cases("@Test void a() {}\n@TestFactory void b() {}\n", lang("java")), 2)
+        self.assertEqual(cs.count_cases("@Test func a() {}\n    func testB() {}\n    override func testC() {}\nfunc helper() {}\n", lang("swift")), 3)
+        self.assertEqual(cs.count_cases("[Fact]\n[Theory]\n[TestCase(1)]\n[TestMethod]\n[Obsolete]\n", lang("cs")), 4)
+        self.assertEqual(cs.count_cases("- (void)testA {\n}\n- (void)setUp {\n}\n", lang("m")), 1)
+        self.assertEqual(cs.count_cases("@test \"a\" {\n}\ntest_b() {\n}\nfunction test_c {\n}\nhelper() {\n}\n", lang("sh")), 3)
+        self.assertEqual(cs.count_cases("Describe 'x' {\n  It 'a' { }\n  It \"b\" { }\n}\n", lang("ps1")), 2)
+        self.assertEqual(cs.count_cases("def test_a\nend\nit 'b' do\nend\ndef helper\nend\n", lang("rb")), 2)
+        self.assertEqual(cs.count_cases("public function testA() {}\n/** @test */\npublic function b() {}\n", lang("php")), 2)
+        self.assertEqual(cs.count_cases("test('a', () {});\ntestWidgets('b', (t) async {});\n", lang("dart")), 2)
+
 
 class ClassifyTests(unittest.TestCase):
     def kind(self, rel):

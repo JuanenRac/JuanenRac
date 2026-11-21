@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -96,8 +97,9 @@ def load_config(path: Path = CONFIG_PATH) -> tuple[dict, list[str]]:
 # Reading
 # ---------------------------------------------------------------------------
 
-_ROW = re.compile(r"^\|\s*Tests\s*\|\s*(.+?)\s*\|\s*$", re.M)
+_ROW = re.compile(r"^\|\s*(?:\*\*)?Tests(?:\*\*)?\s*\|\s*(.+?)\s*\|\s*$", re.M)
 _NUMBER = re.compile(r"^\s*(\d[\d,]*)")
+_HOST_AND_PYTHON = re.compile(r"host (?:test )?programs?\s+and\s+(\d[\d,]*)\s+python checks?")
 
 
 def _int(text: str) -> int | None:
@@ -108,14 +110,7 @@ def _int(text: str) -> int | None:
     return value if 0 <= value <= MAX_COUNT else None
 
 
-def parse_readme(text: str) -> dict | None:
-    """The `Tests` row of the quick-facts table of a README -> {"n", "unit"} or None when the README declares no count.
-    "134 (`python -m unittest`)" is 134 tests; "11979 checks in 20 host programs" is 11979 checks; "7 host test programs (173749 checks counted)" is 173749 checks;
-    "unit tests on the JVM" declares no number."""
-    row = _ROW.search(text or "")
-    if not row:
-        return None
-    value = row.group(1)
+def _parse_value(value: str) -> dict | None:
     found = _NUMBER.match(value)
     if not found:
         return None
@@ -128,8 +123,39 @@ def parse_readme(text: str) -> dict | None:
     if rest.startswith("host"):
         inner = re.search(r"([\d,]+)\s+checks", rest)
         counted = _int(inner.group(1)) if inner else None
-        return {"n": counted, "unit": "checks"} if counted is not None else None
+        if counted is not None:
+            return {"n": counted, "unit": "checks"}
+        # "31 host programs and 7 Python checks (`ctest`)": every program and every Python check is one test of ctest.
+        python = _HOST_AND_PYTHON.match(rest)
+        extra = _int(python.group(1)) if python else None
+        return {"n": number + extra, "unit": "tests"} if extra is not None else None
     return {"n": number, "unit": "tests"}
+
+
+def parse_readme(text: str) -> dict | None:
+    """The `Tests` row of a README -> {"n", "unit"} or None when the README declares no count.
+    "134 (`python -m unittest`)" is 134 tests; "11979 checks in 20 host programs" is 11979 checks; "7 host test programs (173749 checks counted)" is 173749 checks;
+    "31 host programs and 7 Python checks (`ctest`)" is 38 tests (the entries of ctest); "unit tests on the JVM" declares no number. The bold label `**Tests**` is the same row.
+    The row of the quick facts (`| Tests | value |`) is read first; the row of the project status (`| Tests | light | text |`) only when the quick facts give no count
+    ("60 tests pass" is a count, "the test suite passes" is not)."""
+    status: list[str] = []
+    facts_read = False
+    for row in _ROW.finditer(text or ""):
+        value = row.group(1)
+        if " | " in value:                                   # the project status row: the light first, then the text
+            status.append(value.split(" | ", 1)[1].strip())
+            continue
+        if facts_read:                                       # only the first quick-facts row is read
+            continue
+        facts_read = True
+        parsed = _parse_value(value)
+        if parsed:
+            return parsed
+    for value in status:
+        parsed = _parse_value(value)
+        if parsed:
+            return parsed
+    return None
 
 
 def parse_glance(payload: object) -> dict[str, dict | None]:
@@ -202,13 +228,19 @@ def read_all(ecosystem_by_name: Mapping[str, str], fetch: Fetch, config: Mapping
     return result
 
 
-def raw_fetch(owner: str, timeout: float = 15) -> Fetch:
-    """A `fetch` for `read_all`: one file of the default branch of a repository of `owner` from raw.githubusercontent.com (no API quota)."""
+RETRY_PAUSES: tuple[float, ...] = (1.0, 4.0)       # seconds before the 2nd and the 3rd attempt
+
+
+def raw_fetch(owner: str, timeout: float = 15, sleep: Callable[[float], None] = time.sleep) -> Fetch:
+    """A `fetch` for `read_all`: one file of the default branch of a repository of `owner` from raw.githubusercontent.com (no API quota).
+    Three attempts with a pause: a busy answer (429, 5xx) or a dropped connection must not make a repository "not verified" for a whole day."""
     def run(path: str):
         repo, _, rest = path.partition("/")
         request = urllib.request.Request(f"https://raw.githubusercontent.com/{owner}/{repo}/HEAD/{rest}", headers={"User-Agent": "JuanenRac-dashboard-tests"})
         outcome: tuple[str, object] = ("error", "no attempt")
-        for _attempt in range(2):                      # one more try: a single slow answer must not make a repository "not verified"
+        for attempt in range(len(RETRY_PAUSES) + 1):
+            if attempt:
+                sleep(RETRY_PAUSES[attempt - 1])
             try:
                 with urllib.request.urlopen(request, timeout=timeout) as response:
                     return "ok", response.read(3_000_000).decode("utf-8", errors="replace")
