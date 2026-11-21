@@ -57,6 +57,23 @@ class ParseTests(unittest.TestCase):
     def test_only_the_first_tests_row_counts_and_it_must_start_the_row(self):
         self.assertEqual(ts.parse_readme("text | Tests | 5 |\n| Tests | 7 |\n"), {"n": 7, "unit": "tests"})
 
+    def test_the_ctest_nodes_declare_programs_and_python_checks_as_tests(self):
+        self.assertEqual(ts.parse_readme("| Tests | 31 host programs and 7 Python checks (`ctest`) |\n"), {"n": 38, "unit": "tests"})
+        self.assertEqual(ts.parse_readme("| Tests | 38 host test programs and 9 Python checks (`ctest`) |\n"), {"n": 47, "unit": "tests"})
+        self.assertIsNone(ts.parse_readme("| Tests | 31 host programs |\n"))          # programs alone stay undeclared: no Python part, no checks counted
+
+    def test_the_bold_label_is_the_same_row(self):
+        self.assertEqual(ts.parse_readme("| At a glance | |\n| **Tests** | 5108 test methods (`python -m unittest`) |\n"), {"n": 5108, "unit": "tests"})
+
+    def test_the_status_row_is_the_fallback_when_the_quick_facts_give_no_count(self):
+        status = "| Tests | \U0001f7e2 | 60 tests pass (`pytest`) against a fake process runner. |\n"
+        self.assertEqual(ts.parse_readme(status), {"n": 60, "unit": "tests"})
+        self.assertEqual(ts.parse_readme("| Tests | unit tests on the JVM |\n" + status), {"n": 60, "unit": "tests"})
+        self.assertEqual(ts.parse_readme("| Tests | 5 |\n" + status), {"n": 5, "unit": "tests"})          # the quick facts win
+        self.assertIsNone(ts.parse_readme("| Tests | \U0001f7e2 | The test suite passes in the CI on every push. |\n"))
+        self.assertIsNone(ts.parse_readme("| Tests | \U0001f534 | There are no tests of the app. |\n"))
+        self.assertEqual(ts.parse_readme("| Tests | \U0001f7e2 | 496,974 checks in 31 host programs pass (`ctest`). |\n"), {"n": 496974, "unit": "checks"})
+
     def test_glance(self):
         got = ts.parse_glance(GLANCE)
         self.assertEqual(got["HYDRA-UMC-A"], {"n": 162, "unit": "tests"})
@@ -144,6 +161,37 @@ class ReadTests(unittest.TestCase):
         self.assertEqual(ts.fresh_counts(got), {"HYDRA-UMC-A": 162, "HYDRA-UMC-B": 20, "URTC-A": 2066})
         self.assertEqual(ts.fresh_counts(None), {})
         self.assertEqual(ts.fresh_counts({"records": {"X": {"n": True, "unit": "tests"}}}), {})
+
+
+class FetchRetryTests(unittest.TestCase):
+    def run_fetch(self, outcomes):
+        import io
+        import urllib.error
+        import urllib.request
+        from unittest import mock
+
+        calls, pauses = [], []
+
+        def fake_open(request, timeout=0):
+            calls.append(request.full_url)
+            outcome = outcomes[min(len(calls) - 1, len(outcomes) - 1)]
+            if isinstance(outcome, int):
+                raise urllib.error.HTTPError(request.full_url, outcome, "x", {}, io.BytesIO(b""))
+            if outcome == "drop":
+                raise urllib.error.URLError("connection reset")
+            return io.BytesIO(outcome.encode())
+
+        with mock.patch.object(urllib.request, "urlopen", fake_open):
+            result = ts.raw_fetch("Owner", sleep=pauses.append)("REPO/README.md")
+        return result, len(calls), pauses
+
+    def test_a_busy_answer_is_tried_again_and_then_read(self):
+        self.assertEqual(self.run_fetch([429, 503, "| Tests | 7 |"]), (("ok", "| Tests | 7 |"), 3, [1.0, 4.0]))
+        self.assertEqual(self.run_fetch(["drop", "| Tests | 7 |"])[0], ("ok", "| Tests | 7 |"))
+
+    def test_a_missing_file_is_absent_at_once_and_a_lasting_failure_is_an_error(self):
+        self.assertEqual(self.run_fetch([404, "late"]), (("absent", None), 1, []))
+        self.assertEqual(self.run_fetch([429]), (("error", "HTTP 429"), 3, [1.0, 4.0]))
 
 
 class BuildTests(unittest.TestCase):
