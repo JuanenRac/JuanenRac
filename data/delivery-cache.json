@@ -450,15 +450,6 @@
     "at": "present"
    }
   },
-  "EH3D-BUNGARD-GUI": {
-   "fp": "786c022864d7db22",
-   "on": "2026-11-20",
-   "r": {
-    "ak": 3,
-    "an": 3,
-    "at": "present"
-   }
-  },
   "EH3D-CAM-DEBUGGER": {
    "fp": "320f61fdd683f376",
    "on": "2026-11-20",
@@ -550,7 +541,7 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "cd6535564499158f",
+   "fp": "f210f9a70c3cc5c0",
    "on": "2026-11-21",
    "r": {
     "ak": 3,
@@ -962,20 +953,6 @@
     ]
    }
   },
-  "EH3D-BUNGARD-GUI": {
-   "fp": "786c022864d7db22",
-   "r": {
-    "bad": 0,
-    "ho": 0,
-    "ok": 0,
-    "s": "unverifiable",
-    "sch": [],
-    "unk": 5,
-    "why": [
-     "family"
-    ]
-   }
-  },
   "EH3D-CAM-DEBUGGER": {
    "fp": "320f61fdd683f376",
    "r": {
@@ -1117,7 +1094,7 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "cd6535564499158f",
+   "fp": "f210f9a70c3cc5c0",
    "r": {
     "bad": 0,
     "ho": 0,
