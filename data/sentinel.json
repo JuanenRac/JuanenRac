@@ -1,15 +1,15 @@
 {
- "asof": "2026-11-21T22:34:00Z",
+ "asof": "2026-11-21T23:51:09Z",
  "ci": {
-  "checked": 665,
+  "checked": 664,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 1447,
-    "min7": 1447,
+    "min24": 1195,
+    "min7": 1195,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -18,7 +18,7 @@
     "repo": "HYDRA-UMC-DOCS"
    },
    {
-    "min24": 868,
+    "min24": 866,
     "min7": 990,
     "repo": "ARMOR-DOCS"
    },
@@ -28,18 +28,18 @@
     "repo": "URTC-DOCS"
    },
    {
-    "min24": 480,
-    "min7": 586,
+    "min24": 455,
+    "min7": 579,
     "repo": "ARMOR-NODE-RADAR"
    },
    {
-    "min24": 465,
+    "min24": 441,
     "min7": 574,
     "repo": "ARMOR-NODE-ELECTRICAL"
    }
   ],
-  "total24": 14316,
-  "total7": 40989,
+  "total24": 13601,
+  "total7": 40478,
   "warn": true
  },
  "delivery": {
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 55
+  "gap_minutes": 80
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14316
+    "min": 13601
    }
   }
  ],
@@ -610,7 +610,7 @@
    5009,
    6712,
    4279,
-   14316
+   13601
   ],
   "red": [
    3,

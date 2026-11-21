@@ -13243,11 +13243,11 @@
   },
   {
    "actions": {
-    "fail": 60,
-    "min": 14316,
-    "ok": 1796,
+    "fail": 58,
+    "min": 13601,
+    "ok": 1734,
     "other": 34,
-    "runs": 1890
+    "runs": 1826
    },
    "areas": {
     "armor": {
@@ -13854,7 +13854,7 @@
    "sentinel": {
     "cand": 0,
     "gaps": 4,
-    "min": 14316,
+    "min": 13601,
     "red": 0
    },
    "tests": {
@@ -13975,7 +13975,7 @@
     "HYDRA-UMC-VLA-ENGINE": 460,
     "HYDRA-UMC-VOICE-UI": 471,
     "HYDRA-UMC-WATCH": 215,
-    "TOOLS-GITHUB-ACTIONS-MONITOR": 5892,
+    "TOOLS-GITHUB-ACTIONS-MONITOR": 5902,
     "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": 80,
     "URTC": 319,
     "URTC-COMMON": 3049,
