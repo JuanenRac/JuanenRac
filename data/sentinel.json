@@ -1,19 +1,34 @@
 {
- "asof": "2026-11-21T19:17:00Z",
+ "asof": "2026-11-21T21:05:42Z",
  "ci": {
-  "checked": 664,
+  "checked": 665,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 2391,
-    "min7": 2391,
+    "min24": 2144,
+    "min7": 2144,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 447,
+    "min24": 931,
+    "min7": 1002,
+    "repo": "HYDRA-UMC-DOCS"
+   },
+   {
+    "min24": 868,
+    "min7": 990,
+    "repo": "ARMOR-DOCS"
+   },
+   {
+    "min24": 609,
+    "min7": 682,
+    "repo": "URTC-DOCS"
+   },
+   {
+    "min24": 446,
     "min7": 637,
     "repo": "ARMOR-NODE-RADAR"
    },
@@ -21,25 +36,10 @@
     "min24": 418,
     "min7": 591,
     "repo": "ARMOR-NODE-ELECTRICAL"
-   },
-   {
-    "min24": 393,
-    "min7": 587,
-    "repo": "ARMOR-NODE-ALARM"
-   },
-   {
-    "min24": 392,
-    "min7": 552,
-    "repo": "ARMOR-NODE-SOLAR"
-   },
-   {
-    "min24": 383,
-    "min7": 398,
-    "repo": "ELECTRO-HOBBY-3D-UPDATER"
    }
   ],
-  "total24": 13309,
-  "total7": 40591,
+  "total24": 14808,
+  "total7": 42044,
   "warn": true
  },
  "delivery": {
@@ -125,6 +125,18 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-21T21:05:42Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-BRIDGE-UAV",
+   "tag": "v0.2.4"
+  },
+  {
+   "at": "2026-11-21T21:05:42Z",
+   "kind": "released",
+   "repo": "HYDRA-UMC-DEV-SERVER",
+   "tag": "v0.2.8"
+  },
   {
    "at": "2026-11-21T16:36:31Z",
    "kind": "red_ok",
@@ -292,24 +304,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-TWIN",
    "tag": "v0.2.0"
-  },
-  {
-   "at": "2026-11-21T07:28:01Z",
-   "kind": "released",
-   "repo": "ARMOR-DOCS",
-   "tag": "v0.8.2.2"
-  },
-  {
-   "at": "2026-11-21T07:28:01Z",
-   "kind": "released",
-   "repo": "EH3D-AUTOLEVEL",
-   "tag": "v0.1.2"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 50
+  "gap_minutes": 110
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13309
+    "min": 14808
    }
   }
  ],
@@ -465,13 +465,13 @@
   "HYDRA-UMC-BRIDGE-OPENPNP": "v0.2.6",
   "HYDRA-UMC-BRIDGE-PRINTER3D": "v0.2.6",
   "HYDRA-UMC-BRIDGE-ROS2": "v0.2.0",
-  "HYDRA-UMC-BRIDGE-UAV": "v0.2.3",
+  "HYDRA-UMC-BRIDGE-UAV": "v0.2.4",
   "HYDRA-UMC-COGNITIVE-NODE": "v0.2.2",
   "HYDRA-UMC-CONNECTOR-HUB": "v0.2.1",
   "HYDRA-UMC-DASHBOARD-AI": "v0.2.6",
   "HYDRA-UMC-DATALAKE": "v0.2.7",
   "HYDRA-UMC-DETECTION-HEF": "v0.2.1",
-  "HYDRA-UMC-DEV-SERVER": "v0.2.7",
+  "HYDRA-UMC-DEV-SERVER": "v0.2.8",
   "HYDRA-UMC-DEVELOPER-NODE": "v0.0.4",
   "HYDRA-UMC-DOCS": "v0.1.5",
   "HYDRA-UMC-DOCS-QA": "v0.2.1",
@@ -610,7 +610,7 @@
    5009,
    6712,
    4279,
-   13309
+   14808
   ],
   "red": [
    3,

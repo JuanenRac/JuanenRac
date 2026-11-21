@@ -282,7 +282,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.6|Coordenador auxiliar de célula a laser que não pode armar, disparar ou sobrepor intertravamentos a laser.|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.9|Fronteira de coordenação para droides com patas e humanoides: ações nomeadas de andar, pegar e colocar sujeitas ao contrato de segurança partilhado.|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.2.2|Fronteira de coordenação para frotas AGV/AMR: transformação de referenciais e vocabulário de ordens; o planeamento de trajetos fica na navegação do próprio AMR.|
-|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.3|Fronteira de coordenação para UAVs equipados com câmara: vocabulário de solicitação de voo nomeado mais um watchdog determinístico de falha por perda de heartbeat/ligação.|
+|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.4|Fronteira de coordenação para UAVs equipados com câmara: vocabulário de solicitação de voo nomeado mais um watchdog determinístico de falha por perda de heartbeat/ligação.|
 
 ### 🛠️ Ferramentas Complementares
 
@@ -295,7 +295,7 @@ Novo no ecossistema? `./starter-kit.sh` (ou `starter-kit.bat` no Windows) clona 
 |[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.9|Ferramenta de ambiente de trabalho para Windows e Linux que cria uma imagem do CM5 pronta a gravar, com as versões atuais do ecossistema e a configuração do primeiro arranque.|
 |[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.2.4|Coordenador de incidentes de manutenção: recolhe um resumo de estado saneado e pede um diagnóstico a um fornecedor de IA; nunca aplica uma correção.|
 |[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.4|Nó de desenvolvimento: verifica a evidência de incidentes, executa casos de reprodução aprovados e mantém uma cache de checkouts por revisão.|
-|[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.7|Anfitrião de desenvolvimento reproduzível: configuração regida por políticas e inventário de manifestos, a evoluir para um executor de tarefas isolado; sem permissão de implementação por predefinição.|
+|[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.8|Anfitrião de desenvolvimento reproduzível: configuração regida por políticas e inventário de manifestos, a evoluir para um executor de tarefas isolado; sem permissão de implementação por predefinição.|
 |[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.5|Arquitetura, interfaces, linha de base de segurança, matriz de capacidades e catálogo de projetos gerado do ecossistema, mais as ferramentas de comparação.|
 
 \---

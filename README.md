@@ -277,7 +277,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER) | 0.2.6 | Laser-cell auxiliary coordinator that cannot arm, fire or override laser interlocks. |
 | [HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS) | 0.1.9 | Coordination boundary for legged and humanoid droids: named walk, pick and place actions gated by the shared safety contract. |
 | [HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR) | 0.2.2 | Coordination boundary for AGV/AMR fleets: frame transform and an order vocabulary; path planning stays with the AMR's own navigation. |
-| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.2.3 | Coordination boundary for camera-equipped UAVs: named flight-request vocabulary plus a deterministic heartbeat/link-loss failsafe watchdog. |
+| [HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV) | 0.2.4 | Coordination boundary for camera-equipped UAVs: named flight-request vocabulary plus a deterministic heartbeat/link-loss failsafe watchdog. |
 
 ### 🛠️ Complementary Tools
 | Repository | Version | Description |
@@ -289,7 +289,7 @@ for all four - can check versions and build/update any other project.
 | [HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER) | 0.3.9 | Desktop tool for Windows and Linux that builds a ready-to-flash CM5 image with the ecosystem's current versions and first-boot setup. |
 | [HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT) | 0.2.4 | Maintenance-incident coordinator: collects a sanitized health snapshot and asks an AI provider for a diagnosis; it never applies a patch. |
 | [HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE) | 0.0.4 | Developer node: checks incident evidence, runs approved repro cases and keeps a cache of checkouts by revision. |
-| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.2.7 | Reproducible development host: policy-gated configuration and manifest inventory, growing into an isolated task runner; no deploy rights. |
+| [HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER) | 0.2.8 | Reproducible development host: policy-gated configuration and manifest inventory, growing into an isolated task runner; no deploy rights. |
 | [HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS) | 0.1.5 | Architecture, interfaces, security baseline, capability matrix and generated project catalogue of the ecosystem, plus comparison tools. |
 
 ---

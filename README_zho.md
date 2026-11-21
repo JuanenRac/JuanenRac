@@ -282,7 +282,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.6|激光单元辅助协调器，无法对激光联锁进行布防、发射或越权。|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.9|面向足式和人形机器人的协调边界：具名的行走、拾取和放置动作，受共享安全契约约束。|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.2.2|面向 AGV/AMR 车队的协调边界：坐标系转换和指令词汇；路径规划仍由 AMR 自身的导航负责。|
-|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.3|配备相机的无人机（UAV）协调边界：命名的飞行请求词汇加上确定性的心跳/链路丢失故障保护看门狗。|
+|[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.4|配备相机的无人机（UAV）协调边界：命名的飞行请求词汇加上确定性的心跳/链路丢失故障保护看门狗。|
 
 ### 🛠️ 辅助工具
 
@@ -295,7 +295,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-OS-REBUILDER](https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER)|0.3.9|适用于 Windows 和 Linux 的桌面工具：构建可直接烧录的 CM5 镜像，包含生态系统的当前版本和首次启动配置。|
 |[HYDRA-UMC-OPS-AGENT](https://github.com/JuanenRac/HYDRA-UMC-OPS-AGENT)|0.2.4|维护事件协调器：收集经过脱敏的状态快照并向 AI 服务商请求诊断；绝不自行应用补丁。|
 |[HYDRA-UMC-DEVELOPER-NODE](https://github.com/JuanenRac/HYDRA-UMC-DEVELOPER-NODE)|0.0.4|开发节点：核查事件证据，运行已批准的复现用例，并按修订版本缓存检出。|
-|[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.7|可复现的开发主机：由策略管控的配置与清单目录，将发展为隔离的任务运行器；默认没有部署权限。|
+|[HYDRA-UMC-DEV-SERVER](https://github.com/JuanenRac/HYDRA-UMC-DEV-SERVER)|0.2.8|可复现的开发主机：由策略管控的配置与清单目录，将发展为隔离的任务运行器；默认没有部署权限。|
 |[HYDRA-UMC-DOCS](https://github.com/JuanenRac/HYDRA-UMC-DOCS)|0.1.5|生态系统的架构、接口、安全基线、能力矩阵和自动生成的项目目录，以及对比工具。|
 
 \---

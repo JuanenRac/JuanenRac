@@ -13243,11 +13243,11 @@
   },
   {
    "actions": {
-    "fail": 54,
-    "min": 13309,
-    "ok": 1752,
-    "other": 42,
-    "runs": 1848
+    "fail": 58,
+    "min": 14808,
+    "ok": 1694,
+    "other": 37,
+    "runs": 1789
    },
    "areas": {
     "armor": {
@@ -13600,7 +13600,7 @@
     ],
     "HYDRA-UMC-BRIDGE-UAV": [
      1,
-     "0.2.3"
+     "0.2.4"
     ],
     "HYDRA-UMC-COGNITIVE-NODE": [
      1,
@@ -13624,7 +13624,7 @@
     ],
     "HYDRA-UMC-DEV-SERVER": [
      1,
-     "0.2.7"
+     "0.2.8"
     ],
     "HYDRA-UMC-DEVELOPER-NODE": [
      0,
@@ -13854,7 +13854,7 @@
    "sentinel": {
     "cand": 0,
     "gaps": 4,
-    "min": 13309,
+    "min": 14808,
     "red": 0
    },
    "tests": {
