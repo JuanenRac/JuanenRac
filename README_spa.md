@@ -88,7 +88,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 de 59 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `█████████▊ 98%` | 58 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟢 | `██████████ 100%` | 59 de 59 repositorios se han comprobado al menos en un simulador. |
@@ -482,7 +482,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 **Actualizador:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:eh3d -->
-`\[█████████▊░░░░░░░░░░] 49%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 39 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████▋░░░░░░░░░░] 48%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 41 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -492,14 +492,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
-| Software | 🟠 | `█████▋░░░░ 56%` | 22 de 39 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟡 | `█████████░ 90%` | 35 de 39 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟢 | `██████████ 100%` | 39 de 39 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 39 de 39 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🟡 | `███████▉░░ 79%` | 31 de 39 repositorios se han comprobado al menos en un simulador. |
-| Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 14 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
-| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 39 repositorios están consolidados o en producción. |
+| Software | 🟠 | `█████▍░░░░ 54%` | 22 de 41 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟢 | `█████████░ 90%` | 37 de 41 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 41 de 41 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `██████████ 100%` | 41 de 41 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 41 de 41 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🟡 | `████████░░ 80%` | 33 de 41 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🔴 | `░░░░░░░░░░ 0%` | 0 de los 16 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🔴 | `░░░░░░░░░░ 0%` | 0 de 41 repositorios están consolidados o en producción. |
 <!-- /status:eh3d -->
 
 ## 🏗️ Cómo Funciona EH3D Fabrication Suite
@@ -515,7 +515,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
    * **EH3D-STENCILCAM**: Procesamiento de máscaras de pasta para la generación de plantillas de pasta de soldadura SMD.
 3. **Ejecución y Control en Tiempo Real**: **EH3D-PHOENIX-CNC** maneja una máquina desde una sola ventana (jog, puesta a cero, ejecución de código G, vista de la trayectoria; hoy sobre una máquina simulada) y es la base de los programas de control de máquina, integrado con **EH3D-SERVER**, que planifica y ejecuta trabajos de taladrado y fresado a través del nodo de la máquina, con **EH3D-AUTOLEVEL** para el sondeo topográfico de altura Z y **EH3D-NODE-HMI-GUI** para el establecimiento de ceros manuales (G54/G55) y desplazamiento (jogging).
 4. **Edge AI e Inspección**: **EH3D-VISION-STUDIO** aprovecha la NPU Hailo de HYDRA-UMC para realizar alineación de cámaras en tiempo real, detección automática de marcas fiduciales e inspección de desgaste de herramientas.
-5. **Ensamblaje y Datos Auxiliares**: **EH3D-PHOENIX-PNP** gestiona las coordenadas de centroides para Pick \& Place y alimentadores, mientras que **EH3D-TOOL-MANAGER** mantiene una base de datos unificada de bancos de herramientas en todos los módulos CAM.
+5. **Ensamblaje y Datos Auxiliares**: **EH3D-PHOENIX-PNP** gestiona las coordenadas de centroides para Pick \& Place y alimentadores, mientras que **EH3D-TOOL-MANAGER** mantiene una base de datos unificada de bancos de herramientas en todos los módulos CAM. **EH3D-NODE-PNP-FEEDER** mueve los alimentadores de cinta de la máquina y **EH3D-NODE-PNP-HEAD** gobierna las boquillas, el vacío y el eje Z de su cabezal (ambos en fase de esqueleto, probados solo con simuladores).
 6. **Impresión 3D**: **EH3D-PHOENIX-3DP** prepara las impresiones 3D: lee modelos STL, OBJ y 3MF, los lamina a G-code con límites que rechazan una temperatura insegura y envía los trabajos a impresoras Moonraker y OctoPrint o a través de **EH3D-SERVER**; hoy solo se ha probado con simuladores.
 
 ## 📁 Catálogo de Proyectos EH3D Fabrication Suite
@@ -570,6 +570,8 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 |[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.2|Pantalla táctil de 10,1 pulgadas con un ESP32-P4 que controla una máquina Bungard CCD: las pantallas del programa de escritorio, alertas y órdenes habladas en ocho idiomas y una parada por hardware que no pasa por la pantalla.|
 |[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.0|Nodo ESP32-S3 para el cabezal de taladro de una máquina Bungard CCD: el vídeo de su cámara (OV2640 u OV5640) como cámara IP (RTSP y ONVIF), la altura de la mesa medida con un láser, la velocidad y la temperatura del husillo y una salida de protección.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.2|Controlador manual táctil de 10 pulgadas / móvil de uso general con ESP32-P4/ESP32-C6 para el movimiento en tiempo real (jog), la puesta a cero (G54/G55) y la parada de emergencia.|
+|[EH3D-NODE-PNP-FEEDER](https://github.com/JuanenRac/EH3D-NODE-PNP-FEEDER)|0.0.2|Nodo ESP32-S3 de alimentadores de cinta de una máquina pick and place: gobierna una cadena de hasta 32 alimentadores inteligentes por un bus RS-485 con tramas, con detección de alvéolo, tensión y atasco, e informa a EH3D-SERVER (núcleo probado en el equipo y simulador; el firmware no está escrito y no hay nada conectado a hardware).|
+|[EH3D-NODE-PNP-HEAD](https://github.com/JuanenRac/EH3D-NODE-PNP-HEAD)|0.0.2|Nodo ESP32-S3 del cabezal de boquillas de una máquina pick and place: ejes Z y de rotación, bomba de vacío y válvulas con medida de presión, soplado, iluminación y enclavamientos de seguridad, e informa a EH3D-SERVER (núcleo probado en el equipo y simulador; el firmware no está escrito y no hay nada conectado a hardware).|
 
 ### 💠 Proyectos PHOENIX:
 |Repositorio|Versión|Descripción|
