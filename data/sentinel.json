@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T12:44:01Z",
+ "asof": "2026-11-21T12:49:23Z",
  "ci": {
   "checked": 664,
   "red": [],
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-ALARM"
    }
   ],
-  "total24": 14580,
-  "total7": 41415,
+  "total24": 14579,
+  "total7": 41406,
   "warn": true
  },
  "delivery": {
@@ -126,43 +126,43 @@
  },
  "events": [
   {
-   "at": "2026-11-21T12:44:01Z",
+   "at": "2026-11-21T12:49:23Z",
    "kind": "red_ok",
    "repo": "EH3D-COMMON",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-21T12:44:01Z",
+   "at": "2026-11-21T12:49:23Z",
    "kind": "red_ok",
    "repo": "EH3D-NODE-BUNGARD-HMI",
    "wf": "ci.yml"
   },
   {
-   "at": "2026-11-21T12:44:01Z",
+   "at": "2026-11-21T12:49:23Z",
    "kind": "red_ok",
    "repo": "URTC-DOCS",
    "wf": "nightly.yml"
   },
   {
-   "at": "2026-11-21T12:44:01Z",
+   "at": "2026-11-21T12:49:23Z",
    "kind": "released",
    "repo": "ARMOR-ANDROID-CONTROL",
    "tag": "v0.8.0.9"
   },
   {
-   "at": "2026-11-21T12:44:01Z",
+   "at": "2026-11-21T12:49:23Z",
    "kind": "released",
    "repo": "ARMOR-NODE-RADAR",
    "tag": "v0.8.1.4"
   },
   {
-   "at": "2026-11-21T12:44:01Z",
+   "at": "2026-11-21T12:49:23Z",
    "kind": "released",
    "repo": "ARMOR-SERVER",
    "tag": "v0.8.2.4"
   },
   {
-   "at": "2026-11-21T12:44:01Z",
+   "at": "2026-11-21T12:49:23Z",
    "kind": "released",
    "repo": "ARMOR-STUDIO",
    "tag": "v0.8.2.6"
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 55
+  "gap_minutes": 60
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 14580
+    "min": 14579
    }
   }
  ],
@@ -610,7 +610,7 @@
    5009,
    6712,
    4279,
-   14580
+   14579
   ],
   "red": [
    3,
