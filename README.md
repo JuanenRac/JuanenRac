@@ -323,7 +323,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟡 | `████████▎░ 82%` | 9 of 11 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 11 of 11 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▏ 91%` | 10 of 11 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 11 of 11 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 11 of 11 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 11 of 11 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 11 of 11 repositories have been checked at least in a simulator. |
@@ -365,7 +365,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 | [URTC-DOCS](https://github.com/JuanenRac/URTC-DOCS) | 0.1.8 | Architecture, interfaces, security baseline, capability matrix, CAN protocol notes and generated project catalogue of URTC. |
 | [URTC-COMMON](https://github.com/JuanenRac/URTC-COMMON) | 0.3.1 | The CAN protocol of the tool head as data: specification, generated C, TypeScript and Python code, conformance vectors and transports. |
 | [URTC-GATEWAY](https://github.com/JuanenRac/URTC-GATEWAY) | 0.1.0 | Gateway in front of the URTC CAN bus: allowed identifier list, rate limit and session key. |
-| [URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS) | 0.0.7 | The shared repository tools of the URTC family as one versioned set, with a lock file in each repository. |
+| [URTC-DEVTOOLS](https://github.com/JuanenRac/URTC-DEVTOOLS) | 0.0.8 | The shared repository tools of the URTC family as one versioned set, with a lock file in each repository. |
 
 ---
 
@@ -476,7 +476,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 **Updater:** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:eh3d -->
-`[█████████▋░░░░░░░░░░] 48%` — Calculated from real data: the maturity and the evidence that each of its 41 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████▊░░░░░░░░░░] 49%` — Calculated from real data: the maturity and the evidence that each of its 41 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -486,7 +486,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
-| Software | 🟠 | `█████▍░░░░ 54%` | 22 of 41 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Software | 🟠 | `█████▉░░░░ 59%` | 24 of 41 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `█████████░ 90%` | 37 of 41 repositories have automated tests. |
 | Continuous integration | 🟢 | `██████████ 100%` | 41 of 41 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 41 of 41 repositories have published at least one release. |

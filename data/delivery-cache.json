@@ -94,7 +94,6 @@
   "EH3D-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-21T10:01:43Z",
-   "checked": true,
    "exp": "2026-11-28T10:00:30Z",
    "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/44891979662",
    "wf": "apk-build.yml"
@@ -130,7 +129,6 @@
   "HYDRA-UMC": {
    "art": true,
    "at": "2026-11-21T07:53:00Z",
-   "checked": true,
    "exp": "2026-11-28T07:42:25Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/44881262081",
    "wf": "firmware-build.yml"
@@ -243,7 +241,6 @@
   "HYDRA-UMC-TWIN": {
    "art": true,
    "at": "2026-11-21T09:31:04Z",
-   "checked": true,
    "exp": "2026-11-28T09:29:25Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-TWIN/actions/runs/44889731066",
    "wf": "binaries-build.yml"
@@ -265,7 +262,6 @@
   "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": {
    "art": true,
    "at": "2026-11-21T10:37:53Z",
-   "checked": true,
    "exp": "2026-11-28T10:35:59Z",
    "url": "https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID/actions/runs/44894902664",
    "wf": "apk-build.yml"
@@ -514,6 +510,15 @@
    "r": {
     "ak": 2,
     "an": 2,
+    "at": "present"
+   }
+  },
+  "EH3D-PHOENIX-3DP": {
+   "fp": "3b33cff09511543c",
+   "on": "2026-11-21",
+   "r": {
+    "ak": 3,
+    "an": 3,
     "at": "present"
    }
   },
@@ -1050,6 +1055,20 @@
     "s": "unverifiable",
     "sch": [],
     "unk": 2,
+    "why": [
+     "family"
+    ]
+   }
+  },
+  "EH3D-PHOENIX-3DP": {
+   "fp": "3b33cff09511543c",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
     "why": [
      "family"
     ]

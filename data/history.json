@@ -13243,11 +13243,11 @@
   },
   {
    "actions": {
-    "fail": 82,
-    "min": 13475,
-    "ok": 1732,
-    "other": 56,
-    "runs": 1870
+    "fail": 77,
+    "min": 14580,
+    "ok": 1916,
+    "other": 55,
+    "runs": 2048
    },
    "areas": {
     "armor": {
@@ -13271,11 +13271,11 @@
      "tests": 90
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 75,
      "docs": 100,
      "hardware": 100,
      "production": 0,
-     "releases": 50,
+     "releases": 75,
      "simulation": 50,
      "software": 50,
      "tests": 75
@@ -13291,7 +13291,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -13310,6 +13310,10 @@
     "urtc": 56
    },
    "repos": {
+    "ARMOR-ANDROID-CONTROL": [
+     2,
+     "0.8.0.9"
+    ],
     "ARMOR-COMMON": [
      2,
      "0.8.1.6"
@@ -13346,9 +13350,17 @@
      1,
      "0.5.0"
     ],
+    "ARMOR-NODE-RADAR": [
+     2,
+     "0.8.1.4"
+    ],
     "ARMOR-NODE-SOLAR": [
      1,
      "0.6.8"
+    ],
+    "ARMOR-SERVER": [
+     2,
+     "0.8.2.4"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -13357,6 +13369,10 @@
     "ARMOR-SIMULATOR": [
      2,
      "0.3.9"
+    ],
+    "ARMOR-STUDIO": [
+     2,
+     "0.8.2.6"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -13463,11 +13479,11 @@
      "0.1.2"
     ],
     "EH3D-NODE-PNP-FEEDER": [
-     0,
+     1,
      "0.0.2"
     ],
     "EH3D-NODE-PNP-HEAD": [
-     0,
+     1,
      "0.0.2"
     ],
     "EH3D-PHOENIX-3DP": [
@@ -13800,7 +13816,7 @@
     ],
     "URTC-DEVTOOLS": [
      0,
-     "0.0.7"
+     "0.0.8"
     ],
     "URTC-DOCS": [
      1,
@@ -13838,10 +13854,11 @@
    "sentinel": {
     "cand": 0,
     "gaps": 4,
-    "min": 13475,
-    "red": 3
+    "min": 14580,
+    "red": 0
    },
    "tests": {
+    "ARMOR-ANDROID-CONTROL": 608,
     "ARMOR-COMMON": 659,
     "ARMOR-DEVOPS": 509,
     "ARMOR-DOCS": 564,
@@ -13851,9 +13868,12 @@
     "ARMOR-NODE-ALARM": 40,
     "ARMOR-NODE-ELECTRICAL": 39,
     "ARMOR-NODE-HMI": 48,
+    "ARMOR-NODE-RADAR": 34,
     "ARMOR-NODE-SOLAR": 43,
+    "ARMOR-SERVER": 1389,
     "ARMOR-SERVER-AI": 211,
     "ARMOR-SIMULATOR": 415,
+    "ARMOR-STUDIO": 1915,
     "ARMOR-UPDATER": 454,
     "ARMOR-VISION": 382,
     "ARMOR-VOICE-AI": 255,
@@ -13865,17 +13885,17 @@
     "EH3D-COMMON": 967,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 519,
-    "EH3D-DESIGN-EXPLORER": 3,
-    "EH3D-DESIGN-HISTORY": 3,
-    "EH3D-DESIGN-VERIFIER": 3,
+    "EH3D-DESIGN-EXPLORER": 68,
+    "EH3D-DESIGN-HISTORY": 68,
+    "EH3D-DESIGN-VERIFIER": 68,
     "EH3D-DOCS": 583,
     "EH3D-DRILLPRO": 452,
     "EH3D-GERBERVIEWER": 185,
-    "EH3D-HYDRA-BRIDGE": 15,
+    "EH3D-HYDRA-BRIDGE": 80,
     "EH3D-IOS-CONTROL": 444,
     "EH3D-ISOCAM": 545,
-    "EH3D-LAB-BRIDGE": 3,
-    "EH3D-MANUFACTURING-PROFILE": 3,
+    "EH3D-LAB-BRIDGE": 68,
+    "EH3D-MANUFACTURING-PROFILE": 68,
     "EH3D-NODE-PNP-FEEDER": 102,
     "EH3D-NODE-PNP-HEAD": 85,
     "EH3D-PHOENIX-3DP": 714,
@@ -13884,13 +13904,13 @@
     "EH3D-PHOENIX-LASER": 986,
     "EH3D-PHOENIX-PCB": 5422,
     "EH3D-PHOENIX-PNP": 1915,
-    "EH3D-PROJECT-PASSPORT": 3,
+    "EH3D-PROJECT-PASSPORT": 68,
     "EH3D-ROUTEPRO": 125,
     "EH3D-SERVER": 782,
     "EH3D-STENCILCAM": 281,
     "EH3D-STUDIO": 611,
     "EH3D-SUITE-LAUNCHER": 137,
-    "EH3D-THERMAL-LAB": 3,
+    "EH3D-THERMAL-LAB": 68,
     "EH3D-TOOL-MANAGER": 224,
     "EH3D-UPDATER": 538,
     "EH3D-VALIDATION-LAB": 63,
@@ -13965,7 +13985,7 @@
     "URTC-GATEWAY": 245,
     "URTC-SMART-RACK": 786,
     "URTC-TESTER": 1133,
-    "URTC-UPDATER": 734,
+    "URTC-UPDATER": 736,
     "URTC-VISION-TOOL": 251,
     "URTC-WEB-STUDIO": 1811
    }

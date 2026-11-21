@@ -1,28 +1,9 @@
 {
- "asof": "2026-11-21T11:53:59Z",
+ "asof": "2026-11-21T12:44:01Z",
  "ci": {
-  "checked": 639,
-  "red": [
-   {
-    "repo": "EH3D-COMMON",
-    "since": "2026-11-21T11:39:33Z",
-    "streak": 2,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "EH3D-NODE-BUNGARD-HMI",
-    "since": "2026-11-21T10:34:27Z",
-    "streak": 1,
-    "wf": "ci.yml"
-   },
-   {
-    "repo": "URTC-DOCS",
-    "since": "2026-11-21T11:46:11Z",
-    "streak": 1,
-    "wf": "nightly.yml"
-   }
-  ],
-  "red_total": 3
+  "checked": 664,
+  "red": [],
+  "red_total": 0
  },
  "compute": {
   "top": [
@@ -32,33 +13,33 @@
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
+    "min24": 460,
+    "min7": 642,
+    "repo": "ARMOR-NODE-RADAR"
+   },
+   {
     "min24": 418,
     "min7": 591,
     "repo": "ARMOR-NODE-ELECTRICAL"
    },
    {
-    "min24": 400,
+    "min24": 399,
     "min7": 482,
     "repo": "ARMOR-DOCS"
+   },
+   {
+    "min24": 397,
+    "min7": 648,
+    "repo": "URTC"
    },
    {
     "min24": 392,
     "min7": 593,
     "repo": "ARMOR-NODE-ALARM"
-   },
-   {
-    "min24": 392,
-    "min7": 556,
-    "repo": "ARMOR-NODE-SOLAR"
-   },
-   {
-    "min24": 391,
-    "min7": 648,
-    "repo": "URTC"
    }
   ],
-  "total24": 13475,
-  "total7": 39485,
+  "total24": 14580,
+  "total7": 41415,
   "warn": true
  },
  "delivery": {
@@ -70,8 +51,8 @@
    "armor": {
     "clmis": 0,
     "nonotes": 0,
-    "read": 16,
-    "repos": 16,
+    "read": 20,
+    "repos": 20,
     "tagahead": 0
    },
    "eh3d": {
@@ -109,15 +90,15 @@
  "ecosystems": {
   "armor": {
    "cand": 0,
-   "read": 16,
+   "read": 20,
    "red": 0,
-   "repos": 16,
+   "repos": 20,
    "unpub": 0
   },
   "eh3d": {
    "cand": 0,
    "read": 41,
-   "red": 2,
+   "red": 0,
    "repos": 41,
    "unpub": 0
   },
@@ -138,12 +119,54 @@
   "urtc": {
    "cand": 0,
    "read": 11,
-   "red": 1,
+   "red": 0,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
+  {
+   "at": "2026-11-21T12:44:01Z",
+   "kind": "red_ok",
+   "repo": "EH3D-COMMON",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-21T12:44:01Z",
+   "kind": "red_ok",
+   "repo": "EH3D-NODE-BUNGARD-HMI",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-21T12:44:01Z",
+   "kind": "red_ok",
+   "repo": "URTC-DOCS",
+   "wf": "nightly.yml"
+  },
+  {
+   "at": "2026-11-21T12:44:01Z",
+   "kind": "released",
+   "repo": "ARMOR-ANDROID-CONTROL",
+   "tag": "v0.8.0.9"
+  },
+  {
+   "at": "2026-11-21T12:44:01Z",
+   "kind": "released",
+   "repo": "ARMOR-NODE-RADAR",
+   "tag": "v0.8.1.4"
+  },
+  {
+   "at": "2026-11-21T12:44:01Z",
+   "kind": "released",
+   "repo": "ARMOR-SERVER",
+   "tag": "v0.8.2.4"
+  },
+  {
+   "at": "2026-11-21T12:44:01Z",
+   "kind": "released",
+   "repo": "ARMOR-STUDIO",
+   "tag": "v0.8.2.6"
+  },
   {
    "at": "2026-11-21T11:53:59Z",
    "kind": "red_new",
@@ -281,59 +304,17 @@
    "kind": "released",
    "repo": "EH3D-STENCILCAM",
    "tag": "v0.1.1"
-  },
-  {
-   "at": "2026-11-21T07:28:01Z",
-   "kind": "released",
-   "repo": "EH3D-TOOL-MANAGER",
-   "tag": "v0.1.2"
-  },
-  {
-   "at": "2026-11-21T07:28:01Z",
-   "kind": "released",
-   "repo": "EH3D-VISION-STUDIO",
-   "tag": "v0.1.3"
-  },
-  {
-   "at": "2026-11-21T05:29:21Z",
-   "kind": "red_ok",
-   "repo": "EH3D-NODE-HMI-GUI",
-   "wf": "firmware-build.yml"
-  },
-  {
-   "at": "2026-11-21T05:29:21Z",
-   "kind": "released",
-   "repo": "ARMOR-COMMON",
-   "tag": "v0.8.1.6"
-  },
-  {
-   "at": "2026-11-21T05:29:21Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-BUNGARD-HMI",
-   "tag": "v0.1.2"
-  },
-  {
-   "at": "2026-11-21T05:29:21Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-PCB",
-   "tag": "v0.1.5"
-  },
-  {
-   "at": "2026-11-21T05:29:21Z",
-   "kind": "released",
-   "repo": "ELECTRO-HOBBY-3D-UPDATER",
-   "tag": "v0.1.6"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 270
+  "gap_minutes": 55
  },
  "hygiene": {
   "allowed_missing": [],
   "gaps": 4,
-  "ruleset_checked": 131,
+  "ruleset_checked": 135,
   "ruleset_missing": [
    "EH3D-NODE-PNP-FEEDER",
    "EH3D-NODE-PNP-HEAD",
@@ -346,24 +327,12 @@
  "parte": [
   {
    "key": "head",
-   "level": "bad",
+   "level": "warn",
    "p": {
     "bad": 0,
     "cand": 0,
     "hyg": 4,
-    "red": 3
-   }
-  },
-  {
-   "key": "red",
-   "level": "bad",
-   "p": {
-    "list": [
-     "EH3D-COMMON",
-     "EH3D-NODE-BUNGARD-HMI",
-     "URTC-DOCS"
-    ],
-    "n": 3
+    "red": 0
    }
   },
   {
@@ -394,7 +363,7 @@
    "key": "settings",
    "level": "info",
    "p": {
-    "m": 131,
+    "m": 135,
     "n": 0
    }
   },
@@ -402,29 +371,30 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13475
+    "min": 14580
    }
   }
  ],
- "read": 131,
+ "read": 135,
  "releases": {
   "candidates": [],
   "days": 2.0,
   "min_entries": 5,
   "total": 0
  },
- "repos": 131,
+ "repos": 135,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
   "none": 79,
   "norelease": 3,
-  "unverifiable": 19,
+  "unverifiable": 20,
   "unverified": 0,
-  "verified": 30
+  "verified": 33
  },
  "tags": {
+  "ARMOR-ANDROID-CONTROL": "v0.8.0.9",
   "ARMOR-COMMON": "v0.8.1.6",
   "ARMOR-DEVOPS": "v0.7.8",
   "ARMOR-DOCS": "v0.8.2.2",
@@ -434,9 +404,12 @@
   "ARMOR-NODE-ALARM": "v0.5.8",
   "ARMOR-NODE-ELECTRICAL": "v0.6.0",
   "ARMOR-NODE-HMI": "v0.5.0",
+  "ARMOR-NODE-RADAR": "v0.8.1.4",
   "ARMOR-NODE-SOLAR": "v0.6.8",
+  "ARMOR-SERVER": "v0.8.2.4",
   "ARMOR-SERVER-AI": "v0.3.4",
   "ARMOR-SIMULATOR": "v0.3.9",
+  "ARMOR-STUDIO": "v0.8.2.6",
   "ARMOR-UPDATER": "v0.2.4",
   "ARMOR-VISION": "v0.1.8",
   "ARMOR-VOICE-AI": "v0.3.7",
@@ -637,7 +610,7 @@
    5009,
    6712,
    4279,
-   13475
+   14580
   ],
   "red": [
    3,
@@ -658,7 +631,7 @@
    0,
    0,
    0,
-   3
+   0
   ]
  },
  "unpublished": {
@@ -671,7 +644,7 @@
    {
     "repo": "URTC-DEVTOOLS",
     "tag": "v0.0.4",
-    "version": "0.0.7"
+    "version": "0.0.8"
    }
   ],
   "total": 2
