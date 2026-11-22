@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-22T01:33:04Z",
+ "asof": "2026-11-22T06:49:09Z",
  "ci": {
   "checked": 664,
   "red": [],
@@ -13,34 +13,34 @@
     "repo": "HYDRA-UMC-DOCS"
    },
    {
-    "min24": 784,
-    "min7": 784,
+    "min24": 701,
+    "min7": 797,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 609,
-    "min7": 682,
-    "repo": "URTC-DOCS"
-   },
-   {
-    "min24": 545,
+    "min24": 522,
     "min7": 990,
     "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 455,
-    "min7": 579,
-    "repo": "ARMOR-NODE-RADAR"
+    "min24": 456,
+    "min7": 682,
+    "repo": "URTC-DOCS"
    },
    {
-    "min24": 441,
-    "min7": 573,
-    "repo": "ARMOR-NODE-ELECTRICAL"
+    "min24": 77,
+    "min7": 459,
+    "repo": "EH3D-SERVER"
+   },
+   {
+    "min24": 68,
+    "min7": 233,
+    "repo": "HYDRA-UMC-TWIN"
    }
   ],
-  "total24": 12709,
-  "total7": 39351,
-  "warn": true
+  "total24": 4187,
+  "total7": 39191,
+  "warn": false
  },
  "delivery": {
   "clmis": [
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 25
+  "gap_minutes": 320
  },
  "hygiene": {
   "allowed_missing": [],
@@ -365,13 +365,6 @@
    "p": {
     "m": 135,
     "n": 0
-   }
-  },
-  {
-   "key": "compute",
-   "level": "warn",
-   "p": {
-    "min": 12709
    }
   }
  ],
@@ -614,7 +607,7 @@
    6712,
    4279,
    13511,
-   12709
+   4187
   ],
   "red": [
    3,
