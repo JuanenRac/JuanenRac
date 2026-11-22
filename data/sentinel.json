@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T23:58:36Z",
+ "asof": "2026-11-22T01:11:16Z",
  "ci": {
   "checked": 664,
   "red": [],
@@ -8,24 +8,24 @@
  "compute": {
   "top": [
    {
-    "min24": 1121,
-    "min7": 1121,
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
-   },
-   {
-    "min24": 931,
+    "min24": 926,
     "min7": 1002,
     "repo": "HYDRA-UMC-DOCS"
    },
    {
-    "min24": 863,
-    "min7": 990,
-    "repo": "ARMOR-DOCS"
+    "min24": 764,
+    "min7": 764,
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
     "min24": 609,
     "min7": 682,
     "repo": "URTC-DOCS"
+   },
+   {
+    "min24": 565,
+    "min7": 990,
+    "repo": "ARMOR-DOCS"
    },
    {
     "min24": 455,
@@ -34,12 +34,12 @@
    },
    {
     "min24": 441,
-    "min7": 574,
+    "min7": 573,
     "repo": "ARMOR-NODE-ELECTRICAL"
    }
   ],
-  "total24": 13511,
-  "total7": 40396,
+  "total24": 12775,
+  "total7": 39445,
   "warn": true
  },
  "delivery": {
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 85
+  "gap_minutes": 75
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13511
+    "min": 12775
    }
   }
  ],
@@ -547,6 +547,7 @@
    47,
    8,
    4,
+   0,
    0
   ],
   "dates": [
@@ -568,7 +569,8 @@
    "2026-11-18",
    "2026-11-19",
    "2026-11-20",
-   "2026-11-21"
+   "2026-11-21",
+   "2026-11-22"
   ],
   "gaps": [
    0,
@@ -589,6 +591,7 @@
    0,
    1,
    2,
+   4,
    4
   ],
   "min": [
@@ -610,7 +613,8 @@
    5009,
    6712,
    4279,
-   13511
+   13511,
+   12775
   ],
   "red": [
    3,
@@ -628,6 +632,7 @@
    1,
    1,
    2,
+   0,
    0,
    0,
    0,
