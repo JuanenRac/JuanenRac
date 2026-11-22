@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-22T11:58:16Z",
+ "asof": "2026-11-22T15:18:38Z",
  "ci": {
   "checked": 664,
   "red": [
@@ -15,22 +15,22 @@
  "compute": {
   "top": [
    {
-    "min24": 925,
-    "min7": 1002,
+    "min24": 927,
+    "min7": 1003,
     "repo": "HYDRA-UMC-DOCS"
    },
    {
-    "min24": 559,
-    "min7": 797,
+    "min24": 530,
+    "min7": 789,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 509,
-    "min7": 990,
+    "min24": 510,
+    "min7": 981,
     "repo": "ARMOR-DOCS"
    },
    {
-    "min24": 455,
+    "min24": 447,
     "min7": 682,
     "repo": "URTC-DOCS"
    },
@@ -40,13 +40,13 @@
     "repo": "HYDRA-UMC-DEV-SERVER"
    },
    {
-    "min24": 54,
-    "min7": 459,
-    "repo": "EH3D-SERVER"
+    "min24": 47,
+    "min7": 569,
+    "repo": "ARMOR-NODE-ELECTRICAL"
    }
   ],
-  "total24": 3242,
-  "total7": 38665,
+  "total24": 2887,
+  "total7": 38405,
   "warn": false
  },
  "delivery": {
@@ -316,7 +316,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 235
+  "gap_minutes": 205
  },
  "hygiene": {
   "allowed_missing": [],
@@ -624,7 +624,7 @@
    6712,
    4279,
    13511,
-   3242
+   2887
   ],
   "red": [
    3,
