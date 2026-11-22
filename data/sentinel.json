@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-22T16:13:44Z",
+ "asof": "2026-11-22T21:18:09Z",
  "ci": {
   "checked": 664,
   "red": [
@@ -15,38 +15,38 @@
  "compute": {
   "top": [
    {
-    "min24": 927,
-    "min7": 1003,
-    "repo": "HYDRA-UMC-DOCS"
-   },
-   {
-    "min24": 510,
-    "min7": 981,
-    "repo": "ARMOR-DOCS"
-   },
-   {
-    "min24": 476,
+    "min24": 288,
     "min7": 789,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 447,
-    "min7": 682,
-    "repo": "URTC-DOCS"
-   },
-   {
-    "min24": 61,
-    "min7": 530,
-    "repo": "HYDRA-UMC-DEV-SERVER"
-   },
-   {
     "min24": 47,
-    "min7": 569,
+    "min7": 565,
     "repo": "ARMOR-NODE-ELECTRICAL"
+   },
+   {
+    "min24": 44,
+    "min7": 553,
+    "repo": "ARMOR-NODE-ALARM"
+   },
+   {
+    "min24": 39,
+    "min7": 490,
+    "repo": "ARMOR-NODE-HMI"
+   },
+   {
+    "min24": 34,
+    "min7": 566,
+    "repo": "ARMOR-NODE-RADAR"
+   },
+   {
+    "min24": 27,
+    "min7": 501,
+    "repo": "ARMOR-NODE-SOLAR"
    }
   ],
-  "total24": 2762,
-  "total7": 38306,
+  "total24": 576,
+  "total7": 38244,
   "warn": false
  },
  "delivery": {
@@ -316,7 +316,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 60
+  "gap_minutes": 305
  },
  "hygiene": {
   "allowed_missing": [],
@@ -624,7 +624,7 @@
    6712,
    4279,
    13511,
-   2762
+   576
   ],
   "red": [
    3,
