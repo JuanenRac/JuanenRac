@@ -13244,10 +13244,10 @@
   {
    "actions": {
     "fail": 58,
-    "min": 13601,
-    "ok": 1734,
-    "other": 34,
-    "runs": 1826
+    "min": 13511,
+    "ok": 1729,
+    "other": 33,
+    "runs": 1820
    },
    "areas": {
     "armor": {
@@ -13854,7 +13854,7 @@
    "sentinel": {
     "cand": 0,
     "gaps": 4,
-    "min": 13601,
+    "min": 13511,
     "red": 0
    },
    "tests": {

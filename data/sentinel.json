@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-21T23:51:09Z",
+ "asof": "2026-11-21T23:58:36Z",
  "ci": {
   "checked": 664,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1195,
-    "min7": 1195,
+    "min24": 1121,
+    "min7": 1121,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -18,7 +18,7 @@
     "repo": "HYDRA-UMC-DOCS"
    },
    {
-    "min24": 866,
+    "min24": 863,
     "min7": 990,
     "repo": "ARMOR-DOCS"
    },
@@ -38,8 +38,8 @@
     "repo": "ARMOR-NODE-ELECTRICAL"
    }
   ],
-  "total24": 13601,
-  "total7": 40478,
+  "total24": 13511,
+  "total7": 40396,
   "warn": true
  },
  "delivery": {
@@ -309,7 +309,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 80
+  "gap_minutes": 85
  },
  "hygiene": {
   "allowed_missing": [],
@@ -371,7 +371,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 13601
+    "min": 13511
    }
   }
  ],
@@ -610,7 +610,7 @@
    5009,
    6712,
    4279,
-   13601
+   13511
   ],
   "red": [
    3,
