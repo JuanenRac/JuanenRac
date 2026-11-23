@@ -1,7 +1,7 @@
 {
- "asof": "2026-11-22T21:54:08Z",
+ "asof": "2026-11-23T01:50:12Z",
  "ci": {
-  "checked": 664,
+  "checked": 663,
   "red": [
    {
     "repo": "ARMOR-DOCS",
@@ -15,14 +15,24 @@
  "compute": {
   "top": [
    {
-    "min24": 215,
+    "min24": 41,
     "min7": 789,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
     "min24": 9,
-    "min7": 463,
+    "min7": 455,
     "repo": "URTC-FLASHER"
+   },
+   {
+    "min24": 7,
+    "min7": 484,
+    "repo": "ARMOR-NODE-SOLAR"
+   },
+   {
+    "min24": 6,
+    "min7": 156,
+    "repo": "URTC-COMMON"
    },
    {
     "min24": 4,
@@ -31,22 +41,12 @@
    },
    {
     "min24": 4,
-    "min7": 639,
+    "min7": 635,
     "repo": "URTC"
-   },
-   {
-    "min24": 4,
-    "min7": 486,
-    "repo": "URTC-UPDATER"
-   },
-   {
-    "min24": 3,
-    "min7": 355,
-    "repo": "URTC-VISION-TOOL"
    }
   ],
-  "total24": 279,
-  "total7": 38187,
+  "total24": 111,
+  "total7": 37538,
   "warn": false
  },
  "delivery": {
@@ -316,7 +316,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 40
+  "gap_minutes": 240
  },
  "hygiene": {
   "allowed_missing": [],
@@ -558,6 +558,7 @@
    8,
    4,
    0,
+   0,
    0
   ],
   "dates": [
@@ -580,7 +581,8 @@
    "2026-11-19",
    "2026-11-20",
    "2026-11-21",
-   "2026-11-22"
+   "2026-11-22",
+   "2026-11-23"
   ],
   "gaps": [
    0,
@@ -601,6 +603,7 @@
    0,
    1,
    2,
+   4,
    4,
    4
   ],
@@ -624,7 +627,8 @@
    6712,
    4279,
    13511,
-   279
+   279,
+   111
   ],
   "red": [
    3,
@@ -646,6 +650,7 @@
    0,
    0,
    0,
+   1,
    1
   ]
  },
