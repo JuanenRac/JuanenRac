@@ -386,7 +386,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:armor -->
-`[█████████████▊░░░░░░] 69%` — Calculated from real data: the maturity and the evidence that each of its 20 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████████▋░░░░░░] 68%` — Calculated from real data: the maturity and the evidence that each of its 19 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -396,14 +396,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
-| Software | 🟢 | `█████████░ 90%` | 18 of 20 repositories are at least functional, by the maturity each declares in its own manifest. |
-| Tests | 🟢 | `██████████ 100%` | 20 of 20 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 20 of 20 repositories have the last CI run on the main branch green. |
-| Releases | 🟢 | `██████████ 100%` | 20 of 20 repositories have published at least one release. |
-| Documentation | 🟢 | `██████████ 100%` | 20 of 20 repositories have the README in the eight languages. |
-| Simulation | 🟢 | `██████████ 100%` | 20 of 20 repositories have been checked at least in a simulator. |
+| Software | 🟡 | `████████▉░ 89%` | 17 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `██████████ 100%` | 19 of 19 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
+| Simulation | 🟢 | `██████████ 100%` | 19 of 19 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `██▌░░░░░░░ 25%` | 4 of the 16 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
-| Production | 🟡 | `██████░░░░ 60%` | 12 of 20 repositories are established or in production. |
+| Production | 🟡 | `██████▎░░░ 63%` | 12 of 19 repositories are established or in production. |
 <!-- /status:armor -->
 
 ## 🏗️ How A.R.M.O.R. Is Built

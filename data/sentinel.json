@@ -1,12 +1,12 @@
 {
- "asof": "2026-11-23T10:48:03Z",
+ "asof": "2026-11-23T13:38:50Z",
  "ci": {
   "checked": 663,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-22T11:23:49Z",
-    "streak": 1,
+    "since": "2026-11-23T12:38:27Z",
+    "streak": 2,
     "wf": "nightly.yml"
    }
   ],
@@ -16,37 +16,37 @@
   "top": [
    {
     "min24": 28,
-    "min7": 204,
+    "min7": 189,
     "repo": "HYDRA-UMC-WATCH"
    },
    {
-    "min24": 19,
-    "min7": 789,
+    "min24": 21,
+    "min7": 786,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 8,
-    "min7": 301,
+    "min24": 9,
+    "min7": 452,
+    "repo": "URTC-FLASHER"
+   },
+   {
+    "min24": 9,
+    "min7": 302,
     "repo": "ARMOR-HARDWARE"
    },
    {
     "min24": 8,
-    "min7": 162,
+    "min7": 312,
+    "repo": "URTC-SMART-RACK"
+   },
+   {
+    "min24": 8,
+    "min7": 159,
     "repo": "HYDRA-UMC-SWARM-SYNC"
-   },
-   {
-    "min24": 7,
-    "min7": 579,
-    "repo": "ARMOR-IOS-CONTROL"
-   },
-   {
-    "min24": 7,
-    "min7": 478,
-    "repo": "ARMOR-NODE-SOLAR"
    }
   ],
-  "total24": 134,
-  "total7": 33186,
+  "total24": 166,
+  "total7": 32973,
   "warn": false
  },
  "delivery": {
@@ -316,7 +316,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 500
+  "gap_minutes": 175
  },
  "hygiene": {
   "allowed_missing": [],
@@ -334,7 +334,7 @@
  "parte": [
   {
    "key": "head",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "bad": 0,
     "cand": 0,
@@ -344,7 +344,7 @@
   },
   {
    "key": "red",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "list": [
      "ARMOR-DOCS"
@@ -628,7 +628,7 @@
    4279,
    13511,
    279,
-   134
+   166
   ],
   "red": [
    3,
