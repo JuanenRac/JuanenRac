@@ -15490,15 +15490,15 @@
   },
   {
    "actions": {
-    "fail": 102,
-    "min": 10411,
-    "ok": 3107,
-    "other": 116,
-    "runs": 3325
+    "fail": 120,
+    "min": 16389,
+    "ok": 4177,
+    "other": 153,
+    "runs": 4450
    },
    "areas": {
     "armor": {
-     "ci": 100,
+     "ci": 95,
      "docs": 100,
      "hardware": 25,
      "production": 60,
@@ -15538,7 +15538,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 91,
+     "ci": 100,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -15559,11 +15559,11 @@
    "repos": {
     "ARMOR-ANDROID-CONTROL": [
      2,
-     "0.8.1.1"
+     "0.8.1.2"
     ],
     "ARMOR-COMMON": [
      2,
-     "0.8.1.7"
+     "0.8.1.8"
     ],
     "ARMOR-DEVOPS": [
      2,
@@ -15591,7 +15591,7 @@
     ],
     "ARMOR-NODE-ELECTRICAL": [
      1,
-     "0.6.1"
+     "0.6.2"
     ],
     "ARMOR-NODE-HMI": [
      1,
@@ -15603,7 +15603,7 @@
     ],
     "ARMOR-NODE-SOLAR": [
      1,
-     "0.7.0"
+     "0.7.2"
     ],
     "ARMOR-NODE-SOLAR-HMI": [
      0,
@@ -15611,7 +15611,7 @@
     ],
     "ARMOR-SERVER": [
      2,
-     "0.8.2.6"
+     "0.8.2.7"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -15623,7 +15623,7 @@
     ],
     "ARMOR-STUDIO": [
      2,
-     "0.8.2.8"
+     "0.8.2.9"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -15651,15 +15651,15 @@
     ],
     "EH3D-BUNGARD-GUI": [
      1,
-     "0.3.0"
+     "0.3.1"
     ],
     "EH3D-CAM-DEBUGGER": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-COMMON": [
      1,
-     "0.3.4"
+     "0.3.6"
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
@@ -15667,7 +15667,7 @@
     ],
     "EH3D-CORE-LIBS": [
      1,
-     "0.1.2"
+     "0.1.3"
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
@@ -15683,11 +15683,11 @@
     ],
     "EH3D-DOCS": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "EH3D-DRILLPRO": [
      1,
-     "0.2.2"
+     "0.2.3"
     ],
     "EH3D-GERBERVIEWER": [
      1,
@@ -15703,7 +15703,7 @@
     ],
     "EH3D-ISOCAM": [
      1,
-     "0.1.7"
+     "0.1.8"
     ],
     "EH3D-LAB-BRIDGE": [
      0,
@@ -15715,7 +15715,7 @@
     ],
     "EH3D-NODE-BUNGARD": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-NODE-BUNGARD-AUX": [
      0,
@@ -15723,7 +15723,7 @@
     ],
     "EH3D-NODE-BUNGARD-HMI": [
      0,
-     "0.1.2"
+     "0.1.3"
     ],
     "EH3D-NODE-HMI-GUI": [
      0,
@@ -15735,7 +15735,7 @@
     ],
     "EH3D-NODE-PNP-HEAD": [
      1,
-     "0.0.2"
+     "0.0.3"
     ],
     "EH3D-PHOENIX-3DP": [
      1,
@@ -15743,7 +15743,7 @@
     ],
     "EH3D-PHOENIX-CAD": [
      0,
-     "0.1.4"
+     "0.1.5"
     ],
     "EH3D-PHOENIX-CNC": [
      1,
@@ -15751,11 +15751,11 @@
     ],
     "EH3D-PHOENIX-LASER": [
      1,
-     "0.1.6"
+     "0.1.7"
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-     "0.1.6"
+     "0.1.7"
     ],
     "EH3D-PHOENIX-PNP": [
      1,
@@ -15767,7 +15767,7 @@
     ],
     "EH3D-ROUTEPRO": [
      1,
-     "0.1.9"
+     "0.2.0"
     ],
     "EH3D-SERVER": [
      1,
@@ -15795,7 +15795,7 @@
     ],
     "EH3D-UPDATER": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-VALIDATION-LAB": [
      0,
@@ -16075,7 +16075,7 @@
     ],
     "URTC-FLASHER": [
      1,
-     "0.5.8"
+     "0.5.9"
     ],
     "URTC-GATEWAY": [
      0,
@@ -16087,11 +16087,11 @@
     ],
     "URTC-TESTER": [
      1,
-     "0.5.7"
+     "0.5.8"
     ],
     "URTC-UPDATER": [
      2,
-     "0.3.2"
+     "0.3.3"
     ],
     "URTC-VISION-TOOL": [
      1,
@@ -16105,26 +16105,26 @@
    "sentinel": {
     "cand": 1,
     "gaps": 5,
-    "min": 10411,
+    "min": 16389,
     "red": 0
    },
    "tests": {
-    "ARMOR-ANDROID-CONTROL": 615,
+    "ARMOR-ANDROID-CONTROL": 620,
     "ARMOR-COMMON": 661,
     "ARMOR-DEVOPS": 509,
     "ARMOR-DOCS": 568,
     "ARMOR-HARDWARE": 101,
-    "ARMOR-IOS-CONTROL": 541,
+    "ARMOR-IOS-CONTROL": 546,
     "ARMOR-NETWORK": 334,
     "ARMOR-NODE-ALARM": 40,
     "ARMOR-NODE-ELECTRICAL": 39,
     "ARMOR-NODE-HMI": 48,
     "ARMOR-NODE-RADAR": 34,
-    "ARMOR-NODE-SOLAR": 47,
+    "ARMOR-NODE-SOLAR": 48,
     "ARMOR-SERVER": 1389,
     "ARMOR-SERVER-AI": 211,
     "ARMOR-SIMULATOR": 415,
-    "ARMOR-STUDIO": 1933,
+    "ARMOR-STUDIO": 1939,
     "ARMOR-UPDATER": 454,
     "ARMOR-VISION": 382,
     "ARMOR-VOICE-AI": 255,
@@ -16133,33 +16133,33 @@
     "EH3D-AUTOLEVEL": 287,
     "EH3D-BUNGARD-GUI": 712,
     "EH3D-CAM-DEBUGGER": 237,
-    "EH3D-COMMON": 1149,
+    "EH3D-COMMON": 1174,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
-    "EH3D-CORE-LIBS": 557,
+    "EH3D-CORE-LIBS": 561,
     "EH3D-DESIGN-EXPLORER": 68,
     "EH3D-DESIGN-HISTORY": 68,
     "EH3D-DESIGN-VERIFIER": 68,
-    "EH3D-DOCS": 636,
-    "EH3D-DRILLPRO": 515,
-    "EH3D-GERBERVIEWER": 234,
+    "EH3D-DOCS": 643,
+    "EH3D-DRILLPRO": 519,
+    "EH3D-GERBERVIEWER": 237,
     "EH3D-HYDRA-BRIDGE": 80,
     "EH3D-IOS-CONTROL": 490,
-    "EH3D-ISOCAM": 584,
+    "EH3D-ISOCAM": 595,
     "EH3D-LAB-BRIDGE": 68,
     "EH3D-MANUFACTURING-PROFILE": 68,
-    "EH3D-NODE-PNP-FEEDER": 103,
-    "EH3D-NODE-PNP-HEAD": 96,
-    "EH3D-PHOENIX-3DP": 1184,
-    "EH3D-PHOENIX-CAD": 1760,
-    "EH3D-PHOENIX-CNC": 1209,
-    "EH3D-PHOENIX-LASER": 1055,
-    "EH3D-PHOENIX-PCB": 5484,
-    "EH3D-PHOENIX-PNP": 1967,
+    "EH3D-NODE-PNP-FEEDER": 105,
+    "EH3D-NODE-PNP-HEAD": 98,
+    "EH3D-PHOENIX-3DP": 1216,
+    "EH3D-PHOENIX-CAD": 1762,
+    "EH3D-PHOENIX-CNC": 1213,
+    "EH3D-PHOENIX-LASER": 1057,
+    "EH3D-PHOENIX-PCB": 5505,
+    "EH3D-PHOENIX-PNP": 1969,
     "EH3D-PROJECT-PASSPORT": 68,
-    "EH3D-ROUTEPRO": 174,
+    "EH3D-ROUTEPRO": 178,
     "EH3D-SERVER": 1190,
-    "EH3D-STENCILCAM": 321,
-    "EH3D-STUDIO": 681,
+    "EH3D-STENCILCAM": 340,
+    "EH3D-STUDIO": 687,
     "EH3D-SUITE-LAUNCHER": 223,
     "EH3D-THERMAL-LAB": 68,
     "EH3D-TOOL-MANAGER": 277,
@@ -16229,14 +16229,14 @@
     "TOOLS-GITHUB-ACTIONS-MONITOR": 5936,
     "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": 80,
     "URTC": 319,
-    "URTC-COMMON": 3049,
+    "URTC-COMMON": 3072,
     "URTC-DEVTOOLS": 158,
     "URTC-DOCS": 244,
-    "URTC-FLASHER": 933,
+    "URTC-FLASHER": 966,
     "URTC-GATEWAY": 256,
     "URTC-SMART-RACK": 786,
-    "URTC-TESTER": 1133,
-    "URTC-UPDATER": 736,
+    "URTC-TESTER": 1159,
+    "URTC-UPDATER": 752,
     "URTC-VISION-TOOL": 251,
     "URTC-WEB-STUDIO": 1811
    }
