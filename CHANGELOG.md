@@ -4,6 +4,7 @@ All notable changes to this profile repository are documented here.
 
 ## [Unreleased]
 
+- **Roadmap boards brought up to date:** the HYDRA-UMC, URTC and A.R.M.O.R. definitions carry the state and the cause of the latest work, with the open problems of the solar node listed as open and nothing physical claimed as validated.
 - **A manifest that fails to download no longer lowers the repository count:** the progress bars and the status rows tell a missing file (404) from a failed read, try the read again and, if it still fails, keep their last values instead of writing one repository fewer than the catalogue lists. The A.R.M.O.R. count in the eight READMEs is 20 again.
 - **`action_required` is no longer red:** a run that waits for a person to approve it only warns; the Sentinel tab, the Builds tab and the CI watch issue pass over it like a cancelled run, and the run before it decides. A test keeps it out of the red conclusions.
 - **The dashboard reads the manifests with the current updaters:** the pinned HYDRA-UMC-UPDATER, URTC-UPDATER and ARMOR-UPDATER move to versions that accept the evidence record of a manifest, so the repositories that declare field evidence are no longer listed as invalid.

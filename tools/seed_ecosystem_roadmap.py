@@ -371,17 +371,10 @@ NEXT_ITEMS = (
         "Derive body and response schemas from real types instead of only field names.",
         "The generated OpenAPI document carries typed bodies for the write routes and is checked against the SDK fixtures.",
     ),
-    _item(
-        "Separate telemetry, authorization and arming in the UAV bridge",
-        "HYDRA-UMC-BRIDGE-UAV",
-        "External Automation Bridges",
-        "Established",
-        "Simulator",
-        "High",
-        "Make states that must never be confused impossible to mix up with a real flight order.",
-        "A state table and simulated vehicle like the AMR bridge's; tests show an order is refused from every state that does not allow it, and stop is never blocked.",
-        status="Ready",
-    ),
+    _item("Separate telemetry, authorization and arming in the UAV bridge", "HYDRA-UMC-BRIDGE-UAV", "External Automation Bridges", "Established", "Simulator", "High",
+          "Make states that must never be confused impossible to mix up with a real flight order.",
+          "Delivered in code: single-use human confirmation, cell state read from settings and a heartbeat stop when the broker is lost. Open: the full state table against a simulated vehicle.",
+          status="In progress"),
     _item(
         "Distinguish simulated, blocked and failed-delivery outcomes in the HIL bridge",
         "HYDRA-UMC-HIL-BRIDGE",
@@ -456,16 +449,10 @@ NEXT_ITEMS = (
         status="Blocked",
         blocked_by="Decision: signing scheme and key custody",
     ),
-    _item(
-        "Define the development API, local authentication and plugin lifecycle",
-        "HYDRA-UMC-DEV-SERVER",
-        "Platform Foundation",
-        "Scaffolding",
-        "Local test",
-        "Low",
-        "Turn the development host into a documented service with local authentication and a plugin lifecycle.",
-        "An API description, local-only authentication tests and a plugin install, disable and remove test.",
-    ),
+    _item("Define the development API, local authentication and plugin lifecycle", "HYDRA-UMC-DEV-SERVER", "Platform Foundation", "Scaffolding", "Local test", "Low",
+          "Turn the development host into a documented service with local authentication and a plugin lifecycle.",
+          "Delivered in code: a plugin registry with approval by digest and a separate process, with tests of its limits. Open: the full API description and the install and remove test.",
+          status="In progress"),
     _item(
         "Restrict automatic repairs to reversible steps",
         "HYDRA-UMC-NODE-HEALING",
@@ -858,10 +845,12 @@ WAVE_ITEMS = (
           "A changed schema regenerates the types and a stale type fails the build of each client."),
     _item("Measure test coverage and set a floor in every repository", "HYDRA-UMC-DOCS + every repository", "Platform Foundation", "Established", "Local test", "Normal",
           "Coverage is measured in a few repositories only; measure it in the nightly run everywhere.",
-          "A coverage figure per repository in the nightly report and a minimum below which a build fails."),
+          "Delivered in many repositories: coverage measured on every change with a floor. Open: the repositories still without one.",
+          status="In progress"),
     _item("Host tests for the STM32 bootloaders and a nightly integration bench", "HYDRA-UMC + HYDRA-UMC-SDK", "Platform Foundation", "Functional", "Local test", "High",
           "The bootloaders compile and link but only their helper logic is tested on a computer; run their logic on the host and bring up the server, a client and a simulated controller together every night.",
-          "The host tests cover the update and verification paths of the bootloaders, and the nightly bench starts the stack and runs a scripted session."),
+          "Delivered: host tests of the flash and update paths of the bootloaders. Open: the nightly bench that starts the server, a client and a simulated controller together.",
+          status="In progress"),
     # ---- wave 3: signed packages ----
     _item("Signed packages for every CM5 component", "HYDRA-UMC-UPDATER + HYDRA-UMC-OS + HYDRA-UMC-SERVER + HYDRA-UMC-STUDIO", "Platform Foundation", "Scaffolding", "Local test", "High",
           "The release key exists; each component should be published as an archive with a checksum and a detached Ed25519 signature, and the update manifest signed instead of carrying a SHA-256 only. The packaging tool now gives identical bytes from the same commit (tested) and a workflow builds the archives in Actions; the update manifest accepts an optional signature, key id, minimum bootloader and target.",
@@ -873,7 +862,8 @@ WAVE_ITEMS = (
           hardware="CM5"),
     _item("Two-factor sign-in and a list of sessions", "HYDRA-UMC-SERVER + HYDRA-UMC-STUDIO + HYDRA-UMC-ANDROID-CONTROL", "SDK & Server", "Functional", "Local test", "High",
           "Sign-in has a token with refresh and a lock after failures; add a second factor, a list of sessions an administrator can end, and a limit per source.",
-          "A second factor is required when enabled, a session can be ended from the list, and the negative tests cover a wrong code and a replay."),
+          "Delivered in code: a second factor with recovery codes in the server and its screen in the Android app. Open: the list of sessions in every client and a try on a real phone.",
+          status="In progress"),
     _item("Guided remote access, an own certificate authority for the broker, a firewall and an encrypted backup", "HYDRA-UMC-MQTT-BROKER + HYDRA-UMC-OS + HYDRA-UMC-SERVER", "Platform Foundation", "Scaffolding", "Local test", "Normal",
           "TLS for the broker exists and is optional; add a script that creates its own authority, a guided way to reach the CM5 from outside, a firewall profile and an encrypted backup with a restore test.",
           "Each piece has an install and a removal path, a restore from the backup works, and a firewall rule that is not confirmed is removed again.",
@@ -1032,8 +1022,8 @@ RECENT_ITEMS = (
           "Delivered: the lock is one canonical file with a test, the host tests and the contract checks use it, and the CI stays green.", status="Done"),
     _item("Official signed firmware of the boards, built in Actions and signed on the owner's machine", "HYDRA-UMC + HYDRA-UMC-SDK", "Platform Foundation", "Functional", "Local test", "High",
           "The images are built in Actions, the signature is made locally with the release key and the pre-release carries the signature; an official release needs a firmware that ran on a board.",
-          "A signed image set is published and flashed on a populated board with the result written down; the signing path is already exercised on the host.",
-          status="Blocked", hardware="MCU", blocked_by="Needs a bench-tested firmware and a populated board before it is signed as official"),
+          "Signed images of firmware 0.3.0 are published. Open: flashing them on a populated board and writing the result down.",
+          status="Blocked", hardware="MCU", blocked_by="Published and signed, but never flashed on a populated board"),
     _item("Move binaries out of git into releases and keep their hash", "HYDRA-UMC-DOCS + HYDRA-UMC-SDK", "Platform Foundation", "Scaffolding", "Documentation", "Normal",
           "Committed binaries swell the repositories; they should be published as release assets with a recorded SHA-256, without rewriting the history.",
           "A list of the binaries per repository, each replaced by a release asset and a hash, and a check that fails the CI when a new binary is committed."),
@@ -1065,7 +1055,18 @@ RECENT_ITEMS = (
           status="In progress"),
 )
 
-SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS + RECENT_ITEMS
+NEWEST_ITEMS = (
+    _item("Firmware 0.3.0: two-sector bootloader metadata, read-back gate and update backup, behind switches that are off", "HYDRA-UMC", "Platform Foundation", "Functional", "Local test", "High",
+          "The signed firmware release carries these options switched off, with the board drivers of the H757 in simulation and hardened stop paths.",
+          "On a populated board: the default images boot, and each switch is tried with a power cut and the way back recorded. Today everything is tested on the host only.",
+          status="Blocked", hardware="MCU", blocked_by="No populated board of the custom PCBs exists"),
+    _item("Digital twin: sensitivity sweeps and grasp verification from measured poses", "HYDRA-UMC-TWIN", "Robotics & Simulation", "Established", "Local test", "Normal",
+          "A synthetic pick-and-place scenario swept over physical parameters and mounting errors, and a grasp judged from measured poses, never from what a controller reports.",
+          "Delivered in the 0.2.0 release with tests; a check that cannot run is never a pass. The model is synthetic and was not compared with a real cell.",
+          status="Done"),
+)
+
+SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS + RECENT_ITEMS + NEWEST_ITEMS
 
 
 def _status(status: str, blocked_by: str = "None") -> dict:
@@ -1093,6 +1094,13 @@ HYDRA_STATUS_UPDATES = {
     "Signed packages for every CM5 component": _status("In progress"),
     "Share one updater core among the four updaters": _status("In progress"),
     "The safety zones publish a fault event when their state changes": _status("In progress"),
+    "Official signed firmware of the boards, built in Actions and signed on the owner's machine": _status("Blocked", "Published and signed, but never flashed on a populated board"),
+    "Separate telemetry, authorization and arming in the UAV bridge": _status("In progress"),
+    "Two-factor sign-in and a list of sessions": _status("In progress"),
+    "Measure test coverage and set a floor in every repository": _status("In progress"),
+    "Define the development API, local authentication and plugin lifecycle": _status("In progress"),
+    "Host tests for the STM32 bootloaders and a nightly integration bench": _status("In progress"),
+    "Validate release manifests before application updates": _status("In progress"),
 }
 
 HYDRA_RENAMES: dict = {
