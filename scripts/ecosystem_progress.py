@@ -31,6 +31,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -43,6 +44,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SIBLINGS = ROOT.parent
 USER_AGENT = "JuanenRac-ecosystem-progress"
 RAW_TIMEOUT_S = 10
+RAW_ATTEMPTS = 3
 
 README_FILES = [
     "README.md", "README_spa.md", "README_fra.md", "README_ita.md",
@@ -93,14 +95,27 @@ STATUS_ROW = {
 ManifestReader = Callable[[str], "dict | None"]
 
 
+UNREAD: set[str] = set()     # repositories with a file that could not be read for a reason other than "no such file"
+
+
 def _fetch_raw(name: str, candidate: str) -> str | None:
+    """A file of the default branch, or None. A missing file (404) is an answer; any other failure is
+    tried again and, if it goes on, noted in UNREAD so that nobody counts the repository as having none."""
     url = f"https://raw.githubusercontent.com/JuanenRac/{name}/main/{candidate}"
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method="GET")
-    try:
-        with urllib.request.urlopen(request, timeout=RAW_TIMEOUT_S) as response:
-            return response.read().decode("utf-8", errors="replace")
-    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError):
-        return None
+    for attempt in range(RAW_ATTEMPTS):
+        try:
+            with urllib.request.urlopen(request, timeout=RAW_TIMEOUT_S) as response:
+                return response.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return None
+        except (urllib.error.URLError, TimeoutError, OSError):
+            pass
+        if attempt + 1 < RAW_ATTEMPTS:
+            time.sleep(attempt + 1)
+    UNREAD.add(name)
+    return None
 
 
 def read_manifest(name: str) -> dict | None:
@@ -166,11 +181,21 @@ QUOTA = {"hit": False}      # True once GitHub refused a read because the quota 
 
 
 class FactsUnavailable(SystemExit):
-    """The delivery and quality facts could not be read for too many repositories. `quota` says whether GitHub refused for the quota (a reason to keep the last bars)."""
+    """The facts could not be read. `quota` says whether GitHub refused for the quota and `unread` whether a manifest
+    failed to download; either is a reason to keep the last values instead of writing wrong ones."""
 
-    def __init__(self, message: str, quota: bool = False):
+    def __init__(self, message: str, quota: bool = False, unread: bool = False):
         super().__init__(message)
         self.quota = quota
+        self.unread = unread
+
+    @property
+    def keep_last(self) -> bool:
+        return self.quota or self.unread
+
+    @property
+    def reason(self) -> str:
+        return "the quota of the GitHub API is spent" if self.quota else "a manifest could not be downloaded"
 
 
 def _api(path: str, unchanged_since: "int | None" = None) -> object | None:
@@ -233,6 +258,19 @@ def read_signals(name: str, pushed: "int | None" = None) -> dict | None:
 
 
 SignalReader = Callable[[str], "dict | None"]
+
+
+def read_all_manifests(repos: dict[str, list[str]], reader: ManifestReader) -> dict[str, "dict | None"]:
+    """The manifest of every repository of the catalogue, read once. One that failed to download stops the
+    count: leaving it out would write one repository fewer than the catalogue lists."""
+    found: dict[str, dict | None] = {}
+    for names in repos.values():
+        for name in names:
+            UNREAD.discard(name)
+            found[name] = reader(name)
+            if found[name] is None and name in UNREAD:
+                raise FactsUnavailable(f"ERROR: the manifest of {name} could not be read; nothing written", unread=True)
+    return found
 
 
 def ecosystem_percent(repos: list[str], reader: ManifestReader, signals: SignalReader | None = None) -> tuple[int, int]:
@@ -310,7 +348,8 @@ def compute(reader: ManifestReader = read_manifest, signals: SignalReader | None
         if total and missing / total > 1 - ONLINE_MINIMUM:
             raise FactsUnavailable(f"ERROR: the delivery and quality facts could not be read for {missing} of {total} repositories; nothing written", QUOTA["hit"])
         signals = lambda name: cache.get(name)  # noqa: E731 - the facts are read once per repository
-    return {eco: ecosystem_percent(repos.get(eco, []), reader, signals) for eco in ECOSYSTEMS}
+    manifests = read_all_manifests(repos, reader)
+    return {eco: ecosystem_percent(repos.get(eco, []), manifests.get, signals) for eco in ECOSYSTEMS}
 
 
 def main(argv: list[str]) -> int:
@@ -319,10 +358,10 @@ def main(argv: list[str]) -> int:
     try:
         numbers = compute()
     except FactsUnavailable as exc:
-        if not exc.quota:
+        if not exc.keep_last:
             raise
-        # GitHub refused for the quota: the bars keep their last values (nothing is written), the build goes on, and the next run reads again.
-        print(f"WARNING: {exc} (the quota of the GitHub API is spent; the progress bars keep their last values).", file=sys.stderr)
+        # The bars keep their last values (nothing is written), the build goes on, and the next run reads again.
+        print(f"WARNING: {exc} ({exc.reason}; the progress bars keep their last values).", file=sys.stderr)
         return 0
     finally:
         gh_http.shared().save()

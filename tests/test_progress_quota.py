@@ -71,6 +71,57 @@ class SpentQuotaTests(unittest.TestCase):
         self.assertTrue(raised.exception.quota)
 
 
+class UnreadManifestTests(unittest.TestCase):
+    """A manifest that fails to download must never lower the number of repositories written."""
+
+    REPOS = {"hydra-umc": ["A"], "urtc": ["B"], "armor": ["C", "E"], "eh3d": ["D"]}
+
+    @staticmethod
+    def reader(name):
+        if name == "E":
+            progress.UNREAD.add(name)
+            return None
+        return {"maturity": "functional", "evidence": "none"}
+
+    def tearDown(self):
+        progress.UNREAD.clear()
+
+    def test_a_failed_download_stops_the_count_and_keeps_the_last_values(self):
+        with Fake(progress, "ecosystem_repos", lambda _text: self.REPOS):
+            with self.assertRaises(progress.FactsUnavailable) as raised:
+                progress.compute(reader=self.reader, signals=None)
+        self.assertTrue(raised.exception.keep_last)
+        self.assertFalse(raised.exception.quota)
+
+    def test_a_repository_without_a_manifest_file_is_still_just_left_out(self):
+        self.assertEqual(progress.read_all_manifests({"armor": ["F"]}, lambda _name: None), {"F": None})
+
+    def test_main_keeps_the_last_values(self):
+        def run(*_args, **_kwargs):
+            raise progress.FactsUnavailable("ERROR: the manifest of E could not be read; nothing written", unread=True)
+        for module in (progress, status):
+            with Fake(module, "compute", run):
+                self.assertEqual(module.main([]), 0)
+
+    def test_a_missing_file_is_an_answer_and_a_server_error_is_tried_again(self):
+        import io
+        import urllib.error
+        calls = []
+
+        def opener(code):
+            def run(request, timeout=0):
+                calls.append(code)
+                raise urllib.error.HTTPError(request.full_url, code, "x", {}, io.BytesIO())
+            return run
+        with Fake(progress.time, "sleep", lambda _s: None):
+            with Fake(progress.urllib.request, "urlopen", opener(404)):
+                self.assertIsNone(progress._fetch_raw("R", "f"))
+            self.assertEqual((len(calls), "R" in progress.UNREAD), (1, False))
+            with Fake(progress.urllib.request, "urlopen", opener(503)):
+                self.assertIsNone(progress._fetch_raw("R", "f"))
+            self.assertEqual((len(calls), "R" in progress.UNREAD), (1 + progress.RAW_ATTEMPTS, True))
+
+
 class SavedReadsTests(unittest.TestCase):
     def test_the_signals_skip_the_tags_and_the_files_of_a_repository_that_was_not_pushed(self):
         asked = []
