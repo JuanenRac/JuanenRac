@@ -4,6 +4,7 @@ All notable changes to this profile repository are documented here.
 
 ## [Unreleased]
 
+- **A manifest that fails to download no longer lowers the repository count:** the progress bars and the status rows tell a missing file (404) from a failed read, try the read again and, if it still fails, keep their last values instead of writing one repository fewer than the catalogue lists. The A.R.M.O.R. count in the eight READMEs is 20 again.
 - **`action_required` is no longer red:** a run that waits for a person to approve it only warns; the Sentinel tab, the Builds tab and the CI watch issue pass over it like a cancelled run, and the run before it decides. A test keeps it out of the red conclusions.
 - **The dashboard reads the manifests with the current updaters:** the pinned HYDRA-UMC-UPDATER, URTC-UPDATER and ARMOR-UPDATER move to versions that accept the evidence record of a manifest, so the repositories that declare field evidence are no longer listed as invalid.
 - **All five groups at the same level in every tab:** the lines of the evolution of the progress, the radars of the eight areas, the maturity funnel, the dependency diagram, the tests per group and its evolution, the share of the builds and the number keys now cover HYDRA-UMC, URTC, A.R.M.O.R., EH3D and Tools alike (key `5` opens Tools); a group with nothing read shows "not verified" instead of disappearing. The charts tell a fifth series apart without colour (a fifth marker and dash pattern).

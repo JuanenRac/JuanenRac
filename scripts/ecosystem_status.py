@@ -259,11 +259,12 @@ def compute(reader: Callable[[str], "dict | None"] = progress.read_manifest,
                 missing += cache[name] is None
         if total and missing / total > 1 - progress.ONLINE_MINIMUM:
             raise progress.FactsUnavailable(f"ERROR: the delivery and quality facts could not be read for {missing} of {total} repositories; nothing written", progress.QUOTA["hit"])
+    manifests = progress.read_all_manifests(repos, reader)
     out: dict[str, dict[str, tuple[str, int, int]]] = {}
     for eco in ECOSYSTEMS:
         items = []
         for name in repos.get(eco, []):
-            manifest = reader(name)
+            manifest = manifests.get(name)
             if manifest is None:
                 continue
             items.append((manifest, cache.get(name) if cache else (signals(name) if signals else None)))
@@ -279,10 +280,10 @@ def main(argv: list[str]) -> int:
     try:
         rows_by_eco = compute()
     except progress.FactsUnavailable as exc:
-        if not exc.quota:
+        if not exc.keep_last:
             raise
-        # GitHub refused for the quota: the status rows keep their last values (nothing is written), the build goes on, and the next run reads again.
-        print(f"WARNING: {exc} (the quota of the GitHub API is spent; the status rows keep their last values).", file=sys.stderr)
+        # The status rows keep their last values (nothing is written), the build goes on, and the next run reads again.
+        print(f"WARNING: {exc} ({exc.reason}; the status rows keep their last values).", file=sys.stderr)
         return 0
     finally:
         progress.gh_http.shared().save()
