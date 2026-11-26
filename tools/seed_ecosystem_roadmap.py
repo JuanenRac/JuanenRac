@@ -58,7 +58,7 @@ SEED_ITEMS = (
         "evidence": "Local test",
         "priority": "High",
         "objective": "Define deterministic validation for update manifests before any download or installation path is accepted.",
-        "acceptance": "Tests reject invalid semantic versions, non-HTTPS URLs, missing or mismatched hashes, unexpected signatures, excessive sizes and downgrades.",
+        "acceptance": "Tests reject invalid semantic versions, non-HTTPS URLs, missing or mismatched hashes, unexpected signatures, excessive sizes and downgrades. Released so far: the firmware release carries a manifest of its images, Studio and the Suite check the signature over the header and the image, and the server can check an update manifest against its trusted keys.",
     },
     {
         "title": "Prove firmware artifact inventory reproducibility",
@@ -531,7 +531,7 @@ NEXT_ITEMS = (
         "Local test",
         "High",
         "Require approval, cost limits and an explanation before a language-derived plan reaches an executor, with immediate cancellation and a trace per order.",
-        "A three-stage flow with tests: nothing executes without an approval record, cancellation is immediate, every order has a trace.",
+        "A three-stage flow with tests: nothing executes without an approval record, cancellation is immediate, every order has a trace. The released action engine can also attach a shared proof to a confirmation and accept an approval only once, both off by default.",
     ),
     _item(
         "Reject visual-servoing commands built on stale calibration",
@@ -887,7 +887,7 @@ WAVE_ITEMS = (
           "One package used by the apps, with the existing tests passing unchanged."),
     _item("Tell every app when a newer signed version exists", "HYDRA-UMC-STUDIO + HYDRA-UMC-SUITE + HYDRA-UMC-DSI + HYDRA-UMC-WATCH + HYDRA-UMC-EDITOR-STL + HYDRA-UMC-EDITOR-URDF", "Applications", "Established", "Local test", "Low",
           "Several apps never learn about a new release; the CM5 agent updates Studio and the touch panel, the updater the desktop editors, and the watch follows the phone app.",
-          "Each app shows a newer version only when its signature verifies, and never installs during an operation."),
+          "Each app shows a newer version only when its signature verifies, and never installs during an operation. Released so far: Studio and the Suite say that a newer release exists. Open: the other apps and the checks on real devices."),
     _item("Record the evidence per repository in its manifest and require it in the CI", "HYDRA-UMC-SDK + HYDRA-UMC-DOCS + every repository", "Platform Foundation", "Established", "Documentation", "Normal",
           "Maturity levels already follow the evidence; the manifest should also say what the evidence is, and the shared validation should refuse a level without it.",
           "A manifest field for the evidence, a check that a level above functional names it, and every repository filled in."),
@@ -1022,7 +1022,7 @@ RECENT_ITEMS = (
           "Delivered: the lock is one canonical file with a test, the host tests and the contract checks use it, and the CI stays green.", status="Done"),
     _item("Official signed firmware of the boards, built in Actions and signed on the owner's machine", "HYDRA-UMC + HYDRA-UMC-SDK", "Platform Foundation", "Functional", "Local test", "High",
           "The images are built in Actions, the signature is made locally with the release key and the pre-release carries the signature; an official release needs a firmware that ran on a board.",
-          "Signed images of firmware 0.3.0 are published. Open: flashing them on a populated board and writing the result down.",
+          "Signed images of firmware 0.3.1 are published. Open: flashing them on a populated board and writing the result down.",
           status="Blocked", hardware="MCU", blocked_by="Published and signed, but never flashed on a populated board"),
     _item("Move binaries out of git into releases and keep their hash", "HYDRA-UMC-DOCS + HYDRA-UMC-SDK", "Platform Foundation", "Scaffolding", "Documentation", "Normal",
           "Committed binaries swell the repositories; they should be published as release assets with a recorded SHA-256, without rewriting the history.",
@@ -1057,7 +1057,7 @@ RECENT_ITEMS = (
 
 NEWEST_ITEMS = (
     _item("Firmware 0.3.0: two-sector bootloader metadata, read-back gate and update backup, behind switches that are off", "HYDRA-UMC", "Platform Foundation", "Functional", "Local test", "High",
-          "The signed firmware release carries these options switched off, with the board drivers of the H757 in simulation and hardened stop paths.",
+          "The signed firmware release carries these options switched off, with the board drivers of the H757 in simulation and hardened stop paths. Release 0.3.1 follows: it carries the manifest of its images, and the SPI bridge sends the header format that the bootloaders read.",
           "On a populated board: the default images boot, and each switch is tried with a power cut and the way back recorded. Today everything is tested on the host only.",
           status="Blocked", hardware="MCU", blocked_by="No populated board of the custom PCBs exists"),
     _item("Digital twin: sensitivity sweeps and grasp verification from measured poses", "HYDRA-UMC-TWIN", "Robotics & Simulation", "Established", "Local test", "Normal",
@@ -1066,7 +1066,14 @@ NEWEST_ITEMS = (
           status="Done"),
 )
 
-SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS + RECENT_ITEMS + NEWEST_ITEMS
+STOP_ITEMS = (
+    _item("A signed release ends the global stop and is remembered across restarts, off by default", "HYDRA-UMC-SDK + HYDRA-UMC-SERVER + HYDRA-UMC-STUDIO + HYDRA-UMC-SUITE + HYDRA-UMC-BRIDGE-LASER", "SDK & Server", "Functional", "Local test", "High",
+          "With a key configured, every stop is obeyed as before and a return to ready counts only when the server signed it; the newest signed announcement is kept on disk so an old one cannot be replayed after a restart.",
+          "Delivered and released with tests, switched on from Studio or the Suite and off by default. Not tried with a real machine or a power cut on one.",
+          status="Done"),
+)
+
+SEED_ITEMS = SEED_ITEMS + DELIVERED_ITEMS + NEXT_ITEMS + HARDWARE_ITEMS + CURRENT_ITEMS + WAVE_ITEMS + LATEST_ITEMS + RECENT_ITEMS + NEWEST_ITEMS + STOP_ITEMS
 
 
 def _status(status: str, blocked_by: str = "None") -> dict:
@@ -1075,6 +1082,9 @@ def _status(status: str, blocked_by: str = "None") -> dict:
 
 # Explicit status decisions for cards that already exist on the HYDRA-UMC board, applied only with --reconcile-status. Evidence for each is in the changelog of the repository named.
 HYDRA_STATUS_UPDATES = {
+    "Firmware 0.3.0: two-sector bootloader metadata, read-back gate and update backup, behind switches that are off": _status("Blocked", "No populated board of the custom PCBs exists"),
+    "Tell every app when a newer signed version exists": _status("In progress"),
+    "A signed release ends the global stop and is remembered across restarts, off by default": _status("Done"),
     "Prove restart-safe job execution in the dispatcher": _status("Done"),
     "Restrict automatic repairs to reversible steps": _status("Done"),
     "Build the per-robot OPC UA tree from live server state": _status("Done"),
