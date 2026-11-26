@@ -1,12 +1,12 @@
 {
- "asof": "2026-11-23T13:38:50Z",
+ "asof": "2026-11-26T09:31:46Z",
  "ci": {
-  "checked": 663,
+  "checked": 664,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-23T12:38:27Z",
-    "streak": 2,
+    "since": "2026-11-26T08:52:44Z",
+    "streak": 5,
     "wf": "nightly.yml"
    }
   ],
@@ -15,42 +15,43 @@
  "compute": {
   "top": [
    {
-    "min24": 28,
-    "min7": 189,
-    "repo": "HYDRA-UMC-WATCH"
-   },
-   {
-    "min24": 21,
-    "min7": 786,
-    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
-   },
-   {
-    "min24": 9,
-    "min7": 452,
+    "min24": 58,
+    "min7": 385,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 9,
-    "min7": 302,
-    "repo": "ARMOR-HARDWARE"
+    "min24": 49,
+    "min7": 376,
+    "repo": "ARMOR-ANDROID-CONTROL"
    },
    {
-    "min24": 8,
-    "min7": 312,
-    "repo": "URTC-SMART-RACK"
+    "min24": 45,
+    "min7": 768,
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 8,
-    "min7": 159,
-    "repo": "HYDRA-UMC-SWARM-SYNC"
+    "min24": 37,
+    "min7": 970,
+    "repo": "ARMOR-DOCS"
+   },
+   {
+    "min24": 35,
+    "min7": 476,
+    "repo": "ARMOR-IOS-CONTROL"
+   },
+   {
+    "min24": 34,
+    "min7": 89,
+    "repo": "HYDRA-UMC-JOB-DISPATCHER"
    }
   ],
-  "total24": 166,
-  "total7": 32973,
+  "total24": 930,
+  "total7": 22146,
   "warn": false
  },
  "delivery": {
   "clmis": [
+   "EH3D-VISION-STUDIO",
    "HYDRA-UMC-OS",
    "URTC-DEVTOOLS"
   ],
@@ -63,7 +64,7 @@
     "tagahead": 0
    },
    "eh3d": {
-    "clmis": 0,
+    "clmis": 1,
     "nonotes": 0,
     "read": 41,
     "repos": 41,
@@ -96,7 +97,7 @@
  },
  "ecosystems": {
   "armor": {
-   "cand": 0,
+   "cand": 1,
    "read": 20,
    "red": 1,
    "repos": 20,
@@ -110,7 +111,7 @@
    "unpub": 0
   },
   "electro-hobby-3d": {
-   "cand": 0,
+   "cand": 1,
    "read": 4,
    "red": 0,
    "repos": 4,
@@ -132,6 +133,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-26T09:31:46Z",
+   "kind": "released",
+   "repo": "EH3D-SERVER",
+   "tag": "v0.2.3"
+  },
   {
    "at": "2026-11-22T11:58:16Z",
    "kind": "red_new",
@@ -305,18 +312,12 @@
    "kind": "released",
    "repo": "EH3D-STUDIO",
    "tag": "v0.1.9"
-  },
-  {
-   "at": "2026-11-21T11:53:59Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC",
-   "tag": "v0.3.0"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 175
+  "gap_minutes": 4075
  },
  "hygiene": {
   "allowed_missing": [],
@@ -337,7 +338,7 @@
    "level": "bad",
    "p": {
     "bad": 0,
-    "cand": 0,
+    "cand": 2,
     "hyg": 4,
     "red": 1
    }
@@ -350,6 +351,17 @@
      "ARMOR-DOCS"
     ],
     "n": 1
+   }
+  },
+  {
+   "key": "cand",
+   "level": "warn",
+   "p": {
+    "list": [
+     "ARMOR-NODE-SOLAR",
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
+    ],
+    "n": 2
    }
   },
   {
@@ -387,10 +399,23 @@
  ],
  "read": 135,
  "releases": {
-  "candidates": [],
+  "candidates": [
+   {
+    "entries": 38,
+    "published": "2026-11-21T15:27:29Z",
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "tag": "v2.1.7"
+   },
+   {
+    "entries": 9,
+    "published": "2026-11-19T18:28:07Z",
+    "repo": "ARMOR-NODE-SOLAR",
+    "tag": "v0.6.8"
+   }
+  ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 0
+  "total": 2
  },
  "repos": 135,
  "schema": 1,
@@ -455,7 +480,7 @@
   "EH3D-PHOENIX-PNP": "v0.1.4",
   "EH3D-PROJECT-PASSPORT": "v0.0.4",
   "EH3D-ROUTEPRO": "v0.1.8",
-  "EH3D-SERVER": "v0.2.2",
+  "EH3D-SERVER": "v0.2.3",
   "EH3D-STENCILCAM": "v0.1.2",
   "EH3D-STUDIO": "v0.1.9",
   "EH3D-SUITE-LAUNCHER": "v0.0.7",
@@ -559,7 +584,8 @@
    4,
    0,
    0,
-   0
+   0,
+   2
   ],
   "dates": [
    "2026-11-03",
@@ -582,7 +608,8 @@
    "2026-11-20",
    "2026-11-21",
    "2026-11-22",
-   "2026-11-23"
+   "2026-11-23",
+   "2026-11-26"
   ],
   "gaps": [
    0,
@@ -603,6 +630,7 @@
    0,
    1,
    2,
+   4,
    4,
    4,
    4
@@ -628,7 +656,8 @@
    4279,
    13511,
    279,
-   166
+   166,
+   930
   ],
   "red": [
    3,
@@ -650,6 +679,7 @@
    0,
    0,
    0,
+   1,
    1,
    1
   ]

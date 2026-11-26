@@ -396,14 +396,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
-| Software | 🟡 | `████████▉░ 89%` | 17 of 19 repositories are at least functional, by the maturity each declares in its own manifest. |
-| Tests | 🟢 | `█████████▌ 95%` | 18 of 19 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 19 of 19 repositories have the last CI run on the main branch green. |
-| Releases | 🟢 | `██████████ 100%` | 19 of 19 repositories have published at least one release. |
-| Documentation | 🟢 | `██████████ 100%` | 19 of 19 repositories have the README in the eight languages. |
-| Simulation | 🟢 | `██████████ 100%` | 19 of 19 repositories have been checked at least in a simulator. |
+| Software | 🟢 | `█████████░ 90%` | 18 of 20 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟢 | `██████████ 100%` | 20 of 20 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 20 of 20 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `██████████ 100%` | 20 of 20 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 20 of 20 repositories have the README in the eight languages. |
+| Simulation | 🟢 | `██████████ 100%` | 20 of 20 repositories have been checked at least in a simulator. |
 | Real hardware | 🔴 | `██▌░░░░░░░ 25%` | 4 of the 16 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
-| Production | 🟡 | `██████▎░░░ 63%` | 12 of 19 repositories are established or in production. |
+| Production | 🟡 | `██████░░░░ 60%` | 12 of 20 repositories are established or in production. |
 <!-- /status:armor -->
 
 ## 🏗️ How A.R.M.O.R. Is Built
@@ -522,7 +522,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.1.2 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.1.1 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE) | 0.0.3 | Adapter between the EH3D and HYDRA-UMC ecosystems (planned; no code yet). |
-| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.2.2 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
+| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.2.3 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
 | [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.1.9 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
 
@@ -600,7 +600,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 ### 🛠️ Complementary Tools
 | Repository | Version | Description |
 | :--- | :--- | :--- |
-| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.1.3 | Finds round fiducial marks in an image, turns pixels into millimetres, corrects the distortion of the lens and works out the turn and the shift of a board; the live camera, the neural network and the window are planned. |
+| [EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO) | 0.1.4 | Finds round fiducial marks in an image, turns pixels into millimetres, corrects the distortion of the lens and works out the turn and the shift of a board; the live camera, the neural network and the window are planned. |
 | [EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL) | 0.1.2 | Topographic height mesh processor (Z-Probing) and G-code interpolation for surface compensation. |
 
 
@@ -629,7 +629,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████░░░░░ 50%` | 2 of 4 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have automated tests. |
-| Continuous integration | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 4 of 4 repositories have the last CI run on the main branch green. |
 | Releases | 🟡 | `███████▌░░ 75%` | 3 of 4 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 4 of 4 repositories have the README in the eight languages. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 of 4 repositories have been checked at least in a simulator. |
