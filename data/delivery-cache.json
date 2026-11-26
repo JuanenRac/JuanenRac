@@ -2,9 +2,10 @@
  "builds": {
   "ARMOR-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-20T14:24:36Z",
-   "exp": "2026-11-27T14:23:42Z",
-   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/44752305445",
+   "at": "2026-11-26T13:07:11Z",
+   "checked": true,
+   "exp": "2026-12-03T13:04:56Z",
+   "url": "https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL/actions/runs/45824253993",
    "wf": "apk-build.yml"
   },
   "ARMOR-DEVOPS": {
@@ -23,50 +24,50 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-26T12:36:07Z",
+   "at": "2026-11-26T13:07:28Z",
    "checked": true,
-   "exp": "2026-12-03T12:34:38Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/45820464253",
+   "exp": "2026-12-03T13:00:56Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/45824215180",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
-   "at": "2026-11-26T12:36:02Z",
+   "at": "2026-11-26T13:03:29Z",
    "checked": true,
-   "exp": "2026-12-03T12:35:02Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/45820448240",
+   "exp": "2026-12-03T12:59:57Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/45824177006",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-HMI": {
    "art": true,
-   "at": "2026-11-26T11:34:47Z",
+   "at": "2026-11-26T12:37:10Z",
    "checked": true,
-   "exp": "2026-12-03T11:33:46Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/45810871055",
+   "exp": "2026-12-03T12:36:16Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/45820459191",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-RADAR": {
    "art": true,
-   "at": "2026-11-26T12:36:12Z",
+   "at": "2026-11-26T13:06:54Z",
    "checked": true,
-   "exp": "2026-12-03T12:35:14Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/45820453800",
+   "exp": "2026-12-03T13:04:28Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/45824194282",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-26T12:36:02Z",
+   "at": "2026-11-26T13:06:31Z",
    "checked": true,
-   "exp": "2026-12-03T12:35:09Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/45820442523",
+   "exp": "2026-12-03T13:00:57Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/45824170456",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-26T12:35:38Z",
+   "at": "2026-11-26T13:07:03Z",
    "checked": true,
-   "exp": "2026-12-03T12:34:57Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/45820894653",
+   "exp": "2026-12-03T13:00:10Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/45824234137",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -78,9 +79,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-19T17:25:01Z",
-   "exp": "2026-11-26T17:24:23Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/44576738352",
+   "at": "2026-11-26T13:06:39Z",
+   "checked": true,
+   "exp": "2026-12-03T13:01:18Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/45824247815",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -289,7 +291,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-19T09:59:03Z",
-   "checked": true,
    "exp": "2026-12-19T09:58:23Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/44500421019",
    "wf": "exe-build.yml"
@@ -297,7 +298,6 @@
   "URTC-SMART-RACK": {
    "art": true,
    "at": "2026-11-19T10:06:24Z",
-   "checked": true,
    "exp": "2026-12-19T10:05:53Z",
    "url": "https://github.com/JuanenRac/URTC-SMART-RACK/actions/runs/44500403961",
    "wf": "firmware-build.yml"
@@ -305,7 +305,6 @@
   "URTC-TESTER": {
    "art": true,
    "at": "2026-11-19T09:57:34Z",
-   "checked": true,
    "exp": "2026-12-19T09:56:49Z",
    "url": "https://github.com/JuanenRac/URTC-TESTER/actions/runs/44500414061",
    "wf": "exe-build.yml"
@@ -320,7 +319,6 @@
   "URTC-VISION-TOOL": {
    "art": true,
    "at": "2026-11-19T10:01:50Z",
-   "checked": true,
    "exp": "2026-12-19T10:01:19Z",
    "url": "https://github.com/JuanenRac/URTC-VISION-TOOL/actions/runs/44500409073",
    "wf": "firmware-build.yml"

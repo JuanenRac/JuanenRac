@@ -15491,10 +15491,10 @@
   {
    "actions": {
     "fail": 75,
-    "min": 4693,
-    "ok": 1809,
-    "other": 28,
-    "runs": 1912
+    "min": 5634,
+    "ok": 2068,
+    "other": 34,
+    "runs": 2177
    },
    "areas": {
     "armor": {
@@ -15571,7 +15571,7 @@
     ],
     "ARMOR-DOCS": [
      2,
-     "0.8.2.2"
+     "0.8.2.3"
     ],
     "ARMOR-HARDWARE": [
      1,
@@ -15623,7 +15623,7 @@
     ],
     "ARMOR-STUDIO": [
      2,
-     "0.8.2.6"
+     "0.8.2.7"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -15675,11 +15675,11 @@
     ],
     "EH3D-DESIGN-HISTORY": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-DESIGN-VERIFIER": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-DOCS": [
      1,
@@ -15711,7 +15711,7 @@
     ],
     "EH3D-MANUFACTURING-PROFILE": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-NODE-BUNGARD": [
      1,
@@ -15763,7 +15763,7 @@
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-ROUTEPRO": [
      1,
@@ -15975,7 +15975,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.7.4"
+     "0.7.5"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -16103,9 +16103,9 @@
     ]
    },
    "sentinel": {
-    "cand": 6,
+    "cand": 4,
     "gaps": 5,
-    "min": 4693,
+    "min": 5634,
     "red": 1
    },
    "tests": {
@@ -16133,7 +16133,7 @@
     "EH3D-AUTOLEVEL": 285,
     "EH3D-BUNGARD-GUI": 705,
     "EH3D-CAM-DEBUGGER": 236,
-    "EH3D-COMMON": 1035,
+    "EH3D-COMMON": 1042,
     "EH3D-COMPONENT-INTELLIGENCE": 3,
     "EH3D-CORE-LIBS": 557,
     "EH3D-DESIGN-EXPLORER": 68,
@@ -16148,12 +16148,12 @@
     "EH3D-LAB-BRIDGE": 68,
     "EH3D-MANUFACTURING-PROFILE": 68,
     "EH3D-NODE-PNP-FEEDER": 102,
-    "EH3D-NODE-PNP-HEAD": 85,
+    "EH3D-NODE-PNP-HEAD": 87,
     "EH3D-PHOENIX-3DP": 1184,
     "EH3D-PHOENIX-CAD": 709,
-    "EH3D-PHOENIX-CNC": 1210,
-    "EH3D-PHOENIX-LASER": 1055,
-    "EH3D-PHOENIX-PCB": 5461,
+    "EH3D-PHOENIX-CNC": 1209,
+    "EH3D-PHOENIX-LASER": 1054,
+    "EH3D-PHOENIX-PCB": 5484,
     "EH3D-PHOENIX-PNP": 1965,
     "EH3D-PROJECT-PASSPORT": 68,
     "EH3D-ROUTEPRO": 171,
