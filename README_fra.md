@@ -194,18 +194,18 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 |Dépôt|Version|Description|
 |-|-|-|
 |[HYDRA-UMC-OS](https://github.com/JuanenRac/HYDRA-UMC-OS)|0.6.4|Couche de plateforme sur Raspberry Pi OS pour le CM5 : profils, configuration, diagnostic, services et mises à jour ; pas une nouvelle distribution.|
-|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.5|Contrats versionnés partagés, clients légers et bancs de conformité pour les services, IUs et adaptateurs CM5 ; ne remplace pas les API des fournisseurs.|
+|[HYDRA-UMC-SDK](https://github.com/JuanenRac/HYDRA-UMC-SDK)|0.7.6|Contrats versionnés partagés, clients légers et bancs de conformité pour les services, IUs et adaptateurs CM5 ; ne remplace pas les API des fournisseurs.|
 |[HYDRA-UMC-CONNECTOR-HUB](https://github.com/JuanenRac/HYDRA-UMC-CONNECTOR-HUB)|0.2.1|Registre déclaratif et validateur des manifestes d'adaptateurs pour les connecteurs de machines externes.|
 
 ### 💠 Contrôle Principal et Clients Opérateurs
 
 |Dépôt|Version|Description|
 |-|-|-|
-|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.3.0|Micrologiciel principal de contrôle de mouvement pour STM32H757/G474 avec cinématique en S.|
-|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.3|API Node.js sans tête (headless) et backend WebSocket pour l'orchestration robotique.|
-|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.3|Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D du robot.|
+|[HYDRA-UMC](https://github.com/JuanenRac/HYDRA-UMC)|0.3.1|Micrologiciel principal de contrôle de mouvement pour STM32H757/G474 avec cinématique en S.|
+|[HYDRA-UMC-SERVER](https://github.com/JuanenRac/HYDRA-UMC-SERVER)|0.8.3.4|API Node.js sans tête (headless) et backend WebSocket pour l'orchestration robotique.|
+|[HYDRA-UMC-STUDIO](https://github.com/JuanenRac/HYDRA-UMC-STUDIO)|0.8.2.4|Tableau de bord web avancé basé sur React pour la surveillance et le contrôle 3D du robot.|
 |[HYDRA-UMC-STUDIO-KIT](https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT)|0.0.5|Kit TypeScript partagé des clients web de HYDRA-UMC : session, client HTTP, historique des connexions, préférences et visites guidées.|
-|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.8|Application de bureau haute performance Python/Qt pour l'automatisation industrielle.|
+|[HYDRA-UMC-SUITE](https://github.com/JuanenRac/HYDRA-UMC-SUITE)|0.8.0.9|Application de bureau haute performance Python/Qt pour l'automatisation industrielle.|
 |[HYDRA-UMC-DSI](https://github.com/JuanenRac/HYDRA-UMC-DSI)|0.3.9|Interface tactile dédiée basée sur Flutter pour écrans industriels de 7 pouces (CM5).|
 |[HYDRA-UMC-ANDROID-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL)|0.8.0.6|Application mobile native en Kotlin avec connexion biométrique pour la gestion à distance du robot.|
 |[HYDRA-UMC-IOS-CONTROL](https://github.com/JuanenRac/HYDRA-UMC-IOS-CONTROL)|0.3.7|Application mobile Flutter pour iOS/iPadOS avec synchronisation WebSocket en temps réel.|
@@ -279,7 +279,7 @@ Nouveau dans l'écosystème ? `./starter-kit.sh` (ou `starter-kit.bat` sous Wind
 |[HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP)|0.2.6|Coordinateur de transfert de PCB traçable pour OpenPnP et chargement/déchargement assisté par robot.|
 |[HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D)|0.2.6|Pont sécurisé autour du logiciel d'imprimante 3D natif ; le premier adaptateur valide la disponibilité de Moonraker sans remplacer le micrologiciel.|
 |[HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC)|0.2.9|Coordinateur auxiliaire de cellule CNC ; la trajectoire du contrôleur et la sécurité de la machine restent natives.|
-|[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.6|Coordinateur auxiliaire de cellule laser qui ne peut pas armer, déclencher ou contourner les interverrouillages laser.|
+|[HYDRA-UMC-BRIDGE-LASER](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-LASER)|0.2.7|Coordinateur auxiliaire de cellule laser qui ne peut pas armer, déclencher ou contourner les interverrouillages laser.|
 |[HYDRA-UMC-BRIDGE-DROIDS](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-DROIDS)|0.1.9|Frontière de coordination pour droïdes à pattes et humanoïdes : actions nommées de marche, de prise et de dépose soumises au contrat de sécurité partagé.|
 |[HYDRA-UMC-BRIDGE-AMR](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-AMR)|0.2.2|Frontière de coordination pour flottes AGV/AMR : transformation de repères et vocabulaire d'ordres ; la planification de trajectoire reste dans la navigation propre de l'AMR.|
 |[HYDRA-UMC-BRIDGE-UAV](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-UAV)|0.2.4|Limite de coordination pour les drones (UAV) équipés de caméras : vocabulaire de demande de vol nommé plus un chien de garde (watchdog) de sécurité déterministe en cas de perte de battement de cœur/liaison.|
@@ -329,7 +329,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟡 | `████████▎░ 82%` | 9 dépôts sur 11 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▏ 91%` | 10 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 11 dépôts sur 11 ont été vérifiés au moins dans un simulateur. |
@@ -404,7 +404,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████░ 90%` | 18 dépôts sur 20 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `█████████▌ 95%` | 19 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont été vérifiés au moins dans un simulateur. |
@@ -440,7 +440,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 |Dépôt|Version|Description|
 |-|-|-|
 |[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.5|Firmware de nœud de terrain ESP32-S3 avec décodeurs pour les capteurs LD2450, LD2461 et de présence, mises à jour depuis GitHub et carte en direct.|
-|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.6.9|Nœud passerelle solaire : firmware ESP32-S3, panneau et protocoles des onduleurs Voltronic / MPP Solar et des batteries Pylontech et ANT-BMS.|
+|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.7.0|Nœud passerelle solaire : firmware ESP32-S3, panneau et protocoles des onduleurs Voltronic / MPP Solar et des batteries Pylontech et ANT-BMS.|
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.6.1|Nœud électrique : firmware avec compteurs PZEM sur une ligne série, panneau web et MQTT, les trames des compteurs et les règles de manœuvre.|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.5.9|Nœud et panneau d'alarme : zones filaires, sirène, appareils Zigbee et règles d'armement, de temporisation, d'alarme et de code PIN ; continue de surveiller sans le serveur.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.5.1|Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : état du système sur un écran mural, armer, désarmer, acquitter et voix push-to-talk.|
@@ -449,7 +449,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 ### 🧠 Services Centraux
 |Dépôt|Version|Description|
 |-|-|-|
-|[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.5|Serveur central : état persistant, utilisateurs, événements, alarmes, appareils, automatisations, caméras, mises à jour de nœuds signées, notifications et accès à distance.|
+|[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.6|Serveur central : état persistant, utilisateurs, événements, alarmes, appareils, automatisations, caméras, mises à jour de nœuds signées, notifications et accès à distance.|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.4|Service de surveillance de mouvement, sélection de profil visuel, politique de fusion explicable, registre de moteurs.|
 |[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.8|Zones de caméras, masques et règles de détection (rôdage, un événement par visite) ; aucun modèle de détecteur pour l'instant.|
 |[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.7|Service vocal hors ligne : quinze commandes en huit langues, tours de parole du panneau mural, armement et désarmement confirmés par jeton signé.|
@@ -458,8 +458,8 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 ### 💠 Clients Opérateurs
 |Dépôt|Version|Description|
 |-|-|-|
-|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.7|Console d'exploitation : alarmes, appareils, automatisations, historique, PTZ, carte radar, menus solaire et électrique, mises à jour des nœuds et concepteur 2D/3D.|
-|[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.1.0|Client Android pour l'opérateur : armer et désarmer, alarmes, appareils, radar en direct, solaire, historique, notifications, assistant vocal et configurateur de nœuds.|
+|[ARMOR-STUDIO](https://github.com/JuanenRac/ARMOR-STUDIO)|0.8.2.8|Console d'exploitation : alarmes, appareils, automatisations, historique, PTZ, carte radar, menus solaire et électrique, mises à jour des nœuds et concepteur 2D/3D.|
+|[ARMOR-ANDROID-CONTROL](https://github.com/JuanenRac/ARMOR-ANDROID-CONTROL)|0.8.1.1|Client Android pour l'opérateur : armer et désarmer, alarmes, appareils, radar en direct, solaire, historique, notifications, assistant vocal et configurateur de nœuds.|
 |[ARMOR-IOS-CONTROL](https://github.com/JuanenRac/ARMOR-IOS-CONTROL)|0.0.8|Client opérateur pour iPhone : état, armement, alarmes, centrales d'alarme, caméras et l'assistant, en huit langues.|
 |[ARMOR-WATCH](https://github.com/JuanenRac/ARMOR-WATCH)|0.0.3|Client de montre minimal : affiche les avis d'alarme envoyés par le téléphone et confirme une alarme d'un seul appui ; ni session ni clés sur la montre.|
 
@@ -524,19 +524,19 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |Dépôt|Version|Description|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.7|Trouve les programmes de la suite par leurs manifestes, les lance et garde les projets récents et le fichier de projet (.eh3dproj) avec le SHA-256 de ses fichiers ; la fenêtre et la découverte des machines sur le réseau sont prévues.|
-|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.3.2|Modèle de données partagé : le conteneur de projet .eh3dproj avec contrôles d'intégrité, les types de télémétrie machine et la base de firmware reprise par chaque nœud ESP32.|
-|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.2|Documentation de l'écosystème, guides d'assemblage, spécifications techniques des passerelles et manuels d'intégration.|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.3.4|Modèle de données partagé : le conteneur de projet .eh3dproj avec contrôles d'intégrité, les types de télémétrie machine et la base de firmware reprise par chaque nœud ESP32.|
+|[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.3|Documentation de l'écosystème, guides d'assemblage, spécifications techniques des passerelles et manuels d'intégration.|
 |[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.2|Lecteurs en Rust pour Gerber RS-274X, fichiers de perçage Excellon et G-code (dialectes GRBL, Marlin et PlanetCNC), tolérants aux fichiers endommagés.|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.1|Détecte, installe et met à jour les propres dépôts de l'écosystème (atomique par vérification, aucun GITHUB\_TOKEN requis).|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.3|Adaptateur entre les écosystèmes EH3D et HYDRA-UMC (prévu ; pas encore de code).|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.2.4|Serveur en Rust avec interface REST et websocket : utilisateurs, machines et travaux, planification des travaux de perçage et de fraisage avec les bibliothèques de DRILLPRO et ROUTEPRO, un travail à la fois par machine.|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.2.5|Serveur en Rust avec interface REST et websocket : utilisateurs, machines et travaux, planification des travaux de perçage et de fraisage avec les bibliothèques de DRILLPRO et ROUTEPRO, un travail à la fois par machine.|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.2.0|Client web en Rust pour EH3D-SERVER.|
 
 ### 💠 Projets de perçage, détourage et fraisage :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.1|Réimplémentation en Rust du flux de perçage du logiciel DOS classique pour les machines Bungard CCD : interface en mode texte en huit langues, simulateur ou machine réelle.|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.8|Réimplémentation en Rust du flux de fraisage du logiciel DOS classique pour les machines Bungard CCD, à partir de fichiers de traçage HP-GL : interface en mode texte en huit langues, simulateur ou machine réelle.|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.2|Réimplémentation en Rust du flux de perçage du logiciel DOS classique pour les machines Bungard CCD : interface en mode texte en huit langues, simulateur ou machine réelle.|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.1.9|Réimplémentation en Rust du flux de fraisage du logiciel DOS classique pour les machines Bungard CCD, à partir de fichiers de traçage HP-GL : interface en mode texte en huit langues, simulateur ou machine réelle.|
 |[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.3.0|Interface moderne pour les machines Bungard CCD : un lanceur des programmes classiques de perçage et de fraisage et un visualiseur du travail sur la table.|
 |[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.3|Base commune des programmes de pilotage de machine d'EH3D : une fenêtre qui pilote une machine simulée avec jog, mise à zéro, exécution de G-code et vue du parcours, en huit langues.|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.1.2|Base de données de cribles d'outils partagée suivant les heures d'usure, les préréglages de coupe et les avances sur tous les outils FAO EH3D.|
@@ -549,18 +549,18 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 ### 💠 Projets FAO :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.6|Fraisage d'isolation du cuivre d'une couche Gerber : décalages exacts du cuivre, plusieurs passes, contrôle des espaces que l'outil ne peut pas couper et G-code ; la fenêtre, l'enlèvement du cuivre et la stratégie Voronoi sont prévus.|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.7|Fraisage d'isolation du cuivre d'une couche Gerber : décalages exacts du cuivre, plusieurs passes, contrôle des espaces que l'outil ne peut pas couper et G-code ; la fenêtre, l'enlèvement du cuivre et la stratégie Voronoi sont prévus.|
 |[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.8|Vérifie un programme G-code avant qu'il n'atteigne une machine : son temps avec l'accélération de la machine et des alertes pour les mouvements rapides dans la matière, les mouvements hors de la table, les coupes broche arrêtée et les têtes au-dessus de pinces ; la simulation 3D est prévue.|
 
 ### 💠 Projets Gerber :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.0.9|Outil d'inspection FAO léger pour l'alignement des couches Gerber et la visualisation rapide.|
+|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.1.0|Outil d'inspection FAO léger pour l'alignement des couches Gerber et la visualisation rapide.|
 
 ### 💠 Projets Pick&Place :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.1.2|Utilitaire de conversion de masque de pâte générant des trajectoires de découpe pour la fabrication de pochoirs CMS par laser et traceur.|
+|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.1.3|Utilitaire de conversion de masque de pâte générant des trajectoires de découpe pour la fabrication de pochoirs CMS par laser et traceur.|
 |[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.4|Assemblage pick and place : fichiers de positions de KiCad et CSV, chargeurs et ordre de pose pour une tête d'une à six buses ; la caméra et la commande de la machine sont prévues.|
 
 ### 💠 Projets de nœuds :
@@ -568,7 +568,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |-|-|-|
 |[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.0.8|Nœud ESP32-S3 pour le boîtier d'une machine Bungard CCD : le RS-232 de son unité de commande par Ethernet ou Wi-Fi, avec les lampes de la machine et le variateur de la broche sur la même carte.|
 |[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.2|Écran tactile de 10,1 pouces avec un ESP32-P4 qui pilote une machine Bungard CCD : les écrans du programme de bureau, alertes et ordres parlés en huit langues, et un arrêt matériel qui ne passe pas par l'écran.|
-|[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.0|Nœud ESP32-S3 pour la tête de perçage d'une machine Bungard CCD : la vidéo de sa caméra (OV2640 ou OV5640) comme caméra IP (RTSP et ONVIF), la hauteur de la table mesurée au laser, la vitesse et la température de la broche, et une sortie de protection.|
+|[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.1|Nœud ESP32-S3 pour la tête de perçage d'une machine Bungard CCD : la vidéo de sa caméra (OV2640 ou OV5640) comme caméra IP (RTSP et ONVIF), la hauteur de la table mesurée au laser, la vitesse et la température de la broche, et une sortie de protection.|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.2|Contrôleur manuel tactile 10 pouces / mobile polyvalent à base d'ESP32-P4/ESP32-C6 pour le jog en temps réel, la mise à zéro (G54/G55) et l'arrêt d'urgence.|
 |[EH3D-NODE-PNP-FEEDER](https://github.com/JuanenRac/EH3D-NODE-PNP-FEEDER)|0.0.2|Nœud ESP32-S3 des chargeurs de bande d'une machine pick and place : pilote une chaîne de jusqu'à 32 chargeurs intelligents sur un bus RS-485 à trames, avec détection d'alvéole, de tension et de bourrage, et rend compte à EH3D-SERVER (cœur testé sur l'ordinateur et simulateur ; firmware non écrit, rien de connecté au matériel).|
 |[EH3D-NODE-PNP-HEAD](https://github.com/JuanenRac/EH3D-NODE-PNP-HEAD)|0.0.2|Nœud ESP32-S3 de la tête à buses d'une machine pick and place : axes Z et de rotation, pompe à vide et vannes avec mesure de pression, soufflage, éclairage et verrouillages de sécurité, et rend compte à EH3D-SERVER (cœur testé sur l'ordinateur et simulateur ; firmware non écrit, rien de connecté au matériel).|
@@ -583,17 +583,17 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.4|Environnement de test chargé de gérer les cas d'usage de référence et les tests de régression du système.|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.5|Système de contrôle de version qui conserve l'historique sémantique et l'évolution logique de la conception.|
 |[EH3D-PROJECT-PASSPORT](https://github.com/JuanenRac/EH3D-PROJECT-PASSPORT)|0.0.5|Générateur du passeport technique stockable et reproductible pour l'audit complet d'un projet.|
-|[EH3D-COMPONENT-INTELLIGENCE](https://github.com/JuanenRac/EH3D-COMPONENT-INTELLIGENCE)|0.0.4|Base de données technique avancée enrichie de métadonnées sur les composants électroniques.|
+|[EH3D-COMPONENT-INTELLIGENCE](https://github.com/JuanenRac/EH3D-COMPONENT-INTELLIGENCE)|0.0.5|Base de données technique avancée enrichie de métadonnées sur les composants électroniques.|
 |[EH3D-MANUFACTURING-PROFILE](https://github.com/JuanenRac/EH3D-MANUFACTURING-PROFILE)|0.0.5|Gestionnaire de profils des capacités des machines de chaque usine et des contraintes techniques des fournisseurs.|
 |[EH3D-THERMAL-LAB](https://github.com/JuanenRac/EH3D-THERMAL-LAB)|0.0.4|Laboratoire de simulation thermique progressive directement couplé à la conception physique.|
-|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.4|Module de corrélation servant de pont direct entre les données de simulation et les mesures réelles de laboratoire.|
-|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.4|Environnement d'exploration pour comparer et analyser les alternatives ou les branches d'une conception.|
+|[EH3D-LAB-BRIDGE](https://github.com/JuanenRac/EH3D-LAB-BRIDGE)|0.0.5|Module de corrélation servant de pont direct entre les données de simulation et les mesures réelles de laboratoire.|
+|[EH3D-DESIGN-EXPLORER](https://github.com/JuanenRac/EH3D-DESIGN-EXPLORER)|0.0.5|Environnement d'exploration pour comparer et analyser les alternatives ou les branches d'une conception.|
 
 ### 💠 Projets ANDROID/IOS :
 |Dépôt|Version|Description|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.7|Application Android cliente d'EH3D-SERVER.|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.6|Application iOS cliente d'EH3D-SERVER.|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.8|Application Android cliente d'EH3D-SERVER.|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.7|Application iOS cliente d'EH3D-SERVER.|
 
 ### 🛠️ Outils complémentaires
 |Dépôt|Version|Description|
@@ -643,7 +643,7 @@ Le groupe réunit les programmes qui se trouvent au-dessus des quatre écosystè
 
 | Outil | Version | Ce que c'est |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.7 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.1.8 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.1.0 | Application Android du moniteur : lire sur le téléphone l'état et les alertes de ton propre moniteur (simple squelette ; rien n'est encore construit). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Compagnon pour montre (Wear OS) de l'application Android : un coup d'œil à l'état du CI et aux alertes (simple squelette ; rien n'est encore construit). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |
