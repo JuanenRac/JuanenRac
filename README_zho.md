@@ -238,7 +238,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-ORCHESTRATOR](https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR)|0.2.7|用于多机器人协调和防碰撞的车队管理器。|
+|[HYDRA-UMC-ORCHESTRATOR](https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR)|0.2.8|用于多机器人协调和防碰撞的车队管理器。|
 |[HYDRA-UMC-SWARM-SYNC](https://github.com/JuanenRac/HYDRA-UMC-SWARM-SYNC)|0.2.1|纳秒级机器人同步的 PTP（精时协议）同步。|
 |[HYDRA-UMC-PATH-PLANNER-3D](https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D)|0.1.5|共享工作空间机器人群的分布式路径优化器。|
 |[HYDRA-UMC-JOB-DISPATCHER](https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER)|0.3.1|异构机器人车队的基于优先级的任务调度程序。|
@@ -260,7 +260,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 |[HYDRA-UMC-DATALAKE](https://github.com/JuanenRac/HYDRA-UMC-DATALAKE)|0.2.7|用于海量工业机器人数据的大数据存储。|
 |[HYDRA-UMC-TELEMETRY-COLLECTOR](https://github.com/JuanenRac/HYDRA-UMC-TELEMETRY-COLLECTOR)|0.2.3|用于 CAN、WebSocket 和系统日志的高吞吐量摄取器。|
 |[HYDRA-UMC-ANOMALY-DETECTOR](https://github.com/JuanenRac/HYDRA-UMC-ANOMALY-DETECTOR)|0.2.6|基于电机振动特征的预测性维护引擎。|
-|[HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS)|0.2.2|用于工业工厂管理的自动化 OEE 和 KPI 生成。|
+|[HYDRA-UMC-PRODUCTION-REPORTS](https://github.com/JuanenRac/HYDRA-UMC-PRODUCTION-REPORTS)|0.2.3|用于工业工厂管理的自动化 OEE 和 KPI 生成。|
 
 ### 🏭 工业网关
 
@@ -275,7 +275,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2)|0.2.0|双向 ROS 2 协调边界：用于观察的主题、用于检查的服务以及用于单元任务的可取消操作。|
+|[HYDRA-UMC-BRIDGE-ROS2](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-ROS2)|0.2.1|双向 ROS 2 协调边界：用于观察的主题、用于检查的服务以及用于单元任务的可取消操作。|
 |[HYDRA-UMC-BRIDGE-OPENPNP](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-OPENPNP)|0.2.7|适用于 OpenPnP 和机器人辅助上下料的可追溯 PCB 交接协调器。|
 |[HYDRA-UMC-BRIDGE-PRINTER3D](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-PRINTER3D)|0.2.6|围绕原生 3D 打印机软件的安全桥接；首个适配器在不替换固件的情况下验证 Moonraker 的就绪状态。|
 |[HYDRA-UMC-BRIDGE-CNC](https://github.com/JuanenRac/HYDRA-UMC-BRIDGE-CNC)|0.3.0|CNC 单元辅助协调器；控制器轨迹和机器安全性保持原生状态。|
@@ -329,7 +329,7 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 | --- | :---: | --- | --- |
 | 软件 | 🟡 | `████████▎░ 82%` | 11 个仓库中有 9 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个有自动化测试。 |
-| 持续集成 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `█████████▏ 91%` | 11 个仓库中有 10 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个提供八种语言的 README。 |
 | 仿真 | 🟢 | `██████████ 100%` | 11 个仓库中有 11 个至少在仿真器中验证过。 |
@@ -361,8 +361,8 @@ v1.1 生态系统是一个分层的产品平台：它构建在成熟的 Linux �
 
 |仓库|版本|描述|
 |-|-|-|
-|[URTC](https://github.com/JuanenRac/URTC)|0.5.1|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
-|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.5.9|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
+|[URTC](https://github.com/JuanenRac/URTC)|0.5.2|面向各类专用工具头的 Universal Robot Tool Controller 固件。|
+|[URTC-FLASHER](https://github.com/JuanenRac/URTC-FLASHER)|0.6.0|用于 CAN-OTA 和全芯片 SWD/JTAG 固件更新的 GUI 工具。|
 |[URTC-TESTER](https://github.com/JuanenRac/URTC-TESTER)|0.5.9|用于在 CAN 上实时验证 URTC 工具配置文件的诊断工具。|
 |[URTC-WEB-STUDIO](https://github.com/JuanenRac/URTC-WEB-STUDIO)|0.5.4|用于即时硬件测试和分析的基于浏览器的 Web Serial 工具。|
 |[URTC-SMART-RACK](https://github.com/JuanenRac/URTC-SMART-RACK)|0.2.9|具备自动预热和生命周期审计功能的智能工具存储。|
@@ -439,8 +439,8 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 📡 现场节点
 |仓库|版本|描述|
 |-|-|-|
-|[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.5|ESP32-S3 现场节点固件：支持 LD2450、LD2461 和人体存在传感器的解码，可从 GitHub 更新，并提供实时地图。|
-|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.7.3|太阳能网关节点：ESP32-S3 固件、面板，以及 Voltronic / MPP Solar 逆变器和 Pylontech、ANT-BMS 电池的协议。|
+|[ARMOR-NODE-RADAR](https://github.com/JuanenRac/ARMOR-NODE-RADAR)|0.8.1.6|ESP32-S3 现场节点固件：支持 LD2450、LD2461 和人体存在传感器的解码，可从 GitHub 更新，并提供实时地图。|
+|[ARMOR-NODE-SOLAR](https://github.com/JuanenRac/ARMOR-NODE-SOLAR)|0.7.4|太阳能网关节点：ESP32-S3 固件、面板，以及 Voltronic / MPP Solar 逆变器和 Pylontech、ANT-BMS 电池的协议。|
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.6.2|电气节点：通过一条串行线路读取 PZEM 电表的固件、网页面板和 MQTT、电表数据帧以及开合操作规则。|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.6.0|报警节点与面板：有线防区、警笛、Zigbee 设备，以及布防、延时、报警和 PIN 规则；服务器离线时仍继续守护。|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.5.2|适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：在壁挂屏幕上显示系统状态，布防、撤防、确认，以及按键通话语音。|
@@ -451,7 +451,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |-|-|-|
 |[ARMOR-SERVER](https://github.com/JuanenRac/ARMOR-SERVER)|0.8.2.8|中央服务器：持久化状态、用户、事件、报警、设备、自动化、摄像头、已签名的节点更新、通知和远程访问。|
 |[ARMOR-SERVER-AI](https://github.com/JuanenRac/ARMOR-SERVER-AI)|0.3.4|运动监视服务、视觉配置文件选择、可解释的融合策略、引擎注册表。|
-|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.8|相机区域、遮罩和检测规则（徘徊、每次访问一个事件）；暂无检测器模型。|
+|[ARMOR-VISION](https://github.com/JuanenRac/ARMOR-VISION)|0.1.9|相机区域、遮罩和检测规则（徘徊、每次访问一个事件）；暂无检测器模型。|
 |[ARMOR-VOICE-AI](https://github.com/JuanenRac/ARMOR-VOICE-AI)|0.3.8|离线语音服务：八种语言的十五条命令、壁挂面板的语音交互、通过签名令牌确认的布防和撤防。|
 |[ARMOR-NETWORK](https://github.com/JuanenRac/ARMOR-NETWORK)|0.1.9|本地网络监控：网络中的设备、互联网状态以及发生的变化；只观察，不干预。|
 
@@ -482,7 +482,7 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 **更新器：** [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) 检测、安装并更新该生态系统的仓库；[ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) 则对全部四个生态系统这样做。
 
 <!-- progress:eh3d -->
-`\[█████████▊░░░░░░░░░░] 49%` — 根据真实数据计算：其 41 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
+`\[██████████░░░░░░░░░░] 50%` — 根据真实数据计算：其 41 个仓库各自在自己的清单中声明的成熟度和验证依据，以及已发布的版本、测试、通过的 CI 和八种语言的文档。100% 的里程碑是一个完全集成并在真实硬件上运行的生态系统。
 <!-- /progress:eh3d -->
 
 <!-- status:eh3d -->
@@ -524,61 +524,61 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |仓库|版本|描述|
 |-|-|-|
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.8|通过清单找到套件的程序并启动它们，保存最近的项目以及带各文件 SHA-256 的项目文件（.eh3dproj）；窗口和网络上机器的发现在计划中。|
-|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.3.7|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
+|[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.3.9|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.5|生态系统文档、组装指南、网关技术规范和集成手册。|
-|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.3|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.4|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.2|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.3|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.2.6|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
-|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.2.1|EH3D-SERVER 的 Rust Web 客户端。|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.2.7|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
+|[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.2.2|EH3D-SERVER 的 Rust Web 客户端。|
 
 ### 💠 钻孔／铣边／铣削项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.4|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的钻孔流程：八种语言的文本模式界面，可用模拟器或真实机器。|
-|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.2.1|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
-|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.3.2|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
-|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.5|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
+|[EH3D-DRILLPRO](https://github.com/JuanenRac/EH3D-DRILLPRO)|0.2.5|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的钻孔流程：八种语言的文本模式界面，可用模拟器或真实机器。|
+|[EH3D-ROUTEPRO](https://github.com/JuanenRac/EH3D-ROUTEPRO)|0.2.2|用 Rust 重新实现 Bungard CCD 机器经典 DOS 软件的铣削流程，输入为 HP-GL 绘图文件：八种语言的文本模式界面，可用模拟器或真实机器。|
+|[EH3D-BUNGARD-GUI](https://github.com/JuanenRac/EH3D-BUNGARD-GUI)|0.3.3|Bungard CCD 机器的现代界面：经典钻孔和铣削程序的启动器，以及显示工作台上作业的查看器。|
+|[EH3D-PHOENIX-CNC](https://github.com/JuanenRac/EH3D-PHOENIX-CNC)|0.2.6|EH3D 机器控制程序的共享基础：一个驱动模拟机器的窗口，支持点动、置零、G 代码运行和路径显示，提供八种语言。|
 |[EH3D-TOOL-MANAGER](https://github.com/JuanenRac/EH3D-TOOL-MANAGER)|0.1.3|跨所有 EH3D CAM 工具跟踪磨损小时数、切削预设和进给速率的共享刀具库数据库。|
 
 ### 💠 激光项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.1.7|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
+|[EH3D-PHOENIX-LASER](https://github.com/JuanenRac/EH3D-PHOENIX-LASER)|0.1.8|用于图像抖动、光栅/矢量转换和动态 PWM 功率控制的激光 CAM 应用。|
 
 ### 💠 CAM 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.1.9|Gerber 层铜箔的隔离铣削：铜箔的精确偏移、多道走刀、检查刀具切不到的窄缝并输出 G 代码；窗口、铜区去除和 Voronoi 策略在计划中。|
-|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.0.9|在 G 代码程序到达机器之前进行检查：按机器加速度计算时间，并对快速进入材料、超出工作台、主轴停转时切削和刀头经过夹具给出警报；3D 模拟在计划中。|
+|[EH3D-ISOCAM](https://github.com/JuanenRac/EH3D-ISOCAM)|0.2.0|Gerber 层铜箔的隔离铣削：铜箔的精确偏移、多道走刀、检查刀具切不到的窄缝并输出 G 代码；窗口、铜区去除和 Voronoi 策略在计划中。|
+|[EH3D-CAM-DEBUGGER](https://github.com/JuanenRac/EH3D-CAM-DEBUGGER)|0.1.0|在 G 代码程序到达机器之前进行检查：按机器加速度计算时间，并对快速进入材料、超出工作台、主轴停转时切削和刀头经过夹具给出警报；3D 模拟在计划中。|
 
 ### 💠 Gerber 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.1.0|用于 Gerber 图层对齐和快速可视化的轻量级 CAM 检查工具。|
+|[EH3D-GERBERVIEWER](https://github.com/JuanenRac/EH3D-GERBERVIEWER)|0.1.1|用于 Gerber 图层对齐和快速可视化的轻量级 CAM 检查工具。|
 
 ### 💠 贴片（Pick&Place）项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.1.4|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
-|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.5|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
+|[EH3D-STENCILCAM](https://github.com/JuanenRac/EH3D-STENCILCAM)|0.1.5|生成用于激光和绘图仪 SMD 钢网制造的切割刀具路径的阻焊膏掩模转换实用程序。|
+|[EH3D-PHOENIX-PNP](https://github.com/JuanenRac/EH3D-PHOENIX-PNP)|0.1.6|贴片装配：KiCad 和 CSV 位置文件、供料器，以及一到六个吸嘴贴装头的贴装顺序；摄像头和机器控制在计划中。|
 
 ### 💠 节点项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.1.0|用于 Bungard CCD 机器机箱的 ESP32-S3 节点：通过以太网或 Wi-Fi 访问其控制单元的 RS-232，机器的指示灯和主轴驱动器在同一块板上。|
-|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.3|基于 ESP32-P4 的 10.1 英寸触摸屏，用于控制 Bungard CCD 机器：桌面程序的各个界面、八种语言的语音提示与语音指令，以及不经过屏幕的硬件急停。|
-|[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.1|用于 Bungard CCD 机器钻头的 ESP32-S3 节点：其摄像头（OV2640 或 OV5640）的视频以 IP 摄像头形式（RTSP 和 ONVIF）提供，用激光测量工作台高度，测量主轴转速和温度，并带有保护输出。|
+|[EH3D-NODE-BUNGARD](https://github.com/JuanenRac/EH3D-NODE-BUNGARD)|0.1.1|用于 Bungard CCD 机器机箱的 ESP32-S3 节点：通过以太网或 Wi-Fi 访问其控制单元的 RS-232，机器的指示灯和主轴驱动器在同一块板上。|
+|[EH3D-NODE-BUNGARD-HMI](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI)|0.1.4|基于 ESP32-P4 的 10.1 英寸触摸屏，用于控制 Bungard CCD 机器：桌面程序的各个界面、八种语言的语音提示与语音指令，以及不经过屏幕的硬件急停。|
+|[EH3D-NODE-BUNGARD-AUX](https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX)|0.1.2|用于 Bungard CCD 机器钻头的 ESP32-S3 节点：其摄像头（OV2640 或 OV5640）的视频以 IP 摄像头形式（RTSP 和 ONVIF）提供，用激光测量工作台高度，测量主轴转速和温度，并带有保护输出。|
 |[EH3D-NODE-HMI-GUI](https://github.com/JuanenRac/EH3D-NODE-HMI-GUI)|0.1.3|通用的 ESP32-P4/ESP32-C6 10 英寸触摸屏／移动手动控制器，支持实时点动、归零设置（G54/G55）和急停。|
-|[EH3D-NODE-PNP-FEEDER](https://github.com/JuanenRac/EH3D-NODE-PNP-FEEDER)|0.0.3|贴片机料带供料器的 ESP32-S3 节点：通过带帧的 RS-485 总线驱动最多 32 个智能供料器组成的链路，检测料穴、张力和卡料，并向 EH3D-SERVER 报告（主机测试的核心和模拟器；固件尚未编写，未连接任何硬件）。|
-|[EH3D-NODE-PNP-HEAD](https://github.com/JuanenRac/EH3D-NODE-PNP-HEAD)|0.0.3|贴片机吸嘴头的 ESP32-S3 节点：Z 轴和旋转轴、带压力检测的真空泵和阀门、吹气、照明和安全联锁，并向 EH3D-SERVER 报告（主机测试的核心和模拟器；固件尚未编写，未连接任何硬件）。|
+|[EH3D-NODE-PNP-FEEDER](https://github.com/JuanenRac/EH3D-NODE-PNP-FEEDER)|0.0.4|贴片机料带供料器的 ESP32-S3 节点：通过带帧的 RS-485 总线驱动最多 32 个智能供料器组成的链路，检测料穴、张力和卡料，并向 EH3D-SERVER 报告（主机测试的核心和模拟器；固件尚未编写，未连接任何硬件）。|
+|[EH3D-NODE-PNP-HEAD](https://github.com/JuanenRac/EH3D-NODE-PNP-HEAD)|0.0.4|贴片机吸嘴头的 ESP32-S3 节点：Z 轴和旋转轴、带压力检测的真空泵和阀门、吹气、照明和安全联锁，并向 EH3D-SERVER 报告（主机测试的核心和模拟器；固件尚未编写，未连接任何硬件）。|
 
 ### 💠 PHOENIX 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.7|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
+|[EH3D-PHOENIX-PCB](https://github.com/JuanenRac/EH3D-PHOENIX-PCB)|0.1.9|EDA 环境：原理图捕获、PCB 布局、验证工具、电路仿真，以及面向开关电源（SMPS）和射频的专用模块。|
 |[EH3D-PHOENIX-CAD](https://github.com/JuanenRac/EH3D-PHOENIX-CAD)|0.1.6|专注于外壳、机箱和散热器设计的参数化机械 CAD。|
-|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.0.9|准备3D打印：读取STL、OBJ和3MF模型，内置120个打印机配置文件，切片为带安全温度限制的G-code，并与Moonraker、OctoPrint及EH3D-SERVER通信（仅在模拟器上试过）。|
+|[EH3D-PHOENIX-3DP](https://github.com/JuanenRac/EH3D-PHOENIX-3DP)|0.1.0|准备3D打印：读取STL、OBJ和3MF模型，内置120个打印机配置文件，切片为带安全温度限制的G-code，并与Moonraker、OctoPrint及EH3D-SERVER通信（仅在模拟器上试过）。|
 |[EH3D-DESIGN-VERIFIER](https://github.com/JuanenRac/EH3D-DESIGN-VERIFIER)|0.0.5|用于交叉验证和设计质量控制的综合工程验证器。|
 |[EH3D-VALIDATION-LAB](https://github.com/JuanenRac/EH3D-VALIDATION-LAB)|0.0.4|负责管理参考用例和系统回归测试的测试环境。|
 |[EH3D-DESIGN-HISTORY](https://github.com/JuanenRac/EH3D-DESIGN-HISTORY)|0.0.5|保存设计语义历史和逻辑演进的版本控制系统。|
@@ -592,14 +592,14 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 ### 💠 ANDROID/IOS 项目：
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.8|EH3D-SERVER 的 Android 应用客户端。|
-|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.7|EH3D-SERVER 的 iOS 应用客户端。|
+|[EH3D-ANDROID-CONTROL](https://github.com/JuanenRac/EH3D-ANDROID-CONTROL)|0.1.9|EH3D-SERVER 的 Android 应用客户端。|
+|[EH3D-IOS-CONTROL](https://github.com/JuanenRac/EH3D-IOS-CONTROL)|0.1.8|EH3D-SERVER 的 iOS 应用客户端。|
 
 ### 🛠️ 辅助工具
 |仓库|版本|描述|
 |-|-|-|
-|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.1.4|在图像中找到圆形基准点，把像素转换为毫米，校正镜头畸变并计算电路板的旋转和平移；实时摄像头、神经网络和窗口在计划中。|
-|[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.3|地形高度网格处理器（Z 探测）和用于表面补偿的 G代码插值。|
+|[EH3D-VISION-STUDIO](https://github.com/JuanenRac/EH3D-VISION-STUDIO)|0.1.5|在图像中找到圆形基准点，把像素转换为毫米，校正镜头畸变并计算电路板的旋转和平移；实时摄像头、神经网络和窗口在计划中。|
+|[EH3D-AUTOLEVEL](https://github.com/JuanenRac/EH3D-AUTOLEVEL)|0.1.4|地形高度网格处理器（Z 探测）和用于表面补偿的 G代码插值。|
 
 
 ---

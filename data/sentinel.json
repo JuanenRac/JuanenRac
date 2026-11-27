@@ -1,65 +1,80 @@
 {
- "asof": "2026-11-27T04:30:53Z",
+ "asof": "2026-11-27T13:12:23Z",
  "ci": {
-  "checked": 750,
+  "checked": 749,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-27T03:38:52Z",
+    "since": "2026-11-27T12:17:09Z",
+    "streak": 1,
+    "wf": "ci.yml"
+   },
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-27T12:14:59Z",
+    "streak": 1,
+    "wf": "coverage-floor.yml"
+   },
+   {
+    "repo": "ARMOR-DOCS",
+    "since": "2026-11-27T12:20:48Z",
+    "streak": 1,
+    "wf": "nightly.yml"
+   },
+   {
+    "repo": "URTC-DOCS",
+    "since": "2026-11-27T13:08:41Z",
     "streak": 1,
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 1
+  "red_total": 4
  },
  "compute": {
   "top": [
    {
-    "min24": 895,
-    "min7": 895,
-    "repo": "EH3D-PHOENIX-PCB"
-   },
-   {
-    "min24": 828,
-    "min7": 828,
+    "min24": 1152,
+    "min7": 1152,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 700,
-    "min7": 700,
-    "repo": "EH3D-COMMON"
+    "min24": 991,
+    "min7": 991,
+    "repo": "EH3D-PHOENIX-PCB"
    },
    {
-    "min24": 650,
-    "min7": 754,
+    "min24": 988,
+    "min7": 1020,
     "repo": "URTC-FLASHER"
    },
    {
-    "min24": 603,
-    "min7": 603,
-    "repo": "EH3D-PHOENIX-PNP"
+    "min24": 809,
+    "min7": 809,
+    "repo": "EH3D-SERVER"
    },
    {
-    "min24": 581,
-    "min7": 581,
-    "repo": "ARMOR-ANDROID-CONTROL"
+    "min24": 782,
+    "min7": 782,
+    "repo": "EH3D-COMMON"
+   },
+   {
+    "min24": 709,
+    "min7": 758,
+    "repo": "HYDRA-UMC-DEV-SERVER"
    }
   ],
-  "total24": 24422,
-  "total7": 30983,
+  "total24": 40073,
+  "total7": 47210,
   "warn": true
  },
  "delivery": {
   "clmis": [
-   "ARMOR-NODE-SOLAR",
-   "ARMOR-SERVER",
-   "ARMOR-STUDIO",
    "HYDRA-UMC-OS",
    "URTC-DEVTOOLS"
   ],
   "eco": {
    "armor": {
-    "clmis": 3,
+    "clmis": 0,
     "nonotes": 0,
     "read": 21,
     "repos": 21,
@@ -99,11 +114,11 @@
  },
  "ecosystems": {
   "armor": {
-   "cand": 1,
+   "cand": 2,
    "read": 21,
    "red": 1,
    "repos": 21,
-   "unpub": 3
+   "unpub": 0
   },
   "eh3d": {
    "cand": 0,
@@ -120,206 +135,206 @@
    "unpub": 0
   },
   "hydra-umc": {
-   "cand": 0,
+   "cand": 1,
    "read": 59,
    "red": 0,
    "repos": 59,
    "unpub": 1
   },
   "urtc": {
-   "cand": 1,
+   "cand": 2,
    "read": 11,
-   "red": 0,
+   "red": 1,
    "repos": 11,
    "unpub": 1
   }
  },
  "events": [
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "red_new",
    "repo": "ARMOR-DOCS",
+   "wf": "ci.yml"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "red_new",
+   "repo": "ARMOR-DOCS",
+   "wf": "coverage-floor.yml"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "red_new",
+   "repo": "URTC-DOCS",
    "wf": "nightly.yml"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "ARMOR-DEVOPS",
-   "tag": "v0.7.9"
+   "repo": "ARMOR-NODE-RADAR",
+   "tag": "v0.8.1.6"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "ARMOR-NODE-ALARM",
-   "tag": "v0.6.0"
+   "repo": "ARMOR-NODE-SOLAR",
+   "tag": "v0.7.4"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "ARMOR-NODE-HMI",
-   "tag": "v0.5.2"
+   "repo": "ARMOR-SERVER",
+   "tag": "v0.8.2.8"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "ARMOR-SIMULATOR",
-   "tag": "v0.4.0"
+   "repo": "ARMOR-STUDIO",
+   "tag": "v0.8.3.0"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "ARMOR-UPDATER",
-   "tag": "v0.2.5"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "ARMOR-VOICE-AI",
-   "tag": "v0.3.8"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-AUTOLEVEL",
-   "tag": "v0.1.3"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-BUNGARD-GUI",
-   "tag": "v0.3.2"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-COMMON",
-   "tag": "v0.3.7"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-DOCS",
-   "tag": "v0.1.5"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-DRILLPRO",
-   "tag": "v0.2.4"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-ISOCAM",
+   "repo": "ARMOR-VISION",
    "tag": "v0.1.9"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "EH3D-NODE-BUNGARD",
-   "tag": "v0.1.0"
+   "repo": "EH3D-ANDROID-CONTROL",
+   "tag": "v0.1.9"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "EH3D-NODE-HMI-GUI",
-   "tag": "v0.1.3"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-NODE-PNP-FEEDER",
-   "tag": "v0.0.3"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-3DP",
-   "tag": "v0.0.9"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-CAD",
-   "tag": "v0.1.6"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-CNC",
-   "tag": "v0.2.5"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-PHOENIX-PNP",
-   "tag": "v0.1.5"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-ROUTEPRO",
-   "tag": "v0.2.1"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-SERVER",
-   "tag": "v0.2.6"
-  },
-  {
-   "at": "2026-11-27T04:30:53Z",
-   "kind": "released",
-   "repo": "EH3D-STENCILCAM",
+   "repo": "EH3D-AUTOLEVEL",
    "tag": "v0.1.4"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "EH3D-STUDIO",
-   "tag": "v0.2.1"
+   "repo": "EH3D-BUNGARD-GUI",
+   "tag": "v0.3.3"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "EH3D-SUITE-LAUNCHER",
-   "tag": "v0.0.8"
+   "repo": "EH3D-CAM-DEBUGGER",
+   "tag": "v0.1.0"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "EH3D-TOOL-MANAGER",
-   "tag": "v0.1.3"
+   "repo": "EH3D-COMMON",
+   "tag": "v0.3.9"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "HYDRA-UMC",
-   "tag": "v0.3.2"
+   "repo": "EH3D-CORE-LIBS",
+   "tag": "v0.1.4"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "HYDRA-UMC-ANOMALY-DETECTOR",
+   "repo": "EH3D-DRILLPRO",
+   "tag": "v0.2.5"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-GERBERVIEWER",
+   "tag": "v0.1.1"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-IOS-CONTROL",
+   "tag": "v0.1.8"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-ISOCAM",
+   "tag": "v0.2.0"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-NODE-BUNGARD",
+   "tag": "v0.1.1"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-NODE-BUNGARD-AUX",
+   "tag": "v0.1.2"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-NODE-BUNGARD-HMI",
+   "tag": "v0.1.4"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-NODE-PNP-FEEDER",
+   "tag": "v0.0.4"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-NODE-PNP-HEAD",
+   "tag": "v0.0.4"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-3DP",
+   "tag": "v0.1.0"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-CNC",
    "tag": "v0.2.6"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "HYDRA-UMC-BRIDGE-CNC",
-   "tag": "v0.3.0"
+   "repo": "EH3D-PHOENIX-LASER",
+   "tag": "v0.1.8"
   },
   {
-   "at": "2026-11-27T04:30:53Z",
+   "at": "2026-11-27T13:12:23Z",
    "kind": "released",
-   "repo": "HYDRA-UMC-BRIDGE-DROIDS",
-   "tag": "v0.2.0"
+   "repo": "EH3D-PHOENIX-PCB",
+   "tag": "v0.1.9"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-PNP",
+   "tag": "v0.1.6"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-ROUTEPRO",
+   "tag": "v0.2.2"
+  },
+  {
+   "at": "2026-11-27T13:12:23Z",
+   "kind": "released",
+   "repo": "EH3D-SERVER",
+   "tag": "v0.2.7"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 395
+  "gap_minutes": 525
  },
  "hygiene": {
   "allowed_missing": [],
@@ -341,9 +356,9 @@
    "level": "warn",
    "p": {
     "bad": 0,
-    "cand": 2,
+    "cand": 5,
     "hyg": 5,
-    "red": 1
+    "red": 4
    }
   },
   {
@@ -351,9 +366,10 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-DOCS"
+     "ARMOR-DOCS",
+     "URTC-DOCS"
     ],
-    "n": 1
+    "n": 4
    }
   },
   {
@@ -362,9 +378,12 @@
    "p": {
     "list": [
      "ARMOR-NODE-SOLAR-HMI",
-     "URTC"
+     "ARMOR-SERVER-AI",
+     "HYDRA-UMC-ANDROID-CONTROL",
+     "URTC-COMMON",
+     "URTC-DEVTOOLS"
     ],
-    "n": 2
+    "n": 5
    }
   },
   {
@@ -372,13 +391,10 @@
    "level": "warn",
    "p": {
     "list": [
-     "ARMOR-NODE-SOLAR",
-     "ARMOR-SERVER",
-     "ARMOR-STUDIO",
      "HYDRA-UMC-OS",
      "URTC-DEVTOOLS"
     ],
-    "n": 5
+    "n": 2
    }
   },
   {
@@ -407,7 +423,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 24422
+    "min": 40073
    }
   }
  ],
@@ -415,30 +431,48 @@
  "releases": {
   "candidates": [
    {
-    "entries": 6,
-    "published": "2026-11-19T10:26:30Z",
-    "repo": "URTC",
-    "tag": "v0.5.1"
-   },
-   {
-    "entries": 5,
+    "entries": 9,
     "published": null,
     "repo": "ARMOR-NODE-SOLAR-HMI",
     "tag": ""
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-19T16:33:21Z",
+    "repo": "ARMOR-SERVER-AI",
+    "tag": "v0.3.4"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-20T12:34:12Z",
+    "repo": "HYDRA-UMC-ANDROID-CONTROL",
+    "tag": "v0.8.0.6"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-19T15:14:04Z",
+    "repo": "URTC-COMMON",
+    "tag": "v0.3.1"
+   },
+   {
+    "entries": 5,
+    "published": "2026-11-08T00:14:32Z",
+    "repo": "URTC-DEVTOOLS",
+    "tag": "v0.0.4"
    }
   ],
   "days": 2.0,
   "min_entries": 5,
-  "total": 2
+  "total": 5
  },
  "repos": 136,
  "schema": 1,
  "signatures": {
   "invalid": 0,
   "invalid_repos": [],
-  "none": 76,
+  "none": 75,
   "norelease": 4,
-  "unverifiable": 23,
+  "unverifiable": 24,
   "unverified": 0,
   "verified": 33
  },
@@ -453,56 +487,56 @@
   "ARMOR-NODE-ALARM": "v0.6.0",
   "ARMOR-NODE-ELECTRICAL": "v0.6.2",
   "ARMOR-NODE-HMI": "v0.5.2",
-  "ARMOR-NODE-RADAR": "v0.8.1.5",
-  "ARMOR-NODE-SOLAR": "v0.7.2",
-  "ARMOR-SERVER": "v0.8.2.7",
+  "ARMOR-NODE-RADAR": "v0.8.1.6",
+  "ARMOR-NODE-SOLAR": "v0.7.4",
+  "ARMOR-SERVER": "v0.8.2.8",
   "ARMOR-SERVER-AI": "v0.3.4",
   "ARMOR-SIMULATOR": "v0.4.0",
-  "ARMOR-STUDIO": "v0.8.2.9",
+  "ARMOR-STUDIO": "v0.8.3.0",
   "ARMOR-UPDATER": "v0.2.5",
-  "ARMOR-VISION": "v0.1.8",
+  "ARMOR-VISION": "v0.1.9",
   "ARMOR-VOICE-AI": "v0.3.8",
-  "EH3D-ANDROID-CONTROL": "v0.1.8",
-  "EH3D-AUTOLEVEL": "v0.1.3",
-  "EH3D-BUNGARD-GUI": "v0.3.2",
-  "EH3D-CAM-DEBUGGER": "v0.0.9",
-  "EH3D-COMMON": "v0.3.7",
+  "EH3D-ANDROID-CONTROL": "v0.1.9",
+  "EH3D-AUTOLEVEL": "v0.1.4",
+  "EH3D-BUNGARD-GUI": "v0.3.3",
+  "EH3D-CAM-DEBUGGER": "v0.1.0",
+  "EH3D-COMMON": "v0.3.9",
   "EH3D-COMPONENT-INTELLIGENCE": "v0.0.5",
-  "EH3D-CORE-LIBS": "v0.1.3",
+  "EH3D-CORE-LIBS": "v0.1.4",
   "EH3D-DESIGN-EXPLORER": "v0.0.5",
   "EH3D-DESIGN-HISTORY": "v0.0.5",
   "EH3D-DESIGN-VERIFIER": "v0.0.5",
   "EH3D-DOCS": "v0.1.5",
-  "EH3D-DRILLPRO": "v0.2.4",
-  "EH3D-GERBERVIEWER": "v0.1.0",
+  "EH3D-DRILLPRO": "v0.2.5",
+  "EH3D-GERBERVIEWER": "v0.1.1",
   "EH3D-HYDRA-BRIDGE": "v0.0.3",
-  "EH3D-IOS-CONTROL": "v0.1.7",
-  "EH3D-ISOCAM": "v0.1.9",
+  "EH3D-IOS-CONTROL": "v0.1.8",
+  "EH3D-ISOCAM": "v0.2.0",
   "EH3D-LAB-BRIDGE": "v0.0.5",
   "EH3D-MANUFACTURING-PROFILE": "v0.0.5",
-  "EH3D-NODE-BUNGARD": "v0.1.0",
-  "EH3D-NODE-BUNGARD-AUX": "v0.1.1",
-  "EH3D-NODE-BUNGARD-HMI": "v0.1.3",
+  "EH3D-NODE-BUNGARD": "v0.1.1",
+  "EH3D-NODE-BUNGARD-AUX": "v0.1.2",
+  "EH3D-NODE-BUNGARD-HMI": "v0.1.4",
   "EH3D-NODE-HMI-GUI": "v0.1.3",
-  "EH3D-NODE-PNP-FEEDER": "v0.0.3",
-  "EH3D-NODE-PNP-HEAD": "v0.0.3",
-  "EH3D-PHOENIX-3DP": "v0.0.9",
+  "EH3D-NODE-PNP-FEEDER": "v0.0.4",
+  "EH3D-NODE-PNP-HEAD": "v0.0.4",
+  "EH3D-PHOENIX-3DP": "v0.1.0",
   "EH3D-PHOENIX-CAD": "v0.1.6",
-  "EH3D-PHOENIX-CNC": "v0.2.5",
-  "EH3D-PHOENIX-LASER": "v0.1.7",
-  "EH3D-PHOENIX-PCB": "v0.1.7",
-  "EH3D-PHOENIX-PNP": "v0.1.5",
+  "EH3D-PHOENIX-CNC": "v0.2.6",
+  "EH3D-PHOENIX-LASER": "v0.1.8",
+  "EH3D-PHOENIX-PCB": "v0.1.9",
+  "EH3D-PHOENIX-PNP": "v0.1.6",
   "EH3D-PROJECT-PASSPORT": "v0.0.5",
-  "EH3D-ROUTEPRO": "v0.2.1",
-  "EH3D-SERVER": "v0.2.6",
-  "EH3D-STENCILCAM": "v0.1.4",
-  "EH3D-STUDIO": "v0.2.1",
+  "EH3D-ROUTEPRO": "v0.2.2",
+  "EH3D-SERVER": "v0.2.7",
+  "EH3D-STENCILCAM": "v0.1.5",
+  "EH3D-STUDIO": "v0.2.2",
   "EH3D-SUITE-LAUNCHER": "v0.0.8",
   "EH3D-THERMAL-LAB": "v0.0.4",
   "EH3D-TOOL-MANAGER": "v0.1.3",
   "EH3D-UPDATER": "v0.1.2",
   "EH3D-VALIDATION-LAB": "v0.0.4",
-  "EH3D-VISION-STUDIO": "v0.1.4",
+  "EH3D-VISION-STUDIO": "v0.1.5",
   "ELECTRO-HOBBY-3D-UPDATER": "v0.1.6",
   "HYDRA-UMC": "v0.3.2",
   "HYDRA-UMC-ANDROID-CONTROL": "v0.8.0.6",
@@ -513,7 +547,7 @@
   "HYDRA-UMC-BRIDGE-LASER": "v0.2.7",
   "HYDRA-UMC-BRIDGE-OPENPNP": "v0.2.7",
   "HYDRA-UMC-BRIDGE-PRINTER3D": "v0.2.6",
-  "HYDRA-UMC-BRIDGE-ROS2": "v0.2.0",
+  "HYDRA-UMC-BRIDGE-ROS2": "v0.2.1",
   "HYDRA-UMC-BRIDGE-UAV": "v0.2.4",
   "HYDRA-UMC-COGNITIVE-NODE": "v0.2.2",
   "HYDRA-UMC-CONNECTOR-HUB": "v0.2.1",
@@ -538,12 +572,12 @@
   "HYDRA-UMC-NODE-HEALING": "v0.2.6",
   "HYDRA-UMC-OPCUA-SERVER": "v0.2.9",
   "HYDRA-UMC-OPS-AGENT": "v0.2.4",
-  "HYDRA-UMC-ORCHESTRATOR": "v0.2.7",
+  "HYDRA-UMC-ORCHESTRATOR": "v0.2.8",
   "HYDRA-UMC-OS": "v0.6.3",
   "HYDRA-UMC-OS-REBUILDER": "v0.3.9",
   "HYDRA-UMC-PATH-PLANNER-3D": "v0.1.5",
   "HYDRA-UMC-PHYSICS-REPLICA": "v0.1.5",
-  "HYDRA-UMC-PRODUCTION-REPORTS": "v0.2.2",
+  "HYDRA-UMC-PRODUCTION-REPORTS": "v0.2.3",
   "HYDRA-UMC-SAFETY-ZONES": "v0.2.7",
   "HYDRA-UMC-SDK": "v0.7.6",
   "HYDRA-UMC-SEMANTIC-PLANNER": "v0.2.1",
@@ -564,11 +598,11 @@
   "HYDRA-UMC-VOICE-UI": "v0.2.6",
   "HYDRA-UMC-WATCH": "v0.3.5",
   "TOOLS-GITHUB-ACTIONS-MONITOR": "v2.1.8",
-  "URTC": "v0.5.1",
+  "URTC": "v0.5.2",
   "URTC-COMMON": "v0.3.1",
   "URTC-DEVTOOLS": "v0.0.4",
   "URTC-DOCS": "v0.1.9",
-  "URTC-FLASHER": "v0.5.9",
+  "URTC-FLASHER": "v0.6.0",
   "URTC-GATEWAY": "v0.1.1",
   "URTC-SMART-RACK": "v0.2.9",
   "URTC-TESTER": "v0.5.9",
@@ -600,7 +634,7 @@
    0,
    0,
    1,
-   2
+   5
   ],
   "dates": [
    "2026-11-03",
@@ -675,7 +709,7 @@
    279,
    166,
    16389,
-   24422
+   40073
   ],
   "red": [
    3,
@@ -700,26 +734,11 @@
    1,
    1,
    0,
-   1
+   4
   ]
  },
  "unpublished": {
   "rows": [
-   {
-    "repo": "ARMOR-NODE-SOLAR",
-    "tag": "v0.7.2",
-    "version": "0.7.3"
-   },
-   {
-    "repo": "ARMOR-SERVER",
-    "tag": "v0.8.2.7",
-    "version": "0.8.2.8"
-   },
-   {
-    "repo": "ARMOR-STUDIO",
-    "tag": "v0.8.2.9",
-    "version": "0.8.3.0"
-   },
    {
     "repo": "HYDRA-UMC-OS",
     "tag": "v0.6.3",
@@ -731,6 +750,6 @@
     "version": "0.0.8"
    }
   ],
-  "total": 5
+  "total": 2
  }
 }
