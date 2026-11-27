@@ -51,18 +51,18 @@
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-27T13:57:51Z",
+   "at": "2026-11-27T15:59:10Z",
    "checked": true,
-   "exp": "2026-12-04T13:52:17Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/46010130395",
+   "exp": "2026-12-04T15:57:37Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/46029009374",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-27T13:50:56Z",
+   "at": "2026-11-27T15:53:52Z",
    "checked": true,
-   "exp": "2026-12-04T13:48:47Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46009428556",
+   "exp": "2026-12-04T15:53:17Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46028812954",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -74,10 +74,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-27T13:52:33Z",
+   "at": "2026-11-27T15:54:50Z",
    "checked": true,
-   "exp": "2026-12-04T13:50:03Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/46009874355",
+   "exp": "2026-12-04T15:53:59Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/46028867025",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -96,9 +96,10 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-27T10:57:50Z",
-   "exp": "2026-12-04T10:41:27Z",
-   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/45983581369",
+   "at": "2026-11-27T15:25:45Z",
+   "checked": true,
+   "exp": "2026-12-04T15:22:19Z",
+   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/46023330490",
    "wf": "apk-build.yml"
   },
   "EH3D-NODE-BUNGARD": {
@@ -117,18 +118,18 @@
   },
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
-   "at": "2026-11-27T13:29:38Z",
+   "at": "2026-11-27T15:35:52Z",
    "checked": true,
-   "exp": "2026-12-04T13:25:59Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/46005843143",
+   "exp": "2026-12-04T15:34:38Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/46025326550",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-HMI-GUI": {
    "art": true,
-   "at": "2026-11-27T13:31:56Z",
+   "at": "2026-11-27T15:35:50Z",
    "checked": true,
-   "exp": "2026-12-04T13:24:08Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/46005837421",
+   "exp": "2026-12-04T15:34:34Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/46025321496",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC": {
@@ -281,7 +282,6 @@
   "URTC-COMMON": {
    "art": true,
    "at": "2026-11-27T13:38:05Z",
-   "checked": true,
    "exp": "2026-12-04T13:35:23Z",
    "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/46007626970",
    "wf": "release-files-build.yml"
@@ -394,7 +394,7 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "e4eff14ec9f30747",
+   "fp": "4c795ae43d2303bf",
    "on": "2026-11-27",
    "r": {
     "ak": 3,
@@ -403,7 +403,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "57c44a4a3bf26674",
+   "fp": "556639c5eb44abc1",
    "on": "2026-11-27",
    "r": {
     "ak": 1,
@@ -421,7 +421,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "b1ab97becc20fa91",
+   "fp": "d7f7b1b02c365732",
    "on": "2026-11-27",
    "r": {
     "ak": 1,
@@ -439,7 +439,7 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "5f8d1eeaa9dc7fd8",
+   "fp": "98b73e1e7f48eb8c",
    "on": "2026-11-27",
    "r": {
     "ak": 0,
@@ -457,7 +457,7 @@
    }
   },
   "EH3D-BUNGARD-GUI": {
-   "fp": "03695c9a5ee4e4d2",
+   "fp": "97a42fc2bd5ffbde",
    "on": "2026-11-27",
    "r": {
     "ak": 3,
@@ -475,7 +475,7 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "48c4fa8df9aa23dd",
+   "fp": "e8343f07e8f0dd8d",
    "on": "2026-11-27",
    "r": {
     "ak": 3,
@@ -493,7 +493,7 @@
    }
   },
   "EH3D-ISOCAM": {
-   "fp": "af92a6852f23a570",
+   "fp": "eb0508bdc32d77b5",
    "on": "2026-11-27",
    "r": {
     "ak": 3,
@@ -520,7 +520,7 @@
    }
   },
   "EH3D-NODE-BUNGARD-HMI": {
-   "fp": "9e5b24472abb415d",
+   "fp": "8d097fcbb1fcca2e",
    "on": "2026-11-27",
    "r": {
     "ak": 2,
@@ -529,7 +529,7 @@
    }
   },
   "EH3D-NODE-HMI-GUI": {
-   "fp": "5c2fcbad71af3962",
+   "fp": "1a6c18e1d502c215",
    "on": "2026-11-27",
    "r": {
     "ak": 2,
@@ -601,7 +601,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "015a6150d1c7220c",
+   "fp": "ba13c577c56cd909",
    "on": "2026-11-27",
    "r": {
     "ak": 3,
@@ -619,7 +619,7 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "8a017028414bb609",
+   "fp": "2ca637ab96e33511",
    "on": "2026-11-27",
    "r": {
     "ak": 1,
@@ -903,7 +903,7 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "e4eff14ec9f30747",
+   "fp": "4c795ae43d2303bf",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -918,7 +918,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "57c44a4a3bf26674",
+   "fp": "556639c5eb44abc1",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -950,7 +950,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "b1ab97becc20fa91",
+   "fp": "d7f7b1b02c365732",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -982,7 +982,7 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "5f8d1eeaa9dc7fd8",
+   "fp": "98b73e1e7f48eb8c",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1010,7 +1010,7 @@
    }
   },
   "EH3D-BUNGARD-GUI": {
-   "fp": "03695c9a5ee4e4d2",
+   "fp": "97a42fc2bd5ffbde",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1038,7 +1038,7 @@
    }
   },
   "EH3D-DRILLPRO": {
-   "fp": "48c4fa8df9aa23dd",
+   "fp": "e8343f07e8f0dd8d",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1066,7 +1066,7 @@
    }
   },
   "EH3D-ISOCAM": {
-   "fp": "af92a6852f23a570",
+   "fp": "eb0508bdc32d77b5",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1108,7 +1108,7 @@
    }
   },
   "EH3D-NODE-BUNGARD-HMI": {
-   "fp": "9e5b24472abb415d",
+   "fp": "8d097fcbb1fcca2e",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1122,7 +1122,7 @@
    }
   },
   "EH3D-NODE-HMI-GUI": {
-   "fp": "5c2fcbad71af3962",
+   "fp": "1a6c18e1d502c215",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1234,7 +1234,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "015a6150d1c7220c",
+   "fp": "ba13c577c56cd909",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1262,7 +1262,7 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "8a017028414bb609",
+   "fp": "2ca637ab96e33511",
    "r": {
     "bad": 0,
     "ho": 0,
