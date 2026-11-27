@@ -16243,11 +16243,11 @@
   },
   {
    "actions": {
-    "fail": 161,
-    "min": 40073,
-    "ok": 7137,
-    "other": 214,
-    "runs": 7512
+    "fail": 149,
+    "min": 40534,
+    "ok": 7142,
+    "other": 191,
+    "runs": 7482
    },
    "areas": {
     "armor": {
@@ -16291,7 +16291,7 @@
      "tests": 100
     },
     "urtc": {
-     "ci": 100,
+     "ci": 91,
      "docs": 100,
      "hardware": 0,
      "production": 9,
@@ -16304,7 +16304,7 @@
    "date": "2026-11-27",
    "progress": {
     "armor": 69,
-    "eh3d": 49,
+    "eh3d": 50,
     "electro-hobby-3d": 47,
     "hydra-umc": 60,
     "urtc": 56
@@ -16356,7 +16356,7 @@
     ],
     "ARMOR-NODE-SOLAR": [
      1,
-     "0.7.4"
+     "0.7.5"
     ],
     "ARMOR-NODE-SOLAR-HMI": [
      0,
@@ -16364,7 +16364,7 @@
     ],
     "ARMOR-SERVER": [
      2,
-     "0.8.2.8"
+     "0.8.2.9"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -16376,7 +16376,7 @@
     ],
     "ARMOR-STUDIO": [
      2,
-     "0.8.3.0"
+     "0.8.3.1"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -16416,7 +16416,7 @@
     ],
     "EH3D-COMPONENT-INTELLIGENCE": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-CORE-LIBS": [
      1,
@@ -16516,7 +16516,7 @@
     ],
     "EH3D-PROJECT-PASSPORT": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-ROUTEPRO": [
      1,
@@ -16540,7 +16540,7 @@
     ],
     "EH3D-THERMAL-LAB": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-TOOL-MANAGER": [
      1,
@@ -16552,7 +16552,7 @@
     ],
     "EH3D-VALIDATION-LAB": [
      0,
-     "0.0.4"
+     "0.0.5"
     ],
     "EH3D-VISION-STUDIO": [
      1,
@@ -16816,7 +16816,7 @@
     ],
     "URTC-COMMON": [
      1,
-     "0.3.1"
+     "0.3.2"
     ],
     "URTC-DEVTOOLS": [
      0,
@@ -16856,10 +16856,10 @@
     ]
    },
    "sentinel": {
-    "cand": 5,
+    "cand": 4,
     "gaps": 5,
-    "min": 40073,
-    "red": 4
+    "min": 40534,
+    "red": 3
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 621,
@@ -16983,7 +16983,7 @@
     "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": 80,
     "URTC": 322,
     "URTC-COMMON": 3085,
-    "URTC-DEVTOOLS": 164,
+    "URTC-DEVTOOLS": 165,
     "URTC-DOCS": 250,
     "URTC-FLASHER": 1012,
     "URTC-GATEWAY": 312,

@@ -24,7 +24,6 @@
   "ARMOR-NODE-ALARM": {
    "art": true,
    "at": "2026-11-27T09:01:35Z",
-   "checked": true,
    "exp": "2026-12-04T08:52:28Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/45968272244",
    "wf": "firmware-build.yml"
@@ -32,7 +31,6 @@
   "ARMOR-NODE-ELECTRICAL": {
    "art": true,
    "at": "2026-11-27T08:59:30Z",
-   "checked": true,
    "exp": "2026-12-04T08:51:17Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL/actions/runs/45968267741",
    "wf": "firmware-build.yml"
@@ -40,7 +38,6 @@
   "ARMOR-NODE-HMI": {
    "art": true,
    "at": "2026-11-27T09:01:29Z",
-   "checked": true,
    "exp": "2026-12-04T08:51:59Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-HMI/actions/runs/45968276009",
    "wf": "firmware-build.yml"
@@ -48,24 +45,24 @@
   "ARMOR-NODE-RADAR": {
    "art": true,
    "at": "2026-11-27T08:57:13Z",
-   "checked": true,
    "exp": "2026-12-04T08:51:15Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-RADAR/actions/runs/45968262179",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-27T10:44:16Z",
+   "at": "2026-11-27T13:57:51Z",
    "checked": true,
-   "exp": "2026-12-04T10:31:37Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/45981878214",
+   "exp": "2026-12-04T13:52:17Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/46010130395",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-27T01:09:15Z",
-   "exp": "2026-12-04T00:58:26Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/45919723040",
+   "at": "2026-11-27T13:50:56Z",
+   "checked": true,
+   "exp": "2026-12-04T13:48:47Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46009428556",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -77,9 +74,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-27T01:16:08Z",
-   "exp": "2026-12-04T01:14:07Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/45921280880",
+   "at": "2026-11-27T13:52:33Z",
+   "checked": true,
+   "exp": "2026-12-04T13:50:03Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/46009874355",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -99,7 +97,6 @@
   "EH3D-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-27T10:57:50Z",
-   "checked": true,
    "exp": "2026-12-04T10:41:27Z",
    "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/45983581369",
    "wf": "apk-build.yml"
@@ -107,7 +104,6 @@
   "EH3D-NODE-BUNGARD": {
    "art": true,
    "at": "2026-11-27T08:22:15Z",
-   "checked": true,
    "exp": "2026-12-04T08:19:33Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/45964461918",
    "wf": "firmware-build.yml"
@@ -115,25 +111,24 @@
   "EH3D-NODE-BUNGARD-AUX": {
    "art": true,
    "at": "2026-11-27T07:37:58Z",
-   "checked": true,
    "exp": "2026-12-04T07:36:41Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/45959276745",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
-   "at": "2026-11-27T13:11:49Z",
+   "at": "2026-11-27T13:29:38Z",
    "checked": true,
-   "exp": "2026-12-04T13:06:44Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/46002290525",
+   "exp": "2026-12-04T13:25:59Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/46005843143",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-HMI-GUI": {
    "art": true,
-   "at": "2026-11-27T09:45:38Z",
+   "at": "2026-11-27T13:31:56Z",
    "checked": true,
-   "exp": "2026-12-04T09:44:12Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/45975564240",
+   "exp": "2026-12-04T13:24:08Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/46005837421",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC": {
@@ -146,7 +141,6 @@
   "HYDRA-UMC-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-20T12:24:34Z",
-   "checked": true,
    "exp": "2026-12-20T12:24:02Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/44734727549",
    "wf": "binaries-build.yml"
@@ -161,7 +155,6 @@
   "HYDRA-UMC-JOB-DISPATCHER": {
    "art": true,
    "at": "2026-11-20T11:45:41Z",
-   "checked": true,
    "exp": "2026-12-20T11:45:15Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-JOB-DISPATCHER/actions/runs/44730001524",
    "wf": "binaries-build.yml"
@@ -176,7 +169,6 @@
   "HYDRA-UMC-ORCHESTRATOR": {
    "art": true,
    "at": "2026-11-27T06:02:04Z",
-   "checked": true,
    "exp": "2026-12-04T06:00:16Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-ORCHESTRATOR/actions/runs/45948963408",
    "wf": "binaries-build.yml"
@@ -191,7 +183,6 @@
   "HYDRA-UMC-OS-REBUILDER": {
    "art": true,
    "at": "2026-11-20T07:53:59Z",
-   "checked": true,
    "exp": "2026-12-20T07:53:31Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-OS-REBUILDER/actions/runs/44698243648",
    "wf": "package-build.yml"
@@ -269,7 +260,6 @@
   "HYDRA-UMC-WATCH": {
    "art": true,
    "at": "2026-11-20T12:53:35Z",
-   "checked": true,
    "exp": "2026-12-20T12:53:02Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-WATCH/actions/runs/44739086613",
    "wf": "binaries-build.yml"
@@ -290,15 +280,15 @@
   },
   "URTC-COMMON": {
    "art": true,
-   "at": "2026-11-19T15:07:43Z",
-   "exp": "2026-12-19T15:04:08Z",
-   "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/44549862326",
+   "at": "2026-11-27T13:38:05Z",
+   "checked": true,
+   "exp": "2026-12-04T13:35:23Z",
+   "url": "https://github.com/JuanenRac/URTC-COMMON/actions/runs/46007626970",
    "wf": "release-files-build.yml"
   },
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-27T09:45:35Z",
-   "checked": true,
    "exp": "2026-12-04T09:41:47Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/45975042110",
    "wf": "exe-build.yml"
@@ -404,7 +394,7 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "a9ed0c8c23f05a7b",
+   "fp": "e4eff14ec9f30747",
    "on": "2026-11-27",
    "r": {
     "ak": 3,
@@ -413,7 +403,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "7421d528a0bcd641",
+   "fp": "57c44a4a3bf26674",
    "on": "2026-11-27",
    "r": {
     "ak": 1,
@@ -431,7 +421,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "f581a46b790e7ed8",
+   "fp": "b1ab97becc20fa91",
    "on": "2026-11-27",
    "r": {
     "ak": 1,
@@ -764,8 +754,8 @@
    }
   },
   "URTC-COMMON": {
-   "fp": "27c70c0e504b3812",
-   "on": "2026-11-19",
+   "fp": "3a1501d2e7575ff5",
+   "on": "2026-11-27",
    "r": {
     "ak": 2,
     "an": 2,
@@ -913,7 +903,7 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "a9ed0c8c23f05a7b",
+   "fp": "e4eff14ec9f30747",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -928,7 +918,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "7421d528a0bcd641",
+   "fp": "57c44a4a3bf26674",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -960,7 +950,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "f581a46b790e7ed8",
+   "fp": "b1ab97becc20fa91",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1554,7 +1544,7 @@
    }
   },
   "URTC-COMMON": {
-   "fp": "27c70c0e504b3812",
+   "fp": "3a1501d2e7575ff5",
    "r": {
     "bad": 0,
     "ho": 0,
