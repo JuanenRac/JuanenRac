@@ -16244,10 +16244,10 @@
   {
    "actions": {
     "fail": 132,
-    "min": 22356,
-    "ok": 5589,
-    "other": 212,
-    "runs": 5933
+    "min": 24422,
+    "ok": 5771,
+    "other": 182,
+    "runs": 6085
    },
    "areas": {
     "armor": {
@@ -16480,7 +16480,7 @@
     ],
     "EH3D-NODE-HMI-GUI": [
      0,
-     "0.1.2"
+     "0.1.3"
     ],
     "EH3D-NODE-PNP-FEEDER": [
      1,
@@ -16858,7 +16858,7 @@
    "sentinel": {
     "cand": 2,
     "gaps": 5,
-    "min": 22356,
+    "min": 24422,
     "red": 1
    },
    "tests": {
@@ -16882,7 +16882,7 @@
     "ARMOR-VISION": 385,
     "ARMOR-VOICE-AI": 259,
     "ARMOR-WATCH": 124,
-    "EH3D-ANDROID-CONTROL": 481,
+    "EH3D-ANDROID-CONTROL": 483,
     "EH3D-AUTOLEVEL": 301,
     "EH3D-BUNGARD-GUI": 714,
     "EH3D-CAM-DEBUGGER": 239,
@@ -16896,7 +16896,7 @@
     "EH3D-DRILLPRO": 521,
     "EH3D-GERBERVIEWER": 237,
     "EH3D-HYDRA-BRIDGE": 80,
-    "EH3D-IOS-CONTROL": 490,
+    "EH3D-IOS-CONTROL": 492,
     "EH3D-ISOCAM": 597,
     "EH3D-LAB-BRIDGE": 68,
     "EH3D-MANUFACTURING-PROFILE": 68,
@@ -16909,10 +16909,10 @@
     "EH3D-PHOENIX-PCB": 5543,
     "EH3D-PHOENIX-PNP": 1984,
     "EH3D-PROJECT-PASSPORT": 68,
-    "EH3D-ROUTEPRO": 179,
+    "EH3D-ROUTEPRO": 180,
     "EH3D-SERVER": 1214,
     "EH3D-STENCILCAM": 342,
-    "EH3D-STUDIO": 687,
+    "EH3D-STUDIO": 690,
     "EH3D-SUITE-LAUNCHER": 228,
     "EH3D-THERMAL-LAB": 68,
     "EH3D-TOOL-MANAGER": 284,

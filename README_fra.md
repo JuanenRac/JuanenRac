@@ -404,7 +404,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████░ 90%` | 18 dépôts sur 20 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont des tests automatiques. |
-| Intégration continue | 🟢 | `█████████▌ 95%` | 19 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont été vérifiés au moins dans un simulateur. |

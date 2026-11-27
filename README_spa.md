@@ -404,7 +404,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████░ 90%` | 18 de 20 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `█████████▌ 95%` | 19 de 20 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 20 de 20 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟢 | `██████████ 100%` | 20 de 20 repositorios se han comprobado al menos en un simulador. |
