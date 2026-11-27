@@ -16243,11 +16243,11 @@
   },
   {
    "actions": {
-    "fail": 192,
-    "min": 38014,
-    "ok": 6761,
-    "other": 170,
-    "runs": 7123
+    "fail": 191,
+    "min": 38520,
+    "ok": 6774,
+    "other": 138,
+    "runs": 7103
    },
    "areas": {
     "armor": {
@@ -16281,7 +16281,7 @@
      "tests": 75
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 13,
      "production": 8,
@@ -16420,7 +16420,7 @@
     ],
     "EH3D-CORE-LIBS": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "EH3D-DESIGN-EXPLORER": [
      0,
@@ -16524,7 +16524,7 @@
     ],
     "EH3D-SERVER": [
      1,
-     "0.2.8"
+     "0.2.9"
     ],
     "EH3D-STENCILCAM": [
      1,
@@ -16858,7 +16858,7 @@
    "sentinel": {
     "cand": 7,
     "gaps": 5,
-    "min": 38014,
+    "min": 38520,
     "red": 0
    },
    "tests": {

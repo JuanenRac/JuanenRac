@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-27T22:32:39Z",
+ "asof": "2026-11-27T22:43:49Z",
  "ci": {
   "checked": 745,
   "red": [],
@@ -8,28 +8,28 @@
  "compute": {
   "top": [
    {
-    "min24": 1333,
-    "min7": 1333,
+    "min24": 1384,
+    "min7": 1384,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 1037,
-    "min7": 1037,
-    "repo": "HYDRA-UMC-DOCS"
-   },
-   {
-    "min24": 1030,
-    "min7": 1030,
-    "repo": "EH3D-COMMON"
-   },
-   {
-    "min24": 879,
-    "min7": 879,
+    "min24": 1254,
+    "min7": 1254,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 874,
-    "min7": 874,
+    "min24": 1044,
+    "min7": 1044,
+    "repo": "HYDRA-UMC-DOCS"
+   },
+   {
+    "min24": 1000,
+    "min7": 1000,
+    "repo": "EH3D-COMMON"
+   },
+   {
+    "min24": 855,
+    "min7": 855,
     "repo": "EH3D-SERVER"
    },
    {
@@ -38,12 +38,14 @@
     "repo": "URTC-FLASHER"
    }
   ],
-  "total24": 38014,
-  "total7": 49505,
+  "total24": 38520,
+  "total7": 50042,
   "warn": true
  },
  "delivery": {
-  "clmis": [],
+  "clmis": [
+   "EH3D-SERVER"
+  ],
   "eco": {
    "armor": {
     "clmis": 0,
@@ -53,7 +55,7 @@
     "tagahead": 0
    },
    "eh3d": {
-    "clmis": 0,
+    "clmis": 1,
     "nonotes": 0,
     "read": 41,
     "repos": 41,
@@ -122,6 +124,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-27T22:43:49Z",
+   "kind": "released",
+   "repo": "EH3D-CORE-LIBS",
+   "tag": "v0.1.5"
+  },
   {
    "at": "2026-11-27T22:32:39Z",
    "kind": "red_ok",
@@ -295,18 +303,12 @@
    "kind": "released",
    "repo": "URTC-WEB-STUDIO",
    "tag": "v0.5.5"
-  },
-  {
-   "at": "2026-11-27T16:21:57Z",
-   "kind": "red_ok",
-   "repo": "ARMOR-DOCS",
-   "wf": "ci.yml"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 375
+  "gap_minutes": 15
  },
  "hygiene": {
   "allowed_missing": [],
@@ -327,7 +329,7 @@
    "key": "head",
    "level": "bad",
    "p": {
-    "bad": 3,
+    "bad": 4,
     "cand": 7,
     "hyg": 5,
     "red": 0
@@ -340,9 +342,10 @@
     "list": [
      "HYDRA-UMC-OS",
      "HYDRA-UMC-SERVER",
+     "HYDRA-UMC-STUDIO",
      "HYDRA-UMC-TWIN"
     ],
-    "n": 3
+    "n": 4
    }
   },
   {
@@ -387,7 +390,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 38014
+    "min": 38520
    }
   }
  ],
@@ -444,17 +447,18 @@
  "repos": 136,
  "schema": 1,
  "signatures": {
-  "invalid": 3,
+  "invalid": 4,
   "invalid_repos": [
    "HYDRA-UMC-OS",
    "HYDRA-UMC-SERVER",
+   "HYDRA-UMC-STUDIO",
    "HYDRA-UMC-TWIN"
   ],
   "none": 75,
   "norelease": 3,
   "unverifiable": 24,
   "unverified": 0,
-  "verified": 31
+  "verified": 30
  },
  "tags": {
   "ARMOR-ANDROID-CONTROL": "v0.8.1.3",
@@ -483,7 +487,7 @@
   "EH3D-CAM-DEBUGGER": "v0.1.0",
   "EH3D-COMMON": "v0.4.0",
   "EH3D-COMPONENT-INTELLIGENCE": "v0.0.6",
-  "EH3D-CORE-LIBS": "v0.1.4",
+  "EH3D-CORE-LIBS": "v0.1.5",
   "EH3D-DESIGN-EXPLORER": "v0.0.6",
   "EH3D-DESIGN-HISTORY": "v0.0.5",
   "EH3D-DESIGN-VERIFIER": "v0.0.5",
@@ -690,7 +694,7 @@
    279,
    166,
    16389,
-   38014
+   38520
   ],
   "red": [
    3,

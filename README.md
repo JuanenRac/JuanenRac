@@ -88,7 +88,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 59 of 59 repositories have automated tests. |
-| Continuous integration | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 59 of 59 repositories have been checked at least in a simulator. |
@@ -519,10 +519,10 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | [EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER) | 0.0.8 | Finds the programs of the suite by their manifests, starts them and keeps the recent projects and the project file (.eh3dproj) with the SHA-256 of its files; the window and the discovery of machines on the network are planned. |
 | [EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON) | 0.4.0 | Shared data model: the .eh3dproj project container with integrity checks, machine telemetry types, and the firmware base copied by every ESP32 node. |
 | [EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS) | 0.1.5 | Ecosystem documentation, assembly guides, gateway technical specs, and integration manuals. |
-| [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.1.4 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
+| [EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS) | 0.1.5 | Rust readers for Gerber RS-274X, Excellon drill files and G-code (GRBL, Marlin and PlanetCNC dialects), tolerant of damaged files. |
 | [EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER) | 0.1.2 | Detects, installs and updates the ecosystem's own repositories (atomic-by-verification, no GITHUB_TOKEN required). |
 | [EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE) | 0.0.3 | Adapter between the EH3D and HYDRA-UMC ecosystems (planned; no code yet). |
-| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.2.8 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
+| [EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER) | 0.2.9 | Rust server with a REST and websocket interface: users, machines and jobs (drilling, routing and free G-code, with pause and resume, GRBL machines and the spindle of the machine), planning of the jobs with the DRILLPRO and ROUTEPRO libraries, one job at a time per machine, and updates of itself and of the Studio from GitHub. |
 | [EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO) | 0.2.3 | Web client for EH3D-SERVER: machines, jobs (drilling, routing and G-code), the drill head, the fleet and the updates. |
 
 

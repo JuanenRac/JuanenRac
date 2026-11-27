@@ -88,7 +88,7 @@
 | --- | :---: | --- | --- |
 | 软件 | 🟢 | `█████████▊ 97%` | 59 个仓库中有 57 个至少达到可用阶段，依据是各自清单中声明的成熟度。 |
 | 测试 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个有自动化测试。 |
-| 持续集成 | 🟢 | `█████████▊ 98%` | 59 个仓库中有 58 个在主分支上最近一次 CI 运行为绿色。 |
+| 持续集成 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个在主分支上最近一次 CI 运行为绿色。 |
 | 已发布版本 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个至少发布过一个版本。 |
 | 文档 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个提供八种语言的 README。 |
 | 仿真 | 🟢 | `██████████ 100%` | 59 个仓库中有 59 个至少在仿真器中验证过。 |
@@ -526,10 +526,10 @@ A.R.M.O.R. 遵循 HYDRA-UMC 自身仪表板已经应用的相同规则：一项�
 |[EH3D-SUITE-LAUNCHER](https://github.com/JuanenRac/EH3D-SUITE-LAUNCHER)|0.0.8|通过清单找到套件的程序并启动它们，保存最近的项目以及带各文件 SHA-256 的项目文件（.eh3dproj）；窗口和网络上机器的发现在计划中。|
 |[EH3D-COMMON](https://github.com/JuanenRac/EH3D-COMMON)|0.4.0|共享数据模型：带完整性校验的 .eh3dproj 项目容器、机器遥测类型，以及每个 ESP32 节点复用的固件基础。|
 |[EH3D-DOCS](https://github.com/JuanenRac/EH3D-DOCS)|0.1.5|生态系统文档、组装指南、网关技术规范和集成手册。|
-|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.4|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
+|[EH3D-CORE-LIBS](https://github.com/JuanenRac/EH3D-CORE-LIBS)|0.1.5|用 Rust 编写的 Gerber RS-274X、Excellon 钻孔文件和 G 代码（GRBL、Marlin 与 PlanetCNC 方言）读取器，可容忍损坏的文件。|
 |[EH3D-UPDATER](https://github.com/JuanenRac/EH3D-UPDATER)|0.1.2|检测、安装和更新生态系统自身的仓库（通过验证实现原子化，无需 GITHUB\_TOKEN）。|
 |[EH3D-HYDRA-BRIDGE](https://github.com/JuanenRac/EH3D-HYDRA-BRIDGE)|0.0.3|EH3D 与 HYDRA-UMC 两个生态系统之间的适配器(规划中,尚无代码)。|
-|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.2.8|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
+|[EH3D-SERVER](https://github.com/JuanenRac/EH3D-SERVER)|0.2.9|带有 REST 和 websocket 接口的 Rust 服务器：管理用户、机器和作业，使用 DRILLPRO 和 ROUTEPRO 的库规划钻孔和铣削作业，每台机器同一时间只运行一个作业。|
 |[EH3D-STUDIO](https://github.com/JuanenRac/EH3D-STUDIO)|0.2.3|EH3D-SERVER 的 Rust Web 客户端。|
 
 ### 💠 钻孔／铣边／铣削项目：
