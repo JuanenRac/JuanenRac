@@ -16996,11 +16996,11 @@
   },
   {
    "actions": {
-    "fail": 194,
-    "min": 37842,
-    "ok": 6840,
-    "other": 111,
-    "runs": 7145
+    "fail": 187,
+    "min": 33993,
+    "ok": 6275,
+    "other": 97,
+    "runs": 6559
    },
    "areas": {
     "armor": {
@@ -17024,7 +17024,7 @@
      "tests": 90
     },
     "electro-hobby-3d": {
-     "ci": 75,
+     "ci": 100,
      "docs": 100,
      "hardware": 100,
      "production": 0,
@@ -17058,7 +17058,7 @@
    "progress": {
     "armor": 67,
     "eh3d": 50,
-    "electro-hobby-3d": 46,
+    "electro-hobby-3d": 47,
     "hydra-umc": 60,
     "urtc": 57
    },
@@ -17085,7 +17085,7 @@
     ],
     "ARMOR-IOS-CONTROL": [
      0,
-     "0.0.9"
+     "0.1.0"
     ],
     "ARMOR-NETWORK": [
      2,
@@ -17109,7 +17109,7 @@
     ],
     "ARMOR-NODE-SOLAR": [
      1,
-     "0.7.7"
+     "0.7.8"
     ],
     "ARMOR-NODE-SOLAR-HMI": [
      0,
@@ -17117,7 +17117,7 @@
     ],
     "ARMOR-SERVER": [
      2,
-     "0.8.3.1"
+     "0.8.3.2"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -17153,7 +17153,7 @@
     ],
     "EH3D-AUTOLEVEL": [
      1,
-     "0.1.4"
+     "0.1.5"
     ],
     "EH3D-BUNGARD-GUI": [
      1,
@@ -17161,7 +17161,7 @@
     ],
     "EH3D-CAM-DEBUGGER": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-COMMON": [
      1,
@@ -17181,15 +17181,15 @@
     ],
     "EH3D-DESIGN-HISTORY": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-DESIGN-VERIFIER": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-DOCS": [
      1,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-DRILLPRO": [
      1,
@@ -17197,11 +17197,11 @@
     ],
     "EH3D-GERBERVIEWER": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-HYDRA-BRIDGE": [
      0,
-     "0.0.3"
+     "0.0.4"
     ],
     "EH3D-IOS-CONTROL": [
      0,
@@ -17213,27 +17213,27 @@
     ],
     "EH3D-LAB-BRIDGE": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-MANUFACTURING-PROFILE": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-NODE-BUNGARD": [
      1,
-     "0.1.1"
+     "0.1.2"
     ],
     "EH3D-NODE-BUNGARD-AUX": [
      0,
-     "0.1.2"
+     "0.1.3"
     ],
     "EH3D-NODE-BUNGARD-HMI": [
      0,
-     "0.1.6"
+     "0.1.7"
     ],
     "EH3D-NODE-HMI-GUI": [
      0,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-NODE-PNP-FEEDER": [
      1,
@@ -17245,7 +17245,7 @@
     ],
     "EH3D-PHOENIX-3DP": [
      1,
-     "0.1.0"
+     "0.1.1"
     ],
     "EH3D-PHOENIX-CAD": [
      0,
@@ -17261,7 +17261,7 @@
     ],
     "EH3D-PHOENIX-PCB": [
      0,
-     "0.1.9"
+     "0.2.0"
     ],
     "EH3D-PHOENIX-PNP": [
      1,
@@ -17273,7 +17273,7 @@
     ],
     "EH3D-ROUTEPRO": [
      1,
-     "0.2.2"
+     "0.2.3"
     ],
     "EH3D-SERVER": [
      1,
@@ -17281,7 +17281,7 @@
     ],
     "EH3D-STENCILCAM": [
      1,
-     "0.1.5"
+     "0.1.6"
     ],
     "EH3D-STUDIO": [
      1,
@@ -17289,7 +17289,7 @@
     ],
     "EH3D-SUITE-LAUNCHER": [
      1,
-     "0.0.8"
+     "0.0.9"
     ],
     "EH3D-THERMAL-LAB": [
      0,
@@ -17297,7 +17297,7 @@
     ],
     "EH3D-TOOL-MANAGER": [
      1,
-     "0.1.3"
+     "0.1.4"
     ],
     "EH3D-UPDATER": [
      1,
@@ -17305,11 +17305,11 @@
     ],
     "EH3D-VALIDATION-LAB": [
      0,
-     "0.0.5"
+     "0.0.6"
     ],
     "EH3D-VISION-STUDIO": [
      1,
-     "0.1.5"
+     "0.1.6"
     ],
     "ELECTRO-HOBBY-3D-UPDATER": [
      1,
@@ -17321,7 +17321,7 @@
     ],
     "HYDRA-UMC-ANDROID-CONTROL": [
      1,
-     "0.8.0.8"
+     "0.8.0.9"
     ],
     "HYDRA-UMC-ANOMALY-DETECTOR": [
      1,
@@ -17611,7 +17611,7 @@
    "sentinel": {
     "cand": 1,
     "gaps": 5,
-    "min": 37842,
+    "min": 33993,
     "red": 0
    },
    "tests": {
@@ -17674,7 +17674,7 @@
     "EH3D-VISION-STUDIO": 972,
     "ELECTRO-HOBBY-3D-UPDATER": 85,
     "HYDRA-UMC": 1525,
-    "HYDRA-UMC-ANDROID-CONTROL": 811,
+    "HYDRA-UMC-ANDROID-CONTROL": 875,
     "HYDRA-UMC-ANOMALY-DETECTOR": 497,
     "HYDRA-UMC-BRIDGE-AMR": 294,
     "HYDRA-UMC-BRIDGE-CNC": 395,
@@ -17698,7 +17698,7 @@
     "HYDRA-UMC-EDITOR-URDF": 708,
     "HYDRA-UMC-GATEWAY-INDUSTRIAL": 301,
     "HYDRA-UMC-HIL-BRIDGE": 277,
-    "HYDRA-UMC-IOS-CONTROL": 720,
+    "HYDRA-UMC-IOS-CONTROL": 721,
     "HYDRA-UMC-JOB-DISPATCHER": 381,
     "HYDRA-UMC-LOCAL-TECHNICIAN": 496,
     "HYDRA-UMC-MESHES": 70,

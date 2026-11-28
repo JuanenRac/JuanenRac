@@ -51,16 +51,18 @@
   },
   "ARMOR-NODE-SOLAR": {
    "art": true,
-   "at": "2026-11-27T21:29:14Z",
-   "exp": "2026-12-04T21:27:02Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/46069868644",
+   "at": "2026-11-28T01:47:10Z",
+   "checked": true,
+   "exp": "2026-12-05T01:42:47Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/46094183538",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-27T21:28:40Z",
-   "exp": "2026-12-04T21:25:18Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46069850200",
+   "at": "2026-11-28T01:40:24Z",
+   "checked": true,
+   "exp": "2026-12-05T01:39:41Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46094187324",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -100,30 +102,34 @@
   },
   "EH3D-NODE-BUNGARD": {
    "art": true,
-   "at": "2026-11-27T08:22:15Z",
-   "exp": "2026-12-04T08:19:33Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/45964461918",
+   "at": "2026-11-28T03:44:42Z",
+   "checked": true,
+   "exp": "2026-12-05T03:43:46Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/46104033364",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-BUNGARD-AUX": {
    "art": true,
-   "at": "2026-11-27T07:37:58Z",
-   "exp": "2026-12-04T07:36:41Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/45959276745",
+   "at": "2026-11-28T03:51:34Z",
+   "checked": true,
+   "exp": "2026-12-05T03:50:32Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/46104531592",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
-   "at": "2026-11-27T21:57:38Z",
-   "exp": "2026-12-04T21:56:32Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/46072612437",
+   "at": "2026-11-28T04:00:11Z",
+   "checked": true,
+   "exp": "2026-12-05T03:59:21Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/46105146141",
    "wf": "firmware-build.yml"
   },
   "EH3D-NODE-HMI-GUI": {
    "art": true,
-   "at": "2026-11-27T21:44:11Z",
-   "exp": "2026-12-04T21:42:09Z",
-   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/46071680047",
+   "at": "2026-11-28T04:08:39Z",
+   "checked": true,
+   "exp": "2026-12-05T04:07:57Z",
+   "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/46105814415",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC": {
@@ -135,15 +141,15 @@
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-27T20:17:40Z",
-   "exp": "2026-12-04T20:16:45Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/46062000045",
+   "at": "2026-11-28T01:55:45Z",
+   "checked": true,
+   "exp": "2026-12-05T01:54:44Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/46095104994",
    "wf": "binaries-build.yml"
   },
   "HYDRA-UMC-HIL-BRIDGE": {
    "art": true,
    "at": "2026-11-28T00:53:01Z",
-   "checked": true,
    "exp": "2026-12-05T00:51:00Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-HIL-BRIDGE/actions/runs/46089728264",
    "wf": "binaries-build.yml"
@@ -186,7 +192,6 @@
   "HYDRA-UMC-PATH-PLANNER-3D": {
    "art": true,
    "at": "2026-11-28T00:53:32Z",
-   "checked": true,
    "exp": "2026-12-05T00:52:22Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PATH-PLANNER-3D/actions/runs/46089731420",
    "wf": "binaries-build.yml"
@@ -194,7 +199,6 @@
   "HYDRA-UMC-PHYSICS-REPLICA": {
    "art": true,
    "at": "2026-11-28T00:52:31Z",
-   "checked": true,
    "exp": "2026-12-05T00:50:14Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-PHYSICS-REPLICA/actions/runs/46089724647",
    "wf": "binaries-build.yml"
@@ -286,7 +290,6 @@
   "URTC-FLASHER": {
    "art": true,
    "at": "2026-11-28T00:57:09Z",
-   "checked": true,
    "exp": "2026-12-05T00:56:08Z",
    "url": "https://github.com/JuanenRac/URTC-FLASHER/actions/runs/46090273846",
    "wf": "exe-build.yml"
@@ -392,8 +395,8 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "ef8c20f5cddbf888",
-   "on": "2026-11-27",
+   "fp": "dc642be62025cf0c",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -410,8 +413,8 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "76e3df62be6e11f1",
-   "on": "2026-11-27",
+   "fp": "73c2521098702de7",
+   "on": "2026-11-28",
    "r": {
     "ak": 1,
     "an": 1,
@@ -455,8 +458,8 @@
    }
   },
   "EH3D-AUTOLEVEL": {
-   "fp": "439bfd750657ce5d",
-   "on": "2026-11-27",
+   "fp": "b0cd35391a529ccc",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -473,8 +476,8 @@
    }
   },
   "EH3D-CAM-DEBUGGER": {
-   "fp": "4fa4fa82ea4c86fa",
-   "on": "2026-11-27",
+   "fp": "7ed8bdc96a3d1aad",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -491,8 +494,8 @@
    }
   },
   "EH3D-GERBERVIEWER": {
-   "fp": "687e30ef653e7d61",
-   "on": "2026-11-27",
+   "fp": "4174790fabd70233",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -509,8 +512,8 @@
    }
   },
   "EH3D-NODE-BUNGARD": {
-   "fp": "431a20d71d6d89ee",
-   "on": "2026-11-27",
+   "fp": "0084143ce9bcb2f9",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -518,8 +521,8 @@
    }
   },
   "EH3D-NODE-BUNGARD-AUX": {
-   "fp": "f7996d8fa99c1a6a",
-   "on": "2026-11-27",
+   "fp": "3e9883f23f2066b3",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -527,8 +530,8 @@
    }
   },
   "EH3D-NODE-BUNGARD-HMI": {
-   "fp": "43ea55195ea0fccf",
-   "on": "2026-11-27",
+   "fp": "37b79abb67c13b88",
+   "on": "2026-11-28",
    "r": {
     "ak": 2,
     "an": 2,
@@ -536,8 +539,8 @@
    }
   },
   "EH3D-NODE-HMI-GUI": {
-   "fp": "d4e48c57bcf80eee",
-   "on": "2026-11-27",
+   "fp": "c266985daf9d3c3e",
+   "on": "2026-11-28",
    "r": {
     "ak": 2,
     "an": 2,
@@ -545,8 +548,8 @@
    }
   },
   "EH3D-PHOENIX-3DP": {
-   "fp": "6980af8e91bef97b",
-   "on": "2026-11-27",
+   "fp": "1b22221ff20d1a82",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -581,8 +584,8 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "ad342f035f55a475",
-   "on": "2026-11-27",
+   "fp": "d5d32a281bb57989",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -599,8 +602,8 @@
    }
   },
   "EH3D-ROUTEPRO": {
-   "fp": "c1231dac251ed0d4",
-   "on": "2026-11-27",
+   "fp": "457ac792e5af8c80",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -617,8 +620,8 @@
    }
   },
   "EH3D-STENCILCAM": {
-   "fp": "0652a9d899f1076d",
-   "on": "2026-11-27",
+   "fp": "00d80b2f477d3154",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -635,8 +638,8 @@
    }
   },
   "EH3D-SUITE-LAUNCHER": {
-   "fp": "40e8d9b27480046e",
-   "on": "2026-11-27",
+   "fp": "9f165748fe90ed95",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -644,8 +647,8 @@
    }
   },
   "EH3D-TOOL-MANAGER": {
-   "fp": "f69d5e052d0f2770",
-   "on": "2026-11-27",
+   "fp": "8d54c79d669f8ced",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -653,8 +656,8 @@
    }
   },
   "EH3D-VISION-STUDIO": {
-   "fp": "770100142434733d",
-   "on": "2026-11-27",
+   "fp": "df82302b877dc5c8",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -671,8 +674,8 @@
    }
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
-   "fp": "d86a24050c08c5d7",
-   "on": "2026-11-27",
+   "fp": "b77c5bacdc9135db",
+   "on": "2026-11-28",
    "r": {
     "ak": 0,
     "an": 1,
@@ -928,7 +931,7 @@
    }
   },
   "ARMOR-NODE-SOLAR": {
-   "fp": "ef8c20f5cddbf888",
+   "fp": "dc642be62025cf0c",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -943,7 +946,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "76e3df62be6e11f1",
+   "fp": "73c2521098702de7",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1021,7 +1024,7 @@
    }
   },
   "EH3D-AUTOLEVEL": {
-   "fp": "439bfd750657ce5d",
+   "fp": "b0cd35391a529ccc",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1049,7 +1052,7 @@
    }
   },
   "EH3D-CAM-DEBUGGER": {
-   "fp": "4fa4fa82ea4c86fa",
+   "fp": "7ed8bdc96a3d1aad",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1077,7 +1080,7 @@
    }
   },
   "EH3D-GERBERVIEWER": {
-   "fp": "687e30ef653e7d61",
+   "fp": "4174790fabd70233",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1105,7 +1108,7 @@
    }
   },
   "EH3D-NODE-BUNGARD": {
-   "fp": "431a20d71d6d89ee",
+   "fp": "0084143ce9bcb2f9",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1119,7 +1122,7 @@
    }
   },
   "EH3D-NODE-BUNGARD-AUX": {
-   "fp": "f7996d8fa99c1a6a",
+   "fp": "3e9883f23f2066b3",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1133,7 +1136,7 @@
    }
   },
   "EH3D-NODE-BUNGARD-HMI": {
-   "fp": "43ea55195ea0fccf",
+   "fp": "37b79abb67c13b88",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1147,7 +1150,7 @@
    }
   },
   "EH3D-NODE-HMI-GUI": {
-   "fp": "d4e48c57bcf80eee",
+   "fp": "c266985daf9d3c3e",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1161,7 +1164,7 @@
    }
   },
   "EH3D-PHOENIX-3DP": {
-   "fp": "6980af8e91bef97b",
+   "fp": "1b22221ff20d1a82",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1217,7 +1220,7 @@
    }
   },
   "EH3D-PHOENIX-PCB": {
-   "fp": "ad342f035f55a475",
+   "fp": "d5d32a281bb57989",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1245,7 +1248,7 @@
    }
   },
   "EH3D-ROUTEPRO": {
-   "fp": "c1231dac251ed0d4",
+   "fp": "457ac792e5af8c80",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1273,7 +1276,7 @@
    }
   },
   "EH3D-STENCILCAM": {
-   "fp": "0652a9d899f1076d",
+   "fp": "00d80b2f477d3154",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1301,7 +1304,7 @@
    }
   },
   "EH3D-SUITE-LAUNCHER": {
-   "fp": "40e8d9b27480046e",
+   "fp": "9f165748fe90ed95",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1315,7 +1318,7 @@
    }
   },
   "EH3D-TOOL-MANAGER": {
-   "fp": "f69d5e052d0f2770",
+   "fp": "8d54c79d669f8ced",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1329,7 +1332,7 @@
    }
   },
   "EH3D-VISION-STUDIO": {
-   "fp": "770100142434733d",
+   "fp": "df82302b877dc5c8",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1359,7 +1362,7 @@
    }
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
-   "fp": "d86a24050c08c5d7",
+   "fp": "b77c5bacdc9135db",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1373,7 +1376,7 @@
    }
   },
   "HYDRA-UMC-HIL-BRIDGE": {
-   "fp": "cc688847da98024b",
+   "fp": "a92ec6b64a7959e3",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1456,8 +1459,22 @@
     "why": []
    }
   },
+  "HYDRA-UMC-PATH-PLANNER-3D": {
+   "fp": "98b9dad7a2027015",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 2,
+    "s": "verified",
+    "sch": [
+     "hydra-sign"
+    ],
+    "unk": 0,
+    "why": []
+   }
+  },
   "HYDRA-UMC-PHYSICS-REPLICA": {
-   "fp": "f4d99bc6a09c4456",
+   "fp": "c84dc7e8a326c3a1",
    "r": {
     "bad": 0,
     "ho": 0,
