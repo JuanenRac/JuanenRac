@@ -23,9 +23,10 @@
   },
   "ARMOR-NODE-ALARM": {
    "art": true,
-   "at": "2026-11-27T21:29:57Z",
-   "exp": "2026-12-04T21:28:50Z",
-   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/46069877062",
+   "at": "2026-11-27T23:17:48Z",
+   "checked": true,
+   "exp": "2026-12-04T23:14:14Z",
+   "url": "https://github.com/JuanenRac/ARMOR-NODE-ALARM/actions/runs/46079686436",
    "wf": "firmware-build.yml"
   },
   "ARMOR-NODE-ELECTRICAL": {
@@ -93,9 +94,10 @@
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-27T15:25:45Z",
-   "exp": "2026-12-04T15:22:19Z",
-   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/46023330490",
+   "at": "2026-11-27T23:34:39Z",
+   "checked": true,
+   "exp": "2026-12-04T23:33:54Z",
+   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/46082896816",
    "wf": "apk-build.yml"
   },
   "EH3D-NODE-BUNGARD": {
@@ -352,8 +354,8 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "0466e39a158dd60c",
-   "on": "2026-11-27",
+   "fp": "845123e7021c0d76",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -442,8 +444,8 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "98b73e1e7f48eb8c",
-   "on": "2026-11-27",
+   "fp": "5570f0f4b17f53d3",
+   "on": "2026-11-28",
    "r": {
     "ak": 0,
     "an": 1,
@@ -550,8 +552,8 @@
    }
   },
   "EH3D-PHOENIX-CAD": {
-   "fp": "2bfe5e38ab9342ee",
-   "on": "2026-11-27",
+   "fp": "6583ca75d5a995ff",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -559,8 +561,8 @@
    }
   },
   "EH3D-PHOENIX-CNC": {
-   "fp": "f2b988fc6e03dc39",
-   "on": "2026-11-27",
+   "fp": "451dffc0129cb6d7",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -568,8 +570,8 @@
    }
   },
   "EH3D-PHOENIX-LASER": {
-   "fp": "6636e2d67731aaac",
-   "on": "2026-11-27",
+   "fp": "33654c2b231e3019",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -604,8 +606,8 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "ba13c577c56cd909",
-   "on": "2026-11-27",
+   "fp": "f5bda5bb5591d338",
+   "on": "2026-11-28",
    "r": {
     "ak": 3,
     "an": 3,
@@ -622,8 +624,8 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "2ca637ab96e33511",
-   "on": "2026-11-27",
+   "fp": "7b1150aa08bdae54",
+   "on": "2026-11-28",
    "r": {
     "ak": 1,
     "an": 1,
@@ -864,7 +866,7 @@
    }
   },
   "ARMOR-NODE-ALARM": {
-   "fp": "0466e39a158dd60c",
+   "fp": "845123e7021c0d76",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1003,7 +1005,7 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "98b73e1e7f48eb8c",
+   "fp": "5570f0f4b17f53d3",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1171,7 +1173,7 @@
    }
   },
   "EH3D-PHOENIX-CAD": {
-   "fp": "2bfe5e38ab9342ee",
+   "fp": "6583ca75d5a995ff",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1185,7 +1187,7 @@
    }
   },
   "EH3D-PHOENIX-CNC": {
-   "fp": "f2b988fc6e03dc39",
+   "fp": "451dffc0129cb6d7",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1199,7 +1201,7 @@
    }
   },
   "EH3D-PHOENIX-LASER": {
-   "fp": "6636e2d67731aaac",
+   "fp": "33654c2b231e3019",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1255,7 +1257,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "ba13c577c56cd909",
+   "fp": "f5bda5bb5591d338",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1283,7 +1285,7 @@
    }
   },
   "EH3D-STUDIO": {
-   "fp": "2ca637ab96e33511",
+   "fp": "7b1150aa08bdae54",
    "r": {
     "bad": 0,
     "ho": 0,
