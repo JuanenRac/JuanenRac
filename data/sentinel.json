@@ -1,20 +1,20 @@
 {
- "asof": "2026-11-28T00:49:29Z",
+ "asof": "2026-11-28T01:08:44Z",
  "ci": {
-  "checked": 747,
+  "checked": 749,
   "red": [],
   "red_total": 0
  },
  "compute": {
   "top": [
    {
-    "min24": 1218,
-    "min7": 1218,
+    "min24": 1222,
+    "min7": 1222,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 1017,
-    "min7": 1017,
+    "min24": 1075,
+    "min7": 1075,
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
@@ -23,8 +23,8 @@
     "repo": "EH3D-COMMON"
    },
    {
-    "min24": 900,
-    "min7": 970,
+    "min24": 882,
+    "min7": 979,
     "repo": "URTC-FLASHER"
    },
    {
@@ -33,18 +33,18 @@
     "repo": "EH3D-SERVER"
    },
    {
-    "min24": 682,
-    "min7": 682,
+    "min24": 724,
+    "min7": 724,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    }
   ],
-  "total24": 37796,
-  "total7": 49473,
+  "total24": 37842,
+  "total7": 49718,
   "warn": true
  },
  "delivery": {
   "clmis": [
-   "EH3D-PHOENIX-PNP",
+   "EH3D-PHOENIX-3DP",
    "HYDRA-UMC-DSI",
    "HYDRA-UMC-EDITOR-STL",
    "HYDRA-UMC-EDITOR-URDF",
@@ -52,8 +52,7 @@
    "HYDRA-UMC-PATH-PLANNER-3D",
    "HYDRA-UMC-PHYSICS-REPLICA",
    "HYDRA-UMC-TELEMETRY-COLLECTOR",
-   "TOOLS-GITHUB-ACTIONS-MONITOR",
-   "URTC-FLASHER"
+   "TOOLS-GITHUB-ACTIONS-MONITOR"
   ],
   "eco": {
    "armor": {
@@ -85,7 +84,7 @@
     "tagahead": 0
    },
    "urtc": {
-    "clmis": 1,
+    "clmis": 0,
     "nonotes": 0,
     "read": 11,
     "repos": 11,
@@ -129,10 +128,22 @@
    "read": 11,
    "red": 0,
    "repos": 11,
-   "unpub": 1
+   "unpub": 0
   }
  },
  "events": [
+  {
+   "at": "2026-11-28T01:08:44Z",
+   "kind": "released",
+   "repo": "EH3D-PHOENIX-PNP",
+   "tag": "v0.1.7"
+  },
+  {
+   "at": "2026-11-28T01:08:44Z",
+   "kind": "released",
+   "repo": "URTC-FLASHER",
+   "tag": "v0.6.1"
+  },
   {
    "at": "2026-11-28T00:49:29Z",
    "kind": "released",
@@ -300,24 +311,12 @@
    "kind": "released",
    "repo": "HYDRA-UMC-DEVELOPER-NODE",
    "tag": "v0.0.5"
-  },
-  {
-   "at": "2026-11-27T22:32:39Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-DOCS",
-   "tag": "v0.1.6"
-  },
-  {
-   "at": "2026-11-27T22:32:39Z",
-   "kind": "released",
-   "repo": "HYDRA-UMC-ORCHESTRATOR",
-   "tag": "v0.2.9"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 130
+  "gap_minutes": 20
  },
  "hygiene": {
   "allowed_missing": [],
@@ -379,10 +378,9 @@
      "HYDRA-UMC-PATH-PLANNER-3D",
      "HYDRA-UMC-PHYSICS-REPLICA",
      "HYDRA-UMC-TELEMETRY-COLLECTOR",
-     "TOOLS-GITHUB-ACTIONS-MONITOR",
-     "URTC-FLASHER"
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
     ],
-    "n": 9
+    "n": 8
    }
   },
   {
@@ -411,7 +409,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 37796
+    "min": 37842
    }
   }
  ],
@@ -495,7 +493,7 @@
   "EH3D-PHOENIX-CNC": "v0.2.7",
   "EH3D-PHOENIX-LASER": "v0.1.9",
   "EH3D-PHOENIX-PCB": "v0.1.9",
-  "EH3D-PHOENIX-PNP": "v0.1.6",
+  "EH3D-PHOENIX-PNP": "v0.1.7",
   "EH3D-PROJECT-PASSPORT": "v0.0.6",
   "EH3D-ROUTEPRO": "v0.2.2",
   "EH3D-SERVER": "v0.2.9",
@@ -572,7 +570,7 @@
   "URTC-COMMON": "v0.3.2",
   "URTC-DEVTOOLS": "v0.0.9",
   "URTC-DOCS": "v0.2.0",
-  "URTC-FLASHER": "v0.6.0",
+  "URTC-FLASHER": "v0.6.1",
   "URTC-GATEWAY": "v0.1.1",
   "URTC-SMART-RACK": "v0.2.9",
   "URTC-TESTER": "v0.5.9",
@@ -683,7 +681,7 @@
    166,
    16389,
    38520,
-   37796
+   37842
   ],
   "red": [
    3,
@@ -753,13 +751,8 @@
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
     "tag": "v2.1.8",
     "version": "2.2.0"
-   },
-   {
-    "repo": "URTC-FLASHER",
-    "tag": "v0.6.0",
-    "version": "0.6.1"
    }
   ],
-  "total": 9
+  "total": 8
  }
 }
