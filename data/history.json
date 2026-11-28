@@ -16996,11 +16996,11 @@
   },
   {
    "actions": {
-    "fail": 130,
-    "min": 20543,
-    "ok": 4327,
-    "other": 71,
-    "runs": 4528
+    "fail": 131,
+    "min": 18920,
+    "ok": 4246,
+    "other": 60,
+    "runs": 4437
    },
    "areas": {
     "armor": {
@@ -17034,7 +17034,7 @@
      "tests": 75
     },
     "hydra-umc": {
-     "ci": 100,
+     "ci": 98,
      "docs": 100,
      "hardware": 13,
      "production": 8,
@@ -17611,8 +17611,8 @@
    "sentinel": {
     "cand": 3,
     "gaps": 5,
-    "min": 20543,
-    "red": 1
+    "min": 18920,
+    "red": 2
    },
    "tests": {
     "ARMOR-ANDROID-CONTROL": 626,
@@ -17627,10 +17627,10 @@
     "ARMOR-NODE-HMI": 48,
     "ARMOR-NODE-RADAR": 34,
     "ARMOR-NODE-SOLAR": 54,
-    "ARMOR-SERVER": 1408,
+    "ARMOR-SERVER": 1454,
     "ARMOR-SERVER-AI": 213,
     "ARMOR-SIMULATOR": 428,
-    "ARMOR-STUDIO": 1942,
+    "ARMOR-STUDIO": 1966,
     "ARMOR-UPDATER": 503,
     "ARMOR-VISION": 385,
     "ARMOR-VOICE-AI": 259,

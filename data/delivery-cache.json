@@ -59,7 +59,6 @@
   "ARMOR-SERVER": {
    "art": true,
    "at": "2026-11-28T10:36:42Z",
-   "checked": true,
    "exp": "2026-12-05T10:35:56Z",
    "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46135917392",
    "wf": "package-build.yml"
@@ -74,7 +73,6 @@
   "ARMOR-STUDIO": {
    "art": true,
    "at": "2026-11-28T10:30:02Z",
-   "checked": true,
    "exp": "2026-12-05T10:28:44Z",
    "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/46135183931",
    "wf": "package-build.yml"
@@ -89,7 +87,6 @@
   "ARMOR-WATCH": {
    "art": true,
    "at": "2026-11-21T05:46:13Z",
-   "checked": true,
    "exp": "2026-12-21T05:45:20Z",
    "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/44872115290",
    "wf": "apk-build.yml"
@@ -97,7 +94,6 @@
   "EH3D-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-28T04:58:33Z",
-   "checked": true,
    "exp": "2026-12-05T04:57:50Z",
    "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/46109664408",
    "wf": "apk-build.yml"
@@ -133,7 +129,6 @@
   "HYDRA-UMC": {
    "art": true,
    "at": "2026-11-28T10:09:58Z",
-   "checked": true,
    "exp": "2026-12-05T10:08:35Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/46132469918",
    "wf": "firmware-build.yml"
@@ -218,7 +213,6 @@
   "HYDRA-UMC-STUDIO-KIT": {
    "art": true,
    "at": "2026-11-28T09:53:35Z",
-   "checked": true,
    "exp": "2026-12-05T09:47:14Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT/actions/runs/46131801043",
    "wf": "dist-build.yml"
@@ -268,7 +262,6 @@
   "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": {
    "art": true,
    "at": "2026-11-21T10:37:53Z",
-   "checked": true,
    "exp": "2026-12-21T10:37:15Z",
    "url": "https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID/actions/runs/44894902664",
    "wf": "apk-build.yml"

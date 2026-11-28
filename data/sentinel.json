@@ -1,27 +1,33 @@
 {
- "asof": "2026-11-28T12:19:13Z",
+ "asof": "2026-11-28T12:33:31Z",
  "ci": {
   "checked": 749,
   "red": [
    {
     "repo": "ARMOR-DOCS",
-    "since": "2026-11-28T11:45:00Z",
+    "since": "2026-11-28T12:22:18Z",
+    "streak": 2,
+    "wf": "nightly.yml"
+   },
+   {
+    "repo": "HYDRA-UMC-DOCS",
+    "since": "2026-11-28T12:21:30Z",
     "streak": 1,
     "wf": "nightly.yml"
    }
   ],
-  "red_total": 1
+  "red_total": 2
  },
  "compute": {
   "top": [
    {
-    "min24": 1175,
-    "min7": 1175,
+    "min24": 1210,
+    "min7": 1210,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
-    "min24": 692,
-    "min7": 692,
+    "min24": 703,
+    "min7": 703,
     "repo": "HYDRA-UMC-IOS-CONTROL"
    },
    {
@@ -35,18 +41,18 @@
     "repo": "EH3D-COMMON"
    },
    {
-    "min24": 477,
-    "min7": 527,
+    "min24": 452,
+    "min7": 540,
     "repo": "HYDRA-UMC-STUDIO"
    },
    {
-    "min24": 457,
-    "min7": 871,
-    "repo": "EH3D-SERVER"
+    "min24": 450,
+    "min7": 450,
+    "repo": "HYDRA-UMC-EDITOR-URDF"
    }
   ],
-  "total24": 20543,
-  "total7": 46519,
+  "total24": 18920,
+  "total7": 46812,
   "warn": true
  },
  "delivery": {
@@ -116,7 +122,7 @@
   "hydra-umc": {
    "cand": 3,
    "read": 59,
-   "red": 0,
+   "red": 1,
    "repos": 59,
    "unpub": 0
   },
@@ -129,6 +135,12 @@
   }
  },
  "events": [
+  {
+   "at": "2026-11-28T12:33:31Z",
+   "kind": "red_new",
+   "repo": "HYDRA-UMC-DOCS",
+   "wf": "nightly.yml"
+  },
   {
    "at": "2026-11-28T12:19:13Z",
    "kind": "red_new",
@@ -302,18 +314,12 @@
    "kind": "released",
    "repo": "EH3D-ROUTEPRO",
    "tag": "v0.2.3"
-  },
-  {
-   "at": "2026-11-28T04:20:25Z",
-   "kind": "released",
-   "repo": "EH3D-STENCILCAM",
-   "tag": "v0.1.6"
   }
  ],
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 480
+  "gap_minutes": 15
  },
  "hygiene": {
   "allowed_missing": [],
@@ -337,7 +343,7 @@
     "bad": 4,
     "cand": 3,
     "hyg": 5,
-    "red": 1
+    "red": 2
    }
   },
   {
@@ -355,12 +361,13 @@
   },
   {
    "key": "red",
-   "level": "warn",
+   "level": "bad",
    "p": {
     "list": [
-     "ARMOR-DOCS"
+     "ARMOR-DOCS",
+     "HYDRA-UMC-DOCS"
     ],
-    "n": 1
+    "n": 2
    }
   },
   {
@@ -401,7 +408,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 20543
+    "min": 18920
    }
   }
  ],
@@ -409,7 +416,7 @@
  "releases": {
   "candidates": [
    {
-    "entries": 10,
+    "entries": 11,
     "published": "2026-11-19T19:52:03Z",
     "repo": "HYDRA-UMC-IOS-CONTROL",
     "tag": "v0.3.7"
@@ -685,7 +692,7 @@
    166,
    16389,
    38520,
-   20543
+   18920
   ],
   "red": [
    3,
@@ -711,7 +718,7 @@
    1,
    0,
    0,
-   1
+   2
   ]
  },
  "unpublished": {
