@@ -616,7 +616,7 @@ En dehors des quatre écosystèmes, il existe un cinquième groupe : des outils 
 **Outil de mise à jour :** aucun en propre ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) est l'un de ses outils et passe la main à l'outil de mise à jour de chacun des quatre écosystèmes.
 
 <!-- progress:electro-hobby-3d -->
-`\[█████████▎░░░░░░░░░░] 46%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 4 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[█████████▍░░░░░░░░░░] 47%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 4 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -628,7 +628,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟠 | `█████░░░░░ 50%` | 2 dépôts sur 4 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 dépôts sur 4 ont des tests automatiques. |
-| Intégration continue | 🟡 | `███████▌░░ 75%` | 3 dépôts sur 4 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `██████████ 100%` | 4 dépôts sur 4 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟡 | `███████▌░░ 75%` | 3 dépôts sur 4 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 4 dépôts sur 4 ont le README dans les huit langues. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 dépôts sur 4 ont été vérifiés au moins dans un simulateur. |
@@ -644,7 +644,7 @@ Le groupe réunit les programmes qui se trouvent au-dessus des quatre écosystè
 
 | Outil | Version | Ce que c'est |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.2.0 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.2.1 | Surveille les workflows GitHub Actions de tous vos dépôts et montre sur une page locale, en huit langues, ce qui est rouge, bloqué ou en attente, avec des métriques pour Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.1.1 | Application Android du moniteur : lire sur le téléphone l'état et les alertes de ton propre moniteur (simple squelette ; rien n'est encore construit). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Compagnon pour montre (Wear OS) de l'application Android : un coup d'œil à l'état du CI et aux alertes (simple squelette ; rien n'est encore construit). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | La fenêtre et la ligne de commande uniques qui passent la main à l'outil de mise à jour de chaque écosystème. |

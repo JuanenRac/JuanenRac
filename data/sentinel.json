@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-28T13:09:13Z",
+ "asof": "2026-11-28T16:06:34Z",
  "ci": {
   "checked": 749,
   "red": [],
@@ -8,8 +8,8 @@
  "compute": {
   "top": [
    {
-    "min24": 1291,
-    "min7": 1291,
+    "min24": 967,
+    "min7": 967,
     "repo": "TOOLS-GITHUB-ACTIONS-MONITOR"
    },
    {
@@ -23,11 +23,6 @@
     "repo": "HYDRA-UMC-ANDROID-CONTROL"
    },
    {
-    "min24": 507,
-    "min7": 957,
-    "repo": "EH3D-COMMON"
-   },
-   {
     "min24": 480,
     "min7": 534,
     "repo": "HYDRA-UMC-STUDIO"
@@ -36,14 +31,21 @@
     "min24": 420,
     "min7": 420,
     "repo": "HYDRA-UMC-EDITOR-URDF"
+   },
+   {
+    "min24": 391,
+    "min7": 391,
+    "repo": "ARMOR-SERVER"
    }
   ],
-  "total24": 16222,
-  "total7": 46778,
+  "total24": 13985,
+  "total7": 46358,
   "warn": true
  },
  "delivery": {
-  "clmis": [],
+  "clmis": [
+   "TOOLS-GITHUB-ACTIONS-MONITOR"
+  ],
   "eco": {
    "armor": {
     "clmis": 0,
@@ -60,7 +62,7 @@
     "tagahead": 0
    },
    "electro-hobby-3d": {
-    "clmis": 0,
+    "clmis": 1,
     "nonotes": 0,
     "read": 4,
     "repos": 4,
@@ -104,7 +106,7 @@
    "read": 4,
    "red": 0,
    "repos": 4,
-   "unpub": 0
+   "unpub": 1
   },
   "hydra-umc": {
    "cand": 3,
@@ -306,7 +308,7 @@
  "health": {
   "age_minutes": 5,
   "build_queue_seconds": 0,
-  "gap_minutes": 40
+  "gap_minutes": 180
  },
  "hygiene": {
   "allowed_missing": [],
@@ -359,6 +361,16 @@
    }
   },
   {
+   "key": "unpub",
+   "level": "warn",
+   "p": {
+    "list": [
+     "TOOLS-GITHUB-ACTIONS-MONITOR"
+    ],
+    "n": 1
+   }
+  },
+  {
    "key": "hyg",
    "level": "warn",
    "p": {
@@ -384,7 +396,7 @@
    "key": "compute",
    "level": "warn",
    "p": {
-    "min": 16222
+    "min": 13985
    }
   }
  ],
@@ -668,7 +680,7 @@
    166,
    16389,
    38520,
-   16222
+   13985
   ],
   "red": [
    3,
@@ -698,7 +710,13 @@
   ]
  },
  "unpublished": {
-  "rows": [],
-  "total": 0
+  "rows": [
+   {
+    "repo": "TOOLS-GITHUB-ACTIONS-MONITOR",
+    "tag": "v2.2.0",
+    "version": "2.2.1"
+   }
+  ],
+  "total": 1
  }
 }

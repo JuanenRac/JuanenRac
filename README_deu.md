@@ -616,7 +616,7 @@ Neben den vier Ökosystemen gibt es eine fünfte Gruppe: eigenständige Werkzeug
 **Updater:** keinen eigenen; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) ist eines seiner Werkzeuge und übergibt an den Updater jedes der vier Ökosysteme.
 
 <!-- progress:electro-hobby-3d -->
-`\[█████████▎░░░░░░░░░░] 46%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 4 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
+`\[█████████▍░░░░░░░░░░] 47%` — Aus realen Daten berechnet: die Reife und der Nachweis, die jedes seiner 4 Repositories in seinem eigenen Manifest angibt, dazu seine veröffentlichten Versionen, seine Tests, sein grünes CI und seine Dokumentation in acht Sprachen. Der 100%-Meilenstein ist ein vollständig integriertes Ökosystem auf echter Hardware.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -628,7 +628,7 @@ Für das gesamte Ökosystem aus realen Daten berechnet, nie von Hand; eine Ampel
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████░░░░░ 50%` | 2 von 4 Repositories sind mindestens funktionsfähig, nach der Reife, die jedes in seinem eigenen Manifest angibt. |
 | Tests | 🟡 | `███████▌░░ 75%` | 3 von 4 Repositories haben automatische Tests. |
-| Kontinuierliche Integration | 🟡 | `███████▌░░ 75%` | 3 von 4 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
+| Kontinuierliche Integration | 🟢 | `██████████ 100%` | 4 von 4 Repositories haben den letzten CI-Lauf auf dem Hauptzweig grün. |
 | Veröffentlichte Versionen | 🟡 | `███████▌░░ 75%` | 3 von 4 Repositories haben mindestens eine Version veröffentlicht. |
 | Dokumentation | 🟢 | `██████████ 100%` | 4 von 4 Repositories haben die README in den acht Sprachen. |
 | Simulation | 🟠 | `█████░░░░░ 50%` | 2 von 4 Repositories wurden mindestens in einem Simulator geprüft. |
@@ -644,7 +644,7 @@ Die Gruppe enthält die Programme oberhalb der vier Ökosysteme, die keines davo
 
 | Werkzeug | Version | Was es ist |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.2.0 | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.2.1 | Überwacht die GitHub-Actions-Workflows aller deiner Repositories und zeigt auf einer lokalen Seite in acht Sprachen, was rot ist, hängt oder wartet, mit Metriken für Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.1.1 | Android-App des Monitors: Status und Alarme deines eigenen Monitors auf dem Handy lesen (nur Grundgerüst; noch nichts gebaut). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Smartwatch-Begleiter (Wear OS) der Android-App: ein Blick auf den CI-Status und die Alarme (nur Grundgerüst; noch nichts gebaut). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | Das eine Fenster und die eine Kommandozeile, die an den Updater jedes Ökosystems übergeben. |

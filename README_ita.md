@@ -616,7 +616,7 @@ Oltre ai quattro ecosistemi c'è un quinto gruppo: strumenti indipendenti che st
 **Aggiornatore:** nessuno proprio; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) è uno dei suoi strumenti e passa il lavoro all'aggiornatore di ciascuno dei quattro ecosistemi.
 
 <!-- progress:electro-hobby-3d -->
-`\[█████████▎░░░░░░░░░░] 46%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 4 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
+`\[█████████▍░░░░░░░░░░] 47%` — Calcolato da dati reali: la maturità e la prova che ciascuno dei suoi 4 repository dichiara nel proprio manifesto, più le sue versioni pubblicate, i suoi test, la CI verde e la documentazione in otto lingue. Il traguardo del 100% è un ecosistema completamente integrato che funziona su hardware reale.
 <!-- /progress:electro-hobby-3d -->
 
 <!-- status:electro-hobby-3d -->
@@ -628,7 +628,7 @@ Calcolato per l'intero ecosistema da dati reali, mai a mano; una spia diventa ve
 | --- | :---: | --- | --- |
 | Software | 🟠 | `█████░░░░░ 50%` | 2 repository su 4 sono almeno funzionali, secondo la maturità che ciascuno dichiara nel proprio manifesto. |
 | Test | 🟡 | `███████▌░░ 75%` | 3 repository su 4 hanno test automatici. |
-| Integrazione continua | 🟡 | `███████▌░░ 75%` | 3 repository su 4 hanno l'ultima esecuzione della CI sul ramo principale verde. |
+| Integrazione continua | 🟢 | `██████████ 100%` | 4 repository su 4 hanno l'ultima esecuzione della CI sul ramo principale verde. |
 | Versioni pubblicate | 🟡 | `███████▌░░ 75%` | 3 repository su 4 hanno pubblicato almeno una versione. |
 | Documentazione | 🟢 | `██████████ 100%` | 4 repository su 4 hanno il README nelle otto lingue. |
 | Simulazione | 🟠 | `█████░░░░░ 50%` | 2 repository su 4 sono stati verificati almeno in un simulatore. |
@@ -644,7 +644,7 @@ Il gruppo raccoglie i programmi che stanno sopra i quattro ecosistemi e non ne r
 
 | Strumento | Versione | Cos'è |
 | :--- | :--- | :--- |
-| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.2.0 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
+| [TOOLS-GITHUB-ACTIONS-MONITOR](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR) | 2.2.1 | Controlla i workflow GitHub Actions di tutti i tuoi repository e mostra su una pagina locale, in otto lingue, cosa è rosso, bloccato o in attesa, con metriche per Grafana. |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID) | 0.1.1 | App Android del monitor: leggi sul telefono lo stato e gli avvisi del tuo monitor (solo struttura di base; non è ancora stato costruito nulla). |
 | [TOOLS-GITHUB-ACTIONS-MONITOR-WATCH](https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-WATCH) | 0.0.1 | Compagno per smartwatch (Wear OS) dell'app Android: uno sguardo allo stato della CI e agli avvisi (solo struttura di base; non è ancora stato costruito nulla). |
 | [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) | 0.1.6 | L'unica finestra e riga di comando che passano il lavoro all'aggiornatore di ogni ecosistema. |

@@ -16996,11 +16996,11 @@
   },
   {
    "actions": {
-    "fail": 127,
-    "min": 16222,
-    "ok": 4094,
-    "other": 55,
-    "runs": 4276
+    "fail": 121,
+    "min": 13985,
+    "ok": 3717,
+    "other": 43,
+    "runs": 3881
    },
    "areas": {
     "armor": {
@@ -17024,7 +17024,7 @@
      "tests": 90
     },
     "electro-hobby-3d": {
-     "ci": 100,
+     "ci": 75,
      "docs": 100,
      "hardware": 100,
      "production": 0,
@@ -17034,7 +17034,7 @@
      "tests": 75
     },
     "hydra-umc": {
-     "ci": 98,
+     "ci": 100,
      "docs": 100,
      "hardware": 13,
      "production": 8,
@@ -17058,7 +17058,7 @@
    "progress": {
     "armor": 67,
     "eh3d": 50,
-    "electro-hobby-3d": 47,
+    "electro-hobby-3d": 46,
     "hydra-umc": 60,
     "urtc": 57
    },
@@ -17553,7 +17553,7 @@
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR": [
      1,
-     "2.2.0"
+     "2.2.1"
     ],
     "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": [
      0,
@@ -17611,7 +17611,7 @@
    "sentinel": {
     "cand": 3,
     "gaps": 5,
-    "min": 16222,
+    "min": 13985,
     "red": 0
    },
    "tests": {
@@ -17732,7 +17732,7 @@
     "HYDRA-UMC-VLA-ENGINE": 480,
     "HYDRA-UMC-VOICE-UI": 504,
     "HYDRA-UMC-WATCH": 215,
-    "TOOLS-GITHUB-ACTIONS-MONITOR": 6266,
+    "TOOLS-GITHUB-ACTIONS-MONITOR": 6309,
     "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": 75,
     "URTC": 322,
     "URTC-COMMON": 3085,
