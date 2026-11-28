@@ -88,7 +88,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 | --- | :---: | --- | --- |
 | Logiciel | 🟢 | `█████████▊ 97%` | 57 dépôts sur 59 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
 | Tests | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Intégration continue | 🟢 | `█████████▊ 98%` | 58 dépôts sur 59 ont la dernière exécution de la CI sur la branche principale au vert. |
 | Versions publiées | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont publié au moins une version. |
 | Documentation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont le README dans les huit langues. |
 | Simulation | 🟢 | `██████████ 100%` | 59 dépôts sur 59 ont été vérifiés au moins dans un simulateur. |
@@ -392,7 +392,7 @@ Chaque profil d'outil possède son propre chien de garde (watchdog) et son compo
 **Outil de mise à jour :** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) détecte, installe et met à jour les dépôts de cet écosystème ; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) le fait pour les quatre.
 
 <!-- progress:armor -->
-`\[█████████████▊░░░░░░] 69%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 20 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
+`\[█████████████▍░░░░░░] 67%` — Calculé à partir de données réelles : la maturité et la preuve que chacun de ses 21 dépôts déclare dans son propre manifeste, plus ses versions publiées, ses tests, son CI au vert et sa documentation en huit langues. Le jalon de 100 % est un écosystème entièrement intégré fonctionnant sur du matériel réel.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -402,14 +402,14 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 
 | Domaine | État | Avancement | Note |
 | --- | :---: | --- | --- |
-| Logiciel | 🟢 | `█████████░ 90%` | 18 dépôts sur 20 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
-| Tests | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont des tests automatiques. |
-| Intégration continue | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont la dernière exécution de la CI sur la branche principale au vert. |
-| Versions publiées | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont publié au moins une version. |
-| Documentation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont le README dans les huit langues. |
-| Simulation | 🟢 | `██████████ 100%` | 20 dépôts sur 20 ont été vérifiés au moins dans un simulateur. |
-| Matériel réel | 🔴 | `██▌░░░░░░░ 25%` | 4 des 16 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
-| Production | 🟡 | `██████░░░░ 60%` | 12 dépôts sur 20 sont établis ou en production. |
+| Logiciel | 🟡 | `████████▋░ 86%` | 18 dépôts sur 21 sont au moins fonctionnels, selon la maturité que chacun déclare dans son propre manifeste. |
+| Tests | 🟢 | `██████████ 100%` | 21 dépôts sur 21 ont des tests automatiques. |
+| Intégration continue | 🟢 | `██████████ 100%` | 21 dépôts sur 21 ont la dernière exécution de la CI sur la branche principale au vert. |
+| Versions publiées | 🟢 | `██████████ 100%` | 21 dépôts sur 21 ont publié au moins une version. |
+| Documentation | 🟢 | `██████████ 100%` | 21 dépôts sur 21 ont le README dans les huit langues. |
+| Simulation | 🟢 | `█████████▌ 95%` | 20 dépôts sur 21 ont été vérifiés au moins dans un simulateur. |
+| Matériel réel | 🔴 | `██▍░░░░░░░ 24%` | 4 des 17 dépôts qui dépendent du matériel ont été vérifiés au banc ou sur le terrain ; les autres n'ont jamais fonctionné avec l'équipement réel. |
+| Production | 🟠 | `█████▊░░░░ 57%` | 12 dépôts sur 21 sont établis ou en production. |
 <!-- /status:armor -->
 
 ## 🏗️ Comment est construit A.R.M.O.R.
@@ -417,7 +417,7 @@ Calculé pour tout l'écosystème à partir de données réelles, jamais à la m
 1. **Contrat partagé** : **ARMOR-COMMON** détient la signification des messages — schéma JSON, validateur Python et types TypeScript/Kotlin générés que tous les autres dépôts consomment sans jamais les redéfinir.
 2. **Nœuds de terrain** : Micrologiciel ESP32-S3 pour la détection radar/présence (**ARMOR-NODE-RADAR**), la surveillance d'onduleur solaire et de batterie (**ARMOR-NODE-SOLAR**), la mesure électrique avec commutation (**ARMOR-NODE-ELECTRICAL**), et le panneau d'alarme de la maison (**ARMOR-NODE-ALARM**) ; un agent Python (**ARMOR-NETWORK**) surveille le réseau local de la maison et l'accessibilité à Internet à partir d'une machine qui y est connectée.
 3. **Coordinateur central** : **ARMOR-SERVER** stocke l'état, les utilisateurs, les alarmes, les automatisations et les preuves vidéo des caméras ; **ARMOR-SERVER-AI** et **ARMOR-VOICE-AI** ajoutent une politique visuelle explicable et des intentions vocales hors ligne qui n'actionnent jamais rien par elles-mêmes.
-4. **Clients opérateurs** : **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (mobile), **ARMOR-IOS-CONTROL** (iPhone) et la montre minimale **ARMOR-WATCH** sont des clients du serveur central, jamais du réseau de terrain directement. **ARMOR-NODE-HMI** est un panneau tactile mural (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) qui affiche l'état, permet d'armer et d'acquitter, et hébergera l'assistant vocal.
+4. **Clients opérateurs** : **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (mobile), **ARMOR-IOS-CONTROL** (iPhone) et la montre minimale **ARMOR-WATCH** sont des clients du serveur central, jamais du réseau de terrain directement. **ARMOR-NODE-HMI** est un panneau tactile mural (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) qui affiche l'état, permet d'armer et d'acquitter, et hébergera l'assistant vocal. **ARMOR-NODE-SOLAR-HMI** est un second écran mural (une carte ESP32-P4 de 7 pouces) pour les batteries et les onduleurs tels que le serveur les connaît : son firmware se compile, il n'a jamais tourné sur une carte et il n'a pas encore de liaison avec le serveur.
 5. **Déploiement et test** : **ARMOR-DEVOPS** déploie l'ensemble du graphe de services ; **ARMOR-SIMULATOR** rejoue des scénarios et des pannes reproductibles sans matériel réel ; **ARMOR-HARDWARE** regroupe la conception du boîtier et sa matrice de recette en atelier.
 6. **Opérations de l'écosystème** : **ARMOR-UPDATER** découvre, installe et met à jour chaque dépôt A.R.M.O.R. sur une machine, selon la même conception atomique par vérification que HYDRA-UMC-UPDATER ; **ARMOR-DOCS** est la documentation d'architecture canonique et la matrice de capacités. **ARMOR-STUDIO** peut également mettre à jour les services sur la machine centrale à partir de paquets signés avec la clé de version de l'écosystème, en vérifiant chaque signature avant l'installation.
 
@@ -444,6 +444,7 @@ A.R.M.O.R. suit la même règle que le tableau de bord d'HYDRA-UMC applique déj
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.6.3|Nœud électrique : firmware avec compteurs PZEM sur une ligne série, panneau web et MQTT, les trames des compteurs et les règles de manœuvre.|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.6.1|Nœud et panneau d'alarme : zones filaires, sirène, appareils Zigbee et règles d'armement, de temporisation, d'alarme et de code PIN ; continue de surveiller sans le serveur.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.5.2|Panneau tactile pour la Waveshare ESP32-S3-Touch-LCD-7C-BOX : état du système sur un écran mural, armer, désarmer, acquitter et voix push-to-talk.|
+|[ARMOR-NODE-SOLAR-HMI](https://github.com/JuanenRac/ARMOR-NODE-SOLAR-HMI)|0.0.2|Écran tactile solaire : batteries et onduleurs sur un écran mural de 7 pouces à ESP32-P4. Le firmware se compile ; il n'a encore jamais tourné sur une carte.|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.3.0|Conceptions de boîtiers (boîtier d'angle radar ; boîte cochée pour les nœuds solaires, électriques et d'alarme) et matrice de recette en atelier.|
 
 ### 🧠 Services Centraux

@@ -746,6 +746,16 @@
       "zh": "适用于 Waveshare ESP32-S3-Touch-LCD-7C-BOX 的触摸面板：在壁挂屏幕上显示系统状态，布防、撤防、确认，以及按键通话语音。",
       "pt": "Painel tátil para a Waveshare ESP32-S3-Touch-LCD-7C-BOX: estado do sistema num ecrã de parede, armar, desarmar, confirmar e voz com botão de pressão."
     },
+    "ARMOR-NODE-SOLAR-HMI": {
+      "en": "Solar touch screen: batteries and inverters on a 7-inch ESP32-P4 wall screen. The firmware compiles; never run on a board yet.",
+      "es": "Pantalla táctil solar: baterías e inversores en una pantalla de pared de 7 pulgadas con ESP32-P4. El firmware compila; nunca ha corrido en una placa.",
+      "de": "Solar-Touchscreen: Batterien und Wechselrichter auf einem 7-Zoll-Wandbildschirm mit ESP32-P4. Die Firmware wird übersetzt; sie lief noch nie auf einer Platine.",
+      "fr": "Écran tactile solaire : batteries et onduleurs sur un écran mural de 7 pouces à ESP32-P4. Le firmware se compile ; il n'a encore jamais tourné sur une carte.",
+      "it": "Schermo touch solare: batterie e inverter su uno schermo a parete da 7 pollici con ESP32-P4. Il firmware si compila; non è mai girato su una scheda.",
+      "ja": "ソーラータッチ画面。ESP32-P4 搭載の 7 インチ壁面画面にバッテリーとインバーターを表示します。ファームウェアはコンパイルできますが、基板で動かしたことはまだありません。",
+      "zh": "太阳能触摸屏：在基于 ESP32-P4 的 7 英寸壁挂屏上显示电池和逆变器。固件可以编译，但从未在电路板上运行过。",
+      "pt": "Ecrã tátil solar: baterias e inversores num ecrã de parede de 7 polegadas com ESP32-P4. O firmware compila; nunca correu numa placa."
+    },
     "ARMOR-NETWORK": {
       "en": "Local network monitor: devices on the network, state of the internet and what changes; it only observes.",
       "es": "Monitor de la red local: dispositivos de la red, estado de internet y qué cambia; solo observa.",

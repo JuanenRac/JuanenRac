@@ -464,7 +464,7 @@ ARMOR_ITEMS = (
           status="Blocked", hardware="Phone / panel", blocked_by="Needs a real watch with its paired phone; never run on a watch or an emulator"),
     _item("A solar touch screen for the house: ARMOR-NODE-SOLAR-HMI", "ARMOR-NODE-SOLAR-HMI + ARMOR-SERVER + ARMOR-COMMON", "Apps & Panels", "Scaffolding", "Local test", "Normal",
           "A 7-inch touch screen on an ESP32-P4 board that shows the battery stacks, their cells and the inverters as the server knows them, with writes guarded by a PIN.",
-          "The screen shows a real installation on the real board. Today only the logic and a simulator of an installation are tested on a computer: there is no firmware, no screen and no connection to a server.",
+          "The screen shows a real installation on the real board. Today the logic, the screens and a simulator of an installation are tested on a computer and a firmware compiles: it has never run on a board and has no connection to a server.",
           status="In progress", hardware="Phone / panel"),
     _item("The server keeps the history of every battery and cell", "ARMOR-SERVER + ARMOR-STUDIO + ARMOR-ANDROID-CONTROL", "Core: Server, Common, Studio", "Functional", "Local test", "Normal",
           "The charts of a battery and its cells come from daily history files of the server instead of starting empty in each client.",
