@@ -88,7 +88,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 of 59 repositories are at least functional, by the maturity each declares in its own manifest. |
 | Tests | 🟢 | `██████████ 100%` | 59 of 59 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 59 of 59 repositories have the last CI run on the main branch green. |
+| Continuous integration | 🟢 | `█████████▊ 98%` | 58 of 59 repositories have the last CI run on the main branch green. |
 | Releases | 🟢 | `██████████ 100%` | 59 of 59 repositories have published at least one release. |
 | Documentation | 🟢 | `██████████ 100%` | 59 of 59 repositories have the README in the eight languages. |
 | Simulation | 🟢 | `██████████ 100%` | 59 of 59 repositories have been checked at least in a simulator. |
@@ -386,7 +386,7 @@ Each tool profile carries its own watchdog and fault behaviour, independent of t
 **Updater:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detects, installs and updates the repositories of this ecosystem; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) does it for all four.
 
 <!-- progress:armor -->
-`[█████████████▊░░░░░░] 69%` — Calculated from real data: the maturity and the evidence that each of its 20 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
+`[█████████████▍░░░░░░] 67%` — Calculated from real data: the maturity and the evidence that each of its 21 repositories declares in its own manifest, plus its published releases, its tests, its green CI and its documentation in eight languages. The 100% milestone is a fully integrated ecosystem operating on real hardware.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -396,14 +396,14 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 
 | Area | Status | Progress | Note |
 | --- | :---: | --- | --- |
-| Software | 🟢 | `█████████░ 90%` | 18 of 20 repositories are at least functional, by the maturity each declares in its own manifest. |
-| Tests | 🟢 | `██████████ 100%` | 20 of 20 repositories have automated tests. |
-| Continuous integration | 🟢 | `██████████ 100%` | 20 of 20 repositories have the last CI run on the main branch green. |
-| Releases | 🟢 | `██████████ 100%` | 20 of 20 repositories have published at least one release. |
-| Documentation | 🟢 | `██████████ 100%` | 20 of 20 repositories have the README in the eight languages. |
-| Simulation | 🟢 | `██████████ 100%` | 20 of 20 repositories have been checked at least in a simulator. |
-| Real hardware | 🔴 | `██▌░░░░░░░ 25%` | 4 of the 16 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
-| Production | 🟡 | `██████░░░░ 60%` | 12 of 20 repositories are established or in production. |
+| Software | 🟡 | `████████▋░ 86%` | 18 of 21 repositories are at least functional, by the maturity each declares in its own manifest. |
+| Tests | 🟢 | `██████████ 100%` | 21 of 21 repositories have automated tests. |
+| Continuous integration | 🟢 | `██████████ 100%` | 21 of 21 repositories have the last CI run on the main branch green. |
+| Releases | 🟢 | `██████████ 100%` | 21 of 21 repositories have published at least one release. |
+| Documentation | 🟢 | `██████████ 100%` | 21 of 21 repositories have the README in the eight languages. |
+| Simulation | 🟢 | `█████████▌ 95%` | 20 of 21 repositories have been checked at least in a simulator. |
+| Real hardware | 🔴 | `██▍░░░░░░░ 24%` | 4 of the 17 repositories that depend on hardware have been checked on a bench or in the field; the rest have never run on the real thing. |
+| Production | 🟠 | `█████▊░░░░ 57%` | 12 of 21 repositories are established or in production. |
 <!-- /status:armor -->
 
 ## 🏗️ How A.R.M.O.R. Is Built
@@ -411,7 +411,7 @@ Calculated for the whole ecosystem from real data, never typed by hand; a light 
 1. **Shared contract**: **ARMOR-COMMON** owns the message meaning - JSON Schema, a Python validator and generated TypeScript/Kotlin types every other repository consumes, never redefines.
 2. **Field nodes**: ESP32-S3 firmware for radar/presence sensing (**ARMOR-NODE-RADAR**), solar inverter and battery monitoring (**ARMOR-NODE-SOLAR**), electrical metering with switching (**ARMOR-NODE-ELECTRICAL**), and the house's alarm panel (**ARMOR-NODE-ALARM**); a Python agent (**ARMOR-NETWORK**) watches the house's own local network and internet reachability from a machine already on it.
 3. **Central coordinator**: **ARMOR-SERVER** holds state, users, alarms, automations and camera evidence; **ARMOR-SERVER-AI** and **ARMOR-VOICE-AI** add an explainable visual policy and offline voice intents that never actuate anything on their own.
-4. **Operator clients**: **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (mobile), **ARMOR-IOS-CONTROL** (iPhone) and the minimal watch **ARMOR-WATCH** are clients of the central server, never of the field network directly. **ARMOR-NODE-HMI** is a touch panel on the wall (a Waveshare ESP32-S3-Touch-LCD-7C-BOX) that shows the state, arms and acknowledges, and will be where the voice assistant lives.
+4. **Operator clients**: **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (mobile), **ARMOR-IOS-CONTROL** (iPhone) and the minimal watch **ARMOR-WATCH** are clients of the central server, never of the field network directly. **ARMOR-NODE-HMI** is a touch panel on the wall (a Waveshare ESP32-S3-Touch-LCD-7C-BOX) that shows the state, arms and acknowledges, and will be where the voice assistant lives. **ARMOR-NODE-SOLAR-HMI** is a second wall screen (a 7-inch ESP32-P4 board) for the batteries and inverters as the server knows them: its firmware compiles, it has never run on a board and it has no link to the server yet.
 5. **Deployment and testing**: **ARMOR-DEVOPS** deploys the whole service graph; **ARMOR-SIMULATOR** replays scenarios and repeatable faults without real hardware; **ARMOR-HARDWARE** carries the enclosure design and its bench acceptance matrix.
 6. **Ecosystem operations**: **ARMOR-UPDATER** discovers, installs and updates every A.R.M.O.R. repository on a machine, the same atomic-by-verification design as HYDRA-UMC-UPDATER; **ARMOR-DOCS** is the canonical architecture documentation and capability matrix. **ARMOR-STUDIO** can also update the services on the central machine from packages signed with the ecosystem's release key, checking each signature before installing.
 
@@ -438,6 +438,7 @@ A.R.M.O.R. follows the same rule HYDRA-UMC's own dashboard already applies: a cl
 | [ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL) | 0.6.3 | Electrical node: firmware with PZEM meters on one serial line, web panel and MQTT, the meters' frames and the switching rules. |
 | [ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM) | 0.6.1 | Alarm node and panel: wired zones, siren, Zigbee devices and the rules of arming, delays, alarm and PIN; it guards without the server. |
 | [ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI) | 0.5.2 | Touch panel for the Waveshare ESP32-S3-Touch-LCD-7C-BOX: system state on a wall screen, arm/disarm/acknowledge and push-to-talk voice. |
+| [ARMOR-NODE-SOLAR-HMI](https://github.com/JuanenRac/ARMOR-NODE-SOLAR-HMI) | 0.0.2 | Solar touch screen: batteries and inverters on a 7-inch ESP32-P4 wall screen. The firmware compiles; never run on a board yet. |
 | [ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE) | 0.3.0 | Enclosure designs (the radar corner enclosure; a checked box for the solar, electrical and alarm nodes) and the bench acceptance matrix. |
 
 ### 🧠 Core Services

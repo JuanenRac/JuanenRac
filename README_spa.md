@@ -88,7 +88,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 | --- | :---: | --- | --- |
 | Software | 🟢 | `█████████▊ 97%` | 57 de 59 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
 | Pruebas | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Integración continua | 🟢 | `█████████▊ 98%` | 58 de 59 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
 | Versiones publicadas | 🟢 | `██████████ 100%` | 59 de 59 repositorios han publicado al menos una versión. |
 | Documentación | 🟢 | `██████████ 100%` | 59 de 59 repositorios tienen el README en los ocho idiomas. |
 | Simulación | 🟢 | `██████████ 100%` | 59 de 59 repositorios se han comprobado al menos en un simulador. |
@@ -392,7 +392,7 @@ Cada perfil de herramienta cuenta con su propio watchdog y comportamiento ante f
 **Actualizador:** [ARMOR-UPDATER](https://github.com/JuanenRac/ARMOR-UPDATER) detecta, instala y actualiza los repositorios de este ecosistema; [ELECTRO-HOBBY-3D-UPDATER](https://github.com/JuanenRac/ELECTRO-HOBBY-3D-UPDATER) lo hace para los cuatro.
 
 <!-- progress:armor -->
-`\[█████████████▊░░░░░░] 69%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 20 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
+`\[█████████████▍░░░░░░] 67%` — Calculado con datos reales: la madurez y la evidencia que cada uno de sus 21 repositorios declara en su propio manifiesto, más sus versiones publicadas, sus pruebas, su CI en verde y su documentación en ocho idiomas. El hito del 100% es un ecosistema totalmente integrado operando sobre hardware real.
 <!-- /progress:armor -->
 
 <!-- status:armor -->
@@ -402,14 +402,14 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 
 | Área | Estado | Avance | Nota |
 | --- | :---: | --- | --- |
-| Software | 🟢 | `█████████░ 90%` | 18 de 20 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
-| Pruebas | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen pruebas automáticas. |
-| Integración continua | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
-| Versiones publicadas | 🟢 | `██████████ 100%` | 20 de 20 repositorios han publicado al menos una versión. |
-| Documentación | 🟢 | `██████████ 100%` | 20 de 20 repositorios tienen el README en los ocho idiomas. |
-| Simulación | 🟢 | `██████████ 100%` | 20 de 20 repositorios se han comprobado al menos en un simulador. |
-| Hardware real | 🔴 | `██▌░░░░░░░ 25%` | 4 de los 16 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
-| Producción | 🟡 | `██████░░░░ 60%` | 12 de 20 repositorios están consolidados o en producción. |
+| Software | 🟡 | `████████▋░ 86%` | 18 de 21 repositorios son al menos funcionales, según la madurez que cada uno declara en su propio manifiesto. |
+| Pruebas | 🟢 | `██████████ 100%` | 21 de 21 repositorios tienen pruebas automáticas. |
+| Integración continua | 🟢 | `██████████ 100%` | 21 de 21 repositorios tienen en verde la última ejecución de la CI en la rama principal. |
+| Versiones publicadas | 🟢 | `██████████ 100%` | 21 de 21 repositorios han publicado al menos una versión. |
+| Documentación | 🟢 | `██████████ 100%` | 21 de 21 repositorios tienen el README en los ocho idiomas. |
+| Simulación | 🟢 | `█████████▌ 95%` | 20 de 21 repositorios se han comprobado al menos en un simulador. |
+| Hardware real | 🔴 | `██▍░░░░░░░ 24%` | 4 de los 17 repositorios que dependen de hardware se han comprobado en banco o en campo; el resto nunca ha funcionado con el equipo real. |
+| Producción | 🟠 | `█████▊░░░░ 57%` | 12 de 21 repositorios están consolidados o en producción. |
 <!-- /status:armor -->
 
 ## 🏗️ Cómo Está Construido A.R.M.O.R.
@@ -417,7 +417,7 @@ Calculado para todo el ecosistema con datos reales, nunca a mano; una bombilla p
 1. **Contrato compartido**: **ARMOR-COMMON** contiene el significado de los mensajes (JSON Schema, un validador en Python y tipos generados en TypeScript/Kotlin) que todos los demás repositorios consumen y nunca redefinen.
 2. **Nodos de campo**: Firmware ESP32-S3 para detección de radar/presencia (**ARMOR-NODE-RADAR**), monitorización de inversores solares y baterías (**ARMOR-NODE-SOLAR**), medición eléctrica con conmutación (**ARMOR-NODE-ELECTRICAL**), y el panel de alarma de la casa (**ARMOR-NODE-ALARM**); un agente en Python (**ARMOR-NETWORK**) supervisa la red local y la accesibilidad a internet de la casa desde una máquina ya conectada a ella.
 3. **Coordinador central**: **ARMOR-SERVER** mantiene el estado, usuarios, alarmas, automatizaciones y evidencias de cámara; **ARMOR-SERVER-AI** y **ARMOR-VOICE-AI** añaden una política visual explicable y comandos de voz offline que nunca accionan nada por sí mismos.
-4. **Clientes de operador**: **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (móvil), **ARMOR-IOS-CONTROL** (iPhone) y el reloj mínimo **ARMOR-WATCH** son clientes del servidor central, nunca de la red de campo directamente. **ARMOR-NODE-HMI** es un panel táctil en la pared (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) que muestra el estado, arma y reconoce alertas, y será donde resida el asistente de voz.
+4. **Clientes de operador**: **ARMOR-STUDIO** (web), **ARMOR-ANDROID-CONTROL** (móvil), **ARMOR-IOS-CONTROL** (iPhone) y el reloj mínimo **ARMOR-WATCH** son clientes del servidor central, nunca de la red de campo directamente. **ARMOR-NODE-HMI** es un panel táctil en la pared (un Waveshare ESP32-S3-Touch-LCD-7C-BOX) que muestra el estado, arma y reconoce alertas, y será donde resida el asistente de voz. **ARMOR-NODE-SOLAR-HMI** es una segunda pantalla de pared (una placa ESP32-P4 de 7 pulgadas) para las baterías y los inversores tal como los conoce el servidor: su firmware compila, nunca ha corrido en una placa y todavía no tiene conexión con el servidor.
 5. **Despliegue y pruebas**: **ARMOR-DEVOPS** despliega el grafo completo de servicios; **ARMOR-SIMULATOR** reproduce escenarios y fallos repetibles sin hardware real; **ARMOR-HARDWARE** contiene el diseño de la carcasa y su matriz de aceptación en banco.
 6. **Operaciones del ecosistema**: **ARMOR-UPDATER** descubre, instala y actualiza cada repositorio de A.R.M.O.R. en una máquina, con el mismo diseño atómico por verificación que HYDRA-UMC-UPDATER; **ARMOR-DOCS** es la documentación de arquitectura canónica y la matriz de capacidades. **ARMOR-STUDIO** también puede actualizar los servicios de la máquina central a partir de paquetes firmados con la clave de lanzamiento del ecosistema, verificando cada firma antes de la instalación.
 
@@ -444,6 +444,7 @@ A.R.M.O.R. sigue la misma regla que ya aplica el panel de control propio de HYDR
 |[ARMOR-NODE-ELECTRICAL](https://github.com/JuanenRac/ARMOR-NODE-ELECTRICAL)|0.6.3|Nodo eléctrico: firmware con medidores PZEM en una línea serie, panel web y MQTT, las tramas de los medidores y las reglas de maniobra.|
 |[ARMOR-NODE-ALARM](https://github.com/JuanenRac/ARMOR-NODE-ALARM)|0.6.1|Nodo y panel de alarma: zonas cableadas, sirena, dispositivos Zigbee y reglas de armado, retardos, alarma y PIN; sigue vigilando sin el servidor.|
 |[ARMOR-NODE-HMI](https://github.com/JuanenRac/ARMOR-NODE-HMI)|0.5.2|Panel táctil para la Waveshare ESP32-S3-Touch-LCD-7C-BOX: estado del sistema en una pantalla de pared, armar, desarmar, confirmar y voz con pulsador.|
+|[ARMOR-NODE-SOLAR-HMI](https://github.com/JuanenRac/ARMOR-NODE-SOLAR-HMI)|0.0.2|Pantalla táctil solar: baterías e inversores en una pantalla de pared de 7 pulgadas con ESP32-P4. El firmware compila; nunca ha corrido en una placa.|
 |[ARMOR-HARDWARE](https://github.com/JuanenRac/ARMOR-HARDWARE)|0.3.0|Diseños de carcasas (la carcasa de esquina para radar; una caja marcada para los nodos solar, eléctrico y de alarma) y matriz de aceptación en banco.|
 
 ### 🧠 Servicios Centrales
