@@ -16996,11 +16996,11 @@
   },
   {
    "actions": {
-    "fail": 187,
-    "min": 33471,
-    "ok": 6207,
-    "other": 96,
-    "runs": 6490
+    "fail": 130,
+    "min": 20543,
+    "ok": 4327,
+    "other": 71,
+    "runs": 4528
    },
    "areas": {
     "armor": {
@@ -17113,11 +17113,11 @@
     ],
     "ARMOR-NODE-SOLAR-HMI": [
      0,
-     "0.0.2"
+     "0.0.3"
     ],
     "ARMOR-SERVER": [
      2,
-     "0.8.3.2"
+     "0.8.3.3"
     ],
     "ARMOR-SERVER-AI": [
      2,
@@ -17129,7 +17129,7 @@
     ],
     "ARMOR-STUDIO": [
      2,
-     "0.8.3.3"
+     "0.8.3.4"
     ],
     "ARMOR-UPDATER": [
      2,
@@ -17149,7 +17149,7 @@
     ],
     "EH3D-ANDROID-CONTROL": [
      0,
-     "0.2.1"
+     "0.2.2"
     ],
     "EH3D-AUTOLEVEL": [
      1,
@@ -17481,7 +17481,7 @@
     ],
     "HYDRA-UMC-SDK": [
      2,
-     "0.7.7"
+     "0.7.8"
     ],
     "HYDRA-UMC-SEMANTIC-PLANNER": [
      1,
@@ -17497,7 +17497,7 @@
     ],
     "HYDRA-UMC-STUDIO-KIT": [
      1,
-     "0.0.5"
+     "0.0.6"
     ],
     "HYDRA-UMC-SUITE": [
      1,
@@ -17609,18 +17609,18 @@
     ]
    },
    "sentinel": {
-    "cand": 1,
+    "cand": 3,
     "gaps": 5,
-    "min": 33471,
-    "red": 0
+    "min": 20543,
+    "red": 1
    },
    "tests": {
-    "ARMOR-ANDROID-CONTROL": 625,
+    "ARMOR-ANDROID-CONTROL": 626,
     "ARMOR-COMMON": 666,
     "ARMOR-DEVOPS": 516,
     "ARMOR-DOCS": 568,
     "ARMOR-HARDWARE": 128,
-    "ARMOR-IOS-CONTROL": 555,
+    "ARMOR-IOS-CONTROL": 556,
     "ARMOR-NETWORK": 337,
     "ARMOR-NODE-ALARM": 40,
     "ARMOR-NODE-ELECTRICAL": 39,
@@ -17629,7 +17629,7 @@
     "ARMOR-NODE-SOLAR": 54,
     "ARMOR-SERVER": 1408,
     "ARMOR-SERVER-AI": 213,
-    "ARMOR-SIMULATOR": 417,
+    "ARMOR-SIMULATOR": 428,
     "ARMOR-STUDIO": 1942,
     "ARMOR-UPDATER": 503,
     "ARMOR-VISION": 385,
@@ -17665,7 +17665,7 @@
     "EH3D-ROUTEPRO": 185,
     "EH3D-SERVER": 1242,
     "EH3D-STENCILCAM": 346,
-    "EH3D-STUDIO": 704,
+    "EH3D-STUDIO": 714,
     "EH3D-SUITE-LAUNCHER": 228,
     "EH3D-THERMAL-LAB": 68,
     "EH3D-TOOL-MANAGER": 284,

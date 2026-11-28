@@ -52,17 +52,16 @@
   "ARMOR-NODE-SOLAR": {
    "art": true,
    "at": "2026-11-28T01:47:10Z",
-   "checked": true,
    "exp": "2026-12-05T01:42:47Z",
    "url": "https://github.com/JuanenRac/ARMOR-NODE-SOLAR/actions/runs/46094183538",
    "wf": "firmware-build.yml"
   },
   "ARMOR-SERVER": {
    "art": true,
-   "at": "2026-11-28T01:40:24Z",
+   "at": "2026-11-28T10:36:42Z",
    "checked": true,
-   "exp": "2026-12-05T01:39:41Z",
-   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46094187324",
+   "exp": "2026-12-05T10:35:56Z",
+   "url": "https://github.com/JuanenRac/ARMOR-SERVER/actions/runs/46135917392",
    "wf": "package-build.yml"
   },
   "ARMOR-SERVER-AI": {
@@ -74,9 +73,10 @@
   },
   "ARMOR-STUDIO": {
    "art": true,
-   "at": "2026-11-27T21:27:58Z",
-   "exp": "2026-12-04T21:24:56Z",
-   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/46069854312",
+   "at": "2026-11-28T10:30:02Z",
+   "checked": true,
+   "exp": "2026-12-05T10:28:44Z",
+   "url": "https://github.com/JuanenRac/ARMOR-STUDIO/actions/runs/46135183931",
    "wf": "package-build.yml"
   },
   "ARMOR-VOICE-AI": {
@@ -89,21 +89,22 @@
   "ARMOR-WATCH": {
    "art": true,
    "at": "2026-11-21T05:46:13Z",
-   "exp": "2026-11-28T05:44:19Z",
+   "checked": true,
+   "exp": "2026-12-21T05:45:20Z",
    "url": "https://github.com/JuanenRac/ARMOR-WATCH/actions/runs/44872115290",
    "wf": "apk-build.yml"
   },
   "EH3D-ANDROID-CONTROL": {
    "art": true,
-   "at": "2026-11-27T23:34:39Z",
-   "exp": "2026-12-04T23:33:54Z",
-   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/46082896816",
+   "at": "2026-11-28T04:58:33Z",
+   "checked": true,
+   "exp": "2026-12-05T04:57:50Z",
+   "url": "https://github.com/JuanenRac/EH3D-ANDROID-CONTROL/actions/runs/46109664408",
    "wf": "apk-build.yml"
   },
   "EH3D-NODE-BUNGARD": {
    "art": true,
    "at": "2026-11-28T03:44:42Z",
-   "checked": true,
    "exp": "2026-12-05T03:43:46Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD/actions/runs/46104033364",
    "wf": "firmware-build.yml"
@@ -111,7 +112,6 @@
   "EH3D-NODE-BUNGARD-AUX": {
    "art": true,
    "at": "2026-11-28T03:51:34Z",
-   "checked": true,
    "exp": "2026-12-05T03:50:32Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-AUX/actions/runs/46104531592",
    "wf": "firmware-build.yml"
@@ -119,7 +119,6 @@
   "EH3D-NODE-BUNGARD-HMI": {
    "art": true,
    "at": "2026-11-28T04:00:11Z",
-   "checked": true,
    "exp": "2026-12-05T03:59:21Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-BUNGARD-HMI/actions/runs/46105146141",
    "wf": "firmware-build.yml"
@@ -127,22 +126,21 @@
   "EH3D-NODE-HMI-GUI": {
    "art": true,
    "at": "2026-11-28T04:08:39Z",
-   "checked": true,
    "exp": "2026-12-05T04:07:57Z",
    "url": "https://github.com/JuanenRac/EH3D-NODE-HMI-GUI/actions/runs/46105814415",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC": {
    "art": true,
-   "at": "2026-11-27T03:41:16Z",
-   "exp": "2026-12-04T03:35:49Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/45934580044",
+   "at": "2026-11-28T10:09:58Z",
+   "checked": true,
+   "exp": "2026-12-05T10:08:35Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC/actions/runs/46132469918",
    "wf": "firmware-build.yml"
   },
   "HYDRA-UMC-ANDROID-CONTROL": {
    "art": true,
    "at": "2026-11-28T01:55:45Z",
-   "checked": true,
    "exp": "2026-12-05T01:54:44Z",
    "url": "https://github.com/JuanenRac/HYDRA-UMC-ANDROID-CONTROL/actions/runs/46095104994",
    "wf": "binaries-build.yml"
@@ -219,9 +217,10 @@
   },
   "HYDRA-UMC-STUDIO-KIT": {
    "art": true,
-   "at": "2026-11-19T20:35:28Z",
-   "exp": "2026-12-19T20:34:58Z",
-   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT/actions/runs/44610042236",
+   "at": "2026-11-28T09:53:35Z",
+   "checked": true,
+   "exp": "2026-12-05T09:47:14Z",
+   "url": "https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT/actions/runs/46131801043",
    "wf": "dist-build.yml"
   },
   "HYDRA-UMC-SUITE": {
@@ -269,7 +268,8 @@
   "TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID": {
    "art": true,
    "at": "2026-11-21T10:37:53Z",
-   "exp": "2026-11-28T10:35:59Z",
+   "checked": true,
+   "exp": "2026-12-21T10:37:15Z",
    "url": "https://github.com/JuanenRac/TOOLS-GITHUB-ACTIONS-MONITOR-ANDROID/actions/runs/44894902664",
    "wf": "apk-build.yml"
   },
@@ -404,8 +404,8 @@
    }
   },
   "ARMOR-NODE-SOLAR-HMI": {
-   "fp": "5a64c7c262a796a4",
-   "on": "2026-11-27",
+   "fp": "861b41b335eef183",
+   "on": "2026-11-28",
    "r": {
     "ak": 0,
     "an": 3,
@@ -413,7 +413,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "73c2521098702de7",
+   "fp": "1d414e54f580fad3",
    "on": "2026-11-28",
    "r": {
     "ak": 1,
@@ -431,8 +431,8 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "f33083c796100814",
-   "on": "2026-11-27",
+   "fp": "58e1bd93f93355d3",
+   "on": "2026-11-28",
    "r": {
     "ak": 1,
     "an": 1,
@@ -449,7 +449,7 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "5570f0f4b17f53d3",
+   "fp": "5d9843366d7a9337",
    "on": "2026-11-28",
    "r": {
     "ak": 0,
@@ -611,7 +611,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "f5bda5bb5591d338",
+   "fp": "c224d1fd1c076e7f",
    "on": "2026-11-28",
    "r": {
     "ak": 3,
@@ -719,8 +719,8 @@
    }
   },
   "HYDRA-UMC-STUDIO-KIT": {
-   "fp": "ee4296f0c26d4720",
-   "on": "2026-11-19",
+   "fp": "42c4b10ef84037ec",
+   "on": "2026-11-28",
    "r": {
     "ak": 1,
     "an": 1,
@@ -764,12 +764,12 @@
    }
   },
   "TOOLS-GITHUB-ACTIONS-MONITOR": {
-   "fp": "9ea1709f8ff84663",
-   "on": "2026-11-26",
+   "fp": "6a34087a8522b714",
+   "on": "2026-11-28",
    "r": {
-    "ak": 0,
+    "ak": 1,
     "an": 1,
-    "at": "absent"
+    "at": "present"
    }
   },
   "URTC": {
@@ -946,7 +946,7 @@
    }
   },
   "ARMOR-SERVER": {
-   "fp": "73c2521098702de7",
+   "fp": "1d414e54f580fad3",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -978,7 +978,7 @@
    }
   },
   "ARMOR-STUDIO": {
-   "fp": "f33083c796100814",
+   "fp": "58e1bd93f93355d3",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1010,7 +1010,7 @@
    }
   },
   "EH3D-ANDROID-CONTROL": {
-   "fp": "5570f0f4b17f53d3",
+   "fp": "5d9843366d7a9337",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1262,7 +1262,7 @@
    }
   },
   "EH3D-SERVER": {
-   "fp": "f5bda5bb5591d338",
+   "fp": "c224d1fd1c076e7f",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1520,7 +1520,7 @@
    }
   },
   "HYDRA-UMC-STUDIO-KIT": {
-   "fp": "ee4296f0c26d4720",
+   "fp": "42c4b10ef84037ec",
    "r": {
     "bad": 0,
     "ho": 0,
@@ -1589,6 +1589,20 @@
     ],
     "unk": 0,
     "why": []
+   }
+  },
+  "TOOLS-GITHUB-ACTIONS-MONITOR": {
+   "fp": "6a34087a8522b714",
+   "r": {
+    "bad": 0,
+    "ho": 0,
+    "ok": 0,
+    "s": "unverifiable",
+    "sch": [],
+    "unk": 5,
+    "why": [
+     "family"
+    ]
    }
   },
   "URTC": {
